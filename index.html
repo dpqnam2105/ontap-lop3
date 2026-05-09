@@ -1,604 +1,430 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌟 Ôn Toán Lớp 2 → Lớp 3</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌟 Ôn Tập Hè — Lớp 2 lên Lớp 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --green:   #2ECC71;
-      --green-d: #27AE60;
-      --blue:    #3498DB;
-      --blue-d:  #2980B9;
-      --yellow:  #F1C40F;
-      --orange:  #E67E22;
-      --red:     #E74C3C;
-      --purple:  #9B59B6;
-      --bg:      #F0FFF4;
-      --card:    #FFFFFF;
-      --text:    #2C3E50;
-      --gray:    #95A5A6;
+      --green:#2ECC71; --green-d:#27AE60;
+      --blue:#3498DB;  --blue-d:#2980B9;
+      --purple:#9B59B6; --purple-d:#8E44AD;
+      --orange:#E67E22; --orange-d:#D35400;
+      --red:#E74C3C; --yellow:#F1C40F;
+      --bg:#F4FFF8; --text:#2C3E50; --gray:#95A5A6;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(46,204,113,0.08) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(52,152,219,0.08) 0%, transparent 50%);
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 
-    /* ── HEADER ── */
-    .header {
-      background: linear-gradient(135deg, #27AE60 0%, #2ECC71 50%, #1ABC9C 100%);
-      padding: 1.5rem 1rem 2.8rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: -20px; left: 0; right: 0;
-      height: 40px;
-      background: var(--bg);
-      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    }
-    .header__emoji { font-size: 2.8rem; display: block; animation: bounce 2s infinite; }
-    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    .header__title {
-      font-family: 'Baloo 2', cursive;
-      font-size: clamp(1.5rem, 5vw, 2.2rem);
-      font-weight: 800; color: white;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .header__sub { font-size: 0.9rem; color: rgba(255,255,255,0.9); margin-top: 0.25rem; font-weight: 600; }
+    /* HEADER */
+    .header{background:linear-gradient(135deg,#1A8A4A 0%,#27AE60 50%,#1ABC9C 100%);padding:1.4rem 1rem 2.8rem;text-align:center;position:relative;overflow:hidden}
+    .header::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+    .header__emoji{font-size:2.6rem;display:block;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .header__title{font-family:'Baloo 2',cursive;font-size:clamp(1.4rem,5vw,2.1rem);font-weight:800;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .header__sub{font-size:.88rem;color:rgba(255,255,255,.9);margin-top:.2rem;font-weight:600}
 
-    /* ── MAIN ── */
-    .main { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    .main{max-width:680px;margin:0 auto;padding:1.5rem 1rem 3rem}
 
-    /* ── SCREENS ── */
-    .screen { display: none; flex-direction: column; gap: 1rem; }
-    .screen.active { display: flex; }
+    /* SCREENS */
+    .screen{display:none;flex-direction:column;gap:1rem}
+    .screen.active{display:flex}
 
-    /* ══════════════════════════════
-       SCREEN: REGISTER
-    ══════════════════════════════ */
-    .register-card {
-      background: white; border-radius: 28px;
-      padding: 2.5rem 2rem; text-align: center;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    }
-    .register-card__emoji { font-size: 4rem; display: block; margin-bottom: 0.75rem; }
-    .register-card__title {
-      font-family: 'Baloo 2', cursive;
-      font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem;
-    }
-    .register-card__sub { color: var(--gray); font-size: 0.92rem; margin-bottom: 1.75rem; }
-    .name-input {
-      width: 100%; padding: 1rem 1.25rem;
-      font-family: 'Baloo 2', cursive; font-size: 1.2rem; font-weight: 700;
-      text-align: center; color: var(--text);
-      border: 3px solid #ECF0F1; border-radius: 18px;
-      outline: none; transition: border-color 0.3s, box-shadow 0.3s;
-      margin-bottom: 1rem;
-    }
-    .name-input:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(46,204,113,0.15); }
-    .name-input::placeholder { color: #BDC3C7; }
-    .btn-start {
-      width: 100%; padding: 1rem;
-      background: linear-gradient(135deg, #27AE60, #2ECC71);
-      color: white; border: none; border-radius: 18px;
-      font-family: 'Baloo 2', cursive; font-size: 1.15rem; font-weight: 700;
-      cursor: pointer; transition: all 0.2s;
-      box-shadow: 0 4px 16px rgba(46,204,113,0.35);
-    }
-    .btn-start:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,204,113,0.4); }
-    .btn-start:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    /* ── REGISTER ── */
+    .reg-card{background:#fff;border-radius:28px;padding:2.2rem 1.75rem;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+    .reg-card__emoji{font-size:3.5rem;display:block;margin-bottom:.6rem}
+    .reg-card__title{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;margin-bottom:.3rem}
+    .reg-card__sub{color:var(--gray);font-size:.9rem;margin-bottom:1.5rem}
+    .name-input{width:100%;padding:.9rem 1.1rem;font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:700;text-align:center;color:var(--text);border:3px solid #ECF0F1;border-radius:16px;outline:none;transition:border-color .3s,box-shadow .3s;margin-bottom:.9rem}
+    .name-input:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(46,204,113,.15)}
+    .name-input::placeholder{color:#BDC3C7}
+    .btn-start{width:100%;padding:.95rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:16px;font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(46,204,113,.35)}
+    .btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,204,113,.4)}
+    .btn-start:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
-    .register-leaderboard-preview {
-      background: linear-gradient(135deg, #EBF5FB, #D6EAF8);
-      border-radius: 18px; padding: 1.25rem;
-      border: 2px solid #AED6F1;
-    }
-    .register-leaderboard-preview h3 {
-      font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700;
-      color: var(--blue-d); margin-bottom: 0.75rem; text-align: center;
-    }
-    .preview-row {
-      display: flex; align-items: center; gap: 0.75rem;
-      padding: 0.5rem 0.25rem; border-bottom: 1px solid rgba(174,214,241,0.5);
-      font-size: 0.88rem;
-    }
-    .preview-row:last-child { border-bottom: none; }
-    .preview-rank { font-size: 1.1rem; width: 28px; text-align: center; }
-    .preview-name { flex: 1; font-weight: 700; color: var(--text); }
-    .preview-score { font-weight: 800; color: var(--blue-d); }
-    .preview-games { font-size: 0.78rem; color: var(--gray); }
-    .preview-empty { text-align: center; color: var(--gray); font-size: 0.88rem; padding: 0.5rem; }
+    .lb-preview{background:linear-gradient(135deg,#EBF5FB,#D6EAF8);border-radius:18px;padding:1.1rem;border:2px solid #AED6F1}
+    .lb-preview h3{font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:700;color:var(--blue-d);margin-bottom:.65rem;text-align:center}
+    .prev-row{display:flex;align-items:center;gap:.65rem;padding:.4rem .2rem;border-bottom:1px solid rgba(174,214,241,.5);font-size:.85rem}
+    .prev-row:last-child{border-bottom:none}
+    .prev-rank{font-size:1rem;width:26px;text-align:center}
+    .prev-name{flex:1;font-weight:700}
+    .prev-score{font-weight:800;color:var(--blue-d)}
+    .prev-games{font-size:.75rem;color:var(--gray)}
+    .prev-empty{text-align:center;color:var(--gray);font-size:.85rem;padding:.4rem}
 
-    /* ══════════════════════════════
-       SCREEN: MENU
-    ══════════════════════════════ */
-    .menu-welcome {
-      background: white; border-radius: 20px;
-      padding: 1.25rem 1.5rem;
-      display: flex; align-items: center; gap: 1rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
-    .menu-welcome__avatar {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: linear-gradient(135deg, #27AE60, #2ECC71);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; flex-shrink: 0;
-    }
-    .menu-welcome__info { flex: 1; }
-    .menu-welcome__name {
-      font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 800;
-    }
-    .menu-welcome__stats { font-size: 0.82rem; color: var(--gray); margin-top: 0.1rem; }
-    .menu-welcome__change {
-      font-size: 0.75rem; color: var(--blue); font-weight: 600; cursor: pointer;
-      padding: 0.3rem 0.7rem; border-radius: 10px; background: #EBF5FB;
-      white-space: nowrap;
-    }
-    .menu-welcome__change:hover { background: #D6EAF8; }
+    /* ── SUBJECT MENU ── */
+    .welcome-bar{background:#fff;border-radius:18px;padding:1rem 1.25rem;display:flex;align-items:center;gap:.9rem;box-shadow:0 4px 16px rgba(0,0,0,.07)}
+    .welcome-bar__av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#27AE60,#2ECC71);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .welcome-bar__info{flex:1}
+    .welcome-bar__name{font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800}
+    .welcome-bar__stats{font-size:.78rem;color:var(--gray);margin-top:.1rem}
+    .welcome-bar__change{font-size:.72rem;color:var(--blue);font-weight:600;cursor:pointer;padding:.28rem .65rem;border-radius:10px;background:#EBF5FB;white-space:nowrap}
+    .welcome-bar__change:hover{background:#D6EAF8}
 
-    .menu__title {
-      font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 700;
-      color: var(--green-d); text-align: center; margin: 0.25rem 0;
-    }
+    .subject-title{font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;color:var(--green-d);text-align:center}
 
-    .topic-card {
-      background: white; border-radius: 20px;
-      padding: 1.1rem 1.4rem;
-      display: flex; align-items: center; gap: 1rem;
-      cursor: pointer; border: 3px solid transparent;
-      transition: all 0.25s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
-    .topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-    .topic-card--green  { border-color: #2ECC71; }
-    .topic-card--blue   { border-color: #3498DB; }
-    .topic-card--orange { border-color: #E67E22; }
-    .topic-card--purple { border-color: #9B59B6; }
-    .topic-card--yellow { border-color: #F1C40F; }
-    .topic-card__icon {
-      font-size: 2rem; width: 52px; height: 52px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .topic-card--green  .topic-card__icon { background: #D5F5E3; }
-    .topic-card--blue   .topic-card__icon { background: #D6EAF8; }
-    .topic-card--orange .topic-card__icon { background: #FDEBD0; }
-    .topic-card--purple .topic-card__icon { background: #E8DAEF; }
-    .topic-card--yellow .topic-card__icon { background: #FEF9E7; }
-    .topic-card__info { flex: 1; }
-    .topic-card__name { font-family: 'Baloo 2', cursive; font-size: 1.05rem; font-weight: 700; }
-    .topic-card__desc { font-size: 0.82rem; color: var(--gray); margin-top: 0.1rem; }
-    .topic-card__count {
-      font-size: 0.75rem; font-weight: 700;
-      padding: 0.22rem 0.6rem; border-radius: 20px;
-      background: var(--bg); color: var(--green-d);
-    }
+    .subject-card{background:#fff;border-radius:20px;padding:1.25rem 1.4rem;display:flex;align-items:center;gap:1rem;cursor:pointer;border:3px solid transparent;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,.07)}
+    .subject-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+    .subject-card--math   {border-color:#2ECC71}
+    .subject-card--viet   {border-color:#E74C3C}
+    .subject-card--eng    {border-color:#3498DB}
+    .subject-card--matheng{border-color:#9B59B6}
+    .subject-card__icon{font-size:2rem;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .subject-card--math    .subject-card__icon{background:#D5F5E3}
+    .subject-card--viet    .subject-card__icon{background:#FADBD8}
+    .subject-card--eng     .subject-card__icon{background:#D6EAF8}
+    .subject-card--matheng .subject-card__icon{background:#E8DAEF}
+    .subject-card__info{flex:1}
+    .subject-card__name{font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700}
+    .subject-card__desc{font-size:.8rem;color:var(--gray);margin-top:.1rem}
+    .subject-card__badge{font-size:.72rem;font-weight:700;padding:.22rem .6rem;border-radius:20px;background:var(--bg);color:var(--green-d);white-space:nowrap}
 
-    .btn-leaderboard {
-      background: linear-gradient(135deg, #2980B9, #3498DB);
-      color: white; border: none; border-radius: 18px;
-      padding: 0.9rem; width: 100%;
-      font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700;
-      cursor: pointer; transition: all 0.2s;
-      box-shadow: 0 4px 16px rgba(52,152,219,0.3);
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    }
-    .btn-leaderboard:hover { transform: translateY(-2px); }
+    .btn-lb{background:linear-gradient(135deg,#2980B9,#3498DB);color:#fff;border:none;border-radius:18px;padding:.85rem;width:100%;font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(52,152,219,.3);display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .btn-lb:hover{transform:translateY(-2px)}
 
-    /* ══════════════════════════════
-       SCREEN: QUIZ
-    ══════════════════════════════ */
-    .quiz-header {
-      background: white; border-radius: 20px;
-      padding: 1rem 1.25rem;
-      display: flex; align-items: center; gap: 1rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
-    .btn-back {
-      background: var(--bg); border: none; border-radius: 12px;
-      width: 38px; height: 38px; font-size: 1.1rem;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s; flex-shrink: 0;
-    }
-    .btn-back:hover { background: #D5F5E3; }
-    .quiz-header__topic { font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700; flex: 1; }
-    .quiz-header__player { font-size: 0.8rem; color: var(--gray); }
-    .score-badge {
-      background: linear-gradient(135deg, #27AE60, #2ECC71);
-      color: white; padding: 0.28rem 0.8rem;
-      border-radius: 20px; font-weight: 700; font-size: 0.88rem; white-space: nowrap;
-    }
+    /* ── TOPIC MENU ── */
+    .back-bar{display:flex;align-items:center;gap:.75rem;background:#fff;border-radius:16px;padding:.85rem 1.1rem;box-shadow:0 4px 14px rgba(0,0,0,.07)}
+    .btn-back{background:var(--bg);border:none;border-radius:10px;width:36px;height:36px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+    .btn-back:hover{background:#D5F5E3}
+    .back-bar__title{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700}
 
-    .progress-wrap {
-      background: white; border-radius: 16px; padding: 0.85rem 1.25rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    }
-    .progress-info { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; color: var(--gray); margin-bottom: 0.45rem; }
-    .progress-bar { height: 10px; background: #ECF0F1; border-radius: 10px; overflow: hidden; }
-    .progress-fill { height: 100%; background: linear-gradient(90deg, #27AE60, #2ECC71); border-radius: 10px; transition: width 0.5s ease; }
+    .topic-card{background:#fff;border-radius:18px;padding:1rem 1.25rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;border:2px solid #ECF0F1;transition:all .25s;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+    .topic-card:hover{border-color:var(--green);background:#F0FFF4;transform:translateY(-2px);box-shadow:0 6px 20px rgba(46,204,113,.15)}
+    .topic-card__icon{font-size:1.6rem;width:44px;height:44px;border-radius:12px;background:#F0FFF4;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .topic-card__info{flex:1}
+    .topic-card__name{font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:700}
+    .topic-card__desc{font-size:.76rem;color:var(--gray);margin-top:.1rem}
+    .topic-card__count{font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:20px;background:var(--bg);color:var(--green-d)}
 
-    .question-card {
-      background: white; border-radius: 24px; padding: 1.75rem 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;
-    }
-    .question-card__num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6rem; }
-    .question-card__text { font-family: 'Baloo 2', cursive; font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 700; color: var(--text); line-height: 1.3; }
-    .question-card__hint { font-size: 0.82rem; color: var(--gray); margin-top: 0.4rem; }
+    /* ── QUIZ ── */
+    .quiz-hdr{background:#fff;border-radius:18px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 4px 14px rgba(0,0,0,.07)}
+    .quiz-hdr__topic{font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:700;flex:1}
+    .quiz-hdr__player{font-size:.75rem;color:var(--gray)}
+    .score-badge{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;padding:.26rem .75rem;border-radius:20px;font-weight:700;font-size:.85rem;white-space:nowrap}
 
-    .answers { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .answer-btn {
-      background: white; border: 3px solid #ECF0F1; border-radius: 18px;
-      padding: 1rem 0.75rem;
-      font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 700; color: var(--text);
-      cursor: pointer; transition: all 0.2s;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-    }
-    .answer-btn:hover:not(:disabled) { border-color: var(--green); background: #F0FFF4; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(46,204,113,0.2); }
-    .answer-btn.correct { border-color: var(--green); background: linear-gradient(135deg, #D5F5E3, #A9DFBF); color: #1E8449; animation: popIn 0.3s ease; }
-    .answer-btn.wrong   { border-color: var(--red);   background: linear-gradient(135deg, #FADBD8, #F1948A); color: #922B21; animation: shake 0.4s ease; }
-    .answer-btn.show-correct { border-color: var(--green); background: linear-gradient(135deg, #D5F5E3, #A9DFBF); color: #1E8449; }
-    @keyframes popIn { 0%{transform:scale(0.95)} 60%{transform:scale(1.05)} 100%{transform:scale(1)} }
-    @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+    .prog-wrap{background:#fff;border-radius:14px;padding:.8rem 1.1rem;box-shadow:0 4px 14px rgba(0,0,0,.07)}
+    .prog-info{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--gray);margin-bottom:.4rem}
+    .prog-bar{height:9px;background:#ECF0F1;border-radius:9px;overflow:hidden}
+    .prog-fill{height:100%;background:linear-gradient(90deg,#27AE60,#2ECC71);border-radius:9px;transition:width .5s ease}
 
-    .feedback {
-      border-radius: 18px; padding: 1rem 1.25rem;
-      text-align: center; font-weight: 700; font-size: 0.95rem;
-      display: none; align-items: center; justify-content: center; gap: 0.6rem;
-    }
-    .feedback.correct { display: flex; background: linear-gradient(135deg,#D5F5E3,#A9DFBF); color: #1E8449; }
-    .feedback.wrong   { display: flex; background: linear-gradient(135deg,#FADBD8,#F1948A); color: #922B21; }
-    .feedback__emoji { font-size: 1.4rem; }
-    .feedback__answer { font-size: 0.82rem; font-weight: 600; margin-top: 0.15rem; opacity: 0.85; }
+    .q-card{background:#fff;border-radius:22px;padding:1.6rem 1.4rem;box-shadow:0 4px 20px rgba(0,0,0,.08);text-align:center}
+    .q-card__num{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.55rem}
+    .q-card__text{font-family:'Baloo 2',cursive;font-size:clamp(1.3rem,4.5vw,2rem);font-weight:700;color:var(--text);line-height:1.35}
+    .q-card__hint{font-size:.8rem;color:var(--gray);margin-top:.4rem}
 
-    .btn-next {
-      background: linear-gradient(135deg, #27AE60, #2ECC71); color: white;
-      border: none; border-radius: 18px; padding: 1rem; width: 100%;
-      font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 700;
-      cursor: pointer; transition: all 0.2s;
-      box-shadow: 0 4px 16px rgba(46,204,113,0.35);
-      display: none;
-    }
-    .btn-next:hover { transform: translateY(-2px); }
+    /* answer grid — 2 or 1 col depending on content */
+    .answers{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .answers--single{grid-template-columns:1fr}
+    .ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:16px;padding:.9rem .7rem;font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s;box-shadow:0 3px 10px rgba(0,0,0,.06);line-height:1.3}
+    .ans-btn--text{font-size:1rem;text-align:left;padding:.85rem 1rem}
+    .ans-btn:hover:not(:disabled){border-color:var(--green);background:#F0FFF4;transform:translateY(-2px);box-shadow:0 6px 16px rgba(46,204,113,.2)}
+    .ans-btn.correct{border-color:var(--green);background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449;animation:popIn .3s ease}
+    .ans-btn.wrong{border-color:var(--red);background:linear-gradient(135deg,#FADBD8,#F1948A);color:#922B21;animation:shake .4s ease}
+    .ans-btn.show-correct{border-color:var(--green);background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449}
+    @keyframes popIn{0%{transform:scale(.95)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 
-    /* ══════════════════════════════
-       SCREEN: RESULT
-    ══════════════════════════════ */
-    .result-card {
-      background: white; border-radius: 28px; padding: 2.25rem 2rem;
-      text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    .result-card__emoji { font-size: 3.5rem; display: block; margin-bottom: 0.6rem; animation: bounce 1.5s infinite; }
-    .result-card__title { font-family: 'Baloo 2', cursive; font-size: 1.6rem; font-weight: 800; }
-    .result-card__player { font-size: 0.88rem; color: var(--gray); margin: 0.2rem 0 0.5rem; }
-    .result-card__score {
-      font-family: 'Baloo 2', cursive; font-size: 3.2rem; font-weight: 800;
-      background: linear-gradient(135deg, #27AE60, #3498DB);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      line-height: 1; margin: 0.4rem 0;
-    }
-    .result-card__stars { font-size: 2.2rem; letter-spacing: 0.1em; margin: 0.4rem 0; }
-    .result-card__msg { font-size: 0.95rem; font-weight: 600; padding: 0.7rem 1.25rem; border-radius: 12px; margin: 0.5rem 0; }
-    .result-card__msg--great  { background: #D5F5E3; color: #1E8449; }
-    .result-card__msg--good   { background: #D6EAF8; color: #1A5276; }
-    .result-card__msg--try    { background: #FDEBD0; color: #784212; }
+    .feedback{border-radius:16px;padding:.9rem 1.1rem;text-align:center;font-weight:700;font-size:.92rem;display:none;align-items:center;justify-content:center;gap:.55rem}
+    .feedback.correct{display:flex;background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449}
+    .feedback.wrong{display:flex;background:linear-gradient(135deg,#FADBD8,#F1948A);color:#922B21}
+    .fb-emoji{font-size:1.3rem}
+    .fb-ans{font-size:.8rem;font-weight:600;margin-top:.1rem;opacity:.85}
 
-    .saving-indicator {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      font-size: 0.82rem; color: var(--gray); padding: 0.5rem;
-    }
-    .saving-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 1s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .btn-next{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:16px;padding:.95rem;width:100%;font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(46,204,113,.35);display:none}
+    .btn-next:hover{transform:translateY(-2px)}
 
-    .result-actions { display: flex; flex-direction: column; gap: 0.75rem; }
-    .btn-retry { background: linear-gradient(135deg,#27AE60,#2ECC71); color: white; border: none; border-radius: 18px; padding: 0.95rem; font-family: 'Baloo 2', cursive; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(46,204,113,0.35); }
-    .btn-retry:hover { transform: translateY(-2px); }
-    .btn-home  { background: white; color: var(--green-d); border: 3px solid var(--green); border-radius: 18px; padding: 0.8rem; font-family: 'Baloo 2', cursive; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-    .btn-home:hover { background: #D5F5E3; }
+    /* ── RESULT ── */
+    .res-card{background:#fff;border-radius:26px;padding:2rem 1.75rem;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+    .res-card__emoji{font-size:3.2rem;display:block;margin-bottom:.55rem;animation:bounce 1.5s infinite}
+    .res-card__title{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800}
+    .res-card__player{font-size:.85rem;color:var(--gray);margin:.2rem 0 .4rem}
+    .res-card__score{font-family:'Baloo 2',cursive;font-size:3rem;font-weight:800;background:linear-gradient(135deg,#27AE60,#3498DB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin:.35rem 0}
+    .res-card__stars{font-size:2rem;letter-spacing:.1em;margin:.35rem 0}
+    .res-card__msg{font-size:.9rem;font-weight:600;padding:.65rem 1.1rem;border-radius:12px;margin:.4rem 0}
+    .res-card__msg--great{background:#D5F5E3;color:#1E8449}
+    .res-card__msg--good{background:#D6EAF8;color:#1A5276}
+    .res-card__msg--try{background:#FDEBD0;color:#784212}
 
-    /* ══════════════════════════════
-       SCREEN: LEADERBOARD
-    ══════════════════════════════ */
-    .lb-header {
-      background: linear-gradient(135deg, #2980B9, #3498DB);
-      border-radius: 20px; padding: 1.5rem;
-      text-align: center; color: white;
-      box-shadow: 0 4px 16px rgba(52,152,219,0.3);
-    }
-    .lb-header__emoji { font-size: 2.5rem; display: block; margin-bottom: 0.4rem; }
-    .lb-header__title { font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; }
-    .lb-header__sub { font-size: 0.85rem; opacity: 0.85; margin-top: 0.2rem; }
+    .saving{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:var(--gray);padding:.4rem}
+    .saving-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-    .lb-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .res-actions{display:flex;flex-direction:column;gap:.7rem}
+    .btn-retry{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:16px;padding:.9rem;font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(46,204,113,.35)}
+    .btn-retry:hover{transform:translateY(-2px)}
+    .btn-ghost{background:#fff;color:var(--green-d);border:2px solid var(--green);border-radius:16px;padding:.8rem;font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .2s}
+    .btn-ghost:hover{background:#D5F5E3}
+    .btn-ghost--blue{color:var(--blue-d);border-color:var(--blue)}
+    .btn-ghost--blue:hover{background:#D6EAF8}
 
-    .lb-card {
-      background: white; border-radius: 18px;
-      padding: 1rem 1.25rem;
-      display: flex; align-items: center; gap: 1rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-      transition: transform 0.2s;
-    }
-    .lb-card:hover { transform: translateY(-2px); }
-    .lb-card--1st { background: linear-gradient(135deg, #FEF9E7, #FDEBD0); border: 2px solid #F1C40F; }
-    .lb-card--2nd { background: linear-gradient(135deg, #F2F3F4, #E5E7E9); border: 2px solid #BDC3C7; }
-    .lb-card--3rd { background: linear-gradient(135deg, #FEF0E7, #FDDBC7); border: 2px solid #E67E22; }
-    .lb-card--me  { border: 2px solid var(--green); }
+    /* ── LEADERBOARD ── */
+    .lb-hdr{background:linear-gradient(135deg,#2980B9,#3498DB);border-radius:20px;padding:1.4rem;text-align:center;color:#fff;box-shadow:0 4px 16px rgba(52,152,219,.3)}
+    .lb-hdr__emoji{font-size:2.2rem;display:block;margin-bottom:.35rem}
+    .lb-hdr__title{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800}
+    .lb-hdr__sub{font-size:.82rem;opacity:.85;margin-top:.15rem}
+    .lb-list{display:flex;flex-direction:column;gap:.65rem}
+    .lb-item{background:#fff;border-radius:16px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.85rem;box-shadow:0 3px 12px rgba(0,0,0,.07);transition:transform .2s}
+    .lb-item:hover{transform:translateY(-2px)}
+    .lb-item--1{background:linear-gradient(135deg,#FEF9E7,#FDEBD0);border:2px solid #F1C40F}
+    .lb-item--2{background:linear-gradient(135deg,#F2F3F4,#E5E7E9);border:2px solid #BDC3C7}
+    .lb-item--3{background:linear-gradient(135deg,#FEF0E7,#FDDBC7);border:2px solid #E67E22}
+    .lb-item--me{border:2px solid var(--green)}
+    .lb-rank{font-size:1.4rem;width:34px;text-align:center;flex-shrink:0}
+    .lb-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#27AE60,#2ECC71);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;font-family:'Baloo 2',cursive;flex-shrink:0}
+    .lb-info{flex:1;min-width:0}
+    .lb-name{font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .lb-name--me::after{content:' (bạn)';font-size:.72rem;color:var(--green)}
+    .lb-meta{font-size:.74rem;color:var(--gray);margin-top:.1rem}
+    .lb-score{text-align:right;flex-shrink:0}
+    .lb-score__num{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;color:var(--blue-d)}
+    .lb-score__lbl{font-size:.67rem;color:var(--gray)}
+    .lb-loading,.lb-empty{text-align:center;padding:1.75rem;color:var(--gray);font-size:.9rem;background:#fff;border-radius:16px}
+    .btn-refresh{background:#fff;color:var(--blue);border:2px solid var(--blue);border-radius:16px;padding:.75rem;font-family:'Baloo 2',cursive;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.4rem}
+    .btn-refresh:hover{background:#EBF5FB}
 
-    .lb-rank { font-size: 1.5rem; width: 36px; text-align: center; flex-shrink: 0; }
-    .lb-avatar {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: linear-gradient(135deg, #27AE60, #2ECC71);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; font-weight: 800; color: white;
-      font-family: 'Baloo 2', cursive; flex-shrink: 0;
-    }
-    .lb-info { flex: 1; min-width: 0; }
-    .lb-name { font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .lb-name--me::after { content: ' (bạn)'; font-size: 0.75rem; color: var(--green); }
-    .lb-meta { font-size: 0.78rem; color: var(--gray); margin-top: 0.1rem; }
-    .lb-score { text-align: right; flex-shrink: 0; }
-    .lb-score__num { font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: var(--blue-d); }
-    .lb-score__label { font-size: 0.7rem; color: var(--gray); }
+    /* STARS */
+    .stars-rain{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:999;overflow:hidden}
+    .star-fall{position:absolute;font-size:1.5rem;animation:fallDown 1.5s ease-in forwards}
+    @keyframes fallDown{0%{opacity:1;transform:translateY(-20px) rotate(0deg)}100%{opacity:0;transform:translateY(100vh) rotate(360deg)}}
 
-    .lb-loading { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.95rem; }
-    .lb-empty   { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.95rem; background: white; border-radius: 18px; }
-
-    .btn-refresh {
-      background: white; color: var(--blue); border: 2px solid var(--blue);
-      border-radius: 18px; padding: 0.75rem;
-      font-family: 'Baloo 2', cursive; font-size: 0.95rem; font-weight: 700;
-      cursor: pointer; transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    }
-    .btn-refresh:hover { background: #EBF5FB; }
-
-    /* ── STARS RAIN ── */
-    .stars-rain { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 999; overflow: hidden; }
-    .star-fall { position: absolute; font-size: 1.5rem; animation: fallDown 1.5s ease-in forwards; }
-    @keyframes fallDown { 0%{opacity:1;transform:translateY(-20px) rotate(0deg)} 100%{opacity:0;transform:translateY(100vh) rotate(360deg)} }
-
-    @media (max-width: 400px) {
-      .answer-btn { font-size: 1.2rem; padding: 0.85rem 0.5rem; }
-      .result-card__score { font-size: 2.6rem; }
+    @media(max-width:400px){
+      .ans-btn{font-size:1.05rem;padding:.75rem .5rem}
+      .ans-btn--text{font-size:.88rem}
     }
   </style>
 </head>
 <body>
-
 <div class="stars-rain" id="starsRain"></div>
 
 <div class="header">
   <span class="header__emoji">🌟</span>
-  <div class="header__title">Ôn Toán Mùa Hè</div>
-  <div class="header__sub">Lớp 2 → Lớp 3 · Cùng học nào! 🚀</div>
+  <div class="header__title">Ôn Tập Hè · Lớp 2 → Lớp 3</div>
+  <div class="header__sub">Toán · Tiếng Việt · Tiếng Anh 🚀</div>
 </div>
 
 <div class="main">
 
-  <!-- ══ SCREEN: ĐĂNG KÝ ══ -->
+  <!-- ══ REGISTER ══ -->
   <div class="screen active" id="screenRegister">
-    <div class="register-card">
-      <span class="register-card__emoji">👋</span>
-      <div class="register-card__title">Xin chào bạn nhỏ!</div>
-      <div class="register-card__sub">Nhập tên của bạn để bắt đầu ôn tập nhé</div>
-      <input class="name-input" id="nameInput" type="text"
-        placeholder="Tên của bạn là...?" maxlength="20"
-        autocomplete="off" autocorrect="off" spellcheck="false" />
-      <button class="btn-start" id="btnStart" onclick="handleRegister()" disabled>
-        Bắt đầu học thôi! 🚀
-      </button>
+    <div class="reg-card">
+      <span class="reg-card__emoji">👋</span>
+      <div class="reg-card__title">Xin chào bạn nhỏ!</div>
+      <div class="reg-card__sub">Nhập tên của bạn để bắt đầu nhé</div>
+      <input class="name-input" id="nameInput" type="text" placeholder="Tên của bạn là...?" maxlength="20" autocomplete="off"/>
+      <button class="btn-start" id="btnStart" onclick="handleRegister()" disabled>Bắt đầu học thôi! 🚀</button>
     </div>
-
-    <div class="register-leaderboard-preview">
+    <div class="lb-preview">
       <h3>🏆 Bảng xếp hạng lớp</h3>
-      <div id="previewList"><div class="preview-empty">Đang tải...</div></div>
+      <div id="previewList"><div class="prev-empty">Đang tải...</div></div>
     </div>
   </div>
 
-  <!-- ══ SCREEN: MENU ══ -->
-  <div class="screen" id="screenMenu">
-    <div class="menu-welcome">
-      <div class="menu-welcome__avatar" id="menuAvatar">😊</div>
-      <div class="menu-welcome__info">
-        <div class="menu-welcome__name" id="menuName">Bạn nhỏ</div>
-        <div class="menu-welcome__stats" id="menuStats">Chưa làm bài nào</div>
+  <!-- ══ SUBJECT MENU ══ -->
+  <div class="screen" id="screenSubject">
+    <div class="welcome-bar">
+      <div class="welcome-bar__av" id="subAvatar">😊</div>
+      <div class="welcome-bar__info">
+        <div class="welcome-bar__name" id="subName">Bạn nhỏ</div>
+        <div class="welcome-bar__stats" id="subStats">Chào mừng!</div>
       </div>
-      <div class="menu-welcome__change" onclick="showScreen('register')">Đổi tên</div>
+      <div class="welcome-bar__change" onclick="showScreen('register')">Đổi tên</div>
     </div>
 
-    <div class="menu__title">📚 Chọn chủ đề hôm nay</div>
+    <div class="subject-title">📚 Hôm nay học môn gì?</div>
 
-    <div class="topic-card topic-card--green" onclick="startQuiz('cong')">
-      <div class="topic-card__icon">➕</div>
-      <div class="topic-card__info">
-        <div class="topic-card__name">Phép Cộng</div>
-        <div class="topic-card__desc">Cộng có nhớ trong phạm vi 1000</div>
+    <div class="subject-card subject-card--math" onclick="showTopicMenu('math')">
+      <div class="subject-card__icon">🔢</div>
+      <div class="subject-card__info">
+        <div class="subject-card__name">Toán</div>
+        <div class="subject-card__desc">Cộng, Trừ, Nhân, Chia · Hình học · Đo lường</div>
       </div>
-      <div class="topic-card__count">30 câu</div>
+      <div class="subject-card__badge">5 chủ đề</div>
     </div>
 
-    <div class="topic-card topic-card--blue" onclick="startQuiz('tru')">
-      <div class="topic-card__icon">➖</div>
-      <div class="topic-card__info">
-        <div class="topic-card__name">Phép Trừ</div>
-        <div class="topic-card__desc">Trừ có mượn trong phạm vi 1000</div>
+    <div class="subject-card subject-card--viet" onclick="showTopicMenu('viet')">
+      <div class="subject-card__icon">📖</div>
+      <div class="subject-card__info">
+        <div class="subject-card__name">Tiếng Việt</div>
+        <div class="subject-card__desc">Chính tả · Từ vựng · Đọc hiểu · Ngữ pháp</div>
       </div>
-      <div class="topic-card__count">30 câu</div>
+      <div class="subject-card__badge">4 chủ đề</div>
     </div>
 
-    <div class="topic-card topic-card--orange" onclick="startQuiz('nhan')">
-      <div class="topic-card__icon">✖️</div>
-      <div class="topic-card__info">
-        <div class="topic-card__name">Bảng Nhân</div>
-        <div class="topic-card__desc">Bảng nhân 2, 3, 4, 5</div>
+    <div class="subject-card subject-card--eng" onclick="showTopicMenu('eng')">
+      <div class="subject-card__icon">🇬🇧</div>
+      <div class="subject-card__info">
+        <div class="subject-card__name">Tiếng Anh</div>
+        <div class="subject-card__desc">Từ vựng · Câu đơn giản · Số đếm · Màu sắc</div>
       </div>
-      <div class="topic-card__count">32 câu</div>
+      <div class="subject-card__badge">4 chủ đề</div>
     </div>
 
-    <div class="topic-card topic-card--purple" onclick="startQuiz('chia')">
-      <div class="topic-card__icon">➗</div>
-      <div class="topic-card__info">
-        <div class="topic-card__name">Bảng Chia</div>
-        <div class="topic-card__desc">Chia hết trong bảng nhân 2, 3, 4, 5</div>
+    <div class="subject-card subject-card--matheng" onclick="showTopicMenu('matheng')">
+      <div class="subject-card__icon">🔢🇬🇧</div>
+      <div class="subject-card__info">
+        <div class="subject-card__name">Toán Tiếng Anh</div>
+        <div class="subject-card__desc">Math in English · Numbers · Operations</div>
       </div>
-      <div class="topic-card__count">32 câu</div>
+      <div class="subject-card__badge">3 chủ đề</div>
     </div>
 
-    <div class="topic-card topic-card--yellow" onclick="startQuiz('mix')">
-      <div class="topic-card__icon">🎯</div>
-      <div class="topic-card__info">
-        <div class="topic-card__name">Ôn Tổng Hợp</div>
-        <div class="topic-card__desc">Trộn tất cả các phép tính</div>
-      </div>
-      <div class="topic-card__count">Ngẫu nhiên</div>
-    </div>
-
-    <button class="btn-leaderboard" onclick="showLeaderboard()">
-      🏆 Xem bảng xếp hạng lớp
-    </button>
+    <button class="btn-lb" onclick="showLeaderboard()">🏆 Xem bảng xếp hạng lớp</button>
   </div>
 
-  <!-- ══ SCREEN: QUIZ ══ -->
+  <!-- ══ TOPIC MENU ══ -->
+  <div class="screen" id="screenTopic">
+    <div class="back-bar">
+      <button class="btn-back" onclick="showScreen('subject')">←</button>
+      <div class="back-bar__title" id="topicMenuTitle">Chọn chủ đề</div>
+    </div>
+    <div id="topicList"></div>
+  </div>
+
+  <!-- ══ QUIZ ══ -->
   <div class="screen" id="screenQuiz">
-    <div class="quiz-header">
-      <button class="btn-back" onclick="showScreen('menu')">←</button>
-      <div class="quiz-header__topic" id="quizTopicName">Phép Cộng</div>
-      <div class="quiz-header__player" id="quizPlayerName"></div>
-      <div class="score-badge">⭐ <span id="scoreDisplay">0</span></div>
+    <div class="quiz-hdr">
+      <button class="btn-back" onclick="showScreen('topic')">←</button>
+      <div class="quiz-hdr__topic" id="quizTopicName"></div>
+      <div class="quiz-hdr__player" id="quizPlayer"></div>
+      <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
     </div>
-
-    <div class="progress-wrap">
-      <div class="progress-info">
-        <span>Câu <span id="currentQ">1</span> / <span id="totalQ">10</span></span>
-        <span id="progressPct">0%</span>
+    <div class="prog-wrap">
+      <div class="prog-info">
+        <span>Câu <span id="curQ">1</span>/<span id="totQ">10</span></span>
+        <span id="progPct">0%</span>
       </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill" style="width:0%"></div>
-      </div>
+      <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
     </div>
-
-    <div class="question-card">
-      <div class="question-card__num" id="questionNum">Câu 1</div>
-      <div class="question-card__text" id="questionText"></div>
-      <div class="question-card__hint" id="questionHint"></div>
+    <div class="q-card">
+      <div class="q-card__num" id="qNum">Câu 1</div>
+      <div class="q-card__text" id="qText"></div>
+      <div class="q-card__hint" id="qHint"></div>
     </div>
-
-    <div class="answers" id="answersGrid"></div>
-
+    <div class="answers" id="ansGrid"></div>
     <div class="feedback" id="feedback">
-      <span class="feedback__emoji" id="feedbackEmoji"></span>
-      <div>
-        <div id="feedbackText"></div>
-        <div class="feedback__answer" id="feedbackAnswer"></div>
-      </div>
+      <span class="fb-emoji" id="fbEmoji"></span>
+      <div><div id="fbText"></div><div class="fb-ans" id="fbAns"></div></div>
     </div>
-
-    <button class="btn-next" id="nextBtn" onclick="nextQuestion()">Câu tiếp theo →</button>
+    <button class="btn-next" id="btnNext" onclick="nextQ()">Câu tiếp theo →</button>
   </div>
 
-  <!-- ══ SCREEN: RESULT ══ -->
+  <!-- ══ RESULT ══ -->
   <div class="screen" id="screenResult">
-    <div class="result-card">
-      <span class="result-card__emoji" id="resultEmoji">🏆</span>
-      <div class="result-card__title" id="resultTitle">Xuất sắc!</div>
-      <div class="result-card__player" id="resultPlayer"></div>
-      <div class="result-card__score" id="resultScore">10/10</div>
-      <div class="result-card__stars" id="resultStars">⭐⭐⭐</div>
-      <div class="result-card__msg" id="resultMsg"></div>
+    <div class="res-card">
+      <span class="res-card__emoji" id="resEmoji">🏆</span>
+      <div class="res-card__title" id="resTitle">Xuất sắc!</div>
+      <div class="res-card__player" id="resPlayer"></div>
+      <div class="res-card__score" id="resScore">10/10</div>
+      <div class="res-card__stars" id="resStars">⭐⭐⭐</div>
+      <div class="res-card__msg" id="resMsg"></div>
     </div>
-
-    <div class="saving-indicator" id="savingIndicator">
-      <div class="saving-dot"></div>
-      <span>Đang lưu kết quả lên bảng xếp hạng...</span>
-    </div>
-
-    <div class="result-actions">
+    <div class="saving" id="savingEl"><div class="saving-dot"></div><span>Đang lưu kết quả...</span></div>
+    <div class="res-actions">
       <button class="btn-retry" onclick="retryQuiz()">🔄 Làm lại (đề mới)</button>
-      <button class="btn-leaderboard" onclick="showLeaderboard()" style="margin:0">🏆 Xem bảng xếp hạng</button>
-      <button class="btn-home" onclick="showScreen('menu')">🏠 Chọn chủ đề khác</button>
+      <button class="btn-ghost btn-ghost--blue" onclick="showLeaderboard()">🏆 Xem bảng xếp hạng</button>
+      <button class="btn-ghost" onclick="showScreen('subject')">🏠 Chọn môn khác</button>
     </div>
   </div>
 
-  <!-- ══ SCREEN: LEADERBOARD ══ -->
+  <!-- ══ LEADERBOARD ══ -->
   <div class="screen" id="screenLeaderboard">
-    <div class="lb-header">
-      <span class="lb-header__emoji">🏆</span>
-      <div class="lb-header__title">Bảng Xếp Hạng Lớp</div>
-      <div class="lb-header__sub">Ai học giỏi nhất nào? 🌟</div>
+    <div class="lb-hdr">
+      <span class="lb-hdr__emoji">🏆</span>
+      <div class="lb-hdr__title">Bảng Xếp Hạng Lớp</div>
+      <div class="lb-hdr__sub">Ai học giỏi nhất nào? 🌟</div>
     </div>
-
-    <div class="lb-list" id="lbList">
-      <div class="lb-loading">⏳ Đang tải...</div>
-    </div>
-
-    <button class="btn-refresh" onclick="loadLeaderboard()">
-      🔄 Cập nhật mới nhất
-    </button>
-
-    <button class="btn-home" onclick="showScreen('menu')">← Quay lại menu</button>
+    <div class="lb-list" id="lbList"><div class="lb-loading">⏳ Đang tải...</div></div>
+    <button class="btn-refresh" onclick="loadLB()">🔄 Cập nhật mới nhất</button>
+    <button class="btn-ghost" onclick="showScreen('subject')">← Quay lại</button>
   </div>
 
-</div>
+</div><!-- /main -->
 
 <script>
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 //  CONFIG
-// ═══════════════════════════════════════════
-const API_URL = 'https://script.google.com/macros/s/AKfycbz0cCCewVocf_541RQksCQ5IRDhieTJz1zwXX52lCs-dGzgFRCtZwlQcoKMDmXd-NMRrw/exec';
-const QUESTIONS_PER_ROUND = 10;
+// ═══════════════════════════════════════
+const API = 'https://script.google.com/macros/s/AKfycbz0cCCewVocf_541RQksCQ5IRDhieTJz1zwXX52lCs-dGzgFRCtZwlQcoKMDmXd-NMRrw/exec';
+const QPR = 10; // questions per round
+const AVATARS = ['🐶','🐱','🐼','🐨','🦊','🐸','🦁','🐯','🐧','🦋','🌟','🚀','🎈','🍀'];
 
-const TOPIC_NAMES = {
-  cong: '➕ Phép Cộng',
-  tru:  '➖ Phép Trừ',
-  nhan: '✖️ Bảng Nhân',
-  chia: '➗ Bảng Chia',
-  mix:  '🎯 Ôn Tổng Hợp',
+// ═══════════════════════════════════════
+//  SUBJECT & TOPIC CONFIG
+// ═══════════════════════════════════════
+const SUBJECTS = {
+  math: {
+    label:'🔢 Toán',
+    color:'--green',
+    topics: [
+      {id:'math_cong',   icon:'➕', name:'Phép Cộng',     desc:'Cộng có nhớ trong phạm vi 1000'},
+      {id:'math_tru',    icon:'➖', name:'Phép Trừ',      desc:'Trừ có mượn trong phạm vi 1000'},
+      {id:'math_nhan',   icon:'✖️', name:'Bảng Nhân',     desc:'Bảng nhân 2, 3, 4, 5'},
+      {id:'math_chia',   icon:'➗', name:'Bảng Chia',     desc:'Chia hết trong bảng nhân 2,3,4,5'},
+      {id:'math_mix',    icon:'🎯', name:'Ôn Tổng Hợp',  desc:'Trộn tất cả phép tính'},
+    ]
+  },
+  viet: {
+    label:'📖 Tiếng Việt',
+    topics: [
+      {id:'viet_chinh',  icon:'✏️', name:'Chính tả',      desc:'Điền chữ cái, dấu thanh đúng'},
+      {id:'viet_tu',     icon:'📝', name:'Từ vựng',        desc:'Nghĩa của từ, từ đồng nghĩa'},
+      {id:'viet_ngu',    icon:'🔤', name:'Ngữ pháp',       desc:'Câu hỏi, câu kể, dấu câu'},
+      {id:'viet_doc',    icon:'📚', name:'Đọc hiểu',       desc:'Trả lời câu hỏi về đoạn văn'},
+    ]
+  },
+  eng: {
+    label:'🇬🇧 Tiếng Anh',
+    topics: [
+      {id:'eng_vocab',   icon:'🔤', name:'Vocabulary',    desc:'Animals, colors, school, family'},
+      {id:'eng_numbers', icon:'🔢', name:'Numbers',       desc:'Count 1–100, ordinal numbers'},
+      {id:'eng_sentence',icon:'💬', name:'Sentences',     desc:'Simple questions & answers'},
+      {id:'eng_mix',     icon:'🎯', name:'Mixed Review',  desc:'All topics combined'},
+    ]
+  },
+  matheng: {
+    label:'🔢🇬🇧 Toán Tiếng Anh',
+    topics: [
+      {id:'me_add',      icon:'➕', name:'Addition',      desc:'Add numbers in English'},
+      {id:'me_sub',      icon:'➖', name:'Subtraction',   desc:'Subtract numbers in English'},
+      {id:'me_mix',      icon:'🎯', name:'Mixed Math',    desc:'Addition & Subtraction mixed'},
+    ]
+  }
 };
 
-const AVATARS = ['🐶','🐱','🐼','🐨','🦊','🐸','🦁','🐯','🐧','🦋','🌟','🚀'];
-
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 //  QUESTION BANKS
-// ═══════════════════════════════════════════
-const QUESTIONS = {
-  cong: [
-    {q:'25 + 14 = ?',a:39,hint:'Cộng hàng đơn vị trước nhé!'},
-    {q:'46 + 37 = ?',a:83,hint:'Cộng có nhớ'},
+// ═══════════════════════════════════════
+const QB = {
+
+  // ── TOÁN ──────────────────────────────
+  math_cong: [
+    {q:'25 + 14 = ?',a:39,hint:'Cộng hàng đơn vị trước'},{q:'46 + 37 = ?',a:83},
     {q:'58 + 26 = ?',a:84},{q:'63 + 29 = ?',a:92},{q:'75 + 18 = ?',a:93},
     {q:'34 + 48 = ?',a:82},{q:'57 + 35 = ?',a:92},{q:'126 + 53 = ?',a:179},
     {q:'245 + 136 = ?',a:381},{q:'307 + 185 = ?',a:492},{q:'418 + 274 = ?',a:692},
-    {q:'536 + 247 = ?',a:783},{q:'649 + 143 = ?',a:792},{q:'17 + 25 = ?',a:42},
-    {q:'38 + 47 = ?',a:85},{q:'29 + 53 = ?',a:82},{q:'66 + 27 = ?',a:93},
-    {q:'82 + 19 = ?',a:101},{q:'155 + 238 = ?',a:393},{q:'267 + 125 = ?',a:392},
-    {q:'314 + 468 = ?',a:782},{q:'423 + 359 = ?',a:782},{q:'501 + 299 = ?',a:800},
-    {q:'612 + 188 = ?',a:800},{q:'44 + 56 = ?',a:100,hint:'Kết quả tròn trăm!'},
-    {q:'73 + 27 = ?',a:100},{q:'85 + 15 = ?',a:100},{q:'136 + 64 = ?',a:200},
-    {q:'275 + 125 = ?',a:400},{q:'350 + 250 = ?',a:600},
+    {q:'536 + 247 = ?',a:783},{q:'17 + 25 = ?',a:42},{q:'38 + 47 = ?',a:85},
+    {q:'66 + 27 = ?',a:93},{q:'82 + 19 = ?',a:101},{q:'155 + 238 = ?',a:393},
+    {q:'44 + 56 = ?',a:100,hint:'Kết quả tròn trăm!'},{q:'73 + 27 = ?',a:100},
+    {q:'85 + 15 = ?',a:100},{q:'136 + 64 = ?',a:200},{q:'275 + 125 = ?',a:400},
+    {q:'350 + 250 = ?',a:600},{q:'423 + 359 = ?',a:782},{q:'501 + 299 = ?',a:800},
+    {q:'267 + 125 = ?',a:392},{q:'314 + 468 = ?',a:782},{q:'649 + 143 = ?',a:792},
+    {q:'29 + 53 = ?',a:82},{q:'612 + 188 = ?',a:800},
   ],
-  tru: [
-    {q:'47 - 23 = ?',a:24,hint:'Trừ hàng đơn vị trước'},{q:'65 - 28 = ?',a:37,hint:'Trừ có mượn'},
-    {q:'83 - 46 = ?',a:37},{q:'72 - 35 = ?',a:37},{q:'91 - 47 = ?',a:44},
-    {q:'54 - 29 = ?',a:25},{q:'100 - 37 = ?',a:63},{q:'100 - 58 = ?',a:42},
-    {q:'200 - 74 = ?',a:126},{q:'350 - 128 = ?',a:222},{q:'467 - 235 = ?',a:232},
-    {q:'583 - 246 = ?',a:337},{q:'700 - 365 = ?',a:335},{q:'825 - 413 = ?',a:412},
-    {q:'936 - 548 = ?',a:388},{q:'62 - 18 = ?',a:44},{q:'74 - 39 = ?',a:35},
-    {q:'85 - 47 = ?',a:38},{q:'93 - 56 = ?',a:37},{q:'100 - 45 = ?',a:55},
-    {q:'100 - 63 = ?',a:37},{q:'200 - 87 = ?',a:113},{q:'300 - 145 = ?',a:155},
+  math_tru: [
+    {q:'47 - 23 = ?',a:24},{q:'65 - 28 = ?',a:37,hint:'Trừ có mượn'},{q:'83 - 46 = ?',a:37},
+    {q:'72 - 35 = ?',a:37},{q:'91 - 47 = ?',a:44},{q:'54 - 29 = ?',a:25},
+    {q:'100 - 37 = ?',a:63},{q:'100 - 58 = ?',a:42},{q:'200 - 74 = ?',a:126},
+    {q:'350 - 128 = ?',a:222},{q:'467 - 235 = ?',a:232},{q:'583 - 246 = ?',a:337},
+    {q:'700 - 365 = ?',a:335},{q:'825 - 413 = ?',a:412},{q:'936 - 548 = ?',a:388},
+    {q:'62 - 18 = ?',a:44},{q:'74 - 39 = ?',a:35},{q:'85 - 47 = ?',a:38},
+    {q:'100 - 45 = ?',a:55},{q:'200 - 87 = ?',a:113},{q:'300 - 145 = ?',a:155},
     {q:'400 - 236 = ?',a:164},{q:'500 - 278 = ?',a:222},{q:'600 - 347 = ?',a:253},
-    {q:'750 - 425 = ?',a:325},{q:'860 - 534 = ?',a:326},{q:'975 - 648 = ?',a:327},
-    {q:'1000 - 456 = ?',a:544},
+    {q:'750 - 425 = ?',a:325},{q:'860 - 534 = ?',a:326},{q:'1000 - 456 = ?',a:544},
+    {q:'93 - 56 = ?',a:37},{q:'100 - 63 = ?',a:37},{q:'975 - 648 = ?',a:327},
   ],
-  nhan: [
+  math_nhan: [
     {q:'2 × 3 = ?',a:6},{q:'2 × 4 = ?',a:8},{q:'2 × 5 = ?',a:10},{q:'2 × 6 = ?',a:12},
     {q:'2 × 7 = ?',a:14},{q:'2 × 8 = ?',a:16},{q:'2 × 9 = ?',a:18},{q:'2 × 10 = ?',a:20},
     {q:'3 × 3 = ?',a:9},{q:'3 × 4 = ?',a:12},{q:'3 × 5 = ?',a:15},{q:'3 × 6 = ?',a:18},
@@ -608,7 +434,7 @@ const QUESTIONS = {
     {q:'5 × 3 = ?',a:15},{q:'5 × 4 = ?',a:20},{q:'5 × 5 = ?',a:25},{q:'5 × 6 = ?',a:30},
     {q:'5 × 7 = ?',a:35},{q:'5 × 8 = ?',a:40},{q:'5 × 9 = ?',a:45},{q:'5 × 10 = ?',a:50},
   ],
-  chia: [
+  math_chia: [
     {q:'6 ÷ 2 = ?',a:3},{q:'8 ÷ 2 = ?',a:4},{q:'10 ÷ 2 = ?',a:5},{q:'12 ÷ 2 = ?',a:6},
     {q:'14 ÷ 2 = ?',a:7},{q:'16 ÷ 2 = ?',a:8},{q:'18 ÷ 2 = ?',a:9},{q:'20 ÷ 2 = ?',a:10},
     {q:'9 ÷ 3 = ?',a:3},{q:'12 ÷ 3 = ?',a:4},{q:'15 ÷ 3 = ?',a:5},{q:'18 ÷ 3 = ?',a:6},
@@ -618,380 +444,606 @@ const QUESTIONS = {
     {q:'15 ÷ 5 = ?',a:3},{q:'20 ÷ 5 = ?',a:4},{q:'25 ÷ 5 = ?',a:5},{q:'30 ÷ 5 = ?',a:6},
     {q:'35 ÷ 5 = ?',a:7},{q:'40 ÷ 5 = ?',a:8},{q:'45 ÷ 5 = ?',a:9},{q:'50 ÷ 5 = ?',a:10},
   ],
+
+  // ── TIẾNG VIỆT ────────────────────────
+  // Dạng: {q, choices:[], a (index 0-3), hint}
+  viet_chinh: [
+    {q:'Điền chữ còn thiếu: con __ỏ (chạy nhanh)',choices:['th','t','kh','ch'],a:0,hint:'Con thỏ'},
+    {q:'Từ nào viết đúng chính tả?',choices:['Chiều chiều','Chiêu chiêu','Triều chiều','Chìu chiều'],a:0},
+    {q:'Điền dấu thanh đúng: "bầu __ời xanh"',choices:['t','tr','ch','gi'],a:1,hint:'bầu trời'},
+    {q:'Từ nào viết đúng?',choices:['cuốn sách','cuốn xách','quốn sách','cuốn xánh'],a:0},
+    {q:'Điền vào chỗ trống: "Mặt __ời mọc"',choices:['tr','t','ch','d'],a:0,hint:'Mặt trời'},
+    {q:'Chọn từ viết đúng chính tả:',choices:['ngôi trường','ngôi chường','ngồi trường','ngôi tường'],a:0},
+    {q:'Điền chữ: "con __im hót"',choices:['ch','c','s','x'],a:0,hint:'con chim'},
+    {q:'Từ nào viết SAI?',choices:['hoa hồng','cây xanh','bầu trời','con giế'],a:3,hint:'Tìm từ viết sai'},
+    {q:'"con __ó" — điền chữ đúng:',choices:['b','c','g','x'],a:2,hint:'con gió'},
+    {q:'Chọn từ viết đúng:',choices:['nước biển','nướt biển','nức biển','nướt biển'],a:0},
+    {q:'Điền vào: "hòn __á"',choices:['c','đ','t','s'],a:1,hint:'hòn đá'},
+    {q:'Từ nào viết đúng?',choices:['quả xoài','quả xoài','qủa xoài','quả soài'],a:0},
+    {q:'Điền: "cái __ổi"',choices:['g','r','l','đ'],a:0,hint:'cái giỏi → cái rổi → cái lổi... Nghĩ lại: cái giổ'},
+    {q:'Chọn từ đúng: con vật sống dưới nước',choices:['cá trê','cá tre','cá tré','cá trê'],a:0},
+    {q:'Từ nào viết đúng?',choices:['bông hoa','bồng hoa','bổng hoa','bông họa'],a:0},
+    {q:'Điền dấu: "em be __ễ thương"',choices:['d','gi','r','nh'],a:1,hint:'dễ thương'},
+    {q:'Chọn từ viết đúng:',choices:['học sinh','họt sinh','hộc sinh','học xinh'],a:0},
+    {q:'Điền chữ: "__ế hoạch"',choices:['k','c','ch','q'],a:0,hint:'kế hoạch'},
+    {q:'Từ nào viết SAI?',choices:['buổi sáng','trưa hè','chiều tối','đên khuya'],a:3,hint:'đêm khuya'},
+    {q:'Chọn từ đúng chính tả:',choices:['quyển vở','quyến vở','quyển vỡ','quỳên vở'],a:0},
+    {q:'Điền: "cây __e"',choices:['tr','ch','d','gi'],a:0,hint:'cây tre'},
+    {q:'Từ nào viết đúng?',choices:['làng quê','làng quê','lạng quê','làng kwê'],a:0},
+    {q:'Điền: "bà nội __ể chuyện"',choices:['k','c','ch','gi'],a:2,hint:'kể chuyện'},
+    {q:'Chọn từ viết đúng:',choices:['trái tim','trái thim','chái tim','trái tim'],a:0},
+    {q:'Từ nào viết SAI?',choices:['mặt trăng','ngôi sao','bầu trời','ông mặt giời'],a:3,hint:'ông mặt trời'},
+    {q:'Điền: "con __ươu"',choices:['h','s','x','gi'],a:0,hint:'con hươu'},
+    {q:'Chọn từ đúng:',choices:['xinh đẹp','sinh đẹp','xinh đệp','xinh đẻp'],a:0},
+    {q:'Điền: "tiếng __im hót"',choices:['ch','c','x','gi'],a:0,hint:'tiếng chim'},
+    {q:'Từ nào viết đúng?',choices:['vui vẻ','vui vẽ','vùi vẻ','vui về'],a:0},
+    {q:'Chọn từ viết đúng:',choices:['đất nước','đất nướt','đất nứơc','đất nươc'],a:0},
+  ],
+
+  viet_tu: [
+    {q:'"Tươi tốt" có nghĩa là gì?',choices:['héo úa','xanh tốt, đầy sức sống','khô cằn','màu vàng'],a:1},
+    {q:'Từ trái nghĩa với "buồn" là?',choices:['khóc','ngủ','vui','mệt'],a:2},
+    {q:'Từ nào cùng nghĩa với "to lớn"?',choices:['nhỏ bé','khổng lồ','xinh xắn','nhanh nhẹn'],a:1},
+    {q:'"Siêng năng" nghĩa là?',choices:['lười biếng','chăm chỉ, cần cù','thông minh','mạnh khỏe'],a:1},
+    {q:'Từ trái nghĩa với "nhanh" là?',choices:['chậm','mau','vội','lẹ'],a:0},
+    {q:'Con vật nào không phải động vật nuôi trong nhà?',choices:['chó','mèo','sư tử','gà'],a:2},
+    {q:'"Hiền lành" nghĩa là?',choices:['dữ tợn','tốt bụng, không hung ác','thông minh','vui vẻ'],a:1},
+    {q:'Từ đồng nghĩa với "sợ hãi" là?',choices:['dũng cảm','can đảm','kinh sợ','bình tĩnh'],a:2},
+    {q:'"Chăm chỉ" trái nghĩa với?',choices:['cần cù','siêng năng','lười biếng','chịu khó'],a:2},
+    {q:'Cây nào cho quả ăn được?',choices:['cây xương rồng','cây xoài','cây thông','cây tre'],a:1},
+    {q:'"Lung linh" miêu tả điều gì?',choices:['âm thanh to','ánh sáng lấp lánh','mùi thơm','vị ngọt'],a:1},
+    {q:'Từ nào chỉ cảm xúc?',choices:['cái bàn','con mèo','hạnh phúc','ngôi trường'],a:2},
+    {q:'"Bình minh" là?',choices:['lúc giữa trưa','buổi chiều tối','lúc mặt trời mọc','đêm khuya'],a:2},
+    {q:'Từ trái nghĩa với "sáng" là?',choices:['rực rỡ','tối','lấp lánh','trong'],a:1},
+    {q:'"Thủ đô" của Việt Nam là?',choices:['Thành phố Hồ Chí Minh','Đà Nẵng','Hà Nội','Huế'],a:2},
+    {q:'Con vật nào biết bay?',choices:['cá','rắn','chim','mèo'],a:2},
+    {q:'"Nhân hậu" nghĩa là?',choices:['độc ác','tốt bụng, biết thương người','lười biếng','kiêu ngạo'],a:1},
+    {q:'Từ nào chỉ màu sắc?',choices:['to','nhanh','xanh','cao'],a:2},
+    {q:'"Bạn thân" là?',choices:['người xa lạ','người bạn rất thân thiết','thầy cô giáo','ông bà'],a:1},
+    {q:'Mùa nào hoa ban nở?',choices:['mùa hè','mùa đông','mùa xuân','mùa thu'],a:2},
+    {q:'Từ trái nghĩa với "khỏe" là?',choices:['mạnh','yếu','cứng','to'],a:1},
+    {q:'"Hợp tác" nghĩa là?',choices:['làm một mình','cùng nhau làm việc','tranh giành','không làm'],a:1},
+    {q:'Con vật nào ăn cỏ?',choices:['sư tử','cọp','bò','cá sấu'],a:2},
+    {q:'"Quê hương" là?',choices:['trường học','nơi mình sinh ra và lớn lên','siêu thị','bệnh viện'],a:1},
+    {q:'Từ nào chỉ hành động?',choices:['đẹp','nhảy','xanh','to'],a:1},
+    {q:'"Mênh mông" miêu tả?',choices:['rất nhỏ bé','rất to lớn, rộng rãi','rất nhanh','rất thơm'],a:1},
+    {q:'Trái nghĩa với "già" là?',choices:['lớn','trưởng thành','trẻ','cao'],a:2},
+    {q:'"Cần cù" đồng nghĩa với?',choices:['lười nhác','ham chơi','siêng năng','nghịch ngợm'],a:2},
+    {q:'Loại quả nào màu vàng?',choices:['dưa hấu','nho tím','chuối','cherry'],a:2},
+    {q:'"Trung thực" nghĩa là?',choices:['hay nói dối','thành thật, không gian dối','lười biếng','ích kỷ'],a:1},
+  ],
+
+  viet_ngu: [
+    {q:'Câu nào là câu hỏi?',choices:['Em đi học.','Hôm nay trời đẹp.','Bạn tên là gì?','Con mèo kêu.'],a:2},
+    {q:'Dấu câu nào dùng cuối câu hỏi?',choices:['dấu chấm (.)','dấu hỏi (?)','dấu phẩy (,)','dấu chấm than (!)'],a:1},
+    {q:'Câu "Em yêu Việt Nam!" dùng dấu gì?',choices:['dấu chấm','dấu hỏi','dấu phẩy','dấu chấm than'],a:3},
+    {q:'Từ nào là danh từ (chỉ sự vật)?',choices:['chạy','đẹp','ngôi trường','vui'],a:2},
+    {q:'Từ nào là động từ (chỉ hành động)?',choices:['to lớn','đọc sách','xanh lá','xinh đẹp'],a:1},
+    {q:'Câu "Hôm nay, trời ___ và ấm áp." — điền từ đúng:',choices:['xanh','chạy','ăn','đi'],a:0},
+    {q:'Câu nào viết đúng?',choices:['em đi học','Em đi học.','em đi học.','Em đi học'],a:1,hint:'Đầu câu viết hoa, cuối câu có dấu chấm'},
+    {q:'Từ nào là tính từ (chỉ tính chất)?',choices:['nhảy','bạn bè','xinh đẹp','trường học'],a:2},
+    {q:'"Ai làm gì?" — "Bạn Nam" là phần nào?',choices:['Ai','Làm gì','Ở đâu','Khi nào'],a:0},
+    {q:'Câu kể kết thúc bằng dấu gì?',choices:['?','!','.','...'],a:2},
+    {q:'"Con mèo ___ trên ghế." — điền từ đúng:',choices:['bay','ngủ','bơi','leo núi'],a:1},
+    {q:'Câu nào là câu cảm thán?',choices:['Em đi học.','Bạn ở đâu?','Ôi, đẹp quá!','Con mèo ngủ.'],a:2},
+    {q:'Dấu phẩy (,) dùng để làm gì?',choices:['kết thúc câu','ngăn cách các thành phần','hỏi','cảm thán'],a:1},
+    {q:'Từ "chạy" đặt vào chỗ nào đúng?',choices:['Bạn Nam ___ sách.','Bạn Nam ___ nhanh.','Bạn Nam ___ đẹp.','Bạn Nam ___ to.'],a:1},
+    {q:'Câu "Mẹ ơi, con yêu mẹ!" có mấy từ?',choices:['4','5','6','7'],a:1,hint:'Đếm từng từ'},
+    {q:'Từ nào KHÔNG phải danh từ?',choices:['con bướm','cánh đồng','chạy nhảy','bông hoa'],a:2},
+    {q:'"Bầu trời ___ xanh." — điền từ đúng:',choices:['đang ăn','rất','là','đi'],a:1},
+    {q:'Câu hỏi thường bắt đầu bằng từ nào?',choices:['vì','và','nhưng','ai, cái gì, ở đâu'],a:3},
+    {q:'Dấu câu nào dùng trong câu liệt kê?',choices:['?','!',',','.'],a:2},
+    {q:'Câu nào đúng ngữ pháp?',choices:['Chạy bạn nhanh.','Bạn chạy nhanh.','Nhanh bạn chạy.','Bạn nhanh chạy.'],a:1},
+    {q:'Từ "học sinh" gồm mấy tiếng?',choices:['1','2','3','4'],a:1},
+    {q:'"Hôm nay trời mưa to." — chủ ngữ là?',choices:['Hôm nay','trời','mưa','to'],a:1},
+    {q:'Câu nào là câu kể?',choices:['Bạn đi đâu?','Ôi trời ơi!','Em học bài.','Đi nhanh lên!'],a:2},
+    {q:'Từ nào chỉ người?',choices:['con gà','cái bàn','thầy giáo','cây bút'],a:2},
+    {q:'"___ em đi học?" — điền từ đúng:',choices:['Tại sao','Cái gì','Con gì','Màu gì'],a:0,hint:'Hỏi lý do'},
+    {q:'Câu cảm thán dùng dấu gì ở cuối?',choices:['?','.','!',','],a:2},
+    {q:'Từ nào là từ ghép?',choices:['bàn','đẹp','trường học','đi'],a:2},
+    {q:'"Mẹ ___ cơm rất ngon." — điền từ đúng:',choices:['nấu','chạy','bay','hát'],a:0},
+    {q:'Câu nào viết HOA đúng?',choices:['hà Nội','hà nội','Hà Nội','HÀ NỘI'],a:2,hint:'Tên riêng phải viết hoa'},
+    {q:'Dấu chấm than (!) dùng trong câu nào?',choices:['Em học bài.','Bạn ở đâu?','Ôi, vui quá!','Trời mưa.'],a:2},
+  ],
+
+  viet_doc: [
+    {q:'Câu chuyện "Rùa và Thỏ" dạy ta điều gì?',choices:['Chạy nhanh thì thắng','Kiên trì, chăm chỉ sẽ thành công','Ngủ nhiều là tốt','Không cần cố gắng'],a:1},
+    {q:'Trong "Tấm Cám", Tấm là người như thế nào?',choices:['Lười biếng','Độc ác','Chăm chỉ, hiền lành','Kiêu ngạo'],a:2},
+    {q:'"Bầu trời xanh ngắt, mây trắng bồng bềnh." — Bầu trời màu gì?',choices:['trắng','xanh','hồng','vàng'],a:1},
+    {q:'"Em học bài mỗi tối." — Em học bài lúc nào?',choices:['buổi sáng','buổi trưa','buổi tối','buổi chiều'],a:2},
+    {q:'Trong "Cô bé quàng khăn đỏ", cô bé mặc gì?',choices:['áo xanh','áo đỏ có mũ','váy vàng','áo trắng'],a:1},
+    {q:'"Mùa hè, ve kêu ran ran." — Đây là mùa nào?',choices:['xuân','hạ (hè)','thu','đông'],a:1},
+    {q:'Cây lúa cho ra sản phẩm gì?',choices:['bắp ngô','gạo','khoai','sắn'],a:1},
+    {q:'"Ông mặt trời mọc ở hướng nào?',choices:['Tây','Nam','Đông','Bắc'],a:2},
+    {q:'Con ong làm ra sản phẩm gì hữu ích?',choices:['sữa','mật ong','tơ lụa','len'],a:1},
+    {q:'"Lá cờ Việt Nam màu đỏ, có ngôi sao màu...?"',choices:['đỏ','xanh','vàng','trắng'],a:2},
+    {q:'Trong "Ba chú lợn", nhà bằng vật liệu nào chắc nhất?',choices:['rơm','gỗ','gạch đá','lá cây'],a:2},
+    {q:'Mùa nào hoa đào nở?',choices:['mùa hè','mùa đông','mùa xuân','mùa thu'],a:2},
+    {q:'"Cầu vồng xuất hiện sau cơn mưa." — Cầu vồng có mấy màu?',choices:['5','6','7','8'],a:2},
+    {q:'Loài hoa nào tượng trưng cho ngày 8/3?',choices:['hoa cúc','hoa hồng','hoa mai','hoa đào'],a:1},
+    {q:'"Chim hót trên cành cây." — Chim đang ở đâu?',choices:['dưới đất','trên mặt nước','trên cành cây','trong tổ'],a:2},
+    {q:'Nước ta có bao nhiêu mùa ở miền Bắc?',choices:['2','3','4','5'],a:2},
+    {q:'"Bạn Lan học rất giỏi." — Đây là câu khen hay chê?',choices:['chê','khen','hỏi','không rõ'],a:1},
+    {q:'Con tằm nhả ra gì?',choices:['mật','tơ','len','bông'],a:1},
+    {q:'Thủ đô Hà Nội nằm ở miền nào của Việt Nam?',choices:['miền Nam','miền Trung','miền Bắc','miền Tây'],a:2},
+    {q:'"Đêm qua trăng sáng vằng vặc." — Đây là thời gian nào?',choices:['ban ngày','buổi sáng','ban đêm','buổi chiều'],a:2},
+    {q:'Loài vật nào sống dưới nước?',choices:['chim','cá','mèo','chó'],a:1},
+    {q:'Lá cờ Tổ quốc có hình gì ở giữa?',choices:['mặt trăng','ngôi sao vàng','bông hoa','con rồng'],a:1},
+    {q:'Mùa đông thường có đặc điểm gì?',choices:['nóng bức','ẩm ướt nhiều mưa','lạnh giá','khô hạn'],a:2},
+    {q:'"Hoa cúc nở vào mùa thu." — Hoa cúc nở mùa nào?',choices:['xuân','hạ','thu','đông'],a:2},
+    {q:'Trong câu chuyện "Cây tre trăm đốt", điều ước của anh nông dân là gì?',choices:['giàu có','cây tre trăm đốt','lấy vợ đẹp','được đi du lịch'],a:1},
+    {q:'Loài hoa nào nở vào mùa xuân ở miền Nam?',choices:['hoa đào','hoa mai','hoa sen','hoa cúc'],a:1},
+    {q:'"Mẹ em là giáo viên." — Mẹ em làm nghề gì?',choices:['bác sĩ','kỹ sư','giáo viên','nông dân'],a:2},
+    {q:'Quốc ca Việt Nam tên là gì?',choices:['Nối vòng tay lớn','Tiến quân ca','Bài ca không quên','Quê hương'],a:1},
+    {q:'"Bầu ơi thương lấy bí cùng." — Câu này dạy gì?',choices:['trồng bầu bí','đoàn kết yêu thương nhau','không được tranh cãi','học chăm chỉ'],a:1},
+    {q:'Người nông dân trồng lúa ở đâu?',choices:['vườn nhà','ruộng đồng','rừng núi','biển cả'],a:1},
+  ],
+
+  // ── TIẾNG ANH ─────────────────────────
+  eng_vocab: [
+    {q:'What is this? 🐶',choices:['cat','dog','bird','fish'],a:1},
+    {q:'What color is the sky? ☀️',choices:['red','green','blue','yellow'],a:2},
+    {q:'How many legs does a spider have?',choices:['4','6','8','10'],a:2},
+    {q:'"Apple" is a...?',choices:['animal','color','fruit','number'],a:2},
+    {q:'What is the opposite of "big"?',choices:['tall','small','fast','old'],a:1},
+    {q:'Which animal says "Moo"? 🐄',choices:['dog','cat','cow','duck'],a:2},
+    {q:'"Red, blue, yellow" are all...?',choices:['animals','numbers','colors','fruits'],a:2},
+    {q:'What do you use to write? ✏️',choices:['book','pencil','ruler','eraser'],a:1},
+    {q:'Which is a school subject?',choices:['apple','soccer','math','milk'],a:2},
+    {q:'"Mother" means...?',choices:['bố','anh','mẹ','chị'],a:2},
+    {q:'What animal lives in the sea? 🌊',choices:['rabbit','fish','dog','horse'],a:1},
+    {q:'Which word means "happy"?',choices:['sad','angry','happy','tired'],a:2},
+    {q:'"Good morning" — when do you say this?',choices:['at night','in the evening','in the morning','at noon'],a:2},
+    {q:'What is 🍌?',choices:['orange','mango','banana','grape'],a:2},
+    {q:'Which is a vegetable?',choices:['apple','carrot','orange','banana'],a:1},
+    {q:'"Father" means?',choices:['mẹ','bố','ông','bà'],a:1},
+    {q:'What color is grass? 🌿',choices:['blue','red','green','white'],a:2},
+    {q:'Which animal can fly? 🦋',choices:['fish','snake','butterfly','elephant'],a:2},
+    {q:'"Book" means?',choices:['bút','cục tẩy','quyển sách','cái thước'],a:2},
+    {q:'What do you say before eating?',choices:['Good night','Thank you','Enjoy your meal','Goodbye'],a:2},
+    {q:'Which number comes after 9?',choices:['8','11','10','12'],a:2},
+    {q:'"School" means?',choices:['nhà','bệnh viện','trường học','siêu thị'],a:2},
+    {q:'What is 🌧️?',choices:['snow','wind','rain','sun'],a:2},
+    {q:'Which is a family member?',choices:['teacher','sister','doctor','friend'],a:1},
+    {q:'"Small" is the opposite of?',choices:['fast','tall','big','old'],a:2},
+    {q:'What animal is 🐈?',choices:['dog','cat','rabbit','mouse'],a:1},
+    {q:'"I love you" means?',choices:['Tôi ghét bạn','Xin chào','Tôi yêu bạn','Tạm biệt'],a:2},
+    {q:'Which is a number?',choices:['red','seven','happy','run'],a:1},
+    {q:'What do you say when leaving?',choices:['Hello','Good morning','Goodbye','Thank you'],a:2},
+    {q:'"Teacher" means?',choices:['học sinh','phụ huynh','giáo viên','hiệu trưởng'],a:2},
+  ],
+
+  eng_numbers: [
+    {q:'How do you say "5" in English?',choices:['four','five','six','three'],a:1},
+    {q:'What number is "twelve"?',choices:['11','12','13','20'],a:1},
+    {q:'"Twenty" = ?',choices:['12','20','2','200'],a:1},
+    {q:'How do you say "15"?',choices:['fifty','five','fifteen','fiveteen'],a:2},
+    {q:'What is 10 + 5 in English?',choices:['ten','fifteen','fifty','twelve'],a:1},
+    {q:'"Thirty" = ?',choices:['13','23','30','33'],a:2},
+    {q:'How do you write 8 in English?',choices:['six','seven','eight','nine'],a:2},
+    {q:'"One hundred" = ?',choices:['10','100','1000','110'],a:1},
+    {q:'What number comes before "ten"?',choices:['eight','eleven','nine','twelve'],a:2},
+    {q:'"Forty-five" = ?',choices:['54','44','45','40'],a:2},
+    {q:'How do you say "2nd"?',choices:['first','second','third','fourth'],a:1},
+    {q:'"First" is the ___th?',choices:['2nd','3rd','1st','4th'],a:2},
+    {q:'How many days in a week? (in English)',choices:['five','six','seven','eight'],a:2},
+    {q:'"Third" = thứ mấy?',choices:['1','2','3','4'],a:2},
+    {q:'What is "60" in English?',choices:['sixteen','sixty','six','six hundred'],a:1},
+    {q:'"Eleven" = ?',choices:['10','11','12','13'],a:1},
+    {q:'How do you say "50"?',choices:['fifteen','five','fifty','fivety'],a:2},
+    {q:'"Fourth" nghĩa là thứ mấy?',choices:['1','2','3','4'],a:3},
+    {q:'What is 3 × 4 in English?',choices:['ten','eleven','twelve','thirteen'],a:2},
+    {q:'"Twenty-one" = ?',choices:['12','20','21','210'],a:2},
+    {q:'How do you say "100th"?',choices:['one hundred','hundredth','first hundred','the hundred'],a:1},
+    {q:'"Eighteen" = ?',choices:['8','80','18','81'],a:2},
+    {q:'What number is "ninety"?',choices:['19','90','9','900'],a:1},
+    {q:'"Second" là thứ?',choices:['nhất','nhì (hai)','ba','tư'],a:1},
+    {q:'How many months in a year?',choices:['ten','eleven','twelve','thirteen'],a:2},
+    {q:'"Seventy" = ?',choices:['7','17','70','700'],a:2},
+    {q:'What comes after "nineteenth"?',choices:['eighteenth','twentieth','twenty-first','twenty'],a:1},
+    {q:'"Zero" = ?',choices:['1','0','10','100'],a:1},
+    {q:'How do you say "25"?',choices:['two-five','twenty-five','twenty five hundred','five twenty'],a:1},
+    {q:'"Eighty" = ?',choices:['8','18','80','800'],a:2},
+  ],
+
+  eng_sentence: [
+    {q:'Complete: "My name ___ Lan."',choices:['are','am','is','be'],a:2},
+    {q:'"___ are you?" — "I am fine."',choices:['What','Where','How','Who'],a:2},
+    {q:'Complete: "I ___ a student."',choices:['is','are','am','be'],a:2},
+    {q:'"What is this?" — "This is ___ apple."',choices:['a','an','the','—'],a:1,hint:'Before vowels, use "an"'},
+    {q:'Complete: "She ___ a teacher."',choices:['am','are','is','be'],a:2},
+    {q:'"___ old are you?" — "I am 8."',choices:['What','How','Where','Who'],a:1},
+    {q:'Complete: "They ___ my friends."',choices:['is','am','are','be'],a:2},
+    {q:'"Where ___ you from?" — "I am from Vietnam."',choices:['is','am','are','do'],a:2},
+    {q:'Complete: "This is ___ book." (book bắt đầu bằng phụ âm)',choices:['a','an','the','some'],a:0},
+    {q:'"___ is your name?" — "My name is Nam."',choices:['How','Where','What','Who'],a:2},
+    {q:'Complete: "I ___ happy today."',choices:['is','are','am','be'],a:2},
+    {q:'"Do you like cats?" — "___, I do."',choices:['No','Not','Yes','Maybe'],a:2},
+    {q:'Complete: "We ___ in class 2A."',choices:['is','am','are','be'],a:2},
+    {q:'"___ is the dog?" — "It is under the table."',choices:['What','How','Where','Who'],a:2},
+    {q:'Complete: "He ___ 8 years old."',choices:['am','are','is','be'],a:2},
+    {q:'"This is ___ elephant." (elephant bắt đầu bằng nguyên âm)',choices:['a','an','some','—'],a:1},
+    {q:'"I like ___." Complete with a sport:',choices:['apple','soccer','blue','school'],a:1},
+    {q:'Complete: "My mother ___ a nurse."',choices:['am','are','is','be'],a:2},
+    {q:'"___ do you live?" — "I live in Hanoi."',choices:['What','How','Where','Who'],a:2},
+    {q:'Complete: "The cats ___ on the sofa."',choices:['is','am','are','be'],a:2},
+    {q:'"Can you swim?" — "Yes, I ___."',choices:['can','cannot','am','do'],a:0},
+    {q:'Complete: "It ___ raining now."',choices:['am','are','is','be'],a:2},
+    {q:'"I have ___ umbrella." (umbrella — nguyên âm)',choices:['a','an','the','some'],a:1},
+    {q:'"___ is your teacher?" — "Mr. Hung."',choices:['What','Where','How','Who'],a:3},
+    {q:'Complete: "You ___ very kind."',choices:['am','is','are','be'],a:2},
+    {q:'"Do you have a pet?" — "No, I ___."',choices:['do','have','don\'t','am not'],a:2},
+    {q:'Complete: "My bag ___ red."',choices:['am','are','is','be'],a:2},
+    {q:'"___ is your birthday?" — "It\'s in June."',choices:['Who','Where','When','What'],a:2},
+    {q:'Complete: "I ___ not understand."',choices:['is','am','are','do'],a:3},
+    {q:'"Good ___!" — said before sleeping.',choices:['morning','afternoon','evening','night'],a:3},
+  ],
+
+  // ── TOÁN TIẾNG ANH ────────────────────
+  me_add: [
+    {q:'What is 5 + 3?',choices:['7','8','9','6'],a:1},
+    {q:'What is 12 + 7?',choices:['18','19','20','17'],a:1},
+    {q:'What is 24 + 15?',choices:['38','39','40','37'],a:1},
+    {q:'What is 30 + 25?',choices:['54','55','56','53'],a:1},
+    {q:'What is 47 + 36?',choices:['82','83','84','81'],a:1},
+    {q:'What is 58 + 24?',choices:['81','82','83','80'],a:1},
+    {q:'What is 63 + 19?',choices:['81','82','83','80'],a:1},
+    {q:'What is 15 + 15?',choices:['28','29','30','31'],a:2},
+    {q:'What is 100 + 50?',choices:['140','150','160','130'],a:1},
+    {q:'What is 35 + 45?',choices:['79','80','81','78'],a:1},
+    {q:'What is 7 + 8?',choices:['13','14','15','16'],a:2},
+    {q:'What is 26 + 34?',choices:['58','59','60','61'],a:2},
+    {q:'What is 44 + 56?',choices:['99','100','101','98'],a:1},
+    {q:'What is 75 + 25?',choices:['99','100','101','98'],a:1},
+    {q:'What is 200 + 150?',choices:['340','350','360','330'],a:1},
+    {q:'6 + 9 = ?',choices:['13','14','15','16'],a:2},
+    {q:'18 + 13 = ?',choices:['29','30','31','32'],a:2},
+    {q:'50 + 50 = ?',choices:['90','95','100','105'],a:2},
+    {q:'123 + 45 = ?',choices:['166','167','168','165'],a:2},
+    {q:'300 + 250 = ?',choices:['540','550','560','530'],a:1},
+  ],
+  me_sub: [
+    {q:'What is 9 - 4?',choices:['4','5','6','3'],a:1},
+    {q:'What is 15 - 7?',choices:['7','8','9','6'],a:1},
+    {q:'What is 20 - 13?',choices:['6','7','8','9'],a:1},
+    {q:'What is 50 - 25?',choices:['23','24','25','26'],a:2},
+    {q:'What is 100 - 37?',choices:['62','63','64','61'],a:1},
+    {q:'What is 84 - 46?',choices:['37','38','39','36'],a:1},
+    {q:'What is 72 - 35?',choices:['36','37','38','35'],a:1},
+    {q:'What is 60 - 28?',choices:['31','32','33','30'],a:1},
+    {q:'What is 200 - 75?',choices:['124','125','126','123'],a:1},
+    {q:'What is 100 - 58?',choices:['41','42','43','40'],a:1},
+    {q:'8 - 3 = ?',choices:['4','5','6','7'],a:1},
+    {q:'17 - 9 = ?',choices:['7','8','9','10'],a:1},
+    {q:'30 - 14 = ?',choices:['15','16','17','18'],a:1},
+    {q:'45 - 18 = ?',choices:['25','26','27','28'],a:2},
+    {q:'150 - 75 = ?',choices:['74','75','76','73'],a:1},
+    {q:'63 - 27 = ?',choices:['35','36','37','38'],a:1},
+    {q:'500 - 200 = ?',choices:['290','295','300','305'],a:2},
+    {q:'91 - 47 = ?',choices:['43','44','45','46'],a:1},
+    {q:'80 - 35 = ?',choices:['44','45','46','43'],a:1},
+    {q:'1000 - 500 = ?',choices:['490','495','500','505'],a:2},
+  ],
 };
 
-// ═══════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════
-let playerName    = '';
-let playerAvatar  = '😊';
-let currentTopic  = '';
-let quizQuestions = [];
-let currentIndex  = 0;
-let score         = 0;
-let answered      = false;
+// Mix math
+QB.math_mix = () => {
+  const all = [...QB.math_cong,...QB.math_tru,...QB.math_nhan,...QB.math_chia];
+  return shuffle(all).slice(0, QPR);
+};
+// Mix eng
+QB.eng_mix = () => {
+  const all = [...QB.eng_vocab,...QB.eng_numbers,...QB.eng_sentence];
+  return shuffle(all).slice(0, QPR);
+};
+// Mix matheng
+QB.me_mix = () => {
+  const all = [...QB.me_add,...QB.me_sub];
+  return shuffle(all).slice(0, QPR);
+};
 
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════
+let playerName   = '';
+let playerAvatar = '😊';
+let currentTopic = '';
+let currentSubject = '';
+let quizQs       = [];
+let curIdx       = 0;
+let score        = 0;
+let answered     = false;
+
+// ═══════════════════════════════════════
 //  HELPERS
-// ═══════════════════════════════════════════
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length-1; i > 0; i--) {
-    const j = Math.floor(Math.random()*(i+1));
-    [a[i],a[j]] = [a[j],a[i]];
-  }
+// ═══════════════════════════════════════
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
-
-function getQuestions(topic) {
-  if (topic === 'mix') {
-    const all = [...QUESTIONS.cong,...QUESTIONS.tru,...QUESTIONS.nhan,...QUESTIONS.chia];
-    return shuffle(all).slice(0, QUESTIONS_PER_ROUND);
-  }
-  return shuffle(QUESTIONS[topic]).slice(0, QUESTIONS_PER_ROUND);
+function getQs(topicId){
+  const bank = QB[topicId];
+  if(typeof bank === 'function') return bank();
+  return shuffle(bank).slice(0, QPR);
 }
-
-function makeWrongAnswers(correct) {
-  const diffs = [1,-1,2,-2,10,-10,11,-9,5,-5];
-  const wrongs = [];
-  shuffle(diffs).forEach(d => {
-    const n = correct + d;
-    if (n > 0 && n !== correct && !wrongs.includes(n)) wrongs.push(n);
-  });
-  return wrongs.slice(0, 3);
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
 }
+function initials(n){ return n?n.charAt(0).toUpperCase():'?'; }
 
-function showScreen(name) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen' + name.charAt(0).toUpperCase() + name.slice(1)).classList.add('active');
-  window.scrollTo(0, 0);
-}
-
-function getInitial(name) {
-  return name ? name.charAt(0).toUpperCase() : '?';
-}
-
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 //  REGISTER
-// ═══════════════════════════════════════════
-const nameInput = document.getElementById('nameInput');
-const btnStart  = document.getElementById('btnStart');
+// ═══════════════════════════════════════
+const ni = document.getElementById('nameInput');
+const bs = document.getElementById('btnStart');
+ni.addEventListener('input', ()=>{ bs.disabled = ni.value.trim().length < 2; });
+ni.addEventListener('keydown', e=>{ if(e.key==='Enter' && !bs.disabled) handleRegister(); });
 
-nameInput.addEventListener('input', function() {
-  btnStart.disabled = this.value.trim().length < 2;
-});
-nameInput.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !btnStart.disabled) handleRegister();
-});
-
-function handleRegister() {
-  const name = nameInput.value.trim();
-  if (name.length < 2) return;
+function handleRegister(){
+  const name = ni.value.trim();
+  if(name.length < 2) return;
   playerName   = name;
-  playerAvatar = AVATARS[Math.floor(Math.random() * AVATARS.length)];
-
-  // Lưu local
-  localStorage.setItem('playerName',   playerName);
-  localStorage.setItem('playerAvatar', playerAvatar);
-
-  updateMenuWelcome();
-  showScreen('menu');
+  playerAvatar = AVATARS[Math.floor(Math.random()*AVATARS.length)];
+  localStorage.setItem('pName', playerName);
+  localStorage.setItem('pAvatar', playerAvatar);
+  updateWelcome();
+  showScreen('subject');
 }
 
-function updateMenuWelcome() {
-  document.getElementById('menuAvatar').textContent = playerAvatar;
-  document.getElementById('menuName').textContent   = playerName;
-
-  const totalScore = parseInt(localStorage.getItem('totalScore_' + playerName) || '0');
-  const totalGames = parseInt(localStorage.getItem('totalGames_' + playerName) || '0');
-  if (totalGames > 0) {
-    document.getElementById('menuStats').textContent =
-      `Tổng điểm: ${totalScore} ⭐ · Đã làm ${totalGames} lượt`;
-  } else {
-    document.getElementById('menuStats').textContent = 'Chào mừng bạn mới! 🎉';
-  }
+function updateWelcome(){
+  document.getElementById('subAvatar').textContent = playerAvatar;
+  document.getElementById('subName').textContent   = playerName;
+  const ts = parseInt(localStorage.getItem('ts_'+playerName)||'0');
+  const tg = parseInt(localStorage.getItem('tg_'+playerName)||'0');
+  document.getElementById('subStats').textContent = tg > 0
+    ? `Tổng điểm: ${ts}⭐ · ${tg} lượt đã làm`
+    : 'Chào mừng bạn mới! 🎉';
 }
 
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
+//  TOPIC MENU
+// ═══════════════════════════════════════
+function showTopicMenu(subjectId){
+  currentSubject = subjectId;
+  const sub = SUBJECTS[subjectId];
+  document.getElementById('topicMenuTitle').textContent = sub.label;
+  const list = document.getElementById('topicList');
+  list.innerHTML = '';
+  sub.topics.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'topic-card';
+    card.style.marginBottom = '0.65rem';
+    card.innerHTML = `
+      <div class="topic-card__icon">${t.icon}</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">${t.name}</div>
+        <div class="topic-card__desc">${t.desc}</div>
+      </div>
+      <div class="topic-card__count">${Array.isArray(QB[t.id]) ? QB[t.id].length+' câu' : 'Random'}</div>
+    `;
+    card.onclick = () => startQuiz(t.id, t.name);
+    list.appendChild(card);
+  });
+  showScreen('topic');
+}
+
+// ═══════════════════════════════════════
 //  QUIZ
-// ═══════════════════════════════════════════
-function startQuiz(topic) {
-  currentTopic  = topic;
-  quizQuestions = getQuestions(topic);
-  currentIndex  = 0;
-  score         = 0;
+// ═══════════════════════════════════════
+function startQuiz(topicId, topicName){
+  currentTopic = topicId;
+  quizQs       = getQs(topicId);
+  curIdx = 0; score = 0;
 
-  document.getElementById('quizTopicName').textContent  = TOPIC_NAMES[topic];
-  document.getElementById('quizPlayerName').textContent = playerName;
-  document.getElementById('scoreDisplay').textContent   = 0;
-  document.getElementById('totalQ').textContent         = QUESTIONS_PER_ROUND;
+  document.getElementById('quizTopicName').textContent = topicName;
+  document.getElementById('quizPlayer').textContent    = playerAvatar + ' ' + playerName;
+  document.getElementById('scoreDisp').textContent     = 0;
+  document.getElementById('totQ').textContent          = QPR;
 
   showScreen('quiz');
-  renderQuestion();
+  renderQ();
 }
 
-function renderQuestion() {
+function renderQ(){
   answered = false;
-  const q = quizQuestions[currentIndex];
+  const q = quizQs[curIdx];
 
-  document.getElementById('currentQ').textContent    = currentIndex + 1;
-  document.getElementById('questionNum').textContent = 'Câu ' + (currentIndex+1);
-  document.getElementById('questionText').textContent = q.q;
-  document.getElementById('questionHint').textContent = q.hint || '';
+  document.getElementById('curQ').textContent  = curIdx+1;
+  document.getElementById('qNum').textContent  = 'Câu '+(curIdx+1);
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('qHint').textContent = q.hint||'';
 
-  const pct = Math.round((currentIndex / QUESTIONS_PER_ROUND) * 100);
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressPct').textContent  = pct + '%';
+  const pct = Math.round((curIdx/QPR)*100);
+  document.getElementById('progFill').style.width = pct+'%';
+  document.getElementById('progPct').textContent  = pct+'%';
 
-  const wrongs  = makeWrongAnswers(q.a);
-  const options = shuffle([q.a, ...wrongs]);
-  const grid    = document.getElementById('answersGrid');
+  // Detect if answers are text (long) or numbers
+  const isText = q.choices.some(c => typeof c === 'string' && c.length > 6);
+  const grid = document.getElementById('ansGrid');
+  grid.className = isText ? 'answers answers--single' : 'answers';
   grid.innerHTML = '';
-  options.forEach(opt => {
+
+  q.choices.forEach((ch, i) => {
     const btn = document.createElement('button');
-    btn.className   = 'answer-btn';
-    btn.textContent = opt;
-    btn.onclick     = () => checkAnswer(btn, opt, q.a);
+    btn.className = 'ans-btn' + (isText?' ans-btn--text':'');
+    btn.textContent = ch;
+    btn.onclick = () => checkAns(btn, i, q.a, q.choices[q.a]);
     grid.appendChild(btn);
   });
 
   document.getElementById('feedback').className = 'feedback';
-  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('btnNext').style.display = 'none';
 }
 
-function checkAnswer(btn, selected, correct) {
-  if (answered) return;
+function checkAns(btn, idx, correct, correctText){
+  if(answered) return;
   answered = true;
-  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+  document.querySelectorAll('.ans-btn').forEach(b=>b.disabled=true);
 
-  const isRight = selected === correct;
-  if (isRight) {
+  const ok = idx === correct;
+  if(ok){
     btn.classList.add('correct');
     score++;
-    document.getElementById('scoreDisplay').textContent = score;
+    document.getElementById('scoreDisp').textContent = score;
     const fb = document.getElementById('feedback');
     fb.className = 'feedback correct';
-    document.getElementById('feedbackEmoji').textContent = ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)];
-    document.getElementById('feedbackText').textContent  = ['Đúng rồi! Giỏi quá!','Tuyệt vời!','Xuất sắc!','Thông minh lắm!'][Math.floor(Math.random()*4)];
-    document.getElementById('feedbackAnswer').textContent = '';
+    document.getElementById('fbEmoji').textContent = ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)];
+    document.getElementById('fbText').textContent  = ['Đúng rồi! Giỏi quá!','Tuyệt vời!','Xuất sắc!','Thông minh lắm!'][Math.floor(Math.random()*4)];
+    document.getElementById('fbAns').textContent   = '';
   } else {
     btn.classList.add('wrong');
-    document.querySelectorAll('.answer-btn').forEach(b => {
-      if (parseInt(b.textContent) === correct) b.classList.add('show-correct');
-    });
+    document.querySelectorAll('.ans-btn').forEach((b,i)=>{ if(i===correct) b.classList.add('show-correct'); });
     const fb = document.getElementById('feedback');
     fb.className = 'feedback wrong';
-    document.getElementById('feedbackEmoji').textContent = '😅';
-    document.getElementById('feedbackText').textContent  = 'Chưa đúng rồi!';
-    document.getElementById('feedbackAnswer').textContent = 'Đáp án đúng là: ' + correct;
+    document.getElementById('fbEmoji').textContent = '😅';
+    document.getElementById('fbText').textContent  = 'Chưa đúng rồi!';
+    document.getElementById('fbAns').textContent   = 'Đáp án đúng: ' + correctText;
   }
 
-  const nextBtn = document.getElementById('nextBtn');
-  nextBtn.style.display = 'block';
-  nextBtn.textContent = currentIndex === QUESTIONS_PER_ROUND-1 ? '🏁 Xem kết quả' : 'Câu tiếp theo →';
+  const nb = document.getElementById('btnNext');
+  nb.style.display = 'block';
+  nb.textContent = curIdx===QPR-1 ? '🏁 Xem kết quả' : 'Câu tiếp theo →';
 }
 
-function nextQuestion() {
-  currentIndex++;
-  if (currentIndex >= QUESTIONS_PER_ROUND) showResult();
-  else renderQuestion();
+function nextQ(){
+  curIdx++;
+  if(curIdx >= QPR) showResult();
+  else renderQ();
 }
 
-// ═══════════════════════════════════════════
-//  RESULT & SAVE
-// ═══════════════════════════════════════════
-function showResult() {
+// ═══════════════════════════════════════
+//  RESULT
+// ═══════════════════════════════════════
+function showResult(){
   showScreen('result');
+  const pct = score/QPR;
+  document.getElementById('resScore').textContent  = score+'/'+QPR;
+  document.getElementById('resPlayer').textContent = playerAvatar+' '+playerName;
 
-  const pct = score / QUESTIONS_PER_ROUND;
-  document.getElementById('resultScore').textContent  = score + '/' + QUESTIONS_PER_ROUND;
-  document.getElementById('resultPlayer').textContent = playerAvatar + ' ' + playerName;
+  let stars='⭐';
+  if(pct>=0.9) stars='⭐⭐⭐';
+  else if(pct>=0.6) stars='⭐⭐';
+  document.getElementById('resStars').textContent = stars;
 
-  let stars = '⭐';
-  if (pct >= 0.9) stars = '⭐⭐⭐';
-  else if (pct >= 0.6) stars = '⭐⭐';
-  document.getElementById('resultStars').textContent = stars;
+  let emoji,title,msg,cls;
+  if(pct===1){emoji='🏆';title='Hoàn hảo!';msg='🎊 Tất cả đúng! Xuất sắc!';cls='great';launchStars();}
+  else if(pct>=0.8){emoji='🌟';title='Xuất sắc!';msg='👏 Gần hoàn hảo! Cố thêm nhé!';cls='great';launchStars();}
+  else if(pct>=0.6){emoji='😊';title='Tốt lắm!';msg='💪 Làm tốt! Ôn thêm lần nữa nhé!';cls='good';}
+  else if(pct>=0.4){emoji='🤔';title='Cố lên!';msg='📚 Ôn thêm chút nữa là được!';cls='try';}
+  else{emoji='💪';title='Thử lại!';msg='🌱 Đừng nản! Làm lại sẽ tiến bộ!';cls='try';}
 
-  let emoji, title, msg, msgClass;
-  if (pct === 1) {
-    emoji='🏆'; title='Hoàn hảo!';
-    msg='🎊 Làm đúng tất cả! Giỏi xuất sắc!'; msgClass='result-card__msg--great';
-    launchStars();
-  } else if (pct >= 0.8) {
-    emoji='🌟'; title='Xuất sắc!';
-    msg='👏 Gần hoàn hảo rồi! Cố thêm nữa nhé!'; msgClass='result-card__msg--great';
-    launchStars();
-  } else if (pct >= 0.6) {
-    emoji='😊'; title='Tốt lắm!';
-    msg='💪 Làm tốt lắm! Ôn thêm lần nữa nhé!'; msgClass='result-card__msg--good';
-  } else if (pct >= 0.4) {
-    emoji='🤔'; title='Cố lên!';
-    msg='📚 Ôn thêm chút nữa là được thôi!'; msgClass='result-card__msg--try';
-  } else {
-    emoji='💪'; title='Thử lại nhé!';
-    msg='🌱 Đừng nản! Làm lại lần nữa sẽ tiến bộ!'; msgClass='result-card__msg--try';
-  }
-
-  document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultTitle').textContent = title;
-  const msgEl = document.getElementById('resultMsg');
+  document.getElementById('resEmoji').textContent = emoji;
+  document.getElementById('resTitle').textContent = title;
+  const msgEl = document.getElementById('resMsg');
   msgEl.textContent = msg;
-  msgEl.className   = 'result-card__msg ' + msgClass;
+  msgEl.className   = 'res-card__msg res-card__msg--'+cls;
 
-  // Cập nhật local stats
-  const sk = 'totalScore_' + playerName;
-  const gk = 'totalGames_' + playerName;
-  localStorage.setItem(sk, (parseInt(localStorage.getItem(sk)||'0') + score).toString());
-  localStorage.setItem(gk, (parseInt(localStorage.getItem(gk)||'0') + 1).toString());
+  // local stats
+  const sk='ts_'+playerName, gk='tg_'+playerName;
+  localStorage.setItem(sk, (parseInt(localStorage.getItem(sk)||'0')+score).toString());
+  localStorage.setItem(gk, (parseInt(localStorage.getItem(gk)||'0')+1).toString());
 
-  // Lưu lên Google Sheets
-  saveToSheets();
+  // save to sheets
+  saveScore();
 }
 
-function saveToSheets() {
-  const indicator = document.getElementById('savingIndicator');
-  indicator.style.display = 'flex';
-
-  fetch(API_URL, {
-    method: 'POST',
-    body: JSON.stringify({
-      action: 'saveScore',
-      name:   playerName,
-      topic:  TOPIC_NAMES[currentTopic],
-      score:  score,
-      total:  QUESTIONS_PER_ROUND,
-    })
+function saveScore(){
+  const el = document.getElementById('savingEl');
+  el.style.display='flex';
+  const topicLabel = Object.values(SUBJECTS).flatMap(s=>s.topics).find(t=>t.id===currentTopic)?.name || currentTopic;
+  fetch(API, {
+    method:'POST',
+    body: JSON.stringify({action:'saveScore', name:playerName, topic:topicLabel, score, total:QPR})
   })
-  .then(() => {
-    indicator.innerHTML = '<span style="color:var(--green-d)">✅ Đã lưu lên bảng xếp hạng!</span>';
-    setTimeout(() => { indicator.style.display = 'none'; }, 2500);
-  })
-  .catch(() => {
-    indicator.innerHTML = '<span style="color:var(--gray)">📶 Lưu sau (cần internet)</span>';
-    setTimeout(() => { indicator.style.display = 'none'; }, 2500);
-  });
+  .then(()=>{el.innerHTML='<span style="color:var(--green-d)">✅ Đã lưu lên bảng xếp hạng!</span>';setTimeout(()=>{el.style.display='none';},2500);})
+  .catch(()=>{el.innerHTML='<span style="color:var(--gray)">📶 Không có mạng — chưa lưu được</span>';setTimeout(()=>{el.style.display='none';},2500);});
 }
 
-function retryQuiz() { startQuiz(currentTopic); }
+function retryQuiz(){
+  const topicName = Object.values(SUBJECTS).flatMap(s=>s.topics).find(t=>t.id===currentTopic)?.name || '';
+  startQuiz(currentTopic, topicName);
+}
 
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 //  LEADERBOARD
-// ═══════════════════════════════════════════
-function showLeaderboard() {
-  showScreen('leaderboard');
-  loadLeaderboard();
-}
+// ═══════════════════════════════════════
+function showLeaderboard(){ showScreen('leaderboard'); loadLB(); }
 
-function loadLeaderboard() {
+function loadLB(){
   const list = document.getElementById('lbList');
   list.innerHTML = '<div class="lb-loading">⏳ Đang tải bảng xếp hạng...</div>';
-
-  fetch(API_URL + '?action=getLeaderboard')
-    .then(r => r.json())
-    .then(players => {
-      if (!players || players.length === 0) {
-        list.innerHTML = '<div class="lb-empty">🌱 Chưa có ai làm bài.<br>Hãy là người đầu tiên! 🚀</div>';
+  fetch(API+'?action=getLeaderboard')
+    .then(r=>r.json())
+    .then(data => {
+      if(!data||data.length===0){
+        list.innerHTML='<div class="lb-empty">🌱 Chưa có ai làm bài.<br>Hãy là người đầu tiên! 🚀</div>';
         return;
       }
-      renderLeaderboard(players);
+      const medals=['🥇','🥈','🥉'];
+      list.innerHTML = data.map((p,i)=>{
+        const rank=i+1, isMe=p.name===playerName;
+        const avg = p.totalGames>0?(p.totalScore/p.totalGames).toFixed(1):0;
+        return `<div class="lb-item ${rank<=3?'lb-item--'+rank:''} ${isMe?'lb-item--me':''}">
+          <div class="lb-rank">${rank<=3?medals[i]:rank+'.'}</div>
+          <div class="lb-av">${initials(p.name)}</div>
+          <div class="lb-info">
+            <div class="lb-name${isMe?' lb-name--me':''}">${p.name}</div>
+            <div class="lb-meta">${p.totalGames} lượt · TB ${avg}/10</div>
+          </div>
+          <div class="lb-score">
+            <div class="lb-score__num">${p.totalScore}⭐</div>
+            <div class="lb-score__lbl">tổng điểm</div>
+          </div>
+        </div>`;
+      }).join('');
     })
-    .catch(() => {
-      list.innerHTML = '<div class="lb-empty">📶 Không tải được.<br>Kiểm tra kết nối internet nhé!</div>';
-    });
+    .catch(()=>{ list.innerHTML='<div class="lb-empty">📶 Không tải được.<br>Kiểm tra mạng nhé!</div>'; });
 }
 
-function renderLeaderboard(players) {
-  const list    = document.getElementById('lbList');
-  const medals  = ['🥇','🥈','🥉'];
-  list.innerHTML = '';
-
-  players.forEach((p, i) => {
-    const rank    = i + 1;
-    const isMe    = p.name === playerName;
-    const rankStr = rank <= 3 ? medals[i] : rank + '.';
-    const avgScore = p.totalGames > 0
-      ? (p.totalScore / p.totalGames).toFixed(1)
-      : 0;
-
-    const card = document.createElement('div');
-    card.className = 'lb-card'
-      + (rank === 1 ? ' lb-card--1st' : '')
-      + (rank === 2 ? ' lb-card--2nd' : '')
-      + (rank === 3 ? ' lb-card--3rd' : '')
-      + (isMe       ? ' lb-card--me'  : '');
-
-    card.innerHTML = `
-      <div class="lb-rank">${rankStr}</div>
-      <div class="lb-avatar">${getInitial(p.name)}</div>
-      <div class="lb-info">
-        <div class="lb-name${isMe ? ' lb-name--me' : ''}">${p.name}</div>
-        <div class="lb-meta">${p.totalGames} lượt · TB ${avgScore}/10</div>
-      </div>
-      <div class="lb-score">
-        <div class="lb-score__num">${p.totalScore}⭐</div>
-        <div class="lb-score__label">tổng điểm</div>
-      </div>
-    `;
-    list.appendChild(card);
-  });
-}
-
-// ═══════════════════════════════════════════
-//  STARS ANIMATION
-// ═══════════════════════════════════════════
-function launchStars() {
-  const container = document.getElementById('starsRain');
-  container.innerHTML = '';
-  const emojis = ['⭐','🌟','✨','🎉','🎊','💫','🏆'];
-  for (let i = 0; i < 30; i++) {
-    setTimeout(() => {
-      const star = document.createElement('div');
-      star.className   = 'star-fall';
-      star.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-      star.style.left  = Math.random()*100 + 'vw';
-      star.style.animationDelay    = Math.random()*0.5 + 's';
-      star.style.animationDuration = (1 + Math.random()) + 's';
-      container.appendChild(star);
-      setTimeout(() => star.remove(), 2500);
-    }, i * 60);
+// ═══════════════════════════════════════
+//  STARS
+// ═══════════════════════════════════════
+function launchStars(){
+  const c=document.getElementById('starsRain'); c.innerHTML='';
+  const e=['⭐','🌟','✨','🎉','🎊','💫','🏆'];
+  for(let i=0;i<30;i++){
+    setTimeout(()=>{
+      const s=document.createElement('div'); s.className='star-fall';
+      s.textContent=e[Math.floor(Math.random()*e.length)];
+      s.style.left=Math.random()*100+'vw';
+      s.style.animationDelay=Math.random()*0.5+'s';
+      s.style.animationDuration=(1+Math.random())+'s';
+      c.appendChild(s); setTimeout(()=>s.remove(),2500);
+    }, i*60);
   }
 }
 
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 //  INIT
-// ═══════════════════════════════════════════
-// Nếu đã từng đăng ký → vào thẳng menu
-const savedName = localStorage.getItem('playerName');
-if (savedName) {
-  playerName   = savedName;
-  playerAvatar = localStorage.getItem('playerAvatar') || '😊';
-  nameInput.value = playerName;
-  btnStart.disabled = false;
-}
+// ═══════════════════════════════════════
+const saved = localStorage.getItem('pName');
+if(saved){ playerName=saved; playerAvatar=localStorage.getItem('pAvatar')||'😊'; ni.value=playerName; bs.disabled=false; }
 
-// Load preview bảng xếp hạng trên màn hình đăng ký
-fetch(API_URL + '?action=getLeaderboard')
-  .then(r => r.json())
-  .then(players => {
-    const preview = document.getElementById('previewList');
-    if (!players || players.length === 0) {
-      preview.innerHTML = '<div class="preview-empty">Chưa có ai — hãy là người đầu tiên! 🚀</div>';
-      return;
-    }
-    const medals = ['🥇','🥈','🥉'];
-    preview.innerHTML = players.slice(0, 5).map((p, i) => `
-      <div class="preview-row">
-        <span class="preview-rank">${i < 3 ? medals[i] : (i+1)+'.'}</span>
-        <span class="preview-name">${p.name}</span>
-        <span class="preview-score">${p.totalScore}⭐</span>
-        <span class="preview-games">${p.totalGames} lượt</span>
-      </div>
-    `).join('');
+// load preview leaderboard
+fetch(API+'?action=getLeaderboard')
+  .then(r=>r.json())
+  .then(data=>{
+    const prev=document.getElementById('previewList');
+    if(!data||data.length===0){ prev.innerHTML='<div class="prev-empty">Chưa có ai — hãy là người đầu tiên! 🚀</div>'; return; }
+    const medals=['🥇','🥈','🥉'];
+    prev.innerHTML = data.slice(0,5).map((p,i)=>`
+      <div class="prev-row">
+        <span class="prev-rank">${i<3?medals[i]:(i+1)+'.'}</span>
+        <span class="prev-name">${p.name}</span>
+        <span class="prev-score">${p.totalScore}⭐</span>
+        <span class="prev-games">${p.totalGames} lượt</span>
+      </div>`).join('');
   })
-  .catch(() => {
-    document.getElementById('previewList').innerHTML =
-      '<div class="preview-empty">Cần internet để xem bảng xếp hạng</div>';
-  });
+  .catch(()=>{ document.getElementById('previewList').innerHTML='<div class="prev-empty">Cần internet để xem bảng xếp hạng</div>'; });
 </script>
 </body>
 </html>
