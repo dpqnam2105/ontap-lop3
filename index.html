@@ -848,6 +848,16 @@ function startQuiz(topicId, topicName){
   renderQ();
 }
 
+function makeWrongAnswers(correct){
+  const diffs = [1,-1,2,-2,10,-10,11,-9,5,-5,3,-3];
+  const wrongs = [];
+  shuffle(diffs).forEach(d => {
+    const n = correct + d;
+    if(n > 0 && n !== correct && !wrongs.includes(n)) wrongs.push(n);
+  });
+  return wrongs.slice(0, 3);
+}
+
 function renderQ(){
   answered = false;
   const q = quizQs[curIdx];
@@ -861,52 +871,103 @@ function renderQ(){
   document.getElementById('progFill').style.width = pct+'%';
   document.getElementById('progPct').textContent  = pct+'%';
 
-  // Detect if answers are text (long) or numbers
-  const isText = q.choices.some(c => typeof c === 'string' && c.length > 6);
   const grid = document.getElementById('ansGrid');
-  grid.className = isText ? 'answers answers--single' : 'answers';
   grid.innerHTML = '';
 
-  q.choices.forEach((ch, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'ans-btn' + (isText?' ans-btn--text':'');
-    btn.textContent = ch;
-    btn.onclick = () => checkAns(btn, i, q.a, q.choices[q.a]);
-    grid.appendChild(btn);
-  });
+  // ── Loại 1: Câu có choices[] sẵn (Tiếng Việt, Tiếng Anh)
+  if(q.choices){
+    const isLong = q.choices.some(c => String(c).length > 10);
+    grid.className = isLong ? 'answers answers--single' : 'answers';
+
+    q.choices.forEach((ch, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'ans-btn' + (isLong ? ' ans-btn--text' : '');
+      btn.textContent = ch;
+      // q.a là INDEX đáp án đúng
+      btn.onclick = () => checkAnsChoice(btn, i, q.a, q.choices[q.a]);
+      grid.appendChild(btn);
+    });
+
+  // ── Loại 2: Câu Toán — chỉ có q và a là số nguyên
+  } else {
+    grid.className = 'answers';
+    const wrongs  = makeWrongAnswers(q.a);
+    const options = shuffle([q.a, ...wrongs]);
+
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'ans-btn';
+      btn.textContent = opt;
+      // q.a là GIÁ TRỊ đúng
+      btn.onclick = () => checkAnsNumber(btn, opt, q.a);
+      grid.appendChild(btn);
+    });
+  }
 
   document.getElementById('feedback').className = 'feedback';
   document.getElementById('btnNext').style.display = 'none';
 }
 
-function checkAns(btn, idx, correct, correctText){
+// Dành cho Tiếng Việt / Tiếng Anh (so sánh index)
+function checkAnsChoice(btn, idx, correctIdx, correctText){
   if(answered) return;
   answered = true;
-  document.querySelectorAll('.ans-btn').forEach(b=>b.disabled=true);
+  document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
 
-  const ok = idx === correct;
+  const ok = idx === correctIdx;
   if(ok){
     btn.classList.add('correct');
     score++;
     document.getElementById('scoreDisp').textContent = score;
-    const fb = document.getElementById('feedback');
-    fb.className = 'feedback correct';
-    document.getElementById('fbEmoji').textContent = ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)];
-    document.getElementById('fbText').textContent  = ['Đúng rồi! Giỏi quá!','Tuyệt vời!','Xuất sắc!','Thông minh lắm!'][Math.floor(Math.random()*4)];
-    document.getElementById('fbAns').textContent   = '';
+    showFeedback(true, '', '');
   } else {
     btn.classList.add('wrong');
-    document.querySelectorAll('.ans-btn').forEach((b,i)=>{ if(i===correct) b.classList.add('show-correct'); });
-    const fb = document.getElementById('feedback');
-    fb.className = 'feedback wrong';
-    document.getElementById('fbEmoji').textContent = '😅';
-    document.getElementById('fbText').textContent  = 'Chưa đúng rồi!';
-    document.getElementById('fbAns').textContent   = 'Đáp án đúng: ' + correctText;
+    document.querySelectorAll('.ans-btn').forEach((b,i) => {
+      if(i === correctIdx) b.classList.add('show-correct');
+    });
+    showFeedback(false, 'Chưa đúng rồi!', 'Đáp án đúng: ' + correctText);
   }
+  showNextBtn();
+}
 
+// Dành cho Toán (so sánh giá trị số)
+function checkAnsNumber(btn, selected, correct){
+  if(answered) return;
+  answered = true;
+  document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
+
+  const ok = selected === correct;
+  if(ok){
+    btn.classList.add('correct');
+    score++;
+    document.getElementById('scoreDisp').textContent = score;
+    showFeedback(true, '', '');
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.ans-btn').forEach(b => {
+      if(parseInt(b.textContent) === correct) b.classList.add('show-correct');
+    });
+    showFeedback(false, 'Chưa đúng rồi!', 'Đáp án đúng: ' + correct);
+  }
+  showNextBtn();
+}
+
+function showFeedback(ok, text, ans){
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback ' + (ok ? 'correct' : 'wrong');
+  document.getElementById('fbEmoji').textContent = ok
+    ? ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)]
+    : '😅';
+  document.getElementById('fbText').textContent = ok
+    ? ['Đúng rồi! Giỏi quá!','Tuyệt vời!','Xuất sắc!','Thông minh lắm!'][Math.floor(Math.random()*4)]
+    : text;
+  document.getElementById('fbAns').textContent = ans;
+}
+
+function showNextBtn(){
   const nb = document.getElementById('btnNext');
   nb.style.display = 'block';
-  nb.textContent = curIdx===QPR-1 ? '🏁 Xem kết quả' : 'Câu tiếp theo →';
+  nb.textContent = curIdx === QPR-1 ? '🏁 Xem kết quả' : 'Câu tiếp theo →';
 }
 
 function nextQ(){
