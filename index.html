@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 Ôn Toán Lớp 2 → Lớp 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green:   #2ECC71;
+      --green-d: #27AE60;
+      --blue:    #3498DB;
+      --blue-d:  #2980B9;
+      --yellow:  #F1C40F;
+      --orange:  #E67E22;
+      --red:     #E74C3C;
+      --purple:  #9B59B6;
+      --bg:      #F0FFF4;
+      --card:    #FFFFFF;
+      --text:    #2C3E50;
+      --gray:    #95A5A6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(46,204,113,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(52,152,219,0.08) 0%, transparent 50%);
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #27AE60 0%, #2ECC71 50%, #1ABC9C 100%);
+      padding: 1.5rem 1rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: 0; right: 0;
+      height: 40px;
+      background: var(--bg);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+    .header__emoji {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    .header__title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header__sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 0.3rem;
+      font-weight: 600;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* ── MENU ── */
+    .menu { display: flex; flex-direction: column; gap: 1rem; }
+
+    .menu__title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--green-d);
+      margin-bottom: 0.5rem;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .topic-card:hover, .topic-card:active {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .topic-card--green  { border-color: #2ECC71; }
+    .topic-card--blue   { border-color: #3498DB; }
+    .topic-card--orange { border-color: #E67E22; }
+    .topic-card--purple { border-color: #9B59B6; }
+    .topic-card--yellow { border-color: #F1C40F; }
+
+    .topic-card__icon {
+      font-size: 2.2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .topic-card--green  .topic-card__icon { background: #D5F5E3; }
+    .topic-card--blue   .topic-card__icon { background: #D6EAF8; }
+    .topic-card--orange .topic-card__icon { background: #FDEBD0; }
+    .topic-card--purple .topic-card__icon { background: #E8DAEF; }
+    .topic-card--yellow .topic-card__icon { background: #FEF9E7; }
+
+    .topic-card__info { flex: 1; }
+    .topic-card__name {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .topic-card__desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 0.1rem;
+    }
+    .topic-card__count {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      background: var(--bg);
+      color: var(--green-d);
+    }
+
+    /* ── QUIZ SCREEN ── */
+    .quiz { display: none; flex-direction: column; gap: 1.25rem; }
+
+    .quiz__header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      border-radius: 20px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .quiz__back {
+      background: var(--bg);
+      border: none;
+      border-radius: 12px;
+      width: 40px; height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .quiz__back:hover { background: #D5F5E3; }
+    .quiz__topic-name {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .quiz__score-badge {
+      background: linear-gradient(135deg, #27AE60, #2ECC71);
+      color: white;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      background: white;
+      border-radius: 16px;
+      padding: 0.9rem 1.25rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar {
+      height: 10px;
+      background: #ECF0F1;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #27AE60, #2ECC71);
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+
+    /* Question card */
+    .question-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .question-card__num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+    .question-card__text {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+    .question-card__hint {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* Answer options */
+    .answers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .answer-btn {
+      background: white;
+      border: 3px solid #ECF0F1;
+      border-radius: 18px;
+      padding: 1rem 0.75rem;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .answer-btn:hover:not(:disabled) {
+      border-color: var(--green);
+      background: #F0FFF4;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(46,204,113,0.2);
+    }
+    .answer-btn.correct {
+      border-color: var(--green);
+      background: linear-gradient(135deg, #D5F5E3, #A9DFBF);
+      color: var(--green-d);
+      animation: popIn 0.3s ease;
+    }
+    .answer-btn.wrong {
+      border-color: var(--red);
+      background: linear-gradient(135deg, #FADBD8, #F1948A);
+      color: #922B21;
+      animation: shake 0.4s ease;
+    }
+    .answer-btn.show-correct {
+      border-color: var(--green);
+      background: linear-gradient(135deg, #D5F5E3, #A9DFBF);
+      color: var(--green-d);
+    }
+    @keyframes popIn {
+      0%   { transform: scale(0.95); }
+      60%  { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      25%     { transform: translateX(-6px); }
+      75%     { transform: translateX(6px); }
+    }
+
+    /* Feedback */
+    .feedback {
+      border-radius: 18px;
+      padding: 1rem 1.25rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .feedback.correct {
+      display: flex;
+      background: linear-gradient(135deg, #D5F5E3, #A9DFBF);
+      color: #1E8449;
+    }
+    .feedback.wrong {
+      display: flex;
+      background: linear-gradient(135deg, #FADBD8, #F1948A);
+      color: #922B21;
+    }
+    .feedback__emoji { font-size: 1.4rem; }
+    .feedback__answer { font-size: 0.88rem; font-weight: 600; margin-top: 0.2rem; opacity: 0.85; }
+
+    .next-btn {
+      background: linear-gradient(135deg, #27AE60, #2ECC71);
+      color: white;
+      border: none;
+      border-radius: 18px;
+      padding: 1rem;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(46,204,113,0.35);
+      display: none;
+      width: 100%;
+    }
+    .next-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,204,113,0.4); }
+
+    /* ── RESULT SCREEN ── */
+    .result {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+    .result__card {
+      background: white;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .result__emoji {
+      font-size: 4rem;
+      margin-bottom: 0.75rem;
+      display: block;
+      animation: bounce 1.5s infinite;
+    }
+    .result__title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .result__score {
+      font-family: 'Baloo 2', cursive;
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #27AE60, #3498DB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin: 0.5rem 0;
+    }
+    .result__sub {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .result__stars {
+      font-size: 2.5rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .result__msg {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+    }
+    .result__msg--great  { background: #D5F5E3; color: #1E8449; }
+    .result__msg--good   { background: #D6EAF8; color: #1A5276; }
+    .result__msg--try    { background: #FDEBD0; color: #784212; }
+
+    .result__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+    .btn-retry {
+      background: linear-gradient(135deg, #27AE60, #2ECC71);
+      color: white;
+      border: none;
+      border-radius: 18px;
+      padding: 1rem;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(46,204,113,0.35);
+    }
+    .btn-retry:hover { transform: translateY(-2px); }
+    .btn-home {
+      background: white;
+      color: var(--green-d);
+      border: 3px solid var(--green);
+      border-radius: 18px;
+      padding: 0.85rem;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-home:hover { background: #D5F5E3; }
+
+    /* Best score */
+    .best-score {
+      background: linear-gradient(135deg, #FEF9E7, #FDEBD0);
+      border: 2px solid var(--yellow);
+      border-radius: 16px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #7D6608;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ── STARS ANIMATION ── */
+    .stars-rain {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+    .star-fall {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: fallDown 1.5s ease-in forwards;
+    }
+    @keyframes fallDown {
+      0%   { opacity: 1; transform: translateY(-20px) rotate(0deg); }
+      100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 400px) {
+      .answers { grid-template-columns: 1fr 1fr; }
+      .answer-btn { font-size: 1.2rem; padding: 0.85rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Stars rain container -->
+<div class="stars-rain" id="starsRain"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <span class="header__emoji">🌟</span>
+  <div class="header__title">Ôn Toán Mùa Hè</div>
+  <div class="header__sub">Lớp 2 → Lớp 3 · Cùng học nào! 🚀</div>
+</div>
+
+<div class="main">
+
+  <!-- ══ SCREEN 1: MENU ══ -->
+  <div class="menu" id="screenMenu">
+    <div class="menu__title">📚 Chọn chủ đề muốn ôn</div>
+
+    <div class="topic-card topic-card--green" onclick="startQuiz('cong')">
+      <div class="topic-card__icon">➕</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">Phép Cộng</div>
+        <div class="topic-card__desc">Cộng có nhớ trong phạm vi 1000</div>
+      </div>
+      <div class="topic-card__count">30 câu</div>
+    </div>
+
+    <div class="topic-card topic-card--blue" onclick="startQuiz('tru')">
+      <div class="topic-card__icon">➖</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">Phép Trừ</div>
+        <div class="topic-card__desc">Trừ có nhớ trong phạm vi 1000</div>
+      </div>
+      <div class="topic-card__count">30 câu</div>
+    </div>
+
+    <div class="topic-card topic-card--orange" onclick="startQuiz('nhan')">
+      <div class="topic-card__icon">✖️</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">Bảng Nhân</div>
+        <div class="topic-card__desc">Bảng nhân 2, 3, 4, 5</div>
+      </div>
+      <div class="topic-card__count">32 câu</div>
+    </div>
+
+    <div class="topic-card topic-card--purple" onclick="startQuiz('chia')">
+      <div class="topic-card__icon">➗</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">Bảng Chia</div>
+        <div class="topic-card__desc">Chia hết trong bảng nhân 2, 3, 4, 5</div>
+      </div>
+      <div class="topic-card__count">32 câu</div>
+    </div>
+
+    <div class="topic-card topic-card--yellow" onclick="startQuiz('mix')">
+      <div class="topic-card__icon">🎯</div>
+      <div class="topic-card__info">
+        <div class="topic-card__name">Ôn Tổng Hợp</div>
+        <div class="topic-card__desc">Trộn tất cả các phép tính</div>
+      </div>
+      <div class="topic-card__count">Ngẫu nhiên</div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 2: QUIZ ══ -->
+  <div class="quiz" id="screenQuiz">
+    <div class="quiz__header">
+      <button class="quiz__back" onclick="goHome()">←</button>
+      <div class="quiz__topic-name" id="quizTopicName">Phép Cộng</div>
+      <div class="quiz__score-badge">⭐ <span id="scoreDisplay">0</span></div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span>Câu <span id="currentQ">1</span> / <span id="totalQ">10</span></span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="question-card__num" id="questionNum">Câu 1</div>
+      <div class="question-card__text" id="questionText">Loading...</div>
+      <div class="question-card__hint" id="questionHint"></div>
+    </div>
+
+    <div class="answers" id="answersGrid"></div>
+
+    <div class="feedback" id="feedback">
+      <span class="feedback__emoji" id="feedbackEmoji"></span>
+      <div>
+        <div id="feedbackText"></div>
+        <div class="feedback__answer" id="feedbackAnswer"></div>
+      </div>
+    </div>
+
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+      Câu tiếp theo →
+    </button>
+  </div>
+
+  <!-- ══ SCREEN 3: RESULT ══ -->
+  <div class="result" id="screenResult">
+    <div class="result__card">
+      <span class="result__emoji" id="resultEmoji">🏆</span>
+      <div class="result__title" id="resultTitle">Xuất sắc!</div>
+      <div class="result__score" id="resultScore">10/10</div>
+      <div class="result__sub" id="resultSub">Làm đúng 10 câu</div>
+      <div class="result__stars" id="resultStars">⭐⭐⭐</div>
+      <div class="result__msg" id="resultMsg"></div>
+    </div>
+
+    <div class="best-score" id="bestScoreBox">
+      🏅 Điểm cao nhất: <span id="bestScoreText">--</span>
+    </div>
+
+    <div class="result__actions">
+      <button class="btn-retry" onclick="retryQuiz()">🔄 Làm lại (đề mới)</button>
+      <button class="btn-home" onclick="goHome()">🏠 Chọn chủ đề khác</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+//  QUESTION BANKS
+// ═══════════════════════════════════════════
+
+const QUESTIONS = {
+
+  cong: [
+    { q:"25 + 14 = ?", a:39, hint:"Cộng hàng đơn vị trước nhé!" },
+    { q:"46 + 37 = ?", a:83, hint:"Cộng có nhớ" },
+    { q:"58 + 26 = ?", a:84, hint:"Cộng có nhớ" },
+    { q:"63 + 29 = ?", a:92, hint:"" },
+    { q:"75 + 18 = ?", a:93, hint:"" },
+    { q:"34 + 48 = ?", a:82, hint:"" },
+    { q:"57 + 35 = ?", a:92, hint:"" },
+    { q:"126 + 53 = ?", a:179, hint:"" },
+    { q:"245 + 136 = ?", a:381, hint:"" },
+    { q:"307 + 185 = ?", a:492, hint:"" },
+    { q:"418 + 274 = ?", a:692, hint:"" },
+    { q:"536 + 247 = ?", a:783, hint:"" },
+    { q:"649 + 143 = ?", a:792, hint:"" },
+    { q:"17 + 25 = ?",   a:42, hint:"" },
+    { q:"38 + 47 = ?",   a:85, hint:"" },
+    { q:"29 + 53 = ?",   a:82, hint:"" },
+    { q:"66 + 27 = ?",   a:93, hint:"" },
+    { q:"82 + 19 = ?",   a:101, hint:"" },
+    { q:"155 + 238 = ?", a:393, hint:"" },
+    { q:"267 + 125 = ?", a:392, hint:"" },
+    { q:"314 + 468 = ?", a:782, hint:"" },
+    { q:"423 + 359 = ?", a:782, hint:"" },
+    { q:"501 + 299 = ?", a:800, hint:"" },
+    { q:"612 + 188 = ?", a:800, hint:"" },
+    { q:"44 + 56 = ?",   a:100, hint:"Kết quả tròn trăm!" },
+    { q:"73 + 27 = ?",   a:100, hint:"" },
+    { q:"85 + 15 = ?",   a:100, hint:"" },
+    { q:"136 + 64 = ?",  a:200, hint:"" },
+    { q:"275 + 125 = ?", a:400, hint:"" },
+    { q:"350 + 250 = ?", a:600, hint:"" },
+  ],
+
+  tru: [
+    { q:"47 - 23 = ?",  a:24, hint:"Trừ hàng đơn vị trước" },
+    { q:"65 - 28 = ?",  a:37, hint:"Trừ có mượn" },
+    { q:"83 - 46 = ?",  a:37, hint:"Trừ có mượn" },
+    { q:"72 - 35 = ?",  a:37, hint:"" },
+    { q:"91 - 47 = ?",  a:44, hint:"" },
+    { q:"54 - 29 = ?",  a:25, hint:"" },
+    { q:"100 - 37 = ?", a:63, hint:"" },
+    { q:"100 - 58 = ?", a:42, hint:"" },
+    { q:"200 - 74 = ?", a:126, hint:"" },
+    { q:"350 - 128 = ?",a:222, hint:"" },
+    { q:"467 - 235 = ?",a:232, hint:"" },
+    { q:"583 - 246 = ?",a:337, hint:"" },
+    { q:"700 - 365 = ?",a:335, hint:"" },
+    { q:"825 - 413 = ?",a:412, hint:"" },
+    { q:"936 - 548 = ?",a:388, hint:"" },
+    { q:"62 - 18 = ?",  a:44, hint:"" },
+    { q:"74 - 39 = ?",  a:35, hint:"" },
+    { q:"85 - 47 = ?",  a:38, hint:"" },
+    { q:"93 - 56 = ?",  a:37, hint:"" },
+    { q:"100 - 45 = ?", a:55, hint:"" },
+    { q:"100 - 63 = ?", a:37, hint:"" },
+    { q:"200 - 87 = ?", a:113, hint:"" },
+    { q:"300 - 145 = ?",a:155, hint:"" },
+    { q:"400 - 236 = ?",a:164, hint:"" },
+    { q:"500 - 278 = ?",a:222, hint:"" },
+    { q:"600 - 347 = ?",a:253, hint:"" },
+    { q:"750 - 425 = ?",a:325, hint:"" },
+    { q:"860 - 534 = ?",a:326, hint:"" },
+    { q:"975 - 648 = ?",a:327, hint:"" },
+    { q:"1000 - 456 = ?",a:544, hint:"" },
+  ],
+
+  nhan: [
+    { q:"2 × 3 = ?",  a:6  },{ q:"2 × 4 = ?",  a:8  },{ q:"2 × 5 = ?",  a:10 },
+    { q:"2 × 6 = ?",  a:12 },{ q:"2 × 7 = ?",  a:14 },{ q:"2 × 8 = ?",  a:16 },
+    { q:"2 × 9 = ?",  a:18 },{ q:"2 × 10 = ?", a:20 },
+    { q:"3 × 3 = ?",  a:9  },{ q:"3 × 4 = ?",  a:12 },{ q:"3 × 5 = ?",  a:15 },
+    { q:"3 × 6 = ?",  a:18 },{ q:"3 × 7 = ?",  a:21 },{ q:"3 × 8 = ?",  a:24 },
+    { q:"3 × 9 = ?",  a:27 },{ q:"3 × 10 = ?", a:30 },
+    { q:"4 × 3 = ?",  a:12 },{ q:"4 × 4 = ?",  a:16 },{ q:"4 × 5 = ?",  a:20 },
+    { q:"4 × 6 = ?",  a:24 },{ q:"4 × 7 = ?",  a:28 },{ q:"4 × 8 = ?",  a:32 },
+    { q:"4 × 9 = ?",  a:36 },{ q:"4 × 10 = ?", a:40 },
+    { q:"5 × 3 = ?",  a:15 },{ q:"5 × 4 = ?",  a:20 },{ q:"5 × 5 = ?",  a:25 },
+    { q:"5 × 6 = ?",  a:30 },{ q:"5 × 7 = ?",  a:35 },{ q:"5 × 8 = ?",  a:40 },
+    { q:"5 × 9 = ?",  a:45 },{ q:"5 × 10 = ?", a:50 },
+  ],
+
+  chia: [
+    { q:"6 ÷ 2 = ?",  a:3  },{ q:"8 ÷ 2 = ?",  a:4  },{ q:"10 ÷ 2 = ?", a:5  },
+    { q:"12 ÷ 2 = ?", a:6  },{ q:"14 ÷ 2 = ?", a:7  },{ q:"16 ÷ 2 = ?", a:8  },
+    { q:"18 ÷ 2 = ?", a:9  },{ q:"20 ÷ 2 = ?", a:10 },
+    { q:"9 ÷ 3 = ?",  a:3  },{ q:"12 ÷ 3 = ?", a:4  },{ q:"15 ÷ 3 = ?", a:5  },
+    { q:"18 ÷ 3 = ?", a:6  },{ q:"21 ÷ 3 = ?", a:7  },{ q:"24 ÷ 3 = ?", a:8  },
+    { q:"27 ÷ 3 = ?", a:9  },{ q:"30 ÷ 3 = ?", a:10 },
+    { q:"12 ÷ 4 = ?", a:3  },{ q:"16 ÷ 4 = ?", a:4  },{ q:"20 ÷ 4 = ?", a:5  },
+    { q:"24 ÷ 4 = ?", a:6  },{ q:"28 ÷ 4 = ?", a:7  },{ q:"32 ÷ 4 = ?", a:8  },
+    { q:"36 ÷ 4 = ?", a:9  },{ q:"40 ÷ 4 = ?", a:10 },
+    { q:"15 ÷ 5 = ?", a:3  },{ q:"20 ÷ 5 = ?", a:4  },{ q:"25 ÷ 5 = ?", a:5  },
+    { q:"30 ÷ 5 = ?", a:6  },{ q:"35 ÷ 5 = ?", a:7  },{ q:"40 ÷ 5 = ?", a:8  },
+    { q:"45 ÷ 5 = ?", a:9  },{ q:"50 ÷ 5 = ?", a:10 },
+  ],
+};
+
+const TOPIC_NAMES = {
+  cong: "➕ Phép Cộng",
+  tru:  "➖ Phép Trừ",
+  nhan: "✖️ Bảng Nhân",
+  chia: "➗ Bảng Chia",
+  mix:  "🎯 Ôn Tổng Hợp",
+};
+
+const QUESTIONS_PER_ROUND = 10;
+
+// ═══════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════
+let currentTopic   = '';
+let quizQuestions  = [];
+let currentIndex   = 0;
+let score          = 0;
+let answered       = false;
+
+// ═══════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getQuestions(topic) {
+  if (topic === 'mix') {
+    const all = [
+      ...QUESTIONS.cong,
+      ...QUESTIONS.tru,
+      ...QUESTIONS.nhan,
+      ...QUESTIONS.chia,
+    ];
+    return shuffle(all).slice(0, QUESTIONS_PER_ROUND);
+  }
+  return shuffle(QUESTIONS[topic]).slice(0, QUESTIONS_PER_ROUND);
+}
+
+function makeWrongAnswers(correct) {
+  const wrongs = new Set();
+  const variations = [
+    correct + 1, correct - 1,
+    correct + 2, correct - 2,
+    correct + 10, correct - 10,
+    correct + 11, correct - 9,
+  ].filter(n => n > 0 && n !== correct);
+
+  shuffle(variations).forEach(n => wrongs.add(n));
+  const arr = [...wrongs].slice(0, 3);
+  return arr;
+}
+
+function showScreen(name) {
+  document.getElementById('screenMenu').style.display   = name === 'menu'   ? 'flex'    : 'none';
+  document.getElementById('screenQuiz').style.display   = name === 'quiz'   ? 'flex'    : 'none';
+  document.getElementById('screenResult').style.display = name === 'result' ? 'flex'    : 'none';
+}
+
+// ═══════════════════════════════════════════
+//  QUIZ LOGIC
+// ═══════════════════════════════════════════
+function startQuiz(topic) {
+  currentTopic  = topic;
+  quizQuestions = getQuestions(topic);
+  currentIndex  = 0;
+  score         = 0;
+
+  document.getElementById('quizTopicName').textContent = TOPIC_NAMES[topic];
+  document.getElementById('scoreDisplay').textContent  = 0;
+  document.getElementById('totalQ').textContent        = QUESTIONS_PER_ROUND;
+
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = quizQuestions[currentIndex];
+
+  // Header
+  document.getElementById('currentQ').textContent    = currentIndex + 1;
+  document.getElementById('questionNum').textContent = `Câu ${currentIndex + 1}`;
+  document.getElementById('questionText').textContent = q.q;
+  document.getElementById('questionHint').textContent = q.hint || '';
+
+  // Progress
+  const pct = Math.round((currentIndex / QUESTIONS_PER_ROUND) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent  = pct + '%';
+
+  // Answers
+  const wrongs  = makeWrongAnswers(q.a);
+  const options = shuffle([q.a, ...wrongs]);
+  const grid    = document.getElementById('answersGrid');
+  grid.innerHTML = '';
+
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className   = 'answer-btn';
+    btn.textContent = opt;
+    btn.onclick     = () => checkAnswer(btn, opt, q.a);
+    grid.appendChild(btn);
+  });
+
+  // Hide feedback & next
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function checkAnswer(btn, selected, correct) {
+  if (answered) return;
+  answered = true;
+
+  const allBtns = document.querySelectorAll('.answer-btn');
+  allBtns.forEach(b => b.disabled = true);
+
+  const fb      = document.getElementById('feedback');
+  const isRight = selected === correct;
+
+  if (isRight) {
+    btn.classList.add('correct');
+    score++;
+    document.getElementById('scoreDisplay').textContent = score;
+    fb.className = 'feedback correct';
+    document.getElementById('feedbackEmoji').textContent = ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)];
+    document.getElementById('feedbackText').textContent  = ['Đúng rồi! Giỏi quá!','Tuyệt vời! Chính xác!','Xuất sắc! Đúng rồi!','Thông minh lắm! '][Math.floor(Math.random()*4)];
+    document.getElementById('feedbackAnswer').textContent = '';
+  } else {
+    btn.classList.add('wrong');
+    allBtns.forEach(b => {
+      if (parseInt(b.textContent) === correct) b.classList.add('show-correct');
+    });
+    fb.className = 'feedback wrong';
+    document.getElementById('feedbackEmoji').textContent = '😅';
+    document.getElementById('feedbackText').textContent  = 'Chưa đúng rồi!';
+    document.getElementById('feedbackAnswer').textContent = `Đáp án đúng là: ${correct}`;
+  }
+
+  // Next button
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.style.display = 'block';
+  if (currentIndex === QUESTIONS_PER_ROUND - 1) {
+    nextBtn.textContent = '🏁 Xem kết quả';
+  } else {
+    nextBtn.textContent = 'Câu tiếp theo →';
+  }
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= QUESTIONS_PER_ROUND) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ═══════════════════════════════════════════
+//  RESULT
+// ═══════════════════════════════════════════
+function showResult() {
+  showScreen('result');
+
+  const pct = score / QUESTIONS_PER_ROUND;
+  document.getElementById('resultScore').textContent = `${score}/${QUESTIONS_PER_ROUND}`;
+  document.getElementById('resultSub').textContent   = `Làm đúng ${score} câu`;
+
+  // Stars
+  let stars = '⭐';
+  if (pct >= 0.9) stars = '⭐⭐⭐';
+  else if (pct >= 0.6) stars = '⭐⭐';
+  document.getElementById('resultStars').textContent = stars;
+
+  // Emoji + title + message
+  let emoji, title, msg, msgClass;
+  if (pct === 1) {
+    emoji = '🏆'; title = 'Hoàn hảo!';
+    msg = '🎊 Con làm đúng tất cả! Giỏi xuất sắc!'; msgClass = 'result__msg--great';
+    launchStars();
+  } else if (pct >= 0.8) {
+    emoji = '🌟'; title = 'Xuất sắc!';
+    msg = '👏 Gần hoàn hảo rồi! Cố thêm chút nữa nhé!'; msgClass = 'result__msg--great';
+    launchStars();
+  } else if (pct >= 0.6) {
+    emoji = '😊'; title = 'Tốt lắm!';
+    msg = '💪 Làm tốt lắm! Ôn thêm một lần nữa nhé!'; msgClass = 'result__msg--good';
+  } else if (pct >= 0.4) {
+    emoji = '🤔'; title = 'Cố lên!';
+    msg = '📚 Ôn thêm một chút nữa là được thôi!'; msgClass = 'result__msg--try';
+  } else {
+    emoji = '💪'; title = 'Thử lại nhé!';
+    msg = '🌱 Đừng nản! Làm lại lần nữa con sẽ tiến bộ!'; msgClass = 'result__msg--try';
+  }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultTitle').textContent = title;
+  const msgEl = document.getElementById('resultMsg');
+  msgEl.textContent = msg;
+  msgEl.className   = 'result__msg ' + msgClass;
+
+  // Best score
+  const key       = 'best_' + currentTopic;
+  const prevBest  = parseInt(localStorage.getItem(key) || '0');
+  if (score > prevBest) localStorage.setItem(key, score);
+  const best      = Math.max(score, prevBest);
+  document.getElementById('bestScoreText').textContent = `${best}/${QUESTIONS_PER_ROUND}`;
+
+  // Update progress bar to 100%
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressPct').textContent  = '100%';
+}
+
+function retryQuiz() { startQuiz(currentTopic); }
+
+function goHome() {
+  showScreen('menu');
+  document.getElementById('starsRain').innerHTML = '';
+}
+
+// ═══════════════════════════════════════════
+//  STARS ANIMATION
+// ═══════════════════════════════════════════
+function launchStars() {
+  const container = document.getElementById('starsRain');
+  container.innerHTML = '';
+  const emojis = ['⭐','🌟','✨','🎉','🎊','💫','🏆'];
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const star = document.createElement('div');
+      star.className   = 'star-fall';
+      star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      star.style.left  = Math.random() * 100 + 'vw';
+      star.style.animationDelay    = Math.random() * 0.5 + 's';
+      star.style.animationDuration = (1 + Math.random()) + 's';
+      container.appendChild(star);
+      setTimeout(() => star.remove(), 2500);
+    }, i * 60);
+  }
+}
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+showScreen('menu');
+</script>
+</body>
+</html>
