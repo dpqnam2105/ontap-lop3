@@ -403,9 +403,9 @@ async function loadSubjects() {
       return;
     }
 
-    el.innerHTML = data.subjects.map(s => `
+    el.innerHTML = data.subjects.map((s,i) => `
       <div class="sub-card" style="border-color:${SUBJECT_COLORS[s.id]||'#2ECC71'};cursor:pointer"
-           onclick="chooseSubject(${JSON.stringify(JSON.stringify(s))})">
+           data-sidx="${i}">
         <div class="sub-card__icon" style="background:${SUBJECT_BG[s.id]||'#D5F5E3'}">${s.icon}</div>
         <div class="sub-card__info">
           <div class="sub-card__name">${s.name}</div>
@@ -414,13 +414,18 @@ async function loadSubjects() {
         <div class="sub-card__badge">${s.count} câu</div>
       </div>`).join('');
 
+    // Gắn sự kiện sau khi render — tránh lỗi ký tự đặc biệt trong onclick
+    el.querySelectorAll('.sub-card').forEach((card, i) => {
+      card.addEventListener('click', () => chooseSubject(data.subjects[i]));
+    });
+
   } catch (err) {
     el.innerHTML = renderError('Không tải được danh sách môn', 'Kiểm tra URL API và kết nối mạng nhé!', 'loadSubjects()');
   }
 }
 
-function chooseSubject(sJson) {
-  curSubject = JSON.parse(sJson);
+function chooseSubject(s) {
+  curSubject = s;
   document.getElementById('topicMenuTitle').textContent = curSubject.icon + ' ' + curSubject.name;
   showScreen('topic');
   loadTopics(curSubject.id);
@@ -442,8 +447,8 @@ async function loadTopics(subjectId) {
       return;
     }
 
-    el.innerHTML = data.topics.map(t => `
-      <div class="topic-card" onclick="startQuiz(${JSON.stringify(JSON.stringify(t))})">
+    el.innerHTML = data.topics.map((t,i) => `
+      <div class="topic-card" data-tidx="${i}">
         <div class="topic-card__icon">${t.icon}</div>
         <div class="topic-card__info">
           <div class="topic-card__name">${t.name}</div>
@@ -451,6 +456,10 @@ async function loadTopics(subjectId) {
         </div>
         <div class="topic-card__count">${t.count} câu</div>
       </div>`).join('');
+
+    el.querySelectorAll('.topic-card').forEach((card, i) => {
+      card.addEventListener('click', () => startQuiz(data.topics[i]));
+    });
 
   } catch (err) {
     el.innerHTML = renderError('Không tải được chủ đề', 'Kiểm tra kết nối mạng!', `loadTopics('${subjectId}')`);
@@ -460,8 +469,8 @@ async function loadTopics(subjectId) {
 // ═══════════════════════════════════════════════════════════════
 //  START QUIZ — Fetch questions
 // ═══════════════════════════════════════════════════════════════
-async function startQuiz(tJson) {
-  curTopic = JSON.parse(tJson);
+async function startQuiz(t) {
+  curTopic = t;
 
   // Show loading in quiz screen
   document.getElementById('qText').textContent    = 'Đang tải câu hỏi...';
