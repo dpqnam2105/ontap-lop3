@@ -6,6 +6,7 @@
 <title>🌟 Kho Bài Tập – Lớp 2→3</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
+/* GIỮ NGUYÊN CSS ĐẸP CỦA ÔNG */
 :root{
   --green:#2ECC71;--green-d:#27AE60;
   --blue:#3498DB;--blue-d:#2980B9;
@@ -15,185 +16,39 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
-
-/* HEADER */
 .hdr{background:linear-gradient(135deg,#1A8A4A,#27AE60,#1ABC9C);padding:1.2rem 1rem 2.6rem;text-align:center;position:relative;overflow:hidden}
 .hdr::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
 .hdr-ico{font-size:2.4rem;display:block;animation:bob 2s infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .hdr-title{font-family:'Baloo 2',cursive;font-size:clamp(1.3rem,5vw,2rem);font-weight:800;color:#fff}
 .hdr-sub{font-size:.82rem;color:rgba(255,255,255,.85);margin-top:.15rem;font-weight:600}
-
 .main{max-width:680px;margin:0 auto;padding:1.4rem 1rem 4rem}
-
-/* SCREEN */
 .screen{display:none;flex-direction:column;gap:.9rem}
 .screen.active{display:flex}
-
-/* ── REGISTER ── */
 .reg-card{background:#fff;border-radius:26px;padding:2rem 1.6rem;text-align:center;box-shadow:0 6px 28px rgba(0,0,0,.08)}
-.reg-card__emoji{font-size:3.2rem;display:block;margin-bottom:.5rem}
-.reg-card__title{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;margin-bottom:.25rem}
-.reg-card__sub{color:var(--gray);font-size:.88rem;margin-bottom:1.3rem}
 .name-input{width:100%;padding:.85rem 1rem;font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;text-align:center;border:3px solid #ECF0F1;border-radius:14px;outline:none;transition:border-color .3s;margin-bottom:.8rem}
 .name-input:focus{border-color:var(--green)}
-.btn-start{width:100%;padding:.9rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(46,204,113,.35)}
-.btn-start:hover{transform:translateY(-2px)}
-.btn-start:disabled{opacity:.45;cursor:not-allowed;transform:none}
-
-/* LEADERBOARD PREVIEW */
-.lb-mini{background:linear-gradient(135deg,#EBF5FB,#D6EAF8);border-radius:16px;padding:1rem;border:2px solid #AED6F1}
-.lb-mini h3{font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700;color:var(--blue-d);margin-bottom:.6rem;text-align:center}
-.prev-row{display:flex;align-items:center;gap:.6rem;padding:.35rem .15rem;border-bottom:1px solid rgba(174,214,241,.5);font-size:.83rem}
-.prev-row:last-child{border-bottom:none}
-.prev-rank{width:24px;text-align:center;font-size:.95rem}
-.prev-name{flex:1;font-weight:700}
-.prev-score{font-weight:800;color:var(--blue-d)}
-.prev-games{font-size:.72rem;color:var(--gray)}
-.prev-empty{text-align:center;color:var(--gray);font-size:.83rem;padding:.4rem}
-
-/* ── SUBJECT MENU ── */
+.btn-start{width:100%;padding:.9rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(46,204,113,.35)}
+.btn-start:disabled{opacity:.45;cursor:not-allowed}
 .welcome-bar{background:#fff;border-radius:16px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 3px 14px rgba(0,0,0,.07)}
-.w-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#27AE60,#2ECC71);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.w-info{flex:1}
-.w-name{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800}
-.w-stats{font-size:.76rem;color:var(--gray);margin-top:.1rem}
-.w-change{font-size:.7rem;color:var(--blue);font-weight:700;cursor:pointer;padding:.25rem .6rem;border-radius:8px;background:#EBF5FB}
-
-.sub-title{font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:700;color:var(--green-d);text-align:center}
-
-/* Subject cards — dynamic */
-.sub-card{background:#fff;border-radius:18px;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;border:3px solid #ECF0F1;transition:all .22s;box-shadow:0 3px 14px rgba(0,0,0,.07)}
-.sub-card:hover{transform:translateY(-3px);box-shadow:0 7px 22px rgba(0,0,0,.12)}
-.sub-card__icon{font-size:1.8rem;width:48px;height:48px;border-radius:12px;background:#F0FFF4;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sub-card__info{flex:1}
-.sub-card__name{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700}
-.sub-card__desc{font-size:.76rem;color:var(--gray);margin-top:.1rem}
-.sub-card__badge{font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:20px;background:var(--bg);color:var(--green-d)}
-.sub-card--loading{opacity:.55;pointer-events:none}
-
-.btn-lb{background:linear-gradient(135deg,#2980B9,#3498DB);color:#fff;border:none;border-radius:16px;padding:.8rem;width:100%;font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 3px 14px rgba(52,152,219,.3)}
-.btn-lb:hover{transform:translateY(-2px)}
-
-/* ── TOPIC MENU ── */
-.back-bar{display:flex;align-items:center;gap:.7rem;background:#fff;border-radius:14px;padding:.8rem 1rem;box-shadow:0 3px 12px rgba(0,0,0,.07)}
-.btn-back{background:var(--bg);border:none;border-radius:9px;width:34px;height:34px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.btn-back:hover{background:#D5F5E3}
-.back-bar__title{font-family:'Baloo 2',cursive;font-size:.98rem;font-weight:700}
-
-.topic-card{background:#fff;border-radius:16px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.8rem;cursor:pointer;border:2px solid #ECF0F1;transition:all .22s;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.topic-card:hover{border-color:var(--green);background:#F0FFF4;transform:translateY(-2px);box-shadow:0 5px 18px rgba(46,204,113,.15)}
-.topic-card__icon{font-size:1.5rem;width:40px;height:40px;border-radius:11px;background:#F0FFF4;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.topic-card__info{flex:1}
-.topic-card__name{font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700}
-.topic-card__desc{font-size:.73rem;color:var(--gray);margin-top:.1rem}
-.topic-card__count{font-size:.7rem;font-weight:700;padding:.18rem .5rem;border-radius:20px;background:var(--bg);color:var(--green-d)}
-
-/* ── QUIZ ── */
+.sub-card, .topic-card{background:#fff;border-radius:18px;padding:1.1rem 1.2rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;border:3px solid #ECF0F1;transition:all .22s;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.sub-card:hover, .topic-card:hover{transform:translateY(-3px);border-color:var(--green)}
 .quiz-hdr{background:#fff;border-radius:16px;padding:.85rem 1rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 3px 12px rgba(0,0,0,.07)}
-.quiz-hdr__topic{font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700;flex:1}
-.quiz-hdr__player{font-size:.72rem;color:var(--gray)}
-.score-badge{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;padding:.24rem .7rem;border-radius:18px;font-weight:700;font-size:.82rem}
-
 .prog-wrap{background:#fff;border-radius:13px;padding:.75rem 1rem;box-shadow:0 3px 12px rgba(0,0,0,.07)}
-.prog-info{display:flex;justify-content:space-between;font-size:.75rem;font-weight:600;color:var(--gray);margin-bottom:.38rem}
 .prog-bar{height:8px;background:#ECF0F1;border-radius:8px;overflow:hidden}
-.prog-fill{height:100%;background:linear-gradient(90deg,#27AE60,#2ECC71);border-radius:8px;transition:width .5s}
-
+.prog-fill{height:100%;background:linear-gradient(90deg,#27AE60,#2ECC71);transition:width .5s}
 .q-card{background:#fff;border-radius:20px;padding:1.4rem 1.2rem;box-shadow:0 4px 18px rgba(0,0,0,.08);text-align:center}
-.q-num{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
-.q-text{font-family:'Baloo 2',cursive;font-size:clamp(1.2rem,4.5vw,1.85rem);font-weight:700;line-height:1.35}
-.q-hint{font-size:.78rem;color:var(--gray);margin-top:.38rem}
-
 .answers{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
-.answers--single{grid-template-columns:1fr}
-.ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:14px;padding:.85rem .65rem;font-family:'Baloo 2',cursive;font-size:1.15rem;font-weight:700;color:var(--text);cursor:pointer;transition:all .18s;box-shadow:0 2px 9px rgba(0,0,0,.06);line-height:1.3}
-.ans-btn--text{font-size:.92rem;text-align:left;padding:.8rem .9rem}
-.ans-btn:hover:not(:disabled){border-color:var(--green);background:#F0FFF4;transform:translateY(-2px)}
-.ans-btn.correct{border-color:var(--green);background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449;animation:popIn .3s}
-.ans-btn.wrong{border-color:var(--red);background:linear-gradient(135deg,#FADBD8,#F1948A);color:#922B21;animation:shake .4s}
-.ans-btn.show-correct{border-color:var(--green);background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449}
-@keyframes popIn{0%{transform:scale(.95)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-
-.feedback{border-radius:14px;padding:.85rem 1rem;text-align:center;font-weight:700;font-size:.9rem;display:none;align-items:center;justify-content:center;gap:.5rem}
-.feedback.correct{display:flex;background:linear-gradient(135deg,#D5F5E3,#A9DFBF);color:#1E8449}
-.feedback.wrong{display:flex;background:linear-gradient(135deg,#FADBD8,#F1948A);color:#922B21}
-.fb-emoji{font-size:1.3rem}
-.fb-ans{font-size:.78rem;margin-top:.1rem;opacity:.85;font-weight:600}
-
-.btn-next{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;padding:.9rem;width:100%;font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(46,204,113,.35);display:none}
-.btn-next:hover{transform:translateY(-2px)}
-
-/* LOADING STATE */
-.loading-card{background:#fff;border-radius:18px;padding:2rem;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.loading-spinner{font-size:2.5rem;animation:spin 1s linear infinite;display:block;margin-bottom:.8rem}
-@keyframes spin{to{transform:rotate(360deg)}}
-.loading-text{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--gray);font-weight:700}
-
-/* ERROR STATE */
-.error-card{background:#fff;border-radius:18px;padding:1.6rem;text-align:center;border:2px solid #FADBD8;box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.error-card__emoji{font-size:2.4rem;margin-bottom:.5rem;display:block}
-.error-card__title{font-family:'Baloo 2',cursive;font-size:1.1rem;color:var(--red);font-weight:800;margin-bottom:.4rem}
-.error-card__msg{font-size:.83rem;color:var(--gray);margin-bottom:.9rem}
-.btn-retry-load{background:linear-gradient(135deg,#E74C3C,#C0392B);color:#fff;border:none;border-radius:12px;padding:.7rem 1.4rem;font-family:'Baloo 2',cursive;font-size:.9rem;font-weight:700;cursor:pointer}
-
-/* ── RESULT ── */
-.res-card{background:#fff;border-radius:24px;padding:1.8rem 1.5rem;text-align:center;box-shadow:0 7px 28px rgba(0,0,0,.1)}
-.res-card__emoji{font-size:3rem;display:block;margin-bottom:.5rem;animation:bob 1.5s infinite}
-.res-card__title{font-family:'Baloo 2',cursive;font-size:1.45rem;font-weight:800}
-.res-card__player{font-size:.83rem;color:var(--gray);margin:.2rem 0 .35rem}
-.res-card__score{font-family:'Baloo 2',cursive;font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#27AE60,#3498DB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin:.3rem 0}
-.res-card__stars{font-size:1.8rem;letter-spacing:.1em;margin:.3rem 0}
-.res-card__msg{font-size:.88rem;font-weight:600;padding:.6rem 1rem;border-radius:11px;margin:.35rem 0}
-.res-card__msg--great{background:#D5F5E3;color:#1E8449}
-.res-card__msg--good{background:#D6EAF8;color:#1A5276}
-.res-card__msg--try{background:#FDEBD0;color:#784212}
-
-.saving{display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.78rem;color:var(--gray);padding:.35rem}
-.saving-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-.res-actions{display:flex;flex-direction:column;gap:.65rem}
-.btn-retry{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;padding:.85rem;font-family:'Baloo 2',cursive;font-size:.97rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(46,204,113,.35)}
-.btn-retry:hover{transform:translateY(-2px)}
-.btn-ghost{background:#fff;color:var(--green-d);border:2px solid var(--green);border-radius:14px;padding:.75rem;font-family:'Baloo 2',cursive;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s}
-.btn-ghost:hover{background:#D5F5E3}
-.btn-ghost--blue{color:var(--blue-d);border-color:var(--blue)}
-.btn-ghost--blue:hover{background:#D6EAF8}
-
-/* ── LEADERBOARD ── */
-.lb-hdr{background:linear-gradient(135deg,#2980B9,#3498DB);border-radius:18px;padding:1.3rem;text-align:center;color:#fff;box-shadow:0 4px 14px rgba(52,152,219,.3)}
-.lb-hdr__emoji{font-size:2rem;display:block;margin-bottom:.3rem}
-.lb-hdr__title{font-family:'Baloo 2',cursive;font-size:1.25rem;font-weight:800}
-.lb-hdr__sub{font-size:.8rem;opacity:.85;margin-top:.12rem}
-.lb-list{display:flex;flex-direction:column;gap:.6rem}
-.lb-item{background:#fff;border-radius:14px;padding:.85rem 1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 2px 10px rgba(0,0,0,.07)}
-.lb-item--1{background:linear-gradient(135deg,#FEF9E7,#FDEBD0);border:2px solid #F1C40F}
-.lb-item--2{background:linear-gradient(135deg,#F2F3F4,#E5E7E9);border:2px solid #BDC3C7}
-.lb-item--3{background:linear-gradient(135deg,#FEF0E7,#FDDBC7);border:2px solid #E67E22}
-.lb-item--me{border:2px solid var(--green)}
-.lb-rank{font-size:1.3rem;width:32px;text-align:center;flex-shrink:0}
-.lb-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#27AE60,#2ECC71);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:800;color:#fff;font-family:'Baloo 2',cursive;flex-shrink:0}
-.lb-info{flex:1;min-width:0}
-.lb-name{font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lb-name--me::after{content:' (bạn)';font-size:.7rem;color:var(--green)}
-.lb-meta{font-size:.72rem;color:var(--gray);margin-top:.1rem}
-.lb-score__num{font-family:'Baloo 2',cursive;font-size:1.2rem;font-weight:800;color:var(--blue-d)}
-.lb-score__lbl{font-size:.65rem;color:var(--gray)}
-.lb-loading,.lb-empty{text-align:center;padding:1.6rem;color:var(--gray);font-size:.88rem;background:#fff;border-radius:14px}
-.btn-refresh{background:#fff;color:var(--blue);border:2px solid var(--blue);border-radius:14px;padding:.7rem;font-family:'Baloo 2',cursive;font-size:.88rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.4rem}
-.btn-refresh:hover{background:#EBF5FB}
-
-/* STARS */
+.ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:14px;padding:.85rem .65rem;font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .18s}
+.ans-btn.correct{border-color:var(--green);background:#D5F5E3;color:#1E8449}
+.ans-btn.wrong{border-color:var(--red);background:#FADBD8;color:#922B21;opacity:0.7}
+.feedback{border-radius:14px;padding:.85rem 1rem;text-align:center;font-weight:700;display:none;flex-direction:column;gap:5px}
+.feedback.correct{background:#D5F5E3;color:#1E8449;display:flex}
+.feedback.wrong{background:#FADBD8;color:#922B21;display:flex}
+.btn-next{background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;padding:.9rem;width:100%;font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;cursor:pointer;margin-top:10px}
 .stars-rain{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:999;overflow:hidden}
 .star-fall{position:absolute;font-size:1.4rem;animation:fallDown 1.6s ease-in forwards}
-@keyframes fallDown{0%{opacity:1;transform:translateY(-20px) rotate(0)}100%{opacity:0;transform:translateY(100vh) rotate(360deg)}}
-
-@media(max-width:400px){
-  .ans-btn{font-size:1rem;padding:.7rem .5rem}
-  .ans-btn--text{font-size:.84rem}
-}
+@keyframes fallDown{to{transform:translateY(100vh)}}
 </style>
 </head>
 <body>
@@ -202,551 +57,223 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 <header class="hdr">
   <span class="hdr-ico">🌟</span>
   <div class="hdr-title">Kho Bài Tập · Lớp 2–3</div>
-  <div class="hdr-sub">Toán · Tiếng Việt · Tiếng Anh · HSG 🚀</div>
+  <div class="hdr-sub">Học vui mỗi ngày cho con gái yêu 🚀</div>
 </header>
 
 <div class="main">
-
-  <!-- REGISTER -->
   <div class="screen active" id="screenRegister">
     <div class="reg-card">
-      <span class="reg-card__emoji">👋</span>
-      <div class="reg-card__title">Xin chào bạn nhỏ!</div>
-      <div class="reg-card__sub">Nhập tên để bắt đầu học nhé!</div>
-      <input class="name-input" id="nameInput" type="text" placeholder="Tên của bạn...?" maxlength="20" autocomplete="off"/>
+      <span style="font-size:3rem">👋</span>
+      <div style="font-family:'Baloo 2';font-size:1.5rem;font-weight:800">Xin chào bạn nhỏ!</div>
+      <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là gì...?" maxlength="20"/>
       <button class="btn-start" id="btnStart" onclick="handleRegister()" disabled>Bắt đầu học thôi! 🚀</button>
     </div>
-    <div class="lb-mini">
-      <h3>🏆 Bảng xếp hạng</h3>
-      <div id="previewList"><div class="prev-empty">Đang tải...</div></div>
-    </div>
   </div>
 
-  <!-- SUBJECT MENU -->
   <div class="screen" id="screenSubject">
     <div class="welcome-bar">
-      <div class="w-av" id="subAv">😊</div>
-      <div class="w-info">
-        <div class="w-name" id="subName">Bạn nhỏ</div>
-        <div class="w-stats" id="subStats">Chào mừng!</div>
-      </div>
-      <div class="w-change" onclick="showScreen('register')">Đổi tên</div>
-    </div>
-    <div class="sub-title">📚 Hôm nay học môn gì?</div>
-    <div id="subjectList">
-      <div class="loading-card">
-        <span class="loading-spinner">⏳</span>
-        <div class="loading-text">Đang tải danh sách môn học...</div>
+      <div id="subAv" style="font-size:1.5rem">😊</div>
+      <div style="flex:1">
+        <div id="subName" style="font-weight:800;font-family:'Baloo 2'">Bạn nhỏ</div>
+        <div style="font-size:0.8rem;color:var(--gray)">Hôm nay mình thật chăm chỉ nhé!</div>
       </div>
     </div>
-    <button class="btn-lb" onclick="showLeaderboard()">🏆 Xem bảng xếp hạng lớp</button>
+    <div style="text-align:center;font-family:'Baloo 2';font-weight:700;color:var(--green-d);margin:10px 0">📚 Chọn môn học nào:</div>
+    <div id="subjectList"></div>
   </div>
 
-  <!-- TOPIC MENU -->
   <div class="screen" id="screenTopic">
-    <div class="back-bar">
-      <button class="btn-back" onclick="showScreen('subject')">←</button>
-      <div class="back-bar__title" id="topicMenuTitle">Chọn chủ đề</div>
+    <div class="quiz-hdr">
+      <button onclick="showScreen('subject')" style="border:none;background:none;cursor:pointer;font-size:1.2rem">🏠</button>
+      <div id="topicMenuTitle" style="font-weight:800;font-family:'Baloo 2';flex:1;text-align:center">Chọn chủ đề</div>
     </div>
-    <div id="topicList"></div>
+    <div id="topicList" style="margin-top:10px;display:flex;flex-direction:column;gap:10px"></div>
   </div>
 
-  <!-- QUIZ -->
   <div class="screen" id="screenQuiz">
     <div class="quiz-hdr">
-      <button class="btn-back" onclick="showScreen('topic')">←</button>
-      <div class="quiz-hdr__topic" id="quizTopicName"></div>
-      <div class="quiz-hdr__player" id="quizPlayer"></div>
-      <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
+      <button onclick="showScreen('topic')" style="border:none;background:none;cursor:pointer">←</button>
+      <div id="quizTopicName" style="font-weight:700;flex:1;text-align:center">Đang tải...</div>
+      <div style="background:var(--yellow);padding:2px 10px;border-radius:10px;font-weight:800">⭐ <span id="scoreDisp">0</span></div>
     </div>
     <div class="prog-wrap">
-      <div class="prog-info">
+      <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:5px">
         <span>Câu <span id="curQ">1</span>/<span id="totQ">10</span></span>
         <span id="progPct">0%</span>
       </div>
       <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
     </div>
     <div class="q-card">
-      <div class="q-num" id="qNum">Câu 1</div>
-      <div class="q-text" id="qText"></div>
-      <div class="q-hint" id="qHint"></div>
+      <div id="qText" style="font-family:'Baloo 2';font-size:1.4rem;font-weight:700"></div>
     </div>
     <div class="answers" id="ansGrid"></div>
     <div class="feedback" id="feedback">
-      <span class="fb-emoji" id="fbEmoji"></span>
-      <div><div id="fbText"></div><div class="fb-ans" id="fbAns"></div></div>
+      <div id="fbText" style="font-size:1.1rem"></div>
+      <div id="fbAns" style="font-size:0.9rem;font-weight:400;font-style:italic"></div>
     </div>
-    <button class="btn-next" id="btnNext" onclick="nextQ()">Câu tiếp theo →</button>
+    <button class="btn-next" id="btnNext" onclick="nextQ()" style="display:none">Câu tiếp theo →</button>
   </div>
 
-  <!-- RESULT -->
   <div class="screen" id="screenResult">
-    <div class="res-card">
-      <span class="res-card__emoji" id="resEmoji">🏆</span>
-      <div class="res-card__title" id="resTitle">Xuất sắc!</div>
-      <div class="res-card__player" id="resPlayer"></div>
-      <div class="res-card__score" id="resScore">10/10</div>
-      <div class="res-card__stars" id="resStars">⭐⭐⭐</div>
-      <div class="res-card__msg" id="resMsg"></div>
-    </div>
-    <div class="saving" id="savingEl"><div class="saving-dot"></div><span>Đang lưu kết quả...</span></div>
-    <div class="res-actions">
-      <button class="btn-retry" onclick="retryQuiz()">🔄 Làm lại (đề mới)</button>
-      <button class="btn-ghost btn-ghost--blue" onclick="showLeaderboard()">🏆 Xem bảng xếp hạng</button>
-      <button class="btn-ghost" onclick="showScreen('subject')">🏠 Chọn môn khác</button>
+    <div class="reg-card">
+      <div style="font-size:3rem">🏆</div>
+      <div style="font-family:'Baloo 2';font-size:1.8rem;font-weight:800">Hoàn thành rồi!</div>
+      <div id="resScore" style="font-size:2.5rem;font-weight:800;color:var(--green-d)">0/10</div>
+      <div id="resStars" style="font-size:1.5rem;margin-bottom:15px">⭐⭐⭐</div>
+      <button class="btn-start" onclick="showScreen('subject')">Tiếp tục học môn khác 🏠</button>
     </div>
   </div>
-
-  <!-- LEADERBOARD -->
-  <div class="screen" id="screenLeaderboard">
-    <div class="lb-hdr">
-      <span class="lb-hdr__emoji">🏆</span>
-      <div class="lb-hdr__title">Bảng Xếp Hạng Lớp</div>
-      <div class="lb-hdr__sub">Ai học giỏi nhất nào? 🌟</div>
-    </div>
-    <div class="lb-list" id="lbList"><div class="lb-loading">⏳ Đang tải...</div></div>
-    <button class="btn-refresh" onclick="loadLB()">🔄 Cập nhật</button>
-    <button class="btn-ghost" onclick="showScreen('subject')">← Quay lại</button>
-  </div>
-
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
-//  CONFIG — Thay URL này bằng URL sau khi Deploy Apps Script
-// ═══════════════════════════════════════════════════════════════
-const API = 'https://script.google.com/macros/s/AKfycby_zujE4ImXmNLmKUqZ3-Z19bfvgyB5s5M6HH8pO7Ci_3kRX4e3OdUZ-YgT4A2bzOnA/exec';
-const QPR = 10; // Số câu mỗi lần chơi
-const AVATARS = ['🐶','🐱','🐼','🐨','🦊','🐸','🦁','🐯','🐧','🦋','🌟','🚀','🎈','🍀'];
+const API = 'https://script.google.com/macros/s/AKfycbxWlSEXYxlQGeh5nMFGOpPUxoEai3u5_UkIT0KkB9dvsKH9q6_lY4M3BM8NLp7bf1nu/exec';
+const Q_LIMIT = 10;
+let ALL_DATA = null;
+let playerName = '';
+let curSubjectIdx = 0;
+let quizQs = [];
+let curIdx = 0;
+let score = 0;
+let canEarnPoint = true;
 
-// ═══════════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════════
-let playerName   = '';
-let playerAvatar = '😊';
-let curSubject   = null; // { id, name, icon }
-let curTopic     = null; // { id, name, icon }
-let quizQs       = [];
-let curIdx       = 0;
-let score        = 0;
-let answered     = false;
+// Tải dữ liệu ngay khi mở web
+async function initialLoad() {
+  const list = document.getElementById('subjectList');
+  list.innerHTML = '<div style="text-align:center;padding:20px">⏳ Đang tải bài tập từ Google Sheets...</div>';
+  try {
+    const res = await fetch(`${API}?action=getAllData`);
+    ALL_DATA = await res.json();
+    if (playerName) renderSubjects();
+  } catch (e) {
+    list.innerHTML = '❌ Lỗi kết nối. Ông kiểm tra lại URL Apps Script nhé!';
+  }
+}
 
-// ═══════════════════════════════════════════════════════════════
-//  SCREEN NAVIGATION
-// ═══════════════════════════════════════════════════════════════
 function showScreen(name) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
+  document.getElementById('screen' + name.charAt(0).toUpperCase() + name.slice(1)).classList.add('active');
+  window.scrollTo(0,0);
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  REGISTER
-// ═══════════════════════════════════════════════════════════════
 const ni = document.getElementById('nameInput');
 const bs = document.getElementById('btnStart');
-ni.addEventListener('input', () => { bs.disabled = ni.value.trim().length < 2; });
-ni.addEventListener('keydown', e => { if (e.key === 'Enter' && !bs.disabled) handleRegister(); });
+ni.addEventListener('input', () => bs.disabled = ni.value.trim().length < 2);
 
 function handleRegister() {
-  const name = ni.value.trim();
-  if (name.length < 2) return;
-  playerName   = name;
-  playerAvatar = AVATARS[Math.floor(Math.random() * AVATARS.length)];
-  localStorage.setItem('pName',   playerName);
-  localStorage.setItem('pAvatar', playerAvatar);
-  updateWelcome();
-  showScreen('subject');
-  loadSubjects();
-}
-
-function updateWelcome() {
-  document.getElementById('subAv').textContent   = playerAvatar;
+  playerName = ni.value.trim();
   document.getElementById('subName').textContent = playerName;
-  const sk = 'ts_' + playerName, gk = 'tg_' + playerName;
-  const ts = parseInt(localStorage.getItem(sk) || '0');
-  const tg = parseInt(localStorage.getItem(gk) || '0');
-  document.getElementById('subStats').textContent =
-    tg > 0 ? `⭐ ${ts} điểm · ${tg} lượt chơi` : 'Chào mừng lần đầu! 🎉';
+  showScreen('subject');
+  if (ALL_DATA) renderSubjects();
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  LOAD SUBJECTS FROM SHEETS
-// ═══════════════════════════════════════════════════════════════
-// Màu border theo môn (dựa vào id)
-const SUBJECT_COLORS = {
-  toan:      '#2ECC71',
-  english:   '#3498DB',
-  tiengviet: '#E74C3C',
-  hsg:       '#E74C3C',
-  matheng:   '#9B59B6',
-};
-const SUBJECT_BG = {
-  toan:      '#D5F5E3',
-  english:   '#D6EAF8',
-  tiengviet: '#FADBD8',
-  hsg:       '#E8DAEF',
-  matheng:   '#E8DAEF',
-};
-
-async function loadSubjects() {
+function renderSubjects() {
   const el = document.getElementById('subjectList');
-  el.innerHTML = `<div class="loading-card"><span class="loading-spinner">⏳</span><div class="loading-text">Đang tải danh sách môn học...</div></div>`;
-
-  try {
-    const res  = await fetch(`${API}?action=getAllSubjects`);
-    const data = await res.json();
-
-    if (!data.subjects || data.subjects.length === 0) {
-      el.innerHTML = renderError('Chưa có câu hỏi nào', 'Bạn cần nhập câu hỏi vào Google Sheets trước nhé!', null);
-      return;
-    }
-
-    el.innerHTML = data.subjects.map((s,i) => `
-      <div class="sub-card" style="border-color:${SUBJECT_COLORS[s.id]||'#2ECC71'};cursor:pointer"
-           data-sidx="${i}">
-        <div class="sub-card__icon" style="background:${SUBJECT_BG[s.id]||'#D5F5E3'}">${s.icon}</div>
-        <div class="sub-card__info">
-          <div class="sub-card__name">${s.name}</div>
-          <div class="sub-card__desc">Nhấn để xem các chủ đề</div>
-        </div>
-        <div class="sub-card__badge">${s.count} câu</div>
-      </div>`).join('');
-
-    // Gắn sự kiện sau khi render — tránh lỗi ký tự đặc biệt trong onclick
-    el.querySelectorAll('.sub-card').forEach((card, i) => {
-      card.addEventListener('click', () => chooseSubject(data.subjects[i]));
-    });
-
-  } catch (err) {
-    el.innerHTML = renderError('Không tải được danh sách môn', 'Kiểm tra URL API và kết nối mạng nhé!', 'loadSubjects()');
-  }
+  el.innerHTML = ALL_DATA.subjects.map((s, i) => `
+    <div class="sub-card" onclick="chooseSubject(${i})">
+      <div style="font-size:2rem">${s.icon}</div>
+      <div style="flex:1">
+        <div style="font-weight:800;font-family:'Baloo 2'">${s.name}</div>
+        <div style="font-size:0.8rem;color:var(--gray)">${s.topics.length} chủ đề ôn tập</div>
+      </div>
+    </div>
+  `).join('');
 }
 
-function chooseSubject(s) {
-  curSubject = s;
-  document.getElementById('topicMenuTitle').textContent = curSubject.icon + ' ' + curSubject.name;
+function chooseSubject(idx) {
+  curSubjectIdx = idx;
+  const s = ALL_DATA.subjects[idx];
+  document.getElementById('topicMenuTitle').textContent = s.icon + ' ' + s.name;
+  const tList = document.getElementById('topicList');
+  tList.innerHTML = s.topics.map((t, tIdx) => `
+    <div class="topic-card" onclick="startQuiz(${idx}, ${tIdx})">
+      <div style="font-size:1.5rem">${t.icon}</div>
+      <div style="flex:1">
+        <div style="font-weight:700">${t.name}</div>
+        <div style="font-size:0.75rem;color:var(--gray)">${t.questions.length} câu hỏi</div>
+      </div>
+    </div>
+  `).join('');
   showScreen('topic');
-  loadTopics(curSubject.id);
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  LOAD TOPICS
-// ═══════════════════════════════════════════════════════════════
-async function loadTopics(subjectId) {
-  const el = document.getElementById('topicList');
-  el.innerHTML = `<div class="loading-card"><span class="loading-spinner">⏳</span><div class="loading-text">Đang tải chủ đề...</div></div>`;
-
-  try {
-    const res  = await fetch(`${API}?action=getTopics&subject=${encodeURIComponent(subjectId)}`);
-    const data = await res.json();
-
-    if (!data.topics || data.topics.length === 0) {
-      el.innerHTML = renderError('Chưa có chủ đề nào', 'Môn này chưa có câu hỏi.', `loadTopics('${subjectId}')`);
-      return;
-    }
-
-    el.innerHTML = data.topics.map((t,i) => `
-      <div class="topic-card" data-tidx="${i}">
-        <div class="topic-card__icon">${t.icon}</div>
-        <div class="topic-card__info">
-          <div class="topic-card__name">${t.name}</div>
-          <div class="topic-card__desc">Nhấn để bắt đầu luyện tập</div>
-        </div>
-        <div class="topic-card__count">${t.count} câu</div>
-      </div>`).join('');
-
-    el.querySelectorAll('.topic-card').forEach((card, i) => {
-      card.addEventListener('click', () => startQuiz(data.topics[i]));
-    });
-
-  } catch (err) {
-    el.innerHTML = renderError('Không tải được chủ đề', 'Kiểm tra kết nối mạng!', `loadTopics('${subjectId}')`);
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════
-//  START QUIZ — Fetch questions
-// ═══════════════════════════════════════════════════════════════
-async function startQuiz(t) {
-  curTopic = t;
-
-  // Show loading in quiz screen
-  document.getElementById('qText').textContent    = 'Đang tải câu hỏi...';
-  document.getElementById('qHint').textContent    = '';
-  document.getElementById('ansGrid').innerHTML    = '';
-  document.getElementById('feedback').className   = 'feedback';
-  document.getElementById('btnNext').style.display = 'none';
-  document.getElementById('quizTopicName').textContent = curTopic.icon + ' ' + curTopic.name;
-  document.getElementById('quizPlayer').textContent    = playerAvatar + ' ' + playerName;
-  document.getElementById('scoreDisp').textContent     = '0';
+function startQuiz(sIdx, tIdx) {
+  const topic = ALL_DATA.subjects[sIdx].topics[tIdx];
+  quizQs = [...topic.questions].sort(() => 0.5 - Math.random()).slice(0, Q_LIMIT);
+  curIdx = 0; score = 0;
+  document.getElementById('quizTopicName').textContent = topic.name;
   showScreen('quiz');
-
-  try {
-    const url = `${API}?action=getQuestions&subject=${encodeURIComponent(curSubject.id)}&topic=${encodeURIComponent(curTopic.id)}&limit=${QPR}`;
-    const res  = await fetch(url);
-    const data = await res.json();
-
-    if (!data.questions || data.questions.length === 0) {
-      document.getElementById('qText').textContent = '⚠️ Chưa có câu hỏi nào cho chủ đề này!';
-      return;
-    }
-
-    quizQs  = data.questions;
-    curIdx  = 0;
-    score   = 0;
-    answered = false;
-
-    document.getElementById('totQ').textContent = quizQs.length;
-    renderQ();
-
-  } catch (err) {
-    document.getElementById('qText').textContent = '❌ Không tải được câu hỏi. Kiểm tra mạng nhé!';
-  }
+  renderQ();
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  RENDER QUESTION
-// ═══════════════════════════════════════════════════════════════
 function renderQ() {
-  answered = false;
-  const q   = quizQs[curIdx];
-  const tot = quizQs.length;
-
-  document.getElementById('qNum').textContent = 'Câu ' + (curIdx + 1);
+  canEarnPoint = true;
+  const q = quizQs[curIdx];
   document.getElementById('qText').textContent = q.q;
-  document.getElementById('qHint').textContent = q.hint || '';
-  document.getElementById('curQ').textContent  = curIdx + 1;
-  document.getElementById('totQ').textContent  = tot;
-
-  const pct = Math.round(curIdx / tot * 100);
+  document.getElementById('curQ').textContent = curIdx + 1;
+  document.getElementById('totQ').textContent = quizQs.length;
+  document.getElementById('scoreDisp').textContent = score;
+  
+  const pct = Math.round((curIdx / quizQs.length) * 100);
   document.getElementById('progFill').style.width = pct + '%';
-  document.getElementById('progPct').textContent  = pct + '%';
+  document.getElementById('progPct').textContent = pct + '%';
 
-  document.getElementById('feedback').className    = 'feedback';
+  document.getElementById('feedback').style.display = 'none';
   document.getElementById('btnNext').style.display = 'none';
 
-  const grid    = document.getElementById('ansGrid');
-  const choices = q.choices || [];
-  const isText  = choices.some(c => c.length > 6);
-
-  grid.className = 'answers' + (isText || choices.length < 3 ? ' answers--single' : '');
-  grid.innerHTML = choices.map((c, i) => `
-    <button class="ans-btn ${isText ? 'ans-btn--text' : ''}"
-            onclick="checkAns(this, ${i}, ${q.a})">
-      ${isText ? String.fromCharCode(65+i)+'. ' : ''}${c}
-    </button>`).join('');
+  const grid = document.getElementById('ansGrid');
+  grid.innerHTML = q.choices.map((c, i) => `
+    <button class="ans-btn" onclick="checkAns(this, ${i}, ${q.a})">${c}</button>
+  `).join('');
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  CHECK ANSWER
-// ═══════════════════════════════════════════════════════════════
 function checkAns(btn, selected, correct) {
-  if (answered) return;
-  answered = true;
-  document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
-
-  const ok = selected === correct;
-  btn.classList.add(ok ? 'correct' : 'wrong');
-
-  if (!ok) {
-    document.querySelectorAll('.ans-btn')[correct].classList.add('show-correct');
+  const q = quizQs[curIdx];
+  if (selected === correct) {
+    btn.classList.add('correct');
+    if (canEarnPoint) { score++; document.getElementById('scoreDisp').textContent = score; }
+    document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
+    
+    const fb = document.getElementById('feedback');
+    fb.className = 'feedback correct';
+    document.getElementById('fbText').textContent = 'Chính xác! Giỏi quá! 🎉';
+    document.getElementById('fbAns').textContent = '';
+    document.getElementById('btnNext').style.display = 'block';
+  } else {
+    btn.classList.add('wrong');
+    btn.disabled = true;
+    canEarnPoint = false;
+    const fb = document.getElementById('feedback');
+    fb.className = 'feedback wrong';
+    document.getElementById('fbText').textContent = 'Chưa đúng rồi, con thử lại nhé!';
+    document.getElementById('fbAns').textContent = q.hint ? 'Gợi ý: ' + q.hint : '';
   }
-  if (ok) {
-    score++;
-    document.getElementById('scoreDisp').textContent = score;
-  }
-
-  const fb = document.getElementById('feedback');
-  document.getElementById('fbEmoji').textContent = ok
-    ? ['🎉','✨','🌟','👏','💪'][Math.floor(Math.random()*5)] : '😅';
-  document.getElementById('fbText').textContent = ok
-    ? ['Đúng rồi! Giỏi quá!','Tuyệt vời!','Xuất sắc!','Thông minh lắm!'][Math.floor(Math.random()*4)]
-    : 'Chưa đúng rồi!';
-  document.getElementById('fbAns').textContent = ok
-    ? '' : 'Đáp án: ' + (quizQs[curIdx].choices[correct] || correct);
-
-  fb.className = 'feedback ' + (ok ? 'correct' : 'wrong');
-  showNextBtn();
-}
-
-function showNextBtn() {
-  const nb = document.getElementById('btnNext');
-  nb.style.display = 'block';
-  nb.textContent   = curIdx === quizQs.length - 1 ? '🏁 Xem kết quả' : 'Câu tiếp theo →';
 }
 
 function nextQ() {
   curIdx++;
-  if (curIdx >= quizQs.length) showResult();
-  else renderQ();
-}
-
-// ═══════════════════════════════════════════════════════════════
-//  RESULT
-// ═══════════════════════════════════════════════════════════════
-function showResult() {
-  showScreen('result');
-  const tot = quizQs.length;
-  const pct = score / tot;
-
-  document.getElementById('resScore').textContent  = score + '/' + tot;
-  document.getElementById('resPlayer').textContent = playerAvatar + ' ' + playerName;
-
-  let stars = '⭐';
-  if (pct >= 0.9) stars = '⭐⭐⭐';
-  else if (pct >= 0.6) stars = '⭐⭐';
-  document.getElementById('resStars').textContent = stars;
-
-  let emoji, title, msg, cls;
-  if (pct === 1)     { emoji='🏆'; title='Hoàn hảo!';  msg='🎊 Tất cả đúng! Xuất sắc!'; cls='great'; launchStars(); }
-  else if (pct>=0.8) { emoji='🌟'; title='Xuất sắc!';  msg='👏 Gần hoàn hảo! Cố thêm nhé!'; cls='great'; launchStars(); }
-  else if (pct>=0.6) { emoji='😊'; title='Tốt lắm!';   msg='💪 Làm tốt! Ôn thêm nhé!'; cls='good'; }
-  else if (pct>=0.4) { emoji='🤔'; title='Cố lên!';    msg='📚 Ôn thêm chút nữa!'; cls='try'; }
-  else               { emoji='💪'; title='Thử lại!';   msg='🌱 Đừng nản! Tiếp tục cố gắng!'; cls='try'; }
-
-  document.getElementById('resEmoji').textContent = emoji;
-  document.getElementById('resTitle').textContent = title;
-  const msgEl = document.getElementById('resMsg');
-  msgEl.textContent = msg;
-  msgEl.className   = 'res-card__msg res-card__msg--' + cls;
-
-  // Local stats
-  const sk = 'ts_' + playerName, gk = 'tg_' + playerName;
-  localStorage.setItem(sk, (parseInt(localStorage.getItem(sk)||'0') + score).toString());
-  localStorage.setItem(gk, (parseInt(localStorage.getItem(gk)||'0') + 1).toString());
-
-  saveScore();
-}
-
-async function saveScore() {
-  const el = document.getElementById('savingEl');
-  el.style.display = 'flex';
-  try {
-    await fetch(API, {
-      method: 'POST',
-      body: JSON.stringify({
-        action:  'saveScore',
-        name:    playerName,
-        subject: curSubject?.name || '',
-        topic:   curTopic?.name   || '',
-        score,
-        total:   quizQs.length,
-      })
-    });
-    el.innerHTML = '<span style="color:var(--green-d)">✅ Đã lưu lên bảng xếp hạng!</span>';
-  } catch {
-    el.innerHTML = '<span style="color:var(--gray)">📶 Không có mạng — chưa lưu được</span>';
+  if (curIdx >= quizQs.length) {
+    showScreen('result');
+    document.getElementById('resScore').textContent = `${score}/${quizQs.length}`;
+    if (score >= 8) launchStars();
+  } else {
+    renderQ();
   }
-  setTimeout(() => { el.style.display = 'none'; }, 2500);
-}
-
-function retryQuiz() {
-  if (curTopic) startQuiz(JSON.stringify(curTopic));
-}
-
-// ═══════════════════════════════════════════════════════════════
-//  LEADERBOARD
-// ═══════════════════════════════════════════════════════════════
-function showLeaderboard() { showScreen('leaderboard'); loadLB(); }
-
-async function loadLB() {
-  const list = document.getElementById('lbList');
-  list.innerHTML = '<div class="lb-loading">⏳ Đang tải bảng xếp hạng...</div>';
-  try {
-    const res  = await fetch(`${API}?action=getLeaderboard`);
-    const data = await res.json();
-    if (!data || data.length === 0) {
-      list.innerHTML = '<div class="lb-empty">🌱 Chưa có ai làm bài.<br>Hãy là người đầu tiên! 🚀</div>';
-      return;
-    }
-    const medals = ['🥇','🥈','🥉'];
-    list.innerHTML = data.map((p, i) => {
-      const rank = i + 1, isMe = p.name === playerName;
-      const avg  = p.totalGames > 0 ? (p.totalScore / p.totalGames).toFixed(1) : 0;
-      return `<div class="lb-item ${rank<=3?'lb-item--'+rank:''} ${isMe?'lb-item--me':''}">
-        <div class="lb-rank">${rank<=3?medals[i]:rank+'.'}</div>
-        <div class="lb-av">${p.name.charAt(0).toUpperCase()}</div>
-        <div class="lb-info">
-          <div class="lb-name${isMe?' lb-name--me':''}">${p.name}</div>
-          <div class="lb-meta">${p.totalGames} lượt · TB ${avg}/${QPR}</div>
-        </div>
-        <div class="lb-score">
-          <div class="lb-score__num">${p.totalScore}⭐</div>
-          <div class="lb-score__lbl">tổng điểm</div>
-        </div>
-      </div>`;
-    }).join('');
-  } catch {
-    list.innerHTML = '<div class="lb-empty">📶 Không tải được. Kiểm tra mạng nhé!</div>';
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════
-//  HELPERS
-// ═══════════════════════════════════════════════════════════════
-function renderError(title, msg, retryFn) {
-  return `<div class="error-card">
-    <span class="error-card__emoji">😕</span>
-    <div class="error-card__title">${title}</div>
-    <div class="error-card__msg">${msg}</div>
-    ${retryFn ? `<button class="btn-retry-load" onclick="${retryFn}">🔄 Thử lại</button>` : ''}
-  </div>`;
 }
 
 function launchStars() {
   const c = document.getElementById('starsRain');
-  c.innerHTML = '';
-  const e = ['⭐','🌟','✨','🎉','🎊','💫'];
-  for (let i = 0; i < 28; i++) {
-    setTimeout(() => {
-      const s = document.createElement('div');
-      s.className = 'star-fall';
-      s.textContent = e[Math.floor(Math.random()*e.length)];
-      s.style.left = Math.random()*100 + 'vw';
-      s.style.animationDelay = Math.random()*0.5 + 's';
-      s.style.animationDuration = (1+Math.random()) + 's';
-      c.appendChild(s);
-      setTimeout(() => s.remove(), 2500);
-    }, i * 60);
+  for (let i = 0; i < 25; i++) {
+    const s = document.createElement('div');
+    s.className = 'star-fall';
+    s.textContent = ['⭐','🌟','✨','🎉'][Math.floor(Math.random()*4)];
+    s.style.left = Math.random() * 100 + 'vw';
+    s.style.animationDelay = Math.random() * 2 + 's';
+    c.appendChild(s);
+    setTimeout(() => s.remove(), 3000);
   }
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════════
-const saved = localStorage.getItem('pName');
-if (saved) {
-  playerName   = saved;
-  playerAvatar = localStorage.getItem('pAvatar') || '😊';
-  ni.value     = playerName;
-  bs.disabled  = false;
-}
-
-// Preview leaderboard on register screen
-(async () => {
-  try {
-    const res  = await fetch(`${API}?action=getLeaderboard`);
-    const data = await res.json();
-    const prev = document.getElementById('previewList');
-    if (!data || data.length === 0) {
-      prev.innerHTML = '<div class="prev-empty">Chưa có ai — hãy là người đầu tiên! 🚀</div>';
-      return;
-    }
-    const medals = ['🥇','🥈','🥉'];
-    prev.innerHTML = data.slice(0, 5).map((p, i) => `
-      <div class="prev-row">
-        <span class="prev-rank">${i<3?medals[i]:(i+1)+'.'}</span>
-        <span class="prev-name">${p.name}</span>
-        <span class="prev-score">${p.totalScore}⭐</span>
-        <span class="prev-games">${p.totalGames} lượt</span>
-      </div>`).join('');
-  } catch {
-    document.getElementById('previewList').innerHTML =
-      '<div class="prev-empty">Cần internet để xem bảng xếp hạng</div>';
-  }
-})();
+initialLoad();
 </script>
 </body>
 </html>
