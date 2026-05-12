@@ -6,7 +6,6 @@
 <title>🌟 Kho Bài Tập – Lớp 2→3</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-/* ... GIỮ NGUYÊN CSS CŨ VÀ THÊM MỘT CHÚT CHO GÓP Ý ... */
 :root{
   --green:#2ECC71;--green-d:#27AE60;
   --blue:#3498DB;--blue-d:#2980B9;
@@ -15,102 +14,115 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* HEADER */
 .hdr{background:linear-gradient(135deg,#1A8A4A,#27AE60,#1ABC9C);padding:1.2rem 1rem 2.6rem;text-align:center;position:relative}
 .hdr::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
-.main{max-width:680px;margin:0 auto;padding:1.4rem 1rem 4rem}
+
+.main{max-width:680px;margin:0 auto;padding:1rem 1rem 4rem}
 .screen{display:none;flex-direction:column;gap:.9rem}
 .screen.active{display:flex}
-.reg-card, .lb-card{background:#fff;border-radius:26px;padding:1.5rem;text-align:center;box-shadow:0 6px 28px rgba(0,0,0,.08);margin-bottom:1rem}
-.name-input{width:100%;padding:.85rem;text-align:center;border:3px solid #ECF0F1;border-radius:14px;outline:none;font-family:'Baloo 2';font-size:1.1rem}
-.btn-start, .btn-submit{width:100%;padding:.9rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;font-family:'Baloo 2';font-weight:700;cursor:pointer}
-.btn-start:disabled{opacity:.45}
+
+/* CARD & INPUT */
+.card{background:#fff;border-radius:26px;padding:1.5rem;text-align:center;box-shadow:0 6px 28px rgba(0,0,0,.08);margin-bottom:1rem}
+.name-input{width:100%;padding:.85rem;text-align:center;border:3px solid #ECF0F1;border-radius:14px;outline:none;font-family:'Baloo 2';font-size:1.1rem;margin-top:10px}
+.btn-primary{width:100%;padding:.9rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;font-family:'Baloo 2';font-weight:700;cursor:pointer;font-size:1.1rem;box-shadow:0 4px 15px rgba(46,204,113,0.3)}
+.btn-primary:disabled{opacity:.45}
+
+/* LISTS */
 .sub-card, .topic-card{background:#fff;border-radius:18px;padding:1rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;border:3px solid #ECF0F1;transition:all .22s}
 .sub-card:hover{border-color:var(--green);transform:translateY(-2px)}
+
+/* QUIZ */
 .quiz-hdr{background:#fff;border-radius:16px;padding:.8rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 3px 12px rgba(0,0,0,.07)}
-.prog-bar{height:8px;background:#ECF0F1;border-radius:8px;overflow:hidden;margin:5px 0}
+.prog-bar{height:10px;background:#ECF0F1;border-radius:8px;overflow:hidden;margin:10px 0}
 .prog-fill{height:100%;background:linear-gradient(90deg,#27AE60,#2ECC71);transition:width .5s}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
-.ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:14px;padding:.8rem;font-family:'Baloo 2';font-weight:700;cursor:pointer}
-.ans-btn.correct{border-color:var(--green);background:#D5F5E3}
-.ans-btn.wrong{border-color:var(--red);background:#FADBD8}
-.feedback{border-radius:14px;padding:.8rem;text-align:center;display:none;flex-direction:column}
+.q-text{font-family:'Baloo 2';font-size:1.4rem;font-weight:700;margin:10px 0}
+
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+.ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:15px;padding:1rem .5rem;font-family:'Baloo 2';font-weight:700;font-size:1.1rem;cursor:pointer;transition:all 0.15s;color:var(--text);display:block;width:100%}
+.ans-btn.correct{border-color:var(--green)!important;background:#D5F5E3!important;color:#1E8449!important}
+.ans-btn.wrong{border-color:var(--red)!important;background:#FADBD8!important;color:#922B21!important}
+
+.feedback{border-radius:14px;padding:1rem;text-align:center;display:none;flex-direction:column;margin-top:10px}
 .feedback.correct{background:#D5F5E3;color:#1E8449;display:flex}
 .feedback.wrong{background:#FADBD8;color:#922B21;display:flex}
-/* Bảng xếp hạng mini */
-.lb-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:0.9rem}
-.lb-table td{padding:8px;border-bottom:1px solid #eee}
-.rank-1{color:#F1C40F;font-weight:800}
-.btn-feedback-toggle{background:none;border:none;color:var(--blue);text-decoration:underline;cursor:pointer;font-size:0.8rem;margin-top:10px}
+
+.btn-next{background:var(--blue);color:#fff;border:none;border-radius:14px;padding:1rem;width:100%;font-family:'Baloo 2';font-weight:700;margin-top:15px;cursor:pointer}
+
+/* LEADERBOARD */
+.lb-table{width:100%;border-collapse:collapse;margin-top:10px}
+.lb-table td{padding:10px;border-bottom:1px solid #eee;font-size:0.95rem}
+.btn-feedback{background:none;border:none;color:var(--blue);text-decoration:underline;cursor:pointer;margin-top:15px;font-size:0.9rem}
 </style>
 </head>
 <body>
-<div class="stars-rain" id="starsRain"></div>
 
 <audio id="sndCorrect" src="https://www.soundjay.com/buttons/sounds/button-37.mp3"></audio>
 <audio id="sndWrong" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
 <audio id="sndWin" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
 
 <header class="hdr">
-  <span style="font-size:2.4rem">🌟</span>
+  <span style="font-size:2.5rem">🌟</span>
   <div style="font-family:'Baloo 2';font-size:1.8rem;font-weight:800;color:#fff">Kho Bài Tập · Lớp 2–3</div>
 </header>
 
 <div class="main">
   <div class="screen active" id="screenRegister">
-    <div class="reg-card">
-      <div style="font-family:'Baloo 2';font-size:1.3rem;font-weight:800">Chào con yêu! Nhập tên nhé:</div>
-      <input class="name-input" id="nameInput" type="text" placeholder="Tên của con..." maxlength="20"/>
-      <button class="btn-start" id="btnStart" onclick="handleRegister()" disabled style="margin-top:10px">Bắt đầu học thôi! 🚀</button>
+    <div class="card">
+      <div style="font-family:'Baloo 2';font-size:1.4rem;font-weight:800">Chào con! Nhập tên để bắt đầu:</div>
+      <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20"/>
+      <button class="btn-primary" id="btnStart" onclick="handleRegister()" disabled style="margin-top:15px">Vào học thôi! 🚀</button>
     </div>
     
-    <div class="lb-card">
+    <div class="card">
       <div style="font-family:'Baloo 2';font-weight:800;color:var(--blue-d)">🏆 Bảng Xếp Hạng Lớp</div>
-      <div id="lbList"><div style="font-size:0.8rem;padding:10px">Đang tải xếp hạng...</div></div>
+      <div id="lbList"><div style="padding:15px;font-size:0.9rem">Đang tải xếp hạng...</div></div>
     </div>
 
-    <button class="btn-feedback-toggle" onclick="window.open('https://forms.gle/hE3gV5Uy6UodzrZn7')">💌 Góp ý & Đóng góp đề bài</button>
+    <button class="btn-feedback" onclick="window.open('https://forms.gle/hE3gV5Uy6UodzrZn7')">💌 Góp ý & Đóng góp bài tập mới</button>
   </div>
 
   <div class="screen" id="screenSubject">
-    <div class="reg-card" style="padding:10px;display:flex;align-items:center;gap:10px;text-align:left">
-      <div style="font-size:1.5rem">😊</div>
-      <div style="font-weight:800;font-family:'Baloo 2'" id="subName">Bạn nhỏ</div>
+    <div class="card" style="padding:10px;display:flex;align-items:center;gap:12px;text-align:left">
+      <div style="font-size:1.8rem">😊</div>
+      <div style="font-weight:800;font-family:'Baloo 2';font-size:1.2rem" id="subName">Chào con!</div>
     </div>
-    <div id="subjectList"></div>
+    <div id="subjectList" style="display:flex;flex-direction:column;gap:10px;margin-top:10px"></div>
   </div>
 
   <div class="screen" id="screenTopic">
     <div class="quiz-hdr">
-      <button onclick="showScreen('subject')" style="border:none;background:none;font-size:1.2rem">🏠</button>
-      <div id="topicMenuTitle" style="font-weight:800;flex:1;text-align:center">Chọn chủ đề</div>
+      <button onclick="showScreen('subject')" style="border:none;background:none;font-size:1.3rem">🏠</button>
+      <div id="topicMenuTitle" style="font-weight:800;flex:1;text-align:center;font-family:'Baloo 2'">Chủ đề bài tập</div>
     </div>
-    <div id="topicList" style="margin-top:10px;display:flex;flex-direction:column;gap:10px"></div>
+    <div id="topicList" style="margin-top:15px;display:flex;flex-direction:column;gap:10px"></div>
   </div>
 
   <div class="screen" id="screenQuiz">
     <div class="quiz-hdr">
-      <button onclick="showScreen('topic')" style="border:none;background:none">←</button>
-      <div id="quizTopicName" style="font-weight:700;flex:1;text-align:center">Đang tải...</div>
-      <div style="background:var(--yellow);padding:2px 10px;border-radius:10px;font-weight:800">⭐ <span id="scoreDisp">0</span></div>
+      <button onclick="showScreen('topic')" style="border:none;background:none;font-size:1.2rem">←</button>
+      <div id="quizTopicName" style="font-weight:800;flex:1;text-align:center">Đang tải...</div>
+      <div style="background:var(--yellow);padding:3px 12px;border-radius:12px;font-weight:800">⭐ <span id="scoreDisp">0</span></div>
     </div>
     <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
-    <div class="reg-card">
-      <div id="qText" style="font-family:'Baloo 2';font-size:1.3rem;font-weight:700"></div>
+    <div class="card">
+      <div id="qText" class="q-text"></div>
     </div>
     <div class="answers" id="ansGrid"></div>
     <div class="feedback" id="feedback">
-      <div id="fbText" style="font-weight:800"></div>
-      <div id="fbAns" style="font-size:0.85rem;margin-top:5px"></div>
+      <div id="fbText" style="font-weight:800;font-size:1.1rem"></div>
+      <div id="fbAns" style="font-size:0.9rem;margin-top:5px;font-weight:600"></div>
     </div>
     <button class="btn-next" id="btnNext" onclick="nextQ()" style="display:none">Câu tiếp theo →</button>
   </div>
 
   <div class="screen" id="screenResult">
-    <div class="reg-card">
-      <div style="font-size:3rem">🎉</div>
-      <div style="font-family:'Baloo 2';font-size:1.5rem;font-weight:800">Hoàn thành rồi!</div>
-      <div id="resScore" style="font-size:2.5rem;font-weight:800;color:var(--green-d)">0/10</div>
-      <button class="btn-start" onclick="showScreen('subject')">Tiếp tục học môn khác 🏠</button>
+    <div class="card">
+      <div style="font-size:3.5rem">🎉</div>
+      <div style="font-family:'Baloo 2';font-size:1.8rem;font-weight:800">Tuyệt vời quá!</div>
+      <div id="resScore" style="font-size:3rem;font-weight:800;color:var(--green-d);margin:10px 0">0/10</div>
+      <button class="btn-primary" onclick="showScreen('subject')">Làm thêm bài khác 🏠</button>
     </div>
   </div>
 </div>
@@ -124,14 +136,13 @@ let curIdx = 0;
 let score = 0;
 let canEarnPoint = true;
 
-// Tải dữ liệu và BXH ngay khi mở web
 async function initialLoad() {
   loadLeaderboard();
   try {
     const res = await fetch(`${API}?action=getAllData`);
     ALL_DATA = await res.json();
     if (playerName) renderSubjects();
-  } catch (e) { console.error("Lỗi tải dữ liệu"); }
+  } catch (e) { console.error("Lỗi tải data"); }
 }
 
 async function loadLeaderboard() {
@@ -139,14 +150,15 @@ async function loadLeaderboard() {
   try {
     const res = await fetch(`${API}?action=getLeaderboard`);
     const data = await res.json();
-    if (data.length === 0) { lbDiv.innerHTML = "Chưa có ai, hãy là người đầu tiên!"; return; }
+    if (!data || data.length === 0) { lbDiv.innerHTML = "Hãy là người đầu tiên ghi điểm!"; return; }
     let html = '<table class="lb-table">';
     data.slice(0, 5).forEach((p, i) => {
-      html += `<tr><td>${i+1 === 1 ? '🥇' : i+1}</td><td>${p.name}</td><td><b>${p.totalScore}⭐</b></td></tr>`;
+      const icon = i === 0 ? '🥇' : (i === 1 ? '🥈' : (i === 2 ? '🥉' : i + 1));
+      html += `<tr><td width="40">${icon}</td><td align="left"><b>${p.name}</b></td><td align="right"><b>${p.totalScore} ⭐</b></td></tr>`;
     });
     html += '</table>';
     lbDiv.innerHTML = html;
-  } catch (e) { lbDiv.innerHTML = "Không tải được BXH"; }
+  } catch (e) { lbDiv.innerHTML = "Chưa tải được bảng xếp hạng"; }
 }
 
 function showScreen(name) {
@@ -161,7 +173,7 @@ ni.addEventListener('input', () => bs.disabled = ni.value.trim().length < 2);
 
 function handleRegister() {
   playerName = ni.value.trim();
-  document.getElementById('subName').textContent = "Chào con: " + playerName;
+  document.getElementById('subName').textContent = "Chào con: " + playerName + " !";
   showScreen('subject');
   if (ALL_DATA) renderSubjects();
 }
@@ -170,10 +182,10 @@ function renderSubjects() {
   const el = document.getElementById('subjectList');
   el.innerHTML = ALL_DATA.subjects.map((s, i) => `
     <div class="sub-card" onclick="chooseSubject(${i})">
-      <div style="font-size:1.8rem">${s.icon}</div>
+      <div style="font-size:2rem">${s.icon}</div>
       <div style="flex:1">
-        <div style="font-weight:800;font-family:'Baloo 2'">${s.name}</div>
-        <div style="font-size:0.75rem;color:var(--gray)">${s.topics.length} chủ đề</div>
+        <div style="font-weight:800;font-family:'Baloo 2';font-size:1.1rem">${s.name}</div>
+        <div style="font-size:0.8rem;color:var(--gray)">${s.topics.length} nhóm bài tập</div>
       </div>
     </div>
   `).join('');
@@ -185,7 +197,7 @@ function chooseSubject(idx) {
   const tList = document.getElementById('topicList');
   tList.innerHTML = s.topics.map((t, tIdx) => `
     <div class="topic-card" onclick="startQuiz(${idx}, ${tIdx})">
-      <div style="font-size:1.3rem">${t.icon}</div>
+      <div style="font-size:1.5rem">${t.icon}</div>
       <div style="font-weight:700;flex:1">${t.name}</div>
     </div>
   `).join('');
@@ -205,8 +217,6 @@ function renderQ() {
   canEarnPoint = true;
   const q = quizQs[curIdx];
   document.getElementById('qText').textContent = q.q;
-  document.getElementById('curQ').textContent = curIdx + 1;
-  document.getElementById('totQ').textContent = quizQs.length;
   document.getElementById('scoreDisp').textContent = score;
   document.getElementById('progFill').style.width = (curIdx / quizQs.length * 100) + '%';
   document.getElementById('feedback').style.display = 'none';
@@ -219,7 +229,7 @@ function checkAns(btn, selected, correct) {
   const q = quizQs[curIdx];
   const fb = document.getElementById('feedback');
   if (selected === correct) {
-    document.getElementById('sndCorrect').play();
+    document.getElementById('sndCorrect').play().catch(()=>{});
     btn.classList.add('correct');
     if (canEarnPoint) { score++; document.getElementById('scoreDisp').textContent = score; }
     document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
@@ -228,10 +238,10 @@ function checkAns(btn, selected, correct) {
     document.getElementById('fbAns').textContent = '';
     document.getElementById('btnNext').style.display = 'block';
   } else {
-    document.getElementById('sndWrong').play();
+    document.getElementById('sndWrong').play().catch(()=>{});
     btn.classList.add('wrong'); btn.disabled = true; canEarnPoint = false;
     fb.style.display = 'flex'; fb.className = 'feedback wrong';
-    document.getElementById('fbText').textContent = 'Chưa đúng, thử lại con nhé!';
+    document.getElementById('fbText').textContent = 'Chưa đúng rồi, thử lại con nhé!';
     document.getElementById('fbAns').textContent = q.hint ? 'Gợi ý: ' + q.hint : '';
   }
 }
@@ -239,7 +249,7 @@ function checkAns(btn, selected, correct) {
 function nextQ() {
   curIdx++;
   if (curIdx >= quizQs.length) {
-    document.getElementById('sndWin').play();
+    document.getElementById('sndWin').play().catch(()=>{});
     showScreen('result');
     document.getElementById('resScore').textContent = `${score}/${quizQs.length}`;
     saveScoreToGS();
@@ -252,7 +262,7 @@ async function saveScoreToGS() {
       method: 'POST',
       body: JSON.stringify({ action: 'saveScore', name: playerName, score: score, total: quizQs.length })
     });
-    loadLeaderboard(); // Cập nhật lại BXH sau khi lưu
+    loadLeaderboard();
   } catch (e) { console.error("Lỗi lưu điểm"); }
 }
 
