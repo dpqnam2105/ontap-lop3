@@ -228,12 +228,18 @@ function renderQ() {
 
 function checkAns(btn, selected, correct) {
   const q = quizQs[curIdx];
+  const fb = document.getElementById('feedback'); // Gán biến để dùng cho ngắn gọn
+
   if (selected === correct) {
     btn.classList.add('correct');
-    if (canEarnPoint) { score++; document.getElementById('scoreDisp').textContent = score; }
+    if (canEarnPoint) { 
+      score++; 
+      document.getElementById('scoreDisp').textContent = score; 
+    }
     document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
     
-    const fb = document.getElementById('feedback');
+    // Hiển thị và đổi màu xanh
+    fb.style.display = 'flex'; // << THÊM DÒNG NÀY ĐỂ HIỆN KHUNG
     fb.className = 'feedback correct';
     document.getElementById('fbText').textContent = 'Chính xác! Giỏi quá! 🎉';
     document.getElementById('fbAns').textContent = '';
@@ -242,7 +248,9 @@ function checkAns(btn, selected, correct) {
     btn.classList.add('wrong');
     btn.disabled = true;
     canEarnPoint = false;
-    const fb = document.getElementById('feedback');
+
+    // Hiển thị và đổi màu đỏ
+    fb.style.display = 'flex'; // << THÊM DÒNG NÀY ĐỂ HIỆN KHUNG
     fb.className = 'feedback wrong';
     document.getElementById('fbText').textContent = 'Chưa đúng rồi, con thử lại nhé!';
     document.getElementById('fbAns').textContent = q.hint ? 'Gợi ý: ' + q.hint : '';
