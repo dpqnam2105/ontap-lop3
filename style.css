@@ -1,1 +1,36 @@
+<style>
+body {
+  background: linear-gradient(to bottom, #fceabb, #f8b500);
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
 
+h1 {
+  color: #ff4081;
+  text-shadow: 2px 2px #fff;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+#star-area, #badge-area, #shop-area, #inventory-area, #title-area {
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+</style>
