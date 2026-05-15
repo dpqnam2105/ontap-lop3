@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ôn tập lớp 2-3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 style="text-align:center;">Trang ôn tập cho bé</h1>
+
+  <!-- Màn hình quiz -->
+  <div id="quiz-screen" style="text-align:center; margin-top:20px;">
+    <p id="question">Câu hỏi sẽ hiện ở đây...</p>
+    <div id="options"></div>
+    <button onclick="nextQuestion()">Câu tiếp theo</button>
+  </div>
+
+  <!-- Khu vực sao -->
+  <div id="star-area" style="text-align:center; margin-top:10px;">
+    ⭐ Số sao của bé: <span id="star-count">0</span>
+  </div>
+
+  <!-- Khu vực huy hiệu -->
+  <div id="badge-area" style="text-align:center; margin-top:20px;">
+    <!-- Huy hiệu sẽ hiện ở đây -->
+  </div>
+  <div style="text-align:center; margin-top:10px;">
+    <button onclick="redeemBadge()">Đổi huy hiệu</button>
+  </div>
+
+  <!-- Khu vực danh hiệu -->
+  <div id="title-area" style="text-align:center; margin-top:20px;">
+    🌱 Danh hiệu: Người mới bắt đầu
+  </div>
+
+  <!-- Shop mini -->
+  <div id="shop-area" style="text-align:center; margin-top:20px;">
+    <h3>Shop mini</h3>
+    <button onclick="buyItem('sticker_star.png', 10)">Sticker Ngôi sao (10 sao)</button>
+    <button onclick="buyItem('sticker_smile.png', 20)">Sticker Mặt cười (20 sao)</button>
+    <button onclick="buyItem('sticker_cat.png', 30)">Sticker Con mèo (30 sao)</button>
+  </div>
+
+  <!-- Bộ sưu tập -->
+  <div id="inventory-area" style="text-align:center; margin-top:20px;">
+    <h3>Bộ sưu tập của bé</h3>
+  </div>
+
+  <!-- Bảng xếp hạng -->
+  <div id="leaderboard-area" style="text-align:center; margin-top:20px;">
+    <h3>Bảng xếp hạng</h3>
+    <table id="leaderboard" border="1" style="margin:auto;">
+      <tr>
+        <th>Tên</th>
+        <th>Điểm</th>
+        <th>Huy hiệu</th>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    let stars = 0;
+    let currentBadge = "";
+    let score = 0;
+    let currentQuestion = 0;
+
+    const questions = [
+      { q: "2 + 3 = ?", options: ["4", "5", "6"], answer: "5" },
+      { q: "7 - 4 = ?", options: ["2", "3", "4"], answer: "3" },
+      { q: "5 + 5 = ?", options: ["10", "11", "12"], answer: "10" }
+    ];
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById("question").textContent = q.q;
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+      q.options.forEach(opt => {
+        optionsDiv.innerHTML += `<button onclick="checkAnswer('${opt}')">${opt}</button> `;
+      });
+    }
+
+    function checkAnswer(ans) {
+      const q = questions[currentQuestion];
+      if (ans === q.answer) {
+        score++;
+        addStar(1); // mỗi câu đúng được 1 sao
+        alert("Đúng rồi! Bé được cộng 1 sao ⭐");
+      } else {
+        alert("Sai mất rồi, cố gắng nhé 🌱");
+      }
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        alert("Hoàn thành quiz! Điểm: " + score);
+        updateLeaderboard("Bé", score, currentBadge);
+      }
+    }
+
+    function addStar(count) {
+      stars += count;
+      document.getElementById("star-count").textContent = stars;
+      checkTitle();
+    }
+
+    function showBadgeImage(type) {
+      const badgeArea = document.getElementById("badge-area");
+      currentBadge = type;
+      if (type === "gold") {
+        badgeArea.innerHTML = '<img src="images/sticker_gold.png" alt="Huy hiệu Vàng" width="100">';
+      } else if (type === "silver") {
+        badgeArea.innerHTML = '<img src="images/sticker_silver.png" alt="Huy hiệu Bạc" width="100">';
+      } else if (type === "bronze") {
+        badgeArea.innerHTML = '<img src="images/sticker_bronze.png" alt="Huy hiệu Đồng" width="100">';
+      }
+    }
+
+    function redeemBadge() {
+      if (stars >= 50) {
+        showBadgeImage("gold");
+        stars -= 50;
+      } else if (stars >= 30) {
+        showBadgeImage("silver");
+        stars -= 30;
+      } else if (stars >= 10) {
+        showBadgeImage("bronze");
+        stars -= 10;
+      } else {
+        alert("Chưa đủ sao để đổi huy hiệu!");
+      }
+      document.getElementById("star-count").textContent = stars;
+    }
+
+    function buyItem(item, cost) {
+      if (stars >= cost) {
+        stars -= cost;
+        document.getElementById("star-count").textContent = stars;
+        const inventory = document.getElementById("inventory-area");
+        inventory.innerHTML += `<img src="images/${item}" alt="${item}" width="80"> `;
+      } else {
+        alert("Chưa đủ sao để mua!");
+      }
+    }
+
+    function checkTitle() {
+      const titleArea = document.getElementById("title-area");
+      if (stars >= 100) {
+        titleArea.innerHTML = "👑 Danh hiệu: Siêu sao Toán học!";
+      } else if (stars >= 50) {
+        titleArea.innerHTML = "🌟 Danh hiệu: Ngôi sao chăm chỉ!";
+      } else if (stars >= 20) {
+        titleArea.innerHTML = "✨ Danh hiệu: Học sinh tiến bộ!";
+      } else {
+        titleArea.innerHTML = "🌱 Danh hiệu: Người mới bắt đầu";
+      }
+    }
+
+    function updateLeaderboard(name, score, badge) {
+      const table = document.getElementById("leaderboard");
+      const row = table.insertRow(-1);
+      row.insertCell(0).textContent = name;
+      row.insertCell(1).textContent = score;
+      row.insertCell(2).textContent = badge;
+    }
+
+    // Khởi động quiz
+    loadQuestion();
+  </script>
+</body>
+</html>
