@@ -1,175 +1,365 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ôn tập lớp 2-3</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🌟 Kho Bài Tập – Lớp 2→3</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#2ECC71;--green-d:#27AE60;
+  --blue:#3498DB;--blue-d:#2980B9;
+  --red:#E74C3C;--yellow:#F1C40F;
+  --bg:#F4FFF8;--text:#2C3E50;--gray:#95A5A6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+.hdr{background:linear-gradient(135deg,#1A8A4A,#27AE60,#1ABC9C);padding:1.2rem 1rem 2.6rem;text-align:center;position:relative}
+.hdr::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:40px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+
+.main{max-width:680px;margin:0 auto;padding:1rem 1rem 4rem}
+.screen{display:none;flex-direction:column;gap:.9rem}
+.screen.active{display:flex}
+
+.card{background:#fff;border-radius:26px;padding:1.5rem;text-align:center;box-shadow:0 6px 28px rgba(0,0,0,.08);margin-bottom:1rem}
+.name-input{width:100%;padding:.85rem;text-align:center;border:3px solid #ECF0F1;border-radius:14px;outline:none;font-family:'Baloo 2';font-size:1.1rem;margin-top:10px}
+.btn-primary{width:100%;padding:.9rem;background:linear-gradient(135deg,#27AE60,#2ECC71);color:#fff;border:none;border-radius:14px;font-family:'Baloo 2';font-weight:700;cursor:pointer;font-size:1.1rem;box-shadow:0 4px 15px rgba(46,204,113,0.3)}
+.btn-primary:disabled{opacity:.45}
+
+.sub-card, .topic-card{background:#fff;border-radius:18px;padding:1rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;border:3px solid #ECF0F1;transition:all .22s}
+.sub-card:hover{border-color:var(--green);transform:translateY(-2px)}
+
+.quiz-hdr{background:#fff;border-radius:16px;padding:.8rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 3px 12px rgba(0,0,0,.07)}
+.prog-bar{height:10px;background:#ECF0F1;border-radius:8px;overflow:hidden;margin:10px 0}
+.prog-fill{height:100%;background:linear-gradient(90deg,#27AE60,#2ECC71);transition:width .5s}
+.q-text{font-family:'Baloo 2';font-size:1.4rem;font-weight:700;margin:10px 0}
+
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+.ans-btn{background:#fff;border:3px solid #ECF0F1;border-radius:15px;padding:1rem .5rem;font-family:'Baloo 2';font-weight:700;font-size:1.1rem;cursor:pointer;transition:all 0.15s;color:var(--text);display:block;width:100%}
+.ans-btn.correct{border-color:var(--green)!important;background:#D5F5E3!important;color:#1E8449!important}
+.ans-btn.wrong{border-color:var(--red)!important;background:#FADBD8!important;color:#922B21!important}
+
+.feedback{border-radius:14px;padding:1rem;text-align:center;display:none;flex-direction:column;margin-top:10px}
+.feedback.correct{background:#D5F5E3;color:#1E8449;display:flex}
+.feedback.wrong{background:#FADBD8;color:#922B21;display:flex}
+
+.btn-next{background:var(--blue);color:#fff;border:none;border-radius:14px;padding:1rem;width:100%;font-family:'Baloo 2';font-weight:700;margin-top:15px;cursor:pointer}
+
+/* SHOP & REWARDS */
+.shop-btn{background:#fff; border:2px solid var(--blue); border-radius:10px; padding:8px; margin:5px; font-family:'Baloo 2'; font-weight:700; cursor:pointer; font-size:0.9rem}
+.shop-btn:hover{background:var(--bg)}
+.reward-img{margin:5px; transition:transform 0.3s}
+.reward-img:hover{transform:scale(1.1)}
+.title-tag{display:inline-block; background:var(--yellow); padding:5px 15px; border-radius:20px; font-weight:800; font-family:'Baloo 2'; color:var(--text); margin-top:10px}
+
+.lb-table{width:100%;border-collapse:collapse;margin-top:10px}
+.lb-table td{padding:10px;border-bottom:1px solid #eee;font-size:0.95rem}
+</style>
 </head>
 <body>
-  <h1 style="text-align:center;">Trang ôn tập cho bé</h1>
 
-  <!-- Màn hình quiz -->
-  <div id="quiz-screen" style="text-align:center; margin-top:20px;">
-    <p id="question">Câu hỏi sẽ hiện ở đây...</p>
-    <div id="options"></div>
-    <button onclick="nextQuestion()">Câu tiếp theo</button>
+<div class="stars-rain" id="starsRain"></div>
+
+<audio id="sndCorrect" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+<audio id="sndWrong" src="https://assets.mixkit.co/active_storage/sfx/2020/2020-preview.mp3"></audio>
+<audio id="sndWin" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+<header class="hdr">
+  <span style="font-size:2.5rem">🌟</span>
+  <div style="font-family:'Baloo 2';font-size:1.8rem;font-weight:800;color:#fff">Kho Bài Tập · Lớp 2–3</div>
+</header>
+
+<div class="main">
+  <div class="screen active" id="screenRegister">
+    <div class="card">
+      <div style="font-family:'Baloo 2';font-size:1.4rem;font-weight:800">Chào con! Nhập tên để bắt đầu:</div>
+      <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20"/>
+      <button class="btn-primary" id="btnStart" onclick="handleRegister()" disabled style="margin-top:15px">Vào học thôi! 🚀</button>
+    </div>
+    
+    <div class="card">
+      <div style="font-family:'Baloo 2';font-weight:800;color:var(--blue-d)">🏆 Bảng Xếp Hạng Lớp</div>
+      <div id="lbList"><div style="padding:15px;font-size:0.9rem">Đang tải xếp hạng...</div></div>
+    </div>
+    <button class="btn-primary" style="background:var(--blue)" onclick="window.open('https://forms.gle/hE3gV5Uy6UodzrZn7')">💌 Góp ý & Đóng góp bài tập mới</button>
   </div>
 
-  <!-- Khu vực sao -->
-  <div id="star-area" style="text-align:center; margin-top:10px;">
-    ⭐ Số sao của bé: <span id="star-count">0</span>
+  <div class="screen" id="screenSubject">
+    <div class="card" style="padding:15px">
+      <div style="font-weight:800;font-family:'Baloo 2';font-size:1.2rem" id="subName">Chào con!</div>
+      <div id="star-area" style="font-size:1.2rem; margin-top:5px; font-weight:800; color:var(--orange)">
+        ⭐ Sao tích lũy: <span id="star-count">0</span>
+      </div>
+      <div id="title-area" class="title-tag">🌱 Danh hiệu: Người mới bắt đầu</div>
+      
+      <div id="badge-area" style="margin-top:15px; min-height:50px"></div>
+      <button class="shop-btn" style="border-color:var(--orange); color:var(--orange)" onclick="redeemBadge()">🏅 Đổi huy hiệu (Dùng sao)</button>
+    </div>
+
+    <div class="card">
+      <h3 style="font-family:'Baloo 2'; color:var(--blue-d)">🏪 Cửa hàng Sticker</h3>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center">
+        <button class="shop-btn" onclick="buyItem('happy_star.png', 10)">⭐ Ngôi sao (10 sao)</button>
+        <button class="shop-btn" onclick="buyItem('smiley.png', 20)">😊 Mặt cười (20 sao)</button>
+        <button class="shop-btn" onclick="buyItem('cute_cat.png', 30)">🐱 Con mèo (30 sao)</button>
+      </div>
+    </div>
+
+    <div class="card" id="inventory-card" style="display:none">
+      <h3 style="font-family:'Baloo 2'; color:var(--green-d)">🎒 Bộ sưu tập của con</h3>
+      <div id="inventory-area" style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:10px"></div>
+    </div>
+
+    <div id="subjectList" style="display:flex; flex-direction:column; gap:10px"></div>
   </div>
 
-  <!-- Khu vực huy hiệu -->
-  <div id="badge-area" style="text-align:center; margin-top:20px;">
-    <!-- Huy hiệu sẽ hiện ở đây -->
-  </div>
-  <div style="text-align:center; margin-top:10px;">
-    <button onclick="redeemBadge()">Đổi huy hiệu</button>
-  </div>
-
-  <!-- Khu vực danh hiệu -->
-  <div id="title-area" style="text-align:center; margin-top:20px;">
-    🌱 Danh hiệu: Người mới bắt đầu
+  <div class="screen" id="screenTopic">
+    <div class="quiz-hdr">
+      <button onclick="showScreen('subject')" style="border:none;background:none;font-size:1.3rem">🏠</button>
+      <div id="topicMenuTitle" style="font-weight:800;flex:1;text-align:center;font-family:'Baloo 2'">Chủ đề bài tập</div>
+    </div>
+    <div id="topicList" style="margin-top:15px;display:flex;flex-direction:column;gap:10px"></div>
   </div>
 
-  <!-- Shop mini -->
-  <div id="shop-area" style="text-align:center; margin-top:20px;">
-    <h3>Shop mini</h3>
-    <button onclick="buyItem('sticker_star.png', 10)">Sticker Ngôi sao (10 sao)</button>
-    <button onclick="buyItem('sticker_smile.png', 20)">Sticker Mặt cười (20 sao)</button>
-    <button onclick="buyItem('sticker_cat.png', 30)">Sticker Con mèo (30 sao)</button>
+  <div class="screen" id="screenQuiz">
+    <div class="quiz-hdr">
+      <button onclick="showScreen('topic')" style="border:none;background:none;font-size:1.2rem">←</button>
+      <div id="quizTopicName" style="font-weight:800;flex:1;text-align:center">Đang tải...</div>
+      <div style="background:var(--yellow);padding:3px 12px;border-radius:12px;font-weight:800">⭐ <span id="scoreDisp">0</span></div>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    <div class="card">
+      <div id="qText" class="q-text"></div>
+    </div>
+    <div class="answers" id="ansGrid"></div>
+    <div class="feedback" id="feedback">
+      <div id="fbText" style="font-weight:800;font-size:1.1rem"></div>
+      <div id="fbAns" style="font-size:0.9rem;margin-top:5px;font-weight:600"></div>
+    </div>
+    <button class="btn-next" id="btnNext" onclick="nextQ()" style="display:none">Câu tiếp theo →</button>
   </div>
 
-  <!-- Bộ sưu tập -->
-  <div id="inventory-area" style="text-align:center; margin-top:20px;">
-    <h3>Bộ sưu tập của bé</h3>
+  <div class="screen" id="screenResult">
+    <div class="card">
+      <div style="font-size:3.5rem">🎉</div>
+      <div style="font-family:'Baloo 2';font-size:1.8rem;font-weight:800">Tuyệt vời quá!</div>
+      <div id="resScore" style="font-size:3rem;font-weight:800;color:var(--green-d);margin:10px 0">0/10</div>
+      <div style="color:var(--orange); font-weight:800; margin-bottom:15px">Con nhận được thêm sao tích lũy!</div>
+      <button class="btn-primary" onclick="showScreen('subject')">Về trang chủ 🏠</button>
+    </div>
   </div>
+</div>
 
-  <!-- Bảng xếp hạng -->
-  <div id="leaderboard-area" style="text-align:center; margin-top:20px;">
-    <h3>Bảng xếp hạng</h3>
-    <table id="leaderboard" border="1" style="margin:auto;">
-      <tr>
-        <th>Tên</th>
-        <th>Điểm</th>
-        <th>Huy hiệu</th>
-      </tr>
-    </table>
-  </div>
+<script>
+const API = 'https://script.google.com/macros/s/AKfycbxWlSEXYxlQGeh5nMFGOpPUxoEai3u5_UkIT0KkB9dvsKH9q6_lY4M3BM8NLp7bf1nu/exec';
+let ALL_DATA = null;
+let playerName = '';
+let quizQs = [];
+let curIdx = 0;
+let score = 0;
+let canEarnPoint = true;
 
-  <script>
-    let stars = 0;
-    let currentBadge = "";
-    let score = 0;
-    let currentQuestion = 0;
+// BIẾN QUẢN LÝ THƯỞNG
+let stars = 0;
+let currentBadge = "";
 
-    const questions = [
-      { q: "2 + 3 = ?", options: ["4", "5", "6"], answer: "5" },
-      { q: "7 - 4 = ?", options: ["2", "3", "4"], answer: "3" },
-      { q: "5 + 5 = ?", options: ["10", "11", "12"], answer: "10" }
-    ];
+async function initialLoad() {
+  loadLeaderboard();
+  try {
+    const res = await fetch(`${API}?action=getAllData`);
+    ALL_DATA = await res.json();
+    if (playerName) renderSubjects();
+  } catch (e) { console.error("Lỗi tải data"); }
+}
 
-    function loadQuestion() {
-      const q = questions[currentQuestion];
-      document.getElementById("question").textContent = q.q;
-      const optionsDiv = document.getElementById("options");
-      optionsDiv.innerHTML = "";
-      q.options.forEach(opt => {
-        optionsDiv.innerHTML += `<button onclick="checkAnswer('${opt}')">${opt}</button> `;
-      });
+async function loadLeaderboard() {
+  const lbDiv = document.getElementById('lbList');
+  try {
+    const res = await fetch(`${API}?action=getLeaderboard`);
+    const data = await res.json();
+    if (!data || data.length === 0) { lbDiv.innerHTML = "Hãy là người đầu tiên ghi điểm!"; return; }
+    let html = '<table class="lb-table">';
+    data.slice(0, 5).forEach((p, i) => {
+      const icon = i === 0 ? '🥇' : (i === 1 ? '🥈' : (i === 2 ? '🥉' : i + 1));
+      html += `<tr><td width="40">${icon}</td><td align="left"><b>${p.name}</b></td><td align="right"><b>${p.totalScore} ⭐</b></td></tr>`;
+    });
+    html += '</table>';
+    lbDiv.innerHTML = html;
+  } catch (e) { lbDiv.innerHTML = "Chưa tải được bảng xếp hạng"; }
+}
+
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen' + name.charAt(0).toUpperCase() + name.slice(1)).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+const ni = document.getElementById('nameInput');
+const bs = document.getElementById('btnStart');
+ni.addEventListener('input', () => bs.disabled = ni.value.trim().length < 2);
+
+function handleRegister() {
+  playerName = ni.value.trim();
+  document.getElementById('subName').textContent = "Chào con: " + playerName + " !";
+  showScreen('subject');
+  if (ALL_DATA) renderSubjects();
+}
+
+function renderSubjects() {
+  const el = document.getElementById('subjectList');
+  el.innerHTML = ALL_DATA.subjects.map((s, i) => `
+    <div class="sub-card" onclick="chooseSubject(${i})">
+      <div style="font-size:2rem">${s.icon}</div>
+      <div style="flex:1">
+        <div style="font-weight:800;font-family:'Baloo 2';font-size:1.1rem">${s.name}</div>
+        <div style="font-size:0.8rem;color:var(--gray)">${s.topics.length} nhóm bài tập</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function chooseSubject(idx) {
+  const s = ALL_DATA.subjects[idx];
+  document.getElementById('topicMenuTitle').textContent = s.name;
+  const tList = document.getElementById('topicList');
+  tList.innerHTML = s.topics.map((t, tIdx) => `
+    <div class="topic-card" onclick="startQuiz(${idx}, ${tIdx})">
+      <div style="font-size:1.5rem">${t.icon}</div>
+      <div style="font-weight:700;flex:1">${t.name}</div>
+    </div>
+  `).join('');
+  showScreen('topic');
+}
+
+function startQuiz(sIdx, tIdx) {
+  const topic = ALL_DATA.subjects[sIdx].topics[tIdx];
+  quizQs = [...topic.questions].sort(() => 0.5 - Math.random()).slice(0, 10);
+  curIdx = 0; score = 0;
+  document.getElementById('quizTopicName').textContent = topic.name;
+  showScreen('quiz');
+  renderQ();
+}
+
+function renderQ() {
+  canEarnPoint = true;
+  const q = quizQs[curIdx];
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('scoreDisp').textContent = score;
+  document.getElementById('progFill').style.width = (curIdx / quizQs.length * 100) + '%';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('btnNext').style.display = 'none';
+  const grid = document.getElementById('ansGrid');
+  grid.innerHTML = q.choices.map((c, i) => `<button class="ans-btn" onclick="checkAns(this, ${i}, ${q.a})">${c}</button>`).join('');
+}
+
+function checkAns(btn, selected, correct) {
+  const q = quizQs[curIdx];
+  const fb = document.getElementById('feedback');
+  if (selected === correct) {
+    document.getElementById('sndCorrect').play().catch(()=>{});
+    btn.classList.add('correct');
+    if (canEarnPoint) { 
+      score++; 
+      addStar(1); // << CỘNG SAO KHI ĐÚNG
+      document.getElementById('scoreDisp').textContent = score; 
     }
+    document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
+    fb.style.display = 'flex'; fb.className = 'feedback correct';
+    document.getElementById('fbText').textContent = 'Chính xác! Giỏi quá! 🎉';
+    document.getElementById('fbAns').textContent = '';
+    document.getElementById('btnNext').style.display = 'block';
+  } else {
+    document.getElementById('sndWrong').play().catch(()=>{});
+    btn.classList.add('wrong'); btn.disabled = true; canEarnPoint = false;
+    fb.style.display = 'flex'; fb.className = 'feedback wrong';
+    document.getElementById('fbText').textContent = 'Chưa đúng rồi, con thử lại nhé!';
+    document.getElementById('fbAns').textContent = q.hint ? 'Gợi ý: ' + q.hint : '';
+  }
+}
 
-    function checkAnswer(ans) {
-      const q = questions[currentQuestion];
-      if (ans === q.answer) {
-        score++;
-        addStar(1); // mỗi câu đúng được 1 sao
-        alert("Đúng rồi! Bé được cộng 1 sao ⭐");
-      } else {
-        alert("Sai mất rồi, cố gắng nhé 🌱");
-      }
-    }
+function nextQ() {
+  curIdx++;
+  if (curIdx >= quizQs.length) {
+    document.getElementById('sndWin').play().catch(()=>{});
+    showScreen('result');
+    document.getElementById('resScore').textContent = `${score}/${quizQs.length}`;
+    saveScoreToGS();
+  } else { renderQ(); }
+}
 
-    function nextQuestion() {
-      currentQuestion++;
-      if (currentQuestion < questions.length) {
-        loadQuestion();
-      } else {
-        alert("Hoàn thành quiz! Điểm: " + score);
-        updateLeaderboard("Bé", score, currentBadge);
-      }
-    }
+async function saveScoreToGS() {
+  try {
+    await fetch(API, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'saveScore', name: playerName, score: score, total: quizQs.length })
+    });
+    loadLeaderboard();
+  } catch (e) { console.error("Lưu điểm lỗi"); }
+}
 
-    function addStar(count) {
-      stars += count;
-      document.getElementById("star-count").textContent = stars;
-      checkTitle();
-    }
+// LOGIC QUẢN LÝ THƯỞNG (CỦA ÔNG)
+function addStar(count) {
+  stars += count;
+  document.getElementById("star-count").textContent = stars;
+  checkTitle();
+}
 
-    function showBadgeImage(type) {
-      const badgeArea = document.getElementById("badge-area");
-      currentBadge = type;
-      if (type === "gold") {
-        badgeArea.innerHTML = '<img src="images/sticker_gold.png" alt="Huy hiệu Vàng" width="100">';
-      } else if (type === "silver") {
-        badgeArea.innerHTML = '<img src="images/sticker_silver.png" alt="Huy hiệu Bạc" width="100">';
-      } else if (type === "bronze") {
-        badgeArea.innerHTML = '<img src="images/sticker_bronze.png" alt="Huy hiệu Đồng" width="100">';
-      }
-    }
+function showBadgeImage(type) {
+  const badgeArea = document.getElementById("badge-area");
+  currentBadge = type;
+  // Trỏ đúng link ảnh trong thư mục images của Github
+  if (type === "gold") {
+    badgeArea.innerHTML = '<img src="images/badge_gold.png" class="reward-img" alt="Vàng" width="80">';
+  } else if (type === "silver") {
+    badgeArea.innerHTML = '<img src="images/badge_rocket.png" class="reward-img" alt="Bạc" width="80">';
+  } else if (type === "bronze") {
+    badgeArea.innerHTML = '<img src="images/badge_shield.png" class="reward-img" alt="Đồng" width="80">';
+  }
+}
 
-    function redeemBadge() {
-      if (stars >= 50) {
-        showBadgeImage("gold");
-        stars -= 50;
-      } else if (stars >= 30) {
-        showBadgeImage("silver");
-        stars -= 30;
-      } else if (stars >= 10) {
-        showBadgeImage("bronze");
-        stars -= 10;
-      } else {
-        alert("Chưa đủ sao để đổi huy hiệu!");
-      }
-      document.getElementById("star-count").textContent = stars;
-    }
+function redeemBadge() {
+  if (stars >= 50) {
+    showBadgeImage("gold");
+    stars -= 50;
+  } else if (stars >= 30) {
+    showBadgeImage("silver");
+    stars -= 30;
+  } else if (stars >= 10) {
+    showBadgeImage("bronze");
+    stars -= 10;
+  } else {
+    alert("Con chưa đủ sao để đổi huy hiệu đâu! Cố gắng luyện tập thêm nhé!");
+  }
+  document.getElementById("star-count").textContent = stars;
+}
 
-    function buyItem(item, cost) {
-      if (stars >= cost) {
-        stars -= cost;
-        document.getElementById("star-count").textContent = stars;
-        const inventory = document.getElementById("inventory-area");
-        inventory.innerHTML += `<img src="images/${item}" alt="${item}" width="80"> `;
-      } else {
-        alert("Chưa đủ sao để mua!");
-      }
-    }
+function buyItem(item, cost) {
+  if (stars >= cost) {
+    stars -= cost;
+    document.getElementById("star-count").textContent = stars;
+    document.getElementById("inventory-card").style.display = "block";
+    const inventory = document.getElementById("inventory-area");
+    inventory.innerHTML += `<img src="images/${item}" class="reward-img" alt="${item}" width="60"> `;
+  } else {
+    alert("Con chưa đủ sao để mua Sticker này rồi!");
+  }
+}
 
-    function checkTitle() {
-      const titleArea = document.getElementById("title-area");
-      if (stars >= 100) {
-        titleArea.innerHTML = "👑 Danh hiệu: Siêu sao Toán học!";
-      } else if (stars >= 50) {
-        titleArea.innerHTML = "🌟 Danh hiệu: Ngôi sao chăm chỉ!";
-      } else if (stars >= 20) {
-        titleArea.innerHTML = "✨ Danh hiệu: Học sinh tiến bộ!";
-      } else {
-        titleArea.innerHTML = "🌱 Danh hiệu: Người mới bắt đầu";
-      }
-    }
+function checkTitle() {
+  const titleArea = document.getElementById("title-area");
+  if (stars >= 100) {
+    titleArea.innerHTML = "👑 Danh hiệu: Siêu sao Toán học!";
+  } else if (stars >= 50) {
+    titleArea.innerHTML = "🌟 Danh hiệu: Ngôi sao chăm chỉ!";
+  } else if (stars >= 20) {
+    titleArea.innerHTML = "✨ Danh hiệu: Học sinh tiến bộ!";
+  } else {
+    titleArea.innerHTML = "🌱 Danh hiệu: Người mới bắt đầu";
+  }
+}
 
-    function updateLeaderboard(name, score, badge) {
-      const table = document.getElementById("leaderboard");
-      const row = table.insertRow(-1);
-      row.insertCell(0).textContent = name;
-      row.insertCell(1).textContent = score;
-      row.insertCell(2).textContent = badge;
-    }
-
-    // Khởi động quiz
-    loadQuestion();
-  </script>
+initialLoad();
+</script>
 </body>
 </html>
