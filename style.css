@@ -1,14 +1,21 @@
+/* Nền tổng thể */
 body {
-  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* xanh biển nhạt pastel */
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* xanh biển pastel */
   font-family: 'Comic Neue', cursive, sans-serif;
   color: #003366;
+  margin: 0;
+  padding: 0;
 }
 
+/* Tiêu đề */
 h1 {
   color: #0066cc; /* xanh biển đậm */
   text-shadow: 2px 2px #e0f7fa;
+  text-align: center;
+  padding: 20px 0;
 }
 
+/* Nút bấm */
 button {
   background-color: #00bcd4; /* xanh ngọc */
   color: white;
@@ -25,20 +32,45 @@ button:hover {
   background-color: #0097a7; /* xanh ngọc đậm hơn khi hover */
 }
 
+/* Các khung phần thưởng */
 #star-area, #badge-area, #shop-area, #inventory-area, #title-area {
-  background: rgba(255,255,255,0.85);
+  background: #e3f2fd; /* xanh nhạt */
   border-radius: 16px;
   padding: 12px;
   margin: 12px auto;
   width: 80%;
   box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+  color: #003366;
 }
 
+/* Bảng xếp hạng */
 #leaderboard-area {
-  background: rgba(255,255,255,0.9);
+  background: #bbdefb; /* xanh pastel đậm hơn */
   border-radius: 16px;
   padding: 15px;
   margin: 20px auto;
   width: 85%;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  color: #003366;
+}
+
+/* Bảng trong leaderboard */
+#leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#leaderboard th, #leaderboard td {
+  border: 1px solid #0066cc;
+  padding: 8px;
+  text-align: center;
+}
+
+#leaderboard th {
+  background-color: #64b5f6; /* xanh dương nhạt */
+  color: white;
+}
+
+#leaderboard td {
+  background-color: #e3f2fd;
 }
