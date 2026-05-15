@@ -1,76 +1,98 @@
-/* Nền tổng thể */
+/* Biến màu sắc */
+:root {
+  --green: #2ECC71;
+  --green-d: #27AE60;
+  --blue: #3498DB;
+  --blue-d: #2980B9;
+  --red: #E74C3C;
+  --yellow: #F1C40F;
+  --orange: #E67E22;
+  --bg-color: #f0f7f4; /* Màu nền chủ đạo */
+  --text-color: #2C3E50;
+  --gray: #95A5A6;
+}
+
+/* Toàn bộ nền trang web */
 body {
-  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* xanh biển pastel */
-  font-family: 'Comic Neue', cursive, sans-serif;
-  color: #003366;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
   padding: 0;
+  color: var(--text-color);
+  min-height: 100vh;
+  
+  /* Tạo họa tiết chấm bi chìm cho nền không bị đơn điệu */
+  background-color: var(--bg-color);
+  background-image: radial-gradient(#d1eadd 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Tiêu đề */
-h1 {
-  color: #0066cc; /* xanh biển đậm */
-  text-shadow: 2px 2px #e0f7fa;
+/* Header rực rỡ hơn */
+.hdr {
+  background: linear-gradient(135deg, #1A8A4A, #27AE60, #1ABC9C);
+  padding: 1.5rem 1rem 3rem;
   text-align: center;
-  padding: 20px 0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Nút bấm */
-button {
-  background-color: #00bcd4; /* xanh ngọc */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.hdr::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--bg-color);
+  border-radius: 50% 50% 0 0/100% 100% 0 0;
 }
 
-button:hover {
-  background-color: #0097a7; /* xanh ngọc đậm hơn khi hover */
+/* Tối ưu các thẻ Card */
+.card {
+  background: rgba(255, 255, 255, 0.95); /* Trắng hơi trong suốt */
+  border-radius: 26px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Đổ bóng mềm mại */
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px); /* Hiệu ứng mờ kính hiện đại */
 }
 
-/* Các khung phần thưởng */
-#star-area, #badge-area, #shop-area, #inventory-area, #title-area {
-  background: #e3f2fd; /* xanh nhạt */
-  border-radius: 16px;
-  padding: 12px;
-  margin: 12px auto;
-  width: 80%;
-  box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
-  color: #003366;
-}
-
-/* Bảng xếp hạng */
-#leaderboard-area {
-  background: #bbdefb; /* xanh pastel đậm hơn */
-  border-radius: 16px;
-  padding: 15px;
-  margin: 20px auto;
-  width: 85%;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-  color: #003366;
-}
-
-/* Bảng trong leaderboard */
-#leaderboard {
+/* Các nút bấm trông "mọng" hơn */
+.btn-primary {
   width: 100%;
-  border-collapse: collapse;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #2ECC71, #27AE60);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #1e8449; /* Tạo hiệu ứng nút 3D */
+  transition: all 0.1s;
 }
 
-#leaderboard th, #leaderboard td {
-  border: 1px solid #0066cc;
-  padding: 8px;
-  text-align: center;
+.btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #1e8449;
 }
 
-#leaderboard th {
-  background-color: #64b5f6; /* xanh dương nhạt */
-  color: white;
+/* Nút quay lại/trang chủ */
+.btn-nav {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 8px 15px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
 }
 
-#leaderboard td {
-  background-color: #e3f2fd;
+.btn-nav:hover {
+  background: #f9f9f9;
+  border-color: var(--blue);
 }
