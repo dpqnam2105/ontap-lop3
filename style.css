@@ -1,36 +1,44 @@
-<style>
 body {
-  background: linear-gradient(to bottom, #fceabb, #f8b500);
-  font-family: 'Nunito', sans-serif;
-  color: #333;
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* xanh biển nhạt pastel */
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: #003366;
 }
 
 h1 {
-  color: #ff4081;
-  text-shadow: 2px 2px #fff;
+  color: #0066cc; /* xanh biển đậm */
+  text-shadow: 2px 2px #e0f7fa;
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #00bcd4; /* xanh ngọc */
   color: white;
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #388e3c;
+  background-color: #0097a7; /* xanh ngọc đậm hơn khi hover */
 }
 
 #star-area, #badge-area, #shop-area, #inventory-area, #title-area {
-  background: rgba(255,255,255,0.8);
-  border-radius: 12px;
-  padding: 10px;
-  margin: 10px auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  padding: 12px;
+  margin: 12px auto;
   width: 80%;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
 }
-</style>
+
+#leaderboard-area {
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 15px;
+  margin: 20px auto;
+  width: 85%;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
