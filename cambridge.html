@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🐰 Ôn Thi Cambridge Starters - Anh Thư</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#2ECC71;--green-d:#27AE60;
+  --blue:#3498DB;--blue-d:#2980B9;
+  --pink:#FF6B9D;--purple:#A569BD;
+  --yellow:#F1C40F;--orange:#E67E22;
+  --red:#E74C3C;
+  --bg:#FFF9F0;--text:#2C3E50;--gray:#95A5A6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:40px}
+
+.hdr{background:linear-gradient(135deg,#FF6B9D,#A569BD,#3498DB);padding:1.2rem 1rem 2rem;text-align:center;position:relative}
+.hdr h1{font-family:'Baloo 2';color:#fff;font-size:1.6rem;font-weight:800}
+.hdr p{color:#fff;opacity:.95;margin-top:5px;font-weight:600}
+
+.main{max-width:680px;margin:-15px auto 0;padding:0 1rem;position:relative}
+
+.tabs{display:flex;gap:8px;margin-bottom:1rem;overflow-x:auto;padding:5px}
+.tab{background:#fff;border:2px solid #ECF0F1;border-radius:14px;padding:10px 14px;font-family:'Baloo 2';font-weight:700;cursor:pointer;white-space:nowrap;font-size:0.95rem;flex-shrink:0}
+.tab.active{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border-color:transparent}
+
+.section{display:none;animation:fadeIn .3s}
+.section.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.card{background:#fff;border-radius:20px;padding:1.3rem;box-shadow:0 4px 18px rgba(0,0,0,.07);margin-bottom:1rem}
+.card-title{font-family:'Baloo 2';font-size:1.2rem;font-weight:800;color:var(--purple);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+
+.tip-box{background:#FFF3CD;border-left:4px solid var(--yellow);border-radius:10px;padding:12px;margin:10px 0;font-size:0.95rem}
+.tip-box b{color:var(--orange)}
+
+.speak-q{background:linear-gradient(135deg,#FFE5EC,#FFF0F5);border-radius:16px;padding:1rem;margin:10px 0}
+.speak-q-text{font-family:'Baloo 2';font-size:1.3rem;font-weight:700;color:var(--text);text-align:center;margin-bottom:8px}
+.speak-q-vi{font-size:0.9rem;color:var(--gray);text-align:center;font-style:italic;margin-bottom:10px}
+.speak-answer{background:#fff;border-radius:10px;padding:10px;margin-top:8px;display:none;border:2px dashed var(--pink)}
+.speak-answer.show{display:block}
+.speak-answer-text{font-family:'Baloo 2';font-size:1.1rem;color:var(--green-d);font-weight:700}
+.btn-show{background:var(--purple);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-family:'Baloo 2';font-weight:700;cursor:pointer;font-size:0.95rem;margin-top:5px}
+.btn-listen{background:var(--blue);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-family:'Baloo 2';font-weight:700;cursor:pointer;font-size:0.95rem;margin-left:8px}
+.btn-listen:active{transform:scale(0.95)}
+.btn-listen.speaking{background:var(--orange);animation:pulse 0.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
+
+.q-block{background:#fff;border-radius:16px;padding:1rem;margin:10px 0;border:2px solid #ECF0F1}
+.q-text{font-family:'Baloo 2';font-size:1.15rem;font-weight:700;margin-bottom:12px;line-height:1.4}
+.q-img{text-align:center;margin:10px 0;font-size:3rem}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.choice{background:#F8F9FA;border:2px solid #DEE2E6;border-radius:12px;padding:10px;font-family:'Baloo 2';font-weight:700;cursor:pointer;transition:all .15s;font-size:1rem;text-align:center}
+.choice:hover{border-color:var(--blue)}
+.choice.correct{background:#D5F5E3;border-color:var(--green);color:#1E8449}
+.choice.wrong{background:#FADBD8;border-color:var(--red);color:#922B21}
+
+.letter-input{width:100%;padding:12px;border:3px solid #ECF0F1;border-radius:12px;font-family:'Baloo 2';font-size:1.5rem;text-align:center;outline:none;text-transform:lowercase}
+.letter-input:focus{border-color:var(--pink)}
+.btn-check{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;border:none;border-radius:12px;padding:10px;width:100%;font-family:'Baloo 2';font-weight:800;cursor:pointer;font-size:1rem;margin-top:8px}
+
+.tip-card{background:linear-gradient(135deg,#E8F8F5,#D5F5E3);border-radius:16px;padding:1rem;margin:10px 0}
+.tip-card h4{font-family:'Baloo 2';color:var(--green-d);margin-bottom:8px}
+.tip-card ul{margin-left:1.2rem;line-height:1.7}
+
+.pep-talk{background:linear-gradient(135deg,#FFF3CD,#FFE5EC);border-radius:20px;padding:1.5rem;text-align:center;margin-bottom:1rem}
+.pep-talk .emoji{font-size:3rem}
+.pep-talk h2{font-family:'Baloo 2';color:var(--purple);margin:8px 0}
+
+.section-divider{font-family:'Baloo 2';font-weight:800;color:var(--pink);margin:1.2rem 0 0.5rem;font-size:1.1rem;padding-left:5px;border-left:4px solid var(--pink)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <h1>🐰 Anh Thư - Cambridge Starters</h1>
+  <p>Ôn tập cấp tốc đêm trước thi 🌙</p>
+</header>
+
+<div class="main">
+
+  <div class="pep-talk">
+    <div class="emoji">💪✨</div>
+    <h2>Con làm được mà Anh Thư!</h2>
+    <div>Tối nay con chỉ cần ôn nhẹ và đi ngủ sớm thôi nhé. Ba/mẹ tin con!</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="speaking">🗣️ Speaking</button>
+    <button class="tab" data-tab="reading">📖 Reading</button>
+    <button class="tab" data-tab="writing">✍️ Writing</button>
+    <button class="tab" data-tab="listening">👂 Listening</button>
+    <button class="tab" data-tab="vocab">📚 Từ vựng</button>
+    <button class="tab" data-tab="tips">💡 Mẹo thi</button>
+  </div>
+
+  <!-- ============ SPEAKING ============ -->
+  <div class="section active" id="speaking">
+
+    <div class="card">
+      <div class="card-title">🗣️ Speaking - Phần thi nói</div>
+      <div class="tip-box">
+        <b>Mẹo cho Thỏ:</b> Cô giáo Cambridge rất hiền 🌷 Cô sẽ chỉ vào tranh và hỏi. Con cứ nói TO, RÕ, không cần đúng 100% — quan trọng là DÁM NÓI!
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Phần 1: Chào hỏi (cô sẽ hỏi)</div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Hello! What's your name?</div>
+        <div class="speak-q-vi">(Xin chào! Con tên gì?)</div>
+        <button class="btn-listen" onclick="speak('Hello, what is your name?', this)">🔊 Nghe</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem câu trả lời 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">My name is Anh Thu.</div>
+          <button class="btn-listen" onclick="speak('My name is Anh Thu', this)">🔊 Nghe mẫu</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">How old are you?</div>
+        <div class="speak-q-vi">(Con mấy tuổi?)</div>
+        <button class="btn-listen" onclick="speak('How old are you?', this)">🔊 Nghe</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem câu trả lời 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">I'm eight years old.</div>
+          <button class="btn-listen" onclick="speak('I am eight years old', this)">🔊 Nghe mẫu</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">How do you spell your name?</div>
+        <div class="speak-q-vi">(Đánh vần tên con đi)</div>
+        <button class="btn-listen" onclick="speak('How do you spell your name?', this)">🔊 Nghe</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem câu trả lời 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">A-N-H, T-H-U</div>
+          <div style="font-size:0.9rem;color:var(--gray);margin-top:5px">Đọc là: Ei - En - Eich, Ti - Eich - Yu</div>
+          <button class="btn-listen" onclick="speak('A. N. H. T. H. U.', this)">🔊 Nghe mẫu</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Where are you from?</div>
+        <div class="speak-q-vi">(Con đến từ đâu?)</div>
+        <button class="btn-listen" onclick="speak('Where are you from?', this)">🔊 Nghe</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem câu trả lời 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">I'm from Vietnam.</div>
+          <button class="btn-listen" onclick="speak('I am from Vietnam', this)">🔊 Nghe mẫu</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Phần 2: Chỉ tranh - Mô tả</div>
+      <div class="tip-box"><b>Mẹo:</b> Cô chỉ tranh, con dùng giới từ: <b>in</b> (trong), <b>on</b> (trên), <b>under</b> (dưới), <b>next to</b> (bên cạnh), <b>behind</b> (phía sau)</div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Where's the cat? 🐱</div>
+        <div class="speak-q-vi">(Mèo ở đâu?)</div>
+        <button class="btn-listen" onclick="speak('Where is the cat?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">It's on the table.</div>
+          <div class="speak-answer-text" style="margin-top:5px">It's under the chair.</div>
+          <button class="btn-listen" onclick="speak('It is on the table', this)">🔊</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">What colour is it?</div>
+        <div class="speak-q-vi">(Nó màu gì?)</div>
+        <button class="btn-listen" onclick="speak('What colour is it?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">It's red. / It's blue. / It's yellow.</div>
+          <button class="btn-listen" onclick="speak('It is red', this)">🔊</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">How many cats are there?</div>
+        <div class="speak-q-vi">(Có mấy con mèo?)</div>
+        <button class="btn-listen" onclick="speak('How many cats are there?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">There are three. / There's one cat.</div>
+          <button class="btn-listen" onclick="speak('There are three cats', this)">🔊</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">What is the boy doing?</div>
+        <div class="speak-q-vi">(Bạn trai đang làm gì?)</div>
+        <button class="btn-listen" onclick="speak('What is the boy doing?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">He's running. / He's eating. / He's playing.</div>
+          <button class="btn-listen" onclick="speak('He is running', this)">🔊</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Is the dog big or small?</div>
+        <div class="speak-q-vi">(Con chó to hay nhỏ?)</div>
+        <button class="btn-listen" onclick="speak('Is the dog big or small?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">It's big. / It's small.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Phần 3: Câu hỏi cá nhân (quan trọng nhất!)</div>
+      <div class="tip-box"><b>Quan trọng:</b> Cô hỏi về con và gia đình. Trả lời ngắn, đủ ý, KHÔNG cần dài!</div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Do you like ice cream?</div>
+        <div class="speak-q-vi">(Con có thích kem không?)</div>
+        <button class="btn-listen" onclick="speak('Do you like ice cream?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">Yes, I do. / No, I don't.</div>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">What's your favourite animal?</div>
+        <div class="speak-q-vi">(Con vật yêu thích?)</div>
+        <button class="btn-listen" onclick="speak('What is your favourite animal?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">My favourite animal is a rabbit. 🐰</div>
+          <button class="btn-listen" onclick="speak('My favourite animal is a rabbit', this)">🔊</button>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">What's your favourite colour?</div>
+        <div class="speak-q-vi">(Màu yêu thích?)</div>
+        <button class="btn-listen" onclick="speak('What is your favourite colour?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">My favourite colour is pink. 🌸</div>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Have you got a brother or sister?</div>
+        <div class="speak-q-vi">(Có anh chị em không?)</div>
+        <button class="btn-listen" onclick="speak('Have you got a brother or sister?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">Yes, I've got a sister. / No, I haven't.</div>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Do you go to school?</div>
+        <div class="speak-q-vi">(Con đi học không?)</div>
+        <button class="btn-listen" onclick="speak('Do you go to school?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">Yes, I do. I'm in class 2.</div>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">What do you like to eat?</div>
+        <div class="speak-q-vi">(Con thích ăn gì?)</div>
+        <button class="btn-listen" onclick="speak('What do you like to eat?', this)">🔊</button>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">I like rice and chicken. / I like pizza.</div>
+        </div>
+      </div>
+
+      <div class="speak-q">
+        <div class="speak-q-text">Goodbye, Anh Thư!</div>
+        <div class="speak-q-vi">(Tạm biệt nhé!)</div>
+        <button class="btn-show" onclick="toggleAns(this)">Xem 👀</button>
+        <div class="speak-answer">
+          <div class="speak-answer-text">Goodbye! Thank you!</div>
+          <div style="font-size:0.9rem;color:var(--orange);margin-top:5px">💡 Nhớ cười tươi và vẫy tay nhé!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ READING ============ -->
+  <div class="section" id="reading">
+    <div class="card">
+      <div class="card-title">📖 Reading - Đọc & Chọn đáp án</div>
+      <div class="tip-box"><b>Dạng phổ biến:</b> Nhìn tranh → chọn từ đúng. Đọc câu → True/False.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 1: Nhìn tranh chọn từ</div>
+
+      <div class="q-block">
+        <div class="q-img">🐘</div>
+        <div class="q-text">What is this?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">a duck</button>
+          <button class="choice" onclick="check(this,1,2)">a dog</button>
+          <button class="choice" onclick="check(this,2,2)">an elephant</button>
+          <button class="choice" onclick="check(this,3,2)">a lion</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🍎</div>
+        <div class="q-text">It's an...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">orange</button>
+          <button class="choice" onclick="check(this,1,1)">apple</button>
+          <button class="choice" onclick="check(this,2,1)">egg</button>
+          <button class="choice" onclick="check(this,3,1)">ice cream</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">👕</div>
+        <div class="q-text">This is a...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">T-shirt</button>
+          <button class="choice" onclick="check(this,1,0)">shoe</button>
+          <button class="choice" onclick="check(this,2,0)">hat</button>
+          <button class="choice" onclick="check(this,3,0)">sock</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🏠</div>
+        <div class="q-text">It's a...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">school</button>
+          <button class="choice" onclick="check(this,1,2)">park</button>
+          <button class="choice" onclick="check(this,2,2)">house</button>
+          <button class="choice" onclick="check(this,3,2)">tree</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🦒</div>
+        <div class="q-text">What is this?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">a horse</button>
+          <button class="choice" onclick="check(this,1,1)">a giraffe</button>
+          <button class="choice" onclick="check(this,2,1)">a cow</button>
+          <button class="choice" onclick="check(this,3,1)">a zebra</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🚂</div>
+        <div class="q-text">It's a...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,3)">bus</button>
+          <button class="choice" onclick="check(this,1,3)">car</button>
+          <button class="choice" onclick="check(this,2,3)">plane</button>
+          <button class="choice" onclick="check(this,3,3)">train</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 2: Đúng hay sai? (Yes / No)</div>
+      <div class="tip-box"><b>Mẹo:</b> Đọc câu, nhìn tranh, chọn <b>Yes</b> nếu khớp, <b>No</b> nếu không khớp.</div>
+
+      <div class="q-block">
+        <div class="q-img">🐱</div>
+        <div class="q-text">This is a cat.</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">Yes ✓</button>
+          <button class="choice" onclick="check(this,1,0)">No ✗</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🐦 🐦 🐦</div>
+        <div class="q-text">There are two birds.</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">Yes ✓</button>
+          <button class="choice" onclick="check(this,1,1)">No ✗</button>
+        </div>
+        <div style="font-size:0.85rem;color:var(--gray);margin-top:5px">💡 Có 3 con chim, không phải 2.</div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🍌</div>
+        <div class="q-text">It's a banana.</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">Yes ✓</button>
+          <button class="choice" onclick="check(this,1,0)">No ✗</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🦋</div>
+        <div class="q-text">This is a bee.</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">Yes ✓</button>
+          <button class="choice" onclick="check(this,1,1)">No ✗</button>
+        </div>
+        <div style="font-size:0.85rem;color:var(--gray);margin-top:5px">💡 Đây là butterfly (bướm), không phải bee (ong).</div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">☀️</div>
+        <div class="q-text">It's the sun.</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">Yes ✓</button>
+          <button class="choice" onclick="check(this,1,0)">No ✗</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 3: Đọc hiểu câu dài</div>
+
+      <div class="q-block">
+        <div style="background:#FFF3CD;padding:10px;border-radius:8px;margin-bottom:10px;font-style:italic">
+          "I have a red ball. It's big."
+        </div>
+        <div class="q-text">The ball is...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">small</button>
+          <button class="choice" onclick="check(this,1,2)">blue</button>
+          <button class="choice" onclick="check(this,2,2)">red</button>
+          <button class="choice" onclick="check(this,3,2)">green</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <div style="background:#FFF3CD;padding:10px;border-radius:8px;margin-bottom:10px;font-style:italic">
+          "Tom has got a cat. It's black and white."
+        </div>
+        <div class="q-text">Tom's cat is...</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,3)">red</button>
+          <button class="choice" onclick="check(this,1,3)">yellow</button>
+          <button class="choice" onclick="check(this,2,3)">brown</button>
+          <button class="choice" onclick="check(this,3,3)">black and white</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WRITING ============ -->
+  <div class="section" id="writing">
+    <div class="card">
+      <div class="card-title">✍️ Writing - Điền từ</div>
+      <div class="tip-box"><b>Dạng quen thuộc:</b> Nhìn tranh, viết tên đồ vật/con vật. Viết chữ thường, đúng chính tả.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 1: Viết tên đồ vật (viết thường)</div>
+
+      <div class="q-block">
+        <div class="q-img">🐶</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w1" placeholder="d _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w1','dog')">Kiểm tra</button>
+        <div id="r1" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🚗</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w2" placeholder="c _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w2','car')">Kiểm tra</button>
+        <div id="r2" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">📕</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w3" placeholder="b _ _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w3','book')">Kiểm tra</button>
+        <div id="r3" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🐟</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w4" placeholder="f _ _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w4','fish')">Kiểm tra</button>
+        <div id="r4" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🌳</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w5" placeholder="t _ _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w5','tree')">Kiểm tra</button>
+        <div id="r5" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🌸</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w11" placeholder="f _ _ _ _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w11','flower')">Kiểm tra</button>
+        <div id="r11" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🌙</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w12" placeholder="m _ _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w12','moon')">Kiểm tra</button>
+        <div id="r12" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🐝</div>
+        <div class="q-text">What is it?</div>
+        <input class="letter-input" id="w13" placeholder="b _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w13','bee')">Kiểm tra</button>
+        <div id="r13" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">👁️</div>
+        <div class="q-text">What is it? (con mắt)</div>
+        <input class="letter-input" id="w14" placeholder="e _ _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w14','eye')">Kiểm tra</button>
+        <div id="r14" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 2: Chính tả khó (dễ sai)</div>
+      <div class="tip-box">⚠️ Đây là những từ Thỏ <b>dễ viết sai</b>. Để ý chữ cái khó!</div>
+
+      <div class="q-block">
+        <div class="q-img">🦒</div>
+        <div class="q-text">Con hươu cao cổ (có 2 chữ 'f')</div>
+        <input class="letter-input" id="w6" placeholder="g _ r _ f f _" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w6','giraffe')">Kiểm tra</button>
+        <div id="r6" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🍦</div>
+        <div class="q-text">Kem (2 từ, có dấu cách)</div>
+        <input class="letter-input" id="w7" placeholder="ice c _ _ _ _" maxlength="12">
+        <button class="btn-check" onclick="checkWord('w7','ice cream')">Kiểm tra</button>
+        <div id="r7" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🐘</div>
+        <div class="q-text">Con voi</div>
+        <input class="letter-input" id="w8" placeholder="e _ _ _ h _ _ t" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w8','elephant')">Kiểm tra</button>
+        <div id="r8" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🍊</div>
+        <div class="q-text">Quả cam / màu cam</div>
+        <input class="letter-input" id="w9" placeholder="o _ _ _ _ e" maxlength="10">
+        <button class="btn-check" onclick="checkWord('w9','orange')">Kiểm tra</button>
+        <div id="r9" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-img">🦋</div>
+        <div class="q-text">Con bướm</div>
+        <input class="letter-input" id="w10" placeholder="b _ _ t e _ f l _" maxlength="12">
+        <button class="btn-check" onclick="checkWord('w10','butterfly')">Kiểm tra</button>
+        <div id="r10" style="text-align:center;margin-top:8px;font-weight:700"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LISTENING ============ -->
+  <div class="section" id="listening">
+    <div class="card">
+      <div class="card-title">👂 Listening - Nghe và chọn</div>
+      <div class="tip-box">
+        ✨ <b>Cách dùng:</b> Bấm 🔊 để nghe câu (có thể bấm nhiều lần). Sau đó chọn đáp án đúng.
+        <br>💡 Mỗi câu cô sẽ đọc <b>2 lần</b> trong bài thi thật!
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 1: Nghe tên</div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('My name is Tom', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Tên bạn ấy là gì?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">Tim</button>
+          <button class="choice" onclick="check(this,1,1)">Tom</button>
+          <button class="choice" onclick="check(this,2,1)">Tam</button>
+          <button class="choice" onclick="check(this,3,1)">Sam</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('Her name is Anna', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Cô bé tên gì?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">Emma</button>
+          <button class="choice" onclick="check(this,1,2)">Hannah</button>
+          <button class="choice" onclick="check(this,2,2)">Anna</button>
+          <button class="choice" onclick="check(this,3,2)">Amy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 2: Nghe màu sắc</div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('I have a red bag', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Cái túi màu gì?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">blue</button>
+          <button class="choice" onclick="check(this,1,2)">green</button>
+          <button class="choice" onclick="check(this,2,2)">red</button>
+          <button class="choice" onclick="check(this,3,2)">black</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('The cat is white', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Con mèo màu gì?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">white</button>
+          <button class="choice" onclick="check(this,1,0)">brown</button>
+          <button class="choice" onclick="check(this,2,0)">grey</button>
+          <button class="choice" onclick="check(this,3,0)">pink</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 3: Nghe số đếm</div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('There are five apples', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Có bao nhiêu quả táo?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">5</button>
+          <button class="choice" onclick="check(this,1,0)">4</button>
+          <button class="choice" onclick="check(this,2,0)">9</button>
+          <button class="choice" onclick="check(this,3,0)">6</button>
+        </div>
+        <div style="font-size:0.85rem;color:var(--gray);margin-top:5px">💡 Dễ nhầm: <b>five (5)</b> với <b>four (4)</b> hoặc <b>nine (9)</b></div>
+      </div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('I am ten years old', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Bạn ấy mấy tuổi?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,1)">2</button>
+          <button class="choice" onclick="check(this,1,1)">10</button>
+          <button class="choice" onclick="check(this,2,1)">8</button>
+          <button class="choice" onclick="check(this,3,1)">12</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bài 4: Nghe vị trí (in/on/under)</div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('The cat is under the chair', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Con mèo ở đâu?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,2)">on the chair</button>
+          <button class="choice" onclick="check(this,1,2)">in the chair</button>
+          <button class="choice" onclick="check(this,2,2)">under the chair</button>
+          <button class="choice" onclick="check(this,3,2)">next to the chair</button>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <button class="btn-listen" onclick="speak('The book is on the table', this)">🔊 Nghe câu</button>
+        <div class="q-text" style="margin-top:10px">Quyển sách ở đâu?</div>
+        <div class="choices">
+          <button class="choice" onclick="check(this,0,0)">on the table</button>
+          <button class="choice" onclick="check(this,1,0)">under the table</button>
+          <button class="choice" onclick="check(this,2,0)">in the bag</button>
+          <button class="choice" onclick="check(this,3,0)">next to the bag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VOCAB ============ -->
+  <div class="section" id="vocab">
+    <div class="card">
+      <div class="card-title">📚 Ôn từ vựng Cambridge Starters</div>
+      <div class="tip-box">⭐ Đây là <b>các nhóm từ Cambridge Starters hay hỏi nhất</b>. Bấm 🔊 để nghe phát âm.</div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">🌈 Màu sắc (Colours)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('red',this)">🔴 red - đỏ</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('blue',this)">🔵 blue - xanh dương</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('green',this)">🟢 green - xanh lá</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('yellow',this)">🟡 yellow - vàng</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('pink',this)">🩷 pink - hồng</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('orange',this)">🟠 orange - cam</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('purple',this)">🟣 purple - tím</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('black',this)">⚫ black - đen</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('white',this)">⚪ white - trắng</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('brown',this)">🟤 brown - nâu</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">🔢 Số đếm (Numbers)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('one',this)">1 - one</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('two',this)">2 - two</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('three',this)">3 - three</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('four',this)">4 - four</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('five',this)">5 - five</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('six',this)">6 - six</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('seven',this)">7 - seven</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('eight',this)">8 - eight</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('nine',this)">9 - nine</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('ten',this)">10 - ten</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">🐾 Động vật (Animals)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('cat',this)">🐱 cat - mèo</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('dog',this)">🐶 dog - chó</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('rabbit',this)">🐰 rabbit - thỏ</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('bird',this)">🐦 bird - chim</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('fish',this)">🐟 fish - cá</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('horse',this)">🐴 horse - ngựa</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('cow',this)">🐮 cow - bò</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('pig',this)">🐷 pig - lợn</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('duck',this)">🦆 duck - vịt</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('elephant',this)">🐘 elephant</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('lion',this)">🦁 lion - sư tử</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('monkey',this)">🐵 monkey - khỉ</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('giraffe',this)">🦒 giraffe</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('bear',this)">🐻 bear - gấu</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">👨‍👩‍👧 Gia đình (Family)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('mother',this)">👩 mother - mẹ</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('father',this)">👨 father - bố</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('sister',this)">👧 sister - chị/em gái</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('brother',this)">👦 brother - anh/em trai</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('grandmother',this)">👵 grandmother</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('grandfather',this)">👴 grandfather</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('baby',this)">👶 baby - em bé</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('family',this)">👨‍👩‍👧 family - gia đình</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">🦵 Bộ phận cơ thể (Body)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('head',this)">🧠 head - đầu</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('hair',this)">💇 hair - tóc</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('eye',this)">👁️ eye - mắt</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('nose',this)">👃 nose - mũi</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('mouth',this)">👄 mouth - miệng</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('ear',this)">👂 ear - tai</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('hand',this)">✋ hand - tay</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('foot',this)">🦶 foot - chân</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">🍎 Đồ ăn (Food)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('apple',this)">🍎 apple - táo</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('banana',this)">🍌 banana - chuối</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('orange',this)">🍊 orange - cam</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('cake',this)">🍰 cake - bánh</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('ice cream',this)">🍦 ice cream</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('bread',this)">🍞 bread - bánh mì</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('milk',this)">🥛 milk - sữa</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('water',this)">💧 water - nước</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-divider">📍 Vị trí (Prepositions)</div>
+      <div style="display:grid;grid-template-columns:1fr;gap:8px">
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('in - the cat is in the box',this)">📦 in - bên trong</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('on - the book is on the table',this)">⬆️ on - trên</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('under - the ball is under the chair',this)">⬇️ under - dưới</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('next to - the dog is next to the cat',this)">↔️ next to - bên cạnh</button>
+        <button class="btn-listen" style="margin:0;text-align:left" onclick="speak('behind - the boy is behind the tree',this)">⬅️ behind - phía sau</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TIPS ============ -->
+  <div class="section" id="tips">
+    <div class="card">
+      <div class="card-title">💡 Mẹo thi cho Thỏ</div>
+    </div>
+
+    <div class="tip-card">
+      <h4>🌙 Tối nay</h4>
+      <ul>
+        <li>Ôn nhẹ 30-40 phút thôi, đừng học nhiều</li>
+        <li>Chuẩn bị sẵn: bút chì, tẩy, giấy báo thi</li>
+        <li>Đi ngủ trước <b>21:00</b> — quan trọng nhất!</li>
+        <li>Mặc sẵn quần áo mai mặc đi thi</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <h4>🌅 Sáng mai trước khi đi</h4>
+      <ul>
+        <li>Ăn sáng đầy đủ, không quá no</li>
+        <li>Uống nước nhưng đừng nhiều quá</li>
+        <li>Đi vệ sinh trước khi vào phòng thi</li>
+        <li>Hít thở sâu 3 lần, mỉm cười 😊</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <h4>🗣️ Khi vào thi Speaking</h4>
+      <ul>
+        <li>Chào cô: <b>"Hello!"</b> + cười tươi</li>
+        <li>Nói TO, RÕ, không lí nhí</li>
+        <li>Không biết → nói <b>"Sorry, can you repeat?"</b></li>
+        <li>Sai cũng không sao — cô không trừ điểm vì sai!</li>
+        <li>Tạm biệt: <b>"Goodbye! Thank you!"</b></li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <h4>📝 Khi làm Reading/Writing</h4>
+      <ul>
+        <li>Viết chữ THƯỜNG, không viết hoa</li>
+        <li>Xem kỹ tranh trước khi điền</li>
+        <li>Không bỏ trống câu nào — đoán cũng được</li>
+        <li>Soát lại 5 phút cuối</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <h4>👂 Khi nghe Listening</h4>
+      <ul>
+        <li>Mỗi câu nghe <b>2 lần</b> — đừng vội</li>
+        <li>Lần 1 nghe ý chung, lần 2 chú ý chi tiết</li>
+        <li>Nghe được gì viết ngay vào nháp</li>
+      </ul>
+    </div>
+
+    <div class="pep-talk" style="margin-top:20px">
+      <div class="emoji">🐰💖</div>
+      <h2>Anh Thư của ba/mẹ giỏi lắm!</h2>
+      <div>Dù thi kết quả thế nào, con đã rất cố gắng rồi. Ba/mẹ tự hào về con!</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============ TAB SWITCHING ============
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+    window.scrollTo(0,0);
+  });
+});
+
+// ============ TOGGLE ANSWER ============
+function toggleAns(btn){
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('show');
+  btn.textContent = ans.classList.contains('show') ? 'Ẩn câu trả lời 🙈' : 'Xem câu trả lời 👀';
+}
+
+// ============ TEXT-TO-SPEECH (FIXED) ============
+// Cache giọng đọc tiếng Anh
+let englishVoice = null;
+let voicesLoaded = false;
+
+function loadVoices(){
+  const voices = window.speechSynthesis.getVoices();
+  if(voices.length === 0) return false;
+  
+  // Ưu tiên giọng UK > US > bất kỳ giọng tiếng Anh nào
+  englishVoice = voices.find(v => v.lang === 'en-GB' && v.name.includes('Female'))
+              || voices.find(v => v.lang === 'en-GB')
+              || voices.find(v => v.lang === 'en-US' && v.name.includes('Female'))
+              || voices.find(v => v.lang === 'en-US')
+              || voices.find(v => v.lang.startsWith('en'));
+  voicesLoaded = true;
+  return true;
+}
+
+// Load voices ngay khi page load
+if('speechSynthesis' in window){
+  loadVoices();
+  // Chrome cần đợi event voiceschanged
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+// Speak function với fix bug Chrome (queue bị kẹt)
+let speakingBtn = null;
+
+function speak(text, btn){
+  if(!('speechSynthesis' in window)){
+    alert('Trình duyệt không hỗ trợ đọc. Hãy dùng Chrome nhé!');
+    return;
+  }
+  
+  // QUAN TRỌNG: cancel sạch sẽ trước khi nói câu mới
+  window.speechSynthesis.cancel();
+  
+  // Reset trạng thái nút cũ
+  if(speakingBtn){
+    speakingBtn.classList.remove('speaking');
+    speakingBtn = null;
+  }
+  
+  // Workaround cho Chrome bug: đợi 1 chút sau khi cancel
+  setTimeout(() => {
+    // Reload voices nếu chưa có
+    if(!voicesLoaded) loadVoices();
+    
+    const u = new SpeechSynthesisUtterance(text);
+    
+    if(englishVoice){
+      u.voice = englishVoice;
+      u.lang = englishVoice.lang;
+    } else {
+      u.lang = 'en-GB';
+    }
+    
+    u.rate = 0.85;
+    u.pitch = 1.1;
+    u.volume = 1.0;
+    
+    // Hiệu ứng visual cho nút
+    if(btn){
+      btn.classList.add('speaking');
+      speakingBtn = btn;
+    }
+    
+    u.onend = () => {
+      if(btn) btn.classList.remove('speaking');
+      if(speakingBtn === btn) speakingBtn = null;
+    };
+    
+    u.onerror = () => {
+      if(btn) btn.classList.remove('speaking');
+      if(speakingBtn === btn) speakingBtn = null;
+    };
+    
+    window.speechSynthesis.speak(u);
+  }, 100);
+}
+
+// Chrome bug fix: speechSynthesis "ngủ" sau ~15s không dùng → ping định kỳ
+setInterval(() => {
+  if(window.speechSynthesis && !window.speechSynthesis.speaking){
+    window.speechSynthesis.resume();
+  }
+}, 10000);
+
+// ============ CHECK MULTIPLE CHOICE ============
+function check(btn, selected, correct){
+  const parent = btn.parentElement;
+  if(parent.dataset.done) return;
+  parent.dataset.done = '1';
+  
+  parent.querySelectorAll('.choice').forEach((c,i)=>{
+    if(i===correct) c.classList.add('correct');
+    else if(i===selected) c.classList.add('wrong');
+  });
+}
+
+// ============ CHECK SPELLING ============
+function checkWord(inputId, correct){
+  const val = document.getElementById(inputId).value.trim().toLowerCase();
+  const resultId = 'r' + inputId.slice(1);
+  const result = document.getElementById(resultId);
+  if(val === correct){
+    result.innerHTML = '✅ Đúng rồi! Giỏi quá! 🌟';
+    result.style.color = 'var(--green-d)';
+  } else if(val === ''){
+    result.innerHTML = '✏️ Con thử viết xem nào!';
+    result.style.color = 'var(--gray)';
+  } else {
+    result.innerHTML = `❌ Chưa đúng. Đáp án: <b>${correct}</b>`;
+    result.style.color = 'var(--red)';
+  }
+}
+</script>
+
+</body>
+</html>
