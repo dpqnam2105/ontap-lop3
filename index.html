@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌟 Kho Bài Tập – Lớp 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <audio id="sndCorrect" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+  <audio id="sndWrong" src="https://assets.mixkit.co/active_storage/sfx/2020/2020-preview.mp3"></audio>
+  <audio id="sndWin" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+  <header class="hdr">
+    <span class="hdr-emoji">🌟</span>
+    <div class="hdr-title">Kho Bài Tập · Lớp 2–3</div>
+  </header>
+
+  <main class="main">
+
+    <!-- MÀN HÌNH 1: ĐĂNG KÝ -->
+    <section class="screen active" id="screenRegister">
+      <div class="card">
+        <div class="card-title">Chào con! Nhập tên để bắt đầu:</div>
+        <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
+        <button class="btn-primary mt-15" id="btnStart" disabled>Vào học thôi! 🚀</button>
+      </div>
+
+      <div class="card">
+        <div class="card-subtitle">🏆 Bảng Xếp Hạng Lớp</div>
+        <div id="lbList">
+          <div class="loading-text">Đang tải xếp hạng...</div>
+        </div>
+      </div>
+
+      <button class="btn-primary btn-blue" id="btnFeedback">💌 Góp ý & Đóng góp bài tập</button>
+    </section>
+
+    <!-- MÀN HÌNH 2: CHỌN MÔN -->
+    <section class="screen" id="screenSubject">
+      <div class="card card-compact">
+        <div class="card-title-small" id="subName">Chào con!</div>
+        <div class="star-area">
+          ⭐ Sao tích lũy: <span id="star-count">0</span>
+        </div>
+        <div id="title-area" class="title-tag">🌱 Danh hiệu: Người mới bắt đầu</div>
+        <div id="badge-area" class="badge-area"></div>
+        <button class="shop-btn shop-btn-orange" id="btnRedeemBadge">🏅 Đổi huy hiệu mới</button>
+      </div>
+
+      <div class="card">
+        <h3 class="card-heading">🏪 Shop Sticker</h3>
+        <div class="shop-grid">
+          <button class="shop-btn" data-item="sticker_star.png" data-cost="10">⭐ Ngôi sao (10)</button>
+          <button class="shop-btn" data-item="sticker_smile.png" data-cost="20">😊 Mặt cười (20)</button>
+          <button class="shop-btn" data-item="sticker_bird.png" data-cost="30">🐱 Con mèo (30)</button>
+        </div>
+      </div>
+
+      <div class="card hidden" id="inventory-card">
+        <h3 class="card-heading card-heading-green">🎒 Túi đồ của con</h3>
+        <div id="inventory-area" class="inventory-area"></div>
+      </div>
+
+      <div id="subjectList" class="subject-list"></div>
+    </section>
+
+    <!-- MÀN HÌNH 3: CHỌN CHỦ ĐỀ -->
+    <section class="screen" id="screenTopic">
+      <div class="quiz-hdr">
+        <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+        <div id="topicMenuTitle" class="quiz-hdr-title">Chọn chủ đề</div>
+      </div>
+      <div id="topicList" class="topic-list"></div>
+    </section>
+
+    <!-- MÀN HÌNH 4: QUIZ -->
+    <section class="screen" id="screenQuiz">
+      <div class="quiz-hdr">
+        <button class="btn-nav" data-screen="topic">← <span>Quay lại</span></button>
+        <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
+      </div>
+      <div class="prog-bar">
+        <div class="prog-fill" id="progFill"></div>
+      </div>
+      <div class="card">
+        <div class="quiz-topic-name" id="quizTopicName"></div>
+        <div id="qText" class="q-text"></div>
+      </div>
+      <div class="answers" id="ansGrid"></div>
+      <div class="feedback" id="feedback">
+        <div id="fbText" class="fb-text"></div>
+        <div id="fbAns" class="fb-ans"></div>
+      </div>
+      <button class="btn-next hidden" id="btnNext">Câu tiếp theo →</button>
+    </section>
+
+    <!-- MÀN HÌNH 5: KẾT QUẢ -->
+    <section class="screen" id="screenResult">
+      <div class="card">
+        <div class="result-emoji">🎉</div>
+        <div class="result-title">Hoàn thành rồi!</div>
+        <div id="resScore" class="result-score">0/10</div>
+        <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
+        <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS modules - load order matters -->
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
