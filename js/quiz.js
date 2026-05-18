@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   QUIZ.JS v2 - với animation và sound vui
+   QUIZ.JS v3 - quản lý quiz + rewards
    ═══════════════════════════════════════════════ */
 
 const Quiz = {
@@ -59,7 +59,6 @@ const Quiz = {
         Rewards.addStar(1);
         document.getElementById('scoreDisp').textContent = this.score;
         
-        // Animation: sao bay lên + badge pop
         this._flyStar(btn);
         const scoreBadge = document.getElementById('scoreDisp').parentElement;
         scoreBadge.classList.add('pop');
@@ -100,7 +99,6 @@ const Quiz = {
     document.getElementById('resScore').textContent =
       `${this.score}/${this.questions.length}`;
     
-    // Confetti nhẹ nếu được điểm cao
     if (this.score >= 8) {
       this._confettiBurst();
     }
@@ -109,7 +107,6 @@ const Quiz = {
       .then(() => App.loadLeaderboard());
   },
 
-  /** Animation: sao bay từ vị trí nút lên góc score */
   _flyStar(fromEl) {
     const rect = fromEl.getBoundingClientRect();
     const star = document.createElement('div');
@@ -121,7 +118,6 @@ const Quiz = {
     setTimeout(() => star.remove(), 1300);
   },
 
-  /** Confetti nhẹ khi điểm cao */
   _confettiBurst() {
     const emojis = ['🎉', '⭐', '✨', '🌟', '🎊'];
     for (let i = 0; i < 12; i++) {
@@ -140,8 +136,7 @@ const Quiz = {
 };
 
 /* ═══════════════════════════════════════════════
-   SOUND - âm thanh vui hơn
-   Dùng Web Audio API tạo tone đơn giản
+   SOUND - dùng Web Audio API
    ═══════════════════════════════════════════════ */
 
 const Sound = {
@@ -158,7 +153,6 @@ const Sound = {
     return this.ctx;
   },
 
-  /** Phát 1 tone đơn giản */
   _tone(freq, duration, type = 'sine', volume = 0.15) {
     const ctx = this._getCtx();
     if (!ctx) return;
@@ -175,12 +169,8 @@ const Sound = {
     osc.stop(ctx.currentTime + duration);
   },
 
-  /** Chơi melody nhiều note liên tiếp */
   _melody(notes) {
-    const ctx = this._getCtx();
-    if (!ctx) return;
-    
-    notes.forEach(([freq, delay, dur = 0.15], i) => {
+    notes.forEach(([freq, delay, dur = 0.15]) => {
       setTimeout(() => this._tone(freq, dur, 'triangle'), delay);
     });
   },
@@ -188,22 +178,17 @@ const Sound = {
   play(type) {
     switch (type) {
       case 'correct':
-        // Ding ding! - C5 → E5 → G5 (hợp âm Đô trưởng đi lên)
         this._melody([
-          [523.25, 0],    // C5
-          [659.25, 80],   // E5
-          [783.99, 160],  // G5
+          [523.25, 0],
+          [659.25, 80],
+          [783.99, 160],
         ]);
         break;
-        
       case 'wrong':
-        // Buzz nhẹ - A3 chậm
         this._tone(220, 0.2, 'square', 0.08);
         setTimeout(() => this._tone(196, 0.2, 'square', 0.08), 150);
         break;
-        
       case 'win':
-        // Fanfare - C5 → E5 → G5 → C6 (hợp âm thắng cuộc)
         this._melody([
           [523.25, 0],
           [659.25, 100],
@@ -232,7 +217,6 @@ const Rewards = {
     const newTitle = this._calcTitle(data.totalCorrect);
     this.updateUI();
     
-    // Nếu danh hiệu vừa lên cấp → animation đặc biệt
     if (oldTitle !== newTitle) {
       this._titleUpgradeAnimation();
     }
@@ -248,6 +232,11 @@ const Rewards = {
     data.inventory.push(item);
     Storage.save(data);
     this.updateUI();
+    
+    // Tự chuyển sang tab Túi đồ sau khi mua thành công
+    if (typeof App !== 'undefined' && App._switchMiniTab) {
+      setTimeout(() => App._switchMiniTab('inventory'), 300);
+    }
   },
 
   redeemBadge() {
@@ -270,43 +259,50 @@ const Rewards = {
   },
 
   _calcTitle(totalCorrect) {
-    if (totalCorrect >= 100) return '👑 Danh hiệu: Siêu sao học tập!';
-    if (totalCorrect >= 50) return '🌟 Danh hiệu: Ngôi sao chăm chỉ!';
-    if (totalCorrect >= 20) return '✨ Danh hiệu: Bé tiến bộ!';
-    return '🌱 Danh hiệu: Người mới bắt đầu';
+    if (totalCorrect >= 100) return '👑 Siêu sao học tập!';
+    if (totalCorrect >= 50) return '🌟 Ngôi sao chăm chỉ!';
+    if (totalCorrect >= 20) return '✨ Bé tiến bộ!';
+    return '🌱 Người mới bắt đầu';
   },
 
   _titleUpgradeAnimation() {
     const titleEl = document.getElementById('title-area');
-    titleEl.classList.add('upgraded');
-    setTimeout(() => titleEl.classList.remove('upgraded'), 1000);
+    if (titleEl) {
+      titleEl.classList.add('upgraded');
+      setTimeout(() => titleEl.classList.remove('upgraded'), 1000);
+    }
     Sound.play('win');
   },
 
   updateUI() {
     const data = Storage.load();
 
-    document.getElementById('star-count').textContent = data.stars;
-    document.getElementById('title-area').textContent =
-      this._calcTitle(data.totalCorrect);
+    const starEl = document.getElementById('star-count');
+    if (starEl) starEl.textContent = data.stars;
+    
+    const titleEl = document.getElementById('title-area');
+    if (titleEl) titleEl.textContent = this._calcTitle(data.totalCorrect);
 
     const badgeArea = document.getElementById('badge-area');
-    if (data.currentBadge) {
-      badgeArea.innerHTML =
-        `<img src="images/sticker_${data.currentBadge}.png" class="reward-img" alt="Huy hiệu" width="70">`;
-    } else {
-      badgeArea.innerHTML = '';
+    if (badgeArea) {
+      if (data.currentBadge) {
+        badgeArea.innerHTML =
+          `<img src="images/sticker_${data.currentBadge}.png" class="reward-img" alt="Huy hiệu" width="60">`;
+      } else {
+        badgeArea.innerHTML = '';
+      }
     }
 
-    const invCard = document.getElementById('inventory-card');
+    // Inventory - giờ luôn hiển thị (có empty state)
     const invArea = document.getElementById('inventory-area');
-    if (data.inventory.length > 0) {
-      invCard.classList.remove('hidden');
-      invArea.innerHTML = data.inventory
-        .map(item => `<img src="images/${item}" class="reward-img" alt="sticker" width="60">`)
-        .join(' ');
-    } else {
-      invCard.classList.add('hidden');
+    if (invArea) {
+      if (data.inventory.length > 0) {
+        invArea.innerHTML = data.inventory
+          .map(item => `<img src="images/${item}" class="reward-img" alt="sticker" width="50">`)
+          .join(' ');
+      } else {
+        invArea.innerHTML = '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
+      }
     }
   }
 };
