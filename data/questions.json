@@ -1,0 +1,114 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-05-18",
+  "subjects": [
+    {
+      "id": "toan",
+      "icon": "🧮",
+      "name": "Toán",
+      "color": "#3498DB",
+      "topics": [
+        {
+          "id": "phep-nhan-5",
+          "icon": "✖️",
+          "name": "Bảng nhân 5",
+          "questions": [
+            {
+              "q": "5 × 3 = ?",
+              "choices": ["10", "15", "20", "25"],
+              "a": 1,
+              "hint": "Con đếm: 5, 10, 15...",
+              "explain": "5 × 3 = 5 + 5 + 5 = 15"
+            },
+            {
+              "q": "5 × 7 = ?",
+              "choices": ["30", "35", "40", "45"],
+              "a": 1,
+              "hint": "Bảng nhân 5: con đếm thêm 5 mỗi lần",
+              "explain": "5 × 7 = 35. Cách nhớ: 5, 10, 15, 20, 25, 30, 35"
+            },
+            {
+              "q": "Có 4 hộp kẹo, mỗi hộp có 5 viên. Tất cả có bao nhiêu viên kẹo?",
+              "choices": ["15 viên", "20 viên", "25 viên", "9 viên"],
+              "a": 1,
+              "hint": "Phép tính: 5 × 4 hoặc 4 × 5",
+              "explain": "4 × 5 = 20 viên kẹo"
+            }
+          ]
+        },
+        {
+          "id": "phep-chia",
+          "icon": "➗",
+          "name": "Phép chia đơn giản",
+          "questions": [
+            {
+              "q": "20 : 4 = ?",
+              "choices": ["4", "5", "6", "8"],
+              "a": 1,
+              "hint": "Hỏi: 4 nhân mấy bằng 20?",
+              "explain": "4 × 5 = 20, nên 20 : 4 = 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tieng-viet",
+      "icon": "📖",
+      "name": "Tiếng Việt",
+      "color": "#E74C3C",
+      "topics": [
+        {
+          "id": "r-d-gi",
+          "icon": "✍️",
+          "name": "Phân biệt r/d/gi",
+          "questions": [
+            {
+              "q": "Chọn từ đúng: ___ó rét (lạnh)",
+              "choices": ["dó", "ró", "gió", "giớ"],
+              "a": 2,
+              "hint": "Từ chỉ hiện tượng tự nhiên thường dùng 'gi'",
+              "explain": "Đúng là 'gió rét'. Quy tắc: từ chỉ hiện tượng tự nhiên (gió, giông, giá) thường viết bằng 'gi'"
+            },
+            {
+              "q": "Chọn từ đúng: con ___ơi (động vật biết bay)",
+              "choices": ["rơi", "dơi", "giơi", "rời"],
+              "a": 1,
+              "hint": "Con vật bay đêm, treo ngược",
+              "explain": "Đúng là 'con dơi'. Còn 'rơi' nghĩa khác (rơi xuống đất)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tieng-anh",
+      "icon": "🌍",
+      "name": "Tiếng Anh",
+      "color": "#2ECC71",
+      "topics": [
+        {
+          "id": "animals-starters",
+          "icon": "🐾",
+          "name": "Động vật (Starters)",
+          "questions": [
+            {
+              "q": "Con chó trong tiếng Anh là gì?",
+              "choices": ["cat", "dog", "duck", "cow"],
+              "a": 1,
+              "hint": "Bắt đầu bằng chữ 'd'",
+              "explain": "dog = con chó 🐶"
+            },
+            {
+              "q": "🐰 trong tiếng Anh là gì?",
+              "choices": ["rabbit", "rat", "raccoon", "rocket"],
+              "a": 0,
+              "hint": "Con vật Thỏ yêu nhất!",
+              "explain": "rabbit = con thỏ 🐰"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
