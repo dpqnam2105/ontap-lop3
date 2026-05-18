@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   APP.JS v2 - Khởi tạo & điều phối
+   APP.JS v3 - Khởi tạo & điều phối, có mini-tabs
    ═══════════════════════════════════════════════ */
 
 const App = {
@@ -66,17 +66,15 @@ const App = {
     this.playerName = name;
     Storage.set('playerName', name);
 
-    document.getElementById('subName').textContent = 'Chào con: ' + name;
+    document.getElementById('subName').textContent = 'Chào ' + name + '!';
     Rewards.updateUI();
     this.showScreen('subject');
 
     if (this.allData) {
       this._renderSubjects();
     } else {
-      // Nếu data chưa load xong, hiện loading
       document.getElementById('subjectList').innerHTML = 
         '<div class="loading-text">Đang tải bài tập... ⏳</div>';
-      // Đợi data load xong rồi render
       const checkData = setInterval(() => {
         if (this.allData) {
           clearInterval(checkData);
@@ -97,7 +95,7 @@ const App = {
         <div class="sub-icon">${s.icon}</div>
         <div class="sub-info">
           <div class="sub-name">${this._escape(s.name)}</div>
-          <div class="sub-meta">${s.topics.length} bài ôn tập</div>
+          <div class="sub-meta">${s.topics.length} chủ đề ôn tập</div>
         </div>`;
       card.addEventListener('click', () => this._chooseSubject(i));
       el.appendChild(card);
@@ -124,6 +122,15 @@ const App = {
     this.showScreen('topic');
   },
 
+  /** Switch mini-tab (Shop / Inventory) */
+  _switchMiniTab(target) {
+    document.querySelectorAll('.mini-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.mini-content').forEach(c => c.classList.remove('active'));
+    
+    document.querySelector(`.mini-tab[data-mini="${target}"]`).classList.add('active');
+    document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
+  },
+
   _bindEvents() {
     const ni = document.getElementById('nameInput');
     const bs = document.getElementById('btnStart');
@@ -146,7 +153,8 @@ const App = {
       Rewards.redeemBadge();
     });
 
-    document.querySelectorAll('.shop-btn[data-item]').forEach(btn => {
+    // Shop buttons (mới: dùng class shop-btn-mini)
+    document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.dataset.item;
         const cost = parseInt(btn.dataset.cost);
@@ -165,7 +173,12 @@ const App = {
       btn.addEventListener('click', () => this.showScreen(btn.dataset.screen));
     });
 
-    // Footer: Giới thiệu
+    // Mini tabs (Shop / Inventory)
+    document.querySelectorAll('.mini-tab[data-mini]').forEach(tab => {
+      tab.addEventListener('click', () => this._switchMiniTab(tab.dataset.mini));
+    });
+
+    // Footer
     const aboutLink = document.getElementById('footerAbout');
     if (aboutLink) {
       aboutLink.addEventListener('click', (e) => {
