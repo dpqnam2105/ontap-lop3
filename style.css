@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
-   KHO BÀI TẬP v2 - STYLESHEET
-   Cấu trúc: Variables → Reset → Layout → Components 
-            → Animations → Utilities → Responsive
+   KHO BÀI TẬP v2.1 - STYLESHEET
+   Đã tắt animation loop gây mỏi mắt
+   Giữ animation chỉ chạy 1 lần khi có sự kiện
    ═══════════════════════════════════════════════ */
 
 /* ── VARIABLES ──────────────────────────────── */
@@ -29,7 +29,6 @@
   --shadow-card: 0 6px 28px rgba(0, 0, 0, 0.08);
   --shadow-soft: 0 3px 12px rgba(0, 0, 0, 0.07);
   --shadow-btn: 0 4px 15px rgba(46, 204, 113, 0.3);
-  --shadow-glow: 0 0 20px rgba(241, 196, 15, 0.6);
 
   --font-body: 'Nunito', sans-serif;
   --font-display: 'Baloo 2', sans-serif;
@@ -51,7 +50,7 @@ body {
   flex-direction: column;
 }
 
-/* ── HEADER (mới, đẹp hơn) ──────────────────── */
+/* ── HEADER ─────────────────────────────────── */
 .site-header {
   background: linear-gradient(135deg, #1A8A4A, #27AE60, #1ABC9C);
   padding: 1rem 1rem 2.6rem;
@@ -78,10 +77,10 @@ body {
   z-index: 1;
 }
 
+/* TẮT animation nhún - chỉ là emoji tĩnh */
 .header-logo {
   font-size: 2.8rem;
   display: inline-block;
-  animation: gentleBounce 3s ease-in-out infinite;
 }
 
 .header-title {
@@ -99,7 +98,7 @@ body {
   font-weight: 600;
 }
 
-/* ── FOOTER (mới) ──────────────────────────── */
+/* ── FOOTER ─────────────────────────────────── */
 .site-footer {
   margin-top: auto;
   background: linear-gradient(135deg, #2C3E50, #34495E);
@@ -174,12 +173,9 @@ body {
   text-align: center;
   box-shadow: var(--shadow-card);
   margin-bottom: 1rem;
-  transition: transform 0.2s;
 }
 
-.card-compact {
-  padding: 15px;
-}
+.card-compact { padding: 15px; }
 
 .card-title {
   font-family: var(--font-display);
@@ -274,7 +270,7 @@ body {
   cursor: pointer;
   color: var(--text);
   font-size: 0.9rem;
-  transition: all 0.2s;
+  transition: background 0.2s;
 }
 
 .btn-nav:hover {
@@ -374,6 +370,7 @@ body {
   transition: transform 0.3s;
 }
 
+/* Pop chỉ chạy 1 lần khi score tăng */
 .score-badge.pop {
   animation: scorePop 0.5s ease-out;
 }
@@ -530,12 +527,12 @@ body {
 }
 
 .reward-img:hover {
-  transform: scale(1.15) rotate(5deg);
+  transform: scale(1.1);
 }
 
-/* HUY HIỆU - có hiệu ứng sáng lấp lánh */
+/* HUY HIỆU - hiệu ứng sáng RẤT NHẸ (không rung) */
 .badge-area img {
-  animation: badgeGlow 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(241, 196, 15, 0.5));
 }
 
 .title-tag {
@@ -550,6 +547,7 @@ body {
   transition: transform 0.3s;
 }
 
+/* Animation lên cấp - chỉ chạy 1 lần */
 .title-tag.upgraded {
   animation: titleUpgrade 1s ease-out;
 }
@@ -594,9 +592,9 @@ body {
 }
 
 /* ── RESULT ─────────────────────────────────── */
+/* Emoji kết quả - KHÔNG nhảy nữa, chỉ tĩnh */
 .result-emoji {
   font-size: 3.5rem;
-  animation: celebrationBounce 1s ease-out;
 }
 
 .result-title {
@@ -620,10 +618,11 @@ body {
 }
 
 /* ═══════════════════════════════════════════════
-   ANIMATIONS (mới)
+   ANIMATIONS - CHỈ CHẠY 1 LẦN KHI CÓ SỰ KIỆN
+   (đã loại bỏ các animation loop gây mỏi mắt)
    ═══════════════════════════════════════════════ */
 
-/* Sao bay lên khi cộng điểm */
+/* Sao bay lên khi cộng điểm (1 lần, 1.2s) */
 @keyframes starFly {
   0% {
     opacity: 1;
@@ -647,46 +646,27 @@ body {
   animation: starFly 1.2s ease-out forwards;
 }
 
-/* Score badge nhảy lên khi tăng */
+/* Score badge pop (1 lần khi tăng) */
 @keyframes scorePop {
   0% { transform: scale(1); }
   50% { transform: scale(1.3); background: var(--orange); }
   100% { transform: scale(1); }
 }
 
-/* Câu đúng - pulse màu xanh */
+/* Câu đúng - pulse 1 lần */
 @keyframes correctPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
 
-/* Câu sai - rung nhẹ */
+/* Câu sai - rung 1 lần, NHẸ */
 @keyframes wrongShake {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
 }
 
-/* Huy hiệu lấp lánh */
-@keyframes badgeGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 4px rgba(241, 196, 15, 0.6));
-    transform: scale(1);
-  }
-  50% {
-    filter: drop-shadow(0 0 15px rgba(241, 196, 15, 0.9));
-    transform: scale(1.05);
-  }
-}
-
-/* Logo header nhún nhẹ */
-@keyframes gentleBounce {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-3px) rotate(-3deg); }
-  75% { transform: translateY(-3px) rotate(3deg); }
-}
-
-/* Fade vào từ dưới lên */
+/* Fade vào từ dưới lên (khi đổi màn) */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -698,22 +678,14 @@ body {
   }
 }
 
-/* Phóng to khi xuất hiện */
+/* Phóng to khi xuất hiện (kết quả) */
 @keyframes scaleUp {
   0% { transform: scale(0); opacity: 0; }
   60% { transform: scale(1.2); }
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Mừng kết quả */
-@keyframes celebrationBounce {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-15px) rotate(-10deg); }
-  50% { transform: translateY(0); }
-  75% { transform: translateY(-8px) rotate(10deg); }
-}
-
-/* Lên cấp danh hiệu */
+/* Lên cấp danh hiệu (chạy 1 lần khi đủ điểm) */
 @keyframes titleUpgrade {
   0% { transform: scale(1); }
   30% { transform: scale(1.3); background: var(--green); color: #fff; }
@@ -734,7 +706,7 @@ body {
   .footer-links { gap: 0.8rem; font-size: 0.85rem; }
 }
 
-/* Tắt animation nếu user thích giảm chuyển động */
+/* Tắt mọi animation nếu user thích giảm chuyển động */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
