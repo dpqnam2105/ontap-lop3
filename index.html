@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🌟 Kho Bài Tập – Học cùng Anh Thư</title>
-  <meta name="description" content="Trang ôn tập kiến thức tiểu học cho các bé - Toán, Tiếng Việt, Tiếng Anh. Học vui, làm bài thoải mái, tích sao đổi quà!">
+  <meta name="description" content="Trang ôn tập kiến thức tiểu học cho các bé - Toán, Tiếng Việt, Tiếng Anh.">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -22,49 +22,87 @@
 
     <!-- MÀN HÌNH 1: ĐĂNG KÝ -->
     <section class="screen active" id="screenRegister">
-      <div class="card">
-        <div class="card-title">Chào con! Nhập tên để bắt đầu:</div>
-        <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
-        <button class="btn-primary mt-15" id="btnStart" disabled>Vào học thôi! 🚀</button>
-      </div>
+      <div class="register-grid">
+        <div class="card">
+          <div class="card-title">Chào con! Nhập tên để bắt đầu:</div>
+          <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
+          <button class="btn-primary mt-15" id="btnStart" disabled>Vào học thôi! 🚀</button>
+        </div>
 
-      <div class="card">
-        <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
-        <div id="lbList">
-          <div class="loading-text">Đang tải xếp hạng...</div>
+        <div class="card">
+          <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
+          <div id="lbList">
+            <div class="loading-text">Đang tải xếp hạng...</div>
+          </div>
         </div>
       </div>
 
       <button class="btn-primary btn-blue" id="btnFeedback">💌 Góp ý & Đóng góp bài tập</button>
     </section>
 
-    <!-- MÀN HÌNH 2: CHỌN MÔN -->
+    <!-- MÀN HÌNH 2: CHỌN MÔN (layout 2 cột) -->
     <section class="screen" id="screenSubject">
-      <div class="card card-compact">
-        <div class="card-title-small" id="subName">Chào con!</div>
-        <div class="star-area">
-          ⭐ Sao tích lũy: <span id="star-count">0</span>
+      <div class="subject-layout">
+
+        <!-- CỘT TRÁI: MÔN HỌC (ưu tiên cao) -->
+        <div class="subject-main">
+          <div class="card-section-header">
+            <h2 class="section-title">📚 Hôm nay con học gì?</h2>
+            <div class="section-subtitle">Chọn môn học con thích nhé!</div>
+          </div>
+          <div id="subjectList" class="subject-list"></div>
         </div>
-        <div id="title-area" class="title-tag">🌱 Danh hiệu: Người mới bắt đầu</div>
-        <div id="badge-area" class="badge-area"></div>
-        <button class="shop-btn shop-btn-orange" id="btnRedeemBadge">🏅 Đổi huy hiệu mới</button>
-      </div>
 
-      <div class="card">
-        <h3 class="card-heading">🏪 Shop Sticker</h3>
-        <div class="shop-grid">
-          <button class="shop-btn" data-item="sticker_star.png" data-cost="10">⭐ Ngôi sao (10)</button>
-          <button class="shop-btn" data-item="sticker_smile.png" data-cost="20">😊 Mặt cười (20)</button>
-          <button class="shop-btn" data-item="sticker_bird.png" data-cost="30">🐱 Con mèo (30)</button>
-        </div>
-      </div>
+        <!-- CỘT PHẢI: THÔNG TIN + SHOP + TÚI ĐỒ -->
+        <aside class="subject-sidebar">
 
-      <div class="card hidden" id="inventory-card">
-        <h3 class="card-heading card-heading-green">🎒 Túi đồ của con</h3>
-        <div id="inventory-area" class="inventory-area"></div>
-      </div>
+          <!-- Thông tin bé -->
+          <div class="card card-compact">
+            <div class="card-title-small" id="subName">Chào con!</div>
+            <div class="star-area">
+              ⭐ <span id="star-count">0</span> sao
+            </div>
+            <div id="title-area" class="title-tag">🌱 Người mới bắt đầu</div>
+            <div id="badge-area" class="badge-area"></div>
+            <button class="shop-btn shop-btn-orange shop-btn-full" id="btnRedeemBadge">🏅 Đổi huy hiệu</button>
+          </div>
 
-      <div id="subjectList" class="subject-list"></div>
+          <!-- Shop + Túi đồ gộp lại, có tab -->
+          <div class="card card-compact">
+            <div class="mini-tabs">
+              <button class="mini-tab active" data-mini="shop">🏪 Shop</button>
+              <button class="mini-tab" data-mini="inventory">🎒 Túi đồ</button>
+            </div>
+
+            <div class="mini-content active" id="miniShop">
+              <div class="shop-grid-compact">
+                <button class="shop-btn-mini" data-item="sticker_star.png" data-cost="10">
+                  <span class="shop-icon">⭐</span>
+                  <span class="shop-name">Ngôi sao</span>
+                  <span class="shop-cost">10 ⭐</span>
+                </button>
+                <button class="shop-btn-mini" data-item="sticker_smile.png" data-cost="20">
+                  <span class="shop-icon">😊</span>
+                  <span class="shop-name">Mặt cười</span>
+                  <span class="shop-cost">20 ⭐</span>
+                </button>
+                <button class="shop-btn-mini" data-item="sticker_bird.png" data-cost="30">
+                  <span class="shop-icon">🐱</span>
+                  <span class="shop-name">Con mèo</span>
+                  <span class="shop-cost">30 ⭐</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="mini-content" id="miniInventory">
+              <div id="inventory-area" class="inventory-area">
+                <div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
     </section>
 
     <!-- MÀN HÌNH 3: CHỌN CHỦ ĐỀ -->
@@ -78,33 +116,37 @@
 
     <!-- MÀN HÌNH 4: QUIZ -->
     <section class="screen" id="screenQuiz">
-      <div class="quiz-hdr">
-        <button class="btn-nav" data-screen="topic">← <span>Quay lại</span></button>
-        <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
+      <div class="quiz-wrap">
+        <div class="quiz-hdr">
+          <button class="btn-nav" data-screen="topic">← <span>Quay lại</span></button>
+          <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
+        </div>
+        <div class="prog-bar">
+          <div class="prog-fill" id="progFill"></div>
+        </div>
+        <div class="card">
+          <div class="quiz-topic-name" id="quizTopicName"></div>
+          <div id="qText" class="q-text"></div>
+        </div>
+        <div class="answers" id="ansGrid"></div>
+        <div class="feedback" id="feedback">
+          <div id="fbText" class="fb-text"></div>
+          <div id="fbAns" class="fb-ans"></div>
+        </div>
+        <button class="btn-next hidden" id="btnNext">Câu tiếp theo →</button>
       </div>
-      <div class="prog-bar">
-        <div class="prog-fill" id="progFill"></div>
-      </div>
-      <div class="card">
-        <div class="quiz-topic-name" id="quizTopicName"></div>
-        <div id="qText" class="q-text"></div>
-      </div>
-      <div class="answers" id="ansGrid"></div>
-      <div class="feedback" id="feedback">
-        <div id="fbText" class="fb-text"></div>
-        <div id="fbAns" class="fb-ans"></div>
-      </div>
-      <button class="btn-next hidden" id="btnNext">Câu tiếp theo →</button>
     </section>
 
     <!-- MÀN HÌNH 5: KẾT QUẢ -->
     <section class="screen" id="screenResult">
-      <div class="card">
-        <div class="result-emoji">🎉</div>
-        <div class="result-title">Hoàn thành rồi!</div>
-        <div id="resScore" class="result-score">0/10</div>
-        <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
-        <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
+      <div class="result-wrap">
+        <div class="card">
+          <div class="result-emoji">🎉</div>
+          <div class="result-title">Hoàn thành rồi!</div>
+          <div id="resScore" class="result-score">0/10</div>
+          <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
+          <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
+        </div>
       </div>
     </section>
 
@@ -122,7 +164,6 @@
     </div>
   </footer>
 
-  <!-- JS modules - load order matters -->
   <script src="js/storage.js"></script>
   <script src="js/api.js"></script>
   <script src="js/quiz.js"></script>
