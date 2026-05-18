@@ -1,7 +1,6 @@
 /* ═══════════════════════════════════════════════
-   KHO BÀI TẬP v2.1 - STYLESHEET
-   Đã tắt animation loop gây mỏi mắt
-   Giữ animation chỉ chạy 1 lần khi có sự kiện
+   KHO BÀI TẬP v3 - STYLESHEET
+   Layout mới: 2 cột trên desktop, ưu tiên môn học
    ═══════════════════════════════════════════════ */
 
 /* ── VARIABLES ──────────────────────────────── */
@@ -32,6 +31,10 @@
 
   --font-body: 'Nunito', sans-serif;
   --font-display: 'Baloo 2', sans-serif;
+
+  /* Layout: desktop chia 2 cột */
+  --content-max: 1100px;
+  --sidebar-width: 320px;
 }
 
 /* ── RESET ──────────────────────────────────── */
@@ -71,13 +74,12 @@ body {
 }
 
 .header-content {
-  max-width: 680px;
+  max-width: var(--content-max);
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* TẮT animation nhún - chỉ là emoji tĩnh */
 .header-logo {
   font-size: 2.8rem;
   display: inline-block;
@@ -109,7 +111,7 @@ body {
 }
 
 .footer-content {
-  max-width: 680px;
+  max-width: var(--content-max);
   margin: 0 auto;
 }
 
@@ -145,9 +147,9 @@ body {
   font-size: 0.8rem;
 }
 
-/* ── LAYOUT ─────────────────────────────────── */
+/* ── LAYOUT MAIN ────────────────────────────── */
 .main {
-  max-width: 680px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: 1rem 1.2rem 2rem;
   flex: 1;
@@ -156,13 +158,98 @@ body {
 
 .screen {
   display: none;
-  flex-direction: column;
-  gap: 0.9rem;
 }
 
 .screen.active {
-  display: flex;
+  display: block;
   animation: fadeInUp 0.4s ease-out;
+}
+
+/* ── REGISTER GRID (2 cột trên desktop) ──── */
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .register-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── SUBJECT SCREEN LAYOUT (2 cột) ────────── */
+.subject-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .subject-layout {
+    /* Trên desktop: chia 2 cột - môn học chiếm chính */
+    grid-template-columns: 1fr var(--sidebar-width);
+    align-items: start;
+  }
+  
+  /* Sidebar dính phía trên khi scroll */
+  .subject-sidebar {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+/* ── MÔN HỌC - cột chính ──────────────────── */
+.subject-main {
+  order: 1;
+}
+
+.card-section-header {
+  margin-bottom: 1rem;
+  padding: 0 5px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--green-d);
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.subject-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Trên màn rộng hơn, môn học cũng có thể 2 cột */
+@media (min-width: 600px) and (max-width: 899px) {
+  .subject-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── SIDEBAR ──────────────────────────────── */
+.subject-sidebar {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Trên mobile, sidebar nằm SAU môn học */
+@media (max-width: 899px) {
+  .subject-sidebar {
+    order: 3;
+  }
 }
 
 /* ── CARDS ──────────────────────────────────── */
@@ -175,7 +262,10 @@ body {
   margin-bottom: 1rem;
 }
 
-.card-compact { padding: 15px; }
+.card-compact {
+  padding: 1rem;
+  margin-bottom: 0;
+}
 
 .card-title {
   font-family: var(--font-display);
@@ -186,22 +276,16 @@ body {
 .card-title-small {
   font-weight: 800;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
 .card-subtitle {
   font-family: var(--font-display);
   font-weight: 800;
   color: var(--blue-d);
-}
-
-.card-heading {
-  font-family: var(--font-display);
-  color: var(--blue-d);
-}
-
-.card-heading-green {
-  color: var(--green-d);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
 /* ── INPUT ──────────────────────────────────── */
@@ -300,13 +384,14 @@ body {
 .sub-card, .topic-card {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 1rem;
+  padding: 1.1rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
   cursor: pointer;
   border: 3px solid var(--border);
   transition: all 0.22s;
+  text-align: left;
 }
 
 .sub-card:hover, .topic-card:hover {
@@ -315,38 +400,225 @@ body {
   box-shadow: 0 6px 15px rgba(46, 204, 113, 0.15);
 }
 
-.sub-icon { font-size: 2rem; }
+.sub-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
 .sub-info { flex: 1; }
 
 .sub-name {
   font-weight: 800;
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .sub-meta {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--gray);
+  margin-top: 2px;
 }
 
-.topic-icon { font-size: 1.5rem; }
+.topic-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
 
 .topic-name {
   font-weight: 700;
   flex: 1;
 }
 
-.subject-list, .topic-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .topic-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
   margin-top: 15px;
 }
 
+@media (min-width: 600px) {
+  .topic-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── STARS & TITLE (sidebar) ──────────────── */
+.star-area {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--orange);
+  margin: 8px 0;
+}
+
+.title-tag {
+  display: inline-block;
+  background: var(--yellow);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--text);
+  font-size: 0.9rem;
+  margin: 5px 0;
+  transition: transform 0.3s;
+}
+
+.title-tag.upgraded {
+  animation: titleUpgrade 1s ease-out;
+}
+
+.badge-area {
+  margin: 10px 0;
+  min-height: 40px;
+}
+
+.badge-area img {
+  filter: drop-shadow(0 0 8px rgba(241, 196, 15, 0.5));
+}
+
+/* ── SHOP BUTTONS ────────────────────────── */
+.shop-btn {
+  background: #fff;
+  border: 2px solid var(--blue);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: transform 0.15s;
+}
+
+.shop-btn:hover {
+  transform: translateY(-2px);
+}
+
+.shop-btn-orange {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.shop-btn-full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ── MINI TABS (Shop / Túi đồ) ───────────── */
+.mini-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.mini-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gray);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.mini-tab.active {
+  color: var(--green-d);
+  border-bottom-color: var(--green);
+}
+
+.mini-content {
+  display: none;
+}
+
+.mini-content.active {
+  display: block;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* ── SHOP GRID COMPACT ──────────────────── */
+.shop-grid-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shop-btn-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F8F9FA;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.shop-btn-mini:hover {
+  border-color: var(--blue);
+  background: #fff;
+}
+
+.shop-icon {
+  font-size: 1.4rem;
+}
+
+.shop-name {
+  flex: 1;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.shop-cost {
+  font-size: 0.85rem;
+  color: var(--orange);
+  background: rgba(241, 196, 15, 0.2);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+/* ── INVENTORY ──────────────────────────── */
+.inventory-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  min-height: 60px;
+  align-items: center;
+}
+
+.empty-inventory {
+  font-size: 0.85rem;
+  color: var(--gray);
+  text-align: center;
+  padding: 10px;
+  font-style: italic;
+}
+
+.reward-img {
+  transition: transform 0.3s;
+  object-fit: contain;
+}
+
+.reward-img:hover {
+  transform: scale(1.1);
+}
+
 /* ── QUIZ ───────────────────────────────────── */
+.quiz-wrap, .result-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .quiz-hdr {
   background: #fff;
   border-radius: 16px;
@@ -355,6 +627,7 @@ body {
   align-items: center;
   justify-content: space-between;
   box-shadow: var(--shadow-soft);
+  margin-bottom: 0.9rem;
 }
 
 .quiz-hdr-title {
@@ -370,7 +643,6 @@ body {
   transition: transform 0.3s;
 }
 
-/* Pop chỉ chạy 1 lần khi score tăng */
 .score-badge.pop {
   animation: scorePop 0.5s ease-out;
 }
@@ -380,7 +652,7 @@ body {
   background: var(--border);
   border-radius: 8px;
   overflow: hidden;
-  margin: 12px 0;
+  margin: 0 0 12px;
 }
 
 .prog-fill {
@@ -483,87 +755,6 @@ body {
   line-height: 1.4;
 }
 
-/* ── SHOP & REWARDS ─────────────────────────── */
-.star-area {
-  font-size: 1.2rem;
-  margin-top: 5px;
-  font-weight: 800;
-  color: var(--orange);
-}
-
-.shop-btn {
-  background: #fff;
-  border: 2px solid var(--blue);
-  border-radius: var(--radius-sm);
-  padding: 8px;
-  margin: 5px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--text);
-  transition: transform 0.15s;
-}
-
-.shop-btn:hover {
-  transform: translateY(-2px);
-}
-
-.shop-btn-orange {
-  border-color: var(--orange);
-  color: var(--orange);
-}
-
-.shop-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.reward-img {
-  margin: 5px;
-  transition: transform 0.3s;
-  object-fit: contain;
-}
-
-.reward-img:hover {
-  transform: scale(1.1);
-}
-
-/* HUY HIỆU - hiệu ứng sáng RẤT NHẸ (không rung) */
-.badge-area img {
-  filter: drop-shadow(0 0 8px rgba(241, 196, 15, 0.5));
-}
-
-.title-tag {
-  display: inline-block;
-  background: var(--yellow);
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-weight: 800;
-  font-family: var(--font-display);
-  color: var(--text);
-  margin-top: 10px;
-  transition: transform 0.3s;
-}
-
-/* Animation lên cấp - chỉ chạy 1 lần */
-.title-tag.upgraded {
-  animation: titleUpgrade 1s ease-out;
-}
-
-.badge-area {
-  margin-top: 15px;
-  min-height: 50px;
-}
-
-.inventory-area {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-}
-
 /* ── LEADERBOARD ────────────────────────────── */
 .lb-table {
   width: 100%;
@@ -592,7 +783,6 @@ body {
 }
 
 /* ── RESULT ─────────────────────────────────── */
-/* Emoji kết quả - KHÔNG nhảy nữa, chỉ tĩnh */
 .result-emoji {
   font-size: 3.5rem;
 }
@@ -618,24 +808,13 @@ body {
 }
 
 /* ═══════════════════════════════════════════════
-   ANIMATIONS - CHỈ CHẠY 1 LẦN KHI CÓ SỰ KIỆN
-   (đã loại bỏ các animation loop gây mỏi mắt)
+   ANIMATIONS - chỉ chạy khi có sự kiện
    ═══════════════════════════════════════════════ */
 
-/* Sao bay lên khi cộng điểm (1 lần, 1.2s) */
 @keyframes starFly {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: translate(-50%, -80px) scale(1.3) rotate(180deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -160px) scale(0.5) rotate(360deg);
-  }
+  0% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -80px) scale(1.3) rotate(180deg); }
+  100% { opacity: 0; transform: translate(-50%, -160px) scale(0.5) rotate(360deg); }
 }
 
 .flying-star {
@@ -646,46 +825,34 @@ body {
   animation: starFly 1.2s ease-out forwards;
 }
 
-/* Score badge pop (1 lần khi tăng) */
 @keyframes scorePop {
   0% { transform: scale(1); }
   50% { transform: scale(1.3); background: var(--orange); }
   100% { transform: scale(1); }
 }
 
-/* Câu đúng - pulse 1 lần */
 @keyframes correctPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
 
-/* Câu sai - rung 1 lần, NHẸ */
 @keyframes wrongShake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-4px); }
   75% { transform: translateX(4px); }
 }
 
-/* Fade vào từ dưới lên (khi đổi màn) */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Phóng to khi xuất hiện (kết quả) */
 @keyframes scaleUp {
   0% { transform: scale(0); opacity: 0; }
   60% { transform: scale(1.2); }
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Lên cấp danh hiệu (chạy 1 lần khi đủ điểm) */
 @keyframes titleUpgrade {
   0% { transform: scale(1); }
   30% { transform: scale(1.3); background: var(--green); color: #fff; }
@@ -697,16 +864,17 @@ body {
 .mt-15 { margin-top: 15px; }
 .hidden { display: none; }
 
-/* ── RESPONSIVE ─────────────────────────────── */
+/* ── RESPONSIVE - Mobile fine-tune ─────────── */
 @media (max-width: 480px) {
   .header-title { font-size: 1.4rem; }
   .header-logo { font-size: 2.4rem; }
   .q-text { font-size: 1.2rem; }
   .ans-btn { font-size: 1rem; padding: 0.85rem 0.4rem; }
   .footer-links { gap: 0.8rem; font-size: 0.85rem; }
+  .section-title { font-size: 1.4rem; }
 }
 
-/* Tắt mọi animation nếu user thích giảm chuyển động */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
