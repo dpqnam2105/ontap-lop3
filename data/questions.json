@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-05-18",
+  "lastUpdated": "2026-05-19",
   "subjects": [
     {
       "id": "toan",
@@ -366,30 +366,6 @@
               "a": 1,
               "hint": "510: 5+1+0=6, chữ số khác nhau",
               "difficulty": 3
-            },
-            {
-              "q": "Số nào chia hết cho 2?",
-              "choices": [
-                "13",
-                "25",
-                "38",
-                "47"
-              ],
-              "a": 2,
-              "hint": "Tận cùng chẵn",
-              "difficulty": 1
-            },
-            {
-              "q": "Số nào chia hết cho 5?",
-              "choices": [
-                "14",
-                "17",
-                "23",
-                "25"
-              ],
-              "a": 3,
-              "hint": "Tận cùng 0 hoặc 5",
-              "difficulty": 1
             },
             {
               "q": "Số nào vừa chia hết cho 2 vừa chia hết cho 5?",
@@ -919,17 +895,6 @@
                 "756",
                 "757",
                 "758"
-              ],
-              "a": 2,
-              "difficulty": 2
-            },
-            {
-              "q": "792 - 543 = ?",
-              "choices": [
-                "247",
-                "248",
-                "249",
-                "250"
               ],
               "a": 2,
               "difficulty": 2
@@ -3571,42 +3536,6 @@
               "difficulty": 2
             },
             {
-              "q": "24 HS chia đều 2 nhóm. Mỗi nhóm?",
-              "choices": [
-                "11",
-                "12",
-                "13",
-                "14"
-              ],
-              "a": 1,
-              "hint": "24÷2=12",
-              "difficulty": 1
-            },
-            {
-              "q": "30 kẹo chia đều 5 bạn. Mỗi bạn?",
-              "choices": [
-                "4",
-                "5",
-                "6",
-                "7"
-              ],
-              "a": 2,
-              "hint": "30÷5=6",
-              "difficulty": 1
-            },
-            {
-              "q": "45 kg táo, 5 kg/thùng. Được mấy thùng?",
-              "choices": [
-                "7",
-                "8",
-                "9",
-                "10"
-              ],
-              "a": 2,
-              "hint": "45÷5=9",
-              "difficulty": 1
-            },
-            {
               "q": "28 quyển sách, 4 quyển/kệ. Được mấy kệ?",
               "choices": [
                 "6",
@@ -4380,18 +4309,6 @@
               "difficulty": 1
             },
             {
-              "q": "Diện tích HCN dài 6, rộng 4 = ?",
-              "choices": [
-                "20",
-                "24",
-                "28",
-                "32"
-              ],
-              "a": 1,
-              "hint": "S=6×4=24",
-              "difficulty": 2
-            },
-            {
               "q": "Diện tích HV cạnh 7 cm = ?",
               "choices": [
                 "28",
@@ -4426,30 +4343,6 @@
               "a": 1,
               "hint": "9×9=81",
               "difficulty": 2
-            },
-            {
-              "q": "Diện tích HV = 36. Cạnh = ?",
-              "choices": [
-                "4",
-                "5",
-                "6",
-                "7"
-              ],
-              "a": 2,
-              "hint": "6×6=36",
-              "difficulty": 3
-            },
-            {
-              "q": "HCN diện tích 48, rộng 6. Dài = ?",
-              "choices": [
-                "6",
-                "7",
-                "8",
-                "9"
-              ],
-              "a": 2,
-              "hint": "48÷6=8",
-              "difficulty": 3
             },
             {
               "q": "Chu vi HV cạnh 5cm = ?",
@@ -6539,12 +6432,13 @@
               "q": "Từ nào viết ĐÚNG?",
               "choices": [
                 "con dơi",
-                "con Giơi",
                 "con giơi",
-                "con Dơi"
+                "con rơi",
+                "con dời"
               ],
               "a": 0,
-              "difficulty": 1
+              "difficulty": 1,
+              "hint": "Phân biệt d/gi/r: \"dơi\" là động vật, viết bằng d"
             },
             {
               "q": "Điền \"c\" hay \"k\": \"___ỳ lạ\"",
@@ -6862,12 +6756,13 @@
               "q": "Từ nào viết đúng?",
               "choices": [
                 "sáng suốt",
-                "sáng suốt",
-                "sáng suốt",
+                "sáng xuốt",
+                "xáng suốt",
                 "sàng suốt"
               ],
               "a": 0,
-              "difficulty": 1
+              "difficulty": 1,
+              "hint": "Phân biệt s/x: từ Hán Việt \"sáng\" (= ánh sáng, thông minh) viết s"
             }
           ]
         },
@@ -8996,17 +8891,6 @@
               "difficulty": 1
             },
             {
-              "q": "\"Teacher\" means?",
-              "choices": [
-                "học sinh",
-                "phụ huynh",
-                "giáo viên",
-                "hiệu trưởng"
-              ],
-              "a": 2,
-              "difficulty": 1
-            },
-            {
               "q": "\"School\" means?",
               "choices": [
                 "nhà",
@@ -9855,12 +9739,13 @@
               "q": "\"Twenty-five\" = ?",
               "choices": [
                 "15",
-                "52",
+                "20",
                 "25",
                 "52"
               ],
               "a": 2,
-              "difficulty": 1
+              "difficulty": 1,
+              "hint": "twenty = 20, five = 5 → 25"
             },
             {
               "q": "The third month of the year is?",
