@@ -1,308 +1,11889 @@
-/* ═══════════════════════════════════════════════
-   QUIZ.JS v3 - quản lý quiz + rewards
-   ═══════════════════════════════════════════════ */
-
-const Quiz = {
-  questions: [],
-  curIdx: 0,
-  score: 0,
-  canEarnPoint: true,
-  currentTopic: null,
-
-  start(topic) {
-    this.currentTopic = topic;
-    this.questions = [...topic.questions]
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 10);
-    this.curIdx = 0;
-    this.score = 0;
-    document.getElementById('quizTopicName').textContent = 'Chủ đề: ' + topic.name;
-    App.showScreen('quiz');
-    this.render();
-  },
-
-  render() {
-    this.canEarnPoint = true;
-    const q = this.questions[this.curIdx];
-
-    document.getElementById('qText').textContent = q.q;
-    document.getElementById('scoreDisp').textContent = this.score;
-    document.getElementById('progFill').style.width =
-      (this.curIdx / this.questions.length * 100) + '%';
-
-    document.getElementById('feedback').style.display = 'none';
-    document.getElementById('btnNext').classList.add('hidden');
-
-    const grid = document.getElementById('ansGrid');
-    grid.innerHTML = '';
-    q.choices.forEach((choice, i) => {
-      const btn = document.createElement('button');
-      btn.className = 'ans-btn';
-      btn.textContent = choice;
-      btn.addEventListener('click', () => this.checkAnswer(btn, i, q.a));
-      grid.appendChild(btn);
-    });
-  },
-
-  checkAnswer(btn, selected, correct) {
-    const q = this.questions[this.curIdx];
-    const fb = document.getElementById('feedback');
-    const fbText = document.getElementById('fbText');
-    const fbAns = document.getElementById('fbAns');
-
-    if (selected === correct) {
-      Sound.play('correct');
-      btn.classList.add('correct');
-
-      if (this.canEarnPoint) {
-        this.score++;
-        Rewards.addStar(1);
-        document.getElementById('scoreDisp').textContent = this.score;
-        
-        this._flyStar(btn);
-        const scoreBadge = document.getElementById('scoreDisp').parentElement;
-        scoreBadge.classList.add('pop');
-        setTimeout(() => scoreBadge.classList.remove('pop'), 500);
-      }
-
-      document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
-      fb.className = 'feedback correct';
-      fbText.textContent = 'Chính xác! Con làm tốt lắm! 👏';
-      fbAns.textContent = q.explain || '';
-      document.getElementById('btnNext').classList.remove('hidden');
-    } else {
-      Sound.play('wrong');
-      btn.classList.add('wrong');
-      btn.disabled = true;
-      this.canEarnPoint = false;
-
-      fb.className = 'feedback wrong';
-      fbText.textContent = 'Chưa đúng rồi, thử lại nhé!';
-      fbAns.textContent = q.hint
-        ? '💡 Gợi ý: ' + q.hint
-        : 'Hãy xem lại câu hỏi một chút con nhé.';
+{
+  "version": "2.0",
+  "lastUpdated": "2026-05-19",
+  "subjects": [
+    {
+      "id": "toan",
+      "icon": "🧮",
+      "name": "Toán",
+      "topics": [
+        {
+          "id": "toan_so",
+          "icon": "🔢",
+          "name": "Đọc Viết Số",
+          "questions": [
+            {
+              "q": "Số 247 có chữ số hàng trăm là?",
+              "choices": [
+                "2",
+                "4",
+                "7",
+                "0"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số 385 có chữ số hàng chục là?",
+              "choices": [
+                "3",
+                "8",
+                "5",
+                "0"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Số 409 có chữ số hàng đơn vị là?",
+              "choices": [
+                "4",
+                "0",
+                "9",
+                "1"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "300 + 50 + 7 = ?",
+              "choices": [
+                "357",
+                "375",
+                "537",
+                "753"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "400 + 60 + 7 = ?",
+              "choices": [
+                "407",
+                "467",
+                "476",
+                "647"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "700 + 0 + 5 = ?",
+              "choices": [
+                "705",
+                "750",
+                "507",
+                "075"
+              ],
+              "a": 0,
+              "hint": "Hàng chục = 0",
+              "difficulty": 1
+            },
+            {
+              "q": "Số \"hai trăm mười lăm\" viết là?",
+              "choices": [
+                "215",
+                "251",
+                "512",
+                "521"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số \"tám trăm chín mươi\" viết là?",
+              "choices": [
+                "809",
+                "890",
+                "980",
+                "908"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Số \"sáu trăm linh ba\" viết là?",
+              "choices": [
+                "603",
+                "630",
+                "306",
+                "360"
+              ],
+              "a": 0,
+              "hint": "Hàng chục = 0",
+              "difficulty": 1
+            },
+            {
+              "q": "Số \"ba trăm mười lăm\" viết là?",
+              "choices": [
+                "315",
+                "351",
+                "513",
+                "531"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào LỚN NHẤT: 456, 645, 564, 465?",
+              "choices": [
+                "456",
+                "645",
+                "564",
+                "465"
+              ],
+              "a": 1,
+              "hint": "So sánh hàng trăm trước",
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào NHỎ NHẤT: 312, 213, 132, 231?",
+              "choices": [
+                "312",
+                "213",
+                "132",
+                "231"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "456 so với 465?",
+              "choices": [
+                "456 > 465",
+                "456 = 465",
+                "456 < 465",
+                "Không so sánh"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "789 so với 798?",
+              "choices": [
+                "789 > 798",
+                "789 = 798",
+                "789 < 798",
+                "Không xác định"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Số liền sau của 399 là?",
+              "choices": [
+                "398",
+                "399",
+                "400",
+                "401"
+              ],
+              "a": 2,
+              "hint": "399 + 1",
+              "difficulty": 1
+            },
+            {
+              "q": "Số liền trước của 700 là?",
+              "choices": [
+                "698",
+                "699",
+                "700",
+                "701"
+              ],
+              "a": 1,
+              "hint": "700 - 1",
+              "difficulty": 1
+            },
+            {
+              "q": "Số liền sau của 999 là?",
+              "choices": [
+                "998",
+                "999",
+                "1000",
+                "1001"
+              ],
+              "a": 2,
+              "hint": "999 + 1 = 1000",
+              "difficulty": 1
+            },
+            {
+              "q": "Số chẵn nào lớn nhất bé hơn 100?",
+              "choices": [
+                "96",
+                "97",
+                "98",
+                "99"
+              ],
+              "a": 2,
+              "hint": "Số chẵn tận cùng 0,2,4,6,8",
+              "difficulty": 1
+            },
+            {
+              "q": "Số lẻ nào nhỏ nhất lớn hơn 100?",
+              "choices": [
+                "100",
+                "101",
+                "102",
+                "103"
+              ],
+              "a": 1,
+              "hint": "Số lẻ tận cùng 1,3,5,7,9",
+              "difficulty": 1
+            },
+            {
+              "q": "Sắp xếp tăng dần: 312, 213, 132, 231",
+              "choices": [
+                "132;213;231;312",
+                "312;231;213;132",
+                "213;132;231;312",
+                "231;312;132;213"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Sắp xếp giảm dần: 456, 645, 564, 465",
+              "choices": [
+                "645;564;465;456",
+                "456;465;564;645",
+                "564;456;645;465",
+                "465;645;564;456"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Số lớn nhất có 3 chữ số là?",
+              "choices": [
+                "999",
+                "998",
+                "990",
+                "900"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số nhỏ nhất có 3 chữ số là?",
+              "choices": [
+                "100",
+                "101",
+                "110",
+                "111"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số 807 — chữ số hàng chục là?",
+              "choices": [
+                "8",
+                "0",
+                "7",
+                "80"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "893 = 800 + __ + 3. Điền?",
+              "choices": [
+                "80",
+                "90",
+                "9",
+                "8"
+              ],
+              "a": 1,
+              "hint": "Hàng chục = 9 → 9×10=90",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào có 5 trăm, 0 chục, 8 đơn vị?",
+              "choices": [
+                "580",
+                "058",
+                "508",
+                "850"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Dãy số tăng: 102; 222; 342; ___?",
+              "choices": [
+                "450",
+                "460",
+                "462",
+                "463"
+              ],
+              "a": 2,
+              "hint": "Tăng 120 mỗi lần",
+              "difficulty": 2
+            },
+            {
+              "q": "Dãy số giảm: 980; 870; 760; ___?",
+              "choices": [
+                "640",
+                "645",
+                "650",
+                "660"
+              ],
+              "a": 2,
+              "hint": "Giảm 110 mỗi lần",
+              "difficulty": 2
+            },
+            {
+              "q": "Dãy số: 860; 760; 660; 560; ___?",
+              "choices": [
+                "450",
+                "460",
+                "470",
+                "480"
+              ],
+              "a": 1,
+              "hint": "Giảm 100",
+              "difficulty": 2
+            },
+            {
+              "q": "Tổng chữ số của số 2025 là?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "2+0+2+5=9",
+              "difficulty": 2
+            },
+            {
+              "q": "Số chẵn lớn nhất có 3 chữ số khác nhau, tổng = 6?",
+              "choices": [
+                "420",
+                "510",
+                "600",
+                "312"
+              ],
+              "a": 1,
+              "hint": "510: 5+1+0=6, chữ số khác nhau",
+              "difficulty": 3
+            },
+            {
+              "q": "Số nào vừa chia hết cho 2 vừa chia hết cho 5?",
+              "choices": [
+                "15",
+                "20",
+                "25",
+                "35"
+              ],
+              "a": 1,
+              "hint": "Tận cùng 0",
+              "difficulty": 2
+            },
+            {
+              "q": "Có bao nhiêu số lẻ từ 1 đến 10?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "hint": "1,3,5,7,9",
+              "difficulty": 2
+            },
+            {
+              "q": "Có bao nhiêu số chẵn từ 2 đến 20?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 2,
+              "hint": "2,4,...,20",
+              "difficulty": 2
+            },
+            {
+              "q": "Cô giáo có 920 bút, 100 cái/thùng, 10 cái/túi. Xếp được?",
+              "choices": [
+                "9 thùng 2 túi",
+                "9 thùng 20 túi",
+                "92 thùng",
+                "8 thùng 12 túi"
+              ],
+              "a": 0,
+              "hint": "920=9×100+2×10",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 730 bút, 100 cái/thùng, 10 cái/túi. Xếp được?",
+              "choices": [
+                "7 thùng 3 túi",
+                "73 thùng",
+                "7 thùng 30 túi",
+                "3 thùng 7 túi"
+              ],
+              "a": 0,
+              "hint": "730=7×100+3×10",
+              "difficulty": 2
+            },
+            {
+              "q": "Số bé nhất có 3 chữ số giống nhau là?",
+              "choices": [
+                "111",
+                "100",
+                "000",
+                "999"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Số lớn nhất có 3 chữ số giống nhau là?",
+              "choices": [
+                "888",
+                "900",
+                "999",
+                "990"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Hiệu số bé nhất 3 chữ số và số bé nhất 1 chữ số?",
+              "choices": [
+                "99",
+                "100",
+                "101",
+                "89"
+              ],
+              "a": 1,
+              "hint": "100-0=100",
+              "difficulty": 2
+            },
+            {
+              "q": "Trong 200, 300, 450, 600 — số nào không phải số tròn trăm?",
+              "choices": [
+                "200",
+                "300",
+                "450",
+                "600"
+              ],
+              "a": 2,
+              "hint": "450 có chữ số chục khác 0",
+              "difficulty": 2
+            },
+            {
+              "q": "Số tròn chục bé nhất trong: 290, 100, 670, 289, 220?",
+              "choices": [
+                "290",
+                "100",
+                "670",
+                "220"
+              ],
+              "a": 1,
+              "hint": "100 nhỏ nhất và tận cùng 0",
+              "difficulty": 2
+            },
+            {
+              "q": "Viết tiếp: 5; 10; 15; ___; 25",
+              "choices": [
+                "18",
+                "19",
+                "20",
+                "21"
+              ],
+              "a": 2,
+              "hint": "Tăng 5",
+              "difficulty": 1
+            },
+            {
+              "q": "Viết tiếp: 100; 200; 300; ___",
+              "choices": [
+                "350",
+                "400",
+                "450",
+                "500"
+              ],
+              "a": 1,
+              "hint": "Tăng 100",
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào là số nguyên tố? (nhỏ nhất)",
+              "choices": [
+                "4",
+                "6",
+                "7",
+                "9"
+              ],
+              "a": 2,
+              "hint": "7 không chia hết cho số nào khác ngoài 1 và 7",
+              "difficulty": 3
+            },
+            {
+              "q": "So sánh: 3 × 4 __ 4 + 4 + 4 + 4",
+              "choices": [
+                "<",
+                ">",
+                "=",
+                "Không xác định"
+              ],
+              "a": 2,
+              "hint": "3×4=12, 4+4+4+4=16... Sai! 12≠16",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào khi thêm 1 thì tròn trăm?",
+              "choices": [
+                "199",
+                "299",
+                "399",
+                "Tất cả"
+              ],
+              "a": 3,
+              "hint": "199+1=200, 299+1=300, 399+1=400",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 3 so với 4 + 4 + 4 + 4?",
+              "choices": [
+                "4×3 > tổng",
+                "4×3 = tổng",
+                "4×3 < tổng",
+                "Bằng nhau"
+              ],
+              "a": 2,
+              "hint": "4×3=12, 4+4+4+4=16, 12<16",
+              "difficulty": 2
+            },
+            {
+              "q": "Số liền sau của số lớn nhất có 3 chữ số là?",
+              "choices": [
+                "999",
+                "1000",
+                "1001",
+                "Không có"
+              ],
+              "a": 1,
+              "hint": "999+1=1000",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "toan_cong",
+          "icon": "➕",
+          "name": "Phép Cộng",
+          "questions": [
+            {
+              "q": "11 + 23 = ?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "32 + 45 = ?",
+              "choices": [
+                "76",
+                "77",
+                "78",
+                "79"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "61 + 27 = ?",
+              "choices": [
+                "87",
+                "88",
+                "89",
+                "90"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "124 + 53 = ?",
+              "choices": [
+                "176",
+                "177",
+                "178",
+                "179"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "312 + 45 = ?",
+              "choices": [
+                "356",
+                "357",
+                "358",
+                "359"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "421 + 136 = ?",
+              "choices": [
+                "556",
+                "557",
+                "558",
+                "559"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "15 + 27 = ?",
+              "choices": [
+                "40",
+                "41",
+                "42",
+                "43"
+              ],
+              "a": 2,
+              "hint": "5+7=12 nhớ 1",
+              "difficulty": 1
+            },
+            {
+              "q": "28 + 35 = ?",
+              "choices": [
+                "61",
+                "62",
+                "63",
+                "64"
+              ],
+              "a": 2,
+              "hint": "8+5=13 nhớ 1",
+              "difficulty": 1
+            },
+            {
+              "q": "47 + 16 = ?",
+              "choices": [
+                "61",
+                "62",
+                "63",
+                "64"
+              ],
+              "a": 2,
+              "hint": "7+6=13 nhớ 1",
+              "difficulty": 1
+            },
+            {
+              "q": "56 + 38 = ?",
+              "choices": [
+                "92",
+                "93",
+                "94",
+                "95"
+              ],
+              "a": 2,
+              "hint": "6+8=14 nhớ 1",
+              "difficulty": 1
+            },
+            {
+              "q": "67 + 25 = ?",
+              "choices": [
+                "90",
+                "91",
+                "92",
+                "93"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "78 + 14 = ?",
+              "choices": [
+                "90",
+                "91",
+                "92",
+                "93"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "86 + 27 = ?",
+              "choices": [
+                "111",
+                "112",
+                "113",
+                "114"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "94 + 38 = ?",
+              "choices": [
+                "130",
+                "131",
+                "132",
+                "133"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "45 + 55 = ?",
+              "choices": [
+                "90",
+                "100",
+                "110",
+                "105"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "73 + 27 = ?",
+              "choices": [
+                "98",
+                "99",
+                "100",
+                "101"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "64 + 36 = ?",
+              "choices": [
+                "98",
+                "99",
+                "100",
+                "101"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "136 + 64 = ?",
+              "choices": [
+                "198",
+                "199",
+                "200",
+                "201"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "275 + 125 = ?",
+              "choices": [
+                "398",
+                "399",
+                "400",
+                "401"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "350 + 250 = ?",
+              "choices": [
+                "598",
+                "599",
+                "600",
+                "601"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "245 + 136 = ?",
+              "choices": [
+                "379",
+                "380",
+                "381",
+                "382"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "307 + 185 = ?",
+              "choices": [
+                "490",
+                "491",
+                "492",
+                "493"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "418 + 274 = ?",
+              "choices": [
+                "690",
+                "691",
+                "692",
+                "693"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "536 + 247 = ?",
+              "choices": [
+                "781",
+                "782",
+                "783",
+                "784"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "467 + 215 = ?",
+              "choices": [
+                "680",
+                "681",
+                "682",
+                "683"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "378 + 256 = ?",
+              "choices": [
+                "632",
+                "633",
+                "634",
+                "635"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "489 + 167 = ?",
+              "choices": [
+                "654",
+                "655",
+                "656",
+                "657"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "194 + 415 = ?",
+              "choices": [
+                "607",
+                "608",
+                "609",
+                "610"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "651 + 106 = ?",
+              "choices": [
+                "755",
+                "756",
+                "757",
+                "758"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "501 + 299 = ?",
+              "choices": [
+                "798",
+                "799",
+                "800",
+                "801"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "612 + 188 = ?",
+              "choices": [
+                "798",
+                "799",
+                "800",
+                "801"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "723 + 177 = ?",
+              "choices": [
+                "898",
+                "899",
+                "900",
+                "901"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "12 + 23 + 34 = ?",
+              "choices": [
+                "67",
+                "68",
+                "69",
+                "70"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "100 + 200 + 300 = ?",
+              "choices": [
+                "500",
+                "600",
+                "700",
+                "800"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "145 + 235 + 120 = ?",
+              "choices": [
+                "498",
+                "499",
+                "500",
+                "501"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "355 + 511 + 123 = ?",
+              "choices": [
+                "987",
+                "988",
+                "989",
+                "990"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "614 + 44 + 120 = ?",
+              "choices": [
+                "776",
+                "777",
+                "778",
+                "779"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "23 + 145 + 200 = ?",
+              "choices": [
+                "366",
+                "367",
+                "368",
+                "369"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "18 ÷ 2 + 545 = ?",
+              "choices": [
+                "552",
+                "553",
+                "554",
+                "555"
+              ],
+              "a": 2,
+              "hint": "Chia trước: 9+545",
+              "difficulty": 2
+            },
+            {
+              "q": "5 × 5 + 905 = ?",
+              "choices": [
+                "928",
+                "929",
+                "930",
+                "931"
+              ],
+              "a": 2,
+              "hint": "Nhân trước: 25+905",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 4 + 2 × 5 = ?",
+              "choices": [
+                "22",
+                "24",
+                "26",
+                "28"
+              ],
+              "a": 0,
+              "hint": "12+10=22",
+              "difficulty": 2
+            },
+            {
+              "q": "(7 + 3) × 4 = ?",
+              "choices": [
+                "28",
+                "36",
+                "40",
+                "44"
+              ],
+              "a": 2,
+              "hint": "10×4=40",
+              "difficulty": 2
+            },
+            {
+              "q": "2 + 2 + 2 + 2 + 2 + 2 + 88 = ?",
+              "choices": [
+                "98",
+                "100",
+                "102",
+                "104"
+              ],
+              "a": 1,
+              "hint": "2×6=12, 12+88=100",
+              "difficulty": 2
+            },
+            {
+              "q": "5 + 5 + 5 + 5 + 5 + 45 = ?",
+              "choices": [
+                "68",
+                "70",
+                "72",
+                "74"
+              ],
+              "a": 1,
+              "hint": "5×5=25, 25+45=70",
+              "difficulty": 2
+            },
+            {
+              "q": "□ + 234 = 567. □ = ?",
+              "choices": [
+                "331",
+                "332",
+                "333",
+                "334"
+              ],
+              "a": 2,
+              "hint": "567-234",
+              "difficulty": 2
+            },
+            {
+              "q": "156 + □ = 400. □ = ?",
+              "choices": [
+                "242",
+                "243",
+                "244",
+                "245"
+              ],
+              "a": 2,
+              "hint": "400-156",
+              "difficulty": 2
+            },
+            {
+              "q": "□ + 178 = 500. □ = ?",
+              "choices": [
+                "320",
+                "321",
+                "322",
+                "323"
+              ],
+              "a": 2,
+              "hint": "500-178",
+              "difficulty": 2
+            },
+            {
+              "q": "Tìm số lớn nhất điền vào □: □ + 456 < 700",
+              "choices": [
+                "243",
+                "244",
+                "245",
+                "246"
+              ],
+              "a": 0,
+              "hint": "243+456=699<700",
+              "difficulty": 3
+            },
+            {
+              "q": "285 + 347 = ?",
+              "choices": [
+                "630",
+                "631",
+                "632",
+                "633"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "396 + 418 = ?",
+              "choices": [
+                "812",
+                "813",
+                "814",
+                "815"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "457 + 364 = ?",
+              "choices": [
+                "819",
+                "820",
+                "821",
+                "822"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "568 + 275 = ?",
+              "choices": [
+                "841",
+                "842",
+                "843",
+                "844"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "679 + 185 = ?",
+              "choices": [
+                "862",
+                "863",
+                "864",
+                "865"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "348 + 476 = ?",
+              "choices": [
+                "822",
+                "823",
+                "824",
+                "825"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng của 123, 234 và 342 là?",
+              "choices": [
+                "697",
+                "698",
+                "699",
+                "700"
+              ],
+              "a": 2,
+              "hint": "123+234=357, +342=699",
+              "difficulty": 2
+            },
+            {
+              "q": "Hai số có tổng = 500. Số lớn hơn số bé 100. Số lớn = ?",
+              "choices": [
+                "290",
+                "295",
+                "300",
+                "305"
+              ],
+              "a": 2,
+              "hint": "(500+100)÷2=300",
+              "difficulty": 3
+            },
+            {
+              "q": "Hai số có tổng = 400. Số lớn gấp đôi số bé. Số bé = ?",
+              "choices": [
+                "130",
+                "133",
+                "134",
+                "140"
+              ],
+              "a": 1,
+              "hint": "Số bé+2×Số bé=400→3n=400? Sai. n+2n=400→n=133",
+              "difficulty": 3
+            },
+            {
+              "q": "347 + 120 - 275 = ?",
+              "choices": [
+                "190",
+                "191",
+                "192",
+                "193"
+              ],
+              "a": 2,
+              "hint": "467-275=192",
+              "difficulty": 2
+            },
+            {
+              "q": "125 + 246 + 75 = ?",
+              "choices": [
+                "444",
+                "445",
+                "446",
+                "447"
+              ],
+              "a": 2,
+              "hint": "125+75=200, +246=446",
+              "difficulty": 2
+            },
+            {
+              "q": "138 + 276 + 62 = ?",
+              "choices": [
+                "474",
+                "475",
+                "476",
+                "477"
+              ],
+              "a": 2,
+              "hint": "138+62=200, +276=476",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính nhanh: 199 + 85",
+              "choices": [
+                "282",
+                "283",
+                "284",
+                "285"
+              ],
+              "a": 2,
+              "hint": "200+85-1=284",
+              "difficulty": 3
+            },
+            {
+              "q": "Tính nhanh: 398 + 167",
+              "choices": [
+                "563",
+                "564",
+                "565",
+                "566"
+              ],
+              "a": 2,
+              "hint": "400+167-2=565",
+              "difficulty": 3
+            },
+            {
+              "q": "110 cm + 356 cm - 84 cm = ?",
+              "choices": [
+                "380 cm",
+                "381 cm",
+                "382 cm",
+                "383 cm"
+              ],
+              "a": 2,
+              "hint": "466-84=382",
+              "difficulty": 2
+            },
+            {
+              "q": "10 km + 598 km - 18 km = ?",
+              "choices": [
+                "588 km",
+                "589 km",
+                "590 km",
+                "591 km"
+              ],
+              "a": 2,
+              "hint": "608-18=590",
+              "difficulty": 2
+            },
+            {
+              "q": "Tổng 5 ngày bán: 45+38+52+30+60 = ?",
+              "choices": [
+                "223",
+                "224",
+                "225",
+                "226"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Cộng và viết kết quả: 999 + 1 = ?",
+              "choices": [
+                "999",
+                "1000",
+                "1001",
+                "10000"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào cộng với 456 được 800?",
+              "choices": [
+                "342",
+                "343",
+                "344",
+                "345"
+              ],
+              "a": 2,
+              "hint": "800-456=344",
+              "difficulty": 2
+            },
+            {
+              "q": "Kết quả của 615 + 158 là?",
+              "choices": [
+                "771",
+                "772",
+                "773",
+                "774"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Hiệu của 902 và 348 là?",
+              "choices": [
+                "552",
+                "553",
+                "554",
+                "555"
+              ],
+              "a": 2,
+              "hint": "902-348=554",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 5 × 6 + 2 × 7 = ?",
+              "choices": [
+                "42",
+                "43",
+                "44",
+                "45"
+              ],
+              "a": 2,
+              "hint": "30+14=44",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 2 × 8 + 3 × 4 = ?",
+              "choices": [
+                "26",
+                "27",
+                "28",
+                "29"
+              ],
+              "a": 2,
+              "hint": "16+12=28",
+              "difficulty": 2
+            },
+            {
+              "q": "Cộng các số chẵn từ 2 đến 10?",
+              "choices": [
+                "28",
+                "30",
+                "32",
+                "34"
+              ],
+              "a": 1,
+              "hint": "2+4+6+8+10=30",
+              "difficulty": 2
+            },
+            {
+              "q": "Cộng các số lẻ từ 1 đến 9?",
+              "choices": [
+                "21",
+                "23",
+                "25",
+                "27"
+              ],
+              "a": 2,
+              "hint": "1+3+5+7+9=25",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "toan_tru",
+          "icon": "➖",
+          "name": "Phép Trừ",
+          "questions": [
+            {
+              "q": "47 - 23 = ?",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "68 - 35 = ?",
+              "choices": [
+                "31",
+                "32",
+                "33",
+                "34"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "89 - 56 = ?",
+              "choices": [
+                "31",
+                "32",
+                "33",
+                "34"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "175 - 42 = ?",
+              "choices": [
+                "131",
+                "132",
+                "133",
+                "134"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "468 - 235 = ?",
+              "choices": [
+                "231",
+                "232",
+                "233",
+                "234"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "597 - 304 = ?",
+              "choices": [
+                "291",
+                "292",
+                "293",
+                "294"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "52 - 28 = ?",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 2,
+              "hint": "2 không trừ 8 được, mượn 1",
+              "difficulty": 1
+            },
+            {
+              "q": "65 - 28 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "83 - 46 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "72 - 35 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "91 - 47 = ?",
+              "choices": [
+                "42",
+                "43",
+                "44",
+                "45"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "54 - 29 = ?",
+              "choices": [
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "74 - 39 = ?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "85 - 47 = ?",
+              "choices": [
+                "36",
+                "37",
+                "38",
+                "39"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "93 - 56 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "100 - 37 = ?",
+              "choices": [
+                "61",
+                "62",
+                "63",
+                "64"
+              ],
+              "a": 2,
+              "hint": "Mượn từ hàng trăm",
+              "difficulty": 2
+            },
+            {
+              "q": "100 - 58 = ?",
+              "choices": [
+                "40",
+                "41",
+                "42",
+                "43"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "100 - 45 = ?",
+              "choices": [
+                "53",
+                "54",
+                "55",
+                "56"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "200 - 74 = ?",
+              "choices": [
+                "124",
+                "125",
+                "126",
+                "127"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "200 - 87 = ?",
+              "choices": [
+                "111",
+                "112",
+                "113",
+                "114"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "300 - 145 = ?",
+              "choices": [
+                "153",
+                "154",
+                "155",
+                "156"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "500 - 278 = ?",
+              "choices": [
+                "220",
+                "221",
+                "222",
+                "223"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "700 - 365 = ?",
+              "choices": [
+                "333",
+                "334",
+                "335",
+                "336"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "1000 - 456 = ?",
+              "choices": [
+                "542",
+                "543",
+                "544",
+                "545"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "800 - 357 = ?",
+              "choices": [
+                "441",
+                "442",
+                "443",
+                "444"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "600 - 348 = ?",
+              "choices": [
+                "250",
+                "251",
+                "252",
+                "253"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "900 - 543 = ?",
+              "choices": [
+                "355",
+                "356",
+                "357",
+                "358"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "583 - 246 = ?",
+              "choices": [
+                "335",
+                "336",
+                "337",
+                "338"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "825 - 413 = ?",
+              "choices": [
+                "410",
+                "411",
+                "412",
+                "413"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "936 - 548 = ?",
+              "choices": [
+                "386",
+                "387",
+                "388",
+                "389"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "750 - 425 = ?",
+              "choices": [
+                "323",
+                "324",
+                "325",
+                "326"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "860 - 534 = ?",
+              "choices": [
+                "324",
+                "325",
+                "326",
+                "327"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "975 - 648 = ?",
+              "choices": [
+                "325",
+                "326",
+                "327",
+                "328"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "902 - 348 = ?",
+              "choices": [
+                "552",
+                "553",
+                "554",
+                "555"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "805 - 267 = ?",
+              "choices": [
+                "536",
+                "537",
+                "538",
+                "539"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "□ - 138 = 524. □ = ?",
+              "choices": [
+                "660",
+                "661",
+                "662",
+                "663"
+              ],
+              "a": 2,
+              "hint": "138+524=662",
+              "difficulty": 2
+            },
+            {
+              "q": "800 - □ = 513. □ = ?",
+              "choices": [
+                "285",
+                "286",
+                "287",
+                "288"
+              ],
+              "a": 2,
+              "hint": "800-513=287",
+              "difficulty": 2
+            },
+            {
+              "q": "□ - 234 = 308. □ = ?",
+              "choices": [
+                "540",
+                "541",
+                "542",
+                "543"
+              ],
+              "a": 2,
+              "hint": "234+308=542",
+              "difficulty": 2
+            },
+            {
+              "q": "500 - □ = 213. □ = ?",
+              "choices": [
+                "285",
+                "286",
+                "287",
+                "288"
+              ],
+              "a": 2,
+              "hint": "500-213=287",
+              "difficulty": 2
+            },
+            {
+              "q": "Hiệu = 715, giảm số bị trừ 215. Hiệu mới = ?",
+              "choices": [
+                "498",
+                "499",
+                "500",
+                "501"
+              ],
+              "a": 2,
+              "hint": "715-215=500",
+              "difficulty": 3
+            },
+            {
+              "q": "Hiệu = 400, tăng số trừ 50. Hiệu mới = ?",
+              "choices": [
+                "348",
+                "349",
+                "350",
+                "351"
+              ],
+              "a": 2,
+              "hint": "400-50=350",
+              "difficulty": 3
+            },
+            {
+              "q": "Hiệu = 300, giảm số trừ 100. Hiệu mới = ?",
+              "choices": [
+                "398",
+                "399",
+                "400",
+                "401"
+              ],
+              "a": 2,
+              "hint": "300+100=400",
+              "difficulty": 3
+            },
+            {
+              "q": "Số trừ = 138, hiệu = 524. Số bị trừ = ?",
+              "choices": [
+                "660",
+                "661",
+                "662",
+                "663"
+              ],
+              "a": 2,
+              "hint": "138+524=662",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính nhanh: 201 - 98 = ?",
+              "choices": [
+                "101",
+                "102",
+                "103",
+                "104"
+              ],
+              "a": 2,
+              "hint": "200-98+1=103",
+              "difficulty": 3
+            },
+            {
+              "q": "Tính nhanh: 501 - 199 = ?",
+              "choices": [
+                "300",
+                "301",
+                "302",
+                "303"
+              ],
+              "a": 2,
+              "hint": "500-199+1=302",
+              "difficulty": 3
+            },
+            {
+              "q": "Tính nhanh: 400 - 197 = ?",
+              "choices": [
+                "201",
+                "202",
+                "203",
+                "204"
+              ],
+              "a": 2,
+              "hint": "400-200+3=203",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng của 2 số là 500. Hiệu là 100. Số lớn = ?",
+              "choices": [
+                "298",
+                "299",
+                "300",
+                "301"
+              ],
+              "a": 2,
+              "hint": "(500+100)/2=300",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng = 400, hiệu = 80. Số nhỏ = ?",
+              "choices": [
+                "158",
+                "159",
+                "160",
+                "161"
+              ],
+              "a": 2,
+              "hint": "(400-80)/2=160",
+              "difficulty": 3
+            },
+            {
+              "q": "792 - 543 = ?",
+              "choices": [
+                "247",
+                "248",
+                "249",
+                "250"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "932 - 41 = ?",
+              "choices": [
+                "889",
+                "890",
+                "891",
+                "892"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 347 + 120 - 275 = ?",
+              "choices": [
+                "190",
+                "191",
+                "192",
+                "193"
+              ],
+              "a": 2,
+              "hint": "467-275=192",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 50 cm + 356 cm - 84 cm = ?",
+              "choices": [
+                "320 cm",
+                "321 cm",
+                "322 cm",
+                "323 cm"
+              ],
+              "a": 2,
+              "hint": "406-84=322",
+              "difficulty": 2
+            },
+            {
+              "q": "Vườn có 480 cây, chặt 136 cây. Còn lại?",
+              "choices": [
+                "342",
+                "343",
+                "344",
+                "345"
+              ],
+              "a": 2,
+              "hint": "480-136=344",
+              "difficulty": 2
+            },
+            {
+              "q": "Thư viện có 345 sách, cho mượn 127 quyển. Còn?",
+              "choices": [
+                "216",
+                "217",
+                "218",
+                "219"
+              ],
+              "a": 2,
+              "hint": "345-127=218",
+              "difficulty": 2
+            },
+            {
+              "q": "Trường có 550 HS, chuyển trường 28 em. Còn?",
+              "choices": [
+                "520",
+                "521",
+                "522",
+                "523"
+              ],
+              "a": 2,
+              "hint": "550-28=522",
+              "difficulty": 2
+            },
+            {
+              "q": "Mẹ có 850đ, mua kẹo 200đ, mua bánh 300đ. Còn?",
+              "choices": [
+                "348",
+                "349",
+                "350",
+                "351"
+              ],
+              "a": 2,
+              "hint": "850-200-300=350",
+              "difficulty": 2
+            },
+            {
+              "q": "Kệ B ít hơn kệ A 67 quyển. A có 215. B có?",
+              "choices": [
+                "146",
+                "147",
+                "148",
+                "149"
+              ],
+              "a": 2,
+              "hint": "215-67=148",
+              "difficulty": 2
+            },
+            {
+              "q": "Xưởng may 3 ngày 756 chiếc. Ngày1=215, Ngày2=178. Ngày3=?",
+              "choices": [
+                "361",
+                "362",
+                "363",
+                "364"
+              ],
+              "a": 2,
+              "hint": "756-215-178=363",
+              "difficulty": 3
+            },
+            {
+              "q": "An hơn Bình 248. Bình tăng 95. Bây giờ An hơn Bình?",
+              "choices": [
+                "151",
+                "152",
+                "153",
+                "154"
+              ],
+              "a": 2,
+              "hint": "248-95=153",
+              "difficulty": 3
+            },
+            {
+              "q": "Đội trồng 564 kg cà phê, hơn đội 2 là 248. Đội 2 hái?",
+              "choices": [
+                "314",
+                "315",
+                "316",
+                "317"
+              ],
+              "a": 2,
+              "hint": "564-248=316",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 480 kg gạo, mỗi ngày xuất 40 kg. Hết sau?",
+              "choices": [
+                "10 ngày",
+                "11 ngày",
+                "12 ngày",
+                "13 ngày"
+              ],
+              "a": 2,
+              "hint": "480÷40=12",
+              "difficulty": 2
+            },
+            {
+              "q": "Tổng tiền 3 ngày: 125k+98k+64k. Tổng = ?",
+              "choices": [
+                "285k",
+                "286k",
+                "287k",
+                "288k"
+              ],
+              "a": 2,
+              "hint": "287",
+              "difficulty": 2
+            },
+            {
+              "q": "A - B = 400, B - C = 150. A - C = ?",
+              "choices": [
+                "548",
+                "549",
+                "550",
+                "551"
+              ],
+              "a": 2,
+              "hint": "400+150=550",
+              "difficulty": 3
+            },
+            {
+              "q": "Số nào trừ 456 được 344?",
+              "choices": [
+                "798",
+                "799",
+                "800",
+                "801"
+              ],
+              "a": 2,
+              "hint": "344+456=800",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền: 975 - □ = 548. □ = ?",
+              "choices": [
+                "425",
+                "426",
+                "427",
+                "428"
+              ],
+              "a": 2,
+              "hint": "975-548=427",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền: □ - 427 = 365. □ = ?",
+              "choices": [
+                "790",
+                "791",
+                "792",
+                "793"
+              ],
+              "a": 2,
+              "hint": "427+365=792",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 200 - 87 + 136 = ?",
+              "choices": [
+                "247",
+                "248",
+                "249",
+                "250"
+              ],
+              "a": 2,
+              "hint": "113+136=249",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 500 - 278 + 125 = ?",
+              "choices": [
+                "345",
+                "346",
+                "347",
+                "348"
+              ],
+              "a": 2,
+              "hint": "222+125=347",
+              "difficulty": 2
+            },
+            {
+              "q": "Số bé nhất điền vào □: 500 - □ > 300",
+              "choices": [
+                "198",
+                "199",
+                "200",
+                "201"
+              ],
+              "a": 1,
+              "hint": "500-199=301>300",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "toan_nhan",
+          "icon": "✖️",
+          "name": "Bảng Nhân",
+          "questions": [
+            {
+              "q": "2 × 1 = ?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 2 = ?",
+              "choices": [
+                "2",
+                "4",
+                "6",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 3 = ?",
+              "choices": [
+                "4",
+                "6",
+                "8",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 4 = ?",
+              "choices": [
+                "6",
+                "8",
+                "10",
+                "12"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 5 = ?",
+              "choices": [
+                "8",
+                "10",
+                "12",
+                "14"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 6 = ?",
+              "choices": [
+                "10",
+                "12",
+                "14",
+                "16"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 7 = ?",
+              "choices": [
+                "12",
+                "14",
+                "16",
+                "18"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 8 = ?",
+              "choices": [
+                "14",
+                "16",
+                "18",
+                "20"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 9 = ?",
+              "choices": [
+                "16",
+                "18",
+                "20",
+                "22"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 10 = ?",
+              "choices": [
+                "18",
+                "20",
+                "22",
+                "24"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 3 = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 4 = ?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 5 = ?",
+              "choices": [
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 6 = ?",
+              "choices": [
+                "16",
+                "17",
+                "18",
+                "19"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 7 = ?",
+              "choices": [
+                "19",
+                "20",
+                "21",
+                "22"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 8 = ?",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 9 = ?",
+              "choices": [
+                "25",
+                "26",
+                "27",
+                "28"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 10 = ?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 4 = ?",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 5 = ?",
+              "choices": [
+                "18",
+                "19",
+                "20",
+                "21"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 6 = ?",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 7 = ?",
+              "choices": [
+                "26",
+                "27",
+                "28",
+                "29"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 8 = ?",
+              "choices": [
+                "30",
+                "31",
+                "32",
+                "33"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 9 = ?",
+              "choices": [
+                "34",
+                "35",
+                "36",
+                "37"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 10 = ?",
+              "choices": [
+                "38",
+                "39",
+                "40",
+                "41"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 3 = ?",
+              "choices": [
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 4 = ?",
+              "choices": [
+                "18",
+                "19",
+                "20",
+                "21"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 5 = ?",
+              "choices": [
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 6 = ?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 7 = ?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 8 = ?",
+              "choices": [
+                "35",
+                "40",
+                "45",
+                "50"
+              ],
+              "a": 1,
+              "hint": "5×8=40 không phải 45!",
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 9 = ?",
+              "choices": [
+                "40",
+                "43",
+                "45",
+                "50"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 10 = ?",
+              "choices": [
+                "45",
+                "50",
+                "55",
+                "60"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × ? = 14",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "14÷2=7",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × ? = 18",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "hint": "18÷3=6",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × ? = 24",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "hint": "24÷4=6",
+              "difficulty": 2
+            },
+            {
+              "q": "5 × ? = 35",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "35÷5=7",
+              "difficulty": 2
+            },
+            {
+              "q": "? × 3 = 27",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "27÷3=9",
+              "difficulty": 2
+            },
+            {
+              "q": "? × 4 = 32",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 2,
+              "hint": "32÷4=8",
+              "difficulty": 2
+            },
+            {
+              "q": "? × 5 = 45",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "45÷5=9",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 12 = ?",
+              "choices": [
+                "34",
+                "35",
+                "36",
+                "37"
+              ],
+              "a": 2,
+              "hint": "3×10+3×2=36",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 11 = ?",
+              "choices": [
+                "42",
+                "43",
+                "44",
+                "45"
+              ],
+              "a": 2,
+              "hint": "4×10+4×1=44",
+              "difficulty": 2
+            },
+            {
+              "q": "5 × 12 = ?",
+              "choices": [
+                "58",
+                "59",
+                "60",
+                "61"
+              ],
+              "a": 2,
+              "hint": "5×10+5×2=60",
+              "difficulty": 2
+            },
+            {
+              "q": "2 × 15 = ?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "2×10+2×5=30",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 15 = ?",
+              "choices": [
+                "43",
+                "44",
+                "45",
+                "46"
+              ],
+              "a": 2,
+              "hint": "3×10+3×5=45",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 15 = ?",
+              "choices": [
+                "58",
+                "59",
+                "60",
+                "61"
+              ],
+              "a": 2,
+              "hint": "4×10+4×5=60",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 45 = ?",
+              "choices": [
+                "178",
+                "179",
+                "180",
+                "181"
+              ],
+              "a": 2,
+              "hint": "4×40+4×5=180",
+              "difficulty": 3
+            },
+            {
+              "q": "4 × 7 = 7 × ?",
+              "choices": [
+                "3",
+                "4",
+                "7",
+                "28"
+              ],
+              "a": 1,
+              "hint": "Giao hoán: a×b=b×a",
+              "difficulty": 1
+            },
+            {
+              "q": "3 × 8 và 8 × 3: kết quả?",
+              "choices": [
+                "Khác nhau",
+                "Bằng nhau",
+                "3×8 lớn hơn",
+                "8×3 lớn hơn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 6 + 2 × 7 = ?",
+              "choices": [
+                "42",
+                "43",
+                "44",
+                "45"
+              ],
+              "a": 2,
+              "hint": "30+14=44",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 8 - 4 × 3 = ?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "24-12=12",
+              "difficulty": 2
+            },
+            {
+              "q": "2 × 9 + 3 × 4 = ?",
+              "choices": [
+                "29",
+                "30",
+                "31",
+                "32"
+              ],
+              "a": 1,
+              "hint": "18+12=30",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 7 - 5 × 3 = ?",
+              "choices": [
+                "11",
+                "12",
+                "13",
+                "14"
+              ],
+              "a": 2,
+              "hint": "28-15=13",
+              "difficulty": 2
+            },
+            {
+              "q": "4 × 50 = ?",
+              "choices": [
+                "180",
+                "200",
+                "220",
+                "240"
+              ],
+              "a": 1,
+              "hint": "4×5×10=200",
+              "difficulty": 2
+            },
+            {
+              "q": "5 × 40 = ?",
+              "choices": [
+                "180",
+                "200",
+                "220",
+                "240"
+              ],
+              "a": 1,
+              "hint": "5×4×10=200",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 30 = ?",
+              "choices": [
+                "80",
+                "90",
+                "100",
+                "110"
+              ],
+              "a": 1,
+              "hint": "3×3×10=90",
+              "difficulty": 2
+            },
+            {
+              "q": "2 × 150 = ?",
+              "choices": [
+                "290",
+                "300",
+                "310",
+                "320"
+              ],
+              "a": 1,
+              "hint": "2×150=300",
+              "difficulty": 2
+            },
+            {
+              "q": "Mỗi hộp 5 kẹo, có 7 hộp. Tất cả?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 2,
+              "hint": "5×7=35",
+              "difficulty": 1
+            },
+            {
+              "q": "3 xe, mỗi xe 4 bánh. Tổng số bánh?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "3×4=12",
+              "difficulty": 1
+            },
+            {
+              "q": "Lớp có 5 tổ, mỗi tổ 7 bạn. Tổng?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 2,
+              "hint": "5×7=35",
+              "difficulty": 1
+            },
+            {
+              "q": "4 đàn ong, mỗi đàn 45 con. Tổng?",
+              "choices": [
+                "178",
+                "179",
+                "180",
+                "181"
+              ],
+              "a": 2,
+              "hint": "4×45=180",
+              "difficulty": 2
+            },
+            {
+              "q": "Mỗi tuần học 5 ngày, 4 tuần = ?",
+              "choices": [
+                "18",
+                "19",
+                "20",
+                "21"
+              ],
+              "a": 2,
+              "hint": "5×4=20",
+              "difficulty": 1
+            },
+            {
+              "q": "Sắp bánh thành 5 hàng × 6 cột. Tổng bánh?",
+              "choices": [
+                "29",
+                "30",
+                "31",
+                "32"
+              ],
+              "a": 1,
+              "hint": "5×6=30",
+              "difficulty": 1
+            },
+            {
+              "q": "234 × 5 - 234 × 4 = ?",
+              "choices": [
+                "232",
+                "233",
+                "234",
+                "235"
+              ],
+              "a": 2,
+              "hint": "234×(5-4)=234",
+              "difficulty": 3
+            },
+            {
+              "q": "Số nào nhân với 5 được 200?",
+              "choices": [
+                "38",
+                "39",
+                "40",
+                "41"
+              ],
+              "a": 2,
+              "hint": "200÷5=40",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào nhân với 4 được 100?",
+              "choices": [
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "a": 2,
+              "hint": "100÷4=25",
+              "difficulty": 2
+            },
+            {
+              "q": "Bảng nhân nào có kết quả là 24?",
+              "choices": [
+                "2×11",
+                "3×8",
+                "4×5",
+                "5×6"
+              ],
+              "a": 1,
+              "hint": "3×8=24",
+              "difficulty": 2
+            },
+            {
+              "q": "Tích của 2 số là 36, một số là 4. Số kia = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "36÷4=9",
+              "difficulty": 2
+            },
+            {
+              "q": "Tích lớn nhất: 5×1, 2×3, 50÷5, 2×4",
+              "choices": [
+                "5×1=5",
+                "2×3=6",
+                "50÷5=10",
+                "2×4=8"
+              ],
+              "a": 2,
+              "hint": "10 lớn nhất",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "toan_chia",
+          "icon": "➗",
+          "name": "Bảng Chia",
+          "questions": [
+            {
+              "q": "4 ÷ 2 = ?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "6 ÷ 2 = ?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "8 ÷ 2 = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "10 ÷ 2 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "12 ÷ 2 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "14 ÷ 2 = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "16 ÷ 2 = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "18 ÷ 2 = ?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "20 ÷ 2 = ?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "9 ÷ 3 = ?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "12 ÷ 3 = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "15 ÷ 3 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "18 ÷ 3 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "21 ÷ 3 = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "24 ÷ 3 = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "27 ÷ 3 = ?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "30 ÷ 3 = ?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "8 ÷ 4 = ?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "12 ÷ 4 = ?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "16 ÷ 4 = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "20 ÷ 4 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "24 ÷ 4 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "28 ÷ 4 = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "32 ÷ 4 = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "36 ÷ 4 = ?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "40 ÷ 4 = ?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "10 ÷ 5 = ?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "15 ÷ 5 = ?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "20 ÷ 5 = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "25 ÷ 5 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "30 ÷ 5 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "35 ÷ 5 = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "40 ÷ 5 = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "45 ÷ 5 = ?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "50 ÷ 5 = ?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "? ÷ 2 = 6",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "6×2=12",
+              "difficulty": 2
+            },
+            {
+              "q": "? ÷ 3 = 5",
+              "choices": [
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
+              "a": 2,
+              "hint": "5×3=15",
+              "difficulty": 2
+            },
+            {
+              "q": "? ÷ 4 = 8",
+              "choices": [
+                "30",
+                "31",
+                "32",
+                "33"
+              ],
+              "a": 2,
+              "hint": "8×4=32",
+              "difficulty": 2
+            },
+            {
+              "q": "? ÷ 5 = 9",
+              "choices": [
+                "43",
+                "44",
+                "45",
+                "46"
+              ],
+              "a": 2,
+              "hint": "9×5=45",
+              "difficulty": 2
+            },
+            {
+              "q": "? ÷ 2 = 9",
+              "choices": [
+                "16",
+                "17",
+                "18",
+                "19"
+              ],
+              "a": 2,
+              "hint": "9×2=18",
+              "difficulty": 2
+            },
+            {
+              "q": "? ÷ 3 = 7",
+              "choices": [
+                "19",
+                "20",
+                "21",
+                "22"
+              ],
+              "a": 2,
+              "hint": "7×3=21",
+              "difficulty": 2
+            },
+            {
+              "q": "7 ÷ 2 = ? dư ?",
+              "choices": [
+                "3 dư 1",
+                "3 dư 2",
+                "4 dư 0",
+                "4 dư 1"
+              ],
+              "a": 0,
+              "hint": "7=2×3+1",
+              "difficulty": 2
+            },
+            {
+              "q": "11 ÷ 3 = ? dư ?",
+              "choices": [
+                "3 dư 2",
+                "3 dư 3",
+                "4 dư 0",
+                "3 dư 1"
+              ],
+              "a": 0,
+              "hint": "11=3×3+2",
+              "difficulty": 2
+            },
+            {
+              "q": "14 ÷ 4 = ? dư ?",
+              "choices": [
+                "3 dư 2",
+                "3 dư 3",
+                "4 dư 0",
+                "3 dư 1"
+              ],
+              "a": 0,
+              "hint": "14=4×3+2",
+              "difficulty": 2
+            },
+            {
+              "q": "17 ÷ 5 = ? dư ?",
+              "choices": [
+                "3 dư 2",
+                "3 dư 3",
+                "4 dư 0",
+                "3 dư 1"
+              ],
+              "a": 0,
+              "hint": "17=5×3+2",
+              "difficulty": 2
+            },
+            {
+              "q": "13 ÷ 4 = ? dư ?",
+              "choices": [
+                "3 dư 1",
+                "3 dư 2",
+                "3 dư 3",
+                "4 dư 0"
+              ],
+              "a": 0,
+              "hint": "13=4×3+1",
+              "difficulty": 2
+            },
+            {
+              "q": "28 quyển sách, 4 quyển/kệ. Được mấy kệ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "28÷4=7",
+              "difficulty": 1
+            },
+            {
+              "q": "Có 36 cái kẹo, mỗi túi 4 cái. Được mấy túi?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "hint": "36÷4=9",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × 4 = 12. Vậy 12 ÷ 4 = ?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "5 × 7 = 35. Vậy 35 ÷ 5 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "4 × 9 = 36. Vậy 36 ÷ 9 = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Biết 8 × 5 = 40. Tính 40 ÷ 8 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào chia hết cho 2?",
+              "choices": [
+                "13",
+                "25",
+                "38",
+                "47"
+              ],
+              "a": 2,
+              "hint": "Tận cùng chẵn",
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào chia hết cho 5?",
+              "choices": [
+                "14",
+                "17",
+                "23",
+                "25"
+              ],
+              "a": 3,
+              "hint": "Tận cùng 0 hoặc 5",
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào chia hết cho 3?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "1+2=3 chia hết 3",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào chia hết cho cả 2 và 5?",
+              "choices": [
+                "15",
+                "20",
+                "25",
+                "35"
+              ],
+              "a": 1,
+              "hint": "Tận cùng 0",
+              "difficulty": 2
+            },
+            {
+              "q": "(12 + 8) ÷ 4 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "hint": "20÷4=5",
+              "difficulty": 2
+            },
+            {
+              "q": "(3 × 8) ÷ 4 = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "hint": "24÷4=6",
+              "difficulty": 2
+            },
+            {
+              "q": "36 ÷ (3 × 3) = ?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "hint": "36÷9=4",
+              "difficulty": 2
+            },
+            {
+              "q": "(20 + 4) ÷ 4 = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 1,
+              "hint": "24÷4=6",
+              "difficulty": 2
+            },
+            {
+              "q": "Tìm n: n × 5 = 45",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "45÷5=9",
+              "difficulty": 2
+            },
+            {
+              "q": "Tìm n: 36 ÷ n = 4",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "hint": "36÷4=9",
+              "difficulty": 2
+            },
+            {
+              "q": "Tìm n: n ÷ 3 = 8",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 2,
+              "hint": "8×3=24",
+              "difficulty": 2
+            },
+            {
+              "q": "Tổng 2 số = 40, tích = 400. 2 số đó là?",
+              "choices": [
+                "10 và 40",
+                "20 và 20",
+                "25 và 16",
+                "8 và 50"
+              ],
+              "a": 1,
+              "hint": "20+20=40, 20×20=400",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "toan_dovi",
+          "icon": "📏",
+          "name": "Đơn Vị Đo",
+          "questions": [
+            {
+              "q": "1 dm = ? cm",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 2,
+              "hint": "1dm=10cm",
+              "difficulty": 1
+            },
+            {
+              "q": "2 dm = ? cm",
+              "choices": [
+                "18",
+                "19",
+                "20",
+                "21"
+              ],
+              "a": 2,
+              "hint": "2×10=20",
+              "difficulty": 1
+            },
+            {
+              "q": "5 dm = ? cm",
+              "choices": [
+                "40",
+                "45",
+                "50",
+                "55"
+              ],
+              "a": 2,
+              "hint": "5×10=50",
+              "difficulty": 1
+            },
+            {
+              "q": "1 m = ? cm",
+              "choices": [
+                "10",
+                "50",
+                "100",
+                "1000"
+              ],
+              "a": 2,
+              "hint": "1m=100cm",
+              "difficulty": 1
+            },
+            {
+              "q": "1 m = ? dm",
+              "choices": [
+                "5",
+                "8",
+                "10",
+                "100"
+              ],
+              "a": 2,
+              "hint": "1m=10dm",
+              "difficulty": 1
+            },
+            {
+              "q": "3 m = ? dm",
+              "choices": [
+                "25",
+                "27",
+                "30",
+                "33"
+              ],
+              "a": 2,
+              "hint": "3×10=30",
+              "difficulty": 1
+            },
+            {
+              "q": "1 km = ? m",
+              "choices": [
+                "100",
+                "500",
+                "1000",
+                "10000"
+              ],
+              "a": 2,
+              "hint": "1km=1000m",
+              "difficulty": 1
+            },
+            {
+              "q": "3 km = ? m",
+              "choices": [
+                "300",
+                "1000",
+                "3000",
+                "30000"
+              ],
+              "a": 2,
+              "hint": "3×1000=3000",
+              "difficulty": 1
+            },
+            {
+              "q": "5 m = ? dm",
+              "choices": [
+                "40",
+                "45",
+                "50",
+                "55"
+              ],
+              "a": 2,
+              "hint": "5×10=50",
+              "difficulty": 1
+            },
+            {
+              "q": "200 cm = ? m",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "hint": "200÷100=2",
+              "difficulty": 2
+            },
+            {
+              "q": "4 m 5 dm = ? dm",
+              "choices": [
+                "40",
+                "43",
+                "45",
+                "50"
+              ],
+              "a": 2,
+              "hint": "40+5=45",
+              "difficulty": 2
+            },
+            {
+              "q": "87 cm = ? dm ? cm",
+              "choices": [
+                "8dm5cm",
+                "8dm7cm",
+                "7dm8cm",
+                "9dm7cm"
+              ],
+              "a": 1,
+              "hint": "80cm=8dm, 7cm",
+              "difficulty": 2
+            },
+            {
+              "q": "1 m 5 dm = ? dm",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 1,
+              "hint": "10+5=15",
+              "difficulty": 2
+            },
+            {
+              "q": "2 m 3 dm = ? dm",
+              "choices": [
+                "22",
+                "23",
+                "24",
+                "25"
+              ],
+              "a": 1,
+              "hint": "20+3=23",
+              "difficulty": 2
+            },
+            {
+              "q": "30 dm = ? m",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "hint": "30÷10=3",
+              "difficulty": 2
+            },
+            {
+              "q": "150 cm = ? m ? cm",
+              "choices": [
+                "1m50cm",
+                "1m5cm",
+                "15m0cm",
+                "0m150cm"
+              ],
+              "a": 0,
+              "hint": "100cm=1m, còn 50",
+              "difficulty": 2
+            },
+            {
+              "q": "4 m 3 dm = ? dm",
+              "choices": [
+                "42",
+                "43",
+                "44",
+                "45"
+              ],
+              "a": 1,
+              "hint": "40+3=43",
+              "difficulty": 2
+            },
+            {
+              "q": "925 m + 75 m = ? km",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 0,
+              "hint": "1000m=1km",
+              "difficulty": 2
+            },
+            {
+              "q": "152 dm + 70 dm = ?",
+              "choices": [
+                "221dm",
+                "222dm",
+                "223dm",
+                "222m"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "5 m 8 dm = ? cm",
+              "choices": [
+                "570cm",
+                "580cm",
+                "590cm",
+                "508cm"
+              ],
+              "a": 1,
+              "hint": "58dm=580cm",
+              "difficulty": 2
+            },
+            {
+              "q": "Cây cao 1 m 2 dm. Cao bao nhiêu dm?",
+              "choices": [
+                "11dm",
+                "12dm",
+                "13dm",
+                "14dm"
+              ],
+              "a": 1,
+              "hint": "10+2=12",
+              "difficulty": 1
+            },
+            {
+              "q": "Bàn dài 120 cm. Dài bao nhiêu dm?",
+              "choices": [
+                "11dm",
+                "12dm",
+                "13dm",
+                "14dm"
+              ],
+              "a": 1,
+              "hint": "120÷10=12",
+              "difficulty": 2
+            },
+            {
+              "q": "Chiều dài phòng học khoảng?",
+              "choices": [
+                "8cm",
+                "8dm",
+                "8m",
+                "8km"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Chiều dài cây bút chì khoảng?",
+              "choices": [
+                "19cm",
+                "19dm",
+                "19m",
+                "19km"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "1 kg = ? g",
+              "choices": [
+                "100",
+                "500",
+                "1000",
+                "2000"
+              ],
+              "a": 2,
+              "hint": "1kg=1000g",
+              "difficulty": 1
+            },
+            {
+              "q": "2 kg = ? g",
+              "choices": [
+                "1000",
+                "1500",
+                "2000",
+                "2500"
+              ],
+              "a": 2,
+              "hint": "2×1000=2000",
+              "difficulty": 1
+            },
+            {
+              "q": "500 g = ? kg",
+              "choices": [
+                "0,5",
+                "1",
+                "1,5",
+                "2"
+              ],
+              "a": 0,
+              "hint": "500÷1000=0.5",
+              "difficulty": 2
+            },
+            {
+              "q": "Túi gạo nặng 5 kg = ? g",
+              "choices": [
+                "4000g",
+                "5000g",
+                "6000g",
+                "50000g"
+              ],
+              "a": 1,
+              "hint": "5×1000=5000",
+              "difficulty": 1
+            },
+            {
+              "q": "Bé nặng khoảng?",
+              "choices": [
+                "25g",
+                "25kg",
+                "250g",
+                "2500g"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Quyển sách nặng khoảng?",
+              "choices": [
+                "200g",
+                "2kg",
+                "20kg",
+                "200kg"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "3 kg 500 g = ? g",
+              "choices": [
+                "3050g",
+                "3500g",
+                "3005g",
+                "350g"
+              ],
+              "a": 1,
+              "hint": "3000+500=3500",
+              "difficulty": 2
+            },
+            {
+              "q": "Mua 2 gói bánh, mỗi gói 250g. Tổng = ?",
+              "choices": [
+                "400g",
+                "450g",
+                "500g",
+                "550g"
+              ],
+              "a": 2,
+              "hint": "2×250=500",
+              "difficulty": 2
+            },
+            {
+              "q": "1 lít = ? dl",
+              "choices": [
+                "5",
+                "8",
+                "10",
+                "100"
+              ],
+              "a": 2,
+              "hint": "1l=10dl",
+              "difficulty": 1
+            },
+            {
+              "q": "2 lít = ? dl",
+              "choices": [
+                "15",
+                "18",
+                "20",
+                "25"
+              ],
+              "a": 2,
+              "hint": "2×10=20",
+              "difficulty": 1
+            },
+            {
+              "q": "Bình nước 2 lít, uống 500ml. Còn?",
+              "choices": [
+                "1l500ml",
+                "1500ml",
+                "Cả hai",
+                "Không xác định"
+              ],
+              "a": 2,
+              "hint": "2000-500=1500ml",
+              "difficulty": 2
+            },
+            {
+              "q": "Đơn vị đo dung tích là?",
+              "choices": [
+                "dm",
+                "km",
+                "kg",
+                "l (lít)"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "Đơn vị đo khối lượng là?",
+              "choices": [
+                "m",
+                "l",
+                "kg",
+                "km"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "1 giờ = ? phút",
+              "choices": [
+                "30",
+                "60",
+                "90",
+                "120"
+              ],
+              "a": 1,
+              "hint": "1h=60 phút",
+              "difficulty": 1
+            },
+            {
+              "q": "1 phút = ? giây",
+              "choices": [
+                "30",
+                "60",
+                "90",
+                "120"
+              ],
+              "a": 1,
+              "hint": "1 phút=60 giây",
+              "difficulty": 1
+            },
+            {
+              "q": "1 ngày = ? giờ",
+              "choices": [
+                "12",
+                "20",
+                "24",
+                "48"
+              ],
+              "a": 2,
+              "hint": "1 ngày=24h",
+              "difficulty": 1
+            },
+            {
+              "q": "1 tuần = ? ngày",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "1 năm = ? tháng",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Tháng 2 có bao nhiêu ngày (năm thường)?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Tháng nào có 30 ngày?",
+              "choices": [
+                "Tháng 1",
+                "Tháng 3",
+                "Tháng 4",
+                "Tháng 5"
+              ],
+              "a": 2,
+              "hint": "4,6,9,11 có 30 ngày",
+              "difficulty": 2
+            },
+            {
+              "q": "2 giờ 30 phút = ? phút",
+              "choices": [
+                "130",
+                "140",
+                "150",
+                "160"
+              ],
+              "a": 2,
+              "hint": "120+30=150",
+              "difficulty": 2
+            },
+            {
+              "q": "90 phút = ? giờ ? phút",
+              "choices": [
+                "1h20p",
+                "1h30p",
+                "1h40p",
+                "1h50p"
+              ],
+              "a": 1,
+              "hint": "60+30=90",
+              "difficulty": 2
+            },
+            {
+              "q": "Tháng 5 có bao nhiêu ngày?",
+              "choices": [
+                "29",
+                "30",
+                "31",
+                "28"
+              ],
+              "a": 2,
+              "hint": "Tháng lẻ (1,3,5,7,8,10,12) có 31 ngày",
+              "difficulty": 1
+            },
+            {
+              "q": "Diện tích HV cạnh 7 cm = ?",
+              "choices": [
+                "28",
+                "42",
+                "49",
+                "56"
+              ],
+              "a": 2,
+              "hint": "S=7×7=49",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HCN dài 9, rộng 3 = ?",
+              "choices": [
+                "24",
+                "27",
+                "30",
+                "33"
+              ],
+              "a": 1,
+              "hint": "S=9×3=27",
+              "difficulty": 2
+            },
+            {
+              "q": "HV cạnh 9. Diện tích = ?",
+              "choices": [
+                "72",
+                "81",
+                "90",
+                "99"
+              ],
+              "a": 1,
+              "hint": "9×9=81",
+              "difficulty": 2
+            },
+            {
+              "q": "Chu vi HV cạnh 5cm = ?",
+              "choices": [
+                "15cm",
+                "20cm",
+                "25cm",
+                "30cm"
+              ],
+              "a": 1,
+              "hint": "4×5=20",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi HCN dài 8, rộng 4 = ?",
+              "choices": [
+                "20",
+                "22",
+                "24",
+                "26"
+              ],
+              "a": 2,
+              "hint": "(8+4)×2=24",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi tam giác đều cạnh 8cm = ?",
+              "choices": [
+                "16cm",
+                "24cm",
+                "32cm",
+                "8cm"
+              ],
+              "a": 1,
+              "hint": "3×8=24",
+              "difficulty": 2
+            },
+            {
+              "q": "Chu vi HV = 40cm. Cạnh = ?",
+              "choices": [
+                "8cm",
+                "10cm",
+                "12cm",
+                "20cm"
+              ],
+              "a": 1,
+              "hint": "40÷4=10",
+              "difficulty": 2
+            },
+            {
+              "q": "HCN chu vi 36, dài 10. Rộng = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "hint": "(36÷2)-10=8",
+              "difficulty": 3
+            },
+            {
+              "q": "HV chu vi 48. Cạnh = ?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "48÷4=12",
+              "difficulty": 2
+            },
+            {
+              "q": "3 km 400 m = ? m",
+              "choices": [
+                "3040m",
+                "3400m",
+                "3004m",
+                "340m"
+              ],
+              "a": 1,
+              "hint": "3000+400=3400",
+              "difficulty": 2
+            },
+            {
+              "q": "4500 m = ? km ? m",
+              "choices": [
+                "4km50m",
+                "4km500m",
+                "45km0m",
+                "450km0m"
+              ],
+              "a": 1,
+              "hint": "4000m=4km, còn 500m",
+              "difficulty": 3
+            },
+            {
+              "q": "2 giờ = ? phút = ? giây",
+              "choices": [
+                "120p 7200s",
+                "120p 3600s",
+                "60p 3600s",
+                "100p 6000s"
+              ],
+              "a": 0,
+              "hint": "2×60=120p, 120×60=7200s",
+              "difficulty": 3
+            },
+            {
+              "q": "1 m 1 dm 1 cm = ? cm",
+              "choices": [
+                "100cm",
+                "111cm",
+                "110cm",
+                "101cm"
+              ],
+              "a": 1,
+              "hint": "100+10+1=111",
+              "difficulty": 3
+            },
+            {
+              "q": "Sợi dây 480cm, cắt 136cm. Còn lại?",
+              "choices": [
+                "342cm",
+                "343cm",
+                "344cm",
+                "345cm"
+              ],
+              "a": 2,
+              "hint": "480-136=344",
+              "difficulty": 2
+            },
+            {
+              "q": "Đoạn đường: 215m + 178m = ? m",
+              "choices": [
+                "391m",
+                "392m",
+                "393m",
+                "394m"
+              ],
+              "a": 2,
+              "hint": "215+178=393",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "toan_hinh",
+          "icon": "🔷",
+          "name": "Hình Học",
+          "questions": [
+            {
+              "q": "Hình tam giác có bao nhiêu cạnh?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Hình tứ giác có bao nhiêu cạnh?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Hình ngũ giác có bao nhiêu cạnh?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Hình lục giác có bao nhiêu cạnh?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Hình chữ nhật có bao nhiêu góc vuông?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "0"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Hình vuông có bao nhiêu cạnh bằng nhau?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "0"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Hình vuông và HCN khác nhau thế nào?",
+              "choices": [
+                "Số cạnh",
+                "Số góc",
+                "HV có 4 cạnh bằng nhau",
+                "HCN có 4 cạnh bằng nhau"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Khối lập phương có bao nhiêu mặt?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Khối hộp chữ nhật có bao nhiêu mặt?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Khối nào lăn được?",
+              "choices": [
+                "Khối lập phương",
+                "Khối hộp chữ nhật",
+                "Khối cầu",
+                "Khối chóp"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Khối trụ có đáy hình gì?",
+              "choices": [
+                "Vuông",
+                "Chữ nhật",
+                "Tròn",
+                "Tam giác"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Hình thoi có bao nhiêu cạnh bằng nhau?",
+              "choices": [
+                "0",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 3,
+              "difficulty": 2
+            },
+            {
+              "q": "Hình nào KHÔNG phải tứ giác?",
+              "choices": [
+                "Hình vuông",
+                "HCN",
+                "Tam giác",
+                "Hình thoi"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Tổng các góc của tam giác = ?",
+              "choices": [
+                "90°",
+                "180°",
+                "270°",
+                "360°"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Tổng các góc của tứ giác = ?",
+              "choices": [
+                "180°",
+                "270°",
+                "360°",
+                "450°"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "Hình nào có số đường chéo nhiều nhất?",
+              "choices": [
+                "Tam giác",
+                "Tứ giác",
+                "Ngũ giác",
+                "Lục giác"
+              ],
+              "a": 3,
+              "hint": "Lục giác có 9 đường chéo",
+              "difficulty": 3
+            },
+            {
+              "q": "Chu vi HV cạnh 6 = ?",
+              "choices": [
+                "20",
+                "22",
+                "24",
+                "26"
+              ],
+              "a": 2,
+              "hint": "4×6=24",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi HV cạnh 9 = ?",
+              "choices": [
+                "34",
+                "35",
+                "36",
+                "37"
+              ],
+              "a": 2,
+              "hint": "4×9=36",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi HCN dài 10, rộng 5 = ?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "(10+5)×2=30",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi HCN dài 12, rộng 5 = ?",
+              "choices": [
+                "32",
+                "33",
+                "34",
+                "35"
+              ],
+              "a": 2,
+              "hint": "(12+5)×2=34",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi tam giác 3 cạnh đều 6cm = ?",
+              "choices": [
+                "12cm",
+                "16cm",
+                "18cm",
+                "24cm"
+              ],
+              "a": 2,
+              "hint": "3×6=18",
+              "difficulty": 2
+            },
+            {
+              "q": "Chu vi HV = 28. Cạnh = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "28÷4=7",
+              "difficulty": 2
+            },
+            {
+              "q": "Chu vi HCN = 36, dài = 10. Rộng = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 1,
+              "hint": "(36÷2)-10=8",
+              "difficulty": 3
+            },
+            {
+              "q": "Cạnh HV = 6cm. Chu vi = ?",
+              "choices": [
+                "20",
+                "22",
+                "24",
+                "26"
+              ],
+              "a": 2,
+              "hint": "4×6=24",
+              "difficulty": 1
+            },
+            {
+              "q": "Chu vi hình lục giác đều cạnh 6cm = ?",
+              "choices": [
+                "24",
+                "30",
+                "36",
+                "48"
+              ],
+              "a": 2,
+              "hint": "6×6=36",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HCN dài 6, rộng 4 = ?",
+              "choices": [
+                "20",
+                "22",
+                "24",
+                "26"
+              ],
+              "a": 2,
+              "hint": "6×4=24",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HV cạnh 5 = ?",
+              "choices": [
+                "20",
+                "22",
+                "25",
+                "30"
+              ],
+              "a": 2,
+              "hint": "5×5=25",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HV cạnh 8 = ?",
+              "choices": [
+                "60",
+                "62",
+                "64",
+                "66"
+              ],
+              "a": 2,
+              "hint": "8×8=64",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HCN 9×3 = ?",
+              "choices": [
+                "24",
+                "26",
+                "27",
+                "30"
+              ],
+              "a": 2,
+              "hint": "9×3=27",
+              "difficulty": 2
+            },
+            {
+              "q": "Diện tích HV = 36. Cạnh = ?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "hint": "6×6=36",
+              "difficulty": 3
+            },
+            {
+              "q": "HCN diện tích 48, rộng 6. Dài = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "48÷6=8",
+              "difficulty": 3
+            },
+            {
+              "q": "HCN diện tích bằng HV cạnh 6. HCN rộng 4. Dài = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "36÷4=9",
+              "difficulty": 3
+            },
+            {
+              "q": "S HCN dài 12, rộng 3 = ?",
+              "choices": [
+                "30",
+                "33",
+                "36",
+                "39"
+              ],
+              "a": 2,
+              "hint": "12×3=36",
+              "difficulty": 2
+            },
+            {
+              "q": "Hai điểm xác định được bao nhiêu đường thẳng?",
+              "choices": [
+                "0",
+                "1",
+                "2",
+                "Vô số"
+              ],
+              "a": 1,
+              "hint": "Qua 2 điểm có đúng 1 đường thẳng",
+              "difficulty": 2
+            },
+            {
+              "q": "Đoạn thẳng là gì?",
+              "choices": [
+                "Đường thẳng",
+                "Phần đường thẳng giữa 2 điểm",
+                "Đường cong",
+                "Ray"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Hai đường thẳng trong mặt phẳng có thể?",
+              "choices": [
+                "Chỉ cắt nhau",
+                "Chỉ song song",
+                "Cắt nhau hoặc song song",
+                "Luôn vuông góc"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "HV có cạnh bằng HCN dài. HCN rộng 5, dài 8. CV HV = ?",
+              "choices": [
+                "28",
+                "30",
+                "32",
+                "34"
+              ],
+              "a": 2,
+              "hint": "4×8=32",
+              "difficulty": 3
+            },
+            {
+              "q": "Khối nào có các mặt là HCN?",
+              "choices": [
+                "Khối cầu",
+                "Khối trụ",
+                "Khối hộp chữ nhật",
+                "Khối chóp"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Hình nào có đúng 2 cặp cạnh song song và bằng nhau?",
+              "choices": [
+                "Hình vuông",
+                "HCN",
+                "Cả A và B",
+                "Hình thoi"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "Bao nhiêu HV cạnh 2 vừa đủ lát HCN 6×4?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "hint": "S=24, mỗi HV=4 → 24÷4=6",
+              "difficulty": 3
+            },
+            {
+              "q": "HCN có chu vi 36, chiều dài gấp đôi chiều rộng. Diện tích = ?",
+              "choices": [
+                "68",
+                "72",
+                "80",
+                "96"
+              ],
+              "a": 1,
+              "hint": "r=6 d=12 S=72",
+              "difficulty": 3
+            },
+            {
+              "q": "HV chu vi = CV HCN 10×5. Cạnh HV = ?",
+              "choices": [
+                "7",
+                "7,5",
+                "8",
+                "8,5"
+              ],
+              "a": 1,
+              "hint": "CV HCN=30, CV HV=30→cạnh=7,5",
+              "difficulty": 3
+            },
+            {
+              "q": "Nền nhà HCN 8m×6m. Lát gạch 1m². Cần bao nhiêu gạch?",
+              "choices": [
+                "42",
+                "46",
+                "48",
+                "50"
+              ],
+              "a": 2,
+              "hint": "8×6=48",
+              "difficulty": 3
+            },
+            {
+              "q": "Vườn HV cạnh 9m. Quanh vườn trồng cây 3m/cây. Cần mấy cây?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "CV=36, 36÷3=12",
+              "difficulty": 3
+            },
+            {
+              "q": "Sợi dây quấn quanh HV cạnh 7m được 2 vòng. Dài dây = ?",
+              "choices": [
+                "52m",
+                "54m",
+                "56m",
+                "58m"
+              ],
+              "a": 2,
+              "hint": "4×7×2=56",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "toan_loivan",
+          "icon": "📝",
+          "name": "Toán Lời Văn",
+          "questions": [
+            {
+              "q": "Vườn có 248 cam, hái thêm 135. Tổng = ?",
+              "choices": [
+                "381",
+                "382",
+                "383",
+                "384"
+              ],
+              "a": 2,
+              "hint": "248+135=383",
+              "difficulty": 1
+            },
+            {
+              "q": "Lớp 2A: 18 nam, 17 nữ. Tổng = ?",
+              "choices": [
+                "34",
+                "35",
+                "36",
+                "37"
+              ],
+              "a": 1,
+              "hint": "18+17=35",
+              "difficulty": 1
+            },
+            {
+              "q": "Sáng bán 125 bánh, chiều bán 98 bánh. Tổng = ?",
+              "choices": [
+                "221",
+                "222",
+                "223",
+                "224"
+              ],
+              "a": 2,
+              "hint": "125+98=223",
+              "difficulty": 1
+            },
+            {
+              "q": "Khối 2: 615 quà. Khối 3 nhiều hơn 158. Khối 3 = ?",
+              "choices": [
+                "771",
+                "772",
+                "773",
+                "774"
+              ],
+              "a": 2,
+              "hint": "615+158=773",
+              "difficulty": 1
+            },
+            {
+              "q": "Lớp 2A: 35 HS, lớp 2B: 28 HS. 2A hơn 2B?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "hint": "35-28=7",
+              "difficulty": 1
+            },
+            {
+              "q": "Vườn hái 564 kg cà phê, hơn vườn 2 là 248 kg. Vườn 2 = ?",
+              "choices": [
+                "314",
+                "315",
+                "316",
+                "317"
+              ],
+              "a": 2,
+              "hint": "564-248=316",
+              "difficulty": 1
+            },
+            {
+              "q": "Thư viện 345 sách, cho mượn 127. Còn?",
+              "choices": [
+                "216",
+                "217",
+                "218",
+                "219"
+              ],
+              "a": 2,
+              "hint": "345-127=218",
+              "difficulty": 1
+            },
+            {
+              "q": "Mẹ có 850đ, mua kẹo 200đ, bánh 300đ. Còn?",
+              "choices": [
+                "348",
+                "349",
+                "350",
+                "351"
+              ],
+              "a": 2,
+              "hint": "850-500=350",
+              "difficulty": 1
+            },
+            {
+              "q": "Mỗi hộp 5 kẹo, có 6 hộp. Tổng = ?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "5×6=30",
+              "difficulty": 1
+            },
+            {
+              "q": "3 xe, mỗi xe 4 bánh. Tổng bánh = ?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "hint": "3×4=12",
+              "difficulty": 1
+            },
+            {
+              "q": "Lớp 5 tổ, mỗi tổ 7 bạn. Tổng = ?",
+              "choices": [
+                "33",
+                "34",
+                "35",
+                "36"
+              ],
+              "a": 2,
+              "hint": "5×7=35",
+              "difficulty": 1
+            },
+            {
+              "q": "4 đàn ong, mỗi đàn 45 con. Tổng = ?",
+              "choices": [
+                "178",
+                "179",
+                "180",
+                "181"
+              ],
+              "a": 2,
+              "hint": "4×45=180",
+              "difficulty": 2
+            },
+            {
+              "q": "24 HS chia đều 2 nhóm. Mỗi nhóm?",
+              "choices": [
+                "11",
+                "12",
+                "13",
+                "14"
+              ],
+              "a": 1,
+              "hint": "24÷2=12",
+              "difficulty": 1
+            },
+            {
+              "q": "30 kẹo chia đều 5 bạn. Mỗi bạn?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "hint": "30÷5=6",
+              "difficulty": 1
+            },
+            {
+              "q": "45 kg táo, 5 kg/thùng. Được mấy thùng?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "45÷5=9",
+              "difficulty": 1
+            },
+            {
+              "q": "Cô giáo chia 28 quyển sách cho 4 nhóm đều nhau. Mỗi nhóm?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "28÷4=7",
+              "difficulty": 1
+            },
+            {
+              "q": "Mua 3 cái bút 5k/cái và 2 cái thước 3k/cái. Tổng tiền?",
+              "choices": [
+                "18k",
+                "20k",
+                "21k",
+                "22k"
+              ],
+              "a": 2,
+              "hint": "15+6=21k",
+              "difficulty": 2
+            },
+            {
+              "q": "4 gói bánh 4k/gói. Trả 20k. Tiền thừa?",
+              "choices": [
+                "3k",
+                "4k",
+                "5k",
+                "6k"
+              ],
+              "a": 1,
+              "hint": "20-16=4k",
+              "difficulty": 2
+            },
+            {
+              "q": "Kệ B ít hơn kệ A 67 quyển. A có 215. C=A+B. Kệ C?",
+              "choices": [
+                "361",
+                "362",
+                "363",
+                "364"
+              ],
+              "a": 2,
+              "hint": "B=148, C=363",
+              "difficulty": 2
+            },
+            {
+              "q": "Xưởng 3 ngày may 756 chiếc. N1=215, N2=178. N3=?",
+              "choices": [
+                "361",
+                "362",
+                "363",
+                "364"
+              ],
+              "a": 2,
+              "hint": "756-215-178=363",
+              "difficulty": 2
+            },
+            {
+              "q": "Cửa hàng: T2=45, T3=38, T4=52, T5=30, T6=60 quyển. Tổng?",
+              "choices": [
+                "223",
+                "224",
+                "225",
+                "226"
+              ],
+              "a": 2,
+              "hint": "Cộng cả 5 ngày=225",
+              "difficulty": 2
+            },
+            {
+              "q": "Bà có 850đ, mua 1 kẹo 200đ, 2 bánh 150đ/cái. Còn?",
+              "choices": [
+                "348",
+                "349",
+                "350",
+                "351"
+              ],
+              "a": 2,
+              "hint": "200+300=500; 850-500=350",
+              "difficulty": 2
+            },
+            {
+              "q": "Trại nuôi ong 4 đàn, 45 con/đàn. Bán 58 con. Còn?",
+              "choices": [
+                "120",
+                "121",
+                "122",
+                "123"
+              ],
+              "a": 2,
+              "hint": "180-58=122",
+              "difficulty": 2
+            },
+            {
+              "q": "Giá 1 cuốn vở 3k. Có 15k mua được mấy cuốn?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "hint": "15÷3=5",
+              "difficulty": 2
+            },
+            {
+              "q": "Mua 5 cây bút hết 35k. Mỗi cây giá?",
+              "choices": [
+                "5k",
+                "6k",
+                "7k",
+                "8k"
+              ],
+              "a": 2,
+              "hint": "35÷5=7",
+              "difficulty": 2
+            },
+            {
+              "q": "Nam đọc 15 trang/ngày. 5 ngày đọc được?",
+              "choices": [
+                "65",
+                "70",
+                "75",
+                "80"
+              ],
+              "a": 2,
+              "hint": "15×5=75",
+              "difficulty": 2
+            },
+            {
+              "q": "45 quả xoài đóng vào túi, mỗi túi 9 quả. Được mấy túi?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "hint": "45÷9=5",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 48 ô vuông sắp thành hình chữ nhật, rộng 6. Dài?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 2,
+              "hint": "48÷6=8",
+              "difficulty": 2
+            },
+            {
+              "q": "Lớp A: 32, lớp B: 28. Trung bình mỗi lớp?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "(32+28)÷2=30",
+              "difficulty": 3
+            },
+            {
+              "q": "2 số tổng=500, hiệu=100. Số lớn?",
+              "choices": [
+                "290",
+                "295",
+                "300",
+                "305"
+              ],
+              "a": 2,
+              "hint": "(500+100)÷2=300",
+              "difficulty": 3
+            },
+            {
+              "q": "Hiệu = 715, giảm số bị trừ 215. Hiệu mới?",
+              "choices": [
+                "498",
+                "499",
+                "500",
+                "501"
+              ],
+              "a": 2,
+              "hint": "715-215=500",
+              "difficulty": 3
+            },
+            {
+              "q": "An hơn Bình 248. Bình tăng 95. An hơn Bình?",
+              "choices": [
+                "151",
+                "152",
+                "153",
+                "154"
+              ],
+              "a": 2,
+              "hint": "248-95=153",
+              "difficulty": 3
+            },
+            {
+              "q": "Gà có 3 chân? (thực tế gà có mấy chân)",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 0,
+              "hint": "Gà có 2 chân",
+              "difficulty": 1
+            },
+            {
+              "q": "Nhện có 8 chân. 3 con nhện có tất cả?",
+              "choices": [
+                "20",
+                "22",
+                "24",
+                "26"
+              ],
+              "a": 2,
+              "hint": "3×8=24",
+              "difficulty": 1
+            },
+            {
+              "q": "Vịt có 2 chân. Gà có 2 chân. 5 vịt + 3 gà có tổng số chân?",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 2,
+              "hint": "(5+3)×2=16",
+              "difficulty": 2
+            },
+            {
+              "q": "Bàn 4 chân, ghế 4 chân. 3 bộ (1 bàn + 4 ghế). Tổng chân?",
+              "choices": [
+                "58",
+                "60",
+                "62",
+                "64"
+              ],
+              "a": 1,
+              "hint": "3×(4+16)=60",
+              "difficulty": 3
+            },
+            {
+              "q": "Số táo 3 rổ: rổ1=45, rổ2 nhiều hơn 15, rổ3=rổ1+rổ2. Rổ3?",
+              "choices": [
+                "100",
+                "103",
+                "105",
+                "108"
+              ],
+              "a": 2,
+              "hint": "rổ2=60, rổ3=105",
+              "difficulty": 3
+            },
+            {
+              "q": "Mẹ đi chợ lúc 7h, về lúc 9h30. Đi chợ mấy tiếng?",
+              "choices": [
+                "2h",
+                "2h30p",
+                "3h",
+                "3h30p"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Nam tiết kiệm 15k/tuần. Sau 8 tuần được?",
+              "choices": [
+                "110k",
+                "115k",
+                "120k",
+                "125k"
+              ],
+              "a": 2,
+              "hint": "15×8=120",
+              "difficulty": 2
+            },
+            {
+              "q": "Trồng 9 hàng cây, mỗi hàng 8 cây. Tổng?",
+              "choices": [
+                "70",
+                "72",
+                "74",
+                "76"
+              ],
+              "a": 1,
+              "hint": "9×8=72",
+              "difficulty": 2
+            },
+            {
+              "q": "Vải 50m, may áo hết 3m/áo. May được mấy áo + còn thừa?",
+              "choices": [
+                "16 áo dư 2m",
+                "16 áo dư 1m",
+                "17 áo",
+                "18 áo"
+              ],
+              "a": 0,
+              "hint": "50÷3=16 dư 2",
+              "difficulty": 3
+            },
+            {
+              "q": "Tiền đủ mua 5 cây bút 5k/cây. Thực ra mua 6k/cây. Thiếu?",
+              "choices": [
+                "4k",
+                "5k",
+                "6k",
+                "7k"
+              ],
+              "a": 1,
+              "hint": "6×5-5×5=5k",
+              "difficulty": 3
+            },
+            {
+              "q": "Có 5 thẻ: 1,2,3,4,5. Rút ngẫu nhiên. Khả năng rút ra số 0?",
+              "choices": [
+                "Chắc chắn",
+                "Có thể",
+                "Không thể",
+                "50/50"
+              ],
+              "a": 2,
+              "hint": "0 không có trong bộ thẻ",
+              "difficulty": 2
+            },
+            {
+              "q": "Rút thẻ 1-5. Rút ra số bé hơn 10 là?",
+              "choices": [
+                "Không thể",
+                "Có thể",
+                "Chắc chắn",
+                "50/50"
+              ],
+              "a": 2,
+              "hint": "1,2,3,4,5 đều < 10",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 4 thẻ: 2,4,6,8. Rút ra số lẻ là?",
+              "choices": [
+                "Chắc chắn",
+                "Có thể",
+                "Không thể",
+                "50/50"
+              ],
+              "a": 2,
+              "hint": "Chỉ có số chẵn",
+              "difficulty": 2
+            },
+            {
+              "q": "Thẻ 2,4,6,8. Rút ra số chẵn là?",
+              "choices": [
+                "Không thể",
+                "Có thể",
+                "Chắc chắn",
+                "50/50"
+              ],
+              "a": 2,
+              "hint": "Tất cả đều chẵn",
+              "difficulty": 2
+            },
+            {
+              "q": "Thỏ 8 con, Rùa 5 con, Sóc ít hơn Thỏ 5 con. Tổng 3 loài?",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 2,
+              "hint": "8+5+3=16",
+              "difficulty": 2
+            },
+            {
+              "q": "Tổ1:12 sách, Tổ2:9 sách, Tổ3:11 sách. Tổ2 cần thêm = Tổ1?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 2,
+              "hint": "12-9=3",
+              "difficulty": 1
+            },
+            {
+              "q": "Điểm 5 bạn: 8,9,7,10,6. Điểm cao nhất?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "7"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Điểm 5 bạn: 8,9,7,10,6. Điểm trung bình?",
+              "choices": [
+                "7",
+                "7,5",
+                "8",
+                "8,5"
+              ],
+              "a": 2,
+              "hint": "(8+9+7+10+6)÷5=8",
+              "difficulty": 3
+            },
+            {
+              "q": "Đội Đỏ: 45 cây, Đội Xanh: 38 cây, Đội Vàng: 52 cây. Đội Vàng hơn Xanh?",
+              "choices": [
+                "12",
+                "13",
+                "14",
+                "15"
+              ],
+              "a": 2,
+              "hint": "52-38=14",
+              "difficulty": 2
+            },
+            {
+              "q": "3 tổ sách: 12, 9, 11. Tổng cả lớp?",
+              "choices": [
+                "30",
+                "31",
+                "32",
+                "33"
+              ],
+              "a": 2,
+              "hint": "12+9+11=32",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 100 HS, 60 học Toán, 70 học Văn. Ít nhất học cả hai?",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "60+70-100=30",
+              "difficulty": 3
+            },
+            {
+              "q": "Tìm x: (x − 5) × 3 = 27",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 0,
+              "hint": "x-5=9 → x=14",
+              "difficulty": 3
+            },
+            {
+              "q": "3 người đào 3 hố trong 3 giờ. 6 người đào 6 hố trong?",
+              "choices": [
+                "3 giờ",
+                "4 giờ",
+                "6 giờ",
+                "9 giờ"
+              ],
+              "a": 0,
+              "hint": "Tốc độ không đổi",
+              "difficulty": 3
+            },
+            {
+              "q": "1+2+3+...+10 = ?",
+              "choices": [
+                "45",
+                "50",
+                "55",
+                "60"
+              ],
+              "a": 2,
+              "hint": "10×11÷2=55",
+              "difficulty": 3
+            },
+            {
+              "q": "5+10+15+...+50 = ?",
+              "choices": [
+                "250",
+                "275",
+                "300",
+                "325"
+              ],
+              "a": 1,
+              "hint": "(5+50)×10÷2=275",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng số lẻ 1 đến 19 = ?",
+              "choices": [
+                "81",
+                "90",
+                "100",
+                "110"
+              ],
+              "a": 2,
+              "hint": "10²=100",
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "toan_tuyduy",
+          "icon": "🧩",
+          "name": "Tư Duy & Dãy Số",
+          "questions": [
+            {
+              "q": "2, 4, 6, 8, ___",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "hint": "Tăng 2",
+              "difficulty": 1
+            },
+            {
+              "q": "5, 10, 15, 20, ___",
+              "choices": [
+                "22",
+                "24",
+                "25",
+                "30"
+              ],
+              "a": 2,
+              "hint": "Tăng 5",
+              "difficulty": 1
+            },
+            {
+              "q": "1, 3, 5, 7, ___",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "a": 1,
+              "hint": "Tăng 2 (số lẻ)",
+              "difficulty": 1
+            },
+            {
+              "q": "10, 20, 30, 40, ___",
+              "choices": [
+                "44",
+                "48",
+                "50",
+                "55"
+              ],
+              "a": 2,
+              "hint": "Tăng 10",
+              "difficulty": 1
+            },
+            {
+              "q": "100, 200, 300, 400, ___",
+              "choices": [
+                "450",
+                "480",
+                "500",
+                "550"
+              ],
+              "a": 2,
+              "hint": "Tăng 100",
+              "difficulty": 1
+            },
+            {
+              "q": "102, 112, 122, 132, ___",
+              "choices": [
+                "140",
+                "142",
+                "144",
+                "152"
+              ],
+              "a": 1,
+              "hint": "Tăng 10",
+              "difficulty": 2
+            },
+            {
+              "q": "3, 6, 9, 12, ___",
+              "choices": [
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
+              "a": 2,
+              "hint": "Tăng 3",
+              "difficulty": 1
+            },
+            {
+              "q": "4, 8, 12, 16, ___",
+              "choices": [
+                "18",
+                "20",
+                "22",
+                "24"
+              ],
+              "a": 1,
+              "hint": "Tăng 4",
+              "difficulty": 1
+            },
+            {
+              "q": "100, 90, 80, 70, ___",
+              "choices": [
+                "55",
+                "60",
+                "65",
+                "70"
+              ],
+              "a": 1,
+              "hint": "Giảm 10",
+              "difficulty": 1
+            },
+            {
+              "q": "860, 760, 660, 560, ___",
+              "choices": [
+                "450",
+                "460",
+                "470",
+                "480"
+              ],
+              "a": 1,
+              "hint": "Giảm 100",
+              "difficulty": 1
+            },
+            {
+              "q": "980, 870, 760, 650, ___",
+              "choices": [
+                "530",
+                "540",
+                "550",
+                "560"
+              ],
+              "a": 1,
+              "hint": "Giảm 110",
+              "difficulty": 2
+            },
+            {
+              "q": "50, 45, 40, 35, ___",
+              "choices": [
+                "28",
+                "29",
+                "30",
+                "31"
+              ],
+              "a": 2,
+              "hint": "Giảm 5",
+              "difficulty": 1
+            },
+            {
+              "q": "1, 2, 4, 8, 16, ___",
+              "choices": [
+                "24",
+                "28",
+                "32",
+                "36"
+              ],
+              "a": 2,
+              "hint": "Nhân 2",
+              "difficulty": 2
+            },
+            {
+              "q": "2, 4, 8, 16, ___",
+              "choices": [
+                "24",
+                "28",
+                "32",
+                "36"
+              ],
+              "a": 2,
+              "hint": "Nhân 2",
+              "difficulty": 2
+            },
+            {
+              "q": "3, 6, 12, 24, ___",
+              "choices": [
+                "36",
+                "42",
+                "48",
+                "54"
+              ],
+              "a": 2,
+              "hint": "Nhân 2",
+              "difficulty": 2
+            },
+            {
+              "q": "1, 1, 2, 3, 5, 8, ___",
+              "choices": [
+                "10",
+                "11",
+                "13",
+                "15"
+              ],
+              "a": 2,
+              "hint": "Cộng 2 số liền trước",
+              "difficulty": 3
+            },
+            {
+              "q": "1, 2, 3, 5, 8, 13, ___",
+              "choices": [
+                "18",
+                "19",
+                "21",
+                "23"
+              ],
+              "a": 2,
+              "hint": "5+8=13, 8+13=21",
+              "difficulty": 3
+            },
+            {
+              "q": "Số nào khác nhóm: 2, 4, 6, 7, 8?",
+              "choices": [
+                "2",
+                "4",
+                "6",
+                "7"
+              ],
+              "a": 3,
+              "hint": "7 là số lẻ",
+              "difficulty": 1
+            },
+            {
+              "q": "Số nào khác nhóm: 3, 6, 9, 12, 14?",
+              "choices": [
+                "3",
+                "6",
+                "12",
+                "14"
+              ],
+              "a": 3,
+              "hint": "14 không chia hết cho 3",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào khác nhóm: 5, 10, 15, 22, 25?",
+              "choices": [
+                "5",
+                "10",
+                "15",
+                "22"
+              ],
+              "a": 3,
+              "hint": "22 không chia hết cho 5",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào khác nhóm: 4, 8, 12, 15, 16?",
+              "choices": [
+                "4",
+                "8",
+                "12",
+                "15"
+              ],
+              "a": 3,
+              "hint": "15 không chia hết cho 4",
+              "difficulty": 2
+            },
+            {
+              "q": "Số nào khác nhóm: 100, 200, 350, 400, 500?",
+              "choices": [
+                "100",
+                "200",
+                "350",
+                "400"
+              ],
+              "a": 2,
+              "hint": "350 không phải tròn trăm",
+              "difficulty": 2
+            },
+            {
+              "q": "□ + 15 = 40. □ = ?",
+              "choices": [
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "a": 2,
+              "hint": "40-15=25",
+              "difficulty": 2
+            },
+            {
+              "q": "35 - □ = 18. □ = ?",
+              "choices": [
+                "15",
+                "16",
+                "17",
+                "18"
+              ],
+              "a": 2,
+              "hint": "35-18=17",
+              "difficulty": 2
+            },
+            {
+              "q": "□ × 4 = 28. □ = ?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "hint": "28÷4=7",
+              "difficulty": 2
+            },
+            {
+              "q": "42 ÷ □ = 6. □ = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "42÷6=7",
+              "difficulty": 2
+            },
+            {
+              "q": "□ × 5 = 45. □ = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "45÷5=9",
+              "difficulty": 2
+            },
+            {
+              "q": "3 × □ = 27. □ = ?",
+              "choices": [
+                "7",
+                "8",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "hint": "27÷3=9",
+              "difficulty": 2
+            },
+            {
+              "q": "□ ÷ 4 = 9. □ = ?",
+              "choices": [
+                "34",
+                "35",
+                "36",
+                "37"
+              ],
+              "a": 2,
+              "hint": "9×4=36",
+              "difficulty": 2
+            },
+            {
+              "q": "56 ÷ □ = 8. □ = ?",
+              "choices": [
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "a": 1,
+              "hint": "56÷8=7",
+              "difficulty": 2
+            },
+            {
+              "q": "An cao hơn Bình, Bình cao hơn Chi. An so với Chi?",
+              "choices": [
+                "Thấp hơn",
+                "Bằng",
+                "Cao hơn",
+                "Không xác định"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Nếu A > B và B > C thì A so với C?",
+              "choices": [
+                "A < C",
+                "A = C",
+                "A > C",
+                "Không xác định"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Tất cả mèo 4 chân. Mimi là mèo. Mimi có?",
+              "choices": [
+                "2 chân",
+                "3 chân",
+                "4 chân",
+                "6 chân"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Hôm nay Thứ Tư, 5 ngày nữa là?",
+              "choices": [
+                "Thứ Bảy",
+                "Chủ nhật",
+                "Thứ Hai",
+                "Thứ Ba"
+              ],
+              "a": 1,
+              "hint": "T4+5=Chủ nhật",
+              "difficulty": 2
+            },
+            {
+              "q": "Hôm nay Thứ Hai, 10 ngày nữa là?",
+              "choices": [
+                "Thứ Hai",
+                "Thứ Ba",
+                "Thứ Tư",
+                "Thứ Năm"
+              ],
+              "a": 2,
+              "hint": "10÷7=1 tuần 3 ngày → T2+3=T5? T2+3=T5. Thứ Năm",
+              "difficulty": 2
+            },
+            {
+              "q": "Gà + Vịt = 10 con, Chân gà + chân vịt = 28. Số gà?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "hint": "g×2+(10-g)×2=20... Không đúng. Gà 2 chân, vịt 2 chân? Đều 2 chân thì không đủ dữ liệu. Thực ra bài này giả sử vịt 4 chân? → g×2+(10-g)×4=28 → -2g=-12 → g=6... Thử: 6×2+4×4=12+16=28 ✓",
+              "difficulty": 3
+            },
+            {
+              "q": "Thang 10 bậc. Leo từ đất lên hết thang cần mấy bước?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 1,
+              "hint": "Từ bậc 0 lên bậc 10 = 10 bước",
+              "difficulty": 2
+            },
+            {
+              "q": "Bao nhiêu người bắt tay nếu 4 người, mỗi cặp 1 lần?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "hint": "C(4,2)=6",
+              "difficulty": 3
+            },
+            {
+              "q": "5 người, mỗi người bắt tay một lần. Tổng?",
+              "choices": [
+                "8",
+                "9",
+                "10",
+                "12"
+              ],
+              "a": 2,
+              "hint": "C(5,2)=10",
+              "difficulty": 3
+            },
+            {
+              "q": "Nếu 3 người làm 3 ngày xong. 6 người làm xong mấy ngày?",
+              "choices": [
+                "1",
+                "1.5",
+                "2",
+                "3"
+              ],
+              "a": 1,
+              "hint": "Gấp đôi người → 1.5 ngày",
+              "difficulty": 3
+            },
+            {
+              "q": "Có bao nhiêu tam giác trong hình: △△△ (3 tam giác nhỏ ghép)?",
+              "choices": [
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              "a": 1,
+              "hint": "3 nhỏ + 1 lớn = 4",
+              "difficulty": 3
+            },
+            {
+              "q": "Chia HV thành 4 phần bằng nhau bằng cách vẽ?",
+              "choices": [
+                "2 đường thẳng",
+                "3 đường thẳng",
+                "4 đường thẳng",
+                "1 đường"
+              ],
+              "a": 0,
+              "hint": "Vẽ 2 đường song song với cạnh",
+              "difficulty": 2
+            },
+            {
+              "q": "Tung đồng xu: P(ngửa) = ?",
+              "choices": [
+                "1/4",
+                "1/3",
+                "1/2",
+                "1"
+              ],
+              "a": 2,
+              "hint": "50/50",
+              "difficulty": 2
+            },
+            {
+              "q": "Xúc xắc 6 mặt: P(ra mặt 6) = ?",
+              "choices": [
+                "1/6",
+                "1/4",
+                "1/3",
+                "1/2"
+              ],
+              "a": 0,
+              "hint": "1 trong 6 mặt",
+              "difficulty": 3
+            },
+            {
+              "q": "◇○◇○◇___ Tiếp theo là?",
+              "choices": [
+                "◇",
+                "○",
+                "△",
+                "□"
+              ],
+              "a": 1,
+              "hint": "Quy luật ◇○ lặp",
+              "difficulty": 1
+            },
+            {
+              "q": "▲▲○▲▲○___ Tiếp theo là?",
+              "choices": [
+                "▲",
+                "○",
+                "□",
+                "◇"
+              ],
+              "a": 0,
+              "hint": "Quy luật ▲▲○",
+              "difficulty": 1
+            },
+            {
+              "q": "Số hình tròn trong dãy: ○□○□○___",
+              "choices": [
+                "□",
+                "○",
+                "△",
+                "◇"
+              ],
+              "a": 1,
+              "hint": "Quy luật ○□ → ○",
+              "difficulty": 1
+            },
+            {
+              "q": "Tổng 1+2+3+...+10 = ?",
+              "choices": [
+                "45",
+                "50",
+                "55",
+                "60"
+              ],
+              "a": 2,
+              "hint": "10×11÷2=55",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng 1+2+...+20 = ?",
+              "choices": [
+                "200",
+                "205",
+                "210",
+                "215"
+              ],
+              "a": 2,
+              "hint": "20×21÷2=210",
+              "difficulty": 3
+            },
+            {
+              "q": "Có bao nhiêu số tự nhiên từ 1 đến 100?",
+              "choices": [
+                "99",
+                "100",
+                "101",
+                "102"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Có bao nhiêu số lẻ từ 1 đến 99?",
+              "choices": [
+                "48",
+                "49",
+                "50",
+                "51"
+              ],
+              "a": 2,
+              "hint": "1,3,...,99 → 50 số",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng chữ số của 9999 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 1,
+              "hint": "9+9+9+9=36",
+              "difficulty": 2
+            },
+            {
+              "q": "Chữ số hàng đơn vị của 2^10 là?",
+              "choices": [
+                "2",
+                "4",
+                "6",
+                "8"
+              ],
+              "a": 1,
+              "hint": "2^10=1024, chữ số hàng đơn vị là 4",
+              "difficulty": 3
+            },
+            {
+              "q": "Số nào chia cho 3 dư 1 và chia cho 5 dư 2?",
+              "choices": [
+                "5",
+                "7",
+                "22",
+                "37"
+              ],
+              "a": 2,
+              "hint": "22÷3=7 dư 1, 22÷5=4 dư 2",
+              "difficulty": 3
+            },
+            {
+              "q": "Tổng 2 số nguyên tố bằng 100. Tổng lớn nhất của chúng?",
+              "choices": [
+                "97+3",
+                "89+11",
+                "79+21",
+                "71+29"
+              ],
+              "a": 0,
+              "hint": "97+3=100, 97 và 3 đều nguyên tố",
+              "difficulty": 3
+            },
+            {
+              "q": "Số chia hết cho cả 2, 3 và 5 trong nhóm: 15, 20, 30, 45?",
+              "choices": [
+                "15",
+                "20",
+                "30",
+                "45"
+              ],
+              "a": 2,
+              "hint": "30÷2=15, 30÷3=10, 30÷5=6",
+              "difficulty": 3
+            },
+            {
+              "q": "2^11 = 2^10 × ?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tieng-viet",
+      "icon": "📖",
+      "name": "Tiếng Việt",
+      "topics": [
+        {
+          "id": "tv_chinh",
+          "icon": "✏️",
+          "name": "Chính tả",
+          "questions": [
+            {
+              "q": "Từ nào viết ĐÚNG chính tả?",
+              "choices": [
+                "sâu bọ",
+                "xâu bọ",
+                "sấu bọ",
+                "xấu bọ"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào viết ĐÚNG?",
+              "choices": [
+                "con dơi",
+                "con giơi",
+                "con rơi",
+                "con dời"
+              ],
+              "a": 0,
+              "difficulty": 1,
+              "hint": "Phân biệt d/gi/r: \"dơi\" là động vật, viết bằng d"
+            },
+            {
+              "q": "Điền \"c\" hay \"k\": \"___ỳ lạ\"",
+              "choices": [
+                "c",
+                "k",
+                "q",
+                "ch"
+              ],
+              "a": 1,
+              "hint": "Trước e,ê,i dùng k",
+              "difficulty": 1
+            },
+            {
+              "q": "Điền \"c\" hay \"k\": \"___ây cối\"",
+              "choices": [
+                "k",
+                "c",
+                "q",
+                "ch"
+              ],
+              "a": 1,
+              "hint": "Trước a,o,u,â dùng c",
+              "difficulty": 1
+            },
+            {
+              "q": "Điền \"g\" hay \"gh\": \"___e đàn\"",
+              "choices": [
+                "g",
+                "gh",
+                "gi",
+                "nh"
+              ],
+              "a": 1,
+              "hint": "Trước e,ê,i dùng gh",
+              "difficulty": 1
+            },
+            {
+              "q": "Điền \"ng\" hay \"ngh\": \"___ề nghiệp\"",
+              "choices": [
+                "ng",
+                "ngh",
+                "nh",
+                "n"
+              ],
+              "a": 1,
+              "hint": "Trước e,ê,i dùng ngh",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào ĐÚNG chính tả?",
+              "choices": [
+                "dòng sông",
+                "giòng sông",
+                "rong sông",
+                "zòng sông"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào ĐÚNG?",
+              "choices": [
+                "bát ngát",
+                "bác ngát",
+                "bắt ngát",
+                "bat ngát"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Cây _ừa\" (dừa). Điền \"d\" hay \"gi\"?",
+              "choices": [
+                "d",
+                "gi",
+                "r",
+                "v"
+              ],
+              "a": 0,
+              "hint": "Từ dừa",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào ĐÚNG?",
+              "choices": [
+                "giản dị",
+                "dản gi",
+                "giản gi",
+                "dản dị"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Điền vào chỗ trống: \"con _ươu\" (hươu)",
+              "choices": [
+                "h",
+                "kh",
+                "g",
+                "gh"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào sai chính tả?",
+              "choices": [
+                "xanh lá",
+                "san lá",
+                "cây xanh",
+                "lá xanh"
+              ],
+              "a": 1,
+              "hint": "san → xanh",
+              "difficulty": 1
+            },
+            {
+              "q": "Điền thanh đúng: \"mua __ua\" (mưa rơi)",
+              "choices": [
+                "r",
+                "d",
+                "gi",
+                "gh"
+              ],
+              "a": 0,
+              "hint": "mưa rơi",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào đúng: \"___iên nhẫn\"",
+              "choices": [
+                "k",
+                "ki",
+                "c",
+                "q"
+              ],
+              "a": 1,
+              "hint": "kiên nhẫn",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền chữ đúng: \"con c___\" (con cá)",
+              "choices": [
+                "á",
+                "a",
+                "ả",
+                "ạ"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "trăng tròn",
+                "chăng tròn",
+                "trăng chòn",
+                "chăng chòn"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Viết đúng: chim \"_én\"",
+              "choices": [
+                "s",
+                "x",
+                "gi",
+                "d"
+              ],
+              "a": 0,
+              "hint": "chim sén? chim sẽn? Thực ra là chim sẻn",
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "học sinh",
+                "học xinh",
+                "hoc sinh",
+                "hock sinh"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "quê hương",
+                "quê lương",
+                "khuê hương",
+                "khê hương"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Dấu thanh nào đặt đúng: \"ba__m\" (bắm)?",
+              "choices": [
+                "hỏi",
+                "sắc",
+                "nặng",
+                "huyền"
+              ],
+              "a": 1,
+              "hint": "bắm",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào viết đúng?",
+              "choices": [
+                "nhân dân",
+                "nhân zân",
+                "nhân gân",
+                "nhăn dân"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Điền vần: \"h___\" (hươu)",
+              "choices": [
+                "ươu",
+                "ươi",
+                "ưu",
+                "ơu"
+              ],
+              "a": 0,
+              "hint": "hươu",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "tươi sáng",
+                "tưới sáng",
+                "tươi sắng",
+                "tưới sắng"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Điền: \"_uả táo\" (quả)",
+              "choices": [
+                "q",
+                "k",
+                "c",
+                "g"
+              ],
+              "a": 0,
+              "hint": "quả",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào sai?",
+              "choices": [
+                "non nước",
+                "non nướt",
+                "núi non",
+                "sông nước"
+              ],
+              "a": 1,
+              "hint": "non nướt sai",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền: \"inh\" hay \"ính\": \"bình ___\"",
+              "choices": [
+                "inh",
+                "ính",
+                "anh",
+                "ánh"
+              ],
+              "a": 0,
+              "hint": "bình inh? bình tĩnh",
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "ngan ngát",
+                "ngân ngát",
+                "ngán ngát",
+                "ngang ngát"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào đúng?",
+              "choices": [
+                "xinh xắn",
+                "xin xắn",
+                "xinh xắng",
+                "xin xắng"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Điền: \"d\" hay \"r\": \"_êu thương\"",
+              "choices": [
+                "d",
+                "r",
+                "gi",
+                "v"
+              ],
+              "a": 0,
+              "hint": "dêu → yêu thương",
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào viết đúng?",
+              "choices": [
+                "sáng suốt",
+                "sáng xuốt",
+                "xáng suốt",
+                "sàng suốt"
+              ],
+              "a": 0,
+              "difficulty": 1,
+              "hint": "Phân biệt s/x: từ Hán Việt \"sáng\" (= ánh sáng, thông minh) viết s"
+            }
+          ]
+        },
+        {
+          "id": "tv_tuvung",
+          "icon": "📝",
+          "name": "Từ vựng",
+          "questions": [
+            {
+              "q": "Từ trái nghĩa với \"nhanh\" là?",
+              "choices": [
+                "mạnh",
+                "chậm",
+                "cao",
+                "rộng"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"cao\" là?",
+              "choices": [
+                "ngắn",
+                "thấp",
+                "nhỏ",
+                "hẹp"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"nóng\" là?",
+              "choices": [
+                "ấm",
+                "mát",
+                "lạnh",
+                "tươi"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"vui\" là?",
+              "choices": [
+                "buồn",
+                "khóc",
+                "lo",
+                "giận"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"rộng\" là?",
+              "choices": [
+                "dài",
+                "cao",
+                "hẹp",
+                "ngắn"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"sáng\" là?",
+              "choices": [
+                "mờ",
+                "tối",
+                "nhạt",
+                "xỉn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"mạnh\" là?",
+              "choices": [
+                "bệnh",
+                "yếu",
+                "nhỏ",
+                "gầy"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"giàu\" là?",
+              "choices": [
+                "nghèo",
+                "đói",
+                "khó",
+                "ít"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"cứng\" là?",
+              "choices": [
+                "mềm",
+                "dẻo",
+                "lỏng",
+                "ướt"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"tốt\" là?",
+              "choices": [
+                "hỏng",
+                "xấu",
+                "kém",
+                "tệ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ đồng nghĩa với \"chăm chỉ\" là?",
+              "choices": [
+                "lười biếng",
+                "siêng năng",
+                "thông minh",
+                "nhân hậu"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ đồng nghĩa với \"xinh đẹp\" là?",
+              "choices": [
+                "thông minh",
+                "duyên dáng",
+                "mạnh mẽ",
+                "hiền lành"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ đồng nghĩa với \"to lớn\" là?",
+              "choices": [
+                "bé nhỏ",
+                "đồ sộ",
+                "nhỏ bé",
+                "gầy gò"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ đồng nghĩa với \"buồn bã\" là?",
+              "choices": [
+                "vui vẻ",
+                "phấn khởi",
+                "ủ rũ",
+                "hào hứng"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ đồng nghĩa với \"nhà\" là?",
+              "choices": [
+                "lều",
+                "căn hộ",
+                "ngôi nhà",
+                "tất cả"
+              ],
+              "a": 3,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ đồng nghĩa với \"bạn bè\" là?",
+              "choices": [
+                "kẻ thù",
+                "người quen",
+                "bạn hữu",
+                "đối thủ"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"dũng cảm\" là?",
+              "choices": [
+                "yếu đuối",
+                "hèn nhát",
+                "to lớn",
+                "nhanh nhẹn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào KHÔNG đồng nghĩa với \"vui\"?",
+              "choices": [
+                "hạnh phúc",
+                "phấn khởi",
+                "buồn bã",
+                "vui mừng"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"siêng năng\" là?",
+              "choices": [
+                "lười biếng",
+                "chăm chỉ",
+                "cần cù",
+                "kiên nhẫn"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với \"thật thà\" là?",
+              "choices": [
+                "gian dối",
+                "thẳng thắn",
+                "trung thực",
+                "thành thật"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào là từ láy?",
+              "choices": [
+                "học sinh",
+                "cây cối",
+                "lung linh",
+                "bàn ghế"
+              ],
+              "a": 2,
+              "hint": "Từ láy lặp âm",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Long lanh\" là từ?",
+              "choices": [
+                "Từ đơn",
+                "Từ ghép",
+                "Từ láy",
+                "Từ mượn"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Mặt trời\" là từ?",
+              "choices": [
+                "Từ đơn",
+                "Từ ghép",
+                "Từ láy",
+                "Từ mượn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Học sinh\" là từ?",
+              "choices": [
+                "Từ đơn",
+                "Từ ghép",
+                "Từ láy",
+                "Từ mượn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào là từ ghép?",
+              "choices": [
+                "học",
+                "chạy",
+                "học sinh",
+                "đẹp"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"xào xạc\" gợi?",
+              "choices": [
+                "màu sắc",
+                "mùi vị",
+                "âm thanh",
+                "hình dáng"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"lung linh\" gợi?",
+              "choices": [
+                "âm thanh",
+                "ánh sáng lấp lánh",
+                "màu xanh",
+                "mùi thơm"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"róc rách\" gợi?",
+              "choices": [
+                "tiếng nước chảy",
+                "ánh sáng",
+                "màu sắc",
+                "hình dáng"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"thơm phức\" gợi?",
+              "choices": [
+                "âm thanh",
+                "mùi vị",
+                "màu sắc",
+                "hình dáng"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"bạch\" (trong bạch mã) nghĩa là?",
+              "choices": [
+                "đen",
+                "đỏ",
+                "trắng",
+                "vàng"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"thiên\" (trong thiên nhiên) nghĩa là?",
+              "choices": [
+                "đất",
+                "trời",
+                "người",
+                "nước"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Thành ngữ \"Ăn quả nhớ kẻ trồng cây\" nghĩa là?",
+              "choices": [
+                "Hái nhiều quả",
+                "Trồng nhiều cây",
+                "Biết ơn người tạo ra",
+                "Ăn uống tiết kiệm"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Tục ngữ \"Có công mài sắt có ngày nên kim\" dạy điều gì?",
+              "choices": [
+                "Nghề rèn",
+                "Kiên trì sẽ thành công",
+                "Tiết kiệm",
+                "Làm việc nhanh"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Bầu ơi thương lấy bí cùng\" dạy điều gì?",
+              "choices": [
+                "Trồng bầu bí",
+                "Đoàn kết yêu thương",
+                "Không tranh cãi",
+                "Học chăm chỉ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"lấp lánh\" thuộc loại?",
+              "choices": [
+                "Danh từ",
+                "Động từ",
+                "Tính từ",
+                "Đại từ"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"chạy nhảy\" thuộc loại?",
+              "choices": [
+                "Danh từ",
+                "Động từ",
+                "Tính từ",
+                "Đại từ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"ngôi trường\" thuộc loại?",
+              "choices": [
+                "Danh từ",
+                "Động từ",
+                "Tính từ",
+                "Đại từ"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Nhóm từ nào đều là danh từ?",
+              "choices": [
+                "chạy đẹp cao",
+                "bàn ghế sách",
+                "chạy nhảy đứng",
+                "đẹp xinh tốt"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Nhóm từ nào đều là động từ?",
+              "choices": [
+                "học đọc viết",
+                "xanh đỏ vàng",
+                "bàn ghế sách",
+                "cao thấp mập"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Nhóm từ nào đều là tính từ?",
+              "choices": [
+                "chạy nhảy đứng",
+                "xanh đỏ đẹp",
+                "bàn ghế sách",
+                "em anh chị"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"xuân\" trong \"mùa xuân\" và \"tuổi xuân\" là?",
+              "choices": [
+                "Từ trái nghĩa",
+                "Từ đồng âm",
+                "Từ nhiều nghĩa",
+                "Từ đồng nghĩa"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Đầu\" trong \"đầu núi\" và \"đầu người\" là?",
+              "choices": [
+                "Từ đồng âm",
+                "Từ đồng nghĩa",
+                "Từ nhiều nghĩa",
+                "Từ trái nghĩa"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Long\" trong \"long lanh\" và \"con rồng\" là?",
+              "choices": [
+                "Từ đồng âm",
+                "Từ đồng nghĩa",
+                "Từ trái nghĩa",
+                "Từ nhiều nghĩa"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ HÁN VIỆT trong nhóm sau?",
+              "choices": [
+                "trường học",
+                "học sinh",
+                "sách vở",
+                "bút thước"
+              ],
+              "a": 1,
+              "hint": "học sinh gốc Hán Việt",
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"non\" trong \"non nước\" nghĩa là?",
+              "choices": [
+                "núi",
+                "sông",
+                "biển",
+                "đồng bằng"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"thiếu nhi\" có nghĩa là?",
+              "choices": [
+                "người già",
+                "trẻ em",
+                "người trưởng thành",
+                "học sinh"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào đồng nghĩa với \"kiên nhẫn\"?",
+              "choices": [
+                "bền bỉ",
+                "nóng nảy",
+                "vội vàng",
+                "lười biếng"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ trái nghĩa với \"kiên nhẫn\"?",
+              "choices": [
+                "bền bỉ",
+                "nóng nảy",
+                "chăm chỉ",
+                "siêng năng"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào dùng sai: \"Bạn ấy rất là chăm chỉ học\"?",
+              "choices": [
+                "Bạn ấy",
+                "rất là",
+                "chăm chỉ học",
+                "Không có từ sai"
+              ],
+              "a": 1,
+              "hint": "\"Rất là\" không chuẩn văn phong",
+              "difficulty": 2
+            },
+            {
+              "q": "Thành ngữ \"Đi một ngày đàng học một sàng khôn\" có nghĩa?",
+              "choices": [
+                "Nên đi bộ",
+                "Đi xa học được nhiều",
+                "Mang sàng khi đi",
+                "Khôn thì đi nhanh"
+              ],
+              "a": 1,
+              "difficulty": 1
+            }
+          ]
+        },
+        {
+          "id": "tv_ngu",
+          "icon": "🔤",
+          "name": "Ngữ pháp",
+          "questions": [
+            {
+              "q": "Câu nào là câu HỎI?",
+              "choices": [
+                "Em đi học.",
+                "Hôm nay trời đẹp.",
+                "Bạn tên là gì?",
+                "Con mèo kêu."
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu HỎI kết thúc bằng dấu?",
+              "choices": [
+                "dấu chấm",
+                "dấu hỏi",
+                "dấu phẩy",
+                "dấu chấm than"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu CẢM THÁN kết thúc bằng dấu?",
+              "choices": [
+                "?",
+                ".",
+                "!",
+                ","
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu NÀO là câu cảm thán?",
+              "choices": [
+                "Em đi học.",
+                "Bạn có khỏe không?",
+                "Ôi, đẹp quá!",
+                "Mèo ăn cá."
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Bạn Lan đang đọc sách.\" CHỦ NGỮ là?",
+              "choices": [
+                "đang đọc",
+                "sách",
+                "Bạn Lan",
+                "đọc sách"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Mẹ em nấu cơm.\" VỊ NGỮ là?",
+              "choices": [
+                "Mẹ em",
+                "nấu cơm",
+                "em",
+                "Mẹ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Ai làm gì?\" — chọn câu đúng?",
+              "choices": [
+                "Mẹ em là bác sĩ",
+                "Mẹ em rất đẹp",
+                "Mẹ em đang nấu cơm",
+                "Em yêu mẹ nhiều"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Ai là gì?\" — chọn câu đúng?",
+              "choices": [
+                "Mẹ em nấu cơm",
+                "Mẹ em là bác sĩ",
+                "Mẹ em rất đẹp",
+                "Mẹ em đi chợ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Ai thế nào?\" — chọn câu đúng?",
+              "choices": [
+                "Mẹ em nấu cơm",
+                "Mẹ em là giáo viên",
+                "Mẹ em rất hiền",
+                "Mẹ em đi làm"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu nào viết ĐÚNG?",
+              "choices": [
+                "em đi học",
+                "Em đi học.",
+                "em đi học.",
+                "Em đi học"
+              ],
+              "a": 1,
+              "hint": "Đầu câu hoa, cuối câu chấm",
+              "difficulty": 1
+            },
+            {
+              "q": "Tên riêng viết thế nào?",
+              "choices": [
+                "viết thường",
+                "Hoa chữ đầu mỗi tiếng",
+                "HOA TẤT CẢ",
+                "tùy ý"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu nào có trạng ngữ chỉ THỜI GIAN?",
+              "choices": [
+                "Em học ở nhà",
+                "Hôm nay em đi học",
+                "Em học với bạn",
+                "Em học rất chăm"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu nào có trạng ngữ chỉ NƠI CHỐN?",
+              "choices": [
+                "Hôm qua em ở nhà",
+                "Em học ở trường",
+                "Em học rất giỏi",
+                "Mẹ đi chợ sáng nay"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Dấu phẩy dùng để?",
+              "choices": [
+                "Kết thúc câu",
+                "Ngăn cách các thành phần",
+                "Hỏi",
+                "Cảm thán"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Dấu chấm lửng (...) dùng để?",
+              "choices": [
+                "Kết thúc câu",
+                "Liệt kê chưa hết",
+                "Hỏi",
+                "Cảm thán"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Dấu gạch ngang (—) dùng để?",
+              "choices": [
+                "Kết thúc câu",
+                "Liệt kê",
+                "Phần chú thích hoặc lời thoại",
+                "Hỏi"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu GHÉP là câu có?",
+              "choices": [
+                "1 chủ ngữ 1 vị ngữ",
+                "2 vế câu trở lên",
+                "Nhiều chủ ngữ",
+                "Nhiều vị ngữ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu \"Trời mưa, đường trơn\" là câu?",
+              "choices": [
+                "Đơn",
+                "Ghép",
+                "Đặc biệt",
+                "Phức"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Phần VỊ NGỮ trả lời câu hỏi?",
+              "choices": [
+                "Ai? Cái gì?",
+                "Làm gì? Là gì? Thế nào?",
+                "Ở đâu? Khi nào?",
+                "Vì sao?"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Phần TRẠNG NGỮ trả lời câu hỏi?",
+              "choices": [
+                "Ai? Cái gì?",
+                "Làm gì? Là gì?",
+                "Ở đâu? Khi nào? Vì sao?",
+                "Thế nào?"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu \"Em học bài\" — CHỦ NGỮ là?",
+              "choices": [
+                "học bài",
+                "Em",
+                "bài",
+                "học"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Hoa hồng rất đẹp\" — mẫu câu?",
+              "choices": [
+                "Ai làm gì?",
+                "Ai là gì?",
+                "Cái gì thế nào?",
+                "Ai thế nào?"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Nhà em có 4 người\" — \"có 4 người\" là?",
+              "choices": [
+                "Chủ ngữ",
+                "Vị ngữ",
+                "Trạng ngữ",
+                "Tân ngữ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào là liên từ?",
+              "choices": [
+                "nhưng",
+                "và",
+                "vì",
+                "tất cả đều là"
+              ],
+              "a": 3,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu \"Mặc dù trời mưa nhưng em vẫn đi học\" dùng cặp từ?",
+              "choices": [
+                "vì...nên",
+                "tuy...nhưng",
+                "nếu...thì",
+                "càng...càng"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu nào sai về dấu câu?",
+              "choices": [
+                "Em đi học.",
+                "Bạn có khỏe không.",
+                "Trời ơi!",
+                "Hôm nay, em đi học."
+              ],
+              "a": 1,
+              "hint": "Câu hỏi cần dấu ?",
+              "difficulty": 2
+            },
+            {
+              "q": "Động từ nào sau đây là ngoại động từ (có tân ngữ)?",
+              "choices": [
+                "ngủ",
+                "ăn",
+                "đứng",
+                "ngồi"
+              ],
+              "a": 1,
+              "hint": "ăn cơm - cơm là tân ngữ",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu \"Bạn ơi, mượn bút không?\" là câu?",
+              "choices": [
+                "Kể",
+                "Hỏi",
+                "Cầu khiến",
+                "Cảm thán"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Chạy nhanh lên!\" là câu?",
+              "choices": [
+                "Kể",
+                "Hỏi",
+                "Cầu khiến",
+                "Cảm thán"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Ôi, hoa đẹp quá!\" là câu?",
+              "choices": [
+                "Kể",
+                "Hỏi",
+                "Cầu khiến",
+                "Cảm thán"
+              ],
+              "a": 3,
+              "difficulty": 1
+            }
+          ]
+        },
+        {
+          "id": "tv_tutu",
+          "icon": "🌸",
+          "name": "Tu từ & Biện pháp",
+          "questions": [
+            {
+              "q": "Câu \"Mây trắng như bông\" dùng biện pháp?",
+              "choices": [
+                "Nhân hóa",
+                "So sánh",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Chú gió cười khúc khích\" dùng biện pháp?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Biện pháp NHÂN HÓA là?",
+              "choices": [
+                "So sánh 2 sự vật",
+                "Gán tính chất người cho vật",
+                "Lặp từ để nhấn mạnh",
+                "Nói giảm"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Biện pháp SO SÁNH dùng từ?",
+              "choices": [
+                "và, với",
+                "như, giống",
+                "vì, nên",
+                "nhưng, mà"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Biện pháp ĐIỆP NGỮ là?",
+              "choices": [
+                "So sánh 2 vật",
+                "Lặp từ để nhấn mạnh",
+                "Nhân hóa",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Tiếng suối trong như tiếng hát xa\" — biện pháp?",
+              "choices": [
+                "Nhân hóa",
+                "So sánh",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Mặt trời xuống biển như hòn lửa\" — biện pháp?",
+              "choices": [
+                "Nhân hóa",
+                "So sánh",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu nào dùng biện pháp nhân hóa?",
+              "choices": [
+                "Hoa nở rộ",
+                "Gió thổi mạnh",
+                "Chú gió vẫy tay chào",
+                "Trời mưa to"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu nào dùng biện pháp so sánh?",
+              "choices": [
+                "Mây trắng bay",
+                "Bầu trời xanh",
+                "Mây trắng như bông",
+                "Trời có mây"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Đôi mắt to tròn như hai hạt nhãn\" — biện pháp?",
+              "choices": [
+                "Nhân hóa",
+                "So sánh",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Dù ai nói ngả nói nghiêng / Lòng ta vẫn vững như kiềng ba chân\" — biện pháp?",
+              "choices": [
+                "Nhân hóa",
+                "So sánh",
+                "Điệp ngữ",
+                "Hoán dụ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Học một biết mười\" là?",
+              "choices": [
+                "So sánh",
+                "Thành ngữ",
+                "Tục ngữ",
+                "Ca dao"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Non xanh nước biếc\" là?",
+              "choices": [
+                "Câu đơn",
+                "Câu ghép",
+                "Cụm từ",
+                "Câu đặc biệt"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Kết bài văn tả cảnh nên?",
+              "choices": [
+                "Giới thiệu lại",
+                "Nêu cảm nghĩ tình cảm",
+                "Miêu tả chi tiết hơn",
+                "Kể chuyện"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Mở bài văn tả con vật nên?",
+              "choices": [
+                "Tả thẳng đặc điểm",
+                "Giới thiệu tên nguồn gốc",
+                "Kể chuyện về nó",
+                "Nêu cảm nghĩ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Thứ tự hợp lý tả người?",
+              "choices": [
+                "TC→NH→GT",
+                "GT→NH→TC",
+                "NH→GT→TC",
+                "GT→TC→NH"
+              ],
+              "a": 1,
+              "hint": "GT=Giới thiệu, NH=Ngoại hình, TC=Tính cách",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu miêu tả con mèo hay nhất?",
+              "choices": [
+                "Con mèo màu trắng.",
+                "Con mèo trắng muốt đôi mắt xanh biếc.",
+                "Con mèo đi.",
+                "Con mèo kêu."
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Để miêu tả tiếng chim hót hay dùng từ?",
+              "choices": [
+                "ầm ĩ",
+                "thét",
+                "líu lo véo von",
+                "inh ỏi"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Để miêu tả ánh sáng lấp lánh dùng từ?",
+              "choices": [
+                "ầm ầm",
+                "rì rào",
+                "lung linh",
+                "ào ào"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu nào là câu GHÉP?",
+              "choices": [
+                "Em đi học",
+                "Mặt trời mọc",
+                "Trời mưa đường trơn",
+                "Bạn Lan học giỏi"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Nghĩa thành ngữ \"Học tài thi phận\"?",
+              "choices": [
+                "Học giỏi thi tốt",
+                "Học giỏi chưa chắc thi tốt",
+                "Không cần học",
+                "Chăm chỉ thành công"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ gợi âm thanh trong nhóm?",
+              "choices": [
+                "đỏ rực",
+                "thơm ngát",
+                "lách tách",
+                "mềm mại"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Phần THÂN BÀI văn tả con vật gồm?",
+              "choices": [
+                "Giới thiệu",
+                "Tả đặc điểm ngoài tính cách hoạt động",
+                "Nêu cảm nghĩ",
+                "Kết thúc"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Tục ngữ nói về KIÊN TRÌ?",
+              "choices": [
+                "Ăn quả nhớ kẻ trồng cây",
+                "Có công mài sắt có ngày nên kim",
+                "Bầu ơi thương lấy bí cùng",
+                "Lời chào cao hơn mâm cỗ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Tục ngữ nào nói về ĐOÀN KẾT?",
+              "choices": [
+                "Có công mài sắt",
+                "Ăn quả nhớ kẻ",
+                "Bầu ơi thương lấy bí cùng",
+                "Học tài thi phận"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Hôm qua, trời mưa rất to.\" TRẠNG NGỮ?",
+              "choices": [
+                "trời",
+                "mưa rất to",
+                "Hôm qua",
+                "rất to"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Biện pháp ẩn dụ là?",
+              "choices": [
+                "So sánh rõ ràng",
+                "So sánh ngầm không dùng từ so sánh",
+                "Nhân hóa",
+                "Lặp từ"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Thuyền về có nhớ bến chăng\" — thuyền và bến chỉ điều gì?",
+              "choices": [
+                "Tàu thuyền thật",
+                "Người đi kẻ ở",
+                "Biển cả",
+                "Nghề chài lưới"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Câu nào dùng biện pháp ĐIỆP NGỮ?",
+              "choices": [
+                "Mây trắng như bông",
+                "Học học nữa học mãi",
+                "Chú gió vẫy tay",
+                "Trăng như gương"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Phép tu từ trong câu \"Mặt trời của mẹ em nằm trên lưng\"?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Ẩn dụ",
+                "Điệp ngữ"
+              ],
+              "a": 2,
+              "difficulty": 3
+            }
+          ]
+        },
+        {
+          "id": "tv_dochieu",
+          "icon": "📚",
+          "name": "Đọc hiểu",
+          "questions": [
+            {
+              "q": "Khi đọc đoạn văn, câu hỏi \"Bài đọc nói về điều gì?\" hỏi về?",
+              "choices": [
+                "Chi tiết",
+                "Ý chính",
+                "Từ ngữ",
+                "Biện pháp"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Để hiểu bài đọc, cần chú ý điều gì nhất?",
+              "choices": [
+                "Số từ",
+                "Ý chính và chi tiết",
+                "Dấu câu",
+                "Chữ hoa"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: \"Mùa xuân đến, hoa đào nở rộ. Trẻ em chơi đùa vui vẻ.\" Bài nói về?",
+              "choices": [
+                "Mùa đông",
+                "Mùa xuân",
+                "Mùa hè",
+                "Mùa thu"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"nở rộ\" trong đoạn trên có nghĩa?",
+              "choices": [
+                "Hoa tàn",
+                "Hoa nở nhiều",
+                "Hoa chưa nở",
+                "Hoa héo"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc: \"Nam học rất chăm. Mỗi ngày cậu học 2 tiếng.\" Nam học mỗi ngày?",
+              "choices": [
+                "1 tiếng",
+                "2 tiếng",
+                "3 tiếng",
+                "4 tiếng"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc: \"Mèo và Chuột là đôi bạn thân. Mèo luôn giúp Chuột.\" Mèo là bạn như thế nào?",
+              "choices": [
+                "Xấu bụng",
+                "Tốt bụng",
+                "Không quan tâm",
+                "Ganh ghét"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đoạn văn có câu chủ đề thường đặt ở đâu?",
+              "choices": [
+                "Giữa đoạn",
+                "Cuối đoạn",
+                "Đầu đoạn",
+                "Bất kỳ vị trí nào"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"khẩn trương\" có nghĩa gần với từ nào?",
+              "choices": [
+                "chậm chạp",
+                "nhanh nhẹn",
+                "lười biếng",
+                "thư thả"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"rực rỡ\" dùng để tả điều gì?",
+              "choices": [
+                "âm thanh",
+                "mùi vị",
+                "màu sắc đẹp",
+                "hình dáng"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc: \"Chim hót líu lo trong vườn cây. Gió thổi nhẹ làm lá rung rinh.\" Cảnh vật như thế nào?",
+              "choices": [
+                "Ồn ào náo nhiệt",
+                "Yên tĩnh buồn bã",
+                "Tươi vui sinh động",
+                "Lạnh lẽo hoang vắng"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc: \"Mẹ thức khuya dậy sớm lo cho gia đình.\" Mẹ là người như thế nào?",
+              "choices": [
+                "Lười biếng",
+                "Chăm chỉ yêu thương",
+                "Vội vàng",
+                "Không quan tâm"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Trong bài đọc từ \"đặc biệt\" thường báo hiệu điều gì?",
+              "choices": [
+                "Nội dung bình thường",
+                "Điều quan trọng cần chú ý",
+                "Sự kiện bình thường",
+                "Thông tin phụ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc: \"Lan rất thích trồng cây. Mỗi ngày bạn tưới nước và nhổ cỏ.\" Lan thích gì?",
+              "choices": [
+                "Vẽ tranh",
+                "Nấu ăn",
+                "Trồng cây",
+                "Đọc sách"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Bố cục bài văn gồm mấy phần?",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "a": 1,
+              "hint": "Mở-Thân-Kết",
+              "difficulty": 1
+            },
+            {
+              "q": "Phần KẾT BÀI thường nêu điều gì?",
+              "choices": [
+                "Giới thiệu chủ đề",
+                "Nội dung chi tiết",
+                "Cảm nghĩ tổng kết",
+                "Ví dụ minh họa"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"tươi tốt\" gợi tả điều gì?",
+              "choices": [
+                "Sự vật chết khô",
+                "Sự vật xanh tươi khỏe mạnh",
+                "Sự vật héo úa",
+                "Sự vật khô cứng"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc: \"Bé Hoa rất ngoan. Bé học giỏi và hay giúp mẹ.\" Bé Hoa có tính cách gì?",
+              "choices": [
+                "Ngoan ngoãn chăm chỉ",
+                "Lười biếng",
+                "Nghịch ngợm",
+                "Không vâng lời"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"rì rào\" dùng để tả tiếng gì?",
+              "choices": [
+                "Tiếng chim hót",
+                "Tiếng nước chảy nhẹ",
+                "Tiếng sấm",
+                "Tiếng mưa rào"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc đoạn và xác định ý chính là làm gì?",
+              "choices": [
+                "Đọc thật nhanh",
+                "Tìm câu quan trọng nhất",
+                "Đếm số từ",
+                "Tìm dấu câu"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"thung thăng\" gợi cách đi như thế nào?",
+              "choices": [
+                "Vội vàng",
+                "Thong dong thư thái",
+                "Nhanh thoăn thoắt",
+                "Chậm chạp mệt mỏi"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc: \"Trời đẹp. Nắng vàng rải xuống cánh đồng. Lúa chín vàng óng.\" Cảnh vật lúc nào?",
+              "choices": [
+                "Mùa đông",
+                "Mùa mưa",
+                "Thu hoạch lúa",
+                "Đêm tối"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Khi không hiểu từ trong bài đọc nên làm gì?",
+              "choices": [
+                "Bỏ qua",
+                "Đoán từ văn cảnh hoặc tra từ điển",
+                "Hỏi ngay",
+                "Đọc lại từ đầu"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc: \"Minh học lớp 2. Cậu rất thích toán. Mỗi tối Minh làm bài 1 tiếng.\" Minh làm bài bao lâu/tối?",
+              "choices": [
+                "30 phút",
+                "1 tiếng",
+                "2 tiếng",
+                "Không rõ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"bồi hồi\" có nghĩa là?",
+              "choices": [
+                "Vui vẻ",
+                "Xúc động bâng khuâng",
+                "Tức giận",
+                "Buồn ngủ"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"sừng sững\" dùng để tả điều gì?",
+              "choices": [
+                "Nhỏ bé",
+                "Đồ vật thấp",
+                "Vật cao lớn vững chãi",
+                "Vật nhẹ nhàng"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc: \"Mùa hè, ve kêu râm ran trong vườn.\" Mùa hè có âm thanh gì?",
+              "choices": [
+                "Tiếng chim",
+                "Tiếng ve",
+                "Tiếng gió",
+                "Tiếng mưa"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"thân thiết\" có nghĩa gần với?",
+              "choices": [
+                "xa lạ",
+                "thù địch",
+                "gần gũi thân quen",
+                "lạnh lùng"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Khi đọc hiểu cần chú ý đến?",
+              "choices": [
+                "Chỉ câu đầu",
+                "Ý chính từng đoạn",
+                "Chỉ từ in đậm",
+                "Chỉ dấu câu"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Đoạn văn \"Buổi sáng, mặt trời lên. Chim hót vang. Hoa nở rộ.\" Ý chính?",
+              "choices": [
+                "Buổi tối",
+                "Buổi sáng tươi đẹp",
+                "Mùa hè",
+                "Mùa đông"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"lấp lánh\" thường dùng với?",
+              "choices": [
+                "Âm thanh",
+                "Mùi vị",
+                "Ánh sáng",
+                "Màu sắc tối"
+              ],
+              "a": 2,
+              "difficulty": 1
+            }
+          ]
+        },
+        {
+          "id": "tv_hsg",
+          "icon": "🏅",
+          "name": "HSG Tiếng Việt",
+          "questions": [
+            {
+              "q": "Từ \"chân\" trong \"chân núi\" dùng theo nghĩa?",
+              "choices": [
+                "Gốc",
+                "Chuyển",
+                "Trực tiếp",
+                "Đồng âm"
+              ],
+              "a": 1,
+              "hint": "chân núi = phần dưới cùng",
+              "difficulty": 2
+            },
+            {
+              "q": "Phép tu từ trong \"Học học nữa học mãi\"?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ \"thiên\" trong \"thiên nhiên\" nghĩa là?",
+              "choices": [
+                "đất",
+                "trời",
+                "người",
+                "nước"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Nhân\" trong \"nhân dân\" nghĩa là?",
+              "choices": [
+                "người",
+                "lòng tốt",
+                "nhân vật",
+                "thiên nhiên"
+              ],
+              "a": 0,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu \"Gió đưa cành trúc la đà\" dùng biện pháp?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Điệp ngữ",
+                "Ẩn dụ"
+              ],
+              "a": 1,
+              "hint": "gió đưa = nhân hóa",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Thuyền về có nhớ bến chăng\" — thuyền bến chỉ?",
+              "choices": [
+                "Tàu thuyền thật",
+                "Người đi kẻ ở",
+                "Biển cả",
+                "Nghề chài lưới"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Phân biệt thành ngữ và tục ngữ: \"Ăn quả nhớ kẻ trồng cây\" là?",
+              "choices": [
+                "Thành ngữ",
+                "Tục ngữ",
+                "Ca dao",
+                "Câu đố"
+              ],
+              "a": 1,
+              "hint": "Tục ngữ có ý nghĩa đầy đủ",
+              "difficulty": 2
+            },
+            {
+              "q": "\"Uống nước nhớ nguồn\" thuộc thể loại?",
+              "choices": [
+                "Thành ngữ",
+                "Tục ngữ",
+                "Ca dao",
+                "Đồng dao"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Câu phức là câu có?",
+              "choices": [
+                "2 chủ ngữ",
+                "1 vế chính 1 vế phụ quan hệ",
+                "2 vế độc lập",
+                "3 chủ ngữ"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Từ \"bạch\" (bạch mã), \"hắc\" (hắc ín), \"hồng\" (hồng hào). \"Hắc\" có nghĩa?",
+              "choices": [
+                "trắng",
+                "đen",
+                "đỏ",
+                "vàng"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ có vần \"ươi\" khác với nhóm: tươi, bướm, người, cười?",
+              "choices": [
+                "tươi",
+                "bướm",
+                "người",
+                "cười"
+              ],
+              "a": 1,
+              "hint": "bướm vần \"ươm\" không phải \"ươi\"",
+              "difficulty": 3
+            },
+            {
+              "q": "Từ \"chăm học\" là từ ghép loại gì?",
+              "choices": [
+                "Ghép chính phụ",
+                "Ghép đẳng lập",
+                "Từ láy",
+                "Từ đơn"
+              ],
+              "a": 0,
+              "hint": "chăm bổ nghĩa cho học",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Không có việc gì khó / Chỉ sợ lòng không bền\" dạy điều gì?",
+              "choices": [
+                "Sợ khó khăn",
+                "Kiên trì ắt thành công",
+                "Không làm việc khó",
+                "Cần người giúp"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Trong câu \"Em học toán\", \"toán\" là?",
+              "choices": [
+                "Chủ ngữ",
+                "Vị ngữ",
+                "Tân ngữ",
+                "Trạng ngữ"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "Từ nào là từ ghép ĐẲNG LẬP?",
+              "choices": [
+                "học sinh",
+                "xe đạp",
+                "ăn uống",
+                "cây xanh"
+              ],
+              "a": 2,
+              "hint": "ăn và uống đẳng lập",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Mùa xuân cây cối đâm chồi nảy lộc\" TRẠNG NGỮ là?",
+              "choices": [
+                "cây cối",
+                "đâm chồi nảy lộc",
+                "Mùa xuân",
+                "chồi lộc"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Từ nào không phải từ ghép Hán Việt?",
+              "choices": [
+                "học sinh",
+                "giáo viên",
+                "sách giáo khoa",
+                "trường học"
+              ],
+              "a": 3,
+              "hint": "trường học thuần Việt",
+              "difficulty": 3
+            },
+            {
+              "q": "Từ \"mèo\" trong \"Mèo khóc chuột\" là?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Hoán dụ",
+                "Ẩn dụ"
+              ],
+              "a": 3,
+              "hint": "mèo = kẻ giả vờ khóc",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Trăm năm bia đá thì mòn / Nghìn năm bia miệng vẫn còn trơ trơ\" — ý nghĩa?",
+              "choices": [
+                "Bia đá bền hơn",
+                "Tiếng tốt / xấu lưu truyền mãi",
+                "Làm bia đá",
+                "Đá cứng hơn miệng"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Dòng nào là ca dao?",
+              "choices": [
+                "Có công mài sắt",
+                "Học học nữa học mãi",
+                "Công cha như núi Thái Sơn",
+                "Không thầy đố mày làm nên"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Hình ảnh \"ánh mắt\" thể hiện điều gì trong câu thơ?",
+              "choices": [
+                "Mắt người",
+                "Tâm trạng cảm xúc",
+                "Màu mắt",
+                "Hình dáng mắt"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Từ \"sừng sững\" thuộc loại từ?",
+              "choices": [
+                "Danh từ",
+                "Động từ",
+                "Tính từ",
+                "Láy"
+              ],
+              "a": 3,
+              "hint": "sừng sững là từ láy tính từ",
+              "difficulty": 2
+            },
+            {
+              "q": "Phân tích cấu tạo câu: \"Hôm nay, em đi học.\" — TN/CN/VN?",
+              "choices": [
+                "em/hôm nay/đi học",
+                "hôm nay/em/đi học",
+                "đi học/em/hôm nay",
+                "em/đi học/hôm nay"
+              ],
+              "a": 1,
+              "hint": "TN=Hôm nay, CN=em, VN=đi học",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Ếch ngồi đáy giếng\" — hàm ý?",
+              "choices": [
+                "Con ếch nhỏ",
+                "Người hạn hẹp không biết mình kém",
+                "Giếng nước tốt",
+                "Ếch thích nước"
+              ],
+              "a": 1,
+              "difficulty": 3
+            },
+            {
+              "q": "Từ láy nào mô tả ánh sáng lung linh?",
+              "choices": [
+                "ầm ĩ",
+                "rì rào",
+                "lấp lánh",
+                "thơm phức"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Câu \"Năm ấy mưa nhiều\" — \"năm ấy\" là?",
+              "choices": [
+                "Chủ ngữ",
+                "Vị ngữ",
+                "Trạng ngữ thời gian",
+                "Tân ngữ"
+              ],
+              "a": 2,
+              "difficulty": 3
+            },
+            {
+              "q": "Câu cảm thán phải có?",
+              "choices": [
+                "Dấu hỏi",
+                "Dấu chấm than",
+                "Dấu chấm",
+                "Dấu phẩy"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ \"lấp lánh\" gợi lên điều gì?",
+              "choices": [
+                "Âm thanh",
+                "Sự sáng bóng lấp lánh",
+                "Màu xanh",
+                "Mùi thơm"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào KHÔNG phải từ láy?",
+              "choices": [
+                "lung linh",
+                "long lanh",
+                "lóng lánh",
+                "lập lòe"
+              ],
+              "a": 3,
+              "hint": "lập lòe là từ ghép",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu \"Mặt trời của mẹ em nằm trên lưng\" dùng biện pháp?",
+              "choices": [
+                "So sánh",
+                "Nhân hóa",
+                "Ẩn dụ",
+                "Điệp ngữ"
+              ],
+              "a": 2,
+              "hint": "mặt trời = đứa con",
+              "difficulty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tieng-anh",
+      "icon": "🌍",
+      "name": "Tiếng Anh",
+      "topics": [
+        {
+          "id": "en_vocab",
+          "icon": "🔤",
+          "name": "Vocabulary",
+          "questions": [
+            {
+              "q": "What is 🐶?",
+              "choices": [
+                "cat",
+                "dog",
+                "bird",
+                "fish"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🐱?",
+              "choices": [
+                "dog",
+                "cat",
+                "rabbit",
+                "mouse"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🐘?",
+              "choices": [
+                "lion",
+                "tiger",
+                "elephant",
+                "monkey"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🦊?",
+              "choices": [
+                "wolf",
+                "dog",
+                "fox",
+                "cat"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🐸?",
+              "choices": [
+                "toad",
+                "snake",
+                "frog",
+                "lizard"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🦋?",
+              "choices": [
+                "bee",
+                "butterfly",
+                "dragonfly",
+                "ant"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🐬?",
+              "choices": [
+                "shark",
+                "whale",
+                "dolphin",
+                "seal"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Which animal lives in the sea?",
+              "choices": [
+                "rabbit",
+                "fish",
+                "dog",
+                "horse"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which animal can fly?",
+              "choices": [
+                "dog",
+                "cat",
+                "bird",
+                "fish"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What color is the sky?",
+              "choices": [
+                "red",
+                "green",
+                "blue",
+                "yellow"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What color is grass?",
+              "choices": [
+                "blue",
+                "red",
+                "green",
+                "white"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What color is the sun?",
+              "choices": [
+                "blue",
+                "yellow",
+                "green",
+                "purple"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What color is snow?",
+              "choices": [
+                "black",
+                "red",
+                "blue",
+                "white"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Red\" means?",
+              "choices": [
+                "xanh",
+                "đỏ",
+                "vàng",
+                "trắng"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Blue\" means?",
+              "choices": [
+                "xanh dương",
+                "đỏ",
+                "vàng",
+                "tím"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Mother\" means?",
+              "choices": [
+                "bố",
+                "anh",
+                "mẹ",
+                "chị"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Father\" means?",
+              "choices": [
+                "mẹ",
+                "bố",
+                "anh",
+                "em"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"School\" means?",
+              "choices": [
+                "nhà",
+                "bệnh viện",
+                "trường học",
+                "chợ"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🍎?",
+              "choices": [
+                "banana",
+                "apple",
+                "orange",
+                "grape"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🍌?",
+              "choices": [
+                "apple",
+                "banana",
+                "mango",
+                "lemon"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What is 🍕?",
+              "choices": [
+                "burger",
+                "pizza",
+                "pasta",
+                "sandwich"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which is a vegetable?",
+              "choices": [
+                "apple",
+                "carrot",
+                "orange",
+                "banana"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Book\" means?",
+              "choices": [
+                "bút",
+                "vở",
+                "sách",
+                "thước"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Pen\" means?",
+              "choices": [
+                "sách",
+                "bút bi",
+                "vở",
+                "thước"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Chair\" means?",
+              "choices": [
+                "bàn",
+                "ghế",
+                "cửa",
+                "cửa sổ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Window\" means?",
+              "choices": [
+                "cửa",
+                "cửa sổ",
+                "bàn",
+                "ghế"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Rain\" means?",
+              "choices": [
+                "nắng",
+                "gió",
+                "mưa",
+                "tuyết"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Snow\" means?",
+              "choices": [
+                "mưa",
+                "nắng",
+                "gió",
+                "tuyết"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Hot\" means?",
+              "choices": [
+                "lạnh",
+                "mát",
+                "nóng",
+                "ấm"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Cold\" means?",
+              "choices": [
+                "lạnh",
+                "nóng",
+                "ấm",
+                "mát"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Big\" means?",
+              "choices": [
+                "nhỏ",
+                "to lớn",
+                "dài",
+                "ngắn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Small\" means?",
+              "choices": [
+                "to",
+                "nhỏ",
+                "cao",
+                "thấp"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Happy\" means?",
+              "choices": [
+                "buồn",
+                "vui",
+                "giận",
+                "lo"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Sad\" means?",
+              "choices": [
+                "vui",
+                "buồn",
+                "sợ",
+                "bình thường"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Run\" means?",
+              "choices": [
+                "đứng",
+                "ngồi",
+                "chạy",
+                "đi"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Jump\" means?",
+              "choices": [
+                "bơi",
+                "nhảy",
+                "bay",
+                "bò"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Swim\" means?",
+              "choices": [
+                "chạy",
+                "đi",
+                "bơi",
+                "leo"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Eat\" means?",
+              "choices": [
+                "uống",
+                "ngủ",
+                "ăn",
+                "đọc"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Drink\" means?",
+              "choices": [
+                "ăn",
+                "uống",
+                "ngủ",
+                "chơi"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Sleep\" means?",
+              "choices": [
+                "ăn",
+                "chơi",
+                "ngủ",
+                "học"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Read\" means?",
+              "choices": [
+                "viết",
+                "vẽ",
+                "đọc",
+                "nghe"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Write\" means?",
+              "choices": [
+                "đọc",
+                "viết",
+                "vẽ",
+                "nghe"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Play\" means?",
+              "choices": [
+                "học",
+                "chơi",
+                "ăn",
+                "ngủ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"House\" means?",
+              "choices": [
+                "trường",
+                "nhà",
+                "chợ",
+                "bệnh viện"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Tree\" means?",
+              "choices": [
+                "hoa",
+                "lá",
+                "cây",
+                "cỏ"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Flower\" means?",
+              "choices": [
+                "cây",
+                "lá",
+                "hoa",
+                "quả"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Water\" means?",
+              "choices": [
+                "lửa",
+                "đất",
+                "nước",
+                "gió"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Friend\" means?",
+              "choices": [
+                "kẻ thù",
+                "bạn bè",
+                "thầy giáo",
+                "phụ huynh"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Plural of \"child\" is?",
+              "choices": [
+                "childs",
+                "childrens",
+                "children",
+                "child"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Plural of \"tooth\" is?",
+              "choices": [
+                "tooths",
+                "teeth",
+                "toothes",
+                "tooth"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Plural of \"mouse\" is?",
+              "choices": [
+                "mouses",
+                "mousey",
+                "mice",
+                "mouse"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Plural of \"foot\" is?",
+              "choices": [
+                "foots",
+                "feets",
+                "feet",
+                "foot"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Plural of \"man\" is?",
+              "choices": [
+                "mans",
+                "manes",
+                "men",
+                "man"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Plural of \"woman\" is?",
+              "choices": [
+                "womans",
+                "woman",
+                "womens",
+                "women"
+              ],
+              "a": 3,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Angry\" means?",
+              "choices": [
+                "buồn",
+                "vui",
+                "giận dữ",
+                "sợ hãi"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Tired\" means?",
+              "choices": [
+                "khỏe",
+                "mệt",
+                "đói",
+                "khát"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Hungry\" means?",
+              "choices": [
+                "khát",
+                "no",
+                "đói",
+                "mệt"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Fast\" means?",
+              "choices": [
+                "chậm",
+                "nhanh",
+                "cao",
+                "thấp"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Slow\" means?",
+              "choices": [
+                "nhanh",
+                "chậm",
+                "to",
+                "nhỏ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Beautiful\" means?",
+              "choices": [
+                "xấu",
+                "đẹp",
+                "bình thường",
+                "lạ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            }
+          ]
+        },
+        {
+          "id": "en_numbers",
+          "icon": "🔢",
+          "name": "Numbers & Time",
+          "questions": [
+            {
+              "q": "How do you say \"5\"?",
+              "choices": [
+                "four",
+                "five",
+                "six",
+                "three"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "How do you say \"12\"?",
+              "choices": [
+                "ten",
+                "eleven",
+                "twelve",
+                "twenty"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "How do you say \"20\"?",
+              "choices": [
+                "two",
+                "twelve",
+                "twenty",
+                "twoty"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Thirty\" = ?",
+              "choices": [
+                "3",
+                "13",
+                "30",
+                "300"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Forty\" = ?",
+              "choices": [
+                "4",
+                "14",
+                "40",
+                "400"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Fifty\" = ?",
+              "choices": [
+                "15",
+                "5",
+                "500",
+                "50"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Sixty\" = ?",
+              "choices": [
+                "16",
+                "6",
+                "60",
+                "600"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Seventy\" = ?",
+              "choices": [
+                "7",
+                "17",
+                "70",
+                "700"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Eighty\" = ?",
+              "choices": [
+                "8",
+                "18",
+                "80",
+                "800"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Ninety\" = ?",
+              "choices": [
+                "9",
+                "19",
+                "90",
+                "900"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"One hundred\" = ?",
+              "choices": [
+                "10",
+                "100",
+                "1000",
+                "110"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"First\" means?",
+              "choices": [
+                "thứ nhất",
+                "thứ hai",
+                "thứ ba",
+                "thứ tư"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Second\" means?",
+              "choices": [
+                "thứ nhất",
+                "thứ hai",
+                "thứ ba",
+                "thứ tư"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Third\" means?",
+              "choices": [
+                "thứ nhất",
+                "thứ hai",
+                "thứ ba",
+                "thứ tư"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Fourth\" means?",
+              "choices": [
+                "thứ ba",
+                "thứ tư",
+                "thứ năm",
+                "thứ sáu"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Fifth\" means?",
+              "choices": [
+                "thứ ba",
+                "thứ tư",
+                "thứ năm",
+                "thứ sáu"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "3 + 5 = ? (in English)",
+              "choices": [
+                "\"Seven\"",
+                "\"Eight\"",
+                "\"Nine\"",
+                "\"Ten\""
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "10 - 4 = ? (in English)",
+              "choices": [
+                "\"Five\"",
+                "\"Six\"",
+                "\"Seven\"",
+                "\"Eight\""
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "2 × 5 = ? (in English)",
+              "choices": [
+                "\"Eight\"",
+                "\"Nine\"",
+                "\"Ten\"",
+                "\"Twelve\""
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "12 ÷ 4 = ? (in English)",
+              "choices": [
+                "\"Two\"",
+                "\"Three\"",
+                "\"Four\"",
+                "\"Five\""
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Monday\" means?",
+              "choices": [
+                "Thứ Hai",
+                "Thứ Ba",
+                "Thứ Tư",
+                "Thứ Năm"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Wednesday\" means?",
+              "choices": [
+                "Thứ Hai",
+                "Thứ Ba",
+                "Thứ Tư",
+                "Thứ Năm"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Friday\" means?",
+              "choices": [
+                "Thứ Năm",
+                "Thứ Sáu",
+                "Thứ Bảy",
+                "Chủ nhật"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Sunday\" means?",
+              "choices": [
+                "Thứ Sáu",
+                "Thứ Bảy",
+                "Chủ nhật",
+                "Thứ Hai"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"January\" is month?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"June\" is month?",
+              "choices": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"December\" is month?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "1"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What time is \"7 o'clock\"?",
+              "choices": [
+                "6:00",
+                "7:00",
+                "8:00",
+                "9:00"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What time is \"half past 8\"?",
+              "choices": [
+                "8:00",
+                "8:15",
+                "8:30",
+                "8:45"
+              ],
+              "a": 2,
+              "hint": "half past = 30 phút",
+              "difficulty": 2
+            },
+            {
+              "q": "What time is \"quarter past 9\"?",
+              "choices": [
+                "9:00",
+                "9:15",
+                "9:30",
+                "9:45"
+              ],
+              "a": 1,
+              "hint": "quarter past = 15 phút",
+              "difficulty": 2
+            },
+            {
+              "q": "How many months in a year?",
+              "choices": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "How many days in a week?",
+              "choices": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "How many hours in a day?",
+              "choices": [
+                "12",
+                "20",
+                "24",
+                "48"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Twenty-five\" = ?",
+              "choices": [
+                "15",
+                "20",
+                "25",
+                "52"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "twenty = 20, five = 5 → 25"
+            },
+            {
+              "q": "The third month of the year is?",
+              "choices": [
+                "January",
+                "February",
+                "March",
+                "April"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "15 + 17 = ? (in English)",
+              "choices": [
+                "\"Thirty\"",
+                "\"Thirty-one\"",
+                "\"Thirty-two\"",
+                "\"Thirty-three\""
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "How do you write \"56\" in words?",
+              "choices": [
+                "fifty-five",
+                "fifty-six",
+                "sixty-five",
+                "sixty-six"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "How do you write \"100\" in words?",
+              "choices": [
+                "ninety",
+                "one hundred",
+                "ten",
+                "one thousand"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What season is June-August in the North?",
+              "choices": [
+                "Spring",
+                "Summer",
+                "Autumn",
+                "Winter"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "How many weeks in a year (approx)?",
+              "choices": [
+                "48",
+                "50",
+                "52",
+                "54"
+              ],
+              "a": 2,
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "en_gram",
+          "icon": "📐",
+          "name": "Grammar",
+          "questions": [
+            {
+              "q": "\"I ___ a student.\"",
+              "choices": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "a": 2,
+              "hint": "I → am",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ a teacher.\"",
+              "choices": [
+                "am",
+                "are",
+                "is",
+                "be"
+              ],
+              "a": 2,
+              "hint": "He/She/It → is",
+              "difficulty": 1
+            },
+            {
+              "q": "\"They ___ my friends.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 2,
+              "hint": "They → are",
+              "difficulty": 1
+            },
+            {
+              "q": "\"We ___ students.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 2,
+              "hint": "We → are",
+              "difficulty": 1
+            },
+            {
+              "q": "\"He ___ not a doctor.\"",
+              "choices": [
+                "am",
+                "is",
+                "are",
+                "be"
+              ],
+              "a": 1,
+              "hint": "He → is",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ is your name?\"",
+              "choices": [
+                "How",
+                "Where",
+                "What",
+                "Who"
+              ],
+              "a": 2,
+              "hint": "What → cái gì",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ old are you?\"",
+              "choices": [
+                "What",
+                "How",
+                "Where",
+                "Who"
+              ],
+              "a": 1,
+              "hint": "How old → hỏi tuổi",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ are you from?\"",
+              "choices": [
+                "What",
+                "How",
+                "Where",
+                "Who"
+              ],
+              "a": 2,
+              "hint": "Where → nơi chốn",
+              "difficulty": 1
+            },
+            {
+              "q": "\"This is ___ apple.\"",
+              "choices": [
+                "a",
+                "an",
+                "the",
+                "some"
+              ],
+              "a": 1,
+              "hint": "apple bắt đầu nguyên âm → an",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She has ___ dog.\"",
+              "choices": [
+                "a",
+                "an",
+                "the",
+                "some"
+              ],
+              "a": 0,
+              "hint": "dog bắt đầu phụ âm → a",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ elephant is big.\"",
+              "choices": [
+                "A",
+                "An",
+                "The",
+                "Some"
+              ],
+              "a": 1,
+              "hint": "elephant bắt đầu nguyên âm → An",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ to school every day.\" (go)",
+              "choices": [
+                "go",
+                "goes",
+                "going",
+                "went"
+              ],
+              "a": 1,
+              "hint": "She → goes",
+              "difficulty": 1
+            },
+            {
+              "q": "\"They ___ football on Sundays.\" (play)",
+              "choices": [
+                "plays",
+                "play",
+                "playing",
+                "played"
+              ],
+              "a": 1,
+              "hint": "They → play",
+              "difficulty": 1
+            },
+            {
+              "q": "\"He ___ rice for lunch.\" (eat)",
+              "choices": [
+                "eat",
+                "eats",
+                "eating",
+                "ate"
+              ],
+              "a": 1,
+              "hint": "He → eats",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She loves ___.\" (dance)",
+              "choices": [
+                "dance",
+                "dances",
+                "dancing",
+                "to dancing"
+              ],
+              "a": 2,
+              "hint": "love + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"I like ___ books.\" (read)",
+              "choices": [
+                "read",
+                "reads",
+                "reading",
+                "readed"
+              ],
+              "a": 2,
+              "hint": "like + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She hates ___.\" (clean)",
+              "choices": [
+                "clean",
+                "cleans",
+                "cleaning",
+                "to clean"
+              ],
+              "a": 2,
+              "hint": "hate + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"I don't ___ coffee.\"",
+              "choices": [
+                "like",
+                "likes",
+                "liking",
+                "liked"
+              ],
+              "a": 0,
+              "hint": "I + don't + bare infinitive",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ not like coffee.\"",
+              "choices": [
+                "do",
+                "does",
+                "did",
+                "is"
+              ],
+              "a": 1,
+              "hint": "She → does",
+              "difficulty": 1
+            },
+            {
+              "q": "The cat is ___ the box.",
+              "choices": [
+                "in",
+                "on",
+                "under",
+                "beside"
+              ],
+              "a": 0,
+              "hint": "in = trong",
+              "difficulty": 1
+            },
+            {
+              "q": "The book is ___ the table.",
+              "choices": [
+                "in",
+                "on",
+                "under",
+                "behind"
+              ],
+              "a": 1,
+              "hint": "on = trên",
+              "difficulty": 1
+            },
+            {
+              "q": "The ball is ___ the chair.",
+              "choices": [
+                "in",
+                "on",
+                "under",
+                "between"
+              ],
+              "a": 2,
+              "hint": "under = dưới",
+              "difficulty": 1
+            },
+            {
+              "q": "The school is ___ the park.",
+              "choices": [
+                "in",
+                "on",
+                "next to",
+                "under"
+              ],
+              "a": 2,
+              "hint": "next to = bên cạnh",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ the morning, I brush my teeth.\"",
+              "choices": [
+                "In",
+                "On",
+                "At",
+                "By"
+              ],
+              "a": 0,
+              "hint": "in the morning",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ Monday, we have math.\"",
+              "choices": [
+                "In",
+                "On",
+                "At",
+                "By"
+              ],
+              "a": 1,
+              "hint": "on + ngày",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ 7 o'clock, I wake up.\"",
+              "choices": [
+                "In",
+                "On",
+                "At",
+                "By"
+              ],
+              "a": 2,
+              "hint": "at + giờ",
+              "difficulty": 1
+            },
+            {
+              "q": "\"An elephant is ___ a dog.\" (big)",
+              "choices": [
+                "bigger than",
+                "more big",
+                "biger than",
+                "big than"
+              ],
+              "a": 0,
+              "hint": "bigger than",
+              "difficulty": 2
+            },
+            {
+              "q": "\"This book is ___ that one.\" (interesting)",
+              "choices": [
+                "interestinger",
+                "more interesting",
+                "most interesting",
+                "interestingest"
+              ],
+              "a": 1,
+              "hint": "more + adj dài",
+              "difficulty": 2
+            },
+            {
+              "q": "The opposite of \"tall\" is?",
+              "choices": [
+                "fat",
+                "long",
+                "short",
+                "thin"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "The opposite of \"fast\" is?",
+              "choices": [
+                "hot",
+                "slow",
+                "heavy",
+                "small"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "The opposite of \"hot\" is?",
+              "choices": [
+                "warm",
+                "cold",
+                "cool",
+                "fresh"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "The opposite of \"happy\" is?",
+              "choices": [
+                "angry",
+                "sad",
+                "tired",
+                "hungry"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Birds can ___.\"",
+              "choices": [
+                "swim",
+                "fly",
+                "run fast",
+                "climb trees"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Fish ___ walk on land.\"",
+              "choices": [
+                "can",
+                "cannot",
+                "don't",
+                "aren't"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Can you swim?\" → \"Yes, I ___.\"",
+              "choices": [
+                "can't",
+                "don't",
+                "can",
+                "am"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Can she fly?\" → \"No, she ___.\"",
+              "choices": [
+                "can",
+                "is",
+                "does",
+                "can't"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"There ___ a book on the table.\"",
+              "choices": [
+                "are",
+                "is",
+                "am",
+                "be"
+              ],
+              "a": 1,
+              "hint": "a book → is",
+              "difficulty": 2
+            },
+            {
+              "q": "\"There ___ many students in class.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 2,
+              "hint": "many students → are",
+              "difficulty": 2
+            },
+            {
+              "q": "\"___ do you live?\" \"I live in Hanoi.\"",
+              "choices": [
+                "What",
+                "How",
+                "Where",
+                "Who"
+              ],
+              "a": 2,
+              "hint": "Where → nơi chốn",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ does she go to school?\" \"By bike.\"",
+              "choices": [
+                "What",
+                "How",
+                "Where",
+                "Who"
+              ],
+              "a": 1,
+              "hint": "How → cách thức",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Yesterday, I ___ to the park.\" (go)",
+              "choices": [
+                "go",
+                "goes",
+                "going",
+                "went"
+              ],
+              "a": 3,
+              "hint": "Yesterday → quá khứ",
+              "difficulty": 2
+            },
+            {
+              "q": "\"Last night, she ___ a book.\" (read)",
+              "choices": [
+                "reads",
+                "read",
+                "reading",
+                "is reading"
+              ],
+              "a": 1,
+              "hint": "Last night → quá khứ",
+              "difficulty": 2
+            },
+            {
+              "q": "Adjective comes ___ a noun.",
+              "choices": [
+                "after",
+                "before",
+                "far from",
+                "with no fixed position"
+              ],
+              "a": 1,
+              "hint": "adj + noun",
+              "difficulty": 2
+            },
+            {
+              "q": "\"She is taller ___ her sister.\"",
+              "choices": [
+                "as",
+                "that",
+                "than",
+                "then"
+              ],
+              "a": 2,
+              "hint": "taller than",
+              "difficulty": 2
+            },
+            {
+              "q": "\"This is ___ book in the library.\"(interesting)",
+              "choices": [
+                "the most interesting",
+                "more interesting",
+                "most interesting",
+                "the more interesting"
+              ],
+              "a": 0,
+              "hint": "the most + adj",
+              "difficulty": 2
+            },
+            {
+              "q": "\"I ___ homework every evening.\" (do)",
+              "choices": [
+                "does",
+                "do",
+                "doing",
+                "did"
+              ],
+              "a": 1,
+              "hint": "I → do",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ TV now.\" (watch)",
+              "choices": [
+                "watches",
+                "watch",
+                "is watching",
+                "watched"
+              ],
+              "a": 2,
+              "hint": "now → hiện tại tiếp diễn",
+              "difficulty": 2
+            },
+            {
+              "q": "\"We ___ dinner at 6 pm yesterday.\" (have)",
+              "choices": [
+                "have",
+                "has",
+                "had",
+                "having"
+              ],
+              "a": 2,
+              "hint": "yesterday → quá khứ",
+              "difficulty": 2
+            },
+            {
+              "q": "Choose the correct sentence:",
+              "choices": [
+                "She go to school.",
+                "She goes to school.",
+                "She going to school.",
+                "She goed to school."
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"How ___ water do you drink a day?\"",
+              "choices": [
+                "many",
+                "much",
+                "more",
+                "most"
+              ],
+              "a": 1,
+              "hint": "water = uncountable → how much",
+              "difficulty": 2
+            },
+            {
+              "q": "\"How ___ students are in your class?\"",
+              "choices": [
+                "much",
+                "more",
+                "many",
+                "most"
+              ],
+              "a": 2,
+              "hint": "students = countable → how many",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "en_jobs",
+          "icon": "👔",
+          "name": "Jobs & Sports",
+          "questions": [
+            {
+              "q": "\"Doctor\" means?",
+              "choices": [
+                "giáo viên",
+                "bác sĩ",
+                "lính cứu hỏa",
+                "phi công"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Nurse\" means?",
+              "choices": [
+                "bác sĩ",
+                "y tá",
+                "nha sĩ",
+                "dược sĩ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Dentist\" means?",
+              "choices": [
+                "bác sĩ",
+                "y tá",
+                "nha sĩ",
+                "dược sĩ"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Teacher\" means?",
+              "choices": [
+                "học sinh",
+                "giáo viên",
+                "hiệu trưởng",
+                "bảo vệ"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Pilot\" means?",
+              "choices": [
+                "bác sĩ",
+                "giáo viên",
+                "phi công",
+                "cảnh sát"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Firefighter\" means?",
+              "choices": [
+                "bác sĩ",
+                "lính cứu hỏa",
+                "cảnh sát",
+                "thợ điện"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Farmer\" means?",
+              "choices": [
+                "nông dân",
+                "ngư dân",
+                "thợ xây",
+                "bác sĩ"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Police officer\" means?",
+              "choices": [
+                "lính cứu hỏa",
+                "cảnh sát",
+                "thợ xây",
+                "phi công"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Astronaut\" means?",
+              "choices": [
+                "phi công",
+                "phi hành gia",
+                "thủy thủ",
+                "vận động viên"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Mechanic\" means?",
+              "choices": [
+                "thợ điện",
+                "thợ cơ khí",
+                "thợ mộc",
+                "thợ may"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Hairdresser\" means?",
+              "choices": [
+                "thợ may",
+                "thợ cắt tóc",
+                "thợ vẽ",
+                "thợ nấu ăn"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Cleaner\" means?",
+              "choices": [
+                "lao công",
+                "nấu ăn",
+                "bảo vệ",
+                "thủ quỹ"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "What does a doctor do?",
+              "choices": [
+                "fly planes",
+                "teach students",
+                "check patients",
+                "grow food"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What does a farmer do?",
+              "choices": [
+                "fix machines",
+                "grow food",
+                "stop fires",
+                "take photos"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What does a firefighter do?",
+              "choices": [
+                "teach",
+                "grow food",
+                "stop fire",
+                "fly planes"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What does a pilot do?",
+              "choices": [
+                "check patients",
+                "teach students",
+                "fly a plane",
+                "grow food"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What does a teacher do?",
+              "choices": [
+                "fix machines",
+                "teach students",
+                "stop fires",
+                "check patients"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"He ___ to be a police officer.\"",
+              "choices": [
+                "want",
+                "wants",
+                "wanting",
+                "wanted"
+              ],
+              "a": 1,
+              "hint": "He → wants",
+              "difficulty": 1
+            },
+            {
+              "q": "\"I ___ to be a teacher.\"",
+              "choices": [
+                "want",
+                "wants",
+                "wanted",
+                "wanting"
+              ],
+              "a": 0,
+              "hint": "I → want",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ want to be a pilot.\"",
+              "choices": [
+                "don't",
+                "doesn't",
+                "isn't",
+                "wasn't"
+              ],
+              "a": 1,
+              "hint": "She → doesn't",
+              "difficulty": 1
+            },
+            {
+              "q": "Does she want to be a doctor? → \"Yes, she ___.\"",
+              "choices": [
+                "do",
+                "does",
+                "is",
+                "want"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She loves cooking. She wants to be a ___.\"",
+              "choices": [
+                "doctor",
+                "chef",
+                "pilot",
+                "teacher"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which sport uses a racket?",
+              "choices": [
+                "football",
+                "swimming",
+                "badminton",
+                "cycling"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Which sport uses a bat?",
+              "choices": [
+                "soccer",
+                "tennis",
+                "baseball",
+                "golf"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Which sport uses a shuttlecock?",
+              "choices": [
+                "tennis",
+                "badminton",
+                "golf",
+                "baseball"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which sport uses a goal?",
+              "choices": [
+                "badminton",
+                "tennis",
+                "basketball",
+                "soccer"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"I am good at ___ soccer.\" (play)",
+              "choices": [
+                "play",
+                "plays",
+                "playing",
+                "to play"
+              ],
+              "a": 2,
+              "hint": "good at + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She is good at ___.\" (swim)",
+              "choices": [
+                "swim",
+                "swims",
+                "swimming",
+                "to swim"
+              ],
+              "a": 2,
+              "hint": "good at + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"They ___ good at basketball.\"(not)",
+              "choices": [
+                "isn't",
+                "aren't",
+                "am not",
+                "not"
+              ],
+              "a": 1,
+              "hint": "They → aren't",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Can I kick a ball in soccer?\" → \"Yes, you ___.\"",
+              "choices": [
+                "can't",
+                "can",
+                "do",
+                "are"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Can I kick a ball in basketball?\" → \"No, you ___.\"",
+              "choices": [
+                "can",
+                "is",
+                "do",
+                "can't"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Wear a helmet!\" This is a/an ___?",
+              "choices": [
+                "question",
+                "command",
+                "statement",
+                "exclamation"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Don't run in the classroom!\" means?",
+              "choices": [
+                "Hãy chạy",
+                "Đừng chạy trong lớp",
+                "Chạy nhanh lên",
+                "Đứng dậy"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She hates cleaning.\" means?",
+              "choices": [
+                "She loves cleaning",
+                "She likes cleaning",
+                "She doesn't like cleaning",
+                "She cleans well"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Equipment used in badminton?",
+              "choices": [
+                "bat",
+                "racket",
+                "paddle",
+                "stick"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Equipment used in baseball?",
+              "choices": [
+                "racket",
+                "bat",
+                "paddle",
+                "stick"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Equipment used in hockey?",
+              "choices": [
+                "racket",
+                "bat",
+                "paddle",
+                "stick"
+              ],
+              "a": 3,
+              "difficulty": 2
+            },
+            {
+              "q": "\"Astronaut\" — what does an astronaut do?",
+              "choices": [
+                "fly planes",
+                "travel in space",
+                "teach students",
+                "check patients"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which action verb for soccer?",
+              "choices": [
+                "hit",
+                "catch",
+                "kick",
+                "bounce"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Which action verb for basketball?",
+              "choices": [
+                "kick",
+                "bounce",
+                "hit",
+                "throw"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She doesn't want to be a cleaner.\" This means she ___ be a cleaner.",
+              "choices": [
+                "wants to",
+                "would like to",
+                "does not want to",
+                "likes to"
+              ],
+              "a": 2,
+              "difficulty": 2
+            },
+            {
+              "q": "Complete: \"He is ___ at skiing.\"",
+              "choices": [
+                "good",
+                "well",
+                "better",
+                "best"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "Choose: \"I like ___.\" (ride)",
+              "choices": [
+                "ride",
+                "rides",
+                "riding",
+                "to riding"
+              ],
+              "a": 2,
+              "hint": "like + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"My father likes ___.\" (swim)",
+              "choices": [
+                "swim",
+                "swims",
+                "swimming",
+                "to swim"
+              ],
+              "a": 2,
+              "hint": "likes + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ like cooking.\" (not)",
+              "choices": [
+                "don't",
+                "doesn't",
+                "isn't",
+                "wasn't"
+              ],
+              "a": 1,
+              "hint": "She → doesn't",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Photographer\" means?",
+              "choices": [
+                "thợ may",
+                "thợ chụp ảnh",
+                "họa sĩ",
+                "thợ in"
+              ],
+              "a": 1,
+              "difficulty": 1
+            }
+          ]
+        },
+        {
+          "id": "en_sent",
+          "icon": "💬",
+          "name": "Sentences & Reading",
+          "questions": [
+            {
+              "q": "Complete: \"Good morning! How ___ you?\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "do"
+              ],
+              "a": 2,
+              "hint": "How are you?",
+              "difficulty": 1
+            },
+            {
+              "q": "Complete: \"Nice to ___ you.\"",
+              "choices": [
+                "see",
+                "met",
+                "seeing",
+                "saw"
+              ],
+              "a": 0,
+              "hint": "Nice to meet/see you",
+              "difficulty": 1
+            },
+            {
+              "q": "\"What do you say in the morning?\"",
+              "choices": [
+                "Good night",
+                "Good morning",
+                "Goodbye",
+                "Hello sleep"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"What do you say before sleeping?\"",
+              "choices": [
+                "Good morning",
+                "Good afternoon",
+                "Good night",
+                "Good evening"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"How do you say your age: I ___ 8 years old.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 1,
+              "hint": "I → am",
+              "difficulty": 1
+            },
+            {
+              "q": "\"I have ___ brothers.\"(2)",
+              "choices": [
+                "two",
+                "second",
+                "twice",
+                "twos"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"My favorite color ___ blue.\"",
+              "choices": [
+                "am",
+                "is",
+                "are",
+                "be"
+              ],
+              "a": 1,
+              "hint": "My favorite color → is",
+              "difficulty": 1
+            },
+            {
+              "q": "Which is a correct greeting?",
+              "choices": [
+                "How do you?",
+                "How are you?",
+                "How you are?",
+                "Are how you?"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"Where do you live?\" → \"I live ___ Hanoi.\"",
+              "choices": [
+                "on",
+                "in",
+                "at",
+                "by"
+              ],
+              "a": 1,
+              "hint": "live in + thành phố",
+              "difficulty": 1
+            },
+            {
+              "q": "\"What is your favorite subject?\" → \"My favorite subject ___ math.\"",
+              "choices": [
+                "am",
+                "are",
+                "is",
+                "be"
+              ],
+              "a": 2,
+              "hint": "subject → is",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Do you have a pet?\" → \"Yes, I ___ a cat.\"",
+              "choices": [
+                "am",
+                "is",
+                "are",
+                "have"
+              ],
+              "a": 3,
+              "hint": "have a pet",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ to school by bike every day.\"",
+              "choices": [
+                "go",
+                "goes",
+                "going",
+                "went"
+              ],
+              "a": 1,
+              "hint": "She → goes",
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"Tom has a dog. It is brown and small.\" What color is the dog?",
+              "choices": [
+                "White",
+                "Black",
+                "Brown",
+                "Yellow"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"Lily loves cats. She has 3 cats.\" How many cats does Lily have?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"I wake up at 6 am. I go to school at 7 am.\" How long to get ready?",
+              "choices": [
+                "30 minutes",
+                "1 hour",
+                "2 hours",
+                "Not stated"
+              ],
+              "a": 1,
+              "hint": "7-6=1 hour",
+              "difficulty": 2
+            },
+            {
+              "q": "Read: \"My father is a doctor. He helps sick people.\" What does father do?",
+              "choices": [
+                "teaches",
+                "cooks",
+                "helps sick people",
+                "grows food"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She is good at playing soccer. She ___ good at badminton.\" (not good)",
+              "choices": [
+                "is",
+                "are",
+                "isn't",
+                "aren't"
+              ],
+              "a": 2,
+              "hint": "She → isn't",
+              "difficulty": 1
+            },
+            {
+              "q": "Which sentence is correct?",
+              "choices": [
+                "She go to school everyday.",
+                "She goes to school everyday.",
+                "She going to school everyday.",
+                "She goed to school everyday."
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Which question is correct?",
+              "choices": [
+                "Where does she lives?",
+                "Where does she live?",
+                "Where she lives?",
+                "Where she does live?"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Read: \"Nam reads 20 pages every day. In a week, he reads ___ pages.\"",
+              "choices": [
+                "100",
+                "120",
+                "140",
+                "160"
+              ],
+              "a": 2,
+              "hint": "20×7=140",
+              "difficulty": 2
+            },
+            {
+              "q": "\"She ___ not playing now.\" (is/are)",
+              "choices": [
+                "is",
+                "are",
+                "am",
+                "do"
+              ],
+              "a": 0,
+              "hint": "She → is",
+              "difficulty": 2
+            },
+            {
+              "q": "Choose the correct order: \"___ does she go to school?\"",
+              "choices": [
+                "\"How long\"",
+                "\"How many\"",
+                "\"How\"",
+                "\"What\""
+              ],
+              "a": 2,
+              "hint": "How does she go → cách thức",
+              "difficulty": 2
+            },
+            {
+              "q": "Read: \"It is raining. Tom has an umbrella but Lan does not.\" Who is dry?",
+              "choices": [
+                "Lan",
+                "Tom",
+                "Both",
+                "Neither"
+              ],
+              "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "\"My brother ___ taller than me.\" (be)",
+              "choices": [
+                "am",
+                "is",
+                "are",
+                "be"
+              ],
+              "a": 1,
+              "hint": "My brother → is",
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"It is cold today. Please ___ a coat.\" (wear)",
+              "choices": [
+                "wore",
+                "wears",
+                "wear",
+                "wearing"
+              ],
+              "a": 2,
+              "hint": "mệnh lệnh → V nguyên thể",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Do NOT ___ here. It is dangerous.\" (swim)",
+              "choices": [
+                "swims",
+                "swam",
+                "swimming",
+                "swim"
+              ],
+              "a": 3,
+              "hint": "Don't + V",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ happy now.\" (be)",
+              "choices": [
+                "is being",
+                "was",
+                "is",
+                "are"
+              ],
+              "a": 2,
+              "hint": "She now → is",
+              "difficulty": 1
+            },
+            {
+              "q": "Arrange: \"school / to / go / I / every day\"",
+              "choices": [
+                "I to school go every day",
+                "I go to school every day",
+                "I go school to every day",
+                "Every day I school go to"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Arrange: \"a / is / this / book\"",
+              "choices": [
+                "Is this a book",
+                "A book is this",
+                "This is a book",
+                "Book a this is"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"We have 30 students in class. 15 are boys.\" How many girls?",
+              "choices": [
+                "10",
+                "13",
+                "15",
+                "20"
+              ],
+              "a": 2,
+              "hint": "30-15=15",
+              "difficulty": 2
+            },
+            {
+              "q": "\"I ___ my homework before dinner.\" (always do)",
+              "choices": [
+                "always do",
+                "do always",
+                "does always",
+                "always does"
+              ],
+              "a": 0,
+              "hint": "I always do",
+              "difficulty": 2
+            },
+            {
+              "q": "\"___ you like pizza?\" → \"Yes, I do.\"",
+              "choices": [
+                "Are",
+                "Do",
+                "Does",
+                "Is"
+              ],
+              "a": 1,
+              "hint": "I → Do",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ like vegetables.\" (not)",
+              "choices": [
+                "don't",
+                "doesn't",
+                "isn't",
+                "wasn't"
+              ],
+              "a": 1,
+              "hint": "She → doesn't",
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"Ann is 8. Her sister is 3 years older.\" How old is the sister?",
+              "choices": [
+                "9",
+                "10",
+                "11",
+                "12"
+              ],
+              "a": 2,
+              "hint": "8+3=11",
+              "difficulty": 1
+            },
+            {
+              "q": "\"There are ___ apples.\" (5)",
+              "choices": [
+                "five",
+                "fives",
+                "fifth",
+                "fifty"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"My dog ___ a long tail.\"",
+              "choices": [
+                "have",
+                "has",
+                "is",
+                "are"
+              ],
+              "a": 1,
+              "hint": "My dog (3rd person) → has",
+              "difficulty": 2
+            },
+            {
+              "q": "Which is NOT a command?",
+              "choices": [
+                "Sit down!",
+                "She sits down.",
+                "Stand up!",
+                "Be quiet!"
+              ],
+              "a": 1,
+              "hint": "Command = imperative",
+              "difficulty": 2
+            },
+            {
+              "q": "\"___ your homework!\" (do)",
+              "choices": [
+                "Does",
+                "Do",
+                "Doing",
+                "Did"
+              ],
+              "a": 1,
+              "hint": "mệnh lệnh → V nguyên thể",
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"My cat eats fish and drinks milk. It sleeps 14 hours a day.\" What does the cat NOT do?",
+              "choices": [
+                "Eat fish",
+                "Drink milk",
+                "Sleep",
+                "Play soccer"
+              ],
+              "a": 3,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She is ___ than her brother.\"(tall)",
+              "choices": [
+                "tall",
+                "taller",
+                "tallest",
+                "more tall"
+              ],
+              "a": 1,
+              "hint": "so sánh hơn → taller",
+              "difficulty": 2
+            }
+          ]
+        },
+        {
+          "id": "en_start",
+          "icon": "🎓",
+          "name": "Cambridge Starters",
+          "questions": [
+            {
+              "q": "What is this? 🐈",
+              "choices": [
+                "a dog",
+                "a cat",
+                "a bird",
+                "a rabbit"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "What color is the 🍋?",
+              "choices": [
+                "red",
+                "blue",
+                "yellow",
+                "green"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "How many 🐦🐦🐦?",
+              "choices": [
+                "two",
+                "three",
+                "four",
+                "five"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "The boy ___ running.",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "What's in the bag? \"There ___ a book.\"",
+              "choices": [
+                "are",
+                "am",
+                "is",
+                "be"
+              ],
+              "a": 2,
+              "hint": "a book → is",
+              "difficulty": 1
+            },
+            {
+              "q": "Where is the cat? \"The cat is ___ the chair.\"",
+              "choices": [
+                "on",
+                "in",
+                "under",
+                "between"
+              ],
+              "a": 2,
+              "hint": "under = dưới",
+              "difficulty": 1
+            },
+            {
+              "q": "What is she doing? \"She ___ reading.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "was"
+              ],
+              "a": 0,
+              "hint": "she → is",
+              "difficulty": 1
+            },
+            {
+              "q": "What does the girl like? \"She likes ___.\"",
+              "choices": [
+                "swim",
+                "swims",
+                "swimming",
+                "to swimming"
+              ],
+              "a": 2,
+              "hint": "likes + V-ing",
+              "difficulty": 1
+            },
+            {
+              "q": "Who is this? \"This is my ___.\" (mẹ)",
+              "choices": [
+                "father",
+                "brother",
+                "mother",
+                "sister"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "What is the weather like? \"It is ___.\" (mưa)",
+              "choices": [
+                "sunny",
+                "cloudy",
+                "rainy",
+                "windy"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"This is ___ orange.\" (the fruit)",
+              "choices": [
+                "a",
+                "an",
+                "the",
+                "some"
+              ],
+              "a": 1,
+              "hint": "orange → nguyên âm → an",
+              "difficulty": 1
+            },
+            {
+              "q": "Where does she live? \"She lives ___ a house.\"",
+              "choices": [
+                "on",
+                "in",
+                "at",
+                "by"
+              ],
+              "a": 1,
+              "hint": "live in a house",
+              "difficulty": 1
+            },
+            {
+              "q": "\"How many legs does a dog have?\"",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "6"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"How many legs does a bird have?\"",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "6"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"What sound does a cow make?\" → It ___.",
+              "choices": [
+                "\"barks\"",
+                "\"meows\"",
+                "\"moos\"",
+                "\"quacks\""
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"What sound does a duck make?\" → It ___.",
+              "choices": [
+                "\"barks\"",
+                "\"quacks\"",
+                "\"moos\"",
+                "\"meows\""
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Choose the correct word for the picture of a 🚌",
+              "choices": [
+                "car",
+                "truck",
+                "bus",
+                "bike"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Choose the correct word for 🛁",
+              "choices": [
+                "shower",
+                "bath",
+                "sink",
+                "toilet"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"He ___ a sandwich for lunch.\" (eat)",
+              "choices": [
+                "eat",
+                "eats",
+                "eating",
+                "eaten"
+              ],
+              "a": 1,
+              "hint": "He → eats",
+              "difficulty": 1
+            },
+            {
+              "q": "Match: \"playground\" — where is it?",
+              "choices": [
+                "inside school",
+                "outside school",
+                "at home",
+                "at market"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"What time do you wake up?\" → \"I wake up ___ 6 o'clock.\"",
+              "choices": [
+                "in",
+                "on",
+                "at",
+                "by"
+              ],
+              "a": 2,
+              "hint": "at + giờ",
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ is your favorite food?\"",
+              "choices": [
+                "Who",
+                "Where",
+                "What",
+                "How"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"Ann has a red bag. It is big.\" What color is the bag?",
+              "choices": [
+                "Blue",
+                "Green",
+                "Red",
+                "Yellow"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"Tom is 7. His brother is 9.\" Who is older?",
+              "choices": [
+                "Tom",
+                "Tom's brother",
+                "Same age",
+                "Not stated"
+              ],
+              "a": 1,
+              "hint": "9>7",
+              "difficulty": 1
+            },
+            {
+              "q": "\"Are there ___ books on the desk?\"",
+              "choices": [
+                "some",
+                "any",
+                "a",
+                "an"
+              ],
+              "a": 1,
+              "hint": "question → any",
+              "difficulty": 2
+            },
+            {
+              "q": "Opposite of \"open\" is?",
+              "choices": [
+                "close",
+                "closed",
+                "close up",
+                "closing"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"The dog is ___ the sofa.\" (picture: dog on sofa)",
+              "choices": [
+                "under",
+                "behind",
+                "on",
+                "in"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"She has ___ hair.\" (dài)",
+              "choices": [
+                "long",
+                "tall",
+                "big",
+                "fat"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"His eyes are ___.\" (màu nâu)",
+              "choices": [
+                "blue",
+                "green",
+                "brown",
+                "black"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "Listen: \"I go to school ___ foot.\"",
+              "choices": [
+                "on",
+                "by",
+                "with",
+                "in"
+              ],
+              "a": 0,
+              "hint": "on foot = đi bộ",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She goes to school ___ bike.\"",
+              "choices": [
+                "on",
+                "by",
+                "with",
+                "in"
+              ],
+              "a": 1,
+              "hint": "by bike",
+              "difficulty": 1
+            },
+            {
+              "q": "\"What does ___ mean?\"",
+              "choices": [
+                "this",
+                "that",
+                "these",
+                "it"
+              ],
+              "a": 0,
+              "hint": "What does this mean?",
+              "difficulty": 1
+            },
+            {
+              "q": "\"I can ___ a bike.\" (ride)",
+              "choices": [
+                "rides",
+                "rode",
+                "ride",
+                "riding"
+              ],
+              "a": 2,
+              "hint": "can + V nguyên thể",
+              "difficulty": 1
+            },
+            {
+              "q": "\"She ___ sing very well.\"",
+              "choices": [
+                "can't",
+                "doesn't",
+                "isn't",
+                "weren't"
+              ],
+              "a": 0,
+              "difficulty": 1
+            },
+            {
+              "q": "\"The children ___ playing in the park.\"",
+              "choices": [
+                "is",
+                "am",
+                "are",
+                "be"
+              ],
+              "a": 2,
+              "hint": "children → are",
+              "difficulty": 1
+            },
+            {
+              "q": "Match: bedroom ↔ where do you ___?",
+              "choices": [
+                "eat",
+                "sleep",
+                "study",
+                "play"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "Match: kitchen ↔ where do you ___?",
+              "choices": [
+                "sleep",
+                "cook",
+                "play",
+                "read"
+              ],
+              "a": 1,
+              "difficulty": 1
+            },
+            {
+              "q": "\"___ is your school?\" \"It is in Hanoi.\"",
+              "choices": [
+                "How",
+                "What",
+                "Where",
+                "Who"
+              ],
+              "a": 2,
+              "difficulty": 1
+            },
+            {
+              "q": "\"My school ___ big and beautiful.\"",
+              "choices": [
+                "am",
+                "is",
+                "are",
+                "be"
+              ],
+              "a": 1,
+              "hint": "My school → is",
+              "difficulty": 1
+            },
+            {
+              "q": "Read: \"It is Monday. Lan has math and English.\" How many subjects today?",
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "a": 1,
+              "difficulty": 1
+            }
+          ]
+        }
+      ]
     }
-  },
-
-  next() {
-    this.curIdx++;
-    if (this.curIdx >= this.questions.length) {
-      this._finish();
-    } else {
-      this.render();
-    }
-  },
-
-  _finish() {
-    Sound.play('win');
-    App.showScreen('result');
-    document.getElementById('resScore').textContent =
-      `${this.score}/${this.questions.length}`;
-    
-    if (this.score >= 8) {
-      this._confettiBurst();
-    }
-    
-    API.saveScore(App.playerName, this.score, this.questions.length)
-      .then(() => App.loadLeaderboard());
-  },
-
-  _flyStar(fromEl) {
-    const rect = fromEl.getBoundingClientRect();
-    const star = document.createElement('div');
-    star.className = 'flying-star';
-    star.textContent = '⭐';
-    star.style.left = (rect.left + rect.width / 2) + 'px';
-    star.style.top = rect.top + 'px';
-    document.body.appendChild(star);
-    setTimeout(() => star.remove(), 1300);
-  },
-
-  _confettiBurst() {
-    const emojis = ['🎉', '⭐', '✨', '🌟', '🎊'];
-    for (let i = 0; i < 12; i++) {
-      setTimeout(() => {
-        const star = document.createElement('div');
-        star.className = 'flying-star';
-        star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        star.style.left = (50 + (Math.random() - 0.5) * 80) + '%';
-        star.style.top = '60%';
-        star.style.fontSize = (1.5 + Math.random()) + 'rem';
-        document.body.appendChild(star);
-        setTimeout(() => star.remove(), 1300);
-      }, i * 80);
-    }
-  }
-};
-
-/* ═══════════════════════════════════════════════
-   SOUND - dùng Web Audio API
-   ═══════════════════════════════════════════════ */
-
-const Sound = {
-  ctx: null,
-
-  _getCtx() {
-    if (!this.ctx) {
-      try {
-        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-      } catch (e) {
-        console.warn('Audio not supported');
-      }
-    }
-    return this.ctx;
-  },
-
-  _tone(freq, duration, type = 'sine', volume = 0.15) {
-    const ctx = this._getCtx();
-    if (!ctx) return;
-    
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = type;
-    osc.frequency.value = freq;
-    gain.gain.setValueAtTime(volume, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start(ctx.currentTime);
-    osc.stop(ctx.currentTime + duration);
-  },
-
-  _melody(notes) {
-    notes.forEach(([freq, delay, dur = 0.15]) => {
-      setTimeout(() => this._tone(freq, dur, 'triangle'), delay);
-    });
-  },
-
-  play(type) {
-    switch (type) {
-      case 'correct':
-        this._melody([
-          [523.25, 0],
-          [659.25, 80],
-          [783.99, 160],
-        ]);
-        break;
-      case 'wrong':
-        this._tone(220, 0.2, 'square', 0.08);
-        setTimeout(() => this._tone(196, 0.2, 'square', 0.08), 150);
-        break;
-      case 'win':
-        this._melody([
-          [523.25, 0],
-          [659.25, 100],
-          [783.99, 200],
-          [1046.50, 300],
-          [1046.50, 500],
-        ]);
-        break;
-    }
-  }
-};
-
-/* ═══════════════════════════════════════════════
-   REWARDS - sao, sticker, huy hiệu
-   ═══════════════════════════════════════════════ */
-
-const Rewards = {
-  addStar(count) {
-    const data = Storage.load();
-    const oldTitle = this._calcTitle(data.totalCorrect);
-    
-    data.stars += count;
-    data.totalCorrect += count;
-    Storage.save(data);
-    
-    const newTitle = this._calcTitle(data.totalCorrect);
-    this.updateUI();
-    
-    if (oldTitle !== newTitle) {
-      this._titleUpgradeAnimation();
-    }
-  },
-
-  buyItem(item, cost) {
-    const data = Storage.load();
-    if (data.stars < cost) {
-      alert('Chưa đủ sao để mua Sticker này rồi!');
-      return;
-    }
-    data.stars -= cost;
-    data.inventory.push(item);
-    Storage.save(data);
-    this.updateUI();
-    
-    // Tự chuyển sang tab Túi đồ sau khi mua thành công
-    if (typeof App !== 'undefined' && App._switchMiniTab) {
-      setTimeout(() => App._switchMiniTab('inventory'), 300);
-    }
-  },
-
-  redeemBadge() {
-    const data = Storage.load();
-    let badge = null;
-    let cost = 0;
-
-    if (data.stars >= 50) { badge = 'gold'; cost = 50; }
-    else if (data.stars >= 30) { badge = 'silver'; cost = 30; }
-    else if (data.stars >= 10) { badge = 'bronze'; cost = 10; }
-    else {
-      alert('Con cần tích thêm sao mới đổi được huy hiệu nhé!');
-      return;
-    }
-
-    data.stars -= cost;
-    data.currentBadge = badge;
-    Storage.save(data);
-    this.updateUI();
-  },
-
-  _calcTitle(totalCorrect) {
-    if (totalCorrect >= 100) return '👑 Siêu sao học tập!';
-    if (totalCorrect >= 50) return '🌟 Ngôi sao chăm chỉ!';
-    if (totalCorrect >= 20) return '✨ Bé tiến bộ!';
-    return '🌱 Người mới bắt đầu';
-  },
-
-  _titleUpgradeAnimation() {
-    const titleEl = document.getElementById('title-area');
-    if (titleEl) {
-      titleEl.classList.add('upgraded');
-      setTimeout(() => titleEl.classList.remove('upgraded'), 1000);
-    }
-    Sound.play('win');
-  },
-
-  updateUI() {
-    const data = Storage.load();
-
-    const starEl = document.getElementById('star-count');
-    if (starEl) starEl.textContent = data.stars;
-    
-    const titleEl = document.getElementById('title-area');
-    if (titleEl) titleEl.textContent = this._calcTitle(data.totalCorrect);
-
-    const badgeArea = document.getElementById('badge-area');
-    if (badgeArea) {
-      if (data.currentBadge) {
-        badgeArea.innerHTML =
-          `<img src="images/sticker_${data.currentBadge}.png" class="reward-img" alt="Huy hiệu" width="60">`;
-      } else {
-        badgeArea.innerHTML = '';
-      }
-    }
-
-    // Inventory - giờ luôn hiển thị (có empty state)
-    const invArea = document.getElementById('inventory-area');
-    if (invArea) {
-      if (data.inventory.length > 0) {
-        invArea.innerHTML = data.inventory
-          .map(item => `<img src="images/${item}" class="reward-img" alt="sticker" width="50">`)
-          .join(' ');
-      } else {
-        invArea.innerHTML = '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
-      }
-    }
-  }
-};
+  ]
+}
