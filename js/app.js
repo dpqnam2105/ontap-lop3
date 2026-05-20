@@ -421,8 +421,7 @@ const App = {
         e.preventDefault();
         alert(
           '🐰 KHO BÀI TẬP\n\n' +
-          'Trang web ôn tập kiến thức tiểu học, làm bởi 1 phụ huynh ' +
-          'với tình yêu dành cho con gái Anh Thư.\n\n' +
+          'Trang web ôn tập kiến thức tiểu học' +
           'Mục đích: Giúp các bé học vui, ba mẹ đỡ vất vả tìm bài tập.\n\n' +
           'Miễn phí cho mọi người. Mọi góp ý đều quý giá!\n\n' +
           '💖 Cảm ơn bạn đã ghé thăm.'
