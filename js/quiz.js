@@ -428,20 +428,33 @@ const Rewards = {
   redeemBadge() {
     const data = this._loadData();
 
+    const rank = { bronze: 1, silver: 2, gold: 3 };
+    const currentRank = rank[data.currentBadge] || 0;
+
+    // Nâng cấp theo bậc, không mua lại huy hiệu đã có.
+    // Đồng: 10 sao, Bạc: 20 sao, Vàng: 30 sao.
     let badge = null;
     let cost = 0;
 
-    if (data.stars >= 50) {
+    if (currentRank >= 3) {
+      alert('Con đã có huy hiệu Vàng rồi! Tuyệt vời quá! 🥇');
+      return;
+    }
+
+    // Ưu tiên huy hiệu cao nhất mà bé đủ sao và cao hơn huy hiệu hiện tại.
+    if (currentRank < 3 && data.stars >= 30) {
       badge = 'gold';
-      cost = 50;
-    } else if (data.stars >= 30) {
-      badge = 'silver';
       cost = 30;
-    } else if (data.stars >= 10) {
+    } else if (currentRank < 2 && data.stars >= 20) {
+      badge = 'silver';
+      cost = 20;
+    } else if (currentRank < 1 && data.stars >= 10) {
       badge = 'bronze';
       cost = 10;
     } else {
-      alert('Con cần tích thêm sao mới đổi được huy hiệu nhé!');
+      const nextNeed = currentRank === 0 ? 10 : (currentRank === 1 ? 20 : 30);
+      const nextName = currentRank === 0 ? 'Đồng' : (currentRank === 1 ? 'Bạc' : 'Vàng');
+      alert('Con cần ' + nextNeed + ' sao để đổi huy hiệu ' + nextName + ' nhé!');
       return;
     }
 
