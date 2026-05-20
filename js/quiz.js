@@ -1,33 +1,32 @@
 // =============================================
-// QUIZ.JS v5 - chia 20 câu/lần, smart selection
+// QUIZ.JS v7 - saveScore tích hợp log
 // =============================================
 
 const Quiz = {
-  questions: [],         // 20 câu của lần hiện tại
+  questions: [],
   curIdx: 0,
   score: 0,
   canEarnPoint: true,
   currentTopic: null,
+  currentSubject: null,
   currentTopicId: null,
-  sessionInfo: null,     // {current: 1, total: 3, learnedBefore: 0, totalInTopic: 64}
+  sessionInfo: null,
+  sessionStartTime: null,
 
-  // Số câu mục tiêu mỗi lần (sẽ tự điều chỉnh dựa trên tổng câu)
   TARGET_PER_SESSION: 20,
 
-  start(topic) {
+  start(topic, subjectName) {
     this.currentTopic = topic;
-    // ID duy nhất cho topic = subject_topic (để track progress riêng)
+    this.currentSubject = subjectName || '';
     this.currentTopicId = (topic.id || topic.name).toString();
+    this.sessionStartTime = Date.now();
     
-    // Lấy progress hôm nay
     const progress = Storage.getTopicProgress(this.currentTopicId);
     const totalInTopic = topic.questions.length;
     
-    // Tính cách chia: 20 câu/lần đều nhau
     const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
     const sessionSize = Math.ceil(totalInTopic / numSessions);
     
-    // Lấy danh sách index câu chưa làm hôm nay
     const allIndices = topic.questions.map((_, i) => i);
     const notLearned = allIndices.filter(i => !progress.learned.includes(i));
     
@@ -36,22 +35,17 @@ const Quiz = {
     let isAllDone = false;
     
     if (notLearned.length === 0) {
-      // Đã làm hết hôm nay → cho ôn lại câu sai trước, rồi random
       isAllDone = true;
       if (progress.wrong.length > 0) {
-        // Ưu tiên câu sai
         selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
       } else {
-        // Hết câu sai → random từ đầu
         selectedIndices = this._shuffle(allIndices).slice(0, sessionSize);
       }
-      currentSession = numSessions; // Hiển thị "Đã hoàn thành"
+      currentSession = numSessions;
     } else if (notLearned.length <= sessionSize) {
-      // Còn ít hơn 1 session → lấy hết
       selectedIndices = this._shuffle(notLearned);
       currentSession = numSessions;
     } else {
-      // Lấy random từ câu chưa làm
       selectedIndices = this._shuffle(notLearned).slice(0, sessionSize);
       currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
     }
@@ -78,7 +72,6 @@ const Quiz = {
     const total = this.questions.length;
     const info = this.sessionInfo;
 
-    // Tiêu đề: "Chủ đề · Câu X/Y · Lần A/B"
     let titleText = this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     if (info.total > 1) {
       if (info.isAllDone) {
@@ -91,8 +84,7 @@ const Quiz = {
     
     document.getElementById('qText').textContent = q.q;
     document.getElementById('scoreDisp').textContent = this.score;
-    document.getElementById('progFill').style.width =
-      (this.curIdx / total * 100) + '%';
+    document.getElementById('progFill').style.width = (this.curIdx / total * 100) + '%';
 
     document.getElementById('feedback').style.display = 'none';
     document.getElementById('btnNext').classList.add('hidden');
@@ -122,7 +114,6 @@ const Quiz = {
         this.score++;
         Rewards.addStar(1);
         document.getElementById('scoreDisp').textContent = this.score;
-        
         this._flyStar(btn);
         const scoreBadge = document.getElementById('scoreDisp').parentElement;
         scoreBadge.classList.add('pop');
@@ -134,7 +125,6 @@ const Quiz = {
       fbText.textContent = 'Chính xác! Con làm tốt lắm! 👏';
       fbAns.textContent = q.explain || '';
       
-      // Nút next: chỉ ghi "Câu tiếp theo →" hoặc "Xem kết quả 🎉"
       const btnNext = document.getElementById('btnNext');
       btnNext.classList.remove('hidden');
       btnNext.textContent = this.curIdx + 1 >= this.questions.length 
@@ -148,14 +138,11 @@ const Quiz = {
 
       fb.className = 'feedback wrong';
       fbText.textContent = 'Chưa đúng rồi, thử lại nhé!';
-      fbAns.textContent = q.hint
-        ? '💡 Gợi ý: ' + q.hint
-        : 'Hãy xem lại câu hỏi một chút con nhé.';
+      fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.';
     }
   },
 
   next() {
-    // Lưu progress: câu hiện tại đã làm xong
     const q = this.questions[this.curIdx];
     this._markLearned(q._idx, this.canEarnPoint);
     
@@ -167,23 +154,16 @@ const Quiz = {
     }
   },
 
-  /** Đánh dấu câu đã làm (canEarnPoint = đúng từ đầu, không cần ôn) */
   _markLearned(qIdx, wasCorrect) {
     const progress = Storage.getTopicProgress(this.currentTopicId);
-    
-    // Thêm vào learned nếu chưa có
     if (!progress.learned.includes(qIdx)) {
       progress.learned.push(qIdx);
     }
-    
-    // Nếu trả lời sai → đánh dấu cần ôn lại
     if (!wasCorrect && !progress.wrong.includes(qIdx)) {
       progress.wrong.push(qIdx);
     } else if (wasCorrect && progress.wrong.includes(qIdx)) {
-      // Trả lời đúng câu đã từng sai → bỏ khỏi danh sách ôn
       progress.wrong = progress.wrong.filter(i => i !== qIdx);
     }
-    
     Storage.saveTopicProgress(this.currentTopicId, progress.learned, progress.wrong);
   },
 
@@ -197,8 +177,6 @@ const Quiz = {
     const resultMsg = document.querySelector('.result-msg');
     if (resultMsg) {
       const info = this.sessionInfo;
-      
-      // Hiển thị thông tin tiến độ trong ngày
       let progressMsg = '';
       const newLearnedTotal = info.learnedBefore + total;
       
@@ -206,7 +184,7 @@ const Quiz = {
         progressMsg = '🎉 Con đã làm hết bài này hôm nay! Mai quay lại nhé 🌙';
       } else {
         const remaining = info.totalInTopic - newLearnedTotal;
-        progressMsg = '📚 Còn ' + remaining + ' câu nữa trong chủ đề này. Tiếp tục lần sau nhé!';
+        progressMsg = '📚 Còn ' + remaining + ' câu nữa trong chủ đề này.';
       }
       
       let praiseMsg = '';
@@ -218,12 +196,19 @@ const Quiz = {
       resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:600">' + progressMsg + '</span>';
     }
     
-    if (ratio >= 0.8) {
-      this._confettiBurst();
-    }
+    if (ratio >= 0.8) this._confettiBurst();
     
-    API.saveScore(App.playerName, this.score, total)
-      .then(() => App.loadLeaderboard());
+    // Tính thời gian học (giây) - 1 lần lưu cho cả điểm + log
+    const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
+    
+    API.saveScore(
+      App.playerName, 
+      this.score, 
+      total,
+      this.currentSubject,
+      this.currentTopic.name,
+      durationSec
+    ).then(() => App.loadLeaderboard());
   },
 
   _shuffle(arr) {
@@ -263,17 +248,12 @@ const Quiz = {
   }
 };
 
-// =============================================
-// SOUND - Web Audio API
-// =============================================
-
 const Sound = {
   ctx: null,
   _getCtx() {
     if (!this.ctx) {
-      try {
-        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-      } catch (e) { console.warn('Audio not supported'); }
+      try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+      catch (e) { console.warn('Audio not supported'); }
     }
     return this.ctx;
   },
@@ -296,32 +276,21 @@ const Sound = {
   _melody(notes) {
     const self = this;
     notes.forEach(function(note) {
-      const freq = note[0];
-      const delay = note[1];
-      const dur = note[2] || 0.15;
-      setTimeout(function() { self._tone(freq, dur, 'triangle'); }, delay);
+      setTimeout(function() { self._tone(note[0], note[2] || 0.15, 'triangle'); }, note[1]);
     });
   },
   play(type) {
     switch (type) {
-      case 'correct':
-        this._melody([[523.25, 0], [659.25, 80], [783.99, 160]]);
-        break;
+      case 'correct': this._melody([[523.25, 0], [659.25, 80], [783.99, 160]]); break;
       case 'wrong':
         this._tone(220, 0.2, 'square', 0.08);
         const self = this;
         setTimeout(function() { self._tone(196, 0.2, 'square', 0.08); }, 150);
         break;
-      case 'win':
-        this._melody([[523.25, 0], [659.25, 100], [783.99, 200], [1046.50, 300], [1046.50, 500]]);
-        break;
+      case 'win': this._melody([[523.25, 0], [659.25, 100], [783.99, 200], [1046.50, 300], [1046.50, 500]]); break;
     }
   }
 };
-
-// =============================================
-// REWARDS - sao, sticker, huy hiệu
-// =============================================
 
 const Rewards = {
   addStar(count) {

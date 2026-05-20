@@ -1,26 +1,22 @@
-/* ═══════════════════════════════════════════════
-   API.JS - v2: JSON tĩnh cho câu hỏi + Sheets cho BXH
-   ═══════════════════════════════════════════════ */
+// =============================================
+// API.JS v4 - saveScore tích hợp log đầy đủ
+// =============================================
 
 const API = {
   GS_URL: 'https://script.google.com/macros/s/AKfycbxWlSEXYxlQGeh5nMFGOpPUxoEai3u5_UkIT0KkB9dvsKH9q6_lY4M3BM8NLp7bf1nu/exec',
   QUESTIONS_URL: 'data/questions.json',
 
-  /** Lấy câu hỏi từ JSON tĩnh - cực nhanh */
   async getAllData() {
     try {
       const res = await fetch(this.QUESTIONS_URL);
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      console.log('✅ Loaded', data.subjects.length, 'subjects from JSON');
-      return data;
+      return await res.json();
     } catch (e) {
-      console.error('❌ getAllData error:', e);
+      console.error('getAllData error:', e);
       return null;
     }
   },
 
-  /** Lấy BXH từ Google Sheets */
   async getLeaderboard() {
     try {
       const res = await fetch(`${this.GS_URL}?action=getLeaderboard`);
@@ -32,8 +28,8 @@ const API = {
     }
   },
 
-  /** Lưu điểm vào Google Sheets */
-  async saveScore(name, score, total) {
+  /** Lưu điểm + log đầy đủ (subject, topic, duration) */
+  async saveScore(name, score, total, subject, topic, durationSec) {
     try {
       await fetch(this.GS_URL, {
         method: 'POST',
@@ -41,13 +37,30 @@ const API = {
           action: 'saveScore',
           name: name,
           score: score,
-          total: total
+          total: total,
+          subject: subject || '',
+          topic: topic || '',
+          duration: durationSec || 0
         })
       });
       return true;
     } catch (e) {
       console.error('saveScore error:', e);
       return false;
+    }
+  },
+
+  /** Lấy log của 1 bé trong N ngày */
+  async getLog(name, days) {
+    days = days || 30;
+    try {
+      const url = `${this.GS_URL}?action=getLog&name=${encodeURIComponent(name)}&days=${days}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return await res.json();
+    } catch (e) {
+      console.error('getLog error:', e);
+      return [];
     }
   }
 };

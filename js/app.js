@@ -1,10 +1,14 @@
-/* ═══════════════════════════════════════════════
-   APP.JS v3 - Khởi tạo & điều phối, có mini-tabs
-   ═══════════════════════════════════════════════ */
+// =============================================
+// APP.JS v4 - thêm PIN + Parent Dashboard
+// =============================================
 
 const App = {
   allData: null,
   playerName: '',
+
+  // PIN mặc định nếu lần đầu = "1234". Bố mẹ có thể đổi.
+  PIN_KEY: 'khoBaiTap_parentPin',
+  DEFAULT_PIN: '1234',
 
   async init() {
     this._bindEvents();
@@ -24,9 +28,7 @@ const App = {
 
   async _loadData() {
     this.allData = await API.getAllData();
-    if (this.playerName && this.allData) {
-      this._renderSubjects();
-    }
+    if (this.playerName && this.allData) this._renderSubjects();
   },
 
   async loadLeaderboard() {
@@ -41,12 +43,7 @@ const App = {
     const medals = ['🥇', '🥈', '🥉'];
     const rows = data.slice(0, 5).map((p, i) => {
       const icon = medals[i] || (i + 1);
-      return `
-        <tr>
-          <td class="lb-rank">${icon}</td>
-          <td class="lb-name"><b>${this._escape(p.name)}</b></td>
-          <td class="lb-score"><b>${p.totalScore} ⭐</b></td>
-        </tr>`;
+      return `<tr><td class="lb-rank">${icon}</td><td class="lb-name"><b>${this._escape(p.name)}</b></td><td class="lb-score"><b>${p.totalScore} ⭐</b></td></tr>`;
     }).join('');
 
     lbDiv.innerHTML = `<table class="lb-table">${rows}</table>`;
@@ -87,7 +84,6 @@ const App = {
   _renderSubjects() {
     const el = document.getElementById('subjectList');
     el.innerHTML = '';
-
     this.allData.subjects.forEach((s, i) => {
       const card = document.createElement('div');
       card.className = 'sub-card';
@@ -112,23 +108,225 @@ const App = {
     s.topics.forEach((t, tIdx) => {
       const card = document.createElement('div');
       card.className = 'topic-card';
-      card.innerHTML = `
-        <div class="topic-icon">${t.icon}</div>
-        <div class="topic-name">${this._escape(t.name)}</div>`;
-      card.addEventListener('click', () => Quiz.start(t));
+      card.innerHTML = `<div class="topic-icon">${t.icon}</div><div class="topic-name">${this._escape(t.name)}</div>`;
+      // Truyền cả tên môn để log
+      card.addEventListener('click', () => Quiz.start(t, s.name));
       list.appendChild(card);
     });
 
     this.showScreen('topic');
   },
 
-  /** Switch mini-tab (Shop / Inventory) */
   _switchMiniTab(target) {
     document.querySelectorAll('.mini-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.mini-content').forEach(c => c.classList.remove('active'));
-    
     document.querySelector(`.mini-tab[data-mini="${target}"]`).classList.add('active');
     document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
+  },
+
+  // ============================================
+  // PARENT DASHBOARD - khu vực bố mẹ
+  // ============================================
+
+  _openParentArea() {
+    // Reset input
+    document.getElementById('pinInput').value = '';
+    document.getElementById('pinError').classList.add('hidden');
+    
+    // Hiển thị hint nếu là PIN mặc định
+    const isDefault = !localStorage.getItem(this.PIN_KEY);
+    const hint = document.getElementById('pinHint');
+    if (isDefault) {
+      hint.textContent = '💡 Lần đầu truy cập: PIN mặc định là 1234. Hãy đổi sau khi vào.';
+    } else {
+      hint.textContent = '';
+    }
+    
+    this.showScreen('pin');
+    setTimeout(() => document.getElementById('pinInput').focus(), 100);
+  },
+
+  _checkPin() {
+    const input = document.getElementById('pinInput').value.trim();
+    const savedPin = localStorage.getItem(this.PIN_KEY) || this.DEFAULT_PIN;
+    
+    if (input === savedPin) {
+      document.getElementById('pinError').classList.add('hidden');
+      this._openDashboard();
+    } else {
+      document.getElementById('pinError').classList.remove('hidden');
+      document.getElementById('pinInput').value = '';
+      document.getElementById('pinInput').focus();
+    }
+  },
+
+  _changePin() {
+    const oldPin = prompt('Nhập PIN hiện tại:');
+    if (oldPin === null) return;
+    
+    const savedPin = localStorage.getItem(this.PIN_KEY) || this.DEFAULT_PIN;
+    if (oldPin !== savedPin) {
+      alert('PIN hiện tại không đúng!');
+      return;
+    }
+    
+    const newPin = prompt('Nhập PIN mới (4 số):');
+    if (newPin === null) return;
+    
+    if (!/^\d{4}$/.test(newPin)) {
+      alert('PIN phải là 4 chữ số!');
+      return;
+    }
+    
+    localStorage.setItem(this.PIN_KEY, newPin);
+    alert('Đã đổi PIN thành công!');
+  },
+
+  async _openDashboard() {
+    this.showScreen('parent');
+    
+    // Populate select bé học (từ BXH + tên bé đã đăng ký)
+    const select = document.getElementById('parentNameSelect');
+    select.innerHTML = '<option>Đang tải...</option>';
+    
+    const leaderboard = await API.getLeaderboard();
+    const names = leaderboard.map(p => p.name);
+    
+    // Thêm tên bé đang đăng nhập nếu chưa có
+    if (this.playerName && !names.includes(this.playerName)) {
+      names.unshift(this.playerName);
+    }
+    
+    if (names.length === 0) {
+      select.innerHTML = '<option>Chưa có bé nào</option>';
+      document.getElementById('summaryContent').innerHTML = '<div class="no-log">Chưa có dữ liệu học tập</div>';
+      document.getElementById('dailyContent').innerHTML = '';
+      return;
+    }
+    
+    select.innerHTML = names.map(n => `<option value="${this._escape(n)}">${this._escape(n)}</option>`).join('');
+    
+    // Mặc định chọn bé hiện tại
+    if (this.playerName && names.includes(this.playerName)) {
+      select.value = this.playerName;
+    }
+    
+    await this._loadParentLog(select.value);
+  },
+
+  async _loadParentLog(name) {
+    document.getElementById('summaryContent').innerHTML = '<div class="loading-text">Đang tải...</div>';
+    document.getElementById('dailyContent').innerHTML = '<div class="loading-text">Đang tải...</div>';
+    
+    const logs = await API.getLog(name, 30);
+    
+    if (!logs || logs.length === 0) {
+      document.getElementById('summaryContent').innerHTML = '<div class="no-log">Chưa có dữ liệu học tập trong 30 ngày qua</div>';
+      document.getElementById('dailyContent').innerHTML = '';
+      return;
+    }
+    
+    this._renderSummary(logs);
+    this._renderDailyLog(logs);
+  },
+
+  _renderSummary(logs) {
+    // Tóm tắt 7 ngày gần nhất
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const recent = logs.filter(l => new Date(l.time) >= sevenDaysAgo);
+    
+    if (recent.length === 0) {
+      document.getElementById('summaryContent').innerHTML = '<div class="no-log">Không có hoạt động học trong 7 ngày qua</div>';
+      return;
+    }
+    
+    const totalSessions = recent.length;
+    const totalQ = recent.reduce((s, l) => s + (l.total || 0), 0);
+    const totalCorrect = recent.reduce((s, l) => s + (l.correct || 0), 0);
+    const totalSec = recent.reduce((s, l) => s + (l.duration || 0), 0);
+    const accuracy = totalQ > 0 ? Math.round(totalCorrect / totalQ * 100) : 0;
+    const totalMin = Math.round(totalSec / 60);
+    
+    document.getElementById('summaryContent').innerHTML = `
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-card-icon">📚</div>
+          <div class="summary-card-value">${totalSessions}</div>
+          <div class="summary-card-label">Lượt học</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-icon">⏱️</div>
+          <div class="summary-card-value">${totalMin}</div>
+          <div class="summary-card-label">Phút</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-icon">✅</div>
+          <div class="summary-card-value">${totalCorrect}/${totalQ}</div>
+          <div class="summary-card-label">Câu đúng</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-icon">🎯</div>
+          <div class="summary-card-value">${accuracy}%</div>
+          <div class="summary-card-label">Tỷ lệ đúng</div>
+        </div>
+      </div>
+    `;
+  },
+
+  _renderDailyLog(logs) {
+    // Nhóm theo ngày
+    const byDate = {};
+    logs.forEach(log => {
+      const d = new Date(log.time);
+      const key = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      if (!byDate[key]) byDate[key] = [];
+      byDate[key].push(log);
+    });
+    
+    const todayKey = (() => {
+      const n = new Date();
+      return n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0') + '-' + String(n.getDate()).padStart(2, '0');
+    })();
+    
+    const sortedDates = Object.keys(byDate).sort().reverse();
+    let html = '';
+    
+    sortedDates.forEach(dateKey => {
+      const isToday = dateKey === todayKey;
+      const d = new Date(dateKey);
+      const days = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
+      const dateLabel = isToday 
+        ? '📅 Hôm nay - ' + d.getDate() + '/' + (d.getMonth() + 1)
+        : days[d.getDay()] + ', ' + d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
+      
+      html += `<div class="day-group">`;
+      html += `<div class="day-header ${isToday ? 'today' : ''}">${dateLabel}</div>`;
+      
+      byDate[dateKey].forEach(log => {
+        const ratio = log.total > 0 ? log.correct / log.total : 0;
+        const ratioClass = ratio >= 0.8 ? 'good' : (ratio >= 0.5 ? 'warning' : 'bad');
+        
+        const time = new Date(log.time);
+        const timeStr = String(time.getHours()).padStart(2, '0') + ':' + String(time.getMinutes()).padStart(2, '0');
+        const durationMin = Math.round((log.duration || 0) / 60);
+        const durStr = durationMin > 0 ? ' (' + durationMin + ' phút)' : '';
+        
+        html += `
+          <div class="log-entry ${ratioClass}">
+            <div class="log-time">${timeStr}${durStr}</div>
+            <div class="log-subject">
+              ${this._escape(log.subject)}
+              <span class="topic">/ ${this._escape(log.topic)}</span>
+            </div>
+            <div class="log-score ${ratioClass}">${log.correct}/${log.total}</div>
+          </div>`;
+      });
+      
+      html += `</div>`;
+    });
+    
+    document.getElementById('dailyContent').innerHTML = html;
   },
 
   _bindEvents() {
@@ -153,12 +351,9 @@ const App = {
       Rewards.redeemBadge();
     });
 
-    // Shop buttons (mới: dùng class shop-btn-mini)
     document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const item = btn.dataset.item;
-        const cost = parseInt(btn.dataset.cost);
-        Rewards.buyItem(item, cost);
+        Rewards.buyItem(btn.dataset.item, parseInt(btn.dataset.cost));
       });
     });
 
@@ -173,12 +368,32 @@ const App = {
       btn.addEventListener('click', () => this.showScreen(btn.dataset.screen));
     });
 
-    // Mini tabs (Shop / Inventory)
     document.querySelectorAll('.mini-tab[data-mini]').forEach(tab => {
       tab.addEventListener('click', () => this._switchMiniTab(tab.dataset.mini));
     });
 
-    // Footer
+    // PIN screen
+    document.getElementById('footerParent').addEventListener('click', e => {
+      e.preventDefault();
+      this._openParentArea();
+    });
+
+    document.getElementById('btnPinSubmit').addEventListener('click', () => this._checkPin());
+    document.getElementById('btnPinBack').addEventListener('click', () => {
+      this.showScreen(this.playerName ? 'subject' : 'register');
+    });
+    
+    document.getElementById('pinInput').addEventListener('keypress', e => {
+      if (e.key === 'Enter') this._checkPin();
+    });
+
+    // Parent dashboard
+    document.getElementById('btnChangePin').addEventListener('click', () => this._changePin());
+    document.getElementById('parentNameSelect').addEventListener('change', e => {
+      this._loadParentLog(e.target.value);
+    });
+
+    // Footer About
     const aboutLink = document.getElementById('footerAbout');
     if (aboutLink) {
       aboutLink.addEventListener('click', (e) => {
