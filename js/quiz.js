@@ -12,6 +12,9 @@ const Quiz = {
   currentTopicId: null,
   sessionInfo: null,
   sessionStartTime: null,
+  questionStartedAt: null,
+  questionGuard: null,
+  usedHintThisQuestion: false,
 
   TARGET_PER_SESSION: 20,
 
@@ -20,48 +23,85 @@ const Quiz = {
     this.currentSubject = subjectName || '';
     this.currentTopicId = (topic.id || topic.name).toString();
     this.sessionStartTime = Date.now();
-    
-    const progress = Storage.getTopicProgress(this.currentTopicId);
+
     const totalInTopic = topic.questions.length;
-    
-    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
-    const sessionSize = Math.ceil(totalInTopic / numSessions);
-    
-    const allIndices = topic.questions.map((_, i) => i);
-    const notLearned = allIndices.filter(i => !progress.learned.includes(i));
-    
-    let selectedIndices;
-    let currentSession;
-    let isAllDone = false;
-    
-    if (notLearned.length === 0) {
-      isAllDone = true;
-      if (progress.wrong.length > 0) {
-        selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
-      } else {
-        selectedIndices = this._shuffle(allIndices).slice(0, sessionSize);
+    const progress = Storage.getTopicProgress(this.currentTopicId);
+    const sessionSize = Math.min(this.TARGET_PER_SESSION, Math.max(1, totalInTopic));
+
+    // Adaptive mode: chọn câu theo mastery + spaced repetition + câu yếu.
+    if (window.LearningEngine && App.allData) {
+      const selected = window.LearningEngine.selectNextQuestion({
+        db: App.allData,
+        learnerId: App.playerName || 'guest',
+        subjectId: null,
+        topicId: this.currentTopicId,
+        count: sessionSize
+      }) || [];
+
+      this.questions = Array.isArray(selected) ? selected : [selected];
+
+      // Nếu kho câu trong topic chưa đủ hoặc đã bị lọc recent quá nhiều, sinh thêm câu rule-based an toàn.
+      while (this.questions.length < sessionSize) {
+        this.questions.push(window.LearningEngine.generateQuestion({
+          topicId: this.currentTopicId,
+          difficulty: Math.min(3, 1 + Math.floor(this.questions.length / 7)),
+          seed: Date.now() + this.questions.length
+        }));
       }
-      currentSession = numSessions;
-    } else if (notLearned.length <= sessionSize) {
-      selectedIndices = this._shuffle(notLearned);
-      currentSession = numSessions;
+
+      this.questions = this.questions.slice(0, sessionSize).map((q, i) => ({
+        ...q,
+        _idx: typeof q._idx === 'number' ? q._idx : i
+      }));
+
+      this.sessionInfo = {
+        current: 1,
+        total: 1,
+        isAllDone: progress.learned.length >= totalInTopic,
+        learnedBefore: progress.learned.length,
+        totalInTopic: totalInTopic,
+        adaptive: true
+      };
     } else {
-      selectedIndices = this._shuffle(notLearned).slice(0, sessionSize);
-      currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
+      // Fallback giữ logic cũ nếu LearningEngine chưa load.
+      const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
+      const fallbackSessionSize = Math.ceil(totalInTopic / numSessions);
+      const allIndices = topic.questions.map((_, i) => i);
+      const notLearned = allIndices.filter(i => !progress.learned.includes(i));
+
+      let selectedIndices;
+      let currentSession;
+      let isAllDone = false;
+
+      if (notLearned.length === 0) {
+        isAllDone = true;
+        if (progress.wrong.length > 0) {
+          selectedIndices = this._shuffle(progress.wrong).slice(0, fallbackSessionSize);
+        } else {
+          selectedIndices = this._shuffle(allIndices).slice(0, fallbackSessionSize);
+        }
+        currentSession = numSessions;
+      } else if (notLearned.length <= fallbackSessionSize) {
+        selectedIndices = this._shuffle(notLearned);
+        currentSession = numSessions;
+      } else {
+        selectedIndices = this._shuffle(notLearned).slice(0, fallbackSessionSize);
+        currentSession = Math.floor(progress.learned.length / fallbackSessionSize) + 1;
+      }
+
+      this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
+      this.sessionInfo = {
+        current: currentSession,
+        total: numSessions,
+        isAllDone: isAllDone,
+        learnedBefore: progress.learned.length,
+        totalInTopic: totalInTopic
+      };
     }
-    
-    this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
+
     this.curIdx = 0;
     this.score = 0;
-    
-    this.sessionInfo = {
-      current: currentSession,
-      total: numSessions,
-      isAllDone: isAllDone,
-      learnedBefore: progress.learned.length,
-      totalInTopic: totalInTopic
-    };
-    
+
     App.showScreen('quiz');
     this.render();
   },
@@ -72,6 +112,11 @@ const Quiz = {
     const total = this.questions.length;
     const info = this.sessionInfo;
 
+    this.questionStartedAt = Date.now();
+    this.usedHintThisQuestion = false;
+    if (this.questionGuard && this.questionGuard.cleanup) this.questionGuard.cleanup();
+    this.questionGuard = window.LearningEngine ? window.LearningEngine.installSessionGuard() : null;
+
     let titleText = this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     if (info.total > 1) {
       if (info.isAllDone) {
@@ -80,6 +125,7 @@ const Quiz = {
         titleText += ' · Lần ' + info.current + '/' + info.total;
       }
     }
+    if (info.adaptive) titleText += ' · Adaptive 🧠';
     document.getElementById('quizTopicName').textContent = titleText;
     
     document.getElementById('qText').textContent = q.q;
@@ -100,6 +146,19 @@ const Quiz = {
     });
   },
 
+  _recordAdaptiveAnswer(q, selectedIndex) {
+    if (!window.LearningEngine || !q) return;
+    const guardData = this.questionGuard ? this.questionGuard.get() : { visibilityChanges: 0 };
+    window.LearningEngine.recordAnswer({
+      learnerId: App.playerName || 'guest',
+      question: q,
+      selectedIndex: selectedIndex,
+      startedAt: this.questionStartedAt,
+      usedHint: this.usedHintThisQuestion,
+      visibilityChanges: guardData.visibilityChanges || 0
+    });
+  },
+
   checkAnswer(btn, selected, correct) {
     const q = this.questions[this.curIdx];
     const fb = document.getElementById('feedback');
@@ -107,6 +166,7 @@ const Quiz = {
     const fbAns = document.getElementById('fbAns');
 
     if (selected === correct) {
+      this._recordAdaptiveAnswer(q, selected);
       Sound.play('correct');
       btn.classList.add('correct');
 
@@ -131,6 +191,8 @@ const Quiz = {
         ? 'Xem kết quả 🎉' 
         : 'Câu tiếp theo →';
     } else {
+      this.usedHintThisQuestion = true;
+      this._recordAdaptiveAnswer(q, selected);
       Sound.play('wrong');
       btn.classList.add('wrong');
       btn.disabled = true;
@@ -144,6 +206,7 @@ const Quiz = {
 
   next() {
     const q = this.questions[this.curIdx];
+    if (this.questionGuard && this.questionGuard.cleanup) this.questionGuard.cleanup();
     this._markLearned(q._idx, this.canEarnPoint);
     
     this.curIdx++;
@@ -155,6 +218,7 @@ const Quiz = {
   },
 
   _markLearned(qIdx, wasCorrect) {
+    if (typeof qIdx !== 'number') return;
     const progress = Storage.getTopicProgress(this.currentTopicId);
     if (!progress.learned.includes(qIdx)) {
       progress.learned.push(qIdx);
@@ -321,20 +385,6 @@ const Rewards = {
 
   redeemBadge() {
     const data = Storage.load();
-    
-    // CHECK xem đã có huy chương nào rồi không
-    if (data.currentBadge) {
-      const badgeNames = {
-        'gold': '🥇 Huy chương Vàng',
-        'silver': '🥈 Huy chương Bạc',
-        'bronze': '🥉 Huy chương Đồng'
-      };
-      const currentBadgeName = badgeNames[data.currentBadge] || 'Huy chương';
-      alert('Con đã có ' + currentBadgeName + ' rồi! 🎉\n\nMau học thêm để đạt huy chương cao hơn nhé! 💪');
-      return;
-    }
-    
-    // Nếu chưa có huy chương thì mới cho phép đổi
     let badge = null;
     let cost = 0;
     if (data.stars >= 50) { badge = 'gold'; cost = 50; }
@@ -348,14 +398,6 @@ const Rewards = {
     data.currentBadge = badge;
     Storage.save(data);
     this.updateUI();
-    
-    // Thông báo thành công
-    const badgeNames = {
-      'gold': '🥇 Huy chương Vàng',
-      'silver': '🥈 Huy chương Bạc',
-      'bronze': '🥉 Huy chương Đồng'
-    };
-    alert('Chúc mừng! Con đã đạt được ' + badgeNames[badge] + '! 🎊');
   },
 
   _calcTitle(totalCorrect) {
