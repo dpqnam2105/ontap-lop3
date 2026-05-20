@@ -5905,30 +5905,6 @@
               "difficulty": 2
             },
             {
-              "q": "1, 1, 2, 3, 5, 8, ___",
-              "choices": [
-                "10",
-                "11",
-                "13",
-                "15"
-              ],
-              "a": 2,
-              "hint": "Cộng 2 số liền trước",
-              "difficulty": 3
-            },
-            {
-              "q": "1, 2, 3, 5, 8, 13, ___",
-              "choices": [
-                "18",
-                "19",
-                "21",
-                "23"
-              ],
-              "a": 2,
-              "hint": "5+8=13, 8+13=21",
-              "difficulty": 3
-            },
-            {
               "q": "Số nào khác nhóm: 2, 4, 6, 7, 8?",
               "choices": [
                 "2",
@@ -6132,25 +6108,25 @@
             {
               "q": "Hôm nay Thứ Hai, 10 ngày nữa là?",
               "choices": [
-                "Thứ Hai",
                 "Thứ Ba",
                 "Thứ Tư",
-                "Thứ Năm"
+                "Thứ Năm",
+                "Thứ Sáu"
               ],
               "a": 2,
-              "hint": "10÷7=1 tuần 3 ngày → T2+3=T5? T2+3=T5. Thứ Năm",
+              "hint": "10 ngày = 1 tuần + 3 ngày. Thứ Hai + 3 ngày = Thứ Năm",
               "difficulty": 2
             },
             {
               "q": "Gà + Vịt = 10 con, Chân gà + chân vịt = 28. Số gà?",
               "choices": [
-                "3",
                 "4",
                 "5",
-                "6"
+                "6",
+                "7"
               ],
-              "a": 1,
-              "hint": "g×2+(10-g)×2=20... Không đúng. Gà 2 chân, vịt 2 chân? Đều 2 chân thì không đủ dữ liệu. Thực ra bài này giả sử vịt 4 chân? → g×2+(10-g)×4=28 → -2g=-12 → g=6... Thử: 6×2+4×4=12+16=28 ✓",
+              "a": 2,
+              "hint": "Gà 2 chân, Vịt 4 chân. Thử: 6 gà × 2 + 4 vịt × 4 = 12 + 16 = 28 ✓",
               "difficulty": 3
             },
             {
@@ -6164,42 +6140,6 @@
               "a": 1,
               "hint": "Từ bậc 0 lên bậc 10 = 10 bước",
               "difficulty": 2
-            },
-            {
-              "q": "Bao nhiêu người bắt tay nếu 4 người, mỗi cặp 1 lần?",
-              "choices": [
-                "4",
-                "5",
-                "6",
-                "7"
-              ],
-              "a": 2,
-              "hint": "C(4,2)=6",
-              "difficulty": 3
-            },
-            {
-              "q": "5 người, mỗi người bắt tay một lần. Tổng?",
-              "choices": [
-                "8",
-                "9",
-                "10",
-                "12"
-              ],
-              "a": 2,
-              "hint": "C(5,2)=10",
-              "difficulty": 3
-            },
-            {
-              "q": "Nếu 3 người làm 3 ngày xong. 6 người làm xong mấy ngày?",
-              "choices": [
-                "1",
-                "1.5",
-                "2",
-                "3"
-              ],
-              "a": 1,
-              "hint": "Gấp đôi người → 1.5 ngày",
-              "difficulty": 3
             },
             {
               "q": "Có bao nhiêu tam giác trong hình: △△△ (3 tam giác nhỏ ghép)?",
@@ -6260,30 +6200,6 @@
               "a": 1,
               "hint": "Quy luật ○□ → ○",
               "difficulty": 1
-            },
-            {
-              "q": "Tổng 1+2+3+...+10 = ?",
-              "choices": [
-                "45",
-                "50",
-                "55",
-                "60"
-              ],
-              "a": 2,
-              "hint": "10×11÷2=55",
-              "difficulty": 3
-            },
-            {
-              "q": "Tổng 1+2+...+20 = ?",
-              "choices": [
-                "200",
-                "205",
-                "210",
-                "215"
-              ],
-              "a": 2,
-              "hint": "20×21÷2=210",
-              "difficulty": 3
             },
             {
               "q": "Có bao nhiêu số tự nhiên từ 1 đến 100?",
