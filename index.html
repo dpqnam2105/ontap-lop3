@@ -99,34 +99,15 @@
             <button class="shop-btn shop-btn-orange shop-btn-full" id="btnRedeemBadge">🏅 Đổi huy hiệu</button>
           </div>
 
-          <div class="card card-compact">
-            <div class="mini-tabs">
-              <button class="mini-tab active" data-mini="shop">🏪 Shop</button>
-              <button class="mini-tab" data-mini="inventory">🎒 Túi đồ</button>
+          <div class="card card-compact reward-side-card">
+            <div class="card-title-small">🎁 Cửa hàng đổi thưởng</div>
+            <p class="reward-side-text">Tích sao sau mỗi câu đúng để đổi sticker và nâng cấp huy hiệu.</p>
+            <button class="btn-primary shop-open-btn btn-nav" data-screen="shop">🏪 Mở cửa hàng</button>
+            <div class="mini-tabs inventory-tabs">
+              <button class="mini-tab active" data-mini="inventory">🎒 Túi đồ</button>
             </div>
-
-            <div class="mini-content active" id="miniShop">
-              <div class="shop-grid-compact">
-                <button class="shop-btn-mini" data-item="sticker_star.png" data-cost="10">
-                  <span class="shop-icon">⭐</span>
-                  <span class="shop-name">Ngôi sao</span>
-                  <span class="shop-cost">10 ⭐</span>
-                </button>
-                <button class="shop-btn-mini" data-item="sticker_smile.png" data-cost="20">
-                  <span class="shop-icon">😊</span>
-                  <span class="shop-name">Mặt cười</span>
-                  <span class="shop-cost">20 ⭐</span>
-                </button>
-                <button class="shop-btn-mini" data-item="sticker_bird.png" data-cost="30">
-                  <span class="shop-icon">🐱</span>
-                  <span class="shop-name">Con mèo</span>
-                  <span class="shop-cost">30 ⭐</span>
-                </button>
-              </div>
-            </div>
-
-            <div class="mini-content" id="miniInventory">
-              <div id="inventory-area" class="inventory-area">
+            <div class="mini-content active" id="miniInventory">
+              <div id="inventory-area" class="inventory-area inventory-preview">
                 <div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>
               </div>
             </div>
@@ -180,7 +161,85 @@
       </div>
     </section>
 
-    <!-- MÀN HÌNH 7: PIN BỐ MẸ -->
+    <!-- MÀN HÌNH 7: CỬA HÀNG ĐỔI THƯỞNG -->
+    <section class="screen" id="screenShop">
+      <div class="shop-page">
+        <aside class="shop-sidebar">
+          <div class="brand-pill">
+            <div class="brand-avatar">🐰</div>
+            <div>
+              <div class="brand-title">Kho Bài Tập</div>
+              <div class="brand-sub">Cửa hàng lớp 2</div>
+            </div>
+          </div>
+
+          <button class="shop-nav active">⭐ Phần thưởng</button>
+          <button class="shop-nav" data-screen="subject">🏠 Về trang học</button>
+
+          <div class="shop-bunny-card">
+            <div class="bunny-big">🐰</div>
+            <div>Học bài tập để tích sao và đổi quà nhé!</div>
+          </div>
+        </aside>
+
+        <div class="shop-main-panel">
+          <div class="shop-hero">
+            <div>
+              <div class="shop-kicker">🏪 Cửa hàng đổi thưởng</div>
+              <h2>Cửa hàng của bé</h2>
+              <p>Dùng sao để đổi sticker, huy hiệu và phần thưởng thú vị.</p>
+            </div>
+            <div class="shop-stars-card">
+              <div class="star-big">⭐</div>
+              <div><b id="shopStarCount">0</b><span>Sao của bạn</span></div>
+            </div>
+          </div>
+
+          <div class="shop-content-grid">
+            <section class="shop-card-panel shop-items-panel">
+              <div class="shop-panel-header">
+                <div>
+                  <h3>🎁 Phần thưởng</h3>
+                  <p>Mỗi phần thưởng chỉ cần đổi 1 lần.</p>
+                </div>
+                <select id="shopFilter" class="shop-filter" aria-label="Lọc phần thưởng">
+                  <option value="all">Tất cả</option>
+                  <option value="affordable">Đủ sao</option>
+                  <option value="owned">Đã sở hữu</option>
+                </select>
+              </div>
+              <div id="shopItems" class="reward-grid"></div>
+              <div class="shop-note">💡 Cố gắng học mỗi ngày để mở khóa thêm nhiều phần thưởng nhé!</div>
+            </section>
+
+            <aside class="shop-card-panel shop-status-panel">
+              <div class="badge-showcase">
+                <h3>🏅 Huy hiệu của bạn</h3>
+                <div id="shopBadgePreview" class="badge-preview-empty">Chưa có huy hiệu</div>
+                <button class="shop-upgrade-btn" id="btnRedeemBadgeShop">Nâng cấp huy hiệu</button>
+              </div>
+
+              <div class="badge-upgrade-list">
+                <div class="upgrade-row"><span>🥉 Đồng</span><b>10 ⭐</b></div>
+                <div class="upgrade-row"><span>🥈 Bạc</span><b>20 ⭐</b></div>
+                <div class="upgrade-row"><span>🥇 Vàng</span><b>30 ⭐</b></div>
+              </div>
+
+              <div class="tip-box">
+                <b>🌟 Mẹo nhỏ</b>
+                <ul>
+                  <li>Hoàn thành bài tập để nhận sao.</li>
+                  <li>Sao càng nhiều, quà càng xịn.</li>
+                  <li>Ôn lại câu sai để tiến bộ nhanh hơn.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 8: PIN BỐ MẸ -->
     <section class="screen" id="screenPin">
       <div class="pin-wrap">
         <div class="card">
@@ -241,7 +300,6 @@
     </div>
   </footer>
 
-  <script src="data/questions.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/api.js"></script>
   <script src="js/learning-engine.js"></script>
