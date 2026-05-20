@@ -40,11 +40,9 @@
       <button class="btn-primary btn-blue" id="btnFeedback">💌 Góp ý & Đóng góp bài tập</button>
     </section>
 
-    <!-- MÀN HÌNH 2: CHỌN MÔN (layout 2 cột) -->
+    <!-- MÀN HÌNH 2: CHỌN MÔN -->
     <section class="screen" id="screenSubject">
       <div class="subject-layout">
-
-        <!-- CỘT TRÁI: MÔN HỌC (ưu tiên cao) -->
         <div class="subject-main">
           <div class="card-section-header">
             <h2 class="section-title">📚 Hôm nay con học gì?</h2>
@@ -53,10 +51,7 @@
           <div id="subjectList" class="subject-list"></div>
         </div>
 
-        <!-- CỘT PHẢI: THÔNG TIN + SHOP + TÚI ĐỒ -->
         <aside class="subject-sidebar">
-
-          <!-- Thông tin bé -->
           <div class="card card-compact">
             <div class="card-title-small" id="subName">Chào con!</div>
             <div class="star-area">
@@ -67,7 +62,6 @@
             <button class="shop-btn shop-btn-orange shop-btn-full" id="btnRedeemBadge">🏅 Đổi huy hiệu</button>
           </div>
 
-          <!-- Shop + Túi đồ gộp lại, có tab -->
           <div class="card card-compact">
             <div class="mini-tabs">
               <button class="mini-tab active" data-mini="shop">🏪 Shop</button>
@@ -100,7 +94,6 @@
               </div>
             </div>
           </div>
-
         </aside>
       </div>
     </section>
@@ -150,6 +143,52 @@
       </div>
     </section>
 
+    <!-- MÀN HÌNH 6: NHẬP PIN BỐ MẸ -->
+    <section class="screen" id="screenPin">
+      <div class="pin-wrap">
+        <div class="card">
+          <div class="card-title">👨‍👩‍👧 Khu vực Bố Mẹ</div>
+          <div class="pin-desc">Nhập mã PIN 4 số để xem báo cáo học tập của con</div>
+          <input type="password" inputmode="numeric" maxlength="4" pattern="[0-9]*" 
+                 class="pin-input" id="pinInput" placeholder="••••" />
+          <div id="pinError" class="pin-error hidden">Sai mã PIN. Thử lại nhé!</div>
+          <button class="btn-primary mt-15" id="btnPinSubmit">Vào xem 🔓</button>
+          <button class="btn-secondary mt-15" id="btnPinBack">← Quay lại</button>
+          <div class="pin-hint" id="pinHint"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 7: BÁO CÁO BỐ MẸ -->
+    <section class="screen" id="screenParent">
+      <div class="parent-wrap">
+        <div class="quiz-hdr">
+          <button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
+          <div class="quiz-hdr-title">📊 Báo cáo học tập</div>
+          <button class="btn-nav" id="btnChangePin">🔑 Đổi PIN</button>
+        </div>
+
+        <div class="card card-compact">
+          <label class="parent-label">Xem báo cáo của:</label>
+          <select id="parentNameSelect" class="parent-select"></select>
+        </div>
+
+        <div class="card" id="parentSummary">
+          <h3 class="parent-section-title">📈 Tóm tắt 7 ngày gần nhất</h3>
+          <div id="summaryContent">
+            <div class="loading-text">Đang tải...</div>
+          </div>
+        </div>
+
+        <div class="card" id="parentDaily">
+          <h3 class="parent-section-title">📅 Chi tiết theo ngày</h3>
+          <div id="dailyContent">
+            <div class="loading-text">Đang tải...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -157,6 +196,7 @@
       <div class="footer-title">🐰 Kho Bài Tập</div>
       <div>Làm cùng tình yêu cho Anh Thư và các bé tiểu học Việt Nam</div>
       <div class="footer-links">
+        <a href="#" id="footerParent">👨‍👩‍👧 Khu vực Bố Mẹ</a>
         <a href="https://forms.gle/hE3gV5Uy6UodzrZn7" target="_blank">💌 Góp ý</a>
         <a href="#" id="footerAbout">ℹ️ Giới thiệu</a>
       </div>
