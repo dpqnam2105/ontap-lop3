@@ -391,6 +391,24 @@ const Rewards = {
     return map[badge] || null;
   },
 
+
+  SHOP_ITEMS: [
+    { id: 'star', name: 'Ngôi sao', icon: '⭐', file: 'sticker_star.png', cost: 10 },
+    { id: 'smile', name: 'Mặt cười', icon: '😊', file: 'sticker_smile.png', cost: 20 },
+    { id: 'cat', name: 'Con mèo', icon: '🐱', file: 'sticker_bird.png', cost: 30 },
+    { id: 'rabbit', name: 'Thỏ trắng', icon: '🐰', file: 'sticker_rabbit.png', cost: 40 },
+    { id: 'rocket', name: 'Tên lửa', icon: '🚀', file: 'sticker_rocket.png', cost: 50 },
+    { id: 'flower', name: 'Bông hoa', icon: '🌸', file: 'sticker_flower.png', cost: 60 },
+    { id: 'book', name: 'Sách hay', icon: '📚', file: 'sticker_book.png', cost: 70 },
+    { id: 'rainbow', name: 'Cầu vồng', icon: '🌈', file: 'sticker_rainbow.png', cost: 80 },
+    { id: 'trophy', name: 'Cúp vàng', icon: '🏆', file: 'sticker_trophy.png', cost: 100 },
+    { id: 'crown', name: 'Vương miện', icon: '👑', file: 'sticker_crown.png', cost: 150 }
+  ],
+
+  _shopItemMeta(file) {
+    return this.SHOP_ITEMS.find(item => item.file === file) || null;
+  },
+
   addStar(count) {
     const data = this._loadData();
     const oldTitle = this._calcTitle(data.totalCorrect);
@@ -408,9 +426,16 @@ const Rewards = {
   buyItem(item, cost) {
     const data = this._loadData();
     cost = Number(cost || 0);
+    const meta = this._shopItemMeta(item);
+    const itemName = meta ? meta.name : 'phần thưởng này';
+
+    if (data.inventory.includes(item)) {
+      alert('Con đã sở hữu ' + itemName + ' rồi nhé! 🎒');
+      return;
+    }
 
     if (data.stars < cost) {
-      alert('Chưa đủ sao để mua Sticker này rồi!');
+      alert('Chưa đủ sao để đổi ' + itemName + ' rồi! Hãy làm thêm bài nhé ⭐');
       return;
     }
 
@@ -419,12 +444,10 @@ const Rewards = {
 
     this._saveData(data);
     this.updateUI();
+    this.renderShop();
 
-    if (typeof App !== 'undefined' && App._switchMiniTab) {
-      setTimeout(() => App._switchMiniTab('inventory'), 300);
-    }
+    alert('Đổi thành công ' + itemName + '! 🎁');
   },
-
   redeemBadge() {
     const data = this._loadData();
 
@@ -492,36 +515,97 @@ const Rewards = {
     const starEl = document.getElementById('star-count');
     if (starEl) starEl.textContent = data.stars;
 
+    const shopStarEl = document.getElementById('shopStarCount');
+    if (shopStarEl) shopStarEl.textContent = data.stars;
+
     const titleEl = document.getElementById('title-area');
     if (titleEl) titleEl.textContent = this._calcTitle(data.totalCorrect);
 
     const badgeArea = document.getElementById('badge-area');
-    if (badgeArea) {
-      const meta = this._badgeMeta(data.currentBadge);
-      if (meta) {
-        const imgPath = 'images/' + meta.file;
-        badgeArea.innerHTML =
-          '<div class="badge-display" title="' + meta.label + '">' +
-            '<img src="' + imgPath + '" class="reward-img" alt="' + meta.label + '" width="60" ' +
-            'onerror="this.outerHTML=&quot;<div class=\\&quot;badge-fallback\\&quot; style=\\&quot;font-size:48px;line-height:60px\\&quot;>' + meta.icon + '</div>&quot;">' +
-            '<div style="font-size:0.78rem;font-weight:800;margin-top:4px;color:#E67E22">' + meta.label + '</div>' +
-          '</div>';
-      } else {
-        badgeArea.innerHTML = '';
-      }
-    }
+    if (badgeArea) this._renderBadgeInto(badgeArea, data.currentBadge, 'small');
+
+    const shopBadge = document.getElementById('shopBadgePreview');
+    if (shopBadge) this._renderBadgeInto(shopBadge, data.currentBadge, 'large');
 
     const invArea = document.getElementById('inventory-area');
     if (invArea) {
       invArea.innerHTML = data.inventory.length > 0
-        ? data.inventory.map(function(item) {
-            return '<img src="images/' + item + '" class="reward-img" alt="sticker" width="50">';
-          }).join(' ')
+        ? data.inventory.map((item) => {
+            const meta = this._shopItemMeta(item);
+            const icon = meta ? meta.icon : '🎁';
+            const label = meta ? meta.name : 'Sticker';
+            return '<span class="inventory-chip" title="' + label + '">' + icon + '</span>';
+          }).join('')
         : '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
     }
+
+    this.renderShop();
+  },
+
+  _renderBadgeInto(el, badge, size) {
+    const meta = this._badgeMeta(badge);
+    if (!meta) {
+      el.className = size === 'large' ? 'badge-preview-empty' : 'badge-area';
+      el.innerHTML = size === 'large' ? 'Chưa có huy hiệu' : '';
+      return;
+    }
+
+    const imgPath = 'images/' + meta.file;
+    const large = size === 'large';
+    el.className = large ? 'badge-preview-owned' : 'badge-area';
+    el.innerHTML =
+      '<div class="badge-display ' + (large ? 'badge-display-large' : '') + '" title="' + meta.label + '">' +
+        '<img src="' + imgPath + '" class="reward-img" alt="' + meta.label + '" width="' + (large ? '110' : '60') + '" ' +
+        'onerror="this.outerHTML=&quot;<div class=\&quot;badge-fallback\&quot;>' + meta.icon + '</div>&quot;">' +
+        '<div class="badge-label">' + meta.label + '</div>' +
+      '</div>';
+  },
+
+  renderShop() {
+    const el = document.getElementById('shopItems');
+    if (!el) return;
+
+    const data = this._loadData();
+    const filterEl = document.getElementById('shopFilter');
+    const filter = filterEl ? filterEl.value : 'all';
+
+    let items = this.SHOP_ITEMS.slice();
+    if (filter === 'affordable') items = items.filter(item => data.stars >= item.cost && !data.inventory.includes(item.file));
+    if (filter === 'owned') items = items.filter(item => data.inventory.includes(item.file));
+
+    if (items.length === 0) {
+      el.innerHTML = '<div class="shop-empty">Chưa có phần thưởng phù hợp bộ lọc này.</div>';
+      return;
+    }
+
+    el.innerHTML = items.map(item => {
+      const owned = data.inventory.includes(item.file);
+      const affordable = data.stars >= item.cost;
+      const disabled = owned || !affordable;
+      const btnText = owned ? 'Đã có' : (affordable ? 'Đổi' : 'Thiếu sao');
+      return '<div class="reward-card ' + (owned ? 'owned' : '') + '">' +
+        '<div class="reward-icon">' + item.icon + '</div>' +
+        '<div class="reward-name">' + item.name + '</div>' +
+        '<div class="reward-cost">' + item.cost + ' ⭐</div>' +
+        '<button class="reward-buy-btn" data-item="' + item.file + '" data-cost="' + item.cost + '" ' + (disabled ? 'disabled' : '') + '>' + btnText + '</button>' +
+      '</div>';
+    }).join('');
+
+    el.querySelectorAll('.reward-buy-btn:not(:disabled)').forEach(btn => {
+      btn.addEventListener('click', () => this.buyItem(btn.dataset.item, parseInt(btn.dataset.cost, 10)));
+    });
   }
 };
 
 // Cho phép debug dễ hơn trên Console nếu cần:
 // window.RewardsApp.updateUI(), window.RewardsApp._loadData()
 window.RewardsApp = Rewards;
+
+document.addEventListener('DOMContentLoaded', function() {
+  Rewards.renderShop();
+  Rewards.updateUI();
+  const filter = document.getElementById('shopFilter');
+  if (filter) filter.addEventListener('change', function() { Rewards.renderShop(); });
+  const shopBadgeBtn = document.getElementById('btnRedeemBadgeShop');
+  if (shopBadgeBtn) shopBadgeBtn.addEventListener('click', function() { Rewards.redeemBadge(); });
+});
