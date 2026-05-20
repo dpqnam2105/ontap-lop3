@@ -5,300 +5,199 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🌟 Kho Bài Tập – Học cùng Anh Thư</title>
   <meta name="description" content="Trang ôn tập kiến thức tiểu học cho các bé - Toán, Tiếng Việt, Tiếng Anh.">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:,">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="header-content">
-      <span class="header-logo">🌟</span>
-      <div class="header-title">Kho Bài Tập</div>
-      <div class="header-subtitle">Học cùng Anh Thư & các bé tiểu học 🐰</div>
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- MÀN HÌNH 1: ĐĂNG KÝ -->
-    <section class="screen active" id="screenRegister">
-      <div class="register-grid">
-        <div class="card">
-          <div class="card-title">Chào con! Nhập tên để bắt đầu:</div>
-          <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
-          <button class="btn-primary mt-15" id="btnStart" disabled>Vào học thôi! 🚀</button>
-        </div>
-
-        <div class="card">
-          <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
-          <div id="lbList">
-            <div class="loading-text">Đang tải xếp hạng...</div>
-          </div>
+  <div class="app-shell">
+    <aside class="side-rail">
+      <div class="brand-block">
+        <div class="brand-bunny">🐰</div>
+        <div>
+          <div class="brand-name">Kho Bài Tập</div>
+          <div class="brand-grade">Lớp 2</div>
         </div>
       </div>
 
-      <button class="btn-primary btn-blue" id="btnFeedback">💌 Góp ý & Đóng góp bài tập</button>
-    </section>
+      <button class="rail-btn btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+      <button class="rail-btn btn-nav" data-screen="grade">🎓 <span>Chọn lớp</span></button>
+      <button class="rail-btn btn-nav" data-screen="shop">⭐ <span>Phần thưởng</span></button>
+      <a class="rail-btn rail-link" href="#" id="footerParent">🏅 <span>Bố mẹ</span></a>
 
-    <!-- MÀN HÌNH 2: CHỌN LỚP (MỚI) -->
-    <section class="screen" id="screenGrade">
-      <div class="card-section-header" style="text-align:center">
-        <h2 class="section-title">🎓 Con đang học lớp mấy?</h2>
-        <div class="section-subtitle">Chọn lớp của con để vào học nhé!</div>
+      <div class="rail-mascot">
+        <div class="mascot-face">🐰</div>
+        <div class="mascot-text">Học bài để tích sao và đổi phần thưởng nhé!</div>
       </div>
+    </aside>
 
-      <div class="grade-grid">
-        <div class="grade-card grade-active" data-grade="lop2">
-          <div class="grade-icon">📗</div>
-          <div class="grade-name">Lớp 2</div>
-          <div class="grade-status">✅ Đang mở</div>
+    <div class="app-content">
+      <header class="topbar">
+        <div>
+          <div class="top-kicker">Học cùng Anh Thư & các bé tiểu học</div>
+          <h1>🌟 Kho Bài Tập</h1>
         </div>
-
-        <div class="grade-card grade-locked" data-grade="lop3">
-          <div class="grade-icon">📘</div>
-          <div class="grade-name">Lớp 3</div>
-          <div class="grade-status">🌴 Nghỉ hè</div>
+        <div class="top-actions">
+          <button class="pill-action" id="btnFeedback">💌 Góp ý</button>
+          <div class="star-wallet">⭐ <span id="star-count">0</span><small>sao</small></div>
         </div>
+      </header>
 
-        <div class="grade-card grade-locked" data-grade="lop4">
-          <div class="grade-icon">📙</div>
-          <div class="grade-name">Lớp 4</div>
-          <div class="grade-status">🌴 Nghỉ hè</div>
-        </div>
-
-        <div class="grade-card grade-locked" data-grade="lop5">
-          <div class="grade-icon">📕</div>
-          <div class="grade-name">Lớp 5</div>
-          <div class="grade-status">🌴 Nghỉ hè</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MÀN HÌNH 3: CHỌN MÔN -->
-    <section class="screen" id="screenSubject">
-      <div class="subject-layout">
-        <div class="subject-main">
-          <div class="card-section-header">
-            <div class="back-grade-row">
-              <button class="btn-nav" data-screen="grade">← <span>Đổi lớp</span></button>
-              <h2 class="section-title" id="currentGradeLabel">📚 Lớp 2 - Học gì hôm nay?</h2>
+      <main class="main">
+        <section class="screen active" id="screenRegister">
+          <div class="welcome-grid">
+            <div class="hero-card">
+              <div class="hero-badge">🐰 Chào con!</div>
+              <h2>Vào học thật vui hôm nay nhé</h2>
+              <p>Nhập tên để lưu sao, huy hiệu và tiến độ học tập của con.</p>
+              <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
+              <button class="btn-primary mt-15" id="btnStart" disabled>Vào học thôi! 🚀</button>
             </div>
-            <div class="section-subtitle">Chọn môn học con thích nhé!</div>
-          </div>
-          <div id="subjectList" class="subject-list"></div>
-        </div>
 
-        <aside class="subject-sidebar">
-          <div class="card card-compact">
-            <div class="card-title-small" id="subName">Chào con!</div>
-            <div class="star-area">
-              ⭐ <span id="star-count">0</span> sao
-            </div>
-            <div id="title-area" class="title-tag">🌱 Người mới bắt đầu</div>
-            <div id="badge-area" class="badge-area"></div>
-            <button class="shop-btn shop-btn-orange shop-btn-full" id="btnRedeemBadge">🏅 Đổi huy hiệu</button>
-          </div>
-
-          <div class="card card-compact reward-side-card">
-            <div class="card-title-small">🎁 Cửa hàng đổi thưởng</div>
-            <p class="reward-side-text">Tích sao sau mỗi câu đúng để đổi sticker và nâng cấp huy hiệu.</p>
-            <button class="btn-primary shop-open-btn btn-nav" data-screen="shop">🏪 Mở cửa hàng</button>
-            <div class="mini-tabs inventory-tabs">
-              <button class="mini-tab active" data-mini="inventory">🎒 Túi đồ</button>
-            </div>
-            <div class="mini-content active" id="miniInventory">
-              <div id="inventory-area" class="inventory-area inventory-preview">
-                <div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>
-              </div>
+            <div class="leaderboard-card card">
+              <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
+              <div id="lbList"><div class="loading-text">Đang tải xếp hạng...</div></div>
             </div>
           </div>
-        </aside>
-      </div>
-    </section>
+        </section>
 
-    <!-- MÀN HÌNH 4: CHỌN CHỦ ĐỀ -->
-    <section class="screen" id="screenTopic">
-      <div class="quiz-hdr">
-        <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
-        <div id="topicMenuTitle" class="quiz-hdr-title">Chọn chủ đề</div>
-      </div>
-      <div id="topicList" class="topic-list"></div>
-    </section>
-
-    <!-- MÀN HÌNH 5: QUIZ -->
-    <section class="screen" id="screenQuiz">
-      <div class="quiz-wrap">
-        <div class="quiz-hdr">
-          <button class="btn-nav" data-screen="topic">← <span>Quay lại</span></button>
-          <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
-        </div>
-        <div class="prog-bar">
-          <div class="prog-fill" id="progFill"></div>
-        </div>
-        <div class="card">
-          <div class="quiz-topic-name" id="quizTopicName"></div>
-          <div id="qText" class="q-text"></div>
-        </div>
-        <div class="answers" id="ansGrid"></div>
-        <div class="feedback" id="feedback">
-          <div id="fbText" class="fb-text"></div>
-          <div id="fbAns" class="fb-ans"></div>
-        </div>
-        <button class="btn-next hidden" id="btnNext">Câu tiếp theo →</button>
-      </div>
-    </section>
-
-    <!-- MÀN HÌNH 6: KẾT QUẢ -->
-    <section class="screen" id="screenResult">
-      <div class="result-wrap">
-        <div class="card">
-          <div class="result-emoji">🎉</div>
-          <div class="result-title">Hoàn thành rồi!</div>
-          <div id="resScore" class="result-score">0/10</div>
-          <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
-          <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- MÀN HÌNH 7: CỬA HÀNG ĐỔI THƯỞNG -->
-    <section class="screen" id="screenShop">
-      <div class="shop-page">
-        <aside class="shop-sidebar">
-          <div class="brand-pill">
-            <div class="brand-avatar">🐰</div>
-            <div>
-              <div class="brand-title">Kho Bài Tập</div>
-              <div class="brand-sub">Cửa hàng lớp 2</div>
-            </div>
+        <section class="screen" id="screenGrade">
+          <div class="page-heading centered">
+            <div class="heading-icon">🎓</div>
+            <h2>Con đang học lớp mấy?</h2>
+            <p>Chọn lớp của con để vào học nhé!</p>
           </div>
-
-          <button class="shop-nav active">⭐ Phần thưởng</button>
-          <button class="shop-nav" data-screen="subject">🏠 Về trang học</button>
-
-          <div class="shop-bunny-card">
-            <div class="bunny-big">🐰</div>
-            <div>Học bài tập để tích sao và đổi quà nhé!</div>
+          <div class="grade-grid">
+            <div class="grade-card grade-active" data-grade="lop2"><div class="grade-icon">📗</div><div class="grade-name">Lớp 2</div><div class="grade-status">✅ Đang mở</div></div>
+            <div class="grade-card grade-locked" data-grade="lop3"><div class="grade-icon">📘</div><div class="grade-name">Lớp 3</div><div class="grade-status">🌴 Nghỉ hè</div></div>
+            <div class="grade-card grade-locked" data-grade="lop4"><div class="grade-icon">📙</div><div class="grade-name">Lớp 4</div><div class="grade-status">🌴 Nghỉ hè</div></div>
+            <div class="grade-card grade-locked" data-grade="lop5"><div class="grade-icon">📕</div><div class="grade-name">Lớp 5</div><div class="grade-status">🌴 Nghỉ hè</div></div>
           </div>
-        </aside>
+        </section>
 
-        <div class="shop-main-panel">
-          <div class="shop-hero">
-            <div>
-              <div class="shop-kicker">🏪 Cửa hàng đổi thưởng</div>
-              <h2>Cửa hàng của bé</h2>
-              <p>Dùng sao để đổi sticker, huy hiệu và phần thưởng thú vị.</p>
-            </div>
-            <div class="shop-stars-card">
-              <div class="star-big">⭐</div>
-              <div><b id="shopStarCount">0</b><span>Sao của bạn</span></div>
-            </div>
-          </div>
-
-          <div class="shop-content-grid">
-            <section class="shop-card-panel shop-items-panel">
-              <div class="shop-panel-header">
+        <section class="screen" id="screenSubject">
+          <div class="learning-layout">
+            <section class="learn-panel">
+              <div class="page-heading row-heading">
+                <button class="btn-nav soft-back" data-screen="grade">← Đổi lớp</button>
                 <div>
-                  <h3>🎁 Phần thưởng</h3>
-                  <p>Mỗi phần thưởng chỉ cần đổi 1 lần.</p>
+                  <h2 id="currentGradeLabel">📚 Lớp 2 - Học gì hôm nay?</h2>
+                  <p>Chọn môn học con thích nhé!</p>
                 </div>
-                <select id="shopFilter" class="shop-filter" aria-label="Lọc phần thưởng">
-                  <option value="all">Tất cả</option>
-                  <option value="affordable">Đủ sao</option>
-                  <option value="owned">Đã sở hữu</option>
-                </select>
               </div>
-              <div id="shopItems" class="reward-grid"></div>
-              <div class="shop-note">💡 Cố gắng học mỗi ngày để mở khóa thêm nhiều phần thưởng nhé!</div>
+              <div id="subjectList" class="subject-list"></div>
             </section>
 
-            <aside class="shop-card-panel shop-status-panel">
+            <aside class="profile-panel">
+              <div class="profile-card">
+                <div class="profile-top">
+                  <div class="profile-avatar">🐰</div>
+                  <div>
+                    <div class="card-title-small" id="subName">Chào con!</div>
+                    <div id="title-area" class="title-tag">🌱 Người mới bắt đầu</div>
+                  </div>
+                </div>
+                <div class="profile-stars">⭐ <b id="profileStarMirror">0</b><span>Sao của con</span></div>
+                <div id="badge-area" class="badge-area"></div>
+                <button class="btn-primary btn-small" id="btnRedeemBadge">🏅 Nâng cấp huy hiệu</button>
+              </div>
+
+              <div class="profile-card inventory-card">
+                <div class="panel-title">🎒 Túi đồ</div>
+                <div id="inventory-area" class="inventory-area"><div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div></div>
+                <button class="btn-secondary btn-nav" data-screen="shop">🏪 Mở cửa hàng</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="screenTopic">
+          <div class="quiz-hdr glassbar">
+            <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+            <div id="topicMenuTitle" class="quiz-hdr-title">Chọn chủ đề</div>
+          </div>
+          <div id="topicList" class="topic-list"></div>
+        </section>
+
+        <section class="screen" id="screenQuiz">
+          <div class="quiz-wrap">
+            <div class="quiz-hdr glassbar">
+              <button class="btn-nav" data-screen="topic">← <span>Quay lại</span></button>
+              <div class="score-badge">⭐ <span id="scoreDisp">0</span></div>
+            </div>
+            <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+            <div class="question-card card">
+              <div class="quiz-topic-name" id="quizTopicName"></div>
+              <div id="qText" class="q-text"></div>
+            </div>
+            <div class="answers" id="ansGrid"></div>
+            <div class="feedback" id="feedback"><div id="fbText" class="fb-text"></div><div id="fbAns" class="fb-ans"></div></div>
+            <button class="btn-next hidden" id="btnNext">Câu tiếp theo →</button>
+          </div>
+        </section>
+
+        <section class="screen" id="screenResult">
+          <div class="result-wrap">
+            <div class="result-card card">
+              <div class="result-emoji">🎉</div>
+              <div class="result-title">Hoàn thành rồi!</div>
+              <div id="resScore" class="result-score">0/10</div>
+              <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
+              <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screenShop">
+          <div class="shop-layout">
+            <section class="shop-board">
+              <div class="shop-hero">
+                <div>
+                  <div class="shop-kicker">🏪 Cửa hàng đổi thưởng</div>
+                  <h2>Cửa hàng của bé</h2>
+                  <p>Dùng sao để đổi sticker, huy hiệu và phần thưởng thú vị nhé!</p>
+                </div>
+                <div class="shop-stars-card"><div class="star-big">⭐</div><div><b id="shopStarCount">0</b><span>Sao của bạn</span></div></div>
+              </div>
+              <div class="shop-panel-header">
+                <div><h3>🎁 Phần thưởng</h3><p>Mỗi phần thưởng chỉ cần đổi 1 lần.</p></div>
+                <select id="shopFilter" class="shop-filter"><option value="all">Tất cả</option><option value="affordable">Đủ sao</option><option value="owned">Đã sở hữu</option></select>
+              </div>
+              <div id="shopItems" class="reward-grid"></div>
+              <div class="shop-note">💡 Mỗi ngày học một chút, sao sẽ nhiều lên rất nhanh!</div>
+            </section>
+
+            <aside class="shop-status-panel">
               <div class="badge-showcase">
                 <h3>🏅 Huy hiệu của bạn</h3>
                 <div id="shopBadgePreview" class="badge-preview-empty">Chưa có huy hiệu</div>
                 <button class="shop-upgrade-btn" id="btnRedeemBadgeShop">Nâng cấp huy hiệu</button>
               </div>
-
               <div class="badge-upgrade-list">
                 <div class="upgrade-row"><span>🥉 Đồng</span><b>10 ⭐</b></div>
                 <div class="upgrade-row"><span>🥈 Bạc</span><b>20 ⭐</b></div>
                 <div class="upgrade-row"><span>🥇 Vàng</span><b>30 ⭐</b></div>
               </div>
-
-              <div class="tip-box">
-                <b>🌟 Mẹo nhỏ</b>
-                <ul>
-                  <li>Hoàn thành bài tập để nhận sao.</li>
-                  <li>Sao càng nhiều, quà càng xịn.</li>
-                  <li>Ôn lại câu sai để tiến bộ nhanh hơn.</li>
-                </ul>
-              </div>
+              <div class="tip-box"><b>🌟 Mẹo nhỏ</b><ul><li>Hoàn thành bài tập để nhận sao.</li><li>Ôn lại câu sai để tiến bộ.</li><li>Đổi quà để có thêm động lực.</li></ul></div>
             </aside>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- MÀN HÌNH 8: PIN BỐ MẸ -->
-    <section class="screen" id="screenPin">
-      <div class="pin-wrap">
-        <div class="card">
-          <div class="card-title">👨‍👩‍👧 Khu vực Bố Mẹ</div>
-          <div class="pin-desc">Nhập mã PIN 4 số để xem báo cáo học tập của con</div>
-          <input type="password" inputmode="numeric" maxlength="4" pattern="[0-9]*" 
-                 class="pin-input" id="pinInput" placeholder="••••" />
-          <div id="pinError" class="pin-error hidden">Sai mã PIN. Thử lại nhé!</div>
-          <button class="btn-primary mt-15" id="btnPinSubmit">Vào xem 🔓</button>
-          <button class="btn-secondary mt-15" id="btnPinBack">← Quay lại</button>
-          <div class="pin-hint" id="pinHint"></div>
-        </div>
-      </div>
-    </section>
+        <section class="screen" id="screenPin">
+          <div class="pin-wrap"><div class="card pin-card"><div class="card-title">👨‍👩‍👧 Khu vực Bố Mẹ</div><div class="pin-desc">Nhập mã PIN 4 số để xem báo cáo học tập của con</div><input type="password" inputmode="numeric" maxlength="4" pattern="[0-9]*" class="pin-input" id="pinInput" placeholder="••••" /><div id="pinError" class="pin-error hidden">Sai mã PIN. Thử lại nhé!</div><button class="btn-primary mt-15" id="btnPinSubmit">Vào xem 🔓</button><button class="btn-secondary mt-15" id="btnPinBack">← Quay lại</button><div class="pin-hint" id="pinHint"></div></div></div>
+        </section>
 
-    <!-- MÀN HÌNH 8: BÁO CÁO BỐ MẸ -->
-    <section class="screen" id="screenParent">
-      <div class="parent-wrap">
-        <div class="quiz-hdr">
-          <button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
-          <div class="quiz-hdr-title">📊 Báo cáo học tập</div>
-          <button class="btn-nav" id="btnChangePin">🔑 Đổi PIN</button>
-        </div>
-
-        <div class="card card-compact">
-          <label class="parent-label">Xem báo cáo của:</label>
-          <select id="parentNameSelect" class="parent-select"></select>
-        </div>
-
-        <div class="card" id="parentSummary">
-          <h3 class="parent-section-title">📈 Tóm tắt 7 ngày gần nhất</h3>
-          <div id="summaryContent">
-            <div class="loading-text">Đang tải...</div>
+        <section class="screen" id="screenParent">
+          <div class="parent-wrap">
+            <div class="quiz-hdr glassbar"><button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button><div class="quiz-hdr-title">📊 Báo cáo học tập</div><button class="btn-nav" id="btnChangePin">🔑 Đổi PIN</button></div>
+            <div class="card card-compact"><label class="parent-label">Xem báo cáo của:</label><select id="parentNameSelect" class="parent-select"></select></div>
+            <div class="card" id="parentSummary"><h3 class="parent-section-title">📈 Tóm tắt 7 ngày gần nhất</h3><div id="summaryContent"><div class="loading-text">Đang tải...</div></div></div>
+            <div class="card" id="parentDaily"><h3 class="parent-section-title">📅 Chi tiết theo ngày</h3><div id="dailyContent"><div class="loading-text">Đang tải...</div></div></div>
           </div>
-        </div>
-
-        <div class="card" id="parentDaily">
-          <h3 class="parent-section-title">📅 Chi tiết theo ngày</h3>
-          <div id="dailyContent">
-            <div class="loading-text">Đang tải...</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-title">🐰 Kho Bài Tập</div>
-      <div>Làm cùng tình yêu cho Anh Thư và các bé tiểu học Việt Nam</div>
-      <div class="footer-links">
-        <a href="#" id="footerParent">👨‍👩‍👧 Khu vực Bố Mẹ</a>
-        <a href="https://forms.gle/hE3gV5Uy6UodzrZn7" target="_blank">💌 Góp ý</a>
-        <a href="#" id="footerAbout">ℹ️ Giới thiệu</a>
-      </div>
-      <div class="footer-copyright">© 2026 · Made with 💖</div>
+        </section>
+      </main>
     </div>
-  </footer>
+  </div>
 
   <script src="js/storage.js"></script>
   <script src="js/api.js"></script>
