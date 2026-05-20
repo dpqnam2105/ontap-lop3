@@ -52,12 +52,13 @@ const App = {
   showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
-    document.getElementById(id).classList.add('active');
+    const screen = document.getElementById(id);
+    if (screen) screen.classList.add('active');
     window.scrollTo(0, 0);
 
     if (name === 'shop' && typeof Rewards !== 'undefined') {
       Rewards.updateUI();
-      Rewards.renderShop();
+      if (typeof Rewards.renderShop === 'function') Rewards.renderShop(true);
     }
   },
 
@@ -154,8 +155,10 @@ const App = {
   _switchMiniTab(target) {
     document.querySelectorAll('.mini-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.mini-content').forEach(c => c.classList.remove('active'));
-    document.querySelector(`.mini-tab[data-mini="${target}"]`).classList.add('active');
-    document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
+    const tab = document.querySelector(`.mini-tab[data-mini="${target}"]`);
+    const content = document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1));
+    if (tab) tab.classList.add('active');
+    if (content) content.classList.add('active');
   },
 
   // PARENT DASHBOARD
@@ -372,13 +375,28 @@ const App = {
       card.addEventListener('click', () => this._chooseGrade(card.dataset.grade));
     });
 
-    document.getElementById('btnFeedback').addEventListener('click', () => {
-      window.open('https://forms.gle/hE3gV5Uy6UodzrZn7');
-    });
+    const btnFeedback = document.getElementById('btnFeedback');
+    if (btnFeedback) {
+      btnFeedback.addEventListener('click', () => {
+        window.open('https://forms.gle/hE3gV5Uy6UodzrZn7');
+      });
+    }
 
     document.getElementById('btnRedeemBadge').addEventListener('click', () => {
       Rewards.redeemBadge();
     });
+
+    const btnRedeemBadgeShop = document.getElementById('btnRedeemBadgeShop');
+    if (btnRedeemBadgeShop) {
+      btnRedeemBadgeShop.addEventListener('click', () => Rewards.redeemBadge());
+    }
+
+    const shopFilter = document.getElementById('shopFilter');
+    if (shopFilter) {
+      shopFilter.addEventListener('change', () => {
+        if (typeof Rewards !== 'undefined' && typeof Rewards.renderShop === 'function') Rewards.renderShop(true);
+      });
+    }
 
     document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -401,10 +419,13 @@ const App = {
       tab.addEventListener('click', () => this._switchMiniTab(tab.dataset.mini));
     });
 
-    document.getElementById('footerParent').addEventListener('click', e => {
-      e.preventDefault();
-      this._openParentArea();
-    });
+    const footerParent = document.getElementById('footerParent');
+    if (footerParent) {
+      footerParent.addEventListener('click', e => {
+        e.preventDefault();
+        this._openParentArea();
+      });
+    }
 
     document.getElementById('btnPinSubmit').addEventListener('click', () => this._checkPin());
     document.getElementById('btnPinBack').addEventListener('click', () => {
