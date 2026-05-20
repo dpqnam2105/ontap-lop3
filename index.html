@@ -40,23 +40,49 @@
       <button class="btn-primary btn-blue" id="btnFeedback">💌 Góp ý & Đóng góp bài tập</button>
     </section>
 
-    <!-- MÀN HÌNH 1.5: CHỌN LỚP (MỚI) -->
+    <!-- MÀN HÌNH 2: CHỌN LỚP (MỚI) -->
     <section class="screen" id="screenGrade">
-      <div class="grade-wrap">
-        <div class="card">
-          <div class="card-title">🎓 Chọn lớp để bắt đầu</div>
-          <div class="grade-grid" id="gradeList"></div>
-          <button class="btn-secondary mt-15" id="btnGradeBack">← Quay lại</button>
+      <div class="card-section-header" style="text-align:center">
+        <h2 class="section-title">🎓 Con đang học lớp mấy?</h2>
+        <div class="section-subtitle">Chọn lớp của con để vào học nhé!</div>
+      </div>
+
+      <div class="grade-grid">
+        <div class="grade-card grade-active" data-grade="lop2">
+          <div class="grade-icon">📗</div>
+          <div class="grade-name">Lớp 2</div>
+          <div class="grade-status">✅ Đang mở</div>
+        </div>
+
+        <div class="grade-card grade-locked" data-grade="lop3">
+          <div class="grade-icon">📘</div>
+          <div class="grade-name">Lớp 3</div>
+          <div class="grade-status">🌴 Nghỉ hè</div>
+        </div>
+
+        <div class="grade-card grade-locked" data-grade="lop4">
+          <div class="grade-icon">📙</div>
+          <div class="grade-name">Lớp 4</div>
+          <div class="grade-status">🌴 Nghỉ hè</div>
+        </div>
+
+        <div class="grade-card grade-locked" data-grade="lop5">
+          <div class="grade-icon">📕</div>
+          <div class="grade-name">Lớp 5</div>
+          <div class="grade-status">🌴 Nghỉ hè</div>
         </div>
       </div>
     </section>
 
-    <!-- MÀN HÌNH 2: CHỌN MÔN -->
+    <!-- MÀN HÌNH 3: CHỌN MÔN -->
     <section class="screen" id="screenSubject">
       <div class="subject-layout">
         <div class="subject-main">
           <div class="card-section-header">
-            <h2 class="section-title">📚 Hôm nay con học gì?</h2>
+            <div class="back-grade-row">
+              <button class="btn-nav" data-screen="grade">← <span>Đổi lớp</span></button>
+              <h2 class="section-title" id="currentGradeLabel">📚 Lớp 2 - Học gì hôm nay?</h2>
+            </div>
             <div class="section-subtitle">Chọn môn học con thích nhé!</div>
           </div>
           <div id="subjectList" class="subject-list"></div>
@@ -107,10 +133,9 @@
           </div>
         </aside>
       </div>
-      <button class="btn-secondary" id="btnSubjectBack" style="margin-top: 1rem;">← Chọn lớp khác</button>
     </section>
 
-    <!-- MÀN HÌNH 3: CHỌN CHỦ ĐỀ -->
+    <!-- MÀN HÌNH 4: CHỌN CHỦ ĐỀ -->
     <section class="screen" id="screenTopic">
       <div class="quiz-hdr">
         <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
@@ -119,7 +144,7 @@
       <div id="topicList" class="topic-list"></div>
     </section>
 
-    <!-- MÀN HÌNH 4: QUIZ -->
+    <!-- MÀN HÌNH 5: QUIZ -->
     <section class="screen" id="screenQuiz">
       <div class="quiz-wrap">
         <div class="quiz-hdr">
@@ -142,7 +167,7 @@
       </div>
     </section>
 
-    <!-- MÀN HÌNH 5: KẾT QUẢ -->
+    <!-- MÀN HÌNH 6: KẾT QUẢ -->
     <section class="screen" id="screenResult">
       <div class="result-wrap">
         <div class="card">
@@ -155,7 +180,7 @@
       </div>
     </section>
 
-    <!-- MÀN HÌNH 6: NHẬP PIN BỐ MẸ -->
+    <!-- MÀN HÌNH 7: PIN BỐ MẸ -->
     <section class="screen" id="screenPin">
       <div class="pin-wrap">
         <div class="card">
@@ -171,7 +196,7 @@
       </div>
     </section>
 
-    <!-- MÀN HÌNH 7: BÁO CÁO BỐ MẸ -->
+    <!-- MÀN HÌNH 8: BÁO CÁO BỐ MẸ -->
     <section class="screen" id="screenParent">
       <div class="parent-wrap">
         <div class="quiz-hdr">
