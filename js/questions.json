@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-05-19",
+  "lastUpdated": "2026-05-20",
   "subjects": [
     {
       "id": "toan",
@@ -1209,15 +1209,15 @@
               "difficulty": 3
             },
             {
-              "q": "Hai số có tổng = 400. Số lớn gấp đôi số bé. Số bé = ?",
+              "q": "Hai số có tổng = 30. Số lớn gấp đôi số bé. Số bé = ?",
               "choices": [
-                "130",
-                "133",
-                "134",
-                "140"
+                "5",
+                "10",
+                "15",
+                "20"
               ],
               "a": 1,
-              "hint": "Số bé+2×Số bé=400→3n=400? Sai. n+2n=400→n=133",
+              "hint": "Số bé + số lớn = số bé + 2×số bé = 3×số bé. Vậy số bé = 30÷3",
               "difficulty": 3
             },
             {
