@@ -1,18 +1,16 @@
-/* ═══════════════════════════════════════════════
-   STORAGE.JS - Lưu trữ dữ liệu vào localStorage
-   Để Thỏ không mất sao/sticker khi tắt trình duyệt
-   ═══════════════════════════════════════════════ */
+// =============================================
+// STORAGE.JS v2 - localStorage + theo dõi câu đã làm
+// =============================================
 
 const Storage = {
   KEY: 'khoBaiTap_v1',
+  PROGRESS_KEY: 'khoBaiTap_progress_v1',
 
-  /** Đọc toàn bộ data của Thỏ */
   load() {
     try {
       const raw = localStorage.getItem(this.KEY);
       if (!raw) return this._default();
       const data = JSON.parse(raw);
-      // Merge với default để tránh thiếu field khi nâng cấp
       return { ...this._default(), ...data };
     } catch (e) {
       console.error('Storage load error:', e);
@@ -20,7 +18,6 @@ const Storage = {
     }
   },
 
-  /** Lưu toàn bộ data */
   save(data) {
     try {
       localStorage.setItem(this.KEY, JSON.stringify(data));
@@ -29,33 +26,81 @@ const Storage = {
     }
   },
 
-  /** Lưu 1 field cụ thể */
   set(key, value) {
     const data = this.load();
     data[key] = value;
     this.save(data);
   },
 
-  /** Đọc 1 field */
   get(key) {
     return this.load()[key];
   },
 
-  /** Xóa toàn bộ (reset) */
   clear() {
     localStorage.removeItem(this.KEY);
+    localStorage.removeItem(this.PROGRESS_KEY);
   },
 
-  /** Cấu trúc mặc định */
   _default() {
     return {
       playerName: '',
       stars: 0,
-      inventory: [],   // Danh sách sticker đã mua: ['sticker_star.png', ...]
-      currentBadge: '', // 'gold' | 'silver' | 'bronze' | ''
-      title: '🌱 Danh hiệu: Người mới bắt đầu',
-      totalCorrect: 0, // Tổng số câu đúng (cho thống kê sau này)
+      inventory: [],
+      currentBadge: '',
+      title: '🌱 Người mới bắt đầu',
+      totalCorrect: 0,
       lastPlayed: null
     };
+  },
+
+  // ============================================
+  // THEO DÕI TIẾN ĐỘ HỌC THEO NGÀY VÀ CHỦ ĐỀ
+  // ============================================
+
+  /** Lấy progress của 1 chủ đề trong ngày hôm nay */
+  getTopicProgress(topicId) {
+    try {
+      const raw = localStorage.getItem(this.PROGRESS_KEY);
+      const all = raw ? JSON.parse(raw) : {};
+      const today = this._getToday();
+      
+      // Nếu là ngày mới → reset tất cả
+      if (all._date !== today) {
+        return { learned: [], wrong: [], date: today };
+      }
+      
+      return all[topicId] || { learned: [], wrong: [], date: today };
+    } catch (e) {
+      return { learned: [], wrong: [], date: this._getToday() };
+    }
+  },
+
+  /** Lưu progress của 1 chủ đề */
+  saveTopicProgress(topicId, learned, wrong) {
+    try {
+      const raw = localStorage.getItem(this.PROGRESS_KEY);
+      let all = raw ? JSON.parse(raw) : {};
+      const today = this._getToday();
+      
+      // Reset nếu sang ngày mới
+      if (all._date !== today) {
+        all = { _date: today };
+      }
+      
+      all[topicId] = {
+        learned: learned,
+        wrong: wrong,
+        date: today
+      };
+      
+      localStorage.setItem(this.PROGRESS_KEY, JSON.stringify(all));
+    } catch (e) {
+      console.error('saveTopicProgress error:', e);
+    }
+  },
+
+  _getToday() {
+    const now = new Date();
+    return now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
   }
 };

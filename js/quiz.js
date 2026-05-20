@@ -1,23 +1,73 @@
 // =============================================
-// QUIZ.JS v4.1 - lam het cau trong chu de
-// (no special unicode in comments - safe for paste)
+// QUIZ.JS v5 - chia 20 câu/lần, smart selection
 // =============================================
 
 const Quiz = {
-  questions: [],
+  questions: [],         // 20 câu của lần hiện tại
   curIdx: 0,
   score: 0,
   canEarnPoint: true,
   currentTopic: null,
+  currentTopicId: null,
+  sessionInfo: null,     // {current: 1, total: 3, learnedBefore: 0, totalInTopic: 64}
+
+  // Số câu mục tiêu mỗi lần (sẽ tự điều chỉnh dựa trên tổng câu)
+  TARGET_PER_SESSION: 20,
 
   start(topic) {
     this.currentTopic = topic;
-    // Lay TOAN BO cau trong chu de, van xao tron de moi lan lam khac nhau
-    this.questions = [...topic.questions].sort(() => 0.5 - Math.random());
+    // ID duy nhất cho topic = subject_topic (để track progress riêng)
+    this.currentTopicId = (topic.id || topic.name).toString();
+    
+    // Lấy progress hôm nay
+    const progress = Storage.getTopicProgress(this.currentTopicId);
+    const totalInTopic = topic.questions.length;
+    
+    // Tính cách chia: 20 câu/lần đều nhau
+    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
+    const sessionSize = Math.ceil(totalInTopic / numSessions);
+    
+    // Lấy danh sách index câu chưa làm hôm nay
+    const allIndices = topic.questions.map((_, i) => i);
+    const notLearned = allIndices.filter(i => !progress.learned.includes(i));
+    
+    let selectedIndices;
+    let currentSession;
+    let isAllDone = false;
+    
+    if (notLearned.length === 0) {
+      // Đã làm hết hôm nay → cho ôn lại câu sai trước, rồi random
+      isAllDone = true;
+      if (progress.wrong.length > 0) {
+        // Ưu tiên câu sai
+        selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
+      } else {
+        // Hết câu sai → random từ đầu
+        selectedIndices = this._shuffle(allIndices).slice(0, sessionSize);
+      }
+      currentSession = numSessions; // Hiển thị "Đã hoàn thành"
+    } else if (notLearned.length <= sessionSize) {
+      // Còn ít hơn 1 session → lấy hết
+      selectedIndices = this._shuffle(notLearned);
+      currentSession = numSessions;
+    } else {
+      // Lấy random từ câu chưa làm
+      selectedIndices = this._shuffle(notLearned).slice(0, sessionSize);
+      currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
+    }
+    
+    this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
     this.curIdx = 0;
     this.score = 0;
-    document.getElementById('quizTopicName').textContent = 
-      topic.name + ' . ' + this.questions.length + ' cau';
+    
+    this.sessionInfo = {
+      current: currentSession,
+      total: numSessions,
+      isAllDone: isAllDone,
+      learnedBefore: progress.learned.length,
+      totalInTopic: totalInTopic
+    };
+    
     App.showScreen('quiz');
     this.render();
   },
@@ -26,9 +76,18 @@ const Quiz = {
     this.canEarnPoint = true;
     const q = this.questions[this.curIdx];
     const total = this.questions.length;
+    const info = this.sessionInfo;
 
-    document.getElementById('quizTopicName').textContent = 
-      this.currentTopic.name + ' . Cau ' + (this.curIdx + 1) + '/' + total;
+    // Tiêu đề: "Chủ đề · Câu X/Y · Lần A/B"
+    let titleText = this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    if (info.total > 1) {
+      if (info.isAllDone) {
+        titleText += ' · Ôn lại 🔄';
+      } else {
+        titleText += ' · Lần ' + info.current + '/' + info.total;
+      }
+    }
+    document.getElementById('quizTopicName').textContent = titleText;
     
     document.getElementById('qText').textContent = q.q;
     document.getElementById('scoreDisp').textContent = this.score;
@@ -72,14 +131,15 @@ const Quiz = {
 
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
-      fbText.textContent = 'Chinh xac! Con lam tot lam!';
+      fbText.textContent = 'Chính xác! Con làm tốt lắm! 👏';
       fbAns.textContent = q.explain || '';
       
+      // Nút next: chỉ ghi "Câu tiếp theo →" hoặc "Xem kết quả 🎉"
       const btnNext = document.getElementById('btnNext');
       btnNext.classList.remove('hidden');
       btnNext.textContent = this.curIdx + 1 >= this.questions.length 
-        ? 'Xem ket qua' 
-        : 'Cau tiep theo (' + (this.curIdx + 2) + '/' + this.questions.length + ')';
+        ? 'Xem kết quả 🎉' 
+        : 'Câu tiếp theo →';
     } else {
       Sound.play('wrong');
       btn.classList.add('wrong');
@@ -87,20 +147,44 @@ const Quiz = {
       this.canEarnPoint = false;
 
       fb.className = 'feedback wrong';
-      fbText.textContent = 'Chua dung roi, thu lai nhe!';
+      fbText.textContent = 'Chưa đúng rồi, thử lại nhé!';
       fbAns.textContent = q.hint
-        ? 'Goi y: ' + q.hint
-        : 'Hay xem lai cau hoi mot chut con nhe.';
+        ? '💡 Gợi ý: ' + q.hint
+        : 'Hãy xem lại câu hỏi một chút con nhé.';
     }
   },
 
   next() {
+    // Lưu progress: câu hiện tại đã làm xong
+    const q = this.questions[this.curIdx];
+    this._markLearned(q._idx, this.canEarnPoint);
+    
     this.curIdx++;
     if (this.curIdx >= this.questions.length) {
       this._finish();
     } else {
       this.render();
     }
+  },
+
+  /** Đánh dấu câu đã làm (canEarnPoint = đúng từ đầu, không cần ôn) */
+  _markLearned(qIdx, wasCorrect) {
+    const progress = Storage.getTopicProgress(this.currentTopicId);
+    
+    // Thêm vào learned nếu chưa có
+    if (!progress.learned.includes(qIdx)) {
+      progress.learned.push(qIdx);
+    }
+    
+    // Nếu trả lời sai → đánh dấu cần ôn lại
+    if (!wasCorrect && !progress.wrong.includes(qIdx)) {
+      progress.wrong.push(qIdx);
+    } else if (wasCorrect && progress.wrong.includes(qIdx)) {
+      // Trả lời đúng câu đã từng sai → bỏ khỏi danh sách ôn
+      progress.wrong = progress.wrong.filter(i => i !== qIdx);
+    }
+    
+    Storage.saveTopicProgress(this.currentTopicId, progress.learned, progress.wrong);
   },
 
   _finish() {
@@ -112,10 +196,26 @@ const Quiz = {
     const ratio = this.score / total;
     const resultMsg = document.querySelector('.result-msg');
     if (resultMsg) {
-      if (ratio >= 0.9) resultMsg.textContent = 'Xuat sac! Con that gioi!';
-      else if (ratio >= 0.7) resultMsg.textContent = 'Rat tot! Con da cham chi lam!';
-      else if (ratio >= 0.5) resultMsg.textContent = 'Kha tot! Tiep tuc co gang nhe!';
-      else resultMsg.textContent = 'Con da hoan thanh roi! Lan sau se tot hon nhe!';
+      const info = this.sessionInfo;
+      
+      // Hiển thị thông tin tiến độ trong ngày
+      let progressMsg = '';
+      const newLearnedTotal = info.learnedBefore + total;
+      
+      if (newLearnedTotal >= info.totalInTopic) {
+        progressMsg = '🎉 Con đã làm hết bài này hôm nay! Mai quay lại nhé 🌙';
+      } else {
+        const remaining = info.totalInTopic - newLearnedTotal;
+        progressMsg = '📚 Còn ' + remaining + ' câu nữa trong chủ đề này. Tiếp tục lần sau nhé!';
+      }
+      
+      let praiseMsg = '';
+      if (ratio >= 0.9) praiseMsg = 'Xuất sắc! Con thật giỏi! 🌟';
+      else if (ratio >= 0.7) praiseMsg = 'Rất tốt! Con đã chăm chỉ lắm! 👏';
+      else if (ratio >= 0.5) praiseMsg = 'Khá tốt! Tiếp tục cố gắng nhé! 💪';
+      else praiseMsg = 'Con đã hoàn thành rồi! Lần sau sẽ tốt hơn nhé! 🌱';
+      
+      resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:600">' + progressMsg + '</span>';
     }
     
     if (ratio >= 0.8) {
@@ -124,6 +224,15 @@ const Quiz = {
     
     API.saveScore(App.playerName, this.score, total)
       .then(() => App.loadLeaderboard());
+  },
+
+  _shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   },
 
   _flyStar(fromEl) {
@@ -211,7 +320,7 @@ const Sound = {
 };
 
 // =============================================
-// REWARDS - sao, sticker, huy hieu
+// REWARDS - sao, sticker, huy hiệu
 // =============================================
 
 const Rewards = {
@@ -229,7 +338,7 @@ const Rewards = {
   buyItem(item, cost) {
     const data = Storage.load();
     if (data.stars < cost) {
-      alert('Chua du sao de mua Sticker nay roi!');
+      alert('Chưa đủ sao để mua Sticker này rồi!');
       return;
     }
     data.stars -= cost;
@@ -249,7 +358,7 @@ const Rewards = {
     else if (data.stars >= 30) { badge = 'silver'; cost = 30; }
     else if (data.stars >= 10) { badge = 'bronze'; cost = 10; }
     else {
-      alert('Con can tich them sao moi doi duoc huy hieu nhe!');
+      alert('Con cần tích thêm sao mới đổi được huy hiệu nhé!');
       return;
     }
     data.stars -= cost;
@@ -259,10 +368,10 @@ const Rewards = {
   },
 
   _calcTitle(totalCorrect) {
-    if (totalCorrect >= 100) return '👑 Sieu sao hoc tap!';
-    if (totalCorrect >= 50) return '🌟 Ngoi sao cham chi!';
-    if (totalCorrect >= 20) return '✨ Be tien bo!';
-    return '🌱 Nguoi moi bat dau';
+    if (totalCorrect >= 100) return '👑 Siêu sao học tập!';
+    if (totalCorrect >= 50) return '🌟 Ngôi sao chăm chỉ!';
+    if (totalCorrect >= 20) return '✨ Bé tiến bộ!';
+    return '🌱 Người mới bắt đầu';
   },
 
   _titleUpgradeAnimation() {
@@ -283,7 +392,7 @@ const Rewards = {
     const badgeArea = document.getElementById('badge-area');
     if (badgeArea) {
       badgeArea.innerHTML = data.currentBadge
-        ? '<img src="images/sticker_' + data.currentBadge + '.png" class="reward-img" alt="Huy hieu" width="60">'
+        ? '<img src="images/sticker_' + data.currentBadge + '.png" class="reward-img" alt="Huy hiệu" width="60">'
         : '';
     }
     const invArea = document.getElementById('inventory-area');
@@ -292,7 +401,7 @@ const Rewards = {
         ? data.inventory.map(function(item) {
             return '<img src="images/' + item + '" class="reward-img" alt="sticker" width="50">';
           }).join(' ')
-        : '<div class="empty-inventory">Tui do trong. Hay tich sao de mua sticker nhe!</div>';
+        : '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
     }
   }
 };
