@@ -157,6 +157,90 @@ body {
   .register-grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* GRADE SCREEN (MỚI) */
+.grade-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.grade-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 600px) {
+  .grade-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grade-card {
+  background: #fff;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  position: relative;
+}
+
+.grade-card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+}
+
+.grade-card.active {
+  border-color: var(--green);
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.05));
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.2);
+}
+
+.grade-card.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.grade-card.disabled:hover {
+  border-color: var(--border);
+  transform: none;
+  box-shadow: none;
+}
+
+.grade-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.grade-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.grade-status {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.grade-status.active {
+  background: #D5F5E3;
+  color: #1E8449;
+}
+
+.grade-status.coming {
+  background: #FEF5E7;
+  color: #D68910;
+}
+
 /* SUBJECT LAYOUT */
 .subject-layout {
   display: grid;
@@ -930,6 +1014,7 @@ body {
   .footer-links { gap: 0.8rem; font-size: 0.85rem; }
   .section-title { font-size: 1.4rem; }
   .summary-grid { grid-template-columns: 1fr 1fr; }
+  .grade-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
