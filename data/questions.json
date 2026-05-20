@@ -1,4 +1,4 @@
-window.QUESTIONS_DATA = {
+{
   "version": "3.0-production",
   "lastUpdated": "2026-05-20",
   "subjects": [
@@ -20964,4 +20964,4 @@ window.QUESTIONS_DATA = {
       "generated-questions"
     ]
   }
-};
+}
