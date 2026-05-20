@@ -1,12 +1,12 @@
 // =============================================
-// APP.JS v4 - thêm PIN + Parent Dashboard
+// APP.JS v5 - thêm màn chọn lớp
 // =============================================
 
 const App = {
   allData: null,
   playerName: '',
+  currentGrade: 'lop2',
 
-  // PIN mặc định nếu lần đầu = "1234". Bố mẹ có thể đổi.
   PIN_KEY: 'khoBaiTap_parentPin',
   DEFAULT_PIN: '1234',
 
@@ -65,20 +65,50 @@ const App = {
 
     document.getElementById('subName').textContent = 'Chào ' + name + '!';
     Rewards.updateUI();
-    this.showScreen('subject');
+    
+    // MỚI: Sau khi đăng ký → vào màn chọn lớp
+    this.showScreen('grade');
+  },
 
-    if (this.allData) {
-      this._renderSubjects();
-    } else {
-      document.getElementById('subjectList').innerHTML = 
-        '<div class="loading-text">Đang tải bài tập... ⏳</div>';
-      const checkData = setInterval(() => {
-        if (this.allData) {
-          clearInterval(checkData);
-          this._renderSubjects();
-        }
-      }, 200);
+  /** Xử lý khi bấm chọn lớp */
+  _chooseGrade(gradeId) {
+    const gradeNames = {
+      'lop2': 'Lớp 2',
+      'lop3': 'Lớp 3',
+      'lop4': 'Lớp 4',
+      'lop5': 'Lớp 5'
+    };
+    
+    const gradeName = gradeNames[gradeId] || 'Lớp ?';
+    
+    // Lớp 2 đang mở
+    if (gradeId === 'lop2') {
+      this.currentGrade = gradeId;
+      document.getElementById('currentGradeLabel').textContent = '📚 ' + gradeName + ' - Học gì hôm nay?';
+      this.showScreen('subject');
+      
+      if (this.allData) {
+        this._renderSubjects();
+      } else {
+        document.getElementById('subjectList').innerHTML = 
+          '<div class="loading-text">Đang tải bài tập... ⏳</div>';
+        const checkData = setInterval(() => {
+          if (this.allData) {
+            clearInterval(checkData);
+            this._renderSubjects();
+          }
+        }, 200);
+      }
+      return;
     }
+    
+    // Các lớp khác → thông báo nghỉ hè
+    alert(
+      '🌴 ' + gradeName + ' đang nghỉ hè!\n\n' +
+      'Cô giáo Claude đang chuẩn bị bài tập cho ' + gradeName + '.\n' +
+      'Hẹn gặp con vào năm học mới nhé! 🐰\n\n' +
+      'Hiện tại con cứ học chăm chỉ Lớp 2 đã, ' + gradeName + ' sẽ mở sớm thôi! 💪'
+    );
   },
 
   _renderSubjects() {
@@ -109,7 +139,6 @@ const App = {
       const card = document.createElement('div');
       card.className = 'topic-card';
       card.innerHTML = `<div class="topic-icon">${t.icon}</div><div class="topic-name">${this._escape(t.name)}</div>`;
-      // Truyền cả tên môn để log
       card.addEventListener('click', () => Quiz.start(t, s.name));
       list.appendChild(card);
     });
@@ -124,16 +153,11 @@ const App = {
     document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
   },
 
-  // ============================================
-  // PARENT DASHBOARD - khu vực bố mẹ
-  // ============================================
-
+  // PARENT DASHBOARD
   _openParentArea() {
-    // Reset input
     document.getElementById('pinInput').value = '';
     document.getElementById('pinError').classList.add('hidden');
     
-    // Hiển thị hint nếu là PIN mặc định
     const isDefault = !localStorage.getItem(this.PIN_KEY);
     const hint = document.getElementById('pinHint');
     if (isDefault) {
@@ -185,14 +209,12 @@ const App = {
   async _openDashboard() {
     this.showScreen('parent');
     
-    // Populate select bé học (từ BXH + tên bé đã đăng ký)
     const select = document.getElementById('parentNameSelect');
     select.innerHTML = '<option>Đang tải...</option>';
     
     const leaderboard = await API.getLeaderboard();
     const names = leaderboard.map(p => p.name);
     
-    // Thêm tên bé đang đăng nhập nếu chưa có
     if (this.playerName && !names.includes(this.playerName)) {
       names.unshift(this.playerName);
     }
@@ -206,7 +228,6 @@ const App = {
     
     select.innerHTML = names.map(n => `<option value="${this._escape(n)}">${this._escape(n)}</option>`).join('');
     
-    // Mặc định chọn bé hiện tại
     if (this.playerName && names.includes(this.playerName)) {
       select.value = this.playerName;
     }
@@ -231,7 +252,6 @@ const App = {
   },
 
   _renderSummary(logs) {
-    // Tóm tắt 7 ngày gần nhất
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
     const recent = logs.filter(l => new Date(l.time) >= sevenDaysAgo);
@@ -275,7 +295,6 @@ const App = {
   },
 
   _renderDailyLog(logs) {
-    // Nhóm theo ngày
     const byDate = {};
     logs.forEach(log => {
       const d = new Date(log.time);
@@ -343,6 +362,11 @@ const App = {
       if (e.key === 'Enter' && !bs.disabled) this._register();
     });
 
+    // MỚI: Grade selector
+    document.querySelectorAll('.grade-card[data-grade]').forEach(card => {
+      card.addEventListener('click', () => this._chooseGrade(card.dataset.grade));
+    });
+
     document.getElementById('btnFeedback').addEventListener('click', () => {
       window.open('https://forms.gle/hE3gV5Uy6UodzrZn7');
     });
@@ -372,7 +396,6 @@ const App = {
       tab.addEventListener('click', () => this._switchMiniTab(tab.dataset.mini));
     });
 
-    // PIN screen
     document.getElementById('footerParent').addEventListener('click', e => {
       e.preventDefault();
       this._openParentArea();
@@ -387,13 +410,11 @@ const App = {
       if (e.key === 'Enter') this._checkPin();
     });
 
-    // Parent dashboard
     document.getElementById('btnChangePin').addEventListener('click', () => this._changePin());
     document.getElementById('parentNameSelect').addEventListener('change', e => {
       this._loadParentLog(e.target.value);
     });
 
-    // Footer About
     const aboutLink = document.getElementById('footerAbout');
     if (aboutLink) {
       aboutLink.addEventListener('click', (e) => {
