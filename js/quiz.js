@@ -321,6 +321,20 @@ const Rewards = {
 
   redeemBadge() {
     const data = Storage.load();
+    
+    // CHECK xem đã có huy chương nào rồi không
+    if (data.currentBadge) {
+      const badgeNames = {
+        'gold': '🥇 Huy chương Vàng',
+        'silver': '🥈 Huy chương Bạc',
+        'bronze': '🥉 Huy chương Đồng'
+      };
+      const currentBadgeName = badgeNames[data.currentBadge] || 'Huy chương';
+      alert('Con đã có ' + currentBadgeName + ' rồi! 🎉\n\nMau học thêm để đạt huy chương cao hơn nhé! 💪');
+      return;
+    }
+    
+    // Nếu chưa có huy chương thì mới cho phép đổi
     let badge = null;
     let cost = 0;
     if (data.stars >= 50) { badge = 'gold'; cost = 50; }
@@ -334,6 +348,14 @@ const Rewards = {
     data.currentBadge = badge;
     Storage.save(data);
     this.updateUI();
+    
+    // Thông báo thành công
+    const badgeNames = {
+      'gold': '🥇 Huy chương Vàng',
+      'silver': '🥈 Huy chương Bạc',
+      'bronze': '🥉 Huy chương Đồng'
+    };
+    alert('Chúc mừng! Con đã đạt được ' + badgeNames[badge] + '! 🎊');
   },
 
   _calcTitle(totalCorrect) {
