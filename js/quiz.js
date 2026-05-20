@@ -12,9 +12,6 @@ const Quiz = {
   currentTopicId: null,
   sessionInfo: null,
   sessionStartTime: null,
-  questionStartedAt: null,
-  questionGuard: null,
-  usedHintThisQuestion: false,
 
   TARGET_PER_SESSION: 20,
 
@@ -23,85 +20,48 @@ const Quiz = {
     this.currentSubject = subjectName || '';
     this.currentTopicId = (topic.id || topic.name).toString();
     this.sessionStartTime = Date.now();
-
-    const totalInTopic = topic.questions.length;
+    
     const progress = Storage.getTopicProgress(this.currentTopicId);
-    const sessionSize = Math.min(this.TARGET_PER_SESSION, Math.max(1, totalInTopic));
-
-    // Adaptive mode: chọn câu theo mastery + spaced repetition + câu yếu.
-    if (window.LearningEngine && App.allData) {
-      const selected = window.LearningEngine.selectNextQuestion({
-        db: App.allData,
-        learnerId: App.playerName || 'guest',
-        subjectId: null,
-        topicId: this.currentTopicId,
-        count: sessionSize
-      }) || [];
-
-      this.questions = Array.isArray(selected) ? selected : [selected];
-
-      // Nếu kho câu trong topic chưa đủ hoặc đã bị lọc recent quá nhiều, sinh thêm câu rule-based an toàn.
-      while (this.questions.length < sessionSize) {
-        this.questions.push(window.LearningEngine.generateQuestion({
-          topicId: this.currentTopicId,
-          difficulty: Math.min(3, 1 + Math.floor(this.questions.length / 7)),
-          seed: Date.now() + this.questions.length
-        }));
-      }
-
-      this.questions = this.questions.slice(0, sessionSize).map((q, i) => ({
-        ...q,
-        _idx: typeof q._idx === 'number' ? q._idx : i
-      }));
-
-      this.sessionInfo = {
-        current: 1,
-        total: 1,
-        isAllDone: progress.learned.length >= totalInTopic,
-        learnedBefore: progress.learned.length,
-        totalInTopic: totalInTopic,
-        adaptive: true
-      };
-    } else {
-      // Fallback giữ logic cũ nếu LearningEngine chưa load.
-      const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
-      const fallbackSessionSize = Math.ceil(totalInTopic / numSessions);
-      const allIndices = topic.questions.map((_, i) => i);
-      const notLearned = allIndices.filter(i => !progress.learned.includes(i));
-
-      let selectedIndices;
-      let currentSession;
-      let isAllDone = false;
-
-      if (notLearned.length === 0) {
-        isAllDone = true;
-        if (progress.wrong.length > 0) {
-          selectedIndices = this._shuffle(progress.wrong).slice(0, fallbackSessionSize);
-        } else {
-          selectedIndices = this._shuffle(allIndices).slice(0, fallbackSessionSize);
-        }
-        currentSession = numSessions;
-      } else if (notLearned.length <= fallbackSessionSize) {
-        selectedIndices = this._shuffle(notLearned);
-        currentSession = numSessions;
+    const totalInTopic = topic.questions.length;
+    
+    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
+    const sessionSize = Math.ceil(totalInTopic / numSessions);
+    
+    const allIndices = topic.questions.map((_, i) => i);
+    const notLearned = allIndices.filter(i => !progress.learned.includes(i));
+    
+    let selectedIndices;
+    let currentSession;
+    let isAllDone = false;
+    
+    if (notLearned.length === 0) {
+      isAllDone = true;
+      if (progress.wrong.length > 0) {
+        selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
       } else {
-        selectedIndices = this._shuffle(notLearned).slice(0, fallbackSessionSize);
-        currentSession = Math.floor(progress.learned.length / fallbackSessionSize) + 1;
+        selectedIndices = this._shuffle(allIndices).slice(0, sessionSize);
       }
-
-      this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
-      this.sessionInfo = {
-        current: currentSession,
-        total: numSessions,
-        isAllDone: isAllDone,
-        learnedBefore: progress.learned.length,
-        totalInTopic: totalInTopic
-      };
+      currentSession = numSessions;
+    } else if (notLearned.length <= sessionSize) {
+      selectedIndices = this._shuffle(notLearned);
+      currentSession = numSessions;
+    } else {
+      selectedIndices = this._shuffle(notLearned).slice(0, sessionSize);
+      currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
     }
-
+    
+    this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
     this.curIdx = 0;
     this.score = 0;
-
+    
+    this.sessionInfo = {
+      current: currentSession,
+      total: numSessions,
+      isAllDone: isAllDone,
+      learnedBefore: progress.learned.length,
+      totalInTopic: totalInTopic
+    };
+    
     App.showScreen('quiz');
     this.render();
   },
@@ -112,11 +72,6 @@ const Quiz = {
     const total = this.questions.length;
     const info = this.sessionInfo;
 
-    this.questionStartedAt = Date.now();
-    this.usedHintThisQuestion = false;
-    if (this.questionGuard && this.questionGuard.cleanup) this.questionGuard.cleanup();
-    this.questionGuard = window.LearningEngine ? window.LearningEngine.installSessionGuard() : null;
-
     let titleText = this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     if (info.total > 1) {
       if (info.isAllDone) {
@@ -125,7 +80,6 @@ const Quiz = {
         titleText += ' · Lần ' + info.current + '/' + info.total;
       }
     }
-    if (info.adaptive) titleText += ' · Adaptive 🧠';
     document.getElementById('quizTopicName').textContent = titleText;
     
     document.getElementById('qText').textContent = q.q;
@@ -146,19 +100,6 @@ const Quiz = {
     });
   },
 
-  _recordAdaptiveAnswer(q, selectedIndex) {
-    if (!window.LearningEngine || !q) return;
-    const guardData = this.questionGuard ? this.questionGuard.get() : { visibilityChanges: 0 };
-    window.LearningEngine.recordAnswer({
-      learnerId: App.playerName || 'guest',
-      question: q,
-      selectedIndex: selectedIndex,
-      startedAt: this.questionStartedAt,
-      usedHint: this.usedHintThisQuestion,
-      visibilityChanges: guardData.visibilityChanges || 0
-    });
-  },
-
   checkAnswer(btn, selected, correct) {
     const q = this.questions[this.curIdx];
     const fb = document.getElementById('feedback');
@@ -166,7 +107,6 @@ const Quiz = {
     const fbAns = document.getElementById('fbAns');
 
     if (selected === correct) {
-      this._recordAdaptiveAnswer(q, selected);
       Sound.play('correct');
       btn.classList.add('correct');
 
@@ -191,8 +131,6 @@ const Quiz = {
         ? 'Xem kết quả 🎉' 
         : 'Câu tiếp theo →';
     } else {
-      this.usedHintThisQuestion = true;
-      this._recordAdaptiveAnswer(q, selected);
       Sound.play('wrong');
       btn.classList.add('wrong');
       btn.disabled = true;
@@ -206,7 +144,6 @@ const Quiz = {
 
   next() {
     const q = this.questions[this.curIdx];
-    if (this.questionGuard && this.questionGuard.cleanup) this.questionGuard.cleanup();
     this._markLearned(q._idx, this.canEarnPoint);
     
     this.curIdx++;
@@ -218,7 +155,6 @@ const Quiz = {
   },
 
   _markLearned(qIdx, wasCorrect) {
-    if (typeof qIdx !== 'number') return;
     const progress = Storage.getTopicProgress(this.currentTopicId);
     if (!progress.learned.includes(qIdx)) {
       progress.learned.push(qIdx);
@@ -357,50 +293,171 @@ const Sound = {
 };
 
 const Rewards = {
+  _fallbackStorageKey: 'khoBaiTapData',
+
+  _defaultData() {
+    return {
+      playerName: '',
+      stars: 0,
+      totalCorrect: 0,
+      inventory: [],
+      currentBadge: null
+    };
+  },
+
+  _normalizeData(data) {
+    data = data && typeof data === 'object' ? data : {};
+    return {
+      ...this._defaultData(),
+      ...data,
+      stars: Number(data.stars || 0),
+      totalCorrect: Number(data.totalCorrect || 0),
+      inventory: Array.isArray(data.inventory) ? data.inventory : [],
+      currentBadge: data.currentBadge || null
+    };
+  },
+
+  _loadData() {
+    // Ưu tiên dùng Storage object của app nếu có.
+    // Lưu ý: trong Console, chữ Storage có thể trỏ tới Web Storage API của trình duyệt,
+    // nên ở đây kiểm tra kỹ trước khi gọi Storage.load().
+    try {
+      if (typeof Storage !== 'undefined' && Storage && typeof Storage.load === 'function') {
+        return this._normalizeData(Storage.load());
+      }
+    } catch (e) {
+      console.warn('Rewards: Storage.load failed, fallback to localStorage', e);
+    }
+
+    // Fallback: tự tìm key localStorage có dữ liệu sao/huy hiệu.
+    const possibleKeys = [
+      'khoBaiTapData',
+      'khoBaiTap_data',
+      'khoBaiTap',
+      'khoBaiTap_storage',
+      'khoBaiTap_userData'
+    ];
+
+    for (const key of possibleKeys) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) continue;
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object' && ('stars' in parsed || 'totalCorrect' in parsed || 'currentBadge' in parsed)) {
+          this._fallbackStorageKey = key;
+          return this._normalizeData(parsed);
+        }
+      } catch (e) {}
+    }
+
+    // Nếu chưa biết key, quét toàn bộ localStorage để tránh mất dữ liệu cũ.
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      try {
+        const raw = localStorage.getItem(key);
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object' && ('stars' in parsed || 'totalCorrect' in parsed || 'currentBadge' in parsed)) {
+          this._fallbackStorageKey = key;
+          return this._normalizeData(parsed);
+        }
+      } catch (e) {}
+    }
+
+    return this._defaultData();
+  },
+
+  _saveData(data) {
+    const normalized = this._normalizeData(data);
+
+    try {
+      if (typeof Storage !== 'undefined' && Storage && typeof Storage.save === 'function') {
+        Storage.save(normalized);
+        return true;
+      }
+    } catch (e) {
+      console.warn('Rewards: Storage.save failed, fallback to localStorage', e);
+    }
+
+    localStorage.setItem(this._fallbackStorageKey, JSON.stringify(normalized));
+    return true;
+  },
+
+  _badgeMeta(badge) {
+    const map = {
+      bronze: { icon: '🥉', label: 'Huy hiệu Đồng', file: 'sticker_bronze.png' },
+      silver: { icon: '🥈', label: 'Huy hiệu Bạc', file: 'sticker_silver.png' },
+      gold: { icon: '🥇', label: 'Huy hiệu Vàng', file: 'sticker_gold.png' }
+    };
+    return map[badge] || null;
+  },
+
   addStar(count) {
-    const data = Storage.load();
+    const data = this._loadData();
     const oldTitle = this._calcTitle(data.totalCorrect);
-    data.stars += count;
-    data.totalCorrect += count;
-    Storage.save(data);
+
+    data.stars += Number(count || 0);
+    data.totalCorrect += Number(count || 0);
+
+    this._saveData(data);
+
     const newTitle = this._calcTitle(data.totalCorrect);
     this.updateUI();
     if (oldTitle !== newTitle) this._titleUpgradeAnimation();
   },
 
   buyItem(item, cost) {
-    const data = Storage.load();
+    const data = this._loadData();
+    cost = Number(cost || 0);
+
     if (data.stars < cost) {
       alert('Chưa đủ sao để mua Sticker này rồi!');
       return;
     }
+
     data.stars -= cost;
     data.inventory.push(item);
-    Storage.save(data);
+
+    this._saveData(data);
     this.updateUI();
+
     if (typeof App !== 'undefined' && App._switchMiniTab) {
       setTimeout(() => App._switchMiniTab('inventory'), 300);
     }
   },
 
   redeemBadge() {
-    const data = Storage.load();
+    const data = this._loadData();
+
     let badge = null;
     let cost = 0;
-    if (data.stars >= 50) { badge = 'gold'; cost = 50; }
-    else if (data.stars >= 30) { badge = 'silver'; cost = 30; }
-    else if (data.stars >= 10) { badge = 'bronze'; cost = 10; }
-    else {
+
+    if (data.stars >= 50) {
+      badge = 'gold';
+      cost = 50;
+    } else if (data.stars >= 30) {
+      badge = 'silver';
+      cost = 30;
+    } else if (data.stars >= 10) {
+      badge = 'bronze';
+      cost = 10;
+    } else {
       alert('Con cần tích thêm sao mới đổi được huy hiệu nhé!');
       return;
     }
+
     data.stars -= cost;
     data.currentBadge = badge;
-    Storage.save(data);
+    data.badgeUpdatedAt = new Date().toISOString();
+
+    this._saveData(data);
     this.updateUI();
+
+    const meta = this._badgeMeta(badge);
+    alert('Đổi thành công ' + (meta ? meta.label : 'huy hiệu') + '! ' + (meta ? meta.icon : '🏅'));
   },
 
   _calcTitle(totalCorrect) {
+    totalCorrect = Number(totalCorrect || 0);
     if (totalCorrect >= 100) return '👑 Siêu sao học tập!';
     if (totalCorrect >= 50) return '🌟 Ngôi sao chăm chỉ!';
     if (totalCorrect >= 20) return '✨ Bé tiến bộ!';
@@ -417,17 +474,30 @@ const Rewards = {
   },
 
   updateUI() {
-    const data = Storage.load();
+    const data = this._loadData();
+
     const starEl = document.getElementById('star-count');
     if (starEl) starEl.textContent = data.stars;
+
     const titleEl = document.getElementById('title-area');
     if (titleEl) titleEl.textContent = this._calcTitle(data.totalCorrect);
+
     const badgeArea = document.getElementById('badge-area');
     if (badgeArea) {
-      badgeArea.innerHTML = data.currentBadge
-        ? '<img src="images/sticker_' + data.currentBadge + '.png" class="reward-img" alt="Huy hiệu" width="60">'
-        : '';
+      const meta = this._badgeMeta(data.currentBadge);
+      if (meta) {
+        const imgPath = 'images/' + meta.file;
+        badgeArea.innerHTML =
+          '<div class="badge-display" title="' + meta.label + '">' +
+            '<img src="' + imgPath + '" class="reward-img" alt="' + meta.label + '" width="60" ' +
+            'onerror="this.outerHTML=&quot;<div class=\\&quot;badge-fallback\\&quot; style=\\&quot;font-size:48px;line-height:60px\\&quot;>' + meta.icon + '</div>&quot;">' +
+            '<div style="font-size:0.78rem;font-weight:800;margin-top:4px;color:#E67E22">' + meta.label + '</div>' +
+          '</div>';
+      } else {
+        badgeArea.innerHTML = '';
+      }
     }
+
     const invArea = document.getElementById('inventory-area');
     if (invArea) {
       invArea.innerHTML = data.inventory.length > 0
@@ -438,3 +508,7 @@ const Rewards = {
     }
   }
 };
+
+// Cho phép debug dễ hơn trên Console nếu cần:
+// window.RewardsApp.updateUI(), window.RewardsApp._loadData()
+window.RewardsApp = Rewards;
