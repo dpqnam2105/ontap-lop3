@@ -1,136 +1,146 @@
 // =============================================
-// GUEST FLOW GUARD
-// Giữ người dùng mới không bị kẹt khi chưa nhập tên.
-// Load file này sau js/app.js trong index.html
+// GUEST FLOW GUARD v2
+// Chặn người mới đi vào luồng học/shop khi chưa nhập tên.
+// Load sau js/app.js trong index.html.
 // =============================================
 (function () {
-  function safeStorageLoad() {
+  function getNameInputValue() {
+    var el = document.getElementById('nameInput');
+    return el ? String(el.value || '').trim() : '';
+  }
+
+  function getStoredName() {
     try {
       if (window.Storage && typeof window.Storage.load === 'function') {
-        return window.Storage.load() || {};
+        var data = window.Storage.load();
+        return data && data.playerName ? String(data.playerName).trim() : '';
       }
     } catch (e) {}
-    return {};
+    return '';
   }
 
   function hasPlayer() {
-    const data = safeStorageLoad();
-    return Boolean(
-      (window.App && App.playerName && String(App.playerName).trim().length >= 2) ||
-      (data.playerName && String(data.playerName).trim().length >= 2)
-    );
+    var appName = window.App && window.App.playerName ? String(window.App.playerName).trim() : '';
+    var inputName = getNameInputValue();
+    var storedName = getStoredName();
+    return appName.length >= 2 || inputName.length >= 2 || storedName.length >= 2;
   }
 
-  function ensureToastStyle() {
-    if (document.getElementById('guestFlowGuardStyle')) return;
-    const style = document.createElement('style');
-    style.id = 'guestFlowGuardStyle';
-    style.textContent = `
-      .guest-flow-toast{
-        position:fixed;
-        left:50%;
-        top:22px;
-        transform:translateX(-50%) translateY(-12px);
-        z-index:99999;
-        background:#ffffff;
-        color:#14324f;
-        border:1px solid #d9eafd;
-        border-radius:18px;
-        padding:12px 18px;
-        font-family:'Baloo 2','Nunito',sans-serif;
-        font-weight:900;
-        box-shadow:0 18px 44px rgba(31,122,245,.18);
-        opacity:0;
-        pointer-events:none;
-        transition:opacity .22s ease, transform .22s ease;
-        text-align:center;
-      }
-      .guest-flow-toast.show{
-        opacity:1;
-        transform:translateX(-50%) translateY(0);
-      }
-      @media(max-width:640px){
-        .guest-flow-toast{width:calc(100% - 32px); top:14px; font-size:.95rem;}
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  let toastTimer = null;
-  function showToast(message) {
-    ensureToastStyle();
-    let el = document.getElementById('guestFlowToast');
-    if (!el) {
-      el = document.createElement('div');
-      el.id = 'guestFlowToast';
-      el.className = 'guest-flow-toast';
-      document.body.appendChild(el);
-    }
-    el.textContent = message;
-    el.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
-      el.classList.remove('show');
-    }, 1800);
-  }
-
-  function goRegister() {
-    const screen = document.getElementById('screenRegister');
-    if (screen) {
+  function goRegister(showNotice) {
+    if (window.App && typeof window.App.showScreen === 'function') {
+      window.App.showScreen('register');
+    } else {
       document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('active'); });
-      screen.classList.add('active');
-      window.scrollTo(0, 0);
-      const input = document.getElementById('nameInput');
-      if (input) setTimeout(function () { input.focus(); }, 120);
+      var reg = document.getElementById('screenRegister');
+      if (reg) reg.classList.add('active');
+    }
+
+    var input = document.getElementById('nameInput');
+    if (input) {
+      setTimeout(function () {
+        input.focus();
+        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 60);
+    }
+
+    if (showNotice) {
+      showGuestNotice();
     }
   }
 
-  function install() {
-    if (!window.App || App.__guestFlowGuardInstalled) return;
-    App.__guestFlowGuardInstalled = true;
+  function showGuestNotice() {
+    var old = document.getElementById('guestFlowNotice');
+    if (old) old.remove();
 
-    const originalShowScreen = App.showScreen ? App.showScreen.bind(App) : null;
-    const protectedScreens = new Set(['grade', 'subject', 'topic', 'quiz', 'result', 'shop']);
+    var box = document.createElement('div');
+    box.id = 'guestFlowNotice';
+    box.textContent = '🐰 Con nhập tên trước để lưu sao, huy hiệu và tiến độ nhé!';
+    box.style.position = 'fixed';
+    box.style.left = '50%';
+    box.style.top = '18px';
+    box.style.transform = 'translateX(-50%)';
+    box.style.zIndex = '99999';
+    box.style.background = '#ffffff';
+    box.style.color = '#0f4f9c';
+    box.style.border = '2px solid #d9eafd';
+    box.style.borderRadius = '999px';
+    box.style.boxShadow = '0 16px 40px rgba(31,122,245,.18)';
+    box.style.padding = '12px 18px';
+    box.style.fontWeight = '900';
+    box.style.fontFamily = 'Nunito, sans-serif';
+    box.style.maxWidth = 'calc(100vw - 24px)';
+    box.style.textAlign = 'center';
+    document.body.appendChild(box);
 
-    App.showScreen = function (name) {
-      if (!hasPlayer()) {
-        if (name === 'register') {
-          if (originalShowScreen) return originalShowScreen(name);
-          return goRegister();
-        }
+    setTimeout(function () {
+      box.style.transition = 'opacity .25s ease, transform .25s ease';
+      box.style.opacity = '0';
+      box.style.transform = 'translateX(-50%) translateY(-8px)';
+      setTimeout(function () { box.remove(); }, 280);
+    }, 2200);
+  }
 
-        if (name === 'subject') {
-          // Trang chủ khi chưa có bé đăng nhập thì quay về màn nhập tên.
-          goRegister();
-          return;
-        }
+  function shouldBlockTarget(target) {
+    if (!target || hasPlayer()) return false;
 
-        if (protectedScreens.has(name)) {
-          showToast('Con nhập tên trước rồi mình vào học nhé 🐰');
-          goRegister();
-          return;
-        }
+    // Cho phép các thao tác trong màn nhập tên.
+    if (target.closest('#screenRegister')) return false;
+
+    // Cho phép phụ huynh mở dashboard, nhưng khi quay lại sẽ về register.
+    if (target.closest('#footerParent') || target.closest('#btnPinSubmit') || target.closest('#btnPinBack') || target.closest('#btnChangePin')) {
+      return false;
+    }
+
+    // Chặn menu/lớp/shop/chủ đề/môn/câu trả lời khi chưa có tên.
+    if (target.closest('.grade-card')) return true;
+    if (target.closest('.sub-card')) return true;
+    if (target.closest('.topic-card')) return true;
+    if (target.closest('.ans-btn')) return true;
+    if (target.closest('.reward-buy-btn')) return true;
+    if (target.closest('#btnRedeemBadge')) return true;
+    if (target.closest('#btnRedeemBadgeShop')) return true;
+
+    var nav = target.closest('[data-screen]');
+    if (nav) {
+      var screen = nav.getAttribute('data-screen');
+      if (screen === 'register') return false;
+      if (screen === 'subject' || screen === 'grade' || screen === 'topic' || screen === 'quiz' || screen === 'shop') return true;
+    }
+
+    return false;
+  }
+
+  // Capture phase để chặn trước các handler cũ của app.
+  document.addEventListener('click', function (e) {
+    if (shouldBlockTarget(e.target)) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      goRegister(true);
+    }
+  }, true);
+
+  // Override App.showScreen để code khác không tự chuyển qua màn học khi chưa nhập tên.
+  function installShowScreenGuard() {
+    if (!window.App || typeof window.App.showScreen !== 'function' || window.App.__guestGuardInstalled) return;
+
+    var originalShowScreen = window.App.showScreen.bind(window.App);
+    window.App.showScreen = function (name) {
+      var blocked = ['grade', 'subject', 'topic', 'quiz', 'shop', 'result'];
+      if (!hasPlayer() && blocked.indexOf(name) !== -1) {
+        originalShowScreen('register');
+        showGuestNotice();
+        return;
       }
-
-      if (originalShowScreen) return originalShowScreen(name);
+      return originalShowScreen(name);
     };
-
-    // Góp ý và khu Bố Mẹ vẫn dùng được, nhưng các nút học/shop/grade sẽ được guard ở showScreen.
-    document.addEventListener('click', function (e) {
-      const nav = e.target.closest('[data-screen]');
-      if (!nav) return;
-      const target = nav.dataset.screen;
-      if (!hasPlayer() && protectedScreens.has(target)) {
-        e.preventDefault();
-        e.stopPropagation();
-        App.showScreen(target);
-      }
-    }, true);
+    window.App.__guestGuardInstalled = true;
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { setTimeout(install, 0); });
+    document.addEventListener('DOMContentLoaded', installShowScreenGuard);
   } else {
-    setTimeout(install, 0);
+    installShowScreenGuard();
   }
+  setTimeout(installShowScreenGuard, 200);
 })();
