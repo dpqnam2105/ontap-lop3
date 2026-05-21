@@ -28,6 +28,20 @@ const App = {
 
   async _loadData() {
     this.allData = await API.getAllData();
+    
+    // BUG #5 FIX: normalize question bank để engine hoạt động đúng
+    // - Gắn ID ổn định cho mỗi câu (spaced repetition cần ID không đổi)
+    // - Tính difficulty + skill cho câu chưa có
+    // - Adaptive selection cần data đã normalize
+    if (this.allData && window.LearningEngine && window.LearningEngine.normalizeQuestionBank) {
+      try {
+        this.allData = window.LearningEngine.normalizeQuestionBank(this.allData);
+        console.log('✅ LearningEngine normalized:', window.LearningEngine.ENGINE_VERSION);
+      } catch (e) {
+        console.warn('LearningEngine.normalizeQuestionBank failed:', e);
+      }
+    }
+    
     if (this.playerName && this.allData) this._renderSubjects();
   },
 
