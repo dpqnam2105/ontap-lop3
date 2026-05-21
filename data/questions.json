@@ -529,8 +529,8 @@
                 "Không xác định",
                 "="
               ],
-              "a": 3,
-              "hint": "Tính giá trị mỗi vế rồi so sánh xem vế nào lớn hơn",
+              "a": 1,
+              "hint": "So sánh số nhóm: 3 nhóm 4 nhỏ hơn 4 nhóm 4.",
               "difficulty": 2
             },
             {
@@ -568,6 +568,81 @@
               "a": 0,
               "hint": "Số liền sau = số đó cộng 1",
               "difficulty": 3
+            },
+            {
+              "q": "Điền dấu: 572 __ 682",
+              "choices": [
+                "Không xác định",
+                "<",
+                ">",
+                "="
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "So sánh hàng trăm trước, rồi đến hàng chục.",
+              "skill": "comparison",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Điền dấu: 826 __ 852",
+              "choices": [
+                "=",
+                "Không xác định",
+                "<",
+                ">"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Hai số cùng hàng trăm, so sánh tiếp hàng chục.",
+              "skill": "comparison",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Điền dấu: 976 - 517 __ 459",
+              "choices": [
+                ">",
+                "=",
+                "<",
+                "Không xác định"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Tính vế trái trước rồi so sánh.",
+              "skill": "comparison",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Các số có hai chữ số sao cho tích hai chữ số bằng 5 là?",
+              "choices": [
+                "14 và 41",
+                "25 và 52",
+                "15 và 51",
+                "50 và 05"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Tìm các cặp chữ số nhân với nhau được 5.",
+              "skill": "digit_reasoning",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Các số có hai chữ số sao cho tổng hai chữ số bằng 3 là?",
+              "choices": [
+                "13, 31 và 30",
+                "12, 21 và 30",
+                "03, 12 và 21",
+                "12 và 21"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Chữ số hàng chục không được bằng 0.",
+              "skill": "digit_reasoning",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -1408,6 +1483,126 @@
               "a": 0,
               "hint": "Số lẻ là số không chia hết cho 2 (tận cùng 1,3,5,7,9)",
               "difficulty": 1
+            },
+            {
+              "q": "414 + 135 = ?",
+              "choices": [
+                "559",
+                "449",
+                "549",
+                "539"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Cộng theo từng hàng: đơn vị, chục, trăm.",
+              "skill": "addition_3digit",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "672 + 153 = ?",
+              "choices": [
+                "815",
+                "825",
+                "725",
+                "835"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "164 + 376 = ?",
+              "choices": [
+                "540",
+                "530",
+                "550",
+                "440"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tính nhanh: 11 + 28 + 24 + 16 + 12 + 9 = ?",
+              "choices": [
+                "100",
+                "110",
+                "99",
+                "90"
+              ],
+              "a": 0,
+              "difficulty": 3,
+              "hint": "Ghép các cặp số tạo thành chục tròn.",
+              "skill": "mental_math",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tính nhanh: 27 + 45 - 45 - 27 = ?",
+              "choices": [
+                "72",
+                "0",
+                "27",
+                "45"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Các số giống nhau cộng rồi trừ sẽ triệt tiêu nhau.",
+              "skill": "mental_math",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "39 m - 16 m + 24 m = ?",
+              "choices": [
+                "49 m",
+                "45 m",
+                "46 m",
+                "47 m"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Tính từ trái sang phải.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "153 + 631 = ?",
+              "choices": [
+                "794",
+                "774",
+                "784",
+                "684"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "274 + 269 = ?",
+              "choices": [
+                "533",
+                "553",
+                "445",
+                "543"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -2208,6 +2403,96 @@
               "a": 2,
               "hint": "Tính giá trị mỗi vế rồi so sánh xem vế nào lớn hơn",
               "difficulty": 3
+            },
+            {
+              "q": "751 - 245 = ?",
+              "choices": [
+                "506",
+                "406",
+                "496",
+                "516"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Trừ theo từng hàng: đơn vị, chục, trăm.",
+              "skill": "subtraction_3digit",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "825 - 264 = ?",
+              "choices": [
+                "561",
+                "551",
+                "661",
+                "571"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "725 - 625 = ?",
+              "choices": [
+                "110",
+                "90",
+                "100",
+                "200"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "924 - 138 = ?",
+              "choices": [
+                "796",
+                "786",
+                "776",
+                "886"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "757 - 472 = ?",
+              "choices": [
+                "285",
+                "295",
+                "385",
+                "275"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Đặt tính thẳng hàng rồi tính.",
+              "skill": "vertical_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Hiệu giữa số nhỏ nhất có 3 chữ số và số chẵn lớn nhất có 2 chữ số là?",
+              "choices": [
+                "98",
+                "1",
+                "100",
+                "2"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Tìm hai số cần so sánh trước, rồi lấy số lớn trừ số nhỏ.",
+              "skill": "number_properties",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -3010,6 +3295,261 @@
               "a": 1,
               "hint": "10 lớn nhất",
               "difficulty": 3
+            },
+            {
+              "q": "6 × 7 + 143 = ?",
+              "choices": [
+                "185",
+                "179",
+                "175",
+                "195"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Nhân trước, sau đó cộng.",
+              "skill": "order_operations",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "4 m × 6 + 7 m = ?",
+              "choices": [
+                "31 m",
+                "37 m",
+                "24 m",
+                "30 m"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Nhân trước, sau đó cộng.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "7 kg × 3 - 10 kg = ?",
+              "choices": [
+                "11 kg",
+                "21 kg",
+                "13 kg",
+                "10 kg"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Nhân trước, sau đó trừ.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "8 cm × 7 + 37 cm = ?",
+              "choices": [
+                "83 cm",
+                "94 cm",
+                "93 cm",
+                "56 cm"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Nhân trước, sau đó cộng.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Cậu 20 tuổi, tuổi cậu bằng 1/3 tuổi ông ngoại. Ông ngoại bao nhiêu tuổi?",
+              "choices": [
+                "60 tuổi",
+                "23 tuổi",
+                "17 tuổi",
+                "40 tuổi"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Nếu 20 là 1 phần thì 3 phần là bao nhiêu?",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "7 × 3 = ?",
+              "choices": [
+                "22",
+                "20",
+                "21",
+                "23"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "3 × 5 = ?",
+              "choices": [
+                "14",
+                "15",
+                "16",
+                "17"
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "5 × 9 = ?",
+              "choices": [
+                "46",
+                "44",
+                "47",
+                "45"
+              ],
+              "a": 3,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "4 × 3 = ?",
+              "choices": [
+                "14",
+                "13",
+                "12",
+                "11"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "6 × 6 = ?",
+              "choices": [
+                "35",
+                "37",
+                "38",
+                "36"
+              ],
+              "a": 3,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "4 × 7 = ?",
+              "choices": [
+                "27",
+                "30",
+                "28",
+                "29"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "6 × 8 = ?",
+              "choices": [
+                "50",
+                "48",
+                "47",
+                "49"
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "9 × 6 = ?",
+              "choices": [
+                "55",
+                "54",
+                "56",
+                "53"
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "7 × 6 = ?",
+              "choices": [
+                "43",
+                "42",
+                "44",
+                "41"
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "9 × 4 = ?",
+              "choices": [
+                "35",
+                "36",
+                "37",
+                "38"
+              ],
+              "a": 1,
+              "difficulty": 1,
+              "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
+              "skill": "multiplication_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tính nhanh: 5 × 4 + 3 × 4 + 4 + 4 = ?",
+              "choices": [
+                "36",
+                "42",
+                "38",
+                "40"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Tất cả đều có thể gom theo nhóm 4.",
+              "skill": "mental_math",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tính nhanh: 5 × 7 + 4 × 7 + 7 = ?",
+              "choices": [
+                "70",
+                "77",
+                "66",
+                "63"
+              ],
+              "a": 0,
+              "difficulty": 3,
+              "hint": "Gom các nhóm 7 lại với nhau.",
+              "skill": "mental_math",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -3746,6 +4286,126 @@
               "a": 1,
               "hint": "20+20=40, 20×20=400",
               "difficulty": 2
+            },
+            {
+              "q": "36 : 9 : 2 = ?",
+              "choices": [
+                "2",
+                "18",
+                "4",
+                "8"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Tính từ trái sang phải.",
+              "skill": "order_operations",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "6 kg : 1 = ?",
+              "choices": [
+                "1 kg",
+                "6 kg",
+                "0 kg",
+                "7 kg"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Một số chia cho 1 vẫn bằng chính nó.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Mẹ 28 tuổi. Con bằng 1/4 tuổi mẹ. Con bao nhiêu tuổi?",
+              "choices": [
+                "6 tuổi",
+                "9 tuổi",
+                "8 tuổi",
+                "7 tuổi"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Tìm một phần tư bằng cách chia cho 4.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "32 : 4 = ?",
+              "choices": [
+                "8",
+                "10",
+                "9",
+                "7"
+              ],
+              "a": 0,
+              "difficulty": 1,
+              "hint": "Dùng bảng nhân ngược lại để chia.",
+              "skill": "division_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "48 : 6 = ?",
+              "choices": [
+                "7",
+                "10",
+                "8",
+                "9"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Dùng bảng nhân ngược lại để chia.",
+              "skill": "division_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "42 : 7 = ?",
+              "choices": [
+                "7",
+                "8",
+                "6",
+                "5"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Dùng bảng nhân ngược lại để chia.",
+              "skill": "division_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "54 : 6 = ?",
+              "choices": [
+                "11",
+                "10",
+                "9",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 1,
+              "hint": "Dùng bảng nhân ngược lại để chia.",
+              "skill": "division_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "49 : 7 = ?",
+              "choices": [
+                "7",
+                "6",
+                "8",
+                "9"
+              ],
+              "a": 0,
+              "difficulty": 1,
+              "hint": "Dùng bảng nhân ngược lại để chia.",
+              "skill": "division_fact",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -4487,6 +5147,171 @@
               "a": 1,
               "hint": "215+178=393",
               "difficulty": 1
+            },
+            {
+              "q": "6 cm = ? mm",
+              "choices": [
+                "6 mm",
+                "60 mm",
+                "600 mm",
+                "16 mm"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "1 cm = 10 mm.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "5 dm 4 mm = ? mm",
+              "choices": [
+                "540 mm",
+                "5004 mm",
+                "54 mm",
+                "504 mm"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Đổi dm sang mm rồi cộng thêm phần mm.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "4 m = ? cm",
+              "choices": [
+                "400 cm",
+                "40 cm",
+                "104 cm",
+                "4000 cm"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "1 m = 100 cm.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "2 m 6 dm = ? dm",
+              "choices": [
+                "26 dm",
+                "20 dm",
+                "206 dm",
+                "16 dm"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "1 m = 10 dm.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "14 cm + 5 dm = ?",
+              "choices": [
+                "54 cm",
+                "74 cm",
+                "64 cm",
+                "19 cm"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Đổi 5 dm ra cm trước.",
+              "skill": "mixed_units_calculation",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "1 dm 6 cm = ? cm",
+              "choices": [
+                "61 cm",
+                "7 cm",
+                "106 cm",
+                "16 cm"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Đổi về cùng một đơn vị rồi tách phần còn lại.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "5 cm 7 mm = ? mm",
+              "choices": [
+                "507 mm",
+                "12 mm",
+                "75 mm",
+                "57 mm"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Đổi về cùng một đơn vị rồi tách phần còn lại.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "3 m 5 dm = ? dm",
+              "choices": [
+                "53 dm",
+                "8 dm",
+                "35 dm",
+                "305 dm"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Đổi về cùng một đơn vị rồi tách phần còn lại.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "95 dm = ? m ? dm",
+              "choices": [
+                "5 m 9 dm",
+                "9 m 5 dm",
+                "95 m 0 dm",
+                "9 m 50 dm"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Đổi về cùng một đơn vị rồi tách phần còn lại.",
+              "skill": "unit_conversion",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Hôm nay là thứ sáu ngày 2 tháng 6. Thứ sáu tuần sau là ngày nào?",
+              "choices": [
+                "Ngày 9 tháng 6",
+                "Ngày 10 tháng 6",
+                "Ngày 8 tháng 6",
+                "Ngày 7 tháng 6"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Một tuần sau là thêm 7 ngày.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Mẹ đi công tác một tuần và về ngày 24. Mẹ đi từ ngày nào?",
+              "choices": [
+                "Ngày 18",
+                "Ngày 19",
+                "Ngày 17",
+                "Ngày 20"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Một tuần là 7 ngày, tính lùi từ ngày về.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -5015,6 +5840,57 @@
               "a": 2,
               "hint": "4×7×2=56",
               "difficulty": 2
+            },
+            {
+              "q": "Hình dưới đây có bao nhiêu hình tam giác?",
+              "choices": [
+                "9",
+                "8",
+                "6",
+                "7"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Đếm hình nhỏ trước, rồi tìm các tam giác lớn ghép từ nhiều phần.",
+              "type": "visual_count",
+              "skill": "geometry_counting",
+              "image": "images/questions/de2_bai4_tam_giac.png",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Hình dưới đây có bao nhiêu hình tứ giác?",
+              "choices": [
+                "11",
+                "10",
+                "12",
+                "13"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Đếm tứ giác nhỏ trước, sau đó tìm các tứ giác lớn ghép lại.",
+              "type": "visual_count",
+              "skill": "geometry_counting",
+              "image": "images/questions/de5_bai4_tu_giac_tam_giac.png",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Hình dưới đây có bao nhiêu hình tam giác?",
+              "choices": [
+                "12",
+                "10",
+                "9",
+                "8"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Đếm tam giác theo từng kích thước để tránh bỏ sót.",
+              "type": "visual_count",
+              "skill": "geometry_counting",
+              "image": "images/questions/de5_bai4_tu_giac_tam_giac.png",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -5716,6 +6592,141 @@
               "a": 1,
               "hint": "Số lẻ là số không chia hết cho 2 (tận cùng 1,3,5,7,9)",
               "difficulty": 1
+            },
+            {
+              "q": "Lớp 1A có 47 học sinh. Lớp 1B ít hơn lớp 1A 10 học sinh. Lớp 1B có bao nhiêu học sinh?",
+              "choices": [
+                "37 học sinh",
+                "57 học sinh",
+                "27 học sinh",
+                "47 học sinh"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "“Ít hơn” thì dùng phép trừ.",
+              "skill": "word_problem_subtraction",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Có 6 con gà và 3 con mèo. Mỗi gà 2 chân, mỗi mèo 4 chân. Có tất cả bao nhiêu chân?",
+              "choices": [
+                "20 chân",
+                "18 chân",
+                "30 chân",
+                "24 chân"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Tính chân gà và chân mèo riêng, rồi cộng lại.",
+              "skill": "word_problem_multiplication",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Mẹ có 30 gói bánh chia đều cho 3 chị em. Mỗi chị em được bao nhiêu gói?",
+              "choices": [
+                "10 gói",
+                "15 gói",
+                "9 gói",
+                "11 gói"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Chia đều thì dùng phép chia.",
+              "skill": "word_problem_division",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Con vịt nặng 3 kg, con gà nặng hơn con vịt 2 kg. Con gà nặng bao nhiêu?",
+              "choices": [
+                "5 kg",
+                "4 kg",
+                "6 kg",
+                "1 kg"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "“Nặng hơn” thì cộng thêm.",
+              "skill": "word_problem_addition",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Lớp có 13 học sinh nam. Số nữ nhiều hơn số nam 9 bạn. Lớp có tất cả bao nhiêu học sinh?",
+              "choices": [
+                "31 học sinh",
+                "34 học sinh",
+                "35 học sinh",
+                "22 học sinh"
+              ],
+              "a": 2,
+              "difficulty": 2,
+              "hint": "Tìm số bạn nữ trước, rồi cộng cả nam và nữ.",
+              "skill": "two_step_word_problem",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Ông 62 tuổi, ông hơn bố 27 tuổi. Bố bao nhiêu tuổi?",
+              "choices": [
+                "35 tuổi",
+                "37 tuổi",
+                "89 tuổi",
+                "45 tuổi"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Người ít tuổi hơn thì lấy tuổi lớn trừ phần hơn.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Mẹ có 1000 đồng gồm 1 tờ 500 đồng, 2 tờ 200 đồng. Tờ tiền còn lại là?",
+              "choices": [
+                "900 đồng",
+                "200 đồng",
+                "700 đồng",
+                "100 đồng"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Tính số tiền đã biết rồi tìm phần còn lại.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Cửa hàng dùng 60 m vải để may quần áo. Mỗi bộ dùng 3 m vải. May được bao nhiêu bộ?",
+              "choices": [
+                "21 bộ",
+                "30 bộ",
+                "18 bộ",
+                "20 bộ"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Chia tổng số mét vải cho số mét mỗi bộ.",
+              "skill": "word_problem_division",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Cắt cuộn dây dài 80 m thành các đoạn bằng nhau, mỗi đoạn 4 m. Cắt được bao nhiêu đoạn?",
+              "choices": [
+                "20 đoạn",
+                "24 đoạn",
+                "16 đoạn",
+                "18 đoạn"
+              ],
+              "a": 0,
+              "difficulty": 2,
+              "hint": "Chia độ dài cả cuộn cho độ dài mỗi đoạn.",
+              "skill": "word_problem_division",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         },
@@ -6259,6 +7270,261 @@
               "a": 3,
               "hint": "",
               "difficulty": 3
+            },
+            {
+              "q": "Tìm X: X + X + X + X + X - 6 = 14. X = ?",
+              "choices": [
+                "6",
+                "5",
+                "3",
+                "4"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Gộp 5 số X giống nhau thành 5 × X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: X : 6 - 5 = 2. X = ?",
+              "choices": [
+                "48",
+                "42",
+                "36",
+                "30"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Làm ngược từng bước: cộng trước, rồi nhân.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: X + 29 - 27 = 85. X = ?",
+              "choices": [
+                "83",
+                "85",
+                "87",
+                "81"
+              ],
+              "a": 0,
+              "difficulty": 3,
+              "hint": "Có thể gộp +29 và -27 trước.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 96 - X = 16 + 3. X = ?",
+              "choices": [
+                "78",
+                "79",
+                "76",
+                "77"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Tính vế phải trước rồi tìm số bị trừ còn thiếu.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Viết tiếp: 61, 63, 65, __, __, 71, __, __",
+              "choices": [
+                "66, 68, 72, 74",
+                "68, 69, 72, 75",
+                "67, 70, 72, 74",
+                "67, 69, 73, 75"
+              ],
+              "a": 3,
+              "difficulty": 2,
+              "hint": "Dãy số tăng thêm 2 mỗi lần.",
+              "skill": "number_sequence",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Viết tiếp: 1, 5, 9, 13, 17, __, __, __",
+              "choices": [
+                "21, 24, 27",
+                "21, 25, 29",
+                "20, 24, 28",
+                "22, 26, 30"
+              ],
+              "a": 1,
+              "difficulty": 2,
+              "hint": "Dãy số tăng thêm 4 mỗi lần.",
+              "skill": "number_sequence",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 35 < X + 12 < 37. X = ?",
+              "choices": [
+                "25",
+                "23",
+                "24",
+                "36"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Số nguyên nằm giữa 35 và 37 là 36.",
+              "skill": "inequality",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 112 < X - 32 < 114. X = ?",
+              "choices": [
+                "144",
+                "146",
+                "113",
+                "145"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Số nguyên nằm giữa 112 và 114 là 113.",
+              "skill": "inequality",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 232 - X × 2 = 214. X = ?",
+              "choices": [
+                "10",
+                "18",
+                "8",
+                "9"
+              ],
+              "a": 3,
+              "difficulty": 3,
+              "hint": "Làm phép nhân trước trong biểu thức có X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: X × 3 = 5 × 10 - 23. X = ?",
+              "choices": [
+                "8",
+                "9",
+                "27",
+                "10"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Tính vế phải trước rồi tìm thừa số chưa biết.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Anh hơn em 7 tuổi. Sau 10 năm, anh hơn em bao nhiêu tuổi?",
+              "choices": [
+                "2 tuổi",
+                "7 tuổi",
+                "17 tuổi",
+                "16 tuổi"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Hai người cùng tăng tuổi như nhau nên hiệu số tuổi không đổi.",
+              "skill": "summer_review",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: X × 7 = 49. X = ?",
+              "choices": [
+                "8",
+                "7",
+                "9",
+                "6"
+              ],
+              "a": 1,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 7 × X = 293 - 251. X = ?",
+              "choices": [
+                "6",
+                "8",
+                "7",
+                "5"
+              ],
+              "a": 0,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 54 : X = 6. X = ?",
+              "choices": [
+                "8",
+                "6",
+                "9",
+                "10"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 42 : X = 30 : 5. X = ?",
+              "choices": [
+                "9",
+                "6",
+                "7",
+                "8"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 1000 - X = 278. X = ?",
+              "choices": [
+                "278",
+                "732",
+                "722",
+                "712"
+              ],
+              "a": 2,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Tìm X: 777 + X = 1000. X = ?",
+              "choices": [
+                "223",
+                "222",
+                "233",
+                "213"
+              ],
+              "a": 0,
+              "difficulty": 3,
+              "hint": "Tính phần biểu thức đã biết trước, rồi tìm X.",
+              "skill": "find_x",
+              "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+              "curriculum": "grade2_to_grade3_summer_review"
             }
           ]
         }
@@ -11741,6 +13007,14 @@
           ]
         }
       ]
+    }
+  ],
+  "importNotes": [
+    {
+      "date": "2026-05-21",
+      "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
+      "addedQuestions": 84,
+      "note": "Đã thêm câu trắc nghiệm từ PDF. Hai câu đếm hình dùng trường image và cần bổ sung ảnh ở images/questions/."
     }
   ]
 }
