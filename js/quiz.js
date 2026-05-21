@@ -1,5 +1,5 @@
 // =============================================
-// QUIZ.JS v8 - learning modes + adaptive engine integration
+// QUIZ.JS v7 - saveScore tích hợp log
 // =============================================
 
 const Quiz = {
@@ -10,164 +10,78 @@ const Quiz = {
   currentTopic: null,
   currentSubject: null,
   currentTopicId: null,
-  currentSubjectId: 'toan',
   sessionInfo: null,
   sessionStartTime: null,
-  questionStartedAt: null,
-  questionUsedHint: false,
-  questionAnswered: false,
-  mode: 'practice',
-  sessionGuard: null,
 
   TARGET_PER_SESSION: 20,
-  TEST_QUESTION_COUNT: 20,
 
-  start(topic, subjectName, options) {
-    options = options || {};
-    this.mode = options.mode || 'practice';
+  start(topic, subjectName) {
     this.currentTopic = topic;
     this.currentSubject = subjectName || '';
     this.currentTopicId = (topic.id || topic.name).toString();
-    this.currentSubjectId = options.subjectId || this._subjectIdFromName(subjectName) || 'toan';
     this.sessionStartTime = Date.now();
-    this.score = 0;
-    this.curIdx = 0;
-
-    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
-    this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
-      ? window.LearningEngine.installSessionGuard()
-      : null;
-
-    const selection = this._selectQuestions(topic, this.mode);
-    this.questions = selection.questions;
-    this.sessionInfo = selection.info;
-
-    if (!this.questions.length) {
-      alert(this.mode === 'review'
-        ? 'Chưa có câu sai để ôn lại. Con làm bài mới trước nhé! 🌱'
-        : 'Chủ đề này chưa có câu hỏi.');
-      return;
+    
+    const progress = Storage.getTopicProgress(this.currentTopicId);
+    const totalInTopic = topic.questions.length;
+    
+    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
+    const sessionSize = Math.ceil(totalInTopic / numSessions);
+    
+    const allIndices = topic.questions.map((_, i) => i);
+    const notLearned = allIndices.filter(i => !progress.learned.includes(i));
+    
+    let selectedIndices;
+    let currentSession;
+    let isAllDone = false;
+    
+    if (notLearned.length === 0) {
+      isAllDone = true;
+      if (progress.wrong.length > 0) {
+        selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
+      } else {
+        selectedIndices = this._shuffle(allIndices).slice(0, sessionSize);
+      }
+      currentSession = numSessions;
+    } else if (notLearned.length <= sessionSize) {
+      selectedIndices = this._shuffle(notLearned);
+      currentSession = numSessions;
+    } else {
+      selectedIndices = this._shuffle(notLearned).slice(0, sessionSize);
+      currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
     }
-
+    
+    this.questions = selectedIndices.map(i => ({ ...topic.questions[i], _idx: i }));
+    this.curIdx = 0;
+    this.score = 0;
+    
+    this.sessionInfo = {
+      current: currentSession,
+      total: numSessions,
+      isAllDone: isAllDone,
+      learnedBefore: progress.learned.length,
+      totalInTopic: totalInTopic
+    };
+    
     App.showScreen('quiz');
     this.render();
   },
 
-  _selectQuestions(topic, mode) {
-    const totalInTopic = topic.questions.length;
-    const progress = Storage.getTopicProgress(this.currentTopicId);
-    const allIndices = topic.questions.map((_, i) => i);
-
-    if (mode === 'review') {
-      const wrong = (progress.wrong || []).filter(i => topic.questions[i]);
-      const indices = wrong.length ? this._shuffle(wrong).slice(0, this.TARGET_PER_SESSION) : [];
-      return {
-        questions: indices.map(i => this._prepareQuestion(topic.questions[i], i)),
-        info: { mode, modeLabel: 'Ôn lỗi sai 🔁', current: 1, total: 1, isAllDone: true, learnedBefore: progress.learned.length, totalInTopic }
-      };
-    }
-
-    if (mode === 'test') {
-      const count = Math.min(this.TEST_QUESTION_COUNT, totalInTopic);
-      const indices = this._selectAdaptiveIndices(topic, count, allIndices);
-      return {
-        questions: indices.map(i => this._prepareQuestion(topic.questions[i], i)),
-        info: { mode, modeLabel: 'Kiểm tra 📝', current: 1, total: 1, isAllDone: false, learnedBefore: progress.learned.length, totalInTopic }
-      };
-    }
-
-    // practice mode: keep old daily-session behavior, but use adaptive scoring when possible.
-    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
-    const sessionSize = Math.ceil(totalInTopic / numSessions);
-    const notLearned = allIndices.filter(i => !progress.learned.includes(i));
-    let selectedIndices;
-    let currentSession;
-    let isAllDone = false;
-
-    if (notLearned.length === 0) {
-      isAllDone = true;
-      if (progress.wrong.length > 0) selectedIndices = this._shuffle(progress.wrong).slice(0, sessionSize);
-      else selectedIndices = this._selectAdaptiveIndices(topic, sessionSize, allIndices);
-      currentSession = numSessions;
-    } else if (notLearned.length <= sessionSize) {
-      selectedIndices = this._selectAdaptiveIndices(topic, notLearned.length, notLearned);
-      currentSession = numSessions;
-    } else {
-      selectedIndices = this._selectAdaptiveIndices(topic, sessionSize, notLearned);
-      currentSession = Math.floor(progress.learned.length / sessionSize) + 1;
-    }
-
-    return {
-      questions: selectedIndices.map(i => this._prepareQuestion(topic.questions[i], i)),
-      info: { mode, modeLabel: 'Luyện tập 🧠', current: currentSession, total: numSessions, isAllDone, learnedBefore: progress.learned.length, totalInTopic }
-    };
-  },
-
-  _prepareQuestion(q, idx) {
-    return {
-      ...q,
-      _idx: idx,
-      subjectId: this.currentSubjectId,
-      topicId: this.currentTopicId,
-      id: q.id || (window.LearningEngine && window.LearningEngine.stableQuestionId
-        ? window.LearningEngine.stableQuestionId(this.currentSubjectId, this.currentTopicId, q, idx)
-        : this.currentTopicId + '_' + idx)
-    };
-  },
-
-  _selectAdaptiveIndices(topic, count, candidateIndices) {
-    const candidateSet = new Set(candidateIndices);
-    if (window.LearningEngine && window.LearningEngine.selectNextQuestion && App && App.allData) {
-      try {
-        const picked = window.LearningEngine.selectNextQuestion({
-          db: App.allData,
-          learnerId: this._learnerId(),
-          subjectId: this.currentSubjectId,
-          topicId: this.currentTopicId,
-          count: Math.min(count, candidateIndices.length)
-        });
-        const arr = Array.isArray(picked) ? picked : [picked];
-        const byId = new Map(topic.questions.map((q, i) => [q.id || this._prepareQuestion(q, i).id, i]));
-        const indices = arr.map(q => byId.get(q.id)).filter(i => i != null && candidateSet.has(i));
-        if (indices.length) {
-          const missing = candidateIndices.filter(i => !indices.includes(i));
-          return [...indices, ...this._shuffle(missing)].slice(0, count);
-        }
-      } catch (e) {
-        console.warn('Adaptive selection fallback:', e);
-      }
-    }
-    return this._shuffle(candidateIndices).slice(0, count);
-  },
-
   render() {
     this.canEarnPoint = true;
-    this.questionUsedHint = false;
-    this.questionAnswered = false;
-    this.questionStartedAt = Date.now();
-
     const q = this.questions[this.curIdx];
     const total = this.questions.length;
-    const info = this.sessionInfo || {};
+    const info = this.sessionInfo;
 
-    let titleText = (info.modeLabel || 'Luyện tập 🧠') + ' · ' + this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
-    if (this.mode === 'practice' && info.total > 1) {
-      titleText += info.isAllDone ? ' · Ôn lại 🔄' : ' · Lần ' + info.current + '/' + info.total;
-    }
-    if (this.mode === 'test') titleText += ' · Không dùng gợi ý';
-    document.getElementById('quizTopicName').textContent = titleText;
-
-    const imgContainer = document.getElementById('qImage');
-    if (imgContainer) {
-      if (q.image) {
-        imgContainer.innerHTML = '<img src="' + q.image + '" alt="Hình minh hoạ câu hỏi" class="question-image" />';
-        imgContainer.style.display = 'block';
+    let titleText = this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    if (info.total > 1) {
+      if (info.isAllDone) {
+        titleText += ' · Ôn lại 🔄';
       } else {
-        imgContainer.innerHTML = '';
-        imgContainer.style.display = 'none';
+        titleText += ' · Lần ' + info.current + '/' + info.total;
       }
     }
-
+    document.getElementById('quizTopicName').textContent = titleText;
+    
     document.getElementById('qText').textContent = q.q;
     document.getElementById('scoreDisp').textContent = this.score;
     document.getElementById('progFill').style.width = (this.curIdx / total * 100) + '%';
@@ -187,27 +101,18 @@ const Quiz = {
   },
 
   checkAnswer(btn, selected, correct) {
-    if (this.questionAnswered && this.mode === 'test') return;
-
     const q = this.questions[this.curIdx];
     const fb = document.getElementById('feedback');
     const fbText = document.getElementById('fbText');
     const fbAns = document.getElementById('fbAns');
-    const isCorrect = selected === correct;
 
-    if (!this.questionAnswered) {
-      this._recordLearningAnswer(q, selected);
-      this.questionAnswered = true;
-    }
-
-    if (isCorrect) {
+    if (selected === correct) {
       Sound.play('correct');
       btn.classList.add('correct');
 
       if (this.canEarnPoint) {
         this.score++;
         Rewards.addStar(1);
-        if (Rewards.addXP) Rewards.addXP(this.mode === 'test' ? 12 : 8);
         document.getElementById('scoreDisp').textContent = this.score;
         this._flyStar(btn);
         const scoreBadge = document.getElementById('scoreDisp').parentElement;
@@ -217,123 +122,93 @@ const Quiz = {
 
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
-      fbText.textContent = this.mode === 'test' ? 'Đã ghi nhận đáp án! ✅' : 'Chính xác! Con làm tốt lắm! 👏';
-      fbAns.textContent = this.mode === 'test' ? '' : (q.explain || '');
-
+      fbText.textContent = 'Chính xác! Con làm tốt lắm! 👏';
+      fbAns.textContent = q.explain || '';
+      
       const btnNext = document.getElementById('btnNext');
       btnNext.classList.remove('hidden');
-      btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+      btnNext.textContent = this.curIdx + 1 >= this.questions.length 
+        ? 'Xem kết quả 🎉' 
+        : 'Câu tiếp theo →';
     } else {
       Sound.play('wrong');
       btn.classList.add('wrong');
       btn.disabled = true;
       this.canEarnPoint = false;
-      this.questionUsedHint = true;
 
       fb.className = 'feedback wrong';
-      fbText.textContent = this.mode === 'test' ? 'Đã ghi nhận. Sang câu tiếp theo nhé!' : 'Chưa đúng rồi, thử lại nhé!';
-      fbAns.textContent = this.mode === 'test'
-        ? 'Chế độ kiểm tra không hiện gợi ý để điểm công bằng hơn.'
-        : (q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.');
-
-      if (this.mode === 'test') {
-        document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
-        const btnNext = document.getElementById('btnNext');
-        btnNext.classList.remove('hidden');
-        btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
-      }
-    }
-  },
-
-  _recordLearningAnswer(q, selected) {
-    if (!window.LearningEngine || !window.LearningEngine.recordAnswer) return;
-    try {
-      const guard = this.sessionGuard && this.sessionGuard.get ? this.sessionGuard.get() : { visibilityChanges: 0 };
-      window.LearningEngine.recordAnswer({
-        learnerId: this._learnerId(),
-        question: q,
-        selectedIndex: selected,
-        startedAt: this.questionStartedAt,
-        usedHint: this.questionUsedHint,
-        visibilityChanges: guard.visibilityChanges || 0
-      });
-    } catch (e) {
-      console.warn('LearningEngine.recordAnswer failed:', e);
+      fbText.textContent = 'Chưa đúng rồi, thử lại nhé!';
+      fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.';
     }
   },
 
   next() {
     const q = this.questions[this.curIdx];
     this._markLearned(q._idx, this.canEarnPoint);
-
+    
     this.curIdx++;
-    if (this.curIdx >= this.questions.length) this._finish();
-    else this.render();
+    if (this.curIdx >= this.questions.length) {
+      this._finish();
+    } else {
+      this.render();
+    }
   },
 
   _markLearned(qIdx, wasCorrect) {
     const progress = Storage.getTopicProgress(this.currentTopicId);
-    if (!progress.learned.includes(qIdx)) progress.learned.push(qIdx);
-    if (!wasCorrect && !progress.wrong.includes(qIdx)) progress.wrong.push(qIdx);
-    else if (wasCorrect && progress.wrong.includes(qIdx)) progress.wrong = progress.wrong.filter(i => i !== qIdx);
+    if (!progress.learned.includes(qIdx)) {
+      progress.learned.push(qIdx);
+    }
+    if (!wasCorrect && !progress.wrong.includes(qIdx)) {
+      progress.wrong.push(qIdx);
+    } else if (wasCorrect && progress.wrong.includes(qIdx)) {
+      progress.wrong = progress.wrong.filter(i => i !== qIdx);
+    }
     Storage.saveTopicProgress(this.currentTopicId, progress.learned, progress.wrong);
   },
 
   _finish() {
     Sound.play('win');
-    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
-
-    if (Rewards.touchStreak) Rewards.touchStreak();
-
     App.showScreen('result');
     const total = this.questions.length;
     document.getElementById('resScore').textContent = this.score + '/' + total;
-
-    const ratio = total ? this.score / total : 0;
+    
+    const ratio = this.score / total;
     const resultMsg = document.querySelector('.result-msg');
     if (resultMsg) {
-      const info = this.sessionInfo || {};
+      const info = this.sessionInfo;
       let progressMsg = '';
-      if (this.mode === 'test') {
-        progressMsg = '📝 Đây là kết quả kiểm tra. Câu sai sẽ được đưa vào phần ôn lỗi sai.';
-      } else if (this.mode === 'review') {
-        progressMsg = '🔁 Con vừa ôn lại các câu từng làm sai. Rất tốt!';
+      const newLearnedTotal = info.learnedBefore + total;
+      
+      if (newLearnedTotal >= info.totalInTopic) {
+        progressMsg = '🎉 Con đã làm hết bài này hôm nay! Mai quay lại nhé 🌙';
       } else {
-        const newLearnedTotal = info.learnedBefore + total;
-        progressMsg = newLearnedTotal >= info.totalInTopic
-          ? '🎉 Con đã làm hết bài này hôm nay! Mai quay lại nhé 🌙'
-          : '📚 Còn ' + (info.totalInTopic - newLearnedTotal) + ' câu nữa trong chủ đề này.';
+        const remaining = info.totalInTopic - newLearnedTotal;
+        progressMsg = '📚 Còn ' + remaining + ' câu nữa trong chủ đề này.';
       }
-
+      
       let praiseMsg = '';
       if (ratio >= 0.9) praiseMsg = 'Xuất sắc! Con thật giỏi! 🌟';
       else if (ratio >= 0.7) praiseMsg = 'Rất tốt! Con đã chăm chỉ lắm! 👏';
       else if (ratio >= 0.5) praiseMsg = 'Khá tốt! Tiếp tục cố gắng nhé! 💪';
       else praiseMsg = 'Con đã hoàn thành rồi! Lần sau sẽ tốt hơn nhé! 🌱';
-
-      const analytics = this._analyticsText();
-      resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:700">' + progressMsg + '</span>' + analytics;
+      
+      resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:600">' + progressMsg + '</span>';
     }
-
+    
     if (ratio >= 0.8) this._confettiBurst();
-
+    
+    // Tính thời gian học (giây) - 1 lần lưu cho cả điểm + log
     const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
-    API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
-      .then(() => App.loadLeaderboard());
-  },
-
-  _analyticsText() {
-    if (!window.LearningEngine || !window.LearningEngine.getAnalyticsSummary) return '';
-    try {
-      const summary = window.LearningEngine.getAnalyticsSummary(this._learnerId());
-      const topic = (summary.topics || []).find(t => t.topicId === this.currentTopicId);
-      if (!topic) return '';
-      return '<br><br><span class="result-analytics">📈 Thành thạo chủ đề: <b>' + topic.mastery + '%</b> · Độ chính xác: <b>' + topic.accuracy + '%</b></span>';
-    } catch { return ''; }
-  },
-
-  _learnerId() {
-    return (App && App.playerName ? App.playerName : Storage.get('playerName') || 'default').trim().toLowerCase();
+    
+    API.saveScore(
+      App.playerName, 
+      this.score, 
+      total,
+      this.currentSubject,
+      this.currentTopic.name,
+      durationSec
+    ).then(() => App.loadLeaderboard());
   },
 
   _shuffle(arr) {
@@ -418,216 +293,50 @@ const Sound = {
 };
 
 const Rewards = {
-  SHOP_ITEMS: [
-    { id: 'star', name: 'Ngôi sao', icon: '⭐', file: 'sticker_star.png', cost: 10 },
-    { id: 'smile', name: 'Mặt cười', icon: '😊', file: 'sticker_smile.png', cost: 20 },
-    { id: 'cat', name: 'Con mèo', icon: '🐱', file: 'sticker_bird.png', cost: 30 },
-    { id: 'rabbit', name: 'Thỏ trắng', icon: '🐰', file: 'sticker_rabbit.png', cost: 40 },
-    { id: 'rocket', name: 'Tên lửa', icon: '🚀', file: 'sticker_rocket.png', cost: 50 },
-    { id: 'flower', name: 'Bông hoa', icon: '🌸', file: 'sticker_flower.png', cost: 60 },
-    { id: 'book', name: 'Sách hay', icon: '📚', file: 'sticker_book.png', cost: 70 },
-    { id: 'rainbow', name: 'Cầu vồng', icon: '🌈', file: 'sticker_rainbow.png', cost: 80 },
-    { id: 'trophy', name: 'Cúp vàng', icon: '🏆', file: 'sticker_trophy.png', cost: 100 },
-    { id: 'crown', name: 'Vương miện', icon: '👑', file: 'sticker_crown.png', cost: 150 }
-  ],
-
-  _defaultData() {
-    return {
-      playerName: '', stars: 0, totalCorrect: 0, inventory: [], currentBadge: null,
-      xp: 0, level: 1, streak: 0, lastStudyDate: null
-    };
-  },
-
-  _normalizeData(data) {
-    data = data && typeof data === 'object' ? data : {};
-    return {
-      ...this._defaultData(), ...data,
-      stars: Number(data.stars || 0),
-      totalCorrect: Number(data.totalCorrect || 0),
-      inventory: Array.isArray(data.inventory) ? data.inventory : [],
-      currentBadge: data.currentBadge || null,
-      xp: Number(data.xp || 0),
-      level: Number(data.level || 1),
-      streak: Number(data.streak || 0),
-      lastStudyDate: data.lastStudyDate || null
-    };
-  },
-
-  _loadData() {
-    try {
-      if (typeof Storage !== 'undefined' && Storage && typeof Storage.load === 'function') {
-        return this._normalizeData(Storage.load());
-      }
-    } catch (e) { console.warn('Rewards: Storage.load failed', e); }
-    return this._defaultData();
-  },
-
-  _saveData(data) {
-    const normalized = this._normalizeData(data);
-    if (typeof Storage !== 'undefined' && Storage && typeof Storage.save === 'function') Storage.save(normalized);
-    return true;
-  },
-
   addStar(count) {
-    const data = this._loadData();
+    const data = Storage.load();
     const oldTitle = this._calcTitle(data.totalCorrect);
-    data.stars += Number(count || 0);
-    data.totalCorrect += Number(count || 0);
-    this._saveData(data);
+    data.stars += count;
+    data.totalCorrect += count;
+    Storage.save(data);
     const newTitle = this._calcTitle(data.totalCorrect);
     this.updateUI();
     if (oldTitle !== newTitle) this._titleUpgradeAnimation();
   },
 
-  addXP(amount) {
-    const data = this._loadData();
-    amount = Number(amount || 0);
-    data.xp += amount;
-    let needed = this._xpForNextLevel(data.level);
-    let leveled = false;
-    while (data.xp >= needed) {
-      data.xp -= needed;
-      data.level += 1;
-      data.stars += 5;
-      leveled = true;
-      needed = this._xpForNextLevel(data.level);
-    }
-    this._saveData(data);
-    this.updateUI();
-    if (leveled) this._achievementPopup('🎉 Lên Level ' + data.level + '! Thưởng 5 sao!');
-  },
-
-  touchStreak() {
-    const data = this._loadData();
-    const today = this._todayKey();
-    if (data.lastStudyDate === today) return;
-    const yesterday = this._dateKeyOffset(-1);
-    data.streak = data.lastStudyDate === yesterday ? Number(data.streak || 0) + 1 : 1;
-    data.lastStudyDate = today;
-    this._saveData(data);
-    this.updateUI();
-    if (data.streak > 1) this._achievementPopup('🔥 Học liên tiếp ' + data.streak + ' ngày!');
-  },
-
   buyItem(item, cost) {
-    const data = this._loadData();
-    cost = Number(cost || 0);
+    const data = Storage.load();
     if (data.stars < cost) {
       alert('Chưa đủ sao để mua Sticker này rồi!');
       return;
     }
-    if (!data.inventory.includes(item)) data.inventory.push(item);
     data.stars -= cost;
-    this._saveData(data);
+    data.inventory.push(item);
+    Storage.save(data);
     this.updateUI();
-    this._achievementPopup('🎁 Đã đổi phần thưởng!');
-  },
-
-  renderShop() {
-    const el = document.getElementById('shopItems');
-    if (!el) return;
-    const data = this._loadData();
-    const filterEl = document.getElementById('shopFilter');
-    const filter = filterEl ? filterEl.value : 'all';
-    const owned = new Set(data.inventory || []);
-    const items = this.SHOP_ITEMS.filter(item => {
-      if (filter === 'affordable') return data.stars >= item.cost && !owned.has(item.file);
-      if (filter === 'owned') return owned.has(item.file);
-      return true;
-    });
-    if (!items.length) {
-      el.innerHTML = '<div class="shop-empty">Chưa có phần thưởng phù hợp bộ lọc này.</div>';
-      return;
+    if (typeof App !== 'undefined' && App._switchMiniTab) {
+      setTimeout(() => App._switchMiniTab('inventory'), 300);
     }
-    el.innerHTML = items.map(item => {
-      const isOwned = owned.has(item.file);
-      const canBuy = data.stars >= item.cost && !isOwned;
-      return '<div class="reward-card ' + (isOwned ? 'owned' : '') + '">' +
-        '<div class="reward-icon">' + item.icon + '</div>' +
-        '<div class="reward-name">' + item.name + '</div>' +
-        '<div class="reward-cost">' + item.cost + ' ⭐</div>' +
-        '<button class="reward-buy-btn" data-item="' + item.file + '" data-cost="' + item.cost + '" ' + (canBuy ? '' : 'disabled') + '>' + (isOwned ? 'Đã có' : 'Đổi') + '</button>' +
-      '</div>';
-    }).join('');
-    el.querySelectorAll('.reward-buy-btn[data-item]').forEach(btn => {
-      btn.addEventListener('click', () => this.buyItem(btn.dataset.item, parseInt(btn.dataset.cost, 10)));
-    });
   },
 
   redeemBadge() {
-    const data = this._loadData();
-    const rank = { bronze: 1, silver: 2, gold: 3 };
-    const currentRank = rank[data.currentBadge] || 0;
-    let badge = null, cost = 0;
-    if (currentRank >= 3) { alert('Con đã có huy hiệu Vàng rồi! Tuyệt vời quá! 🥇'); return; }
-    if (currentRank < 3 && data.stars >= 30) { badge = 'gold'; cost = 30; }
-    else if (currentRank < 2 && data.stars >= 20) { badge = 'silver'; cost = 20; }
-    else if (currentRank < 1 && data.stars >= 10) { badge = 'bronze'; cost = 10; }
+    const data = Storage.load();
+    let badge = null;
+    let cost = 0;
+    if (data.stars >= 50) { badge = 'gold'; cost = 50; }
+    else if (data.stars >= 30) { badge = 'silver'; cost = 30; }
+    else if (data.stars >= 10) { badge = 'bronze'; cost = 10; }
     else {
-      const nextNeed = currentRank === 0 ? 10 : (currentRank === 1 ? 20 : 30);
-      const nextName = currentRank === 0 ? 'Đồng' : (currentRank === 1 ? 'Bạc' : 'Vàng');
-      alert('Con cần ' + nextNeed + ' sao để đổi huy hiệu ' + nextName + ' nhé!');
+      alert('Con cần tích thêm sao mới đổi được huy hiệu nhé!');
       return;
     }
     data.stars -= cost;
     data.currentBadge = badge;
-    data.badgeUpdatedAt = new Date().toISOString();
-    this._saveData(data);
+    Storage.save(data);
     this.updateUI();
-    const meta = this._badgeMeta(badge);
-    this._achievementPopup('🏅 Đổi thành công ' + (meta ? meta.label : 'huy hiệu') + '!');
-  },
-
-  _badgeMeta(badge) {
-    const map = {
-      bronze: { icon: '🥉', label: 'Huy hiệu Đồng', file: 'sticker_bronze.png' },
-      silver: { icon: '🥈', label: 'Huy hiệu Bạc', file: 'sticker_silver.png' },
-      gold: { icon: '🥇', label: 'Huy hiệu Vàng', file: 'sticker_gold.png' }
-    };
-    return map[badge] || null;
-  },
-
-  _xpForNextLevel(level) { return 80 + Math.max(0, Number(level || 1) - 1) * 30; },
-  _todayKey() {
-    const d = new Date();
-    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  },
-  _dateKeyOffset(days) {
-    const d = new Date(); d.setDate(d.getDate() + days);
-    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-  },
-
-  _renderProgressWidgets(data) {
-    const needed = this._xpForNextLevel(data.level);
-    const pct = Math.min(100, Math.round((data.xp / needed) * 100));
-    const profile = document.querySelector('.profile-card') || document.querySelector('.subject-sidebar .card-compact') || (document.getElementById('title-area') ? document.getElementById('title-area').closest('.card') : null);
-    if (profile && !document.getElementById('learningStatsWidget')) {
-      const box = document.createElement('div');
-      box.id = 'learningStatsWidget';
-      box.className = 'learning-stats-widget';
-      const stars = profile.querySelector('.profile-stars') || profile.querySelector('.star-area') || document.getElementById('title-area');
-      if (stars && stars.parentNode) stars.parentNode.insertBefore(box, stars.nextSibling);
-      else profile.appendChild(box);
-    }
-    const widget = document.getElementById('learningStatsWidget');
-    if (widget) {
-      widget.innerHTML = '<div class="level-row"><span>⚡ Level ' + data.level + '</span><b>' + data.xp + '/' + needed + ' XP</b></div>' +
-        '<div class="xp-track"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
-        '<div class="streak-row">🔥 ' + (data.streak || 0) + ' ngày học liên tiếp</div>';
-    }
-  },
-
-  _achievementPopup(text) {
-    const pop = document.createElement('div');
-    pop.className = 'achievement-toast';
-    pop.textContent = text;
-    document.body.appendChild(pop);
-    setTimeout(() => pop.classList.add('show'), 30);
-    setTimeout(() => { pop.classList.remove('show'); setTimeout(() => pop.remove(), 300); }, 2400);
   },
 
   _calcTitle(totalCorrect) {
-    totalCorrect = Number(totalCorrect || 0);
     if (totalCorrect >= 100) return '👑 Siêu sao học tập!';
     if (totalCorrect >= 50) return '🌟 Ngôi sao chăm chỉ!';
     if (totalCorrect >= 20) return '✨ Bé tiến bộ!';
@@ -644,46 +353,24 @@ const Rewards = {
   },
 
   updateUI() {
-    const data = this._loadData();
+    const data = Storage.load();
     const starEl = document.getElementById('star-count');
     if (starEl) starEl.textContent = data.stars;
-    const profileMirror = document.getElementById('profileStarMirror');
-    if (profileMirror) profileMirror.textContent = data.stars;
-    const shopStar = document.getElementById('shopStarCount');
-    if (shopStar) shopStar.textContent = data.stars;
-
-    this._renderProgressWidgets(data);
-
     const titleEl = document.getElementById('title-area');
     if (titleEl) titleEl.textContent = this._calcTitle(data.totalCorrect);
-
-    const meta = this._badgeMeta(data.currentBadge);
     const badgeArea = document.getElementById('badge-area');
     if (badgeArea) {
-      badgeArea.innerHTML = meta
-        ? '<div class="badge-display"><img src="images/' + meta.file + '" class="reward-img" alt="' + meta.label + '" width="60" onerror="this.outerHTML=\'<div class=\\\'badge-fallback\\\' style=\\\'font-size:48px;line-height:60px\\\'>' + meta.icon + '</div>\'"><div style="font-size:0.78rem;font-weight:800;margin-top:4px;color:#E67E22">' + meta.label + '</div></div>'
+      badgeArea.innerHTML = data.currentBadge
+        ? '<img src="images/sticker_' + data.currentBadge + '.png" class="reward-img" alt="Huy hiệu" width="60">'
         : '';
     }
-    const shopBadge = document.getElementById('shopBadgePreview');
-    if (shopBadge) {
-      if (meta) {
-        shopBadge.className = 'badge-preview-owned';
-        shopBadge.innerHTML = '<div class="badge-display"><img src="images/' + meta.file + '" class="reward-img" alt="' + meta.label + '" width="96"><div class="badge-label">' + meta.label + '</div></div>';
-      } else {
-        shopBadge.className = 'badge-preview-empty';
-        shopBadge.textContent = 'Chưa có huy hiệu';
-      }
-    }
-
-    this.renderShop();
-
     const invArea = document.getElementById('inventory-area');
     if (invArea) {
       invArea.innerHTML = data.inventory.length > 0
-        ? data.inventory.map(item => '<img src="images/' + item + '" class="reward-img" alt="sticker" width="50">').join(' ')
+        ? data.inventory.map(function(item) {
+            return '<img src="images/' + item + '" class="reward-img" alt="sticker" width="50">';
+          }).join(' ')
         : '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
     }
   }
 };
-
-window.RewardsApp = Rewards;
