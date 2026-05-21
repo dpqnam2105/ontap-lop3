@@ -10,7 +10,7 @@ const STORAGE_KEY = 'ontap_learning_state_v1';
 const SESSION_KEY = 'ontap_session_guard_v1';
 
 const CURRICULUM = {
-  grade3_vn_math: {
+  grade2_vn_math: {
     toan_so: ['Đọc, viết, so sánh số trong phạm vi 100000', 'Cấu tạo số', 'Dãy số'],
     toan_cong: ['Cộng trong phạm vi 100000', 'Tính nhẩm', 'Tìm thành phần chưa biết'],
     toan_tru: ['Trừ trong phạm vi 100000', 'Bài toán nhiều bước', 'Tìm thành phần chưa biết'],
@@ -70,10 +70,10 @@ function normalizeQuestionBank(db) {
   const copy = (typeof structuredClone === 'function') ? structuredClone(db) : JSON.parse(JSON.stringify(db));
   for (const subject of copy.subjects || []) {
     for (const topic of subject.topics || []) {
-      const curriculumTags = CURRICULUM.grade3_vn_math[topic.id] || [];
+      const curriculumTags = CURRICULUM.grade2_vn_math[topic.id] || [];
       topic.curriculum = {
-        grade: subject.id === 'toan' ? 3 : null,
-        framework: subject.id === 'toan' ? 'VN-Grade3-Competency' : 'General-Primary',
+        grade: subject.id === 'toan' ? 2 : null,
+        framework: subject.id === 'toan' ? 'VN-Grade2-Competency' : 'General-Primary',
         tags: curriculumTags
       };
       topic.questions = (topic.questions || []).map((q, idx) => ({
@@ -224,10 +224,10 @@ function updateRecent(learner, questionId) {
 
 function detectSuspicion({ question, elapsedMs, usedHint, visibilityChanges = 0, selectedIndex }) {
   const reasons = [];
-  if (elapsedMs < 1200 && !usedHint) reasons.push('answer-too-fast');
+  if (elapsedMs < 700 && !usedHint) reasons.push('answer-too-fast');
   if (visibilityChanges >= 2) reasons.push('tab-switching');
   if (selectedIndex == null || selectedIndex < 0) reasons.push('invalid-answer');
-  if ((question?.difficulty || 1) >= 3 && elapsedMs < 2500) reasons.push('hard-question-too-fast');
+  if ((question?.difficulty || 1) >= 3 && elapsedMs < 1200) reasons.push('hard-question-too-fast');
   return { suspicious: reasons.length > 0, reasons };
 }
 

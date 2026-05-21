@@ -49,7 +49,11 @@ const Storage = {
       currentBadge: '',
       title: '🌱 Người mới bắt đầu',
       totalCorrect: 0,
-      lastPlayed: null
+      lastPlayed: null,
+      xp: 0,
+      level: 1,
+      streak: 0,
+      lastStudyDate: null
     };
   },
 

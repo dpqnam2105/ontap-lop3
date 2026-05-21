@@ -52,14 +52,8 @@ const App = {
   showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
-    const screen = document.getElementById(id);
-    if (screen) screen.classList.add('active');
+    document.getElementById(id).classList.add('active');
     window.scrollTo(0, 0);
-
-    if (name === 'shop' && typeof Rewards !== 'undefined') {
-      Rewards.updateUI();
-      if (typeof Rewards.renderShop === 'function') Rewards.renderShop(true);
-    }
   },
 
   _register() {
@@ -141,11 +135,31 @@ const App = {
     const list = document.getElementById('topicList');
     list.innerHTML = '';
 
-    s.topics.forEach((t, tIdx) => {
+    s.topics.forEach((t) => {
       const card = document.createElement('div');
-      card.className = 'topic-card';
-      card.innerHTML = `<div class="topic-icon">${t.icon}</div><div class="topic-name">${this._escape(t.name)}</div>`;
-      card.addEventListener('click', () => Quiz.start(t, s.name));
+      card.className = 'topic-card topic-card-with-modes';
+      card.innerHTML = `
+        <div class="topic-card-main">
+          <div class="topic-icon">${t.icon}</div>
+          <div>
+            <div class="topic-name">${this._escape(t.name)}</div>
+            <div class="topic-subline">${(t.questions || []).length} câu · chọn chế độ học</div>
+          </div>
+        </div>
+        <div class="topic-mode-row">
+          <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
+          <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
+          <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
+        </div>`;
+
+      card.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          Quiz.start(t, s.name, { mode: btn.dataset.mode });
+        });
+      });
+
+      card.addEventListener('click', () => Quiz.start(t, s.name, { mode: 'practice' }));
       list.appendChild(card);
     });
 
@@ -155,10 +169,8 @@ const App = {
   _switchMiniTab(target) {
     document.querySelectorAll('.mini-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.mini-content').forEach(c => c.classList.remove('active'));
-    const tab = document.querySelector(`.mini-tab[data-mini="${target}"]`);
-    const content = document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1));
-    if (tab) tab.classList.add('active');
-    if (content) content.classList.add('active');
+    document.querySelector(`.mini-tab[data-mini="${target}"]`).classList.add('active');
+    document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
   },
 
   // PARENT DASHBOARD
@@ -375,28 +387,13 @@ const App = {
       card.addEventListener('click', () => this._chooseGrade(card.dataset.grade));
     });
 
-    const btnFeedback = document.getElementById('btnFeedback');
-    if (btnFeedback) {
-      btnFeedback.addEventListener('click', () => {
-        window.open('https://forms.gle/hE3gV5Uy6UodzrZn7');
-      });
-    }
+    document.getElementById('btnFeedback').addEventListener('click', () => {
+      window.open('https://forms.gle/hE3gV5Uy6UodzrZn7');
+    });
 
     document.getElementById('btnRedeemBadge').addEventListener('click', () => {
       Rewards.redeemBadge();
     });
-
-    const btnRedeemBadgeShop = document.getElementById('btnRedeemBadgeShop');
-    if (btnRedeemBadgeShop) {
-      btnRedeemBadgeShop.addEventListener('click', () => Rewards.redeemBadge());
-    }
-
-    const shopFilter = document.getElementById('shopFilter');
-    if (shopFilter) {
-      shopFilter.addEventListener('change', () => {
-        if (typeof Rewards !== 'undefined' && typeof Rewards.renderShop === 'function') Rewards.renderShop(true);
-      });
-    }
 
     document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -419,13 +416,10 @@ const App = {
       tab.addEventListener('click', () => this._switchMiniTab(tab.dataset.mini));
     });
 
-    const footerParent = document.getElementById('footerParent');
-    if (footerParent) {
-      footerParent.addEventListener('click', e => {
-        e.preventDefault();
-        this._openParentArea();
-      });
-    }
+    document.getElementById('footerParent').addEventListener('click', e => {
+      e.preventDefault();
+      this._openParentArea();
+    });
 
     document.getElementById('btnPinSubmit').addEventListener('click', () => this._checkPin());
     document.getElementById('btnPinBack').addEventListener('click', () => {
