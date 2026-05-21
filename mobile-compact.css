@@ -501,3 +501,18 @@
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+@media (max-width: 760px) {
+  .side-rail .rail-btn span,
+  .side-rail .rail-link span {
+    display: none !important;
+  }
+
+  .side-rail .rail-btn,
+  .side-rail .rail-link {
+    justify-content: center !important;
+    min-width: 64px;
+    width: 64px;
+    padding: 0 !important;
+    font-size: 1.35rem;
+  }
+}
