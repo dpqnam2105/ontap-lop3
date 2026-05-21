@@ -516,3 +516,21 @@
     font-size: 1.35rem;
   }
 }
+@media (max-width: 760px) {
+
+  .side-rail .rail-btn,
+  .side-rail .rail-link {
+    font-size: 0 !important;
+    justify-content: center !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  .side-rail .rail-btn::before,
+  .side-rail .rail-link::before {
+    font-size: 1.4rem !important;
+  }
+
+}
