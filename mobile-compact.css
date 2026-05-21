@@ -487,3 +487,24 @@
     gap: 10px !important;
   }
 }
+@media (max-width: 760px) {
+  .feedback-btn {
+    position: fixed !important;
+    top: 108px !important;
+    right: 18px !important;
+    z-index: 999 !important;
+
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    padding: 0 !important;
+    border-radius: 16px !important;
+
+    font-size: 0 !important;
+  }
+
+  .feedback-btn::before {
+    content: "💌";
+    font-size: 1.25rem;
+  }
+}
