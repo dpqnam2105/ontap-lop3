@@ -1,26 +1,27 @@
 /**
- * Adaptive Learning Engine for ontap-lop3
+ * Adaptive Learning Engine for Kho Bai Tap
  * Browser-safe, no external dependency, no API key.
  * Works with question schema: { q, choices, a, hint, difficulty, ... }.
  */
 
-const ENGINE_VERSION = '1.0.0';
+const ENGINE_VERSION = '1.1.0-grade2-safe';
 
 const STORAGE_KEY = 'ontap_learning_state_v1';
 const SESSION_KEY = 'ontap_session_guard_v1';
 
 const CURRICULUM = {
   grade2_vn_math: {
-    toan_so: ['Đọc, viết, so sánh số trong phạm vi 100000', 'Cấu tạo số', 'Dãy số'],
-    toan_cong: ['Cộng trong phạm vi 100000', 'Tính nhẩm', 'Tìm thành phần chưa biết'],
-    toan_tru: ['Trừ trong phạm vi 100000', 'Bài toán nhiều bước', 'Tìm thành phần chưa biết'],
-    toan_nhan: ['Bảng nhân', 'Nhân số có 2-3 chữ số với số có 1 chữ số', 'Tính giá trị biểu thức'],
-    toan_chia: ['Bảng chia', 'Chia hết/chia có dư', 'Tìm thành phần chưa biết'],
-    toan_dovi: ['Độ dài, khối lượng, thời gian, tiền Việt Nam', 'Đổi đơn vị đơn giản'],
-    toan_hinh: ['Điểm, đoạn thẳng, góc, chu vi, diện tích hình chữ nhật/hình vuông'],
-    toan_loivan: ['Bài toán có lời văn 1-2 bước', 'Gấp lên/giảm đi', 'So sánh hơn kém'],
-    toan_tuyduy: ['Quy luật dãy số', 'Suy luận logic', 'Bài toán năng lực']
-  }
+    toan_so: ['Đọc, viết, cấu tạo và so sánh số trong phạm vi 1000', 'Số liền trước, số liền sau', 'Dãy số đơn giản'],
+    toan_cong: ['Cộng trong phạm vi 1000', 'Cộng có nhớ trong phạm vi 1000', 'Tìm số hạng chưa biết ở mức đơn giản'],
+    toan_tru: ['Trừ trong phạm vi 1000', 'Trừ có nhớ trong phạm vi 1000', 'Tìm số bị trừ hoặc số trừ ở mức đơn giản'],
+    toan_nhan: ['Bảng nhân 2, 3, 4, 5', 'Ý nghĩa phép nhân là cộng các số bằng nhau', 'Tính giá trị biểu thức đơn giản'],
+    toan_chia: ['Bảng chia 2, 3, 4, 5', 'Chia đều, chia theo nhóm', 'Quan hệ nhân và chia'],
+    toan_dovi: ['Độ dài: m, dm, cm, mm, km', 'Khối lượng: kg, g', 'Thời gian, ngày tháng, tiền Việt Nam ở mức lớp 2'],
+    toan_hinh: ['Nhận biết hình tam giác, tứ giác, chữ nhật, vuông', 'Đếm hình đơn giản', 'Chu vi hình tam giác, tứ giác đơn giản'],
+    toan_loivan: ['Bài toán có lời văn 1-2 bước trong phạm vi 1000', 'Nhiều hơn, ít hơn', 'Gấp lên, chia đều ở mức cơ bản'],
+    toan_tuyduy: ['Quy luật dãy số đơn giản', 'Suy luận logic phù hợp lớp 2', 'Bài toán năng lực không vượt chương trình']
+  },
+  general_primary: {}
 };
 
 function loadLearningState() {
@@ -70,10 +71,11 @@ function normalizeQuestionBank(db) {
   const copy = (typeof structuredClone === 'function') ? structuredClone(db) : JSON.parse(JSON.stringify(db));
   for (const subject of copy.subjects || []) {
     for (const topic of subject.topics || []) {
-      const curriculumTags = CURRICULUM.grade2_vn_math[topic.id] || [];
+      const isMath = subject.id === 'toan';
+      const curriculumTags = isMath ? (CURRICULUM.grade2_vn_math[topic.id] || []) : [];
       topic.curriculum = {
-        grade: subject.id === 'toan' ? 2 : null,
-        framework: subject.id === 'toan' ? 'VN-Grade2-Competency' : 'General-Primary',
+        grade: isMath ? 2 : null,
+        framework: isMath ? 'VN-Grade2-Competency' : 'General-Primary',
         tags: curriculumTags
       };
       topic.questions = (topic.questions || []).map((q, idx) => ({
@@ -119,7 +121,8 @@ function estimateSeconds(q) {
 function selectNextQuestion({ db, learnerId = 'default', subjectId = 'toan', topicId = null, count = 1 }) {
   const state = loadLearningState();
   const learner = getLearner(state, learnerId);
-  const pool = flattenQuestions(db, subjectId, topicId).filter(item => !learner.recentQuestionIds.includes(item.id));
+  let pool = flattenQuestions(db, subjectId, topicId).filter(item => !learner.recentQuestionIds.includes(item.id));
+  if (!pool.length) pool = flattenQuestions(db, subjectId, topicId);
   const now = Date.now();
   const scored = pool.map(item => ({ item, score: scoreQuestion(item, learner, now) }));
   scored.sort((a, b) => b.score - a.score);
@@ -175,7 +178,7 @@ function recordAnswer({ learnerId = 'default', question, selectedIndex, startedA
 
   updateQuestionStats(learner, question, correct, elapsedMs, usedHint, now);
   updateTopicStats(learner, question.topicId, correct, elapsedMs);
-  updateMastery(learner, question.topicId, correct, question.difficulty || 1, usedHint, cheat.suspicious);
+  updateMastery(learner, question.topicId, correct, question.difficulty || 1, usedHint); // anti-cheat chỉ ghi log, không phạt mastery
   updateRecent(learner, question.id);
   updateAntiCheat(learner, cheat, now);
 
@@ -211,9 +214,10 @@ function updateTopicStats(learner, topicId, correct, elapsedMs) {
   learner.topicStats[topicId] = s;
 }
 
-function updateMastery(learner, topicId, correct, difficulty, usedHint, suspicious) {
+function updateMastery(learner, topicId, correct, difficulty, usedHint) {
   const old = learner.mastery[topicId] ?? 0.25;
-  const gain = correct ? 0.035 * difficulty * (usedHint ? 0.55 : 1) * (suspicious ? 0.25 : 1) : -0.045;
+  // Lớp 2: anti-cheat chỉ dùng để phụ huynh xem log, không phạt mastery vì bé có thể bấm rất nhanh.
+  const gain = correct ? 0.035 * difficulty * (usedHint ? 0.55 : 1) : -0.045;
   learner.mastery[topicId] = Math.max(0, Math.min(1, old + gain));
 }
 

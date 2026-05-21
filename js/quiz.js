@@ -10,6 +10,7 @@ const Quiz = {
   currentTopic: null,
   currentSubject: null,
   currentTopicId: null,
+  currentSubjectId: 'toan',
   sessionInfo: null,
   sessionStartTime: null,
   questionStartedAt: null,
@@ -27,6 +28,7 @@ const Quiz = {
     this.currentTopic = topic;
     this.currentSubject = subjectName || '';
     this.currentTopicId = (topic.id || topic.name).toString();
+    this.currentSubjectId = options.subjectId || this._subjectIdFromName(subjectName) || 'toan';
     this.sessionStartTime = Date.now();
     this.score = 0;
     this.curIdx = 0;
@@ -105,10 +107,10 @@ const Quiz = {
     return {
       ...q,
       _idx: idx,
-      subjectId: 'toan',
+      subjectId: this.currentSubjectId,
       topicId: this.currentTopicId,
       id: q.id || (window.LearningEngine && window.LearningEngine.stableQuestionId
-        ? window.LearningEngine.stableQuestionId('toan', this.currentTopicId, q, idx)
+        ? window.LearningEngine.stableQuestionId(this.currentSubjectId, this.currentTopicId, q, idx)
         : this.currentTopicId + '_' + idx)
     };
   },
@@ -120,7 +122,7 @@ const Quiz = {
         const picked = window.LearningEngine.selectNextQuestion({
           db: App.allData,
           learnerId: this._learnerId(),
-          subjectId: 'toan',
+          subjectId: this.currentSubjectId,
           topicId: this.currentTopicId,
           count: Math.min(count, candidateIndices.length)
         });
@@ -598,12 +600,12 @@ const Rewards = {
   _renderProgressWidgets(data) {
     const needed = this._xpForNextLevel(data.level);
     const pct = Math.min(100, Math.round((data.xp / needed) * 100));
-    const profile = document.querySelector('.profile-card');
+    const profile = document.querySelector('.profile-card') || document.querySelector('.subject-sidebar .card-compact') || (document.getElementById('title-area') ? document.getElementById('title-area').closest('.card') : null);
     if (profile && !document.getElementById('learningStatsWidget')) {
       const box = document.createElement('div');
       box.id = 'learningStatsWidget';
       box.className = 'learning-stats-widget';
-      const stars = profile.querySelector('.profile-stars');
+      const stars = profile.querySelector('.profile-stars') || profile.querySelector('.star-area') || document.getElementById('title-area');
       if (stars && stars.parentNode) stars.parentNode.insertBefore(box, stars.nextSibling);
       else profile.appendChild(box);
     }

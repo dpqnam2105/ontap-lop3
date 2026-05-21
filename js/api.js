@@ -4,25 +4,13 @@
 
 const API = {
   GS_URL: 'https://script.google.com/macros/s/AKfycbxWlSEXYxlQGeh5nMFGOpPUxoEai3u5_UkIT0KkB9dvsKH9q6_lY4M3BM8NLp7bf1nu/exec',
-  QUESTIONS_URL: 'data/questions.json', // fallback nếu chưa dùng data/questions.js
+  QUESTIONS_URL: 'data/questions.json',
 
   async getAllData() {
     try {
-      // Ưu tiên data/questions.js nếu đã nhúng trong index.html
-      const globalData = window.QUESTIONS_DATA || window.questionsData || window.QUESTIONS || window.QuestionBank;
-      if (globalData) {
-        return window.LearningEngine
-          ? window.LearningEngine.normalizeQuestionBank(globalData)
-          : globalData;
-      }
-
-      // Fallback: vẫn hỗ trợ data/questions.json nếu bạn dùng JSON thuần
       const res = await fetch(this.QUESTIONS_URL);
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      return window.LearningEngine
-        ? window.LearningEngine.normalizeQuestionBank(data)
-        : data;
+      return await res.json();
     } catch (e) {
       console.error('getAllData error:', e);
       return null;

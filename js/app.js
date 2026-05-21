@@ -52,7 +52,9 @@ const App = {
   showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
-    document.getElementById(id).classList.add('active');
+    const screen = document.getElementById(id);
+    if (!screen) { console.warn('Screen not found:', id); return; }
+    screen.classList.add('active');
     window.scrollTo(0, 0);
   },
 
@@ -155,11 +157,11 @@ const App = {
       card.querySelectorAll('.mode-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          Quiz.start(t, s.name, { mode: btn.dataset.mode });
+          Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id });
         });
       });
 
-      card.addEventListener('click', () => Quiz.start(t, s.name, { mode: 'practice' }));
+      card.addEventListener('click', () => Quiz.start(t, s.name, { mode: 'practice', subjectId: s.id }));
       list.appendChild(card);
     });
 
