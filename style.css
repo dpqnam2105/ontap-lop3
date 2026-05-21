@@ -1005,23 +1005,3 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
-
-
-/* === Smart learning modes + nhẹ animation === */
-.topic-card-with-modes{display:block;padding:16px}
-.topic-card-main{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.topic-subline{font-size:.86rem;color:var(--muted);font-weight:800;margin-top:2px}
-.topic-mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mode-btn{border:1px solid #d9eafd;border-radius:14px;background:#fff;padding:10px 8px;font-family:var(--font-display);font-weight:900;cursor:pointer;transition:.16s;box-shadow:0 6px 14px rgba(31,122,245,.07)}
-.mode-btn:hover{transform:translateY(-2px)}
-.mode-btn.practice{color:#0d63d8;background:#eef8ff}.mode-btn.test{color:#a45b00;background:#fff7df}.mode-btn.review{color:#148240;background:#edfff3}
-.learning-stats-widget{margin:12px 0;background:#f8fbff;border:1px solid #dbeeff;border-radius:16px;padding:12px;box-shadow:0 8px 18px rgba(31,122,245,.06)}
-.level-row{display:flex;justify-content:space-between;font-family:var(--font-display);font-weight:900;color:#0f4f9c}.xp-track{height:10px;background:#dceeff;border-radius:999px;overflow:hidden;margin:8px 0}.xp-fill{height:100%;background:linear-gradient(90deg,#1f7af5,#80e99f);border-radius:999px;transition:width .35s}.streak-row{font-weight:900;color:#f07916;font-size:.92rem}.achievement-toast{position:fixed;left:50%;top:24px;transform:translate(-50%,-20px) scale(.96);opacity:0;z-index:10000;background:#fff;border:1px solid #d9eafd;border-radius:18px;padding:14px 20px;font-family:var(--font-display);font-weight:900;box-shadow:0 18px 44px rgba(31,122,245,.18);transition:.28s}.achievement-toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
-.result-analytics{display:inline-block;background:#eef8ff;border:1px solid #d4e8ff;border-radius:14px;padding:10px 12px;color:#155fae}
-@media(max-width:760px){.topic-mode-row{grid-template-columns:1fr}.mode-btn{padding:11px}.achievement-toast{width:calc(100% - 28px);text-align:center}}
-
-
-/* Image trong câu hỏi */
-.q-image{margin:0 auto 14px;display:flex;justify-content:center;align-items:center;max-width:100%}
-.question-image{max-width:100%;max-height:320px;width:auto;height:auto;border:2px solid #d9eafd;border-radius:18px;background:#fff;padding:10px;box-shadow:0 8px 20px rgba(37,99,235,.12);object-fit:contain}
-@media(max-width:760px){.question-image{max-height:230px}}
