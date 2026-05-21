@@ -107,7 +107,7 @@ const App = {
     // Các lớp khác → thông báo nghỉ hè
     alert(
       '🌴 ' + gradeName + ' đang nghỉ hè!\n\n' +
-      'Cô giáo Claude đang chuẩn bị bài tập cho ' + gradeName + '.\n' +
+      'Thầy cô giáo đang chuẩn bị bài tập cho ' + gradeName + '.\n' +
       'Hẹn gặp con vào năm học mới nhé! 🐰\n\n' +
       'Hiện tại con cứ học chăm chỉ Lớp 2 đã, ' + gradeName + ' sẽ mở sớm thôi! 💪'
     );
