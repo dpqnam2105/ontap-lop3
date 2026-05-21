@@ -23,3 +23,146 @@
 .achievement-toast{position:fixed;right:22px;bottom:22px;z-index:99999;background:white;border:1px solid #d9eafd;border-radius:20px;padding:16px 18px;font-family:var(--font-display);font-weight:900;color:#0d63d8;box-shadow:0 18px 45px rgba(31,122,245,.2);animation:achievementIn .25s ease, achievementOut .25s ease 2.55s forwards}
 @keyframes achievementIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}@keyframes achievementOut{to{opacity:0;transform:translateY(16px) scale(.96)}}
 @media(max-width:760px){.topic-mode-row{grid-template-columns:1fr}.mode-btn{padding:11px}.achievement-toast{width:calc(100% - 28px);right:14px;left:14px;text-align:center}}
+
+/* === Premium Inventory Grid Patch === */
+.inventory-card {
+  overflow: hidden;
+}
+
+.inventory-area {
+  display: block;
+  min-height: 92px;
+  width: 100%;
+}
+
+.inventory-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0 12px;
+  padding: 10px 12px;
+  border: 1px solid #dbeeff;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f7fbff, #eef8ff);
+  color: #155fae;
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+.inventory-summary b {
+  color: #0d63d8;
+  background: #fff;
+  border: 1px solid #d9eafd;
+  border-radius: 999px;
+  padding: 4px 10px;
+  box-shadow: 0 6px 16px rgba(31,122,245,.08);
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+  gap: 12px;
+  max-height: 330px;
+  overflow-y: auto;
+  padding: 3px 4px 6px;
+}
+
+.inventory-grid::-webkit-scrollbar { width: 8px; }
+.inventory-grid::-webkit-scrollbar-track { background: #eaf4ff; border-radius: 999px; }
+.inventory-grid::-webkit-scrollbar-thumb { background: #a9c9ea; border-radius: 999px; }
+
+.inventory-item {
+  position: relative;
+  min-height: 112px;
+  padding: 10px 7px 8px;
+  border: 2px solid #dbeeff;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  box-shadow: 0 10px 22px rgba(31,122,245,.08);
+  text-align: center;
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.inventory-item:hover {
+  transform: translateY(-3px);
+  border-color: #88c7ff;
+  box-shadow: 0 15px 30px rgba(31,122,245,.14);
+}
+
+.inventory-item-glow {
+  position: absolute;
+  inset: 7px 12px auto 12px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255,230,120,.55), rgba(255,255,255,0) 72%);
+  pointer-events: none;
+}
+
+.inventory-item-img {
+  position: relative;
+  z-index: 1;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,.10));
+}
+
+.inventory-item-emoji {
+  position: relative;
+  z-index: 1;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  font-size: 2.6rem;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,.10));
+}
+
+.inventory-item-name {
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  color: #24445f;
+  font-family: var(--font-display);
+  font-size: .78rem;
+  font-weight: 900;
+  line-height: 1.1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.inventory-empty-card {
+  display: block;
+  width: 100%;
+  padding: 18px 12px;
+  border: 2px dashed #cfe2f3;
+  border-radius: 18px;
+  background: #f8fbff;
+  color: #7f91a4;
+  font-weight: 900;
+}
+
+.inventory-empty-card span {
+  color: #8a9bad;
+  font-size: .92rem;
+}
+
+@media (max-width: 760px) {
+  .inventory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    max-height: 280px;
+  }
+
+  .inventory-item {
+    min-height: 104px;
+  }
+
+  .inventory-item-img,
+  .inventory-item-emoji {
+    width: 56px;
+    height: 56px;
+  }
+}
