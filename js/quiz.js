@@ -82,6 +82,18 @@ const Quiz = {
     }
     document.getElementById('quizTopicName').textContent = titleText;
     
+    // Render image if present (above question text)
+    const imgContainer = document.getElementById('qImage');
+    if (imgContainer) {
+      if (q.image) {
+        imgContainer.innerHTML = '<img src="' + q.image + '" alt="Hình minh hoạ câu hỏi" class="question-image" />';
+        imgContainer.style.display = 'block';
+      } else {
+        imgContainer.innerHTML = '';
+        imgContainer.style.display = 'none';
+      }
+    }
+    
     document.getElementById('qText').textContent = q.q;
     document.getElementById('scoreDisp').textContent = this.score;
     document.getElementById('progFill').style.width = (this.curIdx / total * 100) + '%';
