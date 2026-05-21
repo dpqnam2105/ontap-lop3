@@ -52,7 +52,9 @@ const App = {
   showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
-    document.getElementById(id).classList.add('active');
+    const screen = document.getElementById(id);
+    if (!screen) { console.warn('Screen not found:', id); return; }
+    screen.classList.add('active');
     window.scrollTo(0, 0);
   },
 
@@ -135,11 +137,31 @@ const App = {
     const list = document.getElementById('topicList');
     list.innerHTML = '';
 
-    s.topics.forEach((t, tIdx) => {
+    s.topics.forEach((t) => {
       const card = document.createElement('div');
-      card.className = 'topic-card';
-      card.innerHTML = `<div class="topic-icon">${t.icon}</div><div class="topic-name">${this._escape(t.name)}</div>`;
-      card.addEventListener('click', () => Quiz.start(t, s.name));
+      card.className = 'topic-card topic-card-with-modes';
+      card.innerHTML = `
+        <div class="topic-card-main">
+          <div class="topic-icon">${t.icon}</div>
+          <div>
+            <div class="topic-name">${this._escape(t.name)}</div>
+            <div class="topic-subline">${(t.questions || []).length} câu · chọn chế độ học</div>
+          </div>
+        </div>
+        <div class="topic-mode-row">
+          <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
+          <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
+          <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
+        </div>`;
+
+      card.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id });
+        });
+      });
+
+      card.addEventListener('click', () => Quiz.start(t, s.name, { mode: 'practice', subjectId: s.id }));
       list.appendChild(card);
     });
 
