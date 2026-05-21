@@ -679,9 +679,35 @@ const Rewards = {
 
     const invArea = document.getElementById('inventory-area');
     if (invArea) {
-      invArea.innerHTML = data.inventory.length > 0
-        ? data.inventory.map(item => '<img src="images/' + item + '" class="reward-img" alt="sticker" width="50">').join(' ')
-        : '<div class="empty-inventory">Túi đồ trống. Hãy tích sao để mua sticker nhé! 🌟</div>';
+      const inventory = Array.isArray(data.inventory) ? data.inventory : [];
+      const shopMeta = {};
+      (this.SHOP_ITEMS || []).forEach(item => {
+        shopMeta[item.file] = item;
+      });
+
+      if (inventory.length > 0) {
+        invArea.innerHTML =
+          '<div class="inventory-summary">' +
+            '<span>🎒 Bộ sưu tập</span>' +
+            '<b>' + inventory.length + '/' + (this.SHOP_ITEMS || []).length + '</b>' +
+          '</div>' +
+          '<div class="inventory-grid">' +
+            inventory.map(function(file) {
+              const meta = shopMeta[file] || {};
+              const name = meta.name || file.replace(/^sticker_/, '').replace(/\.png$/i, '').replace(/[_-]/g, ' ');
+              const icon = meta.icon || '🎁';
+              return '' +
+                '<div class="inventory-item" title="' + name + '">' +
+                  '<div class="inventory-item-glow"></div>' +
+                  '<img src="images/' + file + '" class="inventory-item-img" alt="' + name + '" ' +
+                    'onerror="this.outerHTML=&amp;quot;<div class=\&amp;quot;inventory-item-emoji\&amp;quot;&amp;gt;' + icon + '&amp;lt;/div&amp;quot;">' +
+                  '<div class="inventory-item-name">' + name + '</div>' +
+                '</div>';
+            }).join('') +
+          '</div>';
+      } else {
+        invArea.innerHTML = '<div class="empty-inventory inventory-empty-card">🎒 Túi đồ trống.<br><span>Hãy tích sao để mua sticker nhé! 🌟</span></div>';
+      }
     }
   }
 };
