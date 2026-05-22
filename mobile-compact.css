@@ -487,24 +487,55 @@
     gap: 10px !important;
   }
 }
-@media (max-width: 760px) {
-  .feedback-btn {
-    position: fixed !important;
-    top: 108px !important;
-    right: 18px !important;
-    z-index: 999 !important;
 
+/* ===== FIX: Nút Góp ý trên mobile thành icon góc (May 21) ===== */
+@media (max-width: 760px) {
+  .topbar {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-direction: unset !important;
+  }
+  
+  .topbar > div:first-child {
+    min-width: 0;
+    overflow: hidden;
+  }
+  
+  .top-actions {
+    width: auto !important;
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
+  }
+  
+  #btnFeedback {
     width: 46px !important;
     height: 46px !important;
-    min-width: 46px !important;
     padding: 0 !important;
-    border-radius: 16px !important;
-
-    font-size: 0 !important;
+    border-radius: 14px !important;
+    font-size: 1.45rem !important;
+    line-height: 1 !important;
+    background: #fff !important;
+    color: #1f7af5 !important;
+    border: 1px solid #d8eafd !important;
+    box-shadow: 0 6px 14px rgba(31, 122, 245, 0.1) !important;
+    /* Ẩn chữ "Góp ý", chỉ giữ icon */
+    overflow: hidden !important;
+    text-indent: 100% !important;
+    white-space: nowrap !important;
+    position: relative !important;
   }
-
-  .feedback-btn::before {
-    content: "💌";
-    font-size: 1.25rem;
+  
+  /* Dùng pseudo để show lại icon vì text-indent đã ẩn */
+  #btnFeedback::before {
+    content: '💌';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: 0;
+    font-size: 1.45rem;
   }
 }
