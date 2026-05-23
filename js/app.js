@@ -9,11 +9,14 @@ const App = {
 
   PIN_KEY: 'khoBaiTap_parentPin',
   DEFAULT_PIN: '1234',
+  leaderboardGrade: 'lop2',
+  DRAGONBALL_KEY: 'rabbit_dragonball_collection',
+  DRAGON_REWARD_KEY: 'rabbit_shenron_unlocked',
 
   async init() {
     this._bindEvents();
     this._restoreSession();
-    this.loadLeaderboard();
+    this.loadLeaderboard('lop2');
     await this._loadData();
   },
 
@@ -45,8 +48,21 @@ const App = {
     if (this.playerName && this.allData) this._renderSubjects();
   },
 
-  async loadLeaderboard() {
+  async loadLeaderboard(gradeId = 'lop2') {
     const lbDiv = document.getElementById('lbList');
+    if (!lbDiv) return;
+    this.leaderboardGrade = gradeId;
+    document.querySelectorAll('.lb-grade-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.grade === gradeId);
+    });
+
+    if (gradeId !== 'lop2') {
+      const gradeLabel = gradeId.replace('lop', 'Lớp ');
+      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🔒</div><b>' + gradeLabel + ' sắp mở</b><span>Hiện tại web đang ưu tiên lớp 2. Khi mở lớp mới, bảng xếp hạng sẽ hiện riêng tại đây.</span></div>';
+      return;
+    }
+
+    lbDiv.innerHTML = '<div class="loading-text">Đang tải xếp hạng...</div>';
     const data = await API.getLeaderboard();
 
     if (!data || data.length === 0) {
@@ -69,6 +85,9 @@ const App = {
     const screen = document.getElementById(id);
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
+    if (name === 'register' || name === 'subject') this._renderHomeWidgets();
+    if (name === 'shop') this._renderDragonShop();
+    if (name === 'collection') this._renderCollection();
     window.scrollTo(0, 0);
   },
 
@@ -81,6 +100,7 @@ const App = {
 
     document.getElementById('subName').textContent = 'Chào ' + name + '!';
     Rewards.updateUI();
+    this._renderHomeWidgets();
     
     // MỚI: Sau khi đăng ký → vào màn chọn lớp
     this.showScreen('grade');
@@ -187,6 +207,199 @@ const App = {
     document.querySelectorAll('.mini-content').forEach(c => c.classList.remove('active'));
     document.querySelector(`.mini-tab[data-mini="${target}"]`).classList.add('active');
     document.getElementById('mini' + target.charAt(0).toUpperCase() + target.slice(1)).classList.add('active');
+  },
+
+
+  // DRAGON BALL + HOMEPAGE WIDGETS
+  _getDragonCollection() {
+    try {
+      const raw = localStorage.getItem(this.DRAGONBALL_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed.map(Number).filter(n => n >= 1 && n <= 7) : [];
+    } catch (e) {
+      return [];
+    }
+  },
+
+  _saveDragonCollection(list) {
+    const unique = [...new Set(list.map(Number).filter(n => n >= 1 && n <= 7))].sort((a, b) => a - b);
+    localStorage.setItem(this.DRAGONBALL_KEY, JSON.stringify(unique));
+    this._checkDragonReward(unique);
+    this._renderHomeWidgets();
+    this._renderCollection();
+    this._renderDragonShop();
+  },
+
+  _getStars() {
+    const candidates = ['stars', 'score', 'totalStars', 'profileStars'];
+    for (const key of candidates) {
+      const n = parseInt(Storage.get ? Storage.get(key, 0) : localStorage.getItem(key), 10);
+      if (!Number.isNaN(n) && n > 0) return n;
+    }
+    const mirror = document.getElementById('profileStarMirror');
+    const fromDom = mirror ? parseInt(mirror.textContent, 10) : 0;
+    return Number.isNaN(fromDom) ? 0 : fromDom;
+  },
+
+  _setStars(value) {
+    const next = Math.max(0, parseInt(value, 10) || 0);
+    if (Storage.set) Storage.set('stars', next);
+    else localStorage.setItem('stars', String(next));
+    const ids = ['profileStarMirror', 'shopStarCount'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = next;
+    });
+    if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
+  },
+
+  _dragonPrices() {
+    return { 1: 50, 2: 70, 3: 90, 4: 120, 5: 160, 6: 220, 7: 300 };
+  },
+
+  _dragonName(n) {
+    return 'Ngọc rồng ' + n + ' sao';
+  },
+
+  _dragonImg(n) {
+    return 'images/dragonball_' + n + '.png';
+  },
+
+  _renderDragonBallIcon(n, owned) {
+    return `<div class="dragon-ball-icon ${owned ? 'owned' : 'locked'}" title="${this._dragonName(n)}">
+      <img src="${this._dragonImg(n)}" alt="${this._dragonName(n)}" onerror="this.style.display='none';this.parentNode.querySelector('.dragon-fallback').style.display='grid';">
+      <span class="dragon-fallback" style="display:none">${'★'.repeat(n)}</span>
+    </div>`;
+  },
+
+  _renderHomeWidgets() {
+    const missionList = document.getElementById('dailyMissionList');
+    const progressGrid = document.getElementById('learningProgressGrid');
+    const dragonRow = document.getElementById('homeDragonBalls');
+    const dragonProgress = document.getElementById('dragonProgressText');
+    if (!missionList || !progressGrid || !dragonRow) return;
+
+    const stars = this._getStars();
+    const collection = this._getDragonCollection();
+    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+
+    missionList.innerHTML = `
+      <div class="mission-line"><span>✅ Làm 5 câu đúng</span><b>+5 ⭐</b></div>
+      <div class="mission-line"><span>🔥 Học 1 lượt bất kỳ</span><b>+XP</b></div>
+      <div class="mission-line"><span>🐉 Sưu tập ngọc rồng</span><button type="button" class="text-link-btn" data-open-shop="1">Shop</button></div>`;
+
+    progressGrid.innerHTML = `
+      <div class="progress-mini"><b>${localStorage.getItem('khoBaiTap_streak') || 1}</b><span>🔥 Chuỗi ngày</span></div>
+      <div class="progress-mini"><b>${stars}</b><span>⭐ Tổng sao</span></div>
+      <div class="progress-mini"><b>${localStorage.getItem('khoBaiTap_totalCorrect') || 0}</b><span>🧠 Câu đúng</span></div>
+      <div class="progress-mini"><b>#1</b><span>🏆 Lớp 2</span></div>`;
+
+    if (dragonProgress) dragonProgress.textContent = collection.length + '/7 viên';
+    dragonRow.innerHTML = [1,2,3,4,5,6,7].map(n => this._renderDragonBallIcon(n, collection.includes(n))).join('');
+    const hint = document.getElementById('dragonHint');
+    if (hint) hint.textContent = unlocked ? 'Đã mở khóa Sticker Rồng Thần! 🐉' : 'Thu thập đủ 7 viên để nhận Sticker Rồng Thần.';
+
+    document.querySelectorAll('[data-open-shop="1"]').forEach(btn => {
+      btn.onclick = () => this.showScreen('shop');
+    });
+  },
+
+  _renderDragonShop() {
+    const shopItems = document.getElementById('shopItems');
+    if (!shopItems) return;
+
+    const oldDragonSection = document.getElementById('dragonShopSection');
+    if (oldDragonSection) oldDragonSection.remove();
+
+    const collection = this._getDragonCollection();
+    const prices = this._dragonPrices();
+    const stars = this._getStars();
+    const section = document.createElement('div');
+    section.id = 'dragonShopSection';
+    section.className = 'dragon-shop-section';
+    section.innerHTML = `
+      <div class="dragon-shop-head">
+        <div>
+          <h3>🐉 Shop 7 viên ngọc rồng</h3>
+          <p>Mua đủ bộ để nhận Sticker Rồng Thần.</p>
+        </div>
+        <div class="dragon-shop-wallet">⭐ ${stars}</div>
+      </div>
+      <div class="dragon-shop-grid">
+        ${[1,2,3,4,5,6,7].map(n => {
+          const owned = collection.includes(n);
+          const canBuy = stars >= prices[n] && !owned;
+          return `<div class="dragon-shop-card ${owned ? 'owned' : ''}">
+            ${this._renderDragonBallIcon(n, true)}
+            <div class="dragon-shop-name">${this._dragonName(n)}</div>
+            <div class="dragon-shop-price">${owned ? 'Đã có' : prices[n] + ' ⭐'}</div>
+            <button type="button" class="reward-buy-btn dragon-buy-btn" data-dragon="${n}" ${owned || !canBuy ? 'disabled' : ''}>${owned ? 'Đã mua' : 'Mua'}</button>
+          </div>`;
+        }).join('')}
+      </div>`;
+
+    shopItems.parentNode.insertBefore(section, shopItems);
+    section.querySelectorAll('.dragon-buy-btn[data-dragon]').forEach(btn => {
+      btn.addEventListener('click', () => this._buyDragonBall(parseInt(btn.dataset.dragon, 10)));
+    });
+
+    const shopStar = document.getElementById('shopStarCount');
+    if (shopStar) shopStar.textContent = stars;
+  },
+
+  _buyDragonBall(n) {
+    const collection = this._getDragonCollection();
+    if (collection.includes(n)) return;
+    const price = this._dragonPrices()[n];
+    const stars = this._getStars();
+    if (stars < price) {
+      alert('Con chưa đủ sao để mua viên này. Học thêm để tích sao nhé! ⭐');
+      return;
+    }
+    this._setStars(stars - price);
+    collection.push(n);
+    this._saveDragonCollection(collection);
+    alert('Đã mua ' + this._dragonName(n) + '! 🐉');
+  },
+
+  _checkDragonReward(collection) {
+    const hasAll = collection.length >= 7;
+    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+    if (hasAll && !unlocked) {
+      localStorage.setItem(this.DRAGON_REWARD_KEY, '1');
+      this._addShenronToInventory();
+      setTimeout(() => alert('🐉 Rồng Thần xuất hiện! Con đã nhận Sticker Rồng Thần!'), 100);
+    }
+  },
+
+  _addShenronToInventory() {
+    try {
+      const key = 'inventory';
+      const raw = Storage.get ? Storage.get(key, []) : JSON.parse(localStorage.getItem(key) || '[]');
+      const inventory = Array.isArray(raw) ? raw : [];
+      if (!inventory.includes('shenron_sticker')) inventory.push('shenron_sticker');
+      if (Storage.set) Storage.set(key, inventory);
+      else localStorage.setItem(key, JSON.stringify(inventory));
+    } catch (e) {
+      localStorage.setItem('rabbit_shenron_inventory_fallback', '1');
+    }
+  },
+
+  _renderCollection() {
+    const grid = document.getElementById('collectionDragonGrid');
+    if (!grid) return;
+    const collection = this._getDragonCollection();
+    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+    grid.innerHTML = [1,2,3,4,5,6,7].map(n => {
+      const owned = collection.includes(n);
+      return `<div class="collection-dragon-card ${owned ? 'owned' : 'locked'}">
+        ${this._renderDragonBallIcon(n, owned)}
+        <h3>${this._dragonName(n)}</h3>
+        <p>${owned ? 'Đã thu thập' : 'Chưa có'}</p>
+      </div>`;
+    }).join('');
+    const reward = document.getElementById('collectionRewardBadge');
+    if (reward) reward.innerHTML = unlocked ? '🐉<span>Đã nhận Rồng Thần</span>' : collection.length + '/7<span>Đang sưu tập</span>';
   },
 
   // PARENT DASHBOARD
@@ -398,6 +611,17 @@ const App = {
       if (e.key === 'Enter' && !bs.disabled) this._register();
     });
 
+    // Leaderboard grade tabs
+    document.querySelectorAll('.lb-grade-tab[data-grade]').forEach(tab => {
+      tab.addEventListener('click', () => this.loadLeaderboard(tab.dataset.grade));
+    });
+
+    const openDragonShop = document.getElementById('btnOpenDragonShop');
+    if (openDragonShop) openDragonShop.addEventListener('click', () => this.showScreen('shop'));
+
+    const collectionShop = document.getElementById('btnCollectionShop');
+    if (collectionShop) collectionShop.addEventListener('click', () => this.showScreen('shop'));
+
     // MỚI: Grade selector
     document.querySelectorAll('.grade-card[data-grade]').forEach(card => {
       card.addEventListener('click', () => this._chooseGrade(card.dataset.grade));
@@ -410,6 +634,11 @@ const App = {
     document.getElementById('btnRedeemBadge').addEventListener('click', () => {
       Rewards.redeemBadge();
     });
+
+    const btnRedeemBadgeShop = document.getElementById('btnRedeemBadgeShop');
+    if (btnRedeemBadgeShop) {
+      btnRedeemBadgeShop.addEventListener('click', () => Rewards.redeemBadge());
+    }
 
     document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
       btn.addEventListener('click', () => {
