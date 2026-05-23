@@ -17,7 +17,9 @@ const App = {
     this._bindEvents();
     this._restoreSession();
     this.loadLeaderboard('lop2');
+    this._renderHomeWidgets();
     await this._loadData();
+    this._renderHomeWidgets();
   },
 
   _restoreSession() {
@@ -46,6 +48,7 @@ const App = {
     }
     
     if (this.playerName && this.allData) this._renderSubjects();
+    this._renderHomeWidgets();
   },
 
   async loadLeaderboard(gradeId = 'lop2') {
@@ -360,6 +363,9 @@ const App = {
     collection.push(n);
     this._saveDragonCollection(collection);
     alert('Đã mua ' + this._dragonName(n) + '! 🐉');
+    this._renderHomeWidgets();
+    this._renderDragonShop();
+    this._renderCollection();
   },
 
   _checkDragonReward(collection) {
