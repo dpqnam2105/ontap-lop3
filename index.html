@@ -24,6 +24,7 @@
       <button class="rail-btn btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
       <button class="rail-btn btn-nav" data-screen="grade">🎓 <span>Chọn lớp</span></button>
       <button class="rail-btn btn-nav" data-screen="shop">⭐ <span>Phần thưởng</span></button>
+      <button class="rail-btn btn-nav" data-screen="collection">🐉 <span>Bộ sưu tập</span></button>
       <div class="rail-spacer"></div>
       <a class="rail-parent-link" href="#" id="footerParent">👨‍👩‍👧 <span>Dành cho phụ huynh</span></a>
 
@@ -57,7 +58,35 @@
 
             <div class="leaderboard-card card">
               <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
+              <div class="lb-grade-tabs" id="lbGradeTabs">
+                <button class="lb-grade-tab active" data-grade="lop2">Lớp 2</button>
+                <button class="lb-grade-tab" data-grade="lop3">Lớp 3 🔒</button>
+                <button class="lb-grade-tab" data-grade="lop4">Lớp 4 🔒</button>
+                <button class="lb-grade-tab" data-grade="lop5">Lớp 5 🔒</button>
+              </div>
               <div id="lbList"><div class="loading-text">Đang tải xếp hạng...</div></div>
+            </div>
+          </div>
+
+          <div class="home-widgets" id="homeWidgets">
+            <div class="home-widget-card mission-card">
+              <div class="home-widget-title">🎯 Nhiệm vụ hôm nay</div>
+              <div id="dailyMissionList" class="mission-list"></div>
+            </div>
+            <div class="home-widget-card progress-card">
+              <div class="home-widget-title">📈 Tiến bộ học tập</div>
+              <div id="learningProgressGrid" class="progress-mini-grid"></div>
+            </div>
+            <div class="home-widget-card dragon-card">
+              <div class="home-widget-head">
+                <div>
+                  <div class="home-widget-title">🐉 Bộ sưu tập ngọc rồng</div>
+                  <div id="dragonProgressText" class="dragon-progress-text">0/7 viên</div>
+                </div>
+                <button class="mini-green-btn" id="btnOpenDragonShop" type="button">Mở shop</button>
+              </div>
+              <div id="homeDragonBalls" class="dragon-ball-row"></div>
+              <div id="dragonHint" class="dragon-hint">Thu thập đủ 7 viên để nhận Sticker Rồng Thần.</div>
             </div>
           </div>
         </section>
@@ -181,6 +210,25 @@
               </div>
               <div class="tip-box"><b>🌟 Mẹo nhỏ</b><ul><li>Hoàn thành bài tập để nhận sao.</li><li>Ôn lại câu sai để tiến bộ.</li><li>Đổi quà để có thêm động lực.</li></ul></div>
             </aside>
+          </div>
+        </section>
+
+        <section class="screen" id="screenCollection">
+          <div class="collection-wrap">
+            <div class="quiz-hdr glassbar">
+              <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+              <div class="quiz-hdr-title">🐉 Bộ sưu tập ngọc rồng</div>
+              <button class="btn-primary" id="btnCollectionShop" type="button">Mở shop</button>
+            </div>
+            <div class="collection-hero card">
+              <div>
+                <div class="shop-kicker">🎒 Bộ sưu tập</div>
+                <h2>Thu thập 7 viên ngọc rồng</h2>
+                <p>Đủ 7 viên sẽ tự mở khóa Sticker Rồng Thần trong túi đồ.</p>
+              </div>
+              <div id="collectionRewardBadge" class="collection-reward-badge">🐉</div>
+            </div>
+            <div id="collectionDragonGrid" class="collection-dragon-grid"></div>
           </div>
         </section>
 
