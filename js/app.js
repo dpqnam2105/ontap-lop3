@@ -383,7 +383,7 @@ const App = {
       const key = 'inventory';
       const raw = Storage.get ? Storage.get(key, []) : JSON.parse(localStorage.getItem(key) || '[]');
       const inventory = Array.isArray(raw) ? raw : [];
-      if (!inventory.includes('shenron_sticker')) inventory.push('shenron_sticker');
+      if (!inventory.includes('sticker_shenron')) inventory.push('sticker_shenron');
       if (Storage.set) Storage.set(key, inventory);
       else localStorage.setItem(key, JSON.stringify(inventory));
     } catch (e) {
