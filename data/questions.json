@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-05-21",
+  "lastUpdated": "2026-05-25",
   "subjects": [
     {
       "id": "toan",
@@ -1648,6 +1648,150 @@
               "skill": "comparison",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "Số gồm 7 trăm, 5 chục và 3 đơn vị là số nào?",
+              "choices": [
+                "573",
+                "357",
+                "735",
+                "753"
+              ],
+              "a": 3,
+              "hint": "Thứ tự: trăm – chục – đơn vị, ghép từng chữ số vào đúng hàng",
+              "difficulty": 1
+            },
+            {
+              "q": "Số gồm 4 trăm, 0 chục và 8 đơn vị được viết là?",
+              "choices": [
+                "480",
+                "408",
+                "804",
+                "48"
+              ],
+              "a": 1,
+              "hint": "Hàng chục bằng 0 thì vẫn phải viết số 0 vào giữa",
+              "difficulty": 2
+            },
+            {
+              "q": "Số 105 được đọc là?",
+              "choices": [
+                "Một trăm năm",
+                "Mười năm",
+                "Một trăm linh năm",
+                "Một trăm linh lăm"
+              ],
+              "a": 2,
+              "hint": "Có chữ số 0 ở hàng chục thì đọc là 'linh'; số 5 đứng riêng đọc là 'năm'",
+              "difficulty": 2
+            },
+            {
+              "q": "Số liền sau của số 599 là số nào?",
+              "choices": [
+                "600",
+                "699",
+                "598",
+                "500"
+              ],
+              "a": 0,
+              "hint": "Số liền sau bằng số đó cộng thêm 1",
+              "difficulty": 1
+            },
+            {
+              "q": "Số liền trước của số bé nhất có ba chữ số là?",
+              "choices": [
+                "101",
+                "99",
+                "199",
+                "999"
+              ],
+              "a": 1,
+              "hint": "Tìm số bé nhất có 3 chữ số trước, rồi trừ đi 1",
+              "difficulty": 3
+            },
+            {
+              "q": "Sắp xếp các số 462, 264, 624, 246 theo thứ tự từ bé đến lớn.",
+              "choices": [
+                "246, 462, 264, 624",
+                "624, 462, 264, 246",
+                "246, 264, 462, 624",
+                "264, 246, 462, 624"
+              ],
+              "a": 2,
+              "hint": "So sánh chữ số hàng trăm trước, rồi đến hàng chục, rồi đến hàng đơn vị",
+              "difficulty": 2
+            },
+            {
+              "q": "Số lớn nhất có ba chữ số khác nhau lập từ các chữ số 4, 2, 8 là?",
+              "choices": [
+                "248",
+                "824",
+                "428",
+                "842"
+              ],
+              "a": 3,
+              "hint": "Xếp chữ số lớn nhất vào hàng trăm, rồi đến hàng chục",
+              "difficulty": 3
+            },
+            {
+              "q": "Số bé nhất có ba chữ số khác nhau lập từ các chữ số 3, 7, 5 là?",
+              "choices": [
+                "537",
+                "735",
+                "375",
+                "357"
+              ],
+              "a": 3,
+              "hint": "Xếp chữ số nhỏ nhất vào hàng trăm, rồi đến hàng chục",
+              "difficulty": 3
+            },
+            {
+              "q": "Điền số thích hợp vào chỗ chấm: 836 = 800 + ... + 6",
+              "choices": [
+                "30",
+                "3",
+                "300",
+                "36"
+              ],
+              "a": 0,
+              "hint": "Phân tích theo hàng: trăm + chục + đơn vị",
+              "difficulty": 2
+            },
+            {
+              "q": "Chữ số 4 trong số 247 ở hàng nào?",
+              "choices": [
+                "Hàng chục",
+                "Hàng trăm",
+                "Hàng nghìn",
+                "Hàng đơn vị"
+              ],
+              "a": 0,
+              "hint": "Đếm từ phải qua trái: đơn vị – chục – trăm",
+              "difficulty": 1
+            },
+            {
+              "q": "Số liền trước số 700 là?",
+              "choices": [
+                "600",
+                "699",
+                "609",
+                "701"
+              ],
+              "a": 1,
+              "hint": "Số liền trước = số đó trừ đi 1",
+              "difficulty": 1
+            },
+            {
+              "q": "Trong các số 365, 536, 653, 635, số nào lớn nhất?",
+              "choices": [
+                "635",
+                "365",
+                "653",
+                "536"
+              ],
+              "a": 2,
+              "hint": "So sánh chữ số hàng trăm trước; số nào có hàng trăm lớn hơn thì lớn hơn",
+              "difficulty": 2
             }
           ]
         },
@@ -3118,6 +3262,102 @@
               "skill": "mental_addition",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "326 + 457 = ?",
+              "choices": [
+                "693",
+                "783",
+                "873",
+                "773"
+              ],
+              "a": 1,
+              "hint": "Đặt tính thẳng cột, cộng từ phải qua trái, nhớ qua hàng nếu cần",
+              "difficulty": 2
+            },
+            {
+              "q": "252 + 118 = ?",
+              "choices": [
+                "380",
+                "360",
+                "470",
+                "370"
+              ],
+              "a": 3,
+              "hint": "Cộng đơn vị trước: 2 + 8 = 10, nhớ 1 sang hàng chục",
+              "difficulty": 2
+            },
+            {
+              "q": "655 + 37 = ?",
+              "choices": [
+                "702",
+                "682",
+                "692",
+                "688"
+              ],
+              "a": 2,
+              "hint": "Cộng đơn vị 5 + 7 = 12, viết 2 nhớ 1",
+              "difficulty": 2
+            },
+            {
+              "q": "249 + 456 = ?",
+              "choices": [
+                "705",
+                "605",
+                "695",
+                "715"
+              ],
+              "a": 0,
+              "hint": "Cộng đơn vị 9 + 6 = 15, nhớ 1 sang hàng chục",
+              "difficulty": 3
+            },
+            {
+              "q": "544 + 385 = ?",
+              "choices": [
+                "829",
+                "919",
+                "929",
+                "939"
+              ],
+              "a": 2,
+              "hint": "Cộng từng hàng, có nhớ qua hàng chục",
+              "difficulty": 3
+            },
+            {
+              "q": "437 + 50 = ?",
+              "choices": [
+                "487",
+                "937",
+                "447",
+                "497"
+              ],
+              "a": 0,
+              "hint": "Chỉ cộng vào hàng chục, không nhớ",
+              "difficulty": 1
+            },
+            {
+              "q": "Tổng của 564 và 82 là?",
+              "choices": [
+                "636",
+                "482",
+                "656",
+                "646"
+              ],
+              "a": 3,
+              "hint": "Tổng là kết quả của phép cộng; đặt tính thẳng cột",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền số thích hợp: ... + 130 = 340",
+              "choices": [
+                "310",
+                "210",
+                "470",
+                "110"
+              ],
+              "a": 1,
+              "hint": "Muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết",
+              "difficulty": 2
             }
           ]
         },
@@ -4503,6 +4743,102 @@
               "skill": "mixed_calculation",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "762 - 29 = ?",
+              "choices": [
+                "723",
+                "743",
+                "753",
+                "733"
+              ],
+              "a": 3,
+              "hint": "Đặt tính thẳng cột, hàng đơn vị 2 - 9 phải mượn 1 chục",
+              "difficulty": 2
+            },
+            {
+              "q": "849 - 175 = ?",
+              "choices": [
+                "774",
+                "684",
+                "674",
+                "664"
+              ],
+              "a": 2,
+              "hint": "Trừ từng hàng từ phải qua trái, có mượn nếu cần",
+              "difficulty": 3
+            },
+            {
+              "q": "955 - 624 = ?",
+              "choices": [
+                "431",
+                "331",
+                "231",
+                "321"
+              ],
+              "a": 1,
+              "hint": "Trừ từng hàng, không cần mượn",
+              "difficulty": 2
+            },
+            {
+              "q": "317 - 45 = ?",
+              "choices": [
+                "262",
+                "282",
+                "372",
+                "272"
+              ],
+              "a": 3,
+              "hint": "Hàng đơn vị 7 - 5 = 2, hàng chục 1 - 4 phải mượn",
+              "difficulty": 2
+            },
+            {
+              "q": "690 - 241 = ?",
+              "choices": [
+                "439",
+                "459",
+                "449",
+                "549"
+              ],
+              "a": 2,
+              "hint": "Hàng đơn vị 0 - 1 phải mượn 1 chục",
+              "difficulty": 2
+            },
+            {
+              "q": "Hiệu của 783 và 745 là?",
+              "choices": [
+                "83",
+                "38",
+                "48",
+                "84"
+              ],
+              "a": 1,
+              "hint": "Hiệu là kết quả của phép trừ; lấy số lớn trừ số bé",
+              "difficulty": 2
+            },
+            {
+              "q": "Hiệu của số bé nhất có ba chữ số với số lớn nhất có hai chữ số là?",
+              "choices": [
+                "1",
+                "2",
+                "0",
+                "9"
+              ],
+              "a": 0,
+              "hint": "Tìm 2 số trước (số bé nhất có 3 chữ số và số lớn nhất có 2 chữ số), rồi trừ",
+              "difficulty": 3
+            },
+            {
+              "q": "Tìm số trừ trong phép tính: 580 - ... = 250",
+              "choices": [
+                "330",
+                "430",
+                "320",
+                "230"
+              ],
+              "a": 0,
+              "hint": "Muốn tìm số trừ, lấy số bị trừ trừ đi hiệu",
+              "difficulty": 3
             }
           ]
         },
@@ -6355,6 +6691,102 @@
               "skill": "true_false_multiplication",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "Tích của 5 với số lớn nhất có 1 chữ số là?",
+              "choices": [
+                "45",
+                "40",
+                "5",
+                "9"
+              ],
+              "a": 0,
+              "hint": "Số lớn nhất có 1 chữ số là 9; tích là kết quả phép nhân",
+              "difficulty": 2
+            },
+            {
+              "q": "Tích của 2 với số liền sau số 4 là?",
+              "choices": [
+                "15",
+                "12",
+                "8",
+                "10"
+              ],
+              "a": 3,
+              "hint": "Tìm số liền sau số 4 trước, rồi nhân với 2",
+              "difficulty": 2
+            },
+            {
+              "q": "Mỗi hàng có 2 học sinh, có 5 hàng. Hỏi có bao nhiêu học sinh?",
+              "choices": [
+                "7",
+                "15",
+                "12",
+                "10"
+              ],
+              "a": 3,
+              "hint": "Lấy số học sinh mỗi hàng nhân với số hàng",
+              "difficulty": 1
+            },
+            {
+              "q": "Bà Lan mua 5 chai nước mắm, mỗi chai 2 lít. Hỏi mua tất cả bao nhiêu lít?",
+              "choices": [
+                "8 l",
+                "10 l",
+                "12 l",
+                "7 l"
+              ],
+              "a": 1,
+              "hint": "Số chai nhân với số lít mỗi chai",
+              "difficulty": 1
+            },
+            {
+              "q": "Trong phép tính 5 × 4 = 20, số 4 được gọi là gì?",
+              "choices": [
+                "Thừa số",
+                "Tích",
+                "Số chia",
+                "Thương"
+              ],
+              "a": 0,
+              "hint": "Trong phép nhân, hai số đứng trước dấu = đều có cùng vai trò; còn kết quả gọi là tích",
+              "difficulty": 2
+            },
+            {
+              "q": "Tích của 2 và 8 là?",
+              "choices": [
+                "18",
+                "16",
+                "12",
+                "10"
+              ],
+              "a": 1,
+              "hint": "Tích = kết quả của phép nhân",
+              "difficulty": 1
+            },
+            {
+              "q": "5 chuồng thỏ, mỗi chuồng có 5 con. Hỏi có tất cả bao nhiêu con thỏ?",
+              "choices": [
+                "10",
+                "20",
+                "25",
+                "15"
+              ],
+              "a": 2,
+              "hint": "Số chuồng nhân với số thỏ mỗi chuồng",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 4 × 4 + 34 = ?",
+              "choices": [
+                "54",
+                "42",
+                "50",
+                "38"
+              ],
+              "a": 2,
+              "hint": "Tính nhân trước, cộng sau",
+              "difficulty": 2
             }
           ]
         },
@@ -7691,6 +8123,78 @@
               "skill": "order_operations",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "Trong phép tính 30 : 5 = 6, số 30 được gọi là gì?",
+              "choices": [
+                "Số bị chia",
+                "Số chia",
+                "Thương",
+                "Tích"
+              ],
+              "a": 0,
+              "hint": "Trong phép chia: số đứng đầu (trước dấu :) gọi là gì? Hãy nhớ lại tên các thành phần",
+              "difficulty": 2
+            },
+            {
+              "q": "Có 12 cái bánh xếp đều vào 2 hộp. Hỏi mỗi hộp có bao nhiêu cái bánh?",
+              "choices": [
+                "6",
+                "10",
+                "4",
+                "8"
+              ],
+              "a": 0,
+              "hint": "Chia đều: tổng số bánh chia cho số hộp",
+              "difficulty": 1
+            },
+            {
+              "q": "Phép tính nào dưới đây có kết quả lớn nhất?",
+              "choices": [
+                "40 : 5",
+                "20 : 4",
+                "50 : 5",
+                "5 × 4"
+              ],
+              "a": 3,
+              "hint": "Tính kết quả từng phép, rồi so sánh",
+              "difficulty": 2
+            },
+            {
+              "q": "Trong chuồng đếm được 18 cái chân gà. Hỏi có bao nhiêu con gà?",
+              "choices": [
+                "7 con",
+                "8 con",
+                "9 con",
+                "6 con"
+              ],
+              "a": 2,
+              "hint": "Mỗi con gà có 2 chân, lấy tổng số chân chia 2",
+              "difficulty": 2
+            },
+            {
+              "q": "Trong chuồng có 20 cái tai thỏ. Hỏi có bao nhiêu con thỏ?",
+              "choices": [
+                "15",
+                "10",
+                "20",
+                "5"
+              ],
+              "a": 1,
+              "hint": "Mỗi con thỏ có 2 tai, lấy tổng số tai chia 2",
+              "difficulty": 2
+            },
+            {
+              "q": "Tính: 18 : 2 + 45 = ?",
+              "choices": [
+                "63",
+                "54",
+                "44",
+                "9"
+              ],
+              "a": 1,
+              "hint": "Tính phép chia trước, rồi cộng kết quả với 45",
+              "difficulty": 2
             }
           ]
         },
@@ -9347,6 +9851,162 @@
               "skill": "measurement_calculation",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 1m 3cm = ... cm",
+              "choices": [
+                "103",
+                "30",
+                "13",
+                "130"
+              ],
+              "a": 0,
+              "hint": "Đổi 1m về cm trước (1m = 100cm), rồi cộng với 3cm",
+              "difficulty": 2
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 3m 6dm = ... dm",
+              "choices": [
+                "36",
+                "9",
+                "306",
+                "360"
+              ],
+              "a": 0,
+              "hint": "Đổi 1m = 10dm, rồi cộng với 6dm",
+              "difficulty": 2
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 1m 5cm = ... cm",
+              "choices": [
+                "15",
+                "105",
+                "51",
+                "150"
+              ],
+              "a": 1,
+              "hint": "1m = 100cm, cộng thêm 5cm",
+              "difficulty": 2
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 1dm 4cm = ... cm",
+              "choices": [
+                "140",
+                "104",
+                "14",
+                "5"
+              ],
+              "a": 2,
+              "hint": "1dm = 10cm, cộng thêm 4cm",
+              "difficulty": 1
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 2km = ... m",
+              "choices": [
+                "100",
+                "20",
+                "200",
+                "2000"
+              ],
+              "a": 3,
+              "hint": "1km = 1000m",
+              "difficulty": 2
+            },
+            {
+              "q": "Số thích hợp điền vào chỗ chấm: 70cm = ... dm",
+              "choices": [
+                "7",
+                "700",
+                "17",
+                "70"
+              ],
+              "a": 0,
+              "hint": "1dm = 10cm, nên 70cm chia cho 10 sẽ ra số dm",
+              "difficulty": 2
+            },
+            {
+              "q": "Cột cờ trường em cao khoảng 12 ...?",
+              "choices": [
+                "cm",
+                "dm",
+                "km",
+                "m"
+              ],
+              "a": 3,
+              "hint": "Chọn đơn vị hợp lý với độ cao của một cột cờ",
+              "difficulty": 2
+            },
+            {
+              "q": "Bàn học ở lớp em cao khoảng?",
+              "choices": [
+                "60 m",
+                "60 dm",
+                "60 km",
+                "60 cm"
+              ],
+              "a": 3,
+              "hint": "Hình dung độ cao của một cái bàn học, chọn đơn vị hợp lý",
+              "difficulty": 2
+            },
+            {
+              "q": "Chiều dài chiếc bút mực của em khoảng?",
+              "choices": [
+                "13 m",
+                "13 cm",
+                "13 dm",
+                "13 km"
+              ],
+              "a": 1,
+              "hint": "Cây bút chỉ dài bằng một gang tay, chọn đơn vị nhỏ",
+              "difficulty": 1
+            },
+            {
+              "q": "Quãng đường từ nhà đến trường khoảng?",
+              "choices": [
+                "2 cm",
+                "2 km",
+                "2 dm",
+                "2 m"
+              ],
+              "a": 1,
+              "hint": "Quãng đường dài thì dùng đơn vị lớn",
+              "difficulty": 2
+            },
+            {
+              "q": "Hôm nay là ngày 15 tháng 4. Còn 1 tuần nữa là sinh nhật Hoa. Vậy sinh nhật Hoa vào ngày nào?",
+              "choices": [
+                "Ngày 21 tháng 4",
+                "Ngày 20 tháng 4",
+                "Ngày 22 tháng 4",
+                "Ngày 23 tháng 4"
+              ],
+              "a": 2,
+              "hint": "1 tuần = 7 ngày, cộng thêm 7 vào ngày hiện tại",
+              "difficulty": 2
+            },
+            {
+              "q": "Thứ năm tuần này là ngày 8 tháng 4. Thứ năm tuần sau là ngày nào?",
+              "choices": [
+                "Ngày 1 tháng 4",
+                "Ngày 14 tháng 4",
+                "Ngày 15 tháng 4",
+                "Ngày 9 tháng 4"
+              ],
+              "a": 2,
+              "hint": "Tuần sau cách tuần này 7 ngày",
+              "difficulty": 2
+            },
+            {
+              "q": "Hôm nay là thứ Tư ngày 15 tháng 3. Thứ Tư tuần sau là ngày nào?",
+              "choices": [
+                "22 tháng 3",
+                "20 tháng 3",
+                "22 tháng 4",
+                "16 tháng 3"
+              ],
+              "a": 0,
+              "hint": "Tuần sau = ngày hiện tại + 7 ngày",
+              "difficulty": 2
             }
           ]
         },
@@ -9926,6 +10586,66 @@
               "image": "images/questions/de5_bai4_tu_giac_tam_giac.png",
               "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
               "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Trong các hình sau, hình nào KHÔNG phải khối trụ?",
+              "choices": [
+                "Cốc nước hình tròn",
+                "Cây nến tròn",
+                "Hộp sữa lon",
+                "Quả bóng"
+              ],
+              "a": 3,
+              "hint": "Khối trụ có 2 mặt phẳng tròn ở hai đầu; có vật nào tròn đều mọi phía không?",
+              "difficulty": 1
+            },
+            {
+              "q": "Vật nào có dạng khối cầu?",
+              "choices": [
+                "Quả bóng đá",
+                "Cái cốc",
+                "Hộp diêm",
+                "Quyển sách"
+              ],
+              "a": 0,
+              "hint": "Khối cầu là vật tròn đều mọi phía",
+              "difficulty": 1
+            },
+            {
+              "q": "Hình vuông có mấy cạnh bằng nhau?",
+              "choices": [
+                "3 cạnh",
+                "4 cạnh",
+                "5 cạnh",
+                "2 cạnh"
+              ],
+              "a": 1,
+              "hint": "Vẽ ra giấy 1 hình vuông và đếm xem có bao nhiêu cạnh, và chúng có dài bằng nhau không",
+              "difficulty": 1
+            },
+            {
+              "q": "Một đường gấp khúc có 2 đoạn, đoạn AB dài 5cm, đoạn BC dài 8cm. Độ dài đường gấp khúc là?",
+              "choices": [
+                "10 cm",
+                "3 cm",
+                "13 cm",
+                "40 cm"
+              ],
+              "a": 2,
+              "hint": "Độ dài đường gấp khúc bằng tổng độ dài các đoạn thẳng",
+              "difficulty": 2
+            },
+            {
+              "q": "Hình chữ nhật có mấy đỉnh?",
+              "choices": [
+                "4",
+                "5",
+                "3",
+                "2"
+              ],
+              "a": 0,
+              "hint": "Đếm các góc của hình chữ nhật",
+              "difficulty": 1
             }
           ]
         },
@@ -11377,6 +12097,150 @@
               "skill": "word_problem_addition",
               "source": "L2. ĐỀ ÔN THEO CHỦ ĐỀ TOÁN LỚP 2.docx",
               "curriculum": "grade2_vn_review_2026"
+            },
+            {
+              "q": "Cửa hàng buổi sáng bán 350kg gạo, buổi chiều bán 374kg. Hỏi cả hai buổi bán bao nhiêu ki-lô-gam gạo?",
+              "choices": [
+                "614 kg",
+                "724 kg",
+                "624 kg",
+                "734 kg"
+              ],
+              "a": 1,
+              "hint": "Cộng số gạo bán buổi sáng với buổi chiều",
+              "difficulty": 2
+            },
+            {
+              "q": "Khu vườn A có 125 cây vải, khu vườn B có nhiều hơn khu vườn A 68 cây. Hỏi khu vườn B có bao nhiêu cây vải?",
+              "choices": [
+                "57 cây",
+                "203 cây",
+                "193 cây",
+                "183 cây"
+              ],
+              "a": 2,
+              "hint": "Nhiều hơn → phép cộng: lấy số cây vườn A cộng thêm 68",
+              "difficulty": 2
+            },
+            {
+              "q": "Nhà bác Lan nuôi 437 con gà. Số vịt ít hơn số gà 72 con. Hỏi nhà bác Lan nuôi bao nhiêu con vịt?",
+              "choices": [
+                "365 con",
+                "375 con",
+                "509 con",
+                "385 con"
+              ],
+              "a": 0,
+              "hint": "Ít hơn → phép trừ: lấy số gà trừ đi 72",
+              "difficulty": 2
+            },
+            {
+              "q": "Thuyền thứ nhất có 305 người, thuyền thứ hai có nhiều hơn thuyền thứ nhất 86 người. Hỏi thuyền thứ hai có bao nhiêu người?",
+              "choices": [
+                "381 người",
+                "401 người",
+                "219 người",
+                "391 người"
+              ],
+              "a": 3,
+              "hint": "Nhiều hơn → cộng: 305 + 86",
+              "difficulty": 2
+            },
+            {
+              "q": "Cửa hàng buổi sáng bán 345kg gạo, buổi chiều bán nhiều hơn buổi sáng 136kg. Hỏi buổi chiều bán bao nhiêu ki-lô-gam gạo?",
+              "choices": [
+                "471 kg",
+                "491 kg",
+                "481 kg",
+                "209 kg"
+              ],
+              "a": 2,
+              "hint": "Nhiều hơn → cộng: lấy buổi sáng cộng thêm 136kg",
+              "difficulty": 2
+            },
+            {
+              "q": "Mỗi chuồng có 5 con thỏ. Hỏi 5 chuồng như thế có bao nhiêu con thỏ?",
+              "choices": [
+                "20 con",
+                "10 con",
+                "15 con",
+                "25 con"
+              ],
+              "a": 3,
+              "hint": "Mỗi chuồng có cùng số thỏ → dùng phép nhân",
+              "difficulty": 2
+            },
+            {
+              "q": "Cửa hàng sau khi bán 256kg gạo thì còn lại 137kg. Hỏi lúc đầu cửa hàng có bao nhiêu ki-lô-gam gạo?",
+              "choices": [
+                "393 kg",
+                "383 kg",
+                "119 kg",
+                "493 kg"
+              ],
+              "a": 0,
+              "hint": "Lúc đầu = đã bán + còn lại",
+              "difficulty": 3
+            },
+            {
+              "q": "Số học sinh nam khối Hai là 115 em, ít hơn số học sinh nữ 19 em. Hỏi khối Hai có bao nhiêu học sinh nữ?",
+              "choices": [
+                "124 em",
+                "96 em",
+                "144 em",
+                "134 em"
+              ],
+              "a": 3,
+              "hint": "Nam ít hơn nữ 19 em → nữ = nam + 19",
+              "difficulty": 3
+            },
+            {
+              "q": "Gia đình đã đi 470km và còn 280km nữa mới về đến quê. Hỏi quãng đường tất cả dài bao nhiêu ki-lô-mét?",
+              "choices": [
+                "650 km",
+                "750 km",
+                "740 km",
+                "190 km"
+              ],
+              "a": 1,
+              "hint": "Tổng quãng đường = đã đi + còn lại",
+              "difficulty": 2
+            },
+            {
+              "q": "Bò sữa nhà bác Hà mỗi ngày cho 18 lít sữa, bò nhà bác Linh cho nhiều hơn 4 lít. Hỏi bò nhà bác Linh cho bao nhiêu lít sữa?",
+              "choices": [
+                "24 l",
+                "14 l",
+                "22 l",
+                "32 l"
+              ],
+              "a": 2,
+              "hint": "Nhiều hơn → cộng: 18 + 4",
+              "difficulty": 1
+            },
+            {
+              "q": "Lan tiết kiệm được 250 nghìn, Mai tiết kiệm được ít hơn Lan 80 nghìn. Hỏi cả hai bạn tiết kiệm được bao nhiêu nghìn?",
+              "choices": [
+                "420 nghìn",
+                "330 nghìn",
+                "580 nghìn",
+                "170 nghìn"
+              ],
+              "a": 0,
+              "hint": "Tìm số tiền Mai trước, rồi cộng với số tiền Lan",
+              "difficulty": 3
+            },
+            {
+              "q": "Đoạn dây AB dài 175cm, đoạn dây CD ngắn hơn 50cm. Hỏi cả hai đoạn dây dài bao nhiêu xăng-ti-mét?",
+              "choices": [
+                "350 cm",
+                "300 cm",
+                "225 cm",
+                "125 cm"
+              ],
+              "a": 1,
+              "hint": "Tìm CD trước (AB - 50), rồi cộng cả hai đoạn",
+              "difficulty": 3
             }
           ]
         },
@@ -12175,6 +13039,66 @@
               "skill": "find_x",
               "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
               "curriculum": "grade2_to_grade3_summer_review"
+            },
+            {
+              "q": "Số lớn nhất có ba chữ số khác nhau ghép được từ các chữ số 7, 3, 2, 9 là?",
+              "choices": [
+                "973",
+                "739",
+                "923",
+                "999"
+              ],
+              "a": 0,
+              "hint": "Chọn 3 chữ số lớn nhất, xếp giảm dần từ hàng trăm",
+              "difficulty": 3
+            },
+            {
+              "q": "Có mấy số có hai chữ số khác nhau lập từ các chữ số 2, 5, 8?",
+              "choices": [
+                "3 số",
+                "9 số",
+                "6 số",
+                "12 số"
+              ],
+              "a": 2,
+              "hint": "Đếm cặp: 25, 28, 52, 58, 82, 85",
+              "difficulty": 3
+            },
+            {
+              "q": "Số tiếp theo của dãy: 5, 10, 15, 20, ...?",
+              "choices": [
+                "35",
+                "30",
+                "21",
+                "25"
+              ],
+              "a": 3,
+              "hint": "Mỗi số hơn số trước 5 đơn vị",
+              "difficulty": 1
+            },
+            {
+              "q": "Số tiếp theo của dãy: 2, 4, 8, 16, ...?",
+              "choices": [
+                "20",
+                "32",
+                "18",
+                "24"
+              ],
+              "a": 1,
+              "hint": "Mỗi số gấp đôi số đứng trước nó",
+              "difficulty": 3
+            },
+            {
+              "q": "Tìm x: x + 25 = 70",
+              "choices": [
+                "45",
+                "55",
+                "95",
+                "35"
+              ],
+              "a": 0,
+              "hint": "Muốn tìm số hạng, lấy tổng trừ đi số hạng đã biết",
+              "difficulty": 2
             }
           ]
         }
@@ -12536,6 +13460,66 @@
               "a": 0,
               "difficulty": 1,
               "hint": "Phân biệt s/x: từ Hán Việt \"sáng\" (= ánh sáng, thông minh) viết s"
+            },
+            {
+              "q": "Từ nào viết ĐÚNG chính tả?",
+              "choices": [
+                "lung linh",
+                "nung linh",
+                "lung lynh",
+                "nong linh"
+              ],
+              "a": 0,
+              "hint": "L hay N? – ghi nhớ: 'lung linh' tả ánh sáng đẹp",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào viết ĐÚNG chính tả?",
+              "choices": [
+                "khiêm tốn",
+                "khiêm tốt",
+                "khêm tốn",
+                "kiêm tốn"
+              ],
+              "a": 0,
+              "hint": "Khiêm tốn = không tự cao; vần 'iêm' chứ không phải 'êm'",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào viết ĐÚNG chính tả?",
+              "choices": [
+                "dũng cảm",
+                "dũng cãm",
+                "dủng cảm",
+                "zũng cảm"
+              ],
+              "a": 0,
+              "hint": "Dấu ngã trên 'u', dấu hỏi trên 'a' – đọc to để phân biệt",
+              "difficulty": 2
+            },
+            {
+              "q": "Điền vào chỗ trống: chim ... bay liệng báo hiệu mùa xuân",
+              "choices": [
+                "én",
+                "yến",
+                "iến",
+                "in"
+              ],
+              "a": 0,
+              "hint": "Loài chim nhỏ, đuôi chẻ, là biểu tượng mùa xuân",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào viết ĐÚNG chính tả?",
+              "choices": [
+                "rễ cây",
+                "dễ cây",
+                "rể cây",
+                "giễ cây"
+              ],
+              "a": 0,
+              "hint": "Bộ phận cây cắm xuống đất; viết bằng 'r' và dấu ngã",
+              "difficulty": 2
             }
           ]
         },
@@ -13096,6 +14080,126 @@
               ],
               "a": 1,
               "difficulty": 2
+            },
+            {
+              "q": "Từ nào là từ chỉ sự vật?",
+              "choices": [
+                "chạy",
+                "đẹp",
+                "cây đa",
+                "nhanh"
+              ],
+              "a": 2,
+              "hint": "Từ chỉ sự vật là từ chỉ người, vật, con vật, cây cối, hiện tượng",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào là từ chỉ hoạt động?",
+              "choices": [
+                "xanh biếc",
+                "viết bài",
+                "to lớn",
+                "ngôi nhà"
+              ],
+              "a": 1,
+              "hint": "Từ chỉ hoạt động là từ nói về việc làm: đọc, viết, chạy, nhảy...",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào là từ chỉ đặc điểm?",
+              "choices": [
+                "đá bóng",
+                "cô giáo",
+                "con mèo",
+                "óng ánh"
+              ],
+              "a": 3,
+              "hint": "Từ chỉ đặc điểm là từ tả màu sắc, hình dáng, tính cách (đẹp, xanh, hiền...)",
+              "difficulty": 1
+            },
+            {
+              "q": "Dòng nào gồm toàn các từ chỉ đặc điểm?",
+              "choices": [
+                "Xanh biếc, óng ánh, tròn xoe, nhỏ xíu",
+                "Đi dạo, quét sân, đọc sách, vẽ tranh",
+                "Con sông, biển, dãy núi, ngôi nhà",
+                "Cao lớn, ngôi nhà, nhanh nhẹn, nhảy dây"
+              ],
+              "a": 0,
+              "hint": "Loại bỏ dòng có lẫn từ chỉ sự vật hoặc hoạt động",
+              "difficulty": 2
+            },
+            {
+              "q": "Dòng nào gồm toàn các từ chỉ hoạt động?",
+              "choices": [
+                "Chạy, nhảy, hát, viết",
+                "Hiền lành, chăm chỉ, ngoan ngoãn",
+                "Bàn ghế, sách vở, bút thước",
+                "Đỏ thắm, vàng tươi, xanh ngắt"
+              ],
+              "a": 0,
+              "hint": "Từ chỉ hoạt động trả lời cho câu hỏi 'làm gì?'",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với 'cao' là?",
+              "choices": [
+                "to",
+                "thấp",
+                "lớn",
+                "dài"
+              ],
+              "a": 1,
+              "hint": "Trái nghĩa = ý ngược lại; thử ghép vào câu để kiểm tra",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ trái nghĩa với 'nóng' là?",
+              "choices": [
+                "ướt",
+                "ấm",
+                "mát",
+                "lạnh"
+              ],
+              "a": 3,
+              "hint": "Trái nghĩa với nóng nhất là từ chỉ cảm giác rét",
+              "difficulty": 1
+            },
+            {
+              "q": "Từ nào CÙNG NGHĨA với 'khiêm tốn'?",
+              "choices": [
+                "nhường nhịn",
+                "tự cao",
+                "nhút nhát",
+                "kiêu căng"
+              ],
+              "a": 0,
+              "hint": "Khiêm tốn = không tự đề cao mình; chọn từ có nghĩa tương tự",
+              "difficulty": 3
+            },
+            {
+              "q": "Chọn từ thích hợp điền vào chỗ trống: 'Các bạn trong lớp tôi luôn ... , thân ái với nhau.'",
+              "choices": [
+                "anh dũng",
+                "chăm chỉ",
+                "đoàn kết",
+                "anh hùng"
+              ],
+              "a": 2,
+              "hint": "Từ chỉ tinh thần gắn bó giữa các bạn",
+              "difficulty": 2
+            },
+            {
+              "q": "Chọn từ thích hợp điền vào chỗ trống: 'Trần Quốc Toản là một thiếu niên ... '",
+              "choices": [
+                "đoàn kết",
+                "anh dũng",
+                "lễ phép",
+                "chăm chỉ"
+              ],
+              "a": 1,
+              "hint": "Trần Quốc Toản nổi tiếng vì lòng dũng cảm chống giặc",
+              "difficulty": 2
             }
           ]
         },
@@ -13436,6 +14540,126 @@
               ],
               "a": 2,
               "difficulty": 2
+            },
+            {
+              "q": "Câu 'Bạn khiêm tốn quá!' thuộc kiểu câu gì?",
+              "choices": [
+                "Câu khiến",
+                "Câu hỏi",
+                "Câu kể",
+                "Câu nêu cảm xúc"
+              ],
+              "a": 3,
+              "hint": "Dấu chấm than ở cuối câu là dấu hiệu của câu cảm xúc",
+              "difficulty": 1
+            },
+            {
+              "q": "Câu 'Dê rủ cún vào rừng chơi.' thuộc kiểu câu nào?",
+              "choices": [
+                "Câu nêu hoạt động",
+                "Câu hỏi",
+                "Câu nêu đặc điểm",
+                "Câu giới thiệu"
+              ],
+              "a": 0,
+              "hint": "Tìm xem trong câu có từ chỉ hành động (việc làm) không – đó là dấu hiệu",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu 'Đám mây trắng xốp như bông.' thuộc kiểu câu nào?",
+              "choices": [
+                "Ai thế nào?",
+                "Ai làm gì?",
+                "Câu cảm",
+                "Ai là gì?"
+              ],
+              "a": 0,
+              "hint": "Câu này đang tả tính chất, đặc điểm của đám mây – chọn mẫu câu phù hợp",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu 'Chim én mẹ nhổ lông cánh.' viết theo mẫu câu nào?",
+              "choices": [
+                "Ai là gì?",
+                "Ai làm gì?",
+                "Câu hỏi",
+                "Ai thế nào?"
+              ],
+              "a": 1,
+              "hint": "Tìm từ chỉ việc làm trong câu (nhổ) – đó là gợi ý",
+              "difficulty": 1
+            },
+            {
+              "q": "Câu 'Bác tươi cười bế em gái nhỏ lên.' thuộc kiểu câu nào?",
+              "choices": [
+                "Câu giới thiệu",
+                "Câu nêu hoạt động",
+                "Câu nêu đặc điểm",
+                "Câu hỏi"
+              ],
+              "a": 1,
+              "hint": "Câu này nói Bác đang làm việc gì – chọn loại câu phù hợp",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu nào là câu giới thiệu?",
+              "choices": [
+                "Bông hoa rất đẹp.",
+                "Bạn có khỏe không?",
+                "Hồ Ba Bể là hồ nước ngọt quý hiếm của Việt Nam.",
+                "Em đang học bài."
+              ],
+              "a": 2,
+              "hint": "Câu giới thiệu thường có từ 'là' nối hai vế",
+              "difficulty": 2
+            },
+            {
+              "q": "Bộ phận in đậm trong câu 'Thủ đô nước mình **là Hà Nội**.' trả lời cho câu hỏi nào?",
+              "choices": [
+                "Là gì?",
+                "Ở đâu?",
+                "Làm gì?",
+                "Thế nào?"
+              ],
+              "a": 0,
+              "hint": "Bộ phận in đậm dùng để giới thiệu nơi đó – nó trả lời câu hỏi gì?",
+              "difficulty": 2
+            },
+            {
+              "q": "Đặt câu hỏi cho bộ phận in đậm: '**Thu về**, những quả hồng đỏ mọng.'",
+              "choices": [
+                "Quả hồng thế nào?",
+                "Quả hồng ở đâu?",
+                "Bao giờ những quả hồng đỏ mọng?",
+                "Cái gì đỏ mọng?"
+              ],
+              "a": 2,
+              "hint": "'Thu về' chỉ thời gian → hỏi 'Bao giờ?' hoặc 'Khi nào?'",
+              "difficulty": 3
+            },
+            {
+              "q": "Đặt câu hỏi cho bộ phận in đậm: '**Trên bầu trời cao rộng**, mây đen và mây trắng đang rong ruổi.'",
+              "choices": [
+                "Cái gì rong ruổi?",
+                "Mây làm gì?",
+                "Khi nào mây rong ruổi?",
+                "Mây đen và mây trắng đang rong ruổi ở đâu?"
+              ],
+              "a": 3,
+              "hint": "'Trên bầu trời cao rộng' chỉ nơi chốn → hỏi 'Ở đâu?'",
+              "difficulty": 3
+            },
+            {
+              "q": "Câu nào dưới đây là câu hỏi?",
+              "choices": [
+                "Ôi, hoa đẹp quá!",
+                "Bạn đã làm bài tập chưa?",
+                "Em rất vui.",
+                "Em đi học rồi."
+              ],
+              "a": 1,
+              "hint": "Câu hỏi kết thúc bằng dấu chấm hỏi (?)",
+              "difficulty": 1
             }
           ]
         },
@@ -13774,6 +14998,66 @@
               ],
               "a": 0,
               "difficulty": 2
+            },
+            {
+              "q": "Dấu câu thích hợp điền vào cuối câu: 'Bạn đã làm bài tập chưa ...'",
+              "choices": [
+                "!",
+                "?",
+                ",",
+                "."
+              ],
+              "a": 1,
+              "hint": "Câu hỏi kết thúc bằng dấu chấm hỏi",
+              "difficulty": 1
+            },
+            {
+              "q": "Dấu câu thích hợp điền vào cuối câu: 'Ôi, bông hoa đẹp quá ...'",
+              "choices": [
+                "!",
+                "?",
+                ",",
+                "."
+              ],
+              "a": 0,
+              "hint": "Câu cảm thán (bộc lộ cảm xúc) kết thúc bằng dấu chấm than",
+              "difficulty": 1
+            },
+            {
+              "q": "Dấu câu thích hợp điền vào cuối câu: 'Chúng em đang quét lớp ...'",
+              "choices": [
+                "!",
+                "?",
+                ".",
+                ","
+              ],
+              "a": 2,
+              "hint": "Câu kể bình thường kết thúc bằng dấu chấm",
+              "difficulty": 1
+            },
+            {
+              "q": "Chuyển 'Cây đa rất to.' thành câu cảm thán phù hợp nhất?",
+              "choices": [
+                "Cây đa có to không?",
+                "Cây đa rất to?",
+                "Cây đa to.",
+                "Cây đa to quá!"
+              ],
+              "a": 3,
+              "hint": "Câu cảm thán thường có 'quá', 'lắm', 'thay' và kết thúc bằng !",
+              "difficulty": 2
+            },
+            {
+              "q": "Câu 'Các em học sinh luôn lễ phép chăm chỉ ngoan ngoãn.' nên điền dấu phẩy như thế nào?",
+              "choices": [
+                "Lễ phép, chăm chỉ, ngoan ngoãn.",
+                "Không cần dấu phẩy",
+                "Lễ phép chăm chỉ, ngoan ngoãn.",
+                "Lễ phép, chăm chỉ ngoan ngoãn."
+              ],
+              "a": 0,
+              "hint": "Dấu phẩy ngăn cách các từ cùng loại trong cùng một câu",
+              "difficulty": 2
             }
           ]
         },
@@ -14111,6 +15395,126 @@
                 "Màu sắc tối"
               ],
               "a": 1,
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc đoạn: 'Việt Nam có ba miền Bắc, Trung, Nam với khí hậu khác nhau. Miền Bắc và miền Trung một năm có bốn mùa: xuân, hạ, thu, đông. Miền Nam có hai mùa: mùa mưa và mùa khô.' – Đất nước Việt Nam có mấy miền?",
+              "choices": [
+                "2 miền",
+                "4 miền",
+                "3 miền",
+                "5 miền"
+              ],
+              "a": 2,
+              "hint": "Đọc kĩ câu đầu của đoạn, đếm các miền được kể",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Miền Bắc và miền Trung một năm có bốn mùa: xuân, hạ, thu, đông. Miền Nam có hai mùa: mùa mưa và mùa khô.' – Miền nào của nước ta có 2 mùa?",
+              "choices": [
+                "Cả ba miền",
+                "Miền Nam",
+                "Miền Trung",
+                "Miền Bắc"
+              ],
+              "a": 1,
+              "hint": "Tìm câu nói về 'hai mùa: mùa mưa và mùa khô'",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Đom Đóm sà xuống chân ruộng bắt mấy con Rầy Nâu hại lúa.' – Đom Đóm sà xuống chân ruộng để làm gì?",
+              "choices": [
+                "Tìm chỗ ngủ",
+                "Bắt Rầy Nâu hại lúa",
+                "Uống nước",
+                "Bắt Bọ Rệp"
+              ],
+              "a": 1,
+              "hint": "Câu đầu đoạn đã nói rõ Đom Đóm bắt gì",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Đom Đóm cất tiếng: – Chào Giọt Sương, trông bạn lung linh, tỏa sáng như một viên ngọc vậy!' – Đom Đóm nhận xét Giọt Sương như thế nào?",
+              "choices": [
+                "Tròn trĩnh như viên đá cuội",
+                "Tròn xoe như viên bi",
+                "Lung linh, tỏa sáng như viên ngọc",
+                "Trong vắt như nước suối"
+              ],
+              "a": 2,
+              "hint": "Tìm trong câu Đom Đóm nói chuyện với Giọt Sương",
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc đoạn: 'Mây đen sà xuống thấp rồi hóa thành mưa rơi xuống ruộng đồng, cây cỏ.' – Cái gì hóa thành hạt mưa?",
+              "choices": [
+                "Mây đen",
+                "Mây trắng",
+                "Gió",
+                "Nắng"
+              ],
+              "a": 0,
+              "hint": "Tìm câu nói về việc 'hóa thành mưa'",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Muôn loài khổ sở vì rét, bèn cử chim công có sắc đẹp lộng lẫy nhất đi đón nàng tiên mùa xuân.' – Lúc đầu, muông thú chọn con vật như thế nào để đi đón nàng tiên mùa xuân?",
+              "choices": [
+                "Có lòng dũng cảm",
+                "Bay nhanh nhất",
+                "Có sức khỏe",
+                "Có sắc đẹp"
+              ],
+              "a": 3,
+              "hint": "Đọc kĩ lý do muông thú cử chim công đi",
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc đoạn: 'Hà mã phật ý, định bỏ đi.' Trước đó dê nói to: 'Bọn tôi muốn về làng, hãy đưa bọn tôi qua sông!' – Vì sao lúc đầu hà mã định bỏ đi?",
+              "choices": [
+                "Vì dê nói thiếu lịch sự",
+                "Vì sợ nước",
+                "Vì không nghe thấy",
+                "Vì đang bận"
+              ],
+              "a": 0,
+              "hint": "Để ý cách dê nói chuyện trước khi hà mã phật ý",
+              "difficulty": 2
+            },
+            {
+              "q": "Đọc đoạn: 'Bác tươi cười bế một em gái nhỏ lên hôn và đưa cho một quả táo.' – Bác đã làm gì với quả táo?",
+              "choices": [
+                "Tặng cho một em bé",
+                "Để lại trên bàn",
+                "Đem về nhà",
+                "Ăn ngay tại chỗ"
+              ],
+              "a": 0,
+              "hint": "Đọc kĩ hành động của Bác sau bữa tiệc",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Ngày xưa có vợ chồng nọ đi rừng, bắt được một con dúi. Dúi xin tha, họ thương tình tha cho nó.' – Vợ chồng nọ bắt được con gì trong rừng?",
+              "choices": [
+                "Con thỏ",
+                "Con sóc",
+                "Con chim",
+                "Con dúi"
+              ],
+              "a": 3,
+              "hint": "Câu đầu đoạn nói rõ con vật mà vợ chồng bắt được",
+              "difficulty": 1
+            },
+            {
+              "q": "Đọc đoạn: 'Rễ cây nổi lên mặt đất thành những hình thù quái lạ, như những con rắn hổ mang giận dữ.' – Rễ cây đa được so sánh với gì?",
+              "choices": [
+                "Những chiếc đũa",
+                "Những con rắn hổ mang giận dữ",
+                "Những cành hoa",
+                "Những sợi dây"
+              ],
+              "a": 1,
+              "hint": "Tìm chỗ có chữ 'như' để xác định phép so sánh",
               "difficulty": 2
             }
           ]
