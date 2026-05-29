@@ -23,6 +23,9 @@ const Quiz = {
   TARGET_PER_SESSION: 20,
   TEST_QUESTION_COUNT: 20,
 
+  // Link Google Form để phụ huynh báo lỗi nội dung câu hỏi (dùng chung với form góp ý).
+  REPORT_FORM_URL: 'https://forms.gle/hE3gV5Uy6UodzrZn7',
+
   start(topic, subjectName, options) {
     options = options || {};
     this.mode = options.mode || 'practice';
@@ -186,6 +189,75 @@ const Quiz = {
       btn.addEventListener('click', () => this.checkAnswer(btn, i, q.a));
       grid.appendChild(btn);
     });
+
+    this._renderReportButton(q);
+  },
+
+  /** Tạo (hoặc cập nhật) nút "Báo lỗi câu này" trên màn làm bài. */
+  _renderReportButton(q) {
+    let btn = document.getElementById('btnReportQuestion');
+    if (!btn) {
+      this._ensureReportStyles();
+      btn = document.createElement('button');
+      btn.id = 'btnReportQuestion';
+      btn.type = 'button';
+      btn.className = 'report-question-btn';
+      btn.innerHTML = '⚠️ Báo lỗi câu này';
+      // Đặt nút ngay dưới khu vực câu hỏi; nếu không tìm được thì gắn vào màn quiz.
+      const anchor = document.getElementById('ansGrid');
+      if (anchor && anchor.parentNode) anchor.parentNode.appendChild(btn);
+      else document.getElementById('screenQuiz').appendChild(btn);
+    }
+    btn.onclick = () => this.reportQuestion(q);
+  },
+
+  _ensureReportStyles() {
+    if (document.getElementById('reportBtnStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'reportBtnStyles';
+    style.textContent = `
+      .report-question-btn{display:block;margin:18px auto 4px;border:1px solid #fed7aa;background:#fff7ed;color:#c2410c;
+        border-radius:999px;padding:8px 16px;font-weight:700;font-size:.9rem;cursor:pointer;opacity:.85;transition:opacity .15s}
+      .report-question-btn:hover{opacity:1}
+    `;
+    document.head.appendChild(style);
+  },
+
+  /**
+   * Báo lỗi nội dung câu hỏi: gom thông tin câu, copy vào clipboard rồi mở Google Form.
+   * Phụ huynh chỉ cần dán (Ctrl+V) vào form là có đủ thông tin để truy ngược câu lỗi.
+   */
+  reportQuestion(q) {
+    q = q || this.questions[this.curIdx] || {};
+    const info = [
+      'BÁO LỖI CÂU HỎI',
+      'Môn: ' + (this.currentSubject || ''),
+      'Chủ đề: ' + (this.currentTopic && this.currentTopic.name ? this.currentTopic.name : ''),
+      'Mã câu: ' + (q.id || ''),
+      'Câu hỏi: ' + (q.q || ''),
+      'Các đáp án: ' + (Array.isArray(q.choices) ? q.choices.join(' | ') : ''),
+      'Đáp án app cho là đúng: ' + (Array.isArray(q.choices) && q.choices[q.a] != null ? q.choices[q.a] : q.a),
+      '(Bé/phụ huynh mô tả lỗi ở đây: ...)'
+    ].join('\n');
+
+    const openForm = () => window.open(this.REPORT_FORM_URL, '_blank');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(info).then(() => {
+        alert('📋 Đã sao chép thông tin câu hỏi.\n\nMình sẽ mở form báo lỗi — bạn chỉ cần DÁN (Ctrl+V) vào ô mô tả và ghi rõ câu sai chỗ nào nhé!');
+        openForm();
+      }).catch(() => {
+        this._reportFallback(info, openForm);
+      });
+    } else {
+      this._reportFallback(info, openForm);
+    }
+  },
+
+  _reportFallback(info, openForm) {
+    // Trình duyệt không cho copy tự động → hiện prompt để người dùng tự copy.
+    window.prompt('Sao chép nội dung dưới đây (Ctrl+C), rồi dán vào form báo lỗi:', info);
+    openForm();
   },
 
   checkAnswer(btn, selected, correct) {
