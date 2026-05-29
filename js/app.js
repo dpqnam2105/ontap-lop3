@@ -83,6 +83,18 @@ const App = {
   },
 
   showScreen(name) {
+    // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
+    const needsName = (name === 'grade' || name === 'subject' || name === 'topic');
+    if (needsName && !this.playerName) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById('screenRegister').classList.add('active');
+      this._renderHomeWidgets();
+      const ni = document.getElementById('nameInput');
+      if (ni) { ni.focus(); ni.classList.add('name-input-nudge'); setTimeout(() => ni.classList.remove('name-input-nudge'), 1200); }
+      if (Rewards && Rewards._achievementPopup) Rewards._achievementPopup('✍️ Con nhập tên trước khi vào học nhé!');
+      window.scrollTo(0, 0);
+      return;
+    }
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     const id = 'screen' + name.charAt(0).toUpperCase() + name.slice(1);
     const screen = document.getElementById(id);
@@ -91,7 +103,6 @@ const App = {
     if (name === 'register' || name === 'subject') this._renderHomeWidgets();
     if (name === 'shop') this._renderDragonShop();
     if (name === 'collection') this._renderCollection();
-    if (name === 'knowledge') this._renderKnowledgeMap();
     window.scrollTo(0, 0);
   },
 
@@ -105,9 +116,17 @@ const App = {
     document.getElementById('subName').textContent = 'Chào ' + name + '!';
     Rewards.updateUI();
     this._renderHomeWidgets();
-    
-    // MỚI: Sau khi đăng ký → vào màn chọn lớp
-    this.showScreen('grade');
+
+    // Lưu tên xong → ở lại Trang chủ (sảnh chờ). Bé bấm "Vào học" ở menu để bắt đầu học.
+    this.showScreen('register');
+    this._achievementName(name);
+  },
+
+  /** Báo nhỏ đã lưu tên + nhắc bấm Vào học. */
+  _achievementName(name) {
+    if (Rewards && Rewards._achievementPopup) {
+      Rewards._achievementPopup('💾 Đã lưu tên: ' + name + ' · Bấm 📖 Vào học để bắt đầu!');
+    }
   },
 
   /** Xử lý khi bấm chọn lớp */
@@ -178,12 +197,34 @@ const App = {
     s.topics.forEach((t) => {
       const card = document.createElement('div');
       card.className = 'topic-card topic-card-with-modes';
+
+      // ----- Tiến độ thật: lấy từ Storage.getTopicProgress -----
+      const topicId = (t.id || t.name).toString();
+      const totalQ = (t.questions || []).length;
+      let learned = 0, wrong = 0;
+      try {
+        const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
+        if (prog) {
+          learned = (prog.learned || []).filter(i => i < totalQ).length;
+          wrong = (prog.wrong || []).filter(i => i < totalQ).length;
+        }
+      } catch (e) { /* chưa có tiến độ thì để 0 */ }
+      const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
+      const st = this._topicStatus(pct);
+
       card.innerHTML = `
         <div class="topic-card-main">
           <div class="topic-icon">${t.icon}</div>
-          <div>
+          <div class="topic-head-text">
             <div class="topic-name">${this._escape(t.name)}</div>
-            <div class="topic-subline">${(t.questions || []).length} câu · chọn chế độ học</div>
+            <div class="topic-subline">${totalQ} câu · chọn chế độ học</div>
+          </div>
+        </div>
+        <div class="topic-progress-wrap">
+          <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
+          <div class="topic-prog-meta">
+            <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
+            <span class="topic-pct">${pct}%${wrong ? ' · ' + wrong + ' câu cần ôn' : ''}</span>
           </div>
         </div>
         <div class="topic-mode-row">
@@ -206,150 +247,13 @@ const App = {
     this.showScreen('topic');
   },
 
-
-  // KNOWLEDGE MAP
-  _knowledgeMapData() {
-    return {
-      'toan': {
-        title: 'Hành Trình Chinh Phục Vương Quốc Toán',
-        intro: 'Mỗi nhóm là một kỹ năng quan trọng của Toán lớp 2.',
-        overall: '56%',
-        items: [
-          ['🔢','Đọc viết số',['Đếm, đọc, viết số','So sánh số','Số chẵn, số lẻ'],90,'Đã vững','#16a34a',['đọc viết số','số học','số']],
-          ['➕','Phép cộng',['Cộng trong phạm vi 100','Cộng có nhớ','Cộng nhẩm'],75,'Đang tốt','#22c55e',['phép cộng','cộng']],
-          ['➖','Phép trừ',['Trừ trong phạm vi 100','Trừ có nhớ','Trừ nhẩm'],70,'Đang tốt','#14b8a6',['phép trừ','trừ']],
-          ['✖️','Bảng nhân',['Bảng nhân 2, 3, 4, 5','Nhân trong phạm vi 100','Nhân nhẩm'],60,'Cần cố gắng','#a855f7',['bảng nhân','nhân']],
-          ['➗','Bảng chia',['Bảng chia 2, 3, 4, 5','Chia trong phạm vi 100','Chia nhẩm'],58,'Cần cố gắng','#8b5cf6',['bảng chia','chia']],
-          ['📏','Đơn vị đo',['Độ dài: cm, m','Khối lượng: kg, g','Dung tích: l, ml'],70,'Đang tốt','#0ea5e9',['đơn vị đo','đo lường','độ dài','khối lượng']],
-          ['🔷','Hình học',['Hình vuông, chữ nhật','Hình tam giác, hình tròn','Đường thẳng, đường cong'],50,'Đang học','#f97316',['hình học','hình']],
-          ['📝','Toán lời văn',['Tìm hiểu bài toán','Chọn phép tính','Trả lời và kiểm tra'],55,'Cần cố gắng','#ef4444',['toán lời văn','lời văn','giải toán']],
-          ['🧩','Tư duy & dãy số',['Tìm quy luật','Điền số còn thiếu','Rèn luyện tư duy'],40,'Đang học','#84cc16',['tư duy','dãy số','quy luật']]
-        ]
-      },
-      'tieng-viet': {
-        title: 'Hành Trình Nhà Văn Nhí',
-        intro: 'Cùng bé đọc hay, viết đúng, nói tốt và yêu Tiếng Việt.',
-        overall: '48%',
-        items: [
-          ['📚','Đọc hiểu',['Đọc đúng, trôi chảy','Hiểu nội dung','Trả lời câu hỏi'],85,'Đã vững','#16a34a',['đọc hiểu']],
-          ['✏️','Chính tả',['Nghe - viết','Nhìn - viết','Viết đúng chính tả'],70,'Đang tốt','#22c55e',['chính tả']],
-          ['💬','Từ và câu',['Từ chỉ sự vật','Từ chỉ hoạt động','Câu giới thiệu'],65,'Đang học','#f59e0b',['từ và câu','luyện từ']],
-          ['❗','Dấu câu',['Dấu chấm, dấu phẩy','Dấu hỏi, dấu than','Ngắt câu hợp lý'],60,'Cần cố gắng','#f97316',['dấu câu']],
-          ['🌱','Luyện từ và câu',['Mở rộng vốn từ','Từ trái nghĩa','Từ theo chủ điểm'],45,'Đang học','#10b981',['luyện từ','vốn từ']],
-          ['🧾','Tập làm văn',['Viết câu','Viết đoạn ngắn','Viết lời giới thiệu'],50,'Đang học','#0ea5e9',['tập làm văn','viết văn']],
-          ['📖','Kể chuyện',['Kể lại câu chuyện','Kể theo tranh','Nêu ý nghĩa câu chuyện'],40,'Cần cố gắng','#8b5cf6',['kể chuyện']],
-          ['🏆','Ôn tập tổng hợp',['Ôn đọc hiểu','Ôn chính tả','Ôn tập làm văn'],0,'Chưa bắt đầu','#94a3b8',['ôn tập']]
-        ]
-      },
-      'tieng-anh': {
-        title: 'Cuộc Phiêu Lưu Mở Cánh Cửa Thế Giới',
-        intro: 'Cùng Rabbit học từ vựng, mẫu câu và giao tiếp Tiếng Anh thật vui.',
-        overall: '42%',
-        items: [
-          ['👨‍👩‍👧','Family',['father, mother','brother, sister','grandpa, grandma'],90,'Đã vững','#16a34a',['family','gia đình']],
-          ['🏫','School',['book, pen, pencil','ruler, eraser, bag','This is my...'],70,'Đang tốt','#22c55e',['school','trường học']],
-          ['🐶','Animals',['cat, dog, bird','rabbit, fish, elephant','What is it?'],75,'Đang tốt','#0ea5e9',['animals','con vật']],
-          ['🎨','Colors',['red, blue, green','yellow, pink, purple','What color is it?'],66,'Đang học','#f59e0b',['colors','màu sắc']],
-          ['🔢','Numbers',['Numbers 1 - 100','How many?','Let\'s count!'],70,'Đang tốt','#8b5cf6',['numbers','số đếm']],
-          ['🏃','Daily Activities',['get up, go to school','eat, drink, play','I can ...'],60,'Cần cố gắng','#f97316',['daily','activities','hoạt động']],
-          ['🗣️','Communication',['Hello!','How are you?','My name is...'],35,'Cần luyện thêm','#ef4444',['communication','giao tiếp']],
-          ['🌎','Listening & Reading',['Nghe từ đơn giản','Đọc câu ngắn','Hiểu nội dung cơ bản'],0,'Chưa bắt đầu','#94a3b8',['listening','reading','nghe','đọc']]
-        ]
-      }
-    };
-  },
-
-  _renderKnowledgeMap(subjectId) {
-    const data = this._knowledgeMapData();
-    const selected = subjectId || this._activeKnowledgeSubject() || 'toan';
-    const d = data[selected] || data.toan;
-    const title = document.getElementById('kmTitle');
-    const intro = document.getElementById('kmIntro');
-    const overall = document.getElementById('kmOverall');
-    const grid = document.getElementById('knowledgeGrid');
-    if (!grid || !title || !intro || !overall) return;
-
-    title.textContent = d.title;
-    intro.textContent = d.intro;
-    overall.textContent = d.overall;
-
-    document.querySelectorAll('.km-tab[data-km-subject]').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.kmSubject === selected);
-      btn.onclick = () => this._renderKnowledgeMap(btn.dataset.kmSubject);
-    });
-
-    grid.innerHTML = d.items.map((item, idx) => {
-      const locked = item[3] === 0;
-      return `<article class="km-card ${locked ? 'km-locked' : ''}" style="color:${item[5]}" data-km-sub="${selected}" data-km-idx="${idx}">
-        <div class="km-card-top">
-          <div class="km-icon" style="background:${item[5]}">${item[0]}</div>
-          <div><h3>${this._escape(item[1])}</h3><p>${locked ? 'Đang chuẩn bị' : '📚 Nhóm kỹ năng'}</p></div>
-        </div>
-        <ul>${item[2].map(x => `<li>${this._escape(x)}</li>`).join('')}</ul>
-        <div class="km-progress"><div class="km-bar" style="width:${item[3]}%;background:${item[5]}"></div></div>
-        <div class="km-status"><span>${item[3]}%</span><span>${this._escape(item[4])}</span></div>
-      </article>`;
-    }).join('');
-
-    grid.querySelectorAll('.km-card').forEach(card => {
-      card.addEventListener('click', () => this._openKnowledgeTopic(card.dataset.kmSub, Number(card.dataset.kmIdx)));
-    });
-  },
-
-  _activeKnowledgeSubject() {
-    const active = document.querySelector('.km-tab.active[data-km-subject]');
-    return active ? active.dataset.kmSubject : 'toan';
-  },
-
-  _openKnowledgeTopic(kmSubject, idx) {
-    const kmData = this._knowledgeMapData();
-    const item = kmData[kmSubject] && kmData[kmSubject].items[idx];
-    if (!item || item[3] === 0) {
-      alert('Phần này đang được chuẩn bị. Bé học các phần khác trước nhé! 🐰');
-      return;
-    }
-    if (!this.allData || !Array.isArray(this.allData.subjects)) {
-      alert('Dữ liệu bài tập đang tải. Thử lại sau vài giây nhé!');
-      return;
-    }
-
-    const subject = this._findKnowledgeSubject(kmSubject);
-    if (!subject) {
-      alert('Chưa tìm thấy môn học tương ứng trong kho câu hỏi.');
-      return;
-    }
-
-    const topic = this._findKnowledgeTopic(subject, item[6]);
-    if (topic) {
-      Quiz.start(topic, subject.name, { mode: 'practice', subjectId: subject.id });
-      return;
-    }
-
-    this._chooseSubject(this.allData.subjects.indexOf(subject));
-  },
-
-  _findKnowledgeSubject(kmSubject) {
-    const aliases = {
-      'toan': ['toan','toán','math'],
-      'tieng-viet': ['tieng viet','tiếng việt','vietnamese'],
-      'tieng-anh': ['tieng anh','tiếng anh','english']
-    }[kmSubject] || [];
-    return (this.allData.subjects || []).find(s => {
-      const hay = ((s.id || '') + ' ' + (s.name || '')).toLowerCase();
-      return aliases.some(a => hay.includes(a));
-    });
-  },
-
-  _findKnowledgeTopic(subject, keywords) {
-    const keys = (keywords || []).map(k => this._normalizeText(k));
-    return (subject.topics || []).find(t => {
-      const hay = this._normalizeText((t.id || '') + ' ' + (t.name || ''));
-      return keys.some(k => hay.includes(k) || k.includes(hay));
-    });
-  },
-
-  _normalizeText(s) {
-    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+  /** Đổi % tiến độ thành nhãn + màu trạng thái cho card chủ đề. */
+  _topicStatus(pct) {
+    if (pct >= 90) return { label: 'Đã vững', color: '#16a34a' };
+    if (pct >= 70) return { label: 'Đang tốt', color: '#22c55e' };
+    if (pct >= 40) return { label: 'Đang học', color: '#f59e0b' };
+    if (pct > 0)   return { label: 'Cần cố gắng', color: '#f97316' };
+    return { label: 'Chưa bắt đầu', color: '#94a3b8' };
   },
 
   _switchMiniTab(target) {
