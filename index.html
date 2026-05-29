@@ -22,6 +22,7 @@
       </div>
 
       <button class="rail-btn btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+      <button class="rail-btn btn-nav" data-screen="knowledge">🗺️ <span>Bản đồ kiến thức</span></button>
       <button class="rail-btn btn-nav" data-screen="grade">🎓 <span>Chọn lớp</span></button>
       <button class="rail-btn btn-nav" data-screen="shop">⭐ <span>Phần thưởng</span></button>
       <button class="rail-btn btn-nav" data-screen="collection">🐉 <span>Bộ sưu tập</span></button>
@@ -138,6 +139,37 @@
                 <button class="btn-secondary btn-nav" data-screen="shop">🏪 Mở cửa hàng</button>
               </div>
             </aside>
+          </div>
+        </section>
+
+
+        <section class="screen" id="screenKnowledge">
+          <div class="knowledge-wrap">
+            <div class="quiz-hdr glassbar">
+              <button class="btn-nav" data-screen="subject">🏠 <span>Trang chủ</span></button>
+              <div class="quiz-hdr-title">🗺️ Bản đồ kiến thức</div>
+            </div>
+
+            <div class="knowledge-hero card">
+              <div>
+                <div class="shop-kicker">🐰 Rabbit Academy lớp 2</div>
+                <h2 id="kmTitle">Hành Trình Chinh Phục Vương Quốc Toán</h2>
+                <p id="kmIntro">Mỗi nhóm là một kỹ năng quan trọng của Toán lớp 2.</p>
+              </div>
+              <div class="km-overall">
+                <span>Tiến độ tổng quan</span>
+                <b id="kmOverall">56%</b>
+              </div>
+            </div>
+
+            <div class="km-tabs" id="kmTabs">
+              <button class="km-tab active" data-km-subject="toan">🧮 Toán lớp 2</button>
+              <button class="km-tab" data-km-subject="tieng-viet">📖 Tiếng Việt</button>
+              <button class="km-tab" data-km-subject="tieng-anh">🔤 Tiếng Anh</button>
+            </div>
+
+            <div class="km-grid" id="knowledgeGrid"></div>
+            <div class="km-note">⭐ Bấm vào từng nhóm kiến thức để vào chủ đề luyện tập tương ứng.</div>
           </div>
         </section>
 
