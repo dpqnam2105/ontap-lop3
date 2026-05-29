@@ -18,6 +18,7 @@ const Quiz = {
   questionAnswered: false,
   mode: 'practice',
   sessionGuard: null,
+  sessionDetails: [],
 
   TARGET_PER_SESSION: 20,
   TEST_QUESTION_COUNT: 20,
@@ -32,6 +33,7 @@ const Quiz = {
     this.sessionStartTime = Date.now();
     this.score = 0;
     this.curIdx = 0;
+    this.sessionDetails = [];
 
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
@@ -197,6 +199,7 @@ const Quiz = {
 
     if (!this.questionAnswered) {
       this._recordLearningAnswer(q, selected);
+      this._recordSessionDetail(q, selected, correct, isCorrect);
       this.questionAnswered = true;
     }
 
@@ -243,6 +246,31 @@ const Quiz = {
         btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
       }
     }
+  },
+
+  _recordSessionDetail(q, selected, correct, isCorrect) {
+    const choices = Array.isArray(q.choices) ? q.choices : [];
+    const timeSpentSec = Math.max(0, Math.round((Date.now() - (this.questionStartedAt || Date.now())) / 1000));
+    this.sessionDetails.push({
+      questionId: q.id || (this.currentTopicId + '_' + (q._idx != null ? q._idx : this.curIdx)),
+      questionIndex: q._idx != null ? q._idx : this.curIdx,
+      question: q.q || '',
+      image: q.image || '',
+      choices: choices,
+      selectedIndex: selected,
+      correctIndex: correct,
+      selectedAnswer: choices[selected] != null ? choices[selected] : String(selected),
+      correctAnswer: choices[correct] != null ? choices[correct] : String(correct),
+      isCorrect: !!isCorrect,
+      timeSpentSec: timeSpentSec,
+      usedHint: !!this.questionUsedHint,
+      subject: this.currentSubject || '',
+      subjectId: this.currentSubjectId || '',
+      topic: this.currentTopic && this.currentTopic.name ? this.currentTopic.name : '',
+      topicId: this.currentTopicId || '',
+      mode: this.mode || 'practice',
+      answeredAt: new Date().toISOString()
+    });
   },
 
   _recordLearningAnswer(q, selected) {
@@ -318,8 +346,36 @@ const Quiz = {
     if (ratio >= 0.8) this._confettiBurst();
 
     const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
+    this._saveLocalSessionDetails(durationSec);
     API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
       .then(() => App.loadLeaderboard());
+  },
+
+  _saveLocalSessionDetails(durationSec) {
+    try {
+      const key = 'rabbit_parent_session_details';
+      const raw = localStorage.getItem(key);
+      const list = raw ? JSON.parse(raw) : [];
+      const arr = Array.isArray(list) ? list : [];
+      const info = this.sessionInfo || {};
+      arr.unshift({
+        id: 'sess_' + Date.now() + '_' + Math.random().toString(16).slice(2),
+        playerName: App && App.playerName ? App.playerName : this._learnerId(),
+        time: new Date().toISOString(),
+        subject: this.currentSubject || '',
+        topic: (this.currentTopic && this.currentTopic.name ? this.currentTopic.name : '') + (info.modeLabel ? ' · ' + info.modeLabel : ''),
+        topicName: this.currentTopic && this.currentTopic.name ? this.currentTopic.name : '',
+        mode: this.mode || 'practice',
+        modeLabel: info.modeLabel || '',
+        duration: Number(durationSec || 0),
+        correct: Number(this.score || 0),
+        total: Number(this.questions.length || 0),
+        details: Array.isArray(this.sessionDetails) ? this.sessionDetails : []
+      });
+      localStorage.setItem(key, JSON.stringify(arr.slice(0, 300)));
+    } catch (e) {
+      console.warn('Save parent session details failed:', e);
+    }
   },
 
   _analyticsText() {
