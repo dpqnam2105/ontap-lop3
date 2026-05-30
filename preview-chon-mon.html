@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preview chọn môn</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Baloo 2',sans-serif;background:radial-gradient(circle at 15% 5%,#dff3ff,#f8fcff 32%,#eef8ff);padding:30px;margin:0}
+.wrap{max-width:760px;margin:0 auto}
+h2{color:#0f4f9c;text-align:center}
+.subject-list{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+.sub-card-img{display:block;border:2px solid #dbeeff;border-radius:24px;overflow:hidden;position:relative;background:#fff;cursor:pointer;box-shadow:0 10px 24px rgba(31,122,245,.08);transition:.18s}
+.sub-card-img:hover{transform:translateY(-4px);border-color:#8ccaed;box-shadow:0 18px 40px rgba(31,122,245,.16)}
+.sub-banner{display:block;width:100%;height:auto}
+.sub-card-soon{cursor:default}
+.sub-card-soon .sub-banner{filter:grayscale(.35) brightness(.97)}
+.sub-soon-badge{position:absolute;top:14px;right:14px;background:rgba(20,32,51,.82);color:#fff;font-weight:900;font-size:1rem;padding:8px 16px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.2)}
+</style></head><body>
+<div class="wrap">
+<h2>📚 Lớp 2 — Chọn môn con thích nhé!</h2>
+<div class="subject-list">
+  <div class="sub-card-img"><img class="sub-banner" src="images/subject-toan.png" alt="Toán"></div>
+  <div class="sub-card-img"><img class="sub-banner" src="images/subject-tieng-viet.png" alt="Tiếng Việt"></div>
+  <div class="sub-card-img"><img class="sub-banner" src="images/subject-tieng-anh.png" alt="Tiếng Anh"></div>
+  <div class="sub-card-img sub-card-soon"><img class="sub-banner" src="images/subject-toan-tieng-anh.png" alt="Toán Tiếng Anh"><div class="sub-soon-badge">🔒 Sắp ra mắt</div></div>
+</div>
+</div>
+</body></html>
