@@ -245,7 +245,7 @@
 .subject-list{grid-template-columns:1fr 1fr!important;gap:16px}
 .sub-card-img{display:block!important;padding:0!important;border:2px solid #dbeeff;border-radius:24px;overflow:hidden;position:relative;background:#fff}
 .sub-card-img:hover{transform:translateY(-4px);border-color:#8ccaed;box-shadow:0 18px 40px rgba(31,122,245,.16)}
-.sub-banner{display:block;width:100%;height:auto;border-radius:22px}
+.sub-banner{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:22px}
 /* fallback khi thiếu ảnh: hiện icon + tên như cũ */
 .sub-card-fallback{display:none}
 .sub-card-noimg{padding:18px!important}
