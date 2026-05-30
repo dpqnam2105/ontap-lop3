@@ -48,6 +48,7 @@ const App = {
     }
     
     if (this.playerName && this.allData) this._renderSubjects();
+    if (this.playerName) this._showWelcome(this.playerName);
     this._renderHomeWidgets();
   },
 
@@ -116,10 +117,23 @@ const App = {
     document.getElementById('subName').textContent = 'Chào ' + name + '!';
     Rewards.updateUI();
     this._renderHomeWidgets();
+    this._showWelcome(name);
 
     // Lưu tên xong → ở lại Trang chủ (sảnh chờ). Bé bấm "Vào học" ở menu để bắt đầu học.
     this.showScreen('register');
     this._achievementName(name);
+  },
+
+  /** Đổi khung nhập tên thành lời chào sau khi đã có tên. */
+  _showWelcome(name) {
+    const reg = document.getElementById('heroRegister');
+    const wel = document.getElementById('heroWelcome');
+    const intro = document.getElementById('heroIntro');
+    const welName = document.getElementById('heroWelcomeName');
+    if (welName) welName.textContent = 'Xin chào ' + name + '!';
+    if (reg) reg.classList.add('hidden');
+    if (intro) intro.classList.add('hidden');
+    if (wel) wel.classList.remove('hidden');
   },
 
   /** Báo nhỏ đã lưu tên + nhắc bấm Vào học. */
