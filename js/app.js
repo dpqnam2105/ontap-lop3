@@ -125,7 +125,7 @@ const App = {
   /** Báo nhỏ đã lưu tên + nhắc bấm Vào học. */
   _achievementName(name) {
     if (Rewards && Rewards._achievementPopup) {
-      Rewards._achievementPopup('💾 Đã lưu tên: ' + name + ' · Bấm 📖 Vào học để bắt đầu!');
+      Rewards._achievementPopup('🐰 Chào ' + name + ', chúc con học tập vui vẻ!');
     }
   },
 
@@ -173,18 +173,72 @@ const App = {
   _renderSubjects() {
     const el = document.getElementById('subjectList');
     el.innerHTML = '';
+
+    // Các môn thật (có dữ liệu) — dùng ảnh banner theo id.
     this.allData.subjects.forEach((s, i) => {
       const card = document.createElement('div');
-      card.className = 'sub-card';
+      card.className = 'sub-card sub-card-img';
       card.innerHTML = `
-        <div class="sub-icon">${s.icon}</div>
-        <div class="sub-info">
-          <div class="sub-name">${this._escape(s.name)}</div>
-          <div class="sub-meta">${s.topics.length} chủ đề ôn tập</div>
+        <img class="sub-banner" src="images/subject-${s.id}.png" alt="${this._escape(s.name)}"
+             onerror="this.style.display='none';this.parentElement.classList.add('sub-card-noimg')">
+        <div class="sub-card-fallback">
+          <div class="sub-icon">${s.icon}</div>
+          <div class="sub-info">
+            <div class="sub-name">${this._escape(s.name)}</div>
+            <div class="sub-meta">${s.topics.length} chủ đề ôn tập</div>
+          </div>
         </div>`;
       card.addEventListener('click', () => this._chooseSubject(i));
       el.appendChild(card);
     });
+
+    // Môn "Toán Tiếng Anh" — CHƯA có dữ liệu → thẻ Sắp ra mắt.
+    const soon = document.createElement('div');
+    soon.className = 'sub-card sub-card-img sub-card-soon';
+    soon.innerHTML = `
+      <img class="sub-banner" src="images/subject-toan-tieng-anh.png" alt="Toán Tiếng Anh"
+           onerror="this.style.display='none';this.parentElement.classList.add('sub-card-noimg')">
+      <div class="sub-soon-badge">🔒 Sắp ra mắt</div>
+      <div class="sub-card-fallback">
+        <div class="sub-icon">🧮</div>
+        <div class="sub-info">
+          <div class="sub-name">Toán Tiếng Anh</div>
+          <div class="sub-meta">Sắp ra mắt</div>
+        </div>
+      </div>`;
+    soon.addEventListener('click', () => {
+      if (Rewards && Rewards._achievementPopup) Rewards._achievementPopup('🔒 Môn Toán Tiếng Anh sắp ra mắt, con chờ chút nhé!');
+    });
+    // ^ sau này có dữ liệu, đổi dòng trên thành: soon.addEventListener('click', () => this._chooseSubject(idxMoiCuaMon));
+    el.appendChild(soon);
+  },
+
+  // Mô tả kỹ năng ngắn cho từng chủ đề (hiện trên card). Khớp theo id chủ đề trong questions.json.
+  TOPIC_DESC: {
+    // Toán
+    toan_so: 'Đếm, đọc, viết số · So sánh số · Số chẵn, số lẻ',
+    toan_cong: 'Cộng trong phạm vi 100 · Cộng có nhớ · Cộng nhẩm',
+    toan_tru: 'Trừ trong phạm vi 100 · Trừ có nhớ · Trừ nhẩm',
+    toan_nhan: 'Bảng nhân 2-5 · Nhân trong phạm vi 100 · Nhân nhẩm',
+    toan_chia: 'Bảng chia 2-5 · Chia trong phạm vi 100 · Chia nhẩm',
+    toan_dovi: 'Độ dài (cm, m) · Khối lượng (kg, g) · Dung tích (l, ml)',
+    toan_hinh: 'Hình vuông, chữ nhật · Tam giác, hình tròn · Đường thẳng, cong',
+    toan_loivan: 'Tìm hiểu đề bài · Chọn phép tính · Trả lời và kiểm tra',
+    toan_tuyduy: 'Tìm quy luật · Điền số còn thiếu · Rèn luyện tư duy',
+    // Tiếng Việt
+    tv_chinh: 'Nghe - viết · Nhìn - viết · Viết đúng chính tả',
+    tv_tuvung: 'Mở rộng vốn từ · Từ theo chủ điểm · Từ trái nghĩa',
+    tv_ngu: 'Từ chỉ sự vật, hoạt động · Câu giới thiệu · Dấu câu',
+    tv_tutu: 'So sánh · Nhân hóa · Biện pháp tu từ cơ bản',
+    tv_dochieu: 'Đọc đúng, trôi chảy · Hiểu nội dung · Trả lời câu hỏi',
+    tv_hsg: 'Bài nâng cao · Cảm thụ văn học · Luyện thi học sinh giỏi',
+    // Tiếng Anh
+    en_vocab: 'Family, School · Animals, Colors · Food, Toys, Clothes',
+    en_numbers: 'Numbers 1-100 · Telling the time · Days & months',
+    en_gram: 'This / That · He / She / They · I can ...',
+    en_jobs: 'Jobs (doctor, teacher) · Sports · What does he do?',
+    en_sent: 'Đọc câu ngắn · Hiểu đoạn văn · Trả lời câu hỏi',
+    en_start: 'Ôn tập tổng hợp · Listening & Reading · Tự tin thi thử'
   },
 
   _chooseSubject(idx) {
@@ -211,15 +265,17 @@ const App = {
       } catch (e) { /* chưa có tiến độ thì để 0 */ }
       const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
       const st = this._topicStatus(pct);
+      const desc = this.TOPIC_DESC[topicId] || '';
 
       card.innerHTML = `
         <div class="topic-card-main">
           <div class="topic-icon">${t.icon}</div>
           <div class="topic-head-text">
             <div class="topic-name">${this._escape(t.name)}</div>
-            <div class="topic-subline">${totalQ} câu · chọn chế độ học</div>
+            <div class="topic-subline">${totalQ} câu hỏi</div>
           </div>
         </div>
+        ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
         <div class="topic-progress-wrap">
           <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
           <div class="topic-prog-meta">
@@ -227,6 +283,7 @@ const App = {
             <span class="topic-pct">${pct}%${wrong ? ' · ' + wrong + ' câu cần ôn' : ''}</span>
           </div>
         </div>
+        <div class="topic-mode-hint">👇 Chọn cách học để bắt đầu</div>
         <div class="topic-mode-row">
           <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
           <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
@@ -240,7 +297,7 @@ const App = {
         });
       });
 
-      card.addEventListener('click', () => Quiz.start(t, s.name, { mode: 'practice', subjectId: s.id }));
+      // Bỏ click thẳng vào card — bé PHẢI bấm đúng nút chế độ mới vào bài.
       list.appendChild(card);
     });
 
