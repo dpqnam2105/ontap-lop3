@@ -23,9 +23,10 @@
 
       <button class="rail-btn btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
       <button class="rail-btn btn-nav rail-btn-learn" data-screen="grade">📖 <span>Vào học</span></button>
-      <button class="rail-btn btn-nav" data-screen="grade">🎓 <span>Chọn lớp</span></button>
       <button class="rail-btn btn-nav" data-screen="shop">⭐ <span>Phần thưởng</span></button>
       <button class="rail-btn btn-nav" data-screen="collection">🐉 <span>Bộ sưu tập</span></button>
+      <button class="rail-btn btn-nav" data-screen="tournament">🏆 <span>Giải đấu</span></button>
+      <button class="rail-btn btn-nav" data-screen="video">🎬 <span>Video</span></button>
       <div class="rail-spacer"></div>
       <a class="rail-parent-link" href="#" id="footerParent">👨‍👩‍👧 <span>Dành cho phụ huynh</span></a>
 
@@ -52,9 +53,19 @@
             <div class="hero-card">
               <div class="hero-badge">🐰 Chào con!</div>
               <h2>Vào học thật vui hôm nay nhé</h2>
-              <p>Nhập tên để lưu sao, huy hiệu và tiến độ học tập của con. Sau đó bấm <b>📖 Vào học</b> ở menu bên trái nhé!</p>
-              <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
-              <button class="btn-primary mt-15" id="btnStart" disabled>Lưu tên của con 💾</button>
+              <p id="heroIntro">Nhập tên để lưu sao, huy hiệu và tiến độ học tập của con. Sau đó bấm <b>📖 Vào học</b> ở menu bên trái nhé!</p>
+              <div id="heroRegister">
+                <input class="name-input" id="nameInput" type="text" placeholder="Tên của con là..." maxlength="20" />
+                <button class="btn-primary mt-15" id="btnStart" disabled>Lưu tên của con 💾</button>
+              </div>
+              <div id="heroWelcome" class="hero-welcome hidden">
+                <div class="hero-welcome-emoji">🎉</div>
+                <div class="hero-welcome-text">
+                  <b id="heroWelcomeName">Xin chào!</b>
+                  <span>Chúc mừng con đã điểm danh thành công, chúc con học tập thật vui vẻ nhé! 🌟</span>
+                </div>
+                <button class="btn-primary mt-15 btn-nav" data-screen="grade">📖 Vào học ngay</button>
+              </div>
             </div>
 
             <div class="leaderboard-card card">
@@ -243,6 +254,35 @@
             <div class="card card-compact"><label class="parent-label">Xem báo cáo của:</label><select id="parentNameSelect" class="parent-select"></select></div>
             <div class="card" id="parentSummary"><h3 class="parent-section-title">📈 Tóm tắt 7 ngày gần nhất</h3><div id="summaryContent"><div class="loading-text">Đang tải...</div></div></div>
             <div class="card" id="parentDaily"><h3 class="parent-section-title">📅 Chi tiết theo ngày</h3><div id="dailyContent"><div class="loading-text">Đang tải...</div></div></div>
+          </div>
+        </section>
+        <section class="screen" id="screenTournament">
+          <div class="quiz-hdr glassbar">
+            <button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
+            <div class="quiz-hdr-title">🏆 Giải đấu</div>
+          </div>
+          <div class="coming-soon-wrap">
+            <div class="coming-soon-card card">
+              <div class="coming-soon-emoji">🏆</div>
+              <h2>Giải đấu — Sắp ra mắt!</h2>
+              <p>Sắp tới các bé sẽ được thi đấu vui cùng bạn bè, leo bảng xếp hạng và nhận huy chương. Hãy chăm học để sẵn sàng nhé! 🌟</p>
+              <button class="btn-primary btn-nav" data-screen="grade">📖 Vào học ngay</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screenVideo">
+          <div class="quiz-hdr glassbar">
+            <button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
+            <div class="quiz-hdr-title">🎬 Video</div>
+          </div>
+          <div class="coming-soon-wrap">
+            <div class="coming-soon-card card">
+              <div class="coming-soon-emoji">🎬</div>
+              <h2>Video học vui — Sắp ra mắt!</h2>
+              <p>Khu video bài học ngắn, vui nhộn đang được Rabbit chuẩn bị. Bé sẽ vừa xem vừa học thật thích! 🐰</p>
+              <button class="btn-primary btn-nav" data-screen="grade">📖 Vào học ngay</button>
+            </div>
           </div>
         </section>
       </main>

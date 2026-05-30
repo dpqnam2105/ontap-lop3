@@ -225,9 +225,7 @@
 .topic-status-tag{font-weight:900}
 .topic-pct{color:var(--muted)}
 
-/* ===== Nút "Vào học" — viền xanh nổi nhẹ, KHÔNG nền đậm (tránh trông như đang chọn) ===== */
-.rail-btn-learn{background:#fff!important;color:#0e9f54!important;border:2px solid #2fc765!important;box-shadow:0 7px 18px rgba(47,199,101,.12)!important}
-.rail-btn-learn:hover{transform:translateY(-2px);background:#f3fff8!important}
+/* ===== Nút "Vào học" — giống hệt các nút sidebar khác (bỏ màu xanh) ===== */
 /* Nhắc nhập tên: rung nhẹ ô input */
 .name-input-nudge{animation:nameNudge .5s ease;border-color:var(--orange)!important;box-shadow:0 0 0 5px rgba(242,139,34,.18)!important}
 @keyframes nameNudge{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
@@ -243,8 +241,8 @@
 .coming-soon-card h2{font-family:var(--font-display);font-size:1.9rem;color:#0f4f9c;margin-bottom:12px}
 .coming-soon-card p{color:var(--muted);font-weight:700;max-width:480px;margin:0 auto 22px;line-height:1.6}
 
-/* ===== Màn chọn môn — thẻ ảnh banner to, xếp dọc 1 cột ===== */
-.subject-list{grid-template-columns:1fr!important;gap:18px}
+/* ===== Màn chọn môn — 4 bìa xếp 2x2, thấy hết không cuộn ===== */
+.subject-list{grid-template-columns:1fr 1fr!important;gap:16px}
 .sub-card-img{display:block!important;padding:0!important;border:2px solid #dbeeff;border-radius:24px;overflow:hidden;position:relative;background:#fff}
 .sub-card-img:hover{transform:translateY(-4px);border-color:#8ccaed;box-shadow:0 18px 40px rgba(31,122,245,.16)}
 .sub-banner{display:block;width:100%;height:auto;border-radius:22px}
@@ -257,3 +255,13 @@
 .sub-card-soon .sub-banner{filter:grayscale(.35) brightness(.97)}
 .sub-soon-badge{position:absolute;top:14px;right:14px;background:rgba(20,32,51,.82);color:#fff;font-family:var(--font-display);font-weight:900;font-size:1rem;padding:8px 16px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.2);z-index:2}
 @media(max-width:760px){.sub-soon-badge{font-size:.82rem;padding:6px 12px}}
+
+/* ===== Lời chào sau khi điểm danh (thay khung nhập tên) ===== */
+.hero-welcome{margin-top:22px;background:linear-gradient(135deg,#eafff3,#f2f9ff);border:2px solid #b9ebcd;border-radius:22px;padding:22px 24px;max-width:520px}
+.hero-welcome-emoji{font-size:2.6rem;line-height:1}
+.hero-welcome-text b{display:block;font-family:var(--font-display);font-size:1.5rem;color:#0e8a45;margin:6px 0 4px}
+.hero-welcome-text span{color:#3c6b50;font-weight:750}
+.hero-welcome .btn-primary{display:inline-block;text-decoration:none}
+
+/* Màn chọn môn 2x2: trên điện thoại hẹp thì về 1 cột cho dễ bấm */
+@media(max-width:600px){.subject-list{grid-template-columns:1fr!important}}
