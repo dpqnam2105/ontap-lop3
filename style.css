@@ -225,9 +225,35 @@
 .topic-status-tag{font-weight:900}
 .topic-pct{color:var(--muted)}
 
-/* ===== Nút "Vào học" nổi bật trong sidebar ===== */
-.rail-btn-learn{background:linear-gradient(135deg,var(--green2),var(--green))!important;color:#fff!important;border-color:transparent!important;box-shadow:0 10px 22px rgba(47,199,101,.28)!important}
-.rail-btn-learn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+/* ===== Nút "Vào học" — viền xanh nổi nhẹ, KHÔNG nền đậm (tránh trông như đang chọn) ===== */
+.rail-btn-learn{background:#fff!important;color:#0e9f54!important;border:2px solid #2fc765!important;box-shadow:0 7px 18px rgba(47,199,101,.12)!important}
+.rail-btn-learn:hover{transform:translateY(-2px);background:#f3fff8!important}
 /* Nhắc nhập tên: rung nhẹ ô input */
 .name-input-nudge{animation:nameNudge .5s ease;border-color:var(--orange)!important;box-shadow:0 0 0 5px rgba(242,139,34,.18)!important}
 @keyframes nameNudge{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+
+/* ===== Mô tả kỹ năng + gợi ý chọn chế độ trên card chủ đề ===== */
+.topic-desc{margin:10px 0 2px;padding:10px 12px;background:#f4f9ff;border:1px solid #e3eefb;border-radius:14px;color:#3a5a7d;font-weight:700;font-size:.92rem;line-height:1.5}
+.topic-mode-hint{margin:12px 0 6px;text-align:center;color:var(--muted);font-weight:800;font-size:.86rem}
+
+/* ===== Màn "Sắp ra mắt" (Giải đấu / Video) ===== */
+.coming-soon-wrap{max-width:680px;margin:0 auto}
+.coming-soon-card{text-align:center;padding:48px 32px}
+.coming-soon-emoji{font-size:5rem;line-height:1;margin-bottom:8px}
+.coming-soon-card h2{font-family:var(--font-display);font-size:1.9rem;color:#0f4f9c;margin-bottom:12px}
+.coming-soon-card p{color:var(--muted);font-weight:700;max-width:480px;margin:0 auto 22px;line-height:1.6}
+
+/* ===== Màn chọn môn — thẻ ảnh banner to, xếp dọc 1 cột ===== */
+.subject-list{grid-template-columns:1fr!important;gap:18px}
+.sub-card-img{display:block!important;padding:0!important;border:2px solid #dbeeff;border-radius:24px;overflow:hidden;position:relative;background:#fff}
+.sub-card-img:hover{transform:translateY(-4px);border-color:#8ccaed;box-shadow:0 18px 40px rgba(31,122,245,.16)}
+.sub-banner{display:block;width:100%;height:auto;border-radius:22px}
+/* fallback khi thiếu ảnh: hiện icon + tên như cũ */
+.sub-card-fallback{display:none}
+.sub-card-noimg{padding:18px!important}
+.sub-card-noimg .sub-card-fallback{display:flex;align-items:center;gap:14px}
+/* thẻ môn Sắp ra mắt */
+.sub-card-soon{cursor:default}
+.sub-card-soon .sub-banner{filter:grayscale(.35) brightness(.97)}
+.sub-soon-badge{position:absolute;top:14px;right:14px;background:rgba(20,32,51,.82);color:#fff;font-family:var(--font-display);font-weight:900;font-size:1rem;padding:8px 16px;border-radius:999px;box-shadow:0 8px 18px rgba(0,0,0,.2);z-index:2}
+@media(max-width:760px){.sub-soon-badge{font-size:.82rem;padding:6px 12px}}
