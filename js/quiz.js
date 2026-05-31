@@ -323,8 +323,10 @@ const Quiz = {
   _recordSessionDetail(q, selected, correct, isCorrect) {
     const choices = Array.isArray(q.choices) ? q.choices : [];
     const timeSpentSec = Math.max(0, Math.round((Date.now() - (this.questionStartedAt || Date.now())) / 1000));
+    const questionId = q.id || (this.currentTopicId + '_' + (q._idx != null ? q._idx : this.curIdx));
+
     this.sessionDetails.push({
-      questionId: q.id || (this.currentTopicId + '_' + (q._idx != null ? q._idx : this.curIdx)),
+      questionId,
       questionIndex: q._idx != null ? q._idx : this.curIdx,
       question: q.q || '',
       image: q.image || '',
@@ -342,6 +344,15 @@ const Quiz = {
       topicId: this.currentTopicId || '',
       mode: this.mode || 'practice',
       answeredAt: new Date().toISOString()
+    });
+
+    // Ghi vào wrong history tích lũy lâu dài
+    Storage.recordAnswer({
+      questionId,
+      isCorrect: !!isCorrect,
+      subjectId: this.currentSubjectId || '',
+      topicId: this.currentTopicId || '',
+      question: q.q || ''
     });
   },
 

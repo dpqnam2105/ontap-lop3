@@ -126,7 +126,18 @@ const ParentDashboard = {
     const accuracy = totalQ > 0 ? Math.round(totalCorrect / totalQ * 100) : 0;
     const totalMin = Math.round(totalSec / 60);
 
-    document.getElementById('summaryContent').innerHTML = `
+    // Wrong history insights
+    const mostWrong = Storage.getRecentWrong(7, 5);
+    const wrongBySubject = Storage.getWrongBySubject();
+    const unresolved = Storage.getUnresolvedWrong(5);
+    const wrongByTopic = Storage.getWrongByTopic(3);
+
+    const subjectNames = { toan: 'Toán', 'tieng-viet': 'Tiếng Việt', 'tieng-anh': 'Tiếng Anh' };
+    const weakestSubject = Object.entries(wrongBySubject)
+      .sort((a, b) => b[1].wrongCount - a[1].wrongCount)[0];
+    const repeatWrong = mostWrong.filter(q => q.wrongCount >= 2);
+
+    let html = `
       <div class="summary-grid">
         <div class="summary-card">
           <div class="summary-card-icon">📚</div>
@@ -148,8 +159,81 @@ const ParentDashboard = {
           <div class="summary-card-value">${accuracy}%</div>
           <div class="summary-card-label">Tỷ lệ đúng</div>
         </div>
-      </div>
+      </div>`;
+
+    if (weakestSubject) {
+      const [sid, stat] = weakestSubject;
+      html += `
+      <div class="insight-box insight-warning">
+        <div class="insight-title">⚠️ Môn cần chú ý tuần này</div>
+        <div class="insight-body"><b>${subjectNames[sid] || sid}</b> — ${stat.wrongCount} lần sai trên ${stat.questionCount} câu khác nhau</div>
+      </div>`;
+    }
+
+    if (wrongByTopic.length) {
+      const topicLabels = wrongByTopic.map(t =>
+        `<span class="topic-tag">${this._escape(t.topicId.replace(/_/g,' '))} (${t.wrongCount}×)</span>`
+      ).join(' ');
+      html += `
+      <div class="insight-box insight-info">
+        <div class="insight-title">📌 Chủ đề cần ôn lại</div>
+        <div class="insight-body">${topicLabels}</div>
+      </div>`;
+    }
+
+    if (repeatWrong.length) {
+      html += `
+      <div class="insight-box insight-danger">
+        <div class="insight-title">🔁 Câu hay sai lại (${repeatWrong.length} câu)</div>
+        <div class="insight-list">
+          ${repeatWrong.map(q => `
+            <div class="insight-item">
+              <span class="wrong-badge">${q.wrongCount}×</span>
+              <span class="wrong-q">${this._escape(q.question || q.questionId)}</span>
+              ${q.lastCorrect && q.lastCorrect >= q.lastWrong
+                ? '<span class="resolved-tag">✅ đã sửa</span>'
+                : '<span class="unresolved-tag">❌ chưa sửa</span>'}
+            </div>`).join('')}
+        </div>
+      </div>`;
+    } else if (unresolved.length) {
+      html += `
+      <div class="insight-box insight-danger">
+        <div class="insight-title">❌ Chưa sửa được (${unresolved.length} câu)</div>
+        <div class="insight-list">
+          ${unresolved.slice(0, 3).map(q => `
+            <div class="insight-item">
+              <span class="wrong-badge">${q.wrongCount}×</span>
+              <span class="wrong-q">${this._escape(q.question || q.questionId)}</span>
+            </div>`).join('')}
+        </div>
+      </div>`;
+    }
+
+    this._ensureInsightStyles();
+    document.getElementById('summaryContent').innerHTML = html;
+  },
+
+  _ensureInsightStyles() {
+    if (document.getElementById('insightStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'insightStyles';
+    style.textContent = `
+      .insight-box{border-radius:14px;padding:12px 16px;margin-top:12px}
+      .insight-warning{background:#fff7ed;border:1px solid #fed7aa}
+      .insight-info{background:#eff6ff;border:1px solid #bfdbfe}
+      .insight-danger{background:#fef2f2;border:1px solid #fecaca}
+      .insight-title{font-weight:800;font-size:.9rem;margin-bottom:6px}
+      .insight-body{font-size:.88rem;color:#374151;line-height:1.5}
+      .insight-list{display:flex;flex-direction:column;gap:6px}
+      .insight-item{display:flex;align-items:flex-start;gap:8px;font-size:.85rem}
+      .wrong-badge{background:#ef4444;color:#fff;border-radius:999px;padding:1px 7px;font-weight:800;font-size:.78rem;white-space:nowrap;flex-shrink:0}
+      .wrong-q{color:#374151;flex:1;line-height:1.4}
+      .resolved-tag{color:#16a34a;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0}
+      .unresolved-tag{color:#dc2626;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0}
+      .topic-tag{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:2px 10px;font-size:.82rem;margin:2px;font-weight:700}
     `;
+    document.head.appendChild(style);
   },
 
   _renderDailyLog(logs) {
