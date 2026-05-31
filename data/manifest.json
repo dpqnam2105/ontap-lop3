@@ -1,0 +1,45 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-05-26",
+  "grades": [
+    {
+      "id": "lop2",
+      "name": "Lớp 2",
+      "subjects": [
+        {
+          "id": "toan",
+          "name": "Toán",
+          "icon": "🧮",
+          "file": "toan-lop2.json",
+          "available": true
+        },
+        {
+          "id": "tieng-viet",
+          "name": "Tiếng Việt",
+          "icon": "📖",
+          "file": "tieng-viet-lop2.json",
+          "available": true
+        },
+        {
+          "id": "tieng-anh",
+          "name": "Tiếng Anh",
+          "icon": "🌍",
+          "file": "tieng-anh-lop2.json",
+          "available": true
+        },
+        {
+          "id": "toan-tieng-anh",
+          "name": "Toán Tiếng Anh",
+          "icon": "🔢",
+          "file": "toan-tieng-anh-lop2.json",
+          "available": false
+        }
+      ]
+    },
+    {
+      "id": "lop3",
+      "name": "Lớp 3",
+      "subjects": []
+    }
+  ]
+}

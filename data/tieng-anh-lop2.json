@@ -1,0 +1,3197 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-05-26",
+  "grade": "lop2",
+  "subject": {
+    "id": "tieng-anh",
+    "icon": "🌍",
+    "name": "Tiếng Anh",
+    "topics": [
+      {
+        "id": "en_vocab",
+        "icon": "🔤",
+        "name": "Vocabulary",
+        "questions": [
+          {
+            "q": "What is 🐶?",
+            "choices": [
+              "bird",
+              "dog",
+              "fish",
+              "cat"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🐱?",
+            "choices": [
+              "mouse",
+              "dog",
+              "rabbit",
+              "cat"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🐘?",
+            "choices": [
+              "elephant",
+              "tiger",
+              "monkey",
+              "lion"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🦊?",
+            "choices": [
+              "wolf",
+              "dog",
+              "fox",
+              "cat"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🐸?",
+            "choices": [
+              "snake",
+              "frog",
+              "toad",
+              "lizard"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🦋?",
+            "choices": [
+              "dragonfly",
+              "bee",
+              "butterfly",
+              "ant"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🐬?",
+            "choices": [
+              "whale",
+              "seal",
+              "shark",
+              "dolphin"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "Which animal lives in the sea?",
+            "choices": [
+              "horse",
+              "fish",
+              "dog",
+              "rabbit"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "Which animal can fly?",
+            "choices": [
+              "cat",
+              "bird",
+              "fish",
+              "dog"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What color is the sky?",
+            "choices": [
+              "green",
+              "blue",
+              "yellow",
+              "red"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What color is grass?",
+            "choices": [
+              "red",
+              "blue",
+              "green",
+              "white"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What color is the sun?",
+            "choices": [
+              "purple",
+              "blue",
+              "green",
+              "yellow"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "What color is snow?",
+            "choices": [
+              "blue",
+              "black",
+              "red",
+              "white"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Red\" means?",
+            "choices": [
+              "trắng",
+              "vàng",
+              "xanh",
+              "đỏ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Blue\" means?",
+            "choices": [
+              "tím",
+              "đỏ",
+              "xanh dương",
+              "vàng"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Mother\" means?",
+            "choices": [
+              "chị",
+              "anh",
+              "bố",
+              "mẹ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Father\" means?",
+            "choices": [
+              "em",
+              "mẹ",
+              "anh",
+              "bố"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"School\" means?",
+            "choices": [
+              "nhà",
+              "trường học",
+              "bệnh viện",
+              "chợ"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🍎?",
+            "choices": [
+              "apple",
+              "grape",
+              "orange",
+              "banana"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🍌?",
+            "choices": [
+              "apple",
+              "banana",
+              "mango",
+              "lemon"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What is 🍕?",
+            "choices": [
+              "sandwich",
+              "pasta",
+              "pizza",
+              "burger"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Which is a vegetable?",
+            "choices": [
+              "apple",
+              "carrot",
+              "banana",
+              "orange"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Book\" means?",
+            "choices": [
+              "sách",
+              "vở",
+              "bút",
+              "thước"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Pen\" means?",
+            "choices": [
+              "vở",
+              "bút bi",
+              "sách",
+              "thước"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Chair\" means?",
+            "choices": [
+              "cửa",
+              "cửa sổ",
+              "bàn",
+              "ghế"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Window\" means?",
+            "choices": [
+              "bàn",
+              "cửa",
+              "ghế",
+              "cửa sổ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Rain\" means?",
+            "choices": [
+              "mưa",
+              "nắng",
+              "gió",
+              "tuyết"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Snow\" means?",
+            "choices": [
+              "gió",
+              "nắng",
+              "mưa",
+              "tuyết"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Hot\" means?",
+            "choices": [
+              "nóng",
+              "lạnh",
+              "ấm",
+              "mát"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Cold\" means?",
+            "choices": [
+              "ấm",
+              "lạnh",
+              "nóng",
+              "mát"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Big\" means?",
+            "choices": [
+              "dài",
+              "ngắn",
+              "nhỏ",
+              "to lớn"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Small\" means?",
+            "choices": [
+              "nhỏ",
+              "to",
+              "cao",
+              "thấp"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Happy\" means?",
+            "choices": [
+              "vui",
+              "giận",
+              "lo",
+              "buồn"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Sad\" means?",
+            "choices": [
+              "sợ",
+              "buồn",
+              "vui",
+              "bình thường"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Run\" means?",
+            "choices": [
+              "ngồi",
+              "đi",
+              "đứng",
+              "chạy"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Jump\" means?",
+            "choices": [
+              "bò",
+              "bơi",
+              "bay",
+              "nhảy"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Swim\" means?",
+            "choices": [
+              "đi",
+              "bơi",
+              "chạy",
+              "leo"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Eat\" means?",
+            "choices": [
+              "ăn",
+              "ngủ",
+              "uống",
+              "đọc"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Drink\" means?",
+            "choices": [
+              "ăn",
+              "chơi",
+              "uống",
+              "ngủ"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Sleep\" means?",
+            "choices": [
+              "ăn",
+              "học",
+              "chơi",
+              "ngủ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Read\" means?",
+            "choices": [
+              "viết",
+              "vẽ",
+              "nghe",
+              "đọc"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Write\" means?",
+            "choices": [
+              "vẽ",
+              "viết",
+              "đọc",
+              "nghe"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Play\" means?",
+            "choices": [
+              "ngủ",
+              "chơi",
+              "học",
+              "ăn"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"House\" means?",
+            "choices": [
+              "bệnh viện",
+              "trường",
+              "nhà",
+              "chợ"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Tree\" means?",
+            "choices": [
+              "cỏ",
+              "hoa",
+              "cây",
+              "lá"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Flower\" means?",
+            "choices": [
+              "quả",
+              "hoa",
+              "lá",
+              "cây"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Water\" means?",
+            "choices": [
+              "đất",
+              "gió",
+              "lửa",
+              "nước"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Friend\" means?",
+            "choices": [
+              "phụ huynh",
+              "bạn bè",
+              "kẻ thù",
+              "thầy giáo"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"child\" is?",
+            "choices": [
+              "childs",
+              "children",
+              "child",
+              "childrens"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"tooth\" is?",
+            "choices": [
+              "tooths",
+              "tooth",
+              "teeth",
+              "toothes"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"mouse\" is?",
+            "choices": [
+              "mice",
+              "mousey",
+              "mouses",
+              "mouse"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"foot\" is?",
+            "choices": [
+              "feet",
+              "foot",
+              "foots",
+              "feets"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"man\" is?",
+            "choices": [
+              "man",
+              "mans",
+              "men",
+              "manes"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Plural of \"woman\" is?",
+            "choices": [
+              "woman",
+              "womens",
+              "women",
+              "womans"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Angry\" means?",
+            "choices": [
+              "giận dữ",
+              "sợ hãi",
+              "vui",
+              "buồn"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Tired\" means?",
+            "choices": [
+              "khát",
+              "đói",
+              "khỏe",
+              "mệt"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Hungry\" means?",
+            "choices": [
+              "đói",
+              "no",
+              "mệt",
+              "khát"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Fast\" means?",
+            "choices": [
+              "thấp",
+              "nhanh",
+              "chậm",
+              "cao"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Slow\" means?",
+            "choices": [
+              "chậm",
+              "to",
+              "nhanh",
+              "nhỏ"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Beautiful\" means?",
+            "choices": [
+              "đẹp",
+              "bình thường",
+              "xấu",
+              "lạ"
+            ],
+            "a": 0,
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "id": "en_numbers",
+        "icon": "🔢",
+        "name": "Numbers & Time",
+        "questions": [
+          {
+            "q": "How do you say \"5\"?",
+            "choices": [
+              "four",
+              "five",
+              "three",
+              "six"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "How do you say \"12\"?",
+            "choices": [
+              "twenty",
+              "eleven",
+              "twelve",
+              "ten"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "How do you say \"20\"?",
+            "choices": [
+              "twoty",
+              "twenty",
+              "two",
+              "twelve"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Thirty\" = ?",
+            "choices": [
+              "300",
+              "30",
+              "3",
+              "13"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Forty\" = ?",
+            "choices": [
+              "4",
+              "400",
+              "14",
+              "40"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Fifty\" = ?",
+            "choices": [
+              "500",
+              "5",
+              "15",
+              "50"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Sixty\" = ?",
+            "choices": [
+              "60",
+              "16",
+              "6",
+              "600"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Seventy\" = ?",
+            "choices": [
+              "70",
+              "7",
+              "700",
+              "17"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Eighty\" = ?",
+            "choices": [
+              "80",
+              "18",
+              "800",
+              "8"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Ninety\" = ?",
+            "choices": [
+              "9",
+              "90",
+              "19",
+              "900"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"One hundred\" = ?",
+            "choices": [
+              "100",
+              "110",
+              "1000",
+              "10"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"First\" means?",
+            "choices": [
+              "thứ ba",
+              "thứ tư",
+              "thứ nhất",
+              "thứ hai"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Second\" means?",
+            "choices": [
+              "thứ nhất",
+              "thứ hai",
+              "thứ ba",
+              "thứ tư"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Third\" means?",
+            "choices": [
+              "thứ hai",
+              "thứ tư",
+              "thứ ba",
+              "thứ nhất"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Fourth\" means?",
+            "choices": [
+              "thứ năm",
+              "thứ sáu",
+              "thứ ba",
+              "thứ tư"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Fifth\" means?",
+            "choices": [
+              "thứ tư",
+              "thứ sáu",
+              "thứ ba",
+              "thứ năm"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "3 + 5 = ? (in English)",
+            "choices": [
+              "\"Eight\"",
+              "\"Seven\"",
+              "\"Ten\"",
+              "\"Nine\""
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "10 - 4 = ? (in English)",
+            "choices": [
+              "\"Seven\"",
+              "\"Five\"",
+              "\"Eight\"",
+              "\"Six\""
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "2 × 5 = ? (in English)",
+            "choices": [
+              "\"Twelve\"",
+              "\"Eight\"",
+              "\"Ten\"",
+              "\"Nine\""
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "12 ÷ 4 = ? (in English)",
+            "choices": [
+              "\"Four\"",
+              "\"Three\"",
+              "\"Two\"",
+              "\"Five\""
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Monday\" means?",
+            "choices": [
+              "Thứ Năm",
+              "Thứ Hai",
+              "Thứ Tư",
+              "Thứ Ba"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Wednesday\" means?",
+            "choices": [
+              "Thứ Hai",
+              "Thứ Ba",
+              "Thứ Tư",
+              "Thứ Năm"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Friday\" means?",
+            "choices": [
+              "Thứ Sáu",
+              "Thứ Năm",
+              "Thứ Bảy",
+              "Chủ nhật"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Sunday\" means?",
+            "choices": [
+              "Thứ Hai",
+              "Thứ Bảy",
+              "Chủ nhật",
+              "Thứ Sáu"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"January\" is month?",
+            "choices": [
+              "3",
+              "2",
+              "4",
+              "1"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"June\" is month?",
+            "choices": [
+              "6",
+              "7",
+              "4",
+              "5"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"December\" is month?",
+            "choices": [
+              "12",
+              "10",
+              "11",
+              "1"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "What time is \"7 o'clock\"?",
+            "choices": [
+              "6:00",
+              "9:00",
+              "7:00",
+              "8:00"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What time is \"half past 8\"?",
+            "choices": [
+              "8:00",
+              "8:30",
+              "8:45",
+              "8:15"
+            ],
+            "a": 1,
+            "hint": "half past = 30 phút",
+            "difficulty": 1
+          },
+          {
+            "q": "What time is \"quarter past 9\"?",
+            "choices": [
+              "9:30",
+              "9:15",
+              "9:00",
+              "9:45"
+            ],
+            "a": 1,
+            "hint": "quarter past = 15 phút",
+            "difficulty": 2
+          },
+          {
+            "q": "How many months in a year?",
+            "choices": [
+              "13",
+              "11",
+              "12",
+              "10"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "How many days in a week?",
+            "choices": [
+              "8",
+              "5",
+              "7",
+              "6"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "How many hours in a day?",
+            "choices": [
+              "24",
+              "48",
+              "20",
+              "12"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Twenty-five\" = ?",
+            "choices": [
+              "20",
+              "15",
+              "25",
+              "52"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": ""
+          },
+          {
+            "q": "The third month of the year is?",
+            "choices": [
+              "January",
+              "March",
+              "February",
+              "April"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "15 + 17 = ? (in English)",
+            "choices": [
+              "\"Thirty-one\"",
+              "\"Thirty-two\"",
+              "\"Thirty-three\"",
+              "\"Thirty\""
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "How do you write \"56\" in words?",
+            "choices": [
+              "fifty-five",
+              "sixty-six",
+              "fifty-six",
+              "sixty-five"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "How do you write \"100\" in words?",
+            "choices": [
+              "one hundred",
+              "one thousand",
+              "ninety",
+              "ten"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "What season is June-August in the North?",
+            "choices": [
+              "Autumn",
+              "Summer",
+              "Winter",
+              "Spring"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "How many weeks in a year (approx)?",
+            "choices": [
+              "48",
+              "50",
+              "52",
+              "54"
+            ],
+            "a": 2,
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "id": "en_gram",
+        "icon": "📐",
+        "name": "Grammar",
+        "questions": [
+          {
+            "q": "\"I ___ a student.\"",
+            "choices": [
+              "are",
+              "am",
+              "be",
+              "is"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ a teacher.\"",
+            "choices": [
+              "are",
+              "am",
+              "be",
+              "is"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"They ___ my friends.\"",
+            "choices": [
+              "be",
+              "is",
+              "am",
+              "are"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"We ___ students.\"",
+            "choices": [
+              "is",
+              "be",
+              "am",
+              "are"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"He ___ not a doctor.\"",
+            "choices": [
+              "is",
+              "be",
+              "are",
+              "am"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ is your name?\"",
+            "choices": [
+              "How",
+              "Who",
+              "What",
+              "Where"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ old are you?\"",
+            "choices": [
+              "Where",
+              "Who",
+              "What",
+              "How"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ are you from?\"",
+            "choices": [
+              "What",
+              "Who",
+              "How",
+              "Where"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"This is ___ apple.\"",
+            "choices": [
+              "some",
+              "the",
+              "a",
+              "an"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She has ___ dog.\"",
+            "choices": [
+              "a",
+              "the",
+              "an",
+              "some"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ elephant is big.\"",
+            "choices": [
+              "Some",
+              "A",
+              "An",
+              "The"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ to school every day.\" (go)",
+            "choices": [
+              "went",
+              "go",
+              "goes",
+              "going"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"They ___ football on Sundays.\" (play)",
+            "choices": [
+              "play",
+              "plays",
+              "playing",
+              "played"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"He ___ rice for lunch.\" (eat)",
+            "choices": [
+              "eats",
+              "eating",
+              "eat",
+              "ate"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She loves ___.\" (dance)",
+            "choices": [
+              "to dancing",
+              "dances",
+              "dance",
+              "dancing"
+            ],
+            "a": 3,
+            "hint": "love + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"I like ___ books.\" (read)",
+            "choices": [
+              "read",
+              "reads",
+              "readed",
+              "reading"
+            ],
+            "a": 3,
+            "hint": "like + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She hates ___.\" (clean)",
+            "choices": [
+              "clean",
+              "to clean",
+              "cleans",
+              "cleaning"
+            ],
+            "a": 3,
+            "hint": "hate + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"I don't ___ coffee.\"",
+            "choices": [
+              "likes",
+              "like",
+              "liking",
+              "liked"
+            ],
+            "a": 1,
+            "hint": "I + don't + bare infinitive",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ not like coffee.\"",
+            "choices": [
+              "is",
+              "do",
+              "does",
+              "did"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "The cat is ___ the box.",
+            "choices": [
+              "under",
+              "in",
+              "on",
+              "beside"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "The book is ___ the table.",
+            "choices": [
+              "in",
+              "under",
+              "on",
+              "behind"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "The ball is ___ the chair.",
+            "choices": [
+              "on",
+              "in",
+              "under",
+              "between"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "The school is ___ the park.",
+            "choices": [
+              "in",
+              "under",
+              "on",
+              "next to"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ the morning, I brush my teeth.\"",
+            "choices": [
+              "At",
+              "In",
+              "On",
+              "By"
+            ],
+            "a": 1,
+            "hint": "in the morning",
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ Monday, we have math.\"",
+            "choices": [
+              "By",
+              "In",
+              "At",
+              "On"
+            ],
+            "a": 3,
+            "hint": "on + ngày",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ 7 o'clock, I wake up.\"",
+            "choices": [
+              "By",
+              "On",
+              "At",
+              "In"
+            ],
+            "a": 2,
+            "hint": "at + giờ",
+            "difficulty": 1
+          },
+          {
+            "q": "\"An elephant is ___ a dog.\" (big)",
+            "choices": [
+              "bigger than",
+              "biger than",
+              "big than",
+              "more big"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"This book is ___ that one.\" (interesting)",
+            "choices": [
+              "interestingest",
+              "most interesting",
+              "more interesting",
+              "interestinger"
+            ],
+            "a": 2,
+            "hint": "more + adj dài",
+            "difficulty": 2
+          },
+          {
+            "q": "The opposite of \"tall\" is?",
+            "choices": [
+              "fat",
+              "thin",
+              "short",
+              "long"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "The opposite of \"fast\" is?",
+            "choices": [
+              "heavy",
+              "hot",
+              "small",
+              "slow"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "The opposite of \"hot\" is?",
+            "choices": [
+              "cool",
+              "warm",
+              "cold",
+              "fresh"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "The opposite of \"happy\" is?",
+            "choices": [
+              "angry",
+              "sad",
+              "tired",
+              "hungry"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Birds can ___.\"",
+            "choices": [
+              "swim",
+              "fly",
+              "run fast",
+              "climb trees"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Fish ___ walk on land.\"",
+            "choices": [
+              "don't",
+              "aren't",
+              "cannot",
+              "can"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Can you swim?\" → \"Yes, I ___.\"",
+            "choices": [
+              "can",
+              "don't",
+              "am",
+              "can't"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "\"Can she fly?\" → \"No, she ___.\"",
+            "choices": [
+              "can't",
+              "can",
+              "does",
+              "is"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "\"There ___ a book on the table.\"",
+            "choices": [
+              "are",
+              "am",
+              "is",
+              "be"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"There ___ many students in class.\"",
+            "choices": [
+              "am",
+              "are",
+              "be",
+              "is"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ do you live?\" \"I live in Hanoi.\"",
+            "choices": [
+              "How",
+              "Who",
+              "What",
+              "Where"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ does she go to school?\" \"By bike.\"",
+            "choices": [
+              "What",
+              "Where",
+              "How",
+              "Who"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Yesterday, I ___ to the park.\" (go)",
+            "choices": [
+              "goes",
+              "go",
+              "going",
+              "went"
+            ],
+            "a": 3,
+            "hint": "Yesterday → quá khứ",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Last night, she ___ a book.\" (read)",
+            "choices": [
+              "is reading",
+              "read",
+              "reads",
+              "reading"
+            ],
+            "a": 1,
+            "hint": "Last night → quá khứ",
+            "difficulty": 2
+          },
+          {
+            "q": "Adjective comes ___ a noun.",
+            "choices": [
+              "sometimes",
+              "far from",
+              "before",
+              "after"
+            ],
+            "a": 2,
+            "hint": "adj + noun",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She is taller ___ her sister.\"",
+            "choices": [
+              "that",
+              "than",
+              "then",
+              "as"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"This is ___ book in the library.\"(interesting)",
+            "choices": [
+              "the most interesting",
+              "the more interesting",
+              "more interesting",
+              "most interesting"
+            ],
+            "a": 0,
+            "hint": "the most + adj",
+            "difficulty": 2
+          },
+          {
+            "q": "\"I ___ homework every evening.\" (do)",
+            "choices": [
+              "doing",
+              "do",
+              "does",
+              "did"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She ___ TV now.\" (watch)",
+            "choices": [
+              "watched",
+              "watches",
+              "watch",
+              "is watching"
+            ],
+            "a": 3,
+            "hint": "now → hiện tại tiếp diễn",
+            "difficulty": 1
+          },
+          {
+            "q": "\"We ___ dinner at 6 pm yesterday.\" (have)",
+            "choices": [
+              "have",
+              "has",
+              "had",
+              "having"
+            ],
+            "a": 2,
+            "hint": "yesterday → quá khứ",
+            "difficulty": 2
+          },
+          {
+            "q": "Choose the correct sentence:",
+            "choices": [
+              "She goed to school.",
+              "She goes to school.",
+              "She go to school.",
+              "She going to school."
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"How ___ water do you drink a day?\"",
+            "choices": [
+              "much",
+              "most",
+              "more",
+              "many"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"How ___ students are in your class?\"",
+            "choices": [
+              "many",
+              "most",
+              "more",
+              "much"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "id": "en_jobs",
+        "icon": "👔",
+        "name": "Jobs & Sports",
+        "questions": [
+          {
+            "q": "\"Doctor\" means?",
+            "choices": [
+              "phi công",
+              "giáo viên",
+              "lính cứu hỏa",
+              "bác sĩ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Nurse\" means?",
+            "choices": [
+              "dược sĩ",
+              "bác sĩ",
+              "nha sĩ",
+              "y tá"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Dentist\" means?",
+            "choices": [
+              "bác sĩ",
+              "y tá",
+              "dược sĩ",
+              "nha sĩ"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Teacher\" means?",
+            "choices": [
+              "hiệu trưởng",
+              "giáo viên",
+              "học sinh",
+              "bảo vệ"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Pilot\" means?",
+            "choices": [
+              "phi công",
+              "cảnh sát",
+              "bác sĩ",
+              "giáo viên"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Firefighter\" means?",
+            "choices": [
+              "lính cứu hỏa",
+              "cảnh sát",
+              "bác sĩ",
+              "thợ điện"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Farmer\" means?",
+            "choices": [
+              "nông dân",
+              "ngư dân",
+              "thợ xây",
+              "bác sĩ"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Police officer\" means?",
+            "choices": [
+              "cảnh sát",
+              "thợ xây",
+              "lính cứu hỏa",
+              "phi công"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Astronaut\" means?",
+            "choices": [
+              "thủy thủ",
+              "phi công",
+              "vận động viên",
+              "phi hành gia"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Mechanic\" means?",
+            "choices": [
+              "thợ cơ khí",
+              "thợ may",
+              "thợ mộc",
+              "thợ điện"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Hairdresser\" means?",
+            "choices": [
+              "thợ nấu ăn",
+              "thợ may",
+              "thợ cắt tóc",
+              "thợ vẽ"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Cleaner\" means?",
+            "choices": [
+              "bảo vệ",
+              "nấu ăn",
+              "lao công",
+              "thủ quỹ"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What does a doctor do?",
+            "choices": [
+              "fly planes",
+              "teach students",
+              "check patients",
+              "grow food"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What does a farmer do?",
+            "choices": [
+              "fix machines",
+              "grow food",
+              "stop fires",
+              "take photos"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What does a firefighter do?",
+            "choices": [
+              "fly planes",
+              "stop fire",
+              "grow food",
+              "teach"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What does a pilot do?",
+            "choices": [
+              "teach students",
+              "check patients",
+              "fly a plane",
+              "grow food"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "What does a teacher do?",
+            "choices": [
+              "teach students",
+              "fix machines",
+              "check patients",
+              "stop fires"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"He ___ to be a police officer.\"",
+            "choices": [
+              "wanting",
+              "want",
+              "wanted",
+              "wants"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"I ___ to be a teacher.\"",
+            "choices": [
+              "wanted",
+              "want",
+              "wanting",
+              "wants"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ want to be a pilot.\"",
+            "choices": [
+              "isn't",
+              "don't",
+              "wasn't",
+              "doesn't"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "Does she want to be a doctor? → \"Yes, she ___.\"",
+            "choices": [
+              "is",
+              "do",
+              "does",
+              "want"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She loves cooking. She wants to be a ___.\"",
+            "choices": [
+              "pilot",
+              "doctor",
+              "chef",
+              "teacher"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "Which sport uses a racket?",
+            "choices": [
+              "swimming",
+              "football",
+              "badminton",
+              "cycling"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Which sport uses a bat?",
+            "choices": [
+              "soccer",
+              "baseball",
+              "golf",
+              "tennis"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "Which sport uses a shuttlecock?",
+            "choices": [
+              "golf",
+              "baseball",
+              "tennis",
+              "badminton"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "Which sport uses a goal?",
+            "choices": [
+              "tennis",
+              "badminton",
+              "basketball",
+              "soccer"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"I am good at ___ soccer.\" (play)",
+            "choices": [
+              "to play",
+              "plays",
+              "play",
+              "playing"
+            ],
+            "a": 3,
+            "hint": "good at + V-ing",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She is good at ___.\" (swim)",
+            "choices": [
+              "swimming",
+              "to swim",
+              "swim",
+              "swims"
+            ],
+            "a": 0,
+            "hint": "good at + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"They ___ good at basketball.\"(not)",
+            "choices": [
+              "isn't",
+              "am not",
+              "aren't",
+              "not"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Can I kick a ball in soccer?\" → \"Yes, you ___.\"",
+            "choices": [
+              "can't",
+              "can",
+              "do",
+              "are"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"Can I kick a ball in basketball?\" → \"No, you ___.\"",
+            "choices": [
+              "is",
+              "do",
+              "can",
+              "can't"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "\"Wear a helmet!\" This is a/an ___?",
+            "choices": [
+              "statement",
+              "command",
+              "exclamation",
+              "question"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"Don't run in the classroom!\" means?",
+            "choices": [
+              "Chạy nhanh lên",
+              "Đứng dậy",
+              "Đừng chạy trong lớp",
+              "Hãy chạy"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She hates cleaning.\" means?",
+            "choices": [
+              "She cleans well",
+              "She likes cleaning",
+              "She loves cleaning",
+              "She doesn't like cleaning"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "Equipment used in badminton?",
+            "choices": [
+              "racket",
+              "bat",
+              "paddle",
+              "stick"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "Equipment used in baseball?",
+            "choices": [
+              "stick",
+              "paddle",
+              "bat",
+              "racket"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Equipment used in hockey?",
+            "choices": [
+              "stick",
+              "bat",
+              "paddle",
+              "racket"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Astronaut\" — what does an astronaut do?",
+            "choices": [
+              "teach students",
+              "fly planes",
+              "check patients",
+              "travel in space"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "Which action verb for soccer?",
+            "choices": [
+              "kick",
+              "hit",
+              "bounce",
+              "catch"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "Which action verb for basketball?",
+            "choices": [
+              "kick",
+              "hit",
+              "bounce",
+              "throw"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She doesn't want to be a cleaner.\" This means she ___ be a cleaner.",
+            "choices": [
+              "does not want to",
+              "likes to",
+              "would like to",
+              "wants to"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "Complete: \"He is ___ at skiing.\"",
+            "choices": [
+              "better",
+              "best",
+              "good",
+              "well"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "Choose: \"I like ___.\" (ride)",
+            "choices": [
+              "rides",
+              "riding",
+              "ride",
+              "to riding"
+            ],
+            "a": 1,
+            "hint": "like + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"My father likes ___.\" (swim)",
+            "choices": [
+              "to swim",
+              "swimming",
+              "swim",
+              "swims"
+            ],
+            "a": 1,
+            "hint": "likes + V-ing",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ like cooking.\" (not)",
+            "choices": [
+              "don't",
+              "doesn't",
+              "wasn't",
+              "isn't"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"Photographer\" means?",
+            "choices": [
+              "thợ may",
+              "họa sĩ",
+              "thợ in",
+              "thợ chụp ảnh"
+            ],
+            "a": 3,
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "id": "en_sent",
+        "icon": "💬",
+        "name": "Sentences & Reading",
+        "questions": [
+          {
+            "q": "Complete: \"Good morning! How ___ you?\"",
+            "choices": [
+              "is",
+              "am",
+              "do",
+              "are"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Complete: \"Nice to ___ you.\"",
+            "choices": [
+              "seeing",
+              "met",
+              "saw",
+              "see"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "\"What do you say in the morning?\"",
+            "choices": [
+              "Goodbye",
+              "Hello sleep",
+              "Good morning",
+              "Good night"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"What do you say before sleeping?\"",
+            "choices": [
+              "Good evening",
+              "Good night",
+              "Good morning",
+              "Good afternoon"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"How do you say your age: I ___ 8 years old.\"",
+            "choices": [
+              "be",
+              "am",
+              "is",
+              "are"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"I have ___ brothers.\"(2)",
+            "choices": [
+              "twice",
+              "second",
+              "two",
+              "twos"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "\"My favorite color ___ blue.\"",
+            "choices": [
+              "am",
+              "are",
+              "is",
+              "be"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "Which is a correct greeting?",
+            "choices": [
+              "How are you?",
+              "Are how you?",
+              "How you are?",
+              "How do you?"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "\"Where do you live?\" → \"I live ___ Hanoi.\"",
+            "choices": [
+              "on",
+              "in",
+              "at",
+              "by"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"What is your favorite subject?\" → \"My favorite subject ___ math.\"",
+            "choices": [
+              "am",
+              "be",
+              "are",
+              "is"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Do you have a pet?\" → \"Yes, I ___ a cat.\"",
+            "choices": [
+              "is",
+              "am",
+              "have",
+              "are"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She ___ to school by bike every day.\"",
+            "choices": [
+              "went",
+              "goes",
+              "going",
+              "go"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"Tom has a dog. It is brown and small.\" What color is the dog?",
+            "choices": [
+              "Yellow",
+              "Black",
+              "White",
+              "Brown"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"Lily loves cats. She has 3 cats.\" How many cats does Lily have?",
+            "choices": [
+              "3",
+              "1",
+              "4",
+              "2"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"I wake up at 6 am. I go to school at 7 am.\" How long to get ready?",
+            "choices": [
+              "30 minutes",
+              "2 hours",
+              "1 hour",
+              "Not stated"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"My father is a doctor. He helps sick people.\" What does father do?",
+            "choices": [
+              "grows food",
+              "teaches",
+              "cooks",
+              "helps sick people"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She is good at playing soccer. She ___ good at badminton.\" (not good)",
+            "choices": [
+              "isn't",
+              "is",
+              "are",
+              "aren't"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Which sentence is correct?",
+            "choices": [
+              "She going to school everyday.",
+              "She goes to school everyday.",
+              "She goed to school everyday.",
+              "She go to school everyday."
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "Which question is correct?",
+            "choices": [
+              "Where does she live?",
+              "Where she lives?",
+              "Where she does live?",
+              "Where does she lives?"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "Read: \"Nam reads 20 pages every day. In a week, he reads ___ pages.\"",
+            "choices": [
+              "140",
+              "100",
+              "120",
+              "160"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She ___ not playing now.\" (is/are)",
+            "choices": [
+              "are",
+              "am",
+              "is",
+              "do"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Choose the correct order: \"___ does she go to school?\"",
+            "choices": [
+              "\"What\"",
+              "\"How many\"",
+              "\"How long\"",
+              "\"How\""
+            ],
+            "a": 3,
+            "hint": "How does she go → cách thức",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"It is raining. Tom has an umbrella but Lan does not.\" Who is dry?",
+            "choices": [
+              "Neither",
+              "Tom",
+              "Both",
+              "Lan"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"My brother ___ taller than me.\" (be)",
+            "choices": [
+              "be",
+              "is",
+              "am",
+              "are"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"It is cold today. Please ___ a coat.\" (wear)",
+            "choices": [
+              "wear",
+              "wearing",
+              "wore",
+              "wears"
+            ],
+            "a": 0,
+            "hint": "mệnh lệnh → V nguyên thể",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Do NOT ___ here. It is dangerous.\" (swim)",
+            "choices": [
+              "swam",
+              "swims",
+              "swim",
+              "swimming"
+            ],
+            "a": 2,
+            "hint": "Don't + V",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She ___ happy now.\" (be)",
+            "choices": [
+              "was",
+              "is being",
+              "is",
+              "are"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "Arrange: \"school / to / go / I / every day\"",
+            "choices": [
+              "I go to school every day",
+              "I go school to every day",
+              "Every day I school go to",
+              "I to school go every day"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "Arrange: \"a / is / this / book\"",
+            "choices": [
+              "A book is this",
+              "This is a book",
+              "Is this a book",
+              "Book a this is"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"We have 30 students in class. 15 are boys.\" How many girls?",
+            "choices": [
+              "10",
+              "20",
+              "15",
+              "13"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"I ___ my homework before dinner.\" (always do)",
+            "choices": [
+              "does always",
+              "do always",
+              "always does",
+              "always do"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ you like pizza?\" → \"Yes, I do.\"",
+            "choices": [
+              "Does",
+              "Is",
+              "Do",
+              "Are"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She ___ like vegetables.\" (not)",
+            "choices": [
+              "doesn't",
+              "isn't",
+              "don't",
+              "wasn't"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"Ann is 8. Her sister is 3 years older.\" How old is the sister?",
+            "choices": [
+              "10",
+              "11",
+              "9",
+              "12"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"There are ___ apples.\" (5)",
+            "choices": [
+              "fifty",
+              "fifth",
+              "fives",
+              "five"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"My dog ___ a long tail.\"",
+            "choices": [
+              "are",
+              "has",
+              "have",
+              "is"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 1
+          },
+          {
+            "q": "Which is NOT a command?",
+            "choices": [
+              "Be quiet!",
+              "Sit down!",
+              "Stand up!",
+              "She sits down."
+            ],
+            "a": 3,
+            "hint": "Command = imperative",
+            "difficulty": 1
+          },
+          {
+            "q": "\"___ your homework!\" (do)",
+            "choices": [
+              "Do",
+              "Did",
+              "Doing",
+              "Does"
+            ],
+            "a": 0,
+            "hint": "mệnh lệnh → V nguyên thể",
+            "difficulty": 1
+          },
+          {
+            "q": "Read: \"My cat eats fish and drinks milk. It sleeps 14 hours a day.\" What does the cat NOT do?",
+            "choices": [
+              "Eat fish",
+              "Sleep",
+              "Play soccer",
+              "Drink milk"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She is ___ than her brother.\"(tall)",
+            "choices": [
+              "more tall",
+              "tall",
+              "tallest",
+              "taller"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "id": "en_start",
+        "icon": "🎓",
+        "name": "Cambridge Starters",
+        "questions": [
+          {
+            "q": "What is this? 🐈",
+            "choices": [
+              "a dog",
+              "a cat",
+              "a bird",
+              "a rabbit"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "What color is the 🍋?",
+            "choices": [
+              "green",
+              "yellow",
+              "red",
+              "blue"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "How many 🐦🐦🐦?",
+            "choices": [
+              "four",
+              "five",
+              "two",
+              "three"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "The boy ___ running.",
+            "choices": [
+              "is",
+              "be",
+              "am",
+              "are"
+            ],
+            "a": 0,
+            "difficulty": 1
+          },
+          {
+            "q": "What's in the bag? \"There ___ a book.\"",
+            "choices": [
+              "is",
+              "be",
+              "are",
+              "am"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Where is the cat? \"The cat is ___ the chair.\"",
+            "choices": [
+              "under",
+              "in",
+              "between",
+              "on"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "What is she doing? \"She ___ reading.\"",
+            "choices": [
+              "was",
+              "am",
+              "are",
+              "is"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "What does the girl like? \"She likes ___.\"",
+            "choices": [
+              "to swimming",
+              "swim",
+              "swimming",
+              "swims"
+            ],
+            "a": 2,
+            "hint": "likes + V-ing",
+            "difficulty": 2
+          },
+          {
+            "q": "Who is this? \"This is my ___.\" (mẹ)",
+            "choices": [
+              "mother",
+              "father",
+              "brother",
+              "sister"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "What is the weather like? \"It is ___.\" (mưa)",
+            "choices": [
+              "sunny",
+              "rainy",
+              "windy",
+              "cloudy"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"This is ___ orange.\" (the fruit)",
+            "choices": [
+              "the",
+              "an",
+              "some",
+              "a"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Where does she live? \"She lives ___ a house.\"",
+            "choices": [
+              "in",
+              "by",
+              "at",
+              "on"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"How many legs does a dog have?\"",
+            "choices": [
+              "6",
+              "2",
+              "3",
+              "4"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "\"How many legs does a bird have?\"",
+            "choices": [
+              "2",
+              "3",
+              "4",
+              "6"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "\"What sound does a cow make?\" → It ___.",
+            "choices": [
+              "\"meows\"",
+              "\"barks\"",
+              "\"quacks\"",
+              "\"moos\""
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "\"What sound does a duck make?\" → It ___.",
+            "choices": [
+              "\"quacks\"",
+              "\"moos\"",
+              "\"barks\"",
+              "\"meows\""
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "Choose the correct word for the picture of a 🚌",
+            "choices": [
+              "bus",
+              "truck",
+              "bike",
+              "car"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "Choose the correct word for 🛁",
+            "choices": [
+              "toilet",
+              "sink",
+              "shower",
+              "bath"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"He ___ a sandwich for lunch.\" (eat)",
+            "choices": [
+              "eat",
+              "eats",
+              "eating",
+              "eaten"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Match: \"playground\" — where is it?",
+            "choices": [
+              "inside school",
+              "at home",
+              "outside school",
+              "at market"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "\"What time do you wake up?\" → \"I wake up ___ 6 o'clock.\"",
+            "choices": [
+              "on",
+              "by",
+              "at",
+              "in"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ is your favorite food?\"",
+            "choices": [
+              "How",
+              "Where",
+              "Who",
+              "What"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "Read: \"Ann has a red bag. It is big.\" What color is the bag?",
+            "choices": [
+              "Green",
+              "Yellow",
+              "Red",
+              "Blue"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"Tom is 7. His brother is 9.\" Who is older?",
+            "choices": [
+              "Tom",
+              "Not stated",
+              "Same age",
+              "Tom's brother"
+            ],
+            "a": 3,
+            "hint": "9>7",
+            "difficulty": 2
+          },
+          {
+            "q": "\"Are there ___ books on the desk?\"",
+            "choices": [
+              "any",
+              "some",
+              "a",
+              "an"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Opposite of \"open\" is?",
+            "choices": [
+              "close",
+              "closed",
+              "closing",
+              "close up"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"The dog is ___ the sofa.\" (picture: dog on sofa)",
+            "choices": [
+              "in",
+              "on",
+              "under",
+              "behind"
+            ],
+            "a": 1,
+            "difficulty": 2
+          },
+          {
+            "q": "\"She has ___ hair.\" (dài)",
+            "choices": [
+              "big",
+              "fat",
+              "tall",
+              "long"
+            ],
+            "a": 3,
+            "difficulty": 1
+          },
+          {
+            "q": "\"His eyes are ___.\" (màu nâu)",
+            "choices": [
+              "green",
+              "blue",
+              "brown",
+              "black"
+            ],
+            "a": 2,
+            "difficulty": 1
+          },
+          {
+            "q": "Listen: \"I go to school ___ foot.\"",
+            "choices": [
+              "by",
+              "on",
+              "in",
+              "with"
+            ],
+            "a": 1,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"She goes to school ___ bike.\"",
+            "choices": [
+              "by",
+              "with",
+              "in",
+              "on"
+            ],
+            "a": 0,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "\"What does ___ mean?\"",
+            "choices": [
+              "these",
+              "that",
+              "it",
+              "this"
+            ],
+            "a": 3,
+            "hint": "Suy nghĩ về ý nghĩa của từ tiếng Anh",
+            "difficulty": 1
+          },
+          {
+            "q": "\"I can ___ a bike.\" (ride)",
+            "choices": [
+              "rides",
+              "rode",
+              "riding",
+              "ride"
+            ],
+            "a": 3,
+            "hint": "can + V nguyên thể",
+            "difficulty": 1
+          },
+          {
+            "q": "\"She ___ sing very well.\"",
+            "choices": [
+              "isn't",
+              "can't",
+              "weren't",
+              "doesn't"
+            ],
+            "a": 1,
+            "difficulty": 1
+          },
+          {
+            "q": "\"The children ___ playing in the park.\"",
+            "choices": [
+              "am",
+              "is",
+              "be",
+              "are"
+            ],
+            "a": 3,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Match: bedroom ↔ where do you ___?",
+            "choices": [
+              "play",
+              "study",
+              "sleep",
+              "eat"
+            ],
+            "a": 2,
+            "difficulty": 2
+          },
+          {
+            "q": "Match: kitchen ↔ where do you ___?",
+            "choices": [
+              "cook",
+              "sleep",
+              "read",
+              "play"
+            ],
+            "a": 0,
+            "difficulty": 2
+          },
+          {
+            "q": "\"___ is your school?\" \"It is in Hanoi.\"",
+            "choices": [
+              "What",
+              "How",
+              "Who",
+              "Where"
+            ],
+            "a": 3,
+            "difficulty": 2
+          },
+          {
+            "q": "\"My school ___ big and beautiful.\"",
+            "choices": [
+              "am",
+              "are",
+              "is",
+              "be"
+            ],
+            "a": 2,
+            "hint": "",
+            "difficulty": 2
+          },
+          {
+            "q": "Read: \"It is Monday. Lan has math and English.\" How many subjects today?",
+            "choices": [
+              "3",
+              "4",
+              "2",
+              "1"
+            ],
+            "a": 2,
+            "difficulty": 2
+          }
+        ]
+      }
+    ]
+  }
+}
