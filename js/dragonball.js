@@ -8,7 +8,6 @@ const DragonBall = {
   DRAGONBALL_KEY: 'rabbit_dragonball_collection',
   DRAGON_REWARD_KEY: 'rabbit_shenron_unlocked',
 
-  get _app() { return window.App; },
 
   _getDragonCollection() {
     try {
@@ -103,7 +102,7 @@ const DragonBall = {
     if (hint) hint.textContent = unlocked ? 'Đã mở khóa Sticker Rồng Thần! 🐉' : 'Thu thập đủ 7 viên để nhận Sticker Rồng Thần.';
 
     document.querySelectorAll('[data-open-shop="1"]').forEach(btn => {
-      btn.onclick = () => this._app.showScreen('shop');
+      btn.onclick = () => App.showScreen('shop');
     });
   },
 

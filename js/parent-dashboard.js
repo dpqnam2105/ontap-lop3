@@ -6,13 +6,12 @@
 const ParentDashboard = {
 
   // Truy cập App để lấy playerName, PIN_KEY, DEFAULT_PIN, showScreen
-  get _app() { return window.App; },
 
   _openParentArea() {
     document.getElementById('pinInput').value = '';
     document.getElementById('pinError').classList.add('hidden');
 
-    const isDefault = !localStorage.getItem(this._app.PIN_KEY);
+    const isDefault = !localStorage.getItem(App.PIN_KEY);
     const hint = document.getElementById('pinHint');
     if (isDefault) {
       hint.textContent = '💡 Lần đầu truy cập: PIN mặc định là 1234. Hãy đổi sau khi vào.';
@@ -20,13 +19,13 @@ const ParentDashboard = {
       hint.textContent = '';
     }
 
-    this._app.showScreen('pin');
+    App.showScreen('pin');
     setTimeout(() => document.getElementById('pinInput').focus(), 100);
   },
 
   _checkPin() {
     const input = document.getElementById('pinInput').value.trim();
-    const savedPin = localStorage.getItem(this._app.PIN_KEY) || this._app.DEFAULT_PIN;
+    const savedPin = localStorage.getItem(App.PIN_KEY) || App.DEFAULT_PIN;
 
     if (input === savedPin) {
       document.getElementById('pinError').classList.add('hidden');
@@ -42,7 +41,7 @@ const ParentDashboard = {
     const oldPin = prompt('Nhập PIN hiện tại:');
     if (oldPin === null) return;
 
-    const savedPin = localStorage.getItem(this._app.PIN_KEY) || this._app.DEFAULT_PIN;
+    const savedPin = localStorage.getItem(App.PIN_KEY) || App.DEFAULT_PIN;
     if (oldPin !== savedPin) {
       alert('PIN hiện tại không đúng!');
       return;
@@ -56,14 +55,14 @@ const ParentDashboard = {
       return;
     }
 
-    localStorage.setItem(this._app.PIN_KEY, newPin);
+    localStorage.setItem(App.PIN_KEY, newPin);
     alert('Đã đổi PIN thành công!');
   },
 
   async _openDashboard() {
-    this._app.showScreen('parent');
+    App.showScreen('parent');
 
-    if (!localStorage.getItem(this._app.PIN_KEY)) {
+    if (!localStorage.getItem(App.PIN_KEY)) {
       setTimeout(() => alert('🔒 Bạn đang dùng PIN mặc định (1234). Hãy bấm "Đổi PIN" để đặt mã riêng cho an toàn hơn.'), 200);
     }
 
@@ -73,8 +72,8 @@ const ParentDashboard = {
     const leaderboard = await API.getLeaderboard();
     const names = leaderboard.map(p => p.name);
 
-    if (this._app.playerName && !names.includes(this._app.playerName)) {
-      names.unshift(this._app.playerName);
+    if (App.playerName && !names.includes(App.playerName)) {
+      names.unshift(App.playerName);
     }
 
     if (names.length === 0) {
@@ -86,8 +85,8 @@ const ParentDashboard = {
 
     select.innerHTML = names.map(n => `<option value="${this._escape(n)}">${this._escape(n)}</option>`).join('');
 
-    if (this._app.playerName && names.includes(this._app.playerName)) {
-      select.value = this._app.playerName;
+    if (App.playerName && names.includes(App.playerName)) {
+      select.value = App.playerName;
     }
 
     await this._loadParentLog(select.value);
@@ -337,7 +336,7 @@ const ParentDashboard = {
 
   _showDayDetails(dateKey, dayLogs) {
     this._ensureParentDetailStyles();
-    const selectedName = document.getElementById('parentNameSelect') ? document.getElementById('parentNameSelect').value : this._app.playerName;
+    const selectedName = document.getElementById('parentNameSelect') ? document.getElementById('parentNameSelect').value : App.playerName;
     const localSessions = this._getLocalSessionDetails(selectedName).filter(s => this._dayKeyFromTime(s.time) === dateKey);
     const sourceSessions = localSessions.length ? localSessions : (dayLogs || []);
 
