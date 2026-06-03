@@ -133,16 +133,22 @@ const Quiz = {
         });
         const arr = Array.isArray(picked) ? picked : [picked];
         const byId = new Map(topic.questions.map((q, i) => [q.id || this._prepareQuestion(q, i).id, i]));
-        const indices = arr.map(q => byId.get(q.id)).filter(i => i != null && candidateSet.has(i));
+
+        // Dedup: mỗi index chỉ xuất hiện 1 lần
+        const seen = new Set();
+        const indices = arr
+          .map(q => byId.get(q.id))
+          .filter(i => i != null && candidateSet.has(i) && !seen.has(i) && seen.add(i));
+
         if (indices.length) {
-          const missing = candidateIndices.filter(i => !indices.includes(i));
-          return [...indices, ...this._shuffle(missing)].slice(0, count);
+          const missing = this._shuffle(candidateIndices.filter(i => !seen.has(i)));
+          return [...new Set([...indices, ...missing])].slice(0, count);
         }
       } catch (e) {
         console.warn('Adaptive selection fallback:', e);
       }
     }
-    return this._shuffle(candidateIndices).slice(0, count);
+    return [...new Set(this._shuffle(candidateIndices))].slice(0, count);
   },
 
   render() {
