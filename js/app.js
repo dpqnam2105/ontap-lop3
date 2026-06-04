@@ -209,30 +209,53 @@ const App = {
 
   // Mô tả kỹ năng ngắn cho từng chủ đề (hiện trên card). Khớp theo id chủ đề trong questions.json.
   TOPIC_DESC: {
-    // Toán
-    toan_so: 'Đếm, đọc, viết số · So sánh số · Số chẵn, số lẻ',
-    toan_cong: 'Cộng trong phạm vi 100 · Cộng có nhớ · Cộng nhẩm',
-    toan_tru: 'Trừ trong phạm vi 100 · Trừ có nhớ · Trừ nhẩm',
-    toan_nhan: 'Bảng nhân 2-5 · Nhân trong phạm vi 100 · Nhân nhẩm',
-    toan_chia: 'Bảng chia 2-5 · Chia trong phạm vi 100 · Chia nhẩm',
-    toan_dovi: 'Độ dài (cm, m) · Khối lượng (kg, g) · Dung tích (l, ml)',
-    toan_hinh: 'Hình vuông, chữ nhật · Tam giác, hình tròn · Đường thẳng, cong',
-    toan_loivan: 'Tìm hiểu đề bài · Chọn phép tính · Trả lời và kiểm tra',
-    toan_tuyduy: 'Tìm quy luật · Điền số còn thiếu · Rèn luyện tư duy',
-    // Tiếng Việt
-    tv_chinh: 'Nghe - viết · Nhìn - viết · Viết đúng chính tả',
-    tv_tuvung: 'Mở rộng vốn từ · Từ theo chủ điểm · Từ trái nghĩa',
-    tv_ngu: 'Từ chỉ sự vật, hoạt động · Câu giới thiệu · Dấu câu',
-    tv_tutu: 'So sánh · Nhân hóa · Biện pháp tu từ cơ bản',
-    tv_dochieu: 'Đọc đúng, trôi chảy · Hiểu nội dung · Trả lời câu hỏi',
-    tv_hsg: 'Bài nâng cao · Cảm thụ văn học · Luyện thi học sinh giỏi',
-    // Tiếng Anh
+    // Toan -- topic cu
+    toan_so: 'Dem, doc, viet so · So sanh so · So chan, so le',
+    toan_cong: 'Cong trong pham vi 100 · Cong co nho · Cong nham',
+    toan_tru: 'Tru trong pham vi 100 · Tru co nho · Tru nham',
+    toan_nhan: 'Bang nhan 2-5 · Nhan & chia tong hop SGK · Nhan nham',
+    toan_chia: 'Bang chia 2-5 · Chia trong pham vi 100 · Chia nham',
+    toan_dovi: 'Do dai (cm, m, km) · Khoi luong (kg, g) · Do do dai SGK',
+    toan_hinh: 'Hinh vuong, chu nhat · Tam giac, hinh tron · Hinh hoc SGK',
+    toan_loivan: 'Tim hieu de bai · Chon phep tinh · Bai toan co loi van SGK',
+    toan_tuyduy: 'Tim quy luat · Dien so con thieu · Ren luyen tu duy',
+    // Toan -- topic moi SGK bo sung
+    toan_tien_viet_nam_sgk: 'Nhan biet tien · Doi tien · Tinh tien khi mua ban',
+    toan_thoi_gian_sgk: 'Xem dong ho · Gio, phut · Cac buoi trong ngay',
+    toan_thong_ke_xac_suat_sgk: 'Doc bang so lieu · Bieu do · Kha nang xay ra',
+    // Tieng Viet
+    tv_chinh: 'Nghe - viet · Nhin - viet · Viet dung chinh ta',
+    tv_tuvung: 'Mo rong von tu · Tu theo chu diem · Tu trai nghia',
+    tv_ngu: 'Tu chi su vat, hoat dong · Cau gioi thieu · Dau cau',
+    tv_tutu: 'So sanh · Nhan hoa · Bien phap tu tu co ban',
+    tv_dochieu: 'Doc dung, troi chay · Hieu noi dung · Tra loi cau hoi',
+    tv_hsg: 'Bai nang cao · Cam thu van hoc · Luyen thi hoc sinh gioi',
+    // Tieng Anh -- topic moi theo NIK/Cambridge
+    en_school_days: 'School objects · Classroom · Daily routine',
+    en_wild_animals: 'Wild animals · Habitats · What can it do?',
+    en_weather: 'Weather · Seasons · What is the weather like?',
+    en_big_cities: 'Cities · Places · Directions',
+    en_celebrate: 'Festivals · Birthday · Special days',
+    en_jobs: 'Jobs · What do you do? · Workplaces',
+    en_sports: 'Sports · I can / cannot · Play & do',
+    en_feel_good: 'Feelings · How do you feel? · Body parts',
+    en_different: 'Opposites · Comparatives · Superlatives',
+    en_solve_problems: 'Problems · Solutions · Think and act',
+    en_outdoors: 'Nature · Outdoor activities · Environment',
+    // Tieng Anh -- id cu giu lai fallback
     en_vocab: 'Family, School · Animals, Colors · Food, Toys, Clothes',
     en_numbers: 'Numbers 1-100 · Telling the time · Days & months',
     en_gram: 'This / That · He / She / They · I can ...',
-    en_jobs: 'Jobs (doctor, teacher) · Sports · What does he do?',
-    en_sent: 'Đọc câu ngắn · Hiểu đoạn văn · Trả lời câu hỏi',
-    en_start: 'Ôn tập tổng hợp · Listening & Reading · Tự tin thi thử'
+    en_sent: 'Doc cau ngan · Hieu doan van · Tra loi cau hoi',
+    en_start: 'On tap tong hop · Listening & Reading · Tu tin thi thu',
+    // Toan Tieng Anh
+    maen_numbers: 'Numbers & Counting · Compare · Number sequences',
+    maen_add_sub: 'Addition & Subtraction · Missing numbers · True/False',
+    maen_mul_div: 'Multiplication & Division tables 2-5 · Word problems',
+    maen_measurement: 'cm/dm · kg/g · Litres · Convert units',
+    maen_time_money: 'Clock reading · Calendar · Vietnamese Dong',
+    maen_shapes: 'Shapes · Perimeter · Count triangles & quadrilaterals',
+    maen_word_problems: 'Violympic style · 1-2-3 step problems',
   },
 
   _chooseSubject(idx) {
