@@ -32,7 +32,7 @@
           "name": "Toán Tiếng Anh",
           "icon": "🔢",
           "file": "toan-tieng-anh-lop2.json",
-          "available": false
+          "available": true
         }
       ]
     },
