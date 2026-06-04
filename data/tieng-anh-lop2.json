@@ -655,6 +655,266 @@
             "hint": "",
             "skill": "feelings_school",
             "unit": "school_days"
+          },
+          {
+            "q": "What do you use to rub out pencil marks?",
+            "choices": [
+              "eraser",
+              "ruler",
+              "pencil case",
+              "stapler"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_objects",
+            "unit": "school_days"
+          },
+          {
+            "q": "What do you use to measure length?",
+            "choices": [
+              "ruler",
+              "pencil",
+              "eraser",
+              "scissors"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_objects",
+            "unit": "school_days"
+          },
+          {
+            "q": "Where do students sit in a classroom?",
+            "choices": [
+              "desk",
+              "shelf",
+              "cupboard",
+              "window"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_vocab",
+            "unit": "school_days"
+          },
+          {
+            "q": "What is the person who teaches you called?",
+            "choices": [
+              "teacher",
+              "doctor",
+              "chef",
+              "pilot"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_vocab",
+            "unit": "school_days"
+          },
+          {
+            "q": "What do you carry your books and stationery in?",
+            "choices": [
+              "school bag",
+              "lunch box",
+              "pencil case",
+              "folder"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_objects",
+            "unit": "school_days"
+          },
+          {
+            "q": "What does the teacher write on in the classroom?",
+            "choices": [
+              "whiteboard",
+              "window",
+              "desk",
+              "wall"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_vocab",
+            "unit": "school_days"
+          },
+          {
+            "q": "What do you call a book you write your notes in?",
+            "choices": [
+              "notebook",
+              "textbook",
+              "dictionary",
+              "storybook"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_objects",
+            "unit": "school_days"
+          },
+          {
+            "q": "What time do most children arrive at school?",
+            "choices": [
+              "morning",
+              "midnight",
+              "late evening",
+              "noon only"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_routine",
+            "unit": "school_days"
+          },
+          {
+            "q": "What do we call the time between lessons when children can play outside?",
+            "choices": [
+              "break time",
+              "class time",
+              "study time",
+              "lunchtime"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_routine",
+            "unit": "school_days"
+          },
+          {
+            "q": "What subject teaches you about numbers and shapes?",
+            "choices": [
+              "Maths",
+              "History",
+              "Art",
+              "PE"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_subjects",
+            "unit": "school_days"
+          },
+          {
+            "q": "What subject teaches you about countries and maps?",
+            "choices": [
+              "Geography",
+              "Maths",
+              "Science",
+              "Music"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_subjects",
+            "unit": "school_days"
+          },
+          {
+            "q": "What do you call a group of students who study together?",
+            "choices": [
+              "class",
+              "team",
+              "band",
+              "club"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "school_vocab",
+            "unit": "school_days"
+          },
+          {
+            "q": "Every morning, students ______ to their teacher when she enters.",
+            "choices": [
+              "say hello",
+              "says hello",
+              "saying hello",
+              "said hello"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "She ______ her homework every evening after dinner.",
+            "choices": [
+              "does",
+              "do",
+              "doing",
+              "is do"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "The children ______ quietly when the teacher is talking.",
+            "choices": [
+              "listen",
+              "listens",
+              "listened",
+              "listening"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "After ______ at 7am, Tom eats breakfast and goes to school.",
+            "choices": [
+              "waking up",
+              "wake up",
+              "woke up",
+              "wakes"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "'Please ______ your hand if you know the answer,' said the teacher.",
+            "choices": [
+              "raise",
+              "raised",
+              "raising",
+              "raises"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "Nam forgot his pencil case. He ______ a pen from his friend.",
+            "choices": [
+              "borrowed",
+              "borrow",
+              "borrows",
+              "borrowing"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "Which sentence about school is correct?",
+            "choices": [
+              "We learning English every day.",
+              "We learns English every day.",
+              "We learn English every day.",
+              "We is learn English every day."
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
+          },
+          {
+            "q": "The school bell ______ at 3pm to signal the end of school.",
+            "choices": [
+              "rings",
+              "ring",
+              "ringing",
+              "ringed"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "school_grammar",
+            "unit": "school_days"
           }
         ]
       },
@@ -1146,6 +1406,409 @@
             "hint": "",
             "skill": "animal_reading",
             "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal has black and white stripes?",
+            "choices": [
+              "zebra",
+              "giraffe",
+              "elephant",
+              "bear"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_vocab",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal is the largest land animal?",
+            "choices": [
+              "elephant",
+              "lion",
+              "giraffe",
+              "hippo"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal can spray water through its nose?",
+            "choices": [
+              "elephant",
+              "whale",
+              "crocodile",
+              "seal"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal has a very long neck?",
+            "choices": [
+              "giraffe",
+              "cheetah",
+              "zebra",
+              "gorilla"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_vocab",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal is known as the King of the Jungle?",
+            "choices": [
+              "lion",
+              "tiger",
+              "bear",
+              "wolf"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal builds dams in rivers?",
+            "choices": [
+              "beaver",
+              "otter",
+              "seal",
+              "penguin"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal can change its colour to hide?",
+            "choices": [
+              "chameleon",
+              "lizard",
+              "frog",
+              "snake"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which bird cannot fly?",
+            "choices": [
+              "penguin",
+              "eagle",
+              "parrot",
+              "sparrow"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal sleeps hanging upside down?",
+            "choices": [
+              "bat",
+              "sloth",
+              "koala",
+              "monkey"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal carries its home on its back?",
+            "choices": [
+              "tortoise",
+              "hedgehog",
+              "crab",
+              "squirrel"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal is the fastest on land?",
+            "choices": [
+              "cheetah",
+              "lion",
+              "horse",
+              "zebra"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal lives in groups called packs?",
+            "choices": [
+              "wolf",
+              "bear",
+              "tiger",
+              "fox"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which ocean animal has eight arms?",
+            "choices": [
+              "octopus",
+              "whale",
+              "shark",
+              "seal"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_vocab",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal uses a pouch to carry its baby?",
+            "choices": [
+              "kangaroo",
+              "koala",
+              "panda",
+              "bear"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "animal_facts",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A lion ______ in the grasslands of Africa.",
+            "choices": [
+              "lives",
+              "live",
+              "living",
+              "is live"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Elephants ______ in large groups called herds.",
+            "choices": [
+              "live",
+              "lives",
+              "lived",
+              "living"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A bear ______ food before winter to survive hibernation.",
+            "choices": [
+              "stores",
+              "store",
+              "storing",
+              "stored"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "The cheetah is ______ than any other land animal.",
+            "choices": [
+              "faster",
+              "fast",
+              "fastest",
+              "more fast"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Penguins live in ______ places where it is very cold.",
+            "choices": [
+              "icy",
+              "hot",
+              "wet",
+              "dry"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_habitats",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A crocodile ______ in rivers and swamps.",
+            "choices": [
+              "lives",
+              "live",
+              "is live",
+              "living"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which sentence about wild animals is correct?",
+            "choices": [
+              "Tigers lives in Asia.",
+              "A tiger live in Asia.",
+              "Tigers live in Asia.",
+              "Tiger living in Asia."
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Sharks have sharp ______ to catch fish.",
+            "choices": [
+              "teeth",
+              "claws",
+              "wings",
+              "fins only"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_vocab",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "The giraffe has a long neck ______ it can reach leaves high in trees.",
+            "choices": [
+              "so that",
+              "but",
+              "because of",
+              "although"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_grammar",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Wolves ______ loudly at night to communicate with their pack.",
+            "choices": [
+              "howl",
+              "bark",
+              "roar",
+              "chirp"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "animal_vocab",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "An animal is warm-blooded, feeds its babies milk, and has fur. What is it?",
+            "choices": [
+              "a mammal",
+              "a reptile",
+              "a bird",
+              "an insect"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_science",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A polar bear has thick white fur. Why is white fur useful in the Arctic?",
+            "choices": [
+              "It hides the bear in the snow.",
+              "It keeps the bear cool.",
+              "It makes the bear look bigger.",
+              "It helps the bear swim faster."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_inference",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Dolphins live in the ocean but need to breathe air. What does this tell us?",
+            "choices": [
+              "Dolphins are mammals, not fish.",
+              "Dolphins can breathe underwater.",
+              "Dolphins are fish that breathe air.",
+              "Dolphins live on land sometimes."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_inference",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A chameleon turns green when sitting on a leaf. What is the purpose of this?",
+            "choices": [
+              "to hide from enemies",
+              "to attract friends",
+              "to find food faster",
+              "to sleep better"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_inference",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "'The elephant never forgets.' What does this suggest about elephants?",
+            "choices": [
+              "They have very good memory.",
+              "They are very old animals.",
+              "They forget things easily.",
+              "They are very smart hunters."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_idiom",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "Which animal would survive best in the Sahara Desert?",
+            "choices": [
+              "camel",
+              "penguin",
+              "polar bear",
+              "whale"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_inference",
+            "unit": "wild_animals"
+          },
+          {
+            "q": "A food chain is: grass → zebra → lion. What happens if all the grass dies?",
+            "choices": [
+              "Zebras die, then lions die too.",
+              "Only lions die.",
+              "Nothing changes.",
+              "Lions eat zebras more."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "animal_science",
+            "unit": "wild_animals"
           }
         ]
       },
@@ -1321,6 +1984,552 @@
             "hint": "",
             "skill": "seasons_vocab_reading",
             "unit": "seasons"
+          },
+          {
+            "q": "What do we call it when water falls from the sky?",
+            "choices": [
+              "rain",
+              "wind",
+              "snow",
+              "fog"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What is frozen rain called?",
+            "choices": [
+              "hail",
+              "fog",
+              "breeze",
+              "drizzle"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What do we use to stay dry in the rain?",
+            "choices": [
+              "umbrella",
+              "sunscreen",
+              "scarf",
+              "gloves"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Which word describes very strong wind?",
+            "choices": [
+              "storm",
+              "drizzle",
+              "sunny",
+              "warm"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What do we wear when it is very cold?",
+            "choices": [
+              "coat",
+              "swimsuit",
+              "shorts",
+              "sandals"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Which season do leaves fall from trees?",
+            "choices": [
+              "spring",
+              "summer",
+              "autumn",
+              "winter"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "skill": "seasons_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "In which season do flowers usually bloom?",
+            "choices": [
+              "autumn",
+              "winter",
+              "spring",
+              "summer"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "skill": "seasons_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What do you see in the sky on a sunny day?",
+            "choices": [
+              "the sun",
+              "lightning",
+              "snow",
+              "heavy clouds"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Which word means the sky is full of clouds?",
+            "choices": [
+              "cloudy",
+              "windy",
+              "rainy",
+              "foggy"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What do we call a day with no clouds and lots of sunshine?",
+            "choices": [
+              "sunny",
+              "stormy",
+              "cloudy",
+              "rainy"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Which season is between summer and winter?",
+            "choices": [
+              "spring",
+              "autumn",
+              "rainy",
+              "foggy"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "skill": "seasons_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "What do you wear on a sunny summer day?",
+            "choices": [
+              "sunglasses",
+              "boots",
+              "a heavy coat",
+              "a scarf"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_clothes",
+            "unit": "weather"
+          },
+          {
+            "q": "Which word means it is warm but not hot?",
+            "choices": [
+              "mild",
+              "freezing",
+              "boiling",
+              "icy"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "It is very cold and white outside. It is ______.",
+            "choices": [
+              "snowing",
+              "raining",
+              "sunny",
+              "windy"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "I can hear thunder and see lightning. There is a big ______.",
+            "choices": [
+              "storm",
+              "breeze",
+              "sunshine",
+              "rainbow"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "The sky is dark and clouds are heavy. It will probably ______.",
+            "choices": [
+              "rain",
+              "shine",
+              "be warm",
+              "be dry"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "Today the wind is very strong. It is very ______.",
+            "choices": [
+              "windy",
+              "sunny",
+              "hot",
+              "mild"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "In ______, many animals sleep through the cold months.",
+            "choices": [
+              "winter",
+              "spring",
+              "summer",
+              "autumn"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "seasons_facts",
+            "unit": "weather"
+          },
+          {
+            "q": "It is 35 degrees outside. The weather is very ______.",
+            "choices": [
+              "hot",
+              "cold",
+              "cool",
+              "mild"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "After the rain, you can sometimes see a colourful ______ in the sky.",
+            "choices": [
+              "rainbow",
+              "storm",
+              "cloud",
+              "thunder"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "In ______, farmers plant seeds because the ground becomes warm.",
+            "choices": [
+              "winter",
+              "autumn",
+              "spring",
+              "night"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "skill": "seasons_facts",
+            "unit": "weather"
+          },
+          {
+            "q": "The roads are icy. You should walk ______.",
+            "choices": [
+              "carefully",
+              "quickly",
+              "loudly",
+              "far away"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "It rained yesterday, but today the sky is clear. The weather has ______.",
+            "choices": [
+              "improved",
+              "worsened",
+              "disappeared",
+              "frozen"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "The temperature is 0 degrees. Water will ______.",
+            "choices": [
+              "freeze",
+              "boil",
+              "rain",
+              "evaporate"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_science",
+            "unit": "weather"
+          },
+          {
+            "q": "Minh forgot his umbrella. Now his clothes are wet. What happened?",
+            "choices": [
+              "It rained.",
+              "It snowed.",
+              "It was sunny.",
+              "It was windy."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "Choose the correct sentence about today's weather:",
+            "choices": [
+              "It are raining outside.",
+              "It is raining outside.",
+              "It rain outside.",
+              "It rains outside now."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "Lan says: 'I need my coat and boots today.' What is the weather probably like?",
+            "choices": [
+              "hot and sunny",
+              "cold and wet",
+              "warm and dry",
+              "mild and breezy"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "Which TWO seasons are usually warm or hot?",
+            "choices": [
+              "spring and summer",
+              "winter and autumn",
+              "winter and spring",
+              "autumn and summer"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "seasons_compare",
+            "unit": "weather"
+          },
+          {
+            "q": "It was sunny this morning, but now it is cloudy. What might happen next?",
+            "choices": [
+              "It might rain.",
+              "It will get hotter.",
+              "The clouds will disappear.",
+              "It will snow immediately."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "Tom lives where it snows every winter. In summer, the temperature is 30 degrees. Where does Tom probably live?",
+            "choices": [
+              "a country with four seasons",
+              "a tropical country",
+              "a desert country",
+              "near the equator"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "'The weather ____ very cold last week.' Choose the correct verb:",
+            "choices": [
+              "is",
+              "are",
+              "was",
+              "were"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "Which sentence uses weather words correctly?",
+            "choices": [
+              "It is raining heavily today.",
+              "The rain is very sunny.",
+              "Today is cloud and wind.",
+              "It has hot and raining."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_grammar",
+            "unit": "weather"
+          },
+          {
+            "q": "In spring, days get longer and temperatures rise. What does 'rise' mean here?",
+            "choices": [
+              "go up",
+              "go down",
+              "stay the same",
+              "disappear"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Anna goes outside without a jacket. She comes back shivering. What was the weather like?",
+            "choices": [
+              "hot",
+              "cold",
+              "rainy",
+              "windy"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "In which season do animals like bears go into a long deep sleep?",
+            "choices": [
+              "winter",
+              "summer",
+              "spring",
+              "autumn"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "seasons_facts",
+            "unit": "weather"
+          },
+          {
+            "q": "What do farmers need for their crops during a dry summer?",
+            "choices": [
+              "rain or water",
+              "snow",
+              "strong wind",
+              "fog"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "What do you see in the sky just before a thunderstorm?",
+            "choices": [
+              "dark clouds",
+              "sunshine",
+              "rainbow",
+              "stars"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Which season do most children enjoy swimming outdoors?",
+            "choices": [
+              "summer",
+              "winter",
+              "autumn",
+              "spring"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "seasons_facts",
+            "unit": "weather"
+          },
+          {
+            "q": "'It is minus five degrees.' This means the temperature is ______ zero.",
+            "choices": [
+              "below",
+              "above",
+              "at",
+              "near"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "The forecast says there is a 90% chance of rain. Should you bring an umbrella?",
+            "choices": [
+              "Yes, very likely to rain.",
+              "No, it probably won't rain.",
+              "Maybe, it's 50-50.",
+              "No, forecasts are always wrong."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "weather_inference",
+            "unit": "weather"
+          },
+          {
+            "q": "'It was the hottest summer on record.' What does 'on record' mean here?",
+            "choices": [
+              "since people started keeping weather records",
+              "in the whole world",
+              "in history books only",
+              "on a weather chart"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_vocab",
+            "unit": "weather"
+          },
+          {
+            "q": "Why do people in cold countries wear many layers of clothing in winter?",
+            "choices": [
+              "Layers trap warm air and keep body heat in.",
+              "Layers make them look bigger.",
+              "Layers are fashionable in winter.",
+              "Layers block the sunlight."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "weather_inference",
+            "unit": "weather"
           }
         ]
       },
@@ -2324,6 +3533,526 @@
             "difficulty": 2,
             "hint": "",
             "skill": "celebration_vocab_grammar_reading",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do children collect when they go trick-or-treating?",
+            "choices": [
+              "candy",
+              "flowers",
+              "books",
+              "money"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people light on Diwali?",
+            "choices": [
+              "candles and lamps",
+              "snowballs",
+              "pumpkins",
+              "flags"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people watch in the sky on New Year's Eve?",
+            "choices": [
+              "fireworks",
+              "rainbows",
+              "kites",
+              "balloons"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do children hang up for Santa Claus at Christmas?",
+            "choices": [
+              "stockings",
+              "flags",
+              "candles",
+              "lanterns"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people send to friends on special days?",
+            "choices": [
+              "greeting cards",
+              "homework",
+              "money",
+              "keys"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What is the special hat people wear at birthday parties called?",
+            "choices": [
+              "party hat",
+              "helmet",
+              "cap",
+              "crown"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people tie to chairs and trees at parties?",
+            "choices": [
+              "balloons",
+              "umbrellas",
+              "scarves",
+              "kites"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do you open on your birthday?",
+            "choices": [
+              "presents",
+              "doors",
+              "windows",
+              "books"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people wear to a costume party?",
+            "choices": [
+              "costumes",
+              "uniforms",
+              "pyjamas",
+              "sportswear"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people do before eating a birthday cake?",
+            "choices": [
+              "blow out candles",
+              "cut a tree",
+              "paint a picture",
+              "buy flowers"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Which holiday do people decorate a tree with lights and stars?",
+            "choices": [
+              "Christmas",
+              "Halloween",
+              "Diwali",
+              "Easter"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What colour are most Easter eggs?",
+            "choices": [
+              "many bright colours",
+              "black and white",
+              "blue only",
+              "red only"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do children carve on Halloween?",
+            "choices": [
+              "pumpkins",
+              "watermelons",
+              "apples",
+              "coconuts"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Today is Lan's birthday. Her friends sing ______ to her.",
+            "choices": [
+              "Happy Birthday",
+              "Merry Christmas",
+              "Good Morning",
+              "See you later"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "We are having a party. Mum baked a cake and put ______ on top.",
+            "choices": [
+              "candles",
+              "shoes",
+              "rulers",
+              "umbrellas"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "At Tet, Vietnamese families ______ their homes with flowers and red decorations.",
+            "choices": [
+              "decorate",
+              "destroy",
+              "ignore",
+              "clean only"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Mai received five presents. She ______ them with excitement.",
+            "choices": [
+              "unwrapped",
+              "ignored",
+              "buried",
+              "cooked"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "'Let's celebrate!' means ______.",
+            "choices": [
+              "Let's do something fun to mark a special day.",
+              "Let's go to sleep.",
+              "Let's study hard.",
+              "Let's clean the house."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "On New Year's Day, people wish each other ______.",
+            "choices": [
+              "Happy New Year!",
+              "Good night!",
+              "See you tomorrow!",
+              "Well done!"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "The party ______ at 3 o'clock and ended at 6 o'clock.",
+            "choices": [
+              "started",
+              "finished",
+              "cancelled",
+              "ignored"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "We sent ______ to our grandparents to say Happy New Year.",
+            "choices": [
+              "a greeting card",
+              "a homework",
+              "a school bag",
+              "an umbrella"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "There ______ ten candles on the birthday cake.",
+            "choices": [
+              "were",
+              "was",
+              "is",
+              "am"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "My sister is turning 7. How many candles should be on her cake?",
+            "choices": [
+              "7",
+              "6",
+              "8",
+              "10"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_inference",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Choose the correct sentence:",
+            "choices": [
+              "We celebrating Tet last week.",
+              "We celebrated Tet last week.",
+              "We celebrate Tet last week.",
+              "We was celebrate Tet last week."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Lan says 'I got so many presents — I am over the moon!' What does 'over the moon' mean?",
+            "choices": [
+              "very happy",
+              "very surprised",
+              "very tired",
+              "very scared"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_idiom",
+            "unit": "celebrate"
+          },
+          {
+            "q": "A family lights candles, gives gifts, and sings songs together. What are they probably doing?",
+            "choices": [
+              "celebrating a special occasion",
+              "doing homework",
+              "going to school",
+              "cooking dinner only"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_inference",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Tom's birthday is on 15th March. Today is 14th March. How many days until his birthday?",
+            "choices": [
+              "1 day",
+              "2 days",
+              "15 days",
+              "0 days"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_maths",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Which sentence about celebrations is correct?",
+            "choices": [
+              "People celebrates birthdays every year.",
+              "People celebrate birthdays every year.",
+              "People is celebrating birthdays every year.",
+              "People celebrating birthdays every year."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "At the party, each child ______ a piece of cake and a balloon.",
+            "choices": [
+              "received",
+              "receive",
+              "receiving",
+              "was receive"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Mum baked a cake with 8 candles. Dad added 2 more. How old is the birthday person?",
+            "choices": [
+              "8",
+              "2",
+              "10",
+              "6"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "skill": "celebration_maths",
+            "unit": "celebrate"
+          },
+          {
+            "q": "'The party was a great success.' This means the party ______.",
+            "choices": [
+              "went very well",
+              "was very bad",
+              "was cancelled",
+              "was boring"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Which celebration happens at the END of a year?",
+            "choices": [
+              "New Year's Eve",
+              "Easter",
+              "Halloween",
+              "Diwali"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_inference",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What shape is a traditional birthday cake?",
+            "choices": [
+              "round",
+              "square",
+              "triangle",
+              "star"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "What do people do at midnight on New Year's Eve?",
+            "choices": [
+              "count down and cheer",
+              "go to sleep",
+              "eat dinner",
+              "open presents"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "At Tet, children receive lucky money in ______ envelopes.",
+            "choices": [
+              "red",
+              "blue",
+              "white",
+              "green"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "celebration_culture",
+            "unit": "celebrate"
+          },
+          {
+            "q": "The family ______ together to celebrate grandmother's birthday.",
+            "choices": [
+              "gathered",
+              "gather",
+              "gathering",
+              "gathers"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_grammar",
+            "unit": "celebrate"
+          },
+          {
+            "q": "'Hip hip ______ !' is something people shout to celebrate.",
+            "choices": [
+              "hooray",
+              "hello",
+              "hurry",
+              "happy"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_vocab",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Why do people decorate their homes during festivals?",
+            "choices": [
+              "To create a joyful and festive atmosphere.",
+              "Because the law requires it.",
+              "To make neighbours jealous.",
+              "Because decorations are cheap."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_inference",
+            "unit": "celebrate"
+          },
+          {
+            "q": "'The more the merrier!' This phrase is often used at parties. What does it mean?",
+            "choices": [
+              "Having more people makes it more fun.",
+              "More people means more problems.",
+              "Parties should be very quiet.",
+              "Fewer people is better."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "celebration_idiom",
+            "unit": "celebrate"
+          },
+          {
+            "q": "Lan got 10 presents on her birthday. She gave 3 to her little brother. How many does she have left?",
+            "choices": [
+              "7",
+              "3",
+              "10",
+              "13"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "celebration_maths",
             "unit": "celebrate"
           }
         ]
@@ -3420,6 +5149,409 @@
             "difficulty": 1,
             "skill": "en_jobs",
             "unit": "jobs"
+          },
+          {
+            "q": "Which sport do you play on a court with a net in the middle?",
+            "choices": [
+              "badminton",
+              "football",
+              "swimming",
+              "cycling"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport uses a bat and a ball?",
+            "choices": [
+              "baseball",
+              "volleyball",
+              "hockey",
+              "surfing"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport do you do on snow or ice?",
+            "choices": [
+              "skiing",
+              "surfing",
+              "sailing",
+              "jogging"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport do you do on a bicycle?",
+            "choices": [
+              "cycling",
+              "boxing",
+              "wrestling",
+              "archery"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport uses a goal and a goalkeeper?",
+            "choices": [
+              "football",
+              "tennis",
+              "golf",
+              "archery"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport do athletes run 42 kilometres?",
+            "choices": [
+              "marathon",
+              "sprint",
+              "relay",
+              "hurdles"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport uses a bow and arrow?",
+            "choices": [
+              "archery",
+              "fencing",
+              "judo",
+              "boxing"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "What do you call a person who plays football?",
+            "choices": [
+              "footballer",
+              "swimmer",
+              "cyclist",
+              "archer"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport is played in water on a board?",
+            "choices": [
+              "surfing",
+              "skiing",
+              "cycling",
+              "jogging"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "How many players are on a basketball team?",
+            "choices": [
+              "5",
+              "11",
+              "6",
+              "9"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_facts",
+            "unit": "sports"
+          },
+          {
+            "q": "What colour is the centre circle on a football field?",
+            "choices": [
+              "white",
+              "yellow",
+              "green",
+              "red"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_facts",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sport uses a puck instead of a ball?",
+            "choices": [
+              "ice hockey",
+              "tennis",
+              "cricket",
+              "polo"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "In which sport do you score a 'home run'?",
+            "choices": [
+              "baseball",
+              "football",
+              "basketball",
+              "volleyball"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Tom ______ tennis every Saturday morning.",
+            "choices": [
+              "plays",
+              "play",
+              "playing",
+              "is play"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "She ______ the race and got a gold medal.",
+            "choices": [
+              "won",
+              "win",
+              "winning",
+              "wins"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "The team ______ hard every day to prepare for the match.",
+            "choices": [
+              "trains",
+              "train",
+              "trained",
+              "training"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "You need to swim in a ______.",
+            "choices": [
+              "swimming pool",
+              "football field",
+              "tennis court",
+              "golf course"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "The referee ______ the whistle to start the game.",
+            "choices": [
+              "blew",
+              "blows",
+              "blowing",
+              "blow"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "Our team scored 3 goals. The other team scored 1. We ______.",
+            "choices": [
+              "won",
+              "lost",
+              "drew",
+              "gave up"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_inference",
+            "unit": "sports"
+          },
+          {
+            "q": "In the Olympics, the best athlete receives a ______ medal.",
+            "choices": [
+              "gold",
+              "silver",
+              "bronze",
+              "plastic"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_facts",
+            "unit": "sports"
+          },
+          {
+            "q": "A football match has two halves. Each half is 45 minutes. How long is the whole match?",
+            "choices": [
+              "90 minutes",
+              "45 minutes",
+              "60 minutes",
+              "30 minutes"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_maths",
+            "unit": "sports"
+          },
+          {
+            "q": "Nam is tired after ______ for one hour.",
+            "choices": [
+              "running",
+              "run",
+              "runs",
+              "to run"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "What do you say when your team wins?",
+            "choices": [
+              "Congratulations!",
+              "I'm sorry!",
+              "Never mind!",
+              "Bad luck!"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "She is ______ her best to win the swimming race.",
+            "choices": [
+              "doing",
+              "do",
+              "does",
+              "done"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "Team A scored 4 goals. Team B scored 4 goals. What was the result?",
+            "choices": [
+              "a draw",
+              "Team A won",
+              "Team B won",
+              "Team A lost"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_inference",
+            "unit": "sports"
+          },
+          {
+            "q": "'She gave it her all in the race.' This means she ______.",
+            "choices": [
+              "tried her hardest",
+              "gave something away",
+              "stopped racing",
+              "came last"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_idiom",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sentence is in the past tense?",
+            "choices": [
+              "She swims fast.",
+              "She is swimming fast.",
+              "She swam fast.",
+              "She will swim fast."
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "skill": "sports_grammar",
+            "unit": "sports"
+          },
+          {
+            "q": "A marathon is 42 km. Tom ran 21 km. What fraction of the marathon did he complete?",
+            "choices": [
+              "half",
+              "a quarter",
+              "all of it",
+              "a third"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_maths",
+            "unit": "sports"
+          },
+          {
+            "q": "The coach said: 'Train harder or you won't improve.' What does 'improve' mean?",
+            "choices": [
+              "get better",
+              "give up",
+              "stay the same",
+              "get worse"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_vocab",
+            "unit": "sports"
+          },
+          {
+            "q": "Which sports CAN be played without a ball?",
+            "choices": [
+              "swimming and gymnastics",
+              "football and tennis",
+              "basketball and volleyball",
+              "golf and cricket"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_inference",
+            "unit": "sports"
+          },
+          {
+            "q": "'Fair play' in sports means ______.",
+            "choices": [
+              "playing honestly and respecting the rules",
+              "playing to win at any cost",
+              "cheating cleverly",
+              "ignoring the referee"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "sports_values",
+            "unit": "sports"
           }
         ]
       },
@@ -3637,6 +5769,539 @@
             "hint": "",
             "skill": "feelings_vocab_reading",
             "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you eat your favourite food?",
+            "choices": [
+              "happy",
+              "sad",
+              "angry",
+              "bored"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when someone pushes you?",
+            "choices": [
+              "angry",
+              "excited",
+              "surprised",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel on the first day at a new school?",
+            "choices": [
+              "nervous",
+              "proud",
+              "bored",
+              "relaxed"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you watch a very funny film?",
+            "choices": [
+              "amused",
+              "sad",
+              "angry",
+              "frightened"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you are waiting for something exciting?",
+            "choices": [
+              "excited",
+              "bored",
+              "worried",
+              "tired"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you help someone?",
+            "choices": [
+              "proud",
+              "jealous",
+              "angry",
+              "scared"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when a friend takes your toy without asking?",
+            "choices": [
+              "upset",
+              "happy",
+              "excited",
+              "relaxed"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you are very tired and need to sleep?",
+            "choices": [
+              "sleepy",
+              "energetic",
+              "excited",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you miss your mum or dad?",
+            "choices": [
+              "lonely",
+              "happy",
+              "excited",
+              "calm"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "What is the opposite of 'happy'?",
+            "choices": [
+              "sad",
+              "angry",
+              "tired",
+              "bored"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_antonym",
+            "unit": "feel_good"
+          },
+          {
+            "q": "What is the opposite of 'brave'?",
+            "choices": [
+              "afraid",
+              "angry",
+              "sad",
+              "happy"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_antonym",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you cannot find something important?",
+            "choices": [
+              "worried",
+              "excited",
+              "relaxed",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you finish a difficult task?",
+            "choices": [
+              "relieved",
+              "bored",
+              "nervous",
+              "angry"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Lan is shaking and her heart beats fast before the test. She feels ______.",
+            "choices": [
+              "nervous",
+              "bored",
+              "happy",
+              "calm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Nam did not get invited to the party. He feels ______.",
+            "choices": [
+              "left out",
+              "proud",
+              "excited",
+              "calm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "She ______ happy when she heard the good news.",
+            "choices": [
+              "felt",
+              "feel",
+              "feeling",
+              "feels"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_grammar",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Tom looks at his friend's new toy and wants one too. He feels ______.",
+            "choices": [
+              "jealous",
+              "excited",
+              "relaxed",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'I feel under the weather today.' This means ______.",
+            "choices": [
+              "I feel sick.",
+              "The weather is bad.",
+              "I am happy.",
+              "I am outdoors."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_idiom",
+            "unit": "feel_good"
+          },
+          {
+            "q": "After a long holiday, the children felt ______ to see their friends again.",
+            "choices": [
+              "happy",
+              "angry",
+              "bored",
+              "nervous"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "He ______ scared when the dog barked loudly at him.",
+            "choices": [
+              "got",
+              "get",
+              "getting",
+              "gets"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_grammar",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Minh got full marks on her test. Her parents felt ______ of her.",
+            "choices": [
+              "proud",
+              "ashamed",
+              "worried",
+              "nervous"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "The baby cried when the lights went out. The baby felt ______.",
+            "choices": [
+              "frightened",
+              "excited",
+              "happy",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Anna felt ______ because she had nothing to do all afternoon.",
+            "choices": [
+              "bored",
+              "excited",
+              "nervous",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "When we feel ______, we should take deep breaths and count to ten.",
+            "choices": [
+              "angry",
+              "happy",
+              "excited",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_wellbeing",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Choose the sentence that describes feeling surprised:",
+            "choices": [
+              "She jumped when the door slammed shut.",
+              "She smiled while eating cake.",
+              "She yawned because she was tired.",
+              "She frowned because she was angry."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'She wore a big smile and kept jumping up and down.' How did she feel?",
+            "choices": [
+              "very excited",
+              "very sad",
+              "very nervous",
+              "very tired"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Which sentence uses a feelings word correctly?",
+            "choices": [
+              "He feeling very happy today.",
+              "He feels very happy today.",
+              "He feel very happy today.",
+              "He is feel very happy today."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "feelings_grammar",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Lan helped an old lady carry her bags. The lady said thank you. How did Lan probably feel?",
+            "choices": [
+              "proud and warm inside",
+              "angry and tired",
+              "scared and nervous",
+              "bored and sad"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Tom failed his test even after studying hard. Which two feelings might he have?",
+            "choices": [
+              "disappointed and determined to try harder",
+              "happy and relaxed",
+              "excited and proud",
+              "bored and angry at his friends"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'She put on a brave face.' This means she ______.",
+            "choices": [
+              "pretended to be calm even though she was scared",
+              "put on a mask",
+              "felt very brave",
+              "smiled because she was happy"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_idiom",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Which action would help when you feel angry?",
+            "choices": [
+              "Take a deep breath and walk away.",
+              "Shout at everyone nearby.",
+              "Break something.",
+              "Ignore the problem forever."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_wellbeing",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'He had butterflies in his stomach.' What does this mean?",
+            "choices": [
+              "He felt nervous.",
+              "He ate butterflies.",
+              "He felt sick after eating.",
+              "He felt very happy."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_idiom",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Which TWO feelings go together when you win a competition?",
+            "choices": [
+              "proud and excited",
+              "sad and angry",
+              "nervous and bored",
+              "tired and worried"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "What do you call a feeling of great happiness?",
+            "choices": [
+              "joy",
+              "anger",
+              "fear",
+              "sadness"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "How do you feel when you are meeting new people?",
+            "choices": [
+              "nervous",
+              "proud",
+              "bored",
+              "relaxed"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "feelings_vocab",
+            "unit": "feel_good"
+          },
+          {
+            "q": "She ______ a big smile on her face all day after hearing the good news.",
+            "choices": [
+              "wore",
+              "wear",
+              "wearing",
+              "wears"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_grammar",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Which feeling would you have if your best friend moved to another city?",
+            "choices": [
+              "sad and missing them",
+              "very excited",
+              "angry",
+              "proud"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'He was on top of the world when he won the prize.' This means he felt ______.",
+            "choices": [
+              "extremely happy",
+              "very confused",
+              "a little proud",
+              "quite surprised"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_idiom",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Which is the healthiest way to express anger?",
+            "choices": [
+              "Talk calmly about how you feel.",
+              "Shout at the nearest person.",
+              "Break something.",
+              "Pretend you are not angry."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_wellbeing",
+            "unit": "feel_good"
+          },
+          {
+            "q": "Lan was nervous before her speech, but afterwards she felt ______ that she had done it.",
+            "choices": [
+              "proud",
+              "angry",
+              "scared",
+              "bored"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "feelings_inference",
+            "unit": "feel_good"
+          },
+          {
+            "q": "'Feeling blue' is an idiom. What does it mean?",
+            "choices": [
+              "feeling sad",
+              "feeling cold",
+              "feeling calm",
+              "feeling ill"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "feelings_idiom",
+            "unit": "feel_good"
           }
         ]
       },
@@ -3812,6 +6477,539 @@
             "hint": "",
             "skill": "different_traits_values",
             "unit": "different"
+          },
+          {
+            "q": "A mountain is very ______.",
+            "choices": [
+              "tall",
+              "small",
+              "thin",
+              "flat"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A feather is very ______.",
+            "choices": [
+              "light",
+              "heavy",
+              "hard",
+              "loud"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "An elephant is very ______.",
+            "choices": [
+              "heavy",
+              "light",
+              "tiny",
+              "quiet"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "Ice cream is ______.",
+            "choices": [
+              "cold",
+              "hot",
+              "spicy",
+              "sour"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A lemon tastes ______.",
+            "choices": [
+              "sour",
+              "sweet",
+              "salty",
+              "spicy"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A drum makes a ______ sound.",
+            "choices": [
+              "loud",
+              "quiet",
+              "soft",
+              "tiny"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A butterfly is ______.",
+            "choices": [
+              "light",
+              "heavy",
+              "large",
+              "strong"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'wide' is ______.",
+            "choices": [
+              "narrow",
+              "short",
+              "small",
+              "light"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'rough' is ______.",
+            "choices": [
+              "smooth",
+              "soft",
+              "hard",
+              "quiet"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'full' is ______.",
+            "choices": [
+              "empty",
+              "half",
+              "small",
+              "light"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'noisy' is ______.",
+            "choices": [
+              "quiet",
+              "small",
+              "slow",
+              "dark"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'strong' is ______.",
+            "choices": [
+              "weak",
+              "small",
+              "slow",
+              "soft"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'dangerous' is ______.",
+            "choices": [
+              "safe",
+              "quiet",
+              "kind",
+              "small"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'clean' is ______.",
+            "choices": [
+              "dirty",
+              "messy",
+              "dark",
+              "loud"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A whale is ______ than a dolphin.",
+            "choices": [
+              "bigger",
+              "big",
+              "biggest",
+              "more big"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "A cheetah is ______ than a lion.",
+            "choices": [
+              "faster",
+              "fast",
+              "fastest",
+              "more fast"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "Summer is ______ than winter.",
+            "choices": [
+              "hotter",
+              "hot",
+              "hottest",
+              "more hot"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "This book is ______ than that one.",
+            "choices": [
+              "thicker",
+              "thick",
+              "thickest",
+              "more thick"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "My bag is ______ than yours.",
+            "choices": [
+              "heavier",
+              "heavy",
+              "heaviest",
+              "more heavy"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "He is ______ than his brother.",
+            "choices": [
+              "taller",
+              "tall",
+              "tallest",
+              "more tall"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "This problem is ______ than the last one.",
+            "choices": [
+              "easier",
+              "easy",
+              "easiest",
+              "more easy"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "Which sentence uses a comparative correctly?",
+            "choices": [
+              "She is more taller than me.",
+              "She is taller than me.",
+              "She is tallest than me.",
+              "She is tall than me."
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "The blue bag is heavy. The red bag is heavier. Which bag is ______?",
+            "choices": [
+              "lighter",
+              "heavier",
+              "the same",
+              "the biggest"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "Tom is 8 years old. Anna is 10 years old. Anna is ______ than Tom.",
+            "choices": [
+              "older",
+              "younger",
+              "taller",
+              "shorter"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "This road is ______ than that one — it has more cars.",
+            "choices": [
+              "busier",
+              "busy",
+              "busiest",
+              "more busy"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "The Nile is the ______ river in the world.",
+            "choices": [
+              "longest",
+              "longer",
+              "long",
+              "most long"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "superlatives",
+            "unit": "different"
+          },
+          {
+            "q": "Mount Everest is the ______ mountain on Earth.",
+            "choices": [
+              "highest",
+              "higher",
+              "high",
+              "most high"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "superlatives",
+            "unit": "different"
+          },
+          {
+            "q": "Which sentence uses a superlative correctly?",
+            "choices": [
+              "This is the most easiest task.",
+              "This is the easiest task.",
+              "This is the easiest of the two tasks.",
+              "This is more easiest task."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "superlatives",
+            "unit": "different"
+          },
+          {
+            "q": "Tom has 5 books. Anna has 8. Lan has 3. Who has the ______ books?",
+            "choices": [
+              "most — Anna",
+              "most — Tom",
+              "fewest — Anna",
+              "fewest — Tom"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "superlatives",
+            "unit": "different"
+          },
+          {
+            "q": "'Different people have different strengths.' This means ______.",
+            "choices": [
+              "Everyone is good at something different.",
+              "Some people are better than everyone.",
+              "Nobody has any strengths.",
+              "People should all be the same."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "values_inference",
+            "unit": "different"
+          },
+          {
+            "q": "A cat is smaller than a dog but bigger than a mouse. Which is the smallest?",
+            "choices": [
+              "mouse",
+              "cat",
+              "dog",
+              "they are the same"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "Which sentence correctly compares two things?",
+            "choices": [
+              "An ant is more smaller than a bee.",
+              "An ant is smaller than a bee.",
+              "An ant is smallest than a bee.",
+              "An ant is small as a bee."
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "'Every person is unique.' What does 'unique' mean?",
+            "choices": [
+              "one of a kind",
+              "very old",
+              "very clever",
+              "very quiet"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "vocabulary",
+            "unit": "different"
+          },
+          {
+            "q": "Tom runs 100m in 20 seconds. Lan runs it in 15 seconds. Who is faster and by how many seconds?",
+            "choices": [
+              "Lan — by 5 seconds",
+              "Tom — by 5 seconds",
+              "Lan — by 15 seconds",
+              "Tom — by 20 seconds"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "A rock is ______ but a sponge is soft.",
+            "choices": [
+              "hard",
+              "heavy",
+              "large",
+              "dark"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "The opposite of 'ancient' is ______.",
+            "choices": [
+              "modern",
+              "old",
+              "small",
+              "slow"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "adjectives_opposites",
+            "unit": "different"
+          },
+          {
+            "q": "A lion is ______ than a house cat.",
+            "choices": [
+              "fiercer",
+              "fierce",
+              "fiercest",
+              "more fierce"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "This year's summer was ______ than last year's.",
+            "choices": [
+              "drier",
+              "dry",
+              "driest",
+              "more dry"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "The Amazon is the ______ river in the world by water volume.",
+            "choices": [
+              "largest",
+              "larger",
+              "large",
+              "more large"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "superlatives",
+            "unit": "different"
+          },
+          {
+            "q": "Tom is 130cm. Anna is 125cm. Lan is 135cm. Who is the tallest?",
+            "choices": [
+              "Lan",
+              "Tom",
+              "Anna",
+              "They are the same"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "comparatives",
+            "unit": "different"
+          },
+          {
+            "q": "'No two snowflakes are exactly alike.' What does this tell us about snowflakes?",
+            "choices": [
+              "Each snowflake is unique.",
+              "Snowflakes are all the same.",
+              "Snowflakes are very small.",
+              "Snowflakes melt quickly."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "values_inference",
+            "unit": "different"
           }
         ]
       },
@@ -3957,6 +7155,526 @@
             "a": 2,
             "difficulty": 2,
             "hint": "",
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "What is the first step when you have a problem?",
+            "choices": [
+              "Stay calm and think.",
+              "Cry and give up.",
+              "Run away.",
+              "Ignore it."
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If your pencil breaks, what should you do?",
+            "choices": [
+              "Use another pencil or sharpen it.",
+              "Stop working.",
+              "Throw it away angrily.",
+              "Cry."
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you spill water, what should you do first?",
+            "choices": [
+              "Clean it up with a cloth.",
+              "Leave it there.",
+              "Blame someone else.",
+              "Shout for help."
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you feel sick at school, who should you tell?",
+            "choices": [
+              "your teacher",
+              "your best friend",
+              "nobody",
+              "the janitor"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you cannot reach something high, what is the best solution?",
+            "choices": [
+              "Ask a taller person to help.",
+              "Jump repeatedly until tired.",
+              "Give up.",
+              "Knock it down."
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If two friends are arguing, the best thing to do is ______.",
+            "choices": [
+              "talk calmly and listen to each other",
+              "shout louder",
+              "walk away and never talk again",
+              "ask everyone to take sides"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "What does 'solution' mean?",
+            "choices": [
+              "an answer to a problem",
+              "a type of food",
+              "a school subject",
+              "a kind of sport"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you lose your eraser, the best thing to do is ______.",
+            "choices": [
+              "borrow one from a classmate",
+              "stop doing your work",
+              "get angry",
+              "blame your bag"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you don't understand a lesson, you should ______.",
+            "choices": [
+              "ask the teacher to explain",
+              "pretend you understand",
+              "copy your friend's work",
+              "daydream"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "What is the opposite of a problem?",
+            "choices": [
+              "a solution",
+              "a question",
+              "a story",
+              "a game"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If it rains and you have no umbrella, you can ______.",
+            "choices": [
+              "wait inside until it stops",
+              "run in the rain and get very wet",
+              "blame the weather",
+              "cancel your whole day"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "When you face a difficult problem, it is good to ______.",
+            "choices": [
+              "break it into small steps",
+              "panic immediately",
+              "do nothing",
+              "hope it disappears"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Tom cannot find his homework. He has ______ it somewhere.",
+            "choices": [
+              "lost",
+              "lose",
+              "losing",
+              "miss"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_grammar",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If a task is too difficult, you should ______ for help.",
+            "choices": [
+              "ask",
+              "asks",
+              "asking",
+              "asked"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_grammar",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Lan forgot her lunch. She has two options: buy food or ______ some from a friend.",
+            "choices": [
+              "borrow",
+              "borrows",
+              "borrowing",
+              "borrowed"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "The best way to solve an argument is to ______ each other's feelings.",
+            "choices": [
+              "respect",
+              "ignore",
+              "shout about",
+              "laugh at"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If your plan does not work, you should ______.",
+            "choices": [
+              "try a different approach",
+              "give up immediately",
+              "blame others",
+              "do nothing"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Nam broke a vase by accident. The most responsible thing to do is ______.",
+            "choices": [
+              "tell an adult and help clean up",
+              "hide the broken pieces",
+              "blame the cat",
+              "run away"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If two children want the same toy, a fair solution is to ______.",
+            "choices": [
+              "take turns",
+              "let the bigger child keep it",
+              "fight over it",
+              "throw it away"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "'Think before you act' is good advice because ______.",
+            "choices": [
+              "it helps you avoid making mistakes",
+              "it makes you very slow",
+              "it means you never solve problems",
+              "it is always better to act fast"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Which is the BEST way to deal with a bully at school?",
+            "choices": [
+              "Tell a trusted adult.",
+              "Fight back.",
+              "Ignore it forever.",
+              "Bully them back."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Lan needs to finish homework but also wants to play. What should she do?",
+            "choices": [
+              "Finish homework first, then play.",
+              "Play first and not do homework.",
+              "Only play and forget homework.",
+              "Ask mum to do homework."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Tom says: 'I tried one solution and it failed, so I'll never solve this.' Is this a good attitude?",
+            "choices": [
+              "No — he should try other solutions.",
+              "Yes — giving up is sometimes best.",
+              "Yes — one try is always enough.",
+              "No — he should ask someone else to solve it."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_inference",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "There is a big puddle blocking the path. Which is the most creative solution?",
+            "choices": [
+              "Find another path or step over it.",
+              "Stand and complain.",
+              "Jump in the puddle.",
+              "Tell everyone the path is broken."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_inference",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "'Every problem has a solution.' Do you agree? The best answer is ______.",
+            "choices": [
+              "Yes — with effort and creativity, most problems can be solved.",
+              "No — some problems are impossible.",
+              "Yes — problems always solve themselves.",
+              "No — only adults can solve problems."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Lan has 10 minutes to finish a 20-question test. She has only done 5 questions. What is the best strategy?",
+            "choices": [
+              "Answer the easiest remaining questions first.",
+              "Spend 10 minutes on one hard question.",
+              "Give up on the rest.",
+              "Start from the beginning again."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_inference",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Which sentence about problem-solving is correct?",
+            "choices": [
+              "Problems can be solved by thinking carefully.",
+              "We should always avoid all problems.",
+              "Only teachers can solve problems.",
+              "Problems are always impossible to fix."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "A good problem-solver is someone who ______.",
+            "choices": [
+              "stays calm, thinks of options, and tries different solutions",
+              "gives up at the first difficulty",
+              "always asks others without trying",
+              "complains until the problem disappears"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you try your best but still fail, the most important thing is to ______.",
+            "choices": [
+              "learn from the experience and try again",
+              "feel bad and stop trying",
+              "blame your tools",
+              "pretend the problem never existed"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Which word best describes someone who finds smart answers to difficult questions?",
+            "choices": [
+              "resourceful",
+              "careless",
+              "forgetful",
+              "reckless"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_vocab",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "What is a good first step when you don't understand something?",
+            "choices": [
+              "Ask someone to explain.",
+              "Guess randomly.",
+              "Skip it and hope for the best.",
+              "Pretend you understand."
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If your bag is too heavy, a good solution is to ______.",
+            "choices": [
+              "take out things you don't need",
+              "buy a bigger bag immediately",
+              "complain all day",
+              "carry it anyway and hurt your back"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If you make a mistake, the best thing is to ______.",
+            "choices": [
+              "admit it and try to fix it",
+              "hide it and hope nobody notices",
+              "blame someone else",
+              "pretend it never happened"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "'Two heads are better than one.' This means ______.",
+            "choices": [
+              "Working together solves problems better.",
+              "You need two people to solve any problem.",
+              "One person is always wrong.",
+              "Problems need exactly two solutions."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_idiom",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Nam cannot reach the top shelf. He finds a step stool. This is an example of ______.",
+            "choices": [
+              "creative problem solving",
+              "giving up",
+              "asking for help",
+              "ignoring the problem"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_inference",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "If your plan fails, it is best to ______.",
+            "choices": [
+              "analyse why it failed and try a new approach",
+              "do exactly the same thing again",
+              "give the problem to someone else",
+              "decide the problem is unsolvable"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_solving",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "A good problem-solver asks: 'What ______ I try next?' rather than giving up.",
+            "choices": [
+              "can",
+              "should I",
+              "will",
+              "could"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_grammar",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Lan and Tom both want to use the computer at the same time. The fairest solution is to ______.",
+            "choices": [
+              "take turns and agree on a time each",
+              "let the fastest person win",
+              "argue until one person gives up",
+              "ask a teacher to decide every time"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "problem_values",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "'Where there's a will, there's a way.' What does this proverb mean?",
+            "choices": [
+              "If you really want to do something, you will find a way.",
+              "Only strong people can solve problems.",
+              "Problems always have exactly one solution.",
+              "Willpower is more important than thinking."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "problem_idiom",
+            "unit": "solve_problems"
+          },
+          {
+            "q": "Which of these is NOT a good problem-solving strategy?",
+            "choices": [
+              "Panic and do nothing.",
+              "Break the problem into smaller steps.",
+              "Ask for advice from someone experienced.",
+              "Try different solutions until one works."
+            ],
+            "a": 0,
+            "difficulty": 3,
             "skill": "problem_solving",
             "unit": "solve_problems"
           }
@@ -4133,6 +7851,552 @@
             "difficulty": 2,
             "hint": "",
             "skill": "outdoors_vocab_reading",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call a small stream of water in nature?",
+            "choices": [
+              "brook",
+              "ocean",
+              "pond",
+              "cliff"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What is the top of a mountain called?",
+            "choices": [
+              "peak",
+              "valley",
+              "cliff",
+              "slope"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call a large area of trees?",
+            "choices": [
+              "forest",
+              "desert",
+              "meadow",
+              "cliff"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What is a flat, open area of grass in the countryside?",
+            "choices": [
+              "meadow",
+              "cliff",
+              "desert",
+              "cave"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Where does a river flow into the sea?",
+            "choices": [
+              "mouth",
+              "source",
+              "bank",
+              "bed"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call a small lake?",
+            "choices": [
+              "pond",
+              "ocean",
+              "sea",
+              "river"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What is a rocky area of land next to the sea called?",
+            "choices": [
+              "cliff",
+              "meadow",
+              "valley",
+              "forest"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call animals and plants living in their natural home?",
+            "choices": [
+              "wildlife",
+              "livestock",
+              "pets",
+              "crops"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What is the path in the sky for stars called?",
+            "choices": [
+              "the Milky Way",
+              "the Rainbow",
+              "the Horizon",
+              "the Equator"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call the place where a river begins?",
+            "choices": [
+              "source",
+              "mouth",
+              "bank",
+              "waterfall"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What outdoor activity uses a map and compass to find hidden objects?",
+            "choices": [
+              "orienteering",
+              "surfing",
+              "camping",
+              "picnicking"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_activities",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call the natural home of a wild animal?",
+            "choices": [
+              "habitat",
+              "cage",
+              "shelter",
+              "den"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do leaves use sunlight to make?",
+            "choices": [
+              "food for the plant",
+              "water",
+              "oxygen only",
+              "seeds"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_science",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What outdoor gear do you wear to protect your eyes from the sun?",
+            "choices": [
+              "sunglasses",
+              "helmet",
+              "gloves",
+              "boots"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The hikers ______ up the mountain for three hours.",
+            "choices": [
+              "climbed",
+              "climb",
+              "climbing",
+              "are climb"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "We ______ our rubbish home after the picnic to keep the park clean.",
+            "choices": [
+              "took",
+              "take",
+              "taking",
+              "takes"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The children ______ birds singing in the trees.",
+            "choices": [
+              "heard",
+              "hear",
+              "hearing",
+              "hears"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "It is important to ______ wildlife by not leaving rubbish in nature.",
+            "choices": [
+              "protect",
+              "protecting",
+              "protects",
+              "protected"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The river ______ through the valley and into the sea.",
+            "choices": [
+              "flows",
+              "flow",
+              "flowing",
+              "flowed"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "When camping, you should always ______ a campfire safely.",
+            "choices": [
+              "put out",
+              "set up only",
+              "light more",
+              "ignore"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_safety",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Which sentence about nature is correct?",
+            "choices": [
+              "Trees gives us clean air.",
+              "Trees give us clean air.",
+              "Trees giving us clean air.",
+              "Trees is giving us clean air."
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The birds ______ south when winter comes.",
+            "choices": [
+              "fly",
+              "flies",
+              "flying",
+              "flied"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "We should ______ plastic waste to help the environment.",
+            "choices": [
+              "recycle",
+              "ignore",
+              "bury",
+              "burn"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "A forest fire can ______ the homes of many wild animals.",
+            "choices": [
+              "destroy",
+              "protect",
+              "build",
+              "improve"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The children were careful not to ______ the wildflowers when hiking.",
+            "choices": [
+              "pick",
+              "grow",
+              "water",
+              "plant"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Why is it important not to drop litter in forests?",
+            "choices": [
+              "It harms animals and pollutes nature.",
+              "It makes forests look bigger.",
+              "It helps plants grow faster.",
+              "Litter disappears on its own."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "A forest has been cut down. Which animals are MOST affected?",
+            "choices": [
+              "Animals that live in trees",
+              "Animals that live in the ocean",
+              "Desert animals",
+              "Animals that live underground only"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_inference",
+            "unit": "outdoors"
+          },
+          {
+            "q": "If a river becomes polluted, what will likely happen to the fish?",
+            "choices": [
+              "Many fish will get sick or die.",
+              "Fish will grow bigger.",
+              "Fish will move to the mountains.",
+              "Nothing will change."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_inference",
+            "unit": "outdoors"
+          },
+          {
+            "q": "'Leave no trace' is a rule for outdoor activities. What does it mean?",
+            "choices": [
+              "Don't leave any rubbish or damage behind.",
+              "Don't leave your footprints on the trail.",
+              "Don't bring food outdoors.",
+              "Don't touch any plants at all."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Tom sees a bird's nest with eggs while hiking. What should he do?",
+            "choices": [
+              "Leave it alone and walk past quietly.",
+              "Take the eggs home as pets.",
+              "Show all his friends loudly.",
+              "Move the nest to a safer spot."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Plants need sunlight, water, and ______ to grow.",
+            "choices": [
+              "nutrients from soil",
+              "plastic",
+              "concrete",
+              "metal"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_science",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Why do some birds fly to warmer countries in winter?",
+            "choices": [
+              "To find food and escape the cold.",
+              "To see the ocean.",
+              "To meet other animals.",
+              "Because they get lost."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_inference",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Which human activity causes the MOST damage to forests?",
+            "choices": [
+              "Logging large areas for wood",
+              "Hiking on trails",
+              "Birdwatching",
+              "Camping in tents"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_inference",
+            "unit": "outdoors"
+          },
+          {
+            "q": "'Nature is not a place to visit — it is home.' What is the key message?",
+            "choices": [
+              "We should care for nature as if it belongs to us.",
+              "We should only visit nature on holidays.",
+              "Nature is only for wild animals.",
+              "We should build more houses in forests."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call the path of water falling from a height?",
+            "choices": [
+              "waterfall",
+              "river",
+              "brook",
+              "pond"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do hikers follow to stay on the correct path?",
+            "choices": [
+              "trail markers",
+              "stars only",
+              "the wind",
+              "animal footprints"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Which tool helps you find direction in the outdoors?",
+            "choices": [
+              "compass",
+              "thermometer",
+              "telescope",
+              "binoculars"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "What do we call an area of land protected by the government for wildlife?",
+            "choices": [
+              "national park",
+              "farm",
+              "city park",
+              "garden"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "outdoors_vocab",
+            "unit": "outdoors"
+          },
+          {
+            "q": "Why should you stay on marked trails when hiking?",
+            "choices": [
+              "To protect nature and avoid getting lost.",
+              "Because it is more fun.",
+              "Because trails are shorter.",
+              "To see more animals."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_safety",
+            "unit": "outdoors"
+          },
+          {
+            "q": "The hikers ______ their water bottles at the mountain stream.",
+            "choices": [
+              "refilled",
+              "refill",
+              "refilling",
+              "refills"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "outdoors_grammar",
+            "unit": "outdoors"
+          },
+          {
+            "q": "'Take only photographs, leave only footprints.' What does this mean?",
+            "choices": [
+              "Do not take anything from nature or leave rubbish behind.",
+              "Photograph every plant you see.",
+              "Leave your footprints everywhere.",
+              "Only bring a camera outdoors."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_values",
+            "unit": "outdoors"
+          },
+          {
+            "q": "If you get lost in the forest, the safest first action is to ______.",
+            "choices": [
+              "stay calm, stay where you are, and call for help",
+              "keep walking in any direction",
+              "climb a tree to look around",
+              "split up and search separately"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "outdoors_safety",
             "unit": "outdoors"
           }
         ]
@@ -5448,6 +9712,214 @@
             "difficulty": 2,
             "skill": "en_numbers",
             "unit": "numbers"
+          },
+          {
+            "q": "What is 7 × 8?",
+            "choices": [
+              "56",
+              "54",
+              "63",
+              "48"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "multiplication",
+            "unit": "numbers"
+          },
+          {
+            "q": "What is 9 × 6?",
+            "choices": [
+              "54",
+              "48",
+              "63",
+              "45"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "multiplication",
+            "unit": "numbers"
+          },
+          {
+            "q": "How many minutes are in one hour?",
+            "choices": [
+              "60",
+              "30",
+              "100",
+              "24"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "How many days are in a week?",
+            "choices": [
+              "7",
+              "5",
+              "6",
+              "10"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "What is the number halfway between 10 and 20?",
+            "choices": [
+              "15",
+              "12",
+              "18",
+              "14"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "number_sense",
+            "unit": "numbers"
+          },
+          {
+            "q": "How many months are in a year?",
+            "choices": [
+              "12",
+              "10",
+              "7",
+              "24"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "What comes after ninety-nine?",
+            "choices": [
+              "one hundred",
+              "ninety-ten",
+              "ten hundred",
+              "ninety-eleven"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "number_vocab",
+            "unit": "numbers"
+          },
+          {
+            "q": "What is 50 + 50?",
+            "choices": [
+              "100",
+              "90",
+              "110",
+              "80"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "number_sense",
+            "unit": "numbers"
+          },
+          {
+            "q": "If it is now 2:00 PM, what time will it be in 3 hours?",
+            "choices": [
+              "5:00 PM",
+              "4:00 PM",
+              "3:00 PM",
+              "6:00 PM"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "Which time is written correctly as half past three?",
+            "choices": [
+              "3:30",
+              "3:15",
+              "3:45",
+              "3:05"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "'Quarter to five' means ______.",
+            "choices": [
+              "4:45",
+              "5:15",
+              "5:45",
+              "4:15"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "Tom has 3 bags with 12 apples each. How many apples are there in total?",
+            "choices": [
+              "36",
+              "24",
+              "30",
+              "42"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "multiplication",
+            "unit": "numbers"
+          },
+          {
+            "q": "A film starts at 6:30 PM and lasts 2 hours. What time does it end?",
+            "choices": [
+              "8:30 PM",
+              "9:00 PM",
+              "7:30 PM",
+              "8:00 PM"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "time",
+            "unit": "numbers"
+          },
+          {
+            "q": "There are 7 days in a week. How many days in 4 weeks?",
+            "choices": [
+              "28",
+              "21",
+              "30",
+              "35"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "multiplication",
+            "unit": "numbers"
+          },
+          {
+            "q": "Anna saves 15 coins each week. How many coins after 6 weeks?",
+            "choices": [
+              "90",
+              "75",
+              "80",
+              "100"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "multiplication",
+            "unit": "numbers"
+          },
+          {
+            "q": "Which number is between 250 and 260?",
+            "choices": [
+              "255",
+              "245",
+              "265",
+              "270"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "number_sense",
+            "unit": "numbers"
           }
         ]
       },
@@ -6645,6 +11117,136 @@
             "difficulty": 2,
             "skill": "en_sent",
             "unit": "sent"
+          },
+          {
+            "q": "'She went to the market and bought vegetables.' What did she buy?",
+            "choices": [
+              "vegetables",
+              "fruit",
+              "books",
+              "flowers"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'Tom is taller than his sister but shorter than his dad.' Who is the tallest?",
+            "choices": [
+              "dad",
+              "Tom",
+              "sister",
+              "they are the same"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'The dog barked loudly at the door.' Why did the dog bark?",
+            "choices": [
+              "Someone was at the door.",
+              "The dog was hungry.",
+              "The dog was sleeping.",
+              "The dog was playing."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'It was raining, so they stayed inside.' Why did they stay inside?",
+            "choices": [
+              "Because it was raining.",
+              "Because they were tired.",
+              "Because it was hot.",
+              "Because it was dark."
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'Lan finished her homework before dinner.' When did she finish?",
+            "choices": [
+              "Before dinner",
+              "After dinner",
+              "During dinner",
+              "At midnight"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'Although it was cold, the children played outside.' What does 'although' show?",
+            "choices": [
+              "A contrast between two ideas",
+              "A reason",
+              "A result",
+              "A time"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'He studied hard because he wanted to pass the test.' What was his goal?",
+            "choices": [
+              "To pass the test",
+              "To study hard",
+              "To sleep well",
+              "To make friends"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'First, wash the vegetables. Then, cut them. Finally, cook them.' What is the last step?",
+            "choices": [
+              "Cook them",
+              "Cut them",
+              "Wash them",
+              "Eat them"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "reading_comprehension",
+            "unit": "sentences"
+          },
+          {
+            "q": "'She smiled, but her eyes were sad.' What does this suggest?",
+            "choices": [
+              "She was hiding her true feelings.",
+              "She was very happy.",
+              "She was angry.",
+              "She was surprised."
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "reading_inference",
+            "unit": "sentences"
+          },
+          {
+            "q": "'He ran as fast as the wind.' This sentence uses a ______.",
+            "choices": [
+              "simile",
+              "fact",
+              "question",
+              "command"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "reading_literacy",
+            "unit": "sentences"
           }
         ]
       },
@@ -7172,6 +11774,188 @@
             "difficulty": 2,
             "skill": "en_start",
             "unit": "start"
+          },
+          {
+            "q": "What colour is a banana?",
+            "choices": [
+              "yellow",
+              "red",
+              "green",
+              "blue"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "Which animal says 'moo'?",
+            "choices": [
+              "cow",
+              "cat",
+              "dog",
+              "duck"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "How many legs does a spider have?",
+            "choices": [
+              "8",
+              "6",
+              "4",
+              "2"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "What do fish use to swim?",
+            "choices": [
+              "fins",
+              "legs",
+              "wings",
+              "arms"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "What colour is the sky on a clear day?",
+            "choices": [
+              "blue",
+              "grey",
+              "white",
+              "green"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "How many days are in the weekend?",
+            "choices": [
+              "2",
+              "5",
+              "7",
+              "3"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_vocab",
+            "unit": "starters"
+          },
+          {
+            "q": "What do you say when you meet someone for the first time?",
+            "choices": [
+              "Nice to meet you!",
+              "Goodbye!",
+              "See you later!",
+              "Good night!"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "skill": "starters_language",
+            "unit": "starters"
+          },
+          {
+            "q": "'What's your name?' — '______ name is Anna.'",
+            "choices": [
+              "My",
+              "I",
+              "He",
+              "She"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "'How old are you?' — 'I ______ seven years old.'",
+            "choices": [
+              "am",
+              "is",
+              "are",
+              "be"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "'Where do you live?' — 'I live ______ Hanoi.'",
+            "choices": [
+              "in",
+              "on",
+              "at",
+              "to"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "'What is your favourite colour?' — '______ favourite colour is red.'",
+            "choices": [
+              "My",
+              "I",
+              "Your",
+              "He"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "Choose the correct question: 'What ______ your favourite animal?'",
+            "choices": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "'There ______ three cats in the garden.'",
+            "choices": [
+              "are",
+              "is",
+              "am",
+              "be"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "starters_grammar",
+            "unit": "starters"
+          },
+          {
+            "q": "Which question asks about a person's age?",
+            "choices": [
+              "How old are you?",
+              "What is your name?",
+              "Where do you live?",
+              "What do you like?"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "skill": "starters_language",
+            "unit": "starters"
           }
         ]
       }
