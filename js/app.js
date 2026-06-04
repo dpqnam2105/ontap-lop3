@@ -205,42 +205,20 @@ const App = {
       el.appendChild(card);
     });
 
-    // Môn "Toán Tiếng Anh" — CHƯA có dữ liệu → thẻ Sắp ra mắt.
-    const soon = document.createElement('div');
-    soon.className = 'sub-card sub-card-img sub-card-soon';
-    soon.innerHTML = `
-      <img class="sub-banner" src="images/subject-toan-tieng-anh.png" alt="Toán Tiếng Anh"
-           onerror="this.style.display='none';this.parentElement.classList.add('sub-card-noimg')">
-      <div class="sub-soon-badge">🔒 Sắp ra mắt</div>
-      <div class="sub-card-fallback">
-        <div class="sub-icon">🧮</div>
-        <div class="sub-info">
-          <div class="sub-name">Toán Tiếng Anh</div>
-          <div class="sub-meta">Sắp ra mắt</div>
-        </div>
-      </div>`;
-    soon.addEventListener('click', () => {
-      if (Rewards && Rewards._achievementPopup) Rewards._achievementPopup('🔒 Môn Toán Tiếng Anh sắp ra mắt, con chờ chút nhé!');
-    });
-    el.appendChild(soon);
   },
 
   // Mô tả kỹ năng ngắn cho từng chủ đề (hiện trên card). Khớp theo id chủ đề trong questions.json.
   TOPIC_DESC: {
-    // Toán — topic cũ
+    // Toán
     toan_so: 'Đếm, đọc, viết số · So sánh số · Số chẵn, số lẻ',
     toan_cong: 'Cộng trong phạm vi 100 · Cộng có nhớ · Cộng nhẩm',
     toan_tru: 'Trừ trong phạm vi 100 · Trừ có nhớ · Trừ nhẩm',
-    toan_nhan: 'Bảng nhân 2-5 · Nhân & chia tổng hợp SGK · Nhân nhẩm',
+    toan_nhan: 'Bảng nhân 2-5 · Nhân trong phạm vi 100 · Nhân nhẩm',
     toan_chia: 'Bảng chia 2-5 · Chia trong phạm vi 100 · Chia nhẩm',
-    toan_dovi: 'Độ dài (cm, m, km) · Khối lượng (kg, g) · Đo độ dài SGK',
-    toan_hinh: 'Hình vuông, chữ nhật · Tam giác, hình tròn · Hình học SGK',
-    toan_loivan: 'Tìm hiểu đề bài · Chọn phép tính · Bài toán có lời văn SGK',
+    toan_dovi: 'Độ dài (cm, m) · Khối lượng (kg, g) · Dung tích (l, ml)',
+    toan_hinh: 'Hình vuông, chữ nhật · Tam giác, hình tròn · Đường thẳng, cong',
+    toan_loivan: 'Tìm hiểu đề bài · Chọn phép tính · Trả lời và kiểm tra',
     toan_tuyduy: 'Tìm quy luật · Điền số còn thiếu · Rèn luyện tư duy',
-    // Toán — topic mới SGK bổ sung
-    toan_tien_viet_nam_sgk: 'Nhận biết tiền · Đổi tiền · Tính tiền khi mua bán',
-    toan_thoi_gian_sgk: 'Xem đồng hồ · Giờ, phút · Các buổi trong ngày',
-    toan_thong_ke_xac_suat_sgk: 'Đọc bảng số liệu · Biểu đồ · Khả năng xảy ra',
     // Tiếng Việt
     tv_chinh: 'Nghe - viết · Nhìn - viết · Viết đúng chính tả',
     tv_tuvung: 'Mở rộng vốn từ · Từ theo chủ điểm · Từ trái nghĩa',
@@ -248,21 +226,13 @@ const App = {
     tv_tutu: 'So sánh · Nhân hóa · Biện pháp tu từ cơ bản',
     tv_dochieu: 'Đọc đúng, trôi chảy · Hiểu nội dung · Trả lời câu hỏi',
     tv_hsg: 'Bài nâng cao · Cảm thụ văn học · Luyện thi học sinh giỏi',
-    // Tiếng Anh — topic mới theo NIK/Cambridge
-    en_school_days: 'School objects · Classroom · Daily routine',
-    en_wild_animals: 'Wild animals · Habitats · What can it do?',
-    en_weather: 'Weather · Seasons · What\'s the weather like?',
-    en_big_cities: 'Cities · Places · Directions',
-    en_celebrate: 'Festivals · Birthday · Special days',
-    en_jobs: 'Jobs · What do you do? · Workplaces',
-    en_sports: 'Sports · I can / can\'t · Play & do',
-    en_feel_good: 'Feelings · How do you feel? · Body parts',
+    // Tiếng Anh
+    en_vocab: 'Family, School · Animals, Colors · Food, Toys, Clothes',
     en_numbers: 'Numbers 1-100 · Telling the time · Days & months',
     en_gram: 'This / That · He / She / They · I can ...',
+    en_jobs: 'Jobs (doctor, teacher) · Sports · What does he do?',
     en_sent: 'Đọc câu ngắn · Hiểu đoạn văn · Trả lời câu hỏi',
-    en_start: 'Ôn tập tổng hợp · Listening & Reading · Tự tin thi thử',
-    // Tiếng Anh — id cũ giữ lại làm fallback
-    en_vocab: 'Family, School · Animals, Colors · Food, Toys, Clothes',
+    en_start: 'Ôn tập tổng hợp · Listening & Reading · Tự tin thi thử'
   },
 
   _chooseSubject(idx) {
