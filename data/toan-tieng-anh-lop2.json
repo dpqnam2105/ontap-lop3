@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-06-04",
+  "lastUpdated": "2026-06-10",
   "grade": "lop2",
   "subject": {
     "id": "toan-tieng-anh",
@@ -23,7 +23,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q001"
           },
           {
             "q": "What is the value of the digit 4 in the number 48?",
@@ -36,7 +37,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q002"
           },
           {
             "q": "How many tens are in the number 65?",
@@ -49,7 +51,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q003"
           },
           {
             "q": "How many ones are in the number 83?",
@@ -62,7 +65,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q004"
           },
           {
             "q": "What is the preceding number of 87?",
@@ -75,7 +79,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q005"
           },
           {
             "q": "What is the preceding number of 50?",
@@ -88,7 +93,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q006"
           },
           {
             "q": "What is the succeeding number of 99?",
@@ -101,7 +107,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q007"
           },
           {
             "q": "What is the succeeding number of 67?",
@@ -114,7 +121,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q008"
           },
           {
             "q": "Compare: 59 and 78.",
@@ -127,7 +135,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q009"
           },
           {
             "q": "Compare: 84 and 48.",
@@ -140,7 +149,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q010"
           },
           {
             "q": "Write 'forty seven' in number.",
@@ -153,7 +163,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "number_words",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q011"
           },
           {
             "q": "Write 'sixty six' in number.",
@@ -166,7 +177,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "number_words",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q012"
           },
           {
             "q": "Write 'twenty nine' in number.",
@@ -179,7 +191,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "number_words",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q013"
           },
           {
             "q": "How do you say the number 85 in words?",
@@ -192,7 +205,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "number_words",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q014"
           },
           {
             "q": "How do you say the number 73 in words?",
@@ -205,7 +219,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "number_words",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q015"
           },
           {
             "q": "What is the greatest 2-digit number?",
@@ -218,7 +233,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "number_sense",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q016"
           },
           {
             "q": "What is the smallest 2-digit number?",
@@ -231,7 +247,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "number_sense",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q017"
           },
           {
             "q": "Which number comes between 28 and 30?",
@@ -244,7 +261,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q018"
           },
           {
             "q": "Which number comes between 49 and 51?",
@@ -257,7 +275,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "number_sequence",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q019"
           },
           {
             "q": "Find the smallest number in the table: 23, 56, 65, 31, 32, 11",
@@ -270,7 +289,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q020"
           },
           {
             "q": "Find the greatest number in the table: 100, 66, 49, 54, 52, 10",
@@ -283,7 +303,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q021"
           },
           {
             "q": "Find the sum of the greatest and smallest in: 95, 58, 9, 89, 17, 5",
@@ -296,7 +317,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q022"
           },
           {
             "q": "How many numbers in 35, 47, 32, 58, 93, 54, 39, 44 are greater than 45?",
@@ -309,7 +331,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q023"
           },
           {
             "q": "How many numbers in 32, 23, 11, 43, 47, 22, 59, 19 are smaller than 32?",
@@ -322,7 +345,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q024"
           },
           {
             "q": "47 → –6 → □ → +12 → ? What is the final number?",
@@ -335,7 +359,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "number_machine",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q025"
           },
           {
             "q": "56 → –4 → □ → +9 → ? What is the final number?",
@@ -348,7 +373,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "number_machine",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q026"
           },
           {
             "q": "38 → –4 → □ → +9 → ? What is the final number?",
@@ -361,7 +387,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "number_machine",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q027"
           },
           {
             "q": "48 → –4 → □ → +9 → ? What is the final number?",
@@ -374,7 +401,8 @@
             "a": 3,
             "difficulty": 2,
             "skill": "number_machine",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q028"
           },
           {
             "q": "Which number is nineteen less than fifty five?",
@@ -387,7 +415,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "number_sense",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q029"
           },
           {
             "q": "Which number is twelve more than forty eight?",
@@ -400,7 +429,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "number_sense",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q030"
           },
           {
             "q": "The number has 3 tens and 7 ones. What is the number?",
@@ -413,7 +443,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q031"
           },
           {
             "q": "Which number has the digit 5 in the tens place?",
@@ -426,7 +457,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "place_value",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q032"
           },
           {
             "q": "I am a 2-digit number. My tens digit is twice my ones digit. My ones digit is 3. What am I?",
@@ -439,7 +471,8 @@
             "a": 0,
             "difficulty": 3,
             "skill": "number_inference",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q033"
           },
           {
             "q": "I am between 40 and 50. I am an even number. The sum of my digits is 9. What am I?",
@@ -452,7 +485,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "number_inference",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q034"
           },
           {
             "q": "Find the sum of the greatest and smallest number: 25, 10, 7, 33, 93, 22, 89, 90",
@@ -465,7 +499,8 @@
             "a": 0,
             "difficulty": 3,
             "skill": "compare_numbers",
-            "unit": "numbers"
+            "unit": "numbers",
+            "id": "maen_numbers_q035"
           }
         ]
       },
@@ -485,7 +520,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "addition",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q001"
           },
           {
             "q": "Calculate: 43 + 17 + 10 = …",
@@ -498,7 +534,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "addition",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q002"
           },
           {
             "q": "Calculate: 50 – 5 + 10 = …",
@@ -511,7 +548,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q003"
           },
           {
             "q": "Calculate: 67 – 15 – 12 = …",
@@ -524,7 +562,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q004"
           },
           {
             "q": "Subtract: 90 – 11 = …",
@@ -537,7 +576,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q005"
           },
           {
             "q": "Add: 27 + 36 = …",
@@ -550,7 +590,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "addition",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q006"
           },
           {
             "q": "Calculate: 100 – 67 = …",
@@ -563,7 +604,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q007"
           },
           {
             "q": "Calculate: 100 – 44 = …",
@@ -576,7 +618,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q008"
           },
           {
             "q": "Calculate: 100 – 37 = …",
@@ -589,7 +632,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q009"
           },
           {
             "q": "Calculate: 23 + 7 – 9 = …",
@@ -602,7 +646,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q010"
           },
           {
             "q": "Calculate: 27 + 13 – 40 = …",
@@ -615,7 +660,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q011"
           },
           {
             "q": "Calculate: 100 – 78 – 12 = …",
@@ -628,7 +674,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q012"
           },
           {
             "q": "Subtract: 70 – 23 = …",
@@ -641,7 +688,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q013"
           },
           {
             "q": "Calculate: 26 + 26 = …",
@@ -654,7 +702,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "addition",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q014"
           },
           {
             "q": "Calculate: 78 – 69 + 15 = …",
@@ -667,7 +716,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q015"
           },
           {
             "q": "Fill in the missing number: 37 + … = 62",
@@ -680,7 +730,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q016"
           },
           {
             "q": "Fill in the missing number: 27 + … = 63 – 13",
@@ -693,7 +744,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q017"
           },
           {
             "q": "Fill in the missing number: … – 13 = 21 + 32",
@@ -706,7 +758,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q018"
           },
           {
             "q": "Fill in the missing number: 26 + … = 43 – 13",
@@ -719,7 +772,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q019"
           },
           {
             "q": "Fill in the missing number: 27 + … = 40",
@@ -732,7 +786,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q020"
           },
           {
             "q": "Fill in the missing number: … – 5 = 25",
@@ -745,7 +800,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q021"
           },
           {
             "q": "Fill in the missing number: 25 + 35 = … + 40",
@@ -758,7 +814,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q022"
           },
           {
             "q": "Which number sentence is TRUE?",
@@ -771,7 +828,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "true_false",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q023"
           },
           {
             "q": "Which number sentence is FALSE?",
@@ -784,7 +842,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "true_false",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q024"
           },
           {
             "q": "Which number sentence is TRUE?",
@@ -797,7 +856,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "true_false",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q025"
           },
           {
             "q": "Choose the suitable sign: 23 + 66 … 99",
@@ -810,7 +870,8 @@
             "a": 3,
             "difficulty": 2,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q026"
           },
           {
             "q": "Choose the suitable sign: 77 … 22 > 66",
@@ -823,7 +884,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q027"
           },
           {
             "q": "Choose the suitable sign: 23 + 37 … 53",
@@ -836,7 +898,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q028"
           },
           {
             "q": "Choose the suitable sign: 7 + 43 … 60",
@@ -849,7 +912,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q029"
           },
           {
             "q": "Choose the suitable sign: 55 + 45 … 100",
@@ -862,7 +926,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q030"
           },
           {
             "q": "Choose the expression with the same result as 27 + 53:",
@@ -875,7 +940,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "equivalent_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q031"
           },
           {
             "q": "Calculate: 100 – 35 + 15 – 53 = …",
@@ -888,7 +954,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q032"
           },
           {
             "q": "Calculate: 100 – 38 + 18 – 53 = …",
@@ -901,7 +968,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "add_sub_mixed",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q033"
           },
           {
             "q": "Fill in the blank: 10 + 29 = … – 20",
@@ -914,7 +982,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q034"
           },
           {
             "q": "Fill in the blank: … + 23 = 32 + 26 + 2",
@@ -927,7 +996,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "missing_number",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q035"
           },
           {
             "q": "Which equation is TRUE? a) 74=22+17+32  b) 83=37+49–12  c) 67=98–37+6  d) 57=32+18+3",
@@ -940,7 +1010,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "true_false",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q036"
           },
           {
             "q": "49 + 28 – 39 < … < 13 + 35 – 8. Which number fits?",
@@ -953,7 +1024,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "number_inference",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q037"
           },
           {
             "q": "Which result is smaller than 70? a)47+9+13  b)37+11+23  c)23+31+25  d)41+17+15",
@@ -966,7 +1038,8 @@
             "a": 0,
             "difficulty": 3,
             "skill": "compare_expressions",
-            "unit": "add_sub"
+            "unit": "add_sub",
+            "id": "maen_add_sub_q038"
           }
         ]
       },
@@ -986,7 +1059,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q001"
           },
           {
             "q": "Calculate: 2 × 7 = …",
@@ -999,7 +1073,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q002"
           },
           {
             "q": "Calculate: 3 × 4 = …",
@@ -1012,7 +1087,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q003"
           },
           {
             "q": "Calculate: 3 × 8 = …",
@@ -1025,7 +1101,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q004"
           },
           {
             "q": "Calculate: 4 × 5 = …",
@@ -1038,7 +1115,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q005"
           },
           {
             "q": "Calculate: 4 × 7 = …",
@@ -1051,7 +1129,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q006"
           },
           {
             "q": "Calculate: 5 × 6 = …",
@@ -1064,7 +1143,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q007"
           },
           {
             "q": "Calculate: 5 × 9 = …",
@@ -1077,7 +1157,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q008"
           },
           {
             "q": "Calculate: 12 ÷ 2 = …",
@@ -1090,7 +1171,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q009"
           },
           {
             "q": "Calculate: 18 ÷ 3 = …",
@@ -1103,7 +1185,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q010"
           },
           {
             "q": "Calculate: 20 ÷ 4 = …",
@@ -1116,7 +1199,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q011"
           },
           {
             "q": "Calculate: 30 ÷ 5 = …",
@@ -1129,7 +1213,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q012"
           },
           {
             "q": "Calculate: 16 ÷ 2 = …",
@@ -1142,7 +1227,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q013"
           },
           {
             "q": "Calculate: 24 ÷ 3 = …",
@@ -1155,7 +1241,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q014"
           },
           {
             "q": "How much is one half of 20?",
@@ -1168,7 +1255,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q015"
           },
           {
             "q": "How much is one half of 14?",
@@ -1181,7 +1269,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "division_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q016"
           },
           {
             "q": "Find the missing number: 3 × … = 27",
@@ -1194,7 +1283,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "missing_factor",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q017"
           },
           {
             "q": "Find the missing number: … × 4 = 32",
@@ -1207,7 +1297,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "missing_factor",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q018"
           },
           {
             "q": "Find the missing number: 5 × … = 45",
@@ -1220,7 +1311,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "missing_factor",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q019"
           },
           {
             "q": "Find the missing number: … ÷ 3 = 7",
@@ -1233,7 +1325,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "missing_factor",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q020"
           },
           {
             "q": "Tom has 4 bags with 6 apples each. How many apples in total?",
@@ -1246,7 +1339,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "mul_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q021"
           },
           {
             "q": "There are 5 rows of chairs with 7 chairs in each row. How many chairs in total?",
@@ -1259,7 +1353,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "mul_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q022"
           },
           {
             "q": "20 oranges are shared equally among 4 children. How many does each child get?",
@@ -1272,7 +1367,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "div_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q023"
           },
           {
             "q": "There are 18 cookies. They are shared equally among 3 friends. How many does each friend get?",
@@ -1285,7 +1381,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "div_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q024"
           },
           {
             "q": "Choose the correct answer: 3 × 6 = …",
@@ -1298,7 +1395,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q025"
           },
           {
             "q": "Which number sentence is TRUE?",
@@ -1311,7 +1409,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "true_false",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q026"
           },
           {
             "q": "Which multiplication equals 36?",
@@ -1324,7 +1423,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "multiplication_table",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q027"
           },
           {
             "q": "Lan saves 5 coins every day. How many coins does she have after 8 days?",
@@ -1337,7 +1437,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "mul_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q028"
           },
           {
             "q": "A box has 3 rows of 9 eggs. How many eggs are in the box?",
@@ -1350,7 +1451,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "mul_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q029"
           },
           {
             "q": "There are 7 days in a week. How many days in 4 weeks?",
@@ -1363,7 +1465,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "mul_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q030"
           },
           {
             "q": "Find the missing number: 3 × … + 5 = 20",
@@ -1376,7 +1479,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "missing_factor",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q031"
           },
           {
             "q": "A class of 30 students is divided into equal groups of 5. How many groups are there?",
@@ -1389,7 +1493,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "div_word",
-            "unit": "mul_div"
+            "unit": "mul_div",
+            "id": "maen_mul_div_q032"
           }
         ]
       },
@@ -1409,7 +1514,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "cm_dm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q001"
           },
           {
             "q": "35cm + 25cm = … dm",
@@ -1422,7 +1528,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "cm_dm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q002"
           },
           {
             "q": "16cm + 54cm = … dm",
@@ -1435,7 +1542,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "cm_dm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q003"
           },
           {
             "q": "8cm + 42cm = … dm",
@@ -1448,7 +1556,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "cm_dm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q004"
           },
           {
             "q": "6dm = … cm",
@@ -1461,7 +1570,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q005"
           },
           {
             "q": "2dm = … cm",
@@ -1474,7 +1584,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q006"
           },
           {
             "q": "1dm + 5cm = … cm",
@@ -1487,7 +1598,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q007"
           },
           {
             "q": "2dm + 13cm = … cm",
@@ -1500,7 +1612,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q008"
           },
           {
             "q": "2dm + 17cm = … cm",
@@ -1513,7 +1626,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q009"
           },
           {
             "q": "5dm + 10cm = … dm",
@@ -1526,7 +1640,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "dm_cm",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q010"
           },
           {
             "q": "37l + 26l = … l",
@@ -1539,7 +1654,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q011"
           },
           {
             "q": "27l + 29l = … l",
@@ -1552,7 +1668,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q012"
           },
           {
             "q": "55l + 45l = … l",
@@ -1565,7 +1682,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q013"
           },
           {
             "q": "73kg – 18kg = … kg",
@@ -1578,7 +1696,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q014"
           },
           {
             "q": "54kg – 9kg = … kg",
@@ -1591,7 +1710,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q015"
           },
           {
             "q": "76kg – 27kg = … kg",
@@ -1604,7 +1724,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q016"
           },
           {
             "q": "AB = 11cm, CD = 6cm, DB = 3cm. Find the length of AD.",
@@ -1617,7 +1738,8 @@
             "a": 3,
             "difficulty": 2,
             "skill": "line_segments",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q017"
           },
           {
             "q": "AB = 58cm. CD is 28cm shorter than AB. Find CD.",
@@ -1630,7 +1752,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "length_problem",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q018"
           },
           {
             "q": "AB = 56cm. CD is 26cm shorter than AB. Find CD.",
@@ -1643,7 +1766,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "length_problem",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q019"
           },
           {
             "q": "A rope is 85cm long. 35cm is cut off. How long is the rope now?",
@@ -1656,7 +1780,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "length_problem",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q020"
           },
           {
             "q": "Jim has 45 litres of honey. He sells 19 litres. How many litres does he have left?",
@@ -1669,7 +1794,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q021"
           },
           {
             "q": "Mary has 10kg of sugar. She uses 3kg. How many kg does she have left?",
@@ -1682,7 +1808,8 @@
             "a": 3,
             "difficulty": 2,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q022"
           },
           {
             "q": "A bag weighs 54kg. Another weighs 9kg less. How much does the lighter bag weigh?",
@@ -1695,7 +1822,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q023"
           },
           {
             "q": "9l + 37l = … l",
@@ -1708,7 +1836,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q024"
           },
           {
             "q": "Choose the correct answer: 60kg – 7kg = … kg",
@@ -1721,7 +1850,8 @@
             "a": 3,
             "difficulty": 2,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q025"
           },
           {
             "q": "A plank is 1dm 5cm long. Another is 8cm long. How long are they together in cm?",
@@ -1734,7 +1864,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "length_problem",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q026"
           },
           {
             "q": "A container holds 100l. 37l of water is added and 15l is removed. How much is in it?",
@@ -1747,7 +1878,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "volume",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q027"
           },
           {
             "q": "Tom's bag weighs 3kg. He adds 2 books each weighing 500g. How heavy is the bag now? (1kg = 1000g)",
@@ -1760,7 +1892,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "weight",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q028"
           },
           {
             "q": "A path is 3dm 5cm long and another is 2dm 8cm long. How long are they together in cm?",
@@ -1773,7 +1906,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "length_problem",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q029"
           },
           {
             "q": "Which is LONGER? a)3dm  b)25cm  c)1dm 8cm  d)2dm",
@@ -1786,7 +1920,8 @@
             "a": 0,
             "difficulty": 3,
             "skill": "compare_lengths",
-            "unit": "measurement"
+            "unit": "measurement",
+            "id": "maen_measurement_q030"
           }
         ]
       },
@@ -1806,7 +1941,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "time_facts",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q001"
           },
           {
             "q": "How many hours are in 1 day?",
@@ -1819,7 +1955,8 @@
             "a": 3,
             "difficulty": 1,
             "skill": "time_facts",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q002"
           },
           {
             "q": "How many days are in 1 week?",
@@ -1832,7 +1969,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "time_facts",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q003"
           },
           {
             "q": "What time is 'half past three'?",
@@ -1845,7 +1983,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "clock_reading",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q004"
           },
           {
             "q": "What time is 'quarter past two'?",
@@ -1858,7 +1997,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "clock_reading",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q005"
           },
           {
             "q": "What time is 'quarter to five'?",
@@ -1871,7 +2011,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "clock_reading",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q006"
           },
           {
             "q": "What is the month that comes after April?",
@@ -1884,7 +2025,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "calendar",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q007"
           },
           {
             "q": "How many months are in 1 year?",
@@ -1897,7 +2039,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "calendar",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q008"
           },
           {
             "q": "Lan has 50,000 dong. She spends 20,000 dong. How much does she have left?",
@@ -1910,7 +2053,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q009"
           },
           {
             "q": "A book costs 15,000 dong. A pen costs 5,000 dong. How much do they cost together?",
@@ -1923,7 +2067,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q010"
           },
           {
             "q": "Tom has 2 coins of 500 dong and 3 coins of 1,000 dong. How much does he have in total?",
@@ -1936,7 +2081,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q011"
           },
           {
             "q": "If it is now 2:00 PM, what time will it be in 3 hours?",
@@ -1949,7 +2095,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "time_calculation",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q012"
           },
           {
             "q": "A film starts at 6:30 PM and lasts 2 hours. What time does it end?",
@@ -1962,7 +2109,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "time_calculation",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q013"
           },
           {
             "q": "School starts at 7:30 AM and finishes at 11:30 AM. How long is school?",
@@ -1975,7 +2123,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "time_calculation",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q014"
           },
           {
             "q": "Nam saves 5,000 dong every day. How much does he save in 1 week?",
@@ -1988,7 +2137,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q015"
           },
           {
             "q": "A toy costs 45,000 dong. Lan has 30,000 dong. How much more does she need?",
@@ -2001,7 +2151,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q016"
           },
           {
             "q": "Mum buys 3 apples at 2,000 dong each. How much does she pay?",
@@ -2014,7 +2165,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q017"
           },
           {
             "q": "Tom's birthday is on March 15. Today is March 8. How many days until his birthday?",
@@ -2027,7 +2179,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "calendar",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q018"
           },
           {
             "q": "Anna studies for 45 minutes in the morning and 30 minutes in the evening. How long does she study in total?",
@@ -2040,7 +2193,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "time_calculation",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q019"
           },
           {
             "q": "A shop has apples for 3,000 dong each and oranges for 4,000 dong each. Lan buys 2 apples and 3 oranges. How much does she pay?",
@@ -2053,7 +2207,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "money_vnd",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q020"
           },
           {
             "q": "How many minutes are in 2 hours and 30 minutes?",
@@ -2066,7 +2221,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "time_calculation",
-            "unit": "time_money"
+            "unit": "time_money",
+            "id": "maen_time_money_q021"
           }
         ]
       },
@@ -2086,7 +2242,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q001"
           },
           {
             "q": "How many sides does a rectangle have?",
@@ -2099,7 +2256,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q002"
           },
           {
             "q": "How many corners does a square have?",
@@ -2112,7 +2270,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q003"
           },
           {
             "q": "Which shape has all four sides equal?",
@@ -2125,7 +2284,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q004"
           },
           {
             "q": "A circle has … corners.",
@@ -2138,7 +2298,8 @@
             "a": 0,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q005"
           },
           {
             "q": "Which shape has 3 corners and 3 sides?",
@@ -2151,7 +2312,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q006"
           },
           {
             "q": "How many sides does a pentagon have?",
@@ -2164,7 +2326,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q007"
           },
           {
             "q": "How many sides does a hexagon have?",
@@ -2177,7 +2340,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q008"
           },
           {
             "q": "A square has a side of 5cm. What is its perimeter?",
@@ -2190,7 +2354,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "perimeter",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q009"
           },
           {
             "q": "A rectangle is 8cm long and 3cm wide. What is its perimeter?",
@@ -2203,7 +2368,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "perimeter",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q010"
           },
           {
             "q": "How many line segments are there between points A, B, C, D, E on a straight line?",
@@ -2216,7 +2382,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "line_segments",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q011"
           },
           {
             "q": "A figure has 5 points. Each pair of points is connected by a line segment. How many line segments are there?",
@@ -2229,7 +2396,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "line_segments",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q012"
           },
           {
             "q": "How many triangles can you count in a shape divided into 4 smaller triangles?",
@@ -2242,7 +2410,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "count_shapes",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q013"
           },
           {
             "q": "Which shape has the most sides? a) hexagon  b) pentagon  c) square  d) triangle",
@@ -2255,7 +2424,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q014"
           },
           {
             "q": "A rectangle has a length of 10cm and width of 4cm. What is its perimeter?",
@@ -2268,7 +2438,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "perimeter",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q015"
           },
           {
             "q": "How many triangles are there in a large triangle divided by 2 lines from base to top?",
@@ -2281,7 +2452,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "count_shapes",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q016"
           },
           {
             "q": "A square's perimeter is 28cm. What is the length of one side?",
@@ -2294,7 +2466,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "perimeter",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q017"
           },
           {
             "q": "A rectangle's perimeter is 24cm. Its length is 8cm. What is its width?",
@@ -2307,7 +2480,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "perimeter",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q018"
           },
           {
             "q": "Tom draws a shape with 4 equal sides and 4 right angles. What shape is it?",
@@ -2320,7 +2494,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "shape_properties",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q019"
           },
           {
             "q": "A path goes: 3cm right, 4cm up, 3cm left, 4cm down. What shape does it make?",
@@ -2333,7 +2508,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "shape_inference",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q020"
           },
           {
             "q": "How many quadrilaterals (4-sided shapes) can you find in a rectangle divided into 2 equal parts?",
@@ -2346,7 +2522,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "count_shapes",
-            "unit": "shapes"
+            "unit": "shapes",
+            "id": "maen_shapes_q021"
           }
         ]
       },
@@ -2366,7 +2543,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q001"
           },
           {
             "q": "There are 27 red books and 23 blue books. How many books in all?",
@@ -2379,7 +2557,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q002"
           },
           {
             "q": "Mark has 11 stamps. His brother gives him 13 more. How many stamps does he have now?",
@@ -2392,7 +2571,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q003"
           },
           {
             "q": "A teacher has 34 pens. She gives students 7 pens. How many pens does she have left?",
@@ -2405,7 +2585,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q004"
           },
           {
             "q": "Sophia makes 67 paper flowers and gives her friend 17. How many does she have left?",
@@ -2418,7 +2599,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q005"
           },
           {
             "q": "David has 34 marbles. Max has 72. How many more marbles does Max have than David?",
@@ -2431,7 +2613,8 @@
             "a": 1,
             "difficulty": 1,
             "skill": "comparison_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q006"
           },
           {
             "q": "Alicia is 7 years old. Her brother is 8 years older. How old is her brother?",
@@ -2444,7 +2627,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q007"
           },
           {
             "q": "Mr Tom has 52 balloons. 25 are red and the rest are green. How many green balloons?",
@@ -2457,7 +2641,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q008"
           },
           {
             "q": "Roden bought 15 goldfish and 7 blue fish. How many fish did he buy?",
@@ -2470,7 +2655,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q009"
           },
           {
             "q": "Thirty dogs are barking. Ten more join. How many dogs are barking?",
@@ -2483,7 +2669,8 @@
             "a": 2,
             "difficulty": 1,
             "skill": "addition_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q010"
           },
           {
             "q": "There are 19 girls and some boys. There are 38 students altogether. How many boys?",
@@ -2496,7 +2683,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q011"
           },
           {
             "q": "There are 100 people. 6 are teachers. 48 are girl students. How many boy students?",
@@ -2509,7 +2697,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q012"
           },
           {
             "q": "Class 2C has 20 girl students. Boys are 6 fewer than girls. How many boys are there?",
@@ -2522,7 +2711,8 @@
             "a": 0,
             "difficulty": 2,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q013"
           },
           {
             "q": "There are 25 apples, 18 oranges, 12 kiwis, 17 tomatoes. How many more apples than tomatoes?",
@@ -2535,7 +2725,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "comparison_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q014"
           },
           {
             "q": "Mickey has 43 candies. Her father gives 27 more. She eats 25. How many does she have?",
@@ -2548,7 +2739,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q015"
           },
           {
             "q": "Amber has 35 pencils. She gives 19 to a friend, then buys 14 more. How many does she have now?",
@@ -2561,7 +2753,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q016"
           },
           {
             "q": "There are 25 eggs. Mary uses 8 for cakes and her mother buys 12 more. How many eggs now?",
@@ -2574,7 +2767,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q017"
           },
           {
             "q": "Lian has 37 cookies. He gives Jane 13 and Henry 16. How many cookies does he have left?",
@@ -2587,7 +2781,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q018"
           },
           {
             "q": "A class has 28 girl students. The number of boys is 9 fewer. How many boys?",
@@ -2600,7 +2795,8 @@
             "a": 1,
             "difficulty": 2,
             "skill": "subtraction_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q019"
           },
           {
             "q": "Linda has 34 candies. Chloe has 38. They share all their candies equally with 8 friends. How many does each friend get?",
@@ -2613,7 +2809,8 @@
             "a": 2,
             "difficulty": 2,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q020"
           },
           {
             "q": "Tom has some marbles. He gives away 15 and has 27 left. How many did he start with?",
@@ -2626,7 +2823,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "reverse_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q021"
           },
           {
             "q": "A shop has 100 items. In the morning they sell 37 items and buy 15 new items. In the afternoon they sell 24 more. How many items are left?",
@@ -2639,7 +2837,8 @@
             "a": 1,
             "difficulty": 3,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q022"
           },
           {
             "q": "Lan has 3 times as many stickers as Nam. Together they have 48 stickers. How many does Lan have?",
@@ -2652,7 +2851,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "multiplication_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q023"
           },
           {
             "q": "A farmer has chickens and rabbits. There are 10 animals in total and 32 legs altogether. How many rabbits are there?",
@@ -2665,7 +2865,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "logical_word",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q024"
           },
           {
             "q": "Tom reads 8 pages every day. After 5 days he has 20 pages left. How many pages does the book have?",
@@ -2678,7 +2879,8 @@
             "a": 2,
             "difficulty": 3,
             "skill": "multi_step",
-            "unit": "word_problems"
+            "unit": "word_problems",
+            "id": "maen_word_problems_q025"
           }
         ]
       }
