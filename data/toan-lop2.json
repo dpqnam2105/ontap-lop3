@@ -386,7 +386,7 @@
             "id": "toan_so_q030"
           },
           {
-            "q": "Số chẵn lớn nhất có 3 chữ số khác nhau, tổng = 6?",
+            "q": "Tìm số chẵn lớn nhất có 3 chữ số khác nhau mà tổng các chữ số bằng 6.",
             "choices": [
               "600",
               "420",
@@ -394,7 +394,7 @@
               "312"
             ],
             "a": 2,
-            "hint": "Cộng tất cả chữ số trong số đó lại với nhau",
+            "hint": "Muốn số lớn nhất, chọn chữ số hàng trăm lớn nhất có thể, và nhớ ba chữ số phải khác nhau.",
             "difficulty": 3,
             "id": "toan_so_q031"
           },
@@ -2608,7 +2608,7 @@
             "id": "toan_cong_q055"
           },
           {
-            "q": "Hai số có tổng = 500. Số lớn hơn số bé 100. Số lớn = ?",
+            "q": "Hai số có tổng bằng 500. Số lớn hơn số bé 100 đơn vị. Tìm số lớn.",
             "choices": [
               "295",
               "290",
@@ -2616,12 +2616,12 @@
               "300"
             ],
             "a": 3,
-            "hint": "",
+            "hint": "Số lớn = (tổng + hiệu) : 2.",
             "difficulty": 2,
             "id": "toan_cong_q056"
           },
           {
-            "q": "Hai số có tổng = 30. Số lớn gấp đôi số bé. Số bé = ?",
+            "q": "Hai số có tổng bằng 30. Số lớn gấp đôi số bé. Tìm số bé.",
             "choices": [
               "10",
               "20",
@@ -2629,7 +2629,7 @@
               "5"
             ],
             "a": 0,
-            "hint": "Số bé + số lớn = số bé + 2×số bé = 3×số bé. Vậy số bé = 30÷3",
+            "hint": "Số bé + số lớn = số bé + 2 lần số bé = 3 lần số bé.",
             "difficulty": 2,
             "id": "toan_cong_q057"
           },
@@ -4096,7 +4096,7 @@
             "id": "toan_tru_q039"
           },
           {
-            "q": "Hiệu = 715, giảm số bị trừ 215. Hiệu mới = ?",
+            "q": "Hiệu của hai số là 715. Nếu giảm số bị trừ đi 215 thì hiệu mới bằng bao nhiêu?",
             "choices": [
               "499",
               "501",
@@ -4104,12 +4104,12 @@
               "498"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Giảm số bị trừ đi bao nhiêu thì hiệu cũng giảm đi bấy nhiêu.",
             "difficulty": 2,
             "id": "toan_tru_q040"
           },
           {
-            "q": "Hiệu = 400, tăng số trừ 50. Hiệu mới = ?",
+            "q": "Hiệu của hai số là 400. Nếu tăng số trừ thêm 50 thì hiệu mới bằng bao nhiêu?",
             "choices": [
               "348",
               "351",
@@ -4117,12 +4117,12 @@
               "350"
             ],
             "a": 3,
-            "hint": "",
+            "hint": "Tăng số trừ lên bao nhiêu thì hiệu giảm đi bấy nhiêu.",
             "difficulty": 2,
             "id": "toan_tru_q041"
           },
           {
-            "q": "Hiệu = 300, giảm số trừ 100. Hiệu mới = ?",
+            "q": "Hiệu của hai số là 300. Nếu giảm số trừ đi 100 thì hiệu mới bằng bao nhiêu?",
             "choices": [
               "400",
               "401",
@@ -4130,12 +4130,12 @@
               "398"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Giảm số trừ đi bao nhiêu thì hiệu tăng lên bấy nhiêu.",
             "difficulty": 2,
             "id": "toan_tru_q042"
           },
           {
-            "q": "Số trừ = 138, hiệu = 524. Số bị trừ = ?",
+            "q": "Một phép trừ có số trừ là 138 và hiệu là 524. Tìm số bị trừ.",
             "choices": [
               "663",
               "662",
@@ -4143,7 +4143,7 @@
               "660"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Số bị trừ = số trừ + hiệu.",
             "difficulty": 2,
             "id": "toan_tru_q043"
           },
@@ -4200,7 +4200,7 @@
             "id": "toan_tru_q047"
           },
           {
-            "q": "Tổng = 400, hiệu = 80. Số nhỏ = ?",
+            "q": "Hai số có tổng bằng 400 và hiệu bằng 80. Tìm số nhỏ.",
             "choices": [
               "158",
               "159",
@@ -4208,7 +4208,7 @@
               "161"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Số nhỏ = (tổng − hiệu) : 2.",
             "difficulty": 2,
             "id": "toan_tru_q048"
           },
@@ -4289,7 +4289,7 @@
             "id": "toan_tru_q054"
           },
           {
-            "q": "Trường có 550 HS, chuyển trường 28 em. Còn?",
+            "q": "Trường có 550 học sinh, sau đó có 28 em chuyển trường. Hỏi trường còn lại bao nhiêu học sinh?",
             "choices": [
               "523",
               "522",
@@ -4328,7 +4328,7 @@
             "id": "toan_tru_q057"
           },
           {
-            "q": "Xưởng may 3 ngày 756 chiếc. Ngày1=215, Ngày2=178. Ngày3=?",
+            "q": "Một xưởng may trong 3 ngày may được 756 chiếc áo. Ngày thứ nhất may 215 chiếc, ngày thứ hai may 178 chiếc. Hỏi ngày thứ ba xưởng may được bao nhiêu chiếc áo?",
             "choices": [
               "363",
               "361",
@@ -4336,12 +4336,12 @@
               "364"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Lấy tổng số áo trừ đi số áo của hai ngày đầu.",
             "difficulty": 2,
             "id": "toan_tru_q058"
           },
           {
-            "q": "An hơn Bình 248. Bình tăng 95. Bây giờ An hơn Bình?",
+            "q": "An có nhiều hơn Bình 248 viên bi. Sau đó Bình được cho thêm 95 viên bi. Hỏi bây giờ An còn nhiều hơn Bình bao nhiêu viên bi?",
             "choices": [
               "151",
               "153",
@@ -4349,12 +4349,12 @@
               "154"
             ],
             "a": 1,
-            "hint": "Nhớ: 1 giờ = 60 phút",
+            "hint": "Bình được thêm bao nhiêu viên thì khoảng cách giữa hai bạn giảm đi bấy nhiêu.",
             "difficulty": 2,
             "id": "toan_tru_q059"
           },
           {
-            "q": "Đội trồng 564 kg cà phê, hơn đội 2 là 248. Đội 2 hái?",
+            "q": "Đội Một hái được 564 kg cà phê và hái nhiều hơn đội Hai 248 kg. Hỏi đội Hai hái được bao nhiêu ki-lô-gam cà phê?",
             "choices": [
               "314",
               "317",
@@ -4362,7 +4362,7 @@
               "315"
             ],
             "a": 2,
-            "hint": "Nhớ: 1 kg = 1000 g",
+            "hint": "Đội Một nhiều hơn nghĩa là đội Hai ít hơn — dùng phép trừ.",
             "difficulty": 2,
             "id": "toan_tru_q060"
           },
@@ -6083,14 +6083,14 @@
             "id": "toan_nhan_q069"
           },
           {
-            "q": "6 × 7 + 143 = ?",
+            "q": "5 × 7 + 143 = ?",
             "choices": [
-              "185",
-              "179",
-              "175",
-              "195"
+              "168",
+              "188",
+              "178",
+              "175"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "hint": "Nhân trước, sau đó cộng.",
             "skill": "order_operations",
@@ -6179,38 +6179,6 @@
             "id": "toan_nhan_q075"
           },
           {
-            "q": "3 × 5 = ?",
-            "choices": [
-              "14",
-              "16",
-              "15",
-              "17"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q076"
-          },
-          {
-            "q": "5 × 9 = ?",
-            "choices": [
-              "46",
-              "44",
-              "47",
-              "45"
-            ],
-            "a": 3,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q077"
-          },
-          {
             "q": "4 × 3 = ?",
             "choices": [
               "12",
@@ -6225,86 +6193,6 @@
             "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
             "curriculum": "grade2_to_grade3_summer_review",
             "id": "toan_nhan_q078"
-          },
-          {
-            "q": "6 × 6 = ?",
-            "choices": [
-              "35",
-              "36",
-              "38",
-              "37"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q079"
-          },
-          {
-            "q": "4 × 7 = ?",
-            "choices": [
-              "27",
-              "30",
-              "28",
-              "29"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q080"
-          },
-          {
-            "q": "6 × 8 = ?",
-            "choices": [
-              "50",
-              "49",
-              "47",
-              "48"
-            ],
-            "a": 3,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q081"
-          },
-          {
-            "q": "9 × 6 = ?",
-            "choices": [
-              "54",
-              "55",
-              "56",
-              "53"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q082"
-          },
-          {
-            "q": "7 × 6 = ?",
-            "choices": [
-              "43",
-              "42",
-              "44",
-              "41"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Nhớ lại bảng nhân rồi chọn kết quả.",
-            "skill": "multiplication_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_nhan_q083"
           },
           {
             "q": "9 × 4 = ?",
@@ -7803,16 +7691,16 @@
             "id": "toan_nhan_q178"
           },
           {
-            "q": "32 : 4 = ?",
+            "q": "Tính: 4 × 8 − 12 = ?",
             "choices": [
-              "7",
-              "8",
-              "10",
-              "9"
+              "18",
+              "22",
+              "20",
+              "24"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
-            "hint": "Vì 4 × 8 = 32.",
+            "hint": "Nhân trước, sau đó trừ.",
             "skill": "bang_chia_4",
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
@@ -11220,7 +11108,7 @@
             "id": "toan_chia_q061"
           },
           {
-            "q": "Tìm n: 36 ÷ n = 4",
+            "q": "Tìm số n, biết: 36 : n = 4",
             "choices": [
               "9",
               "8",
@@ -11228,7 +11116,7 @@
               "11"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Nhẩm bảng nhân 4: 4 nhân mấy thì bằng 36?",
             "difficulty": 1,
             "id": "toan_chia_q062"
           },
@@ -11246,29 +11134,29 @@
             "id": "toan_chia_q063"
           },
           {
-            "q": "Tổng 2 số = 40, tích = 400. 2 số đó là?",
+            "q": "Hai số có tổng bằng 9 và tích bằng 20. Hỏi đó là hai số nào?",
             "choices": [
-              "25 và 16",
-              "10 và 40",
-              "20 và 20",
-              "8 và 50"
+              "4 và 5",
+              "2 và 7",
+              "3 và 6",
+              "1 và 8"
             ],
-            "a": 2,
-            "hint": "20+20=40, 20×20=400",
+            "a": 0,
+            "hint": "Thử các cặp số trong bảng nhân: cặp nào nhân ra 20 và cộng lại bằng 9?",
             "difficulty": 2,
             "id": "toan_chia_q064"
           },
           {
-            "q": "36 : 9 : 2 = ?",
+            "q": "40 : 4 : 2 = ?",
             "choices": [
-              "8",
-              "18",
+              "5",
               "4",
-              "2"
+              "10",
+              "8"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
-            "hint": "Tính từ trái sang phải.",
+            "hint": "Tính từ trái sang phải: chia cho 4 trước, rồi chia tiếp cho 2.",
             "skill": "order_operations",
             "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
             "curriculum": "grade2_to_grade3_summer_review",
@@ -11323,64 +11211,48 @@
             "id": "toan_chia_q068"
           },
           {
-            "q": "48 : 6 = ?",
+            "q": "16 : 4 + 12 = ?",
             "choices": [
-              "7",
-              "10",
-              "9",
-              "8"
+              "15",
+              "17",
+              "18",
+              "16"
             ],
             "a": 3,
             "difficulty": 1,
-            "hint": "Dùng bảng nhân ngược lại để chia.",
+            "hint": "Chia trước, sau đó cộng.",
             "skill": "division_fact",
             "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
             "curriculum": "grade2_to_grade3_summer_review",
             "id": "toan_chia_q069"
           },
           {
-            "q": "42 : 7 = ?",
+            "q": "30 : 5 + 21 = ?",
             "choices": [
-              "6",
-              "8",
-              "7",
-              "5"
+              "27",
+              "26",
+              "28",
+              "25"
             ],
             "a": 0,
             "difficulty": 1,
-            "hint": "Dùng bảng nhân ngược lại để chia.",
-            "skill": "division_fact",
-            "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
-            "curriculum": "grade2_to_grade3_summer_review",
-            "id": "toan_chia_q070"
-          },
-          {
-            "q": "54 : 6 = ?",
-            "choices": [
-              "11",
-              "9",
-              "10",
-              "8"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Dùng bảng nhân ngược lại để chia.",
+            "hint": "Chia trước, sau đó cộng.",
             "skill": "division_fact",
             "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
             "curriculum": "grade2_to_grade3_summer_review",
             "id": "toan_chia_q071"
           },
           {
-            "q": "49 : 7 = ?",
+            "q": "36 : 4 + 25 = ?",
             "choices": [
-              "8",
-              "6",
-              "7",
-              "9"
+              "33",
+              "35",
+              "34",
+              "36"
             ],
             "a": 2,
             "difficulty": 1,
-            "hint": "Dùng bảng nhân ngược lại để chia.",
+            "hint": "Chia trước, sau đó cộng.",
             "skill": "division_fact",
             "source": "De-on-he-lop-2-len-lop-3-mon-toan.pdf",
             "curriculum": "grade2_to_grade3_summer_review",
@@ -12585,46 +12457,46 @@
             "id": "toan_dovi_q047"
           },
           {
-            "q": "Diện tích HV cạnh 7 cm = ?",
+            "q": "Chu vi hình vuông có cạnh 7 cm là bao nhiêu?",
             "choices": [
-              "49",
-              "42",
-              "28",
-              "56"
+              "28 cm",
+              "21 cm",
+              "14 cm",
+              "24 cm"
             ],
             "a": 0,
-            "hint": "Nhớ: 1 m = 100 cm, 1 dm = 10 cm",
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_dovi_q048"
           },
           {
-            "q": "Diện tích HCN dài 9, rộng 3 = ?",
+            "q": "Hình chữ nhật có chiều dài 9 cm, chiều rộng 3 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "24",
-              "27",
-              "33",
-              "30"
+              "21 cm",
+              "24 cm",
+              "27 cm",
+              "12 cm"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Chu vi hình chữ nhật = (dài + rộng) × 2.",
             "difficulty": 2,
             "id": "toan_dovi_q049"
           },
           {
-            "q": "HV cạnh 9. Diện tích = ?",
+            "q": "Hình tam giác có ba cạnh dài 9 cm, 7 cm và 4 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "90",
-              "72",
-              "81",
-              "99"
+              "16 cm",
+              "22 cm",
+              "20 cm",
+              "18 cm"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Chu vi tam giác = cộng độ dài cả ba cạnh.",
             "difficulty": 1,
             "id": "toan_dovi_q050"
           },
           {
-            "q": "Chu vi HV cạnh 5cm = ?",
+            "q": "Chu vi hình vuông có cạnh 5 cm là bao nhiêu?",
             "choices": [
               "15cm",
               "25cm",
@@ -12632,12 +12504,12 @@
               "20cm"
             ],
             "a": 3,
-            "hint": "4×5=20",
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_dovi_q051"
           },
           {
-            "q": "Chu vi HCN dài 8, rộng 4 = ?",
+            "q": "Hình chữ nhật có chiều dài 8 cm, chiều rộng 4 cm. Chu vi là bao nhiêu?",
             "choices": [
               "24",
               "26",
@@ -12645,7 +12517,7 @@
               "20"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Chu vi = (dài + rộng) × 2.",
             "difficulty": 1,
             "id": "toan_dovi_q052"
           },
@@ -12663,7 +12535,7 @@
             "id": "toan_dovi_q053"
           },
           {
-            "q": "Chu vi HV = 40cm. Cạnh = ?",
+            "q": "Hình vuông có chu vi 40 cm. Hỏi cạnh hình vuông dài bao nhiêu xăng-ti-mét?",
             "choices": [
               "12cm",
               "20cm",
@@ -12671,25 +12543,25 @@
               "8cm"
             ],
             "a": 2,
-            "hint": "40÷4=10",
+            "hint": "Chu vi chia đều cho 4 cạnh.",
             "difficulty": 1,
             "id": "toan_dovi_q054"
           },
           {
-            "q": "HCN chu vi 36, dài 10. Rộng = ?",
+            "q": "Hình chữ nhật có chu vi 32 cm, chiều dài 9 cm. Hỏi chiều rộng là bao nhiêu?",
             "choices": [
-              "9",
-              "7",
-              "10",
-              "8"
+              "8 cm",
+              "7 cm",
+              "6 cm",
+              "5 cm"
             ],
-            "a": 3,
-            "hint": "",
+            "a": 1,
+            "hint": "Nửa chu vi = 32 : 2. Lấy nửa chu vi trừ chiều dài.",
             "difficulty": 2,
             "id": "toan_dovi_q055"
           },
           {
-            "q": "HV chu vi 48. Cạnh = ?",
+            "q": "Hình vuông có chu vi 48 cm. Hỏi cạnh hình vuông dài bao nhiêu xăng-ti-mét?",
             "choices": [
               "12",
               "13",
@@ -12697,7 +12569,7 @@
               "11"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Chu vi chia đều cho 4 cạnh.",
             "difficulty": 1,
             "id": "toan_dovi_q056"
           },
@@ -15764,28 +15636,17 @@
             "id": "toan_hinh_q002"
           },
           {
-            "q": "Hình ngũ giác có bao nhiêu cạnh?",
+            "q": "Hình tam giác có bao nhiêu đỉnh?",
             "choices": [
               "5",
+              "3",
               "6",
-              "7",
-              "4"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "id": "toan_hinh_q003"
-          },
-          {
-            "q": "Hình lục giác có bao nhiêu cạnh?",
-            "choices": [
-              "5",
-              "6",
-              "7",
               "4"
             ],
             "a": 1,
             "difficulty": 2,
-            "id": "toan_hinh_q004"
+            "id": "toan_hinh_q004",
+            "hint": "\"Tam\" nghĩa là ba — đếm các góc nhọn của hình."
           },
           {
             "q": "Hình chữ nhật có bao nhiêu góc vuông?",
@@ -15812,7 +15673,7 @@
             "id": "toan_hinh_q006"
           },
           {
-            "q": "Hình vuông và HCN khác nhau thế nào?",
+            "q": "Hình vuông khác hình chữ nhật ở điểm nào?",
             "choices": [
               "HV có 4 cạnh bằng nhau",
               "Số góc",
@@ -15821,7 +15682,8 @@
             ],
             "a": 0,
             "difficulty": 2,
-            "id": "toan_hinh_q007"
+            "id": "toan_hinh_q007",
+            "hint": "Hãy so sánh độ dài các cạnh của hai hình."
           },
           {
             "q": "Khối lập phương có bao nhiêu mặt?",
@@ -15933,7 +15795,7 @@
             "id": "toan_hinh_q016"
           },
           {
-            "q": "Chu vi HV cạnh 6 = ?",
+            "q": "Chu vi hình vuông có cạnh 6 cm là bao nhiêu?",
             "choices": [
               "22",
               "26",
@@ -15941,12 +15803,12 @@
               "20"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_hinh_q017"
           },
           {
-            "q": "Chu vi HV cạnh 9 = ?",
+            "q": "Chu vi hình vuông có cạnh 9 cm là bao nhiêu?",
             "choices": [
               "34",
               "35",
@@ -15954,12 +15816,12 @@
               "36"
             ],
             "a": 3,
-            "hint": "",
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_hinh_q018"
           },
           {
-            "q": "Chu vi HCN dài 10, rộng 5 = ?",
+            "q": "Hình chữ nhật có chiều dài 10 cm, chiều rộng 5 cm. Chu vi là bao nhiêu?",
             "choices": [
               "30",
               "28",
@@ -15967,12 +15829,12 @@
               "29"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Chu vi = (dài + rộng) × 2.",
             "difficulty": 1,
             "id": "toan_hinh_q019"
           },
           {
-            "q": "Chu vi HCN dài 12, rộng 5 = ?",
+            "q": "Hình chữ nhật có chiều dài 12 cm, chiều rộng 5 cm. Chu vi là bao nhiêu?",
             "choices": [
               "32",
               "34",
@@ -15980,7 +15842,7 @@
               "35"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Chu vi = (dài + rộng) × 2.",
             "difficulty": 1,
             "id": "toan_hinh_q020"
           },
@@ -15998,7 +15860,7 @@
             "id": "toan_hinh_q021"
           },
           {
-            "q": "Chu vi HV = 28. Cạnh = ?",
+            "q": "Hình vuông có chu vi 28 cm. Hỏi cạnh hình vuông dài bao nhiêu?",
             "choices": [
               "6",
               "8",
@@ -16006,12 +15868,12 @@
               "7"
             ],
             "a": 3,
-            "hint": "",
+            "hint": "Chu vi chia đều cho 4 cạnh.",
             "difficulty": 1,
             "id": "toan_hinh_q022"
           },
           {
-            "q": "Chu vi HCN = 36, dài = 10. Rộng = ?",
+            "q": "Hình chữ nhật có chu vi 36 cm, chiều dài 10 cm. Hỏi chiều rộng là bao nhiêu?",
             "choices": [
               "8",
               "10",
@@ -16019,137 +15881,124 @@
               "9"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Nửa chu vi = 36 : 2 = dài + rộng. Lấy nửa chu vi trừ chiều dài.",
             "difficulty": 2,
             "id": "toan_hinh_q023"
           },
           {
-            "q": "Cạnh HV = 6cm. Chu vi = ?",
+            "q": "Hình vuông có cạnh 1 dm. Chu vi hình vuông bằng bao nhiêu xăng-ti-mét?",
             "choices": [
-              "22",
-              "24",
-              "26",
-              "20"
+              "4 cm",
+              "40 cm",
+              "14 cm",
+              "44 cm"
             ],
             "a": 1,
-            "hint": "Nhớ: 1 m = 100 cm, 1 dm = 10 cm",
+            "hint": "Đổi 1 dm = 10 cm trước, rồi lấy cạnh nhân 4.",
             "difficulty": 1,
             "id": "toan_hinh_q024"
           },
           {
-            "q": "Chu vi hình lục giác đều cạnh 6cm = ?",
+            "q": "Hình tam giác có ba cạnh đều dài 6 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "30",
-              "48",
-              "36",
-              "24"
+              "12 cm",
+              "24 cm",
+              "18 cm",
+              "16 cm"
             ],
             "a": 2,
-            "hint": "Nhớ: 1 m = 100 cm, 1 dm = 10 cm",
+            "hint": "Ba cạnh bằng nhau thì chu vi = 6 × 3.",
             "difficulty": 2,
             "id": "toan_hinh_q025"
           },
           {
-            "q": "Diện tích HCN dài 6, rộng 4 = ?",
+            "q": "Hình chữ nhật có chiều dài 6 cm, chiều rộng 4 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "22",
-              "26",
-              "20",
-              "24"
+              "20 cm",
+              "24 cm",
+              "18 cm",
+              "22 cm"
             ],
-            "a": 3,
-            "hint": "",
+            "a": 0,
+            "hint": "Chu vi = (dài + rộng) × 2.",
             "difficulty": 2,
             "id": "toan_hinh_q026"
           },
           {
-            "q": "Diện tích HV cạnh 5 = ?",
+            "q": "Hình vuông có cạnh 3 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "25",
-              "20",
-              "30",
-              "22"
+              "9 cm",
+              "15 cm",
+              "12 cm",
+              "6 cm"
             ],
-            "a": 0,
-            "hint": "",
+            "a": 2,
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_hinh_q027"
           },
           {
-            "q": "Diện tích HV cạnh 8 = ?",
+            "q": "Hình vuông có cạnh 8 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "60",
-              "64",
-              "62",
-              "66"
+              "24 cm",
+              "32 cm",
+              "28 cm",
+              "36 cm"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Chu vi hình vuông = cạnh × 4.",
             "difficulty": 1,
             "id": "toan_hinh_q028"
           },
           {
-            "q": "Diện tích HCN 9×3 = ?",
+            "q": "Hình tứ giác có các cạnh dài 9 cm, 3 cm, 7 cm và 5 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "30",
-              "26",
-              "27",
-              "24"
+              "22 cm",
+              "26 cm",
+              "20 cm",
+              "24 cm"
             ],
-            "a": 2,
-            "hint": "",
+            "a": 3,
+            "hint": "Chu vi tứ giác = cộng độ dài cả bốn cạnh.",
             "difficulty": 1,
             "id": "toan_hinh_q029"
           },
           {
-            "q": "Diện tích HV = 36. Cạnh = ?",
+            "q": "Hình vuông có chu vi 36 cm. Hỏi cạnh hình vuông dài bao nhiêu?",
             "choices": [
-              "5",
-              "7",
-              "4",
-              "6"
+              "9 cm",
+              "8 cm",
+              "6 cm",
+              "7 cm"
             ],
-            "a": 3,
-            "hint": "",
+            "a": 0,
+            "hint": "Chu vi chia đều cho 4 cạnh: 36 : 4.",
             "difficulty": 1,
             "id": "toan_hinh_q030"
           },
           {
-            "q": "HCN diện tích 48, rộng 6. Dài = ?",
+            "q": "Hình chữ nhật có chu vi 28 cm, chiều dài 9 cm. Hỏi chiều rộng là bao nhiêu?",
             "choices": [
-              "9",
-              "10",
-              "7",
-              "8"
+              "6 cm",
+              "5 cm",
+              "4 cm",
+              "7 cm"
             ],
-            "a": 0,
-            "hint": "48÷6=8",
+            "a": 1,
+            "hint": "Nửa chu vi = 28 : 2 = dài + rộng. Lấy nửa chu vi trừ chiều dài.",
             "difficulty": 2,
             "id": "toan_hinh_q031"
           },
           {
-            "q": "HCN diện tích bằng HV cạnh 6. HCN rộng 4. Dài = ?",
+            "q": "Hình chữ nhật có chiều dài 12 cm, chiều rộng 3 cm. Chu vi là bao nhiêu?",
             "choices": [
-              "10",
-              "9",
-              "7",
-              "8"
+              "36 cm",
+              "30 cm",
+              "24 cm",
+              "27 cm"
             ],
             "a": 1,
-            "hint": "",
-            "difficulty": 2,
-            "id": "toan_hinh_q032"
-          },
-          {
-            "q": "S HCN dài 12, rộng 3 = ?",
-            "choices": [
-              "39",
-              "33",
-              "36",
-              "30"
-            ],
-            "a": 2,
-            "hint": "",
+            "hint": "Chu vi = (dài + rộng) × 2.",
             "difficulty": 1,
             "id": "toan_hinh_q033"
           },
@@ -16191,7 +16040,7 @@
             "id": "toan_hinh_q036"
           },
           {
-            "q": "HV có cạnh bằng HCN dài. HCN rộng 5, dài 8. CV HV = ?",
+            "q": "Một hình vuông có cạnh bằng chiều dài của hình chữ nhật. Hình chữ nhật có chiều rộng 5 cm, chiều dài 8 cm. Hỏi chu vi hình vuông là bao nhiêu xăng-ti-mét?",
             "choices": [
               "34",
               "28",
@@ -16199,12 +16048,12 @@
               "30"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Cạnh hình vuông bằng 8 cm, chu vi = cạnh × 4.",
             "difficulty": 2,
             "id": "toan_hinh_q037"
           },
           {
-            "q": "Khối nào có các mặt là HCN?",
+            "q": "Khối nào dưới đây có các mặt đều là hình chữ nhật?",
             "choices": [
               "Khối trụ",
               "Khối chóp",
@@ -16213,7 +16062,8 @@
             ],
             "a": 3,
             "difficulty": 1,
-            "id": "toan_hinh_q038"
+            "id": "toan_hinh_q038",
+            "hint": "Hãy tưởng tượng hình dạng của từng khối: khối nào giống hộp đựng giày?"
           },
           {
             "q": "Hình nào có đúng 2 cặp cạnh song song và bằng nhau?",
@@ -16228,59 +16078,59 @@
             "id": "toan_hinh_q039"
           },
           {
-            "q": "Bao nhiêu HV cạnh 2 vừa đủ lát HCN 6×4?",
+            "q": "Hình tam giác có chu vi 24 cm, hai cạnh dài 9 cm và 7 cm. Hỏi cạnh còn lại dài bao nhiêu?",
             "choices": [
-              "5",
-              "6",
-              "7",
-              "4"
+              "7 cm",
+              "9 cm",
+              "8 cm",
+              "6 cm"
             ],
-            "a": 1,
-            "hint": "",
+            "a": 2,
+            "hint": "Lấy chu vi trừ đi tổng hai cạnh đã biết.",
             "difficulty": 2,
             "id": "toan_hinh_q040"
           },
           {
-            "q": "HCN có chu vi 36, chiều dài gấp đôi chiều rộng. Diện tích = ?",
+            "q": "Hình chữ nhật có chu vi 36 cm, chiều dài 11 cm. Hỏi chiều rộng là bao nhiêu?",
             "choices": [
-              "68",
-              "80",
-              "72",
-              "96"
+              "8 cm",
+              "6 cm",
+              "9 cm",
+              "7 cm"
             ],
-            "a": 2,
-            "hint": "",
+            "a": 3,
+            "hint": "Nửa chu vi = 36 : 2. Lấy nửa chu vi trừ chiều dài.",
             "difficulty": 2,
             "id": "toan_hinh_q041"
           },
           {
-            "q": "HV chu vi = CV HCN 10×5. Cạnh HV = ?",
+            "q": "Hình chữ nhật có chiều dài 9 cm, chiều rộng 7 cm. Một hình vuông có chu vi bằng chu vi hình chữ nhật đó. Hỏi cạnh hình vuông dài bao nhiêu?",
             "choices": [
-              "8,5",
-              "8",
-              "7",
-              "7,5"
+              "7 cm",
+              "8 cm",
+              "9 cm",
+              "6 cm"
             ],
-            "a": 3,
-            "hint": "",
+            "a": 1,
+            "hint": "Tính chu vi hình chữ nhật trước: (dài + rộng) × 2, rồi chia cho 4.",
             "difficulty": 2,
             "id": "toan_hinh_q042"
           },
           {
-            "q": "Nền nhà HCN 8m×6m. Lát gạch 1m². Cần bao nhiêu gạch?",
+            "q": "Mảnh vườn hình chữ nhật có chiều dài 9 m, chiều rộng 6 m. Bác An muốn rào xung quanh vườn. Hỏi hàng rào dài bao nhiêu mét?",
             "choices": [
-              "48",
-              "46",
-              "50",
-              "42"
+              "30 m",
+              "27 m",
+              "24 m",
+              "33 m"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Hàng rào đi quanh vườn chính là chu vi: (dài + rộng) × 2.",
             "difficulty": 2,
             "id": "toan_hinh_q043"
           },
           {
-            "q": "Vườn HV cạnh 9m. Quanh vườn trồng cây 3m/cây. Cần mấy cây?",
+            "q": "Mảnh vườn hình vuông có cạnh 9 m. Người ta trồng cây xung quanh vườn, cứ cách 3 m trồng một cây. Hỏi cần bao nhiêu cây?",
             "choices": [
               "11",
               "12",
@@ -16288,12 +16138,12 @@
               "10"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Tính chu vi vườn trước, rồi chia cho khoảng cách giữa hai cây.",
             "difficulty": 2,
             "id": "toan_hinh_q044"
           },
           {
-            "q": "Sợi dây quấn quanh HV cạnh 7m được 2 vòng. Dài dây = ?",
+            "q": "Một sợi dây quấn vừa đúng 2 vòng quanh một hình vuông có cạnh 7 m. Hỏi sợi dây dài bao nhiêu mét?",
             "choices": [
               "58m",
               "52m",
@@ -16301,7 +16151,7 @@
               "54m"
             ],
             "a": 2,
-            "hint": "4×7×2=56",
+            "hint": "Một vòng dài bằng chu vi hình vuông (7 × 4), quấn 2 vòng thì nhân đôi.",
             "difficulty": 2,
             "id": "toan_hinh_q045"
           },
@@ -16615,7 +16465,7 @@
             "id": "toan_loivan_q003"
           },
           {
-            "q": "Khối 2: 615 quà. Khối 3 nhiều hơn 158. Khối 3 = ?",
+            "q": "Khối lớp Hai gói được 615 món quà. Khối lớp Ba gói nhiều hơn khối lớp Hai 158 món quà. Hỏi khối lớp Ba gói được bao nhiêu món quà?",
             "choices": [
               "774",
               "771",
@@ -16623,12 +16473,12 @@
               "773"
             ],
             "a": 3,
-            "hint": "",
+            "hint": "\"Nhiều hơn\" nghĩa là dùng phép cộng.",
             "difficulty": 2,
             "id": "toan_loivan_q004"
           },
           {
-            "q": "Lớp 2A: 35 HS, lớp 2B: 28 HS. 2A hơn 2B?",
+            "q": "Lớp 2A có 35 học sinh, lớp 2B có 28 học sinh. Hỏi lớp 2A nhiều hơn lớp 2B bao nhiêu học sinh?",
             "choices": [
               "7",
               "8",
@@ -16636,20 +16486,20 @@
               "5"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "So sánh hơn kém — dùng phép trừ.",
             "difficulty": 2,
             "id": "toan_loivan_q005"
           },
           {
-            "q": "Vườn hái 564 kg cà phê, hơn vườn 2 là 248 kg. Vườn 2 = ?",
+            "q": "Kho thứ nhất chứa 472 kg gạo và chứa nhiều hơn kho thứ hai 185 kg. Hỏi kho thứ hai chứa bao nhiêu ki-lô-gam gạo?",
             "choices": [
-              "315",
-              "316",
-              "314",
-              "317"
+              "297 kg",
+              "285 kg",
+              "287 kg",
+              "277 kg"
             ],
-            "a": 1,
-            "hint": "Nhớ: 1 kg = 1000 g",
+            "a": 2,
+            "hint": "Kho thứ nhất nhiều hơn nghĩa là kho thứ hai ít hơn — dùng phép trừ.",
             "difficulty": 2,
             "id": "toan_loivan_q006"
           },
@@ -16732,7 +16582,7 @@
             "id": "toan_loivan_q012"
           },
           {
-            "q": "24 HS chia đều 2 nhóm. Mỗi nhóm?",
+            "q": "Có 24 học sinh chia đều thành 2 nhóm. Hỏi mỗi nhóm có bao nhiêu học sinh?",
             "choices": [
               "12",
               "14",
@@ -16740,7 +16590,7 @@
               "11"
             ],
             "a": 0,
-            "hint": "Chia tổng số cho số nhóm/người",
+            "hint": "Chia tổng số học sinh cho số nhóm.",
             "difficulty": 2,
             "id": "toan_loivan_q013"
           },
@@ -16758,7 +16608,7 @@
             "id": "toan_loivan_q014"
           },
           {
-            "q": "45 kg táo, 5 kg/thùng. Được mấy thùng?",
+            "q": "Có 45 kg táo xếp đều vào các thùng, mỗi thùng đựng 5 kg. Hỏi xếp được bao nhiêu thùng?",
             "choices": [
               "7",
               "8",
@@ -16766,7 +16616,7 @@
               "10"
             ],
             "a": 2,
-            "hint": "Nhớ: 1 kg = 1000 g",
+            "hint": "Lấy tổng số ki-lô-gam chia cho số ki-lô-gam mỗi thùng.",
             "difficulty": 2,
             "id": "toan_loivan_q015"
           },
@@ -16953,28 +16803,28 @@
             "id": "toan_loivan_q029"
           },
           {
-            "q": "2 số tổng=500, hiệu=100. Số lớn?",
+            "q": "Hai số có tổng bằng 600 và hiệu bằng 200. Tìm số lớn.",
             "choices": [
-              "295",
-              "300",
-              "305",
-              "290"
+              "395",
+              "400",
+              "405",
+              "390"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Số lớn = (tổng + hiệu) : 2.",
             "difficulty": 2,
             "id": "toan_loivan_q030"
           },
           {
-            "q": "Hiệu = 715, giảm số bị trừ 215. Hiệu mới?",
+            "q": "Hiệu của hai số là 530. Nếu giảm số bị trừ đi 130 thì hiệu mới bằng bao nhiêu?",
             "choices": [
-              "498",
-              "499",
-              "500",
-              "501"
+              "398",
+              "402",
+              "400",
+              "396"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Giảm số bị trừ đi bao nhiêu thì hiệu cũng giảm đi bấy nhiêu.",
             "difficulty": 2,
             "id": "toan_loivan_q031"
           },
@@ -17044,7 +16894,7 @@
             "id": "toan_loivan_q036"
           },
           {
-            "q": "Số táo 3 rổ: rổ1=45, rổ2 nhiều hơn 15, rổ3=rổ1+rổ2. Rổ3?",
+            "q": "Có 3 rổ táo. Rổ thứ nhất có 45 quả, rổ thứ hai nhiều hơn rổ thứ nhất 15 quả, rổ thứ ba có số táo bằng tổng của hai rổ đầu. Hỏi rổ thứ ba có bao nhiêu quả táo?",
             "choices": [
               "105",
               "108",
@@ -17052,7 +16902,7 @@
               "100"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Tính số táo rổ hai trước, rồi cộng với rổ một.",
             "difficulty": 2,
             "id": "toan_loivan_q037"
           },
@@ -17173,7 +17023,7 @@
             "id": "toan_loivan_q046"
           },
           {
-            "q": "Thỏ 8 con, Rùa 5 con, Sóc ít hơn Thỏ 5 con. Tổng 3 loài?",
+            "q": "Trang trại nuôi 8 con thỏ, 5 con rùa, còn số con sóc ít hơn số con thỏ là 5 con. Hỏi trang trại có tất cả bao nhiêu con vật?",
             "choices": [
               "14",
               "17",
@@ -17181,7 +17031,7 @@
               "15"
             ],
             "a": 2,
-            "hint": "",
+            "hint": "Tính số sóc trước, rồi cộng cả ba loài lại.",
             "difficulty": 2,
             "id": "toan_loivan_q047"
           },
@@ -17250,7 +17100,7 @@
             "id": "toan_loivan_q052"
           },
           {
-            "q": "Có 100 HS, 60 học Toán, 70 học Văn. Ít nhất học cả hai?",
+            "q": "Khối lớp Hai có 100 học sinh, trong đó 60 bạn thích môn Toán và 70 bạn thích môn Tiếng Việt. Hỏi có ít nhất bao nhiêu bạn thích cả hai môn?",
             "choices": [
               "30",
               "28",
@@ -17258,7 +17108,7 @@
               "29"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Cộng hai nhóm lại rồi so với tổng số học sinh — phần dư ra chính là số bạn được đếm hai lần.",
             "difficulty": 2,
             "id": "toan_loivan_q053"
           },
@@ -21917,7 +21767,7 @@
             "id": "toan_tuyduy_q033"
           },
           {
-            "q": "Gà + Vịt = 10 con, Chân gà + chân vịt = 28. Số gà?",
+            "q": "Vừa gà vừa chó đếm được 10 con. Đếm chân thì có tất cả 28 chân. Hỏi có bao nhiêu con gà?",
             "choices": [
               "4",
               "6",
@@ -21925,7 +21775,7 @@
               "5"
             ],
             "a": 1,
-            "hint": "",
+            "hint": "Nếu cả 10 con đều là gà thì chỉ có 20 chân. Mỗi con chó nhiều hơn con gà 2 chân.",
             "difficulty": 3,
             "id": "toan_tuyduy_q034"
           },
@@ -21956,7 +21806,7 @@
             "id": "toan_tuyduy_q036"
           },
           {
-            "q": "Chia HV thành 4 phần bằng nhau bằng cách vẽ?",
+            "q": "Muốn chia một hình vuông thành 4 phần bằng nhau, cần vẽ ít nhất mấy đường thẳng?",
             "choices": [
               "2 đường thẳng",
               "4 đường thẳng",
@@ -21964,7 +21814,7 @@
               "3 đường thẳng"
             ],
             "a": 0,
-            "hint": "Vẽ 2 đường song song với cạnh",
+            "hint": "Thử tưởng tượng cắt chiếc bánh hình vuông thành 4 miếng đều nhau.",
             "difficulty": 3,
             "id": "toan_tuyduy_q037"
           },
@@ -22496,22 +22346,6 @@
             "id": "toan_tien_viet_nam_sgk_q005"
           },
           {
-            "q": "Bạn nhỏ có 5 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "5 000 đồng",
-              "7 000 đồng",
-              "4 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q006"
-          },
-          {
             "q": "Bạn nhỏ có 50 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "56 000 đồng",
@@ -22558,22 +22392,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q009"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "7 000 đồng",
-              "5 000 đồng",
-              "4 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q010"
           },
           {
             "q": "Bạn nhỏ có 5 000 đồng và 10 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
@@ -22624,22 +22442,6 @@
             "id": "toan_tien_viet_nam_sgk_q013"
           },
           {
-            "q": "Bạn nhỏ có 1 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "7 000 đồng",
-              "4 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q014"
-          },
-          {
             "q": "Bạn nhỏ có 50 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "50 000 đồng",
@@ -22686,38 +22488,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q017"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "7 000 đồng",
-              "5 000 đồng",
-              "8 000 đồng",
-              "3 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q018"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "6 000 đồng",
-              "7 000 đồng",
-              "4 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q019"
           },
           {
             "q": "Bạn nhỏ có 10 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
@@ -22768,54 +22538,6 @@
             "id": "toan_tien_viet_nam_sgk_q022"
           },
           {
-            "q": "Bạn nhỏ có 5 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "4 000 đồng",
-              "6 000 đồng",
-              "7 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q023"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "8 000 đồng",
-              "3 000 đồng",
-              "7 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q024"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "7 000 đồng",
-              "5 000 đồng",
-              "4 000 đồng",
-              "6 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q025"
-          },
-          {
             "q": "Bạn nhỏ có 20 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "25 000 đồng",
@@ -22848,70 +22570,6 @@
             "id": "toan_tien_viet_nam_sgk_q027"
           },
           {
-            "q": "Bạn nhỏ có 5 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "3 000 đồng",
-              "8 000 đồng",
-              "7 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q028"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "40 000 đồng",
-              "50 000 đồng",
-              "61 000 đồng",
-              "60 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q029"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "3 000 đồng",
-              "4 000 đồng",
-              "1 000 đồng",
-              "2 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q030"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "7 000 đồng",
-              "6 000 đồng",
-              "4 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q031"
-          },
-          {
             "q": "Bạn nhỏ có 10 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "8 000 đồng",
@@ -22926,22 +22584,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q032"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "50 000 đồng",
-              "48 000 đồng",
-              "53 000 đồng",
-              "52 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q033"
           },
           {
             "q": "Bạn nhỏ có 50 000 đồng và 10 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
@@ -22976,166 +22618,6 @@
             "id": "toan_tien_viet_nam_sgk_q035"
           },
           {
-            "q": "Bạn nhỏ có 1 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "22 000 đồng",
-              "19 000 đồng",
-              "21 000 đồng",
-              "20 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q036"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "56 000 đồng",
-              "50 000 đồng",
-              "45 000 đồng",
-              "55 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q037"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "55 000 đồng",
-              "45 000 đồng",
-              "50 000 đồng",
-              "56 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q038"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "13 000 đồng",
-              "12 000 đồng",
-              "10 000 đồng",
-              "8 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q039"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "52 000 đồng",
-              "50 000 đồng",
-              "51 000 đồng",
-              "49 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q040"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "71 000 đồng",
-              "50 000 đồng",
-              "30 000 đồng",
-              "70 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q041"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "51 000 đồng",
-              "49 000 đồng",
-              "52 000 đồng",
-              "50 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q042"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "10 000 đồng",
-              "11 000 đồng",
-              "9 000 đồng",
-              "12 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q043"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 10 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "61 000 đồng",
-              "50 000 đồng",
-              "60 000 đồng",
-              "40 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q044"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "7 000 đồng",
-              "4 000 đồng",
-              "6 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q045"
-          },
-          {
             "q": "Bạn nhỏ có 20 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "70 000 đồng",
@@ -23150,38 +22632,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q046"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "52 000 đồng",
-              "51 000 đồng",
-              "50 000 đồng",
-              "49 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q047"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "1 000 đồng",
-              "2 000 đồng",
-              "3 000 đồng",
-              "4 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q048"
           },
           {
             "q": "Bạn nhỏ có 5 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
@@ -23200,86 +22650,6 @@
             "id": "toan_tien_viet_nam_sgk_q049"
           },
           {
-            "q": "Bạn nhỏ có 10 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "10 000 đồng",
-              "16 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q050"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "52 000 đồng",
-              "51 000 đồng",
-              "49 000 đồng",
-              "50 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q051"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "2 000 đồng",
-              "4 000 đồng",
-              "3 000 đồng",
-              "1 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q052"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "4 000 đồng",
-              "2 000 đồng",
-              "1 000 đồng",
-              "3 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q053"
-          },
-          {
-            "q": "Bạn nhỏ có 1 000 đồng và 10 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "11 000 đồng",
-              "10 000 đồng",
-              "9 000 đồng",
-              "12 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q054"
-          },
-          {
             "q": "Bạn nhỏ có 1 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "50 000 đồng",
@@ -23296,118 +22666,6 @@
             "id": "toan_tien_viet_nam_sgk_q055"
           },
           {
-            "q": "Bạn nhỏ có 2 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "3 000 đồng",
-              "8 000 đồng",
-              "7 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q056"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "53 000 đồng",
-              "50 000 đồng",
-              "48 000 đồng",
-              "52 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q057"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "7 000 đồng",
-              "8 000 đồng",
-              "5 000 đồng",
-              "3 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 1,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q058"
-          },
-          {
-            "q": "Bạn nhỏ có 2 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "48 000 đồng",
-              "52 000 đồng",
-              "53 000 đồng",
-              "50 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q059"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "50 000 đồng",
-              "45 000 đồng",
-              "55 000 đồng",
-              "56 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q060"
-          },
-          {
-            "q": "Bạn nhỏ có 20 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "26 000 đồng",
-              "20 000 đồng",
-              "25 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q061"
-          },
-          {
-            "q": "Bạn nhỏ có 50 000 đồng và 1 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "51 000 đồng",
-              "52 000 đồng",
-              "50 000 đồng",
-              "49 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q062"
-          },
-          {
             "q": "Bạn nhỏ có 2 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
             "choices": [
               "20 000 đồng",
@@ -23422,102 +22680,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q063"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "26 000 đồng",
-              "25 000 đồng",
-              "20 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q064"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 50 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "61 000 đồng",
-              "40 000 đồng",
-              "50 000 đồng",
-              "60 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q065"
-          },
-          {
-            "q": "Bạn nhỏ có 5 000 đồng và 20 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "25 000 đồng",
-              "15 000 đồng",
-              "26 000 đồng",
-              "20 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q066"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "15 000 đồng",
-              "16 000 đồng",
-              "10 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q067"
-          },
-          {
-            "q": "Bạn nhỏ có 10 000 đồng và 2 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "10 000 đồng",
-              "8 000 đồng",
-              "12 000 đồng",
-              "13 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q068"
-          },
-          {
-            "q": "Bạn nhỏ có 20 000 đồng và 5 000 đồng. Bạn nhỏ có tất cả bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "26 000 đồng",
-              "20 000 đồng",
-              "25 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Cộng giá trị các tờ tiền lại.",
-            "skill": "money_add",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q069"
           },
           {
             "q": "Một món đồ giá 6 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
@@ -23648,22 +22810,6 @@
             "id": "toan_tien_viet_nam_sgk_q077"
           },
           {
-            "q": "Một món đồ giá 6 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "12 000 đồng",
-              "6 003 đồng",
-              "24 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q078"
-          },
-          {
             "q": "Một món đồ giá 8 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "8 002 đồng",
@@ -23694,22 +22840,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q080"
-          },
-          {
-            "q": "Một món đồ giá 6 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "24 000 đồng",
-              "6 003 đồng",
-              "12 000 đồng",
-              "18 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q081"
           },
           {
             "q": "Một món đồ giá 5 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
@@ -23840,22 +22970,6 @@
             "id": "toan_tien_viet_nam_sgk_q089"
           },
           {
-            "q": "Một món đồ giá 8 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "40 000 đồng",
-              "32 000 đồng",
-              "8 005 đồng",
-              "48 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q090"
-          },
-          {
             "q": "Một món đồ giá 7 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "28 000 đồng",
@@ -23920,22 +23034,6 @@
             "id": "toan_tien_viet_nam_sgk_q094"
           },
           {
-            "q": "Một món đồ giá 8 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "8 000 đồng",
-              "16 000 đồng",
-              "24 000 đồng",
-              "8 002 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q095"
-          },
-          {
             "q": "Một món đồ giá 8 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "8 004 đồng",
@@ -23952,22 +23050,6 @@
             "id": "toan_tien_viet_nam_sgk_q096"
           },
           {
-            "q": "Một món đồ giá 3 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "3 005 đồng",
-              "12 000 đồng",
-              "15 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q097"
-          },
-          {
             "q": "Một món đồ giá 10 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "30 000 đồng",
@@ -23982,70 +23064,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q098"
-          },
-          {
-            "q": "Một món đồ giá 9 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "45 000 đồng",
-              "36 000 đồng",
-              "9 004 đồng",
-              "27 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q099"
-          },
-          {
-            "q": "Một món đồ giá 9 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "27 000 đồng",
-              "9 000 đồng",
-              "18 000 đồng",
-              "9 002 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q100"
-          },
-          {
-            "q": "Một món đồ giá 5 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "5 002 đồng",
-              "5 000 đồng",
-              "10 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q101"
-          },
-          {
-            "q": "Một món đồ giá 6 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "30 000 đồng",
-              "36 000 đồng",
-              "24 000 đồng",
-              "6 005 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q102"
           },
           {
             "q": "Một món đồ giá 2 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
@@ -24080,38 +23098,6 @@
             "id": "toan_tien_viet_nam_sgk_q104"
           },
           {
-            "q": "Một món đồ giá 9 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "45 000 đồng",
-              "27 000 đồng",
-              "9 004 đồng",
-              "36 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q105"
-          },
-          {
-            "q": "Một món đồ giá 6 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "6 002 đồng",
-              "6 000 đồng",
-              "18 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q106"
-          },
-          {
             "q": "Một món đồ giá 2 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "4 000 đồng",
@@ -24142,38 +23128,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q108"
-          },
-          {
-            "q": "Một món đồ giá 2 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "2 003 đồng",
-              "8 000 đồng",
-              "4 000 đồng",
-              "6 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q109"
-          },
-          {
-            "q": "Một món đồ giá 3 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "9 000 đồng",
-              "3 004 đồng",
-              "15 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q110"
           },
           {
             "q": "Một món đồ giá 2 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
@@ -24208,182 +23162,6 @@
             "id": "toan_tien_viet_nam_sgk_q112"
           },
           {
-            "q": "Một món đồ giá 7 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "21 000 đồng",
-              "7 004 đồng",
-              "35 000 đồng",
-              "28 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q113"
-          },
-          {
-            "q": "Một món đồ giá 3 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "9 000 đồng",
-              "3 003 đồng",
-              "12 000 đồng",
-              "6 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q114"
-          },
-          {
-            "q": "Một món đồ giá 4 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "20 000 đồng",
-              "16 000 đồng",
-              "12 000 đồng",
-              "4 004 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q115"
-          },
-          {
-            "q": "Một món đồ giá 6 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "6 004 đồng",
-              "24 000 đồng",
-              "30 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q116"
-          },
-          {
-            "q": "Một món đồ giá 4 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "4 005 đồng",
-              "16 000 đồng",
-              "24 000 đồng",
-              "20 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q117"
-          },
-          {
-            "q": "Một món đồ giá 9 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "36 000 đồng",
-              "9 004 đồng",
-              "27 000 đồng",
-              "45 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q118"
-          },
-          {
-            "q": "Một món đồ giá 4 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "4 004 đồng",
-              "16 000 đồng",
-              "12 000 đồng",
-              "20 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q119"
-          },
-          {
-            "q": "Một món đồ giá 4 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "24 000 đồng",
-              "16 000 đồng",
-              "20 000 đồng",
-              "4 005 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q120"
-          },
-          {
-            "q": "Một món đồ giá 5 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "20 000 đồng",
-              "10 000 đồng",
-              "5 003 đồng",
-              "15 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q121"
-          },
-          {
-            "q": "Một món đồ giá 9 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "36 000 đồng",
-              "9 004 đồng",
-              "27 000 đồng",
-              "45 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q122"
-          },
-          {
-            "q": "Một món đồ giá 3 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "9 000 đồng",
-              "3 003 đồng",
-              "12 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q123"
-          },
-          {
             "q": "Một món đồ giá 4 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "4 002 đồng",
@@ -24400,54 +23178,6 @@
             "id": "toan_tien_viet_nam_sgk_q124"
           },
           {
-            "q": "Một món đồ giá 6 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "6 002 đồng",
-              "6 000 đồng",
-              "18 000 đồng",
-              "12 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q125"
-          },
-          {
-            "q": "Một món đồ giá 10 000 đồng. Mua 4 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "40 000 đồng",
-              "30 000 đồng",
-              "10 004 đồng",
-              "50 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q126"
-          },
-          {
-            "q": "Một món đồ giá 8 000 đồng. Mua 2 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "8 002 đồng",
-              "16 000 đồng",
-              "8 000 đồng",
-              "24 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q127"
-          },
-          {
             "q": "Một món đồ giá 7 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
             "choices": [
               "28 000 đồng",
@@ -24462,54 +23192,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q128"
-          },
-          {
-            "q": "Một món đồ giá 3 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "3 003 đồng",
-              "6 000 đồng",
-              "9 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q129"
-          },
-          {
-            "q": "Một món đồ giá 8 000 đồng. Mua 3 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "24 000 đồng",
-              "16 000 đồng",
-              "32 000 đồng",
-              "8 003 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q130"
-          },
-          {
-            "q": "Một món đồ giá 3 000 đồng. Mua 5 món như vậy hết bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "15 000 đồng",
-              "3 005 đồng",
-              "18 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Các món có giá bằng nhau nên dùng phép nhân.",
-            "skill": "money_multiplication",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q131"
           },
           {
             "q": "Có 50 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
@@ -24560,38 +23242,6 @@
             "id": "toan_tien_viet_nam_sgk_q134"
           },
           {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "5001 đồng",
-              "5 000 đồng",
-              "6 000 đồng",
-              "15 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q135"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "6 000 đồng",
-              "5 000 đồng",
-              "4998 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q136"
-          },
-          {
             "q": "Có 100 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "98 000 đồng",
@@ -24638,38 +23288,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q139"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 23 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "28 000 đồng",
-              "23 000 đồng",
-              "27 000 đồng",
-              "73 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q140"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "46 000 đồng",
-              "55 000 đồng",
-              "45 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q141"
           },
           {
             "q": "Có 50 000 đồng  mua hàng hết 8 000 đồng. Còn lại bao nhiêu tiền?",
@@ -24720,22 +23338,6 @@
             "id": "toan_tien_viet_nam_sgk_q144"
           },
           {
-            "q": "Có 20 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "3 000 đồng",
-              "23 000 đồng",
-              "17 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q145"
-          },
-          {
             "q": "Có 100 000 đồng  mua hàng hết 23 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "77 000 đồng",
@@ -24784,22 +23386,6 @@
             "id": "toan_tien_viet_nam_sgk_q148"
           },
           {
-            "q": "Có 20 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "3 000 đồng",
-              "23 000 đồng",
-              "18 000 đồng",
-              "17 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q149"
-          },
-          {
             "q": "Có 100 000 đồng  mua hàng hết 2 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "98 000 đồng",
@@ -24816,22 +23402,6 @@
             "id": "toan_tien_viet_nam_sgk_q150"
           },
           {
-            "q": "Có 20 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "17 000 đồng",
-              "3 000 đồng",
-              "23 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q151"
-          },
-          {
             "q": "Có 20 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "25 000 đồng",
@@ -24846,22 +23416,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q152"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 2 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "99 000 đồng",
-              "102 000 đồng",
-              "2 000 đồng",
-              "98 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q153"
           },
           {
             "q": "Có 20 000 đồng  mua hàng hết 10 000 đồng. Còn lại bao nhiêu tiền?",
@@ -24912,22 +23466,6 @@
             "id": "toan_tien_viet_nam_sgk_q156"
           },
           {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "4997 đồng",
-              "15 000 đồng",
-              "6 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q157"
-          },
-          {
             "q": "Có 10 000 đồng  mua hàng hết 8 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "2 000 đồng",
@@ -24944,70 +23482,6 @@
             "id": "toan_tien_viet_nam_sgk_q158"
           },
           {
-            "q": "Có 50 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "3 000 đồng",
-              "47 000 đồng",
-              "48 000 đồng",
-              "53 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q159"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "18 000 đồng",
-              "23 000 đồng",
-              "17 000 đồng",
-              "3 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q160"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 35 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "66 000 đồng",
-              "35 000 đồng",
-              "135 000 đồng",
-              "65 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q161"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "15 000 đồng",
-              "6 000 đồng",
-              "5005 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q162"
-          },
-          {
             "q": "Có 100 000 đồng  mua hàng hết 8 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "93 000 đồng",
@@ -25022,86 +23496,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q163"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "46 000 đồng",
-              "55 000 đồng",
-              "45 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q164"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "5003 đồng",
-              "15 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q165"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "25 000 đồng",
-              "16 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q166"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "15 000 đồng",
-              "5 000 đồng",
-              "6 000 đồng",
-              "5010 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q167"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 23 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "28 000 đồng",
-              "23 000 đồng",
-              "27 000 đồng",
-              "73 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q168"
           },
           {
             "q": "Có 50 000 đồng  mua hàng hết 7 000 đồng. Còn lại bao nhiêu tiền?",
@@ -25136,102 +23530,6 @@
             "id": "toan_tien_viet_nam_sgk_q170"
           },
           {
-            "q": "Có 100 000 đồng  mua hàng hết 12 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "88 000 đồng",
-              "89 000 đồng",
-              "112 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q171"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 10 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "11 000 đồng",
-              "10010 đồng",
-              "10 000 đồng",
-              "30 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q172"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 12 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "12 000 đồng",
-              "89 000 đồng",
-              "112 000 đồng",
-              "88 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q173"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 27 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "23 000 đồng",
-              "24 000 đồng",
-              "27 000 đồng",
-              "77 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q174"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 2 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "99 000 đồng",
-              "98 000 đồng",
-              "102 000 đồng",
-              "2 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q175"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 2 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "2 000 đồng",
-              "102 000 đồng",
-              "98 000 đồng",
-              "99 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q176"
-          },
-          {
             "q": "Có 20 000 đồng  mua hàng hết 7 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "14 000 đồng",
@@ -25246,86 +23544,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q177"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 10 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "10 000 đồng",
-              "30 000 đồng",
-              "11 000 đồng",
-              "9995 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q178"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 7 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "7 000 đồng",
-              "43 000 đồng",
-              "44 000 đồng",
-              "57 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q179"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "96 000 đồng",
-              "105 000 đồng",
-              "95 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q180"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 8 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "8 000 đồng",
-              "58 000 đồng",
-              "43 000 đồng",
-              "42 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q181"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 27 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "23 000 đồng",
-              "77 000 đồng",
-              "27 000 đồng",
-              "24 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q182"
           },
           {
             "q": "Có 10 000 đồng  mua hàng hết 7 000 đồng. Còn lại bao nhiêu tiền?",
@@ -25344,102 +23562,6 @@
             "id": "toan_tien_viet_nam_sgk_q183"
           },
           {
-            "q": "Có 100 000 đồng  mua hàng hết 35 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "135 000 đồng",
-              "35 000 đồng",
-              "65 000 đồng",
-              "66 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q184"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 35 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "16 000 đồng",
-              "85 000 đồng",
-              "35 000 đồng",
-              "15 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q185"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "5 000 đồng",
-              "4999 đồng",
-              "15 000 đồng",
-              "6 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q186"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "6 000 đồng",
-              "5 000 đồng",
-              "15 000 đồng",
-              "4990 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q187"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "23 000 đồng",
-              "3 000 đồng",
-              "17 000 đồng",
-              "18 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q188"
-          },
-          {
-            "q": "Có 10 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "4995 đồng",
-              "6 000 đồng",
-              "15 000 đồng",
-              "5 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q189"
-          },
-          {
             "q": "Có 20 000 đồng  mua hàng hết 12 000 đồng. Còn lại bao nhiêu tiền?",
             "choices": [
               "8 000 đồng",
@@ -25454,70 +23576,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_tien_viet_nam_sgk_q190"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 3 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "48 000 đồng",
-              "47 000 đồng",
-              "53 000 đồng",
-              "3 000 đồng"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q191"
-          },
-          {
-            "q": "Có 50 000 đồng  mua hàng hết 27 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "24 000 đồng",
-              "27 000 đồng",
-              "23 000 đồng",
-              "77 000 đồng"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q192"
-          },
-          {
-            "q": "Có 100 000 đồng  mua hàng hết 5 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "96 000 đồng",
-              "5 000 đồng",
-              "105 000 đồng",
-              "95 000 đồng"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q193"
-          },
-          {
-            "q": "Có 20 000 đồng  mua hàng hết 10 000 đồng. Còn lại bao nhiêu tiền?",
-            "choices": [
-              "10 000 đồng",
-              "11 000 đồng",
-              "10003 đồng",
-              "30 000 đồng"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Còn lại thì lấy số tiền có trừ số tiền đã dùng.",
-            "skill": "money_subtraction",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_tien_viet_nam_sgk_q194"
           }
         ]
       },
@@ -25879,22 +23937,6 @@
             "id": "toan_thoi_gian_sgk_q022"
           },
           {
-            "q": "Lan bắt đầu học lúc 12 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "15 giờ",
-              "12 giờ",
-              "2 giờ",
-              "14 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q023"
-          },
-          {
             "q": "Lan bắt đầu học lúc 11 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "14 giờ",
@@ -26007,38 +24049,6 @@
             "id": "toan_thoi_gian_sgk_q030"
           },
           {
-            "q": "Lan bắt đầu học lúc 14 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "14 giờ",
-              "20 giờ",
-              "5 giờ",
-              "19 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q031"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 13 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "16 giờ",
-              "17 giờ",
-              "13 giờ",
-              "3 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q032"
-          },
-          {
             "q": "Lan bắt đầu học lúc 8 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "5 giờ",
@@ -26053,54 +24063,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q033"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 13 giờ và học trong 1 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "13 giờ",
-              "15 giờ",
-              "14 giờ",
-              "1 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q034"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "2 giờ",
-              "8 giờ",
-              "11 giờ",
-              "10 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q035"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 18 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "20 giờ",
-              "18 giờ",
-              "2 giờ",
-              "21 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q036"
           },
           {
             "q": "Lan bắt đầu học lúc 10 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
@@ -26183,22 +24145,6 @@
             "id": "toan_thoi_gian_sgk_q041"
           },
           {
-            "q": "Lan bắt đầu học lúc 12 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "15 giờ",
-              "12 giờ",
-              "14 giờ",
-              "2 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q042"
-          },
-          {
             "q": "Lan bắt đầu học lúc 18 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "24 giờ",
@@ -26229,22 +24175,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q044"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 14 giờ và học trong 4 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "4 giờ",
-              "18 giờ",
-              "14 giờ",
-              "19 giờ"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q045"
           },
           {
             "q": "Lan bắt đầu học lúc 11 giờ và học trong 1 giờ. Lan học xong lúc mấy giờ?",
@@ -26295,70 +24225,6 @@
             "id": "toan_thoi_gian_sgk_q048"
           },
           {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 4 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "8 giờ",
-              "12 giờ",
-              "4 giờ",
-              "13 giờ"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q049"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 4 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "13 giờ",
-              "8 giờ",
-              "12 giờ",
-              "4 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q050"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 12 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "16 giờ",
-              "12 giờ",
-              "3 giờ",
-              "15 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q051"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 4 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "12 giờ",
-              "4 giờ",
-              "8 giờ",
-              "13 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q052"
-          },
-          {
             "q": "Lan bắt đầu học lúc 16 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "16 giờ",
@@ -26407,22 +24273,6 @@
             "id": "toan_thoi_gian_sgk_q055"
           },
           {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "11 giờ",
-              "8 giờ",
-              "12 giờ",
-              "3 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q056"
-          },
-          {
             "q": "Lan bắt đầu học lúc 12 giờ và học trong 4 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "4 giờ",
@@ -26439,86 +24289,6 @@
             "id": "toan_thoi_gian_sgk_q057"
           },
           {
-            "q": "Lan bắt đầu học lúc 16 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "2 giờ",
-              "19 giờ",
-              "18 giờ",
-              "16 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q058"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 7 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "7 giờ",
-              "5 giờ",
-              "13 giờ",
-              "12 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q059"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 12 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "15 giờ",
-              "16 giờ",
-              "3 giờ",
-              "12 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q060"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 7 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "5 giờ",
-              "12 giờ",
-              "7 giờ",
-              "13 giờ"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q061"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 13 giờ và học trong 1 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "1 giờ",
-              "13 giờ",
-              "14 giờ",
-              "15 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q062"
-          },
-          {
             "q": "Lan bắt đầu học lúc 7 giờ và học trong 2 giờ. Lan học xong lúc mấy giờ?",
             "choices": [
               "7 giờ",
@@ -26533,70 +24303,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q063"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 13 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "18 giờ",
-              "5 giờ",
-              "13 giờ",
-              "19 giờ"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q064"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 7 giờ và học trong 5 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "7 giờ",
-              "12 giờ",
-              "5 giờ",
-              "13 giờ"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q065"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 8 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "8 giờ",
-              "12 giờ",
-              "11 giờ",
-              "3 giờ"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q066"
-          },
-          {
-            "q": "Lan bắt đầu học lúc 16 giờ và học trong 3 giờ. Lan học xong lúc mấy giờ?",
-            "choices": [
-              "16 giờ",
-              "20 giờ",
-              "3 giờ",
-              "19 giờ"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Lấy giờ bắt đầu cộng thêm thời gian đã học.",
-            "skill": "time_duration",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q067"
           },
           {
             "q": "Lan bắt đầu học lúc 18 giờ và học trong 1 giờ. Lan học xong lúc mấy giờ?",
@@ -26919,22 +24625,6 @@
             "id": "toan_thoi_gian_sgk_q087"
           },
           {
-            "q": "Hôm nay là Chủ Nhật, 2 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Bảy",
-              "Thứ Hai",
-              "Thứ Tư"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q088"
-          },
-          {
             "q": "Hôm nay là Thứ Sáu, 6 ngày nữa là thứ mấy?",
             "choices": [
               "Thứ Sáu",
@@ -26951,22 +24641,6 @@
             "id": "toan_thoi_gian_sgk_q089"
           },
           {
-            "q": "Hôm nay là Chủ Nhật, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Hai",
-              "Thứ Ba",
-              "Thứ Bảy",
-              "Chủ Nhật"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q090"
-          },
-          {
             "q": "Hôm nay là Thứ Sáu, 3 ngày nữa là thứ mấy?",
             "choices": [
               "Thứ Sáu",
@@ -26981,22 +24655,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q091"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 5 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Sáu",
-              "Thứ Bảy",
-              "Thứ Ba",
-              "Chủ Nhật"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q092"
           },
           {
             "q": "Hôm nay là Thứ Sáu, 4 ngày nữa là thứ mấy?",
@@ -27047,38 +24705,6 @@
             "id": "toan_thoi_gian_sgk_q095"
           },
           {
-            "q": "Hôm nay là Chủ Nhật, 4 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Chủ Nhật",
-              "Thứ Bảy",
-              "Thứ Hai"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q096"
-          },
-          {
-            "q": "Hôm nay là Thứ Ba, 1 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Tư",
-              "Chủ Nhật",
-              "Thứ Sáu"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q097"
-          },
-          {
             "q": "Hôm nay là Thứ Tư, 4 ngày nữa là thứ mấy?",
             "choices": [
               "Thứ Bảy",
@@ -27109,118 +24735,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q099"
-          },
-          {
-            "q": "Hôm nay là Thứ Sáu, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Thứ Hai",
-              "Thứ Ba",
-              "Thứ Bảy"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q100"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 2 ngày nữa là thứ mấy?",
-            "choices": [
-              "Chủ Nhật",
-              "Thứ Ba",
-              "Thứ Hai",
-              "Thứ Bảy"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q101"
-          },
-          {
-            "q": "Hôm nay là Thứ Ba, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Năm",
-              "Thứ Ba",
-              "Thứ Sáu"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q102"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 3 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Ba",
-              "Thứ Năm",
-              "Thứ Tư"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q103"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Tư",
-              "Thứ Ba",
-              "Chủ Nhật"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q104"
-          },
-          {
-            "q": "Hôm nay là Thứ Sáu, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Chủ Nhật",
-              "Thứ Năm",
-              "Thứ Bảy",
-              "Thứ Tư"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q105"
-          },
-          {
-            "q": "Hôm nay là Thứ Ba, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Thứ Hai",
-              "Thứ Ba",
-              "Chủ Nhật"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q106"
           },
           {
             "q": "Hôm nay là Thứ Tư, 5 ngày nữa là thứ mấy?",
@@ -27287,38 +24801,6 @@
             "id": "toan_thoi_gian_sgk_q110"
           },
           {
-            "q": "Hôm nay là Thứ Năm, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Chủ Nhật",
-              "Thứ Tư",
-              "Thứ Ba",
-              "Thứ Năm"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q111"
-          },
-          {
-            "q": "Hôm nay là Thứ Tư, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Tư",
-              "Thứ Bảy",
-              "Thứ Hai",
-              "Thứ Năm"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q112"
-          },
-          {
             "q": "Hôm nay là Thứ Ba, 5 ngày nữa là thứ mấy?",
             "choices": [
               "Thứ Tư",
@@ -27351,70 +24833,6 @@
             "id": "toan_thoi_gian_sgk_q114"
           },
           {
-            "q": "Hôm nay là Thứ Sáu, 5 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Hai",
-              "Chủ Nhật",
-              "Thứ Năm",
-              "Thứ Tư"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q115"
-          },
-          {
-            "q": "Hôm nay là Thứ Ba, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Năm",
-              "Thứ Sáu",
-              "Thứ Hai"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q116"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Tư",
-              "Thứ Bảy",
-              "Thứ Hai",
-              "Thứ Sáu"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q117"
-          },
-          {
-            "q": "Hôm nay là Thứ Hai, 6 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Bảy",
-              "Chủ Nhật",
-              "Thứ Năm"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q118"
-          },
-          {
             "q": "Hôm nay là Thứ Hai, 2 ngày nữa là thứ mấy?",
             "choices": [
               "Chủ Nhật",
@@ -27429,134 +24847,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q119"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 1 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Hai",
-              "Chủ Nhật",
-              "Thứ Ba",
-              "Thứ Năm"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q120"
-          },
-          {
-            "q": "Hôm nay là Thứ Tư, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Tư",
-              "Thứ Năm",
-              "Thứ Sáu"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q121"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 1 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Tư",
-              "Chủ Nhật",
-              "Thứ Hai",
-              "Thứ Năm"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q122"
-          },
-          {
-            "q": "Hôm nay là Thứ Bảy, 2 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Thứ Bảy",
-              "Thứ Ba",
-              "Thứ Hai"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q123"
-          },
-          {
-            "q": "Hôm nay là Thứ Ba, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Bảy",
-              "Thứ Sáu",
-              "Thứ Năm"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q124"
-          },
-          {
-            "q": "Hôm nay là Thứ Hai, 5 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Tư",
-              "Thứ Bảy",
-              "Thứ Năm",
-              "Thứ Sáu"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q125"
-          },
-          {
-            "q": "Hôm nay là Thứ Sáu, 5 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Năm",
-              "Thứ Tư",
-              "Thứ Sáu"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q126"
-          },
-          {
-            "q": "Hôm nay là Thứ Hai, 2 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Chủ Nhật",
-              "Thứ Hai",
-              "Thứ Tư"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q127"
           },
           {
             "q": "Hôm nay là Thứ Tư, 2 ngày nữa là thứ mấy?",
@@ -27575,38 +24865,6 @@
             "id": "toan_thoi_gian_sgk_q128"
           },
           {
-            "q": "Hôm nay là Thứ Bảy, 2 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Thứ Hai",
-              "Thứ Sáu",
-              "Thứ Tư"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q129"
-          },
-          {
-            "q": "Hôm nay là Thứ Năm, 3 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Sáu",
-              "Chủ Nhật",
-              "Thứ Hai"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q130"
-          },
-          {
             "q": "Hôm nay là Thứ Hai, 4 ngày nữa là thứ mấy?",
             "choices": [
               "Thứ Ba",
@@ -27621,86 +24879,6 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_thoi_gian_sgk_q131"
-          },
-          {
-            "q": "Hôm nay là Thứ Năm, 7 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Năm",
-              "Thứ Tư",
-              "Thứ Bảy",
-              "Thứ Sáu"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q132"
-          },
-          {
-            "q": "Hôm nay là Thứ Hai, 4 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Sáu",
-              "Thứ Tư",
-              "Thứ Hai"
-            ],
-            "a": 1,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q133"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 4 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Bảy",
-              "Thứ Hai",
-              "Thứ Năm",
-              "Thứ Ba"
-            ],
-            "a": 2,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q134"
-          },
-          {
-            "q": "Hôm nay là Thứ Năm, 3 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Ba",
-              "Thứ Sáu",
-              "Thứ Bảy",
-              "Chủ Nhật"
-            ],
-            "a": 3,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q135"
-          },
-          {
-            "q": "Hôm nay là Chủ Nhật, 1 ngày nữa là thứ mấy?",
-            "choices": [
-              "Thứ Hai",
-              "Thứ Bảy",
-              "Thứ Tư",
-              "Thứ Năm"
-            ],
-            "a": 0,
-            "difficulty": 2,
-            "hint": "Đếm lần lượt từng ngày trên lịch.",
-            "skill": "calendar_days",
-            "source": "sgk_toan_lop2_tap2_inspired",
-            "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
-            "id": "toan_thoi_gian_sgk_q136"
           },
           {
             "q": "Hôm nay là Thứ Tư, 3 ngày nữa là thứ mấy?",
