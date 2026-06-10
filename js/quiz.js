@@ -188,11 +188,15 @@ const Quiz = {
 
     const grid = document.getElementById('ansGrid');
     grid.innerHTML = '';
-    q.choices.forEach((choice, i) => {
+    // Shuffle display order of answers so the correct one is not always
+    // in the same slot. Grading and logging still use ORIGINAL indices,
+    // so wrong-history, session details and report button stay correct.
+    const displayOrder = this._shuffle(q.choices.map((_, i) => i));
+    displayOrder.forEach((origIdx) => {
       const btn = document.createElement('button');
       btn.className = 'ans-btn';
-      btn.textContent = choice;
-      btn.addEventListener('click', () => this.checkAnswer(btn, i, q.a));
+      btn.textContent = q.choices[origIdx];
+      btn.addEventListener('click', () => this.checkAnswer(btn, origIdx, q.a));
       grid.appendChild(btn);
     });
 
