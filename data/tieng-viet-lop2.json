@@ -15,12 +15,12 @@
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "sấu bọ",
-              "xấu bọ",
               "sâu bọ",
+              "xấu bọ",
+              "sấu bọ",
               "xâu bọ"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_chinh_q001"
           },
@@ -28,11 +28,11 @@
             "q": "Từ nào viết ĐÚNG?",
             "choices": [
               "con rơi",
-              "con giơi",
               "con dơi",
+              "con giơi",
               "con dời"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "hint": "Phân biệt d/gi/r: \"dơi\" là động vật, viết bằng d",
             "id": "tv_chinh_q002"
@@ -41,11 +41,11 @@
             "q": "Điền \"c\" hay \"k\": \"___ỳ lạ\"",
             "choices": [
               "c",
-              "k",
               "q",
+              "k",
               "ch"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "",
             "difficulty": 1,
             "id": "tv_chinh_q003"
@@ -55,10 +55,10 @@
             "choices": [
               "q",
               "ch",
-              "c",
-              "k"
+              "k",
+              "c"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "",
             "difficulty": 1,
             "id": "tv_chinh_q004"
@@ -80,11 +80,11 @@
             "q": "Điền \"ng\" hay \"ngh\": \"___ề nghiệp\"",
             "choices": [
               "n",
-              "nh",
+              "ngh",
               "ng",
-              "ngh"
+              "nh"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "",
             "difficulty": 2,
             "id": "tv_chinh_q006"
@@ -93,11 +93,11 @@
             "q": "Từ nào ĐÚNG chính tả?",
             "choices": [
               "rong sông",
-              "dòng sông",
               "zòng sông",
+              "dòng sông",
               "giòng sông"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_chinh_q007"
           },
@@ -114,7 +114,7 @@
             "id": "tv_chinh_q008"
           },
           {
-            "q": "\"Cây _ừa\" (dừa). Điền \"d\" hay \"gi\"?",
+            "q": "Điền \"d\" hay \"gi\": \"Cây _ừa cho trái có nước uống ngọt mát.\"",
             "choices": [
               "d",
               "gi",
@@ -122,7 +122,7 @@
               "v"
             ],
             "a": 0,
-            "hint": "",
+            "hint": "Cây này hay trồng ở miền biển. Thử ghép từng âm vào chỗ trống rồi đọc to — chỉ một từ có nghĩa.",
             "difficulty": 2,
             "id": "tv_chinh_q009"
           },
@@ -130,16 +130,16 @@
             "q": "Từ nào ĐÚNG?",
             "choices": [
               "giản gi",
-              "dản dị",
               "giản dị",
+              "dản dị",
               "dản gi"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_chinh_q010"
           },
           {
-            "q": "Điền vào chỗ trống: \"con _ươu\" (hươu)",
+            "q": "Điền âm đầu: \"Con _ươu cao cổ ăn lá trên cây cao.\"",
             "choices": [
               "gh",
               "g",
@@ -148,7 +148,8 @@
             ],
             "a": 2,
             "difficulty": 2,
-            "id": "tv_chinh_q011"
+            "id": "tv_chinh_q011",
+            "hint": "Ghép thử từng âm với vần \"ươu\" rồi đọc to lên — chỉ một cách ghép ra tên con vật có thật."
           },
           {
             "q": "Từ nào sai chính tả?",
@@ -164,7 +165,7 @@
             "id": "tv_chinh_q012"
           },
           {
-            "q": "Điền chữ đúng: \"con c___\" (con cá)",
+            "q": "Điền chữ còn thiếu: \"Con c__ bơi tung tăng dưới ao.\"",
             "choices": [
               "á",
               "ả",
@@ -173,7 +174,8 @@
             ],
             "a": 0,
             "difficulty": 2,
-            "id": "tv_chinh_q013"
+            "id": "tv_chinh_q013",
+            "hint": "Đây là con vật sống dưới nước. Đọc to và chú ý chọn đúng dấu thanh nhé."
           },
           {
             "q": "Từ nào đúng?",
@@ -191,11 +193,11 @@
             "q": "Từ nào đúng?",
             "choices": [
               "hoc sinh",
-              "học sinh",
               "học xinh",
+              "học sinh",
               "hock sinh"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_chinh_q015"
           },
@@ -214,25 +216,25 @@
           {
             "q": "Từ nào viết đúng?",
             "choices": [
-              "nhân gân",
-              "nhăn dân",
               "nhân dân",
+              "nhăn dân",
+              "nhân gân",
               "nhân zân"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_chinh_q017"
           },
           {
-            "q": "Điền vần: \"h___\" (hươu)",
+            "q": "Điền vần: \"Con h___ cao cổ có chiếc cổ rất dài.\"",
             "choices": [
-              "ươu",
               "ưu",
+              "ươu",
               "ươi",
               "ơu"
             ],
-            "a": 0,
-            "hint": "",
+            "a": 1,
+            "hint": "Ghép thử từng vần với âm đầu \"h\" và đọc to — chỉ một cách ghép tạo ra tên con vật có thật.",
             "difficulty": 1,
             "id": "tv_chinh_q018"
           },
@@ -249,15 +251,15 @@
             "id": "tv_chinh_q019"
           },
           {
-            "q": "Điền: \"_uả táo\" (quả)",
+            "q": "Điền âm đầu đúng chính tả: \"_uả táo\"",
             "choices": [
-              "q",
+              "g",
               "c",
               "k",
-              "g"
+              "q"
             ],
-            "a": 0,
-            "hint": "",
+            "a": 3,
+            "hint": "Nhớ lại luật chính tả: âm /k/ đứng trước vần bắt đầu bằng \"u\" tròn môi thì viết thế nào?",
             "difficulty": 1,
             "id": "tv_chinh_q020"
           },
@@ -290,11 +292,11 @@
             "q": "Từ nào viết đúng?",
             "choices": [
               "xáng suốt",
-              "sáng suốt",
               "sáng xuốt",
+              "sáng suốt",
               "sàng suốt"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "hint": "Phân biệt s/x: từ Hán Việt \"sáng\" (= ánh sáng, thông minh) viết s",
             "id": "tv_chinh_q023"
@@ -308,20 +310,20 @@
               "lung linh"
             ],
             "a": 3,
-            "hint": "L hay N? – ghi nhớ: 'lung linh' tả ánh sáng đẹp",
+            "hint": "Đọc to từng từ, kiểm tra cả âm đầu (l/n) lẫn vần (inh/ynh). Loại dần các từ viết sai.",
             "difficulty": 1,
             "id": "tv_chinh_q024"
           },
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "kiêm tốn",
-              "khiêm tốt",
               "khiêm tốn",
+              "khiêm tốt",
+              "kiêm tốn",
               "khêm tốn"
             ],
-            "a": 2,
-            "hint": "Khiêm tốn = không tự cao; vần 'iêm' chứ không phải 'êm'",
+            "a": 0,
+            "hint": "Đọc to từng đáp án, soát kỹ âm đầu (k/kh), vần (iêm/êm) và âm cuối (n/t). Chỉ một từ đúng hết.",
             "difficulty": 1,
             "id": "tv_chinh_q025"
           },
@@ -329,11 +331,11 @@
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
               "dũng cãm",
-              "dủng cảm",
+              "dũng cảm",
               "zũng cảm",
-              "dũng cảm"
+              "dủng cảm"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Dấu ngã trên 'u', dấu hỏi trên 'a' – đọc to để phân biệt",
             "difficulty": 2,
             "id": "tv_chinh_q026"
@@ -342,11 +344,11 @@
             "q": "Điền vào chỗ trống: chim ... bay liệng báo hiệu mùa xuân",
             "choices": [
               "iến",
-              "én",
               "in",
+              "én",
               "yến"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Loài chim nhỏ, đuôi chẻ, là biểu tượng mùa xuân",
             "difficulty": 1,
             "id": "tv_chinh_q027"
@@ -354,12 +356,12 @@
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "rễ cây",
+              "dễ cây",
               "rể cây",
               "giễ cây",
-              "dễ cây"
+              "rễ cây"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Bộ phận cây cắm xuống đất; viết bằng 'r' và dấu ngã",
             "difficulty": 2,
             "id": "tv_chinh_q028"
@@ -367,12 +369,12 @@
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "mưa dơi",
               "mưa rơi",
+              "mưa dơi",
               "mưa giơi",
               "mưa zơi"
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Phân biệt r/d/gi: hạt nước từ mây xuống đất viết bằng 'r'",
             "difficulty": 1,
             "id": "tv_chinh_q029"
@@ -380,12 +382,12 @@
           {
             "q": "Điền chữ cái thích hợp: \"___iên nhẫn\"",
             "choices": [
-              "k",
               "q",
+              "k",
               "c",
               "g"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Trước các nguyên âm 'i, ê, e' thì viết chữ k, không viết c",
             "difficulty": 1,
             "id": "tv_chinh_q030"
@@ -393,12 +395,12 @@
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "chim én",
-              "chim yến",
               "chim sén",
+              "chim yến",
+              "chim én",
               "chim rén"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Loài chim báo mùa xuân, đuôi chẻ — viết bắt đầu bằng nguyên âm",
             "difficulty": 1,
             "id": "tv_chinh_q031"
@@ -419,12 +421,12 @@
           {
             "q": "Từ nào viết ĐÚNG chính tả?",
             "choices": [
-              "binh minh",
+              "bình minh",
               "bình ninh",
               "bin minh",
-              "bình minh"
+              "binh minh"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "Lúc mặt trời mọc, sáng sớm — phân biệt m/n đầu tiếng",
             "difficulty": 1,
             "id": "tv_chinh_q033"
@@ -467,22 +469,22 @@
             "choices": [
               "rộng",
               "mạnh",
-              "chậm",
-              "cao"
+              "cao",
+              "chậm"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_tuvung_q001"
           },
           {
             "q": "Từ trái nghĩa với \"cao\" là?",
             "choices": [
-              "ngắn",
+              "thấp",
               "hẹp",
               "nhỏ",
-              "thấp"
+              "ngắn"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_tuvung_q002"
           },
@@ -490,11 +492,11 @@
             "q": "Từ trái nghĩa với \"nóng\" là?",
             "choices": [
               "ấm",
-              "tươi",
+              "lạnh",
               "mát",
-              "lạnh"
+              "tươi"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_tuvung_q003"
           },
@@ -503,10 +505,10 @@
             "choices": [
               "khóc",
               "giận",
-              "lo",
-              "buồn"
+              "buồn",
+              "lo"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_tuvung_q004"
           },
@@ -537,24 +539,24 @@
           {
             "q": "Từ trái nghĩa với \"mạnh\" là?",
             "choices": [
-              "yếu",
               "gầy",
+              "yếu",
               "nhỏ",
               "bệnh"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_tuvung_q007"
           },
           {
             "q": "Từ trái nghĩa với \"giàu\" là?",
             "choices": [
-              "nghèo",
-              "đói",
               "khó",
+              "đói",
+              "nghèo",
               "ít"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_tuvung_q008"
           },
@@ -573,24 +575,24 @@
           {
             "q": "Từ trái nghĩa với \"tốt\" là?",
             "choices": [
-              "kém",
               "xấu",
+              "kém",
               "hỏng",
               "tệ"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_tuvung_q010"
           },
           {
             "q": "Từ đồng nghĩa với \"chăm chỉ\" là?",
             "choices": [
-              "siêng năng",
               "thông minh",
+              "siêng năng",
               "lười biếng",
               "nhân hậu"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "id": "tv_tuvung_q011"
           },
@@ -599,10 +601,10 @@
             "choices": [
               "mạnh mẽ",
               "hiền lành",
-              "thông minh",
-              "duyên dáng"
+              "duyên dáng",
+              "thông minh"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_tuvung_q012"
           },
@@ -621,24 +623,24 @@
           {
             "q": "Từ đồng nghĩa với \"buồn bã\" là?",
             "choices": [
-              "hào hứng",
-              "phấn khởi",
               "ủ rũ",
+              "phấn khởi",
+              "hào hứng",
               "vui vẻ"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_tuvung_q014"
           },
           {
             "q": "Từ đồng nghĩa với \"nhà\" là?",
             "choices": [
-              "ngôi nhà",
               "đường phố",
+              "ngôi nhà",
               "sân vườn",
               "cây cối"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Tìm từ chỉ cùng một thứ - nơi mình ở",
             "difficulty": 1,
             "id": "tv_tuvung_q015"
@@ -648,10 +650,10 @@
             "choices": [
               "đối thủ",
               "kẻ thù",
-              "người quen",
-              "bạn hữu"
+              "bạn hữu",
+              "người quen"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_tuvung_q016"
           },
@@ -670,12 +672,12 @@
           {
             "q": "Từ nào KHÔNG đồng nghĩa với \"vui\"?",
             "choices": [
-              "phấn khởi",
               "buồn bã",
+              "phấn khởi",
               "vui mừng",
               "hạnh phúc"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_tuvung_q018"
           },
@@ -694,12 +696,12 @@
           {
             "q": "Từ trái nghĩa với \"thật thà\" là?",
             "choices": [
-              "gian dối",
-              "thẳng thắn",
               "thành thật",
+              "thẳng thắn",
+              "gian dối",
               "trung thực"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_tuvung_q020"
           },
@@ -719,12 +721,12 @@
           {
             "q": "Từ chỉ hoạt động trong câu \"Bạn Hoa đang đọc sách\" là?",
             "choices": [
-              "đang",
-              "sách",
               "đọc",
+              "sách",
+              "đang",
               "Bạn Hoa"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "Từ chỉ việc làm, hành động",
             "difficulty": 1,
             "id": "tv_tuvung_q022"
@@ -733,11 +735,11 @@
             "q": "Từ chỉ sự vật trong câu \"Con mèo bắt chuột rất giỏi\" là?",
             "choices": [
               "rất",
-              "giỏi",
               "con mèo",
+              "giỏi",
               "bắt"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Từ chỉ con vật là từ chỉ sự vật",
             "difficulty": 1,
             "id": "tv_tuvung_q023"
@@ -746,11 +748,11 @@
             "q": "Từ chỉ đặc điểm trong câu \"Bầu trời xanh trong\" là?",
             "choices": [
               "trong",
-              "Cả 'xanh' và 'trong'",
               "xanh",
+              "Cả 'xanh' và 'trong'",
               "bầu trời"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Có thể có nhiều từ chỉ đặc điểm trong một câu",
             "difficulty": 2,
             "id": "tv_tuvung_q024"
@@ -759,11 +761,11 @@
             "q": "Từ chỉ hoạt động trong câu \"Em quét nhà và rửa bát\" là?",
             "choices": [
               "nhà, bát",
-              "quét, rửa",
+              "Em",
               "và",
-              "Em"
+              "quét, rửa"
             ],
-            "a": 1,
+            "a": 3,
             "hint": "Câu có thể có 2 từ chỉ hoạt động",
             "difficulty": 2,
             "id": "tv_tuvung_q025"
@@ -771,12 +773,12 @@
           {
             "q": "Từ \"xào xạc\" gợi?",
             "choices": [
-              "màu sắc",
               "âm thanh",
+              "màu sắc",
               "mùi vị",
               "hình dáng"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_tuvung_q026"
           },
@@ -784,11 +786,11 @@
             "q": "Từ \"lung linh\" gợi?",
             "choices": [
               "mùi thơm",
-              "âm thanh",
+              "ánh sáng lấp lánh",
               "màu xanh",
-              "ánh sáng lấp lánh"
+              "âm thanh"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_tuvung_q027"
           },
@@ -796,35 +798,35 @@
             "q": "Từ \"róc rách\" gợi?",
             "choices": [
               "màu sắc",
-              "tiếng nước chảy",
               "hình dáng",
+              "tiếng nước chảy",
               "ánh sáng"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_tuvung_q028"
           },
           {
             "q": "Từ \"thơm phức\" gợi?",
             "choices": [
-              "mùi vị",
+              "âm thanh",
               "hình dáng",
               "màu sắc",
-              "âm thanh"
+              "mùi vị"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_tuvung_q029"
           },
           {
             "q": "Từ nào trái nghĩa với \"đẹp\"?",
             "choices": [
-              "to",
-              "tốt",
               "xấu",
+              "tốt",
+              "to",
               "nhỏ"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "Trái với 'đẹp' là từ thường dùng tả vật/người không ưa nhìn",
             "difficulty": 1,
             "id": "tv_tuvung_q030"
@@ -833,11 +835,11 @@
             "q": "Từ nào trái nghĩa với \"hiền\"?",
             "choices": [
               "lười",
-              "nhỏ",
               "dữ",
+              "nhỏ",
               "đẹp"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Trái với 'hiền lành' là tính cách thô bạo",
             "difficulty": 1,
             "id": "tv_tuvung_q031"
@@ -847,10 +849,10 @@
             "choices": [
               "Hái nhiều quả",
               "Trồng nhiều cây",
-              "Ăn uống tiết kiệm",
-              "Biết ơn người tạo ra"
+              "Biết ơn người tạo ra",
+              "Ăn uống tiết kiệm"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_tuvung_q032"
           },
@@ -859,22 +861,22 @@
             "choices": [
               "Tiết kiệm",
               "Làm việc nhanh",
-              "Kiên trì sẽ thành công",
-              "Nghề rèn"
+              "Nghề rèn",
+              "Kiên trì sẽ thành công"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_tuvung_q033"
           },
           {
             "q": "\"Bầu ơi thương lấy bí cùng\" dạy điều gì?",
             "choices": [
-              "Học chăm chỉ",
               "Đoàn kết yêu thương",
+              "Học chăm chỉ",
               "Trồng bầu bí",
               "Không tranh cãi"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_tuvung_q034"
           },
@@ -882,11 +884,11 @@
             "q": "Từ \"lấp lánh\" là từ chỉ gì?",
             "choices": [
               "tình cảm",
-              "hoạt động",
+              "đặc điểm",
               "sự vật",
-              "đặc điểm"
+              "hoạt động"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "'Lấp lánh' tả ánh sáng – thuộc nhóm từ tả tính chất",
             "difficulty": 2,
             "id": "tv_tuvung_q035"
@@ -894,12 +896,12 @@
           {
             "q": "Từ \"chạy nhảy\" là từ chỉ gì?",
             "choices": [
-              "hoạt động",
-              "đặc điểm",
               "thời gian",
+              "đặc điểm",
+              "hoạt động",
               "sự vật"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Chạy và nhảy đều là việc làm",
             "difficulty": 1,
             "id": "tv_tuvung_q036"
@@ -913,19 +915,19 @@
               "sự vật"
             ],
             "a": 3,
-            "hint": "Trường là nơi học – là một sự vật",
+            "hint": "Tự hỏi: từ này gọi tên một nơi/đồ vật, một việc làm, hay một cảm xúc?",
             "difficulty": 1,
             "id": "tv_tuvung_q037"
           },
           {
             "q": "Nhóm nào toàn là TỪ CHỈ SỰ VẬT?",
             "choices": [
-              "đẹp, xinh, tốt",
               "bàn, ghế, sách",
+              "đẹp, xinh, tốt",
               "vui, buồn, giận",
               "chạy, nhảy, đứng"
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Từ chỉ sự vật là người, vật, đồ vật, con vật, cây cối",
             "difficulty": 1,
             "id": "tv_tuvung_q038"
@@ -933,12 +935,12 @@
           {
             "q": "Nhóm nào toàn là TỪ CHỈ HOẠT ĐỘNG?",
             "choices": [
-              "học, đọc, viết",
               "bàn, ghế, sách",
+              "học, đọc, viết",
               "cao, thấp, mập",
               "xanh, đỏ, vàng"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Từ chỉ hoạt động là từ chỉ việc làm",
             "difficulty": 1,
             "id": "tv_tuvung_q039"
@@ -947,11 +949,11 @@
             "q": "Nhóm nào toàn là TỪ CHỈ ĐẶC ĐIỂM?",
             "choices": [
               "em, anh, chị",
-              "xanh, đỏ, đẹp",
               "chạy, nhảy, đứng",
+              "xanh, đỏ, đẹp",
               "bàn, ghế, sách"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Từ chỉ đặc điểm tả màu sắc, hình dáng, tính cách",
             "difficulty": 1,
             "id": "tv_tuvung_q040"
@@ -959,12 +961,12 @@
           {
             "q": "Từ trái nghĩa với \"khỏe\"?",
             "choices": [
-              "yếu",
+              "nhỏ",
               "gầy",
               "thấp",
-              "nhỏ"
+              "yếu"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Trái với khỏe mạnh là gì?",
             "difficulty": 1,
             "id": "tv_tuvung_q041"
@@ -972,12 +974,12 @@
           {
             "q": "Từ trái nghĩa với \"đầy\"?",
             "choices": [
-              "hẹp",
-              "ít",
               "vơi",
+              "ít",
+              "hẹp",
               "nhỏ"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "Bát đầy nước trái với bát ... nước",
             "difficulty": 2,
             "id": "tv_tuvung_q042"
@@ -986,12 +988,12 @@
             "q": "Từ trái nghĩa với \"trên\"?",
             "choices": [
               "bên",
-              "ngoài",
+              "dưới",
               "trong",
-              "dưới"
+              "ngoài"
             ],
-            "a": 3,
-            "hint": "Trên - dưới là cặp từ chỉ vị trí trái nghĩa",
+            "a": 1,
+            "hint": "Từ trái nghĩa là từ có nghĩa ngược hẳn lại. Hãy nghĩ đến vị trí ngược lại với \"trên\".",
             "difficulty": 1,
             "id": "tv_tuvung_q043"
           },
@@ -1000,11 +1002,11 @@
             "choices": [
               "yêu",
               "quý",
-              "mến",
-              "chạy"
+              "chạy",
+              "mến"
             ],
-            "a": 3,
-            "hint": "Từ chỉ tình cảm = cảm xúc trong lòng; 'chạy' là hành động",
+            "a": 2,
+            "hint": "Từ chỉ tình cảm nói về cảm xúc trong lòng. Tìm từ nào là một việc làm của tay chân.",
             "difficulty": 1,
             "id": "tv_tuvung_q044"
           },
@@ -1012,11 +1014,11 @@
             "q": "Từ \"non\" trong \"non nước\" nghĩa là?",
             "choices": [
               "biển",
-              "núi",
+              "đồng bằng",
               "sông",
-              "đồng bằng"
+              "núi"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_tuvung_q045"
           },
@@ -1048,12 +1050,12 @@
           {
             "q": "Từ trái nghĩa với \"chăm chỉ\"?",
             "choices": [
-              "lười biếng",
-              "siêng năng",
               "cần cù",
+              "siêng năng",
+              "lười biếng",
               "bền bỉ"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Trái với chăm chỉ là không thích làm việc",
             "difficulty": 1,
             "id": "tv_tuvung_q048"
@@ -1061,25 +1063,25 @@
           {
             "q": "Từ nào dùng sai: \"Bạn ấy rất là chăm chỉ học\"?",
             "choices": [
-              "rất là",
+              "chăm chỉ học",
               "Bạn ấy",
               "Không có từ sai",
-              "chăm chỉ học"
+              "rất là"
             ],
-            "a": 0,
-            "hint": "\"Rất là\" không chuẩn văn phong",
+            "a": 3,
+            "hint": "Đọc to cả câu, thử bỏ từng cụm từ ra xem khi bỏ cụm nào câu nghe gọn và đúng hơn.",
             "difficulty": 2,
             "id": "tv_tuvung_q049"
           },
           {
             "q": "Thành ngữ \"Đi một ngày đàng học một sàng khôn\" có nghĩa?",
             "choices": [
-              "Khôn thì đi nhanh",
               "Đi xa học được nhiều",
+              "Khôn thì đi nhanh",
               "Nên đi bộ",
               "Mang sàng khi đi"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_tuvung_q050"
           },
@@ -1087,11 +1089,11 @@
             "q": "Từ nào là từ chỉ sự vật?",
             "choices": [
               "chạy",
-              "đẹp",
               "cây đa",
+              "đẹp",
               "nhanh"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Từ chỉ sự vật là từ chỉ người, vật, con vật, cây cối, hiện tượng",
             "difficulty": 1,
             "id": "tv_tuvung_q051"
@@ -1100,11 +1102,11 @@
             "q": "Từ nào là từ chỉ hoạt động?",
             "choices": [
               "xanh biếc",
-              "viết bài",
               "to lớn",
+              "viết bài",
               "ngôi nhà"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Từ chỉ hoạt động là từ nói về việc làm: đọc, viết, chạy, nhảy...",
             "difficulty": 1,
             "id": "tv_tuvung_q052"
@@ -1138,12 +1140,12 @@
           {
             "q": "Dòng nào gồm toàn các từ chỉ hoạt động?",
             "choices": [
-              "Chạy, nhảy, hát, viết",
               "Hiền lành, chăm chỉ, ngoan ngoãn",
+              "Chạy, nhảy, hát, viết",
               "Bàn ghế, sách vở, bút thước",
               "Đỏ thắm, vàng tươi, xanh ngắt"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Từ chỉ hoạt động trả lời cho câu hỏi 'làm gì?'",
             "difficulty": 1,
             "id": "tv_tuvung_q055"
@@ -1152,11 +1154,11 @@
             "q": "Từ trái nghĩa với 'cao' là?",
             "choices": [
               "to",
-              "thấp",
               "lớn",
+              "thấp",
               "dài"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Trái nghĩa = ý ngược lại; thử ghép vào câu để kiểm tra",
             "difficulty": 1,
             "id": "tv_tuvung_q056"
@@ -1191,11 +1193,11 @@
             "q": "Chọn từ thích hợp điền vào chỗ trống: 'Các bạn trong lớp tôi luôn ... , thân ái với nhau.'",
             "choices": [
               "anh dũng",
-              "chăm chỉ",
               "đoàn kết",
+              "chăm chỉ",
               "anh hùng"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Từ chỉ tinh thần gắn bó giữa các bạn",
             "difficulty": 2,
             "id": "tv_tuvung_q059"
@@ -1204,11 +1206,11 @@
             "q": "Chọn từ thích hợp điền vào chỗ trống: 'Trần Quốc Toản là một thiếu niên ... '",
             "choices": [
               "đoàn kết",
-              "anh dũng",
               "lễ phép",
+              "anh dũng",
               "chăm chỉ"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Trần Quốc Toản nổi tiếng vì lòng dũng cảm chống giặc",
             "difficulty": 2,
             "id": "tv_tuvung_q060"
@@ -1224,23 +1226,23 @@
             "q": "Câu nào là câu HỎI?",
             "choices": [
               "Con mèo kêu.",
-              "Bạn tên là gì?",
+              "Em đi học.",
               "Hôm nay trời đẹp.",
-              "Em đi học."
+              "Bạn tên là gì?"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_ngu_q001"
           },
           {
             "q": "Câu HỎI kết thúc bằng dấu?",
             "choices": [
-              "dấu chấm than",
+              "dấu hỏi",
               "dấu phẩy",
               "dấu chấm",
-              "dấu hỏi"
+              "dấu chấm than"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_ngu_q002"
           },
@@ -1260,11 +1262,11 @@
             "q": "Câu NÀO là câu cảm thán?",
             "choices": [
               "Bạn có khỏe không?",
-              "Ôi, đẹp quá!",
               "Em đi học.",
+              "Ôi, đẹp quá!",
               "Mèo ăn cá."
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_ngu_q004"
           },
@@ -1272,25 +1274,25 @@
             "q": "Câu \"Bạn Lan đang đọc sách\" thuộc mẫu câu nào?",
             "choices": [
               "Ai thế nào?",
-              "Ai làm gì?",
+              "Ai là gì?",
               "Câu hỏi",
-              "Ai là gì?"
+              "Ai làm gì?"
             ],
-            "a": 1,
-            "hint": "Câu có hành động 'đọc' – mẫu Ai làm gì?",
+            "a": 3,
+            "hint": "Xem câu kể về một hành động, tả một đặc điểm, hay giới thiệu ai/cái gì để chọn mẫu câu.",
             "difficulty": 1,
             "id": "tv_ngu_q005"
           },
           {
             "q": "Câu \"Mẹ em là cô giáo\" thuộc mẫu câu nào?",
             "choices": [
-              "Câu cảm",
+              "Ai là gì?",
               "Ai thế nào?",
               "Ai làm gì?",
-              "Ai là gì?"
+              "Câu cảm"
             ],
-            "a": 3,
-            "hint": "Câu có từ 'là' nối – mẫu Ai là gì?",
+            "a": 0,
+            "hint": "Chú ý từ nối giữa hai phần của câu: câu đang kể hành động, tả đặc điểm hay giới thiệu?",
             "difficulty": 1,
             "id": "tv_ngu_q006"
           },
@@ -1309,12 +1311,12 @@
           {
             "q": "Câu \"Ai là gì?\" — chọn câu đúng?",
             "choices": [
-              "Mẹ em là bác sĩ",
-              "Mẹ em rất đẹp",
               "Mẹ em nấu cơm",
+              "Mẹ em rất đẹp",
+              "Mẹ em là bác sĩ",
               "Mẹ em đi chợ"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_ngu_q008"
           },
@@ -1323,22 +1325,22 @@
             "choices": [
               "Mẹ em nấu cơm",
               "Mẹ em là giáo viên",
-              "Mẹ em rất hiền",
-              "Mẹ em đi làm"
+              "Mẹ em đi làm",
+              "Mẹ em rất hiền"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_ngu_q009"
           },
           {
             "q": "Câu nào viết ĐÚNG?",
             "choices": [
-              "em đi học.",
+              "Em đi học.",
               "Em đi học",
               "em đi học",
-              "Em đi học."
+              "em đi học."
             ],
-            "a": 3,
+            "a": 0,
             "hint": "Đầu câu hoa, cuối câu chấm",
             "difficulty": 1,
             "id": "tv_ngu_q010"
@@ -1360,10 +1362,10 @@
             "choices": [
               "Em đi đâu?",
               "Em đi học khi nào?",
-              "Em là ai?",
-              "Em làm gì?"
+              "Em làm gì?",
+              "Em là ai?"
             ],
-            "a": 3,
+            "a": 2,
             "hint": "'Đi học' là việc làm – hỏi 'làm gì?'",
             "difficulty": 2,
             "id": "tv_ngu_q012"
@@ -1373,10 +1375,10 @@
             "choices": [
               "Em học khi nào?",
               "Ai học?",
-              "Em học bài ở đâu?",
-              "Em làm gì?"
+              "Em làm gì?",
+              "Em học bài ở đâu?"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "'Ở nhà' chỉ nơi chốn – hỏi 'ở đâu?'",
             "difficulty": 1,
             "id": "tv_ngu_q013"
@@ -1384,12 +1386,12 @@
           {
             "q": "Câu nào cần thêm dấu phẩy?",
             "choices": [
-              "Em đi học.",
               "Hôm nay em đi học vẽ học hát.",
+              "Em đi học.",
               "Hoa nở đẹp.",
               "Trời mưa."
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Dấu phẩy ngăn cách các việc/từ cùng loại",
             "difficulty": 2,
             "id": "tv_ngu_q014"
@@ -1398,11 +1400,11 @@
             "q": "Dấu chấm (.) đặt ở đâu trong câu?",
             "choices": [
               "Đầu câu",
-              "Giữa câu",
               "Cuối câu kể",
+              "Giữa câu",
               "Cuối câu hỏi"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Câu kể (câu thường) kết thúc bằng dấu chấm",
             "difficulty": 1,
             "id": "tv_ngu_q015"
@@ -1412,10 +1414,10 @@
             "choices": [
               "Câu kể",
               "Câu trả lời",
-              "Câu hỏi",
-              "Câu cảm"
+              "Câu cảm",
+              "Câu hỏi"
             ],
-            "a": 3,
+            "a": 2,
             "hint": "Câu bộc lộ cảm xúc (vui, buồn, ngạc nhiên...) dùng dấu !",
             "difficulty": 1,
             "id": "tv_ngu_q016"
@@ -1425,10 +1427,10 @@
             "choices": [
               "Hôm nay là thứ mấy?",
               "Mấy giờ rồi?",
-              "Em đi học rồi.",
-              "Bạn tên là gì?"
+              "Bạn tên là gì?",
+              "Em đi học rồi."
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Câu hỏi kết thúc bằng dấu ?",
             "difficulty": 1,
             "id": "tv_ngu_q017"
@@ -1450,11 +1452,11 @@
             "q": "Câu \"Em yêu mẹ\" thuộc nhóm câu nào?",
             "choices": [
               "Câu cảm",
-              "Câu hỏi",
               "Câu chỉ tình cảm",
+              "Câu hỏi",
               "Câu khiến"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "Từ 'yêu' là từ chỉ tình cảm",
             "difficulty": 2,
             "id": "tv_ngu_q019"
@@ -1462,13 +1464,13 @@
           {
             "q": "Bộ phận in đậm trả lời câu hỏi nào: \"**Em** rất chăm học.\"?",
             "choices": [
-              "Ai?",
-              "Khi nào?",
               "Cái gì?",
+              "Khi nào?",
+              "Ai?",
               "Thế nào?"
             ],
-            "a": 0,
-            "hint": "'Em' chỉ người – hỏi 'Ai?'",
+            "a": 2,
+            "hint": "Xem bộ phận in đậm nói về điều gì: người, vật, thời gian hay đặc điểm — rồi chọn câu hỏi tương ứng.",
             "difficulty": 1,
             "id": "tv_ngu_q020"
           },
@@ -1476,11 +1478,11 @@
             "q": "Đặt câu hỏi cho bộ phận in đậm: \"**Cô giáo** đang giảng bài.\"",
             "choices": [
               "Khi nào?",
-              "Ai đang giảng bài?",
+              "Làm gì?",
               "Ở đâu?",
-              "Làm gì?"
+              "Ai đang giảng bài?"
             ],
-            "a": 1,
+            "a": 3,
             "hint": "'Cô giáo' chỉ người – hỏi 'Ai?'",
             "difficulty": 1,
             "id": "tv_ngu_q021"
@@ -1494,7 +1496,7 @@
               "Câu hỏi"
             ],
             "a": 0,
-            "hint": "Câu tả đặc điểm (đẹp) – mẫu Ai thế nào?",
+            "hint": "Tìm từ ngữ chính trong câu: nó kể hành động, tả đặc điểm hay giới thiệu? Từ đó suy ra mẫu câu.",
             "difficulty": 1,
             "id": "tv_ngu_q022"
           },
@@ -1502,11 +1504,11 @@
             "q": "Câu nào thuộc mẫu \"Ai thế nào?\"",
             "choices": [
               "Mẹ làm bánh",
-              "Em đi học",
+              "Trời rất xanh",
               "Bố là kĩ sư",
-              "Trời rất xanh"
+              "Em đi học"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Câu tả đặc điểm/tính chất",
             "difficulty": 1,
             "id": "tv_ngu_q023"
@@ -1515,11 +1517,11 @@
             "q": "Câu \"Cảm ơn bạn rất nhiều!\" thuộc nhóm câu nào?",
             "choices": [
               "Câu hỏi",
-              "Câu cảm ơn",
               "Câu xin lỗi",
+              "Câu cảm ơn",
               "Câu kể"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Câu mở đầu bằng 'cảm ơn' để bày tỏ lòng biết ơn",
             "difficulty": 1,
             "id": "tv_ngu_q024"
@@ -1527,12 +1529,12 @@
           {
             "q": "Câu \"Xin lỗi cô ạ!\" thuộc nhóm câu nào?",
             "choices": [
-              "Câu xin lỗi",
+              "Câu hỏi",
               "Câu kể",
               "Câu cảm thán",
-              "Câu hỏi"
+              "Câu xin lỗi"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Câu để bày tỏ sự tiếc nuối khi làm sai",
             "difficulty": 1,
             "id": "tv_ngu_q025"
@@ -1540,12 +1542,12 @@
           {
             "q": "Câu nào sai về dấu câu?",
             "choices": [
-              "Em đi học.",
               "Bạn có khỏe không.",
+              "Em đi học.",
               "Trời ơi!",
               "Hôm nay, em đi học."
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Câu hỏi cần dấu ?",
             "difficulty": 1,
             "id": "tv_ngu_q026"
@@ -1553,12 +1555,12 @@
           {
             "q": "Câu \"Bạn ơi, cho mình mượn bút nhé!\" thuộc loại câu gì?",
             "choices": [
-              "Câu khiến (đề nghị)",
               "Câu hỏi",
+              "Câu khiến (đề nghị)",
               "Câu cảm",
               "Câu kể"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Câu nhờ vả, đề nghị người khác làm gì đó",
             "difficulty": 2,
             "id": "tv_ngu_q027"
@@ -1567,11 +1569,11 @@
             "q": "Câu \"Bạn ơi, mượn bút không?\" là câu?",
             "choices": [
               "Kể",
-              "Hỏi",
               "Cảm thán",
+              "Hỏi",
               "Cầu khiến"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_ngu_q028"
           },
@@ -1579,23 +1581,23 @@
             "q": "Câu \"Chạy nhanh lên!\" là câu?",
             "choices": [
               "Kể",
-              "Cầu khiến",
+              "Hỏi",
               "Cảm thán",
-              "Hỏi"
+              "Cầu khiến"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_ngu_q029"
           },
           {
             "q": "Câu \"Ôi, hoa đẹp quá!\" là câu?",
             "choices": [
-              "Kể",
-              "Hỏi",
               "Cảm thán",
+              "Hỏi",
+              "Kể",
               "Cầu khiến"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_ngu_q030"
           },
@@ -1603,11 +1605,11 @@
             "q": "Câu 'Bạn khiêm tốn quá!' thuộc kiểu câu gì?",
             "choices": [
               "Câu khiến",
-              "Câu hỏi",
+              "Câu nêu cảm xúc",
               "Câu kể",
-              "Câu nêu cảm xúc"
+              "Câu hỏi"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Dấu chấm than ở cuối câu là dấu hiệu của câu cảm xúc",
             "difficulty": 1,
             "id": "tv_ngu_q031"
@@ -1615,12 +1617,12 @@
           {
             "q": "Câu 'Dê rủ cún vào rừng chơi.' thuộc kiểu câu nào?",
             "choices": [
-              "Câu nêu hoạt động",
-              "Câu hỏi",
               "Câu nêu đặc điểm",
+              "Câu hỏi",
+              "Câu nêu hoạt động",
               "Câu giới thiệu"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Tìm xem trong câu có từ chỉ hành động (việc làm) không – đó là dấu hiệu",
             "difficulty": 2,
             "id": "tv_ngu_q032"
@@ -1628,12 +1630,12 @@
           {
             "q": "Câu 'Đám mây trắng xốp như bông.' thuộc kiểu câu nào?",
             "choices": [
-              "Ai thế nào?",
+              "Ai là gì?",
               "Ai làm gì?",
               "Câu cảm",
-              "Ai là gì?"
+              "Ai thế nào?"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Câu này đang tả tính chất, đặc điểm của đám mây – chọn mẫu câu phù hợp",
             "difficulty": 2,
             "id": "tv_ngu_q033"
@@ -1641,12 +1643,12 @@
           {
             "q": "Câu 'Chim én mẹ nhổ lông cánh.' viết theo mẫu câu nào?",
             "choices": [
-              "Ai là gì?",
               "Ai làm gì?",
+              "Ai là gì?",
               "Câu hỏi",
               "Ai thế nào?"
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Tìm từ chỉ việc làm trong câu (nhổ) – đó là gợi ý",
             "difficulty": 1,
             "id": "tv_ngu_q034"
@@ -1680,12 +1682,12 @@
           {
             "q": "Bộ phận in đậm trong câu 'Thủ đô nước mình **là Hà Nội**.' trả lời cho câu hỏi nào?",
             "choices": [
-              "Là gì?",
+              "Thế nào?",
               "Ở đâu?",
               "Làm gì?",
-              "Thế nào?"
+              "Là gì?"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Bộ phận in đậm dùng để giới thiệu nơi đó – nó trả lời câu hỏi gì?",
             "difficulty": 2,
             "id": "tv_ngu_q037"
@@ -1693,12 +1695,12 @@
           {
             "q": "Đặt câu hỏi cho bộ phận in đậm: '**Thu về**, những quả hồng đỏ mọng.'",
             "choices": [
-              "Quả hồng thế nào?",
-              "Quả hồng ở đâu?",
               "Bao giờ những quả hồng đỏ mọng?",
+              "Quả hồng ở đâu?",
+              "Quả hồng thế nào?",
               "Cái gì đỏ mọng?"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "'Thu về' chỉ thời gian → hỏi 'Bao giờ?' hoặc 'Khi nào?'",
             "difficulty": 3,
             "id": "tv_ngu_q038"
@@ -1707,11 +1709,11 @@
             "q": "Đặt câu hỏi cho bộ phận in đậm: '**Trên bầu trời cao rộng**, mây đen và mây trắng đang rong ruổi.'",
             "choices": [
               "Cái gì rong ruổi?",
-              "Mây làm gì?",
+              "Mây đen và mây trắng đang rong ruổi ở đâu?",
               "Khi nào mây rong ruổi?",
-              "Mây đen và mây trắng đang rong ruổi ở đâu?"
+              "Mây làm gì?"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "'Trên bầu trời cao rộng' chỉ nơi chốn → hỏi 'Ở đâu?'",
             "difficulty": 3,
             "id": "tv_ngu_q039"
@@ -1720,11 +1722,11 @@
             "q": "Câu nào dưới đây là câu hỏi?",
             "choices": [
               "Ôi, hoa đẹp quá!",
-              "Bạn đã làm bài tập chưa?",
               "Em rất vui.",
+              "Bạn đã làm bài tập chưa?",
               "Em đi học rồi."
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Câu hỏi kết thúc bằng dấu chấm hỏi (?)",
             "difficulty": 1,
             "id": "tv_ngu_q040"
@@ -1741,10 +1743,10 @@
             "choices": [
               "mây",
               "bông",
-              "như",
-              "trắng"
+              "trắng",
+              "như"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Để so sánh hai vật, ta dùng từ nào ở giữa?",
             "difficulty": 2,
             "id": "tv_tutu_q001"
@@ -1752,12 +1754,12 @@
           {
             "q": "Câu nào dùng từ \"như\" để so sánh?",
             "choices": [
-              "Trời mưa.",
               "Tóc bà bạc như mây.",
+              "Trời mưa.",
               "Em đi học.",
               "Hoa nở rồi."
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Tìm câu có từ 'như' nối hai sự vật",
             "difficulty": 1,
             "id": "tv_tutu_q002"
@@ -1780,10 +1782,10 @@
             "choices": [
               "Em ăn cơm.",
               "Bạn có vui không?",
-              "Hôm nay là thứ Hai.",
-              "Trời mưa to quá!"
+              "Trời mưa to quá!",
+              "Hôm nay là thứ Hai."
             ],
-            "a": 3,
+            "a": 2,
             "hint": "Câu có từ 'quá' và dấu chấm than ở cuối",
             "difficulty": 1,
             "id": "tv_tutu_q004"
@@ -1818,11 +1820,11 @@
             "q": "Sửa lỗi: \"em yêu mẹ\" – câu này thiếu gì?",
             "choices": [
               "Thiếu từ",
-              "Thiếu chủ ngữ",
+              "Thiếu chữ hoa đầu câu và dấu chấm cuối",
               "Không thiếu gì",
-              "Thiếu chữ hoa đầu câu và dấu chấm cuối"
+              "Thiếu chủ ngữ"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Câu đầy đủ phải bắt đầu bằng chữ hoa và kết thúc bằng dấu câu",
             "difficulty": 1,
             "id": "tv_tutu_q007"
@@ -1830,12 +1832,12 @@
           {
             "q": "Câu nào viết ĐÚNG cách dùng dấu?",
             "choices": [
-              "Ôi trời đẹp quá!",
-              "Bạn có khỏe không.",
               "trời đang mưa",
+              "Bạn có khỏe không.",
+              "Ôi trời đẹp quá!",
               "Em đi học?"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Câu cảm có 'quá', dùng dấu chấm than, đầu câu hoa",
             "difficulty": 2,
             "id": "tv_tutu_q008"
@@ -1844,11 +1846,11 @@
             "q": "Câu nào dùng phép so sánh?",
             "choices": [
               "Em đi học.",
-              "Mặt trăng tròn như cái đĩa.",
+              "Bầu trời xanh.",
               "Trời lạnh.",
-              "Bầu trời xanh."
+              "Mặt trăng tròn như cái đĩa."
             ],
-            "a": 1,
+            "a": 3,
             "hint": "Câu so sánh thường có từ 'như'",
             "difficulty": 1,
             "id": "tv_tutu_q009"
@@ -1870,11 +1872,11 @@
             "q": "Hoàn thành câu so sánh: \"Mặt trời đỏ như ... \"",
             "choices": [
               "cái bàn",
-              "quyển sách",
+              "quả cà chua chín",
               "cây bút",
-              "quả cà chua chín"
+              "quyển sách"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Chọn vật cũng có màu đỏ rực",
             "difficulty": 1,
             "id": "tv_tutu_q011"
@@ -1882,12 +1884,12 @@
           {
             "q": "\"Học một biết mười\" là?",
             "choices": [
-              "Thành ngữ",
-              "So sánh",
               "Tục ngữ",
+              "So sánh",
+              "Thành ngữ",
               "Ca dao"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_tutu_q012"
           },
@@ -1896,22 +1898,22 @@
             "choices": [
               "Câu đơn",
               "Câu ghép",
-              "Cụm từ",
-              "Câu đặc biệt"
+              "Câu đặc biệt",
+              "Cụm từ"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_tutu_q013"
           },
           {
             "q": "Khi viết đoạn văn về một con vật, em nên giới thiệu gì trước?",
             "choices": [
-              "Đặc điểm chi tiết",
-              "Em yêu nó nhất",
               "Tên và đó là con vật gì",
+              "Em yêu nó nhất",
+              "Đặc điểm chi tiết",
               "Nó ăn gì"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "Câu đầu đoạn thường giới thiệu chung",
             "difficulty": 1,
             "id": "tv_tutu_q014"
@@ -1919,12 +1921,12 @@
           {
             "q": "Đoạn văn ngắn về quê hương nên kết thúc bằng gì?",
             "choices": [
-              "Tình cảm của em với quê hương",
               "Câu kể tiếp",
+              "Tình cảm của em với quê hương",
               "Liệt kê",
               "Hỏi người đọc"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Câu cuối thường nêu cảm nghĩ của bản thân",
             "difficulty": 1,
             "id": "tv_tutu_q015"
@@ -1933,11 +1935,11 @@
             "q": "Khi tả người, thường tả theo thứ tự?",
             "choices": [
               "Bụng → đầu → chân",
-              "Hình dáng → tính cách",
               "Tính cách trước hết",
+              "Hình dáng → tính cách",
               "Tùy ý"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Tả người: nhìn thấy bên ngoài trước, biết tính bên trong sau",
             "difficulty": 2,
             "id": "tv_tutu_q016"
@@ -1946,23 +1948,23 @@
             "q": "Câu miêu tả con mèo hay nhất?",
             "choices": [
               "Con mèo kêu.",
-              "Con mèo trắng muốt đôi mắt xanh biếc.",
+              "Con mèo đi.",
               "Con mèo màu trắng.",
-              "Con mèo đi."
+              "Con mèo trắng muốt đôi mắt xanh biếc."
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "id": "tv_tutu_q017"
           },
           {
             "q": "Để miêu tả tiếng chim hót hay dùng từ?",
             "choices": [
-              "ầm ĩ",
+              "líu lo véo von",
               "thét",
               "inh ỏi",
-              "líu lo véo von"
+              "ầm ĩ"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_tutu_q018"
           },
@@ -1970,11 +1972,11 @@
             "q": "Để miêu tả ánh sáng lấp lánh dùng từ?",
             "choices": [
               "ầm ầm",
-              "rì rào",
+              "lung linh",
               "ào ào",
-              "lung linh"
+              "rì rào"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "id": "tv_tutu_q019"
           },
@@ -1995,11 +1997,11 @@
             "q": "Câu tục ngữ \"Thương người như thể thương thân\" khuyên ta điều gì?",
             "choices": [
               "Chỉ thương bạn bè",
-              "Yêu thương người khác như chính mình",
+              "Không cần thương ai",
               "Yêu thương bản thân hơn người khác",
-              "Không cần thương ai"
+              "Yêu thương người khác như chính mình"
             ],
-            "a": 1,
+            "a": 3,
             "hint": "'Thương thân' = thương chính mình; câu khuyên ta yêu thương mọi người",
             "difficulty": 2,
             "id": "tv_tutu_q021"
@@ -2007,24 +2009,24 @@
           {
             "q": "Từ gợi âm thanh trong nhóm?",
             "choices": [
-              "thơm ngát",
+              "lách tách",
               "đỏ rực",
               "mềm mại",
-              "lách tách"
+              "thơm ngát"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "id": "tv_tutu_q022"
           },
           {
             "q": "Khi viết về đồ vật yêu thích, em cần kể những gì?",
             "choices": [
-              "Tên, hình dáng, công dụng, tình cảm",
               "Chỉ tên",
+              "Tên, hình dáng, công dụng, tình cảm",
               "Chỉ giá tiền",
               "Chỉ nơi mua"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Đoạn văn cần đầy đủ: giới thiệu, đặc điểm, cảm xúc",
             "difficulty": 2,
             "id": "tv_tutu_q023"
@@ -2033,11 +2035,11 @@
             "q": "Tục ngữ nói về KIÊN TRÌ?",
             "choices": [
               "Ăn quả nhớ kẻ trồng cây",
-              "Có công mài sắt có ngày nên kim",
               "Lời chào cao hơn mâm cỗ",
+              "Có công mài sắt có ngày nên kim",
               "Bầu ơi thương lấy bí cùng"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "id": "tv_tutu_q024"
           },
@@ -2056,12 +2058,12 @@
           {
             "q": "Bộ phận in đậm \"**Hôm qua**, trời mưa rất to.\" trả lời câu hỏi nào?",
             "choices": [
-              "Cái gì?",
-              "Ở đâu?",
               "Khi nào?",
+              "Ở đâu?",
+              "Cái gì?",
               "Thế nào?"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "'Hôm qua' chỉ thời gian",
             "difficulty": 1,
             "id": "tv_tutu_q026"
@@ -2070,11 +2072,11 @@
             "q": "Câu nào dùng phép so sánh ĐÚNG?",
             "choices": [
               "Em đi học.",
-              "Trời mưa.",
               "Da bé Hoa trắng như tuyết.",
+              "Trời mưa.",
               "Bạn vui không?"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "So sánh hai vật cùng đặc điểm (trắng)",
             "difficulty": 1,
             "id": "tv_tutu_q027"
@@ -2083,11 +2085,11 @@
             "q": "Câu \"Lá vàng như tấm thảm trải đầy sân\" so sánh lá vàng với gì?",
             "choices": [
               "đầy",
-              "tấm thảm",
               "sân",
+              "tấm thảm",
               "trải"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Tìm vật được nhắc đến sau từ 'như'",
             "difficulty": 2,
             "id": "tv_tutu_q028"
@@ -2134,12 +2136,12 @@
           {
             "q": "Dấu câu thích hợp điền vào cuối câu: 'Ôi, bông hoa đẹp quá ...'",
             "choices": [
-              "!",
-              "?",
               ",",
+              "?",
+              "!",
               "."
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Câu cảm thán (bộc lộ cảm xúc) kết thúc bằng dấu chấm than",
             "difficulty": 1,
             "id": "tv_tutu_q032"
@@ -2149,10 +2151,10 @@
             "choices": [
               "!",
               "?",
-              ".",
-              ","
+              ",",
+              "."
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Câu kể bình thường kết thúc bằng dấu chấm",
             "difficulty": 1,
             "id": "tv_tutu_q033"
@@ -2160,12 +2162,12 @@
           {
             "q": "Chuyển 'Cây đa rất to.' thành câu cảm thán phù hợp nhất?",
             "choices": [
-              "Cây đa có to không?",
+              "Cây đa to quá!",
               "Cây đa rất to?",
               "Cây đa to.",
-              "Cây đa to quá!"
+              "Cây đa có to không?"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "Câu cảm thán thường có 'quá', 'lắm', 'thay' và kết thúc bằng !",
             "difficulty": 2,
             "id": "tv_tutu_q034"
@@ -2173,12 +2175,12 @@
           {
             "q": "Câu 'Các em học sinh luôn lễ phép chăm chỉ ngoan ngoãn.' nên điền dấu phẩy như thế nào?",
             "choices": [
-              "Lễ phép, chăm chỉ, ngoan ngoãn.",
               "Không cần dấu phẩy",
+              "Lễ phép, chăm chỉ, ngoan ngoãn.",
               "Lễ phép chăm chỉ, ngoan ngoãn.",
               "Lễ phép, chăm chỉ ngoan ngoãn."
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Dấu phẩy ngăn cách các từ cùng loại trong cùng một câu",
             "difficulty": 2,
             "id": "tv_tutu_q035"
@@ -2193,12 +2195,12 @@
           {
             "q": "Khi đọc đoạn văn, câu hỏi \"Bài đọc nói về điều gì?\" hỏi về?",
             "choices": [
-              "Ý chính",
-              "Biện pháp",
               "Chi tiết",
+              "Biện pháp",
+              "Ý chính",
               "Từ ngữ"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_dochieu_q001"
           },
@@ -2217,12 +2219,12 @@
           {
             "q": "Đọc đoạn: \"Mùa xuân đến, hoa đào nở rộ. Trẻ em chơi đùa vui vẻ.\" Bài nói về?",
             "choices": [
-              "Mùa thu",
+              "Mùa xuân",
               "Mùa đông",
               "Mùa hè",
-              "Mùa xuân"
+              "Mùa thu"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_dochieu_q003"
           },
@@ -2242,35 +2244,35 @@
             "q": "Đọc: \"Nam học rất chăm. Mỗi ngày cậu học 2 tiếng.\" Nam học mỗi ngày?",
             "choices": [
               "1 tiếng",
-              "2 tiếng",
               "4 tiếng",
+              "2 tiếng",
               "3 tiếng"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_dochieu_q005"
           },
           {
             "q": "Đọc: \"Mèo và Chuột là đôi bạn thân. Mèo luôn giúp Chuột.\" Mèo là bạn như thế nào?",
             "choices": [
-              "Tốt bụng",
+              "Xấu bụng",
               "Ganh ghét",
               "Không quan tâm",
-              "Xấu bụng"
+              "Tốt bụng"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_dochieu_q006"
           },
           {
             "q": "Đoạn văn có câu chủ đề thường đặt ở đâu?",
             "choices": [
-              "Cuối đoạn",
-              "Bất kỳ vị trí nào",
               "Đầu đoạn",
+              "Bất kỳ vị trí nào",
+              "Cuối đoạn",
               "Giữa đoạn"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "id": "tv_dochieu_q007"
           },
@@ -2337,24 +2339,24 @@
           {
             "q": "Đọc: \"Lan rất thích trồng cây. Mỗi ngày bạn tưới nước và nhổ cỏ.\" Lan thích gì?",
             "choices": [
-              "Trồng cây",
-              "Đọc sách",
               "Vẽ tranh",
+              "Đọc sách",
+              "Trồng cây",
               "Nấu ăn"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_dochieu_q013"
           },
           {
             "q": "Đọc: \"Lan rất thích chăm sóc vườn hoa. Mỗi sáng, bạn tưới nước và nhổ cỏ.\" Lan làm gì mỗi sáng?",
             "choices": [
-              "Tưới nước và nhổ cỏ",
+              "Đi học sớm",
               "Chơi với bạn",
               "Ngủ tiếp",
-              "Đi học sớm"
+              "Tưới nước và nhổ cỏ"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Tìm hành động được nhắc trong câu thứ hai",
             "difficulty": 1,
             "id": "tv_dochieu_q014"
@@ -2362,12 +2364,12 @@
           {
             "q": "Đọc: \"Con mèo của em rất ngoan. Nó không phá phách và biết nghe lời.\" Con mèo có đặc điểm gì?",
             "choices": [
-              "Hay phá phách",
               "Ngoan, biết nghe lời",
+              "Hay phá phách",
               "Đang ốm",
               "Không nghe lời"
             ],
-            "a": 1,
+            "a": 0,
             "hint": "Tìm các từ chỉ đặc điểm của con mèo",
             "difficulty": 1,
             "id": "tv_dochieu_q015"
@@ -2376,23 +2378,23 @@
             "q": "Từ \"tươi tốt\" gợi tả điều gì?",
             "choices": [
               "Sự vật khô cứng",
-              "Sự vật héo úa",
               "Sự vật xanh tươi khỏe mạnh",
+              "Sự vật héo úa",
               "Sự vật chết khô"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_dochieu_q016"
           },
           {
             "q": "Đọc: \"Bé Hoa rất ngoan. Bé học giỏi và hay giúp mẹ.\" Bé Hoa có tính cách gì?",
             "choices": [
-              "Ngoan ngoãn chăm chỉ",
-              "Lười biếng",
               "Nghịch ngợm",
+              "Lười biếng",
+              "Ngoan ngoãn chăm chỉ",
               "Không vâng lời"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_dochieu_q017"
           },
@@ -2411,12 +2413,12 @@
           {
             "q": "Đọc: \"Mùa thu đến rồi! Lá vàng rụng đầy sân.\" Đoạn văn nói về mùa gì?",
             "choices": [
-              "Mùa hạ",
+              "Mùa thu",
               "Mùa đông",
               "Mùa xuân",
-              "Mùa thu"
+              "Mùa hạ"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "Câu đầu nói rõ mùa nào",
             "difficulty": 1,
             "id": "tv_dochieu_q019"
@@ -2438,10 +2440,10 @@
             "choices": [
               "Mùa mưa",
               "Mùa đông",
-              "Đêm tối",
-              "Thu hoạch lúa"
+              "Thu hoạch lúa",
+              "Đêm tối"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "id": "tv_dochieu_q021"
           },
@@ -2450,10 +2452,10 @@
             "choices": [
               "Vì bé đẹp",
               "Vì bé chạy nhanh",
-              "Vì bé chăm học bài",
-              "Vì bé hát hay"
+              "Vì bé hát hay",
+              "Vì bé chăm học bài"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Tìm nguyên nhân trong câu đầu của đoạn",
             "difficulty": 1,
             "id": "tv_dochieu_q022"
@@ -2473,12 +2475,12 @@
           {
             "q": "Từ \"thích thú\" có nghĩa gần với từ nào?",
             "choices": [
-              "hớn hở vui mừng",
               "tức giận",
+              "hớn hở vui mừng",
               "buồn bã",
               "lo lắng"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Thích thú = cảm giác vui khi gặp điều mình ưa",
             "difficulty": 2,
             "id": "tv_dochieu_q024"
@@ -2500,10 +2502,10 @@
             "choices": [
               "Tiếng gió",
               "Tiếng mưa",
-              "Tiếng ve",
-              "Tiếng chim"
+              "Tiếng chim",
+              "Tiếng ve"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_dochieu_q026"
           },
@@ -2522,12 +2524,12 @@
           {
             "q": "Khi đọc hiểu cần chú ý đến?",
             "choices": [
-              "Ý chính từng đoạn",
               "Chỉ dấu câu",
+              "Ý chính từng đoạn",
               "Chỉ câu đầu",
               "Chỉ từ in đậm"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "id": "tv_dochieu_q028"
           },
@@ -2547,23 +2549,23 @@
             "q": "Từ \"lấp lánh\" thường dùng với?",
             "choices": [
               "Âm thanh",
-              "Ánh sáng",
+              "Màu sắc tối",
               "Mùi vị",
-              "Màu sắc tối"
+              "Ánh sáng"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "id": "tv_dochieu_q030"
           },
           {
             "q": "Đọc đoạn: 'Việt Nam có ba miền Bắc, Trung, Nam với khí hậu khác nhau. Miền Bắc và miền Trung một năm có bốn mùa: xuân, hạ, thu, đông. Miền Nam có hai mùa: mùa mưa và mùa khô.' – Đất nước Việt Nam có mấy miền?",
             "choices": [
-              "2 miền",
-              "4 miền",
               "3 miền",
+              "4 miền",
+              "2 miền",
               "5 miền"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "Đọc kĩ câu đầu của đoạn, đếm các miền được kể",
             "difficulty": 1,
             "id": "tv_dochieu_q031"
@@ -2585,11 +2587,11 @@
             "q": "Đọc đoạn: 'Đom Đóm sà xuống chân ruộng bắt mấy con Rầy Nâu hại lúa.' – Đom Đóm sà xuống chân ruộng để làm gì?",
             "choices": [
               "Tìm chỗ ngủ",
-              "Bắt Rầy Nâu hại lúa",
               "Uống nước",
+              "Bắt Rầy Nâu hại lúa",
               "Bắt Bọ Rệp"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Câu đầu đoạn đã nói rõ Đom Đóm bắt gì",
             "difficulty": 1,
             "id": "tv_dochieu_q033"
@@ -2599,10 +2601,10 @@
             "choices": [
               "Tròn trĩnh như viên đá cuội",
               "Tròn xoe như viên bi",
-              "Lung linh, tỏa sáng như viên ngọc",
-              "Trong vắt như nước suối"
+              "Trong vắt như nước suối",
+              "Lung linh, tỏa sáng như viên ngọc"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Tìm trong câu Đom Đóm nói chuyện với Giọt Sương",
             "difficulty": 2,
             "id": "tv_dochieu_q034"
@@ -2624,11 +2626,11 @@
             "q": "Đọc đoạn: 'Muôn loài khổ sở vì rét, bèn cử chim công có sắc đẹp lộng lẫy nhất đi đón nàng tiên mùa xuân.' – Lúc đầu, muông thú chọn con vật như thế nào để đi đón nàng tiên mùa xuân?",
             "choices": [
               "Có lòng dũng cảm",
-              "Bay nhanh nhất",
+              "Có sắc đẹp",
               "Có sức khỏe",
-              "Có sắc đẹp"
+              "Bay nhanh nhất"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "Đọc kĩ lý do muông thú cử chim công đi",
             "difficulty": 2,
             "id": "tv_dochieu_q036"
@@ -2636,12 +2638,12 @@
           {
             "q": "Đọc đoạn: 'Hà mã phật ý, định bỏ đi.' Trước đó dê nói to: 'Bọn tôi muốn về làng, hãy đưa bọn tôi qua sông!' – Vì sao lúc đầu hà mã định bỏ đi?",
             "choices": [
-              "Vì dê nói thiếu lịch sự",
-              "Vì sợ nước",
               "Vì không nghe thấy",
+              "Vì sợ nước",
+              "Vì dê nói thiếu lịch sự",
               "Vì đang bận"
             ],
-            "a": 0,
+            "a": 2,
             "hint": "Để ý cách dê nói chuyện trước khi hà mã phật ý",
             "difficulty": 2,
             "id": "tv_dochieu_q037"
@@ -2649,12 +2651,12 @@
           {
             "q": "Đọc đoạn: 'Bác tươi cười bế một em gái nhỏ lên hôn và đưa cho một quả táo.' – Bác đã làm gì với quả táo?",
             "choices": [
-              "Tặng cho một em bé",
+              "Ăn ngay tại chỗ",
               "Để lại trên bàn",
               "Đem về nhà",
-              "Ăn ngay tại chỗ"
+              "Tặng cho một em bé"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Đọc kĩ hành động của Bác sau bữa tiệc",
             "difficulty": 1,
             "id": "tv_dochieu_q038"
@@ -2662,12 +2664,12 @@
           {
             "q": "Đọc đoạn: 'Ngày xưa có vợ chồng nọ đi rừng, bắt được một con dúi. Dúi xin tha, họ thương tình tha cho nó.' – Vợ chồng nọ bắt được con gì trong rừng?",
             "choices": [
-              "Con thỏ",
+              "Con dúi",
               "Con sóc",
               "Con chim",
-              "Con dúi"
+              "Con thỏ"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "Câu đầu đoạn nói rõ con vật mà vợ chồng bắt được",
             "difficulty": 1,
             "id": "tv_dochieu_q039"
@@ -2695,13 +2697,13 @@
           {
             "q": "Từ nào chứa tiếng \"non\" với nghĩa là \"trẻ, chưa già\"?",
             "choices": [
-              "lá non",
-              "non cao",
               "non sông",
+              "non cao",
+              "lá non",
               "non nước"
             ],
-            "a": 0,
-            "hint": "Lá non = lá mới mọc, còn trẻ",
+            "a": 2,
+            "hint": "Thử thay tiếng \"non\" trong từng đáp án bằng nghĩa \"trẻ, chưa già\" — nghĩa nào vẫn xuôi là đúng.",
             "difficulty": 3,
             "id": "tv_hsg_q001"
           },
@@ -2710,10 +2712,10 @@
             "choices": [
               "Có mưa.",
               "Trời mưa nhiều.",
-              "Mưa tí tách rơi trên mái nhà.",
-              "Mưa rơi."
+              "Mưa rơi.",
+              "Mưa tí tách rơi trên mái nhà."
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Câu hay là câu dùng từ gợi tả âm thanh, hình ảnh",
             "difficulty": 3,
             "id": "tv_hsg_q002"
@@ -2721,13 +2723,13 @@
           {
             "q": "Trong các từ sau, từ nào KHÔNG cùng nhóm với những từ còn lại: \"yêu, thương, quý, đi\"?",
             "choices": [
-              "thương",
               "đi",
+              "thương",
               "quý",
               "yêu"
             ],
-            "a": 1,
-            "hint": "Ba từ cùng nhóm là từ chỉ tình cảm; còn 'đi' chỉ hoạt động",
+            "a": 0,
+            "hint": "Xếp các từ thành nhóm theo nghĩa (cảm xúc, hoạt động...). Từ nào lạc nhóm chính là đáp án.",
             "difficulty": 2,
             "id": "tv_hsg_q003"
           },
@@ -2740,7 +2742,7 @@
               "xanh"
             ],
             "a": 1,
-            "hint": "Ba từ cùng nhóm chỉ màu sắc; còn 'cá' chỉ con vật",
+            "hint": "Tìm điểm chung của ba từ trước, từ còn lại không có điểm chung đó.",
             "difficulty": 2,
             "id": "tv_hsg_q004"
           },
@@ -2749,10 +2751,10 @@
             "choices": [
               "4 từ",
               "1 từ",
-              "3 từ",
-              "2 từ"
+              "2 từ",
+              "3 từ"
             ],
-            "a": 3,
+            "a": 2,
             "hint": "Đếm các từ chỉ việc làm/hành động (thổi, lay động)",
             "difficulty": 3,
             "id": "tv_hsg_q005"
@@ -2762,10 +2764,10 @@
             "choices": [
               "dịu hiền",
               "của",
-              "là",
-              "vầng trăng"
+              "vầng trăng",
+              "là"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "Từ nối Mẹ với 'vầng trăng' để so sánh",
             "difficulty": 3,
             "id": "tv_hsg_q006"
@@ -2786,12 +2788,12 @@
           {
             "q": "Câu \"Học, học nữa, học mãi\" khuyên ta điều gì?",
             "choices": [
-              "Học suốt đời, không ngừng",
               "Đừng học nhiều",
+              "Học suốt đời, không ngừng",
               "Chỉ học ở trường",
               "Học một lần là đủ"
             ],
-            "a": 0,
+            "a": 1,
             "hint": "Từ 'mãi' nghĩa là không có điểm dừng",
             "difficulty": 2,
             "id": "tv_hsg_q008"
@@ -2800,11 +2802,11 @@
             "q": "Đặt câu với từ \"yêu thương\":",
             "choices": [
               "Em đi học.",
-              "Em rất yêu thương ông bà.",
               "Trời mưa to.",
+              "Em rất yêu thương ông bà.",
               "Sách ở trên bàn."
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Câu có dùng cụm từ 'yêu thương'",
             "difficulty": 1,
             "id": "tv_hsg_q009"
@@ -2812,12 +2814,12 @@
           {
             "q": "Đặt câu với từ \"biết ơn\":",
             "choices": [
-              "Em biết ơn thầy cô đã dạy dỗ.",
+              "Cá bơi dưới nước.",
               "Trời nắng.",
               "Hoa nở rồi.",
-              "Cá bơi dưới nước."
+              "Em biết ơn thầy cô đã dạy dỗ."
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Câu có dùng cụm từ 'biết ơn' và làm rõ biết ơn ai về việc gì",
             "difficulty": 2,
             "id": "tv_hsg_q010"
@@ -2825,12 +2827,12 @@
           {
             "q": "Từ nào KHÁC nhóm: \"đỏ, xanh, vàng, hát\"?",
             "choices": [
-              "vàng",
-              "xanh",
               "hát",
+              "xanh",
+              "vàng",
               "đỏ"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "3 từ chỉ màu sắc, 1 từ chỉ hoạt động",
             "difficulty": 2,
             "id": "tv_hsg_q011"
@@ -2839,11 +2841,11 @@
             "q": "Từ \"ngoan ngoãn\" dùng để tả ai?",
             "choices": [
               "Trời đất",
-              "Cây cối",
               "Em bé biết vâng lời",
+              "Cây cối",
               "Đồ vật"
             ],
-            "a": 2,
+            "a": 1,
             "hint": "'Ngoan ngoãn' chỉ tính cách của người, đặc biệt là trẻ em",
             "difficulty": 2,
             "id": "tv_hsg_q012"
@@ -2851,24 +2853,24 @@
           {
             "q": "Câu \"Không có việc gì khó / Chỉ sợ lòng không bền\" dạy điều gì?",
             "choices": [
-              "Kiên trì ắt thành công",
-              "Cần người giúp",
               "Không làm việc khó",
+              "Cần người giúp",
+              "Kiên trì ắt thành công",
               "Sợ khó khăn"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "id": "tv_hsg_q013"
           },
           {
             "q": "Đặt câu hỏi cho bộ phận in đậm: \"Em đang đọc **quyển truyện cổ tích**.\"",
             "choices": [
-              "Em đọc cái gì?",
+              "Ai đọc?",
               "Em làm gì?",
               "Khi nào đọc?",
-              "Ai đọc?"
+              "Em đọc cái gì?"
             ],
-            "a": 0,
+            "a": 3,
             "hint": "'Quyển truyện cổ tích' là vật – hỏi 'cái gì?'",
             "difficulty": 2,
             "id": "tv_hsg_q014"
@@ -2876,12 +2878,12 @@
           {
             "q": "Từ nào KHÔNG cùng nhóm: \"vui, buồn, giận, học\"?",
             "choices": [
-              "buồn",
+              "học",
               "giận",
               "vui",
-              "học"
+              "buồn"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "3 từ chỉ cảm xúc, 1 từ chỉ hoạt động",
             "difficulty": 2,
             "id": "tv_hsg_q015"
@@ -2895,7 +2897,7 @@
               "hoa đào"
             ],
             "a": 1,
-            "hint": "'Mùa xuân' chỉ thời gian",
+            "hint": "Bộ phận trả lời \"Khi nào?\" luôn là từ ngữ chỉ thời gian. Tìm từ chỉ thời gian trong câu.",
             "difficulty": 2,
             "id": "tv_hsg_q016"
           },
@@ -2904,10 +2906,10 @@
             "choices": [
               "lung linh",
               "róc rách",
-              "lấp lánh",
-              "thơm phức"
+              "thơm phức",
+              "lấp lánh"
             ],
-            "a": 3,
+            "a": 2,
             "hint": "'Phức' đi với mùi thơm rất rõ",
             "difficulty": 2,
             "id": "tv_hsg_q017"
@@ -2915,12 +2917,12 @@
           {
             "q": "Câu nào có từ chỉ tình cảm gia đình?",
             "choices": [
-              "Em kính yêu ông bà và cha mẹ.",
+              "Em đi học.",
               "Trời mưa to.",
               "Sách trên bàn.",
-              "Em đi học."
+              "Em kính yêu ông bà và cha mẹ."
             ],
-            "a": 0,
+            "a": 3,
             "hint": "Tìm từ như: yêu, quý, kính yêu, thương...",
             "difficulty": 1,
             "id": "tv_hsg_q018"
@@ -2928,12 +2930,12 @@
           {
             "q": "Câu \"Ăn quả nhớ kẻ trồng cây\" dạy chúng ta điều gì?",
             "choices": [
-              "Cách trồng cây",
+              "Biết ơn người tạo ra thành quả",
               "Cách hái quả",
               "Cách ăn quả",
-              "Biết ơn người tạo ra thành quả"
+              "Cách trồng cây"
             ],
-            "a": 3,
+            "a": 0,
             "hint": "'Kẻ trồng cây' là người tạo ra quả; nhớ ơn họ khi mình hưởng",
             "difficulty": 2,
             "id": "tv_hsg_q019"
@@ -2942,11 +2944,11 @@
             "q": "\"Công cha như núi Thái Sơn / Nghĩa mẹ như nước trong nguồn chảy ra\" nói về điều gì?",
             "choices": [
               "Học bài",
-              "Núi và nước",
+              "Công ơn cha mẹ rất lớn",
               "Đi du lịch",
-              "Công ơn cha mẹ rất lớn"
+              "Núi và nước"
             ],
-            "a": 3,
+            "a": 1,
             "hint": "So sánh công cha, nghĩa mẹ với những thứ to lớn",
             "difficulty": 2,
             "id": "tv_hsg_q020"
@@ -2955,11 +2957,11 @@
             "q": "Từ ngữ nào tả niềm vui?",
             "choices": [
               "khóc thút thít",
-              "cười tươi",
               "buồn rười rượi",
+              "cười tươi",
               "tức giận"
             ],
-            "a": 1,
+            "a": 2,
             "hint": "Khi vui, mọi người thường có biểu hiện gì?",
             "difficulty": 1,
             "id": "tv_hsg_q021"
@@ -2980,12 +2982,12 @@
           {
             "q": "Đặt câu hỏi cho bộ phận \"**Sáng nay**, lớp em đi tham quan.\"",
             "choices": [
-              "Đi đâu?",
-              "Sáng nay lớp em làm gì?",
               "Lớp em đi tham quan khi nào?",
+              "Sáng nay lớp em làm gì?",
+              "Đi đâu?",
               "Ai đi tham quan?"
             ],
-            "a": 2,
+            "a": 0,
             "hint": "'Sáng nay' chỉ thời gian – hỏi 'khi nào?'",
             "difficulty": 2,
             "id": "tv_hsg_q023"
@@ -2993,24 +2995,24 @@
           {
             "q": "Câu \"Ếch ngồi đáy giếng\" — hàm ý?",
             "choices": [
-              "Người hạn hẹp không biết mình kém",
               "Con ếch nhỏ",
+              "Người hạn hẹp không biết mình kém",
               "Ếch thích nước",
               "Giếng nước tốt"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 3,
             "id": "tv_hsg_q024"
           },
           {
             "q": "Từ láy nào mô tả ánh sáng lung linh?",
             "choices": [
-              "lấp lánh",
-              "rì rào",
               "thơm phức",
+              "rì rào",
+              "lấp lánh",
               "ầm ĩ"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "id": "tv_hsg_q025"
           },
@@ -3019,10 +3021,10 @@
             "choices": [
               "Làm gì?",
               "Ai?",
-              "Ở đâu?",
-              "Khi nào?"
+              "Khi nào?",
+              "Ở đâu?"
             ],
-            "a": 2,
+            "a": 3,
             "hint": "'Trên cánh đồng' chỉ nơi chốn",
             "difficulty": 2,
             "id": "tv_hsg_q026"
@@ -3030,12 +3032,12 @@
           {
             "q": "Câu cảm thán phải có?",
             "choices": [
-              "Dấu chấm",
+              "Dấu chấm than",
               "Dấu phẩy",
               "Dấu hỏi",
-              "Dấu chấm than"
+              "Dấu chấm"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 3,
             "id": "tv_hsg_q027"
           },
@@ -3043,11 +3045,11 @@
             "q": "Từ \"lấp lánh\" gợi lên điều gì?",
             "choices": [
               "Âm thanh",
-              "Mùi thơm",
               "Sự sáng bóng lấp lánh",
+              "Mùi thơm",
               "Màu xanh"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "id": "tv_hsg_q028"
           },
@@ -3056,10 +3058,10 @@
             "choices": [
               "lóng lánh",
               "lung linh",
-              "long lanh",
-              "lập lòe"
+              "lập lòe",
+              "long lanh"
             ],
-            "a": 3,
+            "a": 2,
             "hint": "",
             "difficulty": 3,
             "id": "tv_hsg_q029"
@@ -3068,11 +3070,11 @@
             "q": "Câu \"Mặt trời mọc đỏ rực ở phía đông\" tả điều gì?",
             "choices": [
               "Bữa cơm",
-              "Cảnh bình minh",
+              "Đêm tối",
               "Cảnh hoàng hôn",
-              "Đêm tối"
+              "Cảnh bình minh"
             ],
-            "a": 1,
+            "a": 3,
             "hint": "'Mặt trời mọc' = lúc nào trong ngày?",
             "difficulty": 1,
             "id": "tv_hsg_q030"

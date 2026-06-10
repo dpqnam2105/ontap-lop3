@@ -15,12 +15,12 @@
           {
             "q": "What is the value of the digit 7 in the number 72?",
             "choices": [
-              "7",
               "70",
+              "7",
               "2",
               "72"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "place_value",
             "unit": "numbers",
@@ -30,11 +30,11 @@
             "q": "What is the value of the digit 4 in the number 48?",
             "choices": [
               "4",
-              "8",
               "40",
+              "8",
               "48"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "place_value",
             "unit": "numbers",
@@ -44,11 +44,11 @@
             "q": "How many tens are in the number 65?",
             "choices": [
               "5",
-              "6",
               "65",
+              "6",
               "56"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "place_value",
             "unit": "numbers",
@@ -58,11 +58,11 @@
             "q": "How many ones are in the number 83?",
             "choices": [
               "8",
-              "3",
+              "38",
               "83",
-              "38"
+              "3"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "place_value",
             "unit": "numbers",
@@ -71,12 +71,12 @@
           {
             "q": "What is the preceding number of 87?",
             "choices": [
-              "88",
+              "86",
               "80",
               "90",
-              "86"
+              "88"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "number_sequence",
             "unit": "numbers",
@@ -114,11 +114,11 @@
             "q": "What is the succeeding number of 67?",
             "choices": [
               "66",
-              "68",
+              "76",
               "70",
-              "76"
+              "68"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "number_sequence",
             "unit": "numbers",
@@ -142,11 +142,11 @@
             "q": "Compare: 84 and 48.",
             "choices": [
               "84 < 48",
-              "84 = 48",
               "84 > 48",
+              "84 = 48",
               "Cannot compare"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -156,11 +156,11 @@
             "q": "Write 'forty seven' in number.",
             "choices": [
               "74",
-              "47",
               "57",
+              "47",
               "44"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "number_words",
             "unit": "numbers",
@@ -171,10 +171,10 @@
             "choices": [
               "16",
               "61",
-              "66",
-              "76"
+              "76",
+              "66"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "number_words",
             "unit": "numbers",
@@ -183,12 +183,12 @@
           {
             "q": "Write 'twenty nine' in number.",
             "choices": [
-              "92",
               "29",
+              "92",
               "19",
               "91"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "number_words",
             "unit": "numbers",
@@ -213,10 +213,10 @@
             "choices": [
               "thirty seven",
               "seventy four",
-              "seven three",
-              "seventy three"
+              "seventy three",
+              "seven three"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "number_words",
             "unit": "numbers",
@@ -254,11 +254,11 @@
             "q": "Which number comes between 28 and 30?",
             "choices": [
               "27",
-              "31",
               "29",
+              "31",
               "25"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "number_sequence",
             "unit": "numbers",
@@ -269,10 +269,10 @@
             "choices": [
               "48",
               "52",
-              "53",
-              "50"
+              "50",
+              "53"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "number_sequence",
             "unit": "numbers",
@@ -283,10 +283,10 @@
             "choices": [
               "32",
               "65",
-              "11",
-              "56"
+              "56",
+              "11"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -295,12 +295,12 @@
           {
             "q": "Find the greatest number in the table: 100, 66, 49, 54, 52, 10",
             "choices": [
-              "66",
-              "10",
               "100",
+              "10",
+              "66",
               "54"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -324,11 +324,11 @@
             "q": "How many numbers in 35, 47, 32, 58, 93, 54, 39, 44 are greater than 45?",
             "choices": [
               "3",
-              "4",
               "5",
+              "4",
               "2"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -338,11 +338,11 @@
             "q": "How many numbers in 32, 23, 11, 43, 47, 22, 59, 19 are smaller than 32?",
             "choices": [
               "3",
-              "4",
+              "6",
               "5",
-              "6"
+              "4"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -351,12 +351,12 @@
           {
             "q": "47 → –6 → □ → +12 → ? What is the final number?",
             "choices": [
-              "41",
               "53",
+              "41",
               "65",
               "29"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "number_machine",
             "unit": "numbers",
@@ -365,12 +365,12 @@
           {
             "q": "56 → –4 → □ → +9 → ? What is the final number?",
             "choices": [
-              "61",
               "69",
+              "61",
               "40",
               "51"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "number_machine",
             "unit": "numbers",
@@ -379,12 +379,12 @@
           {
             "q": "38 → –4 → □ → +9 → ? What is the final number?",
             "choices": [
-              "43",
-              "40",
               "41",
+              "40",
+              "43",
               "33"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "skill": "number_machine",
             "unit": "numbers",
@@ -436,11 +436,11 @@
             "q": "The number has 3 tens and 7 ones. What is the number?",
             "choices": [
               "73",
-              "37",
               "307",
+              "37",
               "3007"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "place_value",
             "unit": "numbers",
@@ -450,11 +450,11 @@
             "q": "Which number has the digit 5 in the tens place?",
             "choices": [
               "15",
-              "51",
+              "505",
               "55",
-              "505"
+              "51"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "place_value",
             "unit": "numbers",
@@ -491,12 +491,12 @@
           {
             "q": "Find the sum of the greatest and smallest number: 25, 10, 7, 33, 93, 22, 89, 90",
             "choices": [
-              "100",
-              "103",
               "93",
+              "103",
+              "100",
               "90"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "skill": "compare_numbers",
             "unit": "numbers",
@@ -513,11 +513,11 @@
             "q": "Calculate: 48 + 22 = …",
             "choices": [
               "60",
-              "70",
+              "65",
               "80",
-              "65"
+              "70"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -526,12 +526,12 @@
           {
             "q": "Calculate: 43 + 17 + 10 = …",
             "choices": [
-              "60",
               "70",
+              "60",
               "80",
               "65"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -569,11 +569,11 @@
             "q": "Subtract: 90 – 11 = …",
             "choices": [
               "81",
-              "79",
+              "71",
               "89",
-              "71"
+              "79"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -582,12 +582,12 @@
           {
             "q": "Add: 27 + 36 = …",
             "choices": [
-              "53",
               "63",
+              "53",
               "73",
               "57"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -597,11 +597,11 @@
             "q": "Calculate: 100 – 67 = …",
             "choices": [
               "67",
-              "34",
+              "33",
               "43",
-              "33"
+              "34"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -612,10 +612,10 @@
             "choices": [
               "83",
               "63",
-              "56",
-              "66"
+              "66",
+              "56"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -625,11 +625,11 @@
             "q": "Calculate: 100 – 37 = …",
             "choices": [
               "64",
-              "63",
+              "47",
               "53",
-              "47"
+              "63"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -638,12 +638,12 @@
           {
             "q": "Calculate: 23 + 7 – 9 = …",
             "choices": [
-              "19",
               "21",
+              "19",
               "25",
               "30"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -652,12 +652,12 @@
           {
             "q": "Calculate: 27 + 13 – 40 = …",
             "choices": [
-              "0",
               "10",
+              "0",
               "20",
               "27"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -666,12 +666,12 @@
           {
             "q": "Calculate: 100 – 78 – 12 = …",
             "choices": [
-              "10",
-              "0",
               "22",
+              "0",
+              "10",
               "8"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -681,11 +681,11 @@
             "q": "Subtract: 70 – 23 = …",
             "choices": [
               "53",
-              "47",
+              "43",
               "57",
-              "43"
+              "47"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -694,12 +694,12 @@
           {
             "q": "Calculate: 26 + 26 = …",
             "choices": [
-              "42",
               "52",
+              "42",
               "46",
               "44"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -723,11 +723,11 @@
             "q": "Fill in the missing number: 37 + … = 62",
             "choices": [
               "15",
-              "25",
               "35",
+              "25",
               "27"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -737,11 +737,11 @@
             "q": "Fill in the missing number: 27 + … = 63 – 13",
             "choices": [
               "13",
-              "23",
+              "43",
               "33",
-              "43"
+              "23"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -750,12 +750,12 @@
           {
             "q": "Fill in the missing number: … – 13 = 21 + 32",
             "choices": [
-              "56",
               "66",
+              "56",
               "76",
               "46"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -764,12 +764,12 @@
           {
             "q": "Fill in the missing number: 26 + … = 43 – 13",
             "choices": [
-              "4",
               "14",
+              "4",
               "24",
               "34"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -779,11 +779,11 @@
             "q": "Fill in the missing number: 27 + … = 40",
             "choices": [
               "3",
-              "13",
               "23",
+              "13",
               "33"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -793,11 +793,11 @@
             "q": "Fill in the missing number: … – 5 = 25",
             "choices": [
               "20",
-              "30",
+              "25",
               "35",
-              "25"
+              "30"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -806,12 +806,12 @@
           {
             "q": "Fill in the missing number: 25 + 35 = … + 40",
             "choices": [
-              "10",
               "20",
+              "10",
               "30",
               "40"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -821,11 +821,11 @@
             "q": "Which number sentence is TRUE?",
             "choices": [
               "28 + 12 = 41",
-              "32 + 63 < 95",
               "82 – 80 = 2",
+              "32 + 63 < 95",
               "55 – 15 > 41"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "true_false",
             "unit": "add_sub",
@@ -849,11 +849,11 @@
             "q": "Which number sentence is TRUE?",
             "choices": [
               "13 + 11 > 31",
-              "29 = 20 + 9",
+              "58 > 52 + 8",
               "32 + 7 = 37",
-              "58 > 52 + 8"
+              "29 = 20 + 9"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "true_false",
             "unit": "add_sub",
@@ -862,12 +862,12 @@
           {
             "q": "Choose the suitable sign: 23 + 66 … 99",
             "choices": [
-              "<",
+              "=",
               ">",
               "+",
-              "="
+              "<"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -906,10 +906,10 @@
             "choices": [
               "=",
               "+",
-              "<",
-              ">"
+              ">",
+              "<"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -933,11 +933,11 @@
             "q": "Choose the expression with the same result as 27 + 53:",
             "choices": [
               "19 + 55",
-              "23 + 47",
               "32 + 48",
+              "23 + 47",
               "27 + 45"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "equivalent_expressions",
             "unit": "add_sub",
@@ -947,11 +947,11 @@
             "q": "Calculate: 100 – 35 + 15 – 53 = …",
             "choices": [
               "17",
-              "27",
               "37",
+              "27",
               "47"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -961,11 +961,11 @@
             "q": "Calculate: 100 – 38 + 18 – 53 = …",
             "choices": [
               "17",
-              "27",
+              "7",
               "37",
-              "7"
+              "27"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -974,12 +974,12 @@
           {
             "q": "Fill in the blank: 10 + 29 = … – 20",
             "choices": [
-              "49",
               "59",
+              "49",
               "39",
               "69"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 3,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -1018,10 +1018,10 @@
             "choices": [
               "37",
               "38",
-              "39",
-              "40"
+              "40",
+              "39"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "number_inference",
             "unit": "add_sub",
@@ -1081,10 +1081,10 @@
             "choices": [
               "7",
               "10",
-              "12",
-              "14"
+              "14",
+              "12"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1093,12 +1093,12 @@
           {
             "q": "Calculate: 3 × 8 = …",
             "choices": [
-              "11",
-              "21",
               "24",
+              "21",
+              "11",
               "27"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1108,11 +1108,11 @@
             "q": "Calculate: 4 × 5 = …",
             "choices": [
               "9",
-              "16",
               "20",
+              "16",
               "24"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1136,11 +1136,11 @@
             "q": "Calculate: 5 × 6 = …",
             "choices": [
               "25",
-              "30",
+              "40",
               "35",
-              "40"
+              "30"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1149,12 +1149,12 @@
           {
             "q": "Calculate: 5 × 9 = …",
             "choices": [
-              "40",
               "45",
+              "40",
               "50",
               "55"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1164,11 +1164,11 @@
             "q": "Calculate: 12 ÷ 2 = …",
             "choices": [
               "4",
-              "5",
               "6",
+              "5",
               "7"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1192,11 +1192,11 @@
             "q": "Calculate: 20 ÷ 4 = …",
             "choices": [
               "4",
-              "5",
+              "7",
               "6",
-              "7"
+              "5"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1205,12 +1205,12 @@
           {
             "q": "Calculate: 30 ÷ 5 = …",
             "choices": [
-              "4",
-              "5",
               "6",
+              "5",
+              "4",
               "7"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1220,11 +1220,11 @@
             "q": "Calculate: 16 ÷ 2 = …",
             "choices": [
               "6",
-              "7",
               "8",
+              "7",
               "9"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1249,10 +1249,10 @@
             "choices": [
               "5",
               "8",
-              "10",
-              "12"
+              "12",
+              "10"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1261,12 +1261,12 @@
           {
             "q": "How much is one half of 14?",
             "choices": [
-              "5",
-              "6",
               "7",
+              "6",
+              "5",
               "8"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "division_table",
             "unit": "mul_div",
@@ -1276,11 +1276,11 @@
             "q": "Find the missing number: 3 × … = 27",
             "choices": [
               "7",
-              "8",
               "9",
+              "8",
               "6"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "missing_factor",
             "unit": "mul_div",
@@ -1305,10 +1305,10 @@
             "choices": [
               "7",
               "8",
-              "9",
-              "6"
+              "6",
+              "9"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "missing_factor",
             "unit": "mul_div",
@@ -1317,12 +1317,12 @@
           {
             "q": "Find the missing number: … ÷ 3 = 7",
             "choices": [
-              "18",
               "21",
+              "18",
               "24",
               "27"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "missing_factor",
             "unit": "mul_div",
@@ -1332,11 +1332,11 @@
             "q": "Tom has 4 bags with 6 apples each. How many apples in total?",
             "choices": [
               "10",
-              "20",
               "24",
+              "20",
               "28"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "mul_word",
             "unit": "mul_div",
@@ -1360,11 +1360,11 @@
             "q": "20 oranges are shared equally among 4 children. How many does each child get?",
             "choices": [
               "4",
-              "5",
+              "8",
               "6",
-              "8"
+              "5"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "div_word",
             "unit": "mul_div",
@@ -1373,12 +1373,12 @@
           {
             "q": "There are 18 cookies. They are shared equally among 3 friends. How many does each friend get?",
             "choices": [
-              "5",
               "6",
+              "5",
               "7",
               "8"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "div_word",
             "unit": "mul_div",
@@ -1416,11 +1416,11 @@
             "q": "Which multiplication equals 36?",
             "choices": [
               "4 × 8",
-              "3 × 9",
+              "6 × 5",
               "5 × 7",
-              "6 × 5"
+              "3 × 9"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "multiplication_table",
             "unit": "mul_div",
@@ -1429,12 +1429,12 @@
           {
             "q": "Lan saves 5 coins every day. How many coins does she have after 8 days?",
             "choices": [
-              "13",
-              "35",
               "40",
+              "35",
+              "13",
               "45"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "mul_word",
             "unit": "mul_div",
@@ -1444,11 +1444,11 @@
             "q": "A box has 3 rows of 9 eggs. How many eggs are in the box?",
             "choices": [
               "12",
-              "24",
               "27",
+              "24",
               "30"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "skill": "mul_word",
             "unit": "mul_div",
@@ -1458,11 +1458,11 @@
             "q": "There are 7 days in a week. How many days in 4 weeks?",
             "choices": [
               "21",
-              "28",
               "30",
+              "28",
               "35"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "mul_word",
             "unit": "mul_div",
@@ -1473,10 +1473,10 @@
             "choices": [
               "3",
               "4",
-              "5",
-              "6"
+              "6",
+              "5"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "missing_factor",
             "unit": "mul_div",
@@ -1485,12 +1485,12 @@
           {
             "q": "A class of 30 students is divided into equal groups of 5. How many groups are there?",
             "choices": [
-              "5",
               "6",
+              "5",
               "7",
               "8"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 3,
             "skill": "div_word",
             "unit": "mul_div",
@@ -1507,11 +1507,11 @@
             "q": "27cm + 13cm = … dm",
             "choices": [
               "14",
-              "40",
               "4",
+              "40",
               "41"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1534,12 +1534,12 @@
           {
             "q": "16cm + 54cm = … dm",
             "choices": [
-              "6",
+              "70",
               "60",
               "7",
-              "70"
+              "6"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1548,12 +1548,12 @@
           {
             "q": "8cm + 42cm = … dm",
             "choices": [
-              "5",
-              "60",
               "6",
+              "60",
+              "5",
               "50"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1563,11 +1563,11 @@
             "q": "6dm = … cm",
             "choices": [
               "6",
-              "16",
               "60",
+              "16",
               "600"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1591,11 +1591,11 @@
             "q": "1dm + 5cm = … cm",
             "choices": [
               "6",
-              "15",
+              "16",
               "105",
-              "16"
+              "15"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1618,12 +1618,12 @@
           {
             "q": "2dm + 17cm = … cm",
             "choices": [
-              "37",
               "27",
+              "37",
               "217",
               "19"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1647,11 +1647,11 @@
             "q": "37l + 26l = … l",
             "choices": [
               "53",
-              "63",
+              "11",
               "64",
-              "11"
+              "63"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1660,12 +1660,12 @@
           {
             "q": "27l + 29l = … l",
             "choices": [
-              "53",
               "56",
+              "53",
               "58",
               "11"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1675,11 +1675,11 @@
             "q": "55l + 45l = … l",
             "choices": [
               "53",
-              "10",
               "100",
+              "10",
               "90"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1688,12 +1688,12 @@
           {
             "q": "73kg – 18kg = … kg",
             "choices": [
-              "55",
-              "65",
               "45",
+              "65",
+              "55",
               "91"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1704,10 +1704,10 @@
             "choices": [
               "35",
               "44",
-              "45",
-              "63"
+              "63",
+              "45"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1716,12 +1716,12 @@
           {
             "q": "76kg – 27kg = … kg",
             "choices": [
-              "59",
-              "48",
               "49",
+              "48",
+              "59",
               "93"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1731,11 +1731,11 @@
             "q": "AB = 11cm, CD = 6cm, DB = 3cm. Find the length of AD.",
             "choices": [
               "9cm",
-              "5cm",
+              "8cm",
               "11cm",
-              "8cm"
+              "5cm"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "line_segments",
             "unit": "measurement",
@@ -1745,11 +1745,11 @@
             "q": "AB = 58cm. CD is 28cm shorter than AB. Find CD.",
             "choices": [
               "86cm",
-              "30cm",
               "28cm",
+              "30cm",
               "58cm"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1759,11 +1759,11 @@
             "q": "AB = 56cm. CD is 26cm shorter than AB. Find CD.",
             "choices": [
               "82cm",
-              "30cm",
+              "56cm",
               "26cm",
-              "56cm"
+              "30cm"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1772,12 +1772,12 @@
           {
             "q": "A rope is 85cm long. 35cm is cut off. How long is the rope now?",
             "choices": [
-              "40cm",
-              "45cm",
               "50cm",
+              "45cm",
+              "40cm",
               "55cm"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1787,11 +1787,11 @@
             "q": "Jim has 45 litres of honey. He sells 19 litres. How many litres does he have left?",
             "choices": [
               "13l",
-              "64l",
               "26l",
+              "64l",
               "45l"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "volume",
             "unit": "measurement",
@@ -1802,10 +1802,10 @@
             "choices": [
               "4kg",
               "10kg",
-              "3kg",
-              "7kg"
+              "7kg",
+              "3kg"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1816,10 +1816,10 @@
             "choices": [
               "63kg",
               "44kg",
-              "45kg",
-              "35kg"
+              "35kg",
+              "45kg"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1828,12 +1828,12 @@
           {
             "q": "9l + 37l = … l",
             "choices": [
-              "53",
               "46",
+              "53",
               "47",
               "56"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "volume",
             "unit": "measurement",
@@ -1843,11 +1843,11 @@
             "q": "Choose the correct answer: 60kg – 7kg = … kg",
             "choices": [
               "59",
-              "43",
+              "53",
               "67",
-              "53"
+              "43"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1857,11 +1857,11 @@
             "q": "A plank is 1dm 5cm long. Another is 8cm long. How long are they together in cm?",
             "choices": [
               "13cm",
-              "23cm",
               "33cm",
+              "23cm",
               "43cm"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1871,11 +1871,11 @@
             "q": "A container holds 100l. 37l of water is added and 15l is removed. How much is in it?",
             "choices": [
               "78l",
-              "82l",
+              "92l",
               "88l",
-              "92l"
+              "82l"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "volume",
             "unit": "measurement",
@@ -1884,12 +1884,12 @@
           {
             "q": "Tom's bag weighs 3kg. He adds 2 books each weighing 500g. How heavy is the bag now? (1kg = 1000g)",
             "choices": [
-              "3500g",
               "4000g",
+              "3500g",
               "5000g",
               "4500g"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 3,
             "skill": "weight",
             "unit": "measurement",
@@ -1912,12 +1912,12 @@
           {
             "q": "Which is LONGER? a)3dm  b)25cm  c)1dm 8cm  d)2dm",
             "choices": [
-              "3dm = 30cm",
-              "25cm",
               "1dm 8cm = 18cm",
+              "25cm",
+              "3dm = 30cm",
               "2dm = 20cm"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "skill": "compare_lengths",
             "unit": "measurement",
@@ -1934,11 +1934,11 @@
             "q": "How many minutes are in 1 hour?",
             "choices": [
               "30",
-              "60",
+              "24",
               "100",
-              "24"
+              "60"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1947,12 +1947,12 @@
           {
             "q": "How many hours are in 1 day?",
             "choices": [
-              "12",
+              "24",
               "16",
               "20",
-              "24"
+              "12"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1962,11 +1962,11 @@
             "q": "How many days are in 1 week?",
             "choices": [
               "5",
-              "6",
               "7",
+              "6",
               "8"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1976,11 +1976,11 @@
             "q": "What time is 'half past three'?",
             "choices": [
               "3:15",
-              "3:30",
               "3:45",
+              "3:30",
               "3:05"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "clock_reading",
             "unit": "time_money",
@@ -1989,12 +1989,12 @@
           {
             "q": "What time is 'quarter past two'?",
             "choices": [
-              "2:15",
+              "2:05",
               "2:30",
               "2:45",
-              "2:05"
+              "2:15"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "clock_reading",
             "unit": "time_money",
@@ -2018,11 +2018,11 @@
             "q": "What is the month that comes after April?",
             "choices": [
               "March",
-              "June",
               "May",
+              "June",
               "July"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "calendar",
             "unit": "time_money",
@@ -2046,11 +2046,11 @@
             "q": "Lan has 50,000 dong. She spends 20,000 dong. How much does she have left?",
             "choices": [
               "20,000 dong",
-              "30,000 dong",
+              "70,000 dong",
               "40,000 dong",
-              "70,000 dong"
+              "30,000 dong"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2059,12 +2059,12 @@
           {
             "q": "A book costs 15,000 dong. A pen costs 5,000 dong. How much do they cost together?",
             "choices": [
-              "10,000",
-              "15,000",
               "20,000",
+              "15,000",
+              "10,000",
               "25,000"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2073,12 +2073,12 @@
           {
             "q": "Tom has 2 coins of 500 dong and 3 coins of 1,000 dong. How much does he have in total?",
             "choices": [
-              "4,000 dong",
               "5,000 dong",
+              "4,000 dong",
               "3,500 dong",
               "4,500 dong"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2088,11 +2088,11 @@
             "q": "If it is now 2:00 PM, what time will it be in 3 hours?",
             "choices": [
               "4:00 PM",
-              "5:00 PM",
               "3:00 PM",
+              "5:00 PM",
               "6:00 PM"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2103,10 +2103,10 @@
             "choices": [
               "7:30 PM",
               "8:00 PM",
-              "8:30 PM",
-              "9:00 PM"
+              "9:00 PM",
+              "8:30 PM"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2115,12 +2115,12 @@
           {
             "q": "School starts at 7:30 AM and finishes at 11:30 AM. How long is school?",
             "choices": [
-              "3 hours",
               "4 hours",
+              "3 hours",
               "5 hours",
               "3.5 hours"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2130,11 +2130,11 @@
             "q": "Nam saves 5,000 dong every day. How much does he save in 1 week?",
             "choices": [
               "25,000",
-              "30,000",
               "35,000",
+              "30,000",
               "40,000"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2144,11 +2144,11 @@
             "q": "A toy costs 45,000 dong. Lan has 30,000 dong. How much more does she need?",
             "choices": [
               "10,000",
-              "15,000",
               "20,000",
+              "15,000",
               "25,000"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2159,10 +2159,10 @@
             "choices": [
               "2,000",
               "4,000",
-              "6,000",
-              "8,000"
+              "8,000",
+              "6,000"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2171,12 +2171,12 @@
           {
             "q": "Tom's birthday is on March 15. Today is March 8. How many days until his birthday?",
             "choices": [
-              "5",
               "7",
+              "5",
               "8",
               "10"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 3,
             "skill": "calendar",
             "unit": "time_money",
@@ -2215,10 +2215,10 @@
             "choices": [
               "120",
               "130",
-              "150",
-              "180"
+              "180",
+              "150"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2234,12 +2234,12 @@
           {
             "q": "How many sides does a triangle have?",
             "choices": [
-              "2",
               "3",
+              "2",
               "4",
               "5"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2263,11 +2263,11 @@
             "q": "How many corners does a square have?",
             "choices": [
               "3",
-              "4",
               "5",
+              "4",
               "6"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2278,10 +2278,10 @@
             "choices": [
               "rectangle",
               "triangle",
-              "square",
-              "circle"
+              "circle",
+              "square"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2305,11 +2305,11 @@
             "q": "Which shape has 3 corners and 3 sides?",
             "choices": [
               "square",
-              "rectangle",
               "triangle",
+              "rectangle",
               "circle"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2319,11 +2319,11 @@
             "q": "How many sides does a pentagon have?",
             "choices": [
               "4",
-              "5",
               "6",
+              "5",
               "7"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2333,11 +2333,11 @@
             "q": "How many sides does a hexagon have?",
             "choices": [
               "5",
-              "6",
+              "8",
               "7",
-              "8"
+              "6"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2346,12 +2346,12 @@
           {
             "q": "A square has a side of 5cm. What is its perimeter?",
             "choices": [
-              "10cm",
-              "15cm",
               "20cm",
+              "15cm",
+              "10cm",
               "25cm"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2361,11 +2361,11 @@
             "q": "A rectangle is 8cm long and 3cm wide. What is its perimeter?",
             "choices": [
               "11cm",
-              "16cm",
               "22cm",
+              "16cm",
               "24cm"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2390,10 +2390,10 @@
             "choices": [
               "5",
               "8",
-              "10",
-              "12"
+              "12",
+              "10"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "line_segments",
             "unit": "shapes",
@@ -2402,12 +2402,12 @@
           {
             "q": "How many triangles can you count in a shape divided into 4 smaller triangles?",
             "choices": [
-              "4",
               "5",
+              "4",
               "6",
               "7"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "count_shapes",
             "unit": "shapes",
@@ -2416,12 +2416,12 @@
           {
             "q": "Which shape has the most sides? a) hexagon  b) pentagon  c) square  d) triangle",
             "choices": [
-              "hexagon (6 sides)",
               "pentagon (5 sides)",
+              "hexagon (6 sides)",
               "square (4 sides)",
               "triangle (3 sides)"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2431,11 +2431,11 @@
             "q": "A rectangle has a length of 10cm and width of 4cm. What is its perimeter?",
             "choices": [
               "14cm",
-              "28cm",
               "40cm",
+              "28cm",
               "24cm"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2446,10 +2446,10 @@
             "choices": [
               "3",
               "4",
-              "5",
-              "6"
+              "6",
+              "5"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "count_shapes",
             "unit": "shapes",
@@ -2458,12 +2458,12 @@
           {
             "q": "A square's perimeter is 28cm. What is the length of one side?",
             "choices": [
-              "4cm",
-              "6cm",
               "7cm",
+              "6cm",
+              "4cm",
               "8cm"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2501,11 +2501,11 @@
             "q": "A path goes: 3cm right, 4cm up, 3cm left, 4cm down. What shape does it make?",
             "choices": [
               "square",
-              "rectangle",
+              "circle",
               "triangle",
-              "circle"
+              "rectangle"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "shape_inference",
             "unit": "shapes",
@@ -2514,12 +2514,12 @@
           {
             "q": "How many quadrilaterals (4-sided shapes) can you find in a rectangle divided into 2 equal parts?",
             "choices": [
-              "1",
-              "2",
               "3",
+              "2",
+              "1",
               "4"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "count_shapes",
             "unit": "shapes",
@@ -2536,11 +2536,11 @@
             "q": "Linda has 28 candies. Chloe has 36 candies. How many do they have in all?",
             "choices": [
               "54",
-              "60",
               "64",
+              "60",
               "72"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "addition_word",
             "unit": "word_problems",
@@ -2565,10 +2565,10 @@
             "choices": [
               "2",
               "13",
-              "24",
-              "34"
+              "34",
+              "24"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition_word",
             "unit": "word_problems",
@@ -2577,12 +2577,12 @@
           {
             "q": "A teacher has 34 pens. She gives students 7 pens. How many pens does she have left?",
             "choices": [
-              "7",
               "27",
+              "7",
               "37",
               "41"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2606,11 +2606,11 @@
             "q": "David has 34 marbles. Max has 72. How many more marbles does Max have than David?",
             "choices": [
               "28",
-              "38",
               "48",
+              "38",
               "58"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "comparison_word",
             "unit": "word_problems",
@@ -2621,10 +2621,10 @@
             "choices": [
               "1",
               "7",
-              "15",
-              "8"
+              "8",
+              "15"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition_word",
             "unit": "word_problems",
@@ -2633,12 +2633,12 @@
           {
             "q": "Mr Tom has 52 balloons. 25 are red and the rest are green. How many green balloons?",
             "choices": [
-              "13",
-              "23",
               "27",
+              "23",
+              "13",
               "77"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2648,11 +2648,11 @@
             "q": "Roden bought 15 goldfish and 7 blue fish. How many fish did he buy?",
             "choices": [
               "8",
-              "21",
               "22",
+              "21",
               "35"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "addition_word",
             "unit": "word_problems",
@@ -2676,11 +2676,11 @@
             "q": "There are 19 girls and some boys. There are 38 students altogether. How many boys?",
             "choices": [
               "18",
-              "19",
+              "57",
               "20",
-              "57"
+              "19"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2689,12 +2689,12 @@
           {
             "q": "There are 100 people. 6 are teachers. 48 are girl students. How many boy students?",
             "choices": [
-              "40",
               "46",
+              "40",
               "48",
               "54"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2703,12 +2703,12 @@
           {
             "q": "Class 2C has 20 girl students. Boys are 6 fewer than girls. How many boys are there?",
             "choices": [
-              "14",
               "16",
+              "14",
               "18",
               "26"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2733,10 +2733,10 @@
             "choices": [
               "35",
               "40",
-              "45",
-              "50"
+              "50",
+              "45"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2745,12 +2745,12 @@
           {
             "q": "Amber has 35 pencils. She gives 19 to a friend, then buys 14 more. How many does she have now?",
             "choices": [
-              "20",
-              "25",
               "30",
+              "25",
+              "20",
               "35"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2760,11 +2760,11 @@
             "q": "There are 25 eggs. Mary uses 8 for cakes and her mother buys 12 more. How many eggs now?",
             "choices": [
               "17",
-              "25",
               "29",
+              "25",
               "45"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2774,11 +2774,11 @@
             "q": "Lian has 37 cookies. He gives Jane 13 and Henry 16. How many cookies does he have left?",
             "choices": [
               "4",
-              "8",
               "11",
+              "8",
               "24"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2788,11 +2788,11 @@
             "q": "A class has 28 girl students. The number of boys is 9 fewer. How many boys?",
             "choices": [
               "18",
-              "19",
+              "37",
               "20",
-              "37"
+              "19"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "subtraction_word",
             "unit": "word_problems",
@@ -2801,12 +2801,12 @@
           {
             "q": "Linda has 34 candies. Chloe has 38. They share all their candies equally with 8 friends. How many does each friend get?",
             "choices": [
-              "7",
-              "8",
               "9",
+              "8",
+              "7",
               "10"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2816,11 +2816,11 @@
             "q": "Tom has some marbles. He gives away 15 and has 27 left. How many did he start with?",
             "choices": [
               "12",
-              "32",
               "42",
+              "32",
               "52"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "skill": "reverse_word",
             "unit": "word_problems",
@@ -2830,11 +2830,11 @@
             "q": "A shop has 100 items. In the morning they sell 37 items and buy 15 new items. In the afternoon they sell 24 more. How many items are left?",
             "choices": [
               "44",
-              "54",
               "64",
+              "54",
               "74"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "multi_step",
             "unit": "word_problems",
@@ -2845,10 +2845,10 @@
             "choices": [
               "12",
               "24",
-              "36",
-              "48"
+              "48",
+              "36"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "multiplication_word",
             "unit": "word_problems",
@@ -2857,12 +2857,12 @@
           {
             "q": "A farmer has chickens and rabbits. There are 10 animals in total and 32 legs altogether. How many rabbits are there?",
             "choices": [
-              "4",
-              "5",
               "6",
+              "5",
+              "4",
               "7"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "logical_word",
             "unit": "word_problems",
@@ -2872,11 +2872,11 @@
             "q": "Tom reads 8 pages every day. After 5 days he has 20 pages left. How many pages does the book have?",
             "choices": [
               "40",
-              "50",
               "60",
+              "50",
               "80"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "skill": "multi_step",
             "unit": "word_problems",
