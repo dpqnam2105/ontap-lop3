@@ -265,3 +265,24 @@
 
 /* Màn chọn môn 2x2: trên điện thoại hẹp thì về 1 cột cho dễ bấm */
 @media(max-width:600px){.subject-list{grid-template-columns:1fr!important}}
+
+/* ===== Subject banner overlay (ten mon + tien do + nut Vao hoc) ===== */
+.sub-overlay{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;gap:12px;padding:38px 16px 13px;background:linear-gradient(180deg,rgba(13,42,86,0) 0%,rgba(13,42,86,.5) 45%,rgba(10,34,72,.84) 100%);border-radius:0 0 22px 22px;pointer-events:none}
+.sub-ov-icon{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,.94);display:grid;place-items:center;font-size:1.55rem;box-shadow:0 4px 12px rgba(0,0,0,.2);flex:0 0 auto}
+.sub-ov-text{min-width:0;flex:1}
+.sub-ov-name{font-family:var(--font-display);font-weight:900;font-size:1.32rem;color:#fff;text-shadow:0 2px 8px rgba(8,30,64,.55);line-height:1.12;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sub-ov-meta{color:#dcedff;font-weight:800;font-size:.85rem;text-shadow:0 1px 4px rgba(8,30,64,.55)}
+.sub-ov-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:0 0 auto}
+.sub-ov-chip{background:rgba(255,255,255,.93);color:#0d63d8;border-radius:999px;padding:4px 12px;font-family:var(--font-display);font-weight:900;font-size:.82rem;box-shadow:0 4px 10px rgba(0,0,0,.16);white-space:nowrap}
+.sub-ov-chip-done{background:#ffe56b;color:#7a5800}
+.sub-ov-cta{background:linear-gradient(135deg,var(--green2),var(--green));color:#fff;border-radius:999px;padding:5px 14px;font-family:var(--font-display);font-weight:900;font-size:.86rem;box-shadow:0 6px 14px rgba(47,199,101,.4);white-space:nowrap;transition:.18s}
+.sub-card-img:hover .sub-ov-cta{transform:scale(1.07)}
+.sub-card-noimg .sub-overlay{display:none}
+@media(max-width:760px){
+  .sub-overlay{padding:26px 10px 9px;gap:8px}
+  .sub-ov-icon{width:34px;height:34px;font-size:1.15rem;border-radius:10px}
+  .sub-ov-name{font-size:1.02rem}
+  .sub-ov-meta{display:none}
+  .sub-ov-chip{font-size:.72rem;padding:3px 9px}
+  .sub-ov-cta{font-size:.74rem;padding:4px 10px}
+}
