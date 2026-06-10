@@ -286,3 +286,18 @@
   .sub-ov-chip{font-size:.72rem;padding:3px 9px}
   .sub-ov-cta{font-size:.74rem;padding:4px 10px}
 }
+
+/* ===== Menu chia nhom ===== */
+.rail-label{display:flex;align-items:center;gap:8px;font-size:.74rem;font-weight:900;color:#39699e;letter-spacing:1.4px;text-transform:uppercase;margin:10px 4px -5px}.rail-label:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#bcd9f5,transparent)}
+.rail-label:first-of-type{margin-top:0}
+
+/* ===== Dashboard phu huynh: nhat ky gap gon ===== */
+.day-header{cursor:pointer;user-select:none}
+.day-header .day-caret{display:inline-block;transition:.2s;margin-right:2px}
+.day-collapsed .day-caret{transform:rotate(-90deg)}
+.day-collapsed .day-body{display:none}
+.day-header .day-title{flex:0 0 auto}
+.day-header .day-summary{flex:1;text-align:right;font-weight:800;font-size:.92rem;opacity:.95;margin-right:6px}
+.day-summary .good{color:#bdf7d2}.day-summary .warning{color:#ffe2a9}.day-summary .bad{color:#ffc9c4}
+.log-more-btn{display:block;width:100%;border:1px dashed #b9d6f2;background:#f3f9ff;color:#1565c0;border-radius:12px;padding:9px;font-family:var(--font-display);font-weight:850;cursor:pointer;margin:4px 0 10px}
+.log-more-btn:hover{background:#e7f3ff}
