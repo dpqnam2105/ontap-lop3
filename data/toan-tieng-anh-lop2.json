@@ -501,6 +501,351 @@
             "skill": "compare_numbers",
             "unit": "numbers",
             "id": "maen_numbers_q035"
+          },
+          {
+            "q": "Which number is the greatest?",
+            "choices": [
+              "389",
+              "398",
+              "399",
+              "401"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "So sánh hàng trăm trước, nếu bằng nhau thì so hàng chục.",
+            "id": "maen_numbers_q036",
+            "skill": "compare_numbers",
+            "unit": "numbers"
+          },
+          {
+            "q": "What number comes right before 300?",
+            "choices": [
+              "299",
+              "301",
+              "290",
+              "309"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "'Right before' là số liền trước — bớt đi 1.",
+            "id": "maen_numbers_q037",
+            "skill": "number_order",
+            "unit": "numbers"
+          },
+          {
+            "q": "Count by 2s: 12, 14, 16, __?",
+            "choices": [
+              "17",
+              "18",
+              "20",
+              "19"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Đếm cách 2: cộng thêm 2 vào số cuối.",
+            "id": "maen_numbers_q038",
+            "skill": "skip_counting",
+            "unit": "numbers"
+          },
+          {
+            "q": "Count by 5s: 35, 40, 45, __?",
+            "choices": [
+              "55",
+              "49",
+              "50",
+              "46"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Đếm cách 5: cộng thêm 5 vào số cuối.",
+            "id": "maen_numbers_q039",
+            "skill": "skip_counting",
+            "unit": "numbers"
+          },
+          {
+            "q": "In the number 562, the digit in the tens place is __?",
+            "choices": [
+              "5",
+              "56",
+              "2",
+              "6"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "'Tens place' là hàng chục — chữ số đứng giữa.",
+            "id": "maen_numbers_q040",
+            "skill": "place_value",
+            "unit": "numbers"
+          },
+          {
+            "q": "Write \"three hundred and seven\" as a number.",
+            "choices": [
+              "307",
+              "37",
+              "370",
+              "703"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Three hundred' là 300, 'seven' là 7 đơn vị, hàng chục bằng 0.",
+            "id": "maen_numbers_q041",
+            "skill": "number_words",
+            "unit": "numbers"
+          },
+          {
+            "q": "Which number is between 487 and 489?",
+            "choices": [
+              "486",
+              "488",
+              "490",
+              "489"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "'Between' nghĩa là ở giữa hai số.",
+            "id": "maen_numbers_q042",
+            "skill": "number_order",
+            "unit": "numbers"
+          },
+          {
+            "q": "Which number is even?",
+            "choices": [
+              "235",
+              "121",
+              "348",
+              "507"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Số chẵn có chữ số tận cùng là 0, 2, 4, 6 hoặc 8.",
+            "id": "maen_numbers_q043",
+            "skill": "odd_even",
+            "unit": "numbers"
+          },
+          {
+            "q": "How many tens are there in 90?",
+            "choices": [
+              "8",
+              "10",
+              "19",
+              "9"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "90 gồm bao nhiêu bó chục? Đếm 10, 20, 30...",
+            "id": "maen_numbers_q044",
+            "skill": "place_value",
+            "unit": "numbers"
+          },
+          {
+            "q": "Arrange from smallest to greatest: 240, 204, 420.",
+            "choices": [
+              "204, 240, 420",
+              "240, 204, 420",
+              "420, 240, 204",
+              "204, 420, 240"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "So sánh hàng trăm trước, sau đó đến hàng chục.",
+            "id": "maen_numbers_q045",
+            "skill": "compare_numbers",
+            "unit": "numbers"
+          },
+          {
+            "q": "I am a number. I have 4 hundreds, 0 tens and 9 ones. What number am I?",
+            "choices": [
+              "490",
+              "409",
+              "940",
+              "49"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Ghép theo thứ tự: trăm — chục — đơn vị.",
+            "id": "maen_numbers_q046",
+            "skill": "place_value",
+            "unit": "numbers"
+          },
+          {
+            "q": "If A = 3 and B = 6, the two-digit number AB is __?",
+            "choices": [
+              "63",
+              "9",
+              "36",
+              "18"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "AB nghĩa là A đứng hàng chục, B đứng hàng đơn vị.",
+            "id": "maen_numbers_q047",
+            "skill": "number_puzzle",
+            "unit": "numbers"
+          },
+          {
+            "q": "Compare: 34 + 25 ... 61 − 3. Choose the correct sign.",
+            "choices": [
+              ">",
+              "+",
+              "=",
+              "<"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Tính từng vế trước: 34+25 và 61−3, rồi so sánh hai kết quả.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q048"
+          },
+          {
+            "q": "What is the value of the digit 8 in the number 285?",
+            "choices": [
+              "80",
+              "8",
+              "800",
+              "85"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Chữ số 8 đứng ở hàng chục.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q049"
+          },
+          {
+            "q": "Find the missing number: 15, 20, 25, ..., 35",
+            "choices": [
+              "28",
+              "30",
+              "32",
+              "26"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Dãy số cách đều 5 đơn vị.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q050"
+          },
+          {
+            "q": "If A = 4, B = A + 6, C = B − 3, then C = ?",
+            "choices": [
+              "6",
+              "8",
+              "7",
+              "9"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Tính lần lượt: B trước, rồi mới đến C.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q051"
+          },
+          {
+            "q": "Round numbers: which number is between 56 and 60?",
+            "choices": [
+              "55",
+              "61",
+              "54",
+              "58"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Tìm số lớn hơn 56 và bé hơn 60.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q052"
+          },
+          {
+            "q": "Arrange from smallest to greatest: 207, 270, 72, 720. Which comes first?",
+            "choices": [
+              "72",
+              "270",
+              "207",
+              "720"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Số có 2 chữ số luôn bé hơn số có 3 chữ số.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q053"
+          },
+          {
+            "q": "What is the smallest 3-digit number with all different digits?",
+            "choices": [
+              "100",
+              "102",
+              "123",
+              "111"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Hàng trăm phải là 1, sau đó chọn hai chữ số bé nhất còn lại và khác nhau.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q054"
+          },
+          {
+            "q": "Count by 3s: 3, 6, 9, 12, ... What is the next number?",
+            "choices": [
+              "13",
+              "14",
+              "15",
+              "16"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Cộng thêm 3 vào số cuối cùng.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q055"
+          },
+          {
+            "q": "Compare: 100 − 45 ... 28 + 27. Choose the correct sign.",
+            "choices": [
+              "−",
+              ">",
+              "<",
+              "="
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Tính cả hai vế rồi so sánh: hai kết quả có bằng nhau không?",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q056"
+          },
+          {
+            "q": "The number 'four hundred and six' is written as:",
+            "choices": [
+              "406",
+              "460",
+              "46",
+              "604"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Không có hàng chục thì viết chữ số 0 ở giữa.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q057"
+          },
+          {
+            "q": "How many 2-digit numbers end with the digit 5?",
+            "choices": [
+              "8",
+              "9",
+              "10",
+              "5"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Liệt kê: 15, 25, 35, ... 95 rồi đếm.",
+            "skill": "place_value",
+            "unit": "numbers",
+            "id": "maen_numbers_q058"
           }
         ]
       },
@@ -514,10 +859,10 @@
             "choices": [
               "60",
               "65",
-              "80",
-              "70"
+              "70",
+              "80"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -526,12 +871,12 @@
           {
             "q": "Calculate: 43 + 17 + 10 = …",
             "choices": [
-              "70",
+              "65",
               "60",
               "80",
-              "65"
+              "70"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -540,12 +885,12 @@
           {
             "q": "Calculate: 50 – 5 + 10 = …",
             "choices": [
-              "45",
               "55",
+              "45",
               "35",
               "65"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -555,11 +900,11 @@
             "q": "Calculate: 67 – 15 – 12 = …",
             "choices": [
               "50",
-              "30",
               "40",
+              "30",
               "45"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -570,10 +915,10 @@
             "choices": [
               "81",
               "71",
-              "89",
-              "79"
+              "79",
+              "89"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -582,12 +927,12 @@
           {
             "q": "Add: 27 + 36 = …",
             "choices": [
-              "63",
+              "57",
               "53",
               "73",
-              "57"
+              "63"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -596,12 +941,12 @@
           {
             "q": "Calculate: 100 – 67 = …",
             "choices": [
-              "67",
               "33",
+              "67",
               "43",
               "34"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -611,11 +956,11 @@
             "q": "Calculate: 100 – 44 = …",
             "choices": [
               "83",
-              "63",
               "66",
+              "63",
               "56"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -626,10 +971,10 @@
             "choices": [
               "64",
               "47",
-              "53",
-              "63"
+              "63",
+              "53"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -638,12 +983,12 @@
           {
             "q": "Calculate: 23 + 7 – 9 = …",
             "choices": [
-              "21",
+              "30",
               "19",
               "25",
-              "30"
+              "21"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -652,12 +997,12 @@
           {
             "q": "Calculate: 27 + 13 – 40 = …",
             "choices": [
-              "10",
               "0",
+              "10",
               "20",
               "27"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -667,11 +1012,11 @@
             "q": "Calculate: 100 – 78 – 12 = …",
             "choices": [
               "22",
-              "0",
               "10",
+              "0",
               "8"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -682,10 +1027,10 @@
             "choices": [
               "53",
               "43",
-              "57",
-              "47"
+              "47",
+              "57"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 1,
             "skill": "subtraction",
             "unit": "add_sub",
@@ -694,12 +1039,12 @@
           {
             "q": "Calculate: 26 + 26 = …",
             "choices": [
-              "52",
+              "44",
               "42",
               "46",
-              "44"
+              "52"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 1,
             "skill": "addition",
             "unit": "add_sub",
@@ -708,12 +1053,12 @@
           {
             "q": "Calculate: 78 – 69 + 15 = …",
             "choices": [
-              "14",
               "24",
+              "14",
               "34",
               "44"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 1,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -723,11 +1068,11 @@
             "q": "Fill in the missing number: 37 + … = 62",
             "choices": [
               "15",
-              "35",
               "25",
+              "35",
               "27"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -738,10 +1083,10 @@
             "choices": [
               "13",
               "43",
-              "33",
-              "23"
+              "23",
+              "33"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -750,12 +1095,12 @@
           {
             "q": "Fill in the missing number: … – 13 = 21 + 32",
             "choices": [
-              "66",
+              "46",
               "56",
               "76",
-              "46"
+              "66"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -764,12 +1109,12 @@
           {
             "q": "Fill in the missing number: 26 + … = 43 – 13",
             "choices": [
-              "14",
               "4",
+              "14",
               "24",
               "34"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -779,11 +1124,11 @@
             "q": "Fill in the missing number: 27 + … = 40",
             "choices": [
               "3",
-              "23",
               "13",
+              "23",
               "33"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -794,10 +1139,10 @@
             "choices": [
               "20",
               "25",
-              "35",
-              "30"
+              "30",
+              "35"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -806,12 +1151,12 @@
           {
             "q": "Fill in the missing number: 25 + 35 = … + 40",
             "choices": [
-              "20",
+              "40",
               "10",
               "30",
-              "40"
+              "20"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 2,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -820,12 +1165,12 @@
           {
             "q": "Which number sentence is TRUE?",
             "choices": [
-              "28 + 12 = 41",
               "82 – 80 = 2",
+              "28 + 12 = 41",
               "32 + 63 < 95",
               "55 – 15 > 41"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "true_false",
             "unit": "add_sub",
@@ -835,11 +1180,11 @@
             "q": "Which number sentence is FALSE?",
             "choices": [
               "48 + 12 = 60",
-              "37 + 13 = 50",
               "76 – 53 > 32",
+              "37 + 13 = 50",
               "43 – 23 = 20"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "true_false",
             "unit": "add_sub",
@@ -850,10 +1195,10 @@
             "choices": [
               "13 + 11 > 31",
               "58 > 52 + 8",
-              "32 + 7 = 37",
-              "29 = 20 + 9"
+              "29 = 20 + 9",
+              "32 + 7 = 37"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "skill": "true_false",
             "unit": "add_sub",
@@ -862,12 +1207,12 @@
           {
             "q": "Choose the suitable sign: 23 + 66 … 99",
             "choices": [
-              "=",
+              "<",
               ">",
               "+",
-              "<"
+              "="
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -876,12 +1221,12 @@
           {
             "q": "Choose the suitable sign: 77 … 22 > 66",
             "choices": [
-              "=",
               "–",
+              "=",
               "+",
               "<"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -891,11 +1236,11 @@
             "q": "Choose the suitable sign: 23 + 37 … 53",
             "choices": [
               "=",
-              "+",
               ">",
+              "+",
               "<"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -906,10 +1251,10 @@
             "choices": [
               "=",
               "+",
-              ">",
-              "<"
+              "<",
+              ">"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -918,12 +1263,12 @@
           {
             "q": "Choose the suitable sign: 55 + 45 … 100",
             "choices": [
-              "=",
+              "<",
               "+",
               ">",
-              "<"
+              "="
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 2,
             "skill": "compare_expressions",
             "unit": "add_sub",
@@ -932,12 +1277,12 @@
           {
             "q": "Choose the expression with the same result as 27 + 53:",
             "choices": [
-              "19 + 55",
               "32 + 48",
+              "19 + 55",
               "23 + 47",
               "27 + 45"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 2,
             "skill": "equivalent_expressions",
             "unit": "add_sub",
@@ -947,11 +1292,11 @@
             "q": "Calculate: 100 – 35 + 15 – 53 = …",
             "choices": [
               "17",
-              "37",
               "27",
+              "37",
               "47"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -962,10 +1307,10 @@
             "choices": [
               "17",
               "7",
-              "37",
-              "27"
+              "27",
+              "37"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 3,
             "skill": "add_sub_mixed",
             "unit": "add_sub",
@@ -974,12 +1319,12 @@
           {
             "q": "Fill in the blank: 10 + 29 = … – 20",
             "choices": [
-              "59",
+              "69",
               "49",
               "39",
-              "69"
+              "59"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 3,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -988,12 +1333,12 @@
           {
             "q": "Fill in the blank: … + 23 = 32 + 26 + 2",
             "choices": [
-              "27",
               "37",
+              "27",
               "47",
               "57"
             ],
-            "a": 1,
+            "a": 0,
             "difficulty": 3,
             "skill": "missing_number",
             "unit": "add_sub",
@@ -1003,11 +1348,11 @@
             "q": "Which equation is TRUE? a) 74=22+17+32  b) 83=37+49–12  c) 67=98–37+6  d) 57=32+18+3",
             "choices": [
               "a) 74=22+17+32",
-              "b) 83=37+49–12",
               "c) 67=98–37+6",
+              "b) 83=37+49–12",
               "d) 57=32+18+3"
             ],
-            "a": 2,
+            "a": 1,
             "difficulty": 3,
             "skill": "true_false",
             "unit": "add_sub",
@@ -1018,10 +1363,10 @@
             "choices": [
               "37",
               "38",
-              "40",
-              "39"
+              "39",
+              "40"
             ],
-            "a": 3,
+            "a": 2,
             "difficulty": 3,
             "skill": "number_inference",
             "unit": "add_sub",
@@ -1030,16 +1375,391 @@
           {
             "q": "Which result is smaller than 70? a)47+9+13  b)37+11+23  c)23+31+25  d)41+17+15",
             "choices": [
-              "47+9+13 = 69",
+              "41+17+15 = 73",
               "37+11+23 = 71",
               "23+31+25 = 79",
-              "41+17+15 = 73"
+              "47+9+13 = 69"
             ],
-            "a": 0,
+            "a": 3,
             "difficulty": 3,
             "skill": "compare_expressions",
             "unit": "add_sub",
             "id": "maen_add_sub_q038"
+          },
+          {
+            "q": "345 + 234 = ?",
+            "choices": [
+              "579",
+              "589",
+              "569",
+              "578"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Cộng từ hàng đơn vị: 5+4, rồi 4+3, rồi 3+2.",
+            "id": "maen_add_sub_q039",
+            "skill": "addition",
+            "unit": "add_sub"
+          },
+          {
+            "q": "608 − 217 = ?",
+            "choices": [
+              "381",
+              "391",
+              "401",
+              "390"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Trừ từ hàng đơn vị, nhớ mượn ở hàng chục.",
+            "id": "maen_add_sub_q040",
+            "skill": "subtraction",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Choose the correct sign: 53 − 21 ○ 14 + 17",
+            "choices": [
+              "=",
+              "<",
+              ">",
+              "+"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Tính từng vế trước rồi mới so sánh.",
+            "id": "maen_add_sub_q041",
+            "skill": "compare_expressions",
+            "unit": "add_sub"
+          },
+          {
+            "q": "The sum of 156 and 230 is __?",
+            "choices": [
+              "376",
+              "396",
+              "486",
+              "386"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "'Sum' nghĩa là tổng — dùng phép cộng.",
+            "id": "maen_add_sub_q042",
+            "skill": "addition",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Find the missing number: 47 + __ = 80",
+            "choices": [
+              "33",
+              "23",
+              "37",
+              "43"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 80 trừ đi 47 để tìm số còn thiếu.",
+            "id": "maen_add_sub_q043",
+            "skill": "missing_number",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Find the missing number: __ − 25 = 50",
+            "choices": [
+              "25",
+              "75",
+              "65",
+              "85"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Số bị trừ = hiệu + số trừ.",
+            "id": "maen_add_sub_q044",
+            "skill": "missing_number",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Tom has 35 marbles. He gets 18 more. How many marbles does he have now?",
+            "choices": [
+              "43",
+              "52",
+              "53",
+              "54"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Gets more' nghĩa là được thêm — dùng phép cộng.",
+            "id": "maen_add_sub_q045",
+            "skill": "word_add",
+            "unit": "add_sub"
+          },
+          {
+            "q": "What is 19 more than 64?",
+            "choices": [
+              "73",
+              "82",
+              "85",
+              "83"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "'19 more than 64' nghĩa là 64 cộng thêm 19.",
+            "id": "maen_add_sub_q046",
+            "skill": "addition",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Subtract 140 from 560.",
+            "choices": [
+              "420",
+              "410",
+              "430",
+              "440"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Subtract A from B' nghĩa là lấy B trừ A.",
+            "id": "maen_add_sub_q047",
+            "skill": "subtraction",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Which is the same as 400 + 50 + 3?",
+            "choices": [
+              "4053",
+              "453",
+              "435",
+              "543"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Ghép trăm — chục — đơn vị thành một số.",
+            "id": "maen_add_sub_q048",
+            "skill": "place_value_add",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Choose the correct sign: 36 + 12 ○ 60 − 12",
+            "choices": [
+              ">",
+              "<",
+              "=",
+              "−"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Tính cả hai vế: chúng có bằng nhau không?",
+            "id": "maen_add_sub_q049",
+            "skill": "compare_expressions",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Mai picks 27 flowers. She gives away 9 flowers and then picks 5 more. How many flowers does she have?",
+            "choices": [
+              "24",
+              "22",
+              "13",
+              "23"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Làm theo thứ tự: bớt 9 trước, rồi thêm 5.",
+            "id": "maen_add_sub_q050",
+            "skill": "word_two_steps",
+            "unit": "add_sub"
+          },
+          {
+            "q": "Fill in the blank: 47 + ... = 80",
+            "choices": [
+              "33",
+              "43",
+              "37",
+              "23"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 80 trừ đi 47.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q051"
+          },
+          {
+            "q": "Calculate: 256 + 138 = ...",
+            "choices": [
+              "384",
+              "394",
+              "396",
+              "404"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Đặt tính rồi cộng, chú ý nhớ 1 ở hàng chục.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q052"
+          },
+          {
+            "q": "Calculate: 500 − 237 = ...",
+            "choices": [
+              "273",
+              "253",
+              "263",
+              "267"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Đặt tính rồi trừ, chú ý mượn ở hàng đơn vị.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q053"
+          },
+          {
+            "q": "Compare: 64 − 28 ... 19 + 17. Choose the correct sign.",
+            "choices": [
+              "<",
+              ">",
+              "÷",
+              "="
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Tính cả hai vế: 64−28 và 19+17.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q054"
+          },
+          {
+            "q": "Fill in the blank: ... − 125 = 348",
+            "choices": [
+              "473",
+              "463",
+              "223",
+              "483"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Muốn tìm số bị trừ, lấy hiệu cộng với số trừ.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q055"
+          },
+          {
+            "q": "Calculate: 36 + 47 + 13 = ...",
+            "choices": [
+              "86",
+              "96",
+              "106",
+              "94"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Cộng 47 với 13 trước cho tròn chục, rồi cộng 36.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q056"
+          },
+          {
+            "q": "The sum of 345 and 254 is:",
+            "choices": [
+              "699",
+              "589",
+              "599",
+              "609"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Sum' nghĩa là tổng — dùng phép cộng.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q057"
+          },
+          {
+            "q": "The difference between 92 and 38 is:",
+            "choices": [
+              "64",
+              "56",
+              "44",
+              "54"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "'Difference' nghĩa là hiệu — lấy số lớn trừ số bé.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q058"
+          },
+          {
+            "q": "Fill in the blank: 28 + 28 = 60 − ...",
+            "choices": [
+              "4",
+              "8",
+              "6",
+              "14"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Tính vế trái trước (28+28), rồi tìm số cần trừ khỏi 60.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q059"
+          },
+          {
+            "q": "Calculate: 700 − 350 + 150 = ...",
+            "choices": [
+              "400",
+              "500",
+              "450",
+              "550"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Tính từ trái sang phải, từng bước một.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q060"
+          },
+          {
+            "q": "Which calculation gives the answer 100?",
+            "choices": [
+              "45 + 65",
+              "58 + 52",
+              "73 + 27",
+              "36 + 74"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Cộng nhẩm từng phép tính: hàng đơn vị phải tạo ra số 0.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q061"
+          },
+          {
+            "q": "Fill in the blank: 19 + ... = 19",
+            "choices": [
+              "19",
+              "1",
+              "9",
+              "0"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Cộng với số nào thì kết quả không thay đổi?",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q062"
+          },
+          {
+            "q": "There are two numbers: 47 and 25. Their sum minus their difference is:",
+            "choices": [
+              "50",
+              "44",
+              "40",
+              "72"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Tổng = 47+25, hiệu = 47−25, rồi lấy tổng trừ hiệu.",
+            "skill": "addition",
+            "unit": "add_sub",
+            "id": "maen_add_sub_q063"
           }
         ]
       },
@@ -1495,6 +2215,381 @@
             "skill": "div_word",
             "unit": "mul_div",
             "id": "maen_mul_div_q032"
+          },
+          {
+            "q": "There are 5 boxes. Each box has 8 cakes. How many cakes are there in all?",
+            "choices": [
+              "45",
+              "40",
+              "35",
+              "13"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "'In all' là tất cả: số hộp nhân số bánh mỗi hộp.",
+            "id": "maen_mul_div_q033",
+            "skill": "word_multiply",
+            "unit": "mul_div"
+          },
+          {
+            "q": "20 candies are shared equally among 4 children. How many candies does each child get?",
+            "choices": [
+              "6",
+              "4",
+              "5",
+              "8"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Shared equally' là chia đều — dùng phép chia.",
+            "id": "maen_mul_div_q034",
+            "skill": "word_divide",
+            "unit": "mul_div"
+          },
+          {
+            "q": "Find the missing number: 5 × __ = 45",
+            "choices": [
+              "8",
+              "6",
+              "7",
+              "9"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Nhẩm bảng nhân 5: 5 nhân mấy bằng 45?",
+            "id": "maen_mul_div_q035",
+            "skill": "missing_factor",
+            "unit": "mul_div"
+          },
+          {
+            "q": "Which has the same value as 4 + 4 + 4?",
+            "choices": [
+              "3 × 4",
+              "3 + 4",
+              "4 × 4",
+              "4 × 2"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Cộng 4 ba lần chính là 4 lấy 3 lần.",
+            "id": "maen_mul_div_q036",
+            "skill": "repeated_addition",
+            "unit": "mul_div"
+          },
+          {
+            "q": "If A = 4 and B = 5, then A × B = ?",
+            "choices": [
+              "9",
+              "20",
+              "16",
+              "25"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Thay chữ bằng số rồi nhân như bình thường.",
+            "id": "maen_mul_div_q037",
+            "skill": "letter_puzzle",
+            "unit": "mul_div"
+          },
+          {
+            "q": "How many legs do 5 chickens have?",
+            "choices": [
+              "5",
+              "15",
+              "10",
+              "20"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Mỗi con gà có 2 chân: 2 × 5.",
+            "id": "maen_mul_div_q038",
+            "skill": "word_multiply",
+            "unit": "mul_div"
+          },
+          {
+            "q": "There are 16 wheels. Each car has 4 wheels. How many cars are there?",
+            "choices": [
+              "3",
+              "6",
+              "5",
+              "4"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Chia tổng số bánh xe cho số bánh của mỗi xe.",
+            "id": "maen_mul_div_q039",
+            "skill": "word_divide",
+            "unit": "mul_div"
+          },
+          {
+            "q": "2 × 7 + 10 = ?",
+            "choices": [
+              "24",
+              "27",
+              "17",
+              "34"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Nhân trước, cộng sau.",
+            "id": "maen_mul_div_q040",
+            "skill": "mixed_operations",
+            "unit": "mul_div"
+          },
+          {
+            "q": "A spider has 8 legs. How many legs do 2 spiders have?",
+            "choices": [
+              "10",
+              "16",
+              "18",
+              "12"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Nhân số chân của một con với 2.",
+            "id": "maen_mul_div_q041",
+            "skill": "word_multiply",
+            "unit": "mul_div"
+          },
+          {
+            "q": "4 × 5 − 8 = ?",
+            "choices": [
+              "10",
+              "16",
+              "12",
+              "14"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Nhân trước, trừ sau.",
+            "id": "maen_mul_div_q042",
+            "skill": "mixed_operations",
+            "unit": "mul_div"
+          },
+          {
+            "q": "How many fingers do 3 hands have?",
+            "choices": [
+              "10",
+              "20",
+              "13",
+              "15"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Mỗi bàn tay có 5 ngón: 5 × 3.",
+            "id": "maen_mul_div_q043",
+            "skill": "word_multiply",
+            "unit": "mul_div"
+          },
+          {
+            "q": "Find the missing number: __ : 4 = 5",
+            "choices": [
+              "20",
+              "24",
+              "16",
+              "9"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Số bị chia = thương nhân số chia.",
+            "id": "maen_mul_div_q044",
+            "skill": "missing_dividend",
+            "unit": "mul_div"
+          },
+          {
+            "q": "Calculate: 4 × 9 = ...",
+            "choices": [
+              "32",
+              "36",
+              "38",
+              "34"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Nhớ lại bảng nhân 4.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q045"
+          },
+          {
+            "q": "Fill in the missing number: 5 × ... = 45",
+            "choices": [
+              "8",
+              "7",
+              "9",
+              "10"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Bảng nhân 5: 5 nhân mấy bằng 45?",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q046"
+          },
+          {
+            "q": "Calculate: 40 : 5 = ...",
+            "choices": [
+              "7",
+              "9",
+              "6",
+              "8"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Nhẩm bảng nhân 5: 5 nhân mấy bằng 40?",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q047"
+          },
+          {
+            "q": "Compare: 3 × 8 ... 5 × 5. Choose the correct sign.",
+            "choices": [
+              "<",
+              "=",
+              ">",
+              "+"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Tính hai vế: 3×8 và 5×5, rồi so sánh.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q048"
+          },
+          {
+            "q": "Fill in the blank: ... : 4 = 7",
+            "choices": [
+              "24",
+              "28",
+              "32",
+              "36"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q049"
+          },
+          {
+            "q": "Calculate: 2 × 7 + 36 = ...",
+            "choices": [
+              "48",
+              "52",
+              "50",
+              "46"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Nhân trước, cộng sau.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q050"
+          },
+          {
+            "q": "Which has the same value as 4 × 6?",
+            "choices": [
+              "3 × 7",
+              "3 × 9",
+              "5 × 5",
+              "2 × 12"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Tính 4×6 trước, rồi tính từng đáp án xem cái nào bằng.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q051"
+          },
+          {
+            "q": "Calculate: 45 : 5 × 2 = ...",
+            "choices": [
+              "18",
+              "20",
+              "16",
+              "14"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Tính từ trái sang phải: chia trước, rồi nhân.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q052"
+          },
+          {
+            "q": "Each table has 4 legs. How many legs do 8 tables have?",
+            "choices": [
+              "28",
+              "32",
+              "24",
+              "36"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Mỗi bàn 4 chân, 8 bàn thì lấy 4 nhân 8.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q053"
+          },
+          {
+            "q": "Fill in the blank: 3 × 9 = 30 − ...",
+            "choices": [
+              "7",
+              "5",
+              "3",
+              "2"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Tính 3×9 trước, rồi tìm số cần trừ khỏi 30.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q054"
+          },
+          {
+            "q": "Half of 18 is:",
+            "choices": [
+              "8",
+              "6",
+              "7",
+              "9"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "'Half' nghĩa là một nửa — chia cho 2.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q055"
+          },
+          {
+            "q": "Double of 35 is:",
+            "choices": [
+              "70",
+              "65",
+              "75",
+              "60"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Double' nghĩa là gấp đôi — nhân với 2.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q056"
+          },
+          {
+            "q": "20 candies are shared equally among 5 children. Each child gets:",
+            "choices": [
+              "5 candies",
+              "4 candies",
+              "6 candies",
+              "3 candies"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "'Shared equally' nghĩa là chia đều — lấy 20 chia 5.",
+            "skill": "multiplication_table",
+            "unit": "mul_div",
+            "id": "maen_mul_div_q057"
           }
         ]
       },
@@ -1507,11 +2602,11 @@
             "q": "27cm + 13cm = … dm",
             "choices": [
               "14",
-              "4",
               "40",
+              "4",
               "41"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1522,10 +2617,10 @@
             "choices": [
               "5",
               "60",
-              "6",
-              "70"
+              "70",
+              "6"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1534,12 +2629,12 @@
           {
             "q": "16cm + 54cm = … dm",
             "choices": [
-              "70",
+              "6",
               "60",
               "7",
-              "6"
+              "70"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1548,12 +2643,12 @@
           {
             "q": "8cm + 42cm = … dm",
             "choices": [
-              "6",
               "60",
+              "6",
               "5",
               "50"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "cm_dm",
             "unit": "measurement",
@@ -1563,11 +2658,11 @@
             "q": "6dm = … cm",
             "choices": [
               "6",
-              "60",
               "16",
+              "60",
               "600"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1578,10 +2673,10 @@
             "choices": [
               "2",
               "12",
-              "20",
-              "200"
+              "200",
+              "20"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1590,12 +2685,12 @@
           {
             "q": "1dm + 5cm = … cm",
             "choices": [
-              "6",
+              "15",
               "16",
               "105",
-              "15"
+              "6"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1604,12 +2699,12 @@
           {
             "q": "2dm + 13cm = … cm",
             "choices": [
-              "33",
               "23",
+              "33",
               "213",
               "13"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1619,11 +2714,11 @@
             "q": "2dm + 17cm = … cm",
             "choices": [
               "27",
-              "37",
               "217",
+              "37",
               "19"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1634,10 +2729,10 @@
             "choices": [
               "15",
               "5",
-              "6",
-              "510"
+              "510",
+              "6"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "dm_cm",
             "unit": "measurement",
@@ -1646,12 +2741,12 @@
           {
             "q": "37l + 26l = … l",
             "choices": [
-              "53",
+              "63",
               "11",
               "64",
-              "63"
+              "53"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1660,12 +2755,12 @@
           {
             "q": "27l + 29l = … l",
             "choices": [
-              "56",
               "53",
+              "56",
               "58",
               "11"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1675,11 +2770,11 @@
             "q": "55l + 45l = … l",
             "choices": [
               "53",
-              "100",
               "10",
+              "100",
               "90"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 1,
             "skill": "volume",
             "unit": "measurement",
@@ -1690,10 +2785,10 @@
             "choices": [
               "45",
               "65",
-              "55",
-              "91"
+              "91",
+              "55"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1702,12 +2797,12 @@
           {
             "q": "54kg – 9kg = … kg",
             "choices": [
-              "35",
+              "45",
               "44",
               "63",
-              "45"
+              "35"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1716,12 +2811,12 @@
           {
             "q": "76kg – 27kg = … kg",
             "choices": [
-              "49",
               "48",
+              "49",
               "59",
               "93"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 1,
             "skill": "weight",
             "unit": "measurement",
@@ -1731,11 +2826,11 @@
             "q": "AB = 11cm, CD = 6cm, DB = 3cm. Find the length of AD.",
             "choices": [
               "9cm",
-              "8cm",
               "11cm",
+              "8cm",
               "5cm"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "line_segments",
             "unit": "measurement",
@@ -1746,10 +2841,10 @@
             "choices": [
               "86cm",
               "28cm",
-              "30cm",
-              "58cm"
+              "58cm",
+              "30cm"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1758,12 +2853,12 @@
           {
             "q": "AB = 56cm. CD is 26cm shorter than AB. Find CD.",
             "choices": [
-              "82cm",
+              "30cm",
               "56cm",
               "26cm",
-              "30cm"
+              "82cm"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1772,12 +2867,12 @@
           {
             "q": "A rope is 85cm long. 35cm is cut off. How long is the rope now?",
             "choices": [
-              "50cm",
               "45cm",
+              "50cm",
               "40cm",
               "55cm"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1787,11 +2882,11 @@
             "q": "Jim has 45 litres of honey. He sells 19 litres. How many litres does he have left?",
             "choices": [
               "13l",
-              "26l",
               "64l",
+              "26l",
               "45l"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "volume",
             "unit": "measurement",
@@ -1802,10 +2897,10 @@
             "choices": [
               "4kg",
               "10kg",
-              "7kg",
-              "3kg"
+              "3kg",
+              "7kg"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1814,12 +2909,12 @@
           {
             "q": "A bag weighs 54kg. Another weighs 9kg less. How much does the lighter bag weigh?",
             "choices": [
-              "63kg",
+              "45kg",
               "44kg",
               "35kg",
-              "45kg"
+              "63kg"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1828,12 +2923,12 @@
           {
             "q": "9l + 37l = … l",
             "choices": [
-              "46",
               "53",
+              "46",
               "47",
               "56"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 2,
             "skill": "volume",
             "unit": "measurement",
@@ -1843,11 +2938,11 @@
             "q": "Choose the correct answer: 60kg – 7kg = … kg",
             "choices": [
               "59",
-              "53",
               "67",
+              "53",
               "43"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 2,
             "skill": "weight",
             "unit": "measurement",
@@ -1858,10 +2953,10 @@
             "choices": [
               "13cm",
               "33cm",
-              "23cm",
-              "43cm"
+              "43cm",
+              "23cm"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1870,12 +2965,12 @@
           {
             "q": "A container holds 100l. 37l of water is added and 15l is removed. How much is in it?",
             "choices": [
-              "78l",
+              "82l",
               "92l",
               "88l",
-              "82l"
+              "78l"
             ],
-            "a": 3,
+            "a": 0,
             "difficulty": 3,
             "skill": "volume",
             "unit": "measurement",
@@ -1884,12 +2979,12 @@
           {
             "q": "Tom's bag weighs 3kg. He adds 2 books each weighing 500g. How heavy is the bag now? (1kg = 1000g)",
             "choices": [
-              "4000g",
               "3500g",
+              "4000g",
               "5000g",
               "4500g"
             ],
-            "a": 0,
+            "a": 1,
             "difficulty": 3,
             "skill": "weight",
             "unit": "measurement",
@@ -1899,11 +2994,11 @@
             "q": "A path is 3dm 5cm long and another is 2dm 8cm long. How long are they together in cm?",
             "choices": [
               "53cm",
-              "63cm",
               "73cm",
+              "63cm",
               "83cm"
             ],
-            "a": 1,
+            "a": 2,
             "difficulty": 3,
             "skill": "length_problem",
             "unit": "measurement",
@@ -1914,14 +3009,389 @@
             "choices": [
               "1dm 8cm = 18cm",
               "25cm",
-              "3dm = 30cm",
-              "2dm = 20cm"
+              "2dm = 20cm",
+              "3dm = 30cm"
             ],
-            "a": 2,
+            "a": 3,
             "difficulty": 3,
             "skill": "compare_lengths",
             "unit": "measurement",
             "id": "maen_measurement_q030"
+          },
+          {
+            "q": "2 dm + 5 dm = ? cm",
+            "choices": [
+              "70 cm",
+              "7 cm",
+              "75 cm",
+              "700 cm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Cộng trước (7 dm), rồi đổi: 1 dm = 10 cm.",
+            "id": "maen_measurement_q031",
+            "skill": "unit_conversion",
+            "unit": "measurement"
+          },
+          {
+            "q": "Which is longer: 1 m or 90 cm?",
+            "choices": [
+              "90 cm",
+              "1 m",
+              "They are equal",
+              "Cannot tell"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Đổi 1 m = 100 cm rồi so sánh.",
+            "id": "maen_measurement_q032",
+            "skill": "compare_lengths",
+            "unit": "measurement"
+          },
+          {
+            "q": "A pencil is about 15 __ long.",
+            "choices": [
+              "m",
+              "km",
+              "cm",
+              "kg"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Bút chì ngắn — chọn đơn vị đo độ dài nhỏ.",
+            "id": "maen_measurement_q033",
+            "skill": "choose_unit",
+            "unit": "measurement"
+          },
+          {
+            "q": "5 kg + 12 kg = ?",
+            "choices": [
+              "18 kg",
+              "7 kg",
+              "16 kg",
+              "17 kg"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Cùng đơn vị thì cộng thẳng các số.",
+            "id": "maen_measurement_q034",
+            "skill": "add_weights",
+            "unit": "measurement"
+          },
+          {
+            "q": "Mai's ribbon is 45 cm. Lan's ribbon is 30 cm. How much longer is Mai's ribbon?",
+            "choices": [
+              "15 cm",
+              "75 cm",
+              "25 cm",
+              "10 cm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'How much longer' là hỏi hơn kém — dùng phép trừ.",
+            "id": "maen_measurement_q035",
+            "skill": "compare_lengths",
+            "unit": "measurement"
+          },
+          {
+            "q": "Which unit do we use to measure the weight of an elephant?",
+            "choices": [
+              "cm",
+              "kg",
+              "m",
+              "l"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "'Weight' là cân nặng — chọn đơn vị khối lượng.",
+            "id": "maen_measurement_q036",
+            "skill": "choose_unit",
+            "unit": "measurement"
+          },
+          {
+            "q": "A bottle holds 2 l of water. How much do 4 bottles hold?",
+            "choices": [
+              "6 l",
+              "12 l",
+              "8 l",
+              "2 l"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Nhân lượng nước một chai với số chai.",
+            "id": "maen_measurement_q037",
+            "skill": "capacity",
+            "unit": "measurement"
+          },
+          {
+            "q": "Choose the correct sign: 100 cm ○ 1 m",
+            "choices": [
+              ">",
+              "<",
+              "−",
+              "="
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Nhớ lại: 1 m bằng bao nhiêu xăng-ti-mét?",
+            "id": "maen_measurement_q038",
+            "skill": "compare_units",
+            "unit": "measurement"
+          },
+          {
+            "q": "76 cm − 34 cm = ?",
+            "choices": [
+              "42 cm",
+              "44 cm",
+              "32 cm",
+              "52 cm"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Cùng đơn vị thì trừ thẳng các số.",
+            "id": "maen_measurement_q039",
+            "skill": "subtract_lengths",
+            "unit": "measurement"
+          },
+          {
+            "q": "The rope is 3 m long. We cut off 120 cm. How many centimeters are left?",
+            "choices": [
+              "170 cm",
+              "180 cm",
+              "280 cm",
+              "80 cm"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Đổi 3 m = 300 cm trước, rồi mới trừ.",
+            "id": "maen_measurement_q040",
+            "skill": "unit_conversion",
+            "unit": "measurement"
+          },
+          {
+            "q": "Choose the correct sign: 4 dm ○ 45 cm",
+            "choices": [
+              "=",
+              ">",
+              "<",
+              "+"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Đổi 4 dm = 40 cm rồi so sánh với 45 cm.",
+            "id": "maen_measurement_q041",
+            "skill": "compare_units",
+            "unit": "measurement"
+          },
+          {
+            "q": "A bag of rice weighs 5 kg. How much do 3 bags weigh?",
+            "choices": [
+              "8 kg",
+              "10 kg",
+              "20 kg",
+              "15 kg"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Nhân cân nặng một bao với số bao.",
+            "id": "maen_measurement_q042",
+            "skill": "weights",
+            "unit": "measurement"
+          },
+          {
+            "q": "Convert: 6dm = ... cm",
+            "choices": [
+              "60",
+              "16",
+              "6",
+              "600"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "1 dm = 10 cm.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q043"
+          },
+          {
+            "q": "Convert: 90cm = ... dm",
+            "choices": [
+              "90",
+              "9",
+              "19",
+              "900"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "10 cm = 1 dm, nên lấy 90 chia 10.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q044"
+          },
+          {
+            "q": "Add: 4dm + 30cm = ... dm",
+            "choices": [
+              "34",
+              "43",
+              "7",
+              "70"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Đổi 30 cm = 3 dm trước, rồi mới cộng.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q045"
+          },
+          {
+            "q": "Add: 25cm + 35cm = ... dm",
+            "choices": [
+              "60",
+              "5",
+              "50",
+              "6"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Cộng ra xăng-ti-mét trước, rồi đổi sang đề-xi-mét.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q046"
+          },
+          {
+            "q": "Convert: 3m = ... cm",
+            "choices": [
+              "300",
+              "33",
+              "30",
+              "3000"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "1 m = 100 cm.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q047"
+          },
+          {
+            "q": "Compare: 5dm ... 48cm. Choose the correct sign.",
+            "choices": [
+              "<",
+              ">",
+              "=",
+              "−"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Đổi 5 dm = 50 cm rồi so sánh với 48 cm.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q048"
+          },
+          {
+            "q": "Which is the longest?",
+            "choices": [
+              "70cm",
+              "8dm",
+              "1m",
+              "75cm"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Đổi hết về xăng-ti-mét: 8dm = 80cm, 1m = 100cm.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q049"
+          },
+          {
+            "q": "A pencil is 18cm long. A ruler is 30cm long. The ruler is longer than the pencil by:",
+            "choices": [
+              "22cm",
+              "18cm",
+              "48cm",
+              "12cm"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "'Longer than ... by' nghĩa là dài hơn bao nhiêu — dùng phép trừ.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q050"
+          },
+          {
+            "q": "Convert: 2km = ... m",
+            "choices": [
+              "2000",
+              "200",
+              "20",
+              "2"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "1 km = 1000 m.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q051"
+          },
+          {
+            "q": "Subtract: 8dm − 25cm = ... cm",
+            "choices": [
+              "65",
+              "55",
+              "75",
+              "45"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Đổi 8 dm = 80 cm trước, rồi trừ đi 25 cm.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q052"
+          },
+          {
+            "q": "How heavy: 3kg + 12kg − 5kg = ... kg",
+            "choices": [
+              "11",
+              "9",
+              "10",
+              "12"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Tính từ trái sang phải, giữ nguyên đơn vị kg.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q053"
+          },
+          {
+            "q": "A rope is 4m long. We cut it into pieces of 2m each. How many pieces are there?",
+            "choices": [
+              "1",
+              "3",
+              "4",
+              "2"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Lấy chiều dài sợi dây chia cho chiều dài mỗi đoạn.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q054"
+          },
+          {
+            "q": "Fill the blank: 1m − 40cm = ... cm",
+            "choices": [
+              "60",
+              "50",
+              "70",
+              "40"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Đổi 1 m = 100 cm trước, rồi trừ.",
+            "skill": "cm_dm",
+            "unit": "measurement",
+            "id": "maen_measurement_q055"
           }
         ]
       },
@@ -1934,11 +3404,11 @@
             "q": "How many minutes are in 1 hour?",
             "choices": [
               "30",
-              "24",
+              "60",
               "100",
-              "60"
+              "24"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1947,12 +3417,12 @@
           {
             "q": "How many hours are in 1 day?",
             "choices": [
-              "24",
-              "16",
               "20",
+              "16",
+              "24",
               "12"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1962,11 +3432,11 @@
             "q": "How many days are in 1 week?",
             "choices": [
               "5",
-              "7",
+              "8",
               "6",
-              "8"
+              "7"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "time_facts",
             "unit": "time_money",
@@ -1975,12 +3445,12 @@
           {
             "q": "What time is 'half past three'?",
             "choices": [
-              "3:15",
-              "3:45",
               "3:30",
+              "3:45",
+              "3:15",
               "3:05"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "clock_reading",
             "unit": "time_money",
@@ -1990,11 +3460,11 @@
             "q": "What time is 'quarter past two'?",
             "choices": [
               "2:05",
-              "2:30",
+              "2:15",
               "2:45",
-              "2:15"
+              "2:30"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "clock_reading",
             "unit": "time_money",
@@ -2003,12 +3473,12 @@
           {
             "q": "What time is 'quarter to five'?",
             "choices": [
-              "4:45",
-              "5:15",
               "5:45",
+              "5:15",
+              "4:45",
               "4:15"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "clock_reading",
             "unit": "time_money",
@@ -2018,11 +3488,11 @@
             "q": "What is the month that comes after April?",
             "choices": [
               "March",
-              "May",
+              "July",
               "June",
-              "July"
+              "May"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "calendar",
             "unit": "time_money",
@@ -2031,12 +3501,12 @@
           {
             "q": "How many months are in 1 year?",
             "choices": [
-              "10",
-              "11",
               "12",
+              "11",
+              "10",
               "13"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "calendar",
             "unit": "time_money",
@@ -2046,11 +3516,11 @@
             "q": "Lan has 50,000 dong. She spends 20,000 dong. How much does she have left?",
             "choices": [
               "20,000 dong",
-              "70,000 dong",
+              "30,000 dong",
               "40,000 dong",
-              "30,000 dong"
+              "70,000 dong"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2059,12 +3529,12 @@
           {
             "q": "A book costs 15,000 dong. A pen costs 5,000 dong. How much do they cost together?",
             "choices": [
-              "20,000",
-              "15,000",
               "10,000",
+              "15,000",
+              "20,000",
               "25,000"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2074,11 +3544,11 @@
             "q": "Tom has 2 coins of 500 dong and 3 coins of 1,000 dong. How much does he have in total?",
             "choices": [
               "5,000 dong",
-              "4,000 dong",
+              "4,500 dong",
               "3,500 dong",
-              "4,500 dong"
+              "4,000 dong"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2087,12 +3557,12 @@
           {
             "q": "If it is now 2:00 PM, what time will it be in 3 hours?",
             "choices": [
-              "4:00 PM",
-              "3:00 PM",
               "5:00 PM",
+              "3:00 PM",
+              "4:00 PM",
               "6:00 PM"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2102,11 +3572,11 @@
             "q": "A film starts at 6:30 PM and lasts 2 hours. What time does it end?",
             "choices": [
               "7:30 PM",
-              "8:00 PM",
+              "8:30 PM",
               "9:00 PM",
-              "8:30 PM"
+              "8:00 PM"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2115,12 +3585,12 @@
           {
             "q": "School starts at 7:30 AM and finishes at 11:30 AM. How long is school?",
             "choices": [
-              "4 hours",
-              "3 hours",
               "5 hours",
+              "3 hours",
+              "4 hours",
               "3.5 hours"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2130,11 +3600,11 @@
             "q": "Nam saves 5,000 dong every day. How much does he save in 1 week?",
             "choices": [
               "25,000",
-              "35,000",
+              "40,000",
               "30,000",
-              "40,000"
+              "35,000"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2143,12 +3613,12 @@
           {
             "q": "A toy costs 45,000 dong. Lan has 30,000 dong. How much more does she need?",
             "choices": [
-              "10,000",
-              "20,000",
               "15,000",
+              "20,000",
+              "10,000",
               "25,000"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2158,11 +3628,11 @@
             "q": "Mum buys 3 apples at 2,000 dong each. How much does she pay?",
             "choices": [
               "2,000",
-              "4,000",
+              "6,000",
               "8,000",
-              "6,000"
+              "4,000"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2171,12 +3641,12 @@
           {
             "q": "Tom's birthday is on March 15. Today is March 8. How many days until his birthday?",
             "choices": [
-              "7",
-              "5",
               "8",
+              "5",
+              "7",
               "10"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "skill": "calendar",
             "unit": "time_money",
@@ -2186,11 +3656,11 @@
             "q": "Anna studies for 45 minutes in the morning and 30 minutes in the evening. How long does she study in total?",
             "choices": [
               "1 hour 5 min",
-              "1 hour 15 min",
+              "1 hour 30 min",
               "1 hour 20 min",
-              "1 hour 30 min"
+              "1 hour 15 min"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "time_calculation",
             "unit": "time_money",
@@ -2199,12 +3669,12 @@
           {
             "q": "A shop has apples for 3,000 dong each and oranges for 4,000 dong each. Lan buys 2 apples and 3 oranges. How much does she pay?",
             "choices": [
-              "14,000",
-              "16,000",
               "18,000",
+              "16,000",
+              "14,000",
               "20,000"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "money_vnd",
             "unit": "time_money",
@@ -2214,15 +3684,375 @@
             "q": "How many minutes are in 2 hours and 30 minutes?",
             "choices": [
               "120",
-              "130",
+              "150",
               "180",
-              "150"
+              "130"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 3,
             "skill": "time_calculation",
             "unit": "time_money",
             "id": "maen_time_money_q021"
+          },
+          {
+            "q": "The party starts at 7:00 and ends at 8:30. How many minutes does it last?",
+            "choices": [
+              "80 minutes",
+              "60 minutes",
+              "90 minutes",
+              "70 minutes"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Từ 7:00 đến 8:00 là 60 phút, cộng thêm 30 phút nữa.",
+            "id": "maen_time_money_q022",
+            "skill": "duration",
+            "unit": "time_money"
+          },
+          {
+            "q": "An apple costs $5 and an orange costs $9. Mai buys one apple and one orange. How much does she pay?",
+            "choices": [
+              "$13",
+              "$15",
+              "$16",
+              "$14"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Cộng giá hai món lại với nhau.",
+            "id": "maen_time_money_q023",
+            "skill": "money_add",
+            "unit": "time_money"
+          },
+          {
+            "q": "A week has __ days.",
+            "choices": [
+              "7",
+              "6",
+              "5",
+              "8"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Đếm các thứ từ thứ Hai đến Chủ nhật.",
+            "id": "maen_time_money_q024",
+            "skill": "calendar",
+            "unit": "time_money"
+          },
+          {
+            "q": "The clock shows 9:30. What time was it 30 minutes ago?",
+            "choices": [
+              "10:00",
+              "9:00",
+              "8:30",
+              "9:15"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "'Ago' là trước đó — lùi kim phút lại 30 phút.",
+            "id": "maen_time_money_q025",
+            "skill": "time_before",
+            "unit": "time_money"
+          },
+          {
+            "q": "Nam has $20. He buys a toy for $12. How much money is left?",
+            "choices": [
+              "$6",
+              "$10",
+              "$8",
+              "$32"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Left' là còn lại — dùng phép trừ.",
+            "id": "maen_time_money_q026",
+            "skill": "money_subtract",
+            "unit": "time_money"
+          },
+          {
+            "q": "School starts at 8:00. Lan arrives at 7:45. Is she early or late?",
+            "choices": [
+              "Absent",
+              "Late",
+              "On time",
+              "Early"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "So sánh giờ Lan đến với giờ vào học: 7:45 trước hay sau 8:00?",
+            "id": "maen_time_money_q027",
+            "skill": "time_compare",
+            "unit": "time_money"
+          },
+          {
+            "q": "How many hours are there in one day?",
+            "choices": [
+              "24",
+              "20",
+              "12",
+              "60"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Một ngày đêm kim giờ quay hết hai vòng đồng hồ.",
+            "id": "maen_time_money_q028",
+            "skill": "time_facts",
+            "unit": "time_money"
+          },
+          {
+            "q": "A pen costs $3. How much do 5 pens cost?",
+            "choices": [
+              "$8",
+              "$15",
+              "$12",
+              "$10"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Nhân giá một chiếc bút với số bút.",
+            "id": "maen_time_money_q029",
+            "skill": "money_multiply",
+            "unit": "time_money"
+          },
+          {
+            "q": "Today is Wednesday. What day will it be in 2 days?",
+            "choices": [
+              "Thursday",
+              "Saturday",
+              "Friday",
+              "Monday"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Đếm tiến 2 ngày: Thursday, rồi đến thứ mấy?",
+            "id": "maen_time_money_q030",
+            "skill": "calendar",
+            "unit": "time_money"
+          },
+          {
+            "q": "The minute hand points to 6. How many minutes past the hour is it?",
+            "choices": [
+              "6 minutes",
+              "15 minutes",
+              "45 minutes",
+              "30 minutes"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Mỗi số trên mặt đồng hồ ứng với 5 phút: 6 × 5.",
+            "id": "maen_time_money_q031",
+            "skill": "clock_reading",
+            "unit": "time_money"
+          },
+          {
+            "q": "Ba saves $5 each week. How much does he save in 4 weeks?",
+            "choices": [
+              "$20",
+              "$25",
+              "$9",
+              "$15"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Nhân số tiền mỗi tuần với số tuần.",
+            "id": "maen_time_money_q032",
+            "skill": "money_multiply",
+            "unit": "time_money"
+          },
+          {
+            "q": "A movie starts at 3:00 and lasts 1 hour. What time does it end?",
+            "choices": [
+              "3:30",
+              "4:00",
+              "5:00",
+              "2:00"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Cộng thêm 1 giờ vào giờ bắt đầu.",
+            "id": "maen_time_money_q033",
+            "skill": "duration",
+            "unit": "time_money"
+          },
+          {
+            "q": "How many days are there in a week?",
+            "choices": [
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Đếm từ thứ Hai đến Chủ nhật.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q034"
+          },
+          {
+            "q": "The clock shows 9:30. We say it is:",
+            "choices": [
+              "nine o'clock",
+              "half past ten",
+              "quarter past nine",
+              "half past nine"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "'Half past' nghĩa là rưỡi — kim phút chỉ số 6.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q035"
+          },
+          {
+            "q": "A lesson starts at 8:00 and lasts 40 minutes. It ends at:",
+            "choices": [
+              "8:40",
+              "9:00",
+              "8:30",
+              "8:50"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Cộng 40 phút vào 8 giờ.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q036"
+          },
+          {
+            "q": "How many hours are there from 7:00 in the morning to 11:00 in the morning?",
+            "choices": [
+              "3 hours",
+              "4 hours",
+              "5 hours",
+              "11 hours"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Lấy 11 trừ 7.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q037"
+          },
+          {
+            "q": "Which month comes right after March?",
+            "choices": [
+              "February",
+              "May",
+              "April",
+              "June"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Thứ tự: March (tháng 3) → tháng 4 tên là gì?",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q038"
+          },
+          {
+            "q": "You have a 500-dong coin and a 200-dong coin. How much money do you have?",
+            "choices": [
+              "520 dong",
+              "250 dong",
+              "300 dong",
+              "700 dong"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Cộng giá trị hai đồng xu lại.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q039"
+          },
+          {
+            "q": "A notebook costs 800 dong. You pay 1000 dong. Your change is:",
+            "choices": [
+              "200 dong",
+              "100 dong",
+              "300 dong",
+              "800 dong"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Change' là tiền thừa — lấy số tiền đưa trừ giá món đồ.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q040"
+          },
+          {
+            "q": "How many minutes are there in half an hour?",
+            "choices": [
+              "20 minutes",
+              "30 minutes",
+              "60 minutes",
+              "15 minutes"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Một giờ có 60 phút, một nửa là bao nhiêu?",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q041"
+          },
+          {
+            "q": "Today is Wednesday. What day was it yesterday?",
+            "choices": [
+              "Monday",
+              "Thursday",
+              "Tuesday",
+              "Friday"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Yesterday' là hôm qua — lùi lại một ngày.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q042"
+          },
+          {
+            "q": "Mai sleeps at 9 p.m. and wakes up at 6 a.m. How long does she sleep?",
+            "choices": [
+              "8 hours",
+              "10 hours",
+              "7 hours",
+              "9 hours"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Từ 9 giờ tối đến 12 giờ đêm là 3 tiếng, rồi cộng thêm 6 tiếng.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q043"
+          },
+          {
+            "q": "Which is the shortest time?",
+            "choices": [
+              "1 hour",
+              "100 minutes",
+              "1 day",
+              "90 minutes"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Đổi hết về phút: 1 giờ = 60 phút, 1 ngày = 24 giờ.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q044"
+          },
+          {
+            "q": "The minute hand points at 12, the hour hand points at 5. The time is:",
+            "choices": [
+              "12:05",
+              "5:00",
+              "6:00",
+              "5:12"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Kim phút chỉ số 12 nghĩa là đúng giờ.",
+            "skill": "time_facts",
+            "unit": "time_money",
+            "id": "maen_time_money_q045"
           }
         ]
       },
@@ -2234,12 +4064,12 @@
           {
             "q": "How many sides does a triangle have?",
             "choices": [
-              "3",
-              "2",
               "4",
+              "2",
+              "3",
               "5"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2249,11 +4079,11 @@
             "q": "How many sides does a rectangle have?",
             "choices": [
               "3",
-              "4",
+              "6",
               "5",
-              "6"
+              "4"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2262,12 +4092,12 @@
           {
             "q": "How many corners does a square have?",
             "choices": [
-              "3",
-              "5",
               "4",
+              "5",
+              "3",
               "6"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2277,11 +4107,11 @@
             "q": "Which shape has all four sides equal?",
             "choices": [
               "rectangle",
-              "triangle",
+              "square",
               "circle",
-              "square"
+              "triangle"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2290,12 +4120,12 @@
           {
             "q": "A circle has … corners.",
             "choices": [
-              "0",
-              "1",
               "2",
+              "1",
+              "0",
               "4"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2305,11 +4135,11 @@
             "q": "Which shape has 3 corners and 3 sides?",
             "choices": [
               "square",
-              "triangle",
+              "circle",
               "rectangle",
-              "circle"
+              "triangle"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2318,12 +4148,12 @@
           {
             "q": "How many sides does a pentagon have?",
             "choices": [
-              "4",
-              "6",
               "5",
+              "6",
+              "4",
               "7"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2333,11 +4163,11 @@
             "q": "How many sides does a hexagon have?",
             "choices": [
               "5",
-              "8",
+              "6",
               "7",
-              "6"
+              "8"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 1,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2346,12 +4176,12 @@
           {
             "q": "A square has a side of 5cm. What is its perimeter?",
             "choices": [
-              "20cm",
-              "15cm",
               "10cm",
+              "15cm",
+              "20cm",
               "25cm"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2361,11 +4191,11 @@
             "q": "A rectangle is 8cm long and 3cm wide. What is its perimeter?",
             "choices": [
               "11cm",
-              "22cm",
+              "24cm",
               "16cm",
-              "24cm"
+              "22cm"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2374,12 +4204,12 @@
           {
             "q": "How many line segments are there between points A, B, C, D, E on a straight line?",
             "choices": [
-              "4",
-              "6",
               "10",
+              "6",
+              "4",
               "8"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "line_segments",
             "unit": "shapes",
@@ -2389,11 +4219,11 @@
             "q": "A figure has 5 points. Each pair of points is connected by a line segment. How many line segments are there?",
             "choices": [
               "5",
-              "8",
+              "10",
               "12",
-              "10"
+              "8"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "line_segments",
             "unit": "shapes",
@@ -2402,12 +4232,12 @@
           {
             "q": "How many triangles can you count in a shape divided into 4 smaller triangles?",
             "choices": [
-              "5",
-              "4",
               "6",
+              "4",
+              "5",
               "7"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 2,
             "skill": "count_shapes",
             "unit": "shapes",
@@ -2417,11 +4247,11 @@
             "q": "Which shape has the most sides? a) hexagon  b) pentagon  c) square  d) triangle",
             "choices": [
               "pentagon (5 sides)",
-              "hexagon (6 sides)",
+              "triangle (3 sides)",
               "square (4 sides)",
-              "triangle (3 sides)"
+              "hexagon (6 sides)"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 2,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2430,12 +4260,12 @@
           {
             "q": "A rectangle has a length of 10cm and width of 4cm. What is its perimeter?",
             "choices": [
-              "14cm",
-              "40cm",
               "28cm",
+              "40cm",
+              "14cm",
               "24cm"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 2,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2445,11 +4275,11 @@
             "q": "How many triangles are there in a large triangle divided by 2 lines from base to top?",
             "choices": [
               "3",
-              "4",
+              "5",
               "6",
-              "5"
+              "4"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 2,
             "skill": "count_shapes",
             "unit": "shapes",
@@ -2458,12 +4288,12 @@
           {
             "q": "A square's perimeter is 28cm. What is the length of one side?",
             "choices": [
-              "7cm",
-              "6cm",
               "4cm",
+              "6cm",
+              "7cm",
               "8cm"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2473,11 +4303,11 @@
             "q": "A rectangle's perimeter is 24cm. Its length is 8cm. What is its width?",
             "choices": [
               "3cm",
-              "4cm",
+              "6cm",
               "5cm",
-              "6cm"
+              "4cm"
             ],
-            "a": 1,
+            "a": 3,
             "difficulty": 3,
             "skill": "perimeter",
             "unit": "shapes",
@@ -2486,12 +4316,12 @@
           {
             "q": "Tom draws a shape with 4 equal sides and 4 right angles. What shape is it?",
             "choices": [
-              "rectangle",
-              "rhombus",
               "square",
+              "rhombus",
+              "rectangle",
               "parallelogram"
             ],
-            "a": 2,
+            "a": 0,
             "difficulty": 3,
             "skill": "shape_properties",
             "unit": "shapes",
@@ -2501,11 +4331,11 @@
             "q": "A path goes: 3cm right, 4cm up, 3cm left, 4cm down. What shape does it make?",
             "choices": [
               "square",
-              "circle",
+              "rectangle",
               "triangle",
-              "rectangle"
+              "circle"
             ],
-            "a": 3,
+            "a": 1,
             "difficulty": 3,
             "skill": "shape_inference",
             "unit": "shapes",
@@ -2514,16 +4344,346 @@
           {
             "q": "How many quadrilaterals (4-sided shapes) can you find in a rectangle divided into 2 equal parts?",
             "choices": [
-              "3",
-              "2",
               "1",
+              "2",
+              "3",
               "4"
             ],
-            "a": 0,
+            "a": 2,
             "difficulty": 3,
             "skill": "count_shapes",
             "unit": "shapes",
             "id": "maen_shapes_q021"
+          },
+          {
+            "q": "How many sides do 2 triangles have in all?",
+            "choices": [
+              "5",
+              "8",
+              "7",
+              "6"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Mỗi tam giác có 3 cạnh: 3 × 2.",
+            "id": "maen_shapes_q022",
+            "skill": "counting_shapes",
+            "unit": "shapes"
+          },
+          {
+            "q": "A square has sides of 5 cm. What is its perimeter?",
+            "choices": [
+              "20 cm",
+              "25 cm",
+              "15 cm",
+              "10 cm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Perimeter' là chu vi: cạnh × 4.",
+            "id": "maen_shapes_q023",
+            "skill": "perimeter",
+            "unit": "shapes"
+          },
+          {
+            "q": "Which shape has no corners?",
+            "choices": [
+              "square",
+              "circle",
+              "triangle",
+              "rectangle"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Hình nào tròn xoe, không có góc nào?",
+            "id": "maen_shapes_q024",
+            "skill": "shape_properties",
+            "unit": "shapes"
+          },
+          {
+            "q": "A rectangle is 7 cm long and 3 cm wide. What is its perimeter?",
+            "choices": [
+              "10 cm",
+              "21 cm",
+              "20 cm",
+              "17 cm"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Chu vi hình chữ nhật = (dài + rộng) × 2.",
+            "id": "maen_shapes_q025",
+            "skill": "perimeter",
+            "unit": "shapes"
+          },
+          {
+            "q": "How many small squares are there in a grid with 2 rows of 3 squares?",
+            "choices": [
+              "5",
+              "9",
+              "8",
+              "6"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Mỗi hàng có 3 ô, có 2 hàng: 3 × 2.",
+            "id": "maen_shapes_q026",
+            "skill": "counting_shapes",
+            "unit": "shapes"
+          },
+          {
+            "q": "Which shape looks like a ball?",
+            "choices": [
+              "a sphere",
+              "a cube",
+              "a cylinder",
+              "a pyramid"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "'Ball' là quả bóng — khối nào tròn đều mọi phía?",
+            "id": "maen_shapes_q027",
+            "skill": "solid_shapes",
+            "unit": "shapes"
+          },
+          {
+            "q": "A dice has __ faces.",
+            "choices": [
+              "4",
+              "6",
+              "8",
+              "5"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Xúc xắc là khối lập phương — đếm các mặt của nó.",
+            "id": "maen_shapes_q028",
+            "skill": "solid_shapes",
+            "unit": "shapes"
+          },
+          {
+            "q": "A triangle has sides 4 cm, 5 cm and 6 cm. What is its perimeter?",
+            "choices": [
+              "14 cm",
+              "16 cm",
+              "15 cm",
+              "13 cm"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Chu vi tam giác = cộng cả ba cạnh.",
+            "id": "maen_shapes_q029",
+            "skill": "perimeter",
+            "unit": "shapes"
+          },
+          {
+            "q": "How many corners do 3 squares have in all?",
+            "choices": [
+              "7",
+              "16",
+              "9",
+              "12"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Mỗi hình vuông có 4 góc: 4 × 3.",
+            "id": "maen_shapes_q030",
+            "skill": "counting_shapes",
+            "unit": "shapes"
+          },
+          {
+            "q": "Which shape has exactly 4 equal sides?",
+            "choices": [
+              "a square",
+              "a triangle",
+              "a circle",
+              "a rectangle"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Hình nào có bốn cạnh dài bằng nhau?",
+            "id": "maen_shapes_q031",
+            "skill": "shape_properties",
+            "unit": "shapes"
+          },
+          {
+            "q": "A clock face is shaped like a __.",
+            "choices": [
+              "square",
+              "circle",
+              "triangle",
+              "star"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Nhìn mặt đồng hồ treo tường — nó có dạng hình gì?",
+            "id": "maen_shapes_q032",
+            "skill": "shapes_in_life",
+            "unit": "shapes"
+          },
+          {
+            "q": "How many vertices does a square have?",
+            "choices": [
+              "3",
+              "5",
+              "4",
+              "6"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Vertices' là các đỉnh — đếm các góc của hình vuông.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q033"
+          },
+          {
+            "q": "How many sides does a quadrilateral have?",
+            "choices": [
+              "3",
+              "6",
+              "5",
+              "4"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "'Quadrilateral' là hình tứ giác.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q034"
+          },
+          {
+            "q": "The perimeter of a square with side 6cm is:",
+            "choices": [
+              "24cm",
+              "18cm",
+              "12cm",
+              "36cm"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Chu vi hình vuông = cạnh × 4.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q035"
+          },
+          {
+            "q": "A rectangle has length 8cm and width 3cm. Its perimeter is:",
+            "choices": [
+              "11cm",
+              "22cm",
+              "24cm",
+              "19cm"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Chu vi = (dài + rộng) × 2.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q036"
+          },
+          {
+            "q": "A triangle has sides 5cm, 7cm and 8cm. Its perimeter is:",
+            "choices": [
+              "18cm",
+              "19cm",
+              "20cm",
+              "21cm"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Cộng độ dài cả ba cạnh.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q037"
+          },
+          {
+            "q": "A square has a perimeter of 20cm. Each side is:",
+            "choices": [
+              "4cm",
+              "6cm",
+              "10cm",
+              "5cm"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Chu vi chia đều cho 4 cạnh.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q038"
+          },
+          {
+            "q": "How many faces does a cube have?",
+            "choices": [
+              "6",
+              "8",
+              "4",
+              "12"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Cube' là khối lập phương — như viên xúc xắc, đếm các mặt.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q039"
+          },
+          {
+            "q": "Which of these is a 3D shape?",
+            "choices": [
+              "circle",
+              "sphere",
+              "square",
+              "triangle"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Hình 3D là khối có thể cầm được trong tay, không phẳng như hình vẽ trên giấy.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q040"
+          },
+          {
+            "q": "A clock face is shaped like a:",
+            "choices": [
+              "triangle",
+              "square",
+              "circle",
+              "star"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Mặt đồng hồ treo tường thường có hình gì?",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q041"
+          },
+          {
+            "q": "How many small triangles: a big triangle is cut by one line from a vertex to the opposite side?",
+            "choices": [
+              "1",
+              "3",
+              "4",
+              "2"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Một đường cắt từ đỉnh xuống cạnh đối diện chia tam giác thành mấy phần?",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q042"
+          },
+          {
+            "q": "A rectangle has a perimeter of 18cm. Its length is 6cm. Its width is:",
+            "choices": [
+              "3cm",
+              "4cm",
+              "12cm",
+              "5cm"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Nửa chu vi = 18 : 2 = dài + rộng. Lấy nửa chu vi trừ chiều dài.",
+            "skill": "shape_properties",
+            "unit": "shapes",
+            "id": "maen_shapes_q043"
           }
         ]
       },
@@ -2881,6 +5041,366 @@
             "skill": "multi_step",
             "unit": "word_problems",
             "id": "maen_word_problems_q025"
+          },
+          {
+            "q": "There are 28 birds on a tree. 9 birds fly away. How many birds are left?",
+            "choices": [
+              "21",
+              "18",
+              "19",
+              "37"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Fly away' là bay đi mất — dùng phép trừ.",
+            "id": "maen_word_problems_q026",
+            "skill": "word_subtract",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Class 2A has 18 boys and 17 girls. How many students are there in all?",
+            "choices": [
+              "34",
+              "36",
+              "25",
+              "35"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "'In all' là tất cả — cộng số bạn nam và nữ.",
+            "id": "maen_word_problems_q027",
+            "skill": "word_add",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Hoa is 8 years old. Her brother is 5 years older. How old is her brother?",
+            "choices": [
+              "13",
+              "12",
+              "14",
+              "3"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "'Older' là lớn hơn — cộng thêm số tuổi.",
+            "id": "maen_word_problems_q028",
+            "skill": "word_compare",
+            "unit": "word_problems"
+          },
+          {
+            "q": "A shop has 250 eggs. It sells 130 eggs. How many eggs are left?",
+            "choices": [
+              "110",
+              "120",
+              "130",
+              "380"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "'Sells' là bán đi — dùng phép trừ.",
+            "id": "maen_word_problems_q029",
+            "skill": "word_subtract",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Each table has 4 legs. How many legs do 5 tables have?",
+            "choices": [
+              "9",
+              "16",
+              "20",
+              "24"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Nhân số chân một bàn với số bàn.",
+            "id": "maen_word_problems_q030",
+            "skill": "word_multiply",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Nam reads 12 pages on Monday and 15 pages on Tuesday. How many pages does he read in two days?",
+            "choices": [
+              "37",
+              "25",
+              "17",
+              "27"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Cộng số trang của hai ngày.",
+            "id": "maen_word_problems_q031",
+            "skill": "word_add",
+            "unit": "word_problems"
+          },
+          {
+            "q": "There are 30 apples shared equally into 5 baskets. How many apples are in each basket?",
+            "choices": [
+              "6",
+              "5",
+              "7",
+              "8"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Shared equally' là chia đều — dùng phép chia.",
+            "id": "maen_word_problems_q032",
+            "skill": "word_divide",
+            "unit": "word_problems"
+          },
+          {
+            "q": "A bus has 45 seats. 38 seats are taken. How many seats are empty?",
+            "choices": [
+              "8",
+              "7",
+              "6",
+              "17"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "'Empty' là còn trống — lấy tổng ghế trừ ghế đã ngồi.",
+            "id": "maen_word_problems_q033",
+            "skill": "word_subtract",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Mai has 16 stickers. Lan has double that number. How many stickers does Lan have?",
+            "choices": [
+              "8",
+              "24",
+              "32",
+              "18"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "'Double' nghĩa là gấp đôi — nhân với 2.",
+            "id": "maen_word_problems_q034",
+            "skill": "word_multiply",
+            "unit": "word_problems"
+          },
+          {
+            "q": "A rope is cut into 3 equal pieces. Each piece is 5 m long. How long was the rope?",
+            "choices": [
+              "8 m",
+              "18 m",
+              "12 m",
+              "15 m"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Độ dài cả sợi dây = độ dài một đoạn nhân số đoạn.",
+            "id": "maen_word_problems_q035",
+            "skill": "word_multiply",
+            "unit": "word_problems"
+          },
+          {
+            "q": "There are 24 students. They stand in rows of 4. How many rows are there?",
+            "choices": [
+              "6",
+              "8",
+              "5",
+              "7"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Chia tổng số bạn cho số bạn mỗi hàng.",
+            "id": "maen_word_problems_q036",
+            "skill": "word_divide",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Minh has 50 marbles. He gives 12 to his friend and then wins 5 more. How many marbles does he have now?",
+            "choices": [
+              "38",
+              "43",
+              "45",
+              "33"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Hai bước: bớt 12 trước, rồi thêm 5.",
+            "id": "maen_word_problems_q037",
+            "skill": "word_two_steps",
+            "unit": "word_problems"
+          },
+          {
+            "q": "Tom has 36 marbles. He gives 9 marbles to his friend. How many marbles does Tom have left?",
+            "choices": [
+              "25",
+              "26",
+              "27",
+              "28"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'Gives' là cho đi, 'left' là còn lại — dùng phép trừ.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q038"
+          },
+          {
+            "q": "There are 45 students in the schoolyard. 18 more students come. How many students are there now?",
+            "choices": [
+              "73",
+              "53",
+              "62",
+              "63"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "'More ... come' nghĩa là thêm vào — dùng phép cộng.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q039"
+          },
+          {
+            "q": "A box has 5 rows of cakes. Each row has 4 cakes. How many cakes are there in all?",
+            "choices": [
+              "20",
+              "16",
+              "9",
+              "25"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Each row' gợi ý phép nhân: 5 × 4.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q040"
+          },
+          {
+            "q": "Mary has 64 stickers. Anna has 28 stickers. How many more stickers does Mary have than Anna?",
+            "choices": [
+              "34",
+              "36",
+              "38",
+              "42"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "'How many more ... than' là so sánh hơn kém — dùng phép trừ.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q041"
+          },
+          {
+            "q": "A farmer has 27 chickens and 35 ducks. How many birds does the farmer have in all?",
+            "choices": [
+              "52",
+              "58",
+              "62",
+              "60"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "'In all' là tất cả — dùng phép cộng.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q042"
+          },
+          {
+            "q": "Lan reads 12 pages on Monday and 15 pages on Tuesday. The book has 40 pages. How many pages are left?",
+            "choices": [
+              "17",
+              "15",
+              "12",
+              "13"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Tính số trang đã đọc trước (12+15), rồi lấy 40 trừ đi.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q043"
+          },
+          {
+            "q": "A bus has 42 seats. 26 seats are taken. How many seats are empty?",
+            "choices": [
+              "16",
+              "18",
+              "14",
+              "24"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "'Empty' là trống — lấy tổng số ghế trừ số ghế đã ngồi.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q044"
+          },
+          {
+            "q": "Each week Nam saves 5 thousand dong. How much does he save in 4 weeks?",
+            "choices": [
+              "15 thousand dong",
+              "20 thousand dong",
+              "25 thousand dong",
+              "9 thousand dong"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Mỗi tuần 5 nghìn, 4 tuần thì nhân lên.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q045"
+          },
+          {
+            "q": "There are 19 red flowers and some yellow flowers. There are 35 flowers in all. How many yellow flowers are there?",
+            "choices": [
+              "15",
+              "17",
+              "16",
+              "14"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Lấy tổng số hoa trừ đi số hoa đỏ.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q046"
+          },
+          {
+            "q": "A baker makes 50 cakes. He sells 23 cakes in the morning and 19 cakes in the afternoon. How many cakes are left?",
+            "choices": [
+              "7",
+              "9",
+              "12",
+              "8"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Tính tổng số bánh đã bán trước, rồi lấy 50 trừ đi.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q047"
+          },
+          {
+            "q": "Peter is 8 years old. His brother is 3 years older. How old is his brother?",
+            "choices": [
+              "11",
+              "12",
+              "5",
+              "10"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "'Older' là nhiều tuổi hơn — dùng phép cộng.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q048"
+          },
+          {
+            "q": "There are 4 boxes. Each box has 5 pencils. Mai takes 6 pencils. How many pencils are left?",
+            "choices": [
+              "16",
+              "14",
+              "13",
+              "15"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Tính tổng số bút trước (4×5), rồi trừ đi số bút Mai lấy.",
+            "skill": "addition_word",
+            "unit": "word_problems",
+            "id": "maen_word_problems_q049"
           }
         ]
       }
