@@ -108,6 +108,19 @@ const ParentDashboard = {
     this._renderDailyLog(logs);
   },
 
+  // Tra ten chu de that tu du lieu mon hoc; khong tim thay thi lam dep id
+  _topicName(topicId) {
+    try {
+      if (window.App && App.allData && App.allData.subjects) {
+        for (const s of App.allData.subjects) {
+          const t = (s.topics || []).find(t => (t.id || t.name) === topicId);
+          if (t) return t.name;
+        }
+      }
+    } catch (e) { /* bo qua, dung fallback */ }
+    return String(topicId).replace(/_/g, ' ');
+  },
+
   _renderSummary(logs) {
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
@@ -171,7 +184,7 @@ const ParentDashboard = {
 
     if (wrongByTopic.length) {
       const topicLabels = wrongByTopic.map(t =>
-        `<span class="topic-tag">${this._escape(t.topicId.replace(/_/g,' '))} (${t.wrongCount}×)</span>`
+        `<span class="topic-tag">${this._escape(this._topicName(t.topicId))} (${t.wrongCount}×)</span>`
       ).join(' ');
       html += `
       <div class="insight-box insight-info">
@@ -181,11 +194,13 @@ const ParentDashboard = {
     }
 
     if (repeatWrong.length) {
+      const shown = repeatWrong.slice(0, 3);
+      const rest = repeatWrong.length - shown.length;
       html += `
       <div class="insight-box insight-danger">
         <div class="insight-title">🔁 Câu hay sai lại (${repeatWrong.length} câu)</div>
         <div class="insight-list">
-          ${repeatWrong.map(q => `
+          ${shown.map(q => `
             <div class="insight-item">
               <span class="wrong-badge">${q.wrongCount}×</span>
               <span class="wrong-q">${this._escape(q.question || q.questionId)}</span>
@@ -193,6 +208,7 @@ const ParentDashboard = {
                 ? '<span class="resolved-tag">✅ đã sửa</span>'
                 : '<span class="unresolved-tag">❌ chưa sửa</span>'}
             </div>`).join('')}
+          ${rest > 0 ? `<div class="insight-item insight-rest">… và ${rest} câu khác (xem trong nhật ký từng ngày)</div>` : ''}
         </div>
       </div>`;
     } else if (unresolved.length) {
@@ -251,8 +267,10 @@ const ParentDashboard = {
 
     const sortedDates = Object.keys(byDate).sort().reverse();
     let html = '';
+    const MAX_VISIBLE = 5; // moi ngay chi hien toi da 5 luot, con lai an sau nut "xem them"
+    const MAX_DAYS = 7;    // mac dinh chi hien 7 ngay gan nhat, ngay cu hon an sau nut
 
-    sortedDates.forEach(dateKey => {
+    sortedDates.forEach((dateKey, dayIdx) => {
       const isToday = dateKey === todayKey;
       const d = new Date(dateKey);
       const days = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
@@ -260,10 +278,27 @@ const ParentDashboard = {
         ? '📅 Hôm nay - ' + d.getDate() + '/' + (d.getMonth() + 1)
         : days[d.getDay()] + ', ' + d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
 
-      html += `<div class="day-group">`;
-      html += `<div class="day-header ${isToday ? 'today' : ''}"><span>${dateLabel}</span><button type="button" class="day-detail-btn" data-date="${dateKey}">🔎 Chi tiết</button></div>`;
+      // Tom tat ngay: so luot, tong dung/tong cau, tong phut
+      const dayLogs = byDate[dateKey];
+      const dQ = dayLogs.reduce((s, l) => s + (l.total || 0), 0);
+      const dC = dayLogs.reduce((s, l) => s + (l.correct || 0), 0);
+      const dMin = Math.round(dayLogs.reduce((s, l) => s + (l.duration || 0), 0) / 60);
+      const dRatio = dQ > 0 ? dC / dQ : 0;
+      const dClass = dRatio >= 0.8 ? 'good' : (dRatio >= 0.5 ? 'warning' : 'bad');
+      const summary = `${dayLogs.length} lượt · <b class="${dClass}">${dC}/${dQ}</b> câu${dMin > 0 ? ' · ' + dMin + ' phút' : ''}`;
 
-      byDate[dateKey].forEach(log => {
+      // Chi co hom nay mo san, cac ngay khac gap lai; ngay cu hon 7 ngay an han
+      const oldDay = dayIdx >= MAX_DAYS ? ' day-old hidden' : '';
+      html += `<div class="day-group ${isToday ? '' : 'day-collapsed'}${oldDay}" data-day="${dateKey}">`;
+      html += `<div class="day-header ${isToday ? 'today' : ''}" data-toggle="${dateKey}">
+        <span class="day-caret">▾</span>
+        <span class="day-title">${dateLabel}</span>
+        <span class="day-summary">${summary}</span>
+        <button type="button" class="day-detail-btn" data-date="${dateKey}">🔎 Chi tiết</button>
+      </div>`;
+      html += `<div class="day-body">`;
+
+      dayLogs.forEach((log, idx) => {
         const ratio = log.total > 0 ? log.correct / log.total : 0;
         const ratioClass = ratio >= 0.8 ? 'good' : (ratio >= 0.5 ? 'warning' : 'bad');
 
@@ -273,7 +308,7 @@ const ParentDashboard = {
         const durStr = durationMin > 0 ? ' (' + durationMin + ' phút)' : '';
 
         html += `
-          <div class="log-entry ${ratioClass}">
+          <div class="log-entry ${ratioClass} ${idx >= MAX_VISIBLE ? 'log-overflow hidden' : ''}">
             <div class="log-time">${timeStr}${durStr}</div>
             <div class="log-subject">
               ${this._escape(log.subject)}
@@ -283,12 +318,40 @@ const ParentDashboard = {
           </div>`;
       });
 
-      html += `</div>`;
+      if (dayLogs.length > MAX_VISIBLE) {
+        html += `<button type="button" class="log-more-btn" data-more="${dateKey}">Xem thêm ${dayLogs.length - MAX_VISIBLE} lượt ▾</button>`;
+      }
+      html += `</div></div>`;
     });
 
+    if (sortedDates.length > MAX_DAYS) {
+      html += `<button type="button" class="log-more-btn" id="moreDaysBtn">Xem ${sortedDates.length - MAX_DAYS} ngày trước đó ▾</button>`;
+    }
+
     document.getElementById('dailyContent').innerHTML = html;
+    const moreDays = document.getElementById('moreDaysBtn');
+    if (moreDays) {
+      moreDays.addEventListener('click', () => {
+        document.querySelectorAll('.day-group.day-old').forEach(el => el.classList.remove('hidden'));
+        moreDays.remove();
+      });
+    }
     document.querySelectorAll('.day-detail-btn[data-date]').forEach(btn => {
-      btn.addEventListener('click', () => this._showDayDetails(btn.dataset.date, byDate[btn.dataset.date] || []));
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this._showDayDetails(btn.dataset.date, byDate[btn.dataset.date] || []);
+      });
+    });
+    // Bam vao header ngay de gap / mo
+    document.querySelectorAll('.day-header[data-toggle]').forEach(h => {
+      h.addEventListener('click', () => h.closest('.day-group').classList.toggle('day-collapsed'));
+    });
+    // Nut "xem them" cua ngay dai
+    document.querySelectorAll('.log-more-btn[data-more]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.day-body').querySelectorAll('.log-overflow').forEach(el => el.classList.remove('hidden'));
+        btn.remove();
+      });
     });
   },
 
