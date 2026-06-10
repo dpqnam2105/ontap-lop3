@@ -187,13 +187,38 @@ const App = {
     const el = document.getElementById('subjectList');
     el.innerHTML = '';
 
-    // Các môn thật (có dữ liệu) — dùng ảnh banner theo id.
+    // Cac mon that (co du lieu) -- anh banner + overlay HTML (ten, tien do, nut vao hoc).
     this.allData.subjects.forEach((s, i) => {
+      // Tien do hom nay: so chu de da luyen it nhat 1 cau / tong so chu de.
+      let doneToday = 0;
+      try {
+        if (window.Storage && Storage.getTopicProgress) {
+          s.topics.forEach(t => {
+            const p = Storage.getTopicProgress((t.id || t.name).toString());
+            if (p && (p.learned || []).length > 0) doneToday++;
+          });
+        }
+      } catch (e) { /* chua co tien do thi de 0 */ }
+      const progChip = doneToday > 0
+        ? `<span class="sub-ov-chip sub-ov-chip-done">⭐ Hôm nay: ${doneToday}/${s.topics.length}</span>`
+        : `<span class="sub-ov-chip">🚀 Bắt đầu nào!</span>`;
+
       const card = document.createElement('div');
       card.className = 'sub-card sub-card-img';
       card.innerHTML = `
         <img class="sub-banner" src="images/subject-${s.id}.png" alt="${this._escape(s.name)}"
              onerror="this.style.display='none';this.parentElement.classList.add('sub-card-noimg')">
+        <div class="sub-overlay">
+          <div class="sub-ov-icon">${s.icon}</div>
+          <div class="sub-ov-text">
+            <div class="sub-ov-name">${this._escape(s.name)}</div>
+            <div class="sub-ov-meta">${s.topics.length} chủ đề ôn tập</div>
+          </div>
+          <div class="sub-ov-right">
+            ${progChip}
+            <span class="sub-ov-cta">Vào học ▶</span>
+          </div>
+        </div>
         <div class="sub-card-fallback">
           <div class="sub-icon">${s.icon}</div>
           <div class="sub-info">
