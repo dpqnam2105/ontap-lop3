@@ -475,7 +475,7 @@
             "id": "maen_numbers_q033"
           },
           {
-            "q": "I am between 40 and 50. I am an even number. The sum of my digits is 9. What am I?",
+            "q": "I am between 40 and 50. I am an even number. The sum of my digits is 12. What am I?",
             "choices": [
               "45",
               "48",
@@ -486,7 +486,8 @@
             "difficulty": 3,
             "skill": "number_inference",
             "unit": "numbers",
-            "id": "maen_numbers_q034"
+            "id": "maen_numbers_q034",
+            "hint": "Liệt kê các số chẵn từ 42 đến 48, rồi cộng hai chữ số của từng số xem số nào ra 12."
           },
           {
             "q": "Find the sum of the greatest and smallest number: 25, 10, 7, 33, 93, 22, 89, 90",
