@@ -301,3 +301,19 @@
 .day-summary .good{color:#bdf7d2}.day-summary .warning{color:#ffe2a9}.day-summary .bad{color:#ffc9c4}
 .log-more-btn{display:block;width:100%;border:1px dashed #b9d6f2;background:#f3f9ff;color:#1565c0;border-radius:12px;padding:9px;font-family:var(--font-display);font-weight:850;cursor:pointer;margin:4px 0 10px}
 .log-more-btn:hover{background:#e7f3ff}
+
+/* ===== Banner On cau sai (man chon mon) ===== */
+.wrong-review-bar{grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:18px;background:linear-gradient(120deg,#fff4e0,#ffe9ec);border:2px solid #ffd9a8;cursor:pointer;transition:.18s;box-shadow:0 4px 14px rgba(255,166,77,.18)}
+.wrong-review-bar:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,166,77,.3)}
+.wrb-icon{font-size:1.9rem;flex:0 0 auto}
+.wrb-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.wrb-text b{font-family:var(--font-display);font-weight:900;color:#9a4a00;font-size:1.05rem}
+.wrb-text small{color:#b56a1e;font-weight:700;font-size:.85rem}
+.wrb-cta{background:linear-gradient(135deg,#ffb347,#ff8c42);color:#fff;border-radius:999px;padding:8px 16px;font-family:var(--font-display);font-weight:900;font-size:.9rem;white-space:nowrap;box-shadow:0 5px 12px rgba(255,140,66,.4)}
+@media(max-width:760px){
+  .wrong-review-bar{padding:11px 13px;gap:10px}
+  .wrb-icon{font-size:1.5rem}
+  .wrb-text b{font-size:.95rem}
+  .wrb-text small{font-size:.76rem}
+  .wrb-cta{font-size:.78rem;padding:6px 12px}
+}
