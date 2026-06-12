@@ -49,6 +49,8 @@ const App = {
     if (this.playerName && this.allData) this._renderSubjects();
     if (this.playerName) this._showWelcome(this.playerName);
     DragonBall._renderHomeWidgets();
+    // Lam tuoi toan bo UI thuong (sao, tui do, gian sticker) ngay khi tai trang.
+    if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
   },
 
   async loadLeaderboard(gradeId = 'lop2') {
@@ -101,7 +103,12 @@ const App = {
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
-    if (name === 'shop') DragonBall._renderDragonShop();
+    if (name === 'shop') {
+      DragonBall._renderDragonShop();
+      // Gian sticker doi sao: bi rot khoi luong mo shop khi tach module, goi lai o day.
+      if (window.Rewards && Rewards.renderShop) Rewards.renderShop();
+      if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
+    }
     if (name === 'collection') DragonBall._renderCollection();
     window.scrollTo(0, 0);
   },
@@ -433,6 +440,12 @@ const App = {
     const btnRedeemBadgeShop = document.getElementById('btnRedeemBadgeShop');
     if (btnRedeemBadgeShop) {
       btnRedeemBadgeShop.addEventListener('click', () => Rewards.redeemBadge());
+    }
+
+    // Bo loc gian sticker (Tat ca / Du sao / Da so huu): ve lai khi doi lua chon.
+    const shopFilter = document.getElementById('shopFilter');
+    if (shopFilter) {
+      shopFilter.addEventListener('change', () => Rewards.renderShop());
     }
 
     document.querySelectorAll('.shop-btn-mini[data-item]').forEach(btn => {
