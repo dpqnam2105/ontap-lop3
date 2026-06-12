@@ -337,3 +337,14 @@
   .pack-titles small{display:none}
   .pack-head{padding:8px 10px;gap:8px}
 }
+
+/* ===== Sua layout shop: #shopItems la khoi doc, khong scroll trong ===== */
+#shopItems{display:block;grid-template-columns:none;max-height:none;overflow:visible;padding:0}
+.sticker-pack .reward-grid{max-height:none;overflow:visible;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.packs-soon-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:22px}
+.packs-soon-row .sticker-pack{margin-bottom:0}
+.packs-soon-row .pack-head{margin-bottom:0;height:100%}
+@media(max-width:760px){
+  .sticker-pack .reward-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .packs-soon-row{grid-template-columns:1fr 1fr}
+}
