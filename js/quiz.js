@@ -646,6 +646,48 @@ const Rewards = {
     { id: 'crown', name: 'Vương miện', icon: '👑', file: 'sticker_crown.png', cost: 150 }
   ],
 
+  // Cac bo suu tap sticker theo chu de. Duong dan file tinh tu thu muc images/.
+  // Pack co comingSoon:true se hien khoa "Sap ra mat" — khi co anh, chi can
+  // them danh sach items vao day la pack tu mo.
+  STICKER_PACKS: [
+    {
+      id: 'rabbit-heroes', name: 'Biệt Đội Thỏ Anh Hùng', icon: '🐰',
+      desc: 'Sưu tập đủ 7 Thỏ để nhận Bảng Sưu Tập đặc biệt!',
+      bonus: { file: 'rewards/stickers/rabbit-heroes/collection-sheet.png', name: 'Bảng Sưu Tập Thỏ Anh Hùng', icon: '🖼️' },
+      items: [
+        { id: 'rh-explorer', name: 'Thỏ Thám Hiểm', icon: '🧭', file: 'rewards/stickers/rabbit-heroes/rabbit-explorer.png', cost: 30 },
+        { id: 'rh-scientist', name: 'Thỏ Bác Học', icon: '🔬', file: 'rewards/stickers/rabbit-heroes/rabbit-scientist.png', cost: 50 },
+        { id: 'rh-astronaut', name: 'Thỏ Phi Hành Gia', icon: '🚀', file: 'rewards/stickers/rabbit-heroes/rabbit-astronaut.png', cost: 80 },
+        { id: 'rh-knight', name: 'Thỏ Hiệp Sĩ', icon: '🛡️', file: 'rewards/stickers/rabbit-heroes/rabbit-knight.png', cost: 110 },
+        { id: 'rh-wizard', name: 'Thỏ Phù Thủy', icon: '🪄', file: 'rewards/stickers/rabbit-heroes/rabbit-wizard.png', cost: 150 },
+        { id: 'rh-engineer', name: 'Thỏ Kỹ Sư Robot', icon: '🤖', file: 'rewards/stickers/rabbit-heroes/rabbit-robot-engineer.png', cost: 200 },
+        { id: 'rh-emperor', name: 'Thỏ Hoàng Đế', icon: '👑', file: 'rewards/stickers/rabbit-heroes/rabbit-emperor.png', cost: 300 }
+      ]
+    },
+    { id: 'robot-academy', name: 'Học Viện Robot', icon: '🤖', comingSoon: true },
+    { id: 'dino-world', name: 'Thế Giới Khủng Long', icon: '🦕', comingSoon: true },
+    { id: 'space-explorer', name: 'Du Hành Vũ Trụ', icon: '🌌', comingSoon: true },
+    { id: 'block-world', name: 'Thế Giới Khối Hộp', icon: '🧱', comingSoon: true }
+  ],
+
+  // Gop tat ca sticker (bo co ban + cac pack) de dung chung cho tui do / meta.
+  _allShopItems() {
+    const all = [...this.SHOP_ITEMS];
+    (this.STICKER_PACKS || []).forEach(p => {
+      if (p.items) all.push(...p.items);
+      if (p.bonus) all.push({ id: p.id + '-bonus', name: p.bonus.name, icon: p.bonus.icon || '🖼️', file: p.bonus.file, cost: 0 });
+    });
+    return all;
+  },
+
+  // The img co du phong: thu duong dan chinh -> duong dan cu -> an di (hien emoji ben canh neu co).
+  _imgTag(primary, legacy, alt, cls) {
+    const fb = legacy
+      ? "if(!this.dataset.fb){this.dataset.fb=1;this.src='" + legacy + "';}else{this.style.display='none';var s=this.parentNode.querySelector('.img-emoji-fb');if(s)s.style.display='block';}"
+      : "this.style.display='none';var s=this.parentNode.querySelector('.img-emoji-fb');if(s)s.style.display='block';";
+    return '<img src="' + primary + '" class="' + (cls || '') + '" alt="' + alt + '" loading="lazy" onerror="' + fb + '">';
+  },
+
   _defaultData() {
     return {
       playerName: '', stars: 0, totalCorrect: 0, inventory: [], currentBadge: null,
@@ -733,9 +775,25 @@ const Rewards = {
     }
     if (!data.inventory.includes(item)) data.inventory.push(item);
     data.stars -= cost;
+
+    // Hoan thanh tron bo mot pack -> tang qua dac biet (vd: Bang Suu Tap).
+    let completedPack = null;
+    (this.STICKER_PACKS || []).forEach(pack => {
+      if (!pack.items || !pack.bonus) return;
+      const allOwned = pack.items.every(i => data.inventory.includes(i.file));
+      if (allOwned && !data.inventory.includes(pack.bonus.file)) {
+        data.inventory.push(pack.bonus.file);
+        completedPack = pack;
+      }
+    });
+
     this._saveData(data);
     this.updateUI();
-    this._achievementPopup('🎁 Đã đổi phần thưởng!');
+    if (completedPack) {
+      this._achievementPopup('🏆 Tuyệt vời! Con đã sưu tập đủ bộ ' + completedPack.name + ' và nhận được ' + completedPack.bonus.name + '!');
+    } else {
+      this._achievementPopup('🎁 Đã đổi phần thưởng!');
+    }
   },
 
   renderShop() {
@@ -745,25 +803,66 @@ const Rewards = {
     const filterEl = document.getElementById('shopFilter');
     const filter = filterEl ? filterEl.value : 'all';
     const owned = new Set(data.inventory || []);
-    const items = this.SHOP_ITEMS.filter(item => {
+
+    const matchFilter = (item) => {
       if (filter === 'affordable') return data.stars >= item.cost && !owned.has(item.file);
       if (filter === 'owned') return owned.has(item.file);
       return true;
-    });
-    if (!items.length) {
-      el.innerHTML = '<div class="shop-empty">Chưa có phần thưởng phù hợp bộ lọc này.</div>';
-      return;
-    }
-    el.innerHTML = items.map(item => {
+    };
+
+    const cardHtml = (item, useImage) => {
       const isOwned = owned.has(item.file);
       const canBuy = data.stars >= item.cost && !isOwned;
+      const visual = useImage
+        ? '<div class="reward-icon reward-icon-img">' + this._imgTag('images/' + item.file, null, item.name, 'reward-sticker-img') +
+          '<span class="img-emoji-fb" style="display:none">' + item.icon + '</span></div>'
+        : '<div class="reward-icon">' + item.icon + '</div>';
       return '<div class="reward-card ' + (isOwned ? 'owned' : '') + '">' +
-        '<div class="reward-icon">' + item.icon + '</div>' +
+        visual +
         '<div class="reward-name">' + item.name + '</div>' +
         '<div class="reward-cost">' + item.cost + ' ⭐</div>' +
         '<button class="reward-buy-btn" data-item="' + item.file + '" data-cost="' + item.cost + '" ' + (canBuy ? '' : 'disabled') + '>' + (isOwned ? 'Đã có' : 'Đổi') + '</button>' +
       '</div>';
-    }).join('');
+    };
+
+    let html = '';
+
+    // Cac pack chu de (anh that) — dat len dau cho hap dan.
+    (this.STICKER_PACKS || []).forEach(pack => {
+      if (pack.comingSoon) {
+        if (filter !== 'all') return; // pack khoa chi hien o che do Tat ca
+        html += '<div class="sticker-pack pack-locked">' +
+          '<div class="pack-head"><span class="pack-icon">' + pack.icon + '</span>' +
+          '<div class="pack-titles"><b>' + pack.name + '</b><small>Bộ sưu tập mới đang được chuẩn bị</small></div>' +
+          '<span class="pack-soon">🔒 Sắp ra mắt</span></div></div>';
+        return;
+      }
+      const items = (pack.items || []).filter(matchFilter);
+      const ownedCount = (pack.items || []).filter(i => owned.has(i.file)).length;
+      const total = (pack.items || []).length;
+      const bonusOwned = pack.bonus && owned.has(pack.bonus.file);
+      if (!items.length && filter !== 'all') return;
+      html += '<div class="sticker-pack">' +
+        '<div class="pack-head"><span class="pack-icon">' + pack.icon + '</span>' +
+        '<div class="pack-titles"><b>' + pack.name + '</b><small>' + (pack.desc || '') + '</small></div>' +
+        '<span class="pack-progress ' + (ownedCount === total && total > 0 ? 'pack-done' : '') + '">' +
+          (bonusOwned ? '🏆 Đủ bộ!' : ownedCount + '/' + total) + '</span></div>' +
+        '<div class="reward-grid">' + items.map(i => cardHtml(i, true)).join('') + '</div>' +
+      '</div>';
+    });
+
+    // Bo co ban (sticker emoji cu) — van giu cho be nao da mua.
+    const classicItems = this.SHOP_ITEMS.filter(matchFilter);
+    if (classicItems.length) {
+      html += '<div class="sticker-pack">' +
+        '<div class="pack-head"><span class="pack-icon">⭐</span>' +
+        '<div class="pack-titles"><b>Bộ Cơ Bản</b><small>Những sticker đầu tiên của con</small></div></div>' +
+        '<div class="reward-grid">' + classicItems.map(i => cardHtml(i, false)).join('') + '</div>' +
+      '</div>';
+    }
+
+    if (!html) html = '<div class="shop-empty">Chưa có phần thưởng phù hợp bộ lọc này.</div>';
+    el.innerHTML = html;
     el.querySelectorAll('.reward-buy-btn[data-item]').forEach(btn => {
       btn.addEventListener('click', () => this.buyItem(btn.dataset.item, parseInt(btn.dataset.cost, 10)));
     });
@@ -795,9 +894,9 @@ const Rewards = {
 
   _badgeMeta(badge) {
     const map = {
-      bronze: { icon: '🥉', label: 'Huy hiệu Đồng', file: 'sticker_bronze.png' },
-      silver: { icon: '🥈', label: 'Huy hiệu Bạc', file: 'sticker_silver.png' },
-      gold: { icon: '🥇', label: 'Huy hiệu Vàng', file: 'sticker_gold.png' }
+      bronze: { icon: '🥉', label: 'Huy hiệu Đồng', file: 'rewards/badges/sticker_bronze.png', legacy: 'sticker_bronze.png' },
+      silver: { icon: '🥈', label: 'Huy hiệu Bạc', file: 'rewards/badges/sticker_silver.png', legacy: 'sticker_silver.png' },
+      gold: { icon: '🥇', label: 'Huy hiệu Vàng', file: 'rewards/badges/sticker_gold.png', legacy: 'sticker_gold.png' }
     };
     return map[badge] || null;
   },
@@ -883,7 +982,7 @@ const Rewards = {
     if (shopBadge) {
       if (meta) {
         shopBadge.className = 'badge-preview-owned';
-        shopBadge.innerHTML = '<div class="badge-display"><img src="images/' + meta.file + '" class="reward-img" alt="' + meta.label + '" width="96"><div class="badge-label">' + meta.label + '</div></div>';
+        shopBadge.innerHTML = '<div class="badge-display"><img src="images/' + meta.file + '" class="reward-img" alt="' + meta.label + '" width="96" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src=\'images/' + (meta.legacy || meta.file) + '\';}else{this.style.display=\'none\';}"><div class="badge-label">' + meta.label + '</div></div>';
       } else {
         shopBadge.className = 'badge-preview-empty';
         shopBadge.textContent = 'Chưa có huy hiệu';
@@ -896,7 +995,7 @@ const Rewards = {
     if (invArea) {
       const inventory = Array.isArray(data.inventory) ? data.inventory : [];
       const shopMeta = {};
-      (this.SHOP_ITEMS || []).forEach(item => {
+      this._allShopItems().forEach(item => {
         shopMeta[item.file] = item;
       });
 

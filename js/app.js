@@ -230,11 +230,17 @@ const App = {
         ? `<span class="sub-ov-chip sub-ov-chip-done">⭐ Hôm nay: ${doneToday}/${s.topics.length}</span>`
         : `<span class="sub-ov-chip">🚀 Bắt đầu nào!</span>`;
 
+      // Banner mon hoc: uu tien cau truc moi images/subjects/*.webp,
+      // chua co thi lui ve anh cu images/subject-{id}.png, lui nua thi fallback card.
+      const BANNER_MAP = { 'toan': 'math', 'tieng-viet': 'vietnamese', 'tieng-anh': 'english', 'toan-tieng-anh': 'math-english' };
+      const newSrc = `images/subjects/${BANNER_MAP[s.id] || s.id}-banner.webp`;
+      const oldSrc = `images/subject-${s.id}.png`;
+
       const card = document.createElement('div');
       card.className = 'sub-card sub-card-img';
       card.innerHTML = `
-        <img class="sub-banner" src="images/subject-${s.id}.png" alt="${this._escape(s.name)}"
-             onerror="this.style.display='none';this.parentElement.classList.add('sub-card-noimg')">
+        <img class="sub-banner" src="${newSrc}" alt="${this._escape(s.name)}"
+             onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='${oldSrc}';}else{this.style.display='none';this.parentElement.classList.add('sub-card-noimg');}">
         <div class="sub-overlay">
           <div class="sub-ov-icon">${s.icon}</div>
           <div class="sub-ov-text">

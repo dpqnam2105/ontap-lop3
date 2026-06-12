@@ -60,12 +60,16 @@ const DragonBall = {
   },
 
   _dragonImg(n) {
+    return 'images/rewards/dragonballs/dragonball_' + n + '.png';
+  },
+
+  _dragonImgLegacy(n) {
     return 'images/dragonball_' + n + '.png';
   },
 
   _renderDragonBallIcon(n, owned) {
     return `<div class="dragon-ball-icon ${owned ? 'owned' : 'locked'}" title="${this._dragonName(n)}">
-      <img src="${this._dragonImg(n)}" alt="${this._dragonName(n)}" onerror="this.style.display='none';this.parentNode.querySelector('.dragon-fallback').style.display='grid';">
+      <img src="${this._dragonImg(n)}" alt="${this._dragonName(n)}" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='${this._dragonImgLegacy(n)}';}else{this.style.display='none';this.parentNode.querySelector('.dragon-fallback').style.display='grid';}">
       <span class="dragon-fallback" style="display:none">${'★'.repeat(n)}</span>
     </div>`;
   },
