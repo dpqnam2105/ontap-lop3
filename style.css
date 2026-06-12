@@ -317,3 +317,23 @@
   .wrb-text small{font-size:.76rem}
   .wrb-cta{font-size:.78rem;padding:6px 12px}
 }
+
+/* ===== Sticker packs (cua hang doi thuong) ===== */
+.sticker-pack{margin-bottom:22px}
+.pack-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:10px 14px;border-radius:14px;background:linear-gradient(120deg,#eef6ff,#f6f0ff);border:1.5px solid #d7e8fb}
+.pack-icon{font-size:1.7rem;flex:0 0 auto}
+.pack-titles{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.pack-titles b{font-family:var(--font-display);font-weight:900;color:#1d4f8f;font-size:1.02rem}
+.pack-titles small{color:#5b86b5;font-weight:700;font-size:.8rem}
+.pack-progress{background:#fff;border:1.5px solid #cfe3f8;color:#1d6fd1;border-radius:999px;padding:4px 12px;font-family:var(--font-display);font-weight:900;font-size:.85rem;white-space:nowrap}
+.pack-progress.pack-done{background:#ffe56b;border-color:#f3cf3a;color:#7a5800}
+.pack-soon{background:#f1f3f7;color:#8a93a3;border-radius:999px;padding:4px 12px;font-weight:900;font-size:.82rem;white-space:nowrap}
+.pack-locked .pack-head{background:#f6f8fb;border-style:dashed;opacity:.85}
+.reward-icon-img{display:grid;place-items:center;position:relative}
+.reward-sticker-img{width:74px;height:74px;object-fit:contain;border-radius:12px}
+.img-emoji-fb{font-size:2.4rem;line-height:74px}
+@media(max-width:760px){
+  .reward-sticker-img{width:58px;height:58px}
+  .pack-titles small{display:none}
+  .pack-head{padding:8px 10px;gap:8px}
+}
