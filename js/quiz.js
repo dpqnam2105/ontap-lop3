@@ -664,6 +664,24 @@ const Rewards = {
         { id: 'rh-emperor', name: 'Thỏ Hoàng Đế', icon: '👑', file: 'rewards/stickers/rabbit-heroes/rabbit-emperor.png', cost: 300 }
       ]
     },
+    {
+      id: 'zodiac-heroes', name: 'Biệt Đội 12 Con Giáp', icon: '🐲',
+      desc: 'Sưu tập 12 anh hùng con giáp — Rồng Hoàng Đế đang chờ con!',
+      items: [
+        { id: 'zd-rat', name: 'Chuột Phát Minh', icon: '🐭', file: 'rewards/stickers/zodiac-heroes/rat-inventor.png', cost: 20 },
+        { id: 'zd-pig', name: 'Lợn Đầu Bếp', icon: '🐷', file: 'rewards/stickers/zodiac-heroes/pig-chef.png', cost: 30 },
+        { id: 'zd-goat', name: 'Dê Họa Sĩ', icon: '🐐', file: 'rewards/stickers/zodiac-heroes/goat-artist.png', cost: 40 },
+        { id: 'zd-rooster', name: 'Gà Chỉ Huy', icon: '🐔', file: 'rewards/stickers/zodiac-heroes/rooster-commander.png', cost: 50 },
+        { id: 'zd-cat', name: 'Mèo Học Giả', icon: '🐱', file: 'rewards/stickers/zodiac-heroes/cat-scholar.png', cost: 65 },
+        { id: 'zd-dog', name: 'Chó Vệ Sĩ', icon: '🐶', file: 'rewards/stickers/zodiac-heroes/dog-guardian.png', cost: 80 },
+        { id: 'zd-ox', name: 'Trâu Lực Sĩ', icon: '🐮', file: 'rewards/stickers/zodiac-heroes/ox-strongman.png', cost: 100 },
+        { id: 'zd-monkey', name: 'Khỉ Thám Hiểm', icon: '🐵', file: 'rewards/stickers/zodiac-heroes/monkey-explorer.png', cost: 120 },
+        { id: 'zd-horse', name: 'Ngựa Hiệp Sĩ', icon: '🐴', file: 'rewards/stickers/zodiac-heroes/horse-knight.png', cost: 140 },
+        { id: 'zd-snake', name: 'Rắn Pháp Sư', icon: '🐍', file: 'rewards/stickers/zodiac-heroes/snake-mage.png', cost: 170 },
+        { id: 'zd-tiger', name: 'Hổ Tướng Quân', icon: '🐯', file: 'rewards/stickers/zodiac-heroes/tiger-warlord.png', cost: 210 },
+        { id: 'zd-dragon', name: 'Rồng Hoàng Đế', icon: '🐲', file: 'rewards/stickers/zodiac-heroes/dragon-emperor.png', cost: 250 }
+      ]
+    },
     { id: 'robot-academy', name: 'Học Viện Robot', icon: '🤖', comingSoon: true },
     { id: 'dino-world', name: 'Thế Giới Khủng Long', icon: '🦕', comingSoon: true },
     { id: 'space-explorer', name: 'Du Hành Vũ Trụ', icon: '🌌', comingSoon: true },
@@ -826,12 +844,13 @@ const Rewards = {
     };
 
     let html = '';
+    let soonHtml = '';
 
     // Cac pack chu de (anh that) — dat len dau cho hap dan.
     (this.STICKER_PACKS || []).forEach(pack => {
       if (pack.comingSoon) {
         if (filter !== 'all') return; // pack khoa chi hien o che do Tat ca
-        html += '<div class="sticker-pack pack-locked">' +
+        soonHtml += '<div class="sticker-pack pack-locked">' +
           '<div class="pack-head"><span class="pack-icon">' + pack.icon + '</span>' +
           '<div class="pack-titles"><b>' + pack.name + '</b><small>Bộ sưu tập mới đang được chuẩn bị</small></div>' +
           '<span class="pack-soon">🔒 Sắp ra mắt</span></div></div>';
@@ -850,6 +869,8 @@ const Rewards = {
         '<div class="reward-grid">' + items.map(i => cardHtml(i, true)).join('') + '</div>' +
       '</div>';
     });
+
+    if (soonHtml) html += '<div class="packs-soon-row">' + soonHtml + '</div>';
 
     // Bo co ban (sticker emoji cu) — van giu cho be nao da mua.
     const classicItems = this.SHOP_ITEMS.filter(matchFilter);
