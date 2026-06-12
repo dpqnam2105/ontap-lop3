@@ -26,6 +26,67 @@ const Quiz = {
   // Link Google Form để phụ huynh báo lỗi nội dung câu hỏi (dùng chung với form góp ý).
   REPORT_FORM_URL: 'https://forms.gle/hE3gV5Uy6UodzrZn7',
 
+  WRONG_REVIEW_SESSION: 10,
+
+  // Che do on cau sai xuyen mon: lay cau sai chua sua tu wrong-history (ben vung),
+  // tim lai cau hoi goc trong ngan hang theo id (fallback: theo text de),
+  // roi chay mot phien quiz tron cac mon. Khong dong vao tien do ngay cua tung
+  // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
+  startWrongReview() {
+    const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
+    const pool = [];
+    if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
+      for (const it of items) {
+        const subj = App.allData.subjects.find(s => s.id === it.subjectId);
+        if (!subj) continue;
+        const topic = (subj.topics || []).find(t => (t.id || t.name).toString() === String(it.topicId));
+        if (!topic || !Array.isArray(topic.questions)) continue;
+        let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
+        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => (q.q || '') === it.question);
+        if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
+        pool.push({
+          ...topic.questions[idx],
+          _idx: idx,
+          subjectId: subj.id,
+          topicId: (topic.id || topic.name).toString(),
+          id: topic.questions[idx].id || it.questionId,
+          _subjectName: subj.name || '',
+          _topicName: topic.name || ''
+        });
+      }
+    }
+
+    if (!pool.length) {
+      alert('Tuyệt vời! Con không còn câu sai nào cần ôn lại 🎉');
+      return;
+    }
+
+    this.mode = 'wrong_review';
+    this.questions = this._shuffle(pool).slice(0, this.WRONG_REVIEW_SESSION);
+    this.currentTopic = { id: 'wrong_review', name: 'Ôn câu sai', questions: this.questions };
+    this.currentSubject = 'Ôn câu sai';
+    this.currentTopicId = 'wrong_review';
+    this.currentSubjectId = 'mixed';
+    this.sessionStartTime = Date.now();
+    this.score = 0;
+    this.curIdx = 0;
+    this.sessionDetails = [];
+
+    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
+    this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
+      ? window.LearningEngine.installSessionGuard()
+      : null;
+
+    this.sessionInfo = {
+      mode: 'wrong_review', modeLabel: 'Ôn câu sai 🔁',
+      current: 1, total: 1, isAllDone: true,
+      learnedBefore: 0, totalInTopic: this.questions.length
+    };
+
+    App.showScreen('quiz');
+    this.render();
+  },
+
   start(topic, subjectName, options) {
     options = options || {};
     this.mode = options.mode || 'practice';
@@ -162,6 +223,9 @@ const Quiz = {
     const info = this.sessionInfo || {};
 
     let titleText = (info.modeLabel || 'Luyện tập 🧠') + ' · ' + this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    if (this.mode === 'wrong_review' && q._subjectName) {
+      titleText = 'Ôn câu sai 🔁 · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    }
     if (this.mode === 'practice' && info.total > 1) {
       titleText += info.isAllDone ? ' · Ôn lại 🔄' : ' · Lần ' + info.current + '/' + info.total;
     }
@@ -348,10 +412,10 @@ const Quiz = {
       isCorrect: !!isCorrect,
       timeSpentSec: timeSpentSec,
       usedHint: !!this.questionUsedHint,
-      subject: this.currentSubject || '',
-      subjectId: this.currentSubjectId || '',
-      topic: this.currentTopic && this.currentTopic.name ? this.currentTopic.name : '',
-      topicId: this.currentTopicId || '',
+      subject: q._subjectName || this.currentSubject || '',
+      subjectId: q.subjectId || this.currentSubjectId || '',
+      topic: q._topicName || (this.currentTopic && this.currentTopic.name ? this.currentTopic.name : ''),
+      topicId: q.topicId || this.currentTopicId || '',
       mode: this.mode || 'practice',
       answeredAt: new Date().toISOString()
     });
@@ -360,8 +424,8 @@ const Quiz = {
     Storage.recordAnswer({
       questionId,
       isCorrect: !!isCorrect,
-      subjectId: this.currentSubjectId || '',
-      topicId: this.currentTopicId || '',
+      subjectId: q.subjectId || this.currentSubjectId || '',
+      topicId: q.topicId || this.currentTopicId || '',
       question: q.q || ''
     });
   },
@@ -385,7 +449,9 @@ const Quiz = {
 
   next() {
     const q = this.questions[this.curIdx];
-    this._markLearned(q._idx, this.canEarnPoint);
+    // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
+    // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
+    if (this.mode !== 'wrong_review') this._markLearned(q._idx, this.canEarnPoint);
 
     this.curIdx++;
     if (this.curIdx >= this.questions.length) this._finish();

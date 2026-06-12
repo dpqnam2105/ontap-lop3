@@ -187,6 +187,26 @@ const App = {
     const el = document.getElementById('subjectList');
     el.innerHTML = '';
 
+    // Banner "On cau sai": hien khi co cau sai chua sua trong wrong-history.
+    try {
+      if (window.Storage && Storage.getUnresolvedWrong && window.Quiz && Quiz.startWrongReview) {
+        const pending = Storage.getUnresolvedWrong(40);
+        if (pending.length > 0) {
+          const bar = document.createElement('div');
+          bar.className = 'wrong-review-bar';
+          bar.innerHTML = `
+            <span class="wrb-icon">🔁</span>
+            <span class="wrb-text">
+              <b>Ôn lại câu con hay sai</b>
+              <small>${pending.length} câu đang chờ con chinh phục lại</small>
+            </span>
+            <span class="wrb-cta">Ôn ngay ▶</span>`;
+          bar.addEventListener('click', () => Quiz.startWrongReview());
+          el.appendChild(bar);
+        }
+      }
+    } catch (e) { /* khong co du lieu thi bo qua */ }
+
     // Cac mon that (co du lieu) -- anh banner + overlay HTML (ten, tien do, nut vao hoc).
     this.allData.subjects.forEach((s, i) => {
       // Tien do hom nay: so chu de da luyen it nhat 1 cau / tong so chu de.
