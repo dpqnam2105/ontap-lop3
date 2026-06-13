@@ -372,3 +372,37 @@
   .reward-card{min-height:214px}
   .zoom-hint{opacity:1}
 }
+
+/* ===== Sticker trong man Bo suu tap ===== */
+.collection-sticker-header{margin:26px 0 14px}
+.collection-sticker-header h2{font-family:var(--font-display);font-size:1.6rem;color:#0f4f9c}
+.collection-sticker-header p{color:var(--muted);font-weight:750}
+.collection-pack{background:rgba(255,255,255,.85);border:1px solid #dbeeff;border-radius:22px;padding:16px 18px;margin-bottom:18px;box-shadow:var(--shadow2)}
+.cpack-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.cpack-icon{font-size:1.7rem}
+.cpack-titles{flex:1;min-width:0;display:flex;flex-direction:column}
+.cpack-titles b{font-family:var(--font-display);font-weight:900;color:#1d4f8f;font-size:1.08rem}
+.cpack-titles small{color:#5b86b5;font-weight:750;font-size:.83rem}
+.cpack-count{background:#fff;border:1.5px solid #cfe3f8;color:#1d6fd1;border-radius:999px;padding:4px 13px;font-family:var(--font-display);font-weight:900}
+.cpack-count.cpack-done{background:#ffe56b;border-color:#f3cf3a;color:#7a5800}
+.csticker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px}
+.csticker-card{background:#fff;border:2px solid #e8f1fb;border-radius:18px;padding:12px 8px;text-align:center;box-shadow:0 6px 16px rgba(31,122,245,.06)}
+.csticker-card.owned{border-color:rgba(47,199,101,.5);background:linear-gradient(180deg,#f6fff9,#fff)}
+.csticker-card.locked{opacity:.72}
+.csticker-img-wrap{position:relative;display:grid;place-items:center;min-height:104px}
+.csticker-img{width:100px;height:100px;object-fit:contain;border-radius:12px;transition:transform .18s}
+.csticker-card.owned:hover .csticker-img{transform:scale(1.06)}
+.csticker-locked{background:#f1f5fa;border-radius:14px;width:100px;height:100px;margin:0 auto}
+.csticker-lock{font-size:2.2rem;opacity:.5}
+.csticker-emoji{font-size:3rem;line-height:104px}
+.csticker-name{font-family:var(--font-display);font-weight:900;margin-top:8px;font-size:.95rem;color:#234}
+.csticker-card.locked .csticker-name{color:#9aa9bb}
+.cpack-bonus{display:flex;align-items:center;gap:16px;margin-top:16px;padding:14px;background:linear-gradient(120deg,#fff6e0,#fff);border:1.5px dashed #f3cf3a;border-radius:18px}
+.cpack-bonus .csticker-img-wrap{min-height:auto}
+.cpack-bonus .csticker-img{width:88px;height:88px}
+.cpack-bonus-text{font-weight:800;color:#7a5800;line-height:1.5}
+.cpack-bonus-text b{font-family:var(--font-display);font-size:1.1rem;color:#9a6a00}
+@media(max-width:760px){
+  .csticker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .csticker-img,.csticker-locked{width:86px;height:86px}
+}
