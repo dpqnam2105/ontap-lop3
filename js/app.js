@@ -109,7 +109,10 @@ const App = {
       if (window.Rewards && Rewards.renderShop) Rewards.renderShop();
       if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
     }
-    if (name === 'collection') DragonBall._renderCollection();
+    if (name === 'collection') {
+      DragonBall._renderCollection();
+      if (window.Rewards && Rewards.renderCollection) Rewards.renderCollection();
+    }
     window.scrollTo(0, 0);
   },
 
@@ -233,7 +236,7 @@ const App = {
       // Banner mon hoc: uu tien cau truc moi images/subjects/*.webp,
       // chua co thi lui ve anh cu images/subject-{id}.png, lui nua thi fallback card.
       const BANNER_MAP = { 'toan': 'math', 'tieng-viet': 'vietnamese', 'tieng-anh': 'english', 'toan-tieng-anh': 'math-english' };
-      const newSrc = `images/subjects/${BANNER_MAP[s.id] || s.id}-banner.png`;
+      const newSrc = `images/subjects/${BANNER_MAP[s.id] || s.id}-banner.webp`;
       const oldSrc = `images/subject-${s.id}.png`;
 
       const card = document.createElement('div');

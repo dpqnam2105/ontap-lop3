@@ -814,6 +814,74 @@ const Rewards = {
     }
   },
 
+  // Ve khu sticker trong man "Bo suu tap": gom theo tung pack, hien ro
+  // da so huu / chua co, kem anh that va bam-zoom giong trong shop.
+  renderCollection() {
+    const area = document.getElementById('collectionStickerArea');
+    if (!area) return;
+    const data = this._loadData();
+    const owned = new Set(data.inventory || []);
+
+    let html = '<div class="collection-sticker-header"><h2>🎨 Bộ sưu tập Sticker</h2>' +
+      '<p>Những sticker con đã đổi được sẽ sáng lên ở đây!</p></div>';
+
+    const packCard = (item) => {
+      const has = owned.has(item.file);
+      const inner = has
+        ? '<div class="csticker-img-wrap reward-zoomable" data-zoom="images/' + item.file + '" data-zoom-name="' + item.name + '" title="Bấm để xem to">' +
+          this._imgTag('images/' + item.file, null, item.name, 'csticker-img') +
+          '<span class="img-emoji-fb" style="display:none">' + item.icon + '</span>' +
+          '<span class="zoom-hint">🔍</span></div>'
+        : '<div class="csticker-img-wrap csticker-locked"><span class="csticker-lock">🔒</span></div>';
+      return '<div class="csticker-card ' + (has ? 'owned' : 'locked') + '">' +
+        inner +
+        '<div class="csticker-name">' + (has ? item.name : '???') + '</div>' +
+      '</div>';
+    };
+
+    // Cac pack co anh that (Tho Anh Hung, 12 Con Giap, ...)
+    (this.STICKER_PACKS || []).forEach(pack => {
+      if (pack.comingSoon || !pack.items) return;
+      const ownedCount = pack.items.filter(i => owned.has(i.file)).length;
+      const total = pack.items.length;
+      const bonusOwned = pack.bonus && owned.has(pack.bonus.file);
+      html += '<div class="collection-pack">' +
+        '<div class="cpack-head"><span class="cpack-icon">' + pack.icon + '</span>' +
+        '<div class="cpack-titles"><b>' + pack.name + '</b>' +
+        '<small>' + (bonusOwned ? '🏆 Đã sưu tập đủ bộ!' : 'Đã có ' + ownedCount + '/' + total) + '</small></div>' +
+        '<span class="cpack-count ' + (ownedCount === total ? 'cpack-done' : '') + '">' + ownedCount + '/' + total + '</span></div>' +
+        '<div class="csticker-grid">' + pack.items.map(packCard).join('') + '</div>';
+      // Qua hoan thanh bo (bang suu tap) neu da co
+      if (pack.bonus && bonusOwned) {
+        html += '<div class="cpack-bonus">' +
+          '<div class="csticker-img-wrap reward-zoomable" data-zoom="images/' + pack.bonus.file + '" data-zoom-name="' + pack.bonus.name + '" title="Bấm để xem to">' +
+          this._imgTag('images/' + pack.bonus.file, null, pack.bonus.name, 'csticker-img') +
+          '<span class="img-emoji-fb" style="display:none">' + (pack.bonus.icon || '🖼️') + '</span>' +
+          '<span class="zoom-hint">🔍</span></div>' +
+          '<div class="cpack-bonus-text">🎁 Phần thưởng đặc biệt:<br><b>' + pack.bonus.name + '</b></div>' +
+        '</div>';
+      }
+      html += '</div>';
+    });
+
+    // Bo co ban (sticker emoji) — chi hien nhung cai da so huu cho gon.
+    const classicOwned = this.SHOP_ITEMS.filter(i => owned.has(i.file));
+    if (classicOwned.length) {
+      html += '<div class="collection-pack">' +
+        '<div class="cpack-head"><span class="cpack-icon">⭐</span>' +
+        '<div class="cpack-titles"><b>Bộ Cơ Bản</b><small>Đã có ' + classicOwned.length + ' sticker</small></div></div>' +
+        '<div class="csticker-grid">' +
+        classicOwned.map(i => '<div class="csticker-card owned"><div class="csticker-img-wrap"><span class="csticker-emoji">' + i.icon + '</span></div><div class="csticker-name">' + i.name + '</div></div>').join('') +
+        '</div></div>';
+    }
+
+    area.innerHTML = html;
+    // Gan zoom cho sticker da so huu
+    area.querySelectorAll('.reward-zoomable[data-zoom]').forEach(box => {
+      box.addEventListener('click', () => this._openStickerZoom(box.dataset.zoom, box.dataset.zoomName));
+    });
+  },
+
   renderShop() {
     const el = document.getElementById('shopItems');
     if (!el) return;
