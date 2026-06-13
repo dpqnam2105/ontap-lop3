@@ -832,8 +832,10 @@ const Rewards = {
       const isOwned = owned.has(item.file);
       const canBuy = data.stars >= item.cost && !isOwned;
       const visual = useImage
-        ? '<div class="reward-icon reward-icon-img">' + this._imgTag('images/' + item.file, null, item.name, 'reward-sticker-img') +
-          '<span class="img-emoji-fb" style="display:none">' + item.icon + '</span></div>'
+        ? '<div class="reward-icon reward-icon-img reward-zoomable" data-zoom="images/' + item.file + '" data-zoom-name="' + item.name + '" title="Bấm để xem to">' +
+          this._imgTag('images/' + item.file, null, item.name, 'reward-sticker-img') +
+          '<span class="img-emoji-fb" style="display:none">' + item.icon + '</span>' +
+          '<span class="zoom-hint">🔍</span></div>'
         : '<div class="reward-icon">' + item.icon + '</div>';
       return '<div class="reward-card ' + (isOwned ? 'owned' : '') + '">' +
         visual +
@@ -887,6 +889,39 @@ const Rewards = {
     el.querySelectorAll('.reward-buy-btn[data-item]').forEach(btn => {
       btn.addEventListener('click', () => this.buyItem(btn.dataset.item, parseInt(btn.dataset.cost, 10)));
     });
+    el.querySelectorAll('.reward-zoomable[data-zoom]').forEach(box => {
+      box.addEventListener('click', () => this._openStickerZoom(box.dataset.zoom, box.dataset.zoomName));
+    });
+  },
+
+  // Lightbox xem sticker o kich thuoc lon. Tao mot lan, dung lai cho cac lan sau.
+  _openStickerZoom(src, name) {
+    let ov = document.getElementById('stickerZoomOverlay');
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = 'stickerZoomOverlay';
+      ov.className = 'sticker-zoom-overlay';
+      ov.innerHTML =
+        '<div class="sticker-zoom-box">' +
+          '<button class="sticker-zoom-close" aria-label="Đóng">✕</button>' +
+          '<img class="sticker-zoom-img" src="" alt="">' +
+          '<div class="sticker-zoom-name"></div>' +
+        '</div>';
+      document.body.appendChild(ov);
+      // Dong khi bam nen toi hoac nut X
+      ov.addEventListener('click', (e) => {
+        if (e.target === ov || e.target.classList.contains('sticker-zoom-close')) {
+          ov.classList.remove('show');
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') ov.classList.remove('show');
+      });
+    }
+    ov.querySelector('.sticker-zoom-img').src = src;
+    ov.querySelector('.sticker-zoom-img').alt = name || '';
+    ov.querySelector('.sticker-zoom-name').textContent = name || '';
+    ov.classList.add('show');
   },
 
   redeemBadge() {
