@@ -688,13 +688,18 @@ const Rewards = {
     { id: 'block-world', name: 'Thế Giới Khối Hộp', icon: '🧱', comingSoon: true }
   ],
 
-  // Gop tat ca sticker (bo co ban + cac pack) de dung chung cho tui do / meta.
+  // Sticker Rong Than: phan thuong tu bo ngoc rong (DragonBall ghi ID nay vao inventory).
+  // Khai bao o day de man Shop/Bo suu tap/Tui do nhan dien va hien dung ten + anh.
+  SHENRON_STICKER: { id: 'shenron', name: 'Rồng Thần Shenron', icon: '🐉', file: 'sticker_shenron', legacyFile: true },
+
+  // Gop tat ca sticker (bo co ban + cac pack + Rong Than) de dung chung cho tui do / meta.
   _allShopItems() {
     const all = [...this.SHOP_ITEMS];
     (this.STICKER_PACKS || []).forEach(p => {
       if (p.items) all.push(...p.items);
       if (p.bonus) all.push({ id: p.id + '-bonus', name: p.bonus.name, icon: p.bonus.icon || '🖼️', file: p.bonus.file, cost: 0 });
     });
+    all.push(this.SHENRON_STICKER);
     return all;
   },
 
@@ -824,6 +829,21 @@ const Rewards = {
 
     let html = '<div class="collection-sticker-header"><h2>🎨 Bộ sưu tập Sticker</h2>' +
       '<p>Những sticker con đã đổi được sẽ sáng lên ở đây!</p></div>';
+
+    // Rong Than: phan thuong dac biet tu bo ngoc rong, hien rieng len dau neu da co.
+    const sh = this.SHENRON_STICKER;
+    if (owned.has(sh.file)) {
+      html += '<div class="collection-pack collection-pack-special">' +
+        '<div class="cpack-head"><span class="cpack-icon">🐉</span>' +
+        '<div class="cpack-titles"><b>Phần thưởng Ngọc Rồng</b><small>🏆 Sưu tập đủ 7 viên ngọc rồng!</small></div>' +
+        '<span class="cpack-count cpack-done">1/1</span></div>' +
+        '<div class="csticker-grid"><div class="csticker-card owned">' +
+        '<div class="csticker-img-wrap reward-zoomable" data-zoom="images/' + sh.file + '" data-zoom-name="' + sh.name + '" title="Bấm để xem to">' +
+        this._imgTag('images/' + sh.file, null, sh.name, 'csticker-img') +
+        '<span class="img-emoji-fb" style="display:none">' + sh.icon + '</span>' +
+        '<span class="zoom-hint">🔍</span></div>' +
+        '<div class="csticker-name">' + sh.name + '</div></div></div></div>';
+    }
 
     const packCard = (item) => {
       const has = owned.has(item.file);
