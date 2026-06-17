@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-06-10",
+  "lastUpdated": "2026-06-17",
   "grade": "lop2",
   "subject": {
     "id": "tieng-anh",
@@ -1131,6 +1131,51 @@
             "skill": "feelings_school",
             "unit": "school_days",
             "id": "en_school_days_q076"
+          },
+          {
+            "q": "Which subject teaches you to sing songs?",
+            "choices": [
+              "Math",
+              "Science",
+              "P.E.",
+              "Music"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Think of the subject with notes and instruments.",
+            "skill": "school_subjects",
+            "unit": "school_days",
+            "id": "en_school_days_q077"
+          },
+          {
+            "q": "You ___ your homework every day.",
+            "choices": [
+              "does",
+              "do",
+              "doing",
+              "done"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Use the base verb after 'you'.",
+            "skill": "school_grammar",
+            "unit": "school_days",
+            "id": "en_school_days_q078"
+          },
+          {
+            "q": "We write with a ___ in class.",
+            "choices": [
+              "spoon",
+              "pencil",
+              "plate",
+              "shoe"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Which one is used for writing?",
+            "skill": "school_objects",
+            "unit": "school_days",
+            "id": "en_school_days_q079"
           }
         ]
       },
@@ -2242,6 +2287,66 @@
             "skill": "animal_habitats",
             "unit": "wild_animals",
             "id": "en_wild_animals_q068"
+          },
+          {
+            "q": "Which animal is the tallest?",
+            "choices": [
+              "Cat",
+              "Giraffe",
+              "Mouse",
+              "Rabbit"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Think of the animal with a very long neck.",
+            "skill": "animal_facts",
+            "unit": "wild_animals",
+            "id": "en_wild_animals_q078"
+          },
+          {
+            "q": "A baby dog is called a ___.",
+            "choices": [
+              "kitten",
+              "puppy",
+              "calf",
+              "chick"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Match the baby name to a dog.",
+            "skill": "animal_vocab",
+            "unit": "wild_animals",
+            "id": "en_wild_animals_q079"
+          },
+          {
+            "q": "Where do fish live?",
+            "choices": [
+              "In water",
+              "In trees",
+              "In the sky",
+              "Underground"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Where can a fish breathe and swim?",
+            "skill": "animal_habitats",
+            "unit": "wild_animals",
+            "id": "en_wild_animals_q080"
+          },
+          {
+            "q": "The lion has ___ paws.",
+            "choices": [
+              "his",
+              "her",
+              "its",
+              "their"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Use the word for one animal that is not he or she.",
+            "skill": "possessive_adjectives",
+            "unit": "wild_animals",
+            "id": "en_wild_animals_q081"
           }
         ]
       },
@@ -3167,6 +3272,66 @@
             "skill": "weather_vocab",
             "unit": "seasons",
             "id": "en_weather_q064"
+          },
+          {
+            "q": "What do you wear when it rains?",
+            "choices": [
+              "Sunglasses",
+              "A swimsuit",
+              "A raincoat",
+              "Sandals"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Pick what keeps you dry.",
+            "skill": "weather_clothes",
+            "unit": "seasons",
+            "id": "en_weather_q065"
+          },
+          {
+            "q": "In which season do leaves fall?",
+            "choices": [
+              "Autumn",
+              "Summer",
+              "Spring",
+              "Winter"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Another name for this season is 'fall'.",
+            "skill": "seasons_vocab",
+            "unit": "seasons",
+            "id": "en_weather_q066"
+          },
+          {
+            "q": "It ___ snowing outside now.",
+            "choices": [
+              "am",
+              "is",
+              "are",
+              "be"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Use the verb that goes with 'it'.",
+            "skill": "weather_grammar",
+            "unit": "seasons",
+            "id": "en_weather_q067"
+          },
+          {
+            "q": "The sun makes the day ___.",
+            "choices": [
+              "dark",
+              "bright",
+              "cold",
+              "wet"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "What does light from the sun do?",
+            "skill": "weather_vocab",
+            "unit": "seasons",
+            "id": "en_weather_q068"
           }
         ]
       },
@@ -4164,6 +4329,66 @@
             "skill": "city_function",
             "unit": "big_cities",
             "id": "en_big_cities_q070"
+          },
+          {
+            "q": "Where can you borrow books?",
+            "choices": [
+              "A library",
+              "A bakery",
+              "A garage",
+              "A farm"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Find the place full of books to read.",
+            "skill": "city_places",
+            "unit": "big_cities",
+            "id": "en_big_cities_q071"
+          },
+          {
+            "q": "There ___ many cars on the road.",
+            "choices": [
+              "is",
+              "are",
+              "am",
+              "be"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Use the form for more than one car.",
+            "skill": "there_is_there_are",
+            "unit": "big_cities",
+            "id": "en_big_cities_q072"
+          },
+          {
+            "q": "Where do you buy bread?",
+            "choices": [
+              "A bank",
+              "A school",
+              "A park",
+              "A bakery"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Look for the shop that makes bread.",
+            "skill": "city_places",
+            "unit": "big_cities",
+            "id": "en_big_cities_q073"
+          },
+          {
+            "q": "You cross the street at the ___.",
+            "choices": [
+              "roof",
+              "window",
+              "crosswalk",
+              "cloud"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What safe place lets you walk across?",
+            "skill": "city_directions",
+            "unit": "big_cities",
+            "id": "en_big_cities_q074"
           }
         ]
       },
@@ -5106,6 +5331,66 @@
             "skill": "celebration_grammar",
             "unit": "celebrate",
             "id": "en_celebrate_q065"
+          },
+          {
+            "q": "What do you give on a birthday?",
+            "choices": [
+              "A rock",
+              "A shoe",
+              "A present",
+              "A broom"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Think of something wrapped and fun.",
+            "skill": "celebration_vocab",
+            "unit": "celebrate",
+            "id": "en_celebrate_q066"
+          },
+          {
+            "q": "We light ___ on a birthday cake.",
+            "choices": [
+              "lamps",
+              "stars",
+              "fires",
+              "candles"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Small wax sticks you blow out.",
+            "skill": "celebration_vocab",
+            "unit": "celebrate",
+            "id": "en_celebrate_q067"
+          },
+          {
+            "q": "Tet is a holiday in ___.",
+            "choices": [
+              "Vietnam",
+              "France",
+              "Egypt",
+              "Brazil"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Which country celebrates Tet?",
+            "skill": "celebration_culture",
+            "unit": "celebrate",
+            "id": "en_celebrate_q068"
+          },
+          {
+            "q": "She ___ a party last week.",
+            "choices": [
+              "have",
+              "had",
+              "has",
+              "having"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "'Last week' means past time.",
+            "skill": "celebration_grammar",
+            "unit": "celebrate",
+            "id": "en_celebrate_q069"
           }
         ]
       },
@@ -6143,6 +6428,51 @@
             "skill": "en_jobs",
             "unit": "jobs",
             "id": "en_jobs_q072"
+          },
+          {
+            "q": "Who teaches students at school?",
+            "choices": [
+              "A pilot",
+              "A farmer",
+              "A chef",
+              "A teacher"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Who helps you learn in class?",
+            "skill": "en_jobs",
+            "unit": "jobs",
+            "id": "en_jobs_q073"
+          },
+          {
+            "q": "A doctor helps people who are ___.",
+            "choices": [
+              "sick",
+              "happy",
+              "tall",
+              "fast"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Why do we visit a doctor?",
+            "skill": "jobs_vocab_reading",
+            "unit": "jobs",
+            "id": "en_jobs_q074"
+          },
+          {
+            "q": "Who cooks food in a restaurant?",
+            "choices": [
+              "A teacher",
+              "A pilot",
+              "A farmer",
+              "A chef"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Which job works in a kitchen?",
+            "skill": "en_jobs",
+            "unit": "jobs",
+            "id": "en_jobs_q075"
           }
         ]
       },
@@ -7016,6 +7346,66 @@
             "skill": "sports_values",
             "unit": "sports",
             "id": "en_sports_q060"
+          },
+          {
+            "q": "Which sport uses a basket and a ball?",
+            "choices": [
+              "Basketball",
+              "Swimming",
+              "Running",
+              "Chess"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "The name tells you the answer.",
+            "skill": "sports_vocab",
+            "unit": "sports",
+            "id": "en_sports_q061"
+          },
+          {
+            "q": "You ___ in a pool.",
+            "choices": [
+              "jump",
+              "read",
+              "swim",
+              "sleep"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What do you do in water?",
+            "skill": "sports_grammar",
+            "unit": "sports",
+            "id": "en_sports_q062"
+          },
+          {
+            "q": "A team has many ___.",
+            "choices": [
+              "plates",
+              "players",
+              "pencils",
+              "plants"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Who plays the game together?",
+            "skill": "sports_vocab",
+            "unit": "sports",
+            "id": "en_sports_q063"
+          },
+          {
+            "q": "We run fast to win a ___.",
+            "choices": [
+              "book",
+              "cake",
+              "song",
+              "race"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "What do runners try to win?",
+            "skill": "sports_facts",
+            "unit": "sports",
+            "id": "en_sports_q064"
           }
         ]
       },
@@ -7972,6 +8362,66 @@
             "skill": "feelings_inference",
             "unit": "feel_good",
             "id": "en_feel_good_q066"
+          },
+          {
+            "q": "The opposite of happy is ___.",
+            "choices": [
+              "glad",
+              "big",
+              "sad",
+              "fast"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Think of the feeling that is not happy.",
+            "skill": "feelings_antonym",
+            "unit": "feel_good",
+            "id": "en_feel_good_q067"
+          },
+          {
+            "q": "When you are tired, you should ___.",
+            "choices": [
+              "run",
+              "rest",
+              "shout",
+              "jump"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "What helps your body feel better?",
+            "skill": "feelings_wellbeing",
+            "unit": "feel_good",
+            "id": "en_feel_good_q068"
+          },
+          {
+            "q": "I feel ___ when I get a gift.",
+            "choices": [
+              "happy",
+              "angry",
+              "sleepy",
+              "cold"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "How do gifts usually make you feel?",
+            "skill": "feelings_vocab",
+            "unit": "feel_good",
+            "id": "en_feel_good_q069"
+          },
+          {
+            "q": "She is ___ because she lost her toy.",
+            "choices": [
+              "glad",
+              "tall",
+              "warm",
+              "sad"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "How do you feel when you lose something?",
+            "skill": "feelings_inference",
+            "unit": "feel_good",
+            "id": "en_feel_good_q070"
           }
         ]
       },
@@ -8883,6 +9333,66 @@
             "skill": "superlatives",
             "unit": "different",
             "id": "en_different_q063"
+          },
+          {
+            "q": "The opposite of big is ___.",
+            "choices": [
+              "tall",
+              "small",
+              "wide",
+              "long"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Find the word that means not big.",
+            "skill": "adjectives_opposites",
+            "unit": "different",
+            "id": "en_different_q064"
+          },
+          {
+            "q": "An elephant is ___ than a mouse.",
+            "choices": [
+              "smaller",
+              "shorter",
+              "slower",
+              "bigger"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Compare their sizes.",
+            "skill": "comparatives",
+            "unit": "different",
+            "id": "en_different_q065"
+          },
+          {
+            "q": "The opposite of fast is ___.",
+            "choices": [
+              "quick",
+              "slow",
+              "high",
+              "new"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "What is the other speed word?",
+            "skill": "adjectives_opposites",
+            "unit": "different",
+            "id": "en_different_q066"
+          },
+          {
+            "q": "This is the ___ box of all.",
+            "choices": [
+              "big",
+              "bigger",
+              "biggest",
+              "bigs"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Use the word for number one of all.",
+            "skill": "superlatives",
+            "unit": "different",
+            "id": "en_different_q067"
           }
         ]
       },
@@ -9750,6 +10260,66 @@
             "skill": "problem_solving",
             "unit": "solve_problems",
             "id": "en_solve_problems_q060"
+          },
+          {
+            "q": "If you are lost, you should ask for ___.",
+            "choices": [
+              "candy",
+              "help",
+              "a toy",
+              "a nap"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "What do you need when you are lost?",
+            "skill": "problem_solving",
+            "unit": "solve_problems",
+            "id": "en_solve_problems_q061"
+          },
+          {
+            "q": "When you make a mistake, you should ___.",
+            "choices": [
+              "cry",
+              "give up",
+              "hide",
+              "try again"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "What is the best thing to do?",
+            "skill": "problem_values",
+            "unit": "solve_problems",
+            "id": "en_solve_problems_q062"
+          },
+          {
+            "q": "To solve a problem, first you ___.",
+            "choices": [
+              "think",
+              "run",
+              "sleep",
+              "sing"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "What do you do with your brain first?",
+            "skill": "problem_solving",
+            "unit": "solve_problems",
+            "id": "en_solve_problems_q063"
+          },
+          {
+            "q": "If a friend is sad, you can ___ them.",
+            "choices": [
+              "push",
+              "ignore",
+              "help",
+              "scare"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What is the kind thing to do?",
+            "skill": "problem_values",
+            "unit": "solve_problems",
+            "id": "en_solve_problems_q064"
           }
         ]
       },
@@ -10675,6 +11245,66 @@
             "skill": "outdoors_values",
             "unit": "outdoors",
             "id": "en_outdoors_q064"
+          },
+          {
+            "q": "What do you wear on a sunny day outside?",
+            "choices": [
+              "A blanket",
+              "A pillow",
+              "A hat",
+              "A clock"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What protects your head from the sun?",
+            "skill": "outdoors_safety",
+            "unit": "outdoors",
+            "id": "en_outdoors_q065"
+          },
+          {
+            "q": "We plant ___ in the garden.",
+            "choices": [
+              "spoons",
+              "shoes",
+              "seeds",
+              "cups"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What grows into a plant?",
+            "skill": "outdoors_activities",
+            "unit": "outdoors",
+            "id": "en_outdoors_q066"
+          },
+          {
+            "q": "Bees help flowers by ___.",
+            "choices": [
+              "sleeping",
+              "flying away",
+              "making honey",
+              "hiding"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "What sweet thing do bees make?",
+            "skill": "outdoors_science",
+            "unit": "outdoors",
+            "id": "en_outdoors_q067"
+          },
+          {
+            "q": "We ___ a tent when we go camping.",
+            "choices": [
+              "eat",
+              "drink",
+              "read",
+              "set up"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "What do you do with a tent?",
+            "skill": "outdoors_activities",
+            "unit": "outdoors",
+            "id": "en_outdoors_q068"
           }
         ]
       },
@@ -11672,6 +12302,66 @@
             "skill": "en_vocab",
             "unit": "vocab",
             "id": "en_vocab_q070"
+          },
+          {
+            "q": "A place where you sleep is a ___.",
+            "choices": [
+              "bedroom",
+              "kitchen",
+              "garden",
+              "garage"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "The name has the word 'bed' in it.",
+            "skill": "en_vocab",
+            "unit": "vocab",
+            "id": "en_vocab_q071"
+          },
+          {
+            "q": "You use a key to open a ___.",
+            "choices": [
+              "cloud",
+              "river",
+              "star",
+              "door"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "What can a key unlock?",
+            "skill": "en_vocab",
+            "unit": "vocab",
+            "id": "en_vocab_q072"
+          },
+          {
+            "q": "A baby cat is a ___.",
+            "choices": [
+              "puppy",
+              "cub",
+              "foal",
+              "kitten"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Match the baby name to a cat.",
+            "skill": "en_vocab",
+            "unit": "vocab",
+            "id": "en_vocab_q073"
+          },
+          {
+            "q": "We keep milk in the ___.",
+            "choices": [
+              "fridge",
+              "oven",
+              "sink",
+              "shelf"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Which one keeps food cold?",
+            "skill": "en_vocab",
+            "unit": "vocab",
+            "id": "en_vocab_q074"
           }
         ]
       },
@@ -12613,6 +13303,66 @@
             "skill": "multiplication",
             "unit": "numbers",
             "id": "en_numbers_q066"
+          },
+          {
+            "q": "What is 2 x 3?",
+            "choices": [
+              "5",
+              "6",
+              "8",
+              "9"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Add 2 three times: 2+2+2.",
+            "skill": "multiplication",
+            "unit": "numbers",
+            "id": "en_numbers_q067"
+          },
+          {
+            "q": "What number comes after 19?",
+            "choices": [
+              "18",
+              "21",
+              "20",
+              "29"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Count one more than 19.",
+            "skill": "number_sense",
+            "unit": "numbers",
+            "id": "en_numbers_q068"
+          },
+          {
+            "q": "What is 4 x 2?",
+            "choices": [
+              "8",
+              "6",
+              "7",
+              "10"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Add 4 two times: 4+4.",
+            "skill": "multiplication",
+            "unit": "numbers",
+            "id": "en_numbers_q069"
+          },
+          {
+            "q": "The clock shows 3 o'clock. The big hand points to ___.",
+            "choices": [
+              "3",
+              "6",
+              "12",
+              "9"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "At o'clock, the long hand always points up to 12.",
+            "skill": "time",
+            "unit": "numbers",
+            "id": "en_numbers_q070"
           }
         ]
       },
@@ -13484,6 +14234,66 @@
             "skill": "en_gram",
             "unit": "gram",
             "id": "en_gram_q061"
+          },
+          {
+            "q": "___ apple is red.",
+            "choices": [
+              "A",
+              "Two",
+              "Are",
+              "An"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Use 'an' before a vowel sound.",
+            "skill": "en_gram",
+            "unit": "gram",
+            "id": "en_gram_q062"
+          },
+          {
+            "q": "They ___ playing in the park.",
+            "choices": [
+              "is",
+              "am",
+              "are",
+              "be"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Which verb goes with 'they'?",
+            "skill": "en_gram",
+            "unit": "gram",
+            "id": "en_gram_q063"
+          },
+          {
+            "q": "This is ___ book, not yours.",
+            "choices": [
+              "my",
+              "I",
+              "me",
+              "mine's"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Which word shows it belongs to me before a noun?",
+            "skill": "en_gram",
+            "unit": "gram",
+            "id": "en_gram_q064"
+          },
+          {
+            "q": "There are two ___ on the table.",
+            "choices": [
+              "cup",
+              "cupes",
+              "cup's",
+              "cups"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Add 's' to make more than one.",
+            "skill": "en_gram",
+            "unit": "gram",
+            "id": "en_gram_q065"
           }
         ]
       },
@@ -14341,6 +15151,66 @@
             "skill": "en_sent",
             "unit": "sent",
             "id": "en_sent_q051"
+          },
+          {
+            "q": "Read: 'Tom has a red ball.' What color is the ball?",
+            "choices": [
+              "Red",
+              "Blue",
+              "Green",
+              "Yellow"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Find the color word in the sentence.",
+            "skill": "reading_comprehension",
+            "unit": "sent",
+            "id": "en_sent_q061"
+          },
+          {
+            "q": "Read: 'Mai likes cats.' What does Mai like?",
+            "choices": [
+              "Cats",
+              "Dogs",
+              "Fish",
+              "Birds"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Look for what comes after 'likes'.",
+            "skill": "reading_comprehension",
+            "unit": "sent",
+            "id": "en_sent_q062"
+          },
+          {
+            "q": "Which sentence ends correctly?",
+            "choices": [
+              "I am happy",
+              "I am happy.",
+              "i am happy.",
+              "I am happy?"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "A statement starts with a capital and ends with a period.",
+            "skill": "reading_literacy",
+            "unit": "sent",
+            "id": "en_sent_q063"
+          },
+          {
+            "q": "Read: 'The sun is hot.' Is the sun hot or cold?",
+            "choices": [
+              "Cold",
+              "Hot",
+              "Wet",
+              "Dark"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "The sentence tells you directly.",
+            "skill": "reading_inference",
+            "unit": "sent",
+            "id": "en_sent_q064"
           }
         ]
       },
@@ -15254,6 +16124,66 @@
             "skill": "en_start",
             "unit": "start",
             "id": "en_start_q057"
+          },
+          {
+            "q": "What color is the sky on a clear day?",
+            "choices": [
+              "Green",
+              "Brown",
+              "Black",
+              "Blue"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Look up on a sunny day.",
+            "skill": "starters_vocab",
+            "unit": "start",
+            "id": "en_start_q065"
+          },
+          {
+            "q": "How many legs does a dog have?",
+            "choices": [
+              "Four",
+              "Two",
+              "Three",
+              "Six"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Count a dog's legs.",
+            "skill": "starters_vocab",
+            "unit": "start",
+            "id": "en_start_q066"
+          },
+          {
+            "q": "What do you say to greet a friend?",
+            "choices": [
+              "Hello",
+              "Goodbye",
+              "Sorry",
+              "Thanks"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Which word starts a chat?",
+            "skill": "starters_language",
+            "unit": "start",
+            "id": "en_start_q067"
+          },
+          {
+            "q": "A ___ is a fruit.",
+            "choices": [
+              "chair",
+              "table",
+              "apple",
+              "spoon"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Which one can you eat?",
+            "skill": "starters_vocab",
+            "unit": "start",
+            "id": "en_start_q068"
           }
         ]
       }
