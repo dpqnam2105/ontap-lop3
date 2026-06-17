@@ -1,0 +1,49 @@
+{
+  "id": "tieng-anh",
+  "icon": "🌍",
+  "name": "Tiếng Anh",
+  "topics": [
+    {
+      "id": "en_unit-placeholder-01",
+      "name": "Unit 01 (đổi tên theo sách)",
+      "file": "unit-placeholder-01.json",
+      "count": 0
+    },
+    {
+      "id": "en_unit-placeholder-02",
+      "name": "Unit 02 (đổi tên theo sách)",
+      "file": "unit-placeholder-02.json",
+      "count": 0
+    },
+    {
+      "id": "en_unit-placeholder-03",
+      "name": "Unit 03 (đổi tên theo sách)",
+      "file": "unit-placeholder-03.json",
+      "count": 0
+    },
+    {
+      "id": "en_vocabulary",
+      "name": "Vocabulary",
+      "file": "vocabulary.json",
+      "count": 0
+    },
+    {
+      "id": "en_grammar",
+      "name": "Grammar",
+      "file": "grammar.json",
+      "count": 0
+    },
+    {
+      "id": "en_reading",
+      "name": "Reading",
+      "file": "reading.json",
+      "count": 0
+    },
+    {
+      "id": "en_on-tap-tong-hop",
+      "name": "Ôn tập tổng hợp",
+      "file": "on-tap-tong-hop.json",
+      "count": 0
+    }
+  ]
+}

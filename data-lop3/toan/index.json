@@ -1,0 +1,67 @@
+{
+  "id": "toan",
+  "icon": "🔢",
+  "name": "Toán",
+  "topics": [
+    {
+      "id": "toan_so-den-100000",
+      "name": "Số đến 100 000",
+      "file": "so-den-100000.json",
+      "count": 0
+    },
+    {
+      "id": "toan_cong-tru-trong-100000",
+      "name": "Cộng trừ trong phạm vi 100 000",
+      "file": "cong-tru-trong-100000.json",
+      "count": 0
+    },
+    {
+      "id": "toan_bang-nhan-chia",
+      "name": "Bảng nhân, chia (đến 9)",
+      "file": "bang-nhan-chia.json",
+      "count": 0
+    },
+    {
+      "id": "toan_nhan-chia-ngoai-bang",
+      "name": "Nhân, chia ngoài bảng",
+      "file": "nhan-chia-ngoai-bang.json",
+      "count": 0
+    },
+    {
+      "id": "toan_phan-so-don-gian",
+      "name": "Phân số đơn giản",
+      "file": "phan-so-don-gian.json",
+      "count": 0
+    },
+    {
+      "id": "toan_hinh-hoc",
+      "name": "Hình học (điểm, đoạn thẳng, hình)",
+      "file": "hinh-hoc.json",
+      "count": 0
+    },
+    {
+      "id": "toan_do-luong",
+      "name": "Đo lường (độ dài, khối lượng, dung tích)",
+      "file": "do-luong.json",
+      "count": 0
+    },
+    {
+      "id": "toan_xem-dong-ho-thoi-gian",
+      "name": "Xem đồng hồ, thời gian",
+      "file": "xem-dong-ho-thoi-gian.json",
+      "count": 0
+    },
+    {
+      "id": "toan_giai-toan-co-loi-van",
+      "name": "Giải toán có lời văn",
+      "file": "giai-toan-co-loi-van.json",
+      "count": 0
+    },
+    {
+      "id": "toan_on-tap-tong-hop",
+      "name": "Ôn tập tổng hợp",
+      "file": "on-tap-tong-hop.json",
+      "count": 0
+    }
+  ]
+}

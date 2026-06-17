@@ -1,0 +1,49 @@
+{
+  "id": "tieng-viet",
+  "icon": "📖",
+  "name": "Tiếng Việt",
+  "topics": [
+    {
+      "id": "tv_doc-hieu",
+      "name": "Đọc hiểu",
+      "file": "doc-hieu.json",
+      "count": 0
+    },
+    {
+      "id": "tv_tu-vung",
+      "name": "Từ vựng (từ loại, mở rộng vốn từ)",
+      "file": "tu-vung.json",
+      "count": 0
+    },
+    {
+      "id": "tv_chinh-ta",
+      "name": "Chính tả",
+      "file": "chinh-ta.json",
+      "count": 0
+    },
+    {
+      "id": "tv_cau-va-dau-cau",
+      "name": "Câu và dấu câu",
+      "file": "cau-va-dau-cau.json",
+      "count": 0
+    },
+    {
+      "id": "tv_luyen-tu-va-cau",
+      "name": "Luyện từ và câu",
+      "file": "luyen-tu-va-cau.json",
+      "count": 0
+    },
+    {
+      "id": "tv_tap-lam-van",
+      "name": "Tập làm văn",
+      "file": "tap-lam-van.json",
+      "count": 0
+    },
+    {
+      "id": "tv_on-tap-tong-hop",
+      "name": "Ôn tập tổng hợp",
+      "file": "on-tap-tong-hop.json",
+      "count": 0
+    }
+  ]
+}

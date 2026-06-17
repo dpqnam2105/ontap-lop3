@@ -1,0 +1,35 @@
+{
+  "version": "3.0",
+  "grade": "lop3",
+  "lastUpdated": "2026-06-17",
+  "subjects": [
+    {
+      "id": "toan",
+      "icon": "🔢",
+      "name": "Toán",
+      "dir": "toan",
+      "index": "toan/index.json"
+    },
+    {
+      "id": "tieng-viet",
+      "icon": "📖",
+      "name": "Tiếng Việt",
+      "dir": "tieng-viet",
+      "index": "tieng-viet/index.json"
+    },
+    {
+      "id": "tieng-anh",
+      "icon": "🌍",
+      "name": "Tiếng Anh",
+      "dir": "tieng-anh",
+      "index": "tieng-anh/index.json"
+    },
+    {
+      "id": "toan-tieng-anh",
+      "icon": "🧮",
+      "name": "Toán Tiếng Anh",
+      "dir": "toan-tieng-anh",
+      "index": "toan-tieng-anh/index.json"
+    }
+  ]
+}
