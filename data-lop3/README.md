@@ -46,9 +46,15 @@ Câu hỏi thêm vào mảng `questions`, format **giống hệt lớp 2** để
   "hint": "...",
   "skill": "...",
   "unit": "phan-so-don-gian",
+  "source": "suutam",
   "id": "toan_phan-so-don-gian_q001"
 }
 ```
+
+`source` cho biet nguon goc cau hoi, de kiem tra/audit:
+- `"suutam"` — suu tam tu sach, de, nguon ngoai
+- `"ai"` — do AI tao (soi ky truoc khi bat)
+- `"goc"` — tu soan tay
 
 ## Quy ước
 
@@ -56,6 +62,8 @@ Câu hỏi thêm vào mảng `questions`, format **giống hệt lớp 2** để
   Tiếng Anh=`en`, Toán Tiếng Anh=`tta`.
 - **Tách file theo chủ đề**: sửa chủ đề nào, GitHub chỉ hiện diff file đó.
 - **CHANGELOG**: mỗi lần thêm câu, ghi 1 dòng vào `CHANGELOG.md`.
+- **`source`**: gắn nhãn nguồn mỗi câu (`suutam`/`ai`/`goc`) để audit. Lọc câu AI
+  để soi riêng bằng 1 lệnh, không phải tách file.
 - **`count` trong index.json**: cập nhật lại sau mỗi lần thêm câu.
 
 ## Phạm vi chương trình (GDPT 2018, Lớp 3)
