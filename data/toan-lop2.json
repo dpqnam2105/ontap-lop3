@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-06-10",
+  "lastUpdated": "2026-06-18",
   "grade": "lop2",
   "subject": {
     "id": "toan",
@@ -1924,6 +1924,246 @@
             "hint": "So sánh chữ số hàng trăm trước; số nào có hàng trăm lớn hơn thì lớn hơn",
             "difficulty": 2,
             "id": "toan_so_q132"
+          },
+          {
+            "q": "Số gồm 4 chục 5 đơn vị viết là?",
+            "choices": [
+              "54",
+              "405",
+              "450",
+              "45"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "4 chục là 40, thêm 5 đơn vị.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q133"
+          },
+          {
+            "q": "Số gồm 5 chục và 4 đơn vị viết là?",
+            "choices": [
+              "45",
+              "54",
+              "504",
+              "540"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "5 chục là 50, thêm 4 đơn vị.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q134"
+          },
+          {
+            "q": "Số gồm 3 chục và 27 đơn vị viết là?",
+            "choices": [
+              "327",
+              "37",
+              "30",
+              "57"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "3 chục là 30, cộng thêm 27.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q135"
+          },
+          {
+            "q": "Số 45 có mấy chục và mấy đơn vị?",
+            "choices": [
+              "4 chục 5 đơn vị",
+              "5 chục 4 đơn vị",
+              "45 chục",
+              "4 đơn vị 5 chục"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Chữ số bên trái là hàng chục.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q136"
+          },
+          {
+            "q": "Số 306 đọc là?",
+            "choices": [
+              "Ba mươi sáu",
+              "Ba trăm sáu mươi",
+              "Ba trăm linh sáu",
+              "Ba trăm sáu"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Hàng chục là 0 nên đọc 'linh'.",
+            "skill": "read_number",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q137"
+          },
+          {
+            "q": "Số gồm 5 trăm 5 đơn vị viết là?",
+            "choices": [
+              "505",
+              "5005",
+              "550",
+              "55"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Hàng chục không có thì viết 0.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q138"
+          },
+          {
+            "q": "Số có ba chữ số khác nhau lớn nhất là?",
+            "choices": [
+              "987",
+              "999",
+              "897",
+              "798"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Xếp chữ số lớn nhất ở hàng trăm: 9, 8, 7.",
+            "skill": "number_sense",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q139"
+          },
+          {
+            "q": "Số có ba chữ số khác nhau bé nhất là?",
+            "choices": [
+              "123",
+              "100",
+              "102",
+              "231"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Hàng trăm nhỏ nhất là 1, hàng chục là 0, đơn vị khác 0 nhỏ nhất là 2.",
+            "skill": "number_sense",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q140"
+          },
+          {
+            "q": "Từ 3 chữ số 4, 6, 8 viết được bao nhiêu số có 2 chữ số khác nhau?",
+            "choices": [
+              "3",
+              "9",
+              "12",
+              "6"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Mỗi chữ số đứng hàng chục ghép với 2 chữ số còn lại.",
+            "skill": "counting",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q141"
+          },
+          {
+            "q": "Viết 456 thành tổng trăm, chục, đơn vị?",
+            "choices": [
+              "450+6",
+              "400+56",
+              "4+5+6",
+              "400+50+6"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Tách theo từng hàng.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q142"
+          },
+          {
+            "q": "Viết 306 thành tổng trăm, chục, đơn vị?",
+            "choices": [
+              "30+6",
+              "300+60",
+              "300+6",
+              "3+0+6"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Hàng chục bằng 0 nên bỏ qua.",
+            "skill": "place_value",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q143"
+          },
+          {
+            "q": "Số liền trước của số lớn nhất có ba chữ số là?",
+            "choices": [
+              "1000",
+              "997",
+              "999",
+              "998"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Số lớn nhất có ba chữ số là 999, lùi 1 đơn vị.",
+            "skill": "number_sense",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q144"
+          },
+          {
+            "q": "Sắp xếp từ bé đến lớn: 325, 532, 253?",
+            "choices": [
+              "325, 253, 532",
+              "253, 325, 532",
+              "532, 325, 253",
+              "253, 532, 325"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "So sánh hàng trăm trước.",
+            "skill": "ordering",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q145"
+          },
+          {
+            "q": "Trong dãy 426, 246, 642, 624, 462, 264 số bé nhất là?",
+            "choices": [
+              "264",
+              "426",
+              "246",
+              "642"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "So sánh hàng trăm: số nào có hàng trăm nhỏ nhất.",
+            "skill": "ordering",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q146"
+          },
+          {
+            "q": "Trong dãy 426, 246, 642, 624, 462, 264 số lớn nhất là?",
+            "choices": [
+              "624",
+              "462",
+              "426",
+              "642"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "So sánh hàng trăm: số nào có hàng trăm lớn nhất.",
+            "skill": "ordering",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_so_q147"
           }
         ]
       },
@@ -3613,6 +3853,150 @@
             "hint": "Muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết",
             "difficulty": 2,
             "id": "toan_cong_q123"
+          },
+          {
+            "q": "Điền số: ... + 35 = 71",
+            "choices": [
+              "26",
+              "46",
+              "36",
+              "106"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Lấy 71 trừ đi 35.",
+            "skill": "missing_addend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q124"
+          },
+          {
+            "q": "Điền số: 40 + ... = 91",
+            "choices": [
+              "41",
+              "61",
+              "51",
+              "131"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Lấy 91 trừ đi 40.",
+            "skill": "missing_addend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q125"
+          },
+          {
+            "q": "Tìm x: x + 215 = 315",
+            "choices": [
+              "100",
+              "530",
+              "200",
+              "115"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 315 trừ đi 215.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q126"
+          },
+          {
+            "q": "Tìm x: x - 192 = 301",
+            "choices": [
+              "109",
+              "593",
+              "209",
+              "493"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Số bị trừ = hiệu cộng số trừ.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q127"
+          },
+          {
+            "q": "Đặt tính: 235 + 378 = ?",
+            "choices": [
+              "603",
+              "613",
+              "513",
+              "623"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Cộng từ hàng đơn vị, nhớ sang hàng chục.",
+            "skill": "addition",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q128"
+          },
+          {
+            "q": "Đặt tính: 456 + 397 = ?",
+            "choices": [
+              "843",
+              "853",
+              "753",
+              "863"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Cộng có nhớ ở hàng đơn vị và hàng chục.",
+            "skill": "addition",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q129"
+          },
+          {
+            "q": "Tìm x: x + 12 = 24 + 12",
+            "choices": [
+              "24",
+              "36",
+              "12",
+              "48"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Tính vế phải trước, rồi tìm x.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q130"
+          },
+          {
+            "q": "Tổng hai số là 999, một số là 362. Số kia là?",
+            "choices": [
+              "637",
+              "647",
+              "737",
+              "627"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy tổng trừ số đã biết.",
+            "skill": "missing_addend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q131"
+          },
+          {
+            "q": "Tìm một số biết tổng của số đó với 42 là 100?",
+            "choices": [
+              "68",
+              "48",
+              "142",
+              "58"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Lấy 100 trừ 42.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_cong_q132"
           }
         ]
       },
@@ -5210,6 +5594,150 @@
             "hint": "Muốn tìm số trừ, lấy số bị trừ trừ đi hiệu",
             "difficulty": 3,
             "id": "toan_tru_q116"
+          },
+          {
+            "q": "Điền số: 45 - ... = 18",
+            "choices": [
+              "27",
+              "37",
+              "17",
+              "63"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 45 trừ đi 18.",
+            "skill": "missing_subtrahend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q117"
+          },
+          {
+            "q": "Điền số: 100 - ... = 39",
+            "choices": [
+              "71",
+              "51",
+              "139",
+              "61"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Lấy 100 trừ đi 39.",
+            "skill": "missing_subtrahend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q118"
+          },
+          {
+            "q": "Điền số: ... - 27 = 72",
+            "choices": [
+              "45",
+              "89",
+              "99",
+              "109"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Số bị trừ = hiệu cộng số trừ.",
+            "skill": "find_minuend",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q119"
+          },
+          {
+            "q": "Tìm x: 700 - x = 404",
+            "choices": [
+              "306",
+              "404",
+              "296",
+              "1104"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Số trừ = số bị trừ trừ hiệu.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q120"
+          },
+          {
+            "q": "Đặt tính: 984 - 299 = ?",
+            "choices": [
+              "685",
+              "695",
+              "785",
+              "675"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Trừ có nhớ.",
+            "skill": "subtraction",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q121"
+          },
+          {
+            "q": "Đặt tính: 506 - 188 = ?",
+            "choices": [
+              "328",
+              "318",
+              "218",
+              "308"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Trừ có nhớ qua hàng chục.",
+            "skill": "subtraction",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q122"
+          },
+          {
+            "q": "Tìm một số biết hiệu của 94 với số đó bằng 49?",
+            "choices": [
+              "45",
+              "55",
+              "35",
+              "143"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 94 trừ 49.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q123"
+          },
+          {
+            "q": "Tìm x: x - 44 = 13 + 14",
+            "choices": [
+              "27",
+              "71",
+              "57",
+              "81"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Tính vế phải trước: 13+14, rồi tìm x.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q124"
+          },
+          {
+            "q": "Tìm x: 38 - x = 9 + 9",
+            "choices": [
+              "18",
+              "20",
+              "28",
+              "56"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Tính 9+9 trước, rồi tìm x.",
+            "skill": "find_x",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tru_q125"
           }
         ]
       },
@@ -10345,6 +10873,198 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_nhan_q344"
+          },
+          {
+            "q": "Tính: 5 x 8 + 5 x 2",
+            "choices": [
+              "40",
+              "45",
+              "60",
+              "50"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Có thể tính 5 x (8+2).",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q345"
+          },
+          {
+            "q": "Tính: 5 x 8 - 11",
+            "choices": [
+              "39",
+              "29",
+              "19",
+              "51"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Nhân trước, trừ sau.",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q346"
+          },
+          {
+            "q": "Tính: 2 x 2 x 7",
+            "choices": [
+              "14",
+              "21",
+              "56",
+              "28"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Nhân lần lượt từ trái sang phải.",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q347"
+          },
+          {
+            "q": "Tính: 4 x 6 + 16",
+            "choices": [
+              "30",
+              "42",
+              "40",
+              "50"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Nhân trước, cộng sau.",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q348"
+          },
+          {
+            "q": "Kết quả của 5 x 7 + 350 là?",
+            "choices": [
+              "385",
+              "371",
+              "403",
+              "481"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Nhân 5x7 trước rồi cộng 350.",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q349"
+          },
+          {
+            "q": "Thay tổng 2+2+2+2+2 thành tích?",
+            "choices": [
+              "2 x 4",
+              "5 x 5",
+              "2 x 5",
+              "2 + 5"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Đếm số lần xuất hiện của 2.",
+            "skill": "repeated_addition",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q350"
+          },
+          {
+            "q": "Thay tổng 4+4+4+4 thành tích?",
+            "choices": [
+              "4 x 3",
+              "4 x 4",
+              "4 x 5",
+              "4 + 4"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Có mấy số 4 cộng với nhau?",
+            "skill": "repeated_addition",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q351"
+          },
+          {
+            "q": "Tính: 6 x 7 - 36",
+            "choices": [
+              "16",
+              "42",
+              "6",
+              "78"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Nhân trước, trừ sau.",
+            "skill": "multiply_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q352"
+          },
+          {
+            "q": "Đặt tính: 23 x 2",
+            "choices": [
+              "43",
+              "26",
+              "46",
+              "48"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Nhân từng chữ số với 2.",
+            "skill": "multiply",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q353"
+          },
+          {
+            "q": "Đặt tính: 14 x 4",
+            "choices": [
+              "44",
+              "58",
+              "48",
+              "56"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "4 nhân 4 là 16, nhớ 1.",
+            "skill": "multiply",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q354"
+          },
+          {
+            "q": "Đặt tính: 25 x 5",
+            "choices": [
+              "105",
+              "135",
+              "125",
+              "120"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "5 nhân 5 là 25, viết 5 nhớ 2.",
+            "skill": "multiply",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q355"
+          },
+          {
+            "q": "Tính: 4 x 4 : 2",
+            "choices": [
+              "16",
+              "8",
+              "2",
+              "3"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Nhân trước rồi chia.",
+            "skill": "multiply_divide",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_nhan_q356"
           }
         ]
       },
@@ -11847,6 +12567,134 @@
             "hint": "Tính phép chia trước, rồi cộng kết quả với 45",
             "difficulty": 2,
             "id": "toan_chia_q110"
+          },
+          {
+            "q": "Tính: 3 x 6 : 3",
+            "choices": [
+              "9",
+              "6",
+              "3",
+              "18"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Nhân trước, chia sau.",
+            "skill": "divide_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q111"
+          },
+          {
+            "q": "Tính: 40 : 4 : 5",
+            "choices": [
+              "2",
+              "10",
+              "8",
+              "5"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Chia lần lượt từ trái sang phải.",
+            "skill": "divide_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q112"
+          },
+          {
+            "q": "Tính: 20 : 4 x 6",
+            "choices": [
+              "26",
+              "24",
+              "30",
+              "14"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Chia trước, nhân sau.",
+            "skill": "divide_expr",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q113"
+          },
+          {
+            "q": "Tính nhẩm: 600 : 2",
+            "choices": [
+              "200",
+              "300",
+              "320",
+              "30"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Chia 6 trăm cho 2.",
+            "skill": "mental_divide",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q114"
+          },
+          {
+            "q": "Tính nhẩm: 900 : 3",
+            "choices": [
+              "300",
+              "30",
+              "330",
+              "270"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Chia 9 trăm cho 3.",
+            "skill": "mental_divide",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q115"
+          },
+          {
+            "q": "Có 15 lít dầu đựng đều trong 3 thùng. Mỗi thùng có bao nhiêu lít?",
+            "choices": [
+              "3 lít",
+              "12 lít",
+              "5 lít",
+              "18 lít"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Lấy 15 chia cho 3.",
+            "skill": "divide_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q116"
+          },
+          {
+            "q": "Có 15 lít dầu chia mỗi thùng 5 lít. Chia được mấy thùng?",
+            "choices": [
+              "5 thùng",
+              "10 thùng",
+              "3 thùng",
+              "15 thùng"
+            ],
+            "a": 2,
+            "difficulty": 1,
+            "hint": "Lấy 15 chia cho 5.",
+            "skill": "divide_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q117"
+          },
+          {
+            "q": "Tính nhẩm: 200 x 3",
+            "choices": [
+              "500",
+              "600",
+              "60",
+              "230"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Nhân 2 trăm với 3.",
+            "skill": "mental_multiply",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_chia_q118"
           }
         ]
       },
@@ -15603,6 +16451,118 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_dovi_q249"
+          },
+          {
+            "q": "Chu vi tứ giác có các cạnh 105cm, 110cm, 113cm, 160cm là?",
+            "choices": [
+              "478 cm",
+              "488 cm",
+              "498 cm",
+              "388 cm"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Cộng độ dài cả bốn cạnh.",
+            "skill": "perimeter",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q250"
+          },
+          {
+            "q": "Tính: 5 giờ + 2 giờ",
+            "choices": [
+              "7 giờ",
+              "3 giờ",
+              "10 giờ",
+              "52 giờ"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Cộng số giờ với nhau.",
+            "skill": "time_calc",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q251"
+          },
+          {
+            "q": "Tính: 19 giờ - 7 giờ",
+            "choices": [
+              "26 giờ",
+              "12 giờ",
+              "13 giờ",
+              "11 giờ"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Trừ số giờ.",
+            "skill": "time_calc",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q252"
+          },
+          {
+            "q": "Một sợi dây dài 100mm cắt thành hai đoạn, đoạn thứ nhất dài 48mm. Đoạn còn lại dài?",
+            "choices": [
+              "48 mm",
+              "52 mm",
+              "62 mm",
+              "148 mm"
+            ],
+            "a": 1,
+            "difficulty": 2,
+            "hint": "Lấy 100 trừ 48.",
+            "skill": "length_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q253"
+          },
+          {
+            "q": "Một thùng có 45 lít dầu, rót ra 17 lít rồi rót tiếp 14 lít. Còn lại bao nhiêu lít?",
+            "choices": [
+              "17 lít",
+              "14 lít",
+              "31 lít",
+              "24 lít"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Trừ lần lượt hai lần rót.",
+            "skill": "volume_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q254"
+          },
+          {
+            "q": "Mỗi thùng đựng 4 lít dầu. 6 thùng đựng bao nhiêu lít?",
+            "choices": [
+              "24 lít",
+              "10 lít",
+              "20 lít",
+              "46 lít"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Lấy 4 nhân 6.",
+            "skill": "volume_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q255"
+          },
+          {
+            "q": "Mỗi thùng có 5 lít dầu. 3 thùng có bao nhiêu lít?",
+            "choices": [
+              "15 lít",
+              "8 lít",
+              "10 lít",
+              "53 lít"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Lấy 5 nhân 3.",
+            "skill": "volume_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_dovi_q256"
           }
         ]
       },
@@ -16417,6 +17377,54 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_hinh_q062"
+          },
+          {
+            "q": "Hình tam giác có mấy cạnh?",
+            "choices": [
+              "4 cạnh",
+              "2 cạnh",
+              "5 cạnh",
+              "3 cạnh"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Đếm số cạnh của tam giác.",
+            "skill": "shapes",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_hinh_q063"
+          },
+          {
+            "q": "Hình tứ giác có mấy cạnh?",
+            "choices": [
+              "3 cạnh",
+              "4 cạnh",
+              "5 cạnh",
+              "2 cạnh"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Tiền tố 'tứ' nghĩa là bốn.",
+            "skill": "shapes",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_hinh_q064"
+          },
+          {
+            "q": "Hình vuông và hình chữ nhật cũng là hình gì?",
+            "choices": [
+              "Tam giác",
+              "Tròn",
+              "Ngũ giác",
+              "Tứ giác"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Đếm số cạnh của chúng.",
+            "skill": "shapes",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_hinh_q065"
           }
         ]
       },
@@ -21332,6 +22340,182 @@
             "source": "sgk_toan_lop2_tap2_inspired",
             "curriculum": "ket_noi_tri_thuc_toan_lop2_tap2",
             "id": "toan_loivan_q320"
+          },
+          {
+            "q": "Một bến xe có 25 ô tô rời bến, còn lại 12 ô tô. Lúc đầu có bao nhiêu ô tô?",
+            "choices": [
+              "13 ô tô",
+              "27 ô tô",
+              "37 ô tô",
+              "35 ô tô"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Cộng số đã rời và số còn lại.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q321"
+          },
+          {
+            "q": "Cứ 4 cái bánh đóng một hộp. Cần bao nhiêu bánh để đóng 8 hộp?",
+            "choices": [
+              "32 cái",
+              "12 cái",
+              "24 cái",
+              "48 cái"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 4 nhân 8.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q322"
+          },
+          {
+            "q": "Khối lớp Hai có 537 học sinh, khối lớp Ba ít hơn 20 học sinh. Khối lớp Ba có?",
+            "choices": [
+              "557 học sinh",
+              "527 học sinh",
+              "517 học sinh",
+              "507 học sinh"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Lấy 537 trừ 20.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q323"
+          },
+          {
+            "q": "Hai gói kẹo có 235 cái, gói chanh có 120 cái. Gói dừa có bao nhiêu cái?",
+            "choices": [
+              "105 cái",
+              "125 cái",
+              "355 cái",
+              "115 cái"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Lấy tổng trừ gói chanh.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q324"
+          },
+          {
+            "q": "Mẹ Đào gấp 6 lần tuổi Đào. Đào 5 tuổi thì mẹ bao nhiêu tuổi?",
+            "choices": [
+              "11 tuổi",
+              "35 tuổi",
+              "25 tuổi",
+              "30 tuổi"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Lấy 5 nhân 6.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q325"
+          },
+          {
+            "q": "An có 10 hộp bi, mỗi hộp 5 viên. An có tất cả bao nhiêu viên bi?",
+            "choices": [
+              "15 viên",
+              "55 viên",
+              "2 viên",
+              "50 viên"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Lấy 10 nhân 5.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q326"
+          },
+          {
+            "q": "Trên xe còn 40 khách sau khi 5 người xuống và 3 người lên. Trước khi dừng có bao nhiêu khách?",
+            "choices": [
+              "38 khách",
+              "42 khách",
+              "48 khách",
+              "40 khách"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Làm ngược: cộng lại người xuống, trừ người lên.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q327"
+          },
+          {
+            "q": "Thùng 1 chứa 132 lít, thùng 2 chứa ít hơn 23 lít. Thùng 2 chứa bao nhiêu lít?",
+            "choices": [
+              "109 lít",
+              "155 lít",
+              "119 lít",
+              "99 lít"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Lấy 132 trừ 23.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q328"
+          },
+          {
+            "q": "Bao thứ nhất nặng 46kg, kém bao thứ hai 15kg. Bao thứ hai nặng bao nhiêu kg?",
+            "choices": [
+              "31 kg",
+              "51 kg",
+              "71 kg",
+              "61 kg"
+            ],
+            "a": 3,
+            "difficulty": 2,
+            "hint": "Bao hai nặng hơn, nên cộng thêm 15.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q329"
+          },
+          {
+            "q": "Sân có 14 con gà, gà mái nhiều hơn gà trống 2 con. Có bao nhiêu gà mái?",
+            "choices": [
+              "8 con",
+              "6 con",
+              "7 con",
+              "9 con"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Lấy (14+2) rồi chia 2.",
+            "skill": "word_problem",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q330"
+          },
+          {
+            "q": "Tùng, Toàn, Nam có 8 quả bóng. Nam có 3 quả, Tùng ít nhất, Toàn nhiều nhất. Tùng có mấy quả?",
+            "choices": [
+              "1 quả",
+              "2 quả",
+              "4 quả",
+              "3 quả"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Nam 3 quả, còn 5 quả cho Tùng và Toàn, Tùng ít nhất.",
+            "skill": "logic_word",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_loivan_q331"
           }
         ]
       },
@@ -22257,6 +23441,182 @@
             "hint": "Muốn tìm số hạng, lấy tổng trừ đi số hạng đã biết",
             "difficulty": 2,
             "id": "toan_tuyduy_q067"
+          },
+          {
+            "q": "Số tiếp theo của dãy 3, 6, 9, 12, ...?",
+            "choices": [
+              "13",
+              "15",
+              "14",
+              "16"
+            ],
+            "a": 1,
+            "difficulty": 1,
+            "hint": "Mỗi số hơn số trước 3 đơn vị.",
+            "skill": "sequence",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q068"
+          },
+          {
+            "q": "Số tiếp theo của dãy 2, 4, 8, 16, ...?",
+            "choices": [
+              "32",
+              "18",
+              "24",
+              "20"
+            ],
+            "a": 0,
+            "difficulty": 2,
+            "hint": "Mỗi số gấp đôi số trước.",
+            "skill": "sequence",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q069"
+          },
+          {
+            "q": "Số tiếp theo của dãy 5, 8, 11, ...?",
+            "choices": [
+              "14",
+              "13",
+              "15",
+              "12"
+            ],
+            "a": 0,
+            "difficulty": 1,
+            "hint": "Mỗi số hơn số trước 3 đơn vị.",
+            "skill": "sequence",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q070"
+          },
+          {
+            "q": "Số tiếp theo của dãy 20, 16, 12, ...?",
+            "choices": [
+              "10",
+              "9",
+              "14",
+              "8"
+            ],
+            "a": 3,
+            "difficulty": 1,
+            "hint": "Mỗi số kém số trước 4 đơn vị.",
+            "skill": "sequence",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q071"
+          },
+          {
+            "q": "Số tiếp theo của dãy 112, 223, 334, 445, ...?",
+            "choices": [
+              "556",
+              "546",
+              "566",
+              "456"
+            ],
+            "a": 0,
+            "difficulty": 3,
+            "hint": "Mỗi số hơn số trước 111 đơn vị.",
+            "skill": "sequence",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q072"
+          },
+          {
+            "q": "Tính nhanh: 11 + 28 + 24 + 16 + 12 + 9",
+            "choices": [
+              "90",
+              "110",
+              "99",
+              "100"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Ghép các cặp tròn chục: (28+12), (24+16), (11+9).",
+            "skill": "fast_calc",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q073"
+          },
+          {
+            "q": "Tính nhanh: 75 - 13 - 17 + 25",
+            "choices": [
+              "60",
+              "80",
+              "70",
+              "50"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Ghép 75+25 và 13+17 rồi trừ.",
+            "skill": "fast_calc",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q074"
+          },
+          {
+            "q": "Tìm số biết khi thêm 2 đơn vị vào số đó được số nhỏ hơn 13. Số lớn nhất thỏa mãn?",
+            "choices": [
+              "11",
+              "10",
+              "12",
+              "9"
+            ],
+            "a": 1,
+            "difficulty": 3,
+            "hint": "Số cộng 2 phải nhỏ hơn 13.",
+            "skill": "logic",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q075"
+          },
+          {
+            "q": "Tìm hai số có tổng bằng 4 và tích bằng 0?",
+            "choices": [
+              "1 và 3",
+              "2 và 2",
+              "0 và 4",
+              "4 và 4"
+            ],
+            "a": 2,
+            "difficulty": 3,
+            "hint": "Tích bằng 0 thì một số phải là 0.",
+            "skill": "logic",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q076"
+          },
+          {
+            "q": "Tìm số biết số đó trừ 1 rồi trừ tiếp 3 thì được 5?",
+            "choices": [
+              "8",
+              "6",
+              "9",
+              "4"
+            ],
+            "a": 2,
+            "difficulty": 2,
+            "hint": "Làm ngược: 5 cộng 3 cộng 1.",
+            "skill": "logic",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q077"
+          },
+          {
+            "q": "Hiện tổng tuổi ông và cháu là 78. Sau 4 năm nữa tổng tuổi hai người là?",
+            "choices": [
+              "82",
+              "78",
+              "74",
+              "86"
+            ],
+            "a": 3,
+            "difficulty": 3,
+            "hint": "Mỗi người thêm 4 tuổi, tổng thêm 8.",
+            "skill": "logic",
+            "source": "15-DE-TOAN-ON-HE-LOP-2-LEN-LOP-3.pdf",
+            "curriculum": "grade2_to_grade3_summer_review",
+            "id": "toan_tuyduy_q078"
           }
         ]
       },
