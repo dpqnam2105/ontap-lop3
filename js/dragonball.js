@@ -29,11 +29,14 @@ const DragonBall = {
   },
 
   _getStars() {
-    const candidates = ['stars', 'score', 'totalStars', 'profileStars'];
-    for (const key of candidates) {
-      const n = parseInt(Storage.get ? Storage.get(key, 0) : localStorage.getItem(key), 10);
-      if (!Number.isNaN(n) && n > 0) return n;
-    }
+    // Doc sao tu cung mot nguon voi Rewards (Storage / khoBaiTap_v1)
+    // de ngoc rong va shop sticker luon dem sao giong nhau.
+    try {
+      if (typeof Storage !== 'undefined' && Storage.load) {
+        const n = parseInt(Storage.load().stars, 10);
+        if (!Number.isNaN(n)) return n;
+      }
+    } catch (e) { /* roi xuong fallback */ }
     const mirror = document.getElementById('profileStarMirror');
     const fromDom = mirror ? parseInt(mirror.textContent, 10) : 0;
     return Number.isNaN(fromDom) ? 0 : fromDom;
@@ -41,8 +44,16 @@ const DragonBall = {
 
   _setStars(value) {
     const next = Math.max(0, parseInt(value, 10) || 0);
-    if (Storage.set) Storage.set('stars', next);
-    else localStorage.setItem('stars', String(next));
+    // Ghi sao vao Storage (khoBaiTap_v1) - nguon chuan dung chung voi Rewards.
+    try {
+      if (typeof Storage !== 'undefined' && Storage.load && Storage.save) {
+        const data = Storage.load();
+        data.stars = next;
+        Storage.save(data);
+      } else if (Storage && Storage.set) {
+        Storage.set('stars', next);
+      }
+    } catch (e) { /* bo qua */ }
     const ids = ['profileStarMirror', 'shopStarCount'];
     ids.forEach(id => {
       const el = document.getElementById(id);
@@ -183,12 +194,14 @@ const DragonBall = {
 
   _addShenronToInventory() {
     try {
-      const key = 'inventory';
-      const raw = Storage.get ? Storage.get(key, []) : JSON.parse(localStorage.getItem(key) || '[]');
-      const inventory = Array.isArray(raw) ? raw : [];
-      if (!inventory.includes('sticker_shenron')) inventory.push('sticker_shenron');
-      if (Storage.set) Storage.set(key, inventory);
-      else localStorage.setItem(key, JSON.stringify(inventory));
+      if (typeof Storage !== 'undefined' && Storage.load && Storage.save) {
+        const data = Storage.load();
+        const inventory = Array.isArray(data.inventory) ? data.inventory : [];
+        if (!inventory.includes('sticker_shenron')) inventory.push('sticker_shenron');
+        data.inventory = inventory;
+        Storage.save(data);
+        if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
+      }
     } catch (e) {
       localStorage.setItem('rabbit_shenron_inventory_fallback', '1');
     }

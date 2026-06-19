@@ -646,6 +646,10 @@ const Rewards = {
     { id: 'crown', name: 'Vương miện', icon: '👑', file: 'sticker_crown.png', cost: 150 }
   ],
 
+  // An bo Co Ban khoi Shop va Bo Suu Tap (chi giu ngoc rong + 2 bo moi).
+  // Van giu SHOP_ITEMS de sticker co ban da mua truoc day con hien trong Tui do.
+  HIDE_CLASSIC_PACK: true,
+
   // Cac bo suu tap sticker theo chu de. Duong dan file tinh tu thu muc images/.
   // Pack co comingSoon:true se hien khoa "Sap ra mat" — khi co anh, chi can
   // them danh sach items vao day la pack tu mo.
@@ -690,7 +694,7 @@ const Rewards = {
 
   // Sticker Rong Than: phan thuong tu bo ngoc rong (DragonBall ghi ID nay vao inventory).
   // Khai bao o day de man Shop/Bo suu tap/Tui do nhan dien va hien dung ten + anh.
-  SHENRON_STICKER: { id: 'shenron', name: 'Rồng Thần Shenron', icon: '🐉', file: 'sticker_shenron', legacyFile: true },
+  SHENRON_STICKER: { id: 'shenron', name: 'Rồng Thần Shenron', icon: '🐉', file: 'sticker_shenron', img: 'rewards/dragonballs/sticker_shenron.png', legacyFile: true },
 
   // Gop tat ca sticker (bo co ban + cac pack + Rong Than) de dung chung cho tui do / meta.
   _allShopItems() {
@@ -838,8 +842,8 @@ const Rewards = {
         '<div class="cpack-titles"><b>Phần thưởng Ngọc Rồng</b><small>🏆 Sưu tập đủ 7 viên ngọc rồng!</small></div>' +
         '<span class="cpack-count cpack-done">1/1</span></div>' +
         '<div class="csticker-grid"><div class="csticker-card owned">' +
-        '<div class="csticker-img-wrap reward-zoomable" data-zoom="images/' + sh.file + '" data-zoom-name="' + sh.name + '" title="Bấm để xem to">' +
-        this._imgTag('images/' + sh.file, null, sh.name, 'csticker-img') +
+        '<div class="csticker-img-wrap reward-zoomable" data-zoom="images/' + sh.img + '" data-zoom-name="' + sh.name + '" title="Bấm để xem to">' +
+        this._imgTag('images/' + sh.img, 'images/' + sh.file + '.png', sh.name, 'csticker-img') +
         '<span class="img-emoji-fb" style="display:none">' + sh.icon + '</span>' +
         '<span class="zoom-hint">🔍</span></div>' +
         '<div class="csticker-name">' + sh.name + '</div></div></div></div>';
@@ -884,8 +888,8 @@ const Rewards = {
       html += '</div>';
     });
 
-    // Bo co ban (sticker emoji) — chi hien nhung cai da so huu cho gon.
-    const classicOwned = this.SHOP_ITEMS.filter(i => owned.has(i.file));
+    // Bo co ban (sticker emoji) - chi hien cai da so huu cho gon, va chi khi khong an.
+    const classicOwned = this.HIDE_CLASSIC_PACK ? [] : this.SHOP_ITEMS.filter(i => owned.has(i.file));
     if (classicOwned.length) {
       html += '<div class="collection-pack">' +
         '<div class="cpack-head"><span class="cpack-icon">⭐</span>' +
@@ -962,8 +966,8 @@ const Rewards = {
 
     if (soonHtml) html += '<div class="packs-soon-row">' + soonHtml + '</div>';
 
-    // Bo co ban (sticker emoji cu) — van giu cho be nao da mua.
-    const classicItems = this.SHOP_ITEMS.filter(matchFilter);
+    // Bo co ban (sticker emoji cu) - chi hien neu khong an.
+    const classicItems = this.HIDE_CLASSIC_PACK ? [] : this.SHOP_ITEMS.filter(matchFilter);
     if (classicItems.length) {
       html += '<div class="sticker-pack">' +
         '<div class="pack-head"><span class="pack-icon">⭐</span>' +
