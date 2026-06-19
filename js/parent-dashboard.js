@@ -121,6 +121,36 @@ const ParentDashboard = {
     return String(topicId).replace(/_/g, ' ');
   },
 
+  // Map mon hoc -> icon + mau + ten chuan. Dung chung cho ca tom tat va nhat ky.
+  // Uu tien doc icon that tu App.allData; khong co thi dung bang mac dinh.
+  _subjectMeta(rawName) {
+    const name = String(rawName || '').trim();
+    const lower = name.toLowerCase();
+    // Bang mac dinh theo id chuan cua 4 mon
+    const table = {
+      'toan-tieng-anh': { id: 'toan-tieng-anh', name: 'Toán Tiếng Anh', icon: '🧮', color: '#7c3aed' },
+      'toan': { id: 'toan', name: 'Toán', icon: '🔢', color: '#1d72f3' },
+      'tieng-viet': { id: 'tieng-viet', name: 'Tiếng Việt', icon: '📖', color: '#e8590c' },
+      'tieng-anh': { id: 'tieng-anh', name: 'Tiếng Anh', icon: '🌍', color: '#16a34a' }
+    };
+    // Nhan dien id tu ten hien thi (luu y: kiem "toan tieng anh" TRUOC "toan")
+    let key = null;
+    if (lower.indexOf('toán tiếng anh') !== -1 || lower.indexOf('toan tieng anh') !== -1) key = 'toan-tieng-anh';
+    else if (lower.indexOf('tiếng việt') !== -1 || lower.indexOf('tieng viet') !== -1) key = 'tieng-viet';
+    else if (lower.indexOf('tiếng anh') !== -1 || lower.indexOf('tieng anh') !== -1) key = 'tieng-anh';
+    else if (lower.indexOf('toán') !== -1 || lower.indexOf('toan') !== -1) key = 'toan';
+
+    const base = key ? table[key] : { id: lower, name: name || 'Khác', icon: '📘', color: '#64748b' };
+    // Neu App.allData co icon that thi dung icon do cho dung voi man hinh chinh
+    try {
+      if (window.App && App.allData && App.allData.subjects) {
+        const s = App.allData.subjects.find(x => x.id === base.id || (x.name || '').trim() === name);
+        if (s && s.icon) return { ...base, icon: s.icon, name: s.name || base.name };
+      }
+    } catch (e) { /* dung base */ }
+    return base;
+  },
+
   _renderSummary(logs) {
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
@@ -144,17 +174,33 @@ const ParentDashboard = {
     const unresolved = Storage.getUnresolvedWrong(5);
     const wrongByTopic = Storage.getWrongByTopic(3);
 
-    const subjectNames = { toan: 'Toán', 'tieng-viet': 'Tiếng Việt', 'tieng-anh': 'Tiếng Anh' };
+    const subjectNames = { toan: 'Toán', 'tieng-viet': 'Tiếng Việt', 'tieng-anh': 'Tiếng Anh', 'toan-tieng-anh': 'Toán Tiếng Anh' };
     const weakestSubject = Object.entries(wrongBySubject)
       .sort((a, b) => b[1].wrongCount - a[1].wrongCount)[0];
     const repeatWrong = mostWrong.filter(q => q.wrongCount >= 2);
 
+    // Cau tom tat bang loi - de phu huynh doc 1 cau la nam duoc
+    const childName = (document.getElementById('parentNameSelect') && document.getElementById('parentNameSelect').value)
+      ? document.getElementById('parentNameSelect').value
+      : (App.playerName || 'Bé');
+    const dayCount = new Set(recent.map(l => {
+      const d = new Date(l.time);
+      return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    })).size;
+    let plain = `Tuần này, <b>${this._escape(childName)}</b> học <b>${dayCount}</b> ngày, tổng <b>${totalMin}</b> phút, làm đúng <b>${accuracy}%</b> số câu.`;
+    if (weakestSubject) {
+      plain += ` Môn cần chú ý: <b>${subjectNames[weakestSubject[0]] || weakestSubject[0]}</b>.`;
+    } else if (totalQ > 0 && accuracy >= 90) {
+      plain += ` Bé đang học rất đều, không có môn nào đáng lo. 👏`;
+    }
+
     let html = `
+      <div class="plain-summary">${plain}</div>
       <div class="summary-grid">
         <div class="summary-card">
           <div class="summary-card-icon">📚</div>
           <div class="summary-card-value">${totalSessions}</div>
-          <div class="summary-card-label">Lượt học</div>
+          <div class="summary-card-label">Số buổi học</div>
         </div>
         <div class="summary-card">
           <div class="summary-card-icon">⏱️</div>
@@ -164,12 +210,12 @@ const ParentDashboard = {
         <div class="summary-card">
           <div class="summary-card-icon">✅</div>
           <div class="summary-card-value">${totalCorrect}/${totalQ}</div>
-          <div class="summary-card-label">Câu đúng</div>
+          <div class="summary-card-label">Câu làm đúng</div>
         </div>
         <div class="summary-card">
           <div class="summary-card-icon">🎯</div>
           <div class="summary-card-value">${accuracy}%</div>
-          <div class="summary-card-label">Tỷ lệ đúng</div>
+          <div class="summary-card-label">Làm đúng</div>
         </div>
       </div>`;
 
@@ -247,11 +293,29 @@ const ParentDashboard = {
       .resolved-tag{color:#16a34a;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0}
       .unresolved-tag{color:#dc2626;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0}
       .topic-tag{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:999px;padding:2px 10px;font-size:.82rem;margin:2px;font-weight:700}
+      .plain-summary{background:#f0f9ff;border:1px solid #bae6fd;border-radius:14px;padding:14px 16px;margin-bottom:14px;font-size:.95rem;line-height:1.6;color:#0c4a6e}
+      .plain-summary b{color:#075985}
+      /* Nhom theo mon trong nhat ky */
+      .subj-group{border:1px solid #e6eef9;border-radius:14px;margin:8px 0;overflow:hidden;background:#fff}
+      .subj-head{display:flex;align-items:center;gap:10px;padding:13px 14px;cursor:pointer;border-left:5px solid var(--subj-color,#94a3b8);transition:background .12s;-webkit-tap-highlight-color:transparent;flex-wrap:wrap}
+      .subj-head:hover,.subj-head:active{background:#f4f8ff}
+      .subj-icon{font-size:1.4rem;flex-shrink:0}
+      .subj-name{font-weight:800;color:#1e293b;flex-shrink:0}
+      .subj-stat{color:#475569;font-size:.9rem;flex:1;min-width:120px}
+      .subj-stat b{font-weight:800}
+      .subj-expand{display:flex;align-items:center;gap:5px;background:#eef4ff;color:#1769e0;border-radius:999px;padding:7px 14px;font-weight:800;font-size:.84rem;white-space:nowrap;flex-shrink:0;margin-left:auto}
+      .subj-caret{transition:transform .2s;display:inline-block}
+      .subj-body{display:none;padding:0 14px 10px 14px}
+      .subj-group.subj-open .subj-body{display:block}
+      .subj-group.subj-open .subj-caret{transform:rotate(180deg)}
+      .subj-group.subj-open .subj-expand-text::after{content:''}
+      .good{color:#16a34a}.warning{color:#d97706}.bad{color:#dc2626}
     `;
     document.head.appendChild(style);
   },
 
   _renderDailyLog(logs) {
+    this._ensureInsightStyles();
     const byDate = {};
     logs.forEach(log => {
       const d = new Date(log.time);
@@ -267,7 +331,6 @@ const ParentDashboard = {
 
     const sortedDates = Object.keys(byDate).sort().reverse();
     let html = '';
-    const MAX_VISIBLE = 5; // moi ngay chi hien toi da 5 luot, con lai an sau nut "xem them"
     const MAX_DAYS = 7;    // mac dinh chi hien 7 ngay gan nhat, ngay cu hon an sau nut
 
     sortedDates.forEach((dateKey, dayIdx) => {
@@ -298,29 +361,62 @@ const ParentDashboard = {
       </div>`;
       html += `<div class="day-body">`;
 
-      dayLogs.forEach((log, idx) => {
-        const ratio = log.total > 0 ? log.correct / log.total : 0;
-        const ratioClass = ratio >= 0.8 ? 'good' : (ratio >= 0.5 ? 'warning' : 'bad');
-
-        const time = new Date(log.time);
-        const timeStr = String(time.getHours()).padStart(2, '0') + ':' + String(time.getMinutes()).padStart(2, '0');
-        const durationMin = Math.round((log.duration || 0) / 60);
-        const durStr = durationMin > 0 ? ' (' + durationMin + ' phút)' : '';
-
-        html += `
-          <div class="log-entry ${ratioClass} ${idx >= MAX_VISIBLE ? 'log-overflow hidden' : ''}">
-            <div class="log-time">${timeStr}${durStr}</div>
-            <div class="log-subject">
-              ${this._escape(log.subject)}
-              <span class="topic">/ ${this._escape(log.topic)}</span>
-            </div>
-            <div class="log-score ${ratioClass}">${log.correct}/${log.total}</div>
-          </div>`;
+      // Gom cac luot trong ngay theo MON
+      const bySubject = {};
+      dayLogs.forEach(log => {
+        const meta = this._subjectMeta(log.subject);
+        if (!bySubject[meta.id]) bySubject[meta.id] = { meta, logs: [] };
+        bySubject[meta.id].logs.push(log);
       });
 
-      if (dayLogs.length > MAX_VISIBLE) {
-        html += `<button type="button" class="log-more-btn" data-more="${dateKey}">Xem thêm ${dayLogs.length - MAX_VISIBLE} lượt ▾</button>`;
-      }
+      // Sap xep mon theo so cau lam nhieu nhat
+      const subjectGroups = Object.values(bySubject).sort((a, b) => {
+        const qa = a.logs.reduce((s, l) => s + (l.total || 0), 0);
+        const qb = b.logs.reduce((s, l) => s + (l.total || 0), 0);
+        return qb - qa;
+      });
+
+      subjectGroups.forEach((grp, gi) => {
+        const sLogs = grp.logs;
+        const sQ = sLogs.reduce((s, l) => s + (l.total || 0), 0);
+        const sC = sLogs.reduce((s, l) => s + (l.correct || 0), 0);
+        const sMin = Math.round(sLogs.reduce((s, l) => s + (l.duration || 0), 0) / 60);
+        const sRatio = sQ > 0 ? sC / sQ : 0;
+        const sClass = sRatio >= 0.8 ? 'good' : (sRatio >= 0.5 ? 'warning' : 'bad');
+        const groupId = dateKey + '__' + grp.meta.id;
+        const minStr = sMin > 0 ? ` · ${sMin} phút` : '';
+
+        // Ca dong mon la 1 nut bam duoc; co chu "Xem N luot" + mui ten
+        html += `
+          <div class="subj-group" data-subjgroup="${groupId}">
+            <div class="subj-head" data-subjtoggle="${groupId}" style="--subj-color:${grp.meta.color}">
+              <span class="subj-icon">${grp.meta.icon}</span>
+              <span class="subj-name">${this._escape(grp.meta.name)}</span>
+              <span class="subj-stat"><b class="${sClass}">${sC}/${sQ}</b> câu${minStr}</span>
+              <span class="subj-expand"><span class="subj-expand-text">Xem ${sLogs.length} lượt</span><span class="subj-caret">▾</span></span>
+            </div>
+            <div class="subj-body">`;
+
+        sLogs.forEach(log => {
+          const ratio = log.total > 0 ? log.correct / log.total : 0;
+          const ratioClass = ratio >= 0.8 ? 'good' : (ratio >= 0.5 ? 'warning' : 'bad');
+          const time = new Date(log.time);
+          const timeStr = String(time.getHours()).padStart(2, '0') + ':' + String(time.getMinutes()).padStart(2, '0');
+          const durationMin = Math.round((log.duration || 0) / 60);
+          const durStr = durationMin > 0 ? ' (' + durationMin + ' phút)' : '';
+          html += `
+            <div class="log-entry ${ratioClass}">
+              <div class="log-time">${timeStr}${durStr}</div>
+              <div class="log-subject">
+                <span class="topic">${this._escape(log.topic)}</span>
+              </div>
+              <div class="log-score ${ratioClass}">${log.correct}/${log.total}</div>
+            </div>`;
+        });
+
+        html += `</div></div>`;
+      });
+
       html += `</div></div>`;
     });
 
@@ -346,11 +442,10 @@ const ParentDashboard = {
     document.querySelectorAll('.day-header[data-toggle]').forEach(h => {
       h.addEventListener('click', () => h.closest('.day-group').classList.toggle('day-collapsed'));
     });
-    // Nut "xem them" cua ngay dai
-    document.querySelectorAll('.log-more-btn[data-more]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.day-body').querySelectorAll('.log-overflow').forEach(el => el.classList.remove('hidden'));
-        btn.remove();
+    // Bam ca dong MON de xoe / thu gon cac luot ben trong
+    document.querySelectorAll('.subj-head[data-subjtoggle]').forEach(head => {
+      head.addEventListener('click', () => {
+        head.closest('.subj-group').classList.toggle('subj-open');
       });
     });
   },
@@ -435,11 +530,14 @@ const ParentDashboard = {
 
     const maxSubject = Math.max(1, ...Object.values(subjectMap));
     const subjectHtml = Object.keys(subjectMap).length
-      ? Object.entries(subjectMap).sort((a, b) => b[1] - a[1]).map(([subject, count]) => `
+      ? Object.entries(subjectMap).sort((a, b) => b[1] - a[1]).map(([subject, count]) => {
+        const meta = this._subjectMeta(subject);
+        return `
         <div class="detail-subject-row">
-          <div><b>${this._escape(subject)}</b><span>${count} câu</span></div>
-          <div class="detail-bar"><i style="width:${Math.round(count / maxSubject * 100)}%"></i></div>
-        </div>`).join('')
+          <div><b>${meta.icon} ${this._escape(meta.name)}</b><span>${count} câu</span></div>
+          <div class="detail-bar"><i style="width:${Math.round(count / maxSubject * 100)}%;background:${meta.color}"></i></div>
+        </div>`;
+      }).join('')
       : '<div class="no-log">Chưa có dữ liệu môn học.</div>';
 
     const d = new Date(dateKey);
@@ -481,7 +579,7 @@ const ParentDashboard = {
         </div>
 
         <div class="detail-kpi-grid">
-          <div class="summary-card"><div class="summary-card-icon">📚</div><div class="summary-card-value">${totalSessions}</div><div class="summary-card-label">Lượt học</div></div>
+          <div class="summary-card"><div class="summary-card-icon">📚</div><div class="summary-card-value">${totalSessions}</div><div class="summary-card-label">Số buổi học</div></div>
           <div class="summary-card"><div class="summary-card-icon">⏱️</div><div class="summary-card-value">${this._formatSec(totalSec)}</div><div class="summary-card-label">Thời gian</div></div>
           <div class="summary-card"><div class="summary-card-icon">✅</div><div class="summary-card-value">${totalCorrect}/${totalQ}</div><div class="summary-card-label">Câu đúng</div></div>
           <div class="summary-card"><div class="summary-card-icon">🧠</div><div class="summary-card-value">${avgSec}s</div><div class="summary-card-label">TB/câu</div></div>
