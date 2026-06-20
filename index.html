@@ -28,41 +28,34 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20260620g" />
-  <link rel="stylesheet" href="mobile-compact.css?v=20260620g" />
+  <link rel="stylesheet" href="style.css?v=20260620i" />
+  <link rel="stylesheet" href="mobile-compact.css?v=20260620i" />
   <style>
-    /* Hero banner trang chu - anh moi co ti le ~2.3:1, kem thanh dieu huong
-       o duoi nen dung "contain" + chieu cao khop ti le de KHONG cat mat */
+    /* Hero banner trang chu - dung aspect-ratio dung ti le anh (~2.3:1) de
+       banner LUON keo sat 2 mep (full width) MA KHONG can cat/zoom anh,
+       bat ke man rong hay hep. */
     .home-hero-banner{
       width:100%;
-      max-width:1100px;       /* tranh ti le khung bi keo det qua xa so voi anh tren man rong */
-      max-height:480px;       /* khop voi ti le anh moi (~2.3:1) de hien tron ven */
-      margin:0 auto 18px auto;
+      aspect-ratio: 2.3 / 1;
+      margin:0 0 18px 0;
       border-radius:22px;
       overflow:hidden;
       box-shadow:0 6px 22px rgba(30,64,120,.14);
       line-height:0;
       background:#bfe6ff; /* mau nen tam thoi truoc khi anh tai xong */
-      display:flex;
-      align-items:center;
-      justify-content:center;
     }
     .home-hero-banner img{
       width:100%;
-      height:auto;
-      max-height:480px;
-      object-fit:contain;     /* hien TRON VEN anh, khong cat mat thanh dieu huong duoi */
+      height:100%;
+      object-fit:cover;
+      object-position:center;
       display:block;
     }
     @media (max-width:600px){
       .home-hero-banner{
-        max-width:100%;
-        max-height:220px;
+        aspect-ratio: 1.9 / 1; /* hep hon mot chut tren mobile cho gon */
         border-radius:16px;
         margin-bottom:14px;
-      }
-      .home-hero-banner img{
-        max-height:220px;
       }
     }
   </style>
@@ -111,7 +104,7 @@
       <main class="main">
         <section class="screen active" id="screenRegister">
           <div class="home-hero-banner">
-            <img src="images/hero-banner.jpg?v=20260620h" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
+            <img src="images/hero-banner.jpg?v=20260620i" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
                  onerror="this.closest('.home-hero-banner').style.display='none';" />
           </div>
           <div class="welcome-grid">
@@ -340,13 +333,13 @@
     </div>
   </div>
 
-  <script src="js/storage.js?v=20260620g"></script>
-  <script src="js/learning-engine.js?v=20260620g"></script>
-  <script src="js/api.js?v=20260620g"></script>
-  <script src="js/quiz.js?v=20260620g"></script>
-  <script src="js/dragonball.js?v=20260620g"></script>
-  <script src="js/parent-dashboard.js?v=20260620g"></script>
-  <script src="js/app.js?v=20260620g"></script>
-  <script src="js/guest-flow-guard.js?v=20260620g"></script>
+  <script src="js/storage.js?v=20260620i"></script>
+  <script src="js/learning-engine.js?v=20260620i"></script>
+  <script src="js/api.js?v=20260620i"></script>
+  <script src="js/quiz.js?v=20260620i"></script>
+  <script src="js/dragonball.js?v=20260620i"></script>
+  <script src="js/parent-dashboard.js?v=20260620i"></script>
+  <script src="js/app.js?v=20260620i"></script>
+  <script src="js/guest-flow-guard.js?v=20260620i"></script>
 </body>
 </html>
