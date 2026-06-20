@@ -908,6 +908,7 @@ const Rewards = {
 
   renderShop() {
     const el = document.getElementById('shopItems');
+    console.log('[DEBUG renderShop] goi luc', new Date().toISOString(), '| el ton tai:', !!el, '| stack:', new Error().stack.split('\n').slice(1,3).join(' <- '));
     if (!el) return;
     const data = this._loadData();
     const filterEl = document.getElementById('shopFilter');
@@ -977,7 +978,9 @@ const Rewards = {
     }
 
     if (!html) html = '<div class="shop-empty">Chưa có phần thưởng phù hợp bộ lọc này.</div>';
+    console.log('[DEBUG renderShop] sap gan innerHTML, do dai html =', html.length);
     el.innerHTML = html;
+    console.log('[DEBUG renderShop] DA GAN XONG, el.innerHTML.length ngay sau =', el.innerHTML.length);
     el.querySelectorAll('.reward-buy-btn[data-item]').forEach(btn => {
       btn.addEventListener('click', () => this.buyItem(btn.dataset.item, parseInt(btn.dataset.cost, 10)));
     });
