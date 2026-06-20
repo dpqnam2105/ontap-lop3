@@ -104,14 +104,19 @@ const App = {
     screen.classList.add('active');
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
     if (name === 'shop') {
+      console.log('[DEBUG showScreen-shop] bat dau, window.Rewards ton tai:', !!window.Rewards, '| Rewards.renderShop ton tai:', !!(window.Rewards && window.Rewards.renderShop));
       // Reset bo loc ve "Tat ca" moi lan VAO man Shop, vi trinh duyet co the
       // giu lai gia tri dropdown cu qua F5, khien pack bi loc mat hoan toan.
       const shopFilterEl = document.getElementById('shopFilter');
+      console.log('[DEBUG showScreen-shop] shopFilterEl ton tai:', !!shopFilterEl);
       if (shopFilterEl) shopFilterEl.value = 'all';
       DragonBall._renderDragonShop();
+      console.log('[DEBUG showScreen-shop] sap goi Rewards.renderShop() truc tiep...');
       // Gian sticker doi sao: bi rot khoi luong mo shop khi tach module, goi lai o day.
       if (window.Rewards && Rewards.renderShop) Rewards.renderShop();
+      console.log('[DEBUG showScreen-shop] da goi xong renderShop truc tiep, sap goi updateUI...');
       if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
+      console.log('[DEBUG showScreen-shop] HET nhanh shop');
     }
     if (name === 'collection') {
       DragonBall._renderCollection();
