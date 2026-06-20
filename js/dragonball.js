@@ -150,7 +150,7 @@ const DragonBall = {
             ${this._renderDragonBallIcon(n, true)}
             <div class="dragon-shop-name">${this._dragonName(n)}</div>
             <div class="dragon-shop-price">${owned ? 'Đã có' : prices[n] + ' ⭐'}</div>
-            <button type="button" class="reward-buy-btn dragon-buy-btn" data-dragon="${n}" ${owned || !canBuy ? 'disabled' : ''}>${owned ? 'Đã mua' : 'Mua'}</button>
+            <button type="button" class="reward-buy-btn dragon-buy-btn" data-dragon="${n}" ${owned || !canBuy ? 'disabled' : ''}>${owned ? 'Đã có' : 'Đổi'}</button>
           </div>`;
         }).join('')}
       </div>`;
@@ -176,7 +176,7 @@ const DragonBall = {
     this._setStars(stars - price);
     collection.push(n);
     this._saveDragonCollection(collection);
-    alert('Đã mua ' + this._dragonName(n) + '! 🐉');
+    alert('Đã đổi ' + this._dragonName(n) + '! 🐉');
     this._renderHomeWidgets();
     this._renderDragonShop();
     this._renderCollection();
