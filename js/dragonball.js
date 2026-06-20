@@ -230,3 +230,4 @@ const DragonBall = {
     }[c]));
   }
 };
+window.DragonBall = DragonBall; // dam bao cac noi kiem window.DragonBall hoat dong dung
