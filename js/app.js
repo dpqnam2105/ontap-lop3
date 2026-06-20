@@ -104,6 +104,10 @@ const App = {
     screen.classList.add('active');
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
     if (name === 'shop') {
+      // Reset bo loc ve "Tat ca" moi lan VAO man Shop, vi trinh duyet co the
+      // giu lai gia tri dropdown cu qua F5, khien pack bi loc mat hoan toan.
+      const shopFilterEl = document.getElementById('shopFilter');
+      if (shopFilterEl) shopFilterEl.value = 'all';
       DragonBall._renderDragonShop();
       // Gian sticker doi sao: bi rot khoi luong mo shop khi tach module, goi lai o day.
       if (window.Rewards && Rewards.renderShop) Rewards.renderShop();
