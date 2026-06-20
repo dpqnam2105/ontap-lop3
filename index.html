@@ -28,15 +28,17 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20260620i" />
-  <link rel="stylesheet" href="mobile-compact.css?v=20260620i" />
+  <link rel="stylesheet" href="style.css?v=20260620final" />
+  <link rel="stylesheet" href="mobile-compact.css?v=20260620final" />
   <style>
     /* Hero banner trang chu - dung aspect-ratio dung ti le anh (~2.3:1) de
        banner LUON keo sat 2 mep (full width) MA KHONG can cat/zoom anh,
        bat ke man rong hay hep. */
+    /* Hero banner trang chu - anh moi da duoc xuat dung ti le det (3.66:1)
+       nen chi can dat dung aspect-ratio, khong phai lech object-position. */
     .home-hero-banner{
       width:100%;
-      aspect-ratio: 2.3 / 1;
+      aspect-ratio: 3.66 / 1;
       margin:0 0 18px 0;
       border-radius:22px;
       overflow:hidden;
@@ -53,7 +55,7 @@
     }
     @media (max-width:600px){
       .home-hero-banner{
-        aspect-ratio: 1.9 / 1; /* hep hon mot chut tren mobile cho gon */
+        aspect-ratio: 3.2 / 1; /* hep hon mot chut tren mobile cho gon */
         border-radius:16px;
         margin-bottom:14px;
       }
@@ -104,7 +106,7 @@
       <main class="main">
         <section class="screen active" id="screenRegister">
           <div class="home-hero-banner">
-            <img src="images/hero-banner.jpg?v=20260620i" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
+            <img src="images/hero-banner.jpg?v=20260620final" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
                  onerror="this.closest('.home-hero-banner').style.display='none';" />
           </div>
           <div class="welcome-grid">
@@ -333,13 +335,13 @@
     </div>
   </div>
 
-  <script src="js/storage.js?v=20260620i"></script>
-  <script src="js/learning-engine.js?v=20260620i"></script>
-  <script src="js/api.js?v=20260620i"></script>
-  <script src="js/quiz.js?v=20260620i"></script>
-  <script src="js/dragonball.js?v=20260620i"></script>
-  <script src="js/parent-dashboard.js?v=20260620i"></script>
-  <script src="js/app.js?v=20260620i"></script>
-  <script src="js/guest-flow-guard.js?v=20260620i"></script>
+  <script src="js/storage.js?v=20260620final"></script>
+  <script src="js/learning-engine.js?v=20260620final"></script>
+  <script src="js/api.js?v=20260620final"></script>
+  <script src="js/quiz.js?v=20260620final"></script>
+  <script src="js/dragonball.js?v=20260620final"></script>
+  <script src="js/parent-dashboard.js?v=20260620final"></script>
+  <script src="js/app.js?v=20260620final"></script>
+  <script src="js/guest-flow-guard.js?v=20260620final"></script>
 </body>
 </html>
