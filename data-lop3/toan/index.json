@@ -17,9 +17,9 @@
     },
     {
       "id": "toan_bang-nhan-chia",
-      "name": "Bảng nhân, chia (đến 9)",
+      "name": "Bảng nhân, chia (4, 6, 7)",
       "file": "bang-nhan-chia.json",
-      "count": 0
+      "count": 112
     },
     {
       "id": "toan_nhan-chia-ngoai-bang",
