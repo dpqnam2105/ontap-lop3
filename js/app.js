@@ -7,6 +7,10 @@ const App = {
   playerName: '',
   currentGrade: 'lop2',
 
+  // Các lớp đã mở. Thêm 'lop4' vào đây khi có dữ liệu.
+  OPEN_GRADES: ['lop2', 'lop3'],
+  _dataByGrade: {},
+
   PIN_KEY: 'khoBaiTap_parentPin',
   DEFAULT_PIN: '1234',
   leaderboardGrade: 'lop2',
@@ -34,7 +38,7 @@ const App = {
   },
 
   async _loadData() {
-    this.allData = await API.getAllData();
+    this.allData = await API.getAllData('lop2');
 
     // BUG #5 FIX: normalize question bank để engine hoạt động đúng
     if (this.allData && window.LearningEngine && window.LearningEngine.normalizeQuestionBank) {
@@ -45,6 +49,8 @@ const App = {
         console.warn('LearningEngine.normalizeQuestionBank failed:', e);
       }
     }
+
+    this._dataByGrade['lop2'] = this.allData;
 
     if (this.playerName && this.allData) this._renderSubjects();
     if (this.playerName) this._showWelcome(this.playerName);
@@ -63,7 +69,7 @@ const App = {
 
     if (gradeId !== 'lop2') {
       const gradeLabel = gradeId.replace('lop', 'Lớp ');
-      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🔒</div><b>' + gradeLabel + ' sắp mở</b><span>Hiện tại web đang ưu tiên lớp 2. Khi mở lớp mới, bảng xếp hạng sẽ hiện riêng tại đây.</span></div>';
+      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🏆</div><b>Bảng xếp hạng ' + gradeLabel + '</b><span>Điểm của con vẫn được ghi lại đầy đủ. Bảng xếp hạng riêng cho ' + gradeLabel + ' sẽ bật khi có thêm nhiều bạn cùng tham gia nhé!</span></div>';
       return;
     }
 
@@ -155,8 +161,23 @@ const App = {
     }
   },
 
+  /** Nạp (và nhớ) dữ liệu của 1 lớp */
+  async _loadGradeData(gradeId) {
+    if (this._dataByGrade[gradeId]) return this._dataByGrade[gradeId];
+    let data = await API.getAllData(gradeId);
+    if (data && window.LearningEngine && window.LearningEngine.normalizeQuestionBank) {
+      try {
+        data = window.LearningEngine.normalizeQuestionBank(data);
+      } catch (e) {
+        console.warn('normalizeQuestionBank failed cho ' + gradeId + ':', e);
+      }
+    }
+    this._dataByGrade[gradeId] = data;
+    return data;
+  },
+
   /** Xử lý khi bấm chọn lớp */
-  _chooseGrade(gradeId) {
+  async _chooseGrade(gradeId) {
     const gradeNames = {
       'lop2': 'Lớp 2',
       'lop3': 'Lớp 3',
@@ -166,34 +187,42 @@ const App = {
 
     const gradeName = gradeNames[gradeId] || 'Lớp ?';
 
-    // Lớp 2 đang mở
-    if (gradeId === 'lop2') {
-      this.currentGrade = gradeId;
-      document.getElementById('currentGradeLabel').textContent = '📚 ' + gradeName + ' - Học gì hôm nay?';
-      this.showScreen('subject');
-
-      if (this.allData) {
-        this._renderSubjects();
-      } else {
-        document.getElementById('subjectList').innerHTML =
-          '<div class="loading-text">Đang tải bài tập... ⏳</div>';
-        const checkData = setInterval(() => {
-          if (this.allData) {
-            clearInterval(checkData);
-            this._renderSubjects();
-          }
-        }, 200);
-      }
+    // Lớp chưa mở → thông báo nghỉ hè
+    if (this.OPEN_GRADES.indexOf(gradeId) === -1) {
+      alert(
+        '🌴 ' + gradeName + ' đang nghỉ hè!\n\n' +
+        'Thầy cô giáo đang chuẩn bị bài tập cho ' + gradeName + '.\n' +
+        'Hẹn gặp con sau nhé! 🐰'
+      );
       return;
     }
 
-    // Các lớp khác → thông báo nghỉ hè
-    alert(
-      '🌴 ' + gradeName + ' đang nghỉ hè!\n\n' +
-      'Thầy cô giáo đang chuẩn bị bài tập cho ' + gradeName + '.\n' +
-      'Hẹn gặp con vào năm học mới nhé! 🐰\n\n' +
-      'Hiện tại con cứ học chăm chỉ Lớp 2 đã, ' + gradeName + ' sẽ mở sớm thôi! 💪'
-    );
+    this.currentGrade = gradeId;
+    document.getElementById('currentGradeLabel').textContent = '📚 ' + gradeName + ' - Học gì hôm nay?';
+    this.showScreen('subject');
+
+    const listEl = document.getElementById('subjectList');
+    const cached = this._dataByGrade[gradeId];
+    if (cached) {
+      this.allData = cached;
+      this._renderSubjects();
+      return;
+    }
+
+    listEl.innerHTML = '<div class="loading-text">Đang tải bài tập... ⏳</div>';
+    const data = await this._loadGradeData(gradeId);
+
+    // Bé đã bấm sang lớp khác trong lúc đang tải → bỏ qua kết quả cũ
+    if (this.currentGrade !== gradeId) return;
+
+    if (!data || !data.subjects || !data.subjects.length) {
+      listEl.innerHTML =
+        '<div class="loading-text">Chưa có bài tập cho ' + gradeName + ' con nhé 🐰</div>';
+      return;
+    }
+
+    this.allData = data;
+    this._renderSubjects();
   },
 
   _renderSubjects() {

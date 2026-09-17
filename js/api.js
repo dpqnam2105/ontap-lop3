@@ -8,21 +8,46 @@ const API = {
   MANIFEST_URL: 'data/manifest.json',
   QUESTIONS_URL: 'data/questions.json', // fallback cũ
 
+  // Lớp dùng cấu trúc v3 (mỗi môn 1 thư mục, mỗi chủ đề 1 file)
+  GRADE_MANIFESTS: {
+    lop3: 'data-lop3/manifest.json'
+  },
+
   // Cache manifest + từng file môn để không fetch lại
   _manifest: null,
+  _manifestCache: {},
   _subjectCache: {},
+  _jsonCache: {},
 
   // ─── Manifest ───────────────────────────────────────────
 
-  async getManifest() {
-    if (this._manifest) return this._manifest;
+  async getManifest(gradeId) {
+    const url = (gradeId && this.GRADE_MANIFESTS[gradeId]) || this.MANIFEST_URL;
+    if (this._manifestCache[url]) return this._manifestCache[url];
     try {
-      const res = await fetch(this.MANIFEST_URL);
+      const res = await fetch(url);
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      this._manifest = await res.json();
-      return this._manifest;
+      const data = await res.json();
+      this._manifestCache[url] = data;
+      if (url === this.MANIFEST_URL) this._manifest = data;
+      return data;
     } catch (e) {
-      console.warn('getManifest failed, sẽ dùng questions.json cũ:', e);
+      console.warn('getManifest failed (' + url + '), sẽ dùng questions.json cũ:', e);
+      return null;
+    }
+  },
+
+  /** fetch + cache 1 file JSON bất kỳ theo đường dẫn đầy đủ */
+  async _fetchJSON(path) {
+    if (this._jsonCache[path]) return this._jsonCache[path];
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      this._jsonCache[path] = data;
+      return data;
+    } catch (e) {
+      console.error('_fetchJSON error:', path, e);
       return null;
     }
   },
@@ -35,11 +60,17 @@ const API = {
    * → App.js không cần đổi gì.
    */
   async getAllData(gradeId = 'lop2') {
-    const manifest = await this.getManifest();
+    const manifest = await this.getManifest(gradeId);
 
     // Nếu không có manifest → fallback questions.json cũ
     if (!manifest) return this._getAllDataLegacy();
 
+    // Manifest kiểu v3: subjects[] có 'dir' + 'index', mỗi chủ đề 1 file riêng
+    if (Array.isArray(manifest.subjects) && manifest.subjects.some(x => x.index)) {
+      return this._getAllDataV3(manifest, gradeId);
+    }
+
+    if (!Array.isArray(manifest.grades)) return this._getAllDataLegacy();
     const grade = manifest.grades.find(g => g.id === gradeId);
     if (!grade) return this._getAllDataLegacy();
 
@@ -55,6 +86,40 @@ const API = {
       version: manifest.version,
       lastUpdated: manifest.lastUpdated,
       subjects
+    };
+  },
+
+  // ─── Load data kiểu v3 (data-lop3/) ─────────────────────
+
+  /**
+   * Mỗi môn 1 thư mục, mỗi chủ đề 1 file JSON riêng.
+   * CHỈ nạp chủ đề có count > 0 → chủ đề chưa soạn câu hỏi sẽ
+   * không hiện ra cho bé, không phải khoá thủ công.
+   */
+  async _getAllDataV3(manifest, gradeId) {
+    const base = (this.GRADE_MANIFESTS[gradeId] || '').replace(/manifest\.json$/, '');
+
+    const subjects = await Promise.all((manifest.subjects || []).map(async sub => {
+      const idx = await this._fetchJSON(base + sub.index);
+      if (!idx) return null;
+
+      const wanted = (idx.topics || []).filter(t => t.count > 0 && t.file);
+      const loaded = await Promise.all(
+        wanted.map(t => this._fetchJSON(base + (sub.dir ? sub.dir + '/' : '') + t.file))
+      );
+
+      const topics = loaded
+        .map(d => d && d.topic)
+        .filter(t => t && Array.isArray(t.questions) && t.questions.length > 0);
+
+      if (!topics.length) return null;
+      return { id: idx.id || sub.id, icon: idx.icon || sub.icon, name: idx.name || sub.name, topics };
+    }));
+
+    return {
+      version: manifest.version,
+      lastUpdated: manifest.lastUpdated,
+      subjects: subjects.filter(Boolean)
     };
   },
 
@@ -139,3 +204,5 @@ const API = {
     }
   }
 };
+
+window.API = API;
