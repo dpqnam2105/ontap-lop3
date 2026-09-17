@@ -1,8 +1,1465 @@
 {
   "topic": {
     "id": "toan_bang-nhan-chia",
-    "icon": "",
-    "name": "Bảng nhân, chia (đến 9)",
-    "questions": []
+    "icon": "✖️",
+    "name": "Bảng nhân, chia (4, 6, 7)",
+    "questions": [
+      {
+        "q": "4 × 3 = ?",
+        "choices": [
+          "12",
+          "7",
+          "16",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Đếm thêm 4 ba lần.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q001"
+      },
+      {
+        "q": "4 × 6 = ?",
+        "choices": [
+          "28",
+          "20",
+          "18",
+          "24"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 4 × 5 rồi cộng thêm 4.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q002"
+      },
+      {
+        "q": "4 × 7 = ?",
+        "choices": [
+          "24",
+          "32",
+          "28",
+          "21"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả 4 × 6 rồi cộng thêm 4.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q003"
+      },
+      {
+        "q": "4 × 8 = ?",
+        "choices": [
+          "28",
+          "32",
+          "24",
+          "36"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả 4 × 7 rồi cộng thêm 4.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q004"
+      },
+      {
+        "q": "4 × 9 = ?",
+        "choices": [
+          "40",
+          "27",
+          "32",
+          "36"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 4 × 10 rồi bớt đi 4.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q005"
+      },
+      {
+        "q": "4 × 10 = ?",
+        "choices": [
+          "14",
+          "44",
+          "40",
+          "30"
+        ],
+        "a": 2,
+        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q006"
+      },
+      {
+        "q": "4 × 4 = ?",
+        "choices": [
+          "8",
+          "20",
+          "12",
+          "16"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 4 × 3 rồi cộng thêm 4.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q007"
+      },
+      {
+        "q": "9 × 4 = ?",
+        "choices": [
+          "40",
+          "36",
+          "32",
+          "13"
+        ],
+        "a": 1,
+        "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 4.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q008"
+      },
+      {
+        "q": "12 : 4 = ?",
+        "choices": [
+          "2",
+          "4",
+          "3",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 12?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q009"
+      },
+      {
+        "q": "20 : 4 = ?",
+        "choices": [
+          "4",
+          "6",
+          "5",
+          "16"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 20?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q010"
+      },
+      {
+        "q": "24 : 4 = ?",
+        "choices": [
+          "5",
+          "7",
+          "6",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 24?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q011"
+      },
+      {
+        "q": "28 : 4 = ?",
+        "choices": [
+          "9",
+          "7",
+          "6",
+          "8"
+        ],
+        "a": 1,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 28?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q012"
+      },
+      {
+        "q": "32 : 4 = ?",
+        "choices": [
+          "7",
+          "6",
+          "8",
+          "9"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 32?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q013"
+      },
+      {
+        "q": "36 : 4 = ?",
+        "choices": [
+          "10",
+          "8",
+          "7",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 36?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q014"
+      },
+      {
+        "q": "40 : 4 = ?",
+        "choices": [
+          "10",
+          "11",
+          "9",
+          "36"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 40?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q015"
+      },
+      {
+        "q": "16 : 4 = ?",
+        "choices": [
+          "5",
+          "12",
+          "4",
+          "3"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 4 nhân mấy thì bằng 16?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q016"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? × 4 = 24",
+        "choices": [
+          "5",
+          "20",
+          "7",
+          "6"
+        ],
+        "a": 3,
+        "hint": "Chia 24 cho 4 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q017"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  4 × ? = 36",
+        "choices": [
+          "9",
+          "10",
+          "32",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Chia 36 cho 4 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q018"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? : 4 = 7",
+        "choices": [
+          "28",
+          "11",
+          "32",
+          "24"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q019"
+      },
+      {
+        "q": "Đếm thêm 4:  4; 8; 12; ...; 20. Số còn thiếu là?",
+        "choices": [
+          "15",
+          "14",
+          "18",
+          "16"
+        ],
+        "a": 3,
+        "hint": "Mỗi số hơn số đứng trước nó 4 đơn vị.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q020"
+      },
+      {
+        "q": "Đếm lùi 4:  40; 36; 32; ...; 24. Số còn thiếu là?",
+        "choices": [
+          "28",
+          "27",
+          "26",
+          "30"
+        ],
+        "a": 0,
+        "hint": "Mỗi số kém số đứng trước nó 4 đơn vị.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q021"
+      },
+      {
+        "q": "Biết 4 × 6 = 24. Vậy 24 : 4 = ?",
+        "choices": [
+          "24",
+          "4",
+          "6",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Phép chia là phép tính ngược của phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q022"
+      },
+      {
+        "q": "Trong các phép chia cho 4, phép nào có kết quả LỚN NHẤT?",
+        "choices": [
+          "20 : 4",
+          "32 : 4",
+          "40 : 4",
+          "24 : 4"
+        ],
+        "a": 2,
+        "hint": "Cùng chia cho 4, số bị chia lớn hơn thì thương lớn hơn.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q023"
+      },
+      {
+        "q": "Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô như vậy có bao nhiêu bánh xe?",
+        "choices": [
+          "36 bánh xe",
+          "32 bánh xe",
+          "12 bánh xe",
+          "24 bánh xe"
+        ],
+        "a": 1,
+        "hint": "Có 8 nhóm, mỗi nhóm 4 bánh — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q024"
+      },
+      {
+        "q": "Mỗi bàn học có 4 chỗ ngồi. Hỏi 9 bàn như thế có tất cả bao nhiêu chỗ ngồi?",
+        "choices": [
+          "40 chỗ",
+          "32 chỗ",
+          "36 chỗ",
+          "13 chỗ"
+        ],
+        "a": 2,
+        "hint": "Có 9 nhóm, mỗi nhóm 4 chỗ — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q025"
+      },
+      {
+        "q": "Nhà Lan có 28 con gà nhốt đều vào 4 chuồng. Hỏi mỗi chuồng có bao nhiêu con gà?",
+        "choices": [
+          "8 con",
+          "7 con",
+          "24 con",
+          "6 con"
+        ],
+        "a": 1,
+        "hint": "Chia đều 28 con vào 4 chuồng — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q026"
+      },
+      {
+        "q": "Cô giáo chia đều 36 quyển vở cho 4 tổ. Hỏi mỗi tổ được bao nhiêu quyển?",
+        "choices": [
+          "9 quyển",
+          "8 quyển",
+          "10 quyển",
+          "32 quyển"
+        ],
+        "a": 0,
+        "hint": "Chia đều 36 quyển cho 4 tổ — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q027"
+      },
+      {
+        "q": "Thỏ có 4 hộp bút, mỗi hộp 6 chiếc. Thỏ cho bạn 4 chiếc. Hỏi Thỏ còn lại bao nhiêu chiếc bút?",
+        "choices": [
+          "10 chiếc",
+          "2 chiếc",
+          "20 chiếc",
+          "24 chiếc"
+        ],
+        "a": 2,
+        "hint": "Tìm tổng số bút trước, rồi mới bớt đi phần đã cho.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q028"
+      },
+      {
+        "q": "6 × 2 = ?",
+        "choices": [
+          "12",
+          "18",
+          "10",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Đếm thêm 6 hai lần.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q029"
+      },
+      {
+        "q": "6 × 3 = ?",
+        "choices": [
+          "12",
+          "18",
+          "15",
+          "24"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả 6 × 2 rồi cộng thêm 6.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q030"
+      },
+      {
+        "q": "6 × 4 = ?",
+        "choices": [
+          "30",
+          "24",
+          "18",
+          "20"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả 6 × 3 rồi cộng thêm 6.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q031"
+      },
+      {
+        "q": "6 × 5 = ?",
+        "choices": [
+          "30",
+          "36",
+          "24",
+          "25"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả 6 × 4 rồi cộng thêm 6.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q032"
+      },
+      {
+        "q": "6 × 6 = ?",
+        "choices": [
+          "42",
+          "30",
+          "32",
+          "36"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 6 × 5 rồi cộng thêm 6.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q033"
+      },
+      {
+        "q": "6 × 7 = ?",
+        "choices": [
+          "42",
+          "48",
+          "36",
+          "40"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả 6 × 6 rồi cộng thêm 6.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q034"
+      },
+      {
+        "q": "6 × 8 = ?",
+        "choices": [
+          "46",
+          "42",
+          "54",
+          "48"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 6 × 7 rồi cộng thêm 6.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q035"
+      },
+      {
+        "q": "6 × 9 = ?",
+        "choices": [
+          "56",
+          "60",
+          "48",
+          "54"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 6 × 10 rồi bớt đi 6.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q036"
+      },
+      {
+        "q": "6 × 10 = ?",
+        "choices": [
+          "54",
+          "16",
+          "60",
+          "66"
+        ],
+        "a": 2,
+        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q037"
+      },
+      {
+        "q": "3 × 6 = ?",
+        "choices": [
+          "18",
+          "12",
+          "24",
+          "9"
+        ],
+        "a": 0,
+        "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q038"
+      },
+      {
+        "q": "8 × 6 = ?",
+        "choices": [
+          "54",
+          "14",
+          "48",
+          "42"
+        ],
+        "a": 2,
+        "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 6.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q039"
+      },
+      {
+        "q": "12 : 6 = ?",
+        "choices": [
+          "3",
+          "2",
+          "6",
+          "4"
+        ],
+        "a": 1,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 12?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q040"
+      },
+      {
+        "q": "18 : 6 = ?",
+        "choices": [
+          "2",
+          "12",
+          "4",
+          "3"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 18?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q041"
+      },
+      {
+        "q": "24 : 6 = ?",
+        "choices": [
+          "5",
+          "4",
+          "3",
+          "6"
+        ],
+        "a": 1,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 24?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q042"
+      },
+      {
+        "q": "30 : 6 = ?",
+        "choices": [
+          "6",
+          "4",
+          "5",
+          "24"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 30?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q043"
+      },
+      {
+        "q": "36 : 6 = ?",
+        "choices": [
+          "6",
+          "9",
+          "5",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 36?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q044"
+      },
+      {
+        "q": "42 : 6 = ?",
+        "choices": [
+          "7",
+          "6",
+          "9",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 42?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q045"
+      },
+      {
+        "q": "48 : 6 = ?",
+        "choices": [
+          "8",
+          "6",
+          "9",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 48?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q046"
+      },
+      {
+        "q": "54 : 6 = ?",
+        "choices": [
+          "9",
+          "7",
+          "8",
+          "10"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 54?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q047"
+      },
+      {
+        "q": "60 : 6 = ?",
+        "choices": [
+          "11",
+          "9",
+          "10",
+          "54"
+        ],
+        "a": 2,
+        "hint": "Hỏi: 6 nhân mấy thì bằng 60?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q048"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  6 × ? = 42",
+        "choices": [
+          "8",
+          "36",
+          "7",
+          "6"
+        ],
+        "a": 2,
+        "hint": "Chia 42 cho 6 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q049"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? × 6 = 54",
+        "choices": [
+          "10",
+          "9",
+          "8",
+          "48"
+        ],
+        "a": 1,
+        "hint": "Chia 54 cho 6 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q050"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? : 6 = 8",
+        "choices": [
+          "48",
+          "54",
+          "14",
+          "42"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q051"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  30 : ? = 5",
+        "choices": [
+          "7",
+          "6",
+          "25",
+          "5"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q052"
+      },
+      {
+        "q": "Đếm thêm 6:  6; 12; 18; ...; 30. Số còn thiếu là?",
+        "choices": [
+          "26",
+          "20",
+          "22",
+          "24"
+        ],
+        "a": 3,
+        "hint": "Mỗi số hơn số đứng trước nó 6 đơn vị.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q053"
+      },
+      {
+        "q": "Đếm lùi 6:  60; 54; 48; ...; 36. Số còn thiếu là?",
+        "choices": [
+          "46",
+          "40",
+          "44",
+          "42"
+        ],
+        "a": 3,
+        "hint": "Mỗi số kém số đứng trước nó 6 đơn vị.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q054"
+      },
+      {
+        "q": "Ba số tiếp theo của dãy 18; 24; 30; ... là?",
+        "choices": [
+          "32; 34; 36",
+          "36; 42; 48",
+          "34; 40; 46",
+          "36; 40; 44"
+        ],
+        "a": 1,
+        "hint": "Xem mỗi lần cộng thêm mấy đơn vị.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q055"
+      },
+      {
+        "q": "Tính:  6 × 9 + 6 = ?",
+        "choices": [
+          "66",
+          "60",
+          "69",
+          "54"
+        ],
+        "a": 1,
+        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q056"
+      },
+      {
+        "q": "Tính:  6 × 6 + 6 = ?",
+        "choices": [
+          "36",
+          "48",
+          "42",
+          "66"
+        ],
+        "a": 2,
+        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q057"
+      },
+      {
+        "q": "Biết 6 × 8 = 48. Vậy 48 : 8 = ?",
+        "choices": [
+          "6",
+          "8",
+          "7",
+          "48"
+        ],
+        "a": 0,
+        "hint": "Lấy tích chia cho thừa số này thì được thừa số kia.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q058"
+      },
+      {
+        "q": "Trong các phép chia cho 6, phép nào có kết quả BÉ NHẤT?",
+        "choices": [
+          "30 : 6",
+          "18 : 6",
+          "54 : 6",
+          "42 : 6"
+        ],
+        "a": 1,
+        "hint": "Cùng chia cho 6, số bị chia bé hơn thì thương bé hơn.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q059"
+      },
+      {
+        "q": "Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc bút chì màu?",
+        "choices": [
+          "48 chiếc",
+          "13 chiếc",
+          "36 chiếc",
+          "42 chiếc"
+        ],
+        "a": 3,
+        "hint": "Có 7 hộp, mỗi hộp 6 chiếc — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q060"
+      },
+      {
+        "q": "Mỗi bàn ăn xếp được 6 người. Hỏi 8 bàn như thế xếp được bao nhiêu người?",
+        "choices": [
+          "48 người",
+          "54 người",
+          "14 người",
+          "42 người"
+        ],
+        "a": 0,
+        "hint": "Có 8 bàn, mỗi bàn 6 người — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q061"
+      },
+      {
+        "q": "Một cụm hoa súng có 6 bông. Hỏi 9 cụm hoa như vậy có bao nhiêu bông?",
+        "choices": [
+          "15 bông",
+          "60 bông",
+          "54 bông",
+          "48 bông"
+        ],
+        "a": 2,
+        "hint": "Có 9 cụm, mỗi cụm 6 bông — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q062"
+      },
+      {
+        "q": "Có 36 quả cam xếp đều vào 6 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cam?",
+        "choices": [
+          "30 quả",
+          "5 quả",
+          "6 quả",
+          "7 quả"
+        ],
+        "a": 2,
+        "hint": "Chia đều 36 quả vào 6 đĩa — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q063"
+      },
+      {
+        "q": "Có 48 học sinh xếp thành các hàng, mỗi hàng 6 bạn. Hỏi xếp được bao nhiêu hàng?",
+        "choices": [
+          "9 hàng",
+          "42 hàng",
+          "7 hàng",
+          "8 hàng"
+        ],
+        "a": 3,
+        "hint": "Xem 48 gồm mấy nhóm 6 — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q064"
+      },
+      {
+        "q": "Mẹ mua 6 vỉ trứng, mỗi vỉ 6 quả. Mẹ dùng hết 6 quả. Hỏi còn lại bao nhiêu quả trứng?",
+        "choices": [
+          "30 quả",
+          "36 quả",
+          "24 quả",
+          "12 quả"
+        ],
+        "a": 0,
+        "hint": "Tìm tổng số trứng trước, rồi mới bớt đi phần đã dùng.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q065"
+      },
+      {
+        "q": "7 × 2 = ?",
+        "choices": [
+          "9",
+          "14",
+          "12",
+          "21"
+        ],
+        "a": 1,
+        "hint": "Đếm thêm 7 hai lần.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q066"
+      },
+      {
+        "q": "7 × 3 = ?",
+        "choices": [
+          "21",
+          "18",
+          "14",
+          "28"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả 7 × 2 rồi cộng thêm 7.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q067"
+      },
+      {
+        "q": "7 × 4 = ?",
+        "choices": [
+          "28",
+          "21",
+          "24",
+          "35"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả 7 × 3 rồi cộng thêm 7.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q068"
+      },
+      {
+        "q": "7 × 5 = ?",
+        "choices": [
+          "30",
+          "35",
+          "28",
+          "42"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả 7 × 4 rồi cộng thêm 7.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q069"
+      },
+      {
+        "q": "7 × 6 = ?",
+        "choices": [
+          "36",
+          "35",
+          "49",
+          "42"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 7 × 5 rồi cộng thêm 7.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q070"
+      },
+      {
+        "q": "7 × 7 = ?",
+        "choices": [
+          "47",
+          "42",
+          "56",
+          "49"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 7 × 6 rồi cộng thêm 7.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q071"
+      },
+      {
+        "q": "7 × 8 = ?",
+        "choices": [
+          "54",
+          "49",
+          "63",
+          "56"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả 7 × 7 rồi cộng thêm 7.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q072"
+      },
+      {
+        "q": "7 × 9 = ?",
+        "choices": [
+          "70",
+          "63",
+          "56",
+          "62"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả 7 × 10 rồi bớt đi 7.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q073"
+      },
+      {
+        "q": "7 × 10 = ?",
+        "choices": [
+          "77",
+          "70",
+          "17",
+          "63"
+        ],
+        "a": 1,
+        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q074"
+      },
+      {
+        "q": "5 × 7 = ?",
+        "choices": [
+          "35",
+          "40",
+          "12",
+          "30"
+        ],
+        "a": 0,
+        "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q075"
+      },
+      {
+        "q": "9 × 7 = ?",
+        "choices": [
+          "63",
+          "70",
+          "56",
+          "16"
+        ],
+        "a": 0,
+        "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 7.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q076"
+      },
+      {
+        "q": "14 : 7 = ?",
+        "choices": [
+          "2",
+          "4",
+          "7",
+          "3"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 14?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q077"
+      },
+      {
+        "q": "21 : 7 = ?",
+        "choices": [
+          "3",
+          "14",
+          "4",
+          "2"
+        ],
+        "a": 0,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 21?",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q078"
+      },
+      {
+        "q": "28 : 7 = ?",
+        "choices": [
+          "7",
+          "3",
+          "5",
+          "4"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 28?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q079"
+      },
+      {
+        "q": "35 : 7 = ?",
+        "choices": [
+          "6",
+          "5",
+          "28",
+          "4"
+        ],
+        "a": 1,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 35?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q080"
+      },
+      {
+        "q": "42 : 7 = ?",
+        "choices": [
+          "8",
+          "7",
+          "5",
+          "6"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 42?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q081"
+      },
+      {
+        "q": "49 : 7 = ?",
+        "choices": [
+          "8",
+          "6",
+          "9",
+          "7"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 49?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q082"
+      },
+      {
+        "q": "56 : 7 = ?",
+        "choices": [
+          "7",
+          "6",
+          "9",
+          "8"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 56?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q083"
+      },
+      {
+        "q": "63 : 7 = ?",
+        "choices": [
+          "8",
+          "9",
+          "10",
+          "7"
+        ],
+        "a": 1,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 63?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q084"
+      },
+      {
+        "q": "70 : 7 = ?",
+        "choices": [
+          "63",
+          "11",
+          "9",
+          "10"
+        ],
+        "a": 3,
+        "hint": "Hỏi: 7 nhân mấy thì bằng 70?",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q085"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  7 × ? = 56",
+        "choices": [
+          "49",
+          "8",
+          "7",
+          "9"
+        ],
+        "a": 1,
+        "hint": "Chia 56 cho 7 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q086"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? × 7 = 63",
+        "choices": [
+          "56",
+          "8",
+          "10",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Chia 63 cho 7 để tìm thừa số còn thiếu.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q087"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  ? : 7 = 6",
+        "choices": [
+          "35",
+          "42",
+          "49",
+          "13"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q088"
+      },
+      {
+        "q": "Số thích hợp điền vào ô trống:  35 : ? = 5",
+        "choices": [
+          "30",
+          "7",
+          "5",
+          "6"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q089"
+      },
+      {
+        "q": "Đếm thêm 7:  7; 14; 21; ...; 35. Số còn thiếu là?",
+        "choices": [
+          "30",
+          "26",
+          "28",
+          "24"
+        ],
+        "a": 2,
+        "hint": "Mỗi số hơn số đứng trước nó 7 đơn vị.",
+        "difficulty": 1,
+        "id": "toan_bang-nhan-chia_q090"
+      },
+      {
+        "q": "Đếm lùi 7:  70; 63; 56; ...; 42. Số còn thiếu là?",
+        "choices": [
+          "48",
+          "50",
+          "49",
+          "52"
+        ],
+        "a": 2,
+        "hint": "Mỗi số kém số đứng trước nó 7 đơn vị.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q091"
+      },
+      {
+        "q": "Ba số tiếp theo của dãy 21; 28; 35; ... là?",
+        "choices": [
+          "40; 45; 50",
+          "42; 49; 56",
+          "42; 48; 54",
+          "36; 42; 48"
+        ],
+        "a": 1,
+        "hint": "Xem mỗi lần cộng thêm mấy đơn vị.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q092"
+      },
+      {
+        "q": "Tính:  7 × 8 + 7 = ?",
+        "choices": [
+          "56",
+          "63",
+          "70",
+          "78"
+        ],
+        "a": 1,
+        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q093"
+      },
+      {
+        "q": "Tính:  7 × 5 + 15 = ?",
+        "choices": [
+          "35",
+          "57",
+          "42",
+          "50"
+        ],
+        "a": 3,
+        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q094"
+      },
+      {
+        "q": "Biết 7 × 9 = 63. Vậy 63 : 9 = ?",
+        "choices": [
+          "8",
+          "7",
+          "63",
+          "9"
+        ],
+        "a": 1,
+        "hint": "Lấy tích chia cho thừa số này thì được thừa số kia.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q095"
+      },
+      {
+        "q": "Trong các phép chia cho 7, phép nào có kết quả LỚN NHẤT?",
+        "choices": [
+          "42 : 7",
+          "21 : 7",
+          "70 : 7",
+          "56 : 7"
+        ],
+        "a": 2,
+        "hint": "Cùng chia cho 7, số bị chia lớn hơn thì thương lớn hơn.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q096"
+      },
+      {
+        "q": "Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày?",
+        "choices": [
+          "49 ngày",
+          "35 ngày",
+          "42 ngày",
+          "13 ngày"
+        ],
+        "a": 2,
+        "hint": "Có 6 tuần, mỗi tuần 7 ngày — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q097"
+      },
+      {
+        "q": "Mỗi giỏ có 7 quả cam. Hỏi 8 giỏ như thế có bao nhiêu quả cam?",
+        "choices": [
+          "63 quả",
+          "56 quả",
+          "49 quả",
+          "15 quả"
+        ],
+        "a": 1,
+        "hint": "Có 8 giỏ, mỗi giỏ 7 quả — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q098"
+      },
+      {
+        "q": "Một tổ có 7 bạn. Hỏi 9 tổ như thế có bao nhiêu bạn?",
+        "choices": [
+          "63 bạn",
+          "16 bạn",
+          "70 bạn",
+          "56 bạn"
+        ],
+        "a": 0,
+        "hint": "Có 9 tổ, mỗi tổ 7 bạn — dùng phép nhân.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q099"
+      },
+      {
+        "q": "Có 49 quyển vở chia đều cho 7 bạn. Hỏi mỗi bạn được bao nhiêu quyển?",
+        "choices": [
+          "6 quyển",
+          "42 quyển",
+          "7 quyển",
+          "8 quyển"
+        ],
+        "a": 2,
+        "hint": "Chia đều 49 quyển cho 7 bạn — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q100"
+      },
+      {
+        "q": "Có 56 bông hoa cắm đều vào 7 lọ. Hỏi mỗi lọ có bao nhiêu bông?",
+        "choices": [
+          "9 bông",
+          "7 bông",
+          "8 bông",
+          "49 bông"
+        ],
+        "a": 2,
+        "hint": "Chia đều 56 bông vào 7 lọ — dùng phép chia.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q101"
+      },
+      {
+        "q": "Thỏ đọc mỗi ngày 7 trang sách. Hỏi sau 2 tuần Thỏ đọc được bao nhiêu trang?",
+        "choices": [
+          "14 trang",
+          "49 trang",
+          "70 trang",
+          "98 trang"
+        ],
+        "a": 3,
+        "hint": "Đổi 2 tuần ra số ngày trước, rồi mới nhân với 7.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q102"
+      },
+      {
+        "q": "3 × 8 = ?",
+        "choices": [
+          "27",
+          "21",
+          "24",
+          "11"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả 3 × 7 rồi cộng thêm 3.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q103"
+      },
+      {
+        "q": "5 × 9 = ?",
+        "choices": [
+          "45",
+          "50",
+          "54",
+          "40"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả 5 × 10 rồi bớt đi 5.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q104"
+      },
+      {
+        "q": "Số 42 có trong bảng nhân nào dưới đây?",
+        "choices": [
+          "Chỉ bảng nhân 4",
+          "Bảng nhân 4 và bảng nhân 5",
+          "Bảng nhân 6 và bảng nhân 7",
+          "Chỉ bảng nhân 6"
+        ],
+        "a": 2,
+        "hint": "Thử xem 42 chia hết cho những số nào.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q105"
+      },
+      {
+        "q": "Số nào vừa có trong bảng nhân 4, vừa có trong bảng nhân 6?",
+        "choices": [
+          "28",
+          "30",
+          "18",
+          "24"
+        ],
+        "a": 3,
+        "hint": "Thử từng số xem có chia hết cho cả 4 và 6 không.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q106"
+      },
+      {
+        "q": "Hai phép tính nào dưới đây có CÙNG kết quả?",
+        "choices": [
+          "6 × 8 và 7 × 7",
+          "6 × 7 và 7 × 6",
+          "6 × 7 và 7 × 7",
+          "6 × 6 và 7 × 6"
+        ],
+        "a": 1,
+        "hint": "Đổi chỗ hai thừa số thì tích không đổi.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q107"
+      },
+      {
+        "q": "Phép tính nào dưới đây có kết quả bằng 36?",
+        "choices": [
+          "6 × 7",
+          "7 × 5",
+          "4 × 8",
+          "6 × 6"
+        ],
+        "a": 3,
+        "hint": "Tính nhẩm từng đáp án rồi so với 36.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q108"
+      },
+      {
+        "q": "Phép tính nào có kết quả BẰNG 6 × 7?",
+        "choices": [
+          "7 × 6",
+          "6 × 6",
+          "6 × 8",
+          "7 × 7"
+        ],
+        "a": 0,
+        "hint": "Nhớ tính chất đổi chỗ hai thừa số.",
+        "difficulty": 2,
+        "id": "toan_bang-nhan-chia_q109"
+      },
+      {
+        "q": "Phép nhân nào dưới đây có kết quả lớn nhất?",
+        "choices": [
+          "6 × 8",
+          "7 × 7",
+          "6 × 9",
+          "7 × 8"
+        ],
+        "a": 3,
+        "hint": "Tính nhẩm từng đáp án rồi so sánh.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q110"
+      },
+      {
+        "q": "Mỗi tuần Thỏ học 6 buổi, mỗi buổi 4 tiết. Hỏi mỗi tuần Thỏ học bao nhiêu tiết?",
+        "choices": [
+          "24 tiết",
+          "10 tiết",
+          "30 tiết",
+          "18 tiết"
+        ],
+        "a": 0,
+        "hint": "Có 6 buổi, mỗi buổi 4 tiết — dùng phép nhân.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q111"
+      },
+      {
+        "q": "Có 42 cái bánh chia đều cho 6 bạn, mỗi bạn lại ăn hết 3 cái. Hỏi mỗi bạn còn lại mấy cái bánh?",
+        "choices": [
+          "3 cái",
+          "7 cái",
+          "4 cái",
+          "39 cái"
+        ],
+        "a": 2,
+        "hint": "Chia đều trước để biết mỗi bạn có mấy cái, rồi mới bớt đi.",
+        "difficulty": 3,
+        "id": "toan_bang-nhan-chia_q112"
+      }
+    ]
   }
 }
