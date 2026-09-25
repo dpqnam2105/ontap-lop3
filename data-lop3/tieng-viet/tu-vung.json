@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "tv_tu-vung",
-    "icon": "",
-    "name": "Từ vựng (từ loại, mở rộng vốn từ)",
-    "questions": []
+    "icon": "📖",
+    "name": "Từ vựng",
+    "questions": [
+      {
+        "q": "Từ nào chỉ người trong gia đình?",
+        "choices": [
+          "bạn thân",
+          "ông bà",
+          "thầy giáo",
+          "hàng xóm"
+        ],
+        "a": 1,
+        "hint": "Gia đình gồm những người ruột thịt sống cùng hoặc có họ hàng với em.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q001"
+      },
+      {
+        "q": "Từ nào chỉ nghề nghiệp?",
+        "choices": [
+          "chăm chỉ",
+          "thước kẻ",
+          "trường học",
+          "kĩ sư"
+        ],
+        "a": 3,
+        "hint": "Nghề nghiệp là công việc người lớn làm hằng ngày.",
+        "difficulty": 1,
+        "skill": "jobs",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q002"
+      },
+      {
+        "q": "Ai là người khám và chữa bệnh cho mọi người?",
+        "choices": [
+          "thợ may",
+          "phi công",
+          "nông dân",
+          "bác sĩ"
+        ],
+        "a": 3,
+        "hint": "Nhớ lại các nghề đã học: mỗi nghề làm một công việc khác nhau.",
+        "difficulty": 1,
+        "skill": "jobs",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q003"
+      },
+      {
+        "q": "Từ nào trái nghĩa với «siêng năng»?",
+        "choices": [
+          "cần cù",
+          "lười biếng",
+          "chăm chỉ",
+          "chịu khó"
+        ],
+        "a": 1,
+        "hint": "Trái nghĩa là có nghĩa ngược lại. Ba từ còn lại có nghĩa gần giống nhau.",
+        "difficulty": 1,
+        "skill": "antonym",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q004"
+      },
+      {
+        "q": "Từ nào cùng nghĩa với «to lớn»?",
+        "choices": [
+          "khổng lồ",
+          "nhỏ xíu",
+          "bé nhỏ",
+          "tí hon"
+        ],
+        "a": 0,
+        "hint": "Tìm từ có thể thay cho \"to lớn\" mà nghĩa không đổi.",
+        "difficulty": 1,
+        "skill": "synonym",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q005"
+      },
+      {
+        "q": "Từ nào nói về tình cảm của em với thầy cô?",
+        "choices": [
+          "ồn ào",
+          "nghịch ngợm",
+          "kính trọng",
+          "vội vàng"
+        ],
+        "a": 2,
+        "hint": "Nghĩ xem em cư xử thế nào với người đã dạy dỗ mình.",
+        "difficulty": 1,
+        "skill": "feelings",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q006"
+      },
+      {
+        "q": "Từ nào thuộc chủ đề thiên nhiên?",
+        "choices": [
+          "bàn ghế",
+          "thầy cô",
+          "bút mực",
+          "sông suối"
+        ],
+        "a": 3,
+        "hint": "Thiên nhiên là những gì có sẵn quanh ta, không do con người làm ra.",
+        "difficulty": 1,
+        "skill": "nature",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q007"
+      },
+      {
+        "q": "Nhóm từ nào chỉ các mùa trong năm?",
+        "choices": [
+          "sáng, trưa, chiều, tối",
+          "thứ Hai, thứ Ba, thứ Tư, thứ Năm",
+          "xuân, hạ, thu, đông",
+          "nắng, mưa, gió, bão"
+        ],
+        "a": 2,
+        "hint": "Một năm được chia thành bốn phần theo thời tiết.",
+        "difficulty": 1,
+        "skill": "nature",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q008"
+      },
+      {
+        "q": "«Quê hương» là:",
+        "choices": [
+          "nơi mình sinh ra, lớn lên, gắn bó với người thân",
+          "trường học của em",
+          "thành phố lớn nhất",
+          "nơi đi du lịch một lần"
+        ],
+        "a": 0,
+        "hint": "Nghĩ xem vì sao người ta hay nhớ về quê hương.",
+        "difficulty": 2,
+        "skill": "homeland",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q009"
+      },
+      {
+        "q": "Từ nào gợi tả tiếng chim hót?",
+        "choices": [
+          "ầm ầm",
+          "ào ào",
+          "lộp độp",
+          "líu lo"
+        ],
+        "a": 3,
+        "hint": "Đọc to từng từ, nghe xem từ nào giống tiếng chim nhất.",
+        "difficulty": 1,
+        "skill": "sound-words",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q010"
+      },
+      {
+        "q": "Từ nào gợi tả tiếng mưa rơi trên mái tôn?",
+        "choices": [
+          "lộp độp",
+          "líu lo",
+          "ríu rít",
+          "thì thầm"
+        ],
+        "a": 0,
+        "hint": "Đọc to từng từ, nghe xem từ nào giống tiếng hạt mưa rơi nhất.",
+        "difficulty": 1,
+        "skill": "sound-words",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q011"
+      },
+      {
+        "q": "Câu nào dùng lời chào lịch sự với người lớn?",
+        "choices": [
+          "Ê cô, lại đây.",
+          "Cô kia, nhìn này.",
+          "Thưa cô, em chào cô ạ.",
+          "Chào nhé!"
+        ],
+        "a": 2,
+        "hint": "Khi nói với người lớn, em dùng các từ thể hiện sự lễ phép.",
+        "difficulty": 1,
+        "skill": "politeness",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q012"
+      },
+      {
+        "q": "Từ nào chỉ những người sống gần nhà em?",
+        "choices": [
+          "học sinh",
+          "hàng xóm",
+          "đồng hương",
+          "ông nội"
+        ],
+        "a": 1,
+        "hint": "Nghĩ về những người ở ngay nhà bên cạnh.",
+        "difficulty": 2,
+        "skill": "community",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q013"
+      },
+      {
+        "q": "Từ nào không cùng nhóm với các từ còn lại?",
+        "choices": [
+          "học sinh",
+          "hiệu trưởng",
+          "lớp học",
+          "cô giáo"
+        ],
+        "a": 2,
+        "hint": "Ba từ chỉ người. Tìm từ không chỉ người.",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q014"
+      },
+      {
+        "q": "Từ nào trái nghĩa với «vui vẻ»?",
+        "choices": [
+          "phấn khởi",
+          "buồn bã",
+          "hớn hở",
+          "tươi cười"
+        ],
+        "a": 1,
+        "hint": "Trái nghĩa là có nghĩa ngược lại. Ba từ còn lại gần nghĩa với nhau.",
+        "difficulty": 1,
+        "skill": "antonym",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q015"
+      },
+      {
+        "q": "«Ngày khai giảng» là:",
+        "choices": [
+          "ngày cả trường làm lễ mở đầu năm học mới",
+          "ngày cuối cùng của năm học",
+          "ngày thi cuối kì",
+          "ngày nghỉ Tết"
+        ],
+        "a": 0,
+        "hint": "\"Khai\" có nghĩa là mở ra, bắt đầu.",
+        "difficulty": 1,
+        "skill": "school",
+        "unit": "tu-vung",
+        "source": "claude-audit-20260924",
+        "id": "tv_tu-vung_q016"
+      }
+    ]
   }
 }

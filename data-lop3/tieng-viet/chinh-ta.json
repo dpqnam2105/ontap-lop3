@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "tv_chinh-ta",
-    "icon": "",
+    "icon": "📖",
     "name": "Chính tả",
-    "questions": []
+    "questions": [
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "xạch xẽ",
+          "sạch sẽ",
+          "xạch sẽ",
+          "sạch xẽ"
+        ],
+        "a": 1,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: s/x.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q001"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "suất sắc",
+          "xuất xắc",
+          "suất xắc",
+          "xuất sắc"
+        ],
+        "a": 3,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: s/x.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q002"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "xáng suốt",
+          "xáng xuốt",
+          "sáng xuốt",
+          "sáng suốt"
+        ],
+        "a": 3,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: s/x.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q003"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "chăm chỉ",
+          "trăm trỉ",
+          "chăm trỉ",
+          "trăm chỉ"
+        ],
+        "a": 0,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: ch/tr.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q004"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "chung thực",
+          "trung thực",
+          "chung thựt",
+          "trung thựt"
+        ],
+        "a": 1,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: ch/tr.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q005"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "no nắng",
+          "no lắng",
+          "lo lắng",
+          "lo nắng"
+        ],
+        "a": 2,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: l/n.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q006"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "lắng nóng",
+          "nắng nóng",
+          "lắng lóng",
+          "nắng lóng"
+        ],
+        "a": 1,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: l/n.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q007"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "giúp đỡ",
+          "dúp đỡ",
+          "giúp đở",
+          "rúp đỡ"
+        ],
+        "a": 0,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: r/d/gi, dấu hỏi/dấu ngã.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q008"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "giạy giỗ",
+          "rạy rỗ",
+          "dạy giỗ",
+          "dạy dỗ"
+        ],
+        "a": 3,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: r/d/gi.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q009"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "giộn giàng",
+          "dộn dàng",
+          "rộn ràng",
+          "rộn dàng"
+        ],
+        "a": 2,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: r/d/gi.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q010"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "suy nghỉ",
+          "suy nghĩ",
+          "xuy nghĩ",
+          "xuy nghỉ"
+        ],
+        "a": 1,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: s/x, dấu hỏi/dấu ngã.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q011"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "vẽ tranh",
+          "vẻ tranh",
+          "vẻ chanh",
+          "vẽ chanh"
+        ],
+        "a": 0,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: dấu hỏi/dấu ngã, ch/tr.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q012"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "lang can",
+          "lang cang",
+          "lan can",
+          "lan cang"
+        ],
+        "a": 2,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: an/ang.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q013"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "vường rao",
+          "vường rau",
+          "vườn rao",
+          "vườn rau"
+        ],
+        "a": 3,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: ươn/ương, au/ao.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q014"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "nải chuối",
+          "nải chúi",
+          "nãi chúi",
+          "nãi chuối"
+        ],
+        "a": 0,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: uôi/ui, dấu hỏi/dấu ngã.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q015"
+      },
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "con hưu",
+          "con hiêu",
+          "con hươu",
+          "con hiu"
+        ],
+        "a": 2,
+        "hint": "Đọc to cả cụm từ và nhớ lại cách viết trong bài chính tả. Chú ý các cặp dễ lẫn: ươu/iêu.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "chinh-ta",
+        "source": "claude-audit-20260924",
+        "id": "tv_chinh-ta_q016"
+      }
+    ]
   }
 }

@@ -1,8 +1,169 @@
 {
   "topic": {
     "id": "tta_measurement",
-    "icon": "",
+    "icon": "🧮",
     "name": "Measurement",
-    "questions": []
+    "questions": [
+      {
+        "q": "1 m = ___ cm",
+        "choices": [
+          "1000",
+          "10",
+          "1",
+          "100"
+        ],
+        "a": 3,
+        "hint": "Centi- means one hundredth.",
+        "difficulty": 1,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q001"
+      },
+      {
+        "q": "1 km = ___ m",
+        "choices": [
+          "10 000",
+          "10",
+          "1000",
+          "100"
+        ],
+        "a": 2,
+        "hint": "Kilo- means one thousand.",
+        "difficulty": 1,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q002"
+      },
+      {
+        "q": "1 kg = ___ g",
+        "choices": [
+          "100",
+          "10 000",
+          "1000",
+          "10"
+        ],
+        "a": 2,
+        "hint": "Kilo- means one thousand.",
+        "difficulty": 1,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q003"
+      },
+      {
+        "q": "1 hour = ___ minutes",
+        "choices": [
+          "24",
+          "60",
+          "100",
+          "30"
+        ],
+        "a": 1,
+        "hint": "Think of the minute hand going all the way round the clock.",
+        "difficulty": 1,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q004"
+      },
+      {
+        "q": "2 m 15 cm = ___ cm",
+        "choices": [
+          "215",
+          "200",
+          "2015",
+          "35"
+        ],
+        "a": 0,
+        "hint": "Change metres to centimetres first, then add the rest.",
+        "difficulty": 2,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q005"
+      },
+      {
+        "q": "3 kg = ___ g",
+        "choices": [
+          "1003",
+          "3000",
+          "300",
+          "30"
+        ],
+        "a": 1,
+        "hint": "Each kilogram is 1000 grams.",
+        "difficulty": 2,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q006"
+      },
+      {
+        "q": "Half of 1 litre is ___.",
+        "choices": [
+          "100 ml",
+          "500 ml",
+          "50 ml",
+          "5 ml"
+        ],
+        "a": 1,
+        "hint": "1 litre = 1000 ml. Half means 2 equal parts.",
+        "difficulty": 2,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q007"
+      },
+      {
+        "q": "5 dm = ___ cm",
+        "choices": [
+          "50",
+          "15",
+          "500",
+          "5"
+        ],
+        "a": 0,
+        "hint": "Each decimetre is 10 cm.",
+        "difficulty": 2,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q008"
+      },
+      {
+        "q": "Which is the best unit to measure a pencil?",
+        "choices": [
+          "centimetres",
+          "litres",
+          "kilograms",
+          "kilometres"
+        ],
+        "a": 0,
+        "hint": "A pencil is short. Kilograms and litres do not measure length.",
+        "difficulty": 1,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q009"
+      },
+      {
+        "q": "2 hours = ___ minutes",
+        "choices": [
+          "200",
+          "60",
+          "90",
+          "120"
+        ],
+        "a": 3,
+        "hint": "Each hour has 60 minutes.",
+        "difficulty": 2,
+        "skill": "measurement",
+        "unit": "measurement",
+        "source": "claude-audit-20260924",
+        "id": "tta_measurement_q010"
+      }
+    ]
   }
 }

@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "en_vocabulary",
-    "icon": "",
+    "icon": "🌍",
     "name": "Vocabulary",
-    "questions": []
+    "questions": [
+      {
+        "q": "A person who helps sick people is a ___.",
+        "choices": [
+          "farmer",
+          "singer",
+          "driver",
+          "doctor"
+        ],
+        "a": 3,
+        "hint": "Think of where you go when you are ill.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q001"
+      },
+      {
+        "q": "A person who grows rice and vegetables is a ___.",
+        "choices": [
+          "farmer",
+          "doctor",
+          "nurse",
+          "pilot"
+        ],
+        "a": 0,
+        "hint": "Think of who works in the fields.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q002"
+      },
+      {
+        "q": "The colour of grass is usually ___.",
+        "choices": [
+          "green",
+          "white",
+          "black",
+          "purple"
+        ],
+        "a": 0,
+        "hint": "Picture a football field in your head.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q003"
+      },
+      {
+        "q": "The opposite of \"big\" is ___.",
+        "choices": [
+          "tall",
+          "small",
+          "huge",
+          "long"
+        ],
+        "a": 1,
+        "hint": "Opposites mean very different things, like hot and cold.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q004"
+      },
+      {
+        "q": "Which word is an animal?",
+        "choices": [
+          "tiger",
+          "table",
+          "window",
+          "pencil"
+        ],
+        "a": 0,
+        "hint": "Which one can walk and eat by itself?",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q005"
+      },
+      {
+        "q": "Which word is food?",
+        "choices": [
+          "cloud",
+          "drum",
+          "ruler",
+          "bread"
+        ],
+        "a": 3,
+        "hint": "Which one can you eat?",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q006"
+      },
+      {
+        "q": "I see with my ___.",
+        "choices": [
+          "ears",
+          "eyes",
+          "nose",
+          "mouth"
+        ],
+        "a": 1,
+        "hint": "Point to the part of your face you use to look.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q007"
+      },
+      {
+        "q": "I hear with my ___.",
+        "choices": [
+          "hands",
+          "toes",
+          "ears",
+          "eyes"
+        ],
+        "a": 2,
+        "hint": "Point to the part of your head you use to listen to music.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q008"
+      },
+      {
+        "q": "A cat says \"___\".",
+        "choices": [
+          "moo",
+          "quack",
+          "meow",
+          "woof"
+        ],
+        "a": 2,
+        "hint": "Each animal makes its own sound.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q009"
+      },
+      {
+        "q": "A cow says \"___\".",
+        "choices": [
+          "tweet",
+          "baa",
+          "moo",
+          "meow"
+        ],
+        "a": 2,
+        "hint": "Each animal makes its own sound.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q010"
+      },
+      {
+        "q": "It is cold and white. It falls from the sky in winter. It is ___.",
+        "choices": [
+          "rain",
+          "snow",
+          "sun",
+          "sand"
+        ],
+        "a": 1,
+        "hint": "Read all the clues: cold, white, winter.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q011"
+      },
+      {
+        "q": "Which one is a means of transport?",
+        "choices": [
+          "eraser",
+          "bus",
+          "pillow",
+          "banana"
+        ],
+        "a": 1,
+        "hint": "Which one can take people from place to place?",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q012"
+      },
+      {
+        "q": "Monday comes before ___.",
+        "choices": [
+          "Friday",
+          "Thursday",
+          "Sunday",
+          "Tuesday"
+        ],
+        "a": 3,
+        "hint": "Say the days of the week in order.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q013"
+      },
+      {
+        "q": "Which day is at the weekend?",
+        "choices": [
+          "Saturday",
+          "Thursday",
+          "Monday",
+          "Wednesday"
+        ],
+        "a": 0,
+        "hint": "The weekend is when there is no school.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q014"
+      },
+      {
+        "q": "\"Hungry\" means you want to ___.",
+        "choices": [
+          "drink",
+          "run",
+          "sleep",
+          "eat"
+        ],
+        "a": 3,
+        "hint": "How do you feel just before lunch?",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q015"
+      },
+      {
+        "q": "Choose the correct plural: one child, two ___.",
+        "choices": [
+          "childs",
+          "childes",
+          "children",
+          "childrens"
+        ],
+        "a": 2,
+        "hint": "Some words change in a special way for more than one, like man and men.",
+        "difficulty": 2,
+        "skill": "vocabulary",
+        "unit": "vocabulary",
+        "source": "claude-audit-20260924",
+        "id": "en_vocabulary_q016"
+      }
+    ]
   }
 }

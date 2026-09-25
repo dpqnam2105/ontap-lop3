@@ -1,8 +1,201 @@
 {
   "topic": {
     "id": "en_on-tap-tong-hop",
-    "icon": "",
+    "icon": "🌍",
     "name": "Ôn tập tổng hợp",
-    "questions": []
+    "questions": [
+      {
+        "q": "I ___ a pupil.",
+        "choices": [
+          "are",
+          "be",
+          "am",
+          "is"
+        ],
+        "a": 2,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q001"
+      },
+      {
+        "q": "There ___ two pens on my desk.",
+        "choices": [
+          "is",
+          "be",
+          "am",
+          "are"
+        ],
+        "a": 3,
+        "hint": "Use \"there is\" for one thing and \"there are\" for many things.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q002"
+      },
+      {
+        "q": "She ___ to school every day.",
+        "choices": [
+          "going",
+          "goes",
+          "to go",
+          "go"
+        ],
+        "a": 1,
+        "hint": "With he / she / it, the verb usually adds -s or -es.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q003"
+      },
+      {
+        "q": "My father's father is my ___.",
+        "choices": [
+          "cousin",
+          "uncle",
+          "grandfather",
+          "brother"
+        ],
+        "a": 2,
+        "hint": "Think: who is your dad's dad?",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q004"
+      },
+      {
+        "q": "The teacher writes on the board with a ___.",
+        "choices": [
+          "marker",
+          "spoon",
+          "shoe",
+          "pillow"
+        ],
+        "a": 0,
+        "hint": "Which one can you write with?",
+        "difficulty": 1,
+        "skill": "school",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q005"
+      },
+      {
+        "q": "Choose the correct sentence.",
+        "choices": [
+          "He have a dog.",
+          "He haves a dog.",
+          "He are a dog.",
+          "He has a dog."
+        ],
+        "a": 3,
+        "hint": "Use \"have\" with I / you / we / they and \"has\" with he / she / it.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q006"
+      },
+      {
+        "q": "A person who flies a plane is a ___.",
+        "choices": [
+          "dentist",
+          "pilot",
+          "farmer",
+          "baker"
+        ],
+        "a": 1,
+        "hint": "Think of who works in the sky.",
+        "difficulty": 1,
+        "skill": "jobs",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q007"
+      },
+      {
+        "q": "Read: \"Sue gets up at 6. Then she washes her face.\" What does Sue do after she gets up?",
+        "choices": [
+          "goes to school",
+          "has dinner",
+          "washes her face",
+          "goes to bed"
+        ],
+        "a": 2,
+        "hint": "Look for the word \"Then\".",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q008"
+      },
+      {
+        "q": "Can you ___ the door, please?",
+        "choices": [
+          "opening",
+          "opens",
+          "to open",
+          "open"
+        ],
+        "a": 3,
+        "hint": "After \"can\", use the verb with nothing added.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q009"
+      },
+      {
+        "q": "Choose the correct plural of \"box\".",
+        "choices": [
+          "boxes",
+          "boxies",
+          "box",
+          "boxs"
+        ],
+        "a": 0,
+        "hint": "Words ending in -x, -s, -ch, -sh add -es.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q010"
+      },
+      {
+        "q": "School starts ___ seven o'clock.",
+        "choices": [
+          "under",
+          "at",
+          "on",
+          "in"
+        ],
+        "a": 1,
+        "hint": "Which small word do we use with clock times?",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q011"
+      },
+      {
+        "q": "Choose the correct question.",
+        "choices": [
+          "What is your name?",
+          "Is what name your?",
+          "What your name?",
+          "What is your name."
+        ],
+        "a": 0,
+        "hint": "A question needs the right word order and a question mark.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "en_on-tap-tong-hop_q012"
+      }
+    ]
   }
 }

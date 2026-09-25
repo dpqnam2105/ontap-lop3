@@ -1,8 +1,409 @@
 {
   "topic": {
     "id": "toan_hinh-hoc",
-    "icon": "",
-    "name": "Hình học (điểm, đoạn thẳng, hình)",
-    "questions": []
+    "icon": "🔺",
+    "name": "Hình học (trung điểm, hình tròn, chu vi, diện tích)",
+    "questions": [
+      {
+        "q": "Hình tứ giác có mấy đỉnh?",
+        "choices": [
+          "6",
+          "4",
+          "3",
+          "5"
+        ],
+        "a": 1,
+        "hint": "Mỗi góc của hình là một đỉnh. Đếm số góc.",
+        "difficulty": 1,
+        "skill": "shapes",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q001"
+      },
+      {
+        "q": "Khối lập phương có mấy mặt?",
+        "choices": [
+          "6",
+          "4",
+          "12",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Tưởng tượng con xúc xắc: đếm mặt trên, mặt dưới và các mặt xung quanh.",
+        "difficulty": 2,
+        "skill": "solids",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q002"
+      },
+      {
+        "q": "Khối hộp chữ nhật có mấy đỉnh?",
+        "choices": [
+          "8",
+          "12",
+          "6",
+          "4"
+        ],
+        "a": 0,
+        "hint": "Đếm các góc ở mặt trên rồi đếm các góc ở mặt dưới.",
+        "difficulty": 2,
+        "skill": "solids",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q003"
+      },
+      {
+        "q": "Hình chữ nhật có mấy góc vuông?",
+        "choices": [
+          "4",
+          "0",
+          "1",
+          "2"
+        ],
+        "a": 0,
+        "hint": "Dùng ê ke kiểm tra từng góc của hình chữ nhật.",
+        "difficulty": 1,
+        "skill": "angles",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q004"
+      },
+      {
+        "q": "M là trung điểm của đoạn thẳng AB. AB dài 8 cm. Đoạn AM dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "8",
+          "4",
+          "6",
+          "16"
+        ],
+        "a": 1,
+        "hint": "Trung điểm chia đoạn thẳng thành hai phần dài bằng nhau.",
+        "difficulty": 2,
+        "skill": "midpoint",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q005"
+      },
+      {
+        "q": "M là trung điểm của đoạn thẳng AB. AB dài 12 cm. Đoạn AM dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "12",
+          "24",
+          "6",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Trung điểm chia đoạn thẳng thành hai phần dài bằng nhau.",
+        "difficulty": 2,
+        "skill": "midpoint",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q006"
+      },
+      {
+        "q": "M là trung điểm của đoạn thẳng AB. AB dài 10 cm. Đoạn AM dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "7",
+          "20",
+          "5",
+          "10"
+        ],
+        "a": 2,
+        "hint": "Trung điểm chia đoạn thẳng thành hai phần dài bằng nhau.",
+        "difficulty": 2,
+        "skill": "midpoint",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q007"
+      },
+      {
+        "q": "M là trung điểm của đoạn thẳng AB. AB dài 16 cm. Đoạn AM dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "10",
+          "16",
+          "32",
+          "8"
+        ],
+        "a": 3,
+        "hint": "Trung điểm chia đoạn thẳng thành hai phần dài bằng nhau.",
+        "difficulty": 2,
+        "skill": "midpoint",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q008"
+      },
+      {
+        "q": "Hình tròn có đường kính 10 cm. Bán kính dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "15",
+          "20",
+          "5",
+          "10"
+        ],
+        "a": 2,
+        "hint": "Đường kính dài gấp 2 lần bán kính.",
+        "difficulty": 2,
+        "skill": "circle",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q009"
+      },
+      {
+        "q": "Hình tròn có bán kính 4 cm. Đường kính dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "4",
+          "16",
+          "8",
+          "2"
+        ],
+        "a": 2,
+        "hint": "Đường kính dài gấp 2 lần bán kính.",
+        "difficulty": 2,
+        "skill": "circle",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q010"
+      },
+      {
+        "q": "Đoạn thẳng nối tâm hình tròn với một điểm trên đường tròn gọi là:",
+        "choices": [
+          "đường tròn",
+          "đường kính",
+          "cạnh",
+          "bán kính"
+        ],
+        "a": 3,
+        "hint": "Đoạn thẳng này đi từ tâm ra tới mép hình tròn và dài bằng một nửa đường kính.",
+        "difficulty": 1,
+        "skill": "circle",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q011"
+      },
+      {
+        "q": "Trong một hình tròn, các bán kính như thế nào với nhau?",
+        "choices": [
+          "bán kính vẽ sau dài hơn",
+          "dài gấp đôi nhau",
+          "không so sánh được",
+          "dài bằng nhau"
+        ],
+        "a": 3,
+        "hint": "Nghĩ xem khi vẽ hình tròn, độ mở của compa có thay đổi không.",
+        "difficulty": 2,
+        "skill": "circle",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q012"
+      },
+      {
+        "q": "Hình vuông cạnh 3 cm có chu vi là:",
+        "choices": [
+          "9 cm",
+          "12 cm",
+          "6 cm",
+          "7 cm"
+        ],
+        "a": 1,
+        "hint": "Chu vi là tổng độ dài các cạnh. Hình vuông có 4 cạnh bằng nhau.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q013"
+      },
+      {
+        "q": "Hình vuông cạnh 6 cm có chu vi là:",
+        "choices": [
+          "12 cm",
+          "10 cm",
+          "24 cm",
+          "36 cm"
+        ],
+        "a": 2,
+        "hint": "Chu vi là tổng độ dài các cạnh. Hình vuông có 4 cạnh bằng nhau.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q014"
+      },
+      {
+        "q": "Hình vuông cạnh 9 cm có chu vi là:",
+        "choices": [
+          "18 cm",
+          "36 cm",
+          "13 cm",
+          "81 cm"
+        ],
+        "a": 1,
+        "hint": "Chu vi là tổng độ dài các cạnh. Hình vuông có 4 cạnh bằng nhau.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q015"
+      },
+      {
+        "q": "Hình chữ nhật dài 8 cm, rộng 3 cm có chu vi là:",
+        "choices": [
+          "24 cm",
+          "22 cm",
+          "19 cm",
+          "11 cm"
+        ],
+        "a": 1,
+        "hint": "Chu vi hình chữ nhật: lấy chiều dài cộng chiều rộng, rồi nhân với 2.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q016"
+      },
+      {
+        "q": "Hình chữ nhật dài 12 cm, rộng 5 cm có chu vi là:",
+        "choices": [
+          "60 cm",
+          "34 cm",
+          "17 cm",
+          "29 cm"
+        ],
+        "a": 1,
+        "hint": "Chu vi hình chữ nhật: lấy chiều dài cộng chiều rộng, rồi nhân với 2.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q017"
+      },
+      {
+        "q": "Hình chữ nhật dài 9 cm, rộng 4 cm có chu vi là:",
+        "choices": [
+          "26 cm",
+          "36 cm",
+          "22 cm",
+          "13 cm"
+        ],
+        "a": 0,
+        "hint": "Chu vi hình chữ nhật: lấy chiều dài cộng chiều rộng, rồi nhân với 2.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q018"
+      },
+      {
+        "q": "Hình tam giác có ba cạnh dài 3 cm, 4 cm, 5 cm. Chu vi hình tam giác là:",
+        "choices": [
+          "14 cm",
+          "7 cm",
+          "15 cm",
+          "12 cm"
+        ],
+        "a": 3,
+        "hint": "Chu vi là tổng độ dài các cạnh của hình.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q019"
+      },
+      {
+        "q": "Hình tam giác có ba cạnh dài 6 cm, 6 cm, 6 cm. Chu vi hình tam giác là:",
+        "choices": [
+          "18 cm",
+          "36 cm",
+          "24 cm",
+          "12 cm"
+        ],
+        "a": 0,
+        "hint": "Chu vi là tổng độ dài các cạnh của hình.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q020"
+      },
+      {
+        "q": "Hình tứ giác có bốn cạnh dài 3 cm, 4 cm, 5 cm, 6 cm. Chu vi hình tứ giác là:",
+        "choices": [
+          "18 cm",
+          "360 cm",
+          "15 cm",
+          "12 cm"
+        ],
+        "a": 0,
+        "hint": "Chu vi là tổng độ dài các cạnh của hình.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q021"
+      },
+      {
+        "q": "Hình chữ nhật dài 6 cm, rộng 4 cm có diện tích là:",
+        "choices": [
+          "24 cm²",
+          "20 cm²",
+          "10 cm²",
+          "24 cm"
+        ],
+        "a": 0,
+        "hint": "Diện tích hình chữ nhật: lấy chiều dài nhân với chiều rộng. Nhớ viết đơn vị cm².",
+        "difficulty": 3,
+        "skill": "area",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q022"
+      },
+      {
+        "q": "Hình chữ nhật dài 9 cm, rộng 3 cm có diện tích là:",
+        "choices": [
+          "12 cm²",
+          "24 cm²",
+          "27 cm²",
+          "27 cm"
+        ],
+        "a": 2,
+        "hint": "Diện tích hình chữ nhật: lấy chiều dài nhân với chiều rộng. Nhớ viết đơn vị cm².",
+        "difficulty": 3,
+        "skill": "area",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q023"
+      },
+      {
+        "q": "Hình vuông cạnh 5 cm có diện tích là:",
+        "choices": [
+          "25 cm",
+          "10 cm²",
+          "20 cm²",
+          "25 cm²"
+        ],
+        "a": 3,
+        "hint": "Diện tích hình vuông: lấy độ dài một cạnh nhân với chính nó. Nhớ viết đơn vị cm².",
+        "difficulty": 3,
+        "skill": "area",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q024"
+      },
+      {
+        "q": "Hình vuông cạnh 7 cm có diện tích là:",
+        "choices": [
+          "28 cm²",
+          "14 cm²",
+          "49 cm",
+          "49 cm²"
+        ],
+        "a": 3,
+        "hint": "Diện tích hình vuông: lấy độ dài một cạnh nhân với chính nó. Nhớ viết đơn vị cm².",
+        "difficulty": 3,
+        "skill": "area",
+        "unit": "toan_hinh-hoc",
+        "source": "claude-audit-20260924",
+        "id": "toan_hinh-hoc_q025"
+      }
+    ]
   }
 }

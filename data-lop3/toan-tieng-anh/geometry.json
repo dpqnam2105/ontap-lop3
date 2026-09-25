@@ -1,8 +1,137 @@
 {
   "topic": {
     "id": "tta_geometry",
-    "icon": "",
+    "icon": "🧮",
     "name": "Geometry",
-    "questions": []
+    "questions": [
+      {
+        "q": "How many sides does a triangle have?",
+        "choices": [
+          "6",
+          "3",
+          "5",
+          "4"
+        ],
+        "a": 1,
+        "hint": "\"Tri\" means ... Think of a tricycle.",
+        "difficulty": 1,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q001"
+      },
+      {
+        "q": "How many corners does a rectangle have?",
+        "choices": [
+          "5",
+          "4",
+          "6",
+          "3"
+        ],
+        "a": 1,
+        "hint": "Count the corners one by one.",
+        "difficulty": 1,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q002"
+      },
+      {
+        "q": "The perimeter of a square with sides of 6 cm is ___.",
+        "choices": [
+          "18 cm",
+          "36 cm",
+          "12 cm",
+          "24 cm"
+        ],
+        "a": 3,
+        "hint": "Perimeter: add all the sides. A square has 4 equal sides.",
+        "difficulty": 2,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q003"
+      },
+      {
+        "q": "The perimeter of a rectangle 9 cm long and 4 cm wide is ___.",
+        "choices": [
+          "36 cm",
+          "13 cm",
+          "26 cm",
+          "22 cm"
+        ],
+        "a": 2,
+        "hint": "Add the length and the width, then double it.",
+        "difficulty": 2,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q004"
+      },
+      {
+        "q": "How many right angles does a rectangle have?",
+        "choices": [
+          "0",
+          "1",
+          "4",
+          "2"
+        ],
+        "a": 2,
+        "hint": "Check each corner with a set square.",
+        "difficulty": 1,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q005"
+      },
+      {
+        "q": "A line segment has how many endpoints?",
+        "choices": [
+          "2",
+          "4",
+          "0",
+          "1"
+        ],
+        "a": 0,
+        "hint": "A segment starts at one point and stops at another.",
+        "difficulty": 1,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q006"
+      },
+      {
+        "q": "Which shape has no straight sides?",
+        "choices": [
+          "circle",
+          "triangle",
+          "rectangle",
+          "square"
+        ],
+        "a": 0,
+        "hint": "Which shape is round?",
+        "difficulty": 1,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q007"
+      },
+      {
+        "q": "Perimeter means ___.",
+        "choices": [
+          "the number of corners",
+          "the space inside a shape",
+          "the colour of a shape",
+          "the distance around a shape"
+        ],
+        "a": 3,
+        "hint": "Imagine walking all the way around the edge.",
+        "difficulty": 2,
+        "skill": "geometry",
+        "unit": "geometry",
+        "source": "claude-audit-20260924",
+        "id": "tta_geometry_q008"
+      }
+    ]
   }
 }

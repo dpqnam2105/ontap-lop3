@@ -1,8 +1,265 @@
 {
   "topic": {
-    "id": "en_unit-placeholder-03",
-    "icon": "",
-    "name": "Unit 03 (đổi tên theo sách)",
-    "questions": []
+    "id": "en_daily-activities",
+    "icon": "🌍",
+    "name": "Daily Activities",
+    "questions": [
+      {
+        "q": "I ___ my teeth every morning.",
+        "choices": [
+          "brush",
+          "brushes",
+          "brushing",
+          "to brush"
+        ],
+        "a": 0,
+        "hint": "After I / you / we / they, the verb has no -s.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q001"
+      },
+      {
+        "q": "She ___ up at six o'clock.",
+        "choices": [
+          "to get",
+          "gets",
+          "getting",
+          "get"
+        ],
+        "a": 1,
+        "hint": "With he / she / it, the verb usually adds -s or -es.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q002"
+      },
+      {
+        "q": "We ___ to school from Monday to Friday.",
+        "choices": [
+          "going",
+          "goes",
+          "go",
+          "to go"
+        ],
+        "a": 2,
+        "hint": "After I / you / we / they, the verb has no -s.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q003"
+      },
+      {
+        "q": "He ___ his homework after dinner.",
+        "choices": [
+          "do",
+          "are",
+          "does",
+          "doing"
+        ],
+        "a": 2,
+        "hint": "With he / she / it, the verb usually adds -s or -es.",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q004"
+      },
+      {
+        "q": "I go to bed ___ night.",
+        "choices": [
+          "under",
+          "on",
+          "in",
+          "at"
+        ],
+        "a": 3,
+        "hint": "We say \"in the morning\", \"in the afternoon\", but \"night\" is different.",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q005"
+      },
+      {
+        "q": "We have lunch ___ twelve o'clock.",
+        "choices": [
+          "under",
+          "on",
+          "at",
+          "in"
+        ],
+        "a": 2,
+        "hint": "Which small word do we use with clock times?",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q006"
+      },
+      {
+        "q": "Which one is a daily activity?",
+        "choices": [
+          "wash my face",
+          "visit the zoo",
+          "climb a mountain",
+          "fly a plane"
+        ],
+        "a": 0,
+        "hint": "Which one do you do every single day?",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q007"
+      },
+      {
+        "q": "The opposite of \"get up\" is \"___\".",
+        "choices": [
+          "have breakfast",
+          "go to school",
+          "go to bed",
+          "do homework"
+        ],
+        "a": 2,
+        "hint": "One starts your day, the other ends it.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q008"
+      },
+      {
+        "q": "What time ___ you get up?",
+        "choices": [
+          "does",
+          "are",
+          "is",
+          "do"
+        ],
+        "a": 3,
+        "hint": "In questions: do + I / you / we / they; does + he / she / it.",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q009"
+      },
+      {
+        "q": "What time ___ he get up?",
+        "choices": [
+          "are",
+          "is",
+          "do",
+          "does"
+        ],
+        "a": 3,
+        "hint": "In questions: do + I / you / we / they; does + he / she / it.",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q010"
+      },
+      {
+        "q": "I ___ never late for school.",
+        "choices": [
+          "am",
+          "be",
+          "is",
+          "are"
+        ],
+        "a": 0,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q011"
+      },
+      {
+        "q": "After school I ___ with my friends.",
+        "choices": [
+          "play",
+          "plays",
+          "playing",
+          "to play"
+        ],
+        "a": 0,
+        "hint": "After I / you / we / they, the verb has no -s.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q012"
+      },
+      {
+        "q": "Choose the correct sentence.",
+        "choices": [
+          "She brush her teeth.",
+          "She are brush her teeth.",
+          "She brushing her teeth.",
+          "She brushes her teeth."
+        ],
+        "a": 3,
+        "hint": "With he / she / it, the verb usually adds -s or -es.",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q013"
+      },
+      {
+        "q": "On Sundays I ___ visit my grandparents.",
+        "choices": [
+          "hungry",
+          "often",
+          "pencil",
+          "o'clock"
+        ],
+        "a": 1,
+        "hint": "Which word tells us how many times we do something?",
+        "difficulty": 2,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q014"
+      },
+      {
+        "q": "Breakfast is a meal in the ___.",
+        "choices": [
+          "night",
+          "morning",
+          "evening",
+          "afternoon"
+        ],
+        "a": 1,
+        "hint": "Breakfast is the first meal after you wake up.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q015"
+      },
+      {
+        "q": "How do we say 7:00?",
+        "choices": [
+          "o'clock seven",
+          "seven o'clock",
+          "seven clock",
+          "seven o'clocks"
+        ],
+        "a": 1,
+        "hint": "Say the number first, then the clock word.",
+        "difficulty": 1,
+        "skill": "daily",
+        "unit": "unit-placeholder-03",
+        "source": "claude-audit-20260924",
+        "id": "en_daily-activities_q016"
+      }
+    ]
   }
 }

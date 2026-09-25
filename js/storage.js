@@ -4,16 +4,96 @@
 
 const Storage = {
   KEY: 'khoBaiTap_v1',
+  ACTIVE_KEY: 'khoBaiTap_active_v1',
   PROGRESS_KEY: 'khoBaiTap_progress_v1',
   WRONG_HISTORY_KEY: 'khoBaiTap_wrong_history_v1',
+  MIGRATED_KEY: 'khoBaiTap_migrated_v2',
+
+  normalizeName(raw) {
+    let s = String(raw || '').replace(/\s+/g, ' ').trim().slice(0, 20);
+    if (!s) return '';
+    const lower = s.toLocaleLowerCase('vi');
+    const upper = s.toLocaleUpperCase('vi');
+    if (s === lower || s === upper) {
+      s = lower.split(' ').map(function (w) {
+        return w ? w.charAt(0).toLocaleUpperCase('vi') + w.slice(1) : w;
+      }).join(' ');
+    }
+    return s;
+  },
+
+  canonName(raw) {
+    return this.normalizeName(raw).toLocaleLowerCase('vi');
+  },
+
+  profileKey(name) {
+    return 'khoBaiTap_profile_' + this.canonName(name);
+  },
+
+  getActiveName() {
+    try { return localStorage.getItem(this.ACTIVE_KEY) || ''; }
+    catch (e) { return ''; }
+  },
+
+  _scoped(base, name) {
+    const n = this.canonName(name || this.getActiveName() || 'guest') || 'guest';
+    return base + '::' + n;
+  },
+
+  _migrateLegacyOnce() {
+    try {
+      if (localStorage.getItem(this.MIGRATED_KEY)) return;
+      const raw = localStorage.getItem(this.KEY);
+      if (raw) {
+        const data = JSON.parse(raw);
+        const name = this.normalizeName(data.playerName || '');
+        if (name) {
+          data.playerName = name;
+          const pk = this.profileKey(name);
+          if (!localStorage.getItem(pk)) localStorage.setItem(pk, JSON.stringify(data));
+          localStorage.setItem(this.ACTIVE_KEY, name);
+          const copyIfMissing = function (from, to) {
+            const v = localStorage.getItem(from);
+            if (v && !localStorage.getItem(to)) localStorage.setItem(to, v);
+          };
+          copyIfMissing(this.PROGRESS_KEY, this._scoped(this.PROGRESS_KEY, name));
+          copyIfMissing(this.WRONG_HISTORY_KEY, this._scoped(this.WRONG_HISTORY_KEY, name));
+          copyIfMissing('rabbit_dragonball_collection', 'rabbit_dragonball_collection::' + this.canonName(name));
+          copyIfMissing('rabbit_shenron_unlocked', 'rabbit_shenron_unlocked::' + this.canonName(name));
+        }
+      }
+      localStorage.setItem(this.MIGRATED_KEY, '1');
+    } catch (e) {
+      console.warn('migrate profile failed', e);
+    }
+  },
+
+  switchPlayer(name) {
+    this._migrateLegacyOnce();
+    const clean = this.normalizeName(name);
+    if (clean.length < 2) return this._default();
+    localStorage.setItem(this.ACTIVE_KEY, clean);
+    const pk = this.profileKey(clean);
+    if (!localStorage.getItem(pk)) {
+      const fresh = this._default();
+      fresh.playerName = clean;
+      localStorage.setItem(pk, JSON.stringify(fresh));
+    }
+    return this.load();
+  },
 
   // ─── Profile ────────────────────────────────
 
   load() {
+    this._migrateLegacyOnce();
     try {
-      const raw = localStorage.getItem(this.KEY);
+      const active = this.getActiveName();
+      const key = active ? this.profileKey(active) : this.KEY;
+      const raw = localStorage.getItem(key) || (!active ? null : localStorage.getItem(this.KEY));
       if (!raw) return this._default();
-      return { ...this._default(), ...JSON.parse(raw) };
+      const data = { ...this._default(), ...JSON.parse(raw) };
+      if (active) data.playerName = this.normalizeName(data.playerName || active);
+      return data;
     } catch (e) {
       console.error('Storage load error:', e);
       return this._default();
@@ -21,8 +101,16 @@ const Storage = {
   },
 
   save(data) {
+    this._migrateLegacyOnce();
     try {
-      localStorage.setItem(this.KEY, JSON.stringify(data));
+      const name = this.normalizeName((data && data.playerName) || this.getActiveName());
+      if (name) {
+        data.playerName = name;
+        localStorage.setItem(this.ACTIVE_KEY, name);
+        localStorage.setItem(this.profileKey(name), JSON.stringify(data));
+      } else {
+        localStorage.setItem(this.KEY, JSON.stringify(data));
+      }
     } catch (e) {
       console.error('Storage save error:', e);
     }
@@ -39,9 +127,13 @@ const Storage = {
   },
 
   clear() {
+    const name = this.getActiveName();
+    if (name) {
+      localStorage.removeItem(this.profileKey(name));
+      localStorage.removeItem(this._scoped(this.PROGRESS_KEY, name));
+      localStorage.removeItem(this._scoped(this.WRONG_HISTORY_KEY, name));
+    }
     localStorage.removeItem(this.KEY);
-    localStorage.removeItem(this.PROGRESS_KEY);
-    localStorage.removeItem(this.WRONG_HISTORY_KEY);
   },
 
   _default() {
@@ -56,7 +148,8 @@ const Storage = {
       xp: 0,
       level: 1,
       streak: 0,
-      lastStudyDate: null
+      lastStudyDate: null,
+      lastGrade: ''
     };
   },
 
@@ -65,7 +158,7 @@ const Storage = {
   /** Lấy progress của 1 chủ đề trong ngày hôm nay */
   getTopicProgress(topicId) {
     try {
-      const raw = localStorage.getItem(this.PROGRESS_KEY);
+      const raw = localStorage.getItem(this._scoped(this.PROGRESS_KEY));
       const all = raw ? JSON.parse(raw) : {};
       const today = this._getToday();
       if (all._date !== today) {
@@ -80,12 +173,12 @@ const Storage = {
   /** Lưu progress của 1 chủ đề */
   saveTopicProgress(topicId, learned, wrong) {
     try {
-      const raw = localStorage.getItem(this.PROGRESS_KEY);
+      const raw = localStorage.getItem(this._scoped(this.PROGRESS_KEY));
       let all = raw ? JSON.parse(raw) : {};
       const today = this._getToday();
       if (all._date !== today) all = { _date: today };
       all[topicId] = { learned, wrong, date: today };
-      localStorage.setItem(this.PROGRESS_KEY, JSON.stringify(all));
+      localStorage.setItem(this._scoped(this.PROGRESS_KEY), JSON.stringify(all));
     } catch (e) {
       console.error('saveTopicProgress error:', e);
     }
@@ -99,7 +192,7 @@ const Storage = {
    */
   getWrongHistory() {
     try {
-      const raw = localStorage.getItem(this.WRONG_HISTORY_KEY);
+      const raw = localStorage.getItem(this._scoped(this.WRONG_HISTORY_KEY));
       return raw ? JSON.parse(raw) : {};
     } catch (e) {
       return {};
@@ -253,13 +346,13 @@ const Storage = {
 
   _saveWrongHistory(history) {
     try {
-      localStorage.setItem(this.WRONG_HISTORY_KEY, JSON.stringify(history));
+      localStorage.setItem(this._scoped(this.WRONG_HISTORY_KEY), JSON.stringify(history));
     } catch (e) {
       // localStorage đầy → thử prune rồi save lại
       console.warn('WrongHistory save failed, pruning...', e);
       this.pruneHistory(14);
       try {
-        localStorage.setItem(this.WRONG_HISTORY_KEY, JSON.stringify(history));
+        localStorage.setItem(this._scoped(this.WRONG_HISTORY_KEY), JSON.stringify(history));
       } catch (e2) {
         console.error('WrongHistory save failed after prune:', e2);
       }

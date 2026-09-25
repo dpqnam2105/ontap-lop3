@@ -2,7 +2,7 @@
   "topic": {
     "id": "toan_bang-nhan-chia",
     "icon": "✖️",
-    "name": "Bảng nhân, chia (4, 6, 7)",
+    "name": "Bảng nhân, chia (4, 6, 7, 8, 9)",
     "questions": [
       {
         "q": "4 × 3 = ?",
@@ -1459,6 +1459,606 @@
         "hint": "Chia đều trước để biết mỗi bạn có mấy cái, rồi mới bớt đi.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q112"
+      },
+      {
+        "q": "8 × 2 = ?",
+        "choices": [
+          "24",
+          "16",
+          "8",
+          "14"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả của 8 × 1 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q113"
+      },
+      {
+        "q": "8 × 3 = ?",
+        "choices": [
+          "32",
+          "21",
+          "24",
+          "16"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả của 8 × 2 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q114"
+      },
+      {
+        "q": "8 × 4 = ?",
+        "choices": [
+          "28",
+          "24",
+          "40",
+          "32"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả của 8 × 3 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q115"
+      },
+      {
+        "q": "8 × 5 = ?",
+        "choices": [
+          "40",
+          "35",
+          "48",
+          "32"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả của 8 × 4 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q116"
+      },
+      {
+        "q": "8 × 6 = ?",
+        "choices": [
+          "40",
+          "48",
+          "56",
+          "42"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả của 8 × 5 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q117"
+      },
+      {
+        "q": "8 × 7 = ?",
+        "choices": [
+          "48",
+          "49",
+          "64",
+          "56"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả của 8 × 6 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q118"
+      },
+      {
+        "q": "8 × 8 = ?",
+        "choices": [
+          "56",
+          "66",
+          "64",
+          "72"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả của 8 × 7 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q119"
+      },
+      {
+        "q": "8 × 9 = ?",
+        "choices": [
+          "72",
+          "80",
+          "64",
+          "63"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả của 8 × 8 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q120"
+      },
+      {
+        "q": "8 × 10 = ?",
+        "choices": [
+          "88",
+          "72",
+          "80",
+          "70"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả của 8 × 9 rồi cộng thêm 8.",
+        "difficulty": 1,
+        "skill": "times-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q121"
+      },
+      {
+        "q": "16 : 8 = ?",
+        "choices": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "a": 3,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 16?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q122"
+      },
+      {
+        "q": "24 : 8 = ?",
+        "choices": [
+          "3",
+          "2",
+          "5",
+          "4"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 24?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q123"
+      },
+      {
+        "q": "32 : 8 = ?",
+        "choices": [
+          "3",
+          "4",
+          "6",
+          "5"
+        ],
+        "a": 1,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 32?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q124"
+      },
+      {
+        "q": "40 : 8 = ?",
+        "choices": [
+          "5",
+          "4",
+          "6",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 40?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q125"
+      },
+      {
+        "q": "48 : 8 = ?",
+        "choices": [
+          "7",
+          "5",
+          "8",
+          "6"
+        ],
+        "a": 3,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 48?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q126"
+      },
+      {
+        "q": "56 : 8 = ?",
+        "choices": [
+          "9",
+          "6",
+          "7",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 56?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q127"
+      },
+      {
+        "q": "64 : 8 = ?",
+        "choices": [
+          "9",
+          "8",
+          "7",
+          "10"
+        ],
+        "a": 1,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 64?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q128"
+      },
+      {
+        "q": "72 : 8 = ?",
+        "choices": [
+          "8",
+          "10",
+          "9",
+          "11"
+        ],
+        "a": 2,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 72?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q129"
+      },
+      {
+        "q": "80 : 8 = ?",
+        "choices": [
+          "10",
+          "12",
+          "9",
+          "11"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 8: 8 nhân mấy thì bằng 80?",
+        "difficulty": 1,
+        "skill": "divide-8",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q130"
+      },
+      {
+        "q": "9 × 2 = ?",
+        "choices": [
+          "9",
+          "18",
+          "27",
+          "16"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả của 9 × 1 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q131"
+      },
+      {
+        "q": "9 × 3 = ?",
+        "choices": [
+          "18",
+          "36",
+          "24",
+          "27"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả của 9 × 2 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q132"
+      },
+      {
+        "q": "9 × 4 = ?",
+        "choices": [
+          "27",
+          "32",
+          "36",
+          "45"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả của 9 × 3 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q133"
+      },
+      {
+        "q": "9 × 5 = ?",
+        "choices": [
+          "36",
+          "54",
+          "40",
+          "45"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả của 9 × 4 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q134"
+      },
+      {
+        "q": "9 × 6 = ?",
+        "choices": [
+          "48",
+          "54",
+          "63",
+          "45"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả của 9 × 5 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q135"
+      },
+      {
+        "q": "9 × 7 = ?",
+        "choices": [
+          "63",
+          "54",
+          "72",
+          "56"
+        ],
+        "a": 0,
+        "hint": "Lấy kết quả của 9 × 6 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q136"
+      },
+      {
+        "q": "9 × 8 = ?",
+        "choices": [
+          "64",
+          "81",
+          "72",
+          "63"
+        ],
+        "a": 2,
+        "hint": "Lấy kết quả của 9 × 7 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q137"
+      },
+      {
+        "q": "9 × 9 = ?",
+        "choices": [
+          "83",
+          "81",
+          "90",
+          "72"
+        ],
+        "a": 1,
+        "hint": "Lấy kết quả của 9 × 8 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q138"
+      },
+      {
+        "q": "9 × 10 = ?",
+        "choices": [
+          "80",
+          "81",
+          "99",
+          "90"
+        ],
+        "a": 3,
+        "hint": "Lấy kết quả của 9 × 9 rồi cộng thêm 9.",
+        "difficulty": 1,
+        "skill": "times-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q139"
+      },
+      {
+        "q": "18 : 9 = ?",
+        "choices": [
+          "2",
+          "3",
+          "4",
+          "1"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 18?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q140"
+      },
+      {
+        "q": "27 : 9 = ?",
+        "choices": [
+          "2",
+          "3",
+          "5",
+          "4"
+        ],
+        "a": 1,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 27?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q141"
+      },
+      {
+        "q": "36 : 9 = ?",
+        "choices": [
+          "6",
+          "5",
+          "4",
+          "3"
+        ],
+        "a": 2,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 36?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q142"
+      },
+      {
+        "q": "45 : 9 = ?",
+        "choices": [
+          "6",
+          "4",
+          "7",
+          "5"
+        ],
+        "a": 3,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 45?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q143"
+      },
+      {
+        "q": "54 : 9 = ?",
+        "choices": [
+          "6",
+          "5",
+          "8",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 54?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q144"
+      },
+      {
+        "q": "63 : 9 = ?",
+        "choices": [
+          "7",
+          "8",
+          "9",
+          "6"
+        ],
+        "a": 0,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 63?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q145"
+      },
+      {
+        "q": "72 : 9 = ?",
+        "choices": [
+          "7",
+          "8",
+          "10",
+          "9"
+        ],
+        "a": 1,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 72?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q146"
+      },
+      {
+        "q": "81 : 9 = ?",
+        "choices": [
+          "10",
+          "11",
+          "9",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 81?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q147"
+      },
+      {
+        "q": "90 : 9 = ?",
+        "choices": [
+          "12",
+          "9",
+          "11",
+          "10"
+        ],
+        "a": 3,
+        "hint": "Nhẩm lại bảng nhân 9: 9 nhân mấy thì bằng 90?",
+        "difficulty": 1,
+        "skill": "divide-9",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q148"
+      },
+      {
+        "q": "Mỗi túi có 8 cái kẹo. Hỏi 6 túi có bao nhiêu cái kẹo?",
+        "choices": [
+          "56",
+          "42",
+          "14",
+          "48"
+        ],
+        "a": 3,
+        "hint": "Có nhiều nhóm bằng nhau thì dùng phép nhân.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q149"
+      },
+      {
+        "q": "Có 81 quả cam xếp đều vào 9 đĩa. Hỏi mỗi đĩa có bao nhiêu quả?",
+        "choices": [
+          "9",
+          "72",
+          "8",
+          "90"
+        ],
+        "a": 0,
+        "hint": "Chia đều thành các phần bằng nhau thì dùng phép chia.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q150"
+      },
+      {
+        "q": "Mỗi tuần Thỏ học 8 tiết Toán. Hỏi 4 tuần Thỏ học bao nhiêu tiết Toán?",
+        "choices": [
+          "12",
+          "24",
+          "32",
+          "36"
+        ],
+        "a": 2,
+        "hint": "Mỗi tuần như nhau, có mấy tuần thì nhân lên mấy lần.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q151"
+      },
+      {
+        "q": "Có 72 học sinh xếp thành các hàng, mỗi hàng 9 bạn. Hỏi xếp được mấy hàng?",
+        "choices": [
+          "63",
+          "8",
+          "81",
+          "9"
+        ],
+        "a": 1,
+        "hint": "Muốn biết có bao nhiêu nhóm, lấy tổng số chia cho số bạn trong mỗi nhóm.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "source": "claude-audit-20260924",
+        "id": "toan_bang-nhan-chia_q152"
       }
     ]
   }

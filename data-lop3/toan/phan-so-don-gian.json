@@ -1,8 +1,393 @@
 {
   "topic": {
     "id": "toan_phan-so-don-gian",
-    "icon": "",
-    "name": "Phân số đơn giản",
-    "questions": []
+    "icon": "🍕",
+    "name": "Một phần mấy",
+    "questions": [
+      {
+        "q": "Một cái bánh được chia làm 2 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "1/3",
+          "2/1",
+          "1/2",
+          "1/10"
+        ],
+        "a": 2,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q001"
+      },
+      {
+        "q": "Một cái bánh được chia làm 3 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "1/2",
+          "3/1",
+          "1/4",
+          "1/3"
+        ],
+        "a": 3,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q002"
+      },
+      {
+        "q": "Một cái bánh được chia làm 4 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "1/4",
+          "1/5",
+          "1/3",
+          "4/1"
+        ],
+        "a": 0,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q003"
+      },
+      {
+        "q": "Một cái bánh được chia làm 5 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "1/4",
+          "1/6",
+          "5/1",
+          "1/5"
+        ],
+        "a": 3,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q004"
+      },
+      {
+        "q": "Một cái bánh được chia làm 6 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "6/1",
+          "1/5",
+          "1/7",
+          "1/6"
+        ],
+        "a": 3,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q005"
+      },
+      {
+        "q": "Một cái bánh được chia làm 8 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
+        "choices": [
+          "1/9",
+          "1/7",
+          "1/8",
+          "8/1"
+        ],
+        "a": 2,
+        "hint": "Chia thành bao nhiêu phần bằng nhau thì mỗi phần là \"một phần\" bấy nhiêu.",
+        "difficulty": 1,
+        "skill": "unit-fraction",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q006"
+      },
+      {
+        "q": "1/3 đọc là:",
+        "choices": [
+          "một phần tư",
+          "một phần ba",
+          "ba phần một",
+          "một phần hai"
+        ],
+        "a": 1,
+        "hint": "Đọc \"một phần\" rồi đọc số ở dưới gạch ngang.",
+        "difficulty": 1,
+        "skill": "unit-fraction-read",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q007"
+      },
+      {
+        "q": "1/5 đọc là:",
+        "choices": [
+          "năm phần một",
+          "một phần sáu",
+          "một phần tư",
+          "một phần năm"
+        ],
+        "a": 3,
+        "hint": "Đọc \"một phần\" rồi đọc số ở dưới gạch ngang.",
+        "difficulty": 1,
+        "skill": "unit-fraction-read",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q008"
+      },
+      {
+        "q": "1/7 đọc là:",
+        "choices": [
+          "một phần tám",
+          "bảy phần một",
+          "một phần bảy",
+          "một phần sáu"
+        ],
+        "a": 2,
+        "hint": "Đọc \"một phần\" rồi đọc số ở dưới gạch ngang.",
+        "difficulty": 1,
+        "skill": "unit-fraction-read",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q009"
+      },
+      {
+        "q": "1/9 đọc là:",
+        "choices": [
+          "một phần chín",
+          "chín phần một",
+          "một phần mười",
+          "một phần tám"
+        ],
+        "a": 0,
+        "hint": "Đọc \"một phần\" rồi đọc số ở dưới gạch ngang.",
+        "difficulty": 1,
+        "skill": "unit-fraction-read",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q010"
+      },
+      {
+        "q": "1/2 của 18 là:",
+        "choices": [
+          "16",
+          "36",
+          "20",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q011"
+      },
+      {
+        "q": "1/3 của 12 là:",
+        "choices": [
+          "15",
+          "36",
+          "4",
+          "9"
+        ],
+        "a": 2,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q012"
+      },
+      {
+        "q": "1/4 của 24 là:",
+        "choices": [
+          "28",
+          "6",
+          "20",
+          "96"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q013"
+      },
+      {
+        "q": "1/5 của 35 là:",
+        "choices": [
+          "30",
+          "7",
+          "175",
+          "40"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q014"
+      },
+      {
+        "q": "1/6 của 42 là:",
+        "choices": [
+          "252",
+          "7",
+          "36",
+          "48"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q015"
+      },
+      {
+        "q": "1/7 của 56 là:",
+        "choices": [
+          "8",
+          "49",
+          "392",
+          "63"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q016"
+      },
+      {
+        "q": "1/8 của 64 là:",
+        "choices": [
+          "72",
+          "56",
+          "8",
+          "512"
+        ],
+        "a": 2,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q017"
+      },
+      {
+        "q": "1/9 của 81 là:",
+        "choices": [
+          "72",
+          "729",
+          "90",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q018"
+      },
+      {
+        "q": "1/3 của 27 là:",
+        "choices": [
+          "9",
+          "30",
+          "81",
+          "24"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q019"
+      },
+      {
+        "q": "1/4 của 36 là:",
+        "choices": [
+          "32",
+          "9",
+          "40",
+          "144"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q020"
+      },
+      {
+        "q": "Có 24 cái kẹo, Thỏ cho em 1/4 số kẹo. Hỏi em được mấy cái kẹo?",
+        "choices": [
+          "6",
+          "96",
+          "20",
+          "28"
+        ],
+        "a": 0,
+        "hint": "Chia số kẹo thành 4 phần bằng nhau, em được 1 phần.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q021"
+      },
+      {
+        "q": "Lớp có 35 bạn, 1/5 số bạn đi bơi. Hỏi có mấy bạn đi bơi?",
+        "choices": [
+          "7",
+          "175",
+          "30",
+          "40"
+        ],
+        "a": 0,
+        "hint": "Chia số bạn thành 5 phần bằng nhau, lấy 1 phần.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q022"
+      },
+      {
+        "q": "Sợi dây dài 48 cm. Cắt đi 1/6 sợi dây. Đoạn cắt đi dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "288",
+          "54",
+          "8",
+          "42"
+        ],
+        "a": 2,
+        "hint": "Chia độ dài sợi dây thành 6 phần bằng nhau.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q023"
+      },
+      {
+        "q": "Mẹ có 63 quả trứng, đã dùng 1/7 số trứng. Hỏi mẹ đã dùng mấy quả trứng?",
+        "choices": [
+          "7",
+          "9",
+          "70",
+          "56"
+        ],
+        "a": 1,
+        "hint": "Chia số trứng thành 7 phần bằng nhau, lấy 1 phần.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_phan-so-don-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_phan-so-don-gian_q024"
+      }
+    ]
   }
 }

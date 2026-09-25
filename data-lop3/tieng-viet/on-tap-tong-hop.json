@@ -1,8 +1,201 @@
 {
   "topic": {
     "id": "tv_on-tap-tong-hop",
-    "icon": "",
+    "icon": "📖",
     "name": "Ôn tập tổng hợp",
-    "questions": []
+    "questions": [
+      {
+        "q": "Từ nào viết đúng chính tả?",
+        "choices": [
+          "chăm chĩ",
+          "chăm chỉ",
+          "trăm chỉ",
+          "chăm trỉ"
+        ],
+        "a": 1,
+        "hint": "Chú ý cặp ch/tr và dấu hỏi/dấu ngã.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q001"
+      },
+      {
+        "q": "Từ trái nghĩa với «nóng» là:",
+        "choices": [
+          "ấm áp",
+          "lạnh",
+          "oi bức",
+          "nóng nực"
+        ],
+        "a": 1,
+        "hint": "Trái nghĩa là có nghĩa ngược lại. Ba từ còn lại gần nghĩa với nhau.",
+        "difficulty": 1,
+        "skill": "antonym",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q002"
+      },
+      {
+        "q": "Câu nào viết đúng?",
+        "choices": [
+          "Hôm nay trời, nắng đẹp.",
+          "hôm nay, trời nắng đẹp.",
+          "Hôm nay, trời nắng đẹp.",
+          "Hôm nay, trời nắng đẹp"
+        ],
+        "a": 2,
+        "hint": "Kiểm tra chữ đầu câu, dấu phẩy và dấu cuối câu.",
+        "difficulty": 1,
+        "skill": "punctuation",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q003"
+      },
+      {
+        "q": "Trong câu «Bạn Hoa đang đọc truyện.», từ «đọc» là từ chỉ:",
+        "choices": [
+          "màu sắc",
+          "sự vật",
+          "đặc điểm",
+          "hoạt động"
+        ],
+        "a": 3,
+        "hint": "Từ chỉ sự vật: người, con vật, đồ vật, cây cối. Từ chỉ hoạt động: việc làm. Từ chỉ đặc điểm: màu sắc, hình dáng, tính nết.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q004"
+      },
+      {
+        "q": "Câu «Em đi học lúc 6 giờ 30 phút.» trả lời cho câu hỏi nào?",
+        "choices": [
+          "Để làm gì?",
+          "Ở đâu?",
+          "Khi nào?",
+          "Vì sao?"
+        ],
+        "a": 2,
+        "hint": "Xem phần cuối câu cho biết thời gian, nơi chốn hay lí do.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q005"
+      },
+      {
+        "q": "Chọn từ thích hợp điền vào chỗ trống: «Trăng tròn ... quả bóng.»",
+        "choices": [
+          "như",
+          "nhưng",
+          "và",
+          "vì"
+        ],
+        "a": 0,
+        "hint": "Câu đang so sánh trăng với quả bóng. Chọn từ dùng để so sánh.",
+        "difficulty": 1,
+        "skill": "simile",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q006"
+      },
+      {
+        "q": "Câu nào là câu khiến?",
+        "choices": [
+          "Vì sao lớp ồn vậy?",
+          "Các em hãy giữ trật tự nhé!",
+          "Ôi, lớp mình giỏi quá!",
+          "Lớp em rất trật tự."
+        ],
+        "a": 1,
+        "hint": "Câu khiến dùng để yêu cầu, đề nghị, thường có từ hãy, đừng, nhé.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q007"
+      },
+      {
+        "q": "Từ nào cùng nhóm với «thước, bút, tẩy»?",
+        "choices": [
+          "hôm qua",
+          "xanh",
+          "cặp sách",
+          "chạy"
+        ],
+        "a": 2,
+        "hint": "Tìm điểm chung của ba từ đã cho.",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q008"
+      },
+      {
+        "q": "Đọc đoạn: «Cả lớp cùng trực nhật. Các bạn quét sân, lau bảng và tưới cây.» Ý chính của đoạn là gì?",
+        "choices": [
+          "Cả lớp cùng làm vệ sinh",
+          "Nhà trường đóng cửa",
+          "Các bạn được nghỉ học",
+          "Chỉ một bạn quét sân"
+        ],
+        "a": 0,
+        "hint": "Ý chính là điều mà tất cả các câu trong đoạn cùng nói tới.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q009"
+      },
+      {
+        "q": "Khi viết tên riêng «hà nội», cách viết đúng là:",
+        "choices": [
+          "Hà Nội",
+          "hà Nội",
+          "Hà nội",
+          "HÀ nội"
+        ],
+        "a": 0,
+        "hint": "Tên địa danh: viết hoa chữ cái đầu của mỗi tiếng.",
+        "difficulty": 1,
+        "skill": "capital",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q010"
+      },
+      {
+        "q": "Chọn dấu câu đặt cuối câu: «Ôi, con diều bay cao quá»",
+        "choices": [
+          "dấu chấm",
+          "dấu chấm hỏi",
+          "dấu phẩy",
+          "dấu chấm than"
+        ],
+        "a": 3,
+        "hint": "Câu có từ \"Ôi\" và \"quá\" đang bộc lộ cảm xúc hay đang hỏi?",
+        "difficulty": 1,
+        "skill": "end-mark",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q011"
+      },
+      {
+        "q": "Từ nào có nghĩa giống «đất nước»?",
+        "choices": [
+          "quê nội",
+          "thành phố",
+          "làng xóm",
+          "Tổ quốc"
+        ],
+        "a": 3,
+        "hint": "Tìm từ chỉ cả một nước, không chỉ một vùng nhỏ.",
+        "difficulty": 2,
+        "skill": "synonym",
+        "unit": "on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "tv_on-tap-tong-hop_q012"
+      }
+    ]
   }
 }

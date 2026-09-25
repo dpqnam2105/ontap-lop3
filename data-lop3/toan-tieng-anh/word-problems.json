@@ -1,8 +1,169 @@
 {
   "topic": {
     "id": "tta_word-problems",
-    "icon": "",
+    "icon": "🧮",
     "name": "Word Problems",
-    "questions": []
+    "questions": [
+      {
+        "q": "Lan has 18 stickers. She buys 7 more. How many stickers does she have now?",
+        "choices": [
+          "25",
+          "11",
+          "26",
+          "24"
+        ],
+        "a": 0,
+        "hint": "\"More\" means the number goes up.",
+        "difficulty": 1,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q001"
+      },
+      {
+        "q": "There are 40 pencils. The class uses 15. How many are left?",
+        "choices": [
+          "35",
+          "25",
+          "55",
+          "15"
+        ],
+        "a": 1,
+        "hint": "\"Left\" means some have been taken away.",
+        "difficulty": 1,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q002"
+      },
+      {
+        "q": "Each box has 8 crayons. How many crayons are there in 6 boxes?",
+        "choices": [
+          "48",
+          "42",
+          "56",
+          "14"
+        ],
+        "a": 0,
+        "hint": "Equal groups: use multiplication.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q003"
+      },
+      {
+        "q": "36 students sit in 4 equal rows. How many students are in each row?",
+        "choices": [
+          "40",
+          "9",
+          "32",
+          "8"
+        ],
+        "a": 1,
+        "hint": "Sharing equally: use division.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q004"
+      },
+      {
+        "q": "Minh has 27 marbles. Hoa has 12 more than Minh. How many marbles does Hoa have?",
+        "choices": [
+          "39",
+          "29",
+          "15",
+          "49"
+        ],
+        "a": 0,
+        "hint": "Hoa has more, so her number is bigger than Minh's.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q005"
+      },
+      {
+        "q": "A rope is 50 cm long. Mai cuts off 18 cm. How long is the piece left?",
+        "choices": [
+          "38 cm",
+          "42 cm",
+          "32 cm",
+          "68 cm"
+        ],
+        "a": 2,
+        "hint": "Cutting off makes the rope shorter.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q006"
+      },
+      {
+        "q": "A square garden has sides of 7 m. What is its perimeter?",
+        "choices": [
+          "21 m",
+          "49 m",
+          "14 m",
+          "28 m"
+        ],
+        "a": 3,
+        "hint": "Perimeter: add all 4 sides.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q007"
+      },
+      {
+        "q": "There are 5 baskets. Each basket has 9 mangoes. How many mangoes are there?",
+        "choices": [
+          "40",
+          "54",
+          "14",
+          "45"
+        ],
+        "a": 3,
+        "hint": "Equal groups: use multiplication.",
+        "difficulty": 1,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q008"
+      },
+      {
+        "q": "Dad has 50 000 dong. He spends 35 000 dong. How much money is left?",
+        "choices": [
+          "5 000 dong",
+          "15 000 dong",
+          "25 000 dong",
+          "85 000 dong"
+        ],
+        "a": 1,
+        "hint": "Spending money makes it less.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q009"
+      },
+      {
+        "q": "A lesson starts at 7:00 and ends at 7:45. How long is the lesson?",
+        "choices": [
+          "30 minutes",
+          "1 hour",
+          "45 minutes",
+          "15 minutes"
+        ],
+        "a": 2,
+        "hint": "Count how far the minute hand moves.",
+        "difficulty": 2,
+        "skill": "word-problems",
+        "unit": "word-problems",
+        "source": "claude-audit-20260924",
+        "id": "tta_word-problems_q010"
+      }
+    ]
   }
 }

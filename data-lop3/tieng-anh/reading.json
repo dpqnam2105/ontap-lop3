@@ -1,8 +1,201 @@
 {
   "topic": {
     "id": "en_reading",
-    "icon": "",
+    "icon": "🌍",
     "name": "Reading",
-    "questions": []
+    "questions": [
+      {
+        "q": "Read: \"Mina has a red bike. Every day, she rides it to school with her brother.\" What colour is the bike?",
+        "choices": [
+          "black",
+          "red",
+          "green",
+          "blue"
+        ],
+        "a": 1,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q001"
+      },
+      {
+        "q": "Read: \"Mina has a red bike. Every day, she rides it to school with her brother.\" Where does Mina ride her bike?",
+        "choices": [
+          "to the zoo",
+          "to the park",
+          "to the market",
+          "to school"
+        ],
+        "a": 3,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q002"
+      },
+      {
+        "q": "Read: \"Mina has a red bike. Every day, she rides it to school with her brother.\" Who goes with Mina?",
+        "choices": [
+          "her friend",
+          "her teacher",
+          "her mother",
+          "her brother"
+        ],
+        "a": 3,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q003"
+      },
+      {
+        "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" How does Tom feel after football?",
+        "choices": [
+          "hot and thirsty",
+          "cold and hungry",
+          "sleepy",
+          "sad"
+        ],
+        "a": 0,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q004"
+      },
+      {
+        "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" What does Tom drink?",
+        "choices": [
+          "milk",
+          "juice",
+          "water",
+          "tea"
+        ],
+        "a": 2,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q005"
+      },
+      {
+        "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" Where does Tom sit?",
+        "choices": [
+          "on a bus",
+          "under a tree",
+          "at the table",
+          "in the classroom"
+        ],
+        "a": 1,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q006"
+      },
+      {
+        "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What is the weather like?",
+        "choices": [
+          "windy",
+          "sunny",
+          "rainy",
+          "snowy"
+        ],
+        "a": 2,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q007"
+      },
+      {
+        "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What colour is Lily's umbrella?",
+        "choices": [
+          "blue",
+          "yellow",
+          "pink",
+          "red"
+        ],
+        "a": 1,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q008"
+      },
+      {
+        "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" Why does Lily take an umbrella?",
+        "choices": [
+          "because it is sunny",
+          "because it is hot",
+          "because it is rainy",
+          "because she is hungry"
+        ],
+        "a": 2,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q009"
+      },
+      {
+        "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What does Lily put on her feet?",
+        "choices": [
+          "boots",
+          "a hat",
+          "sandals",
+          "socks"
+        ],
+        "a": 0,
+        "hint": "Read the text again and find the sentence about it.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q010"
+      },
+      {
+        "q": "Read: \"Nam has two dogs. One is big and brown. The other is small and white.\" How many dogs does Nam have?",
+        "choices": [
+          "one",
+          "four",
+          "three",
+          "two"
+        ],
+        "a": 3,
+        "hint": "Find the number in the first sentence.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q011"
+      },
+      {
+        "q": "Read: \"Nam has two dogs. One is big and brown. The other is small and white.\" What is the small dog like?",
+        "choices": [
+          "white",
+          "big",
+          "black",
+          "brown"
+        ],
+        "a": 0,
+        "hint": "Read the last sentence carefully.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading",
+        "source": "claude-audit-20260924",
+        "id": "en_reading_q012"
+      }
+    ]
   }
 }

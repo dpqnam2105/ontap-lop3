@@ -1,8 +1,553 @@
 {
   "topic": {
     "id": "toan_cong-tru-trong-100000",
-    "icon": "",
+    "icon": "➕",
     "name": "Cộng trừ trong phạm vi 100 000",
-    "questions": []
+    "questions": [
+      {
+        "q": "2456 + 3678 = ?",
+        "choices": [
+          "5024",
+          "6144",
+          "6034",
+          "6134"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q001"
+      },
+      {
+        "q": "45 780 + 12 345 = ?",
+        "choices": [
+          "58 125",
+          "57 025",
+          "58 135",
+          "58 025"
+        ],
+        "a": 0,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q002"
+      },
+      {
+        "q": "38 509 + 26 496 = ?",
+        "choices": [
+          "54 995",
+          "64 905",
+          "65 015",
+          "65 005"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q003"
+      },
+      {
+        "q": "7065 + 2947 = ?",
+        "choices": [
+          "9902",
+          "9912",
+          "10 022",
+          "10 012"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q004"
+      },
+      {
+        "q": "19 999 + 4001 = ?",
+        "choices": [
+          "24 010",
+          "23 900",
+          "24 000",
+          "13 990"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q005"
+      },
+      {
+        "q": "56 238 + 27 184 = ?",
+        "choices": [
+          "73 312",
+          "83 322",
+          "83 422",
+          "83 432"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q006"
+      },
+      {
+        "q": "4705 + 3895 = ?",
+        "choices": [
+          "7590",
+          "8500",
+          "8600",
+          "8610"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q007"
+      },
+      {
+        "q": "60 417 + 29 586 = ?",
+        "choices": [
+          "89 903",
+          "90 013",
+          "90 003",
+          "89 993"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q008"
+      },
+      {
+        "q": "1368 + 2789 = ?",
+        "choices": [
+          "3047",
+          "4157",
+          "4057",
+          "4167"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q009"
+      },
+      {
+        "q": "34 095 + 48 917 = ?",
+        "choices": [
+          "72 902",
+          "83 012",
+          "83 022",
+          "82 912"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng rồi cộng từ hàng đơn vị. Hàng nào được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q010"
+      },
+      {
+        "q": "5000 − 2750 = ?",
+        "choices": [
+          "2260",
+          "2150",
+          "2250",
+          "3750"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q011"
+      },
+      {
+        "q": "45 321 − 13 287 = ?",
+        "choices": [
+          "32 166",
+          "32 044",
+          "32 034",
+          "31 934"
+        ],
+        "a": 2,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q012"
+      },
+      {
+        "q": "8000 − 999 = ?",
+        "choices": [
+          "7001",
+          "7011",
+          "8999",
+          "6901"
+        ],
+        "a": 0,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q013"
+      },
+      {
+        "q": "70 302 − 25 418 = ?",
+        "choices": [
+          "44 894",
+          "44 884",
+          "55 116",
+          "44 784"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q014"
+      },
+      {
+        "q": "9105 − 4868 = ?",
+        "choices": [
+          "4137",
+          "5763",
+          "4247",
+          "4237"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q015"
+      },
+      {
+        "q": "63 000 − 27 450 = ?",
+        "choices": [
+          "44 450",
+          "35 550",
+          "35 560",
+          "35 450"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q016"
+      },
+      {
+        "q": "40 016 − 18 239 = ?",
+        "choices": [
+          "38 223",
+          "21 677",
+          "21 787",
+          "21 777"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q017"
+      },
+      {
+        "q": "7432 − 3867 = ?",
+        "choices": [
+          "3575",
+          "4435",
+          "3465",
+          "3565"
+        ],
+        "a": 3,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q018"
+      },
+      {
+        "q": "100 000 − 45 000 = ?",
+        "choices": [
+          "54 900",
+          "55 000",
+          "145 000",
+          "55 010"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q019"
+      },
+      {
+        "q": "52 604 − 38 715 = ?",
+        "choices": [
+          "13 889",
+          "13 899",
+          "26 111",
+          "13 789"
+        ],
+        "a": 0,
+        "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Hàng nào không trừ được thì mượn 1 ở hàng bên trái.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q020"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: ? + 1250 = 4000",
+        "choices": [
+          "3750",
+          "5250",
+          "2750",
+          "2850"
+        ],
+        "a": 2,
+        "hint": "Muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết.",
+        "difficulty": 2,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q021"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: 3600 + ? = 9000",
+        "choices": [
+          "5400",
+          "12 600",
+          "5600",
+          "6400"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết.",
+        "difficulty": 2,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q022"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: ? − 350 = 1200",
+        "choices": [
+          "1550",
+          "1450",
+          "850",
+          "1650"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm số bị trừ, lấy hiệu cộng với số trừ.",
+        "difficulty": 2,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q023"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: 5000 − ? = 1800",
+        "choices": [
+          "3800",
+          "3200",
+          "6800",
+          "4200"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm số trừ, lấy số bị trừ trừ đi hiệu.",
+        "difficulty": 3,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q024"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: ? + 25 000 = 60 000",
+        "choices": [
+          "25 000",
+          "35 000",
+          "45 000",
+          "85 000"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết.",
+        "difficulty": 2,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q025"
+      },
+      {
+        "q": "Số thích hợp thay cho dấu ? là: 72 000 − ? = 30 000",
+        "choices": [
+          "42 000",
+          "32 000",
+          "102 000",
+          "48 000"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm số trừ, lấy số bị trừ trừ đi hiệu.",
+        "difficulty": 3,
+        "skill": "find-unknown",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q026"
+      },
+      {
+        "q": "Giá trị của biểu thức 2000 − (500 + 300) là:",
+        "choices": [
+          "1300",
+          "1800",
+          "1200",
+          "1000"
+        ],
+        "a": 2,
+        "hint": "Biểu thức có dấu ngoặc thì tính trong ngoặc trước.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q027"
+      },
+      {
+        "q": "Giá trị của biểu thức 9000 − 3000 − 2000 là:",
+        "choices": [
+          "8000",
+          "3000",
+          "5000",
+          "4000"
+        ],
+        "a": 3,
+        "hint": "Chỉ có phép cộng, trừ thì tính lần lượt từ trái sang phải.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q028"
+      },
+      {
+        "q": "Giá trị của biểu thức 7500 − (2500 − 1000) là:",
+        "choices": [
+          "6000",
+          "4000",
+          "5000",
+          "6500"
+        ],
+        "a": 0,
+        "hint": "Biểu thức có dấu ngoặc thì tính trong ngoặc trước.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q029"
+      },
+      {
+        "q": "Giá trị của biểu thức 40 000 + 20 000 − 30 000 là:",
+        "choices": [
+          "30 000",
+          "20 000",
+          "10 000",
+          "90 000"
+        ],
+        "a": 0,
+        "hint": "Chỉ có phép cộng, trừ thì tính lần lượt từ trái sang phải.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q030"
+      },
+      {
+        "q": "Tính nhẩm: 60 000 − 20 000 = ?",
+        "choices": [
+          "40 000",
+          "50 000",
+          "30 000",
+          "41 000"
+        ],
+        "a": 0,
+        "hint": "Nghĩ theo đơn vị nghìn hoặc chục nghìn, ví dụ: 6 chục nghìn và 2 chục nghìn.",
+        "difficulty": 1,
+        "skill": "mental",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q031"
+      },
+      {
+        "q": "Tính nhẩm: 30 000 + 50 000 = ?",
+        "choices": [
+          "70 000",
+          "90 000",
+          "81 000",
+          "80 000"
+        ],
+        "a": 3,
+        "hint": "Nghĩ theo đơn vị nghìn hoặc chục nghìn, ví dụ: 6 chục nghìn và 2 chục nghìn.",
+        "difficulty": 1,
+        "skill": "mental",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q032"
+      },
+      {
+        "q": "Tính nhẩm: 8000 + 7000 = ?",
+        "choices": [
+          "25 000",
+          "15 000",
+          "16 000",
+          "5000"
+        ],
+        "a": 1,
+        "hint": "Nghĩ theo đơn vị nghìn hoặc chục nghìn, ví dụ: 6 chục nghìn và 2 chục nghìn.",
+        "difficulty": 1,
+        "skill": "mental",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q033"
+      },
+      {
+        "q": "Tính nhẩm: 100 000 − 40 000 = ?",
+        "choices": [
+          "50 000",
+          "60 000",
+          "70 000",
+          "61 000"
+        ],
+        "a": 1,
+        "hint": "Nghĩ theo đơn vị nghìn hoặc chục nghìn, ví dụ: 6 chục nghìn và 2 chục nghìn.",
+        "difficulty": 1,
+        "skill": "mental",
+        "unit": "cong-tru-trong-100000",
+        "source": "claude-audit-20260924",
+        "id": "toan_cong-tru-trong-100000_q034"
+      }
+    ]
   }
 }

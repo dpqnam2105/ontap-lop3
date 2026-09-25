@@ -171,12 +171,14 @@ const API = {
 
   /** Lưu điểm + log đầy đủ (subject, topic, duration) */
   async saveScore(name, score, total, subject, topic, durationSec) {
+    const clean = (window.Storage && Storage.normalizeName) ? Storage.normalizeName(name) : String(name || '').trim();
+    if (clean.length < 2) return false;
     try {
       await fetch(this.GS_URL, {
         method: 'POST',
         body: JSON.stringify({
           action: 'saveScore',
-          name,
+          name: clean,
           score,
           total,
           subject: subject || '',

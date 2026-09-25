@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "toan_on-tap-tong-hop",
-    "icon": "",
+    "icon": "🌟",
     "name": "Ôn tập tổng hợp",
-    "questions": []
+    "questions": [
+      {
+        "q": "Số liền sau của 39 999 là:",
+        "choices": [
+          "30 000",
+          "39 998",
+          "40 001",
+          "40 000"
+        ],
+        "a": 3,
+        "hint": "Thêm 1 vào số đã cho, nhớ lần lượt qua các hàng.",
+        "difficulty": 1,
+        "skill": "sequence",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q001"
+      },
+      {
+        "q": "Số gồm 4 chục nghìn và 5 trăm viết là:",
+        "choices": [
+          "40 500",
+          "45 000",
+          "4500",
+          "40 050"
+        ],
+        "a": 0,
+        "hint": "Kẻ 5 ô cho 5 hàng. Hàng nào không được nhắc đến thì viết 0.",
+        "difficulty": 2,
+        "skill": "place-value",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q002"
+      },
+      {
+        "q": "Số «sáu mươi nghìn không trăm linh tám» viết là:",
+        "choices": [
+          "60 008",
+          "60 080",
+          "60 800",
+          "6008"
+        ],
+        "a": 0,
+        "hint": "Viết lần lượt từng hàng. \"Không trăm linh\" nghĩa là hàng trăm và hàng chục đều là 0.",
+        "difficulty": 2,
+        "skill": "write-number",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q003"
+      },
+      {
+        "q": "27 450 + 16 380 = ?",
+        "choices": [
+          "33 730",
+          "43 830",
+          "44 830",
+          "43 730"
+        ],
+        "a": 1,
+        "hint": "Đặt tính thẳng hàng, cộng từ hàng đơn vị, nhớ đúng sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "add",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q004"
+      },
+      {
+        "q": "80 000 − 45 670 = ?",
+        "choices": [
+          "34 330",
+          "45 430",
+          "34 430",
+          "35 330"
+        ],
+        "a": 0,
+        "hint": "Đặt tính thẳng hàng, trừ từ hàng đơn vị, mượn khi hàng trên nhỏ hơn.",
+        "difficulty": 2,
+        "skill": "subtract",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q005"
+      },
+      {
+        "q": "8 × 7 = ?",
+        "choices": [
+          "54",
+          "48",
+          "63",
+          "56"
+        ],
+        "a": 3,
+        "hint": "Nhẩm bảng nhân 8 hoặc bảng nhân 7.",
+        "difficulty": 1,
+        "skill": "times-table",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q006"
+      },
+      {
+        "q": "1208 × 4 = ?",
+        "choices": [
+          "4822",
+          "4832",
+          "4032",
+          "4812"
+        ],
+        "a": 1,
+        "hint": "Đặt tính, nhân từ hàng đơn vị và nhớ sang hàng bên trái.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q007"
+      },
+      {
+        "q": "72 : 8 = ?",
+        "choices": [
+          "64",
+          "7",
+          "9",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Nhẩm bảng nhân 8: 8 nhân mấy bằng 72?",
+        "difficulty": 1,
+        "skill": "divide",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q008"
+      },
+      {
+        "q": "1/4 của 28 là:",
+        "choices": [
+          "112",
+          "24",
+          "7",
+          "32"
+        ],
+        "a": 2,
+        "hint": "Lấy số đó chia cho 4.",
+        "difficulty": 2,
+        "skill": "fraction-of",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q009"
+      },
+      {
+        "q": "Hình vuông cạnh 5 cm có chu vi là:",
+        "choices": [
+          "9 cm",
+          "10 cm",
+          "20 cm",
+          "25 cm"
+        ],
+        "a": 2,
+        "hint": "Chu vi là tổng độ dài 4 cạnh.",
+        "difficulty": 2,
+        "skill": "perimeter",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q010"
+      },
+      {
+        "q": "Hình chữ nhật dài 7 cm, rộng 5 cm có diện tích là:",
+        "choices": [
+          "24 cm²",
+          "35 cm²",
+          "12 cm²",
+          "35 cm"
+        ],
+        "a": 1,
+        "hint": "Diện tích hình chữ nhật: dài nhân rộng, đơn vị là cm².",
+        "difficulty": 3,
+        "skill": "area",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q011"
+      },
+      {
+        "q": "2 km = ? m",
+        "choices": [
+          "200",
+          "2000",
+          "20 000",
+          "20"
+        ],
+        "a": 1,
+        "hint": "Ki-lô có nghĩa là \"nghìn\".",
+        "difficulty": 1,
+        "skill": "convert",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q012"
+      },
+      {
+        "q": "Kim giờ chỉ quá số 4 một chút, kim phút chỉ số 6. Đồng hồ chỉ:",
+        "choices": [
+          "5 giờ 30 phút",
+          "4 giờ 6 phút",
+          "6 giờ 20 phút",
+          "4 giờ 30 phút"
+        ],
+        "a": 3,
+        "hint": "Mỗi số trên mặt đồng hồ ứng với 5 phút.",
+        "difficulty": 2,
+        "skill": "clock",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q013"
+      },
+      {
+        "q": "Hùng có 30 viên bi, Hùng kém Việt 12 viên. Hỏi Việt có bao nhiêu viên bi?",
+        "choices": [
+          "42",
+          "40",
+          "18",
+          "32"
+        ],
+        "a": 0,
+        "hint": "\"Kém\" nghĩa là ít hơn. Vậy Việt nhiều hơn hay ít hơn Hùng?",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q014"
+      },
+      {
+        "q": "Làm tròn số 6473 đến hàng trăm ta được:",
+        "choices": [
+          "6000",
+          "6470",
+          "6400",
+          "6500"
+        ],
+        "a": 3,
+        "hint": "Nhìn chữ số hàng chục: từ 5 trở lên thì làm tròn lên.",
+        "difficulty": 2,
+        "skill": "rounding",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q015"
+      },
+      {
+        "q": "50 : 8 = ? (phép chia có dư)",
+        "choices": [
+          "5 dư 10",
+          "6 dư 8",
+          "6 dư 2",
+          "7 dư 2"
+        ],
+        "a": 2,
+        "hint": "Số dư phải bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_on-tap-tong-hop",
+        "source": "claude-audit-20260924",
+        "id": "toan_on-tap-tong-hop_q016"
+      }
+    ]
   }
 }

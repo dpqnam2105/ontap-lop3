@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "tv_cau-va-dau-cau",
-    "icon": "",
+    "icon": "📖",
     "name": "Câu và dấu câu",
-    "questions": []
+    "questions": [
+      {
+        "q": "Câu nào viết đúng?",
+        "choices": [
+          "Bạn tên là nam",
+          "bạn tên là Nam",
+          "Bạn tên là Nam.",
+          "bạn tên là nam."
+        ],
+        "a": 2,
+        "hint": "Kiểm tra 3 điều: chữ đầu câu, tên riêng và dấu cuối câu.",
+        "difficulty": 1,
+        "skill": "capital",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q001"
+      },
+      {
+        "q": "Câu nào là câu hỏi?",
+        "choices": [
+          "Mình thích môn Toán nhất.",
+          "Môn Toán hay quá!",
+          "Bạn thích môn học nào nhất?",
+          "Bạn hãy học bài đi."
+        ],
+        "a": 2,
+        "hint": "Câu hỏi dùng để hỏi, thường có từ để hỏi như ai, gì, nào, đâu, bao giờ.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q002"
+      },
+      {
+        "q": "Câu nào là câu kể?",
+        "choices": [
+          "Đừng chạy ngoài hành lang!",
+          "Ôi, bảo tàng rộng quá!",
+          "Lớp em đi đâu vậy?",
+          "Hôm qua lớp em đi thăm bảo tàng."
+        ],
+        "a": 3,
+        "hint": "Câu kể dùng để kể, tả hoặc giới thiệu, cuối câu thường có dấu chấm.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q003"
+      },
+      {
+        "q": "Câu nào là câu cảm?",
+        "choices": [
+          "Ôi, bông hoa đẹp quá!",
+          "Em hãy tưới hoa đi.",
+          "Bông hoa có màu đỏ.",
+          "Bông hoa này tên là gì?"
+        ],
+        "a": 0,
+        "hint": "Câu cảm bộc lộ cảm xúc (vui, ngạc nhiên, thán phục...), thường có từ ôi, chao ôi, quá, lắm.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q004"
+      },
+      {
+        "q": "Câu nào là câu khiến?",
+        "choices": [
+          "Sách của em màu xanh.",
+          "Các em hãy mở sách ra.",
+          "Em mở sách lúc nào?",
+          "Sách này hay quá!"
+        ],
+        "a": 1,
+        "hint": "Câu khiến dùng để yêu cầu, đề nghị, thường có từ hãy, đừng, chớ, đi, nhé.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q005"
+      },
+      {
+        "q": "Câu «Bạn ơi, đợi mình với!» thuộc kiểu câu nào?",
+        "choices": [
+          "Câu cảm",
+          "Câu khiến",
+          "Câu hỏi",
+          "Câu kể"
+        ],
+        "a": 1,
+        "hint": "Xem câu dùng để làm gì: kể/tả, hỏi, bộc lộ cảm xúc hay yêu cầu, đề nghị. Nhìn cả dấu cuối câu.",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q006"
+      },
+      {
+        "q": "Câu «Chao ôi, cánh đồng lúa mới đẹp làm sao!» thuộc kiểu câu nào?",
+        "choices": [
+          "Câu hỏi",
+          "Câu cảm",
+          "Câu kể",
+          "Câu khiến"
+        ],
+        "a": 1,
+        "hint": "Xem câu dùng để làm gì: kể/tả, hỏi, bộc lộ cảm xúc hay yêu cầu, đề nghị. Nhìn cả dấu cuối câu.",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q007"
+      },
+      {
+        "q": "Câu nào đặt dấu phẩy đúng?",
+        "choices": [
+          "Mẹ mua rau, cá và trứng.",
+          "Mẹ mua, rau cá và trứng.",
+          "Mẹ mua rau cá, và, trứng.",
+          "Mẹ, mua rau cá và trứng."
+        ],
+        "a": 0,
+        "hint": "Dấu phẩy ngăn cách các sự vật được kể ra liên tiếp. Trước chữ \"và\" không cần dấu phẩy.",
+        "difficulty": 2,
+        "skill": "comma",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q008"
+      },
+      {
+        "q": "Câu nào dùng dấu hai chấm đúng?",
+        "choices": [
+          "Trong cặp em có: sách, vở, bút và thước.",
+          "Trong cặp em có sách, vở: bút và thước.",
+          "Trong cặp: em có sách, vở, bút và thước.",
+          "Trong: cặp em có sách, vở, bút và thước."
+        ],
+        "a": 0,
+        "hint": "Dấu hai chấm đặt ngay trước phần kể ra các sự vật.",
+        "difficulty": 2,
+        "skill": "colon",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q009"
+      },
+      {
+        "q": "Dấu gạch ngang ở đầu dòng dùng để:",
+        "choices": [
+          "ngăn cách các sự vật cùng loại",
+          "đánh dấu lời nói của nhân vật",
+          "kết thúc một câu hỏi",
+          "bắt đầu một tên riêng"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại các đoạn truyện có nhân vật trò chuyện với nhau.",
+        "difficulty": 2,
+        "skill": "dash",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q010"
+      },
+      {
+        "q": "Câu nào dùng dấu ngoặc kép đúng?",
+        "choices": [
+          "Mẹ “dặn”: Con nhớ mặc áo ấm nhé!",
+          "“Mẹ dặn:” Con nhớ mặc áo ấm nhé!",
+          "Mẹ dặn: “Con nhớ mặc áo ấm nhé!”",
+          "Mẹ dặn: Con nhớ “mặc” áo ấm nhé!"
+        ],
+        "a": 2,
+        "hint": "Dấu ngoặc kép bao quanh đúng phần lời nói của nhân vật được nhắc lại.",
+        "difficulty": 2,
+        "skill": "quote",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q011"
+      },
+      {
+        "q": "Chọn dấu câu đặt cuối câu: «Bạn đã làm xong bài tập chưa»",
+        "choices": [
+          "dấu chấm",
+          "dấu hai chấm",
+          "dấu phẩy",
+          "dấu chấm hỏi"
+        ],
+        "a": 3,
+        "hint": "Đọc to câu lên: người nói đang kể, đang hỏi hay đang bộc lộ cảm xúc?",
+        "difficulty": 1,
+        "skill": "end-mark",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q012"
+      },
+      {
+        "q": "Chọn dấu câu đặt cuối câu: «Sáng nào ông em cũng tập thể dục»",
+        "choices": [
+          "dấu chấm than",
+          "dấu hai chấm",
+          "dấu chấm",
+          "dấu chấm hỏi"
+        ],
+        "a": 2,
+        "hint": "Đọc to câu lên: người nói đang kể, đang hỏi hay đang bộc lộ cảm xúc?",
+        "difficulty": 1,
+        "skill": "end-mark",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q013"
+      },
+      {
+        "q": "Câu nào viết hoa tên riêng đúng?",
+        "choices": [
+          "Bạn Minh sống ở hà Nội.",
+          "Bạn minh sống ở Hà nội.",
+          "bạn Minh sống ở hà nội.",
+          "Bạn Minh sống ở Hà Nội."
+        ],
+        "a": 3,
+        "hint": "Tên người, tên địa danh: viết hoa chữ cái đầu của mỗi tiếng.",
+        "difficulty": 1,
+        "skill": "capital",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q014"
+      },
+      {
+        "q": "Tên người nào được viết đúng?",
+        "choices": [
+          "nguyễn Thị Lan",
+          "Nguyễn Thị lan",
+          "Nguyễn thị Lan",
+          "Nguyễn Thị Lan"
+        ],
+        "a": 3,
+        "hint": "Tên người: viết hoa chữ cái đầu của mỗi tiếng trong họ, tên đệm và tên.",
+        "difficulty": 1,
+        "skill": "capital",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q015"
+      },
+      {
+        "q": "Trong câu «Sáng nay, em đi học rất sớm.», dấu phẩy dùng để:",
+        "choices": [
+          "ngăn cách bộ phận chỉ thời gian với phần sau",
+          "đánh dấu lời nói của nhân vật",
+          "kết thúc câu",
+          "ngăn cách các từ chỉ màu sắc"
+        ],
+        "a": 0,
+        "hint": "Hỏi thử: \"Sáng nay\" trả lời cho câu hỏi Khi nào, Ở đâu hay Làm gì?",
+        "difficulty": 3,
+        "skill": "comma",
+        "unit": "cau-va-dau-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_cau-va-dau-cau_q016"
+      }
+    ]
   }
 }

@@ -7,16 +7,31 @@ const ParentDashboard = {
 
   // Truy cập App để lấy playerName, PIN_KEY, DEFAULT_PIN, showScreen
 
+  _pinIsWeak(pin) {
+    if (!/^\d{4}$/.test(pin)) return true;
+    if (/^(\d)\1{3}$/.test(pin)) return true;
+    const weak = { '1234': 1, '0123': 1, '2345': 1, '4321': 1, '9876': 1, '1212': 1, '2580': 1 };
+    return !!weak[pin];
+  },
+
   _openParentArea() {
     document.getElementById('pinInput').value = '';
     document.getElementById('pinError').classList.add('hidden');
 
-    const isDefault = !localStorage.getItem(App.PIN_KEY);
+    const saved = localStorage.getItem(App.PIN_KEY);
     const hint = document.getElementById('pinHint');
-    if (isDefault) {
-      hint.textContent = '💡 Lần đầu truy cập: PIN mặc định là 1234. Hãy đổi sau khi vào.';
+    const desc = document.querySelector('.pin-desc');
+    const submit = document.getElementById('btnPinSubmit');
+    this._pinMode = saved ? 'unlock' : 'create';
+
+    if (!saved) {
+      if (desc) desc.textContent = 'Đặt mã PIN 4 số để chỉ bố mẹ xem được báo cáo. Đừng chọn số dễ đoán và đừng cho con biết.';
+      if (hint) hint.textContent = 'Mã này chỉ lưu trên máy này.';
+      if (submit) submit.textContent = 'Đặt mã PIN';
     } else {
-      hint.textContent = '';
+      if (desc) desc.textContent = 'Nhập mã PIN 4 số để xem báo cáo học tập của con.';
+      if (hint) hint.textContent = '';
+      if (submit) submit.textContent = 'Vào xem 🔓';
     }
 
     App.showScreen('pin');
@@ -25,13 +40,32 @@ const ParentDashboard = {
 
   _checkPin() {
     const input = document.getElementById('pinInput').value.trim();
-    const savedPin = localStorage.getItem(App.PIN_KEY) || App.DEFAULT_PIN;
+    const error = document.getElementById('pinError');
 
-    if (input === savedPin) {
-      document.getElementById('pinError').classList.add('hidden');
+    if (this._pinMode === 'create') {
+      if (!/^\d{4}$/.test(input)) {
+        error.textContent = 'PIN phải là đúng 4 chữ số.';
+        error.classList.remove('hidden');
+        return;
+      }
+      if (this._pinIsWeak(input)) {
+        error.textContent = 'Mã này quá dễ đoán. Hãy chọn mã khác.';
+        error.classList.remove('hidden');
+        return;
+      }
+      localStorage.setItem(App.PIN_KEY, input);
+      error.classList.add('hidden');
+      this._openDashboard();
+      return;
+    }
+
+    const savedPin = localStorage.getItem(App.PIN_KEY) || '';
+    if (savedPin && input === savedPin) {
+      error.classList.add('hidden');
       this._openDashboard();
     } else {
-      document.getElementById('pinError').classList.remove('hidden');
+      error.textContent = 'Sai mã PIN. Thử lại nhé!';
+      error.classList.remove('hidden');
       document.getElementById('pinInput').value = '';
       document.getElementById('pinInput').focus();
     }
@@ -41,17 +75,17 @@ const ParentDashboard = {
     const oldPin = prompt('Nhập PIN hiện tại:');
     if (oldPin === null) return;
 
-    const savedPin = localStorage.getItem(App.PIN_KEY) || App.DEFAULT_PIN;
-    if (oldPin !== savedPin) {
+    const savedPin = localStorage.getItem(App.PIN_KEY) || '';
+    if (!savedPin || oldPin !== savedPin) {
       alert('PIN hiện tại không đúng!');
       return;
     }
 
-    const newPin = prompt('Nhập PIN mới (4 số):');
+    const newPin = prompt('Nhập PIN mới gồm 4 số, khó đoán:');
     if (newPin === null) return;
 
-    if (!/^\d{4}$/.test(newPin)) {
-      alert('PIN phải là 4 chữ số!');
+    if (!/^\d{4}$/.test(newPin) || this._pinIsWeak(newPin)) {
+      alert('PIN mới phải là 4 chữ số và không quá dễ đoán.');
       return;
     }
 
@@ -62,19 +96,23 @@ const ParentDashboard = {
   async _openDashboard() {
     App.showScreen('parent');
 
-    if (!localStorage.getItem(App.PIN_KEY)) {
-      setTimeout(() => alert('🔒 Bạn đang dùng PIN mặc định (1234). Hãy bấm "Đổi PIN" để đặt mã riêng cho an toàn hơn.'), 200);
-    }
-
     const select = document.getElementById('parentNameSelect');
     select.innerHTML = '<option>Đang tải...</option>';
 
-    const leaderboard = await API.getLeaderboard();
-    const names = leaderboard.map(p => p.name);
+    const norm = (n) => (window.Storage && Storage.normalizeName) ? Storage.normalizeName(n) : String(n || '').trim();
+    const canon = (n) => (window.Storage && Storage.canonName) ? Storage.canonName(n) : norm(n).toLowerCase();
 
-    if (App.playerName && !names.includes(App.playerName)) {
-      names.unshift(App.playerName);
-    }
+    // Danh sách bé lấy từ bảng xếp hạng (Google Sheet) để bố mẹ xem được từ máy khác.
+    // Gộp các cách gõ khác nhau của cùng một tên (anh thư / Anh Thư).
+    const leaderboard = await API.getLeaderboard();
+    const seen = new Map();
+    const current = norm(App.playerName || '');
+    if (current) seen.set(canon(current), current);
+    (leaderboard || []).forEach(p => {
+      const n = norm(p && p.name);
+      if (n.length >= 2 && !seen.has(canon(n))) seen.set(canon(n), n);
+    });
+    const names = Array.from(seen.values());
 
     if (names.length === 0) {
       select.innerHTML = '<option>Chưa có bé nào</option>';
@@ -84,12 +122,20 @@ const ParentDashboard = {
     }
 
     select.innerHTML = names.map(n => `<option value="${this._escape(n)}">${this._escape(n)}</option>`).join('');
-
-    if (App.playerName && names.includes(App.playerName)) {
-      select.value = App.playerName;
-    }
-
+    select.value = current && names.includes(current) ? current : names[0];
+    this._ensurePrivacyNote();
     await this._loadParentLog(select.value);
+  },
+
+  _ensurePrivacyNote() {
+    if (document.getElementById('parentPrivacyNote')) return;
+    const host = document.getElementById('parentSummary');
+    if (!host) return;
+    const note = document.createElement('p');
+    note.id = 'parentPrivacyNote';
+    note.style.cssText = 'margin:8px 0 0;font-size:.92rem;font-weight:700;color:#475569';
+    note.textContent = 'Chọn tên bé để xem báo cáo, xem được từ bất kỳ máy nào. Riêng sao và sticker nằm trên từng máy; đổi điện thoại thì phần thưởng không đi theo.';
+    host.appendChild(note);
   },
 
   async _loadParentLog(name) {

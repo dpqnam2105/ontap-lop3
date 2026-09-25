@@ -234,11 +234,15 @@ const Quiz = {
 
     const imgContainer = document.getElementById('qImage');
     if (imgContainer) {
+      imgContainer.replaceChildren();
       if (q.image) {
-        imgContainer.innerHTML = '<img src="' + q.image + '" alt="Hình minh hoạ câu hỏi" class="question-image" />';
+        const img = document.createElement('img');
+        img.src = q.image;
+        img.alt = 'Hình minh họa câu hỏi';
+        img.className = 'question-image';
+        imgContainer.appendChild(img);
         imgContainer.style.display = 'block';
       } else {
-        imgContainer.innerHTML = '';
         imgContainer.style.display = 'none';
       }
     }

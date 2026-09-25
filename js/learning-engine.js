@@ -71,12 +71,13 @@ function normalizeQuestionBank(db) {
   const copy = (typeof structuredClone === 'function') ? structuredClone(db) : JSON.parse(JSON.stringify(db));
   for (const subject of copy.subjects || []) {
     for (const topic of subject.topics || []) {
-      const isMath = subject.id === 'toan';
-      const curriculumTags = isMath ? (CURRICULUM.grade2_vn_math[topic.id] || []) : [];
+      const isMath = subject.id === 'toan' || subject.id === 'toan-tieng-anh';
+      const grade2Tags = CURRICULUM.grade2_vn_math[topic.id] || [];
+      const looksGrade3 = /100000|phan-so|ngoai-bang|so-den-100000|cong-tru-trong/.test(topic.id || '');
       topic.curriculum = {
-        grade: isMath ? 2 : null,
-        framework: isMath ? 'VN-Grade2-Competency' : 'General-Primary',
-        tags: curriculumTags
+        grade: looksGrade3 ? 3 : (grade2Tags.length ? 2 : (isMath ? null : null)),
+        framework: looksGrade3 ? 'VN-Grade3-Competency' : (grade2Tags.length ? 'VN-Grade2-Competency' : 'General-Primary'),
+        tags: grade2Tags
       };
       topic.questions = (topic.questions || []).map((q, idx) => ({
         id: q.id || stableQuestionId(subject.id, topic.id, q, idx),

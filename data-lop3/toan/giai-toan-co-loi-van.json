@@ -1,8 +1,249 @@
 {
   "topic": {
     "id": "toan_giai-toan-co-loi-van",
-    "icon": "",
+    "icon": "📝",
     "name": "Giải toán có lời văn",
-    "questions": []
+    "questions": [
+      {
+        "q": "Vườn có 248 quả cam, hái thêm 135 quả. Hỏi vườn có tất cả bao nhiêu quả cam?",
+        "choices": [
+          "373",
+          "483",
+          "383",
+          "113"
+        ],
+        "a": 2,
+        "hint": "Có thêm vào thì số lượng tăng lên. Chọn phép tính phù hợp.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q001"
+      },
+      {
+        "q": "Cửa hàng có 420 quyển vở, đã bán 175 quyển. Hỏi cửa hàng còn lại bao nhiêu quyển vở?",
+        "choices": [
+          "595",
+          "355",
+          "255",
+          "245"
+        ],
+        "a": 3,
+        "hint": "Bán đi thì số vở còn lại ít hơn lúc đầu.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q002"
+      },
+      {
+        "q": "Hà có 45 viên bi, Hà nhiều hơn Nam 18 viên. Hỏi Nam có bao nhiêu viên bi?",
+        "choices": [
+          "27",
+          "37",
+          "18",
+          "63"
+        ],
+        "a": 0,
+        "hint": "Hà nhiều hơn nghĩa là Nam ít hơn Hà. Vẽ sơ đồ đoạn thẳng để thấy rõ.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q003"
+      },
+      {
+        "q": "Mai có 28 nhãn vở, Mai ít hơn Lan 15 nhãn vở. Hỏi Lan có bao nhiêu nhãn vở?",
+        "choices": [
+          "13",
+          "33",
+          "43",
+          "42"
+        ],
+        "a": 2,
+        "hint": "Mai ít hơn nghĩa là Lan nhiều hơn Mai. Vẽ sơ đồ đoạn thẳng để thấy rõ.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q004"
+      },
+      {
+        "q": "Mẹ mua 12 kg gạo, đã dùng 5 kg rồi cho bà 3 kg. Hỏi còn lại bao nhiêu ki-lô-gam gạo?",
+        "choices": [
+          "4",
+          "7",
+          "9",
+          "20"
+        ],
+        "a": 0,
+        "hint": "Bài có hai bước: bớt đi phần đã dùng, rồi bớt tiếp phần cho bà.",
+        "difficulty": 3,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q005"
+      },
+      {
+        "q": "Một thùng có 125 quyển sách. Hỏi 4 thùng như thế có bao nhiêu quyển sách?",
+        "choices": [
+          "129",
+          "500",
+          "520",
+          "480"
+        ],
+        "a": 1,
+        "hint": "Các thùng giống nhau thì dùng phép nhân.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q006"
+      },
+      {
+        "q": "Có 96 học sinh xếp đều thành 6 hàng. Hỏi mỗi hàng có bao nhiêu học sinh?",
+        "choices": [
+          "90",
+          "16",
+          "15",
+          "102"
+        ],
+        "a": 1,
+        "hint": "Chia đều thành các hàng bằng nhau thì dùng phép chia.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q007"
+      },
+      {
+        "q": "Bố có 50 000 đồng, bố mua sách hết 35 000 đồng. Hỏi bố còn lại bao nhiêu tiền?",
+        "choices": [
+          "5 000 đồng",
+          "25 000 đồng",
+          "85 000 đồng",
+          "15 000 đồng"
+        ],
+        "a": 3,
+        "hint": "Mua hết bao nhiêu thì số tiền còn lại giảm đi bấy nhiêu.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q008"
+      },
+      {
+        "q": "Buổi sáng cửa hàng bán 150 cái bánh, buổi chiều bán gấp đôi buổi sáng. Hỏi buổi chiều bán bao nhiêu cái bánh?",
+        "choices": [
+          "450",
+          "152",
+          "300",
+          "75"
+        ],
+        "a": 2,
+        "hint": "Gấp đôi nghĩa là gấp lên 2 lần.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q009"
+      },
+      {
+        "q": "Buổi sáng cửa hàng bán 150 cái bánh, buổi chiều bán gấp đôi buổi sáng. Hỏi cả ngày bán bao nhiêu cái bánh?",
+        "choices": [
+          "152",
+          "450",
+          "302",
+          "300"
+        ],
+        "a": 1,
+        "hint": "Bài có hai bước: tìm số bánh buổi chiều trước, rồi mới tính cả ngày.",
+        "difficulty": 3,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q010"
+      },
+      {
+        "q": "Thùng có 100 lít nước. Đã dùng 36 lít. Hỏi thùng còn bao nhiêu lít nước?",
+        "choices": [
+          "64",
+          "54",
+          "136",
+          "74"
+        ],
+        "a": 0,
+        "hint": "Dùng đi thì lượng nước trong thùng giảm.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q011"
+      },
+      {
+        "q": "Thỏ đọc mỗi ngày 7 trang sách, đọc trong 6 ngày. Hỏi Thỏ đã đọc tất cả bao nhiêu trang?",
+        "choices": [
+          "48",
+          "42",
+          "13",
+          "36"
+        ],
+        "a": 1,
+        "hint": "Mỗi ngày đọc bằng nhau thì dùng phép nhân.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q012"
+      },
+      {
+        "q": "Lớp có 18 bạn nam và 17 bạn nữ. Hôm nay có 3 bạn nghỉ. Hỏi hôm nay có bao nhiêu bạn đi học?",
+        "choices": [
+          "38",
+          "35",
+          "31",
+          "32"
+        ],
+        "a": 3,
+        "hint": "Bài có hai bước: tìm số bạn cả lớp trước, rồi bớt số bạn nghỉ.",
+        "difficulty": 3,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q013"
+      },
+      {
+        "q": "Có 5 hộp bút, mỗi hộp 8 cái. Chia đều số bút cho 4 nhóm. Hỏi mỗi nhóm được bao nhiêu cái bút?",
+        "choices": [
+          "10",
+          "40",
+          "17",
+          "13"
+        ],
+        "a": 0,
+        "hint": "Bài có hai bước: tìm tổng số bút trước, rồi chia đều cho các nhóm.",
+        "difficulty": 3,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q014"
+      },
+      {
+        "q": "Sợi dây dài 36 m, cắt thành các đoạn, mỗi đoạn dài 4 m. Hỏi cắt được mấy đoạn?",
+        "choices": [
+          "40",
+          "144",
+          "9",
+          "32"
+        ],
+        "a": 2,
+        "hint": "Muốn biết được bao nhiêu đoạn, lấy độ dài cả sợi chia cho độ dài một đoạn.",
+        "difficulty": 2,
+        "skill": "word-problem",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "claude-audit-20260924",
+        "id": "toan_giai-toan-co-loi-van_q015"
+      }
+    ]
   }
 }

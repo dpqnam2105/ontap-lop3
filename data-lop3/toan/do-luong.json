@@ -1,8 +1,329 @@
 {
   "topic": {
     "id": "toan_do-luong",
-    "icon": "",
+    "icon": "📏",
     "name": "Đo lường (độ dài, khối lượng, dung tích)",
-    "questions": []
+    "questions": [
+      {
+        "q": "1 cm = ? mm",
+        "choices": [
+          "10",
+          "100",
+          "1000",
+          "1"
+        ],
+        "a": 0,
+        "hint": "Trên thước kẻ, giữa hai vạch xăng-ti-mét có bao nhiêu khoảng nhỏ?",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q001"
+      },
+      {
+        "q": "1 m = ? cm",
+        "choices": [
+          "10",
+          "1000",
+          "100",
+          "1"
+        ],
+        "a": 2,
+        "hint": "Bảng đơn vị đo độ dài: m, dm, cm, mm. Hai đơn vị liền nhau hơn kém nhau 10 lần.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q002"
+      },
+      {
+        "q": "1 km = ? m",
+        "choices": [
+          "10 000",
+          "100",
+          "1000",
+          "10"
+        ],
+        "a": 2,
+        "hint": "Ki-lô có nghĩa là \"nghìn\".",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q003"
+      },
+      {
+        "q": "1 kg = ? g",
+        "choices": [
+          "1000",
+          "10 000",
+          "100",
+          "10"
+        ],
+        "a": 0,
+        "hint": "Ki-lô có nghĩa là \"nghìn\".",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q004"
+      },
+      {
+        "q": "1 l = ? ml",
+        "choices": [
+          "100",
+          "1000",
+          "10 000",
+          "10"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại bài học về chai 1 lít và cốc đo mi-li-lít.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q005"
+      },
+      {
+        "q": "5 cm = ? mm",
+        "choices": [
+          "15",
+          "50",
+          "500",
+          "5"
+        ],
+        "a": 1,
+        "hint": "Mỗi xăng-ti-mét gồm 10 mi-li-mét.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q006"
+      },
+      {
+        "q": "3 m 25 cm = ? cm",
+        "choices": [
+          "3250",
+          "325",
+          "55",
+          "3025"
+        ],
+        "a": 1,
+        "hint": "Đổi mét ra xăng-ti-mét trước rồi cộng thêm phần xăng-ti-mét.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q007"
+      },
+      {
+        "q": "2 km 300 m = ? m",
+        "choices": [
+          "2003",
+          "5300",
+          "2300",
+          "230"
+        ],
+        "a": 2,
+        "hint": "Đổi ki-lô-mét ra mét trước rồi cộng thêm phần mét.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q008"
+      },
+      {
+        "q": "1 kg 250 g = ? g",
+        "choices": [
+          "1025",
+          "1250",
+          "350",
+          "12 500"
+        ],
+        "a": 1,
+        "hint": "Đổi ki-lô-gam ra gam trước rồi cộng thêm phần gam.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q009"
+      },
+      {
+        "q": "2 l 500 ml = ? ml",
+        "choices": [
+          "250",
+          "700",
+          "2050",
+          "2500"
+        ],
+        "a": 3,
+        "hint": "Đổi lít ra mi-li-lít trước rồi cộng thêm phần mi-li-lít.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q010"
+      },
+      {
+        "q": "8 dm = ? cm",
+        "choices": [
+          "18",
+          "8",
+          "80",
+          "800"
+        ],
+        "a": 2,
+        "hint": "Mỗi đề-xi-mét gồm 10 xăng-ti-mét.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q011"
+      },
+      {
+        "q": "70 mm = ? cm",
+        "choices": [
+          "17",
+          "7",
+          "700",
+          "70"
+        ],
+        "a": 1,
+        "hint": "Cứ 10 mi-li-mét gộp lại thành 1 xăng-ti-mét.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q012"
+      },
+      {
+        "q": "500 g + 500 g = ?",
+        "choices": [
+          "1 kg",
+          "10 kg",
+          "100 g",
+          "1000 kg"
+        ],
+        "a": 0,
+        "hint": "Cộng số gam trước, rồi xem được bao nhiêu ki-lô-gam.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q013"
+      },
+      {
+        "q": "Chọn dấu thích hợp: 1 kg ... 999 g",
+        "choices": [
+          "=",
+          "<",
+          "không so sánh được",
+          ">"
+        ],
+        "a": 3,
+        "hint": "Đổi về cùng đơn vị gam rồi so sánh.",
+        "difficulty": 2,
+        "skill": "compare",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q014"
+      },
+      {
+        "q": "Chọn dấu thích hợp: 1 m ... 100 cm",
+        "choices": [
+          ">",
+          "không so sánh được",
+          "<",
+          "="
+        ],
+        "a": 3,
+        "hint": "Đổi về cùng đơn vị xăng-ti-mét rồi so sánh.",
+        "difficulty": 2,
+        "skill": "compare",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q015"
+      },
+      {
+        "q": "Chiếc bút chì dài khoảng:",
+        "choices": [
+          "15 cm",
+          "15 m",
+          "15 mm",
+          "15 km"
+        ],
+        "a": 0,
+        "hint": "Hình dung chiếc bút chì trong tay rồi so với thước kẻ 20 cm.",
+        "difficulty": 1,
+        "skill": "estimate",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q016"
+      },
+      {
+        "q": "Một bạn học sinh lớp 3 nặng khoảng:",
+        "choices": [
+          "28 kg",
+          "280 kg",
+          "2 kg",
+          "28 g"
+        ],
+        "a": 0,
+        "hint": "So với túi gạo 1 kg mẹ hay mua.",
+        "difficulty": 1,
+        "skill": "estimate",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q017"
+      },
+      {
+        "q": "Nhiệt độ cơ thể người khỏe mạnh khoảng:",
+        "choices": [
+          "10 °C",
+          "0 °C",
+          "100 °C",
+          "37 °C"
+        ],
+        "a": 3,
+        "hint": "Nhớ bài học về nhiệt kế đo thân nhiệt.",
+        "difficulty": 2,
+        "skill": "temperature",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q018"
+      },
+      {
+        "q": "Mẹ mua rau hết 15 000 đồng và thịt hết 45 000 đồng. Mẹ đã trả tất cả bao nhiêu tiền?",
+        "choices": [
+          "50 000 đồng",
+          "70 000 đồng",
+          "60 000 đồng",
+          "30 000 đồng"
+        ],
+        "a": 2,
+        "hint": "Mua cả hai thứ thì cộng số tiền lại.",
+        "difficulty": 2,
+        "skill": "money",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q019"
+      },
+      {
+        "q": "Thỏ đưa tờ 50 000 đồng để mua quyển truyện giá 35 000 đồng. Thỏ được trả lại bao nhiêu tiền?",
+        "choices": [
+          "25 000 đồng",
+          "85 000 đồng",
+          "35 000 đồng",
+          "15 000 đồng"
+        ],
+        "a": 3,
+        "hint": "Tiền trả lại = tiền đưa cho người bán trừ đi giá quyển truyện.",
+        "difficulty": 2,
+        "skill": "money",
+        "unit": "toan_do-luong",
+        "source": "claude-audit-20260924",
+        "id": "toan_do-luong_q020"
+      }
+    ]
   }
 }

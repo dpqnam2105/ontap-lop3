@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "en_grammar",
-    "icon": "",
+    "icon": "🌍",
     "name": "Grammar",
-    "questions": []
+    "questions": [
+      {
+        "q": "I ___ a student.",
+        "choices": [
+          "are",
+          "am",
+          "is",
+          "be"
+        ],
+        "a": 1,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q001"
+      },
+      {
+        "q": "She ___ my friend.",
+        "choices": [
+          "am",
+          "be",
+          "is",
+          "are"
+        ],
+        "a": 2,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q002"
+      },
+      {
+        "q": "They ___ in the playground.",
+        "choices": [
+          "is",
+          "am",
+          "are",
+          "be"
+        ],
+        "a": 2,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q003"
+      },
+      {
+        "q": "He can ___ a bike.",
+        "choices": [
+          "ride",
+          "rides",
+          "riding",
+          "to ride"
+        ],
+        "a": 0,
+        "hint": "After \"can\" and \"can't\", use the verb with nothing added.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q004"
+      },
+      {
+        "q": "She can't ___ the heavy bag.",
+        "choices": [
+          "carries",
+          "carried",
+          "carry",
+          "carrying"
+        ],
+        "a": 2,
+        "hint": "After \"can\" and \"can't\", use the verb with nothing added.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q005"
+      },
+      {
+        "q": "There is ___ apple on the table.",
+        "choices": [
+          "an",
+          "some",
+          "a",
+          "many"
+        ],
+        "a": 0,
+        "hint": "Use \"an\" before a vowel sound (a, e, i, o, u). Use \"a\" before other sounds.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q006"
+      },
+      {
+        "q": "There are ___ books on the desk.",
+        "choices": [
+          "some",
+          "an",
+          "one",
+          "a"
+        ],
+        "a": 0,
+        "hint": "Use \"a\" or \"an\" for one thing only. Books means more than one.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q007"
+      },
+      {
+        "q": "This is ___ umbrella.",
+        "choices": [
+          "some",
+          "a",
+          "two",
+          "an"
+        ],
+        "a": 3,
+        "hint": "Use \"an\" before a vowel sound (a, e, i, o, u). Use \"a\" before other sounds.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q008"
+      },
+      {
+        "q": "These ___ my shoes.",
+        "choices": [
+          "be",
+          "am",
+          "is",
+          "are"
+        ],
+        "a": 3,
+        "hint": "\"These\" is for more than one thing.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q009"
+      },
+      {
+        "q": "That ___ a bird in the sky.",
+        "choices": [
+          "are",
+          "is",
+          "be",
+          "am"
+        ],
+        "a": 1,
+        "hint": "\"That\" is for one thing.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q010"
+      },
+      {
+        "q": "I like cats, ___ I don't like spiders.",
+        "choices": [
+          "or",
+          "but",
+          "so",
+          "and"
+        ],
+        "a": 1,
+        "hint": "This word joins two ideas that are different.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q011"
+      },
+      {
+        "q": "Where ___ my bag?",
+        "choices": [
+          "am",
+          "are",
+          "be",
+          "is"
+        ],
+        "a": 3,
+        "hint": "One bag or many bags? Choose the right word for one thing.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q012"
+      },
+      {
+        "q": "He ___ football on Sundays.",
+        "choices": [
+          "playes",
+          "play",
+          "plays",
+          "playing"
+        ],
+        "a": 2,
+        "hint": "With he / she / it, the verb usually adds -s or -es.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q013"
+      },
+      {
+        "q": "We don't ___ school on Sunday.",
+        "choices": [
+          "have",
+          "having",
+          "haves",
+          "has"
+        ],
+        "a": 0,
+        "hint": "After \"don't\" and \"doesn't\", use the verb with nothing added.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q014"
+      },
+      {
+        "q": "___ you like apples? – Yes, I do.",
+        "choices": [
+          "Are",
+          "Is",
+          "Does",
+          "Do"
+        ],
+        "a": 3,
+        "hint": "Look at the short answer: it uses the same helping word.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q015"
+      },
+      {
+        "q": "Look! The children ___ in the park.",
+        "choices": [
+          "is playing",
+          "are playing",
+          "plays",
+          "play"
+        ],
+        "a": 1,
+        "hint": "\"Look!\" tells us it is happening now: am / is / are + verb-ing.",
+        "difficulty": 3,
+        "skill": "grammar",
+        "unit": "grammar",
+        "source": "claude-audit-20260924",
+        "id": "en_grammar_q016"
+      }
+    ]
   }
 }

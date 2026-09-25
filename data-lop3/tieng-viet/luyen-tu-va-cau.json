@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "tv_luyen-tu-va-cau",
-    "icon": "",
+    "icon": "📖",
     "name": "Luyện từ và câu",
-    "questions": []
+    "questions": [
+      {
+        "q": "Từ nào là từ chỉ sự vật?",
+        "choices": [
+          "chạy nhảy",
+          "cái bảng",
+          "chăm chỉ",
+          "xanh biếc"
+        ],
+        "a": 1,
+        "hint": "Từ chỉ sự vật: người, con vật, đồ vật, cây cối. Từ chỉ hoạt động: việc làm. Từ chỉ đặc điểm: màu sắc, hình dáng, tính nết.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q001"
+      },
+      {
+        "q": "Từ nào là từ chỉ hoạt động?",
+        "choices": [
+          "hiền",
+          "tưới",
+          "cây",
+          "đẹp"
+        ],
+        "a": 1,
+        "hint": "Từ chỉ sự vật: người, con vật, đồ vật, cây cối. Từ chỉ hoạt động: việc làm. Từ chỉ đặc điểm: màu sắc, hình dáng, tính nết.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q002"
+      },
+      {
+        "q": "Từ nào là từ chỉ đặc điểm?",
+        "choices": [
+          "cặp sách",
+          "nhảy dây",
+          "hiền lành",
+          "học sinh"
+        ],
+        "a": 2,
+        "hint": "Từ chỉ sự vật: người, con vật, đồ vật, cây cối. Từ chỉ hoạt động: việc làm. Từ chỉ đặc điểm: màu sắc, hình dáng, tính nết.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q003"
+      },
+      {
+        "q": "Cặp từ nào có nghĩa giống nhau?",
+        "choices": [
+          "to - nhỏ",
+          "nhanh - chậm",
+          "vui - buồn",
+          "chăm chỉ - siêng năng"
+        ],
+        "a": 3,
+        "hint": "Thử thay từ này bằng từ kia trong một câu, nếu nghĩa không đổi thì hai từ giống nghĩa.",
+        "difficulty": 1,
+        "skill": "synonym",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q004"
+      },
+      {
+        "q": "Cặp từ nào có nghĩa trái ngược nhau?",
+        "choices": [
+          "xinh - đẹp",
+          "to lớn - khổng lồ",
+          "bé - nhỏ",
+          "dũng cảm - hèn nhát"
+        ],
+        "a": 3,
+        "hint": "Hai từ trái nghĩa nói về cùng một điều nhưng theo hai hướng ngược nhau.",
+        "difficulty": 1,
+        "skill": "antonym",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q005"
+      },
+      {
+        "q": "Câu nào có hình ảnh so sánh?",
+        "choices": [
+          "Em ngắm trăng cùng bà.",
+          "Đêm nay trăng rất sáng.",
+          "Mặt trăng đã lên cao.",
+          "Mặt trăng tròn như cái đĩa bạc."
+        ],
+        "a": 3,
+        "hint": "Hình ảnh so sánh có hai sự vật được so với nhau, nối bằng từ như, giống như, tựa như, là.",
+        "difficulty": 2,
+        "skill": "simile",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q006"
+      },
+      {
+        "q": "Trong câu «Mặt hồ phẳng lặng như tấm gương.», mặt hồ được so sánh với gì?",
+        "choices": [
+          "như",
+          "mặt hồ",
+          "phẳng lặng",
+          "tấm gương"
+        ],
+        "a": 3,
+        "hint": "Hình ảnh so sánh có hai sự vật được so với nhau, nối bằng từ như, giống như, tựa như, là.",
+        "difficulty": 2,
+        "skill": "simile",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q007"
+      },
+      {
+        "q": "Từ dùng để so sánh trong câu «Bạn ấy chạy nhanh như gió.» là:",
+        "choices": [
+          "nhanh",
+          "như",
+          "gió",
+          "chạy"
+        ],
+        "a": 1,
+        "hint": "Tìm hai sự vật được so sánh (bạn ấy và gió), rồi tìm từ nối chúng lại.",
+        "difficulty": 2,
+        "skill": "simile",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q008"
+      },
+      {
+        "q": "Câu «Bố em là bác sĩ.» thuộc kiểu câu nào?",
+        "choices": [
+          "câu giới thiệu",
+          "câu nêu hoạt động",
+          "câu nêu đặc điểm",
+          "câu hỏi"
+        ],
+        "a": 0,
+        "hint": "Câu giới thiệu trả lời \"Ai (cái gì) là gì?\", câu nêu hoạt động trả lời \"làm gì?\", câu nêu đặc điểm trả lời \"thế nào?\".",
+        "difficulty": 2,
+        "skill": "sentence-pattern",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q009"
+      },
+      {
+        "q": "Câu nào là câu nêu hoạt động?",
+        "choices": [
+          "Sân trường rất rộng.",
+          "Hôm nay là thứ Hai.",
+          "Các bạn đang trồng cây trong vườn trường.",
+          "Cây bàng xanh tốt."
+        ],
+        "a": 2,
+        "hint": "Câu giới thiệu trả lời \"Ai (cái gì) là gì?\", câu nêu hoạt động trả lời \"làm gì?\", câu nêu đặc điểm trả lời \"thế nào?\".",
+        "difficulty": 2,
+        "skill": "sentence-pattern",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q010"
+      },
+      {
+        "q": "Câu nào là câu nêu đặc điểm?",
+        "choices": [
+          "Chú mèo đang bắt chuột.",
+          "Chú mèo đi đâu rồi?",
+          "Chú mèo nhà em rất lười.",
+          "Đây là chú mèo nhà em."
+        ],
+        "a": 2,
+        "hint": "Câu giới thiệu trả lời \"Ai (cái gì) là gì?\", câu nêu hoạt động trả lời \"làm gì?\", câu nêu đặc điểm trả lời \"thế nào?\".",
+        "difficulty": 2,
+        "skill": "sentence-pattern",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q011"
+      },
+      {
+        "q": "Trong câu «Sáng mai, lớp em đi tham quan.», bộ phận nào trả lời câu hỏi «Khi nào?»",
+        "choices": [
+          "Sáng mai",
+          "lớp em",
+          "tham quan",
+          "đi tham quan"
+        ],
+        "a": 0,
+        "hint": "Đặt câu hỏi \"Khi nào lớp em đi tham quan?\" rồi tìm phần trả lời.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q012"
+      },
+      {
+        "q": "Trong câu «Chim hót líu lo trên cành cây.», bộ phận nào trả lời câu hỏi «Ở đâu?»",
+        "choices": [
+          "hót líu lo",
+          "trên cành cây",
+          "líu lo",
+          "chim"
+        ],
+        "a": 1,
+        "hint": "Đặt câu hỏi \"Chim hót ở đâu?\" rồi tìm phần trả lời.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q013"
+      },
+      {
+        "q": "Trong câu «Vì trời mưa to, trận đấu bóng bị hoãn.», bộ phận nào trả lời câu hỏi «Vì sao?»",
+        "choices": [
+          "Vì trời mưa to",
+          "trận đấu bóng",
+          "trận đấu bóng bị hoãn",
+          "bị hoãn"
+        ],
+        "a": 0,
+        "hint": "Đặt câu hỏi \"Vì sao trận đấu bị hoãn?\" rồi tìm phần trả lời.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q014"
+      },
+      {
+        "q": "Dòng nào gồm các từ chỉ màu sắc?",
+        "choices": [
+          "đỏ thắm, xanh biếc, vàng tươi",
+          "chạy, nhảy, bơi",
+          "nhanh, chậm, vội",
+          "bàn, ghế, bảng"
+        ],
+        "a": 0,
+        "hint": "Xem từng từ trong dòng: tất cả có cùng nói về màu không?",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q015"
+      },
+      {
+        "q": "Từ nào khác nhóm với các từ còn lại?",
+        "choices": [
+          "tẩy",
+          "bút chì",
+          "quả bóng",
+          "thước kẻ"
+        ],
+        "a": 2,
+        "hint": "Tìm điểm chung của ba từ. Từ không có điểm chung đó là từ khác nhóm.",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "luyen-tu-va-cau",
+        "source": "claude-audit-20260924",
+        "id": "tv_luyen-tu-va-cau_q016"
+      }
+    ]
   }
 }

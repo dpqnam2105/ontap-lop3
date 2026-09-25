@@ -1,8 +1,201 @@
 {
   "topic": {
     "id": "tv_doc-hieu",
-    "icon": "",
+    "icon": "📖",
     "name": "Đọc hiểu",
-    "questions": []
+    "questions": [
+      {
+        "q": "Đọc đoạn: «Sáng chủ nhật, Lan dậy sớm giúp mẹ tưới cây. Khóm hồng trước cửa vừa nở ba bông đỏ thắm. Lan khẽ cúi xuống ngửi và thấy mùi thơm dịu. Mẹ bảo: “Hoa đẹp là nhờ con chăm tưới đấy!” Lan cười tít mắt.» Lan làm gì vào sáng chủ nhật?",
+        "choices": [
+          "giúp mẹ tưới cây",
+          "đi học sớm",
+          "hái hoa tặng mẹ",
+          "đi chợ cùng mẹ"
+        ],
+        "a": 0,
+        "hint": "Đọc lại câu đầu tiên của đoạn.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q001"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng chủ nhật, Lan dậy sớm giúp mẹ tưới cây. Khóm hồng trước cửa vừa nở ba bông đỏ thắm. Lan khẽ cúi xuống ngửi và thấy mùi thơm dịu. Mẹ bảo: “Hoa đẹp là nhờ con chăm tưới đấy!” Lan cười tít mắt.» Khóm hồng trước cửa nở mấy bông?",
+        "choices": [
+          "bốn bông",
+          "ba bông",
+          "năm bông",
+          "hai bông"
+        ],
+        "a": 1,
+        "hint": "Tìm câu nói về khóm hồng.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q002"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng chủ nhật, Lan dậy sớm giúp mẹ tưới cây. Khóm hồng trước cửa vừa nở ba bông đỏ thắm. Lan khẽ cúi xuống ngửi và thấy mùi thơm dịu. Mẹ bảo: “Hoa đẹp là nhờ con chăm tưới đấy!” Lan cười tít mắt.» Theo lời mẹ, vì sao hoa hồng nở đẹp?",
+        "choices": [
+          "vì cây được bón phân",
+          "vì trời mưa nhiều",
+          "vì mẹ mới mua cây",
+          "nhờ Lan chăm tưới"
+        ],
+        "a": 3,
+        "hint": "Đọc kĩ câu mẹ nói trong dấu ngoặc kép.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q003"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng chủ nhật, Lan dậy sớm giúp mẹ tưới cây. Khóm hồng trước cửa vừa nở ba bông đỏ thắm. Lan khẽ cúi xuống ngửi và thấy mùi thơm dịu. Mẹ bảo: “Hoa đẹp là nhờ con chăm tưới đấy!” Lan cười tít mắt.» Câu «Lan cười tít mắt» cho thấy Lan cảm thấy thế nào?",
+        "choices": [
+          "rất vui",
+          "buồn bã",
+          "sợ hãi",
+          "mệt mỏi"
+        ],
+        "a": 0,
+        "hint": "Hình dung khuôn mặt một người đang cười tít mắt.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q004"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ ra chơi, Minh thấy một em lớp 1 đứng khóc ở góc sân vì bị lạc mất chiếc mũ. Minh dắt em đi tìm quanh sân trường. Cuối cùng, hai anh em thấy chiếc mũ mắc trên bụi cây. Em bé lau nước mắt, cảm ơn Minh rối rít.» Vì sao em bé lớp 1 đứng khóc?",
+        "choices": [
+          "vì bị ngã",
+          "vì không tìm thấy lớp",
+          "vì bị bạn trêu",
+          "vì bị lạc mất chiếc mũ"
+        ],
+        "a": 3,
+        "hint": "Tìm chữ \"vì\" trong câu đầu tiên.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q005"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ ra chơi, Minh thấy một em lớp 1 đứng khóc ở góc sân vì bị lạc mất chiếc mũ. Minh dắt em đi tìm quanh sân trường. Cuối cùng, hai anh em thấy chiếc mũ mắc trên bụi cây. Em bé lau nước mắt, cảm ơn Minh rối rít.» Chiếc mũ được tìm thấy ở đâu?",
+        "choices": [
+          "trong cặp sách",
+          "dưới gốc cây bàng",
+          "mắc trên bụi cây",
+          "trong lớp học"
+        ],
+        "a": 2,
+        "hint": "Đọc câu bắt đầu bằng \"Cuối cùng\".",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q006"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ ra chơi, Minh thấy một em lớp 1 đứng khóc ở góc sân vì bị lạc mất chiếc mũ. Minh dắt em đi tìm quanh sân trường. Cuối cùng, hai anh em thấy chiếc mũ mắc trên bụi cây. Em bé lau nước mắt, cảm ơn Minh rối rít.» Qua câu chuyện, em thấy Minh là người thế nào?",
+        "choices": [
+          "nghịch ngợm",
+          "hay khóc nhè",
+          "biết quan tâm, giúp đỡ người khác",
+          "nhút nhát"
+        ],
+        "a": 2,
+        "hint": "Nghĩ xem Minh đã làm gì khi thấy em bé khóc.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q007"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ ra chơi, Minh thấy một em lớp 1 đứng khóc ở góc sân vì bị lạc mất chiếc mũ. Minh dắt em đi tìm quanh sân trường. Cuối cùng, hai anh em thấy chiếc mũ mắc trên bụi cây. Em bé lau nước mắt, cảm ơn Minh rối rít.» Từ nào cho thấy em bé rất biết ơn Minh?",
+        "choices": [
+          "rối rít",
+          "góc sân",
+          "lau",
+          "quanh"
+        ],
+        "a": 0,
+        "hint": "Tìm từ đi kèm với việc em bé cảm ơn.",
+        "difficulty": 3,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q008"
+      },
+      {
+        "q": "Đọc đoạn: «Mùa thu, bầu trời trong xanh và cao vút. Những cơn gió heo may se se lạnh thổi qua. Trên cành, lá bàng chuyển dần sang màu đỏ. Đám học trò ríu rít đến trường, cặp sách mới tinh trên lưng.» Đoạn văn tả cảnh vào mùa nào?",
+        "choices": [
+          "mùa đông",
+          "mùa xuân",
+          "mùa thu",
+          "mùa hè"
+        ],
+        "a": 2,
+        "hint": "Đọc từ ngữ đầu tiên của đoạn văn.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q009"
+      },
+      {
+        "q": "Đọc đoạn: «Mùa thu, bầu trời trong xanh và cao vút. Những cơn gió heo may se se lạnh thổi qua. Trên cành, lá bàng chuyển dần sang màu đỏ. Đám học trò ríu rít đến trường, cặp sách mới tinh trên lưng.» Lá bàng chuyển dần sang màu gì?",
+        "choices": [
+          "màu xanh",
+          "màu tím",
+          "màu vàng",
+          "màu đỏ"
+        ],
+        "a": 3,
+        "hint": "Tìm câu có hình ảnh cây bàng.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q010"
+      },
+      {
+        "q": "Đọc đoạn: «Mùa thu, bầu trời trong xanh và cao vút. Những cơn gió heo may se se lạnh thổi qua. Trên cành, lá bàng chuyển dần sang màu đỏ. Đám học trò ríu rít đến trường, cặp sách mới tinh trên lưng.» Gió heo may được tả như thế nào?",
+        "choices": [
+          "nóng bức",
+          "se se lạnh",
+          "ẩm ướt",
+          "ào ào dữ dội"
+        ],
+        "a": 1,
+        "hint": "Tìm từ tả ngay sau \"gió heo may\".",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q011"
+      },
+      {
+        "q": "Đọc đoạn: «Mùa thu, bầu trời trong xanh và cao vút. Những cơn gió heo may se se lạnh thổi qua. Trên cành, lá bàng chuyển dần sang màu đỏ. Đám học trò ríu rít đến trường, cặp sách mới tinh trên lưng.» Từ nào tả tiếng nói cười của các bạn học trò?",
+        "choices": [
+          "trong xanh",
+          "ríu rít",
+          "se se",
+          "cao vút"
+        ],
+        "a": 1,
+        "hint": "Từ tả âm thanh thường gợi ra tiếng động khi đọc lên.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "doc-hieu",
+        "source": "claude-audit-20260924",
+        "id": "tv_doc-hieu_q012"
+      }
+    ]
   }
 }

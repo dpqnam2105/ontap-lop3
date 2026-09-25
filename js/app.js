@@ -12,7 +12,7 @@ const App = {
   _dataByGrade: {},
 
   PIN_KEY: 'khoBaiTap_parentPin',
-  DEFAULT_PIN: '1234',
+  DEFAULT_PIN: '',
   leaderboardGrade: 'lop2',
 
   // Dragon Ball keys giữ lại để các module con truy cập qua App
@@ -35,6 +35,38 @@ const App = {
       document.getElementById('nameInput').value = data.playerName;
       document.getElementById('btnStart').disabled = false;
     }
+    if (data.lastGrade) {
+      this.currentGrade = data.lastGrade;
+      this._applyGradeLabel(data.lastGrade);
+    }
+  },
+
+  _applyGradeLabel(gradeId) {
+    const names = { lop2: 'Lớp 2', lop3: 'Lớp 3', lop4: 'Lớp 4', lop5: 'Lớp 5' };
+    const el = document.querySelector('.brand-grade');
+    if (el) el.textContent = names[gradeId] || 'Tiểu học';
+  },
+
+  _maskName(name) {
+    const clean = Storage.normalizeName(name);
+    const parts = clean.split(' ').filter(Boolean);
+    if (!parts.length) return 'Bạn';
+    if (parts.length === 1) return parts[0].charAt(0) + '.';
+    return parts.slice(0, -1).join(' ') + ' ' + parts[parts.length - 1].charAt(0) + '.';
+  },
+
+  _mergeLeaderboard(rows) {
+    const map = new Map();
+    (rows || []).forEach(p => {
+      const key = Storage.canonName(p.name || '');
+      if (!key) return;
+      const prev = map.get(key) || { name: Storage.normalizeName(p.name), totalScore: 0, totalGames: 0 };
+      prev.totalScore += Number(p.totalScore || 0);
+      prev.totalGames += Number(p.totalGames || 0);
+      prev.name = Storage.normalizeName(p.name) || prev.name;
+      map.set(key, prev);
+    });
+    return Array.from(map.values()).sort((a, b) => b.totalScore - a.totalScore);
   },
 
   async _loadData() {
@@ -67,9 +99,9 @@ const App = {
       tab.classList.toggle('active', tab.dataset.grade === gradeId);
     });
 
-    if (gradeId !== 'lop2') {
+    if (gradeId === 'lop4' || gradeId === 'lop5') {
       const gradeLabel = gradeId.replace('lop', 'Lớp ');
-      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🏆</div><b>Bảng xếp hạng ' + gradeLabel + '</b><span>Điểm của con vẫn được ghi lại đầy đủ. Bảng xếp hạng riêng cho ' + gradeLabel + ' sẽ bật khi có thêm nhiều bạn cùng tham gia nhé!</span></div>';
+      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🏆</div><b>Bảng xếp hạng ' + gradeLabel + '</b><span>Lớp này chưa mở. Điểm sẽ được ghi khi có bài học.</span></div>';
       return;
     }
 
@@ -82,12 +114,12 @@ const App = {
     }
 
     const medals = ['🥇', '🥈', '🥉'];
-    const rows = data.slice(0, 5).map((p, i) => {
+    const rows = this._mergeLeaderboard(data).slice(0, 5).map((p, i) => {
       const icon = medals[i] || (i + 1);
       return `<tr><td class="lb-rank">${icon}</td><td class="lb-name"><b>${this._escape(p.name)}</b></td><td class="lb-score"><b>${p.totalScore} ⭐</b></td></tr>`;
     }).join('');
 
-    lbDiv.innerHTML = `<table class="lb-table">${rows}</table>`;
+    lbDiv.innerHTML = `<table class="lb-table">${rows}</table><p class="lb-note">Điểm lớp 2 và lớp 3 đang nằm chung một bảng.</p>`;
   },
 
   showScreen(name) {
@@ -126,20 +158,21 @@ const App = {
   },
 
   _register() {
-    const name = document.getElementById('nameInput').value.trim();
+    const name = Storage.normalizeName(document.getElementById('nameInput').value);
     if (name.length < 2) return;
 
-    this.playerName = name;
-    Storage.set('playerName', name);
+    const data = Storage.switchPlayer(name);
+    this.playerName = data.playerName || name;
+    document.getElementById('nameInput').value = this.playerName;
 
-    document.getElementById('subName').textContent = 'Chào ' + name + '!';
+    document.getElementById('subName').textContent = 'Chào ' + this.playerName + '!';
     Rewards.updateUI();
     DragonBall._renderHomeWidgets();
-    this._showWelcome(name);
+    this._showWelcome(this.playerName);
 
     // Lưu tên xong → ở lại Trang chủ (sảnh chờ). Bé bấm "Vào học" ở menu để bắt đầu học.
     this.showScreen('register');
-    this._achievementName(name);
+    this._achievementName(this.playerName);
   },
 
   /** Đổi khung nhập tên thành lời chào sau khi đã có tên. */
@@ -198,6 +231,8 @@ const App = {
     }
 
     this.currentGrade = gradeId;
+    Storage.set('lastGrade', gradeId);
+    this._applyGradeLabel(gradeId);
     document.getElementById('currentGradeLabel').textContent = '📚 ' + gradeName + ' - Học gì hôm nay?';
     this.showScreen('subject');
 
@@ -268,14 +303,16 @@ const App = {
       // Banner mon hoc: uu tien cau truc moi images/subjects/*.webp,
       // chua co thi lui ve anh cu images/subject-{id}.png, lui nua thi fallback card.
       const BANNER_MAP = { 'toan': 'math', 'tieng-viet': 'vietnamese', 'tieng-anh': 'english', 'toan-tieng-anh': 'math-english' };
-      const newSrc = `images/subjects/${BANNER_MAP[s.id] || s.id}-banner.png`;
+      const slug = BANNER_MAP[s.id] || s.id;
+      const webpSrc = `images/subjects/${slug}-banner.webp`;
+      const pngSrc = `images/subjects/${slug}-banner.png`;
       const oldSrc = `images/subject-${s.id}.png`;
 
       const card = document.createElement('div');
       card.className = 'sub-card sub-card-img';
       card.innerHTML = `
-        <img class="sub-banner" src="${newSrc}" alt="${this._escape(s.name)}"
-             onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='${oldSrc}';}else{this.style.display='none';this.parentElement.classList.add('sub-card-noimg');}">
+        <img class="sub-banner" src="${webpSrc}" alt="${this._escape(s.name)}"
+             onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${pngSrc}';}else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='${oldSrc}';}else{this.style.display='none';this.parentElement.classList.add('sub-card-noimg');}">
         <div class="sub-overlay">
           <div class="sub-ov-icon">${s.icon}</div>
           <div class="sub-ov-text">

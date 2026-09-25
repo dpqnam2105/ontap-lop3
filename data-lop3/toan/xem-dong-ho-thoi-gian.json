@@ -1,8 +1,249 @@
 {
   "topic": {
     "id": "toan_xem-dong-ho-thoi-gian",
-    "icon": "",
+    "icon": "🕒",
     "name": "Xem đồng hồ, thời gian",
-    "questions": []
+    "questions": [
+      {
+        "q": "Kim giờ chỉ đúng số 3, kim phút chỉ số 12. Đồng hồ chỉ:",
+        "choices": [
+          "12 giờ 15 phút",
+          "3 giờ",
+          "12 giờ 3 phút",
+          "3 giờ 12 phút"
+        ],
+        "a": 1,
+        "hint": "Kim ngắn là kim giờ, kim dài là kim phút. Kim phút chỉ số 12 là đúng giờ.",
+        "difficulty": 1,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q001"
+      },
+      {
+        "q": "Kim giờ nằm giữa số 10 và số 11, kim phút chỉ số 6. Đồng hồ chỉ:",
+        "choices": [
+          "6 giờ 10 phút",
+          "10 giờ 6 phút",
+          "10 giờ 30 phút",
+          "11 giờ 30 phút"
+        ],
+        "a": 2,
+        "hint": "Kim giờ đã qua số nào thì là giờ đó. Mỗi số của kim phút là 5 phút.",
+        "difficulty": 2,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q002"
+      },
+      {
+        "q": "Kim giờ chỉ quá số 1 một chút, kim phút chỉ số 3. Đồng hồ chỉ:",
+        "choices": [
+          "2 giờ 15 phút",
+          "3 giờ 5 phút",
+          "1 giờ 15 phút",
+          "1 giờ 3 phút"
+        ],
+        "a": 2,
+        "hint": "Kim phút chỉ số nào thì lấy số đó nhân 5 để ra số phút.",
+        "difficulty": 2,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q003"
+      },
+      {
+        "q": "Kim giờ chỉ gần tới số 9, kim phút chỉ số 9. Đồng hồ chỉ:",
+        "choices": [
+          "9 giờ 9 phút",
+          "9 giờ 45 phút",
+          "8 giờ 45 phút",
+          "8 giờ 9 phút"
+        ],
+        "a": 2,
+        "hint": "Kim giờ chưa tới số 9 nghĩa là chưa đến 9 giờ.",
+        "difficulty": 3,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q004"
+      },
+      {
+        "q": "Kim phút chỉ số 4 là bao nhiêu phút?",
+        "choices": [
+          "40 phút",
+          "20 phút",
+          "4 phút",
+          "14 phút"
+        ],
+        "a": 1,
+        "hint": "Mỗi số trên mặt đồng hồ cách nhau 5 phút.",
+        "difficulty": 2,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q005"
+      },
+      {
+        "q": "Kim phút chỉ số 7 là bao nhiêu phút?",
+        "choices": [
+          "70 phút",
+          "30 phút",
+          "7 phút",
+          "35 phút"
+        ],
+        "a": 3,
+        "hint": "Mỗi số trên mặt đồng hồ cách nhau 5 phút.",
+        "difficulty": 2,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q006"
+      },
+      {
+        "q": "8 giờ kém 15 phút còn gọi là:",
+        "choices": [
+          "7 giờ 45 phút",
+          "7 giờ 15 phút",
+          "8 giờ 45 phút",
+          "8 giờ 15 phút"
+        ],
+        "a": 0,
+        "hint": "\"Kém 15 phút\" nghĩa là còn 15 phút nữa mới tới giờ đó.",
+        "difficulty": 3,
+        "skill": "clock",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q007"
+      },
+      {
+        "q": "1 giờ 20 phút = ? phút",
+        "choices": [
+          "120 phút",
+          "80 phút",
+          "60 phút",
+          "21 phút"
+        ],
+        "a": 1,
+        "hint": "Đổi 1 giờ ra phút rồi cộng thêm số phút lẻ.",
+        "difficulty": 2,
+        "skill": "time-convert",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q008"
+      },
+      {
+        "q": "Từ 8 giờ đến 10 giờ 30 phút là bao lâu?",
+        "choices": [
+          "2 giờ 30 phút",
+          "1 giờ 30 phút",
+          "3 giờ",
+          "2 giờ"
+        ],
+        "a": 0,
+        "hint": "Đếm số giờ tròn trước, rồi cộng thêm số phút.",
+        "difficulty": 2,
+        "skill": "duration",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q009"
+      },
+      {
+        "q": "Thỏ học từ 7 giờ 15 phút đến 8 giờ. Thỏ học trong bao lâu?",
+        "choices": [
+          "15 phút",
+          "1 giờ",
+          "45 phút",
+          "1 giờ 15 phút"
+        ],
+        "a": 2,
+        "hint": "Kim phút đi từ số 3 về đến số 12 là bao nhiêu phút?",
+        "difficulty": 2,
+        "skill": "duration",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q010"
+      },
+      {
+        "q": "Một năm có mấy tháng?",
+        "choices": [
+          "12 tháng",
+          "10 tháng",
+          "365 tháng",
+          "7 tháng"
+        ],
+        "a": 0,
+        "hint": "Đếm các tháng từ tháng Một đến tháng cuối năm.",
+        "difficulty": 1,
+        "skill": "calendar",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q011"
+      },
+      {
+        "q": "Tháng nào sau đây có 31 ngày?",
+        "choices": [
+          "Tháng 4",
+          "Tháng 7",
+          "Tháng 9",
+          "Tháng 6"
+        ],
+        "a": 1,
+        "hint": "Nắm tay lại đếm: tháng rơi vào gò xương có 31 ngày.",
+        "difficulty": 2,
+        "skill": "calendar",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q012"
+      },
+      {
+        "q": "Tháng 2 có bao nhiêu ngày?",
+        "choices": [
+          "28 hoặc 29 ngày",
+          "31 ngày",
+          "luôn luôn 30 ngày",
+          "30 ngày"
+        ],
+        "a": 0,
+        "hint": "Tháng 2 là tháng đặc biệt, ngắn nhất trong năm.",
+        "difficulty": 2,
+        "skill": "calendar",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q013"
+      },
+      {
+        "q": "Thứ Hai tuần này là ngày 5. Thứ Hai tuần sau là ngày mấy?",
+        "choices": [
+          "ngày 6",
+          "ngày 13",
+          "ngày 11",
+          "ngày 12"
+        ],
+        "a": 3,
+        "hint": "Một tuần có 7 ngày.",
+        "difficulty": 2,
+        "skill": "calendar",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q014"
+      },
+      {
+        "q": "Hôm nay là thứ Sáu. Ba ngày nữa là thứ mấy?",
+        "choices": [
+          "Chủ nhật",
+          "thứ Bảy",
+          "thứ Ba",
+          "thứ Hai"
+        ],
+        "a": 3,
+        "hint": "Đếm tiếp từng ngày sau thứ Sáu.",
+        "difficulty": 2,
+        "skill": "calendar",
+        "unit": "toan_xem-dong-ho-thoi-gian",
+        "source": "claude-audit-20260924",
+        "id": "toan_xem-dong-ho-thoi-gian_q015"
+      }
+    ]
   }
 }

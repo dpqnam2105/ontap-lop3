@@ -1,8 +1,265 @@
 {
   "topic": {
     "id": "tta_operations",
-    "icon": "",
-    "name": "Operations (+ - x :)",
-    "questions": []
+    "icon": "🧮",
+    "name": "Operations (+ - × :)",
+    "questions": [
+      {
+        "q": "36 + 28 = ?",
+        "choices": [
+          "514",
+          "74",
+          "64",
+          "54"
+        ],
+        "a": 2,
+        "hint": "Line up the digits. Add the ones first, then the tens. Carry if you get 10 or more.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q001"
+      },
+      {
+        "q": "64 - 28 = ?",
+        "choices": [
+          "44",
+          "46",
+          "36",
+          "26"
+        ],
+        "a": 2,
+        "hint": "Line up the digits. Subtract the ones first. Borrow from the tens if you need to.",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q002"
+      },
+      {
+        "q": "145 + 267 = ?",
+        "choices": [
+          "302",
+          "312",
+          "402",
+          "412"
+        ],
+        "a": 3,
+        "hint": "Line up the digits. Add the ones first, then the tens. Carry if you get 10 or more.",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q003"
+      },
+      {
+        "q": "500 - 164 = ?",
+        "choices": [
+          "336",
+          "464",
+          "436",
+          "346"
+        ],
+        "a": 0,
+        "hint": "Line up the digits. Subtract the ones first. Borrow from the tens if you need to.",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q004"
+      },
+      {
+        "q": "1000 + 250 = ?",
+        "choices": [
+          "1025",
+          "1250",
+          "1205",
+          "3500"
+        ],
+        "a": 1,
+        "hint": "Add the hundreds and tens to the thousand.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q005"
+      },
+      {
+        "q": "1250 - 250 = ?",
+        "choices": [
+          "100",
+          "1000",
+          "1025",
+          "1500"
+        ],
+        "a": 1,
+        "hint": "Take away the same number you see at the end.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q006"
+      },
+      {
+        "q": "75 + 25 = ?",
+        "choices": [
+          "910",
+          "100",
+          "90",
+          "110"
+        ],
+        "a": 1,
+        "hint": "Line up the digits. Add the ones first, then the tens. Carry if you get 10 or more.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q007"
+      },
+      {
+        "q": "100 - 25 = ?",
+        "choices": [
+          "75",
+          "125",
+          "65",
+          "85"
+        ],
+        "a": 0,
+        "hint": "Line up the digits. Subtract the ones first. Borrow from the tens if you need to.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q008"
+      },
+      {
+        "q": "6 x 6 = ?",
+        "choices": [
+          "36",
+          "42",
+          "12",
+          "30"
+        ],
+        "a": 0,
+        "hint": "Use the 6 times table.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q009"
+      },
+      {
+        "q": "7 x 8 = ?",
+        "choices": [
+          "48",
+          "56",
+          "54",
+          "63"
+        ],
+        "a": 1,
+        "hint": "Use the 7 or 8 times table.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q010"
+      },
+      {
+        "q": "9 x 4 = ?",
+        "choices": [
+          "45",
+          "32",
+          "36",
+          "13"
+        ],
+        "a": 2,
+        "hint": "Use the 9 or 4 times table.",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q011"
+      },
+      {
+        "q": "23 x 3 = ?",
+        "choices": [
+          "26",
+          "96",
+          "66",
+          "69"
+        ],
+        "a": 3,
+        "hint": "Multiply the ones, then the tens.",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q012"
+      },
+      {
+        "q": "48 ÷ 6 = ?",
+        "choices": [
+          "9",
+          "42",
+          "8",
+          "7"
+        ],
+        "a": 2,
+        "hint": "Think: 6 times what is 48?",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q013"
+      },
+      {
+        "q": "63 ÷ 7 = ?",
+        "choices": [
+          "8",
+          "7",
+          "56",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Think: 7 times what is 63?",
+        "difficulty": 1,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q014"
+      },
+      {
+        "q": "? + 15 = 40",
+        "choices": [
+          "35",
+          "15",
+          "55",
+          "25"
+        ],
+        "a": 3,
+        "hint": "To find the missing part, take the known part away from the total.",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q015"
+      },
+      {
+        "q": "? x 5 = 35",
+        "choices": [
+          "7",
+          "40",
+          "30",
+          "6"
+        ],
+        "a": 0,
+        "hint": "Use division: what number times 5 makes 35?",
+        "difficulty": 2,
+        "skill": "operations",
+        "unit": "operations",
+        "source": "claude-audit-20260924",
+        "id": "tta_operations_q016"
+      }
+    ]
   }
 }

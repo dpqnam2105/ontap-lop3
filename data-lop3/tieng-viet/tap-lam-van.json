@@ -1,8 +1,201 @@
 {
   "topic": {
     "id": "tv_tap-lam-van",
-    "icon": "",
+    "icon": "📖",
     "name": "Tập làm văn",
-    "questions": []
+    "questions": [
+      {
+        "q": "Câu nào phù hợp để mở đầu đoạn văn kể về một buổi đi học?",
+        "choices": [
+          "Nhà em có một con mèo.",
+          "Em rất thích ăn kem.",
+          "Sáng hôm ấy, em dậy sớm và chuẩn bị cặp sách.",
+          "Hôm qua trời mưa to."
+        ],
+        "a": 2,
+        "hint": "Câu mở đầu đưa người đọc vào đúng việc sắp kể.",
+        "difficulty": 1,
+        "skill": "opening",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q001"
+      },
+      {
+        "q": "Câu nào tả hình dáng của một bạn?",
+        "choices": [
+          "Bạn ấy học lớp 3A.",
+          "Bạn ấy đến trường lúc 7 giờ.",
+          "Bạn ấy đang chạy.",
+          "Bạn ấy có mái tóc đen và nụ cười tươi."
+        ],
+        "a": 3,
+        "hint": "Tả hình dáng là nói về tóc, mắt, nụ cười, dáng người.",
+        "difficulty": 1,
+        "skill": "describe",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q002"
+      },
+      {
+        "q": "Câu nào kể về việc làm?",
+        "choices": [
+          "Sân nhà em rất rộng.",
+          "Cây trong vườn xanh mát.",
+          "Em quét sân rồi tưới cây giúp bà.",
+          "Nhà em có bốn người."
+        ],
+        "a": 2,
+        "hint": "Tìm câu có từ chỉ hoạt động mà người trong câu đã làm.",
+        "difficulty": 1,
+        "skill": "narrate",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q003"
+      },
+      {
+        "q": "Khi tả chiếc cặp sách, em nên tả theo trình tự nào?",
+        "choices": [
+          "tả bao quát trước, rồi tả từng bộ phận, cuối cùng nêu tình cảm",
+          "tả lung tung, nghĩ gì viết nấy",
+          "chỉ viết tên chiếc cặp",
+          "kể về ngày sinh nhật của em"
+        ],
+        "a": 0,
+        "hint": "Bài tả đồ vật thường đi từ cái nhìn chung đến các chi tiết.",
+        "difficulty": 2,
+        "skill": "structure",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q004"
+      },
+      {
+        "q": "Câu nào dùng từ chỉ thứ tự hợp lí để kể việc buổi sáng?",
+        "choices": [
+          "Đầu tiên em đi học, sau đó em thức dậy.",
+          "Cuối cùng em đánh răng, đầu tiên em đi học.",
+          "Sau đó em thức dậy, đầu tiên em ăn sáng.",
+          "Đầu tiên em đánh răng, sau đó em ăn sáng."
+        ],
+        "a": 3,
+        "hint": "Nghĩ xem mỗi sáng việc nào em làm trước, việc nào làm sau.",
+        "difficulty": 2,
+        "skill": "sequence",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q005"
+      },
+      {
+        "q": "Phần đầu một bức thư thường ghi:",
+        "choices": [
+          "lời hứa cuối thư",
+          "nơi viết và ngày tháng viết thư",
+          "lời chúc và chữ kí",
+          "câu chuyện chính"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại bức thư mẫu em đã học: dòng đầu tiên nằm ở góc bên phải.",
+        "difficulty": 2,
+        "skill": "letter",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q006"
+      },
+      {
+        "q": "Cuối bức thư thường có:",
+        "choices": [
+          "lời xưng hô với người nhận",
+          "lời chúc, lời hứa và chữ kí",
+          "nơi viết và ngày tháng",
+          "tên bức thư"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại bức thư mẫu: thư kết thúc thế nào?",
+        "difficulty": 2,
+        "skill": "letter",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q007"
+      },
+      {
+        "q": "Câu nào nêu tình cảm của em với người thân?",
+        "choices": [
+          "Bà em có mái tóc bạc.",
+          "Nhà bà em ở quê.",
+          "Em rất yêu quý bà vì bà luôn chăm sóc em.",
+          "Bà em năm nay 70 tuổi."
+        ],
+        "a": 2,
+        "hint": "Tìm câu có từ nói về cảm xúc, tình cảm của em.",
+        "difficulty": 1,
+        "skill": "feelings",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q008"
+      },
+      {
+        "q": "Câu nào phù hợp để kết thúc đoạn văn tả chiếc bút chì?",
+        "choices": [
+          "Em sẽ giữ gìn chiếc bút cẩn thận để viết chữ thật đẹp.",
+          "Vỏ bút được làm bằng gỗ.",
+          "Ruột bút chì màu đen.",
+          "Chiếc bút chì dài khoảng 15 cm."
+        ],
+        "a": 0,
+        "hint": "Câu kết thường nêu tình cảm hoặc ý định của em với đồ vật.",
+        "difficulty": 2,
+        "skill": "closing",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q009"
+      },
+      {
+        "q": "Câu nào không phù hợp trong đoạn văn kể về buổi đi học của em?",
+        "choices": [
+          "Trên đường đi, em gặp bạn Minh.",
+          "Hai bạn cùng bước vào cổng trường.",
+          "Em chào mẹ rồi ra khỏi nhà.",
+          "Con mèo nhà hàng xóm có bộ lông trắng."
+        ],
+        "a": 3,
+        "hint": "Mọi câu trong đoạn văn phải nói về cùng một việc.",
+        "difficulty": 2,
+        "skill": "coherence",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q010"
+      },
+      {
+        "q": "Muốn đoạn văn dễ đọc, em cần:",
+        "choices": [
+          "viết thật dài và không cần dấu câu",
+          "viết thành câu đủ ý, có dấu câu đúng chỗ",
+          "viết tắt cho nhanh",
+          "lặp lại một câu nhiều lần"
+        ],
+        "a": 1,
+        "hint": "Nghĩ xem người đọc cần gì để hiểu bài viết của em.",
+        "difficulty": 1,
+        "skill": "writing",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q011"
+      },
+      {
+        "q": "Từ ngữ nào hợp để tả màu lá cây mùa xuân?",
+        "choices": [
+          "xanh non",
+          "đen sì",
+          "xám xịt",
+          "tím ngắt"
+        ],
+        "a": 0,
+        "hint": "Mùa xuân, cây cối bắt đầu đâm chồi nảy lộc.",
+        "difficulty": 1,
+        "skill": "word-choice",
+        "unit": "tap-lam-van",
+        "source": "claude-audit-20260924",
+        "id": "tv_tap-lam-van_q012"
+      }
+    ]
   }
 }

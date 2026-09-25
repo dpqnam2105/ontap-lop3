@@ -1,8 +1,233 @@
 {
   "topic": {
     "id": "tta_numbers",
-    "icon": "",
+    "icon": "🧮",
     "name": "Numbers",
-    "questions": []
+    "questions": [
+      {
+        "q": "How do you write 15 in words?",
+        "choices": [
+          "fifteen",
+          "five",
+          "fifty",
+          "fourteen"
+        ],
+        "a": 0,
+        "hint": "13 to 19 end in -teen. 20, 30, 40... end in -ty.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q001"
+      },
+      {
+        "q": "How do you write 40 in words?",
+        "choices": [
+          "forty",
+          "four",
+          "fourteen",
+          "fourty"
+        ],
+        "a": 0,
+        "hint": "Careful: the spelling of 40 is different from 4.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q002"
+      },
+      {
+        "q": "How do you write 72 in words?",
+        "choices": [
+          "twenty-seven",
+          "seventy-two",
+          "seven-two",
+          "seventeen-two"
+        ],
+        "a": 1,
+        "hint": "Say the tens word first, then the ones.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q003"
+      },
+      {
+        "q": "How do you write 105 in words?",
+        "choices": [
+          "one hundred and fifty",
+          "one hundred fifty",
+          "one hundred and five",
+          "fifteen"
+        ],
+        "a": 2,
+        "hint": "Say the hundreds, then \"and\", then the rest.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q004"
+      },
+      {
+        "q": "How do you write 350 in words?",
+        "choices": [
+          "three hundred and fifteen",
+          "three thousand and fifty",
+          "thirty-five",
+          "three hundred and fifty"
+        ],
+        "a": 3,
+        "hint": "Say the hundreds, then \"and\", then the rest.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q005"
+      },
+      {
+        "q": "\"Six hundred and eight\" is ___.",
+        "choices": [
+          "68",
+          "608",
+          "680",
+          "6008"
+        ],
+        "a": 1,
+        "hint": "Write the hundreds digit, then the tens (maybe 0), then the ones.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q006"
+      },
+      {
+        "q": "Which number is greater: 58 or 85?",
+        "choices": [
+          "They are equal",
+          "58",
+          "85",
+          "We cannot tell"
+        ],
+        "a": 2,
+        "hint": "Compare the tens digits first.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q007"
+      },
+      {
+        "q": "Which number is the smallest: 409, 490, 94, 904?",
+        "choices": [
+          "490",
+          "904",
+          "409",
+          "94"
+        ],
+        "a": 3,
+        "hint": "A number with fewer digits is smaller.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q008"
+      },
+      {
+        "q": "What number comes just after 199?",
+        "choices": [
+          "210",
+          "1910",
+          "198",
+          "200"
+        ],
+        "a": 3,
+        "hint": "\"Just after\" means one more.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q009"
+      },
+      {
+        "q": "What number comes just before 500?",
+        "choices": [
+          "400",
+          "501",
+          "499",
+          "490"
+        ],
+        "a": 2,
+        "hint": "\"Just before\" means one less.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q010"
+      },
+      {
+        "q": "In 347, the digit 4 means ___.",
+        "choices": [
+          "4 tens",
+          "4 ones",
+          "4 hundreds",
+          "4 thousands"
+        ],
+        "a": 0,
+        "hint": "From the right: ones, tens, hundreds.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q011"
+      },
+      {
+        "q": "Count in 5s: 25, 30, 35, ___",
+        "choices": [
+          "45",
+          "40",
+          "36",
+          "50"
+        ],
+        "a": 1,
+        "hint": "Add the same step each time.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q012"
+      },
+      {
+        "q": "Count in 10s: 70, 80, 90, ___",
+        "choices": [
+          "1000",
+          "100",
+          "91",
+          "110"
+        ],
+        "a": 1,
+        "hint": "Add the same step each time.",
+        "difficulty": 1,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q013"
+      },
+      {
+        "q": "Is 37 odd or even?",
+        "choices": [
+          "odd",
+          "even",
+          "both",
+          "neither"
+        ],
+        "a": 0,
+        "hint": "Look at the ones digit: 0, 2, 4, 6, 8 are even.",
+        "difficulty": 2,
+        "skill": "numbers",
+        "unit": "numbers",
+        "source": "claude-audit-20260924",
+        "id": "tta_numbers_q014"
+      }
+    ]
   }
 }

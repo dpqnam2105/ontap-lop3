@@ -1,8 +1,265 @@
 {
   "topic": {
-    "id": "en_unit-placeholder-02",
-    "icon": "",
-    "name": "Unit 02 (đổi tên theo sách)",
-    "questions": []
+    "id": "en_my-family",
+    "icon": "🌍",
+    "name": "My Family",
+    "questions": [
+      {
+        "q": "My mother's mother is my ___.",
+        "choices": [
+          "grandmother",
+          "sister",
+          "aunt",
+          "cousin"
+        ],
+        "a": 0,
+        "hint": "Think: who is your mum's mum?",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q001"
+      },
+      {
+        "q": "My parents have a son. He is my ___.",
+        "choices": [
+          "grandfather",
+          "brother",
+          "uncle",
+          "cousin"
+        ],
+        "a": 1,
+        "hint": "A boy with the same mum and dad as you.",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q002"
+      },
+      {
+        "q": "I ___ a sister. Her name is Mai.",
+        "choices": [
+          "am",
+          "has",
+          "have",
+          "is"
+        ],
+        "a": 2,
+        "hint": "Use \"have\" with I / you / we / they and \"has\" with he / she / it.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q003"
+      },
+      {
+        "q": "She ___ a baby brother.",
+        "choices": [
+          "have",
+          "are",
+          "has",
+          "am"
+        ],
+        "a": 2,
+        "hint": "Use \"have\" with I / you / we / they and \"has\" with he / she / it.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q004"
+      },
+      {
+        "q": "This is a photo ___ my family.",
+        "choices": [
+          "to",
+          "on",
+          "under",
+          "of"
+        ],
+        "a": 3,
+        "hint": "We say \"a photo ... someone\". Think of \"a picture of a cat\".",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q005"
+      },
+      {
+        "q": "We ___ in a house with our parents.",
+        "choices": [
+          "to live",
+          "lives",
+          "live",
+          "living"
+        ],
+        "a": 2,
+        "hint": "After I / you / we / they, the verb has no -s.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q006"
+      },
+      {
+        "q": "Choose the correct sentence.",
+        "choices": [
+          "These are my parents.",
+          "These is my parents.",
+          "This is my parents.",
+          "This are my parents."
+        ],
+        "a": 0,
+        "hint": "\"Parents\" means two people. Use the words for more than one.",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q007"
+      },
+      {
+        "q": "A boy child in a family is a ___.",
+        "choices": [
+          "daughter",
+          "aunt",
+          "son",
+          "wife"
+        ],
+        "a": 2,
+        "hint": "Two family words for children: one for a boy, one for a girl.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q008"
+      },
+      {
+        "q": "A girl child in a family is a ___.",
+        "choices": [
+          "son",
+          "husband",
+          "uncle",
+          "daughter"
+        ],
+        "a": 3,
+        "hint": "Two family words for children: one for a boy, one for a girl.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q009"
+      },
+      {
+        "q": "My aunt's child is my ___.",
+        "choices": [
+          "sister",
+          "grandfather",
+          "brother",
+          "cousin"
+        ],
+        "a": 3,
+        "hint": "This child does not live in your house but is in your big family.",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q010"
+      },
+      {
+        "q": "\"Dad cooks dinner.\" Who cooks?",
+        "choices": [
+          "Dad",
+          "the family",
+          "dinner",
+          "Mum"
+        ],
+        "a": 0,
+        "hint": "Find the person before the action word.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q011"
+      },
+      {
+        "q": "They ___ my grandparents.",
+        "choices": [
+          "are",
+          "is",
+          "am",
+          "be"
+        ],
+        "a": 0,
+        "hint": "Remember: I → am; he / she / it → is; you / we / they → are.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q012"
+      },
+      {
+        "q": "I love my family ___ they love me.",
+        "choices": [
+          "but",
+          "so",
+          "or",
+          "and"
+        ],
+        "a": 3,
+        "hint": "Choose the word that joins two ideas that go together.",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q013"
+      },
+      {
+        "q": "Which sentence is about a family member?",
+        "choices": [
+          "The board is big.",
+          "My brother is seven years old.",
+          "It is rainy today.",
+          "I have a pencil."
+        ],
+        "a": 1,
+        "hint": "Look for a family word: mother, father, brother, sister...",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q014"
+      },
+      {
+        "q": "\"How many people are there in your family?\" – \"___\"",
+        "choices": [
+          "She is my mother.",
+          "There are four people.",
+          "I am eight.",
+          "My name is Lan."
+        ],
+        "a": 1,
+        "hint": "\"How many...?\" asks for a number.",
+        "difficulty": 2,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q015"
+      },
+      {
+        "q": "Choose the correct sentence.",
+        "choices": [
+          "This my is mother.",
+          "This is my mother.",
+          "Is this mother my.",
+          "Mother this is my."
+        ],
+        "a": 1,
+        "hint": "In English: This + is + my + person.",
+        "difficulty": 1,
+        "skill": "family",
+        "unit": "unit-placeholder-02",
+        "source": "claude-audit-20260924",
+        "id": "en_my-family_q016"
+      }
+    ]
   }
 }

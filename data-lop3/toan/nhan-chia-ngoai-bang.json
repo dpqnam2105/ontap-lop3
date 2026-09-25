@@ -1,8 +1,537 @@
 {
   "topic": {
     "id": "toan_nhan-chia-ngoai-bang",
-    "icon": "",
+    "icon": "✖️",
     "name": "Nhân, chia ngoài bảng",
-    "questions": []
+    "questions": [
+      {
+        "q": "24 × 4 = ?",
+        "choices": [
+          "96",
+          "106",
+          "196",
+          "86"
+        ],
+        "a": 0,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q001"
+      },
+      {
+        "q": "36 × 5 = ?",
+        "choices": [
+          "80",
+          "180",
+          "50",
+          "190"
+        ],
+        "a": 1,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q002"
+      },
+      {
+        "q": "47 × 3 = ?",
+        "choices": [
+          "151",
+          "21",
+          "41",
+          "141"
+        ],
+        "a": 3,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q003"
+      },
+      {
+        "q": "125 × 6 = ?",
+        "choices": [
+          "760",
+          "750",
+          "620",
+          "650"
+        ],
+        "a": 1,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q004"
+      },
+      {
+        "q": "208 × 4 = ?",
+        "choices": [
+          "802",
+          "832",
+          "732",
+          "842"
+        ],
+        "a": 1,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q005"
+      },
+      {
+        "q": "319 × 3 = ?",
+        "choices": [
+          "967",
+          "857",
+          "937",
+          "957"
+        ],
+        "a": 3,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q006"
+      },
+      {
+        "q": "1245 × 4 = ?",
+        "choices": [
+          "4980",
+          "4860",
+          "4990",
+          "4880"
+        ],
+        "a": 0,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q007"
+      },
+      {
+        "q": "2308 × 3 = ?",
+        "choices": [
+          "6934",
+          "6824",
+          "6924",
+          "6904"
+        ],
+        "a": 2,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q008"
+      },
+      {
+        "q": "10 715 × 6 = ?",
+        "choices": [
+          "64 300",
+          "64 290",
+          "60 260",
+          "64 190"
+        ],
+        "a": 1,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q009"
+      },
+      {
+        "q": "12 409 × 7 = ?",
+        "choices": [
+          "86 863",
+          "86 873",
+          "86 763",
+          "74 803"
+        ],
+        "a": 0,
+        "hint": "Đặt tính rồi nhân từ hàng đơn vị. Nhân xong mỗi hàng nhớ cộng thêm phần nhớ của hàng trước.",
+        "difficulty": 2,
+        "skill": "multiply",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q010"
+      },
+      {
+        "q": "96 : 3 = ?",
+        "choices": [
+          "32",
+          "31",
+          "33",
+          "302"
+        ],
+        "a": 0,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q011"
+      },
+      {
+        "q": "84 : 7 = ?",
+        "choices": [
+          "102",
+          "13",
+          "12",
+          "11"
+        ],
+        "a": 2,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q012"
+      },
+      {
+        "q": "248 : 2 = ?",
+        "choices": [
+          "125",
+          "123",
+          "124",
+          "1204"
+        ],
+        "a": 2,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q013"
+      },
+      {
+        "q": "636 : 6 = ?",
+        "choices": [
+          "105",
+          "107",
+          "16",
+          "106"
+        ],
+        "a": 3,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q014"
+      },
+      {
+        "q": "816 : 8 = ?",
+        "choices": [
+          "103",
+          "101",
+          "12",
+          "102"
+        ],
+        "a": 3,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q015"
+      },
+      {
+        "q": "4515 : 5 = ?",
+        "choices": [
+          "902",
+          "904",
+          "903",
+          "93"
+        ],
+        "a": 2,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q016"
+      },
+      {
+        "q": "8424 : 4 = ?",
+        "choices": [
+          "2106",
+          "216",
+          "2107",
+          "2105"
+        ],
+        "a": 0,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q017"
+      },
+      {
+        "q": "25 060 : 5 = ?",
+        "choices": [
+          "5011",
+          "5013",
+          "5012",
+          "512"
+        ],
+        "a": 2,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q018"
+      },
+      {
+        "q": "36 918 : 6 = ?",
+        "choices": [
+          "61 503",
+          "6153",
+          "6154",
+          "6152"
+        ],
+        "a": 1,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q019"
+      },
+      {
+        "q": "63 007 : 7 = ?",
+        "choices": [
+          "9000",
+          "9002",
+          "9001",
+          "91"
+        ],
+        "a": 2,
+        "hint": "Chia lần lượt từ hàng cao nhất: chia, nhân, trừ, rồi hạ chữ số tiếp theo. Nhân ngược lại để thử kết quả.",
+        "difficulty": 2,
+        "skill": "divide",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q020"
+      },
+      {
+        "q": "50 : 6 = ? (phép chia có dư)",
+        "choices": [
+          "8 dư 3",
+          "9 dư 2",
+          "7 dư 8",
+          "8 dư 2"
+        ],
+        "a": 3,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q021"
+      },
+      {
+        "q": "29 : 4 = ? (phép chia có dư)",
+        "choices": [
+          "8 dư 1",
+          "7 dư 1",
+          "6 dư 5",
+          "7 dư 2"
+        ],
+        "a": 1,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q022"
+      },
+      {
+        "q": "75 : 8 = ? (phép chia có dư)",
+        "choices": [
+          "9 dư 3",
+          "9 dư 4",
+          "10 dư 3",
+          "8 dư 11"
+        ],
+        "a": 0,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q023"
+      },
+      {
+        "q": "100 : 9 = ? (phép chia có dư)",
+        "choices": [
+          "11 dư 1",
+          "10 dư 10",
+          "12 dư 1",
+          "11 dư 2"
+        ],
+        "a": 0,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q024"
+      },
+      {
+        "q": "47 : 5 = ? (phép chia có dư)",
+        "choices": [
+          "9 dư 3",
+          "10 dư 2",
+          "8 dư 7",
+          "9 dư 2"
+        ],
+        "a": 3,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q025"
+      },
+      {
+        "q": "83 : 6 = ? (phép chia có dư)",
+        "choices": [
+          "14 dư 5",
+          "13 dư 4",
+          "12 dư 11",
+          "13 dư 5"
+        ],
+        "a": 3,
+        "hint": "Tìm thương lớn nhất sao cho số dư bé hơn số chia.",
+        "difficulty": 2,
+        "skill": "divide-remainder",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q026"
+      },
+      {
+        "q": "Gấp 125 lên 4 lần được:",
+        "choices": [
+          "400",
+          "500",
+          "129",
+          "121"
+        ],
+        "a": 1,
+        "hint": "Gấp một số lên nhiều lần thì dùng phép nhân.",
+        "difficulty": 2,
+        "skill": "times-more",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q027"
+      },
+      {
+        "q": "Giảm 96 đi 3 lần được:",
+        "choices": [
+          "93",
+          "99",
+          "32",
+          "288"
+        ],
+        "a": 2,
+        "hint": "Giảm một số đi nhiều lần thì dùng phép chia.",
+        "difficulty": 2,
+        "skill": "times-less",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q028"
+      },
+      {
+        "q": "Số lớn là 45, số bé là 9. Số lớn gấp mấy lần số bé?",
+        "choices": [
+          "4",
+          "5",
+          "54",
+          "36"
+        ],
+        "a": 1,
+        "hint": "Muốn biết số lớn gấp mấy lần số bé, lấy số lớn chia cho số bé.",
+        "difficulty": 2,
+        "skill": "ratio",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q029"
+      },
+      {
+        "q": "Giá trị của biểu thức 45 + 5 × 3 là:",
+        "choices": [
+          "150",
+          "135",
+          "53",
+          "60"
+        ],
+        "a": 3,
+        "hint": "Biểu thức có cả cộng và nhân thì làm phép nhân trước.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q030"
+      },
+      {
+        "q": "Giá trị của biểu thức (45 + 5) × 3 là:",
+        "choices": [
+          "145",
+          "53",
+          "150",
+          "60"
+        ],
+        "a": 2,
+        "hint": "Biểu thức có dấu ngoặc thì tính trong ngoặc trước.",
+        "difficulty": 2,
+        "skill": "expression",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q031"
+      },
+      {
+        "q": "Giá trị của biểu thức 81 : 9 × 2 là:",
+        "choices": [
+          "18",
+          "4",
+          "162",
+          "81"
+        ],
+        "a": 0,
+        "hint": "Chỉ có nhân và chia thì tính lần lượt từ trái sang phải.",
+        "difficulty": 3,
+        "skill": "expression",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q032"
+      },
+      {
+        "q": "Giá trị của biểu thức 100 − 36 : 4 là:",
+        "choices": [
+          "91",
+          "16",
+          "64",
+          "9"
+        ],
+        "a": 0,
+        "hint": "Biểu thức có cả trừ và chia thì làm phép chia trước.",
+        "difficulty": 3,
+        "skill": "expression",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "claude-audit-20260924",
+        "id": "toan_nhan-chia-ngoai-bang_q033"
+      }
+    ]
   }
 }

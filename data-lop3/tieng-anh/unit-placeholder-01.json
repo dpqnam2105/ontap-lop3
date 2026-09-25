@@ -1,8 +1,265 @@
 {
   "topic": {
-    "id": "en_unit-placeholder-01",
-    "icon": "",
-    "name": "Unit 01 (đổi tên theo sách)",
-    "questions": []
+    "id": "en_at-school",
+    "icon": "🌍",
+    "name": "At School",
+    "questions": [
+      {
+        "q": "I write with a ___.",
+        "choices": [
+          "pen",
+          "desk",
+          "bag",
+          "board"
+        ],
+        "a": 0,
+        "hint": "Which thing do you hold in your hand to write?",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q001"
+      },
+      {
+        "q": "The teacher writes on the ___.",
+        "choices": [
+          "chair",
+          "board",
+          "ruler",
+          "rubber"
+        ],
+        "a": 1,
+        "hint": "Look at the front of your classroom.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q002"
+      },
+      {
+        "q": "I put my books in my ___.",
+        "choices": [
+          "desk lamp",
+          "pencil",
+          "school bag",
+          "rubber"
+        ],
+        "a": 2,
+        "hint": "What do you carry to school every day?",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q003"
+      },
+      {
+        "q": "We sit at a ___ in class.",
+        "choices": [
+          "book",
+          "board",
+          "desk",
+          "pen"
+        ],
+        "a": 2,
+        "hint": "What do you put your books on in class?",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q004"
+      },
+      {
+        "q": "This is ___ eraser.",
+        "choices": [
+          "many",
+          "a",
+          "two",
+          "an"
+        ],
+        "a": 3,
+        "hint": "Use \"an\" before a vowel sound (a, e, i, o, u). Use \"a\" before other sounds.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q005"
+      },
+      {
+        "q": "Choose the plural form of \"teacher\".",
+        "choices": [
+          "teacheries",
+          "teacher",
+          "teachers",
+          "teacheres"
+        ],
+        "a": 2,
+        "hint": "Most nouns just add -s to make the plural.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q006"
+      },
+      {
+        "q": "Choose the correct sentence.",
+        "choices": [
+          "This is my book.",
+          "This is my books.",
+          "This are my book.",
+          "These is my book."
+        ],
+        "a": 0,
+        "hint": "\"This\" is for one thing and goes with \"is\".",
+        "difficulty": 2,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q007"
+      },
+      {
+        "q": "A ruler helps us to ___.",
+        "choices": [
+          "drink milk",
+          "cut paper",
+          "draw straight lines",
+          "rub out mistakes"
+        ],
+        "a": 2,
+        "hint": "Think about how you use a ruler in Maths.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q008"
+      },
+      {
+        "q": "The opposite of \"open your book\" is \"___ your book\".",
+        "choices": [
+          "read",
+          "look at",
+          "take",
+          "close"
+        ],
+        "a": 3,
+        "hint": "Think of the teacher saying \"Open your book\" and then the opposite.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q009"
+      },
+      {
+        "q": "We say \"Good morning\" to the teacher ___.",
+        "choices": [
+          "at bedtime",
+          "at night",
+          "in the evening",
+          "in the morning"
+        ],
+        "a": 3,
+        "hint": "Listen to the second word of the greeting.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q010"
+      },
+      {
+        "q": "There ___ a board in the classroom.",
+        "choices": [
+          "is",
+          "be",
+          "are",
+          "am"
+        ],
+        "a": 0,
+        "hint": "Use \"there is\" for one thing and \"there are\" for many things.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q011"
+      },
+      {
+        "q": "There ___ many students in the class.",
+        "choices": [
+          "are",
+          "is",
+          "am",
+          "be"
+        ],
+        "a": 0,
+        "hint": "Use \"there is\" for one thing and \"there are\" for many things.",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q012"
+      },
+      {
+        "q": "I ___ my hand when I want to answer.",
+        "choices": [
+          "sit down",
+          "stand",
+          "close",
+          "put up"
+        ],
+        "a": 3,
+        "hint": "What do you do with your hand to ask the teacher?",
+        "difficulty": 2,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q013"
+      },
+      {
+        "q": "Which one is a school subject?",
+        "choices": [
+          "kitchen",
+          "Maths",
+          "bicycle",
+          "banana"
+        ],
+        "a": 1,
+        "hint": "Which one do you learn in a lesson at school?",
+        "difficulty": 1,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q014"
+      },
+      {
+        "q": "How do you ask the teacher politely to go out?",
+        "choices": [
+          "You go out?",
+          "May I go out, please?",
+          "I go out.",
+          "Go out now!"
+        ],
+        "a": 1,
+        "hint": "Polite questions to teachers often start with \"May I...?\" and end with \"please\".",
+        "difficulty": 2,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q015"
+      },
+      {
+        "q": "Choose the sentence with correct capital letters.",
+        "choices": [
+          "my teacher is ms lan.",
+          "My teacher is Ms Lan.",
+          "My Teacher is ms lan.",
+          "my Teacher is Ms lan."
+        ],
+        "a": 1,
+        "hint": "Start a sentence with a capital letter. Names and titles like Ms also start with a capital.",
+        "difficulty": 2,
+        "skill": "at-school",
+        "unit": "unit-placeholder-01",
+        "source": "claude-audit-20260924",
+        "id": "en_at-school_q016"
+      }
+    ]
   }
 }

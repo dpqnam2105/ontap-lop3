@@ -8,10 +8,23 @@ const DragonBall = {
   DRAGONBALL_KEY: 'rabbit_dragonball_collection',
   DRAGON_REWARD_KEY: 'rabbit_shenron_unlocked',
 
+  _who() {
+    try {
+      if (window.Storage && Storage.canonName) {
+        const n = Storage.canonName(Storage.getActiveName() || (window.App && App.playerName) || '');
+        if (n) return n;
+      }
+    } catch (e) { /* guest */ }
+    return 'guest';
+  },
+
+  _boxKey() { return this.DRAGONBALL_KEY + '::' + this._who(); },
+  _rewardKey() { return this.DRAGON_REWARD_KEY + '::' + this._who(); },
+
 
   _getDragonCollection() {
     try {
-      const raw = localStorage.getItem(this.DRAGONBALL_KEY);
+      const raw = localStorage.getItem(this._boxKey());
       const parsed = raw ? JSON.parse(raw) : [];
       return Array.isArray(parsed) ? parsed.map(Number).filter(n => n >= 1 && n <= 7) : [];
     } catch (e) {
@@ -21,7 +34,7 @@ const DragonBall = {
 
   _saveDragonCollection(list) {
     const unique = [...new Set(list.map(Number).filter(n => n >= 1 && n <= 7))].sort((a, b) => a - b);
-    localStorage.setItem(this.DRAGONBALL_KEY, JSON.stringify(unique));
+    localStorage.setItem(this._boxKey(), JSON.stringify(unique));
     this._checkDragonReward(unique);
     this._renderHomeWidgets();
     this._renderCollection();
@@ -94,7 +107,7 @@ const DragonBall = {
 
     const stars = this._getStars();
     const collection = this._getDragonCollection();
-    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+    const unlocked = localStorage.getItem(this._rewardKey()) === '1';
 
     const profile = (typeof Storage !== 'undefined' && Storage.load) ? Storage.load() : {};
     const streak = Number(profile.streak || 0);
@@ -184,9 +197,9 @@ const DragonBall = {
 
   _checkDragonReward(collection) {
     const hasAll = collection.length >= 7;
-    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+    const unlocked = localStorage.getItem(this._rewardKey()) === '1';
     if (hasAll && !unlocked) {
-      localStorage.setItem(this.DRAGON_REWARD_KEY, '1');
+      localStorage.setItem(this._rewardKey(), '1');
       this._addShenronToInventory();
       setTimeout(() => alert('🐉 Rồng Thần xuất hiện! Con đã nhận Sticker Rồng Thần!'), 100);
     }
@@ -203,7 +216,7 @@ const DragonBall = {
         if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
       }
     } catch (e) {
-      localStorage.setItem('rabbit_shenron_inventory_fallback', '1');
+      localStorage.setItem('rabbit_shenron_inventory_fallback::' + this._who(), '1');
     }
   },
 
@@ -211,7 +224,7 @@ const DragonBall = {
     const grid = document.getElementById('collectionDragonGrid');
     if (!grid) return;
     const collection = this._getDragonCollection();
-    const unlocked = localStorage.getItem(this.DRAGON_REWARD_KEY) === '1';
+    const unlocked = localStorage.getItem(this._rewardKey()) === '1';
     grid.innerHTML = [1, 2, 3, 4, 5, 6, 7].map(n => {
       const owned = collection.includes(n);
       return `<div class="collection-dragon-card ${owned ? 'owned' : 'locked'}">
