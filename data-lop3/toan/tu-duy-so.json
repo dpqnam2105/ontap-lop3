@@ -1,0 +1,889 @@
+{
+  "topic": {
+    "id": "toan_tu-duy-so",
+    "icon": "🧠",
+    "name": "Tư duy số & phép tính",
+    "questions": [
+      {
+        "q": "Hiệu của số lớn nhất có ba chữ số và số bé nhất có ba chữ số là:",
+        "choices": [
+          "999",
+          "889",
+          "899",
+          "900"
+        ],
+        "a": 2,
+        "hint": "Tìm số lớn nhất có ba chữ số và số bé nhất có ba chữ số trước, rồi mới trừ.",
+        "difficulty": 2,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q001"
+      },
+      {
+        "q": "Số tròn chục lớn nhất có ba chữ số là:",
+        "choices": [
+          "999",
+          "990",
+          "900",
+          "980"
+        ],
+        "a": 1,
+        "hint": "Số tròn chục có chữ số hàng đơn vị là 0.",
+        "difficulty": 1,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q002"
+      },
+      {
+        "q": "Số lớn nhất có ba chữ số khác nhau là:",
+        "choices": [
+          "987",
+          "978",
+          "998",
+          "999"
+        ],
+        "a": 0,
+        "hint": "Ba chữ số phải khác nhau; muốn số lớn nhất thì chữ số lớn đứng ở hàng trăm.",
+        "difficulty": 2,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q003"
+      },
+      {
+        "q": "Số bé nhất có ba chữ số khác nhau là:",
+        "choices": [
+          "100",
+          "102",
+          "123",
+          "101"
+        ],
+        "a": 1,
+        "hint": "Hàng trăm không được là 0. Ba chữ số phải khác nhau.",
+        "difficulty": 2,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q004"
+      },
+      {
+        "q": "Tổng của số bé nhất có ba chữ số và số lớn nhất có hai chữ số là:",
+        "choices": [
+          "199",
+          "200",
+          "109",
+          "189"
+        ],
+        "a": 0,
+        "hint": "Viết ra hai số đó trước rồi cộng.",
+        "difficulty": 2,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q005"
+      },
+      {
+        "q": "6□8 < 638. Những chữ số nào điền được vào ô trống?",
+        "choices": [
+          "1; 2; 3",
+          "3; 4; 5",
+          "0; 1; 2",
+          "0; 1; 2; 3"
+        ],
+        "a": 2,
+        "hint": "Hàng trăm bằng nhau thì so sánh hàng chục. Thử với □ = 3 xem hai số có bằng nhau không.",
+        "difficulty": 2,
+        "skill": "dien-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q006"
+      },
+      {
+        "q": "5□4 > 584. Chữ số điền vào ô trống là:",
+        "choices": [
+          "7; 8; 9",
+          "8",
+          "8; 9",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Hàng trăm bằng nhau, so sánh hàng chục. Nếu hàng chục bằng nhau thì xét tiếp hàng đơn vị.",
+        "difficulty": 2,
+        "skill": "dien-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q007"
+      },
+      {
+        "q": "4□7 < 427. Những chữ số nào điền được vào ô trống?",
+        "choices": [
+          "0; 1; 2",
+          "0; 1",
+          "1; 2",
+          "2"
+        ],
+        "a": 1,
+        "hint": "Thử □ = 2: hai số có bằng nhau không?",
+        "difficulty": 2,
+        "skill": "dien-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q008"
+      },
+      {
+        "q": "3□5 > 3□2 (hai ô trống điền cùng một chữ số). Chữ số nào điền được?",
+        "choices": [
+          "Chỉ có chữ số 0",
+          "Chữ số nào từ 0 đến 9 cũng được",
+          "Chỉ có chữ số 9",
+          "Không có chữ số nào"
+        ],
+        "a": 1,
+        "hint": "Hàng trăm và hàng chục của hai số giống nhau, chỉ còn hàng đơn vị khác nhau.",
+        "difficulty": 3,
+        "skill": "dien-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q009"
+      },
+      {
+        "q": "Viết thêm chữ số 2 vào bên trái số 30 thì số đó tăng thêm bao nhiêu đơn vị?",
+        "choices": [
+          "20",
+          "230",
+          "200",
+          "2"
+        ],
+        "a": 2,
+        "hint": "Viết số mới ra, rồi lấy số mới trừ số cũ.",
+        "difficulty": 2,
+        "skill": "viet-them-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q010"
+      },
+      {
+        "q": "Viết thêm chữ số 0 vào bên phải số 45 thì số mới hơn số cũ bao nhiêu đơn vị?",
+        "choices": [
+          "405",
+          "400",
+          "45",
+          "450"
+        ],
+        "a": 0,
+        "hint": "Số mới là 450. Lấy số mới trừ số cũ.",
+        "difficulty": 3,
+        "skill": "viet-them-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q011"
+      },
+      {
+        "q": "Xoá chữ số 5 ở hàng trăm của số 536 thì số đó giảm đi bao nhiêu đơn vị?",
+        "choices": [
+          "536",
+          "5",
+          "50",
+          "500"
+        ],
+        "a": 3,
+        "hint": "Xoá chữ số 5 thì còn lại số nào? Lấy số cũ trừ số đó.",
+        "difficulty": 2,
+        "skill": "viet-them-chu-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q012"
+      },
+      {
+        "q": "Có bao nhiêu số có hai chữ số mà chữ số hàng đơn vị là 7?",
+        "choices": [
+          "9",
+          "10",
+          "7",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Liệt kê: 17, 27, … Hàng chục không được là 0.",
+        "difficulty": 2,
+        "skill": "dem-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q013"
+      },
+      {
+        "q": "Có bao nhiêu số có ba chữ số mà ba chữ số giống nhau?",
+        "choices": [
+          "10",
+          "3",
+          "27",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Liệt kê: 111, 222, … Số có ba chữ số không bắt đầu bằng 0.",
+        "difficulty": 2,
+        "skill": "dem-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q014"
+      },
+      {
+        "q": "Có bao nhiêu số tròn chục có hai chữ số?",
+        "choices": [
+          "8",
+          "10",
+          "90",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Liệt kê từ 10 đến số tròn chục lớn nhất có hai chữ số.",
+        "difficulty": 1,
+        "skill": "dem-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q015"
+      },
+      {
+        "q": "Có bao nhiêu số tròn trăm có ba chữ số?",
+        "choices": [
+          "9",
+          "10",
+          "100",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Liệt kê từ 100 đến số tròn trăm lớn nhất có ba chữ số.",
+        "difficulty": 1,
+        "skill": "dem-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q016"
+      },
+      {
+        "q": "Từ ba chữ số 1, 2, 3 lập được bao nhiêu số có ba chữ số khác nhau?",
+        "choices": [
+          "6",
+          "9",
+          "4",
+          "3"
+        ],
+        "a": 0,
+        "hint": "Lần lượt chọn chữ số hàng trăm là 1, 2, 3; mỗi lần viết ra các số lập được.",
+        "difficulty": 2,
+        "skill": "dem-so",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q017"
+      },
+      {
+        "q": "Chọn 4 số trong các số 15, 20, 23, 25, 37, 40 để có tổng bằng 100:",
+        "choices": [
+          "20, 23, 25, 37",
+          "15, 20, 25, 40",
+          "15, 20, 23, 37",
+          "15, 23, 25, 40"
+        ],
+        "a": 1,
+        "hint": "Cộng thử từng bộ; ghép các số tròn chục trước cho dễ tính.",
+        "difficulty": 3,
+        "skill": "chon-so-theo-tong",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q018"
+      },
+      {
+        "q": "Chọn 3 số trong các số 12, 18, 25, 30, 45 để có tổng bằng 75:",
+        "choices": [
+          "12, 25, 30",
+          "18, 25, 30",
+          "12, 18, 45",
+          "25, 30, 45"
+        ],
+        "a": 2,
+        "hint": "12 + 18 được số tròn chục. Thử cộng thêm từng số còn lại.",
+        "difficulty": 3,
+        "skill": "chon-so-theo-tong",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q019"
+      },
+      {
+        "q": "178 < … < 184. Số tròn chục điền vào chỗ chấm là:",
+        "choices": [
+          "190",
+          "170",
+          "179",
+          "180"
+        ],
+        "a": 3,
+        "hint": "Số tròn chục có hàng đơn vị là 0 và phải nằm giữa hai số đã cho.",
+        "difficulty": 1,
+        "skill": "so-tron",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q020"
+      },
+      {
+        "q": "629 < □ < 748. Số tròn trăm điền vào ô trống là:",
+        "choices": [
+          "800",
+          "650",
+          "600",
+          "700"
+        ],
+        "a": 3,
+        "hint": "Số tròn trăm có hàng chục và hàng đơn vị đều là 0.",
+        "difficulty": 1,
+        "skill": "so-tron",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q021"
+      },
+      {
+        "q": "Số tròn chục lớn hơn 395 và bé hơn 405 là:",
+        "choices": [
+          "390",
+          "399",
+          "400",
+          "410"
+        ],
+        "a": 2,
+        "hint": "Kiểm tra từng số: có tròn chục không, có nằm giữa 395 và 405 không.",
+        "difficulty": 2,
+        "skill": "so-tron",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q022"
+      },
+      {
+        "q": "Tìm quy luật: (2 và 3) → 6; (4 và 5) → 20; (3 và 7) → ?",
+        "choices": [
+          "24",
+          "10",
+          "4",
+          "21"
+        ],
+        "a": 3,
+        "hint": "Thử cộng, trừ, nhân hai số đầu xem phép nào ra 6 và 20.",
+        "difficulty": 2,
+        "skill": "quy-luat",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q023"
+      },
+      {
+        "q": "Tìm quy luật: (9 và 4) → 5; (12 và 7) → 5; (15 và 6) → ?",
+        "choices": [
+          "21",
+          "9",
+          "8",
+          "3"
+        ],
+        "a": 1,
+        "hint": "Hai số 9 và 4 làm phép tính gì thì ra 5?",
+        "difficulty": 2,
+        "skill": "quy-luat",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q024"
+      },
+      {
+        "q": "Tìm quy luật: (1 và 2) → 6; (3 và 4) → 14; (5 và 2) → ?",
+        "choices": [
+          "7",
+          "14",
+          "10",
+          "12"
+        ],
+        "a": 1,
+        "hint": "Cộng hai số lại rồi xem phải làm gì tiếp để ra 6 và 14.",
+        "difficulty": 3,
+        "skill": "quy-luat",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q025"
+      },
+      {
+        "q": "Hiệu hai số là 76. Thêm 12 vào số bị trừ, giữ nguyên số trừ thì hiệu mới là:",
+        "choices": [
+          "76",
+          "88",
+          "100",
+          "64"
+        ],
+        "a": 1,
+        "hint": "Số bị trừ tăng thêm bao nhiêu thì hiệu cũng tăng thêm bấy nhiêu.",
+        "difficulty": 3,
+        "skill": "tong-hieu-thay-doi",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q026"
+      },
+      {
+        "q": "Hiệu hai số là 50. Thêm 8 vào số trừ, giữ nguyên số bị trừ thì hiệu mới là:",
+        "choices": [
+          "8",
+          "58",
+          "50",
+          "42"
+        ],
+        "a": 3,
+        "hint": "Số trừ lớn hơn thì phần còn lại nhỏ đi hay lớn lên?",
+        "difficulty": 3,
+        "skill": "tong-hieu-thay-doi",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q027"
+      },
+      {
+        "q": "Tổng hai số là 327. Giảm số thứ nhất đi 26 và tăng số thứ hai thêm 48 thì tổng mới là:",
+        "choices": [
+          "349",
+          "253",
+          "401",
+          "305"
+        ],
+        "a": 0,
+        "hint": "Bớt 26 rồi thêm 48: tổng thay đổi thế nào?",
+        "difficulty": 3,
+        "skill": "tong-hieu-thay-doi",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q028"
+      },
+      {
+        "q": "Hiệu hai số là 45. Thêm 10 vào cả số bị trừ và số trừ thì hiệu mới là:",
+        "choices": [
+          "35",
+          "55",
+          "45",
+          "65"
+        ],
+        "a": 2,
+        "hint": "Thử với hai số cụ thể, ví dụ 50 − 5.",
+        "difficulty": 3,
+        "skill": "tong-hieu-thay-doi",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q029"
+      },
+      {
+        "q": "Tổng hai số là 90. Nếu mỗi số đều thêm 5 thì tổng mới là:",
+        "choices": [
+          "90",
+          "95",
+          "85",
+          "100"
+        ],
+        "a": 3,
+        "hint": "Mỗi số thêm 5 thì tổng thêm tất cả bao nhiêu?",
+        "difficulty": 2,
+        "skill": "tong-hieu-thay-doi",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q030"
+      },
+      {
+        "q": "Tính nhanh: 6 × 5 + 6 × 3 + 6 × 2 = ?",
+        "choices": [
+          "60",
+          "66",
+          "36",
+          "50"
+        ],
+        "a": 0,
+        "hint": "6 được lấy tất cả bao nhiêu lần?",
+        "difficulty": 2,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q031"
+      },
+      {
+        "q": "Tính nhanh: 815 − 23 − 77 + 185 = ?",
+        "choices": [
+          "850",
+          "900",
+          "700",
+          "800"
+        ],
+        "a": 1,
+        "hint": "Ghép 815 với 185, ghép 23 với 77.",
+        "difficulty": 3,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q032"
+      },
+      {
+        "q": "Tính nhanh: 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19 = ?",
+        "choices": [
+          "110",
+          "99",
+          "100",
+          "90"
+        ],
+        "a": 2,
+        "hint": "Ghép số đầu với số cuối: 1 + 19, 3 + 17, … Có mấy cặp?",
+        "difficulty": 3,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q033"
+      },
+      {
+        "q": "Tính nhanh: 576 + 678 + 780 − 475 − 577 − 679 = ?",
+        "choices": [
+          "333",
+          "300",
+          "303",
+          "403"
+        ],
+        "a": 2,
+        "hint": "Ghép 576 với 475, 678 với 577, 780 với 679.",
+        "difficulty": 3,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q034"
+      },
+      {
+        "q": "Tính nhanh: 9 × 4 + 9 × 6 = ?",
+        "choices": [
+          "80",
+          "90",
+          "94",
+          "60"
+        ],
+        "a": 1,
+        "hint": "9 được lấy 4 lần rồi thêm 6 lần nữa.",
+        "difficulty": 2,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q035"
+      },
+      {
+        "q": "Tính nhanh: 8 × 7 − 8 × 5 = ?",
+        "choices": [
+          "2",
+          "24",
+          "16",
+          "8"
+        ],
+        "a": 2,
+        "hint": "8 được lấy 7 lần rồi bớt đi 5 lần.",
+        "difficulty": 2,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q036"
+      },
+      {
+        "q": "Tính nhanh: 25 + 37 + 75 + 63 = ?",
+        "choices": [
+          "190",
+          "200",
+          "100",
+          "210"
+        ],
+        "a": 1,
+        "hint": "Ghép hai số cộng lại được số tròn trăm.",
+        "difficulty": 2,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q037"
+      },
+      {
+        "q": "Tính nhanh: 7 × 3 + 7 × 7 = ?",
+        "choices": [
+          "21",
+          "49",
+          "70",
+          "63"
+        ],
+        "a": 2,
+        "hint": "7 được lấy 3 lần và 7 lần, tất cả là mấy lần?",
+        "difficulty": 2,
+        "skill": "tinh-nhanh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q038"
+      },
+      {
+        "q": "Không cần tính, chọn dấu đúng: 7 × 6 … 7 × 8",
+        "choices": [
+          "<",
+          "=",
+          "Không so sánh được",
+          ">"
+        ],
+        "a": 0,
+        "hint": "Cùng lấy 7, bên nào lấy nhiều lần hơn?",
+        "difficulty": 1,
+        "skill": "so-sanh-khong-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q039"
+      },
+      {
+        "q": "Không cần tính, chọn dấu đúng: 9 × 5 … 5 × 9",
+        "choices": [
+          "<",
+          "=",
+          ">",
+          "Không so sánh được"
+        ],
+        "a": 1,
+        "hint": "Đổi chỗ hai thừa số thì tích có thay đổi không?",
+        "difficulty": 1,
+        "skill": "so-sanh-khong-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q040"
+      },
+      {
+        "q": "8 × 7 < □ × 8. Trong các số 7, 5, 8, 6, số nào điền được vào ô trống?",
+        "choices": [
+          "5",
+          "8",
+          "7",
+          "6"
+        ],
+        "a": 1,
+        "hint": "8 × 7 cũng là 7 × 8. Ô trống phải lớn hơn số nào?",
+        "difficulty": 2,
+        "skill": "so-sanh-khong-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q041"
+      },
+      {
+        "q": "Chọn dấu đúng: 6 × 4 … 4 × 7",
+        "choices": [
+          ">",
+          "=",
+          "<",
+          "Không so sánh được"
+        ],
+        "a": 2,
+        "hint": "Tính từng tích rồi so sánh.",
+        "difficulty": 1,
+        "skill": "so-sanh-khong-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q042"
+      },
+      {
+        "q": "Chọn dấu đúng: 6 × 9 … 50 + 4",
+        "choices": [
+          "<",
+          ">",
+          "=",
+          "Không so sánh được"
+        ],
+        "a": 2,
+        "hint": "Tính từng vế rồi so sánh.",
+        "difficulty": 1,
+        "skill": "so-sanh-khong-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q043"
+      },
+      {
+        "q": "Tôi nghĩ ra một số. Thêm 72 vào số đó rồi bớt đi 27 thì được 81. Số tôi nghĩ là:",
+        "choices": [
+          "126",
+          "45",
+          "108",
+          "36"
+        ],
+        "a": 3,
+        "hint": "Đi ngược lại: thêm 27 vào 81, rồi bớt 72.",
+        "difficulty": 3,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q044"
+      },
+      {
+        "q": "Một số trừ đi 34 thì bằng 43 + 58. Số đó là:",
+        "choices": [
+          "125",
+          "101",
+          "67",
+          "135"
+        ],
+        "a": 3,
+        "hint": "Tính 43 + 58 trước. Số bị trừ = hiệu + số trừ.",
+        "difficulty": 3,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q045"
+      },
+      {
+        "q": "Lấy một số nhân với 4 rồi cộng thêm 7 thì được 39. Số đó là:",
+        "choices": [
+          "8",
+          "9",
+          "32",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Đi ngược lại: bớt 7 trước, rồi chia cho 4.",
+        "difficulty": 3,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q046"
+      },
+      {
+        "q": "Lấy một số chia cho 6 rồi trừ đi 3 thì được 5. Số đó là:",
+        "choices": [
+          "30",
+          "48",
+          "12",
+          "8"
+        ],
+        "a": 1,
+        "hint": "Đi ngược lại: cộng 3 trước, rồi nhân với 6.",
+        "difficulty": 3,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q047"
+      },
+      {
+        "q": "Nhân một số với 5 rồi cộng thêm 4 thì được 29. Số đó là:",
+        "choices": [
+          "5",
+          "6",
+          "33",
+          "25"
+        ],
+        "a": 0,
+        "hint": "Đi ngược lại: bớt 4 trước, rồi chia cho 5.",
+        "difficulty": 2,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q048"
+      },
+      {
+        "q": "Biết hiệu là 245, số trừ là 162. Số bị trừ là:",
+        "choices": [
+          "407",
+          "83",
+          "307",
+          "183"
+        ],
+        "a": 0,
+        "hint": "Số bị trừ = hiệu + số trừ.",
+        "difficulty": 2,
+        "skill": "thanh-phan-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q049"
+      },
+      {
+        "q": "Trong một phép trừ, số bị trừ lớn hơn hiệu 15 đơn vị. Số trừ là:",
+        "choices": [
+          "30",
+          "0",
+          "15",
+          "Không tìm được"
+        ],
+        "a": 2,
+        "hint": "Số bị trừ = hiệu + số trừ. Vậy số bị trừ hơn hiệu đúng bằng số nào?",
+        "difficulty": 3,
+        "skill": "thanh-phan-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q050"
+      },
+      {
+        "q": "Tổng hai số là 500, một số là 275. Số kia là:",
+        "choices": [
+          "235",
+          "775",
+          "225",
+          "325"
+        ],
+        "a": 2,
+        "hint": "Số hạng chưa biết = tổng − số hạng đã biết.",
+        "difficulty": 2,
+        "skill": "thanh-phan-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q051"
+      },
+      {
+        "q": "Số hạng thứ nhất là 348. Tổng lớn hơn số hạng thứ nhất 152 đơn vị. Số hạng thứ hai là:",
+        "choices": [
+          "348",
+          "500",
+          "196",
+          "152"
+        ],
+        "a": 3,
+        "hint": "Tổng = số hạng thứ nhất + số hạng thứ hai. Tổng hơn số hạng thứ nhất chính là phần nào?",
+        "difficulty": 3,
+        "skill": "thanh-phan-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q052"
+      },
+      {
+        "q": "Máy tính số: 7 → nhân 8 → bớt 6 → chia 5 → ?",
+        "choices": [
+          "10",
+          "50",
+          "11",
+          "56"
+        ],
+        "a": 0,
+        "hint": "Làm lần lượt từng bước từ trái sang phải.",
+        "difficulty": 2,
+        "skill": "chuoi-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q053"
+      },
+      {
+        "q": "Máy tính số: 36 → chia 4 → nhân 7 → cộng 37 → ?",
+        "choices": [
+          "100",
+          "90",
+          "63",
+          "70"
+        ],
+        "a": 0,
+        "hint": "Làm lần lượt từng bước từ trái sang phải.",
+        "difficulty": 2,
+        "skill": "chuoi-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q054"
+      },
+      {
+        "q": "Máy tính số: 90 → bớt 18 → chia 8 → nhân 6 → ?",
+        "choices": [
+          "72",
+          "9",
+          "48",
+          "54"
+        ],
+        "a": 3,
+        "hint": "Làm lần lượt từng bước từ trái sang phải.",
+        "difficulty": 2,
+        "skill": "chuoi-phep-tinh",
+        "unit": "tu-duy-so",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-so_q055"
+      }
+    ]
+  }
+}

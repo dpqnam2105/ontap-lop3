@@ -1,0 +1,633 @@
+{
+  "topic": {
+    "id": "toan_loi-van-hay",
+    "icon": "📝",
+    "name": "Toán có lời văn hay",
+    "questions": [
+      {
+        "q": "Thái cho Hùng 14 viên bi, sau đó Hùng cho lại Thái 9 viên thì mỗi bạn có 40 viên. Lúc đầu Thái có bao nhiêu viên bi?",
+        "choices": [
+          "40 viên",
+          "45 viên",
+          "35 viên",
+          "63 viên"
+        ],
+        "a": 1,
+        "hint": "Đi ngược lại từ lúc mỗi bạn có 40 viên: Thái vừa nhận 9 viên, trước đó đã cho đi 14 viên.",
+        "difficulty": 3,
+        "skill": "cho-qua-cho-lai",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q001"
+      },
+      {
+        "q": "Thái cho Hùng 14 viên bi, sau đó Hùng cho lại Thái 9 viên thì mỗi bạn có 40 viên. Lúc đầu Hùng có bao nhiêu viên bi?",
+        "choices": [
+          "40 viên",
+          "49 viên",
+          "35 viên",
+          "45 viên"
+        ],
+        "a": 2,
+        "hint": "Đi ngược lại: Hùng vừa cho đi 9 viên, trước đó đã nhận 14 viên.",
+        "difficulty": 3,
+        "skill": "cho-qua-cho-lai",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q002"
+      },
+      {
+        "q": "An có 30 cái kẹo. An cho Bình 8 cái thì số kẹo hai bạn bằng nhau. Lúc đầu Bình có bao nhiêu cái kẹo?",
+        "choices": [
+          "22 cái",
+          "14 cái",
+          "38 cái",
+          "8 cái"
+        ],
+        "a": 1,
+        "hint": "Sau khi cho, An còn bao nhiêu cái? Lúc đó Bình cũng có bấy nhiêu.",
+        "difficulty": 3,
+        "skill": "cho-qua-cho-lai",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q003"
+      },
+      {
+        "q": "Hai hộp có số bút bằng nhau. Chuyển 6 cái bút từ hộp A sang hộp B thì hộp B nhiều hơn hộp A bao nhiêu cái bút?",
+        "choices": [
+          "3 cái",
+          "6 cái",
+          "12 cái",
+          "0 cái"
+        ],
+        "a": 2,
+        "hint": "Hộp A bớt đi 6 cái, hộp B thêm 6 cái. Thử với mỗi hộp 10 cái bút.",
+        "difficulty": 3,
+        "skill": "cho-qua-cho-lai",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q004"
+      },
+      {
+        "q": "Lan có nhiều hơn Mai 10 nhãn vở. Lan phải cho Mai bao nhiêu nhãn vở để hai bạn có số nhãn vở bằng nhau?",
+        "choices": [
+          "2 nhãn vở",
+          "5 nhãn vở",
+          "20 nhãn vở",
+          "10 nhãn vở"
+        ],
+        "a": 1,
+        "hint": "Mỗi nhãn Lan cho đi làm khoảng cách giữa hai bạn giảm mấy?",
+        "difficulty": 3,
+        "skill": "cho-qua-cho-lai",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q005"
+      },
+      {
+        "q": "Năm nay con 8 tuổi, mẹ hơn con 25 tuổi. Hỏi 3 năm nữa mẹ bao nhiêu tuổi?",
+        "choices": [
+          "11 tuổi",
+          "33 tuổi",
+          "36 tuổi",
+          "28 tuổi"
+        ],
+        "a": 2,
+        "hint": "Tìm tuổi mẹ năm nay trước, rồi tính 3 năm nữa.",
+        "difficulty": 2,
+        "skill": "tuoi",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q006"
+      },
+      {
+        "q": "Năm nay bố 35 tuổi, con 7 tuổi. Hỏi sau 5 năm nữa bố hơn con bao nhiêu tuổi?",
+        "choices": [
+          "38 tuổi",
+          "33 tuổi",
+          "28 tuổi",
+          "23 tuổi"
+        ],
+        "a": 2,
+        "hint": "Mỗi năm bố và con đều thêm 1 tuổi. Khoảng cách tuổi có thay đổi không?",
+        "difficulty": 3,
+        "skill": "tuoi",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q007"
+      },
+      {
+        "q": "Hai năm nữa ông tròn 70 tuổi. Năm nay ông bao nhiêu tuổi?",
+        "choices": [
+          "68 tuổi",
+          "72 tuổi",
+          "70 tuổi",
+          "66 tuổi"
+        ],
+        "a": 0,
+        "hint": "Năm nay thì ít hơn hai năm nữa mấy tuổi?",
+        "difficulty": 1,
+        "skill": "tuoi",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q008"
+      },
+      {
+        "q": "Năm nay chị 12 tuổi, em 7 tuổi. Khi em 12 tuổi thì chị bao nhiêu tuổi?",
+        "choices": [
+          "17 tuổi",
+          "12 tuổi",
+          "5 tuổi",
+          "19 tuổi"
+        ],
+        "a": 0,
+        "hint": "Chị hơn em mấy tuổi? Khoảng cách này luôn giữ nguyên.",
+        "difficulty": 2,
+        "skill": "tuoi",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q009"
+      },
+      {
+        "q": "Có một can 5 l và một can 3 l (không có vạch chia). Làm thế nào để lấy được đúng 2 l nước?",
+        "choices": [
+          "Đổ nước vào khoảng một nửa can 5 l là được 2 l",
+          "Đổ đầy can 3 l, rót hết sang can 5 l, lấy phần can 5 l",
+          "Đổ đầy cả hai can rồi đổ chung vào một chiếc xô",
+          "Đổ đầy can 5 l, rót sang can 3 l cho đầy, can 5 l còn 2 l"
+        ],
+        "a": 3,
+        "hint": "Can không có vạch chia, chỉ đong chính xác được khi đổ đầy. 5 l bớt đi 3 l còn bao nhiêu?",
+        "difficulty": 2,
+        "skill": "rot-nuoc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q010"
+      },
+      {
+        "q": "Có một can 5 l và một can 3 l. Cách nào lấy được đúng 8 l nước vào xô?",
+        "choices": [
+          "Đổ đầy can 3 l ba lần rồi đổ cả vào xô",
+          "Đổ đầy can 5 l hai lần rồi đổ cả vào xô",
+          "Đổ đầy can 5 l rồi rót sang can 3 l",
+          "Đổ đầy can 5 l và can 3 l rồi đổ cả vào xô"
+        ],
+        "a": 3,
+        "hint": "Tính xem mỗi cách được bao nhiêu lít.",
+        "difficulty": 2,
+        "skill": "rot-nuoc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q011"
+      },
+      {
+        "q": "Có một can 7 l và một can 4 l. Làm thế nào để lấy được đúng 3 l nước?",
+        "choices": [
+          "Đổ nước vào khoảng một nửa can 7 l là được 3 l",
+          "Đổ đầy can 7 l, rót sang can 4 l cho đầy, can 7 l còn 3 l",
+          "Đổ đầy can 4 l, rót hết sang can 7 l, lấy phần can 7 l",
+          "Đổ đầy cả hai can rồi đổ chung vào một chiếc xô"
+        ],
+        "a": 1,
+        "hint": "7 l bớt đi 4 l còn bao nhiêu?",
+        "difficulty": 2,
+        "skill": "rot-nuoc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q012"
+      },
+      {
+        "q": "Có một ca 3 l và một ca 5 l (đều không có vạch chia). Cách nào lấy được đúng 1 l nước?",
+        "choices": [
+          "Đổ đầy ca 5 l, rót sang ca 3 l cho đầy, ca 5 l còn 1 l",
+          "Đổ nước vào khoảng một phần ba ca 3 l là được 1 l",
+          "Đổ đầy ca 3 l, rót hết sang ca 5 l, ca 3 l còn 1 l",
+          "Đổ đầy ca 3 l, rót sang ca 5 l; làm lại lần nữa, ca 3 l còn 1 l"
+        ],
+        "a": 3,
+        "hint": "Lần thứ hai, ca 5 l đã có sẵn 3 l, chỉ nhận thêm được mấy lít nữa?",
+        "difficulty": 3,
+        "skill": "rot-nuoc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q013"
+      },
+      {
+        "q": "Cân thăng bằng: đĩa bên trái có 3 hộp sữa; đĩa bên phải có 1 quả dưa và 1 hộp sữa. Mỗi hộp sữa nặng 2 kg. Quả dưa nặng bao nhiêu?",
+        "choices": [
+          "8 kg",
+          "4 kg",
+          "2 kg",
+          "6 kg"
+        ],
+        "a": 1,
+        "hint": "Bỏ đi 1 hộp sữa ở mỗi bên, cân vẫn thăng bằng. Còn lại gì ở hai bên?",
+        "difficulty": 3,
+        "skill": "can-thang-bang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q014"
+      },
+      {
+        "q": "2 quả bưởi nặng bằng 6 quả cam. 1 quả bưởi nặng bằng mấy quả cam?",
+        "choices": [
+          "12 quả cam",
+          "4 quả cam",
+          "2 quả cam",
+          "3 quả cam"
+        ],
+        "a": 3,
+        "hint": "Chia đều 6 quả cam cho 2 quả bưởi.",
+        "difficulty": 2,
+        "skill": "can-thang-bang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q015"
+      },
+      {
+        "q": "1 quả dưa nặng bằng 3 quả táo; 1 quả táo nặng bằng 2 quả mận. 1 quả dưa nặng bằng mấy quả mận?",
+        "choices": [
+          "3 quả mận",
+          "6 quả mận",
+          "9 quả mận",
+          "5 quả mận"
+        ],
+        "a": 1,
+        "hint": "Thay mỗi quả táo bằng 2 quả mận.",
+        "difficulty": 3,
+        "skill": "can-thang-bang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q016"
+      },
+      {
+        "q": "Cân thăng bằng: đĩa trái có túi gạo 5 kg và quả cân 2 kg; đĩa phải có quả bí và quả cân 3 kg. Quả bí nặng bao nhiêu?",
+        "choices": [
+          "5 kg",
+          "10 kg",
+          "6 kg",
+          "4 kg"
+        ],
+        "a": 3,
+        "hint": "Đĩa trái nặng tất cả bao nhiêu? Đĩa phải cũng nặng bấy nhiêu.",
+        "difficulty": 3,
+        "skill": "can-thang-bang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q017"
+      },
+      {
+        "q": "Quang làm bài trong nửa giờ. Hồng làm chậm hơn Quang 2 phút nhưng nhanh hơn Mai 5 phút. Bạn nào làm xong nhanh nhất?",
+        "choices": [
+          "Quang",
+          "Ba bạn bằng nhau",
+          "Mai",
+          "Hồng"
+        ],
+        "a": 0,
+        "hint": "Nửa giờ là 30 phút. Tính thời gian của từng bạn.",
+        "difficulty": 2,
+        "skill": "ai-ve-nhat",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q018"
+      },
+      {
+        "q": "Quang làm bài trong nửa giờ. Hồng làm chậm hơn Quang 2 phút nhưng nhanh hơn Mai 5 phút. Mai làm bài hết bao nhiêu phút?",
+        "choices": [
+          "27 phút",
+          "37 phút",
+          "35 phút",
+          "32 phút"
+        ],
+        "a": 1,
+        "hint": "Tìm thời gian của Hồng trước. Mai chậm hơn Hồng.",
+        "difficulty": 3,
+        "skill": "ai-ve-nhat",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q019"
+      },
+      {
+        "q": "An chạy hết 15 phút. Bình chạy nhanh hơn An 3 phút. Chi chạy chậm hơn Bình 5 phút. Bạn nào chạy chậm nhất?",
+        "choices": [
+          "Ba bạn bằng nhau",
+          "Chi",
+          "Bình",
+          "An"
+        ],
+        "a": 1,
+        "hint": "Nhanh hơn nghĩa là ít phút hơn. Tính số phút của từng bạn.",
+        "difficulty": 3,
+        "skill": "ai-ve-nhat",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q020"
+      },
+      {
+        "q": "An cao hơn Bình. Chi thấp hơn Bình. Bạn nào thấp nhất?",
+        "choices": [
+          "Chi",
+          "An",
+          "Bình",
+          "Không biết được"
+        ],
+        "a": 0,
+        "hint": "Xếp ba bạn theo thứ tự từ cao đến thấp.",
+        "difficulty": 2,
+        "skill": "ai-ve-nhat",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q021"
+      },
+      {
+        "q": "Thứ Bảy là ngày 8 tháng 9. Ngày 20 tháng 9 cùng năm là thứ mấy?",
+        "choices": [
+          "Thứ Năm",
+          "Thứ Bảy",
+          "Chủ nhật",
+          "Thứ Sáu"
+        ],
+        "a": 0,
+        "hint": "Cứ 7 ngày lại đến thứ Bảy. Tìm thứ Bảy gần ngày 20 nhất rồi đếm tiếp.",
+        "difficulty": 3,
+        "skill": "lich",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q022"
+      },
+      {
+        "q": "Thứ Hai là ngày 2. Hai tuần sau, thứ Hai là ngày mấy?",
+        "choices": [
+          "Ngày 23",
+          "Ngày 14",
+          "Ngày 16",
+          "Ngày 9"
+        ],
+        "a": 2,
+        "hint": "Một tuần có 7 ngày. Hai tuần có mấy ngày?",
+        "difficulty": 2,
+        "skill": "lich",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q023"
+      },
+      {
+        "q": "Ngày 1 tháng 10 là thứ Tư. Ngày 10 tháng 10 cùng năm là thứ mấy?",
+        "choices": [
+          "Thứ Sáu",
+          "Thứ Tư",
+          "Thứ Bảy",
+          "Thứ Năm"
+        ],
+        "a": 0,
+        "hint": "Ngày 8 cũng là thứ Tư. Đếm tiếp đến ngày 10.",
+        "difficulty": 2,
+        "skill": "lich",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q024"
+      },
+      {
+        "q": "Tháng 9 có 30 ngày. Ngày 28 tháng 9 là Chủ nhật. Ngày 1 tháng 10 là thứ mấy?",
+        "choices": [
+          "Thứ Năm",
+          "Thứ Tư",
+          "Thứ Ba",
+          "Thứ Hai"
+        ],
+        "a": 1,
+        "hint": "Đếm lần lượt: 29, 30 tháng 9, rồi đến 1 tháng 10.",
+        "difficulty": 3,
+        "skill": "lich",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q025"
+      },
+      {
+        "q": "Buổi liên hoan bắt đầu lúc 3 giờ chiều và kéo dài 30 phút. Buổi liên hoan kết thúc lúc:",
+        "choices": [
+          "3 giờ rưỡi chiều",
+          "3 giờ 15 phút chiều",
+          "3 giờ 3 phút chiều",
+          "4 giờ chiều"
+        ],
+        "a": 0,
+        "hint": "30 phút là nửa giờ.",
+        "difficulty": 1,
+        "skill": "thoi-gian",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q026"
+      },
+      {
+        "q": "Thỏ ngủ trưa từ 12 giờ trưa đến 1 giờ rưỡi chiều. Thỏ ngủ trong bao lâu?",
+        "choices": [
+          "2 giờ",
+          "1 giờ",
+          "1 giờ 30 phút",
+          "30 phút"
+        ],
+        "a": 2,
+        "hint": "Từ 12 giờ đến 1 giờ là bao lâu? Thêm nửa giờ nữa.",
+        "difficulty": 2,
+        "skill": "thoi-gian",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q027"
+      },
+      {
+        "q": "Xe khởi hành lúc 7 giờ sáng và đi mất 2 giờ rưỡi. Xe đến nơi lúc:",
+        "choices": [
+          "9 giờ rưỡi sáng",
+          "9 giờ sáng",
+          "10 giờ sáng",
+          "5 giờ rưỡi sáng"
+        ],
+        "a": 0,
+        "hint": "Cộng 2 giờ trước, rồi thêm nửa giờ.",
+        "difficulty": 2,
+        "skill": "thoi-gian",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q028"
+      },
+      {
+        "q": "Từ nhà đến hiệu thuốc dài 150 m. Từ hiệu thuốc đến bưu điện dài hơn thế 120 m. Đi từ nhà đến bưu điện (qua hiệu thuốc) dài bao nhiêu mét?",
+        "choices": [
+          "390 m",
+          "300 m",
+          "270 m",
+          "420 m"
+        ],
+        "a": 3,
+        "hint": "Tìm quãng đường từ hiệu thuốc đến bưu điện trước, rồi cộng cả hai quãng.",
+        "difficulty": 3,
+        "skill": "quang-duong",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q029"
+      },
+      {
+        "q": "Quãng đường AB dài 240 m. Quãng đường BC ngắn hơn AB 60 m. Đi từ A đến C (qua B) dài bao nhiêu mét?",
+        "choices": [
+          "180 m",
+          "300 m",
+          "540 m",
+          "420 m"
+        ],
+        "a": 3,
+        "hint": "Tìm độ dài BC trước, rồi cộng với AB.",
+        "difficulty": 3,
+        "skill": "quang-duong",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q030"
+      },
+      {
+        "q": "Thỏ đi từ nhà đến trường dài 350 m rồi quay về nhà. Thỏ đã đi tất cả bao nhiêu mét?",
+        "choices": [
+          "600 m",
+          "350 m",
+          "700 m",
+          "750 m"
+        ],
+        "a": 2,
+        "hint": "Đi một lượt rồi về một lượt bằng nhau.",
+        "difficulty": 2,
+        "skill": "quang-duong",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q031"
+      },
+      {
+        "q": "Biểu đồ tranh (mỗi ★ là 1 cái): Bút chì ★★★★; Bút sáp ★★★★★★★; Thước ★★. Bút sáp nhiều hơn bút chì mấy cái?",
+        "choices": [
+          "7 cái",
+          "4 cái",
+          "11 cái",
+          "3 cái"
+        ],
+        "a": 3,
+        "hint": "Đếm số ★ của từng loại rồi so sánh.",
+        "difficulty": 1,
+        "skill": "bieu-do-tranh",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q032"
+      },
+      {
+        "q": "Biểu đồ tranh (mỗi ★ là 1 cái): Bút chì ★★★★; Bút sáp ★★★★★★★; Thước ★★. Cả ba loại có tất cả mấy cái?",
+        "choices": [
+          "13 cái",
+          "9 cái",
+          "12 cái",
+          "11 cái"
+        ],
+        "a": 0,
+        "hint": "Đếm số ★ của từng loại rồi cộng lại.",
+        "difficulty": 1,
+        "skill": "bieu-do-tranh",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q033"
+      },
+      {
+        "q": "Biểu đồ tranh (mỗi ★ là 2 quyển truyện): Lan ★★★; Hoa ★★★★★. Hoa có nhiều hơn Lan bao nhiêu quyển truyện?",
+        "choices": [
+          "4 quyển",
+          "2 quyển",
+          "6 quyển",
+          "10 quyển"
+        ],
+        "a": 0,
+        "hint": "Chú ý: mỗi ★ là 2 quyển, không phải 1 quyển.",
+        "difficulty": 3,
+        "skill": "bieu-do-tranh",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q034"
+      },
+      {
+        "q": "Có 4 hộp, mỗi hộp có 2 ngăn. Chia đều 40 cái bút vào tất cả các ngăn. Mỗi ngăn có bao nhiêu cái bút?",
+        "choices": [
+          "8 cái",
+          "10 cái",
+          "5 cái",
+          "20 cái"
+        ],
+        "a": 2,
+        "hint": "Tìm xem có tất cả bao nhiêu ngăn trước.",
+        "difficulty": 3,
+        "skill": "chia-nhieu-tang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q035"
+      },
+      {
+        "q": "Có 3 tủ, mỗi tủ có 3 ngăn. Xếp đều 45 quyển sách vào tất cả các ngăn. Mỗi ngăn có bao nhiêu quyển?",
+        "choices": [
+          "6 quyển",
+          "5 quyển",
+          "15 quyển",
+          "9 quyển"
+        ],
+        "a": 1,
+        "hint": "Tìm xem có tất cả bao nhiêu ngăn trước.",
+        "difficulty": 3,
+        "skill": "chia-nhieu-tang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q036"
+      },
+      {
+        "q": "Có 6 túi, mỗi túi có 4 gói, mỗi gói có 2 cái kẹo. Có tất cả bao nhiêu cái kẹo?",
+        "choices": [
+          "12 cái",
+          "24 cái",
+          "48 cái",
+          "32 cái"
+        ],
+        "a": 2,
+        "hint": "Tìm số gói trước, rồi tìm số kẹo.",
+        "difficulty": 3,
+        "skill": "chia-nhieu-tang",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q037"
+      },
+      {
+        "q": "Đường gấp khúc ABCDE có AB = BC = 13 cm, CD = 15 cm, DE = 19 cm. Đường gấp khúc dài bao nhiêu đề-xi-mét?",
+        "choices": [
+          "60 dm",
+          "5 dm",
+          "47 cm",
+          "6 dm"
+        ],
+        "a": 3,
+        "hint": "Cộng độ dài bốn đoạn (đơn vị cm) rồi đổi sang dm; 10 cm = 1 dm.",
+        "difficulty": 3,
+        "skill": "duong-gap-khuc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q038"
+      },
+      {
+        "q": "Một đường gấp khúc gồm 4 đoạn thẳng, mỗi đoạn dài 8 cm. Đường gấp khúc dài bao nhiêu?",
+        "choices": [
+          "12 cm",
+          "40 cm",
+          "32 cm",
+          "24 cm"
+        ],
+        "a": 2,
+        "hint": "4 đoạn bằng nhau: dùng phép nhân.",
+        "difficulty": 1,
+        "skill": "duong-gap-khuc",
+        "unit": "loi-van-hay",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_loi-van-hay_q039"
+      }
+    ]
+  }
+}

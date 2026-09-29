@@ -7,13 +7,17 @@
       "id": "toan_so-den-100000",
       "name": "Số đến 100 000",
       "file": "so-den-100000.json",
-      "count": 52
+      "count": 52,
+      "hidden": true,
+      "hiddenNote": "Nội dung HK2 — tạm ẩn đến khi lớp học tới"
     },
     {
       "id": "toan_cong-tru-trong-100000",
       "name": "Cộng trừ trong phạm vi 100 000",
       "file": "cong-tru-trong-100000.json",
-      "count": 34
+      "count": 34,
+      "hidden": true,
+      "hiddenNote": "Nội dung HK2 — tạm ẩn đến khi lớp học tới"
     },
     {
       "id": "toan_bang-nhan-chia",
@@ -62,6 +66,24 @@
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",
       "count": 16
+    },
+    {
+      "id": "toan_tu-duy-so",
+      "name": "Tư duy số & phép tính",
+      "file": "tu-duy-so.json",
+      "count": 55
+    },
+    {
+      "id": "toan_loi-van-hay",
+      "name": "Toán có lời văn hay",
+      "file": "loi-van-hay.json",
+      "count": 39
+    },
+    {
+      "id": "toan_tu-duy-logic",
+      "name": "Tư duy logic (kiểu Bebras)",
+      "file": "tu-duy-logic.json",
+      "count": 30
     }
   ]
 }

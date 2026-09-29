@@ -103,7 +103,7 @@ const API = {
       const idx = await this._fetchJSON(base + sub.index);
       if (!idx) return null;
 
-      const wanted = (idx.topics || []).filter(t => t.count > 0 && t.file);
+      const wanted = (idx.topics || []).filter(t => t.count > 0 && t.file && !t.hidden);
       const loaded = await Promise.all(
         wanted.map(t => this._fetchJSON(base + (sub.dir ? sub.dir + '/' : '') + t.file))
       );

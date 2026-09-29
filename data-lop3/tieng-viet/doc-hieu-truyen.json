@@ -1,0 +1,393 @@
+{
+  "topic": {
+    "id": "tv_doc-hieu-truyen",
+    "icon": "📚",
+    "name": "Đọc hiểu truyện ngắn",
+    "questions": [
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nVì sao Minh cuống quýt trong giờ vẽ?",
+        "choices": [
+          "Vì Minh chưa nghĩ ra sẽ vẽ gì",
+          "Vì bút màu của Minh bị gãy hết",
+          "Vì Minh vẽ chậm hơn các bạn",
+          "Vì Minh quên hộp bút màu ở nhà"
+        ],
+        "a": 3,
+        "hint": "Đọc lại câu đầu tiên của đoạn.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q001"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nKhi cây bút xanh chỉ còn một mẩu ngắn, Hà đã làm gì?",
+        "choices": [
+          "Bẻ đôi mẩu bút, đưa cho Minh một nửa",
+          "Giữ lại mẩu bút để tự tô",
+          "Mượn thêm bút của cô giáo",
+          "Đổi sang tô bằng màu vàng"
+        ],
+        "a": 0,
+        "hint": "Tìm câu nói về cây bút xanh của Hà.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q002"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nSắp xếp các sự việc theo đúng thứ tự: (1) Hà bẻ đôi mẩu bút xanh. (2) Minh quên hộp bút màu. (3) Cô giáo khen tranh của hai bạn.",
+        "choices": [
+          "3 – 1 – 2",
+          "2 – 3 – 1",
+          "1 – 2 – 3",
+          "2 – 1 – 3"
+        ],
+        "a": 3,
+        "hint": "Sự việc nào xảy ra đầu giờ vẽ, sự việc nào xảy ra cuối giờ?",
+        "difficulty": 2,
+        "skill": "doc-hieu-trinh-tu",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q003"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nCâu chuyện muốn nói với em điều gì?",
+        "choices": [
+          "Cô giáo chỉ khen bạn vẽ đẹp nhất",
+          "Bạn bè biết chia sẻ, giúp đỡ nhau",
+          "Cần vẽ thật nhanh trong giờ học",
+          "Không nên mang bút màu đến lớp"
+        ],
+        "a": 1,
+        "hint": "Hà đã làm gì cho Minh? Minh định làm gì ngày mai?",
+        "difficulty": 2,
+        "skill": "doc-hieu-y-nghia",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q004"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nTrong câu \"Hai bạn cùng vẽ cánh đồng lúa.\", từ chỉ hoạt động là:",
+        "choices": [
+          "vẽ",
+          "lúa",
+          "bạn",
+          "cánh đồng"
+        ],
+        "a": 0,
+        "hint": "Từ chỉ hoạt động là từ chỉ việc làm.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q005"
+      },
+      {
+        "q": "Đọc đoạn: «Giờ vẽ, Minh cuống quýt vì quên hộp bút màu ở nhà. Cậu ngồi im, mắt nhìn tờ giấy trắng. Hà ngồi bàn bên thấy vậy liền đẩy hộp bút của mình sang giữa hai bàn và nói nhỏ: \"Mình dùng chung nhé!\" Hai bạn cùng vẽ cánh đồng lúa. Đến lúc cần màu xanh lá, cây bút xanh của Hà chỉ còn một mẩu ngắn. Hà bẻ đôi mẩu bút, đưa cho Minh một nửa. Cuối giờ, cô giáo khen tranh của cả hai bạn đều tươi sáng. Minh cảm ơn Hà và tự nhủ: \"Ngày mai mình sẽ mang hộp bút màu để hai đứa cùng dùng.\"»\n\nTừ nào trong bài là từ chỉ đặc điểm?",
+        "choices": [
+          "cánh đồng",
+          "bẻ đôi",
+          "tươi sáng",
+          "cảm ơn"
+        ],
+        "a": 2,
+        "hint": "Từ chỉ đặc điểm cho biết sự vật trông như thế nào.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q006"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nNhà Lan ở đâu?",
+        "choices": [
+          "Ở giữa cánh đồng lúa",
+          "Ở cuối xóm, cách trường hơn một cây số",
+          "Ở ngay cạnh cổng trường",
+          "Ở đầu làng, gần con đê"
+        ],
+        "a": 1,
+        "hint": "Đọc lại câu đầu tiên của đoạn.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q007"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nTrên đường đến trường, ba bạn thường làm gì?",
+        "choices": [
+          "Vừa đi vừa ôn bài, đố nhau",
+          "Chạy thi với nhau trên đê",
+          "Hái bông lúa ven đường",
+          "Đạp xe thật nhanh cho kịp giờ"
+        ],
+        "a": 0,
+        "hint": "Tìm câu nói về Lan, Tùng và Mai.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q008"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nKhi trời mưa, ai đưa các bạn qua đoạn dốc?",
+        "choices": [
+          "Cô giáo",
+          "Tùng và Mai",
+          "Mẹ Lan",
+          "Bố Lan"
+        ],
+        "a": 3,
+        "hint": "Đọc câu nói về ngày trời mưa.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q009"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nVì sao Lan yêu con đường đến trường?",
+        "choices": [
+          "Vì ngày nào bố cũng đưa Lan đi học",
+          "Vì con đường rất ngắn và bằng phẳng",
+          "Vì đường đê không bao giờ trơn trượt",
+          "Vì trên đường có bạn bè, cánh đồng và những câu đố vui"
+        ],
+        "a": 3,
+        "hint": "Câu cuối của đoạn nêu lí do.",
+        "difficulty": 2,
+        "skill": "doc-hieu-y-nghia",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q010"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nDòng nào chỉ gồm các từ chỉ đặc điểm có trong bài?",
+        "choices": [
+          "xanh mướt, mát rượi, trơn trượt",
+          "xanh mướt, con đê, ôn bài",
+          "thơm dịu, dắt xe, bạn bè",
+          "mát rượi, đố nhau, cánh đồng"
+        ],
+        "a": 0,
+        "hint": "Loại ra những từ chỉ sự vật và từ chỉ hoạt động.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q011"
+      },
+      {
+        "q": "Đọc đoạn: «Nhà Lan ở cuối xóm, cách trường hơn một cây số. Mỗi sáng, Lan đi qua con đê nhỏ. Hai bên đê, lúa đang thì con gái, xanh mướt. Gió sớm mát rượi, mang theo mùi rơm thơm dịu. Đến đầu làng, Lan gặp Tùng và Mai. Ba bạn vừa đi vừa ôn bài, thỉnh thoảng lại đố nhau một câu. Hôm nào trời mưa, đường đê trơn trượt, bố Lan dắt xe đạp đưa cả ba bạn qua đoạn dốc. Lan yêu con đường ấy lắm, vì trên đường có bạn bè, có cánh đồng và có cả những câu đố vui.»\n\nTrong câu \"Gió sớm mát rượi, mang theo mùi rơm thơm dịu.\", từ \"thơm dịu\" là từ chỉ đặc điểm về:",
+        "choices": [
+          "Âm thanh",
+          "Hình dáng",
+          "Mùi hương",
+          "Màu sắc"
+        ],
+        "a": 2,
+        "hint": "Mũi ngửi thấy được đặc điểm nào?",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q012"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nNam viết gì vào sổ tay?",
+        "choices": [
+          "Lời giải bài toán khó",
+          "Ba điều hứa để trở thành người chăm ngoan",
+          "Tên các bạn trong lớp",
+          "Thời khoá biểu của lớp"
+        ],
+        "a": 1,
+        "hint": "Đọc câu có từ \"sổ tay\".",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q013"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nĐiều nào KHÔNG có trong ba điều hứa của Nam?",
+        "choices": [
+          "Giúp đỡ bạn bè",
+          "Tập thể dục mỗi sáng",
+          "Đi học đúng giờ",
+          "Làm bài đầy đủ"
+        ],
+        "a": 1,
+        "hint": "Đọc kĩ ba điều hứa, tìm ý không được nhắc tới.",
+        "difficulty": 2,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q014"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nKhi quên làm bài tập, Nam đã làm gì?",
+        "choices": [
+          "Nói với cô rằng mình bị ốm",
+          "Im lặng ngồi yên tại chỗ",
+          "Đứng dậy thật thà nhận lỗi với cô",
+          "Mượn vở của Tuấn để chép lại"
+        ],
+        "a": 2,
+        "hint": "Tìm câu kể về hôm Nam quên làm bài.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q015"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nNam là bạn nhỏ như thế nào?",
+        "choices": [
+          "Hay khoe khoang với bạn bè",
+          "Nhút nhát và hay quên",
+          "Thông minh nhưng lười học",
+          "Chăm chỉ, tốt bụng và thật thà"
+        ],
+        "a": 3,
+        "hint": "Nghĩ về những việc Nam đã làm trong bài.",
+        "difficulty": 2,
+        "skill": "doc-hieu-nhan-vat",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q016"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nCâu \"Cậu kiên nhẫn giảng lại bài toán khó cho Tuấn.\" là:",
+        "choices": [
+          "Câu nêu hoạt động",
+          "Câu giới thiệu",
+          "Câu hỏi",
+          "Câu nêu đặc điểm"
+        ],
+        "a": 0,
+        "hint": "Câu cho biết ai đang làm việc gì.",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q017"
+      },
+      {
+        "q": "Đọc đoạn: «Sáng thứ Hai, cô Tổng phụ trách thông báo: tháng sau, những bạn lớp Ba chăm ngoan sẽ được kết nạp vào Đội. Nam háo hức lắm. Tối đó, cậu viết vào sổ tay ba điều hứa: đi học đúng giờ, làm bài đầy đủ và giúp đỡ bạn bè. Những ngày sau, Nam dậy sớm hơn, tự soạn sách vở. Giờ ra chơi, cậu kiên nhẫn giảng lại bài toán khó cho Tuấn. Một hôm, Nam lỡ quên làm bài tập. Cậu đứng dậy, thật thà nhận lỗi với cô. Cô giáo mỉm cười: \"Biết nhận lỗi cũng là điều đáng quý.\" Ngày kết nạp, khi chiếc khăn quàng đỏ được thắt lên vai, Nam thấy lòng mình rộn ràng.»\n\nTừ \"rộn ràng\" ở câu cuối cho biết Nam cảm thấy thế nào?",
+        "choices": [
+          "Sợ hãi, run rẩy",
+          "Mệt mỏi, chán nản",
+          "Vui sướng, xúc động",
+          "Buồn bã, lo lắng"
+        ],
+        "a": 2,
+        "hint": "Đó là lúc Nam được thắt khăn quàng đỏ.",
+        "difficulty": 2,
+        "skill": "doc-hieu-tu-ngu",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q018"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nThầy Hùng ra bài toán đố gì?",
+        "choices": [
+          "Chia cam cho cả lớp cùng ăn",
+          "Chia 9 quả cam cho 3 bạn sao cho bạn nào cũng vui",
+          "Tính tiền mua 9 quả cam",
+          "Đếm số quả cam trong chiếc giỏ"
+        ],
+        "a": 1,
+        "hint": "Đọc lời thầy ở đầu đoạn.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q019"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nHoa nói thêm điều gì?",
+        "choices": [
+          "Để phần cam của Khoa lại, chiều mang đến nhà bạn",
+          "Mỗi bạn được 3 quả cam",
+          "Nên chia cam cho 4 bạn",
+          "Hoa muốn được thêm một quả"
+        ],
+        "a": 0,
+        "hint": "Tìm lời Hoa nói.",
+        "difficulty": 1,
+        "skill": "doc-hieu-chi-tiet",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q020"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nVì sao thầy khen lời giải của Hoa?",
+        "choices": [
+          "Vì Hoa làm được phép chia khó nhất",
+          "Vì Hoa trả lời nhanh nhất lớp",
+          "Vì lời giải vừa đúng vừa thể hiện sự quan tâm đến bạn",
+          "Vì Hoa nói to và rõ ràng"
+        ],
+        "a": 2,
+        "hint": "Đọc lời thầy nói sau khi Hoa trả lời.",
+        "difficulty": 2,
+        "skill": "doc-hieu-y-nghia",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q021"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nTrong câu \"Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa.\", bộ phận \"đến thăm Khoa\" trả lời cho câu hỏi nào?",
+        "choices": [
+          "Khi nào?",
+          "Làm gì?",
+          "Thế nào?",
+          "Ở đâu?"
+        ],
+        "a": 1,
+        "hint": "Bộ phận này cho biết cả tổ làm việc gì.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q022"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nTừ \"vàng ươm\" là từ chỉ đặc điểm về:",
+        "choices": [
+          "Âm thanh",
+          "Mùi hương",
+          "Hình dáng",
+          "Màu sắc"
+        ],
+        "a": 3,
+        "hint": "Mắt nhìn thấy được đặc điểm nào?",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q023"
+      },
+      {
+        "q": "Đọc đoạn: «Thầy Hùng ra một bài toán đố: \"Có 9 quả cam chia cho 3 bạn. Chia thế nào để bạn nào cũng vui?\" Cả lớp nhao nhao: \"Mỗi bạn 3 quả ạ!\" Riêng Hoa giơ tay nói thêm: \"Thưa thầy, bạn Khoa đang ốm nên nghỉ học. Chúng con để phần cam của Khoa lại, chiều mang đến nhà bạn ạ.\" Thầy gật đầu, mắt sáng lên: \"Lời giải của Hoa vừa đúng phép chia, vừa có cả tấm lòng.\" Chiều hôm ấy, cả tổ cùng Hoa đến thăm Khoa. Ba quả cam vàng ươm nằm gọn trong chiếc giỏ nhỏ, kèm một tấm thiệp ghi: \"Mau khoẻ để đi học nhé!\"»\n\nCâu chuyện muốn nói với em điều gì?",
+        "choices": [
+          "Phải làm toán thật nhanh",
+          "Chỉ bạn giỏi toán mới được khen",
+          "Biết quan tâm, nghĩ đến bạn khi bạn gặp khó khăn",
+          "Nên ăn nhiều cam cho khoẻ"
+        ],
+        "a": 2,
+        "hint": "Hoa đã nghĩ đến ai khi trả lời?",
+        "difficulty": 2,
+        "skill": "doc-hieu-y-nghia",
+        "unit": "doc-hieu-truyen",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_doc-hieu-truyen_q024"
+      }
+    ]
+  }
+}

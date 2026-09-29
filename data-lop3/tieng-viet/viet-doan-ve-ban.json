@@ -1,0 +1,105 @@
+{
+  "topic": {
+    "id": "tv_viet-doan-ve-ban",
+    "icon": "💌",
+    "name": "Viết đoạn văn về bạn",
+    "questions": [
+      {
+        "q": "Viết đoạn văn nêu cảm nghĩ về một người bạn. Câu nào phù hợp nhất để mở đầu?",
+        "choices": [
+          "Hà thích ăn kem dâu.",
+          "Em mong bạn luôn vui vẻ.",
+          "Em rất buồn khi phải chia tay.",
+          "Bạn thân nhất của em ở lớp là Hà."
+        ],
+        "a": 3,
+        "hint": "Câu mở đầu giới thiệu bạn là ai.",
+        "difficulty": 1,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q001"
+      },
+      {
+        "q": "Viết đoạn văn về một người bạn. Câu nào tả đặc điểm của bạn?",
+        "choices": [
+          "Hà có mái tóc dài và nụ cười rất tươi.",
+          "Em quen Hà từ năm lớp Một.",
+          "Em mong hai đứa mãi là bạn tốt.",
+          "Hôm qua em đi học sớm."
+        ],
+        "a": 0,
+        "hint": "Tìm câu cho biết bạn trông như thế nào.",
+        "difficulty": 1,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q002"
+      },
+      {
+        "q": "Câu nào nêu tình cảm, cảm xúc của em với bạn?",
+        "choices": [
+          "Hà học lớp 3A.",
+          "Nhà Hà ở gần trường.",
+          "Em rất quý Hà vì bạn luôn giúp đỡ em.",
+          "Hà ngồi ở bàn thứ hai."
+        ],
+        "a": 2,
+        "hint": "Tìm câu có từ nói về tình cảm của em.",
+        "difficulty": 1,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q003"
+      },
+      {
+        "q": "Câu nào phù hợp để kết thúc đoạn văn nêu cảm nghĩ về bạn?",
+        "choices": [
+          "Hà là bạn học cùng lớp với em.",
+          "Em mong tình bạn của chúng em mãi đẹp như bây giờ.",
+          "Hà rất thích vẽ tranh.",
+          "Hà có đôi mắt to tròn."
+        ],
+        "a": 1,
+        "hint": "Câu kết thường nói lên mong ước hoặc tình cảm.",
+        "difficulty": 1,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q004"
+      },
+      {
+        "q": "Sắp xếp các ý thành đoạn văn hợp lí: (1) Nêu tình cảm của em với bạn. (2) Giới thiệu bạn là ai. (3) Kể một kỉ niệm với bạn.",
+        "choices": [
+          "3 – 2 – 1",
+          "2 – 3 – 1",
+          "1 – 2 – 3",
+          "1 – 3 – 2"
+        ],
+        "a": 1,
+        "hint": "Giới thiệu trước, kể chuyện ở giữa, tình cảm để cuối.",
+        "difficulty": 2,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q005"
+      },
+      {
+        "q": "Câu nào KHÔNG nên có trong đoạn văn nêu cảm nghĩ về một người bạn?",
+        "choices": [
+          "Hôm nay trời mưa rất to.",
+          "Bạn Hà rất chăm chỉ và tốt bụng.",
+          "Em và Hà thường cùng đọc truyện.",
+          "Em rất vui khi có Hà làm bạn."
+        ],
+        "a": 0,
+        "hint": "Câu nào không nói về bạn và tình cảm của em?",
+        "difficulty": 2,
+        "skill": "tlv-cam-nghi-ve-ban",
+        "unit": "viet-doan-ve-ban",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_viet-doan-ve-ban_q006"
+      }
+    ]
+  }
+}

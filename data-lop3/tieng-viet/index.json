@@ -44,6 +44,30 @@
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",
       "count": 12
+    },
+    {
+      "id": "tv_doc-hieu-truyen",
+      "name": "Đọc hiểu truyện ngắn",
+      "file": "doc-hieu-truyen.json",
+      "count": 24
+    },
+    {
+      "id": "tv_tu-va-cau-den-bai-12",
+      "name": "Từ, câu, dấu câu (đến bài 12)",
+      "file": "tu-va-cau-den-bai-12.json",
+      "count": 47
+    },
+    {
+      "id": "tv_chinh-ta-theo-nghia",
+      "name": "Chính tả theo nghĩa",
+      "file": "chinh-ta-theo-nghia.json",
+      "count": 25
+    },
+    {
+      "id": "tv_viet-doan-ve-ban",
+      "name": "Viết đoạn văn về bạn",
+      "file": "viet-doan-ve-ban.json",
+      "count": 6
     }
   ]
 }

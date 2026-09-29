@@ -1,0 +1,489 @@
+{
+  "topic": {
+    "id": "toan_tu-duy-logic",
+    "icon": "🧩",
+    "name": "Tư duy logic (kiểu Bebras)",
+    "questions": [
+      {
+        "q": "An theo dõi Bình và Chi; Bình theo dõi Chi; Dũng theo dõi An và Chi; Chi không theo dõi ai. \"Ngôi sao\" là bạn được tất cả các bạn khác theo dõi và không theo dõi ai. Ngôi sao là ai?",
+        "choices": [
+          "Chi",
+          "Bình",
+          "An",
+          "Dũng"
+        ],
+        "a": 0,
+        "hint": "Với mỗi bạn, kiểm tra hai điều: có được cả ba bạn kia theo dõi không, và có theo dõi ai không.",
+        "difficulty": 2,
+        "skill": "logic-quan-he",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q001"
+      },
+      {
+        "q": "Hà theo dõi Mai; Mai theo dõi Lan; Lan theo dõi Mai; Tú theo dõi Mai và Lan. \"Ngôi sao\" là bạn được tất cả các bạn khác theo dõi và không theo dõi ai. Ngôi sao là ai?",
+        "choices": [
+          "Tú",
+          "Lan",
+          "Không có ngôi sao",
+          "Mai"
+        ],
+        "a": 2,
+        "hint": "Mai được mọi người theo dõi, nhưng Mai có theo dõi ai không?",
+        "difficulty": 3,
+        "skill": "logic-quan-he",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q002"
+      },
+      {
+        "q": "Hai đèn X và Y đang tắt. Công tắc 1: bật X và tắt Y. Công tắc 2: bật Y. Muốn cả hai đèn cùng sáng, em bấm thế nào?",
+        "choices": [
+          "Chỉ bấm công tắc 2",
+          "Chỉ bấm công tắc 1",
+          "Công tắc 1 rồi công tắc 2",
+          "Công tắc 2 rồi công tắc 1"
+        ],
+        "a": 2,
+        "hint": "Thử từng cách, ghi lại đèn nào sáng, đèn nào tắt sau mỗi lần bấm.",
+        "difficulty": 2,
+        "skill": "trang-thai",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q003"
+      },
+      {
+        "q": "Một bóng đèn đang tắt. Mỗi lần bấm công tắc, đèn đổi trạng thái (đang tắt thì sáng, đang sáng thì tắt). Bấm 7 lần thì đèn:",
+        "choices": [
+          "Tắt",
+          "Nhấp nháy",
+          "Không biết được",
+          "Sáng"
+        ],
+        "a": 3,
+        "hint": "Bấm 1 lần: sáng. Bấm 2 lần: tắt. Tìm quy luật.",
+        "difficulty": 2,
+        "skill": "trang-thai",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q004"
+      },
+      {
+        "q": "Một bóng đèn đang tắt. Mỗi lần bấm công tắc, đèn đổi trạng thái. Bấm 10 lần thì đèn:",
+        "choices": [
+          "Không biết được",
+          "Tắt",
+          "Sáng",
+          "Nhấp nháy"
+        ],
+        "a": 1,
+        "hint": "Bấm số lần chẵn thì đèn quay về như lúc đầu hay không?",
+        "difficulty": 2,
+        "skill": "trang-thai",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q005"
+      },
+      {
+        "q": "Ba đèn A, B, C đều tắt. Nút 1 đổi trạng thái đèn A và đèn B. Nút 2 đổi trạng thái đèn B và đèn C. Bấm nút 1 rồi nút 2 thì những đèn nào sáng?",
+        "choices": [
+          "Đèn B và đèn C",
+          "Đèn A và đèn B",
+          "Cả ba đèn",
+          "Đèn A và đèn C"
+        ],
+        "a": 3,
+        "hint": "Ghi trạng thái ba đèn sau lần bấm thứ nhất, rồi sau lần bấm thứ hai.",
+        "difficulty": 3,
+        "skill": "trang-thai",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q006"
+      },
+      {
+        "q": "Máy làm kem: nút A thả dâu, nút B thả kem, nút C thả chuối vào cốc; nút X lấy ra thứ vừa thả vào gần nhất. Bấm lần lượt A, B, X, C, B. Trên cùng của cốc là:",
+        "choices": [
+          "Dâu",
+          "Chuối",
+          "Không có gì",
+          "Kem"
+        ],
+        "a": 3,
+        "hint": "Vẽ chiếc cốc, sau mỗi lần bấm ghi lại thứ tự từ dưới lên.",
+        "difficulty": 3,
+        "skill": "ngan-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q007"
+      },
+      {
+        "q": "Máy làm kem: nút A thả dâu, nút B thả kem, nút C thả chuối vào cốc; nút X lấy ra thứ vừa thả vào gần nhất. Bấm lần lượt A, B, X, C, B. Dưới cùng của cốc là:",
+        "choices": [
+          "Không có gì",
+          "Dâu",
+          "Chuối",
+          "Kem"
+        ],
+        "a": 1,
+        "hint": "Thứ được thả vào đầu tiên nằm ở đâu?",
+        "difficulty": 2,
+        "skill": "ngan-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q008"
+      },
+      {
+        "q": "Chồng sách: đặt quyển Toán, rồi Tiếng Việt, rồi Tiếng Anh lên trên. Lấy ra quyển trên cùng, rồi đặt thêm quyển Mĩ thuật. Quyển thứ hai tính từ trên xuống là:",
+        "choices": [
+          "Tiếng Việt",
+          "Toán",
+          "Mĩ thuật",
+          "Tiếng Anh"
+        ],
+        "a": 0,
+        "hint": "Quyển trên cùng lúc lấy ra là quyển đặt vào sau cùng.",
+        "difficulty": 3,
+        "skill": "ngan-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q009"
+      },
+      {
+        "q": "Thỏ xếp 5 chiếc đĩa chồng lên nhau, đĩa đỏ đặt đầu tiên. Mỗi lần chỉ lấy được đĩa trên cùng. Muốn lấy đĩa đỏ, Thỏ phải lấy ra mấy chiếc đĩa khác trước?",
+        "choices": [
+          "4 chiếc",
+          "5 chiếc",
+          "0 chiếc",
+          "1 chiếc"
+        ],
+        "a": 0,
+        "hint": "Đĩa đặt đầu tiên nằm ở dưới cùng.",
+        "difficulty": 2,
+        "skill": "ngan-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q010"
+      },
+      {
+        "q": "Một bạn đã làm vỡ lọ hoa. An nói: \"Bình làm vỡ.\" Bình nói: \"Không phải tớ.\" Chi nói: \"Không phải tớ.\" Biết chỉ có một bạn nói dối. Ai làm vỡ lọ hoa?",
+        "choices": [
+          "An",
+          "Bình",
+          "Không bạn nào",
+          "Chi"
+        ],
+        "a": 1,
+        "hint": "Thử từng trường hợp: nếu An làm vỡ thì những ai nói dối? Đúng một bạn nói dối mới được.",
+        "difficulty": 3,
+        "skill": "that-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q011"
+      },
+      {
+        "q": "Một bạn đã ăn chiếc bánh. Hoa nói: \"Tớ không ăn.\" Lan nói: \"Hoa ăn.\" Cúc nói: \"Tớ không ăn.\" Biết chỉ có một bạn nói thật. Ai đã ăn bánh?",
+        "choices": [
+          "Hoa",
+          "Cúc",
+          "Lan",
+          "Không bạn nào"
+        ],
+        "a": 1,
+        "hint": "Thử từng trường hợp và đếm số bạn nói thật.",
+        "difficulty": 3,
+        "skill": "that-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q012"
+      },
+      {
+        "q": "Hôm qua là Chủ nhật. Thỏ nói: \"Hôm nay không phải thứ Hai.\" Thỏ nói thật hay nói dối?",
+        "choices": [
+          "Không biết được",
+          "Nói thật",
+          "Nói dối",
+          "Vừa thật vừa dối"
+        ],
+        "a": 2,
+        "hint": "Hôm qua là Chủ nhật thì hôm nay là thứ mấy?",
+        "difficulty": 1,
+        "skill": "that-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q013"
+      },
+      {
+        "q": "Ba khối gỗ ghi số 3, 1, 2 đứng thành hàng. Mỗi lần chỉ được đổi chỗ hai khối đứng cạnh nhau. Ít nhất mấy lần để xếp thành 1, 2, 3?",
+        "choices": [
+          "4 lần",
+          "3 lần",
+          "1 lần",
+          "2 lần"
+        ],
+        "a": 3,
+        "hint": "Thử đưa khối số 3 về cuối hàng trước.",
+        "difficulty": 2,
+        "skill": "sap-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q014"
+      },
+      {
+        "q": "Bốn khối gỗ ghi số 2, 1, 4, 3. Mỗi lần chỉ được đổi chỗ hai khối đứng cạnh nhau. Ít nhất mấy lần để xếp thành 1, 2, 3, 4?",
+        "choices": [
+          "1 lần",
+          "2 lần",
+          "3 lần",
+          "4 lần"
+        ],
+        "a": 1,
+        "hint": "Tìm những cặp đứng cạnh nhau đang bị ngược thứ tự.",
+        "difficulty": 2,
+        "skill": "sap-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q015"
+      },
+      {
+        "q": "Bốn khối gỗ ghi số 4, 3, 2, 1. Mỗi lần chỉ được đổi chỗ hai khối đứng cạnh nhau. Ít nhất mấy lần để xếp thành 1, 2, 3, 4?",
+        "choices": [
+          "4 lần",
+          "8 lần",
+          "6 lần",
+          "3 lần"
+        ],
+        "a": 2,
+        "hint": "Đưa khối 4 về cuối hàng cần mấy lần? Sau đó đến khối 3…",
+        "difficulty": 3,
+        "skill": "sap-xep",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q016"
+      },
+      {
+        "q": "Tấm ảnh đầu tiên có 16 con bướm. Sau mỗi lần chụp, một nửa số bướm bay đi. Tấm ảnh cuối cùng còn 1 con. Đã chụp bao nhiêu tấm ảnh?",
+        "choices": [
+          "5 tấm",
+          "8 tấm",
+          "16 tấm",
+          "4 tấm"
+        ],
+        "a": 0,
+        "hint": "Viết số bướm trong từng tấm ảnh: 16, …, 1. Đếm có mấy số.",
+        "difficulty": 3,
+        "skill": "chia-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q017"
+      },
+      {
+        "q": "Cốc có 32 viên bi. Mỗi lần lấy ra một nửa số bi đang có. Sau mấy lần thì cốc còn 4 viên?",
+        "choices": [
+          "3 lần",
+          "8 lần",
+          "2 lần",
+          "4 lần"
+        ],
+        "a": 0,
+        "hint": "Viết số bi còn lại sau mỗi lần lấy.",
+        "difficulty": 2,
+        "skill": "chia-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q018"
+      },
+      {
+        "q": "Gấp đôi một tờ giấy 3 lần liền rồi mở ra. Tờ giấy được chia thành mấy phần bằng nhau?",
+        "choices": [
+          "8 phần",
+          "9 phần",
+          "6 phần",
+          "3 phần"
+        ],
+        "a": 0,
+        "hint": "Mỗi lần gấp đôi, số phần gấp lên mấy lần?",
+        "difficulty": 3,
+        "skill": "chia-doi",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q019"
+      },
+      {
+        "q": "Mật mã: mỗi số được thay bằng số lớn hơn nó 1 đơn vị, ví dụ 3-5-7 thành 4-6-8. Mã 5-2-9 là của dãy số nào?",
+        "choices": [
+          "6-3-10",
+          "6-3-9",
+          "4-1-8",
+          "5-2-9"
+        ],
+        "a": 2,
+        "hint": "Muốn giải mã thì làm ngược lại: mỗi số bớt đi 1.",
+        "difficulty": 2,
+        "skill": "mat-ma",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q020"
+      },
+      {
+        "q": "Quy ước: A = 1, B = 2, C = 3, D = 4, E = 5. Chữ \"BE\" được mã hoá thành:",
+        "choices": [
+          "2-4",
+          "2-5",
+          "5-2",
+          "3-5"
+        ],
+        "a": 1,
+        "hint": "Thay từng chữ cái bằng số theo đúng thứ tự.",
+        "difficulty": 1,
+        "skill": "mat-ma",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q021"
+      },
+      {
+        "q": "Quy ước: A = 1, B = 2, C = 3, D = 4, E = 5. Mã 4-1-4 là chữ nào?",
+        "choices": [
+          "BAB",
+          "ADA",
+          "DAB",
+          "DAD"
+        ],
+        "a": 3,
+        "hint": "Đổi từng số thành chữ cái.",
+        "difficulty": 1,
+        "skill": "mat-ma",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q022"
+      },
+      {
+        "q": "Xe 1 rời bến A lúc 7 giờ, đến bến B lúc 7 giờ 20 phút. Xe 2 rời bến B lúc 7 giờ 15 phút và 7 giờ 30 phút, mỗi chuyến đi 20 phút thì đến C. Từ A, sớm nhất mấy giờ đến được C?",
+        "choices": [
+          "7 giờ 50 phút",
+          "7 giờ 35 phút",
+          "7 giờ 40 phút",
+          "8 giờ"
+        ],
+        "a": 0,
+        "hint": "Đến B lúc 7 giờ 20 phút thì còn kịp chuyến 7 giờ 15 phút không?",
+        "difficulty": 3,
+        "skill": "lich-trinh",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q023"
+      },
+      {
+        "q": "Tàu chạy lúc 8 giờ, 8 giờ rưỡi và 9 giờ. Thỏ đến ga lúc 8 giờ 10 phút. Chuyến sớm nhất Thỏ đi được là:",
+        "choices": [
+          "8 giờ",
+          "8 giờ 10 phút",
+          "8 giờ rưỡi",
+          "9 giờ"
+        ],
+        "a": 2,
+        "hint": "Chuyến nào chạy trước khi Thỏ đến ga thì đã đi mất.",
+        "difficulty": 2,
+        "skill": "lich-trinh",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q024"
+      },
+      {
+        "q": "Nấu cơm mất 30 phút, rán trứng mất 10 phút, rửa rau mất 10 phút. Mẹ bật nồi cơm rồi làm các việc khác trong lúc chờ cơm chín. Ít nhất bao lâu thì xong cả ba việc?",
+        "choices": [
+          "50 phút",
+          "20 phút",
+          "40 phút",
+          "30 phút"
+        ],
+        "a": 3,
+        "hint": "Trong lúc nồi cơm tự nấu, mẹ làm được những việc gì?",
+        "difficulty": 3,
+        "skill": "lich-trinh",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q025"
+      },
+      {
+        "q": "Có 2 quả bóng to và 3 quả bóng nhỏ; 1 hộp to và 4 hộp nhỏ. Bóng chỉ cho vừa hộp cùng cỡ hoặc hộp to hơn, mỗi hộp đựng 1 quả. Đóng được nhiều nhất bao nhiêu quả bóng?",
+        "choices": [
+          "5 quả",
+          "4 quả",
+          "2 quả",
+          "3 quả"
+        ],
+        "a": 1,
+        "hint": "Bóng to chỉ vào được hộp nào? Có mấy hộp như thế?",
+        "difficulty": 3,
+        "skill": "ghep-hop",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q026"
+      },
+      {
+        "q": "Có 3 quả bóng to và 1 quả bóng nhỏ; 2 hộp to và 2 hộp nhỏ. Bóng chỉ cho vừa hộp cùng cỡ hoặc hộp to hơn, mỗi hộp đựng 1 quả. Đóng được nhiều nhất bao nhiêu quả bóng?",
+        "choices": [
+          "1 quả",
+          "3 quả",
+          "2 quả",
+          "4 quả"
+        ],
+        "a": 1,
+        "hint": "Bóng to không vào được hộp nhỏ.",
+        "difficulty": 3,
+        "skill": "ghep-hop",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q027"
+      },
+      {
+        "q": "Có 1 quả bóng to và 4 quả bóng nhỏ; 3 hộp to và 1 hộp nhỏ. Bóng chỉ cho vừa hộp cùng cỡ hoặc hộp to hơn, mỗi hộp đựng 1 quả. Đóng được nhiều nhất bao nhiêu quả bóng?",
+        "choices": [
+          "4 quả",
+          "3 quả",
+          "2 quả",
+          "5 quả"
+        ],
+        "a": 0,
+        "hint": "Bóng nhỏ cho được vào cả hộp to.",
+        "difficulty": 3,
+        "skill": "ghep-hop",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q028"
+      },
+      {
+        "q": "Dãy hình lặp lại: ▲ ● ■ ▲ ● ■ ▲ … Hình thứ 10 là:",
+        "choices": [
+          "●",
+          "★",
+          "▲",
+          "■"
+        ],
+        "a": 2,
+        "hint": "Cứ 3 hình thì lặp lại. Hình thứ 9 là hình gì?",
+        "difficulty": 2,
+        "skill": "day-lap",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q029"
+      },
+      {
+        "q": "Dãy chữ lặp lại: T H O T H O T … Chữ thứ 14 là:",
+        "choices": [
+          "Không có",
+          "T",
+          "O",
+          "H"
+        ],
+        "a": 3,
+        "hint": "Cứ 3 chữ thì lặp lại. Chữ thứ 12 là chữ gì?",
+        "difficulty": 2,
+        "skill": "day-lap",
+        "unit": "tu-duy-logic",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "toan_tu-duy-logic_q030"
+      }
+    ]
+  }
+}

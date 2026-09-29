@@ -1,0 +1,761 @@
+{
+  "topic": {
+    "id": "tv_tu-va-cau-den-bai-12",
+    "icon": "✏️",
+    "name": "Từ, câu, dấu câu (đến bài 12)",
+    "questions": [
+      {
+        "q": "Trong câu \"Đàn gà con lông vàng óng chạy ra sân.\", các từ gà con – vàng óng – chạy – sân lần lượt là từ chỉ:",
+        "choices": [
+          "sự vật – đặc điểm – hoạt động – sự vật",
+          "đặc điểm – sự vật – hoạt động – sự vật",
+          "sự vật – đặc điểm – sự vật – hoạt động",
+          "sự vật – hoạt động – đặc điểm – sự vật"
+        ],
+        "a": 0,
+        "hint": "Xét từng từ: người/vật, việc làm, hay trông như thế nào?",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q001"
+      },
+      {
+        "q": "Trong câu \"Cô giáo giảng bài rất say sưa.\", các từ cô giáo – giảng – say sưa lần lượt là từ chỉ:",
+        "choices": [
+          "đặc điểm – hoạt động – sự vật",
+          "sự vật – hoạt động – đặc điểm",
+          "sự vật – đặc điểm – hoạt động",
+          "hoạt động – sự vật – đặc điểm"
+        ],
+        "a": 1,
+        "hint": "Xét từng từ: người/vật, việc làm, hay tính chất?",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q002"
+      },
+      {
+        "q": "Trong câu \"Chú mèo mướp nằm sưởi nắng trên hiên.\", các từ mèo mướp – nằm – hiên lần lượt là từ chỉ:",
+        "choices": [
+          "sự vật – hoạt động – sự vật",
+          "sự vật – sự vật – hoạt động",
+          "sự vật – đặc điểm – sự vật",
+          "hoạt động – sự vật – sự vật"
+        ],
+        "a": 0,
+        "hint": "\"Nằm\" là việc con mèo đang làm.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q003"
+      },
+      {
+        "q": "Câu \"Trên cành cây, chú chim sâu nhảy nhót.\" có mấy từ chỉ sự vật?",
+        "choices": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "a": 3,
+        "hint": "Từ chỉ sự vật: tên người, con vật, đồ vật, cây cối.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q004"
+      },
+      {
+        "q": "Câu \"Em quét nhà, lau bàn và tưới cây.\" có mấy từ chỉ hoạt động?",
+        "choices": [
+          "6",
+          "4",
+          "3",
+          "2"
+        ],
+        "a": 2,
+        "hint": "Tìm những từ chỉ việc em làm.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q005"
+      },
+      {
+        "q": "Câu \"Bầu trời xanh ngắt, mây trắng bồng bềnh.\" có mấy từ chỉ đặc điểm?",
+        "choices": [
+          "4",
+          "2",
+          "1",
+          "3"
+        ],
+        "a": 3,
+        "hint": "Tìm những từ cho biết bầu trời và mây trông như thế nào.",
+        "difficulty": 3,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q006"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ đặc điểm?",
+        "choices": [
+          "long lanh, ngọt lịm, cầu vồng",
+          "ồn ào, cắt tỉa, náo nhiệt",
+          "vàng óng, bé xíu, hiền lành",
+          "xanh biếc, học bài, cao lớn"
+        ],
+        "a": 2,
+        "hint": "Mỗi dòng sai có lẫn một từ chỉ sự vật hoặc hoạt động.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q007"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ hoạt động?",
+        "choices": [
+          "hát, múa, đẹp, vui",
+          "đọc, bảng, chạy, xanh",
+          "viết, vở, nhảy, cao",
+          "đọc, viết, chạy, nhảy"
+        ],
+        "a": 3,
+        "hint": "Từ chỉ hoạt động là từ chỉ việc làm.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q008"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ đặc điểm về âm thanh?",
+        "choices": [
+          "róc rách, líu lo, ầm ầm",
+          "róc rách, ngọt ngào, líu lo",
+          "đỏ thắm, líu lo, tí tách",
+          "thơm phức, ầm ầm, vi vu"
+        ],
+        "a": 0,
+        "hint": "Tai nghe được những từ nào?",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q009"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ đặc điểm về hương vị?",
+        "choices": [
+          "ngọt lịm, chua chua, thơm phức",
+          "thơm phức, rì rào, cay xè",
+          "ngọt lịm, xanh non, chua chua",
+          "đắng ngắt, tròn xoe, mặn chát"
+        ],
+        "a": 0,
+        "hint": "Lưỡi nếm và mũi ngửi thấy được những từ nào?",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q010"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ hình dáng, kích thước?",
+        "choices": [
+          "tròn xoe, đỏ au, bé tí",
+          "cao vút, thơm ngát, dài",
+          "vuông vức, ríu rít, to",
+          "tròn xoe, cao vút, bé tí"
+        ],
+        "a": 3,
+        "hint": "Loại những từ chỉ màu sắc, mùi hương, âm thanh.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q011"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ hoạt động nấu ăn?",
+        "choices": [
+          "bơi, rán, nướng",
+          "luộc, rán, xào",
+          "luộc, chạy, xào",
+          "đi, xào, bay"
+        ],
+        "a": 1,
+        "hint": "Những việc làm trong bếp khi nấu món ăn.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q012"
+      },
+      {
+        "q": "Dòng nào chỉ gồm các từ chỉ hoạt động di chuyển?",
+        "choices": [
+          "bay, rán, đi, nướng",
+          "đi, chạy, bơi, bay",
+          "đi, luộc, bơi, bay",
+          "chạy, xào, nhảy, bò"
+        ],
+        "a": 1,
+        "hint": "Những việc làm giúp người hay con vật đi từ chỗ này sang chỗ khác.",
+        "difficulty": 1,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q013"
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ người làm việc ở trường học?",
+        "choices": [
+          "bảo vệ",
+          "hiệu trưởng",
+          "thủ thư",
+          "ca sĩ"
+        ],
+        "a": 3,
+        "hint": "Nghĩ xem mỗi người làm việc ở đâu.",
+        "difficulty": 1,
+        "skill": "vocab-truong-hoc",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q014"
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ đồ dùng học tập?",
+        "choices": [
+          "bút chì",
+          "thước kẻ",
+          "cục tẩy",
+          "quả bóng"
+        ],
+        "a": 3,
+        "hint": "Đồ dùng học tập dùng khi học bài, viết bài.",
+        "difficulty": 1,
+        "skill": "vocab-truong-hoc",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q015"
+      },
+      {
+        "q": "Từ nào KHÔNG cùng nhóm với các từ còn lại?",
+        "choices": [
+          "dịu dàng",
+          "đỏ thắm",
+          "xanh lè",
+          "vàng tươi"
+        ],
+        "a": 0,
+        "hint": "Ba từ cùng nhóm đều chỉ màu sắc.",
+        "difficulty": 2,
+        "skill": "word-class",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q016"
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ hoạt động ở trường?",
+        "choices": [
+          "học bài",
+          "chào cờ",
+          "nấu cơm",
+          "tập thể dục"
+        ],
+        "a": 2,
+        "hint": "Việc nào thường làm ở nhà?",
+        "difficulty": 1,
+        "skill": "vocab-truong-hoc",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q017"
+      },
+      {
+        "q": "Chọn từ điền vào chỗ trống: \"Sáng thứ Hai, cả trường tập trung ở sân để … cờ.\"",
+        "choices": [
+          "chào",
+          "hát",
+          "đọc",
+          "tập"
+        ],
+        "a": 0,
+        "hint": "Hoạt động đầu tuần dưới lá cờ Tổ quốc.",
+        "difficulty": 1,
+        "skill": "chon-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q018"
+      },
+      {
+        "q": "Chọn từ điền vào chỗ trống: \"Tối nào em cũng … sách vở cho ngày hôm sau.\"",
+        "choices": [
+          "trồng",
+          "chuẩn bị",
+          "dọn dẹp",
+          "trang trí"
+        ],
+        "a": 1,
+        "hint": "Việc làm trước khi đến lớp.",
+        "difficulty": 1,
+        "skill": "chon-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q019"
+      },
+      {
+        "q": "Chọn từ điền vào chỗ trống: \"Dòng suối chảy … .\"",
+        "choices": [
+          "róc rách",
+          "ngọt lịm",
+          "đỏ thắm",
+          "tròn xoe"
+        ],
+        "a": 0,
+        "hint": "Cần một từ chỉ âm thanh.",
+        "difficulty": 1,
+        "skill": "chon-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q020"
+      },
+      {
+        "q": "Chọn từ điền vào chỗ trống: \"Quả xoài chín … .\"",
+        "choices": [
+          "líu lo",
+          "ầm ầm",
+          "ngọt lịm",
+          "cao vút"
+        ],
+        "a": 2,
+        "hint": "Cần một từ chỉ hương vị.",
+        "difficulty": 1,
+        "skill": "chon-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q021"
+      },
+      {
+        "q": "Chọn từ điền vào chỗ trống: \"Bầu trời mùa thu … .\"",
+        "choices": [
+          "thơm phức",
+          "mặn chát",
+          "xanh ngắt",
+          "róc rách"
+        ],
+        "a": 2,
+        "hint": "Cần một từ chỉ màu sắc.",
+        "difficulty": 1,
+        "skill": "chon-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q022"
+      },
+      {
+        "q": "Câu nào dùng từ CHƯA đúng?",
+        "choices": [
+          "Dòng suối chảy róc rách.",
+          "Bông hoa hồng kêu líu lo trong vườn.",
+          "Chú chim hót líu lo trên cành.",
+          "Bông hồng khoe sắc đỏ thắm."
+        ],
+        "a": 1,
+        "hint": "Từ chỉ âm thanh có hợp với sự vật trong câu không?",
+        "difficulty": 2,
+        "skill": "sua-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q023"
+      },
+      {
+        "q": "Câu nào dùng từ CHƯA đúng?",
+        "choices": [
+          "Bạn Lan đang đọc truyện.",
+          "Bạn Lan đang đọc bài hát.",
+          "Bạn Lan đang hát một bài hát.",
+          "Bạn Lan đang viết bài."
+        ],
+        "a": 1,
+        "hint": "Bài hát thì ta làm gì với nó?",
+        "difficulty": 2,
+        "skill": "sua-tu",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q024"
+      },
+      {
+        "q": "Câu \"Bạn Tùng là lớp trưởng lớp 3A.\" là:",
+        "choices": [
+          "Câu hỏi",
+          "Câu giới thiệu",
+          "Câu nêu hoạt động",
+          "Câu nêu đặc điểm"
+        ],
+        "a": 1,
+        "hint": "Câu cho biết Tùng là ai.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q025"
+      },
+      {
+        "q": "Câu \"Sân trường rộng và sạch sẽ.\" là:",
+        "choices": [
+          "Câu nêu hoạt động",
+          "Câu giới thiệu",
+          "Câu nêu đặc điểm",
+          "Câu hỏi"
+        ],
+        "a": 2,
+        "hint": "Câu cho biết sân trường như thế nào.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q026"
+      },
+      {
+        "q": "Câu \"Các bạn đang tập thể dục giữa giờ.\" là:",
+        "choices": [
+          "Câu hỏi",
+          "Câu nêu đặc điểm",
+          "Câu nêu hoạt động",
+          "Câu giới thiệu"
+        ],
+        "a": 2,
+        "hint": "Câu cho biết các bạn đang làm gì.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q027"
+      },
+      {
+        "q": "Câu \"Bạn có mang hộp màu không?\" là:",
+        "choices": [
+          "Câu nêu hoạt động",
+          "Câu nêu đặc điểm",
+          "Câu giới thiệu",
+          "Câu hỏi"
+        ],
+        "a": 3,
+        "hint": "Để ý dấu cuối câu.",
+        "difficulty": 1,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q028"
+      },
+      {
+        "q": "Câu nào là câu nêu đặc điểm?",
+        "choices": [
+          "Đây là chiếc cặp của em.",
+          "Em đeo cặp đến trường.",
+          "Chiếc cặp của em để ở đâu?",
+          "Chiếc cặp của em rất gọn gàng."
+        ],
+        "a": 3,
+        "hint": "Câu nêu đặc điểm cho biết sự vật như thế nào.",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q029"
+      },
+      {
+        "q": "Câu \"Đàn chim én đang sải cánh trên bầu trời.\" Câu hỏi cho bộ phận \"đang sải cánh trên bầu trời\" là:",
+        "choices": [
+          "Con gì đang sải cánh trên bầu trời?",
+          "Đàn chim én là gì?",
+          "Đàn chim én làm gì?",
+          "Đàn chim én thế nào?"
+        ],
+        "a": 2,
+        "hint": "Bộ phận này cho biết đàn chim đang làm việc gì.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q030"
+      },
+      {
+        "q": "Câu \"Bạn Mai là học sinh giỏi của lớp.\" Câu hỏi cho bộ phận \"Bạn Mai\" là:",
+        "choices": [
+          "Bạn Mai thế nào?",
+          "Bạn Mai làm gì?",
+          "Ai là học sinh giỏi của lớp?",
+          "Bạn Mai là ai?"
+        ],
+        "a": 2,
+        "hint": "Bộ phận này chỉ người, nên hỏi bằng từ nào?",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q031"
+      },
+      {
+        "q": "Câu \"Cánh đồng lúa xanh mướt.\" Câu hỏi cho bộ phận \"xanh mướt\" là:",
+        "choices": [
+          "Cánh đồng lúa làm gì?",
+          "Cái gì xanh mướt?",
+          "Cánh đồng lúa thế nào?",
+          "Cánh đồng lúa là gì?"
+        ],
+        "a": 2,
+        "hint": "Bộ phận này chỉ đặc điểm.",
+        "difficulty": 2,
+        "skill": "question-part",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q032"
+      },
+      {
+        "q": "Câu \"Em học bài ở thư viện.\" Câu hỏi cho bộ phận \"ở thư viện\" là:",
+        "choices": [
+          "Em học bài ở đâu?",
+          "Em làm gì ở thư viện?",
+          "Em học bài khi nào?",
+          "Ai học bài ở thư viện?"
+        ],
+        "a": 0,
+        "hint": "Bộ phận này chỉ nơi chốn.",
+        "difficulty": 1,
+        "skill": "question-part",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q033"
+      },
+      {
+        "q": "Sắp xếp các từ thành câu: em / hoá / ước gì / mây / thành",
+        "choices": [
+          "Em ước gì mây hoá thành.",
+          "Mây ước gì em hoá thành.",
+          "Thành mây ước gì em hoá.",
+          "Ước gì em hoá thành mây."
+        ],
+        "a": 3,
+        "hint": "Câu nói về điều em mong muốn.",
+        "difficulty": 2,
+        "skill": "sap-xep-cau",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q034"
+      },
+      {
+        "q": "Sắp xếp các từ thành câu: đến trường / vui vẻ / chúng em / mỗi sáng",
+        "choices": [
+          "Vui vẻ mỗi sáng đến trường chúng em.",
+          "Chúng em đến trường mỗi sáng vui vẻ.",
+          "Mỗi sáng chúng em vui vẻ đến trường.",
+          "Đến trường chúng em mỗi sáng vui vẻ."
+        ],
+        "a": 2,
+        "hint": "Câu nói ai, làm gì, vào lúc nào.",
+        "difficulty": 2,
+        "skill": "sap-xep-cau",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q035"
+      },
+      {
+        "q": "Sắp xếp các từ thành câu: thư viện / nhiều / trường em / có / sách hay",
+        "choices": [
+          "Thư viện trường em có nhiều sách hay.",
+          "Trường em có thư viện sách hay nhiều.",
+          "Sách hay có nhiều thư viện trường em.",
+          "Nhiều thư viện có sách hay trường em."
+        ],
+        "a": 0,
+        "hint": "Bắt đầu bằng sự vật được nói đến.",
+        "difficulty": 2,
+        "skill": "sap-xep-cau",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q036"
+      },
+      {
+        "q": "Đoạn văn: \"Sáng nay, Thỏ dậy sớm. Thỏ đánh răng, rửa mặt. Bầu trời thật trong xanh. Thỏ chào bố mẹ rồi đi học.\" Đoạn văn có mấy câu nêu hoạt động?",
+        "choices": [
+          "1 câu",
+          "3 câu",
+          "4 câu",
+          "2 câu"
+        ],
+        "a": 1,
+        "hint": "Xét từng câu: nói về việc làm hay về đặc điểm?",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q037"
+      },
+      {
+        "q": "Đoạn văn: \"Sáng nay, Thỏ dậy sớm. Thỏ đánh răng, rửa mặt. Bầu trời thật trong xanh. Thỏ chào bố mẹ rồi đi học.\" Đoạn văn có mấy câu nêu đặc điểm?",
+        "choices": [
+          "4 câu",
+          "2 câu",
+          "3 câu",
+          "1 câu"
+        ],
+        "a": 3,
+        "hint": "Tìm câu cho biết sự vật như thế nào.",
+        "difficulty": 2,
+        "skill": "sentence-type",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q038"
+      },
+      {
+        "q": "Chọn dấu câu điền vào ô trống: \"Mùa hè có nhiều loài hoa□ hoa hồng, hoa phượng, hoa sen.\"",
+        "choices": [
+          "Dấu hai chấm",
+          "Dấu chấm",
+          "Dấu gạch ngang",
+          "Dấu chấm hỏi"
+        ],
+        "a": 0,
+        "hint": "Phía sau ô trống là phần kể ra các loài hoa.",
+        "difficulty": 1,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q039"
+      },
+      {
+        "q": "Chọn dấu câu điền vào ô trống: \"Hôm nay lớp mình học môn gì□\"",
+        "choices": [
+          "Dấu hai chấm",
+          "Dấu chấm",
+          "Dấu chấm hỏi",
+          "Dấu gạch ngang"
+        ],
+        "a": 2,
+        "hint": "Đây là câu dùng để hỏi.",
+        "difficulty": 1,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q040"
+      },
+      {
+        "q": "Chọn dấu câu điền vào ô trống: \"Trong cặp của em có đủ đồ dùng□ sách, vở, bút, thước.\"",
+        "choices": [
+          "Dấu chấm hỏi",
+          "Dấu hai chấm",
+          "Dấu gạch ngang",
+          "Dấu chấm"
+        ],
+        "a": 1,
+        "hint": "Phía sau ô trống là phần kể ra các đồ dùng.",
+        "difficulty": 1,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q041"
+      },
+      {
+        "q": "Trong câu \"Vườn nhà bà có nhiều cây ăn quả: cam, bưởi, na, ổi.\", dấu hai chấm dùng để:",
+        "choices": [
+          "Báo hiệu phần giải thích",
+          "Báo hiệu phần liệt kê",
+          "Kết thúc câu",
+          "Hỏi về cây ăn quả"
+        ],
+        "a": 1,
+        "hint": "Phía sau dấu hai chấm là tên các loại cây được kể ra.",
+        "difficulty": 2,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q042"
+      },
+      {
+        "q": "Trong câu \"Lan đến lớp muộn: xe đạp của bạn bị hỏng.\", dấu hai chấm dùng để:",
+        "choices": [
+          "Báo hiệu phần liệt kê",
+          "Báo hiệu phần giải thích",
+          "Hỏi về chiếc xe đạp",
+          "Kết thúc câu"
+        ],
+        "a": 1,
+        "hint": "Phần sau dấu hai chấm cho biết vì sao Lan đến muộn.",
+        "difficulty": 2,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q043"
+      },
+      {
+        "q": "Đoạn văn chưa có dấu chấm: \"Sáng nay em dậy sớm em giúp mẹ tưới cây rồi em đi học\". Đoạn văn này nên tách thành mấy câu?",
+        "choices": [
+          "3 câu",
+          "1 câu",
+          "2 câu",
+          "4 câu"
+        ],
+        "a": 0,
+        "hint": "Mỗi câu kể một việc em làm.",
+        "difficulty": 3,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q044"
+      },
+      {
+        "q": "Đoạn văn chưa có dấu chấm: \"Trường em có sân rộng giữa sân có cây bàng to các bạn thường chơi dưới gốc bàng\". Câu thứ hai bắt đầu bằng chữ nào?",
+        "choices": [
+          "Giữa",
+          "Có",
+          "Cây",
+          "Các"
+        ],
+        "a": 0,
+        "hint": "Câu thứ nhất nói về sân trường; câu thứ hai nói về thứ ở giữa sân.",
+        "difficulty": 3,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q045"
+      },
+      {
+        "q": "Câu nào đặt dấu câu đúng?",
+        "choices": [
+          "Bạn tên là gì.",
+          "Bạn tên là gì?",
+          "Bạn: tên là gì?",
+          "Bạn tên là gì:"
+        ],
+        "a": 1,
+        "hint": "Câu hỏi kết thúc bằng dấu gì?",
+        "difficulty": 1,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q046"
+      },
+      {
+        "q": "Câu nào dùng dấu hai chấm đúng?",
+        "choices": [
+          "Lớp em có ba tổ, Tổ Một: Tổ Hai, Tổ Ba.",
+          "Lớp em có: ba tổ.",
+          "Lớp: em có ba tổ, Tổ Một, Tổ Hai, Tổ Ba.",
+          "Lớp em có ba tổ: Tổ Một, Tổ Hai, Tổ Ba."
+        ],
+        "a": 3,
+        "hint": "Dấu hai chấm đứng ngay trước phần được kể ra.",
+        "difficulty": 2,
+        "skill": "punctuation",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_tu-va-cau-den-bai-12_q047"
+      }
+    ]
+  }
+}

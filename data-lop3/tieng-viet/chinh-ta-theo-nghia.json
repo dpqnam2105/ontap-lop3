@@ -1,0 +1,409 @@
+{
+  "topic": {
+    "id": "tv_chinh-ta-theo-nghia",
+    "icon": "🔤",
+    "name": "Chính tả theo nghĩa",
+    "questions": [
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Em … gìn sách vở cẩn thận.\"",
+        "choices": [
+          "giữ",
+          "giử",
+          "dữ",
+          "rữ"
+        ],
+        "a": 0,
+        "hint": "\"… gìn\" nghĩa là trông nom, không để hỏng.",
+        "difficulty": 1,
+        "skill": "spelling-r-d-gi",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q001"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Chú chó nhà hàng xóm rất …, thấy người lạ là sủa.\"",
+        "choices": [
+          "dử",
+          "dữ",
+          "rữ",
+          "giữ"
+        ],
+        "a": 1,
+        "hint": "Từ chỉ tính nết hung hăng.",
+        "difficulty": 2,
+        "skill": "spelling-r-d-gi",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q002"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Mẹ … rau thật sạch.\"",
+        "choices": [
+          "rửa",
+          "dửa",
+          "rữa",
+          "giửa"
+        ],
+        "a": 0,
+        "hint": "Làm sạch bằng nước.",
+        "difficulty": 1,
+        "skill": "spelling-r-d-gi",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q003"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Cơn … thổi mát rượi.\"",
+        "choices": [
+          "gió",
+          "dó",
+          "ró",
+          "giố"
+        ],
+        "a": 0,
+        "hint": "Không khí chuyển động.",
+        "difficulty": 1,
+        "skill": "spelling-r-d-gi",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q004"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Các bạn … tay phát biểu.\"",
+        "choices": [
+          "giơ",
+          "giờ",
+          "rơ",
+          "dơ"
+        ],
+        "a": 0,
+        "hint": "Đưa tay lên cao.",
+        "difficulty": 2,
+        "skill": "spelling-r-d-gi",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q005"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Chúng em … thành cảm ơn cô giáo.\"",
+        "choices": [
+          "trân",
+          "chăn",
+          "trăn",
+          "chân"
+        ],
+        "a": 3,
+        "hint": "\"… thành\" nghĩa là thật lòng.",
+        "difficulty": 2,
+        "skill": "spelling-ch-tr",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q006"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Ông … trọng cất giữ những bức ảnh cũ.\"",
+        "choices": [
+          "trân",
+          "chân",
+          "chăn",
+          "trăn"
+        ],
+        "a": 0,
+        "hint": "\"… trọng\" nghĩa là rất quý, giữ gìn cẩn thận.",
+        "difficulty": 2,
+        "skill": "spelling-ch-tr",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q007"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Bạn Minh rất … thực, không bao giờ nói dối.\"",
+        "choices": [
+          "chung",
+          "chun",
+          "trung",
+          "trun"
+        ],
+        "a": 2,
+        "hint": "\"… thực\" nghĩa là thật thà.",
+        "difficulty": 2,
+        "skill": "spelling-ch-tr",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q008"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Nhà bác em ở khu … cư cao tầng.\"",
+        "choices": [
+          "trung",
+          "trun",
+          "chun",
+          "chung"
+        ],
+        "a": 3,
+        "hint": "Nhiều gia đình cùng ở chung một toà nhà.",
+        "difficulty": 2,
+        "skill": "spelling-ch-tr",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q009"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Cả lớp … bị cho buổi cắm trại.\"",
+        "choices": [
+          "truẩn",
+          "chuẫn",
+          "chuẩn",
+          "chẩn"
+        ],
+        "a": 2,
+        "hint": "Sắp xếp sẵn sàng trước.",
+        "difficulty": 1,
+        "skill": "spelling-ch-tr",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q010"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Em ngồi trên chiếc … gỗ.\"",
+        "choices": [
+          "ghé",
+          "ghế",
+          "ghể",
+          "gế"
+        ],
+        "a": 1,
+        "hint": "Đứng trước ê, e, i thì viết gh.",
+        "difficulty": 1,
+        "skill": "spelling-g-gh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q011"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Em … bài vào vở.\"",
+        "choices": [
+          "ghí",
+          "ghi",
+          "gi",
+          "gì"
+        ],
+        "a": 1,
+        "hint": "Đứng trước i thì viết gh.",
+        "difficulty": 1,
+        "skill": "spelling-g-gh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q012"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Con … mái đang ấp trứng.\"",
+        "choices": [
+          "gà",
+          "ghà",
+          "ga",
+          "gầ"
+        ],
+        "a": 0,
+        "hint": "Đứng trước a thì viết g.",
+        "difficulty": 1,
+        "skill": "spelling-g-gh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q013"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Cả lớp chăm chú … cô giảng bài.\"",
+        "choices": [
+          "nghè",
+          "ngé",
+          "nghe",
+          "nge"
+        ],
+        "a": 2,
+        "hint": "Đứng trước e, ê, i thì viết ngh.",
+        "difficulty": 1,
+        "skill": "spelling-ng-ngh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q014"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Chú ấy là một … sĩ vẽ tranh.\"",
+        "choices": [
+          "nghệ",
+          "ngệ",
+          "nghê",
+          "ngề"
+        ],
+        "a": 0,
+        "hint": "Đứng trước ê thì viết ngh.",
+        "difficulty": 2,
+        "skill": "spelling-ng-ngh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q015"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Các bạn xếp hàng … ngắn.\"",
+        "choices": [
+          "ngây",
+          "nghay",
+          "ngay",
+          "ngai"
+        ],
+        "a": 2,
+        "hint": "Đứng trước a thì viết ng.",
+        "difficulty": 1,
+        "skill": "spelling-ng-ngh",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q016"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Em rất … khi được cô khen.\"",
+        "choices": [
+          "dụi",
+          "dui",
+          "vùi",
+          "vui"
+        ],
+        "a": 3,
+        "hint": "Cảm thấy thích thú, sung sướng.",
+        "difficulty": 1,
+        "skill": "spelling-v-d",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q017"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Thầy giáo … dò chúng em chăm học.\"",
+        "choices": [
+          "rặn",
+          "dặn",
+          "vặn",
+          "dằn"
+        ],
+        "a": 1,
+        "hint": "\"… dò\" nghĩa là nhắc nhở cẩn thận.",
+        "difficulty": 2,
+        "skill": "spelling-v-d",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q018"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Các bạn xếp … ngay ngắn.\"",
+        "choices": [
+          "hạng",
+          "hằng",
+          "hàn",
+          "hàng"
+        ],
+        "a": 3,
+        "hint": "Vần ang.",
+        "difficulty": 1,
+        "skill": "spelling-an-ang",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q019"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Chú công nhân … hai thanh sắt lại với nhau.\"",
+        "choices": [
+          "hàng",
+          "hán",
+          "hàn",
+          "hằn"
+        ],
+        "a": 2,
+        "hint": "Nối hai miếng kim loại bằng lửa, vần an.",
+        "difficulty": 2,
+        "skill": "spelling-an-ang",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q020"
+      },
+      {
+        "q": "Chọn từ viết đúng điền vào chỗ trống: \"Tiếng đàn … lên thật êm.\"",
+        "choices": [
+          "vàn",
+          "dang",
+          "van",
+          "vang"
+        ],
+        "a": 3,
+        "hint": "Âm thanh lan xa, vần ang.",
+        "difficulty": 2,
+        "skill": "spelling-an-ang",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q021"
+      },
+      {
+        "q": "Câu đố: \"Con gì …ông vằn mắt xanh / Dáng đi uyển chuyển, nhe …anh tìm mồi\". Hai chữ cái điền vào chỗ trống lần lượt là:",
+        "choices": [
+          "n – l",
+          "l – n",
+          "l – l",
+          "n – n"
+        ],
+        "a": 1,
+        "hint": "Hai từ cần điền là bộ phận trên cơ thể con vật: bộ … và răng … .",
+        "difficulty": 2,
+        "skill": "spelling-l-n",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q022"
+      },
+      {
+        "q": "Câu đố: \"Con gì lông vằn mắt xanh / Dáng đi uyển chuyển, nhe nanh tìm mồi / Muông thú khiếp sợ tôn ngôi chúa rừng?\" Đó là con gì?",
+        "choices": [
+          "Con voi",
+          "Con hổ",
+          "Con hươu",
+          "Con mèo"
+        ],
+        "a": 1,
+        "hint": "Con vật có bộ lông vằn và được gọi là chúa rừng.",
+        "difficulty": 1,
+        "skill": "spelling-l-n",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q023"
+      },
+      {
+        "q": "Câu ca dao \"Tiếng lành bình định tốt nhà / phú yên tốt lúa, khánh hòa tốt trâu\" viết sai tên riêng. Cách viết đúng là:",
+        "choices": [
+          "bình Định, Phú yên, Khánh hòa",
+          "Bình Định, phú Yên, Khánh Hòa",
+          "Bình định, Phú Yên, khánh Hòa",
+          "Bình Định, Phú Yên, Khánh Hòa"
+        ],
+        "a": 3,
+        "hint": "Tên địa danh viết hoa chữ cái đầu của mỗi tiếng.",
+        "difficulty": 2,
+        "skill": "capitalization",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q024"
+      },
+      {
+        "q": "Cách viết tên riêng nào đúng?",
+        "choices": [
+          "vịnh Hạ long",
+          "vịnh hạ Long",
+          "vịnh Hạ Long",
+          "vịnh hạ long"
+        ],
+        "a": 2,
+        "hint": "Viết hoa chữ cái đầu của mỗi tiếng trong tên riêng.",
+        "difficulty": 1,
+        "skill": "capitalization",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "cai-bien-de-hk1-20260929",
+        "id": "tv_chinh-ta-theo-nghia_q025"
+      }
+    ]
+  }
+}
