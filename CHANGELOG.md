@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Toán lớp 3: chủ đề mới "Sơ đồ đoạn thẳng"
+- Chủ đề mới **Sơ đồ đoạn thẳng (toán có lời văn)** — 20 câu, mỗi câu kèm hình sơ đồ (phương pháp "bar model" của Toán Singapore):
+  - Phần – tổng (3), nhiều hơn / ít hơn (4), bài toán hai bước (3), một phần mấy (3), tổng – hiệu nâng cao (2), chọn sơ đồ đúng với đề bài (2) — GĐ1
+  - Gấp một số lên nhiều lần (3) và chọn sơ đồ "gấp 3 lần" (1) — GĐ2
+- 20 hình sơ đồ mới trong `images/questions/lop3/so-do-*.svg`.
+
 ## 2026-09-30 — Toán lớp 3: thêm 24 câu tư duy kiểu Bebras
 - Chủ đề **Tư duy logic (kiểu Bebras)**: từ 46 lên 70 câu, thêm 8 dạng mới (đều ở GĐ1):
   - Robot đi theo lệnh trên lưới có đá (4 câu, có hình): dừng ở ô nào, chọn dãy lệnh đúng, lệnh lặp, ít lệnh nhất

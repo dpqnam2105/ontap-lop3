@@ -1,0 +1,369 @@
+{
+  "topic": {
+    "id": "toan_so-do-doan-thang",
+    "icon": "📏",
+    "name": "Sơ đồ đoạn thẳng (toán có lời văn)",
+    "questions": [
+      {
+        "q": "Lớp 3A có 64 bạn, trong đó có 28 bạn nam. Nhìn sơ đồ, hỏi lớp 3A có bao nhiêu bạn nữ?",
+        "choices": [
+          "46 bạn nữ",
+          "92 bạn nữ",
+          "36 bạn nữ",
+          "26 bạn nữ"
+        ],
+        "a": 2,
+        "hint": "Cả đoạn là tổng. Biết một phần, muốn tìm phần kia thì lấy tổng trừ phần đã biết.",
+        "difficulty": 1,
+        "skill": "so-do-phan-tong",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q001",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-01.svg"
+      },
+      {
+        "q": "Cửa hàng có 350 kg gạo, đã bán 125 kg. Nhìn sơ đồ, hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?",
+        "choices": [
+          "215 kg gạo",
+          "475 kg gạo",
+          "235 kg gạo",
+          "225 kg gạo"
+        ],
+        "a": 3,
+        "hint": "Cả đoạn là tổng. Biết một phần, muốn tìm phần kia thì lấy tổng trừ phần đã biết.",
+        "difficulty": 1,
+        "skill": "so-do-phan-tong",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q002",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-02.svg"
+      },
+      {
+        "q": "Quãng đường từ nhà Thỏ đến bà dài 500 m. Thỏ đã đi được 275 m. Nhìn sơ đồ, hỏi Thỏ còn phải đi bao nhiêu mét nữa?",
+        "choices": [
+          "235 m",
+          "225 m",
+          "775 m",
+          "215 m"
+        ],
+        "a": 1,
+        "hint": "Cả đoạn là tổng. Biết một phần, muốn tìm phần kia thì lấy tổng trừ phần đã biết.",
+        "difficulty": 2,
+        "skill": "so-do-phan-tong",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q003",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-03.svg"
+      },
+      {
+        "q": "An có 45 viên bi. Bình có nhiều hơn An 18 viên bi. Hỏi Bình có bao nhiêu viên bi?",
+        "choices": [
+          "73 viên bi",
+          "18 viên bi",
+          "27 viên bi",
+          "63 viên bi"
+        ],
+        "a": 3,
+        "hint": "Đoạn của Bình dài hơn: bằng đoạn của An thêm một đoạn nữa.",
+        "difficulty": 1,
+        "skill": "so-do-hon-kem",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q004",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-04.svg"
+      },
+      {
+        "q": "Hà có 132 nhãn vở. Lan có ít hơn Hà 27 nhãn vở. Hỏi Lan có bao nhiêu nhãn vở?",
+        "choices": [
+          "159 nhãn vở",
+          "95 nhãn vở",
+          "106 nhãn vở",
+          "105 nhãn vở"
+        ],
+        "a": 3,
+        "hint": "Đoạn của Lan ngắn hơn đoạn của Hà. Ngắn hơn bao nhiêu thì bớt đi bấy nhiêu.",
+        "difficulty": 2,
+        "skill": "so-do-hon-kem",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q005",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-05.svg"
+      },
+      {
+        "q": "Tổ 1 gấp được 56 bông hoa, Tổ 2 gấp được 37 bông hoa. Tổ 1 gấp nhiều hơn Tổ 2 bao nhiêu bông hoa?",
+        "choices": [
+          "29 bông hoa",
+          "19 bông hoa",
+          "93 bông hoa",
+          "18 bông hoa"
+        ],
+        "a": 1,
+        "hint": "Phần dài thêm của đoạn trên chính là số hơn. Lấy số lớn trừ số bé.",
+        "difficulty": 1,
+        "skill": "so-do-hon-kem",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q006",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-06.svg"
+      },
+      {
+        "q": "Thùng A có 240 lít nước, nhiều hơn thùng B 65 lít. Hỏi thùng B có bao nhiêu lít nước?",
+        "choices": [
+          "305 lít nước",
+          "175 lít nước",
+          "180 lít nước",
+          "65 lít nước"
+        ],
+        "a": 1,
+        "hint": "\"Thùng A nhiều hơn thùng B\" nghĩa là thùng B ÍT hơn. Nhìn sơ đồ: đoạn nào ngắn hơn?",
+        "difficulty": 2,
+        "skill": "so-do-hon-kem",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q007",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-07.svg"
+      },
+      {
+        "q": "An có 25 quyển truyện. Bình có nhiều hơn An 12 quyển truyện. Hỏi cả hai có tất cả bao nhiêu quyển truyện?",
+        "choices": [
+          "62 quyển truyện",
+          "37 quyển truyện",
+          "50 quyển truyện",
+          "13 quyển truyện"
+        ],
+        "a": 0,
+        "hint": "Bài có hai bước: tìm số của Bình trước, rồi mới tính tổng.",
+        "difficulty": 2,
+        "skill": "so-do-hai-buoc",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q008",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-08.svg"
+      },
+      {
+        "q": "Buổi sáng cửa hàng bán được 138 cái bánh (Sáng). Buổi chiều bán được ít hơn buổi sáng 45 cái (Chiều). Hỏi cả ngày cửa hàng bán được bao nhiêu cái bánh?",
+        "choices": [
+          "231 cái bánh",
+          "276 cái bánh",
+          "93 cái bánh",
+          "183 cái bánh"
+        ],
+        "a": 0,
+        "hint": "Bài có hai bước: tìm số của Chiều trước, rồi mới tính tổng.",
+        "difficulty": 2,
+        "skill": "so-do-hai-buoc",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q009",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-09.svg"
+      },
+      {
+        "q": "Đàn gà có 215 con. Đàn vịt nhiều hơn đàn gà 90 con. Hỏi cả hai đàn có tất cả bao nhiêu con?",
+        "choices": [
+          "430 con",
+          "305 con",
+          "125 con",
+          "520 con"
+        ],
+        "a": 3,
+        "hint": "Bài có hai bước: tìm số của Đàn vịt trước, rồi mới tính tổng.",
+        "difficulty": 3,
+        "skill": "so-do-hai-buoc",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q010",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-10.svg"
+      },
+      {
+        "q": "Mẹ có 32 quả táo, cho bà 1/4 số táo. Nhìn sơ đồ, phần tô màu là bao nhiêu quả táo?",
+        "choices": [
+          "8 quả táo",
+          "24 quả táo",
+          "16 quả táo",
+          "12 quả táo"
+        ],
+        "a": 0,
+        "hint": "Cả đoạn được chia thành 4 phần bằng nhau. Một phần là phép chia nào?",
+        "difficulty": 1,
+        "skill": "so-do-mot-phan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q011",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-11.svg"
+      },
+      {
+        "q": "Sợi dây dài 45 cm, cắt đi 1/5 sợi dây. Nhìn sơ đồ, phần tô màu là bao nhiêu cm?",
+        "choices": [
+          "36 cm",
+          "9 cm",
+          "14 cm",
+          "18 cm"
+        ],
+        "a": 1,
+        "hint": "Cả đoạn được chia thành 5 phần bằng nhau. Một phần là phép chia nào?",
+        "difficulty": 1,
+        "skill": "so-do-mot-phan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q012",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-12.svg"
+      },
+      {
+        "q": "Có 54 học sinh, 1/6 số học sinh đi bơi. Nhìn sơ đồ, phần tô màu là bao nhiêu học sinh?",
+        "choices": [
+          "18 học sinh",
+          "15 học sinh",
+          "9 học sinh",
+          "45 học sinh"
+        ],
+        "a": 2,
+        "hint": "Cả đoạn được chia thành 6 phần bằng nhau. Một phần là phép chia nào?",
+        "difficulty": 2,
+        "skill": "so-do-mot-phan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q013",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-13.svg"
+      },
+      {
+        "q": "Em 8 tuổi. Tuổi anh gấp 3 lần tuổi em. Hỏi anh bao nhiêu tuổi?",
+        "choices": [
+          "16 tuổi",
+          "11 tuổi",
+          "24 tuổi",
+          "32 tuổi"
+        ],
+        "a": 2,
+        "hint": "Đoạn dưới gồm 3 đoạn bằng đoạn trên. \"Gấp 3 lần\" là phép nhân với 3.",
+        "difficulty": 1,
+        "skill": "so-do-gap-lan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q014",
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-14.svg"
+      },
+      {
+        "q": "Buổi sáng xe đi được 15 km. Buổi chiều đi được gấp 4 lần buổi sáng. Hỏi buổi chiều xe đi được bao nhiêu km?",
+        "choices": [
+          "45 km",
+          "75 km",
+          "60 km",
+          "19 km"
+        ],
+        "a": 2,
+        "hint": "Đoạn dưới gồm 4 đoạn bằng đoạn trên. \"Gấp 4 lần\" là phép nhân với 4.",
+        "difficulty": 2,
+        "skill": "so-do-gap-lan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q015",
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-15.svg"
+      },
+      {
+        "q": "Lan hái được 24 bông hoa. Mai hái được gấp 2 lần Lan. Hỏi Mai hái được bao nhiêu bông hoa?",
+        "choices": [
+          "24 bông hoa",
+          "26 bông hoa",
+          "72 bông hoa",
+          "48 bông hoa"
+        ],
+        "a": 3,
+        "hint": "Đoạn dưới gồm 2 đoạn bằng đoạn trên. \"Gấp 2 lần\" là phép nhân với 2.",
+        "difficulty": 2,
+        "skill": "so-do-gap-lan",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q016",
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-16.svg"
+      },
+      {
+        "q": "Anh và em có tất cả 50 viên bi. Anh có nhiều hơn em 10 viên bi. Hỏi em có bao nhiêu viên bi?",
+        "choices": [
+          "20 viên bi",
+          "40 viên bi",
+          "30 viên bi",
+          "25 viên bi"
+        ],
+        "a": 0,
+        "hint": "Bớt phần nhiều hơn đi thì hai đoạn dài bằng nhau. Tổng lúc đó là bao nhiêu? Chia đều cho 2 đoạn.",
+        "difficulty": 3,
+        "skill": "so-do-tong-hieu",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q017",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-17.svg"
+      },
+      {
+        "q": "Thùng to và thùng nhỏ có tất cả 90 lít. Thùng to có nhiều hơn thùng nhỏ 16 lít. Hỏi thùng nhỏ có bao nhiêu lít?",
+        "choices": [
+          "45 lít",
+          "37 lít",
+          "74 lít",
+          "53 lít"
+        ],
+        "a": 1,
+        "hint": "Bớt phần nhiều hơn đi thì hai đoạn dài bằng nhau. Tổng lúc đó là bao nhiêu? Chia đều cho 2 đoạn.",
+        "difficulty": 3,
+        "skill": "so-do-tong-hieu",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q018",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-18.svg"
+      },
+      {
+        "q": "Hoa có 20 cái kẹo (hàng trên). Hồng có nhiều hơn Hoa 10 cái kẹo (hàng dưới). Sơ đồ nào vẽ ĐÚNG bài toán?",
+        "choices": [
+          "Sơ đồ A",
+          "Sơ đồ B",
+          "Sơ đồ C",
+          "Sơ đồ D"
+        ],
+        "a": 0,
+        "hint": "Hàng dưới là của Hồng. Hồng nhiều hơn thì đoạn của Hồng phải dài hơn, và dài hơn đúng 10.",
+        "difficulty": 2,
+        "skill": "so-do-chon",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q019",
+        "stage": 1,
+        "image": "images/questions/lop3/so-do-19.svg"
+      },
+      {
+        "q": "Minh có 15 bút chì (hàng trên). Số bút màu gấp 3 lần số bút chì (hàng dưới). Sơ đồ nào vẽ ĐÚNG?",
+        "choices": [
+          "Sơ đồ A",
+          "Sơ đồ B",
+          "Sơ đồ C",
+          "Sơ đồ D"
+        ],
+        "a": 2,
+        "hint": "\"Gấp 3 lần\" nghĩa là hàng dưới gồm 3 đoạn, mỗi đoạn dài bằng hàng trên.",
+        "difficulty": 2,
+        "skill": "so-do-chon",
+        "unit": "so-do-doan-thang",
+        "source": "claude-singapore-bar-model-20260930",
+        "id": "toan_so-do-doan-thang_q020",
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-20.svg"
+      }
+    ]
+  }
+}

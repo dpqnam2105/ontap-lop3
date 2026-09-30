@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456 152" width="456" height="152">
+<rect width="456" height="152" fill="#fff"/>
+<text x="92" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Sáng</text>
+<rect x="100" y="18" width="260.0" height="30" fill="#aed6f1" stroke="#2c3e50" stroke-width="2"/>
+<text x="230.0" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">138</text>
+<text x="92" y="102.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Chiều</text>
+<rect x="100" y="82" width="175.2173913043478" height="30" fill="#f9e79f" stroke="#2c3e50" stroke-width="2"/>
+<path d="M370.0,18 h8 V112 h-8" fill="none" stroke="#8e44ad" stroke-width="2"/>
+<text x="384.0" y="70.0" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#8e44ad" text-anchor="start">? tổng</text>
+<path d="M275.2173913043478,97 h84.78260869565217" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/><text x="317.6086956521739" y="92" font-family="Verdana,Arial,sans-serif" font-size="12" font-weight="bold" fill="#c0392b" text-anchor="middle">kém 45</text></svg>

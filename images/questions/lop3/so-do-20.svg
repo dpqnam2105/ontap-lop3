@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 250" width="440" height="250">
+<rect width="440" height="250" fill="#fff"/>
+<text x="20" y="24" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">A.</text>
+<rect x="44" y="34" width="52.5" height="26" fill="#aed6f1" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="70.25" y="52" font-family="Verdana,Arial,sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">15</text>
+<rect x="44" y="74" width="35.0" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="240" y="24" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">B.</text>
+<rect x="264" y="34" width="52.5" height="26" fill="#aed6f1" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="290.25" y="52" font-family="Verdana,Arial,sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">15</text>
+<rect x="264" y="74" width="17.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="20" y="149" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">C.</text>
+<rect x="44" y="159" width="52.5" height="26" fill="#aed6f1" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="70.25" y="177" font-family="Verdana,Arial,sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">15</text>
+<rect x="44" y="199" width="52.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<rect x="96.5" y="199" width="52.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<rect x="149.0" y="199" width="52.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="240" y="149" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">D.</text>
+<rect x="264" y="159" width="52.5" height="26" fill="#aed6f1" stroke="#2c3e50" stroke-width="1.5"/>
+<text x="290.25" y="177" font-family="Verdana,Arial,sans-serif" font-size="12" font-weight="bold" fill="#2c3e50" text-anchor="middle">15</text>
+<rect x="264" y="199" width="52.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+<rect x="316.5" y="199" width="52.5" height="26" fill="#f9e79f" stroke="#2c3e50" stroke-width="1.5"/>
+</svg>

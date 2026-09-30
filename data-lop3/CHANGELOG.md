@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-09-30 (Claude — sơ đồ đoạn thẳng)
+- Toán / Sơ đồ đoạn thẳng (toán có lời văn) — +20 câu (chủ đề mới; GĐ1: 16, GĐ2: 4)
+
 ## 2026-09-30 (Claude — Bebras đợt 2)
 - Toán / Tư duy logic (kiểu Bebras) — +24 câu (46 → 70): robot-lenh, duong-ngan-nhat, xep-lich, hang-doi, quy-luat-lap, can-tim-bi, to-mau, den-nhi-phan. Tất cả `stage: 1`.
 

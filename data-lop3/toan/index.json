@@ -64,6 +64,12 @@
       "count": 15
     },
     {
+      "id": "toan_so-do-doan-thang",
+      "name": "Sơ đồ đoạn thẳng (toán có lời văn)",
+      "file": "so-do-doan-thang.json",
+      "count": 20
+    },
+    {
       "id": "toan_on-tap-tong-hop",
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",

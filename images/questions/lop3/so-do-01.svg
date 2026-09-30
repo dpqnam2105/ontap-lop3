@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 110" width="440" height="110">
+<rect width="440" height="110" fill="#fff"/>
+<text x="22" y="60.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end"></text>
+<rect x="30" y="40" width="122.5" height="30" fill="#aed6f1" stroke="#2c3e50" stroke-width="2"/>
+<text x="91.25" y="60.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Bạn nam: 28</text>
+<rect x="152.5" y="40" width="157.5" height="30" fill="#f9e79f" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="231.25" y="60.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Bạn nữ: ?</text>
+<path d="M30.0,32 v-8 H310.0 v8" fill="none" stroke="#8e44ad" stroke-width="2"/>
+<text x="170.0" y="19" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#8e44ad" text-anchor="middle">Tổng: 64</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 466 152" width="466" height="152">
+<rect width="466" height="152" fill="#fff"/>
+<text x="92" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Anh</text>
+<rect x="100" y="18" width="173.33333333333331" height="30" fill="#aed6f1" stroke="#2c3e50" stroke-width="2"/>
+<rect x="273.3333333333333" y="18" width="86.66666666666666" height="30" fill="#aed6f1" stroke="#2c3e50" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="316.66666666666663" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">10</text>
+<text x="92" y="102.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Em</text>
+<rect x="100" y="82" width="173.33333333333331" height="30" fill="#f9e79f" stroke="#2c3e50" stroke-width="2"/>
+<path d="M370.0,18 h8 V112 h-8" fill="none" stroke="#8e44ad" stroke-width="2"/>
+<text x="384.0" y="70.0" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#8e44ad" text-anchor="start">Tổng 50</text>
+</svg>

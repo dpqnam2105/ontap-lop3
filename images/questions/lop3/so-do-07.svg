@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 152" width="440" height="152">
+<rect width="440" height="152" fill="#fff"/>
+<text x="92" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Thùng A</text>
+<rect x="100" y="18" width="260.0" height="30" fill="#aed6f1" stroke="#2c3e50" stroke-width="2"/>
+<text x="230.0" y="38.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">240</text>
+<text x="92" y="102.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="end">Thùng B</text>
+<rect x="100" y="82" width="189.58333333333331" height="30" fill="#f9e79f" stroke="#2c3e50" stroke-width="2"/>
+<text x="194.79166666666666" y="102.0" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">?</text>
+<path d="M289.5833333333333,97 h70.41666666666666" stroke="#8e44ad" stroke-width="2"/><text x="324.79166666666663" y="92" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#8e44ad" text-anchor="middle">65</text></svg>
