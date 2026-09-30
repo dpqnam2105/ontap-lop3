@@ -18,7 +18,8 @@
         "skill": "cho-qua-cho-lai",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q001"
+        "id": "toan_loi-van-hay_q001",
+        "stage": 1
       },
       {
         "q": "Thái cho Hùng 14 viên bi, sau đó Hùng cho lại Thái 9 viên thì mỗi bạn có 40 viên. Lúc đầu Hùng có bao nhiêu viên bi?",
@@ -34,7 +35,8 @@
         "skill": "cho-qua-cho-lai",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q002"
+        "id": "toan_loi-van-hay_q002",
+        "stage": 1
       },
       {
         "q": "An có 30 cái kẹo. An cho Bình 8 cái thì số kẹo hai bạn bằng nhau. Lúc đầu Bình có bao nhiêu cái kẹo?",
@@ -50,7 +52,8 @@
         "skill": "cho-qua-cho-lai",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q003"
+        "id": "toan_loi-van-hay_q003",
+        "stage": 1
       },
       {
         "q": "Hai hộp có số bút bằng nhau. Chuyển 6 cái bút từ hộp A sang hộp B thì hộp B nhiều hơn hộp A bao nhiêu cái bút?",
@@ -66,7 +69,8 @@
         "skill": "cho-qua-cho-lai",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q004"
+        "id": "toan_loi-van-hay_q004",
+        "stage": 1
       },
       {
         "q": "Lan có nhiều hơn Mai 10 nhãn vở. Lan phải cho Mai bao nhiêu nhãn vở để hai bạn có số nhãn vở bằng nhau?",
@@ -82,7 +86,8 @@
         "skill": "cho-qua-cho-lai",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q005"
+        "id": "toan_loi-van-hay_q005",
+        "stage": 1
       },
       {
         "q": "Năm nay con 8 tuổi, mẹ hơn con 25 tuổi. Hỏi 3 năm nữa mẹ bao nhiêu tuổi?",
@@ -98,7 +103,8 @@
         "skill": "tuoi",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q006"
+        "id": "toan_loi-van-hay_q006",
+        "stage": 1
       },
       {
         "q": "Năm nay bố 35 tuổi, con 7 tuổi. Hỏi sau 5 năm nữa bố hơn con bao nhiêu tuổi?",
@@ -114,7 +120,8 @@
         "skill": "tuoi",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q007"
+        "id": "toan_loi-van-hay_q007",
+        "stage": 1
       },
       {
         "q": "Hai năm nữa ông tròn 70 tuổi. Năm nay ông bao nhiêu tuổi?",
@@ -130,7 +137,8 @@
         "skill": "tuoi",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q008"
+        "id": "toan_loi-van-hay_q008",
+        "stage": 1
       },
       {
         "q": "Năm nay chị 12 tuổi, em 7 tuổi. Khi em 12 tuổi thì chị bao nhiêu tuổi?",
@@ -146,7 +154,8 @@
         "skill": "tuoi",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q009"
+        "id": "toan_loi-van-hay_q009",
+        "stage": 1
       },
       {
         "q": "Có một can 5 l và một can 3 l (không có vạch chia). Làm thế nào để lấy được đúng 2 l nước?",
@@ -162,7 +171,8 @@
         "skill": "rot-nuoc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q010"
+        "id": "toan_loi-van-hay_q010",
+        "stage": 1
       },
       {
         "q": "Có một can 5 l và một can 3 l. Cách nào lấy được đúng 8 l nước vào xô?",
@@ -178,7 +188,8 @@
         "skill": "rot-nuoc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q011"
+        "id": "toan_loi-van-hay_q011",
+        "stage": 1
       },
       {
         "q": "Có một can 7 l và một can 4 l. Làm thế nào để lấy được đúng 3 l nước?",
@@ -194,7 +205,8 @@
         "skill": "rot-nuoc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q012"
+        "id": "toan_loi-van-hay_q012",
+        "stage": 1
       },
       {
         "q": "Có một ca 3 l và một ca 5 l (đều không có vạch chia). Cách nào lấy được đúng 1 l nước?",
@@ -210,7 +222,8 @@
         "skill": "rot-nuoc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q013"
+        "id": "toan_loi-van-hay_q013",
+        "stage": 1
       },
       {
         "q": "Cân thăng bằng: đĩa bên trái có 3 hộp sữa; đĩa bên phải có 1 quả dưa và 1 hộp sữa. Mỗi hộp sữa nặng 2 kg. Quả dưa nặng bao nhiêu?",
@@ -226,7 +239,8 @@
         "skill": "can-thang-bang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q014"
+        "id": "toan_loi-van-hay_q014",
+        "stage": 1
       },
       {
         "q": "2 quả bưởi nặng bằng 6 quả cam. 1 quả bưởi nặng bằng mấy quả cam?",
@@ -242,7 +256,8 @@
         "skill": "can-thang-bang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q015"
+        "id": "toan_loi-van-hay_q015",
+        "stage": 1
       },
       {
         "q": "1 quả dưa nặng bằng 3 quả táo; 1 quả táo nặng bằng 2 quả mận. 1 quả dưa nặng bằng mấy quả mận?",
@@ -258,7 +273,8 @@
         "skill": "can-thang-bang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q016"
+        "id": "toan_loi-van-hay_q016",
+        "stage": 1
       },
       {
         "q": "Cân thăng bằng: đĩa trái có túi gạo 5 kg và quả cân 2 kg; đĩa phải có quả bí và quả cân 3 kg. Quả bí nặng bao nhiêu?",
@@ -274,7 +290,8 @@
         "skill": "can-thang-bang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q017"
+        "id": "toan_loi-van-hay_q017",
+        "stage": 1
       },
       {
         "q": "Quang làm bài trong nửa giờ. Hồng làm chậm hơn Quang 2 phút nhưng nhanh hơn Mai 5 phút. Bạn nào làm xong nhanh nhất?",
@@ -290,7 +307,8 @@
         "skill": "ai-ve-nhat",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q018"
+        "id": "toan_loi-van-hay_q018",
+        "stage": 1
       },
       {
         "q": "Quang làm bài trong nửa giờ. Hồng làm chậm hơn Quang 2 phút nhưng nhanh hơn Mai 5 phút. Mai làm bài hết bao nhiêu phút?",
@@ -306,7 +324,8 @@
         "skill": "ai-ve-nhat",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q019"
+        "id": "toan_loi-van-hay_q019",
+        "stage": 1
       },
       {
         "q": "An chạy hết 15 phút. Bình chạy nhanh hơn An 3 phút. Chi chạy chậm hơn Bình 5 phút. Bạn nào chạy chậm nhất?",
@@ -322,7 +341,8 @@
         "skill": "ai-ve-nhat",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q020"
+        "id": "toan_loi-van-hay_q020",
+        "stage": 1
       },
       {
         "q": "An cao hơn Bình. Chi thấp hơn Bình. Bạn nào thấp nhất?",
@@ -338,7 +358,8 @@
         "skill": "ai-ve-nhat",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q021"
+        "id": "toan_loi-van-hay_q021",
+        "stage": 1
       },
       {
         "q": "Thứ Bảy là ngày 8 tháng 9. Ngày 20 tháng 9 cùng năm là thứ mấy?",
@@ -354,7 +375,8 @@
         "skill": "lich",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q022"
+        "id": "toan_loi-van-hay_q022",
+        "stage": 1
       },
       {
         "q": "Thứ Hai là ngày 2. Hai tuần sau, thứ Hai là ngày mấy?",
@@ -370,7 +392,8 @@
         "skill": "lich",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q023"
+        "id": "toan_loi-van-hay_q023",
+        "stage": 1
       },
       {
         "q": "Ngày 1 tháng 10 là thứ Tư. Ngày 10 tháng 10 cùng năm là thứ mấy?",
@@ -386,7 +409,8 @@
         "skill": "lich",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q024"
+        "id": "toan_loi-van-hay_q024",
+        "stage": 1
       },
       {
         "q": "Tháng 9 có 30 ngày. Ngày 28 tháng 9 là Chủ nhật. Ngày 1 tháng 10 là thứ mấy?",
@@ -402,7 +426,8 @@
         "skill": "lich",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q025"
+        "id": "toan_loi-van-hay_q025",
+        "stage": 1
       },
       {
         "q": "Buổi liên hoan bắt đầu lúc 3 giờ chiều và kéo dài 30 phút. Buổi liên hoan kết thúc lúc:",
@@ -418,7 +443,8 @@
         "skill": "thoi-gian",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q026"
+        "id": "toan_loi-van-hay_q026",
+        "stage": 1
       },
       {
         "q": "Thỏ ngủ trưa từ 12 giờ trưa đến 1 giờ rưỡi chiều. Thỏ ngủ trong bao lâu?",
@@ -434,7 +460,8 @@
         "skill": "thoi-gian",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q027"
+        "id": "toan_loi-van-hay_q027",
+        "stage": 1
       },
       {
         "q": "Xe khởi hành lúc 7 giờ sáng và đi mất 2 giờ rưỡi. Xe đến nơi lúc:",
@@ -450,7 +477,8 @@
         "skill": "thoi-gian",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q028"
+        "id": "toan_loi-van-hay_q028",
+        "stage": 1
       },
       {
         "q": "Từ nhà đến hiệu thuốc dài 150 m. Từ hiệu thuốc đến bưu điện dài hơn thế 120 m. Đi từ nhà đến bưu điện (qua hiệu thuốc) dài bao nhiêu mét?",
@@ -466,7 +494,8 @@
         "skill": "quang-duong",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q029"
+        "id": "toan_loi-van-hay_q029",
+        "stage": 1
       },
       {
         "q": "Quãng đường AB dài 240 m. Quãng đường BC ngắn hơn AB 60 m. Đi từ A đến C (qua B) dài bao nhiêu mét?",
@@ -482,7 +511,8 @@
         "skill": "quang-duong",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q030"
+        "id": "toan_loi-van-hay_q030",
+        "stage": 1
       },
       {
         "q": "Thỏ đi từ nhà đến trường dài 350 m rồi quay về nhà. Thỏ đã đi tất cả bao nhiêu mét?",
@@ -498,7 +528,8 @@
         "skill": "quang-duong",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q031"
+        "id": "toan_loi-van-hay_q031",
+        "stage": 1
       },
       {
         "q": "Biểu đồ tranh (mỗi ★ là 1 cái): Bút chì ★★★★; Bút sáp ★★★★★★★; Thước ★★. Bút sáp nhiều hơn bút chì mấy cái?",
@@ -514,7 +545,8 @@
         "skill": "bieu-do-tranh",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q032"
+        "id": "toan_loi-van-hay_q032",
+        "stage": 1
       },
       {
         "q": "Biểu đồ tranh (mỗi ★ là 1 cái): Bút chì ★★★★; Bút sáp ★★★★★★★; Thước ★★. Cả ba loại có tất cả mấy cái?",
@@ -530,7 +562,8 @@
         "skill": "bieu-do-tranh",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q033"
+        "id": "toan_loi-van-hay_q033",
+        "stage": 1
       },
       {
         "q": "Biểu đồ tranh (mỗi ★ là 2 quyển truyện): Lan ★★★; Hoa ★★★★★. Hoa có nhiều hơn Lan bao nhiêu quyển truyện?",
@@ -546,7 +579,8 @@
         "skill": "bieu-do-tranh",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q034"
+        "id": "toan_loi-van-hay_q034",
+        "stage": 1
       },
       {
         "q": "Có 4 hộp, mỗi hộp có 2 ngăn. Chia đều 40 cái bút vào tất cả các ngăn. Mỗi ngăn có bao nhiêu cái bút?",
@@ -562,7 +596,8 @@
         "skill": "chia-nhieu-tang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q035"
+        "id": "toan_loi-van-hay_q035",
+        "stage": 1
       },
       {
         "q": "Có 3 tủ, mỗi tủ có 3 ngăn. Xếp đều 45 quyển sách vào tất cả các ngăn. Mỗi ngăn có bao nhiêu quyển?",
@@ -578,7 +613,8 @@
         "skill": "chia-nhieu-tang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q036"
+        "id": "toan_loi-van-hay_q036",
+        "stage": 1
       },
       {
         "q": "Có 6 túi, mỗi túi có 4 gói, mỗi gói có 2 cái kẹo. Có tất cả bao nhiêu cái kẹo?",
@@ -594,7 +630,8 @@
         "skill": "chia-nhieu-tang",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q037"
+        "id": "toan_loi-van-hay_q037",
+        "stage": 1
       },
       {
         "q": "Đường gấp khúc ABCDE có AB = BC = 13 cm, CD = 15 cm, DE = 19 cm. Đường gấp khúc dài bao nhiêu đề-xi-mét?",
@@ -610,7 +647,8 @@
         "skill": "duong-gap-khuc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q038"
+        "id": "toan_loi-van-hay_q038",
+        "stage": 1
       },
       {
         "q": "Một đường gấp khúc gồm 4 đoạn thẳng, mỗi đoạn dài 8 cm. Đường gấp khúc dài bao nhiêu?",
@@ -626,7 +664,8 @@
         "skill": "duong-gap-khuc",
         "unit": "loi-van-hay",
         "source": "cai-bien-de-hk1-20260929",
-        "id": "toan_loi-van-hay_q039"
+        "id": "toan_loi-van-hay_q039",
+        "stage": 1
       }
     ]
   }

@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-09-30 (Claude — giai đoạn học Toán)
+- Toán lớp 3: thêm trường `stage` (1–5) cho cả 546 câu; `toan/index.json` có thêm `stages` và `defaultStage`. Bỏ `hidden` của hai chủ đề 100 000.
+
 ## 2026-09-30 (Claude — Tiếng Anh NIK3 + Global Success)
 - Tiếng Anh / NIK3 Unit 1: Places & directions — +22 câu (chủ đề mới)
 - Tiếng Anh / NIK3 Unit 2: Dinosaurs & Ancient Egypt — +22 câu (chủ đề mới)

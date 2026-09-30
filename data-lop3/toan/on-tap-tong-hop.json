@@ -18,7 +18,8 @@
         "skill": "sequence",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q001"
+        "id": "toan_on-tap-tong-hop_q001",
+        "stage": 5
       },
       {
         "q": "Số gồm 4 chục nghìn và 5 trăm viết là:",
@@ -34,7 +35,8 @@
         "skill": "place-value",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q002"
+        "id": "toan_on-tap-tong-hop_q002",
+        "stage": 5
       },
       {
         "q": "Số «sáu mươi nghìn không trăm linh tám» viết là:",
@@ -50,7 +52,8 @@
         "skill": "write-number",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q003"
+        "id": "toan_on-tap-tong-hop_q003",
+        "stage": 5
       },
       {
         "q": "27 450 + 16 380 = ?",
@@ -66,7 +69,8 @@
         "skill": "add",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q004"
+        "id": "toan_on-tap-tong-hop_q004",
+        "stage": 5
       },
       {
         "q": "80 000 − 45 670 = ?",
@@ -82,7 +86,8 @@
         "skill": "subtract",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q005"
+        "id": "toan_on-tap-tong-hop_q005",
+        "stage": 5
       },
       {
         "q": "8 × 7 = ?",
@@ -98,7 +103,8 @@
         "skill": "times-table",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q006"
+        "id": "toan_on-tap-tong-hop_q006",
+        "stage": 1
       },
       {
         "q": "1208 × 4 = ?",
@@ -114,7 +120,8 @@
         "skill": "multiply",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q007"
+        "id": "toan_on-tap-tong-hop_q007",
+        "stage": 4
       },
       {
         "q": "72 : 8 = ?",
@@ -130,7 +137,8 @@
         "skill": "divide",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q008"
+        "id": "toan_on-tap-tong-hop_q008",
+        "stage": 1
       },
       {
         "q": "1/4 của 28 là:",
@@ -146,7 +154,8 @@
         "skill": "fraction-of",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q009"
+        "id": "toan_on-tap-tong-hop_q009",
+        "stage": 1
       },
       {
         "q": "Hình vuông cạnh 5 cm có chu vi là:",
@@ -162,7 +171,8 @@
         "skill": "perimeter",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q010"
+        "id": "toan_on-tap-tong-hop_q010",
+        "stage": 4
       },
       {
         "q": "Hình chữ nhật dài 7 cm, rộng 5 cm có diện tích là:",
@@ -178,7 +188,8 @@
         "skill": "area",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q011"
+        "id": "toan_on-tap-tong-hop_q011",
+        "stage": 4
       },
       {
         "q": "2 km = ? m",
@@ -194,7 +205,8 @@
         "skill": "convert",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q012"
+        "id": "toan_on-tap-tong-hop_q012",
+        "stage": 1
       },
       {
         "q": "Kim giờ chỉ quá số 4 một chút, kim phút chỉ số 6. Đồng hồ chỉ:",
@@ -210,7 +222,8 @@
         "skill": "clock",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q013"
+        "id": "toan_on-tap-tong-hop_q013",
+        "stage": 1
       },
       {
         "q": "Hùng có 30 viên bi, Hùng kém Việt 12 viên. Hỏi Việt có bao nhiêu viên bi?",
@@ -226,7 +239,8 @@
         "skill": "word-problem",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q014"
+        "id": "toan_on-tap-tong-hop_q014",
+        "stage": 1
       },
       {
         "q": "Làm tròn số 6473 đến hàng trăm ta được:",
@@ -242,7 +256,8 @@
         "skill": "rounding",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q015"
+        "id": "toan_on-tap-tong-hop_q015",
+        "stage": 4
       },
       {
         "q": "50 : 8 = ? (phép chia có dư)",
@@ -258,7 +273,8 @@
         "skill": "divide-remainder",
         "unit": "toan_on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "toan_on-tap-tong-hop_q016"
+        "id": "toan_on-tap-tong-hop_q016",
+        "stage": 2
       }
     ]
   }

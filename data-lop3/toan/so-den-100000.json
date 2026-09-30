@@ -18,7 +18,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q001"
+        "id": "toan_so-den-100000_q001",
+        "stage": 5
       },
       {
         "q": "Số 40 705 được đọc là:",
@@ -34,7 +35,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q002"
+        "id": "toan_so-den-100000_q002",
+        "stage": 5
       },
       {
         "q": "Số 70 001 được đọc là:",
@@ -50,7 +52,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q003"
+        "id": "toan_so-den-100000_q003",
+        "stage": 5
       },
       {
         "q": "Số 36 105 được đọc là:",
@@ -66,7 +69,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q004"
+        "id": "toan_so-den-100000_q004",
+        "stage": 5
       },
       {
         "q": "Số 81 021 được đọc là:",
@@ -82,7 +86,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q005"
+        "id": "toan_so-den-100000_q005",
+        "stage": 5
       },
       {
         "q": "Số 58 415 được đọc là:",
@@ -98,7 +103,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q006"
+        "id": "toan_so-den-100000_q006",
+        "stage": 5
       },
       {
         "q": "Số 90 090 được đọc là:",
@@ -114,7 +120,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q007"
+        "id": "toan_so-den-100000_q007",
+        "stage": 5
       },
       {
         "q": "Số 12 504 được đọc là:",
@@ -130,7 +137,8 @@
         "skill": "read-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q008"
+        "id": "toan_so-den-100000_q008",
+        "stage": 5
       },
       {
         "q": "Số «ba mươi hai nghìn không trăm linh bảy» viết là:",
@@ -146,7 +154,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q009"
+        "id": "toan_so-den-100000_q009",
+        "stage": 5
       },
       {
         "q": "Số «sáu mươi nghìn bốn trăm năm mươi» viết là:",
@@ -162,7 +171,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q010"
+        "id": "toan_so-den-100000_q010",
+        "stage": 5
       },
       {
         "q": "Số «mười lăm nghìn không trăm mười lăm» viết là:",
@@ -178,7 +188,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q011"
+        "id": "toan_so-den-100000_q011",
+        "stage": 5
       },
       {
         "q": "Số «bốn mươi bảy nghìn ba trăm» viết là:",
@@ -194,7 +205,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q012"
+        "id": "toan_so-den-100000_q012",
+        "stage": 5
       },
       {
         "q": "Số «tám mươi nghìn không trăm linh tám» viết là:",
@@ -210,7 +222,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q013"
+        "id": "toan_so-den-100000_q013",
+        "stage": 5
       },
       {
         "q": "Số «hai mươi mốt nghìn chín trăm mười» viết là:",
@@ -226,7 +239,8 @@
         "skill": "write-number",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q014"
+        "id": "toan_so-den-100000_q014",
+        "stage": 5
       },
       {
         "q": "Số gồm 4 chục nghìn, 7 trăm, 8 đơn vị là:",
@@ -242,7 +256,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q015"
+        "id": "toan_so-den-100000_q015",
+        "stage": 5
       },
       {
         "q": "Số gồm 3 chục nghìn, 2 nghìn, 4 chục, 5 đơn vị là:",
@@ -258,7 +273,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q016"
+        "id": "toan_so-den-100000_q016",
+        "stage": 5
       },
       {
         "q": "Số gồm 6 chục nghìn, 3 trăm là:",
@@ -274,7 +290,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q017"
+        "id": "toan_so-den-100000_q017",
+        "stage": 5
       },
       {
         "q": "Số gồm 9 chục nghìn, 1 nghìn, 6 đơn vị là:",
@@ -290,7 +307,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q018"
+        "id": "toan_so-den-100000_q018",
+        "stage": 5
       },
       {
         "q": "Số gồm 5 chục nghìn, 5 nghìn, 5 trăm là:",
@@ -306,7 +324,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q019"
+        "id": "toan_so-den-100000_q019",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng chục nghìn của số 47 582 là:",
@@ -322,7 +341,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q020"
+        "id": "toan_so-den-100000_q020",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng trăm của số 47 582 là:",
@@ -338,7 +358,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q021"
+        "id": "toan_so-den-100000_q021",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng nghìn của số 30 816 là:",
@@ -354,7 +375,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q022"
+        "id": "toan_so-den-100000_q022",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng chục của số 30 816 là:",
@@ -370,7 +392,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q023"
+        "id": "toan_so-den-100000_q023",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng nghìn của số 92 045 là:",
@@ -386,7 +409,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q024"
+        "id": "toan_so-den-100000_q024",
+        "stage": 5
       },
       {
         "q": "Chữ số hàng đơn vị của số 68 213 là:",
@@ -402,7 +426,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q025"
+        "id": "toan_so-den-100000_q025",
+        "stage": 5
       },
       {
         "q": "Trong số 36 582, chữ số 6 có giá trị là:",
@@ -418,7 +443,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q026"
+        "id": "toan_so-den-100000_q026",
+        "stage": 5
       },
       {
         "q": "Trong số 40 917, chữ số 9 có giá trị là:",
@@ -434,7 +460,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q027"
+        "id": "toan_so-den-100000_q027",
+        "stage": 5
       },
       {
         "q": "Trong số 72 345, chữ số 7 có giá trị là:",
@@ -450,7 +477,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q028"
+        "id": "toan_so-den-100000_q028",
+        "stage": 5
       },
       {
         "q": "Trong số 18 264, chữ số 2 có giá trị là:",
@@ -466,7 +494,8 @@
         "skill": "place-value",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q029"
+        "id": "toan_so-den-100000_q029",
+        "stage": 5
       },
       {
         "q": "Số lớn nhất trong các số 45 230, 45 203, 45 320, 45 023 là:",
@@ -482,7 +511,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q030"
+        "id": "toan_so-den-100000_q030",
+        "stage": 5
       },
       {
         "q": "Số lớn nhất trong các số 9999, 10 000, 9990, 9909 là:",
@@ -498,7 +528,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q031"
+        "id": "toan_so-den-100000_q031",
+        "stage": 4
       },
       {
         "q": "Số lớn nhất trong các số 68 750, 68 570, 68 075, 68 705 là:",
@@ -514,7 +545,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q032"
+        "id": "toan_so-den-100000_q032",
+        "stage": 5
       },
       {
         "q": "Số bé nhất trong các số 30 400, 34 000, 30 040, 30 004 là:",
@@ -530,7 +562,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q033"
+        "id": "toan_so-den-100000_q033",
+        "stage": 5
       },
       {
         "q": "Số bé nhất trong các số 71 099, 71 909, 70 999, 71 990 là:",
@@ -546,7 +579,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q034"
+        "id": "toan_so-den-100000_q034",
+        "stage": 5
       },
       {
         "q": "Số lớn nhất trong các số 25 600, 26 500, 25 060, 26 050 là:",
@@ -562,7 +596,8 @@
         "skill": "compare",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q035"
+        "id": "toan_so-den-100000_q035",
+        "stage": 5
       },
       {
         "q": "Số liền sau của 9999 là:",
@@ -578,7 +613,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q036"
+        "id": "toan_so-den-100000_q036",
+        "stage": 4
       },
       {
         "q": "Số liền trước của 10 000 là:",
@@ -594,7 +630,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q037"
+        "id": "toan_so-den-100000_q037",
+        "stage": 4
       },
       {
         "q": "Số liền sau của 24 999 là:",
@@ -610,7 +647,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q038"
+        "id": "toan_so-den-100000_q038",
+        "stage": 5
       },
       {
         "q": "Số liền trước của 50 000 là:",
@@ -626,7 +664,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q039"
+        "id": "toan_so-den-100000_q039",
+        "stage": 5
       },
       {
         "q": "Số liền sau của 69 909 là:",
@@ -642,7 +681,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q040"
+        "id": "toan_so-den-100000_q040",
+        "stage": 5
       },
       {
         "q": "Số liền trước của 30 100 là:",
@@ -658,7 +698,8 @@
         "skill": "sequence",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q041"
+        "id": "toan_so-den-100000_q041",
+        "stage": 5
       },
       {
         "q": "Làm tròn số 3682 đến hàng trăm ta được:",
@@ -674,7 +715,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q042"
+        "id": "toan_so-den-100000_q042",
+        "stage": 4
       },
       {
         "q": "Làm tròn số 47 đến hàng chục ta được:",
@@ -690,7 +732,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q043"
+        "id": "toan_so-den-100000_q043",
+        "stage": 4
       },
       {
         "q": "Làm tròn số 1499 đến hàng nghìn ta được:",
@@ -706,7 +749,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q044"
+        "id": "toan_so-den-100000_q044",
+        "stage": 4
       },
       {
         "q": "Làm tròn số 865 đến hàng chục ta được:",
@@ -722,7 +766,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q045"
+        "id": "toan_so-den-100000_q045",
+        "stage": 4
       },
       {
         "q": "Làm tròn số 24 500 đến hàng nghìn ta được:",
@@ -738,7 +783,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q046"
+        "id": "toan_so-den-100000_q046",
+        "stage": 5
       },
       {
         "q": "Làm tròn số 73 250 đến hàng chục nghìn ta được:",
@@ -754,7 +800,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q047"
+        "id": "toan_so-den-100000_q047",
+        "stage": 5
       },
       {
         "q": "Làm tròn số 6350 đến hàng trăm ta được:",
@@ -770,7 +817,8 @@
         "skill": "rounding",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q048"
+        "id": "toan_so-den-100000_q048",
+        "stage": 4
       },
       {
         "q": "Số La Mã IX là số:",
@@ -786,7 +834,8 @@
         "skill": "roman",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q049"
+        "id": "toan_so-den-100000_q049",
+        "stage": 4
       },
       {
         "q": "Số La Mã XII là số:",
@@ -802,7 +851,8 @@
         "skill": "roman",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q050"
+        "id": "toan_so-den-100000_q050",
+        "stage": 4
       },
       {
         "q": "Số La Mã XIV là số:",
@@ -818,7 +868,8 @@
         "skill": "roman",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q051"
+        "id": "toan_so-den-100000_q051",
+        "stage": 4
       },
       {
         "q": "Số La Mã XX là số:",
@@ -834,7 +885,8 @@
         "skill": "roman",
         "unit": "so-den-100000",
         "source": "claude-audit-20260924",
-        "id": "toan_so-den-100000_q052"
+        "id": "toan_so-den-100000_q052",
+        "stage": 4
       }
     ]
   }

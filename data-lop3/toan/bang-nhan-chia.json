@@ -15,7 +15,8 @@
         "a": 0,
         "hint": "Đếm thêm 4 ba lần.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q001"
+        "id": "toan_bang-nhan-chia_q001",
+        "stage": 1
       },
       {
         "q": "4 × 6 = ?",
@@ -28,7 +29,8 @@
         "a": 3,
         "hint": "Lấy kết quả 4 × 5 rồi cộng thêm 4.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q002"
+        "id": "toan_bang-nhan-chia_q002",
+        "stage": 1
       },
       {
         "q": "4 × 7 = ?",
@@ -41,7 +43,8 @@
         "a": 2,
         "hint": "Lấy kết quả 4 × 6 rồi cộng thêm 4.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q003"
+        "id": "toan_bang-nhan-chia_q003",
+        "stage": 1
       },
       {
         "q": "4 × 8 = ?",
@@ -54,7 +57,8 @@
         "a": 1,
         "hint": "Lấy kết quả 4 × 7 rồi cộng thêm 4.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q004"
+        "id": "toan_bang-nhan-chia_q004",
+        "stage": 1
       },
       {
         "q": "4 × 9 = ?",
@@ -67,7 +71,8 @@
         "a": 3,
         "hint": "Lấy kết quả 4 × 10 rồi bớt đi 4.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q005"
+        "id": "toan_bang-nhan-chia_q005",
+        "stage": 1
       },
       {
         "q": "4 × 10 = ?",
@@ -80,7 +85,8 @@
         "a": 2,
         "hint": "Nhân với 10 thì viết thêm chữ số 0.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q006"
+        "id": "toan_bang-nhan-chia_q006",
+        "stage": 1
       },
       {
         "q": "4 × 4 = ?",
@@ -93,7 +99,8 @@
         "a": 3,
         "hint": "Lấy kết quả 4 × 3 rồi cộng thêm 4.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q007"
+        "id": "toan_bang-nhan-chia_q007",
+        "stage": 1
       },
       {
         "q": "9 × 4 = ?",
@@ -106,7 +113,8 @@
         "a": 1,
         "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 4.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q008"
+        "id": "toan_bang-nhan-chia_q008",
+        "stage": 1
       },
       {
         "q": "12 : 4 = ?",
@@ -119,7 +127,8 @@
         "a": 2,
         "hint": "Hỏi: 4 nhân mấy thì bằng 12?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q009"
+        "id": "toan_bang-nhan-chia_q009",
+        "stage": 1
       },
       {
         "q": "20 : 4 = ?",
@@ -132,7 +141,8 @@
         "a": 2,
         "hint": "Hỏi: 4 nhân mấy thì bằng 20?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q010"
+        "id": "toan_bang-nhan-chia_q010",
+        "stage": 1
       },
       {
         "q": "24 : 4 = ?",
@@ -145,7 +155,8 @@
         "a": 2,
         "hint": "Hỏi: 4 nhân mấy thì bằng 24?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q011"
+        "id": "toan_bang-nhan-chia_q011",
+        "stage": 1
       },
       {
         "q": "28 : 4 = ?",
@@ -158,7 +169,8 @@
         "a": 1,
         "hint": "Hỏi: 4 nhân mấy thì bằng 28?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q012"
+        "id": "toan_bang-nhan-chia_q012",
+        "stage": 1
       },
       {
         "q": "32 : 4 = ?",
@@ -171,7 +183,8 @@
         "a": 2,
         "hint": "Hỏi: 4 nhân mấy thì bằng 32?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q013"
+        "id": "toan_bang-nhan-chia_q013",
+        "stage": 1
       },
       {
         "q": "36 : 4 = ?",
@@ -184,7 +197,8 @@
         "a": 3,
         "hint": "Hỏi: 4 nhân mấy thì bằng 36?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q014"
+        "id": "toan_bang-nhan-chia_q014",
+        "stage": 1
       },
       {
         "q": "40 : 4 = ?",
@@ -197,7 +211,8 @@
         "a": 0,
         "hint": "Hỏi: 4 nhân mấy thì bằng 40?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q015"
+        "id": "toan_bang-nhan-chia_q015",
+        "stage": 1
       },
       {
         "q": "16 : 4 = ?",
@@ -210,7 +225,8 @@
         "a": 2,
         "hint": "Hỏi: 4 nhân mấy thì bằng 16?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q016"
+        "id": "toan_bang-nhan-chia_q016",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 4 = 24",
@@ -223,7 +239,8 @@
         "a": 3,
         "hint": "Chia 24 cho 4 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q017"
+        "id": "toan_bang-nhan-chia_q017",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  4 × ? = 36",
@@ -236,7 +253,8 @@
         "a": 0,
         "hint": "Chia 36 cho 4 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q018"
+        "id": "toan_bang-nhan-chia_q018",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 4 = 7",
@@ -249,7 +267,8 @@
         "a": 0,
         "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q019"
+        "id": "toan_bang-nhan-chia_q019",
+        "stage": 1
       },
       {
         "q": "Đếm thêm 4:  4; 8; 12; ...; 20. Số còn thiếu là?",
@@ -262,7 +281,8 @@
         "a": 3,
         "hint": "Mỗi số hơn số đứng trước nó 4 đơn vị.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q020"
+        "id": "toan_bang-nhan-chia_q020",
+        "stage": 1
       },
       {
         "q": "Đếm lùi 4:  40; 36; 32; ...; 24. Số còn thiếu là?",
@@ -275,7 +295,8 @@
         "a": 0,
         "hint": "Mỗi số kém số đứng trước nó 4 đơn vị.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q021"
+        "id": "toan_bang-nhan-chia_q021",
+        "stage": 1
       },
       {
         "q": "Biết 4 × 6 = 24. Vậy 24 : 4 = ?",
@@ -288,7 +309,8 @@
         "a": 2,
         "hint": "Phép chia là phép tính ngược của phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q022"
+        "id": "toan_bang-nhan-chia_q022",
+        "stage": 1
       },
       {
         "q": "Trong các phép chia cho 4, phép nào có kết quả LỚN NHẤT?",
@@ -301,7 +323,8 @@
         "a": 2,
         "hint": "Cùng chia cho 4, số bị chia lớn hơn thì thương lớn hơn.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q023"
+        "id": "toan_bang-nhan-chia_q023",
+        "stage": 1
       },
       {
         "q": "Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô như vậy có bao nhiêu bánh xe?",
@@ -314,7 +337,8 @@
         "a": 1,
         "hint": "Có 8 nhóm, mỗi nhóm 4 bánh — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q024"
+        "id": "toan_bang-nhan-chia_q024",
+        "stage": 1
       },
       {
         "q": "Mỗi bàn học có 4 chỗ ngồi. Hỏi 9 bàn như thế có tất cả bao nhiêu chỗ ngồi?",
@@ -327,7 +351,8 @@
         "a": 2,
         "hint": "Có 9 nhóm, mỗi nhóm 4 chỗ — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q025"
+        "id": "toan_bang-nhan-chia_q025",
+        "stage": 1
       },
       {
         "q": "Nhà Lan có 28 con gà nhốt đều vào 4 chuồng. Hỏi mỗi chuồng có bao nhiêu con gà?",
@@ -340,7 +365,8 @@
         "a": 1,
         "hint": "Chia đều 28 con vào 4 chuồng — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q026"
+        "id": "toan_bang-nhan-chia_q026",
+        "stage": 1
       },
       {
         "q": "Cô giáo chia đều 36 quyển vở cho 4 tổ. Hỏi mỗi tổ được bao nhiêu quyển?",
@@ -353,7 +379,8 @@
         "a": 0,
         "hint": "Chia đều 36 quyển cho 4 tổ — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q027"
+        "id": "toan_bang-nhan-chia_q027",
+        "stage": 1
       },
       {
         "q": "Thỏ có 4 hộp bút, mỗi hộp 6 chiếc. Thỏ cho bạn 4 chiếc. Hỏi Thỏ còn lại bao nhiêu chiếc bút?",
@@ -366,7 +393,8 @@
         "a": 2,
         "hint": "Tìm tổng số bút trước, rồi mới bớt đi phần đã cho.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q028"
+        "id": "toan_bang-nhan-chia_q028",
+        "stage": 1
       },
       {
         "q": "6 × 2 = ?",
@@ -379,7 +407,8 @@
         "a": 0,
         "hint": "Đếm thêm 6 hai lần.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q029"
+        "id": "toan_bang-nhan-chia_q029",
+        "stage": 1
       },
       {
         "q": "6 × 3 = ?",
@@ -392,7 +421,8 @@
         "a": 1,
         "hint": "Lấy kết quả 6 × 2 rồi cộng thêm 6.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q030"
+        "id": "toan_bang-nhan-chia_q030",
+        "stage": 1
       },
       {
         "q": "6 × 4 = ?",
@@ -405,7 +435,8 @@
         "a": 1,
         "hint": "Lấy kết quả 6 × 3 rồi cộng thêm 6.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q031"
+        "id": "toan_bang-nhan-chia_q031",
+        "stage": 1
       },
       {
         "q": "6 × 5 = ?",
@@ -418,7 +449,8 @@
         "a": 0,
         "hint": "Lấy kết quả 6 × 4 rồi cộng thêm 6.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q032"
+        "id": "toan_bang-nhan-chia_q032",
+        "stage": 1
       },
       {
         "q": "6 × 6 = ?",
@@ -431,7 +463,8 @@
         "a": 3,
         "hint": "Lấy kết quả 6 × 5 rồi cộng thêm 6.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q033"
+        "id": "toan_bang-nhan-chia_q033",
+        "stage": 1
       },
       {
         "q": "6 × 7 = ?",
@@ -444,7 +477,8 @@
         "a": 0,
         "hint": "Lấy kết quả 6 × 6 rồi cộng thêm 6.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q034"
+        "id": "toan_bang-nhan-chia_q034",
+        "stage": 1
       },
       {
         "q": "6 × 8 = ?",
@@ -457,7 +491,8 @@
         "a": 3,
         "hint": "Lấy kết quả 6 × 7 rồi cộng thêm 6.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q035"
+        "id": "toan_bang-nhan-chia_q035",
+        "stage": 1
       },
       {
         "q": "6 × 9 = ?",
@@ -470,7 +505,8 @@
         "a": 3,
         "hint": "Lấy kết quả 6 × 10 rồi bớt đi 6.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q036"
+        "id": "toan_bang-nhan-chia_q036",
+        "stage": 1
       },
       {
         "q": "6 × 10 = ?",
@@ -483,7 +519,8 @@
         "a": 2,
         "hint": "Nhân với 10 thì viết thêm chữ số 0.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q037"
+        "id": "toan_bang-nhan-chia_q037",
+        "stage": 1
       },
       {
         "q": "3 × 6 = ?",
@@ -496,7 +533,8 @@
         "a": 0,
         "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q038"
+        "id": "toan_bang-nhan-chia_q038",
+        "stage": 1
       },
       {
         "q": "8 × 6 = ?",
@@ -509,7 +547,8 @@
         "a": 2,
         "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 6.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q039"
+        "id": "toan_bang-nhan-chia_q039",
+        "stage": 1
       },
       {
         "q": "12 : 6 = ?",
@@ -522,7 +561,8 @@
         "a": 1,
         "hint": "Hỏi: 6 nhân mấy thì bằng 12?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q040"
+        "id": "toan_bang-nhan-chia_q040",
+        "stage": 1
       },
       {
         "q": "18 : 6 = ?",
@@ -535,7 +575,8 @@
         "a": 3,
         "hint": "Hỏi: 6 nhân mấy thì bằng 18?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q041"
+        "id": "toan_bang-nhan-chia_q041",
+        "stage": 1
       },
       {
         "q": "24 : 6 = ?",
@@ -548,7 +589,8 @@
         "a": 1,
         "hint": "Hỏi: 6 nhân mấy thì bằng 24?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q042"
+        "id": "toan_bang-nhan-chia_q042",
+        "stage": 1
       },
       {
         "q": "30 : 6 = ?",
@@ -561,7 +603,8 @@
         "a": 2,
         "hint": "Hỏi: 6 nhân mấy thì bằng 30?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q043"
+        "id": "toan_bang-nhan-chia_q043",
+        "stage": 1
       },
       {
         "q": "36 : 6 = ?",
@@ -574,7 +617,8 @@
         "a": 0,
         "hint": "Hỏi: 6 nhân mấy thì bằng 36?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q044"
+        "id": "toan_bang-nhan-chia_q044",
+        "stage": 1
       },
       {
         "q": "42 : 6 = ?",
@@ -587,7 +631,8 @@
         "a": 0,
         "hint": "Hỏi: 6 nhân mấy thì bằng 42?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q045"
+        "id": "toan_bang-nhan-chia_q045",
+        "stage": 1
       },
       {
         "q": "48 : 6 = ?",
@@ -600,7 +645,8 @@
         "a": 0,
         "hint": "Hỏi: 6 nhân mấy thì bằng 48?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q046"
+        "id": "toan_bang-nhan-chia_q046",
+        "stage": 1
       },
       {
         "q": "54 : 6 = ?",
@@ -613,7 +659,8 @@
         "a": 0,
         "hint": "Hỏi: 6 nhân mấy thì bằng 54?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q047"
+        "id": "toan_bang-nhan-chia_q047",
+        "stage": 1
       },
       {
         "q": "60 : 6 = ?",
@@ -626,7 +673,8 @@
         "a": 2,
         "hint": "Hỏi: 6 nhân mấy thì bằng 60?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q048"
+        "id": "toan_bang-nhan-chia_q048",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  6 × ? = 42",
@@ -639,7 +687,8 @@
         "a": 2,
         "hint": "Chia 42 cho 6 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q049"
+        "id": "toan_bang-nhan-chia_q049",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 6 = 54",
@@ -652,7 +701,8 @@
         "a": 1,
         "hint": "Chia 54 cho 6 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q050"
+        "id": "toan_bang-nhan-chia_q050",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 6 = 8",
@@ -665,7 +715,8 @@
         "a": 0,
         "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q051"
+        "id": "toan_bang-nhan-chia_q051",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  30 : ? = 5",
@@ -678,7 +729,8 @@
         "a": 1,
         "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q052"
+        "id": "toan_bang-nhan-chia_q052",
+        "stage": 1
       },
       {
         "q": "Đếm thêm 6:  6; 12; 18; ...; 30. Số còn thiếu là?",
@@ -691,7 +743,8 @@
         "a": 3,
         "hint": "Mỗi số hơn số đứng trước nó 6 đơn vị.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q053"
+        "id": "toan_bang-nhan-chia_q053",
+        "stage": 1
       },
       {
         "q": "Đếm lùi 6:  60; 54; 48; ...; 36. Số còn thiếu là?",
@@ -704,7 +757,8 @@
         "a": 3,
         "hint": "Mỗi số kém số đứng trước nó 6 đơn vị.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q054"
+        "id": "toan_bang-nhan-chia_q054",
+        "stage": 1
       },
       {
         "q": "Ba số tiếp theo của dãy 18; 24; 30; ... là?",
@@ -717,7 +771,8 @@
         "a": 1,
         "hint": "Xem mỗi lần cộng thêm mấy đơn vị.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q055"
+        "id": "toan_bang-nhan-chia_q055",
+        "stage": 1
       },
       {
         "q": "Tính:  6 × 9 + 6 = ?",
@@ -730,7 +785,8 @@
         "a": 1,
         "hint": "Làm phép nhân trước, phép cộng sau.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q056"
+        "id": "toan_bang-nhan-chia_q056",
+        "stage": 1
       },
       {
         "q": "Tính:  6 × 6 + 6 = ?",
@@ -743,7 +799,8 @@
         "a": 2,
         "hint": "Làm phép nhân trước, phép cộng sau.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q057"
+        "id": "toan_bang-nhan-chia_q057",
+        "stage": 1
       },
       {
         "q": "Biết 6 × 8 = 48. Vậy 48 : 8 = ?",
@@ -756,7 +813,8 @@
         "a": 0,
         "hint": "Lấy tích chia cho thừa số này thì được thừa số kia.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q058"
+        "id": "toan_bang-nhan-chia_q058",
+        "stage": 1
       },
       {
         "q": "Trong các phép chia cho 6, phép nào có kết quả BÉ NHẤT?",
@@ -769,7 +827,8 @@
         "a": 1,
         "hint": "Cùng chia cho 6, số bị chia bé hơn thì thương bé hơn.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q059"
+        "id": "toan_bang-nhan-chia_q059",
+        "stage": 1
       },
       {
         "q": "Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc bút chì màu?",
@@ -782,7 +841,8 @@
         "a": 3,
         "hint": "Có 7 hộp, mỗi hộp 6 chiếc — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q060"
+        "id": "toan_bang-nhan-chia_q060",
+        "stage": 1
       },
       {
         "q": "Mỗi bàn ăn xếp được 6 người. Hỏi 8 bàn như thế xếp được bao nhiêu người?",
@@ -795,7 +855,8 @@
         "a": 0,
         "hint": "Có 8 bàn, mỗi bàn 6 người — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q061"
+        "id": "toan_bang-nhan-chia_q061",
+        "stage": 1
       },
       {
         "q": "Một cụm hoa súng có 6 bông. Hỏi 9 cụm hoa như vậy có bao nhiêu bông?",
@@ -808,7 +869,8 @@
         "a": 2,
         "hint": "Có 9 cụm, mỗi cụm 6 bông — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q062"
+        "id": "toan_bang-nhan-chia_q062",
+        "stage": 1
       },
       {
         "q": "Có 36 quả cam xếp đều vào 6 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cam?",
@@ -821,7 +883,8 @@
         "a": 2,
         "hint": "Chia đều 36 quả vào 6 đĩa — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q063"
+        "id": "toan_bang-nhan-chia_q063",
+        "stage": 1
       },
       {
         "q": "Có 48 học sinh xếp thành các hàng, mỗi hàng 6 bạn. Hỏi xếp được bao nhiêu hàng?",
@@ -834,7 +897,8 @@
         "a": 3,
         "hint": "Xem 48 gồm mấy nhóm 6 — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q064"
+        "id": "toan_bang-nhan-chia_q064",
+        "stage": 1
       },
       {
         "q": "Mẹ mua 6 vỉ trứng, mỗi vỉ 6 quả. Mẹ dùng hết 6 quả. Hỏi còn lại bao nhiêu quả trứng?",
@@ -847,7 +911,8 @@
         "a": 0,
         "hint": "Tìm tổng số trứng trước, rồi mới bớt đi phần đã dùng.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q065"
+        "id": "toan_bang-nhan-chia_q065",
+        "stage": 1
       },
       {
         "q": "7 × 2 = ?",
@@ -860,7 +925,8 @@
         "a": 1,
         "hint": "Đếm thêm 7 hai lần.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q066"
+        "id": "toan_bang-nhan-chia_q066",
+        "stage": 1
       },
       {
         "q": "7 × 3 = ?",
@@ -873,7 +939,8 @@
         "a": 0,
         "hint": "Lấy kết quả 7 × 2 rồi cộng thêm 7.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q067"
+        "id": "toan_bang-nhan-chia_q067",
+        "stage": 1
       },
       {
         "q": "7 × 4 = ?",
@@ -886,7 +953,8 @@
         "a": 0,
         "hint": "Lấy kết quả 7 × 3 rồi cộng thêm 7.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q068"
+        "id": "toan_bang-nhan-chia_q068",
+        "stage": 1
       },
       {
         "q": "7 × 5 = ?",
@@ -899,7 +967,8 @@
         "a": 1,
         "hint": "Lấy kết quả 7 × 4 rồi cộng thêm 7.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q069"
+        "id": "toan_bang-nhan-chia_q069",
+        "stage": 1
       },
       {
         "q": "7 × 6 = ?",
@@ -912,7 +981,8 @@
         "a": 3,
         "hint": "Lấy kết quả 7 × 5 rồi cộng thêm 7.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q070"
+        "id": "toan_bang-nhan-chia_q070",
+        "stage": 1
       },
       {
         "q": "7 × 7 = ?",
@@ -925,7 +995,8 @@
         "a": 3,
         "hint": "Lấy kết quả 7 × 6 rồi cộng thêm 7.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q071"
+        "id": "toan_bang-nhan-chia_q071",
+        "stage": 1
       },
       {
         "q": "7 × 8 = ?",
@@ -938,7 +1009,8 @@
         "a": 3,
         "hint": "Lấy kết quả 7 × 7 rồi cộng thêm 7.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q072"
+        "id": "toan_bang-nhan-chia_q072",
+        "stage": 1
       },
       {
         "q": "7 × 9 = ?",
@@ -951,7 +1023,8 @@
         "a": 1,
         "hint": "Lấy kết quả 7 × 10 rồi bớt đi 7.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q073"
+        "id": "toan_bang-nhan-chia_q073",
+        "stage": 1
       },
       {
         "q": "7 × 10 = ?",
@@ -964,7 +1037,8 @@
         "a": 1,
         "hint": "Nhân với 10 thì viết thêm chữ số 0.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q074"
+        "id": "toan_bang-nhan-chia_q074",
+        "stage": 1
       },
       {
         "q": "5 × 7 = ?",
@@ -977,7 +1051,8 @@
         "a": 0,
         "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q075"
+        "id": "toan_bang-nhan-chia_q075",
+        "stage": 1
       },
       {
         "q": "9 × 7 = ?",
@@ -990,7 +1065,8 @@
         "a": 0,
         "hint": "Đổi chỗ hai thừa số rồi dùng bảng nhân 7.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q076"
+        "id": "toan_bang-nhan-chia_q076",
+        "stage": 1
       },
       {
         "q": "14 : 7 = ?",
@@ -1003,7 +1079,8 @@
         "a": 0,
         "hint": "Hỏi: 7 nhân mấy thì bằng 14?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q077"
+        "id": "toan_bang-nhan-chia_q077",
+        "stage": 1
       },
       {
         "q": "21 : 7 = ?",
@@ -1016,7 +1093,8 @@
         "a": 0,
         "hint": "Hỏi: 7 nhân mấy thì bằng 21?",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q078"
+        "id": "toan_bang-nhan-chia_q078",
+        "stage": 1
       },
       {
         "q": "28 : 7 = ?",
@@ -1029,7 +1107,8 @@
         "a": 3,
         "hint": "Hỏi: 7 nhân mấy thì bằng 28?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q079"
+        "id": "toan_bang-nhan-chia_q079",
+        "stage": 1
       },
       {
         "q": "35 : 7 = ?",
@@ -1042,7 +1121,8 @@
         "a": 1,
         "hint": "Hỏi: 7 nhân mấy thì bằng 35?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q080"
+        "id": "toan_bang-nhan-chia_q080",
+        "stage": 1
       },
       {
         "q": "42 : 7 = ?",
@@ -1055,7 +1135,8 @@
         "a": 3,
         "hint": "Hỏi: 7 nhân mấy thì bằng 42?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q081"
+        "id": "toan_bang-nhan-chia_q081",
+        "stage": 1
       },
       {
         "q": "49 : 7 = ?",
@@ -1068,7 +1149,8 @@
         "a": 3,
         "hint": "Hỏi: 7 nhân mấy thì bằng 49?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q082"
+        "id": "toan_bang-nhan-chia_q082",
+        "stage": 1
       },
       {
         "q": "56 : 7 = ?",
@@ -1081,7 +1163,8 @@
         "a": 3,
         "hint": "Hỏi: 7 nhân mấy thì bằng 56?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q083"
+        "id": "toan_bang-nhan-chia_q083",
+        "stage": 1
       },
       {
         "q": "63 : 7 = ?",
@@ -1094,7 +1177,8 @@
         "a": 1,
         "hint": "Hỏi: 7 nhân mấy thì bằng 63?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q084"
+        "id": "toan_bang-nhan-chia_q084",
+        "stage": 1
       },
       {
         "q": "70 : 7 = ?",
@@ -1107,7 +1191,8 @@
         "a": 3,
         "hint": "Hỏi: 7 nhân mấy thì bằng 70?",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q085"
+        "id": "toan_bang-nhan-chia_q085",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  7 × ? = 56",
@@ -1120,7 +1205,8 @@
         "a": 1,
         "hint": "Chia 56 cho 7 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q086"
+        "id": "toan_bang-nhan-chia_q086",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 7 = 63",
@@ -1133,7 +1219,8 @@
         "a": 3,
         "hint": "Chia 63 cho 7 để tìm thừa số còn thiếu.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q087"
+        "id": "toan_bang-nhan-chia_q087",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 7 = 6",
@@ -1146,7 +1233,8 @@
         "a": 1,
         "hint": "Muốn tìm số bị chia, lấy thương nhân với số chia.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q088"
+        "id": "toan_bang-nhan-chia_q088",
+        "stage": 1
       },
       {
         "q": "Số thích hợp điền vào ô trống:  35 : ? = 5",
@@ -1159,7 +1247,8 @@
         "a": 1,
         "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q089"
+        "id": "toan_bang-nhan-chia_q089",
+        "stage": 1
       },
       {
         "q": "Đếm thêm 7:  7; 14; 21; ...; 35. Số còn thiếu là?",
@@ -1172,7 +1261,8 @@
         "a": 2,
         "hint": "Mỗi số hơn số đứng trước nó 7 đơn vị.",
         "difficulty": 1,
-        "id": "toan_bang-nhan-chia_q090"
+        "id": "toan_bang-nhan-chia_q090",
+        "stage": 1
       },
       {
         "q": "Đếm lùi 7:  70; 63; 56; ...; 42. Số còn thiếu là?",
@@ -1185,7 +1275,8 @@
         "a": 2,
         "hint": "Mỗi số kém số đứng trước nó 7 đơn vị.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q091"
+        "id": "toan_bang-nhan-chia_q091",
+        "stage": 1
       },
       {
         "q": "Ba số tiếp theo của dãy 21; 28; 35; ... là?",
@@ -1198,7 +1289,8 @@
         "a": 1,
         "hint": "Xem mỗi lần cộng thêm mấy đơn vị.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q092"
+        "id": "toan_bang-nhan-chia_q092",
+        "stage": 1
       },
       {
         "q": "Tính:  7 × 8 + 7 = ?",
@@ -1211,7 +1303,8 @@
         "a": 1,
         "hint": "Làm phép nhân trước, phép cộng sau.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q093"
+        "id": "toan_bang-nhan-chia_q093",
+        "stage": 1
       },
       {
         "q": "Tính:  7 × 5 + 15 = ?",
@@ -1224,7 +1317,8 @@
         "a": 3,
         "hint": "Làm phép nhân trước, phép cộng sau.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q094"
+        "id": "toan_bang-nhan-chia_q094",
+        "stage": 1
       },
       {
         "q": "Biết 7 × 9 = 63. Vậy 63 : 9 = ?",
@@ -1237,7 +1331,8 @@
         "a": 1,
         "hint": "Lấy tích chia cho thừa số này thì được thừa số kia.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q095"
+        "id": "toan_bang-nhan-chia_q095",
+        "stage": 1
       },
       {
         "q": "Trong các phép chia cho 7, phép nào có kết quả LỚN NHẤT?",
@@ -1250,7 +1345,8 @@
         "a": 2,
         "hint": "Cùng chia cho 7, số bị chia lớn hơn thì thương lớn hơn.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q096"
+        "id": "toan_bang-nhan-chia_q096",
+        "stage": 1
       },
       {
         "q": "Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày?",
@@ -1263,7 +1359,8 @@
         "a": 2,
         "hint": "Có 6 tuần, mỗi tuần 7 ngày — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q097"
+        "id": "toan_bang-nhan-chia_q097",
+        "stage": 1
       },
       {
         "q": "Mỗi giỏ có 7 quả cam. Hỏi 8 giỏ như thế có bao nhiêu quả cam?",
@@ -1276,7 +1373,8 @@
         "a": 1,
         "hint": "Có 8 giỏ, mỗi giỏ 7 quả — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q098"
+        "id": "toan_bang-nhan-chia_q098",
+        "stage": 1
       },
       {
         "q": "Một tổ có 7 bạn. Hỏi 9 tổ như thế có bao nhiêu bạn?",
@@ -1289,7 +1387,8 @@
         "a": 0,
         "hint": "Có 9 tổ, mỗi tổ 7 bạn — dùng phép nhân.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q099"
+        "id": "toan_bang-nhan-chia_q099",
+        "stage": 1
       },
       {
         "q": "Có 49 quyển vở chia đều cho 7 bạn. Hỏi mỗi bạn được bao nhiêu quyển?",
@@ -1302,7 +1401,8 @@
         "a": 2,
         "hint": "Chia đều 49 quyển cho 7 bạn — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q100"
+        "id": "toan_bang-nhan-chia_q100",
+        "stage": 1
       },
       {
         "q": "Có 56 bông hoa cắm đều vào 7 lọ. Hỏi mỗi lọ có bao nhiêu bông?",
@@ -1315,7 +1415,8 @@
         "a": 2,
         "hint": "Chia đều 56 bông vào 7 lọ — dùng phép chia.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q101"
+        "id": "toan_bang-nhan-chia_q101",
+        "stage": 1
       },
       {
         "q": "Thỏ đọc mỗi ngày 7 trang sách. Hỏi sau 2 tuần Thỏ đọc được bao nhiêu trang?",
@@ -1328,7 +1429,8 @@
         "a": 3,
         "hint": "Đổi 2 tuần ra số ngày trước, rồi mới nhân với 7.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q102"
+        "id": "toan_bang-nhan-chia_q102",
+        "stage": 1
       },
       {
         "q": "3 × 8 = ?",
@@ -1341,7 +1443,8 @@
         "a": 2,
         "hint": "Lấy kết quả 3 × 7 rồi cộng thêm 3.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q103"
+        "id": "toan_bang-nhan-chia_q103",
+        "stage": 1
       },
       {
         "q": "5 × 9 = ?",
@@ -1354,7 +1457,8 @@
         "a": 0,
         "hint": "Lấy kết quả 5 × 10 rồi bớt đi 5.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q104"
+        "id": "toan_bang-nhan-chia_q104",
+        "stage": 1
       },
       {
         "q": "Số 42 có trong bảng nhân nào dưới đây?",
@@ -1367,7 +1471,8 @@
         "a": 2,
         "hint": "Thử xem 42 chia hết cho những số nào.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q105"
+        "id": "toan_bang-nhan-chia_q105",
+        "stage": 1
       },
       {
         "q": "Số nào vừa có trong bảng nhân 4, vừa có trong bảng nhân 6?",
@@ -1380,7 +1485,8 @@
         "a": 3,
         "hint": "Thử từng số xem có chia hết cho cả 4 và 6 không.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q106"
+        "id": "toan_bang-nhan-chia_q106",
+        "stage": 1
       },
       {
         "q": "Hai phép tính nào dưới đây có CÙNG kết quả?",
@@ -1393,7 +1499,8 @@
         "a": 1,
         "hint": "Đổi chỗ hai thừa số thì tích không đổi.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q107"
+        "id": "toan_bang-nhan-chia_q107",
+        "stage": 1
       },
       {
         "q": "Phép tính nào dưới đây có kết quả bằng 36?",
@@ -1406,7 +1513,8 @@
         "a": 3,
         "hint": "Tính nhẩm từng đáp án rồi so với 36.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q108"
+        "id": "toan_bang-nhan-chia_q108",
+        "stage": 1
       },
       {
         "q": "Phép tính nào có kết quả BẰNG 6 × 7?",
@@ -1419,7 +1527,8 @@
         "a": 0,
         "hint": "Nhớ tính chất đổi chỗ hai thừa số.",
         "difficulty": 2,
-        "id": "toan_bang-nhan-chia_q109"
+        "id": "toan_bang-nhan-chia_q109",
+        "stage": 1
       },
       {
         "q": "Phép nhân nào dưới đây có kết quả lớn nhất?",
@@ -1432,7 +1541,8 @@
         "a": 3,
         "hint": "Tính nhẩm từng đáp án rồi so sánh.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q110"
+        "id": "toan_bang-nhan-chia_q110",
+        "stage": 1
       },
       {
         "q": "Mỗi tuần Thỏ học 6 buổi, mỗi buổi 4 tiết. Hỏi mỗi tuần Thỏ học bao nhiêu tiết?",
@@ -1445,7 +1555,8 @@
         "a": 0,
         "hint": "Có 6 buổi, mỗi buổi 4 tiết — dùng phép nhân.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q111"
+        "id": "toan_bang-nhan-chia_q111",
+        "stage": 1
       },
       {
         "q": "Có 42 cái bánh chia đều cho 6 bạn, mỗi bạn lại ăn hết 3 cái. Hỏi mỗi bạn còn lại mấy cái bánh?",
@@ -1458,7 +1569,8 @@
         "a": 2,
         "hint": "Chia đều trước để biết mỗi bạn có mấy cái, rồi mới bớt đi.",
         "difficulty": 3,
-        "id": "toan_bang-nhan-chia_q112"
+        "id": "toan_bang-nhan-chia_q112",
+        "stage": 1
       },
       {
         "q": "8 × 2 = ?",
@@ -1473,7 +1585,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q113"
+        "id": "toan_bang-nhan-chia_q113",
+        "stage": 1
       },
       {
         "q": "8 × 3 = ?",
@@ -1488,7 +1601,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q114"
+        "id": "toan_bang-nhan-chia_q114",
+        "stage": 1
       },
       {
         "q": "8 × 4 = ?",
@@ -1503,7 +1617,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q115"
+        "id": "toan_bang-nhan-chia_q115",
+        "stage": 1
       },
       {
         "q": "8 × 5 = ?",
@@ -1518,7 +1633,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q116"
+        "id": "toan_bang-nhan-chia_q116",
+        "stage": 1
       },
       {
         "q": "8 × 6 = ?",
@@ -1533,7 +1649,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q117"
+        "id": "toan_bang-nhan-chia_q117",
+        "stage": 1
       },
       {
         "q": "8 × 7 = ?",
@@ -1548,7 +1665,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q118"
+        "id": "toan_bang-nhan-chia_q118",
+        "stage": 1
       },
       {
         "q": "8 × 8 = ?",
@@ -1563,7 +1681,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q119"
+        "id": "toan_bang-nhan-chia_q119",
+        "stage": 1
       },
       {
         "q": "8 × 9 = ?",
@@ -1578,7 +1697,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q120"
+        "id": "toan_bang-nhan-chia_q120",
+        "stage": 1
       },
       {
         "q": "8 × 10 = ?",
@@ -1593,7 +1713,8 @@
         "difficulty": 1,
         "skill": "times-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q121"
+        "id": "toan_bang-nhan-chia_q121",
+        "stage": 1
       },
       {
         "q": "16 : 8 = ?",
@@ -1608,7 +1729,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q122"
+        "id": "toan_bang-nhan-chia_q122",
+        "stage": 1
       },
       {
         "q": "24 : 8 = ?",
@@ -1623,7 +1745,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q123"
+        "id": "toan_bang-nhan-chia_q123",
+        "stage": 1
       },
       {
         "q": "32 : 8 = ?",
@@ -1638,7 +1761,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q124"
+        "id": "toan_bang-nhan-chia_q124",
+        "stage": 1
       },
       {
         "q": "40 : 8 = ?",
@@ -1653,7 +1777,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q125"
+        "id": "toan_bang-nhan-chia_q125",
+        "stage": 1
       },
       {
         "q": "48 : 8 = ?",
@@ -1668,7 +1793,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q126"
+        "id": "toan_bang-nhan-chia_q126",
+        "stage": 1
       },
       {
         "q": "56 : 8 = ?",
@@ -1683,7 +1809,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q127"
+        "id": "toan_bang-nhan-chia_q127",
+        "stage": 1
       },
       {
         "q": "64 : 8 = ?",
@@ -1698,7 +1825,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q128"
+        "id": "toan_bang-nhan-chia_q128",
+        "stage": 1
       },
       {
         "q": "72 : 8 = ?",
@@ -1713,7 +1841,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q129"
+        "id": "toan_bang-nhan-chia_q129",
+        "stage": 1
       },
       {
         "q": "80 : 8 = ?",
@@ -1728,7 +1857,8 @@
         "difficulty": 1,
         "skill": "divide-8",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q130"
+        "id": "toan_bang-nhan-chia_q130",
+        "stage": 1
       },
       {
         "q": "9 × 2 = ?",
@@ -1743,7 +1873,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q131"
+        "id": "toan_bang-nhan-chia_q131",
+        "stage": 1
       },
       {
         "q": "9 × 3 = ?",
@@ -1758,7 +1889,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q132"
+        "id": "toan_bang-nhan-chia_q132",
+        "stage": 1
       },
       {
         "q": "9 × 4 = ?",
@@ -1773,7 +1905,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q133"
+        "id": "toan_bang-nhan-chia_q133",
+        "stage": 1
       },
       {
         "q": "9 × 5 = ?",
@@ -1788,7 +1921,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q134"
+        "id": "toan_bang-nhan-chia_q134",
+        "stage": 1
       },
       {
         "q": "9 × 6 = ?",
@@ -1803,7 +1937,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q135"
+        "id": "toan_bang-nhan-chia_q135",
+        "stage": 1
       },
       {
         "q": "9 × 7 = ?",
@@ -1818,7 +1953,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q136"
+        "id": "toan_bang-nhan-chia_q136",
+        "stage": 1
       },
       {
         "q": "9 × 8 = ?",
@@ -1833,7 +1969,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q137"
+        "id": "toan_bang-nhan-chia_q137",
+        "stage": 1
       },
       {
         "q": "9 × 9 = ?",
@@ -1848,7 +1985,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q138"
+        "id": "toan_bang-nhan-chia_q138",
+        "stage": 1
       },
       {
         "q": "9 × 10 = ?",
@@ -1863,7 +2001,8 @@
         "difficulty": 1,
         "skill": "times-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q139"
+        "id": "toan_bang-nhan-chia_q139",
+        "stage": 1
       },
       {
         "q": "18 : 9 = ?",
@@ -1878,7 +2017,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q140"
+        "id": "toan_bang-nhan-chia_q140",
+        "stage": 1
       },
       {
         "q": "27 : 9 = ?",
@@ -1893,7 +2033,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q141"
+        "id": "toan_bang-nhan-chia_q141",
+        "stage": 1
       },
       {
         "q": "36 : 9 = ?",
@@ -1908,7 +2049,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q142"
+        "id": "toan_bang-nhan-chia_q142",
+        "stage": 1
       },
       {
         "q": "45 : 9 = ?",
@@ -1923,7 +2065,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q143"
+        "id": "toan_bang-nhan-chia_q143",
+        "stage": 1
       },
       {
         "q": "54 : 9 = ?",
@@ -1938,7 +2081,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q144"
+        "id": "toan_bang-nhan-chia_q144",
+        "stage": 1
       },
       {
         "q": "63 : 9 = ?",
@@ -1953,7 +2097,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q145"
+        "id": "toan_bang-nhan-chia_q145",
+        "stage": 1
       },
       {
         "q": "72 : 9 = ?",
@@ -1968,7 +2113,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q146"
+        "id": "toan_bang-nhan-chia_q146",
+        "stage": 1
       },
       {
         "q": "81 : 9 = ?",
@@ -1983,7 +2129,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q147"
+        "id": "toan_bang-nhan-chia_q147",
+        "stage": 1
       },
       {
         "q": "90 : 9 = ?",
@@ -1998,7 +2145,8 @@
         "difficulty": 1,
         "skill": "divide-9",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q148"
+        "id": "toan_bang-nhan-chia_q148",
+        "stage": 1
       },
       {
         "q": "Mỗi túi có 8 cái kẹo. Hỏi 6 túi có bao nhiêu cái kẹo?",
@@ -2013,7 +2161,8 @@
         "difficulty": 2,
         "skill": "word-problem",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q149"
+        "id": "toan_bang-nhan-chia_q149",
+        "stage": 1
       },
       {
         "q": "Có 81 quả cam xếp đều vào 9 đĩa. Hỏi mỗi đĩa có bao nhiêu quả?",
@@ -2028,7 +2177,8 @@
         "difficulty": 2,
         "skill": "word-problem",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q150"
+        "id": "toan_bang-nhan-chia_q150",
+        "stage": 1
       },
       {
         "q": "Mỗi tuần Thỏ học 8 tiết Toán. Hỏi 4 tuần Thỏ học bao nhiêu tiết Toán?",
@@ -2043,7 +2193,8 @@
         "difficulty": 2,
         "skill": "word-problem",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q151"
+        "id": "toan_bang-nhan-chia_q151",
+        "stage": 1
       },
       {
         "q": "Có 72 học sinh xếp thành các hàng, mỗi hàng 9 bạn. Hỏi xếp được mấy hàng?",
@@ -2058,7 +2209,8 @@
         "difficulty": 2,
         "skill": "word-problem",
         "source": "claude-audit-20260924",
-        "id": "toan_bang-nhan-chia_q152"
+        "id": "toan_bang-nhan-chia_q152",
+        "stage": 1
       }
     ]
   }

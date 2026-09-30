@@ -5,6 +5,17 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Toán lớp 3: chia theo giai đoạn học
+- Thêm thanh **"Con đang học đến đâu?"** khi vào môn Toán lớp 3: Học kì 1 (GĐ1, GĐ2, GĐ3) và Học kì 2 (GĐ4, GĐ5), bám theo SGK Toán 3 Kết nối tri thức.
+  - GĐ1: Chủ đề 1–2 (ôn tập đến 1000, bảng nhân chia 2–9, một phần mấy)
+  - GĐ2: Chủ đề 3–4 (hình phẳng, hình khối, nhân chia số có hai chữ số, chia có dư)
+  - GĐ3: Chủ đề 5–7 (mm, g, ml, nhiệt độ, nhân chia số có ba chữ số, biểu thức)
+  - GĐ4–5: Học kì 2 (số đến 10 000 và 100 000, chu vi, diện tích, La Mã, đồng hồ đến từng phút, tiền)
+- Hai cách học: **Ôn cả phần trước** (hiện câu từ GĐ1 đến giai đoạn đã chọn) hoặc **Chỉ giai đoạn này**. Lựa chọn lưu riêng cho từng bé; mặc định GĐ1.
+- Gắn nhãn giai đoạn cho toàn bộ 546 câu Toán lớp 3 (GĐ1: 362, GĐ2: 26, GĐ3: 28, GĐ4: 47, GĐ5: 83). Chủ đề không có câu nào trong giai đoạn đang chọn sẽ tự ẩn.
+- Bỏ cách ẩn tạm hai chủ đề "Số đến 100 000" và "Cộng trừ trong phạm vi 100 000": nay chúng nằm ở GĐ4–5.
+- Tiến độ và câu sai vẫn giữ nguyên, không bị lệch khi đổi giai đoạn.
+
 ## 2026-09-30 — Tiếng Anh lớp 3: thêm 92 câu
 - **NIK3 Unit 1: Places & directions** (chủ đề mới, 22 câu): nơi chốn trong thành phố (museum, theater, harbor, art gallery, recreation center…), giới từ above / below / beside / close to, câu mệnh lệnh và biển báo (Don't…), câu hỏi Are you…-ing? / Does she…?, đi lại bằng by bus.
 - **NIK3 Unit 2: Dinosaurs & Ancient Egypt** (chủ đề mới, 22 câu): từ vựng khủng long và Ai Cập cổ đại, odd one out, has to / have to / don't have to / doesn't have to, câu hỏi Do/Does… have to?

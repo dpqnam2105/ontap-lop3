@@ -18,7 +18,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q001"
+        "id": "toan_xem-dong-ho-thoi-gian_q001",
+        "stage": 1
       },
       {
         "q": "Kim giờ nằm giữa số 10 và số 11, kim phút chỉ số 6. Đồng hồ chỉ:",
@@ -34,7 +35,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q002"
+        "id": "toan_xem-dong-ho-thoi-gian_q002",
+        "stage": 1
       },
       {
         "q": "Kim giờ chỉ quá số 1 một chút, kim phút chỉ số 3. Đồng hồ chỉ:",
@@ -50,7 +52,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q003"
+        "id": "toan_xem-dong-ho-thoi-gian_q003",
+        "stage": 1
       },
       {
         "q": "Kim giờ chỉ gần tới số 9, kim phút chỉ số 9. Đồng hồ chỉ:",
@@ -66,7 +69,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q004"
+        "id": "toan_xem-dong-ho-thoi-gian_q004",
+        "stage": 5
       },
       {
         "q": "Kim phút chỉ số 4 là bao nhiêu phút?",
@@ -82,7 +86,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q005"
+        "id": "toan_xem-dong-ho-thoi-gian_q005",
+        "stage": 5
       },
       {
         "q": "Kim phút chỉ số 7 là bao nhiêu phút?",
@@ -98,7 +103,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q006"
+        "id": "toan_xem-dong-ho-thoi-gian_q006",
+        "stage": 5
       },
       {
         "q": "8 giờ kém 15 phút còn gọi là:",
@@ -114,7 +120,8 @@
         "skill": "clock",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q007"
+        "id": "toan_xem-dong-ho-thoi-gian_q007",
+        "stage": 5
       },
       {
         "q": "1 giờ 20 phút = ? phút",
@@ -130,7 +137,8 @@
         "skill": "time-convert",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q008"
+        "id": "toan_xem-dong-ho-thoi-gian_q008",
+        "stage": 5
       },
       {
         "q": "Từ 8 giờ đến 10 giờ 30 phút là bao lâu?",
@@ -146,7 +154,8 @@
         "skill": "duration",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q009"
+        "id": "toan_xem-dong-ho-thoi-gian_q009",
+        "stage": 5
       },
       {
         "q": "Thỏ học từ 7 giờ 15 phút đến 8 giờ. Thỏ học trong bao lâu?",
@@ -162,7 +171,8 @@
         "skill": "duration",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q010"
+        "id": "toan_xem-dong-ho-thoi-gian_q010",
+        "stage": 5
       },
       {
         "q": "Một năm có mấy tháng?",
@@ -178,7 +188,8 @@
         "skill": "calendar",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q011"
+        "id": "toan_xem-dong-ho-thoi-gian_q011",
+        "stage": 5
       },
       {
         "q": "Tháng nào sau đây có 31 ngày?",
@@ -194,7 +205,8 @@
         "skill": "calendar",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q012"
+        "id": "toan_xem-dong-ho-thoi-gian_q012",
+        "stage": 5
       },
       {
         "q": "Tháng 2 có bao nhiêu ngày?",
@@ -210,7 +222,8 @@
         "skill": "calendar",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q013"
+        "id": "toan_xem-dong-ho-thoi-gian_q013",
+        "stage": 5
       },
       {
         "q": "Thứ Hai tuần này là ngày 5. Thứ Hai tuần sau là ngày mấy?",
@@ -226,7 +239,8 @@
         "skill": "calendar",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q014"
+        "id": "toan_xem-dong-ho-thoi-gian_q014",
+        "stage": 1
       },
       {
         "q": "Hôm nay là thứ Sáu. Ba ngày nữa là thứ mấy?",
@@ -242,7 +256,8 @@
         "skill": "calendar",
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
-        "id": "toan_xem-dong-ho-thoi-gian_q015"
+        "id": "toan_xem-dong-ho-thoi-gian_q015",
+        "stage": 1
       }
     ]
   }

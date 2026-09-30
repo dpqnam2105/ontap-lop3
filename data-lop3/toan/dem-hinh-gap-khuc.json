@@ -19,7 +19,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q001",
-        "image": "images/questions/lop3/dem-hinh-tg-1.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-1.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -36,7 +37,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q002",
-        "image": "images/questions/lop3/dem-hinh-tg-2.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-2.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -53,7 +55,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q003",
-        "image": "images/questions/lop3/dem-hinh-tg-3.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-3.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -70,7 +73,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q004",
-        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tứ giác?",
@@ -87,7 +91,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q005",
-        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -104,7 +109,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q006",
-        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tứ giác?",
@@ -121,7 +127,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q007",
-        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg"
+        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -138,7 +145,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q008",
-        "image": "images/questions/lop3/dem-hinh-cn-2-cheo.svg"
+        "image": "images/questions/lop3/dem-hinh-cn-2-cheo.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -155,7 +163,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q009",
-        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg"
+        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
@@ -172,7 +181,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q010",
-        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg"
+        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
@@ -189,7 +199,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q011",
-        "image": "images/questions/lop3/dem-hinh-dai-3.svg"
+        "image": "images/questions/lop3/dem-hinh-dai-3.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
@@ -206,7 +217,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q012",
-        "image": "images/questions/lop3/dem-hinh-dai-4.svg"
+        "image": "images/questions/lop3/dem-hinh-dai-4.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu hình vuông?",
@@ -223,7 +235,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q013",
-        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg"
+        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
@@ -240,7 +253,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q014",
-        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg"
+        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg",
+        "stage": 1
       },
       {
         "q": "Hình bên có tất cả bao nhiêu tam giác?",
@@ -257,7 +271,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q015",
-        "image": "images/questions/lop3/dem-hinh-ngoi-nha.svg"
+        "image": "images/questions/lop3/dem-hinh-ngoi-nha.svg",
+        "stage": 1
       },
       {
         "q": "Đường gấp khúc ABCDE dài bao nhiêu đề-xi-mét?",
@@ -274,7 +289,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q016",
-        "image": "images/questions/lop3/gap-khuc-1.svg"
+        "image": "images/questions/lop3/gap-khuc-1.svg",
+        "stage": 1
       },
       {
         "q": "Đường gấp khúc MNPQ gồm các đoạn thẳng dài bằng nhau. Độ dài đường gấp khúc là:",
@@ -291,7 +307,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q017",
-        "image": "images/questions/lop3/gap-khuc-2.svg"
+        "image": "images/questions/lop3/gap-khuc-2.svg",
+        "stage": 1
       },
       {
         "q": "Đường gấp khúc ABCD dài 45 cm. Đoạn thẳng CD dài bao nhiêu xăng-ti-mét?",
@@ -308,7 +325,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q018",
-        "image": "images/questions/lop3/gap-khuc-3.svg"
+        "image": "images/questions/lop3/gap-khuc-3.svg",
+        "stage": 1
       },
       {
         "q": "Đường gấp khúc ABCDE có 4 đoạn. Đoạn AB dài 5 cm, mỗi đoạn sau dài hơn đoạn liền trước 2 cm. Đường gấp khúc dài bao nhiêu?",
@@ -325,7 +343,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q019",
-        "image": "images/questions/lop3/gap-khuc-4.svg"
+        "image": "images/questions/lop3/gap-khuc-4.svg",
+        "stage": 1
       },
       {
         "q": "Thỏ đi từ nhà đến trường. Đường nào ngắn hơn và ngắn hơn bao nhiêu mét?",
@@ -342,7 +361,8 @@
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q020",
-        "image": "images/questions/lop3/hai-con-duong.svg"
+        "image": "images/questions/lop3/hai-con-duong.svg",
+        "stage": 1
       }
     ]
   }

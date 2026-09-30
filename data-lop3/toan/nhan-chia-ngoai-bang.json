@@ -18,7 +18,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q001"
+        "id": "toan_nhan-chia-ngoai-bang_q001",
+        "stage": 2
       },
       {
         "q": "36 × 5 = ?",
@@ -34,7 +35,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q002"
+        "id": "toan_nhan-chia-ngoai-bang_q002",
+        "stage": 2
       },
       {
         "q": "47 × 3 = ?",
@@ -50,7 +52,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q003"
+        "id": "toan_nhan-chia-ngoai-bang_q003",
+        "stage": 2
       },
       {
         "q": "125 × 6 = ?",
@@ -66,7 +69,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q004"
+        "id": "toan_nhan-chia-ngoai-bang_q004",
+        "stage": 3
       },
       {
         "q": "208 × 4 = ?",
@@ -82,7 +86,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q005"
+        "id": "toan_nhan-chia-ngoai-bang_q005",
+        "stage": 3
       },
       {
         "q": "319 × 3 = ?",
@@ -98,7 +103,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q006"
+        "id": "toan_nhan-chia-ngoai-bang_q006",
+        "stage": 3
       },
       {
         "q": "1245 × 4 = ?",
@@ -114,7 +120,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q007"
+        "id": "toan_nhan-chia-ngoai-bang_q007",
+        "stage": 4
       },
       {
         "q": "2308 × 3 = ?",
@@ -130,7 +137,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q008"
+        "id": "toan_nhan-chia-ngoai-bang_q008",
+        "stage": 4
       },
       {
         "q": "10 715 × 6 = ?",
@@ -146,7 +154,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q009"
+        "id": "toan_nhan-chia-ngoai-bang_q009",
+        "stage": 5
       },
       {
         "q": "12 409 × 7 = ?",
@@ -162,7 +171,8 @@
         "skill": "multiply",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q010"
+        "id": "toan_nhan-chia-ngoai-bang_q010",
+        "stage": 5
       },
       {
         "q": "96 : 3 = ?",
@@ -178,7 +188,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q011"
+        "id": "toan_nhan-chia-ngoai-bang_q011",
+        "stage": 2
       },
       {
         "q": "84 : 7 = ?",
@@ -194,7 +205,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q012"
+        "id": "toan_nhan-chia-ngoai-bang_q012",
+        "stage": 2
       },
       {
         "q": "248 : 2 = ?",
@@ -210,7 +222,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q013"
+        "id": "toan_nhan-chia-ngoai-bang_q013",
+        "stage": 3
       },
       {
         "q": "636 : 6 = ?",
@@ -226,7 +239,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q014"
+        "id": "toan_nhan-chia-ngoai-bang_q014",
+        "stage": 3
       },
       {
         "q": "816 : 8 = ?",
@@ -242,7 +256,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q015"
+        "id": "toan_nhan-chia-ngoai-bang_q015",
+        "stage": 3
       },
       {
         "q": "4515 : 5 = ?",
@@ -258,7 +273,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q016"
+        "id": "toan_nhan-chia-ngoai-bang_q016",
+        "stage": 4
       },
       {
         "q": "8424 : 4 = ?",
@@ -274,7 +290,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q017"
+        "id": "toan_nhan-chia-ngoai-bang_q017",
+        "stage": 4
       },
       {
         "q": "25 060 : 5 = ?",
@@ -290,7 +307,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q018"
+        "id": "toan_nhan-chia-ngoai-bang_q018",
+        "stage": 5
       },
       {
         "q": "36 918 : 6 = ?",
@@ -306,7 +324,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q019"
+        "id": "toan_nhan-chia-ngoai-bang_q019",
+        "stage": 5
       },
       {
         "q": "63 007 : 7 = ?",
@@ -322,7 +341,8 @@
         "skill": "divide",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q020"
+        "id": "toan_nhan-chia-ngoai-bang_q020",
+        "stage": 5
       },
       {
         "q": "50 : 6 = ? (phép chia có dư)",
@@ -338,7 +358,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q021"
+        "id": "toan_nhan-chia-ngoai-bang_q021",
+        "stage": 2
       },
       {
         "q": "29 : 4 = ? (phép chia có dư)",
@@ -354,7 +375,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q022"
+        "id": "toan_nhan-chia-ngoai-bang_q022",
+        "stage": 2
       },
       {
         "q": "75 : 8 = ? (phép chia có dư)",
@@ -370,7 +392,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q023"
+        "id": "toan_nhan-chia-ngoai-bang_q023",
+        "stage": 2
       },
       {
         "q": "100 : 9 = ? (phép chia có dư)",
@@ -386,7 +409,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q024"
+        "id": "toan_nhan-chia-ngoai-bang_q024",
+        "stage": 3
       },
       {
         "q": "47 : 5 = ? (phép chia có dư)",
@@ -402,7 +426,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q025"
+        "id": "toan_nhan-chia-ngoai-bang_q025",
+        "stage": 2
       },
       {
         "q": "83 : 6 = ? (phép chia có dư)",
@@ -418,7 +443,8 @@
         "skill": "divide-remainder",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q026"
+        "id": "toan_nhan-chia-ngoai-bang_q026",
+        "stage": 2
       },
       {
         "q": "Gấp 125 lên 4 lần được:",
@@ -434,7 +460,8 @@
         "skill": "times-more",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q027"
+        "id": "toan_nhan-chia-ngoai-bang_q027",
+        "stage": 3
       },
       {
         "q": "Giảm 96 đi 3 lần được:",
@@ -450,7 +477,8 @@
         "skill": "times-less",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q028"
+        "id": "toan_nhan-chia-ngoai-bang_q028",
+        "stage": 2
       },
       {
         "q": "Số lớn là 45, số bé là 9. Số lớn gấp mấy lần số bé?",
@@ -466,7 +494,8 @@
         "skill": "ratio",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q029"
+        "id": "toan_nhan-chia-ngoai-bang_q029",
+        "stage": 3
       },
       {
         "q": "Giá trị của biểu thức 45 + 5 × 3 là:",
@@ -482,7 +511,8 @@
         "skill": "expression",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q030"
+        "id": "toan_nhan-chia-ngoai-bang_q030",
+        "stage": 3
       },
       {
         "q": "Giá trị của biểu thức (45 + 5) × 3 là:",
@@ -498,7 +528,8 @@
         "skill": "expression",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q031"
+        "id": "toan_nhan-chia-ngoai-bang_q031",
+        "stage": 3
       },
       {
         "q": "Giá trị của biểu thức 81 : 9 × 2 là:",
@@ -514,7 +545,8 @@
         "skill": "expression",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q032"
+        "id": "toan_nhan-chia-ngoai-bang_q032",
+        "stage": 3
       },
       {
         "q": "Giá trị của biểu thức 100 − 36 : 4 là:",
@@ -530,7 +562,8 @@
         "skill": "expression",
         "unit": "toan_nhan-chia-ngoai-bang",
         "source": "claude-audit-20260924",
-        "id": "toan_nhan-chia-ngoai-bang_q033"
+        "id": "toan_nhan-chia-ngoai-bang_q033",
+        "stage": 3
       }
     ]
   }

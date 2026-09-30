@@ -408,3 +408,21 @@
 .q-image{margin:14px auto 0;text-align:center;max-width:100%}
 .question-image{display:block;margin:0 auto;max-width:100%;height:auto;max-height:260px;background:#fff;border-radius:12px}
 .lb-note{margin:10px 4px 0;font-size:.85rem;font-weight:700;color:#5b7190}
+
+/* ===== Giai đoạn học (stage bar) ===== */
+.stage-bar{grid-column:1/-1;background:linear-gradient(135deg,#fffdf3,#f4f9ff);border:1.5px solid #ffe29a;border-radius:20px;padding:14px 16px;box-shadow:var(--shadow2)}
+.stage-bar-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-bottom:10px}
+.stage-bar-title{font-family:var(--font-display);font-weight:900;font-size:1.05rem;color:var(--ink)}
+.stage-mode{display:inline-flex;background:#eaf2fc;border-radius:999px;padding:3px}
+.stage-mode-btn{border:0;background:transparent;border-radius:999px;padding:6px 12px;font-weight:800;font-size:.85rem;color:var(--muted);cursor:pointer}
+.stage-mode-btn.active{background:#fff;color:var(--blue2);box-shadow:0 2px 8px rgba(31,122,245,.15)}
+.stage-chips{display:flex;flex-wrap:wrap;gap:10px 18px}
+.stage-term{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.stage-term-label{font-size:.78rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-right:2px}
+.stage-chip{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:7px 14px;font-weight:900;font-size:.95rem;color:var(--ink);cursor:pointer;transition:.15s}
+.stage-chip:hover{border-color:#9dcbfb;transform:translateY(-1px)}
+.stage-chip.included{background:#e9f8ef;border-color:#9fe0b8;color:#1b7a43}
+.stage-chip.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 6px 14px rgba(31,122,245,.25)}
+.stage-desc{margin-top:10px;font-size:.9rem;line-height:1.45;color:#3a4a60}
+.stage-nudge{margin-top:8px;font-size:.85rem;font-weight:800;color:#b45309;background:#fff4dd;border-radius:10px;padding:6px 10px;display:inline-block}
+@media (max-width:640px){.stage-bar{padding:12px}.stage-chip{padding:7px 11px;font-size:.9rem}.stage-bar-head{flex-direction:column;align-items:flex-start}}

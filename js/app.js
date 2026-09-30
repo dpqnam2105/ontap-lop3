@@ -286,18 +286,21 @@ const App = {
 
     // Cac mon that (co du lieu) -- anh banner + overlay HTML (ten, tien do, nut vao hoc).
     this.allData.subjects.forEach((s, i) => {
+      const visTopics = this._visibleTopics(s);
+      const stSet = this.getStageSetting(s);
+      const stageTag = stSet ? ' · ' + ((s.stages.find(x => x.id === stSet.stage) || {}).short || '') : '';
       // Tien do hom nay: so chu de da luyen it nhat 1 cau / tong so chu de.
       let doneToday = 0;
       try {
         if (window.Storage && Storage.getTopicProgress) {
-          s.topics.forEach(t => {
+          visTopics.forEach(t => {
             const p = Storage.getTopicProgress((t.id || t.name).toString());
             if (p && (p.learned || []).length > 0) doneToday++;
           });
         }
       } catch (e) { /* chua co tien do thi de 0 */ }
       const progChip = doneToday > 0
-        ? `<span class="sub-ov-chip sub-ov-chip-done">⭐ Hôm nay: ${doneToday}/${s.topics.length}</span>`
+        ? `<span class="sub-ov-chip sub-ov-chip-done">⭐ Hôm nay: ${doneToday}/${visTopics.length}</span>`
         : `<span class="sub-ov-chip">🚀 Bắt đầu nào!</span>`;
 
       // Banner mon hoc: uu tien cau truc moi images/subjects/*.webp,
@@ -317,7 +320,7 @@ const App = {
           <div class="sub-ov-icon">${s.icon}</div>
           <div class="sub-ov-text">
             <div class="sub-ov-name">${this._escape(s.name)}</div>
-            <div class="sub-ov-meta">${s.topics.length} chủ đề ôn tập</div>
+            <div class="sub-ov-meta">${visTopics.length} chủ đề ôn tập${stageTag}</div>
           </div>
           <div class="sub-ov-right">
             ${progChip}
@@ -328,7 +331,7 @@ const App = {
           <div class="sub-icon">${s.icon}</div>
           <div class="sub-info">
             <div class="sub-name">${this._escape(s.name)}</div>
-            <div class="sub-meta">${s.topics.length} chủ đề ôn tập</div>
+            <div class="sub-meta">${visTopics.length} chủ đề ôn tập${stageTag}</div>
           </div>
         </div>`;
       card.addEventListener('click', () => this._chooseSubject(i));
@@ -388,25 +391,116 @@ const App = {
     maen_word_problems: 'Violympic style · 1-2-3 step problems',
   },
 
-  _chooseSubject(idx) {
+  // ─── Giai đoạn học (chia kiến thức theo học kì / giai đoạn) ─────────
+  // Môn có "stages" trong index.json thì mỗi câu hỏi mang trường "stage".
+  // Bé chọn "học đến giai đoạn X" (cộng dồn) hoặc "chỉ giai đoạn X".
+  // Cài đặt lưu riêng theo từng bé, theo lớp + môn.
+  STAGE_STORE_KEY: 'stageBySubject',
+
+  _stageKey(s) { return this.currentGrade + ':' + s.id; },
+
+  getStageSetting(s) {
+    if (!s || !Array.isArray(s.stages) || !s.stages.length) return null;
+    let all = {};
+    try { all = Storage.get(this.STAGE_STORE_KEY) || {}; } catch (e) { all = {}; }
+    const saved = all[this._stageKey(s)];
+    const ids = s.stages.map(x => x.id);
+    const stage = saved && ids.includes(saved.stage) ? saved.stage : (s.defaultStage || ids[0]);
+    return { stage, only: !!(saved && saved.only), chosen: !!saved };
+  },
+
+  setStageSetting(s, stage, only) {
+    let all = {};
+    try { all = Storage.get(this.STAGE_STORE_KEY) || {}; } catch (e) { all = {}; }
+    all[this._stageKey(s)] = { stage, only: !!only };
+    Storage.set(this.STAGE_STORE_KEY, all);
+  },
+
+  /** Chỉ số các câu trong chủ đề hợp với giai đoạn đang chọn (null = môn không chia giai đoạn). */
+  _allowedIndices(s, t) {
+    const st = this.getStageSetting(s);
+    if (!st) return null;
+    const out = [];
+    (t.questions || []).forEach((q, i) => {
+      const qs = Number(q.stage || 0);
+      if (!qs) { out.push(i); return; }           // câu chưa gắn nhãn: luôn hiện
+      if (st.only ? qs === st.stage : qs <= st.stage) out.push(i);
+    });
+    return out;
+  },
+
+  _visibleTopics(s) {
+    return s.topics.filter(t => {
+      const a = this._allowedIndices(s, t);
+      return a === null ? true : a.length > 0;
+    });
+  },
+
+  _renderStageBar(s, subjectIdx) {
+    const st = this.getStageSetting(s);
+    if (!st) return null;
+    const bar = document.createElement('div');
+    bar.className = 'stage-bar';
+    const cur = s.stages.find(x => x.id === st.stage) || s.stages[0];
+    const terms = [];
+    s.stages.forEach(x => { if (!terms.includes(x.term)) terms.push(x.term); });
+    const chips = terms.map(term => `
+      <div class="stage-term">
+        <span class="stage-term-label">${this._escape(term === 'HK1' ? 'Học kì 1' : term === 'HK2' ? 'Học kì 2' : term)}</span>
+        ${s.stages.filter(x => x.term === term).map(x => `
+          <button class="stage-chip${x.id === st.stage ? ' active' : ''}${!st.only && x.id < st.stage ? ' included' : ''}" data-stage="${x.id}">
+            ${this._escape(x.short || x.name)}
+          </button>`).join('')}
+      </div>`).join('');
+    bar.innerHTML = `
+      <div class="stage-bar-head">
+        <span class="stage-bar-title">📍 Con đang học đến đâu?</span>
+        <div class="stage-mode">
+          <button class="stage-mode-btn${!st.only ? ' active' : ''}" data-only="0">Ôn cả phần trước</button>
+          <button class="stage-mode-btn${st.only ? ' active' : ''}" data-only="1">Chỉ giai đoạn này</button>
+        </div>
+      </div>
+      <div class="stage-chips">${chips}</div>
+      <div class="stage-desc"><b>${this._escape(cur.name)}:</b> ${this._escape(cur.desc || '')}</div>
+      ${st.chosen ? '' : '<div class="stage-nudge">👨‍👩‍👧 Bố mẹ chọn giúp con giai đoạn đang học trên lớp nhé.</div>'}`;
+    bar.querySelectorAll('.stage-chip').forEach(b => b.addEventListener('click', () => {
+      this.setStageSetting(s, Number(b.dataset.stage), st.only);
+      this._chooseSubject(subjectIdx, true);
+    }));
+    bar.querySelectorAll('.stage-mode-btn').forEach(b => b.addEventListener('click', () => {
+      this.setStageSetting(s, st.stage, b.dataset.only === '1');
+      this._chooseSubject(subjectIdx, true);
+    }));
+    return bar;
+  },
+
+  _chooseSubject(idx, keepScroll) {
     const s = this.allData.subjects[idx];
     document.getElementById('topicMenuTitle').textContent = s.name;
 
     const list = document.getElementById('topicList');
     list.innerHTML = '';
 
+    const stageBar = this._renderStageBar(s, idx);
+    if (stageBar) list.appendChild(stageBar);
+
     s.topics.forEach((t) => {
+      const allowed = this._allowedIndices(s, t);
+      if (allowed && !allowed.length) return; // chủ đề chưa có câu trong giai đoạn đang chọn
+      const allowedSet = allowed ? new Set(allowed) : null;
+      const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
+
       const card = document.createElement('div');
       card.className = 'topic-card topic-card-with-modes';
 
       const topicId = (t.id || t.name).toString();
-      const totalQ = (t.questions || []).length;
+      const totalQ = allowed ? allowed.length : (t.questions || []).length;
       let learned = 0, wrong = 0;
       try {
         const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
         if (prog) {
-          learned = (prog.learned || []).filter(i => i < totalQ).length;
-          wrong = (prog.wrong || []).filter(i => i < totalQ).length;
+          learned = (prog.learned || []).filter(inScope).length;
+          wrong = (prog.wrong || []).filter(inScope).length;
         }
       } catch (e) { /* chưa có tiến độ thì để 0 */ }
       const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
@@ -439,13 +533,14 @@ const App = {
       card.querySelectorAll('.mode-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id });
+          Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed });
         });
       });
 
       list.appendChild(card);
     });
 
+    if (keepScroll) return; // đổi giai đoạn: vẽ lại tại chỗ, không cuộn lên đầu
     this.showScreen('topic');
   },
 

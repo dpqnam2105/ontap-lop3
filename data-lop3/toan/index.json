@@ -7,17 +7,13 @@
       "id": "toan_so-den-100000",
       "name": "Số đến 100 000",
       "file": "so-den-100000.json",
-      "count": 52,
-      "hidden": true,
-      "hiddenNote": "Nội dung HK2 — tạm ẩn đến khi lớp học tới"
+      "count": 52
     },
     {
       "id": "toan_cong-tru-trong-100000",
       "name": "Cộng trừ trong phạm vi 100 000",
       "file": "cong-tru-trong-100000.json",
-      "count": 34,
-      "hidden": true,
-      "hiddenNote": "Nội dung HK2 — tạm ẩn đến khi lớp học tới"
+      "count": 34
     },
     {
       "id": "toan_bang-nhan-chia",
@@ -91,5 +87,43 @@
       "file": "tu-duy-logic.json",
       "count": 46
     }
-  ]
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "term": "HK1",
+      "name": "Giai đoạn 1",
+      "short": "GĐ1",
+      "desc": "Chủ đề 1–2: ôn tập số và cộng trừ đến 1000, bảng nhân chia 2–9, tìm thành phần phép nhân chia, một phần mấy"
+    },
+    {
+      "id": 2,
+      "term": "HK1",
+      "name": "Giai đoạn 2",
+      "short": "GĐ2",
+      "desc": "Chủ đề 3–4: trung điểm, hình tròn, góc vuông, khối lập phương; nhân chia số có hai chữ số, gấp/giảm một số lần, chia có dư, toán hai bước"
+    },
+    {
+      "id": 3,
+      "term": "HK1",
+      "name": "Giai đoạn 3",
+      "short": "GĐ3",
+      "desc": "Chủ đề 5–7: mi-li-mét, gam, mi-li-lít, nhiệt độ; nhân chia số có ba chữ số; biểu thức số; gấp mấy lần; ôn tập học kì 1"
+    },
+    {
+      "id": 4,
+      "term": "HK2",
+      "name": "Giai đoạn 4",
+      "short": "GĐ4",
+      "desc": "Số đến 10 000, làm tròn số, chữ số La Mã; chu vi, diện tích; cộng trừ nhân chia trong phạm vi 10 000"
+    },
+    {
+      "id": 5,
+      "term": "HK2",
+      "name": "Giai đoạn 5",
+      "short": "GĐ5",
+      "desc": "Số đến 100 000 và các phép tính; xem đồng hồ đến từng phút, tháng – năm; tiền Việt Nam; ôn tập cuối năm"
+    }
+  ],
+  "defaultStage": 1
 }

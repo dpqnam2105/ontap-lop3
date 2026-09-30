@@ -113,7 +113,13 @@ const API = {
         .filter(t => t && Array.isArray(t.questions) && t.questions.length > 0);
 
       if (!topics.length) return null;
-      return { id: idx.id || sub.id, icon: idx.icon || sub.icon, name: idx.name || sub.name, topics };
+      const out = { id: idx.id || sub.id, icon: idx.icon || sub.icon, name: idx.name || sub.name, topics };
+      // Giai đoạn học (nếu môn có chia): danh sách giai đoạn + giai đoạn mặc định
+      if (Array.isArray(idx.stages) && idx.stages.length) {
+        out.stages = idx.stages;
+        out.defaultStage = idx.defaultStage || idx.stages[0].id;
+      }
+      return out;
     }));
 
     return {

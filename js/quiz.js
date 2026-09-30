@@ -98,6 +98,9 @@ const Quiz = {
     this.score = 0;
     this.curIdx = 0;
     this.sessionDetails = [];
+    // Giai đoạn học: chỉ lấy câu có chỉ số nằm trong options.allowed (null = cả chủ đề).
+    // Giữ nguyên chỉ số gốc để tiến độ và câu sai không bị lệch.
+    this.allowedIdx = Array.isArray(options.allowed) ? options.allowed.slice() : null;
 
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
@@ -120,9 +123,17 @@ const Quiz = {
   },
 
   _selectQuestions(topic, mode) {
-    const totalInTopic = topic.questions.length;
-    const progress = Storage.getTopicProgress(this.currentTopicId);
-    const allIndices = topic.questions.map((_, i) => i);
+    const allIndices = this.allowedIdx
+      ? this.allowedIdx.filter(i => topic.questions[i])
+      : topic.questions.map((_, i) => i);
+    const allowedSet = new Set(allIndices);
+    const totalInTopic = allIndices.length;
+    const rawProgress = Storage.getTopicProgress(this.currentTopicId);
+    const progress = {
+      ...rawProgress,
+      learned: (rawProgress.learned || []).filter(i => allowedSet.has(i)),
+      wrong: (rawProgress.wrong || []).filter(i => allowedSet.has(i))
+    };
 
     if (mode === 'review') {
       const wrong = (progress.wrong || []).filter(i => topic.questions[i]);
