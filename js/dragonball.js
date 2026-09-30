@@ -183,13 +183,13 @@ const DragonBall = {
     const price = this._dragonPrices()[n];
     const stars = this._getStars();
     if (stars < price) {
-      alert('Con chưa đủ sao để mua viên này. Học thêm để tích sao nhé! ⭐');
+      Rewards._achievementPopup('⭐ Con chưa đủ sao để đổi viên này. Học thêm để tích sao nhé!');
       return;
     }
     this._setStars(stars - price);
     collection.push(n);
     this._saveDragonCollection(collection);
-    alert('Đã đổi ' + this._dragonName(n) + '! 🐉');
+    Rewards._achievementPopup('🐉 Đã đổi ' + this._dragonName(n) + '!');
     this._renderHomeWidgets();
     this._renderDragonShop();
     this._renderCollection();
@@ -201,7 +201,7 @@ const DragonBall = {
     if (hasAll && !unlocked) {
       localStorage.setItem(this._rewardKey(), '1');
       this._addShenronToInventory();
-      setTimeout(() => alert('🐉 Rồng Thần xuất hiện! Con đã nhận Sticker Rồng Thần!'), 100);
+      setTimeout(() => Rewards._achievementPopup('🐉 Rồng Thần xuất hiện! Con đã nhận Sticker Rồng Thần!'), 100);
     }
   },
 

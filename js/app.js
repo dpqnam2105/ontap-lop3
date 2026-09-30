@@ -5,7 +5,7 @@
 const App = {
   allData: null,
   playerName: '',
-  currentGrade: 'lop2',
+  currentGrade: 'lop3', // lớp mặc định; nhớ lớp bé chọn lần trước (lastGrade)
 
   // Các lớp đã mở. Thêm 'lop4' vào đây khi có dữ liệu.
   OPEN_GRADES: ['lop2', 'lop3'],
@@ -22,10 +22,12 @@ const App = {
   async init() {
     this._bindEvents();
     this._restoreSession();
-    this.loadLeaderboard('lop2');
+    this._syncGradeUI();
+    this.loadLeaderboard(this.currentGrade);
     DragonBall._renderHomeWidgets();
     await this._loadData();
     DragonBall._renderHomeWidgets();
+    if (window.Today) Today.render();
   },
 
   _restoreSession() {
@@ -35,10 +37,22 @@ const App = {
       document.getElementById('nameInput').value = data.playerName;
       document.getElementById('btnStart').disabled = false;
     }
-    if (data.lastGrade) {
-      this.currentGrade = data.lastGrade;
-      this._applyGradeLabel(data.lastGrade);
-    }
+    if (data.lastGrade && this.OPEN_GRADES.includes(data.lastGrade)) this.currentGrade = data.lastGrade;
+    this._applyGradeLabel(this.currentGrade);
+  },
+
+  /** Đồng bộ các chỗ hiển thị lớp (thẻ chọn lớp, tiêu đề màn môn) với lớp đang học. */
+  _syncGradeUI() {
+    const names = { lop2: 'Lớp 2', lop3: 'Lớp 3', lop4: 'Lớp 4', lop5: 'Lớp 5' };
+    document.querySelectorAll('.grade-card[data-grade]').forEach(c => c.classList.toggle('grade-active', c.dataset.grade === this.currentGrade));
+    const lbl = document.getElementById('currentGradeLabel');
+    if (lbl) lbl.textContent = '📚 ' + (names[this.currentGrade] || '') + ' - Học gì hôm nay?';
+  },
+
+  /** "Vào học": đi thẳng vào lớp đang học, không bắt chọn lại lớp. */
+  goLearn() {
+    if (!this.playerName) { this.showScreen('grade'); return; }
+    this._chooseGrade(this.currentGrade);
   },
 
   _applyGradeLabel(gradeId) {
@@ -70,7 +84,8 @@ const App = {
   },
 
   async _loadData() {
-    this.allData = await API.getAllData('lop2');
+    const g = this.currentGrade;
+    this.allData = await API.getAllData(g);
 
     // BUG #5 FIX: normalize question bank để engine hoạt động đúng
     if (this.allData && window.LearningEngine && window.LearningEngine.normalizeQuestionBank) {
@@ -82,7 +97,7 @@ const App = {
       }
     }
 
-    this._dataByGrade['lop2'] = this.allData;
+    this._dataByGrade[g] = this.allData;
 
     if (this.playerName && this.allData) this._renderSubjects();
     if (this.playerName) this._showWelcome(this.playerName);
@@ -141,6 +156,7 @@ const App = {
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
+    if (name === 'register' && window.Today) Today.render();
     if (name === 'shop') {
       // Reset bo loc ve "Tat ca" moi lan VAO man Shop, vi trinh duyet co the
       // giu lai gia tri dropdown cu qua F5, khien pack bi loc mat hoan toan.
@@ -233,6 +249,7 @@ const App = {
     this.currentGrade = gradeId;
     Storage.set('lastGrade', gradeId);
     this._applyGradeLabel(gradeId);
+    this._syncGradeUI();
     document.getElementById('currentGradeLabel').textContent = '📚 ' + gradeName + ' - Học gì hôm nay?';
     this.showScreen('subject');
 
@@ -585,11 +602,14 @@ const App = {
 
       const topicId = (t.id || t.name).toString();
       const totalQ = allowed ? allowed.length : (t.questions || []).length;
-      let learned = 0, wrong = 0;
+      let learned = 0, wrong = 0, today = 0;
       try {
+        // Tiến độ tích lũy: số câu đã từng làm đúng (không reset theo ngày).
+        const tot = (window.Storage && Storage.getTotalProgress) ? Storage.getTotalProgress(topicId) : null;
+        if (tot) learned = (tot.ok || []).filter(inScope).length;
         const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
         if (prog) {
-          learned = (prog.learned || []).filter(inScope).length;
+          today = (prog.learned || []).filter(inScope).length;
           wrong = (prog.wrong || []).filter(inScope).length;
         }
       } catch (e) { /* chưa có tiến độ thì để 0 */ }
@@ -610,7 +630,7 @@ const App = {
           <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
           <div class="topic-prog-meta">
             <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
-            <span class="topic-pct">${pct}%${wrong ? ' · ' + wrong + ' câu cần ôn' : ''}</span>
+            <span class="topic-pct">${learned}/${totalQ} câu đã đúng${today ? ' · hôm nay ' + today : ''}${wrong ? ' · ' + wrong + ' cần ôn' : ''}</span>
           </div>
         </div>
         <div class="topic-mode-hint">👇 Chọn cách học để bắt đầu</div>
@@ -727,12 +747,15 @@ const App = {
     document.getElementById('btnNext').addEventListener('click', () => Quiz.next());
 
     document.getElementById('btnContinue').addEventListener('click', () => {
-      this.showScreen('subject');
+      this.goLearn();
       Rewards.updateUI();
     });
 
     document.querySelectorAll('.btn-nav[data-screen]').forEach(btn => {
-      btn.addEventListener('click', () => this.showScreen(btn.dataset.screen));
+      btn.addEventListener('click', () => {
+        if (btn.dataset.screen === 'learn') this.goLearn();
+        else this.showScreen(btn.dataset.screen);
+      });
     });
 
     document.querySelectorAll('.mini-tab[data-mini]').forEach(tab => {

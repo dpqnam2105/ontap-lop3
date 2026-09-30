@@ -28,8 +28,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20260930d" />
-  <link rel="stylesheet" href="mobile-compact.css?v=20260930d" />
+  <link rel="stylesheet" href="style.css?v=20261001a" />
+  <link rel="stylesheet" href="mobile-compact.css?v=20261001a" />
   <style>
     /* Hero banner trang chu - dung aspect-ratio dung ti le anh (~2.3:1) de
        banner LUON keo sat 2 mep (full width) MA KHONG can cat/zoom anh,
@@ -75,11 +75,11 @@
 
       <div class="rail-label">Học tập</div>
       <button class="rail-btn btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
-      <button class="rail-btn btn-nav rail-btn-learn" data-screen="grade">📖 <span>Vào học</span></button>
+      <button class="rail-btn btn-nav rail-btn-learn" data-screen="learn">📖 <span>Vào học</span></button>
       <div class="rail-label">Phần thưởng</div>
       <button class="rail-btn btn-nav" data-screen="shop">⭐ <span>Cửa hàng sao</span></button>
       <button class="rail-btn btn-nav" data-screen="collection">🐉 <span>Bộ sưu tập</span></button>
-      <button class="rail-btn btn-nav" data-screen="tournament">🏆 <span>Giải đấu</span></button>
+      <button class="rail-btn btn-nav hidden" data-screen="tournament">🏆 <span>Giải đấu</span></button>
       <div class="rail-label">Tài nguyên</div>
       <a class="rail-btn rail-link" href="https://padlet.com/buidanghongvan/grade-2-reading-library-icpys7pe3icyzhyb" target="_blank" rel="noopener noreferrer">📚 <span>Thư viện đọc</span></a>
       <a class="rail-btn rail-link" href="https://drive.google.com/drive/folders/176blqzrDt_KvZmekcqjDcThJdLGqdrP8" target="_blank" rel="noopener noreferrer">🎬 <span>Video Shadowing</span></a>
@@ -105,8 +105,9 @@
 
       <main class="main">
         <section class="screen active" id="screenRegister">
+          <div id="todayCard" class="today-card hidden" aria-live="polite"></div>
           <div class="home-hero-banner">
-            <img src="images/hero-banner.jpg?v=20260930d" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
+            <img src="images/hero-banner.jpg?v=20261001a" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
                  onerror="this.closest('.home-hero-banner').style.display='none';" />
           </div>
           <div class="welcome-grid">
@@ -124,17 +125,16 @@
                   <b id="heroWelcomeName">Xin chào!</b>
                   <span>Chúc mừng con đã điểm danh thành công, chúc con học tập thật vui vẻ nhé! 🌟</span>
                 </div>
-                <button class="btn-primary mt-15 btn-nav" data-screen="grade">📖 Vào học ngay</button>
+                <button class="btn-primary mt-15 btn-nav" data-screen="learn">📖 Vào học ngay</button>
               </div>
             </div>
 
             <div class="leaderboard-card card">
               <div class="card-subtitle">🏆 Bảng Xếp Hạng</div>
               <div class="lb-grade-tabs" id="lbGradeTabs">
-                <button class="lb-grade-tab active" data-grade="lop2">Lớp 2</button>
+                <button class="lb-grade-tab" data-grade="lop2">Lớp 2</button>
                 <button class="lb-grade-tab" data-grade="lop3">Lớp 3</button>
-                <button class="lb-grade-tab" data-grade="lop4">Lớp 4 🔒</button>
-                <button class="lb-grade-tab" data-grade="lop5">Lớp 5 🔒</button>
+                
               </div>
               <div id="lbList"><div class="loading-text">Đang tải xếp hạng...</div></div>
             </div>
@@ -170,10 +170,10 @@
             <p>Chọn lớp của con để vào học nhé!</p>
           </div>
           <div class="grade-grid">
-            <div class="grade-card grade-active" data-grade="lop2"><div class="grade-icon">📗</div><div class="grade-name">Lớp 2</div><div class="grade-status">✅ Đang mở</div></div>
+            <div class="grade-card" data-grade="lop2"><div class="grade-icon">📗</div><div class="grade-name">Lớp 2</div><div class="grade-status">✅ Đang mở</div></div>
             <div class="grade-card" data-grade="lop3"><div class="grade-icon">📘</div><div class="grade-name">Lớp 3</div><div class="grade-status">✅ Đang mở</div></div>
-            <div class="grade-card grade-locked" data-grade="lop4"><div class="grade-icon">📙</div><div class="grade-name">Lớp 4</div><div class="grade-status">🌴 Nghỉ hè</div></div>
-            <div class="grade-card grade-locked" data-grade="lop5"><div class="grade-icon">📕</div><div class="grade-name">Lớp 5</div><div class="grade-status">🌴 Nghỉ hè</div></div>
+            <div class="grade-card grade-locked hidden" data-grade="lop4"><div class="grade-icon">📙</div><div class="grade-name">Lớp 4</div><div class="grade-status">🌴 Nghỉ hè</div></div>
+            <div class="grade-card grade-locked hidden" data-grade="lop5"><div class="grade-icon">📕</div><div class="grade-name">Lớp 5</div><div class="grade-status">🌴 Nghỉ hè</div></div>
           </div>
         </section>
 
@@ -183,7 +183,7 @@
               <div class="page-heading row-heading">
                 <button class="btn-nav soft-back" data-screen="grade">← Đổi lớp</button>
                 <div>
-                  <h2 id="currentGradeLabel">📚 Lớp 2 - Học gì hôm nay?</h2>
+                  <h2 id="currentGradeLabel">📚 Lớp 3 - Học gì hôm nay?</h2>
                   <p>Chọn môn học con thích nhé!</p>
                 </div>
               </div>
@@ -246,7 +246,8 @@
               <div class="result-title">Hoàn thành rồi!</div>
               <div id="resScore" class="result-score">0/10</div>
               <div class="result-msg">Con đã tích thêm được sao rồi đấy!</div>
-              <button class="btn-primary" id="btnContinue">Tiếp tục học thôi 🏠</button>
+              <div id="resExtra" class="res-extra"></div>
+              <button class="btn-secondary res-pick" id="btnContinue">📚 Chọn bài khác</button>
             </div>
           </div>
         </section>
@@ -328,7 +329,7 @@
               <div class="coming-soon-emoji">🏆</div>
               <h2>Giải đấu — Sắp ra mắt!</h2>
               <p>Sắp tới các bé sẽ được thi đấu vui cùng bạn bè, leo bảng xếp hạng và nhận huy chương. Hãy chăm học để sẵn sàng nhé! 🌟</p>
-              <button class="btn-primary btn-nav" data-screen="grade">📖 Vào học ngay</button>
+              <button class="btn-primary btn-nav" data-screen="learn">📖 Vào học ngay</button>
             </div>
           </div>
         </section>
@@ -336,13 +337,14 @@
     </div>
   </div>
 
-  <script src="js/storage.js?v=20260930d"></script>
-  <script src="js/learning-engine.js?v=20260930d"></script>
-  <script src="js/api.js?v=20260930d"></script>
-  <script src="js/quiz.js?v=20260930d"></script>
-  <script src="js/dragonball.js?v=20260930d"></script>
-  <script src="js/parent-dashboard.js?v=20260930d"></script>
-  <script src="js/app.js?v=20260930d"></script>
-  <script src="js/guest-flow-guard.js?v=20260930d"></script>
+  <script src="js/storage.js?v=20261001a"></script>
+  <script src="js/learning-engine.js?v=20261001a"></script>
+  <script src="js/api.js?v=20261001a"></script>
+  <script src="js/quiz.js?v=20261001a"></script>
+  <script src="js/dragonball.js?v=20261001a"></script>
+  <script src="js/parent-dashboard.js?v=20261001a"></script>
+  <script src="js/app.js?v=20261001a"></script>
+  <script src="js/today.js?v=20261001a"></script>
+  <script src="js/guest-flow-guard.js?v=20261001a"></script>
 </body>
 </html>

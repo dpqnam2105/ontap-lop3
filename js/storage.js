@@ -184,6 +184,37 @@ const Storage = {
     }
   },
 
+  // ─── Tiến độ tích lũy (không reset theo ngày) ───────
+  // { [topicId]: { seen: [idx...], ok: [idx...] } } — ok = câu đã từng làm đúng ngay lần đầu chọn.
+  PROGRESS_TOTAL_KEY: 'khoBaiTap_progress_total_v1',
+
+  getTotalProgress(topicId) {
+    try {
+      const raw = localStorage.getItem(this._scoped(this.PROGRESS_TOTAL_KEY));
+      const all = raw ? JSON.parse(raw) : {};
+      const p = all[topicId] || {};
+      return { seen: p.seen || [], ok: p.ok || [] };
+    } catch (e) {
+      return { seen: [], ok: [] };
+    }
+  },
+
+  markTotalProgress(topicId, idx, correct) {
+    if (!topicId || idx == null || idx < 0) return;
+    try {
+      const key = this._scoped(this.PROGRESS_TOTAL_KEY);
+      const raw = localStorage.getItem(key);
+      const all = raw ? JSON.parse(raw) : {};
+      const p = all[topicId] || { seen: [], ok: [] };
+      if (!p.seen.includes(idx)) p.seen.push(idx);
+      if (correct && !p.ok.includes(idx)) p.ok.push(idx);
+      all[topicId] = p;
+      localStorage.setItem(key, JSON.stringify(all));
+    } catch (e) {
+      console.warn('markTotalProgress error:', e);
+    }
+  },
+
   // ─── Wrong history (tích lũy lâu dài) ───────
 
   /**

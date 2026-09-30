@@ -5,6 +5,19 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-01 — Màn "Hôm nay học gì?" + nhiệm vụ thật + tiến độ không bị xoá
+- **Trang chủ mới "Hôm nay học gì?"** (khi bé đã có tên): lời chào, chuỗi ngày, sao, thanh Level, lời nhắn của Thỏ và **kế hoạch 3 việc** Rabbit chọn sẵn mỗi ngày, cùng một nút lớn **Bắt đầu học / Học tiếp**. Vẫn có đường "Con muốn tự chọn bài".
+  - Việc 1: Ôn lại tối đa 5 câu con từng sai (nếu có).
+  - Việc 2: Luyện 10 câu ở chủ đề Toán còn yếu (chọn trong 3 chủ đề có tiến độ thấp nhất, theo giai đoạn đang học).
+  - Việc 3: Thử thách tuần (nếu tuần này chưa làm), hoặc 10 câu môn khác (Tiếng Anh / Tiếng Việt xoay vòng).
+  - Xong cả 3 việc → **+10 sao** (1 lần/ngày) và pháo hoa. Kế hoạch cố định trong ngày, riêng từng bé.
+- Bỏ khung "Nhiệm vụ hôm nay" cũ (chỉ là chữ tĩnh, không đếm được). Ảnh banner và khung nhập tên chỉ hiện khi chưa có tên.
+- **Nhớ lớp**: web mặc định Lớp 3 và nhớ lớp bé chọn; nút "Vào học" đi thẳng vào danh sách môn, không bắt chọn lại lớp. Bảng xếp hạng mở đúng tab lớp đang học.
+- **Tiến độ chủ đề tích luỹ**: thẻ chủ đề hiện "x/y câu đã đúng" cộng dồn qua các ngày (trước đây tự về 0 lúc nửa đêm), kèm "hôm nay n câu". Tính từ hôm nay trở đi.
+- **Màn kết quả mới**: hiện số sao và XP vừa nhận, thanh Level, tiến độ kế hoạch hôm nay, nút **Việc tiếp theo**, **Làm thêm một lượt**, **Về trang chủ**, **Chọn bài khác**.
+- Thay các hộp thoại `alert()` ở chỗ bé dùng (thiếu sao, đổi ngọc rồng, hết câu sai, huy hiệu…) bằng thông báo nhỏ của web.
+- Ẩn bớt thứ gây nhiễu: mục "Giải đấu" (sắp ra mắt), thẻ Lớp 4/5 "nghỉ hè", tab xếp hạng Lớp 4/5.
+
 ## 2026-09-30 — Thêm "Đề trộn tuần này" cho mọi môn
 - Trong mỗi môn, dưới thanh chọn giai đoạn có thẻ **🎲 Đề trộn tuần này**: 20 câu lấy xen kẽ từ tất cả chủ đề nằm trong giai đoạn bé đang chọn (phương pháp luyện trộn dạng — interleaving).
 - Bộ câu cố định trong một tuần (đổi vào thứ Hai), riêng cho từng bé và từng giai đoạn, nên làm lại được để so điểm; thẻ hiện **điểm cao nhất** của tuần.

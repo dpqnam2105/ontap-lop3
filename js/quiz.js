@@ -32,7 +32,9 @@ const Quiz = {
   // tim lai cau hoi goc trong ngan hang theo id (fallback: theo text de),
   // roi chay mot phien quiz tron cac mon. Khong dong vao tien do ngay cua tung
   // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
-  startWrongReview() {
+  startWrongReview(limit, todayTaskId) {
+    this.todayTaskId = todayTaskId || null;
+    this._lastLaunch = { type: 'wrong', limit: limit };
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
@@ -57,12 +59,13 @@ const Quiz = {
     }
 
     if (!pool.length) {
-      alert('Tuyệt vời! Con không còn câu sai nào cần ôn lại 🎉');
+      Rewards._achievementPopup('🎉 Tuyệt vời! Con không còn câu sai nào cần ôn lại');
+      if (window.Today) Today.onSessionFinish({ mode: 'wrong_review', taskId: this.todayTaskId, empty: true });
       return;
     }
 
     this.mode = 'wrong_review';
-    this.questions = this._shuffle(pool).slice(0, this.WRONG_REVIEW_SESSION);
+    this.questions = this._shuffle(pool).slice(0, limit || this.WRONG_REVIEW_SESSION);
     this.currentTopic = { id: 'wrong_review', name: 'Ôn câu sai', questions: this.questions };
     this.currentSubject = 'Ôn câu sai';
     this.currentTopicId = 'wrong_review';
@@ -71,6 +74,8 @@ const Quiz = {
     this.score = 0;
     this.curIdx = 0;
     this.sessionDetails = [];
+    this.sessionStars = 0;
+    this.sessionXP = 0;
 
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
@@ -89,8 +94,10 @@ const Quiz = {
 
   // Đề trộn tuần: câu hỏi lấy từ nhiều chủ đề của một môn (App dựng sẵn pool, cố định theo tuần).
   // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
-  startMixed(pool, subjectName, subjectId, mixKey) {
-    if (!pool || !pool.length) { alert('Chưa có câu hỏi để trộn con nhé 🌱'); return; }
+  startMixed(pool, subjectName, subjectId, mixKey, todayTaskId) {
+    if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
+    this.todayTaskId = todayTaskId || null;
+    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey };
     this.mode = 'mixed';
     this.mixKey = mixKey || '';
     this.questions = pool.slice();
@@ -103,6 +110,8 @@ const Quiz = {
     this.score = 0;
     this.curIdx = 0;
     this.sessionDetails = [];
+    this.sessionStars = 0;
+    this.sessionXP = 0;
 
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
@@ -121,6 +130,9 @@ const Quiz = {
 
   start(topic, subjectName, options) {
     options = options || {};
+    this.todayTaskId = options.todayTaskId || null;
+    this.sessionCount = options.count || null;
+    this._lastLaunch = { type: 'topic', topic, subjectName, options: { ...options, todayTaskId: null } };
     this.mode = options.mode || 'practice';
     this.currentTopic = topic;
     this.currentSubject = subjectName || '';
@@ -130,6 +142,8 @@ const Quiz = {
     this.score = 0;
     this.curIdx = 0;
     this.sessionDetails = [];
+    this.sessionStars = 0;
+    this.sessionXP = 0;
     // Giai đoạn học: chỉ lấy câu có chỉ số nằm trong options.allowed (null = cả chủ đề).
     // Giữ nguyên chỉ số gốc để tiến độ và câu sai không bị lệch.
     this.allowedIdx = Array.isArray(options.allowed) ? options.allowed.slice() : null;
@@ -144,8 +158,8 @@ const Quiz = {
     this.sessionInfo = selection.info;
 
     if (!this.questions.length) {
-      alert(this.mode === 'review'
-        ? 'Chưa có câu sai để ôn lại. Con làm bài mới trước nhé! 🌱'
+      Rewards._achievementPopup(this.mode === 'review'
+        ? '🌱 Chưa có câu sai để ôn lại. Con làm bài mới trước nhé!'
         : 'Chủ đề này chưa có câu hỏi.');
       return;
     }
@@ -186,8 +200,10 @@ const Quiz = {
     }
 
     // practice mode: keep old daily-session behavior, but use adaptive scoring when possible.
-    const numSessions = Math.max(1, Math.ceil(totalInTopic / this.TARGET_PER_SESSION));
-    const sessionSize = Math.ceil(totalInTopic / numSessions);
+    const perSession = this.sessionCount ? Math.min(this.sessionCount, this.TARGET_PER_SESSION) : this.TARGET_PER_SESSION;
+    const numSessions = Math.max(1, Math.ceil(totalInTopic / perSession));
+    // Có count (vd. nhiệm vụ hôm nay "10 câu") thì lấy đúng count câu; không thì chia đều như cũ.
+    const sessionSize = this.sessionCount ? Math.min(this.sessionCount, totalInTopic) : Math.ceil(totalInTopic / numSessions);
     const notLearned = allIndices.filter(i => !progress.learned.includes(i));
     let selectedIndices;
     let currentSession;
@@ -406,7 +422,10 @@ const Quiz = {
       if (this.canEarnPoint) {
         this.score++;
         Rewards.addStar(1);
-        if (Rewards.addXP) Rewards.addXP(this.mode === 'test' ? 12 : 8);
+        const xpGain = this.mode === 'test' ? 12 : 8;
+        if (Rewards.addXP) Rewards.addXP(xpGain);
+        this.sessionStars = (this.sessionStars || 0) + 1;
+        this.sessionXP = (this.sessionXP || 0) + xpGain;
         document.getElementById('scoreDisp').textContent = this.score;
         this._flyStar(btn);
         const scoreBadge = document.getElementById('scoreDisp').parentElement;
@@ -502,6 +521,8 @@ const Quiz = {
     // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
     // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
     if (this.mode !== 'wrong_review' && this.mode !== 'mixed') this._markLearned(q._idx, this.canEarnPoint);
+    // Tiến độ tích lũy theo chủ đề gốc của câu (mọi chế độ), không reset theo ngày.
+    if (Storage.markTotalProgress) Storage.markTotalProgress(q.topicId || this.currentTopicId, q._idx, this.canEarnPoint);
 
     this.curIdx++;
     if (this.curIdx >= this.questions.length) this._finish();
@@ -563,6 +584,12 @@ const Quiz = {
     }
 
     if (ratio >= 0.8) this._confettiBurst();
+    if (window.Today) {
+      try {
+        Today.onSessionFinish({ mode: this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
+        Today.renderResult({ stars: this.sessionStars || 0, xp: this.sessionXP || 0 });
+      } catch (e) { console.warn('Today result error', e); }
+    }
 
     const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
     this._saveLocalSessionDetails(durationSec);
@@ -858,7 +885,7 @@ const Rewards = {
     const data = this._loadData();
     cost = Number(cost || 0);
     if (data.stars < cost) {
-      alert('Chưa đủ sao để mua Sticker này rồi!');
+      this._achievementPopup('⭐ Chưa đủ sao để mua sticker này rồi, học thêm nhé!');
       return;
     }
     if (!data.inventory.includes(item)) data.inventory.push(item);
@@ -1082,14 +1109,14 @@ const Rewards = {
     const rank = { bronze: 1, silver: 2, gold: 3 };
     const currentRank = rank[data.currentBadge] || 0;
     let badge = null, cost = 0;
-    if (currentRank >= 3) { alert('Con đã có huy hiệu Vàng rồi! Tuyệt vời quá! 🥇'); return; }
+    if (currentRank >= 3) { this._achievementPopup('🥇 Con đã có huy hiệu Vàng rồi! Tuyệt vời quá!'); return; }
     if (currentRank < 3 && data.stars >= 30) { badge = 'gold'; cost = 30; }
     else if (currentRank < 2 && data.stars >= 20) { badge = 'silver'; cost = 20; }
     else if (currentRank < 1 && data.stars >= 10) { badge = 'bronze'; cost = 10; }
     else {
       const nextNeed = currentRank === 0 ? 10 : (currentRank === 1 ? 20 : 30);
       const nextName = currentRank === 0 ? 'Đồng' : (currentRank === 1 ? 'Bạc' : 'Vàng');
-      alert('Con cần ' + nextNeed + ' sao để đổi huy hiệu ' + nextName + ' nhé!');
+      this._achievementPopup('⭐ Con cần ' + nextNeed + ' sao để đổi huy hiệu ' + nextName + ' nhé!');
       return;
     }
     data.stars -= cost;
