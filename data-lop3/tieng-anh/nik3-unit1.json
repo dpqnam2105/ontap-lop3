@@ -1,0 +1,361 @@
+{
+  "topic": {
+    "id": "en_nik3-unit1",
+    "icon": "🏙️",
+    "name": "NIK3 Unit 1: Places & directions",
+    "questions": [
+      {
+        "q": "We see dinosaur bones and old things at the ___.",
+        "choices": [
+          "bank",
+          "harbor",
+          "museum",
+          "theater"
+        ],
+        "a": 2,
+        "hint": "Where can you look at old things from the past? (nơi trưng bày đồ cổ)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q001"
+      },
+      {
+        "q": "We watch a play or a show at the ___.",
+        "choices": [
+          "library",
+          "theater",
+          "museum",
+          "harbor"
+        ],
+        "a": 1,
+        "hint": "Actors act and sing there. (nhà hát)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q002"
+      },
+      {
+        "q": "Big ships and boats stop at the ___.",
+        "choices": [
+          "harbor",
+          "art gallery",
+          "square",
+          "bridge"
+        ],
+        "a": 0,
+        "hint": "Think about water and boats. (bến cảng)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q003"
+      },
+      {
+        "q": "We look at paintings at the ___.",
+        "choices": [
+          "harbor",
+          "art gallery",
+          "bank",
+          "recreation center"
+        ],
+        "a": 1,
+        "hint": "Paintings are art. (phòng tranh)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q004"
+      },
+      {
+        "q": "I swim and play badminton at the ___.",
+        "choices": [
+          "museum",
+          "library",
+          "art gallery",
+          "recreation center"
+        ],
+        "a": 3,
+        "hint": "It is a place for sports and games. (trung tâm vui chơi, thể thao)",
+        "difficulty": 2,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q005"
+      },
+      {
+        "q": "I borrow books at the ___.",
+        "choices": [
+          "harbor",
+          "restaurant",
+          "library",
+          "theater"
+        ],
+        "a": 2,
+        "hint": "Where do you find many books? (thư viện)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q006"
+      },
+      {
+        "q": "We walk across the ___ to go over the river.",
+        "choices": [
+          "bridge",
+          "harbor",
+          "tower",
+          "square"
+        ],
+        "a": 0,
+        "hint": "It goes over the water. (cây cầu)",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q007"
+      },
+      {
+        "q": "Which word is NOT a place in town?",
+        "choices": [
+          "museum",
+          "claw",
+          "bridge",
+          "square"
+        ],
+        "a": 1,
+        "hint": "Three words are places. One word is a part of an animal.",
+        "difficulty": 2,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q008"
+      },
+      {
+        "q": "The clock is on the wall. The sofa is under the clock. The clock is ___ the sofa.",
+        "choices": [
+          "below",
+          "beside",
+          "above",
+          "in"
+        ],
+        "a": 2,
+        "hint": "The clock is higher than the sofa. (ở phía trên)",
+        "difficulty": 2,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q009"
+      },
+      {
+        "q": "The shoes are under the bed. The shoes are ___ the bed.",
+        "choices": [
+          "above",
+          "below",
+          "beside",
+          "close to"
+        ],
+        "a": 1,
+        "hint": "Under = lower than something. (ở phía dưới)",
+        "difficulty": 1,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q010"
+      },
+      {
+        "q": "The cat sits next to the dog. The cat is ___ the dog.",
+        "choices": [
+          "below",
+          "far from",
+          "above",
+          "beside"
+        ],
+        "a": 3,
+        "hint": "Next to has the same meaning. (bên cạnh)",
+        "difficulty": 1,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q011"
+      },
+      {
+        "q": "My school is only five minutes from my house. My school is ___ my house.",
+        "choices": [
+          "close to",
+          "below",
+          "above",
+          "far from"
+        ],
+        "a": 0,
+        "hint": "Five minutes is not far. (gần)",
+        "difficulty": 2,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q012"
+      },
+      {
+        "q": "The bird is flying over the tree. The bird is ___ the tree.",
+        "choices": [
+          "beside",
+          "in",
+          "below",
+          "above"
+        ],
+        "a": 3,
+        "hint": "Over the tree = higher than the tree.",
+        "difficulty": 1,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q013"
+      },
+      {
+        "q": "You see a sign: NO SWIMMING. What does it mean?",
+        "choices": [
+          "Swim here.",
+          "Please swim fast.",
+          "Don't swim here.",
+          "Don't walk here."
+        ],
+        "a": 2,
+        "hint": "NO + -ing on a sign = Don't + verb.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q014"
+      },
+      {
+        "q": "You are in the library. What does the teacher say?",
+        "choices": [
+          "Don't read.",
+          "Please be loud.",
+          "Run, please.",
+          "Please be quiet."
+        ],
+        "a": 3,
+        "hint": "What must we do in a library?",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q015"
+      },
+      {
+        "q": "The light for walkers is red. Which sentence is right?",
+        "choices": [
+          "Don't cross now.",
+          "Cross now, please.",
+          "Run across now.",
+          "Turn left now."
+        ],
+        "a": 0,
+        "hint": "Red light = stop and wait.",
+        "difficulty": 2,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q016"
+      },
+      {
+        "q": "Put the words in order: feed / Don't / the / animals",
+        "choices": [
+          "The animals don't feed.",
+          "Don't feed the animals.",
+          "Feed don't the animals.",
+          "Don't the animals feed."
+        ],
+        "a": 1,
+        "hint": "Start with Don't, then the verb.",
+        "difficulty": 2,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q017"
+      },
+      {
+        "q": "The arrow points to the RIGHT. What do you say?",
+        "choices": [
+          "Turn right.",
+          "Turn left.",
+          "Don't turn right.",
+          "Go back."
+        ],
+        "a": 0,
+        "hint": "Look at the arrow's direction. (rẽ phải)",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q018"
+      },
+      {
+        "q": "___ you going to the museum now? – Yes, I am.",
+        "choices": [
+          "Does",
+          "Are",
+          "Do",
+          "Is"
+        ],
+        "a": 1,
+        "hint": "The answer is 'Yes, I am.' → ask with Are.",
+        "difficulty": 2,
+        "skill": "questions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q019"
+      },
+      {
+        "q": "___ she go to the library on Saturdays? – Yes, she does.",
+        "choices": [
+          "Is",
+          "Are",
+          "Do",
+          "Does"
+        ],
+        "a": 3,
+        "hint": "The answer uses 'does'. On Saturdays = every Saturday.",
+        "difficulty": 2,
+        "skill": "questions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q020"
+      },
+      {
+        "q": "Is Tom taking the bus now? – No, he ___.",
+        "choices": [
+          "isn't",
+          "doesn't",
+          "aren't",
+          "don't"
+        ],
+        "a": 0,
+        "hint": "The question starts with Is → the short answer uses is / isn't.",
+        "difficulty": 2,
+        "skill": "questions",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q021"
+      },
+      {
+        "q": "How do you go to school every day? – I go ___.",
+        "choices": [
+          "in bus",
+          "at bus",
+          "by bus",
+          "with bus"
+        ],
+        "a": 2,
+        "hint": "We say: by bus, by car, by bike.",
+        "difficulty": 2,
+        "skill": "transport",
+        "unit": "nik3-unit1",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit1_q022"
+      }
+    ]
+  }
+}

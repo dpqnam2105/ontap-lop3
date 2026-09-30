@@ -1,0 +1,34 @@
+# CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
+
+Nhật ký mỗi lần sửa website và push lên GitHub. Mới nhất ở trên cùng.
+Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
+
+---
+
+## 2026-09-30 — Tiếng Anh lớp 3: thêm 92 câu
+- **NIK3 Unit 1: Places & directions** (chủ đề mới, 22 câu): nơi chốn trong thành phố (museum, theater, harbor, art gallery, recreation center…), giới từ above / below / beside / close to, câu mệnh lệnh và biển báo (Don't…), câu hỏi Are you…-ing? / Does she…?, đi lại bằng by bus.
+- **NIK3 Unit 2: Dinosaurs & Ancient Egypt** (chủ đề mới, 22 câu): từ vựng khủng long và Ai Cập cổ đại, odd one out, has to / have to / don't have to / doesn't have to, câu hỏi Do/Does… have to?
+- **Adjectives & Adverbs** (chủ đề mới, 16 câu): tính từ hay trạng từ, quy tắc -ly, y → ily, good → well, fast → fast.
+- **Reading: NIK3 Unit 1–2** (chủ đề mới, 12 câu): 3 bài đọc ngắn, mỗi bài 4 câu hỏi.
+- **Global Success 3 (tập 1)** (chủ đề mới, 20 câu): chào hỏi, tên tuổi, this/that, cơ thể, sở thích, phòng học, mệnh lệnh trong lớp, đồ dùng học tập, màu sắc, giờ ra chơi.
+- Nội dung bám theo các phiếu in NIK3 Unit 1–2 và phiếu Tính từ – Trạng từ đã làm. Các chủ đề tiếng Anh cũ giữ nguyên.
+
+## 2026-09-30 — Toán lớp 3: thêm 36 câu có hình
+- **Đếm hình & đường gấp khúc** (chủ đề mới, 20 câu): đếm tam giác, tứ giác, hình chữ nhật, hình vuông trong hình ghép; đường gấp khúc, đổi ra dm, so sánh hai con đường.
+- **Tư duy logic (kiểu Bebras)**: +16 câu có hình (lưới 3×3, sơ đồ có/không, đếm đường đi, mã hóa ô đen trắng), từ 30 lên 46 câu.
+- 29 hình vẽ SVG trong `images/questions/lop3/`; ảnh câu hỏi tự co giãn trên máy tính.
+- Bắt đầu push thẳng lên GitHub (không cần tải file lên tay nữa).
+
+## 2026-09-29 — Toán + Tiếng Việt lớp 3: thêm 226 câu
+- Toán: Tư duy số & phép tính (55), Toán có lời văn hay (39), Tư duy logic kiểu Bebras (30).
+- Tiếng Việt: Đọc hiểu truyện ngắn (24), Từ, câu, dấu câu đến bài 12 (47), Chính tả theo nghĩa (25), Viết đoạn văn về bạn (6).
+- Tạm ẩn hai chủ đề HK2 "Số đến 100 000" và "Cộng trừ trong phạm vi 100 000".
+
+## 2026-09-25 — Viết lại bộ câu lớp 3
+- Viết lại toàn bộ câu lớp 3 cho đúng phạm vi và thuật ngữ lớp 3; đáp án chia đều A/B/C/D.
+
+## 2026-09-17 — Cập nhật website
+- Nhiều lần tải file lên (chưa ghi chi tiết).
+
+## Tháng 6/2026 — Dựng website
+- Dựng website, hệ thống phần thưởng, cửa hàng sao, trang phụ huynh; dựng sườn dữ liệu lớp 3.

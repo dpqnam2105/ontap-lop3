@@ -1,0 +1,329 @@
+{
+  "topic": {
+    "id": "en_global-success-3",
+    "icon": "🌟",
+    "name": "Global Success 3 (tập 1)",
+    "questions": [
+      {
+        "q": "Hello, I'm Mai. How are you? – ___",
+        "choices": [
+          "Goodbye.",
+          "My name's Nam.",
+          "Fine, thank you.",
+          "I'm eight."
+        ],
+        "a": 2,
+        "hint": "How are you? asks how you feel.",
+        "difficulty": 1,
+        "skill": "gs-greetings",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q001"
+      },
+      {
+        "q": "What's your name? – ___",
+        "choices": [
+          "I'm fine.",
+          "It's a pen.",
+          "I'm nine years old.",
+          "My name's Linh."
+        ],
+        "a": 3,
+        "hint": "name → My name's …",
+        "difficulty": 1,
+        "skill": "gs-names",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q002"
+      },
+      {
+        "q": "How old are you? – ___",
+        "choices": [
+          "My name's Ben.",
+          "I'm fine, thanks.",
+          "It's red.",
+          "I'm eight years old."
+        ],
+        "a": 3,
+        "hint": "How old → years old.",
+        "difficulty": 1,
+        "skill": "gs-names",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q003"
+      },
+      {
+        "q": "Is that your teacher? – Yes, ___",
+        "choices": [
+          "they are.",
+          "I am.",
+          "it isn't.",
+          "it is."
+        ],
+        "a": 3,
+        "hint": "Is that…? → Yes, it is. / No, it isn't.",
+        "difficulty": 2,
+        "skill": "gs-friends",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q004"
+      },
+      {
+        "q": "___ is my friend Lucy. (Lucy is next to me.)",
+        "choices": [
+          "Those",
+          "This",
+          "That",
+          "These"
+        ],
+        "a": 1,
+        "hint": "Near you → this. Far from you → that.",
+        "difficulty": 2,
+        "skill": "gs-friends",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q005"
+      },
+      {
+        "q": "I see with my ___.",
+        "choices": [
+          "nose",
+          "hands",
+          "eyes",
+          "ears"
+        ],
+        "a": 2,
+        "hint": "Which part of the body do you use to see?",
+        "difficulty": 1,
+        "skill": "gs-body",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q006"
+      },
+      {
+        "q": "Touch your ___! (the part you smell with)",
+        "choices": [
+          "mouth",
+          "nose",
+          "ear",
+          "hair"
+        ],
+        "a": 1,
+        "hint": "You smell flowers with it.",
+        "difficulty": 1,
+        "skill": "gs-body",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q007"
+      },
+      {
+        "q": "What's your hobby? – ___",
+        "choices": [
+          "I like drawing.",
+          "I have a ruler.",
+          "It's blue.",
+          "I'm fine."
+        ],
+        "a": 0,
+        "hint": "hobby = something you like to do.",
+        "difficulty": 1,
+        "skill": "gs-hobbies",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q008"
+      },
+      {
+        "q": "Which word is NOT a hobby?",
+        "choices": [
+          "dancing",
+          "ruler",
+          "swimming",
+          "singing"
+        ],
+        "a": 1,
+        "hint": "Hobbies here end in -ing.",
+        "difficulty": 1,
+        "skill": "gs-hobbies",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q009"
+      },
+      {
+        "q": "We use computers in the ___.",
+        "choices": [
+          "computer room",
+          "music room",
+          "gym",
+          "art room"
+        ],
+        "a": 0,
+        "hint": "The name of the room tells you.",
+        "difficulty": 1,
+        "skill": "gs-school",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q010"
+      },
+      {
+        "q": "We play sports in the ___.",
+        "choices": [
+          "gym",
+          "classroom",
+          "library",
+          "art room"
+        ],
+        "a": 0,
+        "hint": "It is a big room for sports. (phòng thể dục)",
+        "difficulty": 1,
+        "skill": "gs-school",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q011"
+      },
+      {
+        "q": "Let's go to the playground! – ___",
+        "choices": [
+          "No, I don't.",
+          "OK, let's go.",
+          "Yes, it is.",
+          "Fine, thanks."
+        ],
+        "a": 1,
+        "hint": "Let's… → OK, let's go.",
+        "difficulty": 2,
+        "skill": "gs-school",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q012"
+      },
+      {
+        "q": "May I come in? – ___",
+        "choices": [
+          "Yes, it is.",
+          "Yes, I do.",
+          "Yes, you can.",
+          "Yes, I am."
+        ],
+        "a": 2,
+        "hint": "May I…? → Yes, you can. / No, you can't.",
+        "difficulty": 2,
+        "skill": "gs-instructions",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q013"
+      },
+      {
+        "q": "The teacher says: '___ down, please!'",
+        "choices": [
+          "Open",
+          "Stand",
+          "Sit",
+          "Go"
+        ],
+        "a": 2,
+        "hint": "The opposite of 'stand up'.",
+        "difficulty": 1,
+        "skill": "gs-instructions",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q014"
+      },
+      {
+        "q": "Do you have a pencil case? – No, ___",
+        "choices": [
+          "it isn't.",
+          "I don't.",
+          "I'm not.",
+          "I haven't."
+        ],
+        "a": 1,
+        "hint": "Do you…? → Yes, I do. / No, I don't.",
+        "difficulty": 2,
+        "skill": "gs-school-things",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q015"
+      },
+      {
+        "q": "I have a ___. I use it to rub out mistakes.",
+        "choices": [
+          "notebook",
+          "pen",
+          "eraser",
+          "ruler"
+        ],
+        "a": 2,
+        "hint": "rub out = xoá.",
+        "difficulty": 1,
+        "skill": "gs-school-things",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q016"
+      },
+      {
+        "q": "What colour are they? – ___",
+        "choices": [
+          "They're green.",
+          "They green.",
+          "Is it green?",
+          "It's green."
+        ],
+        "a": 0,
+        "hint": "are they → They're …",
+        "difficulty": 2,
+        "skill": "gs-colours",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q017"
+      },
+      {
+        "q": "What colour is the sky on a sunny day?",
+        "choices": [
+          "black",
+          "orange",
+          "brown",
+          "blue"
+        ],
+        "a": 3,
+        "hint": "Look up on a sunny day.",
+        "difficulty": 1,
+        "skill": "gs-colours",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q018"
+      },
+      {
+        "q": "What do you do at break time? – ___",
+        "choices": [
+          "It's yellow.",
+          "Yes, you can.",
+          "I'm eight.",
+          "I play chess."
+        ],
+        "a": 3,
+        "hint": "The question asks about an activity.",
+        "difficulty": 1,
+        "skill": "gs-break-time",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q019"
+      },
+      {
+        "q": "Which game do you play with a small ball and a table?",
+        "choices": [
+          "table tennis",
+          "basketball",
+          "chess",
+          "football"
+        ],
+        "a": 0,
+        "hint": "The name of the game tells you.",
+        "difficulty": 2,
+        "skill": "gs-break-time",
+        "unit": "global-success-3",
+        "source": "claude-global-success-20260930",
+        "id": "en_global-success-3_q020"
+      }
+    ]
+  }
+}

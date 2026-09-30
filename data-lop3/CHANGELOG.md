@@ -6,6 +6,13 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-09-30 (Claude — Tiếng Anh NIK3 + Global Success)
+- Tiếng Anh / NIK3 Unit 1: Places & directions — +22 câu (chủ đề mới)
+- Tiếng Anh / NIK3 Unit 2: Dinosaurs & Ancient Egypt — +22 câu (chủ đề mới)
+- Tiếng Anh / Adjectives & Adverbs — +16 câu (chủ đề mới)
+- Tiếng Anh / Reading: NIK3 Unit 1–2 — +12 câu (chủ đề mới, 3 bài đọc)
+- Tiếng Anh / Global Success 3 (tập 1) — +20 câu (chủ đề mới)
+
 ## 2026-09-30 (Claude — Toán có hình)
 - Toán / Đếm hình & đường gấp khúc (chủ đề mới) — +20 câu: đếm tam giác, tứ giác, hình chữ nhật, hình vuông trong hình ghép (15); đường gấp khúc, đổi ra dm, so sánh hai con đường (5). Số hình đếm bằng chương trình.
 - Toán / Tư duy logic (kiểu Bebras) — +16 câu có hình: lưới 3×3 đủ 3 loại hình (4), sơ đồ câu hỏi có/không (4), đếm đường đi theo mũi tên (4), mã hóa ô đen trắng (4). 30 → 46 câu.

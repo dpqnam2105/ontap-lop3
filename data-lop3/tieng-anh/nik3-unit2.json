@@ -1,0 +1,361 @@
+{
+  "topic": {
+    "id": "en_nik3-unit2",
+    "icon": "🦖",
+    "name": "NIK3 Unit 2: Dinosaurs & Ancient Egypt",
+    "questions": [
+      {
+        "q": "An animal that eats only plants is a ___.",
+        "choices": [
+          "dinosaur",
+          "pharaoh",
+          "carnivore",
+          "herbivore"
+        ],
+        "a": 3,
+        "hint": "herb- is like grass and plants. (ăn cỏ)",
+        "difficulty": 1,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q001"
+      },
+      {
+        "q": "A T-Rex eats meat. It is a ___.",
+        "choices": [
+          "tomb",
+          "carnivore",
+          "herbivore",
+          "horn"
+        ],
+        "a": 1,
+        "hint": "Think: carni- = meat (thịt).",
+        "difficulty": 1,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q002"
+      },
+      {
+        "q": "There are no dinosaurs today. Dinosaurs are ___.",
+        "choices": [
+          "loud",
+          "careful",
+          "quick",
+          "extinct"
+        ],
+        "a": 3,
+        "hint": "All of them are gone. (tuyệt chủng)",
+        "difficulty": 1,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q003"
+      },
+      {
+        "q": "The long part at the back of an animal is its ___.",
+        "choices": [
+          "tail",
+          "claw",
+          "horn",
+          "steps"
+        ],
+        "a": 0,
+        "hint": "A dog wags it when it is happy.",
+        "difficulty": 1,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q004"
+      },
+      {
+        "q": "A hard, pointed part on an animal's head is a ___.",
+        "choices": [
+          "tomb",
+          "horn",
+          "tail",
+          "gold"
+        ],
+        "a": 1,
+        "hint": "A Triceratops has three of them. (sừng)",
+        "difficulty": 2,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q005"
+      },
+      {
+        "q": "A person who studies old things from the past is an ___.",
+        "choices": [
+          "pharaoh",
+          "teacher",
+          "thief",
+          "archeologist"
+        ],
+        "a": 3,
+        "hint": "This person digs slowly to find old things. (nhà khảo cổ)",
+        "difficulty": 2,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q006"
+      },
+      {
+        "q": "The king of ancient Egypt was called a ___.",
+        "choices": [
+          "archeologist",
+          "thief",
+          "pharaoh",
+          "carnivore"
+        ],
+        "a": 2,
+        "hint": "Tutankhamun was one of them.",
+        "difficulty": 1,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q007"
+      },
+      {
+        "q": "The pharaoh was buried in a ___ under the pyramid.",
+        "choices": [
+          "tomb",
+          "library",
+          "harbor",
+          "museum"
+        ],
+        "a": 0,
+        "hint": "A place for a dead king. (lăng mộ)",
+        "difficulty": 2,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q008"
+      },
+      {
+        "q": "Tutankhamun's mask is made of ___. It is yellow and very expensive.",
+        "choices": [
+          "steps",
+          "tail",
+          "gold",
+          "horn"
+        ],
+        "a": 2,
+        "hint": "A yellow metal. (vàng)",
+        "difficulty": 1,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q009"
+      },
+      {
+        "q": "Bad people who take things that are not theirs are ___.",
+        "choices": [
+          "thieves",
+          "pharaohs",
+          "archeologists",
+          "herbivores"
+        ],
+        "a": 0,
+        "hint": "One thief, two ___. (những tên trộm)",
+        "difficulty": 2,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q010"
+      },
+      {
+        "q": "Archeologists ___ in the sand to find old things.",
+        "choices": [
+          "dig",
+          "bury",
+          "fly",
+          "swim"
+        ],
+        "a": 0,
+        "hint": "They use small tools in the ground. (đào)",
+        "difficulty": 2,
+        "skill": "egypt",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q011"
+      },
+      {
+        "q": "Odd one out: herbivore · carnivore · dinosaur · gold",
+        "choices": [
+          "dinosaur",
+          "herbivore",
+          "gold",
+          "carnivore"
+        ],
+        "a": 2,
+        "hint": "Three words are about dinosaurs.",
+        "difficulty": 1,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q012"
+      },
+      {
+        "q": "Odd one out: pharaoh · tomb · treasure · tail",
+        "choices": [
+          "tail",
+          "tomb",
+          "pharaoh",
+          "treasure"
+        ],
+        "a": 0,
+        "hint": "Three words are about ancient Egypt.",
+        "difficulty": 2,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q013"
+      },
+      {
+        "q": "Odd one out: quick · careful · loud · dig",
+        "choices": [
+          "loud",
+          "quick",
+          "dig",
+          "careful"
+        ],
+        "a": 2,
+        "hint": "Three words describe things (adjectives). One word is an action.",
+        "difficulty": 3,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q014"
+      },
+      {
+        "q": "Tilly ___ be careful near the T-Rex.",
+        "choices": [
+          "having to",
+          "have to",
+          "haves to",
+          "has to"
+        ],
+        "a": 3,
+        "hint": "Tilly = she → has to.",
+        "difficulty": 1,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q015"
+      },
+      {
+        "q": "Archeologists ___ dig very slowly.",
+        "choices": [
+          "to have",
+          "have to",
+          "has to",
+          "haves to"
+        ],
+        "a": 1,
+        "hint": "Archeologists = they → have to.",
+        "difficulty": 1,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q016"
+      },
+      {
+        "q": "The museum is free today. We ___ pay.",
+        "choices": [
+          "doesn't have to",
+          "don't have to",
+          "have to",
+          "has to"
+        ],
+        "a": 1,
+        "hint": "Free = no money. We → don't have to.",
+        "difficulty": 2,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q017"
+      },
+      {
+        "q": "Sam ___ go to school on Sunday. He stays at home.",
+        "choices": [
+          "has to",
+          "doesn't have to",
+          "have to",
+          "don't have to"
+        ],
+        "a": 1,
+        "hint": "Sam = he. No school on Sunday.",
+        "difficulty": 2,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q018"
+      },
+      {
+        "q": "___ you have to wear a hat in the desert? – Yes, we do.",
+        "choices": [
+          "Is",
+          "Do",
+          "Does",
+          "Are"
+        ],
+        "a": 1,
+        "hint": "The answer is 'Yes, we do.'",
+        "difficulty": 2,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q019"
+      },
+      {
+        "q": "___ Linh have to feed the cat? – No, she doesn't.",
+        "choices": [
+          "Do",
+          "Has",
+          "Is",
+          "Does"
+        ],
+        "a": 3,
+        "hint": "Linh = she, and the answer uses doesn't.",
+        "difficulty": 2,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q020"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "She has to cleans her room.",
+          "She have to clean her room.",
+          "She has to clean her room.",
+          "She to have clean her room."
+        ],
+        "a": 2,
+        "hint": "he / she / it → has to + verb (no -s on the verb).",
+        "difficulty": 3,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q021"
+      },
+      {
+        "q": "We have to be quiet in the museum. What does 'have to' mean?",
+        "choices": [
+          "phải",
+          "có thể",
+          "không cần",
+          "thích"
+        ],
+        "a": 0,
+        "hint": "have to = it is a rule, you must do it.",
+        "difficulty": 1,
+        "skill": "have-to",
+        "unit": "nik3-unit2",
+        "source": "claude-nik3-20260930",
+        "id": "en_nik3-unit2_q022"
+      }
+    ]
+  }
+}

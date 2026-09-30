@@ -1,0 +1,265 @@
+{
+  "topic": {
+    "id": "en_adj-adv",
+    "icon": "✍️",
+    "name": "Adjectives & Adverbs",
+    "questions": [
+      {
+        "q": "The rabbit runs very ___.",
+        "choices": [
+          "quicker",
+          "quickful",
+          "quick",
+          "quickly"
+        ],
+        "a": 3,
+        "hint": "runs is an action → use an adverb (-ly).",
+        "difficulty": 1,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q001"
+      },
+      {
+        "q": "The rabbit is very ___.",
+        "choices": [
+          "quicks",
+          "quickly",
+          "quickful",
+          "quick"
+        ],
+        "a": 3,
+        "hint": "is → use an adjective.",
+        "difficulty": 1,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q002"
+      },
+      {
+        "q": "The classroom is very ___.",
+        "choices": [
+          "quiet",
+          "quietly",
+          "quiets",
+          "quieter than"
+        ],
+        "a": 0,
+        "hint": "Look at the word before 'very': is → adjective.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q003"
+      },
+      {
+        "q": "The children read very ___.",
+        "choices": [
+          "quiets",
+          "quietful",
+          "quietly",
+          "quiet"
+        ],
+        "a": 2,
+        "hint": "read is an action → adverb.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q004"
+      },
+      {
+        "q": "Tom is a ___ swimmer.",
+        "choices": [
+          "good",
+          "well",
+          "better",
+          "goodly"
+        ],
+        "a": 0,
+        "hint": "a ___ + person/thing → adjective.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q005"
+      },
+      {
+        "q": "Tom swims ___.",
+        "choices": [
+          "nice",
+          "well",
+          "goodly",
+          "good"
+        ],
+        "a": 1,
+        "hint": "good → well (special word).",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q006"
+      },
+      {
+        "q": "He runs ___.",
+        "choices": [
+          "fastful",
+          "fastly",
+          "fast",
+          "fasty"
+        ],
+        "a": 2,
+        "hint": "fast → fast. There is no 'fastly'.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q007"
+      },
+      {
+        "q": "happy → ___ (adverb)",
+        "choices": [
+          "happly",
+          "happy",
+          "happily",
+          "happyly"
+        ],
+        "a": 2,
+        "hint": "Word ends in -y: change y → i, then add -ly.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q008"
+      },
+      {
+        "q": "easy → ___ (adverb)",
+        "choices": [
+          "easy",
+          "easily",
+          "easyly",
+          "easly"
+        ],
+        "a": 1,
+        "hint": "Word ends in -y: change y → i, then add -ly.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q009"
+      },
+      {
+        "q": "Be ___! The road is busy.",
+        "choices": [
+          "carefully",
+          "carely",
+          "careful",
+          "care"
+        ],
+        "a": 2,
+        "hint": "Be → adjective.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q010"
+      },
+      {
+        "q": "Please cross the street ___.",
+        "choices": [
+          "carefully",
+          "care",
+          "careful",
+          "carefuly"
+        ],
+        "a": 0,
+        "hint": "cross is an action → adverb.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q011"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "The music is very loudly.",
+          "He sings very loud.",
+          "She is a carefully girl.",
+          "He sings very loudly."
+        ],
+        "a": 3,
+        "hint": "Action → adverb; is / a + noun → adjective.",
+        "difficulty": 3,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q012"
+      },
+      {
+        "q": "Which word is an ADVERB?",
+        "choices": [
+          "neat",
+          "softly",
+          "soft",
+          "slow"
+        ],
+        "a": 1,
+        "hint": "Adverbs often end in -ly.",
+        "difficulty": 1,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q013"
+      },
+      {
+        "q": "He is a quick runner. = He runs ___.",
+        "choices": [
+          "quicker",
+          "quick",
+          "fastly",
+          "quickly"
+        ],
+        "a": 3,
+        "hint": "a quick runner → runs quickly.",
+        "difficulty": 3,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q014"
+      },
+      {
+        "q": "The T-Rex has a ___ roar.",
+        "choices": [
+          "loudful",
+          "loud",
+          "loudly",
+          "louds"
+        ],
+        "a": 1,
+        "hint": "a ___ roar: roar here is a thing (a noun) → adjective.",
+        "difficulty": 3,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q015"
+      },
+      {
+        "q": "Please sit ___ and listen.",
+        "choices": [
+          "nicely",
+          "nice",
+          "nicly",
+          "nicer"
+        ],
+        "a": 0,
+        "hint": "sit is an action → adverb. nice → nicely.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "claude-nik3-20260930",
+        "id": "en_adj-adv_q016"
+      }
+    ]
+  }
+}

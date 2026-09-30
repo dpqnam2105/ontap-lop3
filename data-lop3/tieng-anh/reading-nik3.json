@@ -1,0 +1,201 @@
+{
+  "topic": {
+    "id": "en_reading-nik3",
+    "icon": "📖",
+    "name": "Reading: NIK3 Unit 1–2",
+    "questions": [
+      {
+        "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" Where is the museum?",
+        "choices": [
+          "above the library",
+          "beside the harbor",
+          "far from Lily's school",
+          "close to Lily's school"
+        ],
+        "a": 3,
+        "hint": "Find the sentence with 'close to'.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q001"
+      },
+      {
+        "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" How does Lily go to the museum?",
+        "choices": [
+          "by car",
+          "by bike",
+          "by bus",
+          "on foot"
+        ],
+        "a": 2,
+        "hint": "Find the word 'by'.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q002"
+      },
+      {
+        "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" Who goes with Lily?",
+        "choices": [
+          "her teacher",
+          "her grandpa",
+          "her brother",
+          "her mom"
+        ],
+        "a": 1,
+        "hint": "Read the sentence about Sunday.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q003"
+      },
+      {
+        "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" Which sentence is TRUE?",
+        "choices": [
+          "The dinosaur has small teeth.",
+          "Lily goes there every Saturday.",
+          "They walk loudly in the museum.",
+          "The dinosaur has a long tail."
+        ],
+        "a": 3,
+        "hint": "Check each sentence with the text.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q004"
+      },
+      {
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What is Ben's job?",
+        "choices": [
+          "an archeologist",
+          "a teacher",
+          "a driver",
+          "a pharaoh"
+        ],
+        "a": 0,
+        "hint": "Read the first sentence.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q005"
+      },
+      {
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" Why does Ben wear a big hat?",
+        "choices": [
+          "Because it is very hot.",
+          "Because he likes hats.",
+          "Because it is cold.",
+          "Because it is raining."
+        ],
+        "a": 0,
+        "hint": "Find the word 'so'.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q006"
+      },
+      {
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What does Ben find today?",
+        "choices": [
+          "a pharaoh",
+          "a small gold cat",
+          "a big dinosaur",
+          "a gold mask"
+        ],
+        "a": 1,
+        "hint": "Find the word 'Today'.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q007"
+      },
+      {
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" How does Ben dig?",
+        "choices": [
+          "slow and careful",
+          "quickly and loudly",
+          "fast and happily",
+          "slowly and carefully"
+        ],
+        "a": 3,
+        "hint": "Look for words ending in -ly.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q008"
+      },
+      {
+        "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" How does Mai go to the recreation center?",
+        "choices": [
+          "by bike",
+          "by car",
+          "by boat",
+          "by bus"
+        ],
+        "a": 0,
+        "hint": "Read the second sentence.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q009"
+      },
+      {
+        "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" What does Mai do at the recreation center?",
+        "choices": [
+          "She reads books.",
+          "She plays badminton.",
+          "She swims.",
+          "She watches a play."
+        ],
+        "a": 2,
+        "hint": "Read the sentence after 'recreation center'.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q010"
+      },
+      {
+        "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" Where is the library?",
+        "choices": [
+          "close to the harbor",
+          "above the recreation center",
+          "beside Mai's house",
+          "far from Mai's house"
+        ],
+        "a": 2,
+        "hint": "Find the word 'library'.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q011"
+      },
+      {
+        "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" Which sentence is TRUE?",
+        "choices": [
+          "Mai has to get up early on Sundays.",
+          "Mai doesn't have to get up early on Sundays.",
+          "Mai swims with her sister.",
+          "Mai lives far from the harbor."
+        ],
+        "a": 1,
+        "hint": "Check 'doesn't have to' in the text.",
+        "difficulty": 3,
+        "skill": "reading",
+        "unit": "reading-nik3",
+        "source": "claude-nik3-20260930",
+        "id": "en_reading-nik3_q012"
+      }
+    ]
+  }
+}

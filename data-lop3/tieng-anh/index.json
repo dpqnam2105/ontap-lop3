@@ -4,6 +4,36 @@
   "name": "Tiếng Anh",
   "topics": [
     {
+      "id": "en_nik3-unit1",
+      "name": "NIK3 Unit 1: Places & directions",
+      "file": "nik3-unit1.json",
+      "count": 22
+    },
+    {
+      "id": "en_nik3-unit2",
+      "name": "NIK3 Unit 2: Dinosaurs & Ancient Egypt",
+      "file": "nik3-unit2.json",
+      "count": 22
+    },
+    {
+      "id": "en_adj-adv",
+      "name": "Adjectives & Adverbs",
+      "file": "adj-adv.json",
+      "count": 16
+    },
+    {
+      "id": "en_reading-nik3",
+      "name": "Reading: NIK3 Unit 1–2",
+      "file": "reading-nik3.json",
+      "count": 12
+    },
+    {
+      "id": "en_global-success-3",
+      "name": "Global Success 3 (tập 1)",
+      "file": "global-success-3.json",
+      "count": 20
+    },
+    {
       "id": "en_unit-placeholder-01",
       "name": "At School",
       "file": "unit-placeholder-01.json",
