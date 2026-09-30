@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-09-30 (Claude — Bebras đợt 2)
+- Toán / Tư duy logic (kiểu Bebras) — +24 câu (46 → 70): robot-lenh, duong-ngan-nhat, xep-lich, hang-doi, quy-luat-lap, can-tim-bi, to-mau, den-nhi-phan. Tất cả `stage: 1`.
+
 ## 2026-09-30 (Claude — giai đoạn học Tiếng Anh)
 - Tiếng Anh lớp 3: thêm `stage` cho cả 196 câu (đều GĐ1); `tieng-anh/index.json` có thêm `stages` (theo unit NIK3) và `defaultStage`.
 

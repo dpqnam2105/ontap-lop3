@@ -5,6 +5,18 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Toán lớp 3: thêm 24 câu tư duy kiểu Bebras
+- Chủ đề **Tư duy logic (kiểu Bebras)**: từ 46 lên 70 câu, thêm 8 dạng mới (đều ở GĐ1):
+  - Robot đi theo lệnh trên lưới có đá (4 câu, có hình): dừng ở ô nào, chọn dãy lệnh đúng, lệnh lặp, ít lệnh nhất
+  - Đường đi ngắn nhất trên bản đồ có số phút/số mét (3 câu, có hình)
+  - Xếp lịch làm việc: việc nào chờ việc nào, làm song song (3 câu)
+  - Hàng đợi "đến trước làm trước" và so sánh với chồng đĩa (3 câu)
+  - Quy luật lặp lại: hình thứ 20, chuyền bóng, đếm hạt vòng (3 câu)
+  - Cân hai đĩa tìm hòn bi nặng hơn với ít lần cân nhất (3 câu)
+  - Tô màu / chia nhóm sao cho hai bên nối nhau không trùng (2 câu, có hình)
+  - Đèn báo số 8-4-2-1 (3 câu)
+- Đáp án được tính và kiểm tra bằng chương trình; 8 hình vẽ mới trong `images/questions/lop3/`.
+
 ## 2026-09-30 — Tiếng Anh lớp 3: chia theo giai đoạn học
 - Thêm thanh **"Con đang học đến đâu?"** cho môn Tiếng Anh lớp 3, chia theo Now I Know 3 (giả định 6 unit mỗi học kì):
   - HK1 — GĐ1: Unit 1–2 · GĐ2: Unit 3–4 · GĐ3: Unit 5–6

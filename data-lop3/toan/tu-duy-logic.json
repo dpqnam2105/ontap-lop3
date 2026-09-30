@@ -801,6 +801,423 @@
         "id": "toan_tu-duy-logic_q046",
         "image": "images/questions/lop3/ma-hoa-4.svg",
         "stage": 1
+      },
+      {
+        "q": "Robot đi mỗi lệnh 1 ô theo mũi tên (⬆️ lên, ⬇️ xuống, ⬅️ trái, ➡️ phải), không được đi vào ô có đá. Robot làm lần lượt: ➡️ ➡️ ⬆️ ⬆️ ⬆️ ➡️. Robot dừng ở ô nào?",
+        "choices": [
+          "Ô A",
+          "Ô B",
+          "Ô C",
+          "Ô D"
+        ],
+        "a": 1,
+        "hint": "Lấy ngón tay đặt lên robot, đi từng lệnh một, đếm từng ô.",
+        "difficulty": 1,
+        "skill": "robot-lenh",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q047",
+        "stage": 1,
+        "image": "images/questions/lop3/robot-1.svg"
+      },
+      {
+        "q": "Robot đi mỗi lệnh 1 ô theo mũi tên (⬆️ lên, ⬇️ xuống, ⬅️ trái, ➡️ phải), không được đi vào ô có đá. Dãy lệnh nào đưa robot tới củ cà rốt?",
+        "choices": [
+          "➡️ ⬆️ ⬆️ ⬆️ ⬆️ ➡️ ➡️ ➡️",
+          "⬆️ ➡️ ➡️ ➡️ ⬆️ ⬆️ ➡️ ⬆️",
+          "⬆️ ⬆️ ⬆️ ⬆️ ➡️ ➡️ ➡️ ➡️",
+          "⬆️ ⬆️ ➡️ ➡️ ⬆️ ⬆️ ➡️ ➡️"
+        ],
+        "a": 1,
+        "hint": "Thử từng dãy lệnh. Dãy nào làm robot đâm vào đá hoặc đi ra ngoài lưới thì loại.",
+        "difficulty": 2,
+        "skill": "robot-lenh",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q048",
+        "stage": 1,
+        "image": "images/questions/lop3/robot-2.svg"
+      },
+      {
+        "q": "Robot đi mỗi lệnh 1 ô theo mũi tên (⬆️ lên, ⬇️ xuống, ⬅️ trái, ➡️ phải), không được đi vào ô có đá. \"Lặp 3 lần: ➡️ ⬆️\" nghĩa là làm \"➡️ ⬆️\" ba lần liền. Lệnh nào đưa robot tới cà rốt?",
+        "choices": [
+          "Lặp 3 lần: ➡️ ⬆️",
+          "Lặp 2 lần: ➡️ ⬆️",
+          "Lặp 3 lần: ➡️ ➡️",
+          "Lặp 3 lần: ⬆️ ⬆️"
+        ],
+        "a": 0,
+        "hint": "Viết lệnh lặp ra đầy đủ rồi đi thử từng bước. Chú ý đá và mép lưới.",
+        "difficulty": 3,
+        "skill": "robot-lenh",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q049",
+        "stage": 1,
+        "image": "images/questions/lop3/robot-3.svg"
+      },
+      {
+        "q": "Robot đi mỗi lệnh 1 ô theo mũi tên (⬆️ lên, ⬇️ xuống, ⬅️ trái, ➡️ phải), không được đi vào ô có đá. Robot cần ít nhất bao nhiêu lệnh để tới cà rốt?",
+        "choices": [
+          "4",
+          "3",
+          "7",
+          "5"
+        ],
+        "a": 3,
+        "hint": "Tìm đường vòng qua đá. Đếm số ô robot phải bước qua trên đường ngắn nhất.",
+        "difficulty": 3,
+        "skill": "robot-lenh",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q050",
+        "stage": 1,
+        "image": "images/questions/lop3/robot-4.svg"
+      },
+      {
+        "q": "Số trên mỗi đoạn đường là số phút đi bộ. Thỏ đi từ Nhà đến Trường nhanh nhất mất bao nhiêu phút?",
+        "choices": [
+          "9 phút",
+          "8 phút",
+          "11 phút",
+          "14 phút"
+        ],
+        "a": 1,
+        "hint": "Thử nhiều đường khác nhau và cộng số phút. Có khi đi vòng qua nhiều điểm lại nhanh hơn.",
+        "difficulty": 2,
+        "skill": "duong-ngan-nhat",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q051",
+        "stage": 1,
+        "image": "images/questions/lop3/duong-ngan-1.svg"
+      },
+      {
+        "q": "Số trên mỗi đoạn đường là số phút đi bộ. Đường đi nhanh nhất từ Nhà đến Trường đi qua những điểm nào?",
+        "choices": [
+          "Nhà → A → B → C → Trường",
+          "Nhà → B → C → Trường",
+          "Nhà → B → A → C → Trường",
+          "Nhà → A → C → Trường"
+        ],
+        "a": 0,
+        "hint": "Tính thời gian của từng đường rồi so sánh.",
+        "difficulty": 3,
+        "skill": "duong-ngan-nhat",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q052",
+        "stage": 1,
+        "image": "images/questions/lop3/duong-ngan-1.svg"
+      },
+      {
+        "q": "Số trên mỗi đoạn đường là số trăm mét. Đường ngắn nhất từ Nhà đến Công viên dài bao nhiêu trăm mét?",
+        "choices": [
+          "10",
+          "11",
+          "9",
+          "12"
+        ],
+        "a": 2,
+        "hint": "Ghi bên cạnh mỗi điểm: đi từ Nhà tới điểm đó ngắn nhất là bao nhiêu. Làm dần từ gần đến xa.",
+        "difficulty": 3,
+        "skill": "duong-ngan-nhat",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q053",
+        "stage": 1,
+        "image": "images/questions/lop3/duong-ngan-2.svg"
+      },
+      {
+        "q": "Mẹ và Thỏ làm bánh. Trộn bột mất 10 phút, sau đó nướng 20 phút. Trong lúc đó, Thỏ làm kem mất 15 phút (làm cùng lúc với mẹ được). Bánh nướng xong và kem làm xong mới phết kem, mất 5 phút. Ít nhất bao nhiêu phút thì xong bánh?",
+        "choices": [
+          "35 phút",
+          "45 phút",
+          "50 phút",
+          "30 phút"
+        ],
+        "a": 0,
+        "hint": "Việc nào phải chờ việc nào? Việc làm cùng lúc thì không cộng thời gian vào nhau.",
+        "difficulty": 3,
+        "skill": "xep-lich",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q054",
+        "stage": 1
+      },
+      {
+        "q": "Thỏ phải làm 3 việc, mỗi việc mất 10 phút: tưới cây, cho mèo ăn, quét nhà. Anh trai giúp làm cùng lúc, mỗi người chỉ làm một việc một lúc. Ít nhất bao nhiêu phút thì xong cả 3 việc?",
+        "choices": [
+          "20 phút",
+          "15 phút",
+          "10 phút",
+          "30 phút"
+        ],
+        "a": 0,
+        "hint": "Hai người làm cùng lúc được 2 việc. Còn lại mấy việc?",
+        "difficulty": 2,
+        "skill": "xep-lich",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q055",
+        "stage": 1
+      },
+      {
+        "q": "Sáng thứ Bảy Thỏ cần: đánh răng (5 phút), ăn sáng (15 phút), đi bộ đến lớp vẽ (10 phút). Lớp vẽ bắt đầu lúc 8 giờ. Thỏ phải bắt đầu đánh răng muộn nhất lúc mấy giờ?",
+        "choices": [
+          "7 giờ 50 phút",
+          "7 giờ 20 phút",
+          "7 giờ 45 phút",
+          "7 giờ 30 phút"
+        ],
+        "a": 3,
+        "hint": "Cộng thời gian cả 3 việc rồi tính ngược từ 8 giờ.",
+        "difficulty": 2,
+        "skill": "xep-lich",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q056",
+        "stage": 1
+      },
+      {
+        "q": "Ở quầy bán kem, ai đến trước thì mua trước. Lan đến, rồi Minh đến, rồi Hoa đến. Lan mua xong đi về. Sau đó Tú đến xếp hàng. Bạn nào mua tiếp theo?",
+        "choices": [
+          "Tú",
+          "Minh",
+          "Hoa",
+          "Lan"
+        ],
+        "a": 1,
+        "hint": "Viết tên các bạn thành một hàng theo thứ tự đến. Ai mua xong thì gạch đi.",
+        "difficulty": 1,
+        "skill": "hang-doi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q057",
+        "stage": 1
+      },
+      {
+        "q": "Hàng chờ đi cầu trượt: ai đến trước chơi trước. An, Bình, Chi lần lượt đến. Một bạn chơi xong đi về. Dũng đến. Thêm một bạn chơi xong đi về. Hà đến. Lúc này bạn nào đứng đầu hàng?",
+        "choices": [
+          "Chi",
+          "An",
+          "Bình",
+          "Dũng"
+        ],
+        "a": 0,
+        "hint": "Bạn chơi xong là bạn đang đứng đầu hàng. Ghi lại hàng sau mỗi lần thay đổi.",
+        "difficulty": 2,
+        "skill": "hang-doi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q058",
+        "stage": 1
+      },
+      {
+        "q": "Một chồng đĩa: đĩa đặt vào sau cùng nằm trên cùng và được lấy ra trước. Còn hàng chờ mua vé: ai đến trước mua trước. Điều nào ĐÚNG?",
+        "choices": [
+          "Chồng đĩa: vào trước ra trước. Hàng mua vé: vào sau ra trước.",
+          "Cả hai đều vào sau ra trước.",
+          "Chồng đĩa: vào sau ra trước. Hàng mua vé: vào trước ra trước.",
+          "Cả hai đều vào trước ra trước."
+        ],
+        "a": 2,
+        "hint": "Nghĩ xem đĩa nào mình lấy được đầu tiên, và ai trong hàng được mua vé đầu tiên.",
+        "difficulty": 2,
+        "skill": "hang-doi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q059",
+        "stage": 1
+      },
+      {
+        "q": "Dãy hình lặp lại: 🔺 🔵 🔵 🔺 🔵 🔵 🔺 … Hình thứ 20 là hình gì?",
+        "choices": [
+          "🔺",
+          "⭐",
+          "🟩",
+          "🔵"
+        ],
+        "a": 3,
+        "hint": "Nhóm lặp lại có mấy hình? Chia 20 thành các nhóm như thế rồi xem hình thứ 20 rơi vào vị trí nào trong nhóm.",
+        "difficulty": 2,
+        "skill": "quy-luat-lap",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q060",
+        "stage": 1
+      },
+      {
+        "q": "Bốn bạn A, B, C, D ngồi quanh bàn và chuyền bóng lần lượt: A → B → C → D → A → … Bóng bắt đầu ở tay A. Sau 10 lần chuyền, bóng ở tay bạn nào?",
+        "choices": [
+          "B",
+          "D",
+          "A",
+          "C"
+        ],
+        "a": 3,
+        "hint": "Sau 4 lần chuyền bóng lại về tay A.",
+        "difficulty": 2,
+        "skill": "quy-luat-lap",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q061",
+        "stage": 1
+      },
+      {
+        "q": "Dãy hạt vòng lặp lại: 🔴 🟡 🟡 🔵 🔴 🟡 🟡 🔵 … Trong 15 hạt đầu tiên có bao nhiêu hạt vàng 🟡?",
+        "choices": [
+          "9",
+          "6",
+          "8",
+          "7"
+        ],
+        "a": 2,
+        "hint": "Mỗi nhóm 4 hạt có mấy hạt vàng? 15 hạt gồm mấy nhóm đủ và còn thừa mấy hạt?",
+        "difficulty": 3,
+        "skill": "quy-luat-lap",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q062",
+        "stage": 1
+      },
+      {
+        "q": "Có 3 hòn bi trông giống hệt nhau, 1 hòn nặng hơn. Dùng cân hai đĩa, ít nhất mấy lần cân chắc chắn tìm ra hòn bi nặng?",
+        "choices": [
+          "3 lần",
+          "0 lần",
+          "1 lần",
+          "2 lần"
+        ],
+        "a": 2,
+        "hint": "Đặt 1 hòn lên mỗi đĩa. Nếu cân thăng bằng thì sao?",
+        "difficulty": 2,
+        "skill": "can-tim-bi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q063",
+        "stage": 1
+      },
+      {
+        "q": "Có 9 hòn bi giống hệt nhau, 1 hòn nặng hơn. Dùng cân hai đĩa, ít nhất mấy lần cân chắc chắn tìm ra hòn bi nặng?",
+        "choices": [
+          "1 lần",
+          "2 lần",
+          "3 lần",
+          "4 lần"
+        ],
+        "a": 1,
+        "hint": "Chia 9 hòn thành 3 nhóm bằng nhau. Một lần cân cho biết nhóm nào có hòn nặng.",
+        "difficulty": 3,
+        "skill": "can-tim-bi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q064",
+        "stage": 1
+      },
+      {
+        "q": "Có 4 hòn bi, 1 hòn nặng hơn. Thỏ đặt 2 hòn lên đĩa trái, 2 hòn lên đĩa phải, đĩa trái lệch xuống. Thỏ cần cân thêm ít nhất mấy lần nữa?",
+        "choices": [
+          "2 lần",
+          "0 lần",
+          "1 lần",
+          "3 lần"
+        ],
+        "a": 2,
+        "hint": "Hòn nặng nằm ở đĩa nào? Còn lại mấy hòn cần so sánh?",
+        "difficulty": 2,
+        "skill": "can-tim-bi",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q065",
+        "stage": 1
+      },
+      {
+        "q": "Mỗi vòng tròn là một bể cá. Hai bể nối với nhau bằng nét đứt thì không được thả cùng một loại cá. Cần ít nhất bao nhiêu loại cá?",
+        "choices": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "a": 1,
+        "hint": "Tìm ba bể nối với nhau thành hình tam giác: ba bể đó phải khác loại. Rồi thử xếp các bể còn lại.",
+        "difficulty": 3,
+        "skill": "to-mau",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q066",
+        "stage": 1,
+        "image": "images/questions/lop3/to-mau-1.svg"
+      },
+      {
+        "q": "Mỗi vòng tròn là một bạn. Hai bạn nối với nhau bằng nét đứt thì không ngồi cùng nhóm. Cần ít nhất mấy nhóm?",
+        "choices": [
+          "1",
+          "3",
+          "4",
+          "2"
+        ],
+        "a": 3,
+        "hint": "Thử chia: A vào nhóm 1, B phải khác A… Có cần đến nhóm thứ ba không?",
+        "difficulty": 2,
+        "skill": "to-mau",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q067",
+        "stage": 1,
+        "image": "images/questions/lop3/to-mau-2.svg"
+      },
+      {
+        "q": "Hàng 4 bóng đèn ghi số 8, 4, 2, 1 (từ trái sang phải). Số được báo bằng tổng các số ở bóng đèn đang sáng 💡 (bóng tắt là ⚫). Đèn đang là: 💡 ⚫ 💡 ⚫. Đó là số mấy?",
+        "choices": [
+          "12",
+          "9",
+          "10",
+          "11"
+        ],
+        "a": 2,
+        "hint": "Chỉ cộng số ở các bóng đang sáng.",
+        "difficulty": 1,
+        "skill": "den-nhi-phan",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q068",
+        "stage": 1
+      },
+      {
+        "q": "Hàng 4 bóng đèn ghi số 8, 4, 2, 1 (từ trái sang phải). Số được báo bằng tổng các số ở bóng đèn đang sáng 💡 (bóng tắt là ⚫). Đèn đang là: ⚫ 💡 💡 💡. Đó là số mấy?",
+        "choices": [
+          "7",
+          "9",
+          "6",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Chỉ cộng số ở các bóng đang sáng.",
+        "difficulty": 2,
+        "skill": "den-nhi-phan",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q069",
+        "stage": 1
+      },
+      {
+        "q": "Hàng 4 bóng đèn ghi số 8, 4, 2, 1 (từ trái sang phải). Số được báo bằng tổng các số ở bóng đèn đang sáng 💡 (bóng tắt là ⚫). Muốn báo số 13 thì các đèn phải như thế nào?",
+        "choices": [
+          "💡 💡 💡 ⚫",
+          "⚫ 💡 💡 💡",
+          "💡 ⚫ 💡 💡",
+          "💡 💡 ⚫ 💡"
+        ],
+        "a": 3,
+        "hint": "Bắt đầu từ bóng lớn nhất: 13 có lấy được 8 không? Còn lại bao nhiêu?",
+        "difficulty": 3,
+        "skill": "den-nhi-phan",
+        "unit": "tu-duy-logic",
+        "source": "tu-soan-y-tuong-bebras-20260930",
+        "id": "toan_tu-duy-logic_q070",
+        "stage": 1
       }
     ]
   }

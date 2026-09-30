@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260">
+<rect width="260" height="260" fill="#fff"/>
+<rect x="10" y="10" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="58" y="10" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="106" y="10" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="154" y="10" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="202" y="10" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="10" y="58" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="58" y="58" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="106" y="58" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="154" y="58" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="202" y="58" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="10" y="106" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="58" y="106" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="106" y="106" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="154" y="106" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="202" y="106" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="10" y="154" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="58" y="154" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="106" y="154" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="154" y="154" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="202" y="154" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="10" y="202" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="58" y="202" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="106" y="202" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="154" y="202" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<rect x="202" y="202" width="48" height="48" fill="#f4fbf2" stroke="#9bb59a" stroke-width="1.5"/>
+<ellipse cx="178" cy="182" rx="17" ry="13" fill="#7f8c8d"/><ellipse cx="174" cy="178" rx="8" ry="5" fill="#95a5a6"/>
+<ellipse cx="82" cy="182" rx="17" ry="13" fill="#7f8c8d"/><ellipse cx="78" cy="178" rx="8" ry="5" fill="#95a5a6"/>
+<rect x="19" y="213" width="30" height="26" rx="6" fill="#3498db"/><circle cx="28" cy="223" r="3.5" fill="#fff"/><circle cx="40" cy="223" r="3.5" fill="#fff"/><rect x="27" y="231" width="14" height="3" fill="#fff"/><line x1="34" y1="213" x2="34" y2="206" stroke="#3498db" stroke-width="2.5"/><circle cx="34" cy="205" r="3" fill="#e74c3c"/>
+<circle cx="130" cy="82" r="15" fill="#fff" stroke="#8e44ad" stroke-width="2"/><text x="130" y="88" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#8e44ad" text-anchor="middle">A</text>
+<circle cx="178" cy="82" r="15" fill="#fff" stroke="#8e44ad" stroke-width="2"/><text x="178" y="88" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#8e44ad" text-anchor="middle">B</text>
+<circle cx="178" cy="130" r="15" fill="#fff" stroke="#8e44ad" stroke-width="2"/><text x="178" y="136" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#8e44ad" text-anchor="middle">C</text>
+<circle cx="226" cy="82" r="15" fill="#fff" stroke="#8e44ad" stroke-width="2"/><text x="226" y="88" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#8e44ad" text-anchor="middle">D</text>
+</svg>
