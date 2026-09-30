@@ -1,0 +1,368 @@
+{
+  "topic": {
+    "id": "toan_kieu-kangaroo",
+    "icon": "🦘",
+    "name": "Toán đố vui kiểu Kangaroo",
+    "questions": [
+      {
+        "q": "Thỏ đứng xếp hàng. Tính từ trái sang, Thỏ đứng thứ 5. Tính từ phải sang, Thỏ đứng thứ 3. Hàng có tất cả bao nhiêu bạn?",
+        "choices": [
+          "6",
+          "9",
+          "8",
+          "7"
+        ],
+        "a": 3,
+        "hint": "Vẽ hàng ra giấy bằng các dấu chấm. Thỏ được đếm ở cả hai phía đấy!",
+        "difficulty": 2,
+        "skill": "kg-xep-hang",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q001",
+        "stage": 1
+      },
+      {
+        "q": "Bố cưa một khúc gỗ thành 5 đoạn. Mỗi lần cưa mất 3 phút. Bố cưa xong hết bao nhiêu phút?",
+        "choices": [
+          "18",
+          "12",
+          "9",
+          "15"
+        ],
+        "a": 1,
+        "hint": "Cưa thành 2 đoạn cần mấy lần cưa? Thành 3 đoạn cần mấy lần?",
+        "difficulty": 2,
+        "skill": "kg-khoang-cach",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q002",
+        "stage": 1
+      },
+      {
+        "q": "Người ta trồng cây ở cả hai đầu và dọc một con đường dài 20 m, cứ 4 m trồng một cây. Có tất cả bao nhiêu cây?",
+        "choices": [
+          "6",
+          "4",
+          "7",
+          "5"
+        ],
+        "a": 0,
+        "hint": "Vẽ đoạn thẳng 20 m, đánh dấu từng cây. Nhớ cây ở hai đầu đường.",
+        "difficulty": 2,
+        "skill": "kg-khoang-cach",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q003",
+        "stage": 1
+      },
+      {
+        "q": "Để xếp 1 hình vuông cần 4 que diêm. Xếp 3 hình vuông liền nhau thành một hàng (dùng chung cạnh) cần bao nhiêu que diêm?",
+        "choices": [
+          "10",
+          "12",
+          "11",
+          "9"
+        ],
+        "a": 0,
+        "hint": "Hình vuông thứ hai dùng chung một cạnh với hình đầu, nên chỉ cần thêm mấy que?",
+        "difficulty": 2,
+        "skill": "kg-que-diem",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q004",
+        "stage": 1
+      },
+      {
+        "q": "Trong sân có gà và chó. Đếm được 10 cái đầu và 28 cái chân. Có mấy con chó?",
+        "choices": [
+          "7",
+          "4",
+          "3",
+          "6"
+        ],
+        "a": 1,
+        "hint": "Giả sử tất cả đều là gà thì có bao nhiêu chân? Mỗi con chó có thêm mấy chân so với gà?",
+        "difficulty": 3,
+        "skill": "kg-ga-cho",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q005",
+        "stage": 1
+      },
+      {
+        "q": "Bốn bạn gặp nhau, hai bạn bất kì bắt tay nhau đúng một lần. Có tất cả bao nhiêu cái bắt tay?",
+        "choices": [
+          "8",
+          "6",
+          "4",
+          "12"
+        ],
+        "a": 1,
+        "hint": "Bạn thứ nhất bắt tay với mấy bạn? Bạn thứ hai còn phải bắt tay với mấy bạn nữa (không tính lại bạn thứ nhất)?",
+        "difficulty": 3,
+        "skill": "kg-bat-tay",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q006",
+        "stage": 1
+      },
+      {
+        "q": "Năm nay Thỏ 8 tuổi, mẹ 35 tuổi. Khi Thỏ 20 tuổi thì mẹ bao nhiêu tuổi?",
+        "choices": [
+          "43",
+          "27",
+          "47",
+          "55"
+        ],
+        "a": 2,
+        "hint": "Mỗi năm Thỏ thêm 1 tuổi thì mẹ cũng thêm 1 tuổi. Mẹ luôn hơn Thỏ bao nhiêu tuổi?",
+        "difficulty": 2,
+        "skill": "kg-tuoi",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q007",
+        "stage": 1
+      },
+      {
+        "q": "Hôm nay là thứ Tư. 10 ngày nữa là thứ mấy?",
+        "choices": [
+          "thứ Sáu",
+          "thứ Năm",
+          "Chủ nhật",
+          "thứ Bảy"
+        ],
+        "a": 3,
+        "hint": "Sau 7 ngày thì lại đúng thứ Tư. Còn thêm mấy ngày nữa?",
+        "difficulty": 2,
+        "skill": "kg-lich",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q008",
+        "stage": 1
+      },
+      {
+        "q": "Đồng hồ của ông chạy nhanh 2 phút mỗi giờ. Ông chỉnh đúng giờ lúc 8 giờ sáng. Đúng 12 giờ trưa, đồng hồ của ông chỉ mấy giờ?",
+        "choices": [
+          "12 giờ 4 phút",
+          "11 giờ 52 phút",
+          "12 giờ 2 phút",
+          "12 giờ 8 phút"
+        ],
+        "a": 3,
+        "hint": "Từ 8 giờ đến 12 giờ là mấy giờ đồng hồ? Mỗi giờ nhanh thêm 2 phút.",
+        "difficulty": 3,
+        "skill": "kg-dong-ho",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q009",
+        "stage": 1
+      },
+      {
+        "q": "Có bao nhiêu số có hai chữ số mà tổng hai chữ số bằng 5?",
+        "choices": [
+          "10",
+          "4",
+          "5",
+          "6"
+        ],
+        "a": 2,
+        "hint": "Viết lần lượt: chữ số hàng chục là 1 thì hàng đơn vị là mấy? Hàng chục là 2 thì sao? Đừng quên chữ số 0.",
+        "difficulty": 2,
+        "skill": "kg-chu-so",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q010",
+        "stage": 1
+      },
+      {
+        "q": "Đánh số trang một quyển truyện từ trang 1 đến trang 20. Cần viết tất cả bao nhiêu chữ số?",
+        "choices": [
+          "40",
+          "31",
+          "20",
+          "29"
+        ],
+        "a": 1,
+        "hint": "Các trang 1 đến 9 mỗi trang mấy chữ số? Các trang 10 đến 20 mỗi trang mấy chữ số? Có bao nhiêu trang như thế?",
+        "difficulty": 3,
+        "skill": "kg-chu-so",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q011",
+        "stage": 1
+      },
+      {
+        "q": "Dùng cả ba chữ số 3, 0, 7 (mỗi chữ số dùng một lần) để viết số có ba chữ số. Hiệu của số lớn nhất và số bé nhất viết được là bao nhiêu?",
+        "choices": [
+          "396",
+          "423",
+          "360",
+          "693"
+        ],
+        "a": 1,
+        "hint": "Số bé nhất không được bắt đầu bằng chữ số 0.",
+        "difficulty": 3,
+        "skill": "kg-chu-so",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q012",
+        "stage": 1
+      },
+      {
+        "q": "Trong túi có 5 viên bi đỏ và 4 viên bi xanh. Nhắm mắt lấy bi. Phải lấy ít nhất mấy viên để chắc chắn có 2 viên cùng màu?",
+        "choices": [
+          "5",
+          "2",
+          "3",
+          "6"
+        ],
+        "a": 2,
+        "hint": "Nếu xui nhất thì 2 viên đầu tiên có màu thế nào?",
+        "difficulty": 3,
+        "skill": "kg-chac-chan",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q013",
+        "stage": 1
+      },
+      {
+        "q": "Trong túi có 5 viên bi đỏ và 4 viên bi xanh. Nhắm mắt lấy bi. Phải lấy ít nhất mấy viên để chắc chắn có 1 viên bi xanh?",
+        "choices": [
+          "5",
+          "1",
+          "4",
+          "6"
+        ],
+        "a": 3,
+        "hint": "Xui nhất là lấy phải toàn bi đỏ trước. Có mấy viên đỏ?",
+        "difficulty": 3,
+        "skill": "kg-chac-chan",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q014",
+        "stage": 1
+      },
+      {
+        "q": "2 quả táo nặng bằng 1 quả lê. 2 quả lê nặng bằng 1 quả dưa. 1 quả dưa nặng bằng mấy quả táo?",
+        "choices": [
+          "6",
+          "3",
+          "2",
+          "4"
+        ],
+        "a": 3,
+        "hint": "Thay mỗi quả lê bằng số táo nặng bằng nó.",
+        "difficulty": 2,
+        "skill": "kg-can-bang",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q015",
+        "stage": 1
+      },
+      {
+        "q": "Mỗi hình giống nhau là cùng một số. □ + □ + □ = 12 và □ + ○ = 10. Vậy ○ = ?",
+        "choices": [
+          "6",
+          "7",
+          "8",
+          "4"
+        ],
+        "a": 0,
+        "hint": "Tìm □ trước từ phép tính thứ nhất.",
+        "difficulty": 2,
+        "skill": "kg-hinh-so",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q016",
+        "stage": 1
+      },
+      {
+        "q": "Chia 20 cái kẹo cho An, Bình, Chi. Ai cũng có kẹo, không có hai bạn nào được số kẹo bằng nhau, và An được nhiều nhất. An được ít nhất bao nhiêu cái kẹo?",
+        "choices": [
+          "8",
+          "7",
+          "10",
+          "9"
+        ],
+        "a": 0,
+        "hint": "Muốn An được ít thì hai bạn kia phải được nhiều, nhưng vẫn ít hơn An và khác nhau. Thử An = 7 xem có đủ 20 không.",
+        "difficulty": 3,
+        "skill": "kg-chia-keo",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q017",
+        "stage": 1
+      },
+      {
+        "q": "Một chú ốc sên bò lên cột cao 6 m. Ban ngày bò lên 3 m, ban đêm tụt xuống 2 m. Đến ngày thứ mấy ốc sên lên tới đỉnh cột?",
+        "choices": [
+          "Ngày thứ 5",
+          "Ngày thứ 4",
+          "Ngày thứ 3",
+          "Ngày thứ 6"
+        ],
+        "a": 1,
+        "hint": "Ghi lại mỗi ngày ốc ở độ cao nào. Chú ý: ngày cuối lên tới đỉnh rồi thì không tụt nữa.",
+        "difficulty": 3,
+        "skill": "kg-oc-sen",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q018",
+        "stage": 1
+      },
+      {
+        "q": "An cao hơn Bình. Chi thấp hơn Bình. Dũng cao hơn An. Bạn nào thấp nhất?",
+        "choices": [
+          "An",
+          "Bình",
+          "Chi",
+          "Dũng"
+        ],
+        "a": 2,
+        "hint": "Xếp các bạn thành hàng từ cao đến thấp, thêm từng bạn một.",
+        "difficulty": 2,
+        "skill": "kg-so-sanh",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q019",
+        "stage": 1
+      },
+      {
+        "q": "Ba hình là cùng một mảnh ghép được xoay đi. Một hình phải lật mặt mới có được. Đó là hình nào?",
+        "choices": [
+          "Hình A",
+          "Hình B",
+          "Hình C",
+          "Hình D"
+        ],
+        "a": 2,
+        "hint": "Tưởng tượng xoay từng hình trên mặt bàn (không được nhấc lên lật). Hình nào xoay kiểu gì cũng không trùng các hình kia?",
+        "difficulty": 2,
+        "skill": "kg-xoay-hinh",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q020",
+        "stage": 1,
+        "image": "images/questions/lop3/kangaroo-xoay-1.svg"
+      },
+      {
+        "q": "Ba hình là cùng một mảnh ghép được xoay đi. Một hình phải lật mặt mới có được. Đó là hình nào?",
+        "choices": [
+          "Hình A",
+          "Hình B",
+          "Hình C",
+          "Hình D"
+        ],
+        "a": 0,
+        "hint": "Tưởng tượng xoay từng hình trên mặt bàn (không được nhấc lên lật). Hình nào xoay kiểu gì cũng không trùng các hình kia?",
+        "difficulty": 3,
+        "skill": "kg-xoay-hinh",
+        "unit": "kieu-kangaroo",
+        "source": "tu-soan-y-tuong-kangaroo-20260930",
+        "id": "toan_kieu-kangaroo_q021",
+        "stage": 1,
+        "image": "images/questions/lop3/kangaroo-xoay-2.svg"
+      }
+    ]
+  }
+}

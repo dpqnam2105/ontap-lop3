@@ -5,6 +5,15 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Toán lớp 3: chủ đề mới "Toán đố vui kiểu Kangaroo"
+- Chủ đề mới **Toán đố vui kiểu Kangaroo** — 21 câu tự soạn theo phong cách kỳ thi Toán quốc tế Kangaroo (IKMC), đều ở GĐ1:
+  - Xếp hàng (đứng thứ mấy từ hai phía), cưa gỗ, trồng cây hai đầu, xếp que diêm
+  - Gà và chó (đếm đầu, đếm chân), bắt tay, tuổi, lịch, đồng hồ chạy nhanh
+  - Chữ số: tổng chữ số, đánh số trang, lập số lớn nhất – bé nhất
+  - "Chắc chắn" khi bốc bi, cân bằng táo – lê – dưa, hình thay số, chia kẹo, ốc sên leo cột, so sánh cao thấp
+  - Hình nào phải lật mặt mới có được (2 câu có hình)
+- Đáp án tính và kiểm tra bằng chương trình.
+
 ## 2026-09-30 — Toán lớp 3: chủ đề mới "Sơ đồ đoạn thẳng"
 - Chủ đề mới **Sơ đồ đoạn thẳng (toán có lời văn)** — 20 câu, mỗi câu kèm hình sơ đồ (phương pháp "bar model" của Toán Singapore):
   - Phần – tổng (3), nhiều hơn / ít hơn (4), bài toán hai bước (3), một phần mấy (3), tổng – hiệu nâng cao (2), chọn sơ đồ đúng với đề bài (2) — GĐ1

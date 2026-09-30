@@ -92,6 +92,12 @@
       "name": "Tư duy logic (kiểu Bebras)",
       "file": "tu-duy-logic.json",
       "count": 70
+    },
+    {
+      "id": "toan_kieu-kangaroo",
+      "name": "Toán đố vui kiểu Kangaroo",
+      "file": "kieu-kangaroo.json",
+      "count": 21
     }
   ],
   "stages": [

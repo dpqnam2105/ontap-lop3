@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" width="460" height="150">
+<rect width="460" height="150" fill="#fff"/>
+<rect x="55" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="55" y="40" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="35" y="60" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="55" y="60" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<text x="55" y="140" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình A</text>
+<rect x="127" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="127" y="40" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="127" y="60" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="147" y="60" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<text x="167" y="140" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình B</text>
+<rect x="239" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="259" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="279" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="239" y="40" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<text x="279" y="140" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình C</text>
+<rect x="371" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="391" y="20" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="391" y="40" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<rect x="391" y="60" width="20" height="20" fill="#f39c12" stroke="#784212" stroke-width="1.5"/>
+<text x="391" y="140" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình D</text>
+</svg>
