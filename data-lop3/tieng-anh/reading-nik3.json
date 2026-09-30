@@ -18,7 +18,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q001"
+        "id": "en_reading-nik3_q001",
+        "stage": 1
       },
       {
         "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" How does Lily go to the museum?",
@@ -34,7 +35,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q002"
+        "id": "en_reading-nik3_q002",
+        "stage": 1
       },
       {
         "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" Who goes with Lily?",
@@ -50,7 +52,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q003"
+        "id": "en_reading-nik3_q003",
+        "stage": 1
       },
       {
         "q": "Read: \"My name is Lily. My favourite place in town is the museum. It is close to my school. I go there by bus with my grandpa every Sunday. There is a big dinosaur. It has sharp teeth and a long tail. We walk quietly and look at everything carefully.\" Which sentence is TRUE?",
@@ -66,7 +69,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q004"
+        "id": "en_reading-nik3_q004",
+        "stage": 1
       },
       {
         "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What is Ben's job?",
@@ -82,7 +86,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q005"
+        "id": "en_reading-nik3_q005",
+        "stage": 1
       },
       {
         "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" Why does Ben wear a big hat?",
@@ -98,7 +103,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q006"
+        "id": "en_reading-nik3_q006",
+        "stage": 1
       },
       {
         "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What does Ben find today?",
@@ -114,7 +120,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q007"
+        "id": "en_reading-nik3_q007",
+        "stage": 1
       },
       {
         "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" How does Ben dig?",
@@ -130,7 +137,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q008"
+        "id": "en_reading-nik3_q008",
+        "stage": 1
       },
       {
         "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" How does Mai go to the recreation center?",
@@ -146,7 +154,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q009"
+        "id": "en_reading-nik3_q009",
+        "stage": 1
       },
       {
         "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" What does Mai do at the recreation center?",
@@ -162,7 +171,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q010"
+        "id": "en_reading-nik3_q010",
+        "stage": 1
       },
       {
         "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" Where is the library?",
@@ -178,7 +188,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q011"
+        "id": "en_reading-nik3_q011",
+        "stage": 1
       },
       {
         "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" Which sentence is TRUE?",
@@ -194,7 +205,8 @@
         "skill": "reading",
         "unit": "reading-nik3",
         "source": "claude-nik3-20260930",
-        "id": "en_reading-nik3_q012"
+        "id": "en_reading-nik3_q012",
+        "stage": 1
       }
     ]
   }

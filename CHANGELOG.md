@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Tiếng Anh lớp 3: chia theo giai đoạn học
+- Thêm thanh **"Con đang học đến đâu?"** cho môn Tiếng Anh lớp 3, chia theo Now I Know 3 (giả định 6 unit mỗi học kì):
+  - HK1 — GĐ1: Unit 1–2 · GĐ2: Unit 3–4 · GĐ3: Unit 5–6
+  - HK2 — GĐ4: Unit 7–9 · GĐ5: Unit 10–12
+- Cả 196 câu tiếng Anh hiện có đều thuộc GĐ1 (Unit 1–2 và kiến thức nền be / have / can / hiện tại đơn). Các giai đoạn sau sẽ có bài khi lớp học tới.
+- Khi chọn "Chỉ giai đoạn này" mà giai đoạn chưa có bài, trang hiện lời nhắc thay vì để trống.
+
 ## 2026-09-30 — Toán lớp 3: chia theo giai đoạn học
 - Thêm thanh **"Con đang học đến đâu?"** khi vào môn Toán lớp 3: Học kì 1 (GĐ1, GĐ2, GĐ3) và Học kì 2 (GĐ4, GĐ5), bám theo SGK Toán 3 Kết nối tri thức.
   - GĐ1: Chủ đề 1–2 (ôn tập đến 1000, bảng nhân chia 2–9, một phần mấy)

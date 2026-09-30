@@ -18,7 +18,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q001"
+        "id": "en_vocabulary_q001",
+        "stage": 1
       },
       {
         "q": "A person who grows rice and vegetables is a ___.",
@@ -34,7 +35,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q002"
+        "id": "en_vocabulary_q002",
+        "stage": 1
       },
       {
         "q": "The colour of grass is usually ___.",
@@ -50,7 +52,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q003"
+        "id": "en_vocabulary_q003",
+        "stage": 1
       },
       {
         "q": "The opposite of \"big\" is ___.",
@@ -66,7 +69,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q004"
+        "id": "en_vocabulary_q004",
+        "stage": 1
       },
       {
         "q": "Which word is an animal?",
@@ -82,7 +86,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q005"
+        "id": "en_vocabulary_q005",
+        "stage": 1
       },
       {
         "q": "Which word is food?",
@@ -98,7 +103,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q006"
+        "id": "en_vocabulary_q006",
+        "stage": 1
       },
       {
         "q": "I see with my ___.",
@@ -114,7 +120,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q007"
+        "id": "en_vocabulary_q007",
+        "stage": 1
       },
       {
         "q": "I hear with my ___.",
@@ -130,7 +137,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q008"
+        "id": "en_vocabulary_q008",
+        "stage": 1
       },
       {
         "q": "A cat says \"___\".",
@@ -146,7 +154,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q009"
+        "id": "en_vocabulary_q009",
+        "stage": 1
       },
       {
         "q": "A cow says \"___\".",
@@ -162,7 +171,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q010"
+        "id": "en_vocabulary_q010",
+        "stage": 1
       },
       {
         "q": "It is cold and white. It falls from the sky in winter. It is ___.",
@@ -178,7 +188,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q011"
+        "id": "en_vocabulary_q011",
+        "stage": 1
       },
       {
         "q": "Which one is a means of transport?",
@@ -194,7 +205,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q012"
+        "id": "en_vocabulary_q012",
+        "stage": 1
       },
       {
         "q": "Monday comes before ___.",
@@ -210,7 +222,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q013"
+        "id": "en_vocabulary_q013",
+        "stage": 1
       },
       {
         "q": "Which day is at the weekend?",
@@ -226,7 +239,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q014"
+        "id": "en_vocabulary_q014",
+        "stage": 1
       },
       {
         "q": "\"Hungry\" means you want to ___.",
@@ -242,7 +256,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q015"
+        "id": "en_vocabulary_q015",
+        "stage": 1
       },
       {
         "q": "Choose the correct plural: one child, two ___.",
@@ -258,7 +273,8 @@
         "skill": "vocabulary",
         "unit": "vocabulary",
         "source": "claude-audit-20260924",
-        "id": "en_vocabulary_q016"
+        "id": "en_vocabulary_q016",
+        "stage": 1
       }
     ]
   }

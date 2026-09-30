@@ -18,7 +18,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q001"
+        "id": "en_adj-adv_q001",
+        "stage": 1
       },
       {
         "q": "The rabbit is very ___.",
@@ -34,7 +35,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q002"
+        "id": "en_adj-adv_q002",
+        "stage": 1
       },
       {
         "q": "The classroom is very ___.",
@@ -50,7 +52,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q003"
+        "id": "en_adj-adv_q003",
+        "stage": 1
       },
       {
         "q": "The children read very ___.",
@@ -66,7 +69,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q004"
+        "id": "en_adj-adv_q004",
+        "stage": 1
       },
       {
         "q": "Tom is a ___ swimmer.",
@@ -82,7 +86,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q005"
+        "id": "en_adj-adv_q005",
+        "stage": 1
       },
       {
         "q": "Tom swims ___.",
@@ -98,7 +103,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q006"
+        "id": "en_adj-adv_q006",
+        "stage": 1
       },
       {
         "q": "He runs ___.",
@@ -114,7 +120,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q007"
+        "id": "en_adj-adv_q007",
+        "stage": 1
       },
       {
         "q": "happy → ___ (adverb)",
@@ -130,7 +137,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q008"
+        "id": "en_adj-adv_q008",
+        "stage": 1
       },
       {
         "q": "easy → ___ (adverb)",
@@ -146,7 +154,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q009"
+        "id": "en_adj-adv_q009",
+        "stage": 1
       },
       {
         "q": "Be ___! The road is busy.",
@@ -162,7 +171,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q010"
+        "id": "en_adj-adv_q010",
+        "stage": 1
       },
       {
         "q": "Please cross the street ___.",
@@ -178,7 +188,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q011"
+        "id": "en_adj-adv_q011",
+        "stage": 1
       },
       {
         "q": "Which sentence is correct?",
@@ -194,7 +205,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q012"
+        "id": "en_adj-adv_q012",
+        "stage": 1
       },
       {
         "q": "Which word is an ADVERB?",
@@ -210,7 +222,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q013"
+        "id": "en_adj-adv_q013",
+        "stage": 1
       },
       {
         "q": "He is a quick runner. = He runs ___.",
@@ -226,7 +239,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q014"
+        "id": "en_adj-adv_q014",
+        "stage": 1
       },
       {
         "q": "The T-Rex has a ___ roar.",
@@ -242,7 +256,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q015"
+        "id": "en_adj-adv_q015",
+        "stage": 1
       },
       {
         "q": "Please sit ___ and listen.",
@@ -258,7 +273,8 @@
         "skill": "adj-adv",
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
-        "id": "en_adj-adv_q016"
+        "id": "en_adj-adv_q016",
+        "stage": 1
       }
     ]
   }

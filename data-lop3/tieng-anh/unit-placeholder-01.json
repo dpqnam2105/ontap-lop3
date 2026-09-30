@@ -18,7 +18,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q001"
+        "id": "en_at-school_q001",
+        "stage": 1
       },
       {
         "q": "The teacher writes on the ___.",
@@ -34,7 +35,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q002"
+        "id": "en_at-school_q002",
+        "stage": 1
       },
       {
         "q": "I put my books in my ___.",
@@ -50,7 +52,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q003"
+        "id": "en_at-school_q003",
+        "stage": 1
       },
       {
         "q": "We sit at a ___ in class.",
@@ -66,7 +69,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q004"
+        "id": "en_at-school_q004",
+        "stage": 1
       },
       {
         "q": "This is ___ eraser.",
@@ -82,7 +86,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q005"
+        "id": "en_at-school_q005",
+        "stage": 1
       },
       {
         "q": "Choose the plural form of \"teacher\".",
@@ -98,7 +103,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q006"
+        "id": "en_at-school_q006",
+        "stage": 1
       },
       {
         "q": "Choose the correct sentence.",
@@ -114,7 +120,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q007"
+        "id": "en_at-school_q007",
+        "stage": 1
       },
       {
         "q": "A ruler helps us to ___.",
@@ -130,7 +137,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q008"
+        "id": "en_at-school_q008",
+        "stage": 1
       },
       {
         "q": "The opposite of \"open your book\" is \"___ your book\".",
@@ -146,7 +154,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q009"
+        "id": "en_at-school_q009",
+        "stage": 1
       },
       {
         "q": "We say \"Good morning\" to the teacher ___.",
@@ -162,7 +171,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q010"
+        "id": "en_at-school_q010",
+        "stage": 1
       },
       {
         "q": "There ___ a board in the classroom.",
@@ -178,7 +188,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q011"
+        "id": "en_at-school_q011",
+        "stage": 1
       },
       {
         "q": "There ___ many students in the class.",
@@ -194,7 +205,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q012"
+        "id": "en_at-school_q012",
+        "stage": 1
       },
       {
         "q": "I ___ my hand when I want to answer.",
@@ -210,7 +222,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q013"
+        "id": "en_at-school_q013",
+        "stage": 1
       },
       {
         "q": "Which one is a school subject?",
@@ -226,7 +239,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q014"
+        "id": "en_at-school_q014",
+        "stage": 1
       },
       {
         "q": "How do you ask the teacher politely to go out?",
@@ -242,7 +256,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q015"
+        "id": "en_at-school_q015",
+        "stage": 1
       },
       {
         "q": "Choose the sentence with correct capital letters.",
@@ -258,7 +273,8 @@
         "skill": "at-school",
         "unit": "unit-placeholder-01",
         "source": "claude-audit-20260924",
-        "id": "en_at-school_q016"
+        "id": "en_at-school_q016",
+        "stage": 1
       }
     ]
   }

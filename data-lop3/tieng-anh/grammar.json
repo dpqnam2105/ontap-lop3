@@ -18,7 +18,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q001"
+        "id": "en_grammar_q001",
+        "stage": 1
       },
       {
         "q": "She ___ my friend.",
@@ -34,7 +35,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q002"
+        "id": "en_grammar_q002",
+        "stage": 1
       },
       {
         "q": "They ___ in the playground.",
@@ -50,7 +52,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q003"
+        "id": "en_grammar_q003",
+        "stage": 1
       },
       {
         "q": "He can ___ a bike.",
@@ -66,7 +69,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q004"
+        "id": "en_grammar_q004",
+        "stage": 1
       },
       {
         "q": "She can't ___ the heavy bag.",
@@ -82,7 +86,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q005"
+        "id": "en_grammar_q005",
+        "stage": 1
       },
       {
         "q": "There is ___ apple on the table.",
@@ -98,7 +103,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q006"
+        "id": "en_grammar_q006",
+        "stage": 1
       },
       {
         "q": "There are ___ books on the desk.",
@@ -114,7 +120,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q007"
+        "id": "en_grammar_q007",
+        "stage": 1
       },
       {
         "q": "This is ___ umbrella.",
@@ -130,7 +137,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q008"
+        "id": "en_grammar_q008",
+        "stage": 1
       },
       {
         "q": "These ___ my shoes.",
@@ -146,7 +154,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q009"
+        "id": "en_grammar_q009",
+        "stage": 1
       },
       {
         "q": "That ___ a bird in the sky.",
@@ -162,7 +171,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q010"
+        "id": "en_grammar_q010",
+        "stage": 1
       },
       {
         "q": "I like cats, ___ I don't like spiders.",
@@ -178,7 +188,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q011"
+        "id": "en_grammar_q011",
+        "stage": 1
       },
       {
         "q": "Where ___ my bag?",
@@ -194,7 +205,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q012"
+        "id": "en_grammar_q012",
+        "stage": 1
       },
       {
         "q": "He ___ football on Sundays.",
@@ -210,7 +222,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q013"
+        "id": "en_grammar_q013",
+        "stage": 1
       },
       {
         "q": "We don't ___ school on Sunday.",
@@ -226,7 +239,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q014"
+        "id": "en_grammar_q014",
+        "stage": 1
       },
       {
         "q": "___ you like apples? – Yes, I do.",
@@ -242,7 +256,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q015"
+        "id": "en_grammar_q015",
+        "stage": 1
       },
       {
         "q": "Look! The children ___ in the park.",
@@ -258,7 +273,8 @@
         "skill": "grammar",
         "unit": "grammar",
         "source": "claude-audit-20260924",
-        "id": "en_grammar_q016"
+        "id": "en_grammar_q016",
+        "stage": 1
       }
     ]
   }

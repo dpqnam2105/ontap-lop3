@@ -18,7 +18,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q001"
+        "id": "en_on-tap-tong-hop_q001",
+        "stage": 1
       },
       {
         "q": "There ___ two pens on my desk.",
@@ -34,7 +35,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q002"
+        "id": "en_on-tap-tong-hop_q002",
+        "stage": 1
       },
       {
         "q": "She ___ to school every day.",
@@ -50,7 +52,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q003"
+        "id": "en_on-tap-tong-hop_q003",
+        "stage": 1
       },
       {
         "q": "My father's father is my ___.",
@@ -66,7 +69,8 @@
         "skill": "family",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q004"
+        "id": "en_on-tap-tong-hop_q004",
+        "stage": 1
       },
       {
         "q": "The teacher writes on the board with a ___.",
@@ -82,7 +86,8 @@
         "skill": "school",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q005"
+        "id": "en_on-tap-tong-hop_q005",
+        "stage": 1
       },
       {
         "q": "Choose the correct sentence.",
@@ -98,7 +103,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q006"
+        "id": "en_on-tap-tong-hop_q006",
+        "stage": 1
       },
       {
         "q": "A person who flies a plane is a ___.",
@@ -114,7 +120,8 @@
         "skill": "jobs",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q007"
+        "id": "en_on-tap-tong-hop_q007",
+        "stage": 1
       },
       {
         "q": "Read: \"Sue gets up at 6. Then she washes her face.\" What does Sue do after she gets up?",
@@ -130,7 +137,8 @@
         "skill": "reading",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q008"
+        "id": "en_on-tap-tong-hop_q008",
+        "stage": 1
       },
       {
         "q": "Can you ___ the door, please?",
@@ -146,7 +154,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q009"
+        "id": "en_on-tap-tong-hop_q009",
+        "stage": 1
       },
       {
         "q": "Choose the correct plural of \"box\".",
@@ -162,7 +171,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q010"
+        "id": "en_on-tap-tong-hop_q010",
+        "stage": 1
       },
       {
         "q": "School starts ___ seven o'clock.",
@@ -178,7 +188,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q011"
+        "id": "en_on-tap-tong-hop_q011",
+        "stage": 1
       },
       {
         "q": "Choose the correct question.",
@@ -194,7 +205,8 @@
         "skill": "grammar",
         "unit": "on-tap-tong-hop",
         "source": "claude-audit-20260924",
-        "id": "en_on-tap-tong-hop_q012"
+        "id": "en_on-tap-tong-hop_q012",
+        "stage": 1
       }
     ]
   }

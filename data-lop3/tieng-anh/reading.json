@@ -18,7 +18,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q001"
+        "id": "en_reading_q001",
+        "stage": 1
       },
       {
         "q": "Read: \"Mina has a red bike. Every day, she rides it to school with her brother.\" Where does Mina ride her bike?",
@@ -34,7 +35,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q002"
+        "id": "en_reading_q002",
+        "stage": 1
       },
       {
         "q": "Read: \"Mina has a red bike. Every day, she rides it to school with her brother.\" Who goes with Mina?",
@@ -50,7 +52,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q003"
+        "id": "en_reading_q003",
+        "stage": 1
       },
       {
         "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" How does Tom feel after football?",
@@ -66,7 +69,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q004"
+        "id": "en_reading_q004",
+        "stage": 1
       },
       {
         "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" What does Tom drink?",
@@ -82,7 +86,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q005"
+        "id": "en_reading_q005",
+        "stage": 1
       },
       {
         "q": "Read: \"Tom is hot and thirsty after football. He drinks a big glass of water and sits under a tree.\" Where does Tom sit?",
@@ -98,7 +103,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q006"
+        "id": "en_reading_q006",
+        "stage": 1
       },
       {
         "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What is the weather like?",
@@ -114,7 +120,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q007"
+        "id": "en_reading_q007",
+        "stage": 1
       },
       {
         "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What colour is Lily's umbrella?",
@@ -130,7 +137,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q008"
+        "id": "en_reading_q008",
+        "stage": 1
       },
       {
         "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" Why does Lily take an umbrella?",
@@ -146,7 +154,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q009"
+        "id": "en_reading_q009",
+        "stage": 1
       },
       {
         "q": "Read: \"It is rainy today. Lily takes her yellow umbrella and puts on her boots.\" What does Lily put on her feet?",
@@ -162,7 +171,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q010"
+        "id": "en_reading_q010",
+        "stage": 1
       },
       {
         "q": "Read: \"Nam has two dogs. One is big and brown. The other is small and white.\" How many dogs does Nam have?",
@@ -178,7 +188,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q011"
+        "id": "en_reading_q011",
+        "stage": 1
       },
       {
         "q": "Read: \"Nam has two dogs. One is big and brown. The other is small and white.\" What is the small dog like?",
@@ -194,7 +205,8 @@
         "skill": "reading",
         "unit": "reading",
         "source": "claude-audit-20260924",
-        "id": "en_reading_q012"
+        "id": "en_reading_q012",
+        "stage": 1
       }
     ]
   }

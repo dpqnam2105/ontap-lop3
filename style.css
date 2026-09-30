@@ -426,3 +426,4 @@
 .stage-desc{margin-top:10px;font-size:.9rem;line-height:1.45;color:#3a4a60}
 .stage-nudge{margin-top:8px;font-size:.85rem;font-weight:800;color:#b45309;background:#fff4dd;border-radius:10px;padding:6px 10px;display:inline-block}
 @media (max-width:640px){.stage-bar{padding:12px}.stage-chip{padding:7px 11px;font-size:.9rem}.stage-bar-head{flex-direction:column;align-items:flex-start}}
+.stage-empty{grid-column:1/-1;background:#fff;border:1.5px dashed #9dcbfb;border-radius:18px;padding:22px;text-align:center;font-weight:800;color:#3a4a60}

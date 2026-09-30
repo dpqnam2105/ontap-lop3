@@ -75,5 +75,43 @@
       "file": "on-tap-tong-hop.json",
       "count": 12
     }
-  ]
+  ],
+  "stages": [
+    {
+      "id": 1,
+      "term": "HK1",
+      "name": "Giai đoạn 1",
+      "short": "GĐ1",
+      "desc": "Now I Know 3 Unit 1–2: nơi chốn, chỉ đường, câu mệnh lệnh; khủng long, Ai Cập cổ đại, have to / has to; tính từ – trạng từ. Kèm kiến thức nền: be, have, can, thì hiện tại đơn"
+    },
+    {
+      "id": 2,
+      "term": "HK1",
+      "name": "Giai đoạn 2",
+      "short": "GĐ2",
+      "desc": "Now I Know 3 Unit 3–4: kì nghỉ, cắm trại; truyện cổ tích; thì quá khứ đơn (-ed, did / didn't, câu hỏi Wh- với did)"
+    },
+    {
+      "id": 3,
+      "term": "HK1",
+      "name": "Giai đoạn 3",
+      "short": "GĐ3",
+      "desc": "Now I Know 3 Unit 5–6: môi trường; so sánh hơn, so sánh nhất; mua sắm, tiền, danh từ chỉ số lượng, hỏi giờ"
+    },
+    {
+      "id": 4,
+      "term": "HK2",
+      "name": "Giai đoạn 4",
+      "short": "GĐ4",
+      "desc": "Now I Know 3 Unit 7–9: giải trí, nhạc cụ; vũ trụ, How often…?; ngôi nhà, Would you like to…?, số thứ tự"
+    },
+    {
+      "id": 5,
+      "term": "HK2",
+      "name": "Giai đoạn 5",
+      "short": "GĐ5",
+      "desc": "Now I Know 3 Unit 10–12: cơ thể và sức khỏe, should / shouldn't; Nam Cực, There is / There are; lễ hội, will / won't"
+    }
+  ],
+  "defaultStage": 1
 }

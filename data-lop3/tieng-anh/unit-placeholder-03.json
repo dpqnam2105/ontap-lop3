@@ -18,7 +18,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q001"
+        "id": "en_daily-activities_q001",
+        "stage": 1
       },
       {
         "q": "She ___ up at six o'clock.",
@@ -34,7 +35,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q002"
+        "id": "en_daily-activities_q002",
+        "stage": 1
       },
       {
         "q": "We ___ to school from Monday to Friday.",
@@ -50,7 +52,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q003"
+        "id": "en_daily-activities_q003",
+        "stage": 1
       },
       {
         "q": "He ___ his homework after dinner.",
@@ -66,7 +69,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q004"
+        "id": "en_daily-activities_q004",
+        "stage": 1
       },
       {
         "q": "I go to bed ___ night.",
@@ -82,7 +86,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q005"
+        "id": "en_daily-activities_q005",
+        "stage": 1
       },
       {
         "q": "We have lunch ___ twelve o'clock.",
@@ -98,7 +103,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q006"
+        "id": "en_daily-activities_q006",
+        "stage": 1
       },
       {
         "q": "Which one is a daily activity?",
@@ -114,7 +120,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q007"
+        "id": "en_daily-activities_q007",
+        "stage": 1
       },
       {
         "q": "The opposite of \"get up\" is \"___\".",
@@ -130,7 +137,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q008"
+        "id": "en_daily-activities_q008",
+        "stage": 1
       },
       {
         "q": "What time ___ you get up?",
@@ -146,7 +154,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q009"
+        "id": "en_daily-activities_q009",
+        "stage": 1
       },
       {
         "q": "What time ___ he get up?",
@@ -162,7 +171,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q010"
+        "id": "en_daily-activities_q010",
+        "stage": 1
       },
       {
         "q": "I ___ never late for school.",
@@ -178,7 +188,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q011"
+        "id": "en_daily-activities_q011",
+        "stage": 1
       },
       {
         "q": "After school I ___ with my friends.",
@@ -194,7 +205,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q012"
+        "id": "en_daily-activities_q012",
+        "stage": 1
       },
       {
         "q": "Choose the correct sentence.",
@@ -210,7 +222,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q013"
+        "id": "en_daily-activities_q013",
+        "stage": 1
       },
       {
         "q": "On Sundays I ___ visit my grandparents.",
@@ -226,7 +239,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q014"
+        "id": "en_daily-activities_q014",
+        "stage": 1
       },
       {
         "q": "Breakfast is a meal in the ___.",
@@ -242,7 +256,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q015"
+        "id": "en_daily-activities_q015",
+        "stage": 1
       },
       {
         "q": "How do we say 7:00?",
@@ -258,7 +273,8 @@
         "skill": "daily",
         "unit": "unit-placeholder-03",
         "source": "claude-audit-20260924",
-        "id": "en_daily-activities_q016"
+        "id": "en_daily-activities_q016",
+        "stage": 1
       }
     ]
   }

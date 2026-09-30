@@ -18,7 +18,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q001"
+        "id": "en_my-family_q001",
+        "stage": 1
       },
       {
         "q": "My parents have a son. He is my ___.",
@@ -34,7 +35,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q002"
+        "id": "en_my-family_q002",
+        "stage": 1
       },
       {
         "q": "I ___ a sister. Her name is Mai.",
@@ -50,7 +52,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q003"
+        "id": "en_my-family_q003",
+        "stage": 1
       },
       {
         "q": "She ___ a baby brother.",
@@ -66,7 +69,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q004"
+        "id": "en_my-family_q004",
+        "stage": 1
       },
       {
         "q": "This is a photo ___ my family.",
@@ -82,7 +86,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q005"
+        "id": "en_my-family_q005",
+        "stage": 1
       },
       {
         "q": "We ___ in a house with our parents.",
@@ -98,7 +103,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q006"
+        "id": "en_my-family_q006",
+        "stage": 1
       },
       {
         "q": "Choose the correct sentence.",
@@ -114,7 +120,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q007"
+        "id": "en_my-family_q007",
+        "stage": 1
       },
       {
         "q": "A boy child in a family is a ___.",
@@ -130,7 +137,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q008"
+        "id": "en_my-family_q008",
+        "stage": 1
       },
       {
         "q": "A girl child in a family is a ___.",
@@ -146,7 +154,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q009"
+        "id": "en_my-family_q009",
+        "stage": 1
       },
       {
         "q": "My aunt's child is my ___.",
@@ -162,7 +171,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q010"
+        "id": "en_my-family_q010",
+        "stage": 1
       },
       {
         "q": "\"Dad cooks dinner.\" Who cooks?",
@@ -178,7 +188,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q011"
+        "id": "en_my-family_q011",
+        "stage": 1
       },
       {
         "q": "They ___ my grandparents.",
@@ -194,7 +205,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q012"
+        "id": "en_my-family_q012",
+        "stage": 1
       },
       {
         "q": "I love my family ___ they love me.",
@@ -210,7 +222,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q013"
+        "id": "en_my-family_q013",
+        "stage": 1
       },
       {
         "q": "Which sentence is about a family member?",
@@ -226,7 +239,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q014"
+        "id": "en_my-family_q014",
+        "stage": 1
       },
       {
         "q": "\"How many people are there in your family?\" – \"___\"",
@@ -242,7 +256,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q015"
+        "id": "en_my-family_q015",
+        "stage": 1
       },
       {
         "q": "Choose the correct sentence.",
@@ -258,7 +273,8 @@
         "skill": "family",
         "unit": "unit-placeholder-02",
         "source": "claude-audit-20260924",
-        "id": "en_my-family_q016"
+        "id": "en_my-family_q016",
+        "stage": 1
       }
     ]
   }

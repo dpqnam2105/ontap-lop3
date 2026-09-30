@@ -540,6 +540,13 @@ const App = {
       list.appendChild(card);
     });
 
+    if (stageBar && !list.querySelector('.topic-card')) {
+      const empty = document.createElement('div');
+      empty.className = 'stage-empty';
+      empty.innerHTML = '🌱 Bài cho giai đoạn này đang được soạn thêm. Con chọn giai đoạn khác hoặc bấm <b>Ôn cả phần trước</b> nhé!';
+      list.appendChild(empty);
+    }
+
     if (keepScroll) return; // đổi giai đoạn: vẽ lại tại chỗ, không cuộn lên đầu
     this.showScreen('topic');
   },

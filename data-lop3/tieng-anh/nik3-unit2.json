@@ -18,7 +18,8 @@
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q001"
+        "id": "en_nik3-unit2_q001",
+        "stage": 1
       },
       {
         "q": "A T-Rex eats meat. It is a ___.",
@@ -34,7 +35,8 @@
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q002"
+        "id": "en_nik3-unit2_q002",
+        "stage": 1
       },
       {
         "q": "There are no dinosaurs today. Dinosaurs are ___.",
@@ -50,7 +52,8 @@
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q003"
+        "id": "en_nik3-unit2_q003",
+        "stage": 1
       },
       {
         "q": "The long part at the back of an animal is its ___.",
@@ -66,7 +69,8 @@
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q004"
+        "id": "en_nik3-unit2_q004",
+        "stage": 1
       },
       {
         "q": "A hard, pointed part on an animal's head is a ___.",
@@ -82,7 +86,8 @@
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q005"
+        "id": "en_nik3-unit2_q005",
+        "stage": 1
       },
       {
         "q": "A person who studies old things from the past is an ___.",
@@ -98,7 +103,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q006"
+        "id": "en_nik3-unit2_q006",
+        "stage": 1
       },
       {
         "q": "The king of ancient Egypt was called a ___.",
@@ -114,7 +120,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q007"
+        "id": "en_nik3-unit2_q007",
+        "stage": 1
       },
       {
         "q": "The pharaoh was buried in a ___ under the pyramid.",
@@ -130,7 +137,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q008"
+        "id": "en_nik3-unit2_q008",
+        "stage": 1
       },
       {
         "q": "Tutankhamun's mask is made of ___. It is yellow and very expensive.",
@@ -146,7 +154,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q009"
+        "id": "en_nik3-unit2_q009",
+        "stage": 1
       },
       {
         "q": "Bad people who take things that are not theirs are ___.",
@@ -162,7 +171,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q010"
+        "id": "en_nik3-unit2_q010",
+        "stage": 1
       },
       {
         "q": "Archeologists ___ in the sand to find old things.",
@@ -178,7 +188,8 @@
         "skill": "egypt",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q011"
+        "id": "en_nik3-unit2_q011",
+        "stage": 1
       },
       {
         "q": "Odd one out: herbivore · carnivore · dinosaur · gold",
@@ -194,7 +205,8 @@
         "skill": "odd-one-out",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q012"
+        "id": "en_nik3-unit2_q012",
+        "stage": 1
       },
       {
         "q": "Odd one out: pharaoh · tomb · treasure · tail",
@@ -210,7 +222,8 @@
         "skill": "odd-one-out",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q013"
+        "id": "en_nik3-unit2_q013",
+        "stage": 1
       },
       {
         "q": "Odd one out: quick · careful · loud · dig",
@@ -226,7 +239,8 @@
         "skill": "odd-one-out",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q014"
+        "id": "en_nik3-unit2_q014",
+        "stage": 1
       },
       {
         "q": "Tilly ___ be careful near the T-Rex.",
@@ -242,7 +256,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q015"
+        "id": "en_nik3-unit2_q015",
+        "stage": 1
       },
       {
         "q": "Archeologists ___ dig very slowly.",
@@ -258,7 +273,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q016"
+        "id": "en_nik3-unit2_q016",
+        "stage": 1
       },
       {
         "q": "The museum is free today. We ___ pay.",
@@ -274,7 +290,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q017"
+        "id": "en_nik3-unit2_q017",
+        "stage": 1
       },
       {
         "q": "Sam ___ go to school on Sunday. He stays at home.",
@@ -290,7 +307,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q018"
+        "id": "en_nik3-unit2_q018",
+        "stage": 1
       },
       {
         "q": "___ you have to wear a hat in the desert? – Yes, we do.",
@@ -306,7 +324,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q019"
+        "id": "en_nik3-unit2_q019",
+        "stage": 1
       },
       {
         "q": "___ Linh have to feed the cat? – No, she doesn't.",
@@ -322,7 +341,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q020"
+        "id": "en_nik3-unit2_q020",
+        "stage": 1
       },
       {
         "q": "Which sentence is correct?",
@@ -338,7 +358,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q021"
+        "id": "en_nik3-unit2_q021",
+        "stage": 1
       },
       {
         "q": "We have to be quiet in the museum. What does 'have to' mean?",
@@ -354,7 +375,8 @@
         "skill": "have-to",
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit2_q022"
+        "id": "en_nik3-unit2_q022",
+        "stage": 1
       }
     ]
   }

@@ -18,7 +18,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q001"
+        "id": "en_nik3-unit1_q001",
+        "stage": 1
       },
       {
         "q": "We watch a play or a show at the ___.",
@@ -34,7 +35,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q002"
+        "id": "en_nik3-unit1_q002",
+        "stage": 1
       },
       {
         "q": "Big ships and boats stop at the ___.",
@@ -50,7 +52,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q003"
+        "id": "en_nik3-unit1_q003",
+        "stage": 1
       },
       {
         "q": "We look at paintings at the ___.",
@@ -66,7 +69,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q004"
+        "id": "en_nik3-unit1_q004",
+        "stage": 1
       },
       {
         "q": "I swim and play badminton at the ___.",
@@ -82,7 +86,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q005"
+        "id": "en_nik3-unit1_q005",
+        "stage": 1
       },
       {
         "q": "I borrow books at the ___.",
@@ -98,7 +103,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q006"
+        "id": "en_nik3-unit1_q006",
+        "stage": 1
       },
       {
         "q": "We walk across the ___ to go over the river.",
@@ -114,7 +120,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q007"
+        "id": "en_nik3-unit1_q007",
+        "stage": 1
       },
       {
         "q": "Which word is NOT a place in town?",
@@ -130,7 +137,8 @@
         "skill": "places",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q008"
+        "id": "en_nik3-unit1_q008",
+        "stage": 1
       },
       {
         "q": "The clock is on the wall. The sofa is under the clock. The clock is ___ the sofa.",
@@ -146,7 +154,8 @@
         "skill": "prepositions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q009"
+        "id": "en_nik3-unit1_q009",
+        "stage": 1
       },
       {
         "q": "The shoes are under the bed. The shoes are ___ the bed.",
@@ -162,7 +171,8 @@
         "skill": "prepositions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q010"
+        "id": "en_nik3-unit1_q010",
+        "stage": 1
       },
       {
         "q": "The cat sits next to the dog. The cat is ___ the dog.",
@@ -178,7 +188,8 @@
         "skill": "prepositions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q011"
+        "id": "en_nik3-unit1_q011",
+        "stage": 1
       },
       {
         "q": "My school is only five minutes from my house. My school is ___ my house.",
@@ -194,7 +205,8 @@
         "skill": "prepositions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q012"
+        "id": "en_nik3-unit1_q012",
+        "stage": 1
       },
       {
         "q": "The bird is flying over the tree. The bird is ___ the tree.",
@@ -210,7 +222,8 @@
         "skill": "prepositions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q013"
+        "id": "en_nik3-unit1_q013",
+        "stage": 1
       },
       {
         "q": "You see a sign: NO SWIMMING. What does it mean?",
@@ -226,7 +239,8 @@
         "skill": "imperatives",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q014"
+        "id": "en_nik3-unit1_q014",
+        "stage": 1
       },
       {
         "q": "You are in the library. What does the teacher say?",
@@ -242,7 +256,8 @@
         "skill": "imperatives",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q015"
+        "id": "en_nik3-unit1_q015",
+        "stage": 1
       },
       {
         "q": "The light for walkers is red. Which sentence is right?",
@@ -258,7 +273,8 @@
         "skill": "imperatives",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q016"
+        "id": "en_nik3-unit1_q016",
+        "stage": 1
       },
       {
         "q": "Put the words in order: feed / Don't / the / animals",
@@ -274,7 +290,8 @@
         "skill": "imperatives",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q017"
+        "id": "en_nik3-unit1_q017",
+        "stage": 1
       },
       {
         "q": "The arrow points to the RIGHT. What do you say?",
@@ -290,7 +307,8 @@
         "skill": "imperatives",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q018"
+        "id": "en_nik3-unit1_q018",
+        "stage": 1
       },
       {
         "q": "___ you going to the museum now? – Yes, I am.",
@@ -306,7 +324,8 @@
         "skill": "questions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q019"
+        "id": "en_nik3-unit1_q019",
+        "stage": 1
       },
       {
         "q": "___ she go to the library on Saturdays? – Yes, she does.",
@@ -322,7 +341,8 @@
         "skill": "questions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q020"
+        "id": "en_nik3-unit1_q020",
+        "stage": 1
       },
       {
         "q": "Is Tom taking the bus now? – No, he ___.",
@@ -338,7 +358,8 @@
         "skill": "questions",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q021"
+        "id": "en_nik3-unit1_q021",
+        "stage": 1
       },
       {
         "q": "How do you go to school every day? – I go ___.",
@@ -354,7 +375,8 @@
         "skill": "transport",
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
-        "id": "en_nik3-unit1_q022"
+        "id": "en_nik3-unit1_q022",
+        "stage": 1
       }
     ]
   }
