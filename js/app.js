@@ -474,6 +474,94 @@ const App = {
     return bar;
   },
 
+  // ─── Đề trộn tuần này (interleaving) ─────────
+  // Lấy khoảng 20 câu từ mọi chủ đề trong phạm vi giai đoạn đang chọn, xen kẽ các chủ đề.
+  // Bộ câu cố định trong một tuần (theo tên bé + lớp + môn + giai đoạn) để làm lại được và so điểm.
+  MIX_SIZE: 20,
+
+  _weekStart(d) {
+    const x = new Date(d || Date.now());
+    const day = (x.getDay() + 6) % 7; // thứ Hai = 0
+    x.setHours(0, 0, 0, 0);
+    x.setDate(x.getDate() - day);
+    return x;
+  },
+
+  _seededRandom(seedStr) {
+    let h = 2166136261;
+    for (let i = 0; i < seedStr.length; i++) { h ^= seedStr.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return () => {
+      h += 0x6D2B79F5; let t = h;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  },
+
+  _mixKey(s) {
+    const ws = this._weekStart();
+    const wk = ws.getFullYear() + '-' + String(ws.getMonth() + 1).padStart(2, '0') + '-' + String(ws.getDate()).padStart(2, '0');
+    const st = this.getStageSetting(s);
+    const stTag = st ? (st.only ? 'only' : 'upto') + st.stage : 'all';
+    return wk + '|' + this.currentGrade + ':' + s.id + '|' + stTag;
+  },
+
+  _buildWeeklyMix(s) {
+    const key = this._mixKey(s);
+    const rand = this._seededRandom(key + '|' + Storage.canonName(this.playerName || ''));
+    const shuffle = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+    const buckets = shuffle(s.topics.map(t => {
+      const allowed = this._allowedIndices(s, t);
+      const idxs = allowed === null ? (t.questions || []).map((_, i) => i) : allowed;
+      return { t, idxs: shuffle(idxs) };
+    }).filter(b => b.idxs.length));
+    const pool = [];
+    let round = 0;
+    while (pool.length < this.MIX_SIZE && buckets.some(b => b.idxs.length > round)) {
+      for (const b of buckets) {
+        if (pool.length >= this.MIX_SIZE) break;
+        const i = b.idxs[round];
+        if (i == null) continue;
+        const q = b.t.questions[i];
+        const topicId = (b.t.id || b.t.name).toString();
+        pool.push({
+          ...q,
+          _idx: i,
+          subjectId: s.id,
+          topicId,
+          id: q.id || (topicId + '_' + i),
+          _subjectName: s.name,
+          _topicName: b.t.name
+        });
+      }
+      round++;
+    }
+    return { key, pool: shuffle(pool), topicCount: buckets.length };
+  },
+
+  _renderMixCard(s) {
+    const { key, pool, topicCount } = this._buildWeeklyMix(s);
+    if (pool.length < 5 || topicCount < 2) return null;
+    let best = null;
+    try { best = (Storage.get('weeklyMix') || {})[key] || null; } catch (e) { best = null; }
+    const ws = this._weekStart();
+    const card = document.createElement('div');
+    card.className = 'mix-card';
+    card.innerHTML = `
+      <div class="mix-icon">🎲</div>
+      <div class="mix-text">
+        <div class="mix-title">Đề trộn tuần này</div>
+        <div class="mix-sub">${pool.length} câu xen kẽ từ ${topicCount} chủ đề · tuần từ ${ws.getDate()}/${ws.getMonth() + 1}${best ? ` · <b>Điểm cao nhất: ${best.score}/${best.total}</b>` : ''}</div>
+        <div class="mix-why">Trộn nhiều dạng giúp con tự nhận ra bài nào dùng cách nào — nhớ lâu hơn làm từng dạng riêng.</div>
+      </div>
+      <button class="mix-btn">${best ? 'Làm lại ▶' : 'Làm đề ▶'}</button>`;
+    card.querySelector('.mix-btn').addEventListener('click', e => {
+      e.stopPropagation();
+      Quiz.startMixed(pool, s.name, s.id, key);
+    });
+    return card;
+  },
+
   _chooseSubject(idx, keepScroll) {
     const s = this.allData.subjects[idx];
     document.getElementById('topicMenuTitle').textContent = s.name;
@@ -483,6 +571,8 @@ const App = {
 
     const stageBar = this._renderStageBar(s, idx);
     if (stageBar) list.appendChild(stageBar);
+    const mixCard = this._renderMixCard(s);
+    if (mixCard) list.appendChild(mixCard);
 
     s.topics.forEach((t) => {
       const allowed = this._allowedIndices(s, t);

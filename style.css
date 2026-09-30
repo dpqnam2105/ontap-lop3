@@ -427,3 +427,14 @@
 .stage-nudge{margin-top:8px;font-size:.85rem;font-weight:800;color:#b45309;background:#fff4dd;border-radius:10px;padding:6px 10px;display:inline-block}
 @media (max-width:640px){.stage-bar{padding:12px}.stage-chip{padding:7px 11px;font-size:.9rem}.stage-bar-head{flex-direction:column;align-items:flex-start}}
 .stage-empty{grid-column:1/-1;background:#fff;border:1.5px dashed #9dcbfb;border-radius:18px;padding:22px;text-align:center;font-weight:800;color:#3a4a60}
+
+/* ===== Đề trộn tuần này ===== */
+.mix-card{grid-column:1/-1;display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#f3ecff,#eaf6ff);border:1.5px solid #cdb8f5;border-radius:20px;padding:14px 16px;box-shadow:var(--shadow2)}
+.mix-icon{font-size:2.3rem;line-height:1}
+.mix-text{flex:1;min-width:0}
+.mix-title{font-family:var(--font-display);font-weight:900;font-size:1.1rem;color:#4a2a8a}
+.mix-sub{font-size:.9rem;color:#3a4a60;margin-top:2px}
+.mix-why{font-size:.8rem;color:var(--muted);margin-top:4px}
+.mix-btn{border:0;background:#7c4dff;color:#fff;font-weight:900;border-radius:14px;padding:11px 18px;cursor:pointer;white-space:nowrap;box-shadow:0 6px 14px rgba(124,77,255,.28)}
+.mix-btn:hover{transform:translateY(-1px)}
+@media (max-width:640px){.mix-card{flex-wrap:wrap}.mix-btn{width:100%}}

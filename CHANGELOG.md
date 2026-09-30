@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-09-30 — Thêm "Đề trộn tuần này" cho mọi môn
+- Trong mỗi môn, dưới thanh chọn giai đoạn có thẻ **🎲 Đề trộn tuần này**: 20 câu lấy xen kẽ từ tất cả chủ đề nằm trong giai đoạn bé đang chọn (phương pháp luyện trộn dạng — interleaving).
+- Bộ câu cố định trong một tuần (đổi vào thứ Hai), riêng cho từng bé và từng giai đoạn, nên làm lại được để so điểm; thẻ hiện **điểm cao nhất** của tuần.
+- Câu sai trong đề trộn được đưa vào phần **Ôn câu sai**; không làm lệch tiến độ của từng chủ đề.
+
 ## 2026-09-30 — Toán lớp 3: chủ đề mới "Toán đố vui kiểu Kangaroo"
 - Chủ đề mới **Toán đố vui kiểu Kangaroo** — 21 câu tự soạn theo phong cách kỳ thi Toán quốc tế Kangaroo (IKMC), đều ở GĐ1:
   - Xếp hàng (đứng thứ mấy từ hai phía), cưa gỗ, trồng cây hai đầu, xếp que diêm

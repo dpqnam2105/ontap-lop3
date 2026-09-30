@@ -87,6 +87,38 @@ const Quiz = {
     this.render();
   },
 
+  // Đề trộn tuần: câu hỏi lấy từ nhiều chủ đề của một môn (App dựng sẵn pool, cố định theo tuần).
+  // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
+  startMixed(pool, subjectName, subjectId, mixKey) {
+    if (!pool || !pool.length) { alert('Chưa có câu hỏi để trộn con nhé 🌱'); return; }
+    this.mode = 'mixed';
+    this.mixKey = mixKey || '';
+    this.questions = pool.slice();
+    this.currentTopic = { id: 'weekly_mix', name: 'Đề trộn tuần này', questions: this.questions };
+    this.currentSubject = subjectName || '';
+    this.currentTopicId = 'weekly_mix';
+    this.currentSubjectId = subjectId || 'mixed';
+    this.allowedIdx = null;
+    this.sessionStartTime = Date.now();
+    this.score = 0;
+    this.curIdx = 0;
+    this.sessionDetails = [];
+
+    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
+    this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
+      ? window.LearningEngine.installSessionGuard()
+      : null;
+
+    this.sessionInfo = {
+      mode: 'mixed', modeLabel: 'Đề trộn 🎲',
+      current: 1, total: 1, isAllDone: true,
+      learnedBefore: 0, totalInTopic: this.questions.length
+    };
+
+    App.showScreen('quiz');
+    this.render();
+  },
+
   start(topic, subjectName, options) {
     options = options || {};
     this.mode = options.mode || 'practice';
@@ -234,6 +266,9 @@ const Quiz = {
     const info = this.sessionInfo || {};
 
     let titleText = (info.modeLabel || 'Luyện tập 🧠') + ' · ' + this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    if (this.mode === 'mixed') {
+      titleText = 'Đề trộn 🎲 · ' + (q._topicName || '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    }
     if (this.mode === 'wrong_review' && q._subjectName) {
       titleText = 'Ôn câu sai 🔁 · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     }
@@ -466,7 +501,7 @@ const Quiz = {
     const q = this.questions[this.curIdx];
     // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
     // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
-    if (this.mode !== 'wrong_review') this._markLearned(q._idx, this.canEarnPoint);
+    if (this.mode !== 'wrong_review' && this.mode !== 'mixed') this._markLearned(q._idx, this.canEarnPoint);
 
     this.curIdx++;
     if (this.curIdx >= this.questions.length) this._finish();
@@ -498,6 +533,16 @@ const Quiz = {
       let progressMsg = '';
       if (this.mode === 'test') {
         progressMsg = '📝 Đây là kết quả kiểm tra. Câu sai sẽ được đưa vào phần ôn lỗi sai.';
+      } else if (this.mode === 'mixed') {
+        progressMsg = '🎲 Đề trộn tuần này: con đúng ' + this.score + '/' + total + ' câu. Câu sai đã được đưa vào phần Ôn câu sai.';
+        try {
+          const all = Storage.get('weeklyMix') || {};
+          const prev = all[this.mixKey];
+          if (!prev || this.score >= prev.score) all[this.mixKey] = { score: this.score, total: total, at: new Date().toISOString() };
+          const keys = Object.keys(all).sort((a, b) => String(all[b].at).localeCompare(String(all[a].at)));
+          keys.slice(30).forEach(k => delete all[k]);
+          Storage.set('weeklyMix', all);
+        } catch (e) { /* bỏ qua nếu không lưu được */ }
       } else if (this.mode === 'review') {
         progressMsg = '🔁 Con vừa ôn lại các câu từng làm sai. Rất tốt!';
       } else {
