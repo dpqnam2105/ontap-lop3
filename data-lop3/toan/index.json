@@ -44,6 +44,12 @@
       "count": 25
     },
     {
+      "id": "toan_dem-hinh-gap-khuc",
+      "name": "Đếm hình & đường gấp khúc",
+      "file": "dem-hinh-gap-khuc.json",
+      "count": 20
+    },
+    {
       "id": "toan_do-luong",
       "name": "Đo lường (độ dài, khối lượng, dung tích)",
       "file": "do-luong.json",
@@ -83,7 +89,7 @@
       "id": "toan_tu-duy-logic",
       "name": "Tư duy logic (kiểu Bebras)",
       "file": "tu-duy-logic.json",
-      "count": 30
+      "count": 46
     }
   ]
 }

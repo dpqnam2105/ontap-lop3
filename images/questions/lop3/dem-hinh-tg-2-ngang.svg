@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" width="360" height="250">
+<rect width="360" height="250" fill="#fff"/>
+<line x1="180" y1="28" x2="40" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="130" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="230" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="320" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="40" y1="222" x2="320" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="110.0" y1="125.0" x2="250.0" y2="125.0" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<circle cx="180" cy="28" r="3.5" fill="#2c3e50"/>
+<text x="180" y="18" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">A</text>
+<circle cx="40" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="25" y="235" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">B</text>
+<circle cx="320" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="335" y="235" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">C</text>
+<circle cx="130" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="120" y="241" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">D</text>
+<circle cx="230" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="240" y="241" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">E</text>
+<circle cx="110.0" cy="125.0" r="3.5" fill="#2c3e50"/>
+<text x="94" y="129" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">M</text>
+<circle cx="155.0" cy="125.0" r="3.5" fill="#2c3e50"/>
+<text x="153" y="115" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">P</text>
+<circle cx="205.0" cy="125.0" r="3.5" fill="#2c3e50"/>
+<text x="209" y="115" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">Q</text>
+<circle cx="250.0" cy="125.0" r="3.5" fill="#2c3e50"/>
+<text x="266" y="129" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">N</text>
+</svg>

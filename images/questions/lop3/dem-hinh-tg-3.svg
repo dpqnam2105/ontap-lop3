@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" width="360" height="250">
+<rect width="360" height="250" fill="#fff"/>
+<line x1="180" y1="28" x2="40" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="320" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="40" y1="222" x2="320" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="110" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="180" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="28" x2="250" y2="222" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<circle cx="180" cy="28" r="3.5" fill="#2c3e50"/>
+<text x="180" y="18" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">A</text>
+<circle cx="40" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="24" y="232" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">B</text>
+<circle cx="320" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="336" y="232" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">C</text>
+<circle cx="110" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="95" y="235" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">D</text>
+<circle cx="180" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="180" y="244" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">E</text>
+<circle cx="250" cy="222" r="3.5" fill="#2c3e50"/>
+<text x="265" y="235" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">G</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 210" width="380" height="210">
+<rect width="380" height="210" fill="#fff"/>
+<polyline points="20,170 110,60 200,170 290,60 370,170" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="20" cy="170" r="4" fill="#2c3e50"/>
+<text x="20" y="194" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">A</text>
+<circle cx="110" cy="60" r="4" fill="#2c3e50"/>
+<text x="110" y="48" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">B</text>
+<circle cx="200" cy="170" r="4" fill="#2c3e50"/>
+<text x="200" y="194" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">C</text>
+<circle cx="290" cy="60" r="4" fill="#2c3e50"/>
+<text x="290" y="48" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">D</text>
+<circle cx="370" cy="170" r="4" fill="#2c3e50"/>
+<text x="370" y="194" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">E</text>
+<rect x="42" y="104" width="46" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="65" y="120" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">5 cm</text>
+</svg>

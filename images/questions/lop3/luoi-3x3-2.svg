@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 248" width="248" height="248">
+<rect width="248" height="248" fill="#fff"/>
+<rect x="10" y="10" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<rect x="86" y="10" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<polygon points="124,24 100,68 148,68" fill="#27ae60"/>
+<rect x="162" y="10" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<rect x="10" y="86" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<rect x="86" y="86" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<rect x="162" y="86" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<polygon points="200,100 176,144 224,144" fill="#27ae60"/>
+<rect x="10" y="162" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<text x="48" y="214" font-family="Verdana,Arial,sans-serif" font-size="40" font-weight="bold" fill="#8e44ad" text-anchor="middle">?</text>
+<rect x="86" y="162" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+<rect x="162" y="162" width="76" height="76" fill="#fdfefe" stroke="#34495e" stroke-width="2"/>
+</svg>

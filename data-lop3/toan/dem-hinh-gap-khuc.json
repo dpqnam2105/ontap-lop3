@@ -1,0 +1,349 @@
+{
+  "topic": {
+    "id": "toan_dem-hinh-gap-khuc",
+    "icon": "🔺",
+    "name": "Đếm hình & đường gấp khúc",
+    "questions": [
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "5",
+          "4",
+          "3",
+          "2"
+        ],
+        "a": 2,
+        "hint": "Đếm hình tam giác nhỏ trước, rồi tìm hình tam giác được ghép từ hai hình nhỏ.",
+        "difficulty": 1,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q001",
+        "image": "images/questions/lop3/dem-hinh-tg-1.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "6",
+          "3",
+          "4",
+          "5"
+        ],
+        "a": 0,
+        "hint": "Mọi hình tam giác đều có đỉnh A. Đếm xem trên cạnh đáy BC có bao nhiêu đoạn thẳng — mỗi đoạn ứng với một hình tam giác.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q002",
+        "image": "images/questions/lop3/dem-hinh-tg-2.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "9",
+          "8",
+          "4",
+          "10"
+        ],
+        "a": 3,
+        "hint": "Mỗi hình tam giác gồm đỉnh A và một đoạn thẳng trên đáy BC. Đếm các đoạn: bắt đầu từ B, rồi từ D, rồi từ E…",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q003",
+        "image": "images/questions/lop3/dem-hinh-tg-3.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "4",
+          "6",
+          "8",
+          "3"
+        ],
+        "a": 1,
+        "hint": "Đường MN chia hình thành hai tầng. Đếm tam giác có đáy nằm trên MN, rồi tam giác có đáy nằm trên BC.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q004",
+        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tứ giác?",
+        "choices": [
+          "4",
+          "3",
+          "2",
+          "1"
+        ],
+        "a": 1,
+        "hint": "Tứ giác nằm giữa đường MN và đáy BC. Đếm hình nhỏ trước, rồi hình ghép từ hai hình nhỏ.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q005",
+        "image": "images/questions/lop3/dem-hinh-tg-1-ngang.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "10",
+          "6",
+          "9",
+          "12"
+        ],
+        "a": 3,
+        "hint": "Đếm riêng từng tầng: tam giác có đáy trên MN và tam giác có đáy trên BC. Mỗi tầng đếm như hình có hai đường kẻ từ A.",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q006",
+        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tứ giác?",
+        "choices": [
+          "6",
+          "4",
+          "5",
+          "3"
+        ],
+        "a": 0,
+        "hint": "Tứ giác nằm giữa MN và BC. Mỗi tứ giác ứng với một đoạn thẳng trên đáy BC.",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q007",
+        "image": "images/questions/lop3/dem-hinh-tg-2-ngang.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "4",
+          "10",
+          "6",
+          "8"
+        ],
+        "a": 3,
+        "hint": "Có 4 tam giác nhỏ quanh điểm O. Thử ghép hai tam giác nhỏ cạnh nhau xem có thành tam giác lớn không.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q008",
+        "image": "images/questions/lop3/dem-hinh-cn-2-cheo.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "4",
+          "2",
+          "3",
+          "5"
+        ],
+        "a": 0,
+        "hint": "Đừng quên các tam giác lớn có cạnh là đường chéo AC.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q009",
+        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
+        "choices": [
+          "3",
+          "2",
+          "4",
+          "5"
+        ],
+        "a": 0,
+        "hint": "Đếm hình chữ nhật nhỏ, rồi xem ghép lại có thành hình chữ nhật lớn không. Hình có đường chéo đi qua không làm mất hình chữ nhật.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q010",
+        "image": "images/questions/lop3/dem-hinh-cn-giua-cheo.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
+        "choices": [
+          "4",
+          "6",
+          "5",
+          "3"
+        ],
+        "a": 1,
+        "hint": "Đếm hình gồm 1 ô, rồi hình gồm 2 ô liền nhau, rồi hình gồm 3 ô.",
+        "difficulty": 2,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q011",
+        "image": "images/questions/lop3/dem-hinh-dai-3.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
+        "choices": [
+          "8",
+          "7",
+          "10",
+          "4"
+        ],
+        "a": 2,
+        "hint": "Đếm theo số ô: hình 1 ô, 2 ô, 3 ô, 4 ô rồi cộng lại.",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q012",
+        "image": "images/questions/lop3/dem-hinh-dai-4.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu hình vuông?",
+        "choices": [
+          "9",
+          "6",
+          "5",
+          "4"
+        ],
+        "a": 2,
+        "hint": "Ngoài các hình vuông nhỏ, còn có hình vuông lớn bao quanh.",
+        "difficulty": 1,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q013",
+        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu hình chữ nhật?",
+        "choices": [
+          "9",
+          "4",
+          "5",
+          "8"
+        ],
+        "a": 0,
+        "hint": "Hình vuông cũng là hình chữ nhật. Đếm hình 1 ô, hình 2 ô (nằm ngang, đứng dọc) và hình 4 ô.",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q014",
+        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg"
+      },
+      {
+        "q": "Hình bên có tất cả bao nhiêu tam giác?",
+        "choices": [
+          "10",
+          "5",
+          "8",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Đếm tam giác ở mái nhà, rồi đếm trong hình vuông ABCD: 4 tam giác nhỏ và các tam giác ghép từ 2 tam giác nhỏ.",
+        "difficulty": 3,
+        "skill": "dem-hinh",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q015",
+        "image": "images/questions/lop3/dem-hinh-ngoi-nha.svg"
+      },
+      {
+        "q": "Đường gấp khúc ABCDE dài bao nhiêu đề-xi-mét?",
+        "choices": [
+          "60 dm",
+          "5 dm",
+          "7 dm",
+          "6 dm"
+        ],
+        "a": 3,
+        "hint": "Cộng độ dài các đoạn thẳng để được số xăng-ti-mét, rồi nhớ: 10 cm = 1 dm.",
+        "difficulty": 2,
+        "skill": "duong-gap-khuc",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q016",
+        "image": "images/questions/lop3/gap-khuc-1.svg"
+      },
+      {
+        "q": "Đường gấp khúc MNPQ gồm các đoạn thẳng dài bằng nhau. Độ dài đường gấp khúc là:",
+        "choices": [
+          "36 cm",
+          "27 cm",
+          "18 cm",
+          "12 cm"
+        ],
+        "a": 1,
+        "hint": "Đếm xem có mấy đoạn thẳng, mỗi đoạn bao nhiêu xăng-ti-mét — dùng phép nhân cho nhanh.",
+        "difficulty": 1,
+        "skill": "duong-gap-khuc",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q017",
+        "image": "images/questions/lop3/gap-khuc-2.svg"
+      },
+      {
+        "q": "Đường gấp khúc ABCD dài 45 cm. Đoạn thẳng CD dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "30 cm",
+          "27 cm",
+          "18 cm",
+          "33 cm"
+        ],
+        "a": 2,
+        "hint": "Lấy độ dài cả đường gấp khúc trừ đi tổng hai đoạn đã biết.",
+        "difficulty": 2,
+        "skill": "duong-gap-khuc",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q018",
+        "image": "images/questions/lop3/gap-khuc-3.svg"
+      },
+      {
+        "q": "Đường gấp khúc ABCDE có 4 đoạn. Đoạn AB dài 5 cm, mỗi đoạn sau dài hơn đoạn liền trước 2 cm. Đường gấp khúc dài bao nhiêu?",
+        "choices": [
+          "36 cm",
+          "32 cm",
+          "20 cm",
+          "26 cm"
+        ],
+        "a": 1,
+        "hint": "Tìm lần lượt BC, CD, DE trước (mỗi đoạn thêm 2 cm), rồi cộng cả 4 đoạn.",
+        "difficulty": 3,
+        "skill": "duong-gap-khuc",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q019",
+        "image": "images/questions/lop3/gap-khuc-4.svg"
+      },
+      {
+        "q": "Thỏ đi từ nhà đến trường. Đường nào ngắn hơn và ngắn hơn bao nhiêu mét?",
+        "choices": [
+          "Đường qua công viên, ngắn hơn 50 m",
+          "Hai đường dài bằng nhau",
+          "Đường qua công viên, ngắn hơn 20 m",
+          "Đường qua bưu điện, ngắn hơn 20 m"
+        ],
+        "a": 2,
+        "hint": "Tính độ dài từng đường (cộng hai đoạn), rồi so sánh và lấy số lớn trừ số bé.",
+        "difficulty": 2,
+        "skill": "duong-gap-khuc",
+        "unit": "dem-hinh-gap-khuc",
+        "source": "cai-bien-de-hk1-20260930",
+        "id": "toan_dem-hinh-gap-khuc_q020",
+        "image": "images/questions/lop3/hai-con-duong.svg"
+      }
+    ]
+  }
+}

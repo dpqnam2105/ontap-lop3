@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 160" width="470" height="160">
+<rect width="470" height="160" fill="#fff"/>
+<rect x="12" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="36" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="60" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="84" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="12" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="36" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="60" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="84" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="12" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="36" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="60" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="84" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="12" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="36" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="60" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="84" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<text x="60" y="145" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình A</text>
+<rect x="128" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="152" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="176" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="200" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="128" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="152" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="176" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="200" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="128" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="152" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="176" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="200" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="128" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="152" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="176" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="200" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<text x="176" y="145" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình B</text>
+<rect x="244" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="268" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="292" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="316" y="12" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="244" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="268" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="292" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="316" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="244" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="268" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="292" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="316" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="244" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="268" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="292" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="316" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<text x="292" y="145" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình C</text>
+<rect x="360" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="384" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="408" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="432" y="12" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="360" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="384" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="408" y="36" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="432" y="36" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="360" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="384" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="408" y="60" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="432" y="60" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="360" y="84" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="384" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="408" y="84" width="24" height="24" fill="#2c3e50" stroke="#95a5a6" stroke-width="1.5"/>
+<rect x="432" y="84" width="24" height="24" fill="#fff" stroke="#95a5a6" stroke-width="1.5"/>
+<text x="408" y="145" font-family="Verdana,Arial,sans-serif" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="middle">Hình D</text>
+</svg>

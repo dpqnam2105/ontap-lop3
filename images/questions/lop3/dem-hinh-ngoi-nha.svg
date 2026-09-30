@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" width="360" height="250">
+<rect width="360" height="250" fill="#fff"/>
+<line x1="180" y1="22" x2="90" y2="112" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="180" y1="22" x2="270" y2="112" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="90" y1="112" x2="270" y2="112" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="270" y1="112" x2="270" y2="232" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="270" y1="232" x2="90" y2="232" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="90" y1="232" x2="90" y2="112" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="90" y1="112" x2="270" y2="232" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<line x1="270" y1="112" x2="90" y2="232" stroke="#2c3e50" stroke-width="3" stroke-linecap="round"/>
+<circle cx="180" cy="22" r="3.5" fill="#2c3e50"/>
+<text x="180" y="12" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">E</text>
+<circle cx="90" cy="112" r="3.5" fill="#2c3e50"/>
+<text x="75" y="112" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">A</text>
+<circle cx="270" cy="112" r="3.5" fill="#2c3e50"/>
+<text x="285" y="112" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">B</text>
+<circle cx="270" cy="232" r="3.5" fill="#2c3e50"/>
+<text x="282" y="249" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">C</text>
+<circle cx="90" cy="232" r="3.5" fill="#2c3e50"/>
+<text x="78" y="249" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">D</text>
+<circle cx="180" cy="172" r="3.5" fill="#2c3e50"/>
+<text x="180" y="198" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">O</text>
+</svg>

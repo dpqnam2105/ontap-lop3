@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 210" width="380" height="210">
+<rect width="380" height="210" fill="#fff"/>
+<polyline points="40,160 140,60 240,160 340,60" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="40" cy="160" r="4" fill="#2c3e50"/>
+<text x="40" y="184" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">M</text>
+<circle cx="140" cy="60" r="4" fill="#2c3e50"/>
+<text x="140" y="48" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">N</text>
+<circle cx="240" cy="160" r="4" fill="#2c3e50"/>
+<text x="240" y="184" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">P</text>
+<circle cx="340" cy="60" r="4" fill="#2c3e50"/>
+<text x="340" y="48" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">Q</text>
+<rect x="67" y="99" width="46" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="90" y="115" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">9 cm</text>
+<rect x="167" y="99" width="46" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="190" y="115" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">9 cm</text>
+<rect x="267" y="99" width="46" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="290" y="115" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">9 cm</text>
+</svg>

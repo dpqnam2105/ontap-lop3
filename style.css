@@ -406,4 +406,5 @@
 }
 
 .q-image{margin:14px auto 0;text-align:center;max-width:100%}
+.question-image{display:block;margin:0 auto;max-width:100%;height:auto;max-height:260px;background:#fff;border-radius:12px}
 .lb-note{margin:10px 4px 0;font-size:.85rem;font-weight:700;color:#5b7190}

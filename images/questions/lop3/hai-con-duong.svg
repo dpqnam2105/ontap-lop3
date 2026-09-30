@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 230" width="380" height="230">
+<rect width="380" height="230" fill="#fff"/>
+<line x1="50" y1="115" x2="190" y2="30" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="2 0"/>
+<rect x="92" y="62" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="120" y="78" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">150 m</text>
+<line x1="190" y1="30" x2="330" y2="115" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="2 0"/>
+<rect x="232" y="62" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="260" y="78" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">230 m</text>
+<line x1="50" y1="115" x2="190" y2="200" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="2 0"/>
+<rect x="92" y="146" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="120" y="162" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">200 m</text>
+<line x1="190" y1="200" x2="330" y2="115" stroke="#7f8c8d" stroke-width="4" stroke-dasharray="2 0"/>
+<rect x="232" y="146" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="260" y="162" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">160 m</text>
+<rect x="6" y="101" width="88" height="28" rx="8" fill="#fef5e7" stroke="#e67e22" stroke-width="2"/>
+<text x="50" y="120" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Nhà Thỏ</text>
+<rect x="146" y="16" width="88" height="28" rx="8" fill="#fef5e7" stroke="#e67e22" stroke-width="2"/>
+<text x="190" y="35" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Bưu điện</text>
+<rect x="146" y="186" width="88" height="28" rx="8" fill="#fef5e7" stroke="#e67e22" stroke-width="2"/>
+<text x="190" y="205" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Công viên</text>
+<rect x="286" y="101" width="88" height="28" rx="8" fill="#fef5e7" stroke="#e67e22" stroke-width="2"/>
+<text x="330" y="120" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#2c3e50" text-anchor="middle">Trường</text>
+</svg>

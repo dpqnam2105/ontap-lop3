@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 280" width="390" height="280">
+<rect width="390" height="280" fill="#fff"/>
+<defs><marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2c3e50"/></marker></defs>
+<line x1="78.0" y1="50.0" x2="130.0" y2="50.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="60.0" y1="68.0" x2="60.0" y2="120.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="168.0" y1="50.0" x2="220.0" y2="50.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="150.0" y1="68.0" x2="150.0" y2="120.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="258.0" y1="50.0" x2="310.0" y2="50.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="240.0" y1="68.0" x2="240.0" y2="120.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="330.0" y1="68.0" x2="330.0" y2="120.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="78.0" y1="140.0" x2="130.0" y2="140.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="60.0" y1="158.0" x2="60.0" y2="210.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="150.0" y1="158.0" x2="150.0" y2="210.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="258.0" y1="140.0" x2="310.0" y2="140.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="240.0" y1="158.0" x2="240.0" y2="210.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="330.0" y1="158.0" x2="330.0" y2="210.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="78.0" y1="230.0" x2="130.0" y2="230.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="168.0" y1="230.0" x2="220.0" y2="230.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<line x1="258.0" y1="230.0" x2="310.0" y2="230.0" stroke="#2c3e50" stroke-width="3" marker-end="url(#m)"/>
+<circle cx="60" cy="50" r="16" fill="#f8c471" stroke="#e67e22" stroke-width="2"/>
+<text x="60" y="28" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#e67e22" text-anchor="middle">Nhà Thỏ</text>
+<circle cx="150" cy="50" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="240" cy="50" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="330" cy="50" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="60" cy="140" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="150" cy="140" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="240" cy="140" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="330" cy="140" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="60" cy="230" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="150" cy="230" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="240" cy="230" r="9" fill="#aed6f1" stroke="#2e86de" stroke-width="2"/>
+<circle cx="330" cy="230" r="16" fill="#f5b041" stroke="#d35400" stroke-width="2"/>
+<text x="330" y="264" font-family="Verdana,Arial,sans-serif" font-size="13" font-weight="bold" fill="#d35400" text-anchor="middle">Vườn cà rốt</text>
+</svg>

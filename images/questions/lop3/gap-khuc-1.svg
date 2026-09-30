@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 210" width="380" height="210">
+<rect width="380" height="210" fill="#fff"/>
+<polyline points="30,170 110,60 190,160 270,50 350,150" fill="none" stroke="#2c3e50" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="30" cy="170" r="4" fill="#2c3e50"/>
+<text x="30" y="194" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">A</text>
+<circle cx="110" cy="60" r="4" fill="#2c3e50"/>
+<text x="110" y="48" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">B</text>
+<circle cx="190" cy="160" r="4" fill="#2c3e50"/>
+<text x="190" y="184" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">C</text>
+<circle cx="270" cy="50" r="4" fill="#2c3e50"/>
+<text x="270" y="38" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">D</text>
+<circle cx="350" cy="150" r="4" fill="#2c3e50"/>
+<text x="350" y="174" font-family="Verdana,Arial,sans-serif" font-size="17" font-weight="bold" fill="#c0392b" text-anchor="middle">E</text>
+<rect x="42" y="104" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="70" y="120" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">12 cm</text>
+<rect x="122" y="99" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="150" y="115" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">12 cm</text>
+<rect x="202" y="94" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="230" y="110" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">17 cm</text>
+<rect x="282" y="89" width="55" height="22" rx="10" fill="#fff" stroke="#aed6f1" stroke-width="1.5"/><text x="310" y="105" font-family="Verdana,Arial,sans-serif" font-size="14" font-weight="bold" fill="#1a5276" text-anchor="middle">19 cm</text>
+</svg>
