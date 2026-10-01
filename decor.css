@@ -127,7 +127,8 @@
 }
 
 /* Tin vui: nhãn có vệt sáng lướt qua, chữ nổi nhẹ */
-.nt-label{position:relative;overflow:hidden;background:linear-gradient(135deg,#ff9a1f,#ff5f6d);box-shadow:0 3px 0 #d9480f}
+.nt-label{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f7af5,#6d4bc4);box-shadow:0 3px 0 #1a3f9e}
+.nt-mega{background:#fff;border-radius:50%;width:1.45em;height:1.45em;line-height:1.45em;text-align:center;margin-right:2px}
 .nt-label::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:ntShine 3.2s ease-in-out infinite}
 .nt-mega{display:inline-block;animation:ntWiggle 2.4s ease-in-out infinite}
 .nt-item{text-shadow:0 1px 0 #fff}

@@ -5,6 +5,9 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Nhãn Tin vui dễ nhìn hơn
+- Nhãn "📣 Tin vui" đổi nền xanh dương–tím của web; cái loa nằm trong vòng tròn trắng nên không còn lẫn vào nền cam.
+
 ## 2026-10-02 — Tin vui chạy chữ mượt trên mọi máy
 - Dòng "📣 Tin vui" nay chạy chữ chậm, đều **từ phải sang trái** bằng JavaScript (~38 px/giây), rê chuột hoặc chạm vào thì dừng. Trước đây chạy bằng CSS nên máy bật "giảm hiệu ứng" (Windows: Hiệu ứng hoạt hình = Tắt) thấy chữ đứng yên.
 - Nhãn "📣 Tin vui" đổi màu cam–đỏ, có vệt sáng lướt qua và loa rung nhẹ mỗi vài giây.
