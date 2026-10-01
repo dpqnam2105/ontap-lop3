@@ -387,6 +387,193 @@
         "unit": "doc-hieu-truyen",
         "source": "cai-bien-de-hk1-20260929",
         "id": "tv_doc-hieu-truyen_q024"
+      },
+      {
+        "q": "Đọc đoạn: «Trong giờ ra chơi, Nam lỡ tay làm đổ lọ mực lên vở của Hùng. Nam đỏ mặt xin lỗi rồi lấy giấy thấm giúp bạn. Hùng tuy hơi buồn nhưng vẫn cười: \"Không sao đâu, mình chép lại là được.\" Từ hôm đó, hai bạn càng thân nhau hơn.»\n\nChọn cặp từ điền vào chỗ trống: \"Câu chuyện khen Nam biết … và Hùng biết … cho bạn.\"",
+        "choices": [
+          "nhận lỗi – trách mắng",
+          "tha thứ – nhận lỗi",
+          "nhận lỗi – tha thứ",
+          "chép bài – cười"
+        ],
+        "a": 2,
+        "hint": "Ai làm đổ mực? Bạn ấy đã làm gì? Bạn kia đối xử thế nào?",
+        "difficulty": 2,
+        "skill": "y-nghia-truyen",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q025",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Ông nội trồng một cây hồng xiêm trước sân. Có người hỏi: \"Ông đã già rồi, trồng cây bao giờ mới được ăn quả?\" Ông cười: \"Ông trồng để các cháu ăn.\" Mấy năm sau, cây sai trĩu quả, cả nhà ăn quả lại nhớ đến ông.»\n\nChọn cặp từ điền vào chỗ trống: \"Câu chuyện nói về tấm lòng … của ông dành cho …\"",
+        "choices": [
+          "yêu thương – hàng xóm",
+          "nghiêm khắc – con cháu",
+          "chăm chỉ – cây hồng xiêm",
+          "yêu thương – con cháu"
+        ],
+        "a": 3,
+        "hint": "Ông trồng cây để cho ai ăn?",
+        "difficulty": 2,
+        "skill": "y-nghia-truyen",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q026",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Hôm Lan làm bài kiểm tra chưa tốt, cô giáo không trách mà ngồi xuống cạnh em, chỉ ra từng lỗi sai và dặn: \"Lần sau con đọc kĩ đề nhé.\" Nhưng khi Lan nói chuyện riêng trong giờ học, cô nhắc rất nghiêm: \"Con hãy giữ trật tự.\"»\n\nChọn cặp từ điền vào chỗ trống: \"Cô giáo của Lan vừa … vừa …\"",
+        "choices": [
+          "dịu dàng – nghiêm khắc",
+          "nghiêm khắc – lười biếng",
+          "vui tính – nóng nảy",
+          "dịu dàng – dễ dãi"
+        ],
+        "a": 0,
+        "hint": "Khi Lan làm bài chưa tốt cô thế nào? Khi Lan nói chuyện riêng cô thế nào?",
+        "difficulty": 2,
+        "skill": "y-nghia-truyen",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q027",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Mùa hè, đàn kiến chăm chỉ tha mồi về tổ. Châu chấu chỉ mải nhảy nhót, ca hát. Mùa đông đến, kiến có đủ thức ăn, còn châu chấu đói rét phải đi xin.»\n\nChọn cặp từ điền vào chỗ trống: \"Câu chuyện khuyên chúng ta phải … và biết … cho ngày mai.\"",
+        "choices": [
+          "chăm chỉ – lo xa",
+          "chăm chỉ – nhảy nhót",
+          "vui chơi – tiết kiệm",
+          "ca hát – lo xa"
+        ],
+        "a": 0,
+        "hint": "Vì sao mùa đông kiến không bị đói?",
+        "difficulty": 1,
+        "skill": "y-nghia-truyen",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q028",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Mẹ đi làm về muộn, trời mưa to. Thu đã nấu sẵn nồi cơm, quét nhà sạch sẽ rồi cầm ô ra cửa đứng chờ mẹ. Mẹ ôm Thu vào lòng: \"Con gái mẹ lớn thật rồi!\"»\n\nChọn cặp từ điền vào chỗ trống: \"Thu là một cô bé … và biết … mẹ.\"",
+        "choices": [
+          "ngoan ngoãn – trách",
+          "nhút nhát – sợ",
+          "nghịch ngợm – thương",
+          "ngoan ngoãn – thương"
+        ],
+        "a": 3,
+        "hint": "Thu đã làm những việc gì khi chờ mẹ?",
+        "difficulty": 1,
+        "skill": "y-nghia-truyen",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q029",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Trời sắp mưa. Những đám mây đen kéo đến che kín bầu trời. Gió thổi ào ào, cây cối nghiêng ngả. Rồi tiếng sấm ầm ầm vang lên.»\n\nTác giả tả cơn mưa sắp đến bằng những giác quan nào?",
+        "choices": [
+          "Chỉ có thị giác (mắt)",
+          "Thị giác (mắt) và thính giác (tai)",
+          "Khứu giác (mũi) và vị giác (lưỡi)",
+          "Chỉ có thính giác (tai)"
+        ],
+        "a": 1,
+        "hint": "Mây đen, cây nghiêng ngả là nhìn thấy. Gió ào ào, sấm ầm ầm là nghe thấy.",
+        "difficulty": 3,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q030",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Trời sắp mưa. Những đám mây đen kéo đến che kín bầu trời. Gió thổi ào ào, cây cối nghiêng ngả. Rồi tiếng sấm ầm ầm vang lên.»\n\nTừ ngữ nào cho thấy tác giả tả bằng thính giác (nghe bằng tai)?",
+        "choices": [
+          "đen",
+          "nghiêng ngả",
+          "ầm ầm",
+          "che kín"
+        ],
+        "a": 2,
+        "hint": "Tìm từ chỉ âm thanh.",
+        "difficulty": 2,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q031",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Vườn nhà bà có cây bưởi đang mùa hoa. Mới bước vào cổng, em đã ngửi thấy hương thơm ngào ngạt. Những chùm hoa trắng muốt nở chi chít trên cành.»\n\nĐoạn văn tả cây bưởi bằng những giác quan nào?",
+        "choices": [
+          "Vị giác (lưỡi) và xúc giác (da)",
+          "Thính giác (tai) và thị giác (mắt)",
+          "Chỉ có khứu giác (mũi)",
+          "Khứu giác (mũi) và thị giác (mắt)"
+        ],
+        "a": 3,
+        "hint": "\"Ngửi thấy hương thơm\" dùng mũi. \"Hoa trắng muốt\" là nhìn thấy.",
+        "difficulty": 3,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q032",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Buổi sáng, chợ quê thật nhộn nhịp. Tiếng người mua kẻ bán râm ran. Tiếng gà kêu chiêm chiếp, vịt kêu cạp cạp vang khắp góc chợ.»\n\nĐoạn văn chủ yếu tả chợ quê bằng giác quan nào?",
+        "choices": [
+          "Vị giác (lưỡi)",
+          "Thính giác (tai)",
+          "Thị giác (mắt)",
+          "Khứu giác (mũi)"
+        ],
+        "a": 1,
+        "hint": "Các câu đều nói về tiếng gì?",
+        "difficulty": 2,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q033",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Em cắn một miếng xoài chín. Vị ngọt lịm lan khắp đầu lưỡi, chỉ hơi chua ở phần gần hạt.»\n\nĐoạn văn tả quả xoài bằng giác quan nào?",
+        "choices": [
+          "Vị giác (lưỡi)",
+          "Khứu giác (mũi)",
+          "Thị giác (mắt)",
+          "Thính giác (tai)"
+        ],
+        "a": 0,
+        "hint": "Ngọt, chua là cảm nhận bằng gì?",
+        "difficulty": 1,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q034",
+        "stage": 1
+      },
+      {
+        "q": "Đọc đoạn: «Bàn tay bà nhăn nheo nhưng thật ấm áp. Mỗi lần bà xoa lưng, em thấy dễ chịu vô cùng.»\n\nEm cảm nhận bàn tay bà \"ấm áp\" bằng giác quan nào?",
+        "choices": [
+          "Thị giác (mắt)",
+          "Thính giác (tai)",
+          "Xúc giác (da, chạm vào)",
+          "Vị giác (lưỡi)"
+        ],
+        "a": 2,
+        "hint": "Muốn biết ấm hay lạnh, em phải làm gì với bàn tay bà?",
+        "difficulty": 2,
+        "skill": "giac-quan",
+        "unit": "doc-hieu-truyen",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_doc-hieu-truyen_q035",
+        "stage": 1
       }
     ]
   }

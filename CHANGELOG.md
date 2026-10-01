@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Tiếng Việt: 5 dạng đề còn thiếu + câu hỏi dài dễ đọc hơn
+- Thêm 35 câu Tiếng Việt cho 5 dạng trong "Kho dạng đề" chưa có trên web: V02 điền từ vào câu nêu ý nghĩa, V07 tả bằng giác quan nào, V12 từ không cùng nhóm, V30 tìm dấu bạn đặt sai, V32 câu đố điền âm. Chi tiết ở `data-lop3/CHANGELOG.md`.
+- **Câu hỏi dài** (đọc hiểu, đoạn văn): xuống dòng đúng chỗ, chữ nhỏ vừa phải và căn trái, không còn dồn thành một khối chữ to.
+- Câu "chọn chỗ (1) (2) (3) (4)" giữ đúng thứ tự đáp án, không bị xáo trộn.
+
 ## 2026-10-02 — Nút 🔊 Đọc to
 - **Nút "🔊 Đọc to"** ở góc khung câu hỏi (file mới `js/speak.js`): bấm là đọc câu hỏi rồi đọc lần lượt các đáp án theo thứ tự đang hiện; bấm lần nữa (nút "Dừng") để dừng. Tự dừng khi con chọn đáp án hoặc sang câu khác.
   - Dùng giọng đọc có sẵn của máy, không cần mạng. Câu tiếng Việt đọc giọng Việt, câu tiếng Anh đọc giọng Anh (đoán theo từng câu và từng đáp án).

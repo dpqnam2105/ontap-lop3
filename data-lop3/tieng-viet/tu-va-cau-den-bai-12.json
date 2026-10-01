@@ -755,6 +755,142 @@
         "unit": "tu-va-cau-den-bai-12",
         "source": "cai-bien-de-hk1-20260929",
         "id": "tv_tu-va-cau-den-bai-12_q047"
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ người trong gia đình?",
+        "choices": [
+          "thầy cô",
+          "ông bà",
+          "bố mẹ",
+          "anh chị"
+        ],
+        "a": 0,
+        "hint": "Thầy cô là người ở đâu?",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q048",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ sự vật?",
+        "choices": [
+          "quyển vở",
+          "bông hoa",
+          "chăm chỉ",
+          "cái bàn"
+        ],
+        "a": 2,
+        "hint": "Từ chỉ sự vật là tên người, con vật, đồ vật, cây cối…",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q049",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ hoạt động?",
+        "choices": [
+          "viết bài",
+          "đọc sách",
+          "vẽ tranh",
+          "xinh xắn"
+        ],
+        "a": 3,
+        "hint": "Từ chỉ hoạt động là việc mình làm.",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q050",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ đặc điểm?",
+        "choices": [
+          "xanh biếc",
+          "chạy nhảy",
+          "cao vút",
+          "thơm ngát"
+        ],
+        "a": 1,
+        "hint": "Từ nào là một việc làm?",
+        "difficulty": 2,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q051",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ màu sắc?",
+        "choices": [
+          "xanh ngắt",
+          "đỏ thắm",
+          "ngọt lịm",
+          "vàng óng"
+        ],
+        "a": 2,
+        "hint": "Từ nào nói về vị?",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q052",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ âm thanh?",
+        "choices": [
+          "lấp lánh",
+          "róc rách",
+          "ríu rít",
+          "ào ào"
+        ],
+        "a": 0,
+        "hint": "Từ nào chỉ thấy bằng mắt chứ không nghe được?",
+        "difficulty": 2,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q053",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ tình cảm?",
+        "choices": [
+          "quý mến",
+          "yêu thương",
+          "kính trọng",
+          "nhảy dây"
+        ],
+        "a": 3,
+        "hint": "Từ nào là một trò chơi?",
+        "difficulty": 1,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q054",
+        "stage": 1
+      },
+      {
+        "q": "Từ nào KHÔNG chỉ hương vị?",
+        "choices": [
+          "ngọt ngào",
+          "tròn xoe",
+          "mặn mòi",
+          "chua chua"
+        ],
+        "a": 1,
+        "hint": "Từ nào nói về hình dáng?",
+        "difficulty": 2,
+        "skill": "word-group",
+        "unit": "tu-va-cau-den-bai-12",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_tu-va-cau-den-bai-12_q055",
+        "stage": 1
       }
     ]
   }

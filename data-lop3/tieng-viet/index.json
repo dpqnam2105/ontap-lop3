@@ -25,7 +25,7 @@
       "id": "tv_cau-va-dau-cau",
       "name": "Câu và dấu câu",
       "file": "cau-va-dau-cau.json",
-      "count": 16
+      "count": 24
     },
     {
       "id": "tv_luyen-tu-va-cau",
@@ -49,19 +49,19 @@
       "id": "tv_doc-hieu-truyen",
       "name": "Đọc hiểu truyện ngắn",
       "file": "doc-hieu-truyen.json",
-      "count": 24
+      "count": 35
     },
     {
       "id": "tv_tu-va-cau-den-bai-12",
       "name": "Từ, câu, dấu câu (đến bài 12)",
       "file": "tu-va-cau-den-bai-12.json",
-      "count": 47
+      "count": 55
     },
     {
       "id": "tv_chinh-ta-theo-nghia",
       "name": "Chính tả theo nghĩa",
       "file": "chinh-ta-theo-nghia.json",
-      "count": 25
+      "count": 33
     },
     {
       "id": "tv_viet-doan-ve-ban",

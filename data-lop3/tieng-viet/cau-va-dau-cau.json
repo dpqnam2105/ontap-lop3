@@ -259,6 +259,150 @@
         "unit": "cau-va-dau-cau",
         "source": "claude-audit-20260924",
         "id": "tv_cau-va-dau-cau_q016"
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Bạn có thích đọc truyện không?(1) Mình rất thích truyện cổ tích.(2) Truyện mình thích nhất là Tấm Cám?(3) Còn bạn thì sao?(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 2,
+        "hint": "Câu nào là câu kể, không phải câu hỏi?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q017",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Lớp em có nhiều bạn giỏi.(1) Bạn Minh học giỏi Toán.(2) Bạn Hoa viết chữ rất đẹp?(3) Bạn Nam vẽ tranh rất khéo.(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 2,
+        "hint": "Câu nào kể về bạn mà lại dùng dấu chấm hỏi?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q018",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Trong vườn có nhiều loại cây:(1) cam, bưởi, nhãn, ổi.(2) Cây nào cũng sai quả.(3) Bạn có muốn đến chơi không.(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 3,
+        "hint": "Câu cuối là câu hỏi hay câu kể?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q019",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Hôm nay là chủ nhật.(1) Cả nhà em về quê thăm ông bà?(2) Ông bà rất vui.(3) Bà làm món bánh đúc rất ngon.(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 1,
+        "hint": "Câu nào kể việc cả nhà làm mà lại dùng dấu chấm hỏi?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q020",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Mùa hè có nhiều loài hoa.(1) hoa sen, hoa phượng, hoa bằng lăng.(2) Em thích nhất hoa sen.(3) Hoa sen vừa đẹp vừa thơm.(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 0,
+        "hint": "Sau \"nhiều loài hoa\" là kể tên các loài hoa. Trước khi liệt kê ta dùng dấu gì?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q021",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Em có một người bạn thân tên là Lan.(1) Lan có mái tóc dài và đôi mắt to tròn.(2) Lan học có giỏi không?(3) Lan học rất giỏi?(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 3,
+        "hint": "Câu nào là câu trả lời mà lại dùng dấu chấm hỏi?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q022",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Đồ dùng học tập của em gồm:(1) bút chì, thước kẻ, tẩy và hộp màu?(2) Em giữ gìn chúng rất cẩn thận.(3) Em có hay quên đồ dùng không?(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 1,
+        "hint": "Câu kể tên đồ dùng có phải câu hỏi không?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q023",
+        "stage": 1,
+        "keepOrder": true
+      },
+      {
+        "q": "Bạn Mai viết đoạn văn và đánh số sau mỗi dấu câu:\n«Ai dậy sớm nhất nhà em?(1) Đó là bà nội.(2) Bà dậy từ lúc trời còn tối?(3) Bà quét sân rồi nấu nước pha trà.(4)»\nBạn Mai đặt dấu SAI ở chỗ nào?",
+        "choices": [
+          "Chỗ (1)",
+          "Chỗ (2)",
+          "Chỗ (3)",
+          "Chỗ (4)"
+        ],
+        "a": 2,
+        "hint": "Câu nào kể về bà mà lại dùng dấu chấm hỏi?",
+        "difficulty": 2,
+        "skill": "sua-dau-cau",
+        "unit": "cau-va-dau-cau",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_cau-va-dau-cau_q024",
+        "stage": 1,
+        "keepOrder": true
       }
     ]
   }

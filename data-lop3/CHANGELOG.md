@@ -6,6 +6,13 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-02 (Claude — dạng đề Tiếng Việt còn thiếu)
+- Tiếng Việt / Đọc hiểu truyện ngắn — +11 câu (24 → 35): V02 chọn cặp từ điền vào câu nêu ý nghĩa (5 đoạn truyện tự viết); V07 tác giả tả bằng giác quan nào (6 câu: thị giác, thính giác, khứu giác, vị giác, xúc giác).
+- Tiếng Việt / Từ, câu, dấu câu (đến bài 12) — +8 câu (47 → 55): V12 từ không cùng nhóm (gia đình, sự vật, hoạt động, đặc điểm, màu sắc, âm thanh, tình cảm, hương vị).
+- Tiếng Việt / Câu và dấu câu — +8 câu (16 → 24): V30 "Bạn Mai đặt dấu sai ở chỗ nào?" chọn (1)–(4); chỉ dùng dấu chấm, chấm hỏi, hai chấm (đã học). Đáp án giữ thứ tự (`keepOrder`).
+- Tiếng Việt / Chính tả theo nghĩa — +8 câu (25 → 33): V32 câu đố điền âm ch/tr, l/n, s/x, r/gi rồi giải đố.
+- `skills.json`: thêm tên 4 dạng mới cho báo cáo kỹ năng.
+
 ## 2026-10-01 (Claude — từ phiếu bổ trợ tuần 6–8)
 - Toán / Dãy số cách đều — +15 câu (chủ đề mới, GĐ1): số hạng thứ n, đếm số số hạng, dãy Fibonacci, tìm vị trí số.
 - Toán / Tư duy với số — +21 câu (55 → 76): viết thành tích 2 thừa số, thay đổi chữ số, tìm thừa số, lập số (có/không lặp chữ số), số lớn/bé nhất theo tổng chữ số, chân chó – mũi, cân thăng bằng.

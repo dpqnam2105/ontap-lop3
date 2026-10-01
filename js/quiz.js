@@ -335,7 +335,9 @@ const Quiz = {
       }
     }
 
-    document.getElementById('qText').textContent = q.q;
+    const qTextEl = document.getElementById('qText');
+    qTextEl.textContent = q.q;
+    qTextEl.classList.toggle('q-long', String(q.q || '').length > 110);
     document.getElementById('scoreDisp').textContent = this.score;
     document.getElementById('progFill').style.width = (this.curIdx / total * 100) + '%';
 
@@ -347,7 +349,7 @@ const Quiz = {
     // Shuffle display order of answers so the correct one is not always
     // in the same slot. Grading and logging still use ORIGINAL indices,
     // so wrong-history, session details and report button stay correct.
-    const displayOrder = this._shuffle(q.choices.map((_, i) => i));
+    const displayOrder = q.keepOrder ? q.choices.map((_, i) => i) : this._shuffle(q.choices.map((_, i) => i));
     displayOrder.forEach((origIdx) => {
       const btn = document.createElement('button');
       btn.className = 'ans-btn';

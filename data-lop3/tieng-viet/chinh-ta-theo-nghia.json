@@ -403,6 +403,142 @@
         "unit": "chinh-ta-theo-nghia",
         "source": "cai-bien-de-hk1-20260929",
         "id": "tv_chinh-ta-theo-nghia_q025"
+      },
+      {
+        "q": "Câu đố: \"Con gì nho nhỏ / Cái mỏ xinh xinh / …ăm nhặt …ăm tìm / Bắt sâu cho lá.\" Hai chỗ trống điền lần lượt là:",
+        "choices": [
+          "tr – ch",
+          "tr – tr",
+          "ch – tr",
+          "ch – ch"
+        ],
+        "a": 3,
+        "hint": "\"Chăm\" trong chăm chỉ viết bằng ch hay tr?",
+        "difficulty": 2,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q026",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Con gì …ông trắng, mỏ vàng / Bơi …ội dưới ao, kêu cạp cạp?\" Hai chỗ trống điền lần lượt là:",
+        "choices": [
+          "l – l",
+          "n – l",
+          "n – n",
+          "l – n"
+        ],
+        "a": 0,
+        "hint": "Lông của con vật; bơi lội dưới nước.",
+        "difficulty": 2,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q027",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Con gì …ống ở dưới nước / Không có chân mà bơi rất …a?\" Hai chỗ trống điền lần lượt là:",
+        "choices": [
+          "x – x",
+          "s – x",
+          "x – s",
+          "s – s"
+        ],
+        "a": 1,
+        "hint": "\"Sống\" (còn sống) và \"xa\" (xa xôi).",
+        "difficulty": 2,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q028",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Quả gì vỏ xanh, …òn …ịa / Bổ ra ruột đỏ, hạt đen?\" Hai chỗ trống điền lần lượt là:",
+        "choices": [
+          "tr – ch",
+          "ch – ch",
+          "tr – tr",
+          "ch – tr"
+        ],
+        "a": 2,
+        "hint": "\"Tròn trịa\" viết bằng tr.",
+        "difficulty": 2,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q029",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Cái gì có …ăng mà chẳng có miệng / Sáng nào cũng …úp em chải tóc?\" Hai chỗ trống điền lần lượt là:",
+        "choices": [
+          "r – d",
+          "gi – r",
+          "r – gi",
+          "d – gi"
+        ],
+        "a": 2,
+        "hint": "\"Răng\" (hàm răng) và \"giúp\" (giúp đỡ).",
+        "difficulty": 3,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q030",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Con gì nho nhỏ / Cái mỏ xinh xinh / Chăm nhặt chăm tìm / Bắt sâu cho lá?\" Đó là con gì?",
+        "choices": [
+          "Con chim",
+          "Con gà",
+          "Con cá",
+          "Con mèo"
+        ],
+        "a": 0,
+        "hint": "Con vật nào có mỏ và hay bắt sâu trên cây?",
+        "difficulty": 1,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q031",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Quả gì vỏ xanh, tròn trịa / Bổ ra ruột đỏ, hạt đen?\" Đó là quả gì?",
+        "choices": [
+          "Quả bưởi",
+          "Quả chuối",
+          "Quả cam",
+          "Quả dưa hấu"
+        ],
+        "a": 3,
+        "hint": "Quả nào ruột đỏ, nhiều hạt đen?",
+        "difficulty": 1,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q032",
+        "stage": 1
+      },
+      {
+        "q": "Câu đố: \"Cái gì có răng mà chẳng có miệng / Sáng nào cũng giúp em chải tóc?\" Đó là cái gì?",
+        "choices": [
+          "Cái cưa",
+          "Cái lược",
+          "Cái bàn chải",
+          "Cái kéo"
+        ],
+        "a": 1,
+        "hint": "Dùng để chải tóc.",
+        "difficulty": 1,
+        "skill": "cau-do-chinh-ta",
+        "unit": "chinh-ta-theo-nghia",
+        "source": "dang-de-tv-20261002",
+        "id": "tv_chinh-ta-theo-nghia_q033",
+        "stage": 1
       }
     ]
   }

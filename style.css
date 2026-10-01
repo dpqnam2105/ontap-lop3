@@ -576,3 +576,8 @@
 @keyframes speakPulse{50%{box-shadow:0 0 0 8px rgba(13,99,216,.15)}}
 #screenQuiz .quiz-topic-name{padding-right:110px}
 @media(max-width:760px){.speak-btn{top:10px;right:10px;padding:7px 11px;font-size:.9rem}.speak-btn .speak-lbl{display:none}#screenQuiz .quiz-topic-name{padding-right:52px}}
+
+/* Câu hỏi dài (đọc hiểu, đoạn văn): xuống dòng đúng, chữ vừa phải, căn trái */
+.q-text{white-space:pre-line}
+.q-text.q-long{font-size:1.35rem;line-height:1.55;text-align:left;font-weight:800}
+@media(max-width:760px){.q-text.q-long{font-size:1.08rem!important;line-height:1.5!important}}
