@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-01 (Claude — đáp án nhiễu sát hơn)
+- Toán / Một phần mấy (14), Bảng nhân chia (72), Sơ đồ đoạn thẳng (3): phương án nhiễu đổi thành số sát đáp án (±1–3) thay vì số quá xa dễ loại trừ. Vị trí đáp án đúng giữ nguyên.
+
 ## 2026-09-30 (Claude — kiểu Kangaroo)
 - Toán / Toán đố vui kiểu Kangaroo — +21 câu (chủ đề mới, GĐ1)
 

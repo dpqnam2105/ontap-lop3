@@ -188,9 +188,9 @@
         "q": "Mẹ có 32 quả táo, cho bà 1/4 số táo. Nhìn sơ đồ, phần tô màu là bao nhiêu quả táo?",
         "choices": [
           "8 quả táo",
-          "24 quả táo",
-          "16 quả táo",
-          "12 quả táo"
+          "7 quả táo",
+          "10 quả táo",
+          "9 quả táo"
         ],
         "a": 0,
         "hint": "Cả đoạn được chia thành 4 phần bằng nhau. Một phần là phép chia nào?",
@@ -205,10 +205,10 @@
       {
         "q": "Sợi dây dài 45 cm, cắt đi 1/5 sợi dây. Nhìn sơ đồ, phần tô màu là bao nhiêu cm?",
         "choices": [
-          "36 cm",
+          "10 cm",
           "9 cm",
-          "14 cm",
-          "18 cm"
+          "8 cm",
+          "11 cm"
         ],
         "a": 1,
         "hint": "Cả đoạn được chia thành 5 phần bằng nhau. Một phần là phép chia nào?",
@@ -223,10 +223,10 @@
       {
         "q": "Có 54 học sinh, 1/6 số học sinh đi bơi. Nhìn sơ đồ, phần tô màu là bao nhiêu học sinh?",
         "choices": [
-          "18 học sinh",
-          "15 học sinh",
+          "11 học sinh",
+          "10 học sinh",
           "9 học sinh",
-          "45 học sinh"
+          "8 học sinh"
         ],
         "a": 2,
         "hint": "Cả đoạn được chia thành 6 phần bằng nhau. Một phần là phép chia nào?",

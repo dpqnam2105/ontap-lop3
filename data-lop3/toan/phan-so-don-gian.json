@@ -177,9 +177,9 @@
       {
         "q": "1/2 của 18 là:",
         "choices": [
-          "16",
-          "36",
-          "20",
+          "10",
+          "11",
+          "8",
           "9"
         ],
         "a": 3,
@@ -194,10 +194,10 @@
       {
         "q": "1/3 của 12 là:",
         "choices": [
-          "15",
-          "36",
+          "6",
+          "5",
           "4",
-          "9"
+          "3"
         ],
         "a": 2,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -211,10 +211,10 @@
       {
         "q": "1/4 của 24 là:",
         "choices": [
-          "28",
+          "8",
           "6",
-          "20",
-          "96"
+          "7",
+          "5"
         ],
         "a": 1,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -228,10 +228,10 @@
       {
         "q": "1/5 của 35 là:",
         "choices": [
-          "30",
+          "6",
           "7",
-          "175",
-          "40"
+          "8",
+          "9"
         ],
         "a": 1,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -245,10 +245,10 @@
       {
         "q": "1/6 của 42 là:",
         "choices": [
-          "252",
+          "6",
           "7",
-          "36",
-          "48"
+          "8",
+          "9"
         ],
         "a": 1,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -263,9 +263,9 @@
         "q": "1/7 của 56 là:",
         "choices": [
           "8",
-          "49",
-          "392",
-          "63"
+          "9",
+          "7",
+          "10"
         ],
         "a": 0,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -279,10 +279,10 @@
       {
         "q": "1/8 của 64 là:",
         "choices": [
-          "72",
-          "56",
+          "9",
+          "7",
           "8",
-          "512"
+          "10"
         ],
         "a": 2,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -296,9 +296,9 @@
       {
         "q": "1/9 của 81 là:",
         "choices": [
-          "72",
-          "729",
-          "90",
+          "11",
+          "10",
+          "8",
           "9"
         ],
         "a": 3,
@@ -314,9 +314,9 @@
         "q": "1/3 của 27 là:",
         "choices": [
           "9",
-          "30",
-          "81",
-          "24"
+          "10",
+          "8",
+          "11"
         ],
         "a": 0,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -330,10 +330,10 @@
       {
         "q": "1/4 của 36 là:",
         "choices": [
-          "32",
+          "10",
           "9",
-          "40",
-          "144"
+          "8",
+          "11"
         ],
         "a": 1,
         "hint": "Muốn tìm một phần mấy của một số, lấy số đó chia cho số phần.",
@@ -348,9 +348,9 @@
         "q": "Có 24 cái kẹo, Thỏ cho em 1/4 số kẹo. Hỏi em được mấy cái kẹo?",
         "choices": [
           "6",
-          "96",
-          "20",
-          "28"
+          "7",
+          "8",
+          "5"
         ],
         "a": 0,
         "hint": "Chia số kẹo thành 4 phần bằng nhau, em được 1 phần.",
@@ -365,9 +365,9 @@
         "q": "Lớp có 35 bạn, 1/5 số bạn đi bơi. Hỏi có mấy bạn đi bơi?",
         "choices": [
           "7",
-          "175",
-          "30",
-          "40"
+          "6",
+          "8",
+          "9"
         ],
         "a": 0,
         "hint": "Chia số bạn thành 5 phần bằng nhau, lấy 1 phần.",
@@ -381,10 +381,10 @@
       {
         "q": "Sợi dây dài 48 cm. Cắt đi 1/6 sợi dây. Đoạn cắt đi dài bao nhiêu xăng-ti-mét?",
         "choices": [
-          "288",
-          "54",
+          "9",
+          "7",
           "8",
-          "42"
+          "10"
         ],
         "a": 2,
         "hint": "Chia độ dài sợi dây thành 6 phần bằng nhau.",
@@ -398,10 +398,10 @@
       {
         "q": "Mẹ có 63 quả trứng, đã dùng 1/7 số trứng. Hỏi mẹ đã dùng mấy quả trứng?",
         "choices": [
-          "7",
+          "10",
           "9",
-          "70",
-          "56"
+          "8",
+          "7"
         ],
         "a": 1,
         "hint": "Chia số trứng thành 7 phần bằng nhau, lấy 1 phần.",

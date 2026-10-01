@@ -224,6 +224,7 @@ const Today = {
     const box = document.getElementById('todayCard');
     if (!screen || !box) return;
     const p = this.plan();
+    this.renderWeek();
     if (!App.playerName || !p) {
       screen.classList.remove('has-today');
       box.classList.add('hidden');
@@ -289,6 +290,35 @@ const Today = {
     box.querySelector('[data-act="go"]').addEventListener('click', () => this.startNext());
     box.querySelector('[data-act="pick"]').addEventListener('click', () => App.goLearn());
     box.querySelector('[data-act="grade"]').addEventListener('click', () => App.showScreen('grade'));
+  },
+
+  /** Thẻ "Tuần này": 7 ô ngày (sáng lên ngày có học) + số câu đúng tuần này so với tuần trước. */
+  renderWeek() {
+    const box = document.getElementById('weekCard');
+    if (!box) return;
+    if (!App.playerName) { box.classList.add('hidden'); return; }
+    box.classList.remove('hidden');
+    const log = Storage.getStudyLog ? Storage.getStudyLog() : {};
+    const ws = App._weekStart();
+    const labels = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+    const todayKey = this._dateKey();
+    let week = 0, last = 0, days = 0;
+    const cells = labels.map((lb, i) => {
+      const d = new Date(ws); d.setDate(ws.getDate() + i);
+      const k = this._dateKey(d);
+      const n = log[k] || 0;
+      week += n; if (n > 0) days++;
+      const cls = n > 0 ? 'wk-on' : (k === todayKey ? 'wk-today' : (k < todayKey ? 'wk-miss' : 'wk-future'));
+      return `<div class="wk-day ${cls}"><span class="wk-dot">${n > 0 ? n : ''}</span><small>${lb}</small></div>`;
+    }).join('');
+    for (let i = 1; i <= 7; i++) { const d = new Date(ws); d.setDate(ws.getDate() - i); last += log[this._dateKey(d)] || 0; }
+    const diff = week - last;
+    // Không hiện số âm để bé khỏi nản giữa tuần: hơn tuần trước thì khen, chưa bằng thì chỉ ghi mốc tuần trước.
+    const cmp = last === 0 ? '' : (diff > 0 ? `<span class="wk-up">nhiều hơn tuần trước ${diff} câu</span>` : `<span class="wk-down">· tuần trước ${last} câu</span>`);
+    box.innerHTML = `
+      <div class="wk-head"><b>Tuần này của con</b><span>${days}/7 ngày học</span></div>
+      <div class="wk-row">${cells}</div>
+      <div class="wk-foot"><b>${week}</b> câu đúng ${cmp}</div>`;
   },
 
   /** Phần thêm ở màn kết quả: sao/XP vừa nhận, thanh level, việc tiếp theo, làm thêm một lượt. */

@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-01 — Đáp án nhiễu sát hơn + trang chủ 2 cột trên máy tính + thẻ "Tuần này"
+- **Đáp án nhiễu sát đáp án đúng hơn** (89 câu): các câu tính toán đơn giản trước đây có phương án quá xa (vd. "1/5 của 35" có 7, 30, 40, 50 → bé đoán ngay được). Nay phương án nhiễu nằm sát đáp án (vd. 6, 7, 8, 9):
+  - Một phần mấy: 14 câu · Bảng nhân, chia: 72 câu · Sơ đồ đoạn thẳng (một phần mấy): 3 câu.
+- **Trang chủ trên máy tính chia 2 cột**: bên trái thẻ "Hôm nay học gì?", bên phải xếp dọc "Tuần này", ngọc rồng, bảng xếp hạng — hết khoảng trống hai bên. Điện thoại vẫn 1 cột.
+- **Thẻ "Tuần này của con"**: 7 ô T2–CN, ngày nào học thì ô xanh và ghi số câu đúng; tổng câu đúng tuần này, khen khi nhiều hơn tuần trước (không hiện số âm). Bắt đầu ghi từ hôm nay.
+- Bỏ ô "Tiến bộ học tập" 4 số cũ trên trang chủ (đã có trong thẻ Hôm nay và Tuần này).
+
 ## 2026-10-01 — Màn "Hôm nay học gì?" + nhiệm vụ thật + tiến độ không bị xoá
 - **Trang chủ mới "Hôm nay học gì?"** (khi bé đã có tên): lời chào, chuỗi ngày, sao, thanh Level, lời nhắn của Thỏ và **kế hoạch 3 việc** Rabbit chọn sẵn mỗi ngày, cùng một nút lớn **Bắt đầu học / Học tiếp**. Vẫn có đường "Con muốn tự chọn bài".
   - Việc 1: Ôn lại tối đa 5 câu con từng sai (nếu có).

@@ -500,3 +500,30 @@
   .today-rabbit{width:56px;height:66px}
   .today-level small{display:none}
 }
+
+/* ===== Trang chủ 2 cột trên máy tính + thẻ Tuần này ===== */
+.has-today .progress-card{display:none!important}
+.week-card{background:#fff;border:1.5px solid #d9eafd;border-radius:24px;padding:16px 18px;box-shadow:var(--shadow2);order:1}
+.has-today .home-widgets{order:2}
+.wk-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.wk-head b{font-family:var(--font-display);font-size:1.15rem;color:#0f4f9c}
+.wk-head span{font-weight:800;color:#4a5a70;font-size:.9rem}
+.wk-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.wk-day{display:flex;flex-direction:column;align-items:center;gap:4px}
+.wk-day small{font-weight:900;font-size:.78rem;color:#4a5a70}
+.wk-dot{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:.85rem;background:#eef3f9;color:#4a5a70;border:2px solid transparent}
+.wk-on .wk-dot{background:#21a856;color:#fff}
+.wk-today .wk-dot{border-color:#1f7af5;background:#fff}
+.wk-future .wk-dot{background:#f6f9fc}
+.wk-foot{margin-top:10px;font-weight:800;color:#3a4a60}
+.wk-foot b{font-family:var(--font-display);font-size:1.3rem;color:#148240}
+.wk-up{color:#148240;margin-left:6px}.wk-down{color:#5b6b80;margin-left:6px}
+@media (min-width:1100px){
+  .screen.active.has-today{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:20px;align-items:start}
+  .has-today .home-widgets,.has-today .welcome-grid{display:contents}
+  .has-today .today-card{grid-column:1;grid-row:1 / span 3;max-width:none;margin:0}
+  .has-today .week-card{grid-column:2;grid-row:1}
+  .has-today .dragon-card{grid-column:2;grid-row:2;margin:0}
+  .has-today .leaderboard-card{grid-column:2;grid-row:3;padding:18px}
+  .has-today .leaderboard-card .lb-table td{padding:8px 10px}
+}

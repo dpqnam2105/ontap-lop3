@@ -215,6 +215,26 @@ const Storage = {
     }
   },
 
+  // ─── Nhật ký học theo ngày: { 'YYYY-MM-DD': số câu đúng } (giữ 60 ngày gần nhất) ───
+  STUDY_LOG_KEY: 'khoBaiTap_study_log_v1',
+
+  getStudyLog() {
+    try { return JSON.parse(localStorage.getItem(this._scoped(this.STUDY_LOG_KEY)) || '{}'); }
+    catch (e) { return {}; }
+  },
+
+  addStudyLog(correct) {
+    try {
+      const log = this.getStudyLog();
+      const d = new Date();
+      const k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      log[k] = (log[k] || 0) + (correct || 0);
+      const keys = Object.keys(log).sort();
+      keys.slice(0, Math.max(0, keys.length - 60)).forEach(x => delete log[x]);
+      localStorage.setItem(this._scoped(this.STUDY_LOG_KEY), JSON.stringify(log));
+    } catch (e) { /* bỏ qua */ }
+  },
+
   // ─── Wrong history (tích lũy lâu dài) ───────
 
   /**

@@ -425,6 +425,7 @@ const Quiz = {
         const xpGain = this.mode === 'test' ? 12 : 8;
         if (Rewards.addXP) Rewards.addXP(xpGain);
         this.sessionStars = (this.sessionStars || 0) + 1;
+        if (Storage.addStudyLog) Storage.addStudyLog(1);
         this.sessionXP = (this.sessionXP || 0) + xpGain;
         document.getElementById('scoreDisp').textContent = this.score;
         this._flyStar(btn);
