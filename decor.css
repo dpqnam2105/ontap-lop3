@@ -113,17 +113,28 @@
 .news-ticker{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:8px 10px 8px 8px;border-radius:16px;background:linear-gradient(90deg,#fff6d8,#ffeef6 50%,#eaf4ff);border:1.5px solid #ffe2a3;box-shadow:0 6px 16px rgba(255,170,40,.12);overflow:hidden}
 .nt-label{flex-shrink:0;background:#ff8a1f;color:#fff;font-weight:900;font-size:.85rem;border-radius:10px;padding:5px 10px;white-space:nowrap}
 .nt-view{flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
-.nt-track{display:inline-flex;align-items:center;white-space:nowrap;animation:ntScroll 30s linear infinite;will-change:transform}
-.news-ticker:hover .nt-track{animation-play-state:paused}
+.nt-track{display:inline-flex;align-items:center;white-space:nowrap;will-change:transform}
 .nt-item{font-weight:850;color:#5b3a00;font-size:.98rem}
 .nt-sep{color:#ffb020;margin:0 16px}
 @keyframes ntScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:760px){.news-ticker{margin:0 0 10px;padding:6px 8px 6px 6px}.nt-label{font-size:.78rem;padding:4px 8px}.nt-item{font-size:.9rem}}
-@media(prefers-reduced-motion:reduce){.nt-track{animation:none}.nt-view{overflow-x:auto}}
 @media (min-width:1100px){
   .has-today .news-ticker{grid-column:1 / -1;grid-row:1;margin:0}
   .has-today .today-card{grid-row:2 / span 3}
   .has-today .week-card{grid-row:2}
   .has-today .dragon-card{grid-row:3}
   .has-today .leaderboard-card{grid-row:4}
+}
+
+/* Tin vui: nhãn có vệt sáng lướt qua, chữ nổi nhẹ */
+.nt-label{position:relative;overflow:hidden;background:linear-gradient(135deg,#ff9a1f,#ff5f6d);box-shadow:0 3px 0 #d9480f}
+.nt-label::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:ntShine 3.2s ease-in-out infinite}
+.nt-mega{display:inline-block;animation:ntWiggle 2.4s ease-in-out infinite}
+.nt-item{text-shadow:0 1px 0 #fff}
+@keyframes ntShine{0%,60%{left:-60%}100%{left:130%}}
+@keyframes ntWiggle{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-14deg)}85%{transform:rotate(12deg)}}
+/* Giữ hiệu ứng nhỏ của Tin vui kể cả khi máy bật "giảm hiệu ứng" (style.css tắt mọi animation) */
+@media(prefers-reduced-motion:reduce){
+  .nt-label::after{animation-duration:3.2s!important}
+  .nt-mega{animation-duration:2.4s!important}
 }

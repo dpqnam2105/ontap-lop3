@@ -139,9 +139,37 @@ const Achieve = {
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     const texts = items.length ? items.map(i => i.text) : ['🐰 Bảng tin Vương Quốc Thỏ: học đều mỗi ngày để có tên ở đây nhé!'];
     const line = texts.map(t => '<span class="nt-item">' + esc(t) + '</span>').join('<span class="nt-sep">✦</span>');
-    const secs = Math.max(18, Math.round(texts.join(' ').length / 5));
-    bar.innerHTML = '<span class="nt-label">📣 Tin vui</span><div class="nt-view"><div class="nt-track" style="animation-duration:' + secs + 's">' +
+    bar.innerHTML = '<span class="nt-label"><span class="nt-mega">📣</span> Tin vui</span><div class="nt-view"><div class="nt-track">' +
       line + '<span class="nt-sep">✦</span>' + line + '<span class="nt-sep">✦</span></div></div>';
+    this._startScroll(bar);
+  },
+
+  /** Chạy chữ bằng JS (không phụ thuộc cài đặt "giảm hiệu ứng" của máy): chậm, đều, từ phải sang trái. */
+  SPEED: 38, // px mỗi giây
+  _startScroll(bar) {
+    const track = bar.querySelector('.nt-track');
+    if (!track) return;
+    if (this._raf) cancelAnimationFrame(this._raf);
+    let x = bar.querySelector('.nt-view').clientWidth * 0.6; // bắt đầu từ bên phải
+    let last = performance.now();
+    let paused = false;
+    bar.onmouseenter = () => { paused = true; };
+    bar.onmouseleave = () => { paused = false; };
+    bar.ontouchstart = () => { paused = true; };
+    bar.ontouchend = () => { setTimeout(() => { paused = false; }, 1500); };
+    const step = (now) => {
+      if (!document.body.contains(track)) return;
+      const dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+      const half = track.scrollWidth / 2;
+      if (!paused && !document.hidden && half > 0) {
+        x -= this.SPEED * dt;
+        if (x <= -half) x += half;
+        track.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
+      }
+      this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
   },
 
   init() {

@@ -5,6 +5,10 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Tin vui chạy chữ mượt trên mọi máy
+- Dòng "📣 Tin vui" nay chạy chữ chậm, đều **từ phải sang trái** bằng JavaScript (~38 px/giây), rê chuột hoặc chạm vào thì dừng. Trước đây chạy bằng CSS nên máy bật "giảm hiệu ứng" (Windows: Hiệu ứng hoạt hình = Tắt) thấy chữ đứng yên.
+- Nhãn "📣 Tin vui" đổi màu cam–đỏ, có vệt sáng lướt qua và loa rung nhẹ mỗi vài giây.
+
 ## 2026-10-02 — Bảng tin "📣 Tin vui" chạy ngang + thành tích
 - **Dòng tin vui chạy ngang** trên đầu trang chủ (file mới `js/achieve.js`): thông báo thành tích của **cả 3 bé** trong 14 ngày gần nhất, mới nhất trước, rê chuột vào thì dừng. Bé khác máy thì đọc từ bản sao lưu trên mạng. Chưa có tin thì hiện lời nhắc học đều để có tên trên bảng tin.
 - **Các mốc thành tích**:
