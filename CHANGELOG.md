@@ -5,6 +5,10 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Sửa hình đếm hình chữ nhật
+- Câu "Hình bên có tất cả bao nhiêu hình chữ nhật?" (lưới 2×2): vẽ lại thành 4 ô chữ nhật dẹt, không ô nào trông như hình vuông. Đáp án vẫn 9. Câu đếm hình vuông giữ hình lưới vuông cũ.
+- Hình dải 3 ô: hạ chiều cao để mỗi ô là hình chữ nhật rõ ràng (trước đây gần vuông). Đáp án vẫn 6.
+
 ## 2026-10-02 — Địa chỉ mới: chamhoc.vercel.app
 - Gắn thêm tên miền **https://chamhoc.vercel.app** cho web (cài trên Vercel, không đổi code). Link cũ `ontap-lop3.vercel.app` vẫn chạy song song.
 - Sao/sticker/tiến độ lưu trong trình duyệt theo từng địa chỉ: lần đầu mở địa chỉ mới, bé gõ lại đúng tên cũ là web tự lấy lại từ bản sao lưu.

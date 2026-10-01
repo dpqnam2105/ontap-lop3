@@ -247,13 +247,13 @@
           "8"
         ],
         "a": 0,
-        "hint": "Hình vuông cũng là hình chữ nhật. Đếm hình 1 ô, hình 2 ô (nằm ngang, đứng dọc) và hình 4 ô.",
+        "hint": "Đếm hình 1 ô, hình 2 ô (nằm ngang, đứng dọc), rồi hình lớn gồm cả 4 ô.",
         "difficulty": 3,
         "skill": "dem-hinh",
         "unit": "dem-hinh-gap-khuc",
         "source": "cai-bien-de-hk1-20260930",
         "id": "toan_dem-hinh-gap-khuc_q014",
-        "image": "images/questions/lop3/dem-hinh-luoi-2x2.svg",
+        "image": "images/questions/lop3/dem-hinh-luoi-2x2-cn.svg",
         "stage": 1
       },
       {

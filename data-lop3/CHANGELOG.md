@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-02 (Claude — sửa hình)
+- Toán / Đếm hình & đường gấp khúc: q014 dùng hình mới `dem-hinh-luoi-2x2-cn.svg` (ô 130×80, đếm bằng chương trình: 9 hình chữ nhật, 0 hình vuông), bỏ câu "Hình vuông cũng là hình chữ nhật" trong gợi ý. `dem-hinh-dai-3.svg` vẽ lại ô 100×70 (q011, vẫn 6).
+
 ## 2026-10-02 (Claude — dạng đề Tiếng Việt còn thiếu)
 - Tiếng Việt / Đọc hiểu truyện ngắn — +11 câu (24 → 35): V02 chọn cặp từ điền vào câu nêu ý nghĩa (5 đoạn truyện tự viết); V07 tác giả tả bằng giác quan nào (6 câu: thị giác, thính giác, khứu giác, vị giác, xúc giác).
 - Tiếng Việt / Từ, câu, dấu câu (đến bài 12) — +8 câu (47 → 55): V12 từ không cùng nhóm (gia đình, sự vật, hoạt động, đặc điểm, màu sắc, âm thanh, tình cảm, hương vị).
