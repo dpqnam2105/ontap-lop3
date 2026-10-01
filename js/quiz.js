@@ -448,6 +448,7 @@ const Quiz = {
       this._recordLearningAnswer(q, selected);
       this._recordSessionDetail(q, selected, correct, isCorrect);
       this.questionAnswered = true;
+      if (window.Achieve) Achieve.recordAnswer(isCorrect);
       if (!isCorrect) this._scheduleRetry(q);
     }
 

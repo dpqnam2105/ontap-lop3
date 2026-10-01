@@ -5,6 +5,17 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Bảng tin "📣 Tin vui" chạy ngang + thành tích
+- **Dòng tin vui chạy ngang** trên đầu trang chủ (file mới `js/achieve.js`): thông báo thành tích của **cả 3 bé** trong 14 ngày gần nhất, mới nhất trước, rê chuột vào thì dừng. Bé khác máy thì đọc từ bản sao lưu trên mạng. Chưa có tin thì hiện lời nhắc học đều để có tên trên bảng tin.
+- **Các mốc thành tích**:
+  - 🔥 Học liên tục 3 / 7 / 14 / 30 / 60 / 100 ngày.
+  - 🎯 Trả lời đúng **liên tiếp** 10 / 20 / 50 / 100 / 200 câu (tính lần chọn đầu tiên của mỗi câu; sai một câu là đếm lại; không tính câu "làm lại").
+  - ✅ Tổng số câu đúng 100 / 300 / 500 / 1000 / 2000 / 5000.
+  - ⭐ Lên Level 5 / 10 / 15 / 20 / 30 / 50.
+  - 🐉 Đủ 7 viên ngọc rồng. 🎒 Sưu tập 10 / 20 / 30 / 50 sticker.
+- Đạt mốc mới thì bé thấy thông báo chúc mừng ngay. Thành tích lưu trong hồ sơ (có ngày đạt) nên được sao lưu.
+- Lần đầu chạy: các mốc đã đạt từ trước chỉ báo mốc cao nhất của mỗi loại, tránh dồn một lúc nhiều tin cũ.
+
 ## 2026-10-02 — Trang trí hồ sơ (thử nghiệm 3 bộ)
 - **Trang trí hồ sơ kiểu Discord** (file mới `js/decor.js`, `decor.css`, vẽ hoàn toàn bằng CSS, không dùng ảnh): mỗi bộ có **khung avatar**, **bảng tên** và **hiệu ứng nền**.
   - 🥕 **Vườn Cà Rốt** (Level 1, mở sẵn): khung lá cà rốt, bảng tên cam, lá bay nhẹ.

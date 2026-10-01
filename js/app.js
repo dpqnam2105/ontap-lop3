@@ -31,6 +31,7 @@ const App = {
     if (window.Cloud) Cloud.init();
     if (window.Speak) Speak.init();
     if (window.Decor) Decor.init();
+    if (window.Achieve) Achieve.init();
   },
 
   _restoreSession() {
@@ -142,6 +143,7 @@ const App = {
 
   showScreen(name) {
     if (window.Speak) Speak.stop();
+    if (name === 'register' && window.Achieve) Achieve.renderTicker();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
     const needsName = (name === 'grade' || name === 'subject' || name === 'topic');
     if (needsName && !this.playerName) {
