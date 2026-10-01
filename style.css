@@ -585,3 +585,8 @@
 /* Nhãn lớp trên bảng xếp hạng */
 .lb-grade{display:inline-block;font-size:.75rem;font-weight:900;border-radius:999px;padding:2px 8px;margin-right:8px;vertical-align:middle;background:#eef2ff;color:#4338ca}
 .lb-grade-2{background:#fff3d6;color:#9a5b00}.lb-grade-3{background:#e3f0ff;color:#0d63d8}.lb-grade-4{background:#e6f8ec;color:#178a45}.lb-grade-5{background:#f3e8ff;color:#7c3aed}
+
+/* Nhận xét sau lượt học */
+.res-insight{display:flex;flex-direction:column;gap:8px;margin:14px auto 4px;max-width:520px;text-align:left}
+.res-insight:empty{display:none}
+.res-insight-line{background:#f3f9ff;border:1.5px solid #d6e9ff;border-radius:14px;padding:10px 14px;font-weight:750;line-height:1.45;color:#1e293b}

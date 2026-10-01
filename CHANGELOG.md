@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Làm lại câu sai ngay trong lượt + nhận xét kỹ năng sau lượt
+- **Làm lại câu vừa sai**: câu nào con sai ở lần chọn đầu, 3 câu sau Rabbit hỏi lại câu đó (tiêu đề "🔁 Làm lại câu vừa sai", đáp án xáo lại vị trí).
+  - Đúng ngay → "Sửa được rồi! Con giỏi lắm 💪". Sai nữa → hiện gợi ý, con chọn lại rồi đi tiếp như thường, không bị trừ gì.
+  - Câu làm lại **chỉ để củng cố**: không cộng sao/XP/điểm, không tính vào "đã vững" hay lịch ôn; điểm lượt (vd. 8/10) vẫn tính theo lần trả lời đầu. Câu sai vẫn vào phần Ôn lại hôm sau như cũ.
+  - Không áp dụng ở chế độ Kiểm tra; câu sai ở 2 câu cuối lượt thì không hỏi lại ngay (đã có Ôn lại hôm sau).
+- **Màn kết quả có nhận xét ngắn**: "🔁 Con đã sửa được 2/3 câu vừa sai", "🌟 Con làm tốt *Tìm một phần mấy của một số* (đúng 4/4)", "🌱 Thử ôn thêm *Lập số từ các chữ số* (đúng 1/4)". Nhận xét kỹ năng chỉ hiện khi lượt có **từ 3 câu cùng dạng** trở lên.
+
 ## 2026-10-02 — Bảng xếp hạng chung, có nhãn lớp tự lên lớp
 - Bỏ các tab Lớp 2 / Lớp 3 trên bảng xếp hạng: còn **một bảng chung**, cạnh tên mỗi bé có nhãn màu **Lớp 2 / Lớp 3**.
 - Lớp của bé khai trong `API.KIDS` (`js/api.js`): coca lớp 2, Anh Thư lớp 3, Minh Trí lớp 3, tính cho năm học 2026–2027. **Nhãn tự tăng 1 lớp vào 1/9 mỗi năm** (tháng 9/2027: coca lớp 3, Anh Thư và Minh Trí lớp 4), không cần sửa tay.

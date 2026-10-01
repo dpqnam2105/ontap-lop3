@@ -304,20 +304,22 @@ const Quiz = {
     this.questionStartedAt = Date.now();
 
     const q = this.questions[this.curIdx];
-    const total = this.questions.length;
+    const total = this._mainTotal();
     const info = this.sessionInfo || {};
+    const num = this.questions.slice(0, this.curIdx + 1).filter(x => !x._retry).length;
 
-    let titleText = (info.modeLabel || 'Luyện tập 🧠') + ' · ' + this.currentTopic.name + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+    let titleText = (info.modeLabel || 'Luyện tập 🧠') + ' · ' + this.currentTopic.name + ' · Câu ' + num + '/' + total;
     if (this.mode === 'mixed') {
-      titleText = 'Đề trộn 🎲 · ' + (q._topicName || '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+      titleText = 'Đề trộn 🎲 · ' + (q._topicName || '') + ' · Câu ' + num + '/' + total;
     }
     if (this.mode === 'wrong_review' && q._subjectName) {
-      titleText = ((this.sessionInfo && this.sessionInfo.modeLabel) || 'Ôn câu sai 🔁') + ' · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+      titleText = ((this.sessionInfo && this.sessionInfo.modeLabel) || 'Ôn câu sai 🔁') + ' · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + num + '/' + total;
     }
     if (this.mode === 'practice' && info.total > 1) {
       titleText += info.isAllDone ? ' · Ôn lại 🔄' : ' · Lần ' + info.current + '/' + info.total;
     }
     if (this.mode === 'test') titleText += ' · Không dùng gợi ý';
+    if (q._retry) titleText = '🔁 Làm lại câu vừa sai · ' + (q._topicName || this.currentTopic.name);
     document.getElementById('quizTopicName').textContent = titleText;
 
     const imgContainer = document.getElementById('qImage');
@@ -339,7 +341,7 @@ const Quiz = {
     qTextEl.textContent = q.q;
     qTextEl.classList.toggle('q-long', String(q.q || '').length > 110);
     document.getElementById('scoreDisp').textContent = this.score;
-    document.getElementById('progFill').style.width = (this.curIdx / total * 100) + '%';
+    document.getElementById('progFill').style.width = (Math.max(0, num - (q._retry ? 0 : 1)) / Math.max(total, 1) * 100) + '%';
 
     document.getElementById('feedback').style.display = 'none';
     document.getElementById('btnNext').classList.add('hidden');
@@ -439,10 +441,14 @@ const Quiz = {
     const fbAns = document.getElementById('fbAns');
     const isCorrect = selected === correct;
 
+    // Câu làm lại: chỉ để củng cố, không tính điểm/sao/độ vững (số liệu giữ theo lần trả lời đầu).
+    if (q._retry) { this._checkRetry(q, btn, isCorrect); return; }
+
     if (!this.questionAnswered) {
       this._recordLearningAnswer(q, selected);
       this._recordSessionDetail(q, selected, correct, isCorrect);
       this.questionAnswered = true;
+      if (!isCorrect) this._scheduleRetry(q);
     }
 
     if (isCorrect) {
@@ -491,6 +497,49 @@ const Quiz = {
         btnNext.classList.remove('hidden');
         btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
       }
+    }
+  },
+
+  /** Tổng số câu chính của lượt (không tính câu làm lại). */
+  _mainTotal() { return (this.questions || []).filter(x => !x._retry).length; },
+
+  RETRY_GAP: 3,
+
+  /** Sai lần đầu → chèn lại câu này sau vài câu (đáp án sẽ được xáo lại khi hiện). */
+  _scheduleRetry(q) {
+    if (this.mode === 'test' || q._retry || q._retryScheduled) return;
+    // Gần cuối lượt (còn < 2 câu) thì không hỏi lại ngay; câu sai đã vào phần Ôn lại hôm sau.
+    if (this.questions.length - (this.curIdx + 1) < 2) return;
+    q._retryScheduled = true;
+    const clone = Object.assign({}, q, { _retry: true, _fixed: false, _retryTried: false });
+    const pos = Math.min(this.curIdx + 1 + this.RETRY_GAP, this.questions.length);
+    this.questions.splice(pos, 0, clone);
+  },
+
+  _checkRetry(q, btn, isCorrect) {
+    const fb = document.getElementById('feedback');
+    const fbText = document.getElementById('fbText');
+    const fbAns = document.getElementById('fbAns');
+    const firstTry = !q._retryTried;
+    q._retryTried = true;
+    const btnNext = document.getElementById('btnNext');
+    if (isCorrect) {
+      Sound.play('correct');
+      btn.classList.add('correct');
+      if (firstTry) q._fixed = true;
+      document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
+      fb.className = 'feedback correct';
+      fbText.textContent = firstTry ? 'Sửa được rồi! Con giỏi lắm 💪' : 'Đúng rồi! Lần sau con sẽ nhớ ngay thôi 🌱';
+      fbAns.textContent = '';
+      btnNext.classList.remove('hidden');
+      btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+    } else {
+      Sound.play('wrong');
+      btn.classList.add('wrong');
+      btn.disabled = true;
+      fb.className = 'feedback wrong';
+      fbText.textContent = 'Không sao, câu này hơi khó. Xem gợi ý rồi chọn lại nhé!';
+      fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : '';
     }
   },
 
@@ -556,6 +605,11 @@ const Quiz = {
 
   next() {
     const q = this.questions[this.curIdx];
+    if (q && q._retry) {
+      this.curIdx++;
+      if (this.curIdx >= this.questions.length) this._finish(); else this.render();
+      return;
+    }
     // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
     // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
     if (this.mode !== 'wrong_review' && this.mode !== 'mixed') this._markLearned(q._idx, this.canEarnPoint);
@@ -582,7 +636,7 @@ const Quiz = {
     if (Rewards.touchStreak) Rewards.touchStreak();
 
     App.showScreen('result');
-    const total = this.questions.length;
+    const total = this._mainTotal();
     document.getElementById('resScore').textContent = this.score + '/' + total;
 
     const ratio = total ? this.score / total : 0;
@@ -620,6 +674,7 @@ const Quiz = {
       const analytics = this._analyticsText();
       resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:700">' + progressMsg + '</span>' + analytics;
     }
+    this._renderSessionInsight();
 
     if (ratio >= 0.8) this._confettiBurst();
     if (window.Today) {
@@ -633,6 +688,43 @@ const Quiz = {
     this._saveLocalSessionDetails(durationSec);
     API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
       .then(() => App.loadLeaderboard());
+  },
+
+  /** Nhận xét kỹ năng sau lượt (chỉ khi có ≥3 câu cùng dạng) + số câu sửa được. */
+  async _renderSessionInsight() {
+    const host = document.getElementById('resExtra');
+    if (!host) return;
+    let box = document.getElementById('resInsight');
+    if (!box) { box = document.createElement('div'); box.id = 'resInsight'; box.className = 'res-insight'; host.parentNode.insertBefore(box, host); }
+    box.innerHTML = '';
+    const lines = [];
+    const retries = (this.questions || []).filter(x => x._retry);
+    if (retries.length) {
+      const fixed = retries.filter(x => x._fixed).length;
+      lines.push(fixed
+        ? '🔁 Con đã <b>sửa được ' + fixed + '/' + retries.length + '</b> câu vừa sai ngay trong lượt này!'
+        : '🔁 Các câu vừa sai sẽ được Rabbit đưa lại vào phần Ôn lại hôm sau nhé.');
+    }
+    try {
+      if (window.SkillReport && SkillReport._loadBank) {
+        const bank = await SkillReport._loadBank();
+        const groups = {};
+        (this.sessionDetails || []).forEach(d => {
+          const m = bank.byId[d.questionId];
+          if (!m) return;
+          const g = groups[m.skillKey] || (groups[m.skillKey] = { label: m.label, n: 0, ok: 0 });
+          g.n++;
+          if (d.isCorrect) g.ok++;
+        });
+        const big = Object.values(groups).filter(g => g.n >= 3);
+        const good = big.filter(g => g.ok / g.n >= 0.8).sort((a, b) => b.n - a.n)[0];
+        const weak = big.filter(g => g.ok / g.n <= 0.6).sort((a, b) => (a.ok / a.n) - (b.ok / b.n))[0];
+        const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+        if (good) lines.push('🌟 Con làm tốt <b>' + esc(good.label) + '</b> (đúng ' + good.ok + '/' + good.n + ' câu).');
+        if (weak) lines.push('🌱 Thử ôn thêm <b>' + esc(weak.label) + '</b> nhé (đúng ' + weak.ok + '/' + weak.n + ' câu). Rabbit sẽ đưa lại các câu sai vào phần Ôn lại.');
+      }
+    } catch (e) { console.warn('session insight', e); }
+    if (lines.length) box.innerHTML = lines.map(l => '<div class="res-insight-line">' + l + '</div>').join('');
   },
 
   _saveLocalSessionDetails(durationSec) {
