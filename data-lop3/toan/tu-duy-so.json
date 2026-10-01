@@ -938,6 +938,363 @@
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q055",
         "stage": 1
+      },
+      {
+        "q": "Viết thành tích của 2 thừa số: 10 × 4 + 10 × 5 − 10 = 10 × ?",
+        "choices": [
+          "10",
+          "8",
+          "19",
+          "9"
+        ],
+        "a": 1,
+        "hint": "Lấy 10 bốn lần, cộng 10 năm lần, bớt đi 10 một lần. Còn lại bao nhiêu lần 10?",
+        "difficulty": 2,
+        "skill": "viet-thanh-tich",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q056",
+        "stage": 1
+      },
+      {
+        "q": "m × 8 − m × 3 = m × ?",
+        "choices": [
+          "11",
+          "5",
+          "24",
+          "6"
+        ],
+        "a": 1,
+        "hint": "8 lần m bớt đi 3 lần m thì còn mấy lần m?",
+        "difficulty": 2,
+        "skill": "viet-thanh-tich",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q057",
+        "stage": 1
+      },
+      {
+        "q": "b + b × 5 + b × 4 = b × ?",
+        "choices": [
+          "11",
+          "20",
+          "9",
+          "10"
+        ],
+        "a": 3,
+        "hint": "Đừng quên số b đứng một mình chính là b × 1.",
+        "difficulty": 3,
+        "skill": "viet-thanh-tich",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q058",
+        "stage": 1
+      },
+      {
+        "q": "Cho số 726. Nếu chữ số hàng chục tăng 5 đơn vị và chữ số hàng đơn vị giảm 3 đơn vị thì số đó thay đổi thế nào?",
+        "choices": [
+          "Giảm 47 đơn vị",
+          "Tăng 8 đơn vị",
+          "Tăng 53 đơn vị",
+          "Tăng 47 đơn vị"
+        ],
+        "a": 3,
+        "hint": "Chữ số hàng chục thay đổi 1 đơn vị thì số thay đổi 10 đơn vị. Tính riêng từng phần rồi so phần tăng với phần giảm.",
+        "difficulty": 3,
+        "skill": "thay-doi-chu-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q059",
+        "stage": 1
+      },
+      {
+        "q": "Cho số 692. Nếu chữ số hàng chục giảm 4 đơn vị và chữ số hàng đơn vị tăng 5 đơn vị thì số đó thay đổi thế nào?",
+        "choices": [
+          "Giảm 35 đơn vị",
+          "Giảm 45 đơn vị",
+          "Tăng 35 đơn vị",
+          "Giảm 9 đơn vị"
+        ],
+        "a": 0,
+        "hint": "Chữ số hàng chục thay đổi 1 đơn vị thì số thay đổi 10 đơn vị. Tính riêng từng phần rồi so phần tăng với phần giảm.",
+        "difficulty": 3,
+        "skill": "thay-doi-chu-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q060",
+        "stage": 1
+      },
+      {
+        "q": "Cho số 872. Nếu chữ số hàng trăm giảm 6 đơn vị và chữ số hàng đơn vị tăng 5 đơn vị thì số đó thay đổi thế nào?",
+        "choices": [
+          "Tăng 595 đơn vị",
+          "Giảm 11 đơn vị",
+          "Giảm 595 đơn vị",
+          "Giảm 605 đơn vị"
+        ],
+        "a": 2,
+        "hint": "Chữ số hàng trăm thay đổi 1 đơn vị thì số thay đổi 100 đơn vị. Tính riêng từng phần rồi so phần tăng với phần giảm.",
+        "difficulty": 3,
+        "skill": "thay-doi-chu-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q061",
+        "stage": 1
+      },
+      {
+        "q": "Cho số 536. Nếu chữ số hàng chục giảm 3 đơn vị và chữ số hàng đơn vị tăng 2 đơn vị thì số đó thay đổi thế nào?",
+        "choices": [
+          "Tăng 28 đơn vị",
+          "Giảm 28 đơn vị",
+          "Giảm 5 đơn vị",
+          "Giảm 32 đơn vị"
+        ],
+        "a": 1,
+        "hint": "Chữ số hàng chục thay đổi 1 đơn vị thì số thay đổi 10 đơn vị. Tính riêng từng phần rồi so phần tăng với phần giảm.",
+        "difficulty": 3,
+        "skill": "thay-doi-chu-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q062",
+        "stage": 1
+      },
+      {
+        "q": "Tích của hai số là 40, thừa số thứ hai là 8. Thừa số còn lại là:",
+        "choices": [
+          "7",
+          "5",
+          "4",
+          "6"
+        ],
+        "a": 1,
+        "hint": "Muốn tìm một thừa số, lấy tích chia cho thừa số kia.",
+        "difficulty": 2,
+        "skill": "tim-thua-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q063",
+        "stage": 1
+      },
+      {
+        "q": "Tích của hai số là 63, thừa số thứ nhất là 7. Thừa số còn lại là:",
+        "choices": [
+          "11",
+          "10",
+          "8",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Muốn tìm một thừa số, lấy tích chia cho thừa số kia.",
+        "difficulty": 1,
+        "skill": "tim-thua-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q064",
+        "stage": 1
+      },
+      {
+        "q": "Tích của hai số là 56, thừa số thứ nhất là 8. Thừa số còn lại là:",
+        "choices": [
+          "6",
+          "8",
+          "9",
+          "7"
+        ],
+        "a": 3,
+        "hint": "Muốn tìm một thừa số, lấy tích chia cho thừa số kia.",
+        "difficulty": 1,
+        "skill": "tim-thua-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q065",
+        "stage": 1
+      },
+      {
+        "q": "Tích của hai số là 72, thừa số thứ hai là 9. Thừa số còn lại là:",
+        "choices": [
+          "8",
+          "10",
+          "9",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Muốn tìm một thừa số, lấy tích chia cho thừa số kia.",
+        "difficulty": 2,
+        "skill": "tim-thua-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q066",
+        "stage": 1
+      },
+      {
+        "q": "Từ các chữ số 3, 0, 8, lập được bao nhiêu số có ba chữ số khác nhau?",
+        "choices": [
+          "5",
+          "6",
+          "4",
+          "3"
+        ],
+        "a": 2,
+        "hint": "Chọn lần lượt chữ số hàng trăm (không được là 0), rồi hàng chục, rồi hàng đơn vị. Viết ra hết để đếm.",
+        "difficulty": 2,
+        "skill": "lap-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q067",
+        "stage": 1
+      },
+      {
+        "q": "Từ các chữ số 3, 0, 8, lập được bao nhiêu số có ba chữ số (mỗi chữ số được dùng nhiều lần)?",
+        "choices": [
+          "18",
+          "17",
+          "27",
+          "19"
+        ],
+        "a": 0,
+        "hint": "Chọn lần lượt chữ số hàng trăm (không được là 0), rồi hàng chục, rồi hàng đơn vị. Viết ra hết để đếm.",
+        "difficulty": 3,
+        "skill": "lap-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q068",
+        "stage": 1
+      },
+      {
+        "q": "Từ các chữ số 1, 0, 5, lập được bao nhiêu số có ba chữ số khác nhau?",
+        "choices": [
+          "6",
+          "5",
+          "4",
+          "3"
+        ],
+        "a": 2,
+        "hint": "Chọn lần lượt chữ số hàng trăm (không được là 0), rồi hàng chục, rồi hàng đơn vị. Viết ra hết để đếm.",
+        "difficulty": 2,
+        "skill": "lap-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q069",
+        "stage": 1
+      },
+      {
+        "q": "Từ các chữ số 2, 4, 6, lập được bao nhiêu số có ba chữ số khác nhau?",
+        "choices": [
+          "6",
+          "7",
+          "5",
+          "9"
+        ],
+        "a": 0,
+        "hint": "Chọn hàng trăm trước, rồi hàng chục, rồi hàng đơn vị và nhân số cách chọn.",
+        "difficulty": 1,
+        "skill": "lap-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q070",
+        "stage": 1
+      },
+      {
+        "q": "Từ các chữ số 2, 4, 6, lập được bao nhiêu số có ba chữ số (mỗi chữ số được dùng nhiều lần)?",
+        "choices": [
+          "26",
+          "27",
+          "28",
+          "18"
+        ],
+        "a": 1,
+        "hint": "Chọn hàng trăm trước, rồi hàng chục, rồi hàng đơn vị và nhân số cách chọn.",
+        "difficulty": 3,
+        "skill": "lap-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q071",
+        "stage": 1
+      },
+      {
+        "q": "Số bé nhất có ba chữ số mà tổng các chữ số bằng 20 là:",
+        "choices": [
+          "992",
+          "389",
+          "479",
+          "299"
+        ],
+        "a": 3,
+        "hint": "Muốn số bé nhất thì hàng trăm phải nhỏ nhất có thể, hàng đơn vị và hàng chục lớn nhất (9).",
+        "difficulty": 3,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q072",
+        "stage": 1
+      },
+      {
+        "q": "Số lớn nhất có ba chữ số mà tổng các chữ số bằng 20 là:",
+        "choices": [
+          "992",
+          "299",
+          "911",
+          "983"
+        ],
+        "a": 0,
+        "hint": "Muốn số lớn nhất thì hàng trăm lớn nhất (9), rồi đến hàng chục.",
+        "difficulty": 2,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q073",
+        "stage": 1
+      },
+      {
+        "q": "Số bé nhất có ba chữ số mà tổng các chữ số bằng 15 là:",
+        "choices": [
+          "195",
+          "600",
+          "168",
+          "159"
+        ],
+        "a": 3,
+        "hint": "Hàng trăm nhỏ nhất là 1, khi đó hai chữ số còn lại có tổng bằng mấy?",
+        "difficulty": 3,
+        "skill": "so-dac-biet",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q074",
+        "stage": 1
+      },
+      {
+        "q": "Nhà Minh nuôi một đàn chó. Số chân chó nhiều hơn số mũi của chúng là 18. Nhà Minh nuôi mấy con chó?",
+        "choices": [
+          "18",
+          "9",
+          "6",
+          "4"
+        ],
+        "a": 2,
+        "hint": "Mỗi con chó có 4 chân và 1 mũi, vậy mỗi con chân nhiều hơn mũi mấy?",
+        "difficulty": 3,
+        "skill": "ga-cho",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q075",
+        "stage": 1
+      },
+      {
+        "q": "Cân thăng bằng: đĩa trái có 1 hình tam giác và 4 viên bi, đĩa phải có 3 hình tam giác. Mỗi hình tam giác nặng bằng mấy viên bi?",
+        "choices": [
+          "3",
+          "4",
+          "2",
+          "1"
+        ],
+        "a": 2,
+        "hint": "Bỏ bớt 1 hình tam giác ở cả hai đĩa thì cân vẫn thăng bằng. Còn lại gì?",
+        "difficulty": 3,
+        "skill": "can-bang",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_tu-duy-so_q076",
+        "stage": 1
       }
     ]
   }

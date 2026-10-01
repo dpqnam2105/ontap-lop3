@@ -5,6 +5,14 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-01 — Ôn đúng lúc sắp quên + "Đã vững" + gọn giao diện điện thoại + 60 câu mới
+- **Ôn đúng lúc sắp quên** (lặp lại ngắt quãng): mỗi câu con làm được xếp vào 4 hộp. Làm đúng ở một ngày khác thì lên hộp, sau 1 → 3 → 7 → 14 ngày Rabbit mới hỏi lại; làm sai thì về hộp đầu, sáng hôm sau ôn lại.
+  - Việc 1 trong "Hôm nay học gì?" giờ là **Ôn lại tối đa 8 câu**: câu từng sai trước, rồi câu đến hạn ôn (ví dụ "1 câu từng sai · 7 câu sắp quên"). Theo giai đoạn đang học.
+- **"Đã vững"**: câu đúng ở ít nhất 2 ngày khác nhau là đã vững. Thẻ chủ đề hiện "⭐ n câu đã vững"; vững từ 80% chủ đề thì có nhãn 🌟 Đã vững.
+- **Điện thoại gọn hơn**: thanh điều hướng 5 nút cố định ở đáy màn hình (Trang chủ, Học, Cửa hàng, Xếp hạng, Phụ huynh), ẩn thanh tiêu đề trên cùng, thông báo nhỏ hiện ở trên. Link tài liệu chuyển vào cuối thẻ "Hôm nay".
+- **Máy tính**: nút đang mở được tô sáng ở thanh bên; Thỏ ở góc dưới nói con hôm nay đã làm được mấy việc.
+- **Câu hỏi mới** theo phiếu bổ trợ tuần 6–8 (Toán) và lỗi Tiếng Anh hay gặp — xem `data-lop3/CHANGELOG.md`. Có chủ đề mới **Dãy số cách đều**.
+
 ## 2026-10-01 — Đáp án nhiễu sát hơn + trang chủ 2 cột trên máy tính + thẻ "Tuần này"
 - **Đáp án nhiễu sát đáp án đúng hơn** (89 câu): các câu tính toán đơn giản trước đây có phương án quá xa (vd. "1/5 của 35" có 7, 30, 40, 50 → bé đoán ngay được). Nay phương án nhiễu nằm sát đáp án (vd. 6, 7, 8, 9):
   - Một phần mấy: 14 câu · Bảng nhân, chia: 72 câu · Sơ đồ đoạn thẳng (một phần mấy): 3 câu.

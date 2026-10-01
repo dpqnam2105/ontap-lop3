@@ -155,6 +155,11 @@ const App = {
     const screen = document.getElementById(id);
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
+    const learnScreens = ['grade', 'subject', 'topic', 'quiz', 'result'];
+    document.querySelectorAll('.side-rail .btn-nav').forEach(b => {
+      const sc = b.dataset.screen;
+      b.classList.toggle('nav-active', sc === name || (sc === 'learn' && learnScreens.includes(name)));
+    });
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
     if (name === 'register' && window.Today) Today.render();
     if (name === 'shop') {
@@ -613,8 +618,14 @@ const App = {
           wrong = (prog.wrong || []).filter(inScope).length;
         }
       } catch (e) { /* chưa có tiến độ thì để 0 */ }
+      let solid = 0;
+      try {
+        const rv = Storage.getReviewMap ? Storage.getReviewMap() : {};
+        (t.questions || []).forEach((q, i) => { const r = q.id && rv[q.id]; if (r && r.box >= Storage.MASTER_BOX && inScope(i)) solid++; });
+      } catch (e) { solid = 0; }
+      const solidAll = totalQ > 0 && solid / totalQ >= 0.8;
       const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
-      const st = this._topicStatus(pct);
+      const st = solidAll ? { label: '🌟 Đã vững', color: '#16a34a' } : this._topicStatus(pct);
       const desc = this.TOPIC_DESC[topicId] || '';
 
       card.innerHTML = `
@@ -622,7 +633,7 @@ const App = {
           <div class="topic-icon">${t.icon}</div>
           <div class="topic-head-text">
             <div class="topic-name">${this._escape(t.name)}</div>
-            <div class="topic-subline">${totalQ} câu hỏi</div>
+            <div class="topic-subline">${totalQ} câu hỏi${solid ? ` · <span class="solid-tag">⭐ ${solid} câu đã vững</span>` : ''}</div>
           </div>
         </div>
         ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
@@ -663,7 +674,7 @@ const App = {
 
   /** Đổi % tiến độ thành nhãn + màu trạng thái cho card chủ đề. */
   _topicStatus(pct) {
-    if (pct >= 90) return { label: 'Đã vững', color: '#16a34a' };
+    if (pct >= 90) return { label: 'Làm gần hết rồi', color: '#16a34a' };
     if (pct >= 70) return { label: 'Đang tốt', color: '#22c55e' };
     if (pct >= 40) return { label: 'Đang học', color: '#f59e0b' };
     if (pct > 0)   return { label: 'Cần cố gắng', color: '#f97316' };

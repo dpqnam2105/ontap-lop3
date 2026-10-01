@@ -235,6 +235,61 @@ const Storage = {
     } catch (e) { /* bỏ qua */ }
   },
 
+  // ─── Hộp ôn tập theo câu (kiểu Leitner) ─────────
+  // { [questionId]: { box, due, last, subjectId, topicId, idx } }
+  //  box 0: vừa sai → ôn lại hôm sau · box 1 → 3 ngày · box 2 ("Đã vững") → 7 ngày · box 3 → 14 ngày
+  //  Chỉ lên hộp khi làm đúng ở MỘT NGÀY KHÁC lần lên hộp trước (đúng 2 lần cùng ngày không tính).
+  REVIEW_KEY: 'khoBaiTap_review_v1',
+  REVIEW_DAYS: [1, 3, 7, 14],
+  MASTER_BOX: 2,
+
+  _dayStr(ts) {
+    const d = new Date(ts || Date.now());
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  },
+
+  getReviewMap() {
+    try { return JSON.parse(localStorage.getItem(this._scoped(this.REVIEW_KEY)) || '{}'); }
+    catch (e) { return {}; }
+  },
+
+  recordReview(qid, correct, info) {
+    if (!qid) return;
+    try {
+      const map = this.getReviewMap();
+      const now = Date.now();
+      const today = this._dayStr(now);
+      const r = map[qid] || { box: -1, due: 0, last: '' };
+      const dayMs = 24 * 60 * 60 * 1000;
+      if (!correct) {
+        r.box = 0;
+        r.due = now + dayMs * this.REVIEW_DAYS[0] - 2 * 60 * 60 * 1000; // sáng hôm sau là đến hạn
+        r.last = today;
+      } else if (r.box < 0) {
+        // Lần đầu gặp mà đúng ngay: vào hộp 1, ôn lại sau 3 ngày
+        r.box = 1; r.due = now + dayMs * this.REVIEW_DAYS[1]; r.last = today;
+      } else if (r.last !== today) {
+        r.box = Math.min(3, r.box + 1);
+        r.due = now + dayMs * this.REVIEW_DAYS[r.box];
+        r.last = today;
+      }
+      if (info) { r.subjectId = info.subjectId || r.subjectId; r.topicId = info.topicId || r.topicId; if (info.idx != null) r.idx = info.idx; }
+      map[qid] = r;
+      localStorage.setItem(this._scoped(this.REVIEW_KEY), JSON.stringify(map));
+    } catch (e) { console.warn('recordReview error', e); }
+  },
+
+  /** Câu đã gặp và đến hạn ôn (sắp quên), quá hạn lâu nhất trước. Không gồm câu đang sai (đã có Ôn câu sai). */
+  getDueReviews(limit) {
+    const map = this.getReviewMap();
+    const now = Date.now();
+    return Object.entries(map)
+      .filter(([, r]) => r.box >= 1 && r.due && r.due <= now)
+      .sort((a, b) => a[1].due - b[1].due)
+      .slice(0, limit || 50)
+      .map(([questionId, r]) => ({ questionId, ...r }));
+  },
+
   // ─── Wrong history (tích lũy lâu dài) ───────
 
   /**

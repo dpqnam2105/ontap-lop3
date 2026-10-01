@@ -31,13 +31,13 @@
       "id": "toan_phan-so-don-gian",
       "name": "Một phần mấy",
       "file": "phan-so-don-gian.json",
-      "count": 24
+      "count": 31
     },
     {
       "id": "toan_hinh-hoc",
       "name": "Hình học (trung điểm, hình tròn, chu vi, diện tích)",
       "file": "hinh-hoc.json",
-      "count": 25
+      "count": 28
     },
     {
       "id": "toan_dem-hinh-gap-khuc",
@@ -70,6 +70,13 @@
       "count": 20
     },
     {
+      "id": "toan_day-so-cach-deu",
+      "icon": "🔢",
+      "name": "Dãy số cách đều",
+      "file": "day-so-cach-deu.json",
+      "count": 15
+    },
+    {
       "id": "toan_on-tap-tong-hop",
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",
@@ -79,13 +86,13 @@
       "id": "toan_tu-duy-so",
       "name": "Tư duy số & phép tính",
       "file": "tu-duy-so.json",
-      "count": 55
+      "count": 76
     },
     {
       "id": "toan_loi-van-hay",
       "name": "Toán có lời văn hay",
       "file": "loi-van-hay.json",
-      "count": 39
+      "count": 44
     },
     {
       "id": "toan_tu-duy-logic",

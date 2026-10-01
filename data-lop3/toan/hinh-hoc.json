@@ -428,6 +428,57 @@
         "source": "claude-audit-20260924",
         "id": "toan_hinh-hoc_q025",
         "stage": 4
+      },
+      {
+        "q": "Cho 3 điểm thẳng hàng X, Y, Z. Biết Z là trung điểm của đoạn thẳng XY và XZ = 4 cm. Đoạn thẳng XY dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "6 cm",
+          "8 cm",
+          "4 cm",
+          "2 cm"
+        ],
+        "a": 1,
+        "hint": "Trung điểm chia đoạn thẳng thành hai phần bằng nhau. XY gồm mấy đoạn dài bằng XZ?",
+        "difficulty": 2,
+        "skill": "midpoint",
+        "unit": "hinh-hoc",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_hinh-hoc_q026",
+        "stage": 2
+      },
+      {
+        "q": "Trên tia số, điểm E ứng với số 40, điểm G ứng với số 120. Trung điểm của đoạn thẳng EG ứng với số nào?",
+        "choices": [
+          "60",
+          "100",
+          "80",
+          "40"
+        ],
+        "a": 2,
+        "hint": "Từ 40 đến 120 dài bao nhiêu? Đi từ E thêm một nửa độ dài đó.",
+        "difficulty": 3,
+        "skill": "midpoint",
+        "unit": "hinh-hoc",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_hinh-hoc_q027",
+        "stage": 2
+      },
+      {
+        "q": "M là trung điểm của đoạn thẳng AB. AM = 7 cm. Độ dài đoạn thẳng AB là:",
+        "choices": [
+          "12 cm",
+          "7 cm",
+          "21 cm",
+          "14 cm"
+        ],
+        "a": 3,
+        "hint": "AB = AM + MB, mà AM và MB bằng nhau.",
+        "difficulty": 1,
+        "skill": "midpoint",
+        "unit": "hinh-hoc",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_hinh-hoc_q028",
+        "stage": 2
       }
     ]
   }

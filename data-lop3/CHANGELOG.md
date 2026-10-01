@@ -6,6 +6,15 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-01 (Claude — từ phiếu bổ trợ tuần 6–8)
+- Toán / Dãy số cách đều — +15 câu (chủ đề mới, GĐ1): số hạng thứ n, đếm số số hạng, dãy Fibonacci, tìm vị trí số.
+- Toán / Tư duy với số — +21 câu (55 → 76): viết thành tích 2 thừa số, thay đổi chữ số, tìm thừa số, lập số (có/không lặp chữ số), số lớn/bé nhất theo tổng chữ số, chân chó – mũi, cân thăng bằng.
+- Toán / Một phần mấy — +7 câu (24 → 31): phần còn lại (1/5 đàn vịt dưới ao → trên bờ), tìm "là mấy phần".
+- Toán / Toán có lời văn hay — +5 câu (39 → 44): chuyển sách giữa 3 ngăn cho bằng nhau.
+- Toán / Hình học — +3 câu trung điểm (25 → 28), GĐ2.
+- Tiếng Anh / Adjectives & Adverbs — +9 câu (16 → 25): be + tính từ, hành động + trạng từ -ly, sắp xếp câu.
+- Phương án nhiễu đều sát đáp án (±1–2) hoặc là lỗi con hay mắc (vd. 27 khi lập số có chữ số 0).
+
 ## 2026-10-01 (Claude — đáp án nhiễu sát hơn)
 - Toán / Một phần mấy (14), Bảng nhân chia (72), Sơ đồ đoạn thẳng (3): phương án nhiễu đổi thành số sát đáp án (±1–3) thay vì số quá xa dễ loại trừ. Vị trí đáp án đúng giữ nguyên.
 

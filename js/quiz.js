@@ -92,6 +92,32 @@ const Quiz = {
     this.render();
   },
 
+  // Phiên ôn tập tổng hợp: câu sai chưa sửa + câu đến hạn ôn (App/Today dựng sẵn pool).
+  startReviewPool(pool, todayTaskId) {
+    if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
+    this.todayTaskId = todayTaskId || null;
+    this._lastLaunch = { type: 'pool', pool };
+    this.mode = 'wrong_review';
+    this.questions = pool.slice();
+    this.currentTopic = { id: 'wrong_review', name: 'Ôn lại', questions: this.questions };
+    this.currentSubject = 'Ôn lại';
+    this.currentTopicId = 'wrong_review';
+    this.currentSubjectId = 'mixed';
+    this.allowedIdx = null;
+    this.sessionStartTime = Date.now();
+    this.score = 0;
+    this.curIdx = 0;
+    this.sessionDetails = [];
+    this.sessionStars = 0;
+    this.sessionXP = 0;
+    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
+    this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
+      ? window.LearningEngine.installSessionGuard() : null;
+    this.sessionInfo = { mode: 'wrong_review', modeLabel: 'Ôn lại 🧠', current: 1, total: 1, isAllDone: true, learnedBefore: 0, totalInTopic: this.questions.length };
+    App.showScreen('quiz');
+    this.render();
+  },
+
   // Đề trộn tuần: câu hỏi lấy từ nhiều chủ đề của một môn (App dựng sẵn pool, cố định theo tuần).
   // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
   startMixed(pool, subjectName, subjectId, mixKey, todayTaskId) {
@@ -286,7 +312,7 @@ const Quiz = {
       titleText = 'Đề trộn 🎲 · ' + (q._topicName || '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     }
     if (this.mode === 'wrong_review' && q._subjectName) {
-      titleText = 'Ôn câu sai 🔁 · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
+      titleText = ((this.sessionInfo && this.sessionInfo.modeLabel) || 'Ôn câu sai 🔁') + ' · ' + q._subjectName + (q._topicName ? ' / ' + q._topicName : '') + ' · Câu ' + (this.curIdx + 1) + '/' + total;
     }
     if (this.mode === 'practice' && info.total > 1) {
       titleText += info.isAllDone ? ' · Ôn lại 🔄' : ' · Lần ' + info.current + '/' + info.total;
@@ -488,6 +514,13 @@ const Quiz = {
       topicId: q.topicId || this.currentTopicId || '',
       mode: this.mode || 'practice',
       answeredAt: new Date().toISOString()
+    });
+
+    // Hộp ôn tập: lên lịch ôn lại đúng lúc sắp quên
+    if (Storage.recordReview) Storage.recordReview(questionId, !!isCorrect, {
+      subjectId: q.subjectId || this.currentSubjectId || '',
+      topicId: q.topicId || this.currentTopicId || '',
+      idx: q._idx
     });
 
     // Ghi vào wrong history tích lũy lâu dài

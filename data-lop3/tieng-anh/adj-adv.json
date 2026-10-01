@@ -275,6 +275,159 @@
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q016",
         "stage": 1
+      },
+      {
+        "q": "Please be ___ when you cross the street.",
+        "choices": [
+          "carefuly",
+          "careful",
+          "carefully",
+          "care"
+        ],
+        "a": 1,
+        "hint": "\"be\" + tính từ. Sau \"be\" không dùng trạng từ -ly.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q017",
+        "stage": 1
+      },
+      {
+        "q": "The dog is running ___.",
+        "choices": [
+          "happiness",
+          "happily",
+          "happy",
+          "happyly"
+        ],
+        "a": 1,
+        "hint": "running là hành động → trạng từ. happy → happily.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q018",
+        "stage": 1
+      },
+      {
+        "q": "The children are playing ___ in the park.",
+        "choices": [
+          "happily",
+          "happier",
+          "happy",
+          "happyly"
+        ],
+        "a": 0,
+        "hint": "\"are playing\" là đang làm một hành động → dùng trạng từ.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q019",
+        "stage": 1
+      },
+      {
+        "q": "They work ___ together.",
+        "choices": [
+          "quietful",
+          "quiet",
+          "quiets",
+          "quietly"
+        ],
+        "a": 3,
+        "hint": "work là hành động → trạng từ.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q020",
+        "stage": 1
+      },
+      {
+        "q": "She is a ___ student.",
+        "choices": [
+          "careful",
+          "cares",
+          "carefuly",
+          "carefully"
+        ],
+        "a": 0,
+        "hint": "\"a ___ student\": đứng trước danh từ → tính từ.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q021",
+        "stage": 1
+      },
+      {
+        "q": "He plays the piano very ___.",
+        "choices": [
+          "beauty",
+          "beautiful",
+          "beautifully",
+          "beautifuly"
+        ],
+        "a": 2,
+        "hint": "plays là hành động → trạng từ. beautiful → beautifully.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q022",
+        "stage": 1
+      },
+      {
+        "q": "Put the words in order: fast / running / is / very / She",
+        "choices": [
+          "She is very running fast.",
+          "She very fast is running.",
+          "Running she is very fast.",
+          "She is running very fast."
+        ],
+        "a": 3,
+        "hint": "Ai – đang làm gì (is running) – làm thế nào (very fast).",
+        "difficulty": 3,
+        "skill": "word-order",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q023",
+        "stage": 1
+      },
+      {
+        "q": "Put the words in order: write / your / name / carefully / Please",
+        "choices": [
+          "Please carefully your name write.",
+          "Please write carefully name your.",
+          "Please write your name carefully.",
+          "Write please your name carefully."
+        ],
+        "a": 2,
+        "hint": "Please + động từ + cái gì + làm thế nào.",
+        "difficulty": 3,
+        "skill": "word-order",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q024",
+        "stage": 1
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "Please talk loud in the library.",
+          "The baby sleeps quiet.",
+          "The baby is sleeping. Be quiet.",
+          "The baby is sleeping. Be quietly."
+        ],
+        "a": 2,
+        "hint": "Be + tính từ; hành động + trạng từ.",
+        "difficulty": 3,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "en_adj-adv_q025",
+        "stage": 1
       }
     ]
   }

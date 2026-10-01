@@ -666,6 +666,91 @@
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_loi-van-hay_q039",
         "stage": 1
+      },
+      {
+        "q": "Ba ngăn đựng tất cả 300 cuốn sách. Bình lấy 15 cuốn ở ngăn thứ nhất chuyển sang ngăn thứ hai thì số sách ở ba ngăn bằng nhau. Lúc đầu ngăn thứ nhất có bao nhiêu cuốn?",
+        "choices": [
+          "100",
+          "85",
+          "95",
+          "115"
+        ],
+        "a": 3,
+        "hint": "Lúc sau mỗi ngăn có tổng : 3. Ngăn thứ nhất đã cho đi nên lúc đầu NHIỀU hơn lúc sau.",
+        "difficulty": 3,
+        "skill": "chuyen-bang-nhau",
+        "unit": "loi-van-hay",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_loi-van-hay_q040",
+        "stage": 1
+      },
+      {
+        "q": "Ba ngăn đựng tất cả 300 cuốn sách. Lấy 15 cuốn ở ngăn thứ nhất chuyển sang ngăn thứ hai thì ba ngăn bằng nhau. Lúc đầu ngăn thứ hai có bao nhiêu cuốn?",
+        "choices": [
+          "100",
+          "85",
+          "115",
+          "70"
+        ],
+        "a": 1,
+        "hint": "Ngăn thứ hai được nhận thêm nên lúc đầu ÍT hơn lúc sau.",
+        "difficulty": 3,
+        "skill": "chuyen-bang-nhau",
+        "unit": "loi-van-hay",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_loi-van-hay_q041",
+        "stage": 1
+      },
+      {
+        "q": "Ba ngăn đựng tất cả 240 cuốn sách. Bình lấy 12 cuốn ở ngăn thứ nhất chuyển sang ngăn thứ hai thì số sách ở ba ngăn bằng nhau. Lúc đầu ngăn thứ nhất có bao nhiêu cuốn?",
+        "choices": [
+          "75",
+          "80",
+          "68",
+          "92"
+        ],
+        "a": 3,
+        "hint": "Lúc sau mỗi ngăn có tổng : 3. Ngăn thứ nhất đã cho đi nên lúc đầu NHIỀU hơn lúc sau.",
+        "difficulty": 3,
+        "skill": "chuyen-bang-nhau",
+        "unit": "loi-van-hay",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_loi-van-hay_q042",
+        "stage": 1
+      },
+      {
+        "q": "Ba ngăn đựng tất cả 240 cuốn sách. Lấy 12 cuốn ở ngăn thứ nhất chuyển sang ngăn thứ hai thì ba ngăn bằng nhau. Lúc đầu ngăn thứ hai có bao nhiêu cuốn?",
+        "choices": [
+          "80",
+          "56",
+          "68",
+          "92"
+        ],
+        "a": 2,
+        "hint": "Ngăn thứ hai được nhận thêm nên lúc đầu ÍT hơn lúc sau.",
+        "difficulty": 3,
+        "skill": "chuyen-bang-nhau",
+        "unit": "loi-van-hay",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_loi-van-hay_q043",
+        "stage": 1
+      },
+      {
+        "q": "Ba ngăn đựng tất cả 300 cuốn sách. Lấy 15 cuốn ở ngăn thứ nhất chuyển sang ngăn thứ hai thì ba ngăn bằng nhau. Lúc đầu ngăn thứ ba có bao nhiêu cuốn?",
+        "choices": [
+          "100",
+          "85",
+          "90",
+          "115"
+        ],
+        "a": 0,
+        "hint": "Ngăn thứ ba không cho, không nhận. Lúc sau mỗi ngăn có bao nhiêu cuốn?",
+        "difficulty": 2,
+        "skill": "chuyen-bang-nhau",
+        "unit": "loi-van-hay",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_loi-van-hay_q044",
+        "stage": 1
       }
     ]
   }

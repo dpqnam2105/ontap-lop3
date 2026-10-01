@@ -1,0 +1,264 @@
+{
+  "topic": {
+    "id": "toan_day-so-cach-deu",
+    "icon": "🔢",
+    "name": "Dãy số cách đều",
+    "questions": [
+      {
+        "q": "Cho dãy số 2; 4; 6; 8; … Số hạng thứ 10 của dãy là:",
+        "choices": [
+          "24",
+          "20",
+          "18",
+          "22"
+        ],
+        "a": 1,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 10 có 9 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "difficulty": 1,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q001",
+        "stage": 1
+      },
+      {
+        "q": "Cho dãy số 0; 5; 10; 15; … Số hạng thứ 11 của dãy là:",
+        "choices": [
+          "60",
+          "50",
+          "45",
+          "55"
+        ],
+        "a": 1,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "difficulty": 2,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q002",
+        "stage": 1
+      },
+      {
+        "q": "Cho dãy số 3; 6; 9; 12; … Số hạng thứ 11 của dãy là:",
+        "choices": [
+          "33",
+          "36",
+          "39",
+          "30"
+        ],
+        "a": 0,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "difficulty": 2,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q003",
+        "stage": 1
+      },
+      {
+        "q": "Cho dãy số 1; 4; 7; 10; … Số hạng thứ 8 của dãy là:",
+        "choices": [
+          "19",
+          "22",
+          "25",
+          "24"
+        ],
+        "a": 1,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 8 có 7 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "difficulty": 2,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q004",
+        "stage": 1
+      },
+      {
+        "q": "Cho dãy số 5; 9; 13; 17; … Số hạng thứ 6 của dãy là:",
+        "choices": [
+          "24",
+          "21",
+          "29",
+          "25"
+        ],
+        "a": 3,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 6 có 5 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "difficulty": 2,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q005",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 1; 3; 5; 7; …; 21 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "11",
+          "12",
+          "13",
+          "10"
+        ],
+        "a": 0,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 2,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q006",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 2; 5; 8; 11; …; 26 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "11",
+          "10",
+          "8",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 2,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q007",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 11; 14; 17; 20; …; 68 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "20",
+          "19",
+          "21",
+          "22"
+        ],
+        "a": 0,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 3,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q008",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 5; 7; 9; 11; …; 25 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "11",
+          "12",
+          "13",
+          "10"
+        ],
+        "a": 0,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 2,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q009",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 1; 4; 7; 10; …; 28 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "12",
+          "11",
+          "10",
+          "9"
+        ],
+        "a": 2,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 2,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q010",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 5; 10; 15; 20; …; 50 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "12",
+          "9",
+          "11",
+          "10"
+        ],
+        "a": 3,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 1,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q011",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 2; 4; 6; 8; …; 22 có tất cả bao nhiêu số hạng?",
+        "choices": [
+          "12",
+          "10",
+          "13",
+          "11"
+        ],
+        "a": 3,
+        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "difficulty": 1,
+        "skill": "so-so-hang",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q012",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 1; 2; 3; 5; 8; … Số tiếp theo là:",
+        "choices": [
+          "11",
+          "10",
+          "13",
+          "12"
+        ],
+        "a": 2,
+        "hint": "Mỗi số bằng tổng của hai số đứng ngay trước nó: 3 + 5 = 8.",
+        "difficulty": 3,
+        "skill": "quy-luat-day",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q013",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 0; 3; 6; 9; 12; 15; … Ba số tiếp theo là:",
+        "choices": [
+          "17; 19; 21",
+          "18; 21; 24",
+          "16; 17; 18",
+          "18; 20; 22"
+        ],
+        "a": 1,
+        "hint": "Hai số liền nhau hơn kém nhau mấy đơn vị?",
+        "difficulty": 1,
+        "skill": "quy-luat-day",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q014",
+        "stage": 1
+      },
+      {
+        "q": "Trong dãy 4; 8; 12; …; 40, số 28 là số hạng thứ mấy?",
+        "choices": [
+          "6",
+          "9",
+          "7",
+          "8"
+        ],
+        "a": 2,
+        "hint": "Đếm khoảng cách từ 4 đến 28 (mỗi khoảng 4 đơn vị), rồi cộng 1.",
+        "difficulty": 3,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan6-8-20261001",
+        "id": "toan_day-so-cach-deu_q015",
+        "stage": 1
+      }
+    ]
+  }
+}

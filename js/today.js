@@ -54,6 +54,51 @@ const Today = {
     return pool[Math.floor(r * pool.length)];
   },
 
+  /** Bản đồ id câu → {subject, topic, idx} trong dữ liệu lớp đang học. */
+  _qIndex() {
+    const d = this._data();
+    if (!d) return new Map();
+    if (this._qIdxCache && this._qIdxCache.data === d) return this._qIdxCache.map;
+    const map = new Map();
+    d.subjects.forEach(s => (s.topics || []).forEach(t => (t.questions || []).forEach((q, i) => {
+      if (q.id) map.set(q.id, { s, t, i });
+    })));
+    this._qIdxCache = { data: d, map };
+    return map;
+  },
+
+  /** Câu cần ôn hôm nay: câu sai chưa sửa trước, rồi câu đến hạn (sắp quên). */
+  _reviewItems() {
+    const idx = this._qIndex();
+    const out = [];
+    const seen = new Set();
+    const push = (qid, kind) => {
+      if (seen.has(qid)) return;
+      const hit = idx.get(qid);
+      if (!hit) return;
+      // chỉ ôn câu nằm trong giai đoạn đang chọn
+      const allowed = App._allowedIndices(hit.s, hit.t);
+      if (allowed && !allowed.includes(hit.i)) return;
+      seen.add(qid);
+      out.push({ qid, kind, hit });
+    };
+    (Storage.getUnresolvedWrong ? Storage.getUnresolvedWrong(60) : []).forEach(w => push(w.questionId, 'wrong'));
+    (Storage.getDueReviews ? Storage.getDueReviews(80) : []).forEach(r => push(r.questionId, 'due'));
+    return out;
+  },
+
+  _reviewPool(n) {
+    return this._reviewItems().slice(0, n).map(({ hit }) => ({
+      ...hit.t.questions[hit.i],
+      _idx: hit.i,
+      subjectId: hit.s.id,
+      topicId: (hit.t.id || hit.t.name).toString(),
+      id: hit.t.questions[hit.i].id,
+      _subjectName: hit.s.name,
+      _topicName: hit.t.name
+    }));
+  },
+
   _pendingWrong() {
     const d = this._data();
     if (!d || !Storage.getUnresolvedWrong) return 0;
@@ -81,10 +126,14 @@ const Today = {
     const others = d.subjects.filter(s => s.id !== main.id && s.id !== 'toan-tieng-anh');
     const tasks = [];
 
-    const wrongN = this._pendingWrong();
-    if (wrongN > 0) {
-      const n = Math.min(5, wrongN);
-      tasks.push({ id: 'wrong', kind: 'wrong', n, title: 'Ôn lại ' + n + ' câu con từng sai', sub: 'Sửa lỗi cũ cho thật chắc', minutes: 3, icon: 'redo', done: false });
+    const items = this._reviewItems();
+    if (items.length > 0) {
+      const n = Math.min(8, items.length);
+      const w = items.slice(0, n).filter(x => x.kind === 'wrong').length;
+      const parts = [];
+      if (w) parts.push(w + ' câu từng sai');
+      if (n - w) parts.push((n - w) + ' câu sắp quên');
+      tasks.push({ id: 'review', kind: 'review', n, title: 'Ôn lại ' + n + ' câu', sub: parts.join(' · '), minutes: Math.max(2, Math.round(n * 0.5)), icon: 'redo', done: false });
     }
 
     const used = [];
@@ -136,7 +185,9 @@ const Today = {
     const task = p.tasks[i];
     const d = this._data();
     App.allData = d;
-    if (task.kind === 'wrong') {
+    if (task.kind === 'review') {
+      Quiz.startReviewPool(this._reviewPool(task.n), task.id);
+    } else if (task.kind === 'wrong') {
       Quiz.startWrongReview(task.n, task.id);
     } else if (task.kind === 'mix') {
       const s = this._subject(task.subjectId);
@@ -174,7 +225,7 @@ const Today = {
     p.tasks.forEach(t => {
       if (t.done) return;
       const hit = (info.taskId && info.taskId === t.id)
-        || (t.kind === 'wrong' && info.mode === 'wrong_review')
+        || ((t.kind === 'wrong' || t.kind === 'review') && (info.mode === 'wrong_review' || info.mode === 'review_pool'))
         || (t.kind === 'mix' && info.mode === 'mixed' && info.subjectId === t.subjectId)
         || (t.kind === 'topic' && info.mode === 'practice' && info.topicId === t.topicId);
       if (hit) { t.done = true; changed = true; }
@@ -281,7 +332,12 @@ const Today = {
         ${rows}
       </div>
       <button type="button" class="today-go${allDone ? ' today-go-extra' : ''}" data-act="go">${this.ICONS.play}${btnLabel}</button>
-      <div class="today-links"><button type="button" class="link-btn" data-act="pick">Con muốn tự chọn bài</button></div>`;
+      <div class="today-links"><button type="button" class="link-btn" data-act="pick">Con muốn tự chọn bài</button></div>
+      <div class="today-res">${[...document.querySelectorAll('.side-rail .rail-link')].map(a => `<a href="${a.getAttribute('href')}" target="_blank" rel="noopener noreferrer">${this._esc(a.textContent.trim())}</a>`).join('')}</div>`;
+
+    const mascot = document.getElementById('mascotText');
+    if (mascot) mascot.textContent = allDone ? 'Con đã xong việc hôm nay rồi! Giỏi quá! 🎉'
+      : (doneN === 0 ? 'Hôm nay có ' + p.tasks.length + ' việc nhỏ, mình bắt đầu nhé!' : 'Còn ' + (p.tasks.length - doneN) + ' việc nữa thôi, cố lên con!');
 
     box.querySelectorAll('.tt-row').forEach(b => b.addEventListener('click', () => {
       const i = Number(b.dataset.task);
@@ -361,6 +417,7 @@ const Today = {
     const l = Quiz._lastLaunch;
     if (!l) { this.startExtra(); return; }
     if (l.type === 'wrong') Quiz.startWrongReview(l.limit);
+    else if (l.type === 'pool') Quiz.startReviewPool(this._reviewPool(8));
     else if (l.type === 'mixed') Quiz.startMixed(l.pool, l.subjectName, l.subjectId, l.mixKey);
     else Quiz.start(l.topic, l.subjectName, l.options);
   }
