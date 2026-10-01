@@ -535,3 +535,34 @@
 #backupCard .backup-actions{display:flex;flex-wrap:wrap;gap:10px}
 #backupCard .backup-actions .btn-primary,#backupCard .backup-actions .btn-secondary{width:auto;margin:0;padding:10px 16px;cursor:pointer;display:inline-flex;align-items:center}
 #backupCard .backup-status{margin-top:10px;font-weight:800;color:#0f5132;min-height:1.2em}
+
+/* Báo cáo kỹ năng (Khu vực Bố Mẹ) */
+#skillCard .sk-total{font-weight:800;margin:4px 0 12px;color:#334155}
+#skillCard .sk-suggest{background:#eef6ff;border:1.5px solid #cfe3ff;border-radius:16px;padding:12px 14px;margin-bottom:14px}
+#skillCard .sk-suggest-title{font-weight:900;color:#0d63d8;margin-bottom:6px}
+#skillCard .sk-suggest ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+#skillCard .sk-suggest li{display:flex;gap:8px;line-height:1.45;font-weight:700;color:#1e293b}
+#skillCard .sk-ic{flex:0 0 auto}
+#skillCard .sk-eg{display:block;color:#64748b;font-weight:700;font-size:.9rem;margin-top:2px}
+#skillCard details.sk-subject{border-top:1px solid #e2e8f0;padding:8px 0}
+#skillCard details.sk-subject>summary{cursor:pointer;font-weight:900;font-size:1.05rem;padding:4px 0}
+#skillCard details.sk-subject>summary small{font-weight:700;color:#64748b;margin-left:6px}
+#skillCard .sk-topic{padding:10px 0;border-bottom:1px dashed #e2e8f0}
+#skillCard .sk-topic:last-child{border-bottom:0}
+#skillCard .sk-topic-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800}
+#skillCard .sk-bar{display:flex;height:10px;border-radius:999px;background:#e8eef6;overflow:hidden;margin:6px 0 4px}
+#skillCard .sk-b-solid{background:#21a856}#skillCard .sk-b-once{background:#9ad3a8}#skillCard .sk-b-wrong{background:#ef4444}
+#skillCard .sk-topic-sub{font-size:.88rem;font-weight:700;color:#64748b}
+#skillCard .sk-red{color:#dc2626}
+#skillCard .sk-tag,#skillCard .sk-chip{font-size:.8rem;font-weight:800;border-radius:999px;padding:3px 9px;white-space:nowrap}
+#skillCard .sk-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+#skillCard .sk-chip{white-space:normal}
+#skillCard .sk-weak{background:#fee2e2;color:#b91c1c}
+#skillCard .sk-learning{background:#f1f5f9;color:#475569}
+#skillCard .sk-almost{background:#fef3c7;color:#92400e}
+#skillCard .sk-solid{background:#dcfce7;color:#166534}
+#skillCard .sk-once{background:#9ad3a8}
+#skillCard .sk-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 6px;vertical-align:middle}
+#skillCard .sk-dot.sk-solid{background:#21a856}#skillCard .sk-dot.sk-weak{background:#ef4444}#skillCard .sk-dot.sk-once{background:#9ad3a8}
+#skillCard .sk-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.82rem;font-weight:700;color:#64748b;margin-top:10px}
+#skillCard .sk-note{font-size:.82rem;color:#64748b;font-weight:700;margin:6px 0 0}

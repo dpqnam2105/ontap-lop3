@@ -5,6 +5,15 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Báo cáo kỹ năng cho bố mẹ + Rabbit gợi ý
+- **Khu vực Bố Mẹ → khung "🧩 Kỹ năng của con"** (file mới `js/skill-report.js`):
+  - Tổng: số câu đã gặp, đã vững, đang sai.
+  - **Rabbit gợi ý cho bố mẹ**: tối đa 3 dạng bài con đang sai nhiều nhất (kèm một câu con vừa sai làm ví dụ), dạng sắp vững, dạng đã vững để khen, và nhắc khi có nhiều câu đến hạn ôn.
+  - Theo từng môn → từng chủ đề: thanh màu (xanh đậm = vững, xanh nhạt = đúng 1 lần, đỏ = đang sai), nhãn Cần ôn / Đang học / Sắp vững / Đã vững, và các ô kỹ năng nhỏ "vững/đã làm" (vd. "Bảng nhân 8 3/5").
+  - Xem được trên máy bất kỳ: chọn tên bé → lấy từ bản sao lưu trên mạng (bé đang dùng máy này thì lấy ngay trên máy).
+- **Danh mục kỹ năng** `data-lop3/skills.json`: tên tiếng Việt cho ~200 dạng bài của 4 môn. Câu bảng nhân chia cũ chưa gắn dạng thì tự nhận theo đề (4 × 3 → Bảng nhân 4).
+- Lịch ôn ghi thêm số lần làm và số lần đúng của từng câu (dùng cho báo cáo sau này).
+
 ## 2026-10-01 — Bật sao lưu tự động
 - Gắn URL Apps Script sao lưu (Google Sheet "Thỏ - sao lưu") vào `Cloud.URL`. Đã thử từ web thật: ping, ghi, đọc đều được. Từ giờ sao, sticker, ngọc rồng, tiến độ tự sao lưu; đổi máy gõ đúng tên là lấy lại.
 

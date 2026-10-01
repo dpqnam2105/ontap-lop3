@@ -273,6 +273,8 @@ const Storage = {
         r.due = now + dayMs * this.REVIEW_DAYS[r.box];
         r.last = today;
       }
+      r.n = (r.n || 0) + 1;
+      if (correct) r.ok = (r.ok || 0) + 1;
       if (info) { r.subjectId = info.subjectId || r.subjectId; r.topicId = info.topicId || r.topicId; if (info.idx != null) r.idx = info.idx; }
       map[qid] = r;
       localStorage.setItem(this._scoped(this.REVIEW_KEY), JSON.stringify(map));
