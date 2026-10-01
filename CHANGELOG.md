@@ -5,6 +5,16 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Trang trí hồ sơ (thử nghiệm 3 bộ)
+- **Trang trí hồ sơ kiểu Discord** (file mới `js/decor.js`, `decor.css`, vẽ hoàn toàn bằng CSS, không dùng ảnh): mỗi bộ có **khung avatar**, **bảng tên** và **hiệu ứng nền**.
+  - 🥕 **Vườn Cà Rốt** (Level 1, mở sẵn): khung lá cà rốt, bảng tên cam, lá bay nhẹ.
+  - 🍭 **Lâu Đài Kẹo Ngọt** (Level 5): khung sọc kẹo, bảng tên hồng, bong bóng bay lên.
+  - 🪐 **Dải Ngân Hà** (Level 10): khung có hành tinh bay quanh, bảng tên trăng, trời sao lấp lánh.
+- **Bộ sưu tập → "🎨 Trang trí hồ sơ"**: xem trước, phối từng món từ các bộ đã mở (vd. khung kẹo + nền sao), hoặc bấm "Mặc cả bộ". Bộ chưa mở hiện 🔒 Level cần đạt.
+- **Trang chủ**: thẻ "Hôm nay học gì?" hiện avatar có khung + bảng tên + nền theo đồ đang mặc (thay ô chữ viết tắt cũ). Bấm vào avatar để mở phần trang trí.
+- Lên Level mở được bộ mới → thông báo "🎨 Mở khoá bộ trang trí …".
+- Đồ đang mặc lưu trong hồ sơ bé nên được sao lưu cùng sao, sticker. Máy bật "giảm chuyển động" thì tắt hiệu ứng động.
+
 ## 2026-10-02 — Sửa hình đếm hình chữ nhật
 - Câu "Hình bên có tất cả bao nhiêu hình chữ nhật?" (lưới 2×2): vẽ lại thành 4 ô chữ nhật dẹt, không ô nào trông như hình vuông. Đáp án vẫn 9. Câu đếm hình vuông giữ hình lưới vuông cũ.
 - Hình dải 3 ô: hạ chiều cao để mỗi ô là hình chữ nhật rõ ràng (trước đây gần vuông). Đáp án vẫn 6.

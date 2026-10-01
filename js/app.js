@@ -30,6 +30,7 @@ const App = {
     if (window.Today) Today.render();
     if (window.Cloud) Cloud.init();
     if (window.Speak) Speak.init();
+    if (window.Decor) Decor.init();
   },
 
   _restoreSession() {
@@ -177,6 +178,7 @@ const App = {
     if (name === 'collection') {
       DragonBall._renderCollection();
       if (window.Rewards && Rewards.renderCollection) Rewards.renderCollection();
+      if (window.Decor) Decor.renderCollection();
     }
     window.scrollTo(0, 0);
   },

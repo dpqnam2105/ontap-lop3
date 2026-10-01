@@ -311,11 +311,12 @@ const Today = {
 
     box.innerHTML = `
       <div class="today-head">
+        ${window.Decor ? Decor.render({ size: 'mini', name: App.playerName, sub: (names[App.currentGrade] || '') + ' · <button type="button" class="link-btn" data-act="grade">Đổi lớp</button>' }) : `
         <div class="today-avatar">${this._esc((App.playerName || '?').split(' ').map(w => w[0]).slice(-2).join('').toUpperCase())}</div>
         <div class="today-hello">
           <b>Chào ${this._esc(App.playerName)}!</b>
           <span>${names[App.currentGrade] || ''} · <button type="button" class="link-btn" data-act="grade">Đổi lớp</button></span>
-        </div>
+        </div>`}
         <div class="today-chips">
           <span class="today-chip chip-streak">${this.ICONS.flame}${L.streak} ngày</span>
           <span class="today-chip chip-star">${this.ICONS.star}${L.stars}</span>
@@ -346,6 +347,8 @@ const Today = {
     box.querySelector('[data-act="go"]').addEventListener('click', () => this.startNext());
     box.querySelector('[data-act="pick"]').addEventListener('click', () => App.goLearn());
     box.querySelector('[data-act="grade"]').addEventListener('click', () => App.showScreen('grade'));
+    const av = box.querySelector('.dc-mini .dc-avatar');
+    if (av) { av.title = 'Trang trí hồ sơ'; av.style.cursor = 'pointer'; av.addEventListener('click', () => App.showScreen('collection')); }
   },
 
   /** Thẻ "Tuần này": 7 ô ngày (sáng lên ngày có học) + số câu đúng tuần này so với tuần trước. */

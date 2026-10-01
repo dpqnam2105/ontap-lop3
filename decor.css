@@ -1,0 +1,110 @@
+/* =============================================
+   DECOR.CSS — Trang trí hồ sơ: khung avatar, bảng tên, hiệu ứng nền
+   3 bộ: carrot (Vườn Cà Rốt), candy (Lâu Đài Kẹo Ngọt), galaxy (Dải Ngân Hà)
+   ============================================= */
+
+.dc-card{position:relative;overflow:hidden;border-radius:20px;display:flex;align-items:center;gap:14px;isolation:isolate}
+.dc-big{flex-direction:column;justify-content:center;padding:26px 18px 20px;min-height:230px;text-align:center}
+.dc-mini{flex:1;min-width:0;padding:8px 12px 8px 8px}
+.dc-big{--av:116px}.dc-mini{--av:60px}
+
+/* Nền */
+.dc-bg-carrot{background:linear-gradient(135deg,#eaf8e1 0%,#fff4e2 100%)}
+.dc-bg-candy{background:linear-gradient(135deg,#ffe4f1 0%,#f1e5ff 100%)}
+.dc-bg-galaxy{background:radial-gradient(circle at 50% 45%,rgba(120,170,255,.45),transparent 55%),linear-gradient(135deg,#1c2a6b 0%,#3b2d7d 55%,#6a3f9e 100%)}
+
+/* Hạt hiệu ứng */
+.dc-fx{position:absolute;inset:0;pointer-events:none;z-index:0}
+.dc-fx i{position:absolute;font-style:normal;line-height:1}
+.dc-bg-carrot .dc-fx i{top:-24px!important;font-size:calc(15px * var(--s));opacity:.6;animation:dcFall 10s linear infinite}
+.dc-bg-candy .dc-fx i{top:auto!important;bottom:-24px;width:calc(12px * var(--s));height:calc(12px * var(--s));border-radius:50%;border:2px solid rgba(232,67,147,.45);background:rgba(255,255,255,.55);animation:dcRise 8s linear infinite}
+.dc-bg-galaxy .dc-fx i{width:calc(3px * var(--s));height:calc(3px * var(--s));border-radius:50%;background:#fff;box-shadow:0 0 6px #fff;animation:dcTwinkle 3s ease-in-out infinite}
+.dc-bg-galaxy .dc-fx i:nth-child(3n){background:#ffe27a;box-shadow:0 0 6px #ffe27a}
+@keyframes dcFall{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(300px) rotate(300deg)}}
+@keyframes dcRise{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(-300px);opacity:0}}
+@keyframes dcTwinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
+
+/* Avatar + khung */
+.dc-avatar{position:relative;width:var(--av);height:var(--av);flex-shrink:0;z-index:1}
+.dc-ring{position:absolute;inset:0;border-radius:50%}
+.dc-face{position:absolute;inset:9%;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:calc(var(--av) * .46);line-height:1;box-shadow:inset 0 -4px 0 rgba(0,0,0,.05)}
+.dc-orn{position:absolute;top:-6%;right:-8%;font-size:calc(var(--av) * .3);transform:rotate(14deg);filter:drop-shadow(0 2px 2px rgba(0,0,0,.15))}
+
+.dc-frame-carrot .dc-ring{background:conic-gradient(from 200deg,#ff9f1c,#ffbf47,#7cc950,#3f9b2f,#7cc950,#ffbf47,#ff9f1c);box-shadow:0 6px 16px rgba(255,140,30,.3)}
+.dc-frame-candy .dc-ring{background:repeating-conic-gradient(#ff5fa2 0deg 15deg,#fff 15deg 30deg);box-shadow:0 0 0 3px #ffc4df,0 6px 16px rgba(232,67,147,.3)}
+.dc-frame-galaxy .dc-ring{background:conic-gradient(#3a4fd0,#8d5ce6,#4fc3ff,#3a4fd0);box-shadow:0 0 18px rgba(130,160,255,.75)}
+.dc-orbit{position:absolute;inset:-13%;border-radius:50%;border:1.5px dashed rgba(170,190,255,.85);animation:dcSpin 9s linear infinite}
+.dc-orbit i{position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff6c4,#ffc93c 55%,#e08a00);box-shadow:0 0 8px #ffd25c}
+.dc-mini .dc-orbit i{width:8px;height:8px;margin-left:-4px;top:-4px}
+@keyframes dcSpin{to{transform:rotate(360deg)}}
+
+/* Bảng tên */
+.dc-info{position:relative;z-index:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+.dc-big .dc-info{align-items:center;margin-top:12px}
+.dc-plate{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:6px 14px;border-radius:13px;color:#fff;font-family:var(--font-display,'Baloo 2'),sans-serif;font-weight:900;font-size:1.25rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dc-mini .dc-plate{font-size:1.05rem;padding:4px 11px;border-radius:11px}
+.dc-plate i{font-style:normal}
+.dc-plate-carrot{background:linear-gradient(180deg,#ffa94d,#f47b20);box-shadow:0 3px 0 #c2560a}
+.dc-plate-candy{background:linear-gradient(180deg,#ff8cc0,#e84393);box-shadow:0 3px 0 #b52a6f}
+.dc-plate-galaxy{background:linear-gradient(180deg,#3a4aa8,#6d4bc4);box-shadow:0 3px 0 #1f2560;border:1px solid rgba(255,255,255,.35)}
+.dc-sub{font-size:.86rem;font-weight:800;color:#4a5a70}
+.dc-bg-galaxy .dc-sub{color:#dfe6ff}
+.dc-bg-galaxy .dc-sub .link-btn{color:#ffe27a}
+
+/* Trang chủ: khối mini thay avatar chữ cái */
+.today-head .dc-mini{margin:-4px 0 -4px -4px}
+
+/* Bộ sưu tập: mục Trang trí */
+.decor-panel{padding:20px;margin-bottom:18px}
+.decor-head h3{font-family:var(--font-display,'Baloo 2'),sans-serif;font-size:1.35rem;margin:2px 0 12px}
+.decor-preview{max-width:520px;margin:0 auto 18px}
+.decor-slot{margin-bottom:14px}
+.decor-slot-label{font-weight:900;color:#0f4f9c;margin-bottom:8px}
+.decor-opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.decor-opt{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px;border:2px solid #d9eafd;border-radius:16px;background:#fff;cursor:pointer;font-family:inherit;transition:.15s}
+.decor-opt:hover:not(:disabled){border-color:#7ec3ff;transform:translateY(-2px)}
+.decor-opt.on{border-color:#1f7af5;background:#eef6ff;box-shadow:0 0 0 3px rgba(31,122,245,.12)}
+.decor-opt.locked{opacity:.55;cursor:not-allowed;filter:grayscale(.5)}
+.decor-opt-name{font-weight:900;font-size:.92rem;color:#142033;text-align:center}
+.decor-opt-tag{font-size:.78rem;font-weight:800;color:#64748b;text-align:center}
+.decor-opt.on .decor-opt-tag{color:#1f7af5}
+.decor-sw{display:block}
+.decor-sw-frame{width:42px;height:42px;border-radius:50%;position:relative}
+.decor-sw-frame::after{content:'🐰';position:absolute;inset:6px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:17px}
+.decor-sw-frame.decor-sw-carrot{background:conic-gradient(from 200deg,#ff9f1c,#ffbf47,#7cc950,#3f9b2f,#7cc950,#ffbf47,#ff9f1c)}
+.decor-sw-frame.decor-sw-candy{background:repeating-conic-gradient(#ff5fa2 0deg 15deg,#fff 15deg 30deg);box-shadow:0 0 0 2px #ffc4df}
+.decor-sw-frame.decor-sw-galaxy{background:conic-gradient(#3a4fd0,#8d5ce6,#4fc3ff,#3a4fd0);box-shadow:0 0 8px rgba(130,160,255,.8)}
+.decor-sw-plate{width:64px;height:24px;border-radius:8px}
+.decor-sw-plate.decor-sw-carrot{background:linear-gradient(180deg,#ffa94d,#f47b20);box-shadow:0 3px 0 #c2560a}
+.decor-sw-plate.decor-sw-candy{background:linear-gradient(180deg,#ff8cc0,#e84393);box-shadow:0 3px 0 #b52a6f}
+.decor-sw-plate.decor-sw-galaxy{background:linear-gradient(180deg,#3a4aa8,#6d4bc4);box-shadow:0 3px 0 #1f2560}
+.decor-sw-fx{width:64px;height:40px;border-radius:10px}
+.decor-sw-fx.decor-sw-carrot{background:linear-gradient(135deg,#eaf8e1,#fff4e2);border:1px solid #d6efc9}
+.decor-sw-fx.decor-sw-carrot::after{content:'🍃';display:block;text-align:center;line-height:40px}
+.decor-sw-fx.decor-sw-candy{background:radial-gradient(circle at 30% 60%,#fff 0 5px,transparent 6px),radial-gradient(circle at 70% 35%,#fff 0 4px,transparent 5px),linear-gradient(135deg,#ffd0e6,#e9d6ff)}
+.decor-sw-fx.decor-sw-galaxy{background:radial-gradient(circle at 25% 35%,#fff 0 1.5px,transparent 2px),radial-gradient(circle at 70% 60%,#ffe27a 0 1.5px,transparent 2px),radial-gradient(circle at 50% 25%,#fff 0 1px,transparent 1.5px),linear-gradient(135deg,#1c2a6b,#6a3f9e)}
+.decor-sets{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.decor-set{flex:1 1 150px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 14px;border:1.5px dashed #c9dcf3;border-radius:14px;background:#f8fbff;cursor:pointer;font-family:inherit;text-align:left}
+.decor-set b{font-weight:900;color:#142033}
+.decor-set small{font-weight:800;color:#1f7af5}
+.decor-set.locked{opacity:.6;cursor:not-allowed}
+.decor-set.locked small{color:#64748b}
+.decor-note{margin:12px 0 0;font-size:.88rem;font-weight:700;color:#64748b}
+
+@media(max-width:760px){
+  .dc-big{--av:100px;min-height:210px}
+  .dc-mini{--av:52px}
+  .decor-opts{gap:7px}
+  .decor-opt{padding:10px 4px}
+  .decor-opt-name{font-size:.8rem}
+  .decor-opt-tag{font-size:.7rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .dc-fx i,.dc-orbit{animation:none!important}
+}
+
+.dc-sub{white-space:nowrap}
+@media(max-width:760px){
+  .today-head{flex-wrap:wrap}
+  .today-head .dc-mini{flex:1 1 100%;margin:0}
+}
