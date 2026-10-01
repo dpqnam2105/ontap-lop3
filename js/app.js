@@ -116,11 +116,9 @@ const App = {
       tab.classList.toggle('active', tab.dataset.grade === gradeId);
     });
 
-    if (gradeId === 'lop4' || gradeId === 'lop5') {
-      const gradeLabel = gradeId.replace('lop', 'Lớp ');
-      lbDiv.innerHTML = '<div class="leaderboard-locked"><div class="locked-big">🏆</div><b>Bảng xếp hạng ' + gradeLabel + '</b><span>Lớp này chưa mở. Điểm sẽ được ghi khi có bài học.</span></div>';
-      return;
-    }
+    // Một bảng chung cho mọi lớp; nhãn lớp đặt cạnh tên bé.
+    const tabs = document.getElementById('lbGradeTabs');
+    if (tabs) tabs.classList.add('hidden');
 
     lbDiv.innerHTML = '<div class="loading-text">Đang tải xếp hạng...</div>';
     const data = await API.getLeaderboard();
@@ -133,10 +131,12 @@ const App = {
     const medals = ['🥇', '🥈', '🥉'];
     const rows = this._mergeLeaderboard(data).slice(0, 5).map((p, i) => {
       const icon = medals[i] || (i + 1);
-      return `<tr><td class="lb-rank">${icon}</td><td class="lb-name"><b>${this._escape(p.name)}</b></td><td class="lb-score"><b>${p.totalScore} ⭐</b></td></tr>`;
+      const g = API.gradeOf ? API.gradeOf(p.name) : null;
+      const tag = g ? `<span class="lb-grade lb-grade-${g}">Lớp ${g}</span>` : '';
+      return `<tr><td class="lb-rank">${icon}</td><td class="lb-name">${tag}<b>${this._escape(p.name)}</b></td><td class="lb-score"><b>${p.totalScore} ⭐</b></td></tr>`;
     }).join('');
 
-    lbDiv.innerHTML = `<table class="lb-table">${rows}</table><p class="lb-note">Điểm lớp 2 và lớp 3 đang nằm chung một bảng.</p>`;
+    lbDiv.innerHTML = `<table class="lb-table">${rows}</table>`;
   },
 
   showScreen(name) {

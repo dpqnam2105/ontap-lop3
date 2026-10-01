@@ -167,11 +167,22 @@ const API = {
   // ─── Danh sách bé thật (bố mẹ chọn) ─────────────────────
   // Chỉ hiện các bé này trên bảng xếp hạng / Khu vực Bố Mẹ.
   // Tên phụ (gõ khác) được gộp điểm vào tên chính. Để trống KIDS = hiện tất cả như cũ.
+  // grade = lớp của bé trong năm học bắt đầu từ năm `since` (tháng 9). Lớp tự tăng mỗi tháng 9.
   KIDS: [
-    { name: 'coca', aliases: ['Coca'] },
-    { name: 'Anh Thư', aliases: ['Anh thu japan'] },
-    { name: 'Minh Trí', aliases: ['MINH TRÍ'] }
+    { name: 'coca', aliases: ['Coca'], grade: 2, since: 2026 },
+    { name: 'Anh Thư', aliases: ['Anh thu japan'], grade: 3, since: 2026 },
+    { name: 'Minh Trí', aliases: ['MINH TRÍ'], grade: 3, since: 2026 }
   ],
+
+  /** Lớp hiện tại của bé (tự lên lớp từ 1/9 mỗi năm). null nếu không rõ. */
+  gradeOf(name) {
+    const main = this.kidOf(name);
+    const kid = this.KIDS.find(x => x.name === main);
+    if (!kid || !kid.grade) return null;
+    const now = new Date();
+    const schoolYear = now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1;
+    return Math.min(5, Math.max(1, kid.grade + (schoolYear - (kid.since || schoolYear))));
+  },
 
   _kidKey(n) {
     return String(n || '').normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('vi');
@@ -202,7 +213,7 @@ const API = {
       raw.forEach(p => {
         const main = this.kidOf(p && p.name);
         if (!main) return;
-        const cur = merged.get(main) || { ...p, name: main, totalScore: 0, totalGames: 0 };
+        const cur = merged.get(main) || { ...p, name: main, grade: this.gradeOf(main), totalScore: 0, totalGames: 0 };
         cur.totalScore += Number(p.totalScore || 0);
         cur.totalGames += Number(p.totalGames || 0);
         merged.set(main, cur);

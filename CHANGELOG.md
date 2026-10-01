@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Bảng xếp hạng chung, có nhãn lớp tự lên lớp
+- Bỏ các tab Lớp 2 / Lớp 3 trên bảng xếp hạng: còn **một bảng chung**, cạnh tên mỗi bé có nhãn màu **Lớp 2 / Lớp 3**.
+- Lớp của bé khai trong `API.KIDS` (`js/api.js`): coca lớp 2, Anh Thư lớp 3, Minh Trí lớp 3, tính cho năm học 2026–2027. **Nhãn tự tăng 1 lớp vào 1/9 mỗi năm** (tháng 9/2027: coca lớp 3, Anh Thư và Minh Trí lớp 4), không cần sửa tay.
+- Bỏ dòng ghi chú "Điểm lớp 2 và lớp 3 đang nằm chung một bảng".
+
 ## 2026-10-02 — Bảng xếp hạng chỉ còn 3 bé thật, gộp tên trùng
 - Bảng xếp hạng và danh sách bé trong Khu vực Bố Mẹ chỉ còn **coca, Anh Thư, Minh Trí** (danh sách `API.KIDS` trong `js/api.js`).
 - Gộp tên gõ khác của cùng một bé, cộng dồn điểm và số lượt: "Anh thu japan" → Anh Thư, "MINH TRÍ" → Minh Trí, "Coca" → coca. Báo cáo của bố mẹ cũng lấy đủ nhật ký của mọi cách gõ tên.
