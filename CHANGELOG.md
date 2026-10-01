@@ -5,6 +5,14 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Nút 🔊 Đọc to
+- **Nút "🔊 Đọc to"** ở góc khung câu hỏi (file mới `js/speak.js`): bấm là đọc câu hỏi rồi đọc lần lượt các đáp án theo thứ tự đang hiện; bấm lần nữa (nút "Dừng") để dừng. Tự dừng khi con chọn đáp án hoặc sang câu khác.
+  - Dùng giọng đọc có sẵn của máy, không cần mạng. Câu tiếng Việt đọc giọng Việt, câu tiếng Anh đọc giọng Anh (đoán theo từng câu và từng đáp án).
+  - Tiếng Việt đọc đúng phép tính và đơn vị: × → nhân, : → chia, − → trừ, = ? → bằng mấy, 1/5 → 1 phần 5, cm² → xăng-ti-mét vuông, kg, g, l, mm…; "25 014" đọc liền thành số.
+  - Tiếng Anh: chỗ trống "___" đọc là "blank", "= ?" là "equals what".
+  - Máy không có giọng phù hợp (vd. Windows chưa cài giọng tiếng Việt) thì nút tự ẩn với câu đó.
+- Điện thoại: nút chỉ còn biểu tượng 🔊 cho gọn.
+
 ## 2026-10-02 — Báo cáo kỹ năng cho bố mẹ + Rabbit gợi ý
 - **Khu vực Bố Mẹ → khung "🧩 Kỹ năng của con"** (file mới `js/skill-report.js`):
   - Tổng: số câu đã gặp, đã vững, đang sai.

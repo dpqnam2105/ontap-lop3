@@ -29,6 +29,7 @@ const App = {
     DragonBall._renderHomeWidgets();
     if (window.Today) Today.render();
     if (window.Cloud) Cloud.init();
+    if (window.Speak) Speak.init();
   },
 
   _restoreSession() {
@@ -139,6 +140,7 @@ const App = {
   },
 
   showScreen(name) {
+    if (window.Speak) Speak.stop();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
     const needsName = (name === 'grade' || name === 'subject' || name === 'topic');
     if (needsName && !this.playerName) {

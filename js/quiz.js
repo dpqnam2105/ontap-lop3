@@ -357,6 +357,7 @@ const Quiz = {
     });
 
     this._renderReportButton(q);
+    if (window.Speak) Speak.attach(q, q.subjectId || this.currentSubjectId);
   },
 
   /** Tạo (hoặc cập nhật) nút "Báo lỗi câu này" trên màn làm bài. */
@@ -427,6 +428,7 @@ const Quiz = {
   },
 
   checkAnswer(btn, selected, correct) {
+    if (window.Speak) Speak.stop();
     if (this.questionAnswered && this.mode === 'test') return;
 
     const q = this.questions[this.curIdx];

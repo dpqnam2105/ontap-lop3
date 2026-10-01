@@ -566,3 +566,13 @@
 #skillCard .sk-dot.sk-solid{background:#21a856}#skillCard .sk-dot.sk-weak{background:#ef4444}#skillCard .sk-dot.sk-once{background:#9ad3a8}
 #skillCard .sk-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:.82rem;font-weight:700;color:#64748b;margin-top:10px}
 #skillCard .sk-note{font-size:.82rem;color:#64748b;font-weight:700;margin:6px 0 0}
+
+/* Nút đọc to */
+.question-card{position:relative}
+.speak-btn{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:6px;border:1.5px solid #cfe3ff;background:#fff;color:#0d63d8;border-radius:999px;padding:8px 14px;font-family:var(--font-display);font-weight:900;font-size:1rem;cursor:pointer;box-shadow:0 6px 14px rgba(31,122,245,.12);z-index:2}
+.speak-btn:hover{background:#eef6ff}
+.speak-btn .speak-ic{font-size:1.2rem;line-height:1}
+.speak-btn.speaking{background:#0d63d8;color:#fff;border-color:#0d63d8;animation:speakPulse 1.2s ease-in-out infinite}
+@keyframes speakPulse{50%{box-shadow:0 0 0 8px rgba(13,99,216,.15)}}
+#screenQuiz .quiz-topic-name{padding-right:110px}
+@media(max-width:760px){.speak-btn{top:10px;right:10px;padding:7px 11px;font-size:.9rem}.speak-btn .speak-lbl{display:none}#screenQuiz .quiz-topic-name{padding-right:52px}}
