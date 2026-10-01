@@ -115,12 +115,16 @@ const Speak = {
   },
 
   // ─── Nút trên màn làm bài ───────────────────────────
+  // Chỉ bật cho các môn này (Toán, Tiếng Việt: bé tự đọc đề)
+  ENABLED_SUBJECTS: ['tieng-anh'],
   _q: null,
+  _subject: '',
   _hint: 'vi',
 
   attach(q, subjectId) {
     this.stop();
     this._q = q;
+    this._subject = subjectId || '';
     this._hint = (subjectId === 'tieng-anh' || subjectId === 'toan-tieng-anh') ? 'en' : 'vi';
     this.refreshButton();
   },
@@ -157,7 +161,7 @@ const Speak = {
       card.insertBefore(btn, card.firstChild);
     }
     const lang = this._q ? this.detect(this._q.q, this._hint) : this._hint;
-    const ok = this.supported && this.hasVoice(lang);
+    const ok = this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang);
     btn.classList.toggle('hidden', !ok);
     this._setBtnState(this._speaking);
   },

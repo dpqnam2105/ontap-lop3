@@ -5,6 +5,9 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Nút 🔊 chỉ còn ở Tiếng Anh
+- Nút "Đọc to" chỉ hiện ở môn **Tiếng Anh** (nghe phát âm từ, câu). Toán, Tiếng Việt, Toán Tiếng Anh ẩn nút: bé lớp 3 tự đọc đề, và tự đọc cũng là kỹ năng cần luyện. Muốn bật lại môn nào thì thêm vào `Speak.ENABLED_SUBJECTS` trong `js/speak.js`.
+
 ## 2026-10-02 — Tiếng Việt: 5 dạng đề còn thiếu + câu hỏi dài dễ đọc hơn
 - Thêm 35 câu Tiếng Việt cho 5 dạng trong "Kho dạng đề" chưa có trên web: V02 điền từ vào câu nêu ý nghĩa, V07 tả bằng giác quan nào, V12 từ không cùng nhóm, V30 tìm dấu bạn đặt sai, V32 câu đố điền âm. Chi tiết ở `data-lop3/CHANGELOG.md`.
 - **Câu hỏi dài** (đọc hiểu, đoạn văn): xuống dòng đúng chỗ, chữ nhỏ vừa phải và căn trái, không còn dồn thành một khối chữ to.
