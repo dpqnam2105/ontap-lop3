@@ -343,7 +343,8 @@ const Quiz = {
     document.getElementById('scoreDisp').textContent = this.score;
     document.getElementById('progFill').style.width = (Math.max(0, num - (q._retry ? 0 : 1)) / Math.max(total, 1) * 100) + '%';
 
-    document.getElementById('feedback').style.display = 'none';
+    { const fbBox = document.getElementById('feedback'); fbBox.style.display = ''; fbBox.className = 'feedback'; fbBox.classList.remove('has-mascot'); }
+    this._fbMascot('');
     document.getElementById('btnNext').classList.add('hidden');
 
     const grid = document.getElementById('ansGrid');
@@ -474,6 +475,7 @@ const Quiz = {
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
       fbText.textContent = this.mode === 'test' ? 'Đã ghi nhận đáp án! ✅' : 'Chính xác! Con làm tốt lắm! 👏';
+      this._fbMascot(this.mode === 'test' ? '' : 'ngon-cai');
       fbAns.textContent = this.mode === 'test' ? '' : (q.explain || '');
 
       const btnNext = document.getElementById('btnNext');
@@ -488,6 +490,7 @@ const Quiz = {
 
       fb.className = 'feedback wrong';
       fbText.textContent = this.mode === 'test' ? 'Đã ghi nhận. Sang câu tiếp theo nhé!' : 'Chưa đúng rồi, thử lại nhé!';
+      this._fbMascot(this.mode === 'test' ? '' : 'dong-vien');
       fbAns.textContent = this.mode === 'test'
         ? 'Chế độ kiểm tra không hiện gợi ý để điểm công bằng hơn.'
         : (q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.');
@@ -499,6 +502,17 @@ const Quiz = {
         btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
       }
     }
+  },
+
+  /** Thỏ nhỏ cạnh lời nhận xét (đúng: giơ ngón cái, sai: động viên). */
+  _fbMascot(pose) {
+    const fb = document.getElementById('feedback');
+    if (!fb) return;
+    let img = document.getElementById('fbMascot');
+    if (!pose || !window.Mascot) { if (img) img.remove(); fb.classList.remove('has-mascot'); return; }
+    if (!img) { img = document.createElement('img'); img.id = 'fbMascot'; img.className = 'fb-mascot'; img.alt = ''; fb.insertBefore(img, fb.firstChild); }
+    img.src = Mascot.src(pose);
+    fb.classList.add('has-mascot');
   },
 
   /** Tổng số câu chính của lượt (không tính câu làm lại). */
@@ -531,6 +545,7 @@ const Quiz = {
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
       fbText.textContent = firstTry ? 'Sửa được rồi! Con giỏi lắm 💪' : 'Đúng rồi! Lần sau con sẽ nhớ ngay thôi 🌱';
+      this._fbMascot(firstTry ? 'co-vu' : 'ngon-cai');
       fbAns.textContent = '';
       btnNext.classList.remove('hidden');
       btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
@@ -540,6 +555,7 @@ const Quiz = {
       btn.disabled = true;
       fb.className = 'feedback wrong';
       fbText.textContent = 'Không sao, câu này hơi khó. Xem gợi ý rồi chọn lại nhé!';
+      this._fbMascot('dong-vien');
       fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : '';
     }
   },
@@ -641,6 +657,8 @@ const Quiz = {
     document.getElementById('resScore').textContent = this.score + '/' + total;
 
     const ratio = total ? this.score / total : 0;
+    const resM = document.getElementById('resMascot');
+    if (resM && window.Mascot) resM.innerHTML = Mascot.img(ratio >= 0.8 ? 'an-mung' : (ratio >= 0.5 ? 'co-vu' : 'dong-vien'), 'res-mascot-img');
     const resultMsg = document.querySelector('.result-msg');
     if (resultMsg) {
       const info = this.sessionInfo || {};

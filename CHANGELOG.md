@@ -5,6 +5,16 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Linh vật Thỏ mới (ảnh Gemini) + sửa lỗi không hiện lời nhận xét
+- **Bộ 9 ảnh Thỏ** (Nam tạo bằng Gemini; tách nền, cắt, nén WebP 15–57 KB) ở `images/mascot/`: avatar, vẫy tay, giơ ngón cái, cổ vũ, ôm sao, động viên, đọc sách, ngủ, ăn mừng.
+- Gắn vào web:
+  - Avatar trong khung trang trí (trang chủ, Bộ sưu tập) và logo góc trái: Thỏ avatar thay biểu tượng 🐰.
+  - Thanh bên máy tính: Thỏ vẫy tay.
+  - Thẻ "Hôm nay học gì?": chưa làm việc nào → vẫy tay (việc đầu là Ôn lại → đọc sách); đang làm dở → cổ vũ; xong hết → ôm sao.
+  - Khi làm bài: đúng → Thỏ giơ ngón cái; sai → Thỏ động viên kèm gợi ý; làm lại câu sai đúng ngay → Thỏ cổ vũ.
+  - Màn kết quả: ≥80% → Thỏ ăn mừng cầm cúp; ≥50% → cổ vũ; thấp hơn → động viên.
+- **Sửa lỗi có từ bản đầu**: khung nhận xét sau mỗi câu ("Chính xác!", "Chưa đúng rồi" + 💡 gợi ý) bị ẩn vĩnh viễn nên bé chưa bao giờ thấy gợi ý. Nay hiện đúng.
+
 ## 2026-10-02 — Nhãn Tin vui dễ nhìn hơn
 - Nhãn "📣 Tin vui" đổi nền xanh dương–tím của web; cái loa nằm trong vòng tròn trắng nên không còn lẫn vào nền cam.
 

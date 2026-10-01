@@ -4,6 +4,14 @@
 // Toàn bộ vẽ bằng CSS (decor.css), không cần ảnh.
 // =============================================
 
+const Mascot = {
+  BASE: 'images/mascot/',
+  POSES: ['avatar', 'vay-tay', 'ngon-cai', 'co-vu', 'om-sao', 'dong-vien', 'doc-sach', 'ngu', 'an-mung'],
+  src(pose) { return this.BASE + 'tho-' + (this.POSES.includes(pose) ? pose : 'vay-tay') + '.webp?v=1'; },
+  img(pose, cls, alt) { return '<img class="' + (cls || 'mascot-img') + '" src="' + this.src(pose) + '" alt="' + (alt || 'Thỏ') + '" loading="lazy" decoding="async">'; }
+};
+window.Mascot = Mascot;
+
 const Decor = {
   SETS: [
     {
@@ -84,7 +92,7 @@ const Decor = {
       '<div class="dc-avatar dc-frame-' + e.frame + '">' +
         '<span class="dc-ring"></span>' +
         (e.frame === 'galaxy' ? '<span class="dc-orbit"><i></i></span>' : '') +
-        '<span class="dc-face">🐰</span>' +
+        '<span class="dc-face">' + Mascot.img('avatar', 'dc-face-img', '') + '</span>' +
         (ornament ? '<span class="dc-orn">' + ornament + '</span>' : '') +
       '</div>' +
       '<div class="dc-info">' +

@@ -327,7 +327,7 @@ const Today = {
         <div class="today-level-bar"><div style="width:${Math.min(100, Math.round(L.xp / L.need * 100))}%"></div></div>
         <small>còn ${Math.max(0, L.need - L.xp)} XP lên Level ${L.level + 1}</small>
       </div>
-      <div class="today-say">${this.RABBIT}<div class="today-bubble">${bubble}</div></div>
+      <div class="today-say">${window.Mascot ? Mascot.img(allDone ? 'om-sao' : (doneN > 0 ? 'co-vu' : ((p.tasks[nextI] || {}).id === 'review' ? 'doc-sach' : 'vay-tay')), 'today-rabbit-img') : this.RABBIT}<div class="today-bubble">${bubble}</div></div>
       <div class="today-plan">
         <div class="today-plan-head"><b>Kế hoạch hôm nay</b><span>${doneN}/${p.tasks.length} xong${p.rewarded ? ' · đã nhận ' + this.REWARD + ' ⭐' : ' · xong hết +' + this.REWARD + ' ⭐'}</span></div>
         ${rows}
