@@ -28,6 +28,7 @@ const App = {
     await this._loadData();
     DragonBall._renderHomeWidgets();
     if (window.Today) Today.render();
+    if (window.Cloud) Cloud.init();
   },
 
   _restoreSession() {
@@ -194,6 +195,7 @@ const App = {
     // Lưu tên xong → ở lại Trang chủ (sảnh chờ). Bé bấm "Vào học" ở menu để bắt đầu học.
     this.showScreen('register');
     this._achievementName(this.playerName);
+    if (window.Cloud) Cloud.sync(this.playerName);
   },
 
   /** Đổi khung nhập tên thành lời chào sau khi đã có tên. */

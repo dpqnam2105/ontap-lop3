@@ -5,6 +5,15 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-01 — Sao lưu sao, sticker, ngọc rồng (đổi máy không mất)
+- **Sao lưu tự động lên Google Sheet** (file mới `js/cloud.js`): sau mỗi lần sao/XP/sticker/ngọc rồng thay đổi, web gom toàn bộ dữ liệu của bé (sao, sticker, huy hiệu, Level, ngọc rồng, tiến độ chủ đề, câu sai, lịch ôn, kế hoạch hôm nay) và gửi lên sau vài giây; khi đóng tab cũng gửi nốt.
+  - Đổi máy hoặc xoá trình duyệt: bé gõ đúng tên cũ → web tự lấy lại và báo "☁️ Đã lấy lại ⭐ … sao · … sticker · … ngọc rồng".
+  - Học trên 2 máy: mở web là tự lấy bản tiến xa hơn (theo tổng XP; bằng nhau thì lấy bản mới sửa sau, vd. vừa mua sticker ở máy kia).
+  - Chống mất: máy mới (ít tiến độ hơn) không ghi đè được bản tốt hơn trên mạng; mỗi lần ghi đè, bản cũ được chép sang trang "LichSu" (giữ 500 bản gần nhất).
+  - Máy chủ: Apps Script riêng `backup-apps-script/Code.gs`, không đụng vào bảng xếp hạng cũ. **Chỉ chạy sau khi điền URL vào `Cloud.URL`.**
+- **Khu vực Bố Mẹ → khung "☁️ Sao lưu phần thưởng"**: xem sao/sticker/ngọc rồng của bé trên máy này, giờ sao lưu gần nhất, nút **Sao lưu ngay**, **Tải file sao lưu** (.json) và **Mở file sao lưu** (dùng được cả khi chưa bật máy chủ).
+- Sửa lỗi nhỏ: sticker trong túi đồ bị lỗi ảnh thì hiện emoji thay thế (trước đây báo lỗi JavaScript).
+
 ## 2026-10-01 — Ôn đúng lúc sắp quên + "Đã vững" + gọn giao diện điện thoại + 60 câu mới
 - **Ôn đúng lúc sắp quên** (lặp lại ngắt quãng): mỗi câu con làm được xếp vào 4 hộp. Làm đúng ở một ngày khác thì lên hộp, sau 1 → 3 → 7 → 14 ngày Rabbit mới hỏi lại; làm sai thì về hộp đầu, sáng hôm sau ôn lại.
   - Việc 1 trong "Hôm nay học gì?" giờ là **Ôn lại tối đa 8 câu**: câu từng sai trước, rồi câu đến hạn ôn (ví dụ "1 câu từng sai · 7 câu sắp quên"). Theo giai đoạn đang học.

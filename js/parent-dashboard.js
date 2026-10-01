@@ -95,6 +95,7 @@ const ParentDashboard = {
 
   async _openDashboard() {
     App.showScreen('parent');
+    if (window.Cloud) Cloud.renderParentCard();
 
     const select = document.getElementById('parentNameSelect');
     select.innerHTML = '<option>Đang tải...</option>';
@@ -134,7 +135,7 @@ const ParentDashboard = {
     const note = document.createElement('p');
     note.id = 'parentPrivacyNote';
     note.style.cssText = 'margin:8px 0 0;font-size:.92rem;font-weight:700;color:#475569';
-    note.textContent = 'Chọn tên bé để xem báo cáo, xem được từ bất kỳ máy nào. Riêng sao và sticker nằm trên từng máy; đổi điện thoại thì phần thưởng không đi theo.';
+    note.textContent = 'Chọn tên bé để xem báo cáo, xem được từ bất kỳ máy nào. Sao, sticker, ngọc rồng: xem khung Sao lưu ở cuối trang.';
     host.appendChild(note);
   },
 

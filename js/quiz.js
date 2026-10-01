@@ -1284,7 +1284,7 @@ const Rewards = {
                 '<div class="inventory-item" title="' + name + '">' +
                   '<div class="inventory-item-glow"></div>' +
                   '<img src="images/' + file + '" class="inventory-item-img" alt="' + name + '" ' +
-                    'onerror="this.outerHTML=&amp;quot;<div class=\&amp;quot;inventory-item-emoji\&amp;quot;&amp;gt;' + icon + '&amp;lt;/div&amp;quot;">' +
+                    'data-icon="' + icon + '" onerror="var d=document.createElement(\'div\');d.className=\'inventory-item-emoji\';d.textContent=this.dataset.icon;this.replaceWith(d)">' +
                   '<div class="inventory-item-name">' + name + '</div>' +
                 '</div>';
             }).join('') +
