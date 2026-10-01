@@ -6,7 +6,7 @@
 
 const Cloud = {
   // Điền URL ứng dụng web Apps Script (…/exec) của file backup-apps-script/Code.gs
-  URL: '',
+  URL: 'https://script.google.com/macros/s/AKfycbxA0Br0LUEf9rKDtietHfQmYcA0GyvBf1TyOt6EXlnVK9Uj2kkcpDymJ_jgLAJ9IrnVcg/exec',
   META_PREFIX: 'khoBaiTap_cloudmeta::',
   DEBOUNCE_MS: 4000,
   _timer: null,
