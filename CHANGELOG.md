@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Địa chỉ mới: chamhoc.vercel.app
+- Gắn thêm tên miền **https://chamhoc.vercel.app** cho web (cài trên Vercel, không đổi code). Link cũ `ontap-lop3.vercel.app` vẫn chạy song song.
+- Sao/sticker/tiến độ lưu trong trình duyệt theo từng địa chỉ: lần đầu mở địa chỉ mới, bé gõ lại đúng tên cũ là web tự lấy lại từ bản sao lưu.
+- Các tên đã thử nhưng có người giữ: vuihoc, hocvui, hoc-vui, ontap, hocthem.
+
 ## 2026-10-02 — Làm lại câu sai ngay trong lượt + nhận xét kỹ năng sau lượt
 - **Làm lại câu vừa sai**: câu nào con sai ở lần chọn đầu, 3 câu sau Rabbit hỏi lại câu đó (tiêu đề "🔁 Làm lại câu vừa sai", đáp án xáo lại vị trí).
   - Đúng ngay → "Sửa được rồi! Con giỏi lắm 💪". Sai nữa → hiện gợi ý, con chọn lại rồi đi tiếp như thường, không bị trừ gì.
