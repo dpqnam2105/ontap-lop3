@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-02 — Bảng xếp hạng chỉ còn 3 bé thật, gộp tên trùng
+- Bảng xếp hạng và danh sách bé trong Khu vực Bố Mẹ chỉ còn **coca, Anh Thư, Minh Trí** (danh sách `API.KIDS` trong `js/api.js`).
+- Gộp tên gõ khác của cùng một bé, cộng dồn điểm và số lượt: "Anh thu japan" → Anh Thư, "MINH TRÍ" → Minh Trí, "Coca" → coca. Báo cáo của bố mẹ cũng lấy đủ nhật ký của mọi cách gõ tên.
+- Ẩn các tên thử / lạ (Rabbit, Mạnh Quân, Nhạc Khanh, Ai hỏi việt nam, Test). Dữ liệu gốc trong Google Sheet bảng xếp hạng không bị xoá; muốn thêm bé mới thì thêm tên vào `API.KIDS`.
+
 ## 2026-10-02 — Nút 🔊 chỉ còn ở Tiếng Anh
 - Nút "Đọc to" chỉ hiện ở môn **Tiếng Anh** (nghe phát âm từ, câu). Toán, Tiếng Việt, Toán Tiếng Anh ẩn nút: bé lớp 3 tự đọc đề, và tự đọc cũng là kỹ năng cần luyện. Muốn bật lại môn nào thì thêm vào `Speak.ENABLED_SUBJECTS` trong `js/speak.js`.
 

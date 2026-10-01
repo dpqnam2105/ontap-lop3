@@ -164,11 +164,50 @@ const API = {
 
   // ─── Google Sheets ──────────────────────────────────────
 
+  // ─── Danh sách bé thật (bố mẹ chọn) ─────────────────────
+  // Chỉ hiện các bé này trên bảng xếp hạng / Khu vực Bố Mẹ.
+  // Tên phụ (gõ khác) được gộp điểm vào tên chính. Để trống KIDS = hiện tất cả như cũ.
+  KIDS: [
+    { name: 'coca', aliases: ['Coca'] },
+    { name: 'Anh Thư', aliases: ['Anh thu japan'] },
+    { name: 'Minh Trí', aliases: ['MINH TRÍ'] }
+  ],
+
+  _kidKey(n) {
+    return String(n || '').normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('vi');
+  },
+
+  /** Tên hiển thị chuẩn của 1 tên bất kỳ; null nếu không thuộc danh sách bé thật. */
+  kidOf(name) {
+    if (!this.KIDS.length) return String(name || '').trim();
+    const k = this._kidKey(name);
+    const kid = this.KIDS.find(x => [x.name].concat(x.aliases || []).some(a => this._kidKey(a) === k));
+    return kid ? kid.name : null;
+  },
+
+  /** Mọi cách gõ của cùng 1 bé (để lấy đủ nhật ký). */
+  namesOf(name) {
+    const main = this.kidOf(name);
+    const kid = this.KIDS.find(x => x.name === main);
+    return kid ? [kid.name].concat(kid.aliases || []) : [name];
+  },
+
   async getLeaderboard() {
     try {
       const res = await fetch(`${this.GS_URL}?action=getLeaderboard`);
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      return await res.json();
+      const raw = await res.json();
+      if (!this.KIDS.length || !Array.isArray(raw)) return raw;
+      const merged = new Map();
+      raw.forEach(p => {
+        const main = this.kidOf(p && p.name);
+        if (!main) return;
+        const cur = merged.get(main) || { ...p, name: main, totalScore: 0, totalGames: 0 };
+        cur.totalScore += Number(p.totalScore || 0);
+        cur.totalGames += Number(p.totalGames || 0);
+        merged.set(main, cur);
+      });
+      return Array.from(merged.values()).sort((a, b) => b.totalScore - a.totalScore);
     } catch (e) {
       console.error('getLeaderboard error:', e);
       return [];
@@ -201,15 +240,28 @@ const API = {
 
   /** Lấy log của 1 bé trong N ngày */
   async getLog(name, days = 30) {
-    try {
-      const url = `${this.GS_URL}?action=getLog&name=${encodeURIComponent(name)}&days=${days}`;
-      const res = await fetch(url);
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return await res.json();
-    } catch (e) {
-      console.error('getLog error:', e);
-      return [];
-    }
+    const one = async (n) => {
+      try {
+        const url = `${this.GS_URL}?action=getLog&name=${encodeURIComponent(n)}&days=${days}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const out = await res.json();
+        return Array.isArray(out) ? out : [];
+      } catch (e) {
+        console.error('getLog error:', e);
+        return [];
+      }
+    };
+    // Gộp nhật ký của mọi cách gõ tên (vd. "Anh thu japan" → Anh Thư)
+    const names = this.KIDS.length ? this.namesOf(name) : [name];
+    const lists = await Promise.all(names.map(one));
+    const seen = new Set();
+    return lists.flat().filter(l => {
+      const k = JSON.stringify(l);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    }).sort((a, b) => new Date(b.time) - new Date(a.time));
   }
 };
 
