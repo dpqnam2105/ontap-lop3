@@ -2,6 +2,8 @@
 
 ## Vòng 3 (2026-10-06): sửa theo góp ý Codex trên commit 544bcf6
 
+- **Đọc chữ số 4 (Nam chốt theo sách)**: «tư» sau «mươi» và sau «linh» (24 «hai mươi tư», 104 «một trăm linh tư»); sau «mười» vẫn là «bốn» (14 «mười bốn»). Bỏ chặn các số này khỏi câu đọc/viết số. Test chặn «mươi bốn», «linh bốn», «mười tư», «lẻ», «ngàn», «nhăm» xuất hiện ở bất kỳ lựa chọn nào. Còn chờ: 1000 viết «1 000» hay «1000» (đang để «1 000»).
+
 - **[P2] Bộ chọn**: chỉ dùng tên mẫu có thật (tên sai bị bỏ qua, kể cả `constructor`, `toString`); không còn mẫu nào thì trả `[]` để bên gọi dùng câu tĩnh. `maxLesson`: không truyền = không lọc; `0` = chưa học bài nào → `[]`; giá trị không hợp lệ (null, âm, số lẻ, chuỗi, NaN) → `[]`, không bao giờ mở toàn bộ. `n` không phải số nguyên dương → `[]`. Có test cho từng trường hợp.
 - **[P1 khi tích hợp] Phiên bản**: chọn cách **giữ bộ dựng của phiên bản cũ**. `T_BY_VER = {1: T}`; muốn sửa mẫu thì thêm bảng `T2`, tăng `VERSION`, không sửa bảng v1. `pick()` luôn sinh theo `VERSION` mới, `build()` dựng được mọi phiên bản đã có (id phiên bản tương lai → null). Test giả lập lên v2 (đổi gợi ý mẫu cộng): cả 86 câu v1 trong ảnh chụp vẫn dựng lại y nguyên, câu mới ra `_v2_` với gợi ý mới. Lưu ý: v1 chưa phát hành, nên đợt này còn sửa được khung lời văn; từ lúc nạp lên web thì v1 đóng băng, ảnh chụp cố định bảo vệ.
 - **[P3] Id**: `_v01_`, `_v0_` bị từ chối (chỉ nhận `v` + số không có 0 đứng đầu); tên mẫu chỉ khớp khoá riêng của bảng mẫu.

@@ -9,7 +9,8 @@ const num = s => Number(String(s).replace(/ /g, ''));          // "1 000" → 10
 const B = id => { const q = G.build(id); assert.ok(q, 'build null: ' + id); return q; };
 const ans = q => q.choices[q.a];
 
-// (1a) Cách đọc số — viết tay, KHÔNG sinh từ hàm read(). Phủ: 0, một/mốt, bốn, năm/lăm, linh, tròn chục, tròn trăm, biên.
+// (1a) Cách đọc số — viết tay, KHÔNG sinh từ hàm read(). Phủ: 0, một/mốt, bốn/tư, năm/lăm, linh, tròn chục, tròn trăm, biên.
+//      Chữ số 4 hàng đơn vị: «tư» sau «mươi» và «linh», «bốn» sau «mười» (Nam chốt theo sách).
 const READ = {
   0: 'không', 1: 'một', 5: 'năm', 9: 'chín',
   10: 'mười', 11: 'mười một', 14: 'mười bốn', 15: 'mười lăm', 19: 'mười chín',
@@ -19,6 +20,8 @@ const READ = {
   115: 'một trăm mười lăm', 120: 'một trăm hai mươi', 121: 'một trăm hai mươi mốt', 205: 'hai trăm linh năm',
   250: 'hai trăm năm mươi', 305: 'ba trăm linh năm', 405: 'bốn trăm linh năm', 450: 'bốn trăm năm mươi',
   500: 'năm trăm', 555: 'năm trăm năm mươi lăm', 701: 'bảy trăm linh một', 710: 'bảy trăm mười', 715: 'bảy trăm mười lăm',
+  4: 'bốn', 24: 'hai mươi tư', 44: 'bốn mươi tư', 94: 'chín mươi tư', 104: 'một trăm linh tư', 114: 'một trăm mười bốn',
+  124: 'một trăm hai mươi tư', 140: 'một trăm bốn mươi', 41: 'bốn mươi mốt', 404: 'bốn trăm linh tư', 994: 'chín trăm chín mươi tư',
   999: 'chín trăm chín mươi chín', 1000: 'một nghìn'
 };
 // (1b) Câu viết tay: id → đáp án đúng + (một số) nhiễu bắt buộc phải có, tính tay theo đúng lỗi.
@@ -52,19 +55,18 @@ const CASES = [
 ];
 // (1c) Khung lời văn → phép tính đúng (viết tay). Bẫy: "A ít hơn B" hỏi B → cộng.
 const FRAME_OP = { them: '+', bot: '-', nhieu: '+', it: '-', aItB: '+', aNhieuB: '-' };
-const ALLOWED_WORDS = /^(không|một|mốt|hai|ba|bốn|năm|lăm|sáu|bảy|tám|chín|mười|mươi|trăm|linh|nghìn)( |$)/;
+const ALLOWED_WORDS = /^(không|một|mốt|hai|ba|bốn|tư|năm|lăm|sáu|bảy|tám|chín|mười|mươi|trăm|linh|nghìn)( |$)/;
 
 const tests = {
   'đọc số khớp bảng viết tay (0, mốt, lăm, linh, tròn chục/trăm, 1000)'() {
     for (const [n, w] of Object.entries(READ)) assert.strictEqual(G.read(Number(n)), w, n);
   },
-  'cách đọc chưa chốt (tư/bốn) bị chặn khỏi câu đọc/viết số'() {
-    for (const n of [24, 34, 94, 104, 124, 504, 994]) {
-      assert.ok(G.uncertainReading(n), n);
-      assert.strictEqual(G.build('toan_g13_doc_v1_' + n), null, 'doc ' + n);
-      assert.strictEqual(G.build('toan_g13_viet_v1_' + n), null, 'viet ' + n);
+  'đọc «tư»: câu đọc/viết số có 24, 104…; «bốn» ở vị trí đó không bao giờ là đáp án sai'() {
+    for (const [n, w] of [[24, 'hai mươi tư'], [104, 'một trăm linh tư'], [504, 'năm trăm linh tư'], [994, 'chín trăm chín mươi tư']]) {
+      assert.strictEqual(ans(B('toan_g13_doc_v1_' + n)), w);
+      assert.ok(B('toan_g13_viet_v1_' + n).q.includes('«' + w + '»'), 'viet ' + n);
     }
-    for (const n of [14, 114, 140, 41, 21, 25, 105]) assert.ok(!G.uncertainReading(n), n);
+    assert.strictEqual(ans(B('toan_g13_doc_v1_14')), 'mười bốn');
   },
   'ví dụ viết tay: đáp án đúng + nhiễu bắt buộc'() {
     for (const [id, a, must] of CASES) {
@@ -178,7 +180,7 @@ const tests = {
       if (tpl === 'tong') for (const c of q.choices) if (c !== ans(q)) assert.notStrictEqual(c.split(' + ').reduce((s, x) => s + Number(x), 0), p[0], q.id + ' nhiễu có tổng bằng đáp án');
       if (tpl === 'doc') {
         for (const c of q.choices) {
-          assert.ok(!/(lẻ|ngàn|nhăm|tư)/.test(c), q.id + ' dùng biến thể vùng miền: ' + c);
+          assert.ok(!/(lẻ|ngàn|nhăm|mười tư|mươi bốn|linh bốn)/.test(c), q.id + ' dùng biến thể / cách đọc không theo sách: ' + c);
           let rest = c; while (rest) { const m = ALLOWED_WORDS.exec(rest); assert.ok(m, q.id + ' từ lạ: ' + c); rest = rest.slice(m[0].length); }
         }
         assert.strictEqual(ans(q), G.read(p[0]));
@@ -208,11 +210,14 @@ const tests = {
     const L = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data-lop3', 'skills.json'), 'utf8')).labels.toan;
     for (const [t, T] of Object.entries(G.T)) assert.ok(L[T.skill], t + ': ' + T.skill);
   },
-  'gợi ý không lộ đáp án'() {
-    for (const q of G.pick('goi-y', 2000)) {
-      const a = ans(q);
-      if (/^[\d ]+$/.test(a) && num(a) >= 10) assert.ok(!q.hint.includes(a), q.id + ' gợi ý chứa đáp án');
+  'gợi ý không lộ đáp án: gợi ý không phụ thuộc số trong đề'() {
+    const byTpl = {};
+    for (const q of G.pick('goi-y', 3000)) {
+      const t = G.parse(q.id).tpl;
+      if (t === 'lv') { assert.ok(!/\d/.test(q.hint), q.id + ' gợi ý lời văn có số'); continue; }   // chỉ thay tên người/nơi
+      (byTpl[t] = byTpl[t] || new Set()).add(q.hint);
     }
+    for (const [t, hs] of Object.entries(byTpl)) assert.strictEqual(hs.size, 1, t + ': gợi ý đổi theo câu → có thể lộ đáp án');
   },
 };
 

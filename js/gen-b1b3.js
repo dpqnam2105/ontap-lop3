@@ -18,7 +18,8 @@
 //   Không đủ 3 nhiễu hợp lệ → mẫu từ chối bộ tham số đó (build trả null), bộ chọn câu sinh lại.
 // - Đọc số: dùng cách đọc chuẩn "linh", "mốt", "lăm", "một nghìn". Nhiễu là cách đọc chuẩn
 //   của MỘT SỐ KHÁC (do lỗi viết số), nên biến thể hợp lệ (lẻ, ngàn, nhăm…) không bao giờ là
-//   đáp án sai. Số có cách đọc chưa chốt (… mươi tư/bốn, linh tư/bốn) chưa đưa vào câu đọc/viết.
+//   đáp án sai. Chữ số 4 ở hàng đơn vị đọc «tư» sau «mươi» và sau «linh» (Nam chốt theo sách: 24 «hai mươi tư»,
+//   104 «một trăm linh tư»); sau «mười» vẫn đọc «bốn» (14 «mười bốn»).
 // =============================================
 
 const GenB13 = {
@@ -58,16 +59,10 @@ const GenB13 = {
     if (n < 10) return this.UNITS[n];
     const h = Math.floor(n / 100), t = Math.floor(n / 10) % 10, u = n % 10, U = this.UNITS;
     let two;
-    if (t === 0) two = u === 0 ? '' : 'linh ' + U[u];
+    if (t === 0) two = u === 0 ? '' : 'linh ' + (u === 4 ? 'tư' : U[u]);
     else if (t === 1) two = 'mười' + (u === 0 ? '' : ' ' + (u === 5 ? 'lăm' : U[u]));
-    else two = U[t] + ' mươi' + (u === 0 ? '' : ' ' + (u === 1 ? 'mốt' : u === 5 ? 'lăm' : U[u]));
+    else two = U[t] + ' mươi' + (u === 0 ? '' : ' ' + (u === 1 ? 'mốt' : u === 4 ? 'tư' : u === 5 ? 'lăm' : U[u]));
     return h === 0 ? two : U[h] + ' trăm' + (two ? ' ' + two : '');
-  },
-  /** Cách đọc chưa chốt theo sách (tư/bốn): không dùng trong câu đọc/viết số cho tới khi Nam đối chiếu. */
-  uncertainReading(n) {
-    if (n >= 1000 || n < 10) return false;
-    const h = Math.floor(n / 100), t = Math.floor(n / 10) % 10, u = n % 10;
-    return u === 4 && (t >= 2 || (t === 0 && h >= 1));
   },
 
   // ---------- mô phỏng lỗi (trả số hoặc null) ----------
@@ -207,8 +202,8 @@ const GenB13 = {
       skill: 'read-1000', lesson: 1, n: 1,
       gen(r) { return [GenB13._pickNum(r, 10, 1000)]; },
       build([n]) {
-        if (n < 10 || GenB13.uncertainReading(n)) return null;
-        const ds = GenB13._pick3(n, GenB13._numErrs(n), v => GenB13._ok(v) && v >= 10 && !GenB13.uncertainReading(v));
+        if (n < 10) return null;
+        const ds = GenB13._pick3(n, GenB13._numErrs(n), v => GenB13._ok(v) && v >= 10);
         if (!ds) return null;
         return { q: 'Số ' + GenB13.fmt(n) + ' đọc là:', ans: GenB13.read(n), wrong: ds.map(v => GenB13.read(v)),
           hint: 'Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».',
@@ -220,7 +215,7 @@ const GenB13 = {
       skill: 'write-1000', lesson: 1, n: 1,
       gen(r) { return [GenB13._pickNum(r, 10, 1000)]; },
       build([n]) {
-        if (n < 10 || GenB13.uncertainReading(n)) return null;
+        if (n < 10) return null;
         const ds = GenB13._pick3(n, GenB13._numErrs(n), v => GenB13._ok(v) && v >= 10);
         if (!ds) return null;
         return { q: 'Số «' + GenB13.read(n) + '» viết là:', ans: GenB13.fmt(n), wrong: ds.map(v => GenB13.fmt(v)),

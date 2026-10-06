@@ -5,6 +5,9 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Bộ sinh B1–B3: đọc «tư» theo sách (Nam chốt)
+- `GenB13.read`: 24 «hai mươi tư», 104 «một trăm linh tư», 14 vẫn «mười bốn». Câu đọc/viết số giờ có cả các số này. Test: bảng đọc viết tay thêm 11 số có chữ số 4; «mươi bốn» / «linh bốn» không xuất hiện ở lựa chọn nào. Test "gợi ý không lộ đáp án" đổi sang kiểm tra gợi ý không phụ thuộc số trong đề. Vẫn chưa lên web.
+
 ## 2026-10-06 — Bộ sinh B1–B3: sửa theo góp ý Codex (vẫn chưa lên web)
 - Bộ chọn `GenB13.pick`: bỏ tên mẫu không có thật; không còn mẫu → `[]`; `maxLesson` 0 / không hợp lệ không còn mở toàn bộ nội dung.
 - Giữ bộ dựng theo phiên bản (`T_BY_VER`): sau khi lên phiên bản mới, câu v1 trong lịch ôn vẫn dựng lại y nguyên (có test giả lập v2). Id `_v01_` bị từ chối.

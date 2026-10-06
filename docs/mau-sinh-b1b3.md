@@ -4,11 +4,14 @@ Bộ sinh `js/gen-b1b3.js` **chưa nạp vào web**. Mỗi mẫu 5 câu. Đáp �
 
 ## Đọc số — `doc` · skill `read-1000` · B1
 
-- `toan_g13_doc_v1_160` [độ khó 3] Số 160 đọc là:  
-  một trăm linh sáu _(đảo hàng chục – đơn vị)_ · mười sáu _(bỏ sót chữ số 0)_ · **một trăm sáu mươi** · sáu mươi mốt _(viết ngược)_  
+- `toan_g13_doc_v1_164` [độ khó 2] Số 164 đọc là:  
+  một trăm bốn mươi sáu _(đảo hàng chục – đơn vị)_ · bốn trăm sáu mươi mốt _(viết ngược)_ · **một trăm sáu mươi tư** · sáu trăm mười bốn _(đảo hàng trăm – chục)_  
   _Gợi ý:_ Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».
-- `toan_g13_doc_v1_19` [độ khó 1] Số 19 đọc là:  
-  chín mươi mốt _(đảo hàng chục – đơn vị)_ · **mười chín** · một trăm linh chín _(viết thừa chữ số 0)_ · một trăm chín mươi _(thừa một hàng)_  
+- `toan_g13_doc_v1_69` [độ khó 1] Số 69 đọc là:  
+  chín mươi sáu _(đảo hàng chục – đơn vị)_ · **sáu mươi chín** · sáu trăm linh chín _(viết thừa chữ số 0)_ · sáu trăm chín mươi _(thừa một hàng)_  
+  _Gợi ý:_ Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».
+- `toan_g13_doc_v1_406` [độ khó 3] Số 406 đọc là:  
+  bốn trăm sáu mươi _(đảo hàng chục – đơn vị)_ · **bốn trăm linh sáu** · bốn mươi sáu _(bỏ sót chữ số 0)_ · sáu trăm linh tư _(viết ngược)_  
   _Gợi ý:_ Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».
 - `toan_g13_doc_v1_159` [độ khó 2] Số 159 đọc là:  
   một trăm chín mươi lăm _(đảo hàng chục – đơn vị)_ · chín trăm năm mươi mốt _(viết ngược)_ · năm trăm mười chín _(đảo hàng trăm – chục)_ · **một trăm năm mươi chín**  
@@ -16,26 +19,23 @@ Bộ sinh `js/gen-b1b3.js` **chưa nạp vào web**. Mỗi mẫu 5 câu. Đáp �
 - `toan_g13_doc_v1_717` [độ khó 2] Số 717 đọc là:  
   bảy trăm bảy mươi mốt _(đảo hàng chục – đơn vị)_ · **bảy trăm mười bảy** · một trăm bảy mươi bảy _(đảo hàng trăm – chục)_ · bảy mươi mốt _(thiếu chữ số cuối)_  
   _Gợi ý:_ Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».
-- `toan_g13_doc_v1_203` [độ khó 3] Số 203 đọc là:  
-  hai trăm ba mươi _(đảo hàng chục – đơn vị)_ · hai mươi ba _(bỏ sót chữ số 0)_ · **hai trăm linh ba** · ba trăm linh hai _(viết ngược)_  
-  _Gợi ý:_ Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».
 
 ## Viết số từ cách đọc — `viet` · skill `write-1000` · B1
 
-- `toan_g13_viet_v1_720` [độ khó 3] Số «bảy trăm hai mươi» viết là:  
-  702 _(đảo hàng chục – đơn vị)_ · 72 _(bỏ sót chữ số 0)_ · **720** · 27 _(viết ngược)_  
+- `toan_g13_viet_v1_84` [độ khó 1] Số «tám mươi tư» viết là:  
+  48 _(đảo hàng chục – đơn vị)_ · 804 _(viết thừa chữ số 0)_ · **84** · 840 _(thừa một hàng)_  
   _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
-- `toan_g13_viet_v1_245` [độ khó 2] Số «hai trăm bốn mươi lăm» viết là:  
-  254 _(đảo hàng chục – đơn vị)_ · 542 _(viết ngược)_ · **245** · 425 _(đảo hàng trăm – chục)_  
+- `toan_g13_viet_v1_722` [độ khó 2] Số «bảy trăm hai mươi hai» viết là:  
+  227 _(viết ngược)_ · 272 _(đảo hàng trăm – chục)_ · 72 _(thiếu chữ số cuối)_ · **722**  
+  _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
+- `toan_g13_viet_v1_490` [độ khó 3] Số «bốn trăm chín mươi» viết là:  
+  409 _(đảo hàng chục – đơn vị)_ · 49 _(bỏ sót chữ số 0)_ · 94 _(viết ngược)_ · **490**  
   _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
 - `toan_g13_viet_v1_590` [độ khó 3] Số «năm trăm chín mươi» viết là:  
   509 _(đảo hàng chục – đơn vị)_ · 59 _(bỏ sót chữ số 0)_ · 95 _(viết ngược)_ · **590**  
   _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
 - `toan_g13_viet_v1_814` [độ khó 2] Số «tám trăm mười bốn» viết là:  
   841 _(đảo hàng chục – đơn vị)_ · **814** · 418 _(viết ngược)_ · 184 _(đảo hàng trăm – chục)_  
-  _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
-- `toan_g13_viet_v1_63` [độ khó 1] Số «sáu mươi ba» viết là:  
-  **63** · 36 _(đảo hàng chục – đơn vị)_ · 603 _(viết thừa chữ số 0)_ · 630 _(thừa một hàng)_  
   _Gợi ý:_ Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.
 
 ## Cấu tạo số (gồm … trăm … chục … đơn vị) — `gom` · skill `place-value-1000` · B1
