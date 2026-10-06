@@ -804,7 +804,7 @@ const Cloud = {
       'family-code-missing': '🔑 Cần nhập mã gia đình trên máy này để ghi đè bản trên mạng (ô bên dưới).',
       'family-code-unset': '🔑 Máy chủ sao lưu chưa cài mã gia đình (FAMILY_CODE trong Apps Script) nên chưa cho ghi đè.',
       'family-code-wrong': '🔑 Mã gia đình không đúng. Nhập lại mã ở ô bên dưới.',
-      'family-code-locked': '🔒 Nhập sai mã quá nhiều lần — ghi đè bị khoá 1 giờ. Thử lại sau nhé.'
+      'family-code-locked': '🔒 Máy chủ nhận quá nhiều mã sai nên tạm khoá ghi đè 1 giờ (việc học và sao lưu thường vẫn chạy). Muốn mở ngay: vào Apps Script sao lưu → ⚙️ Cài đặt dự án → Thuộc tính tập lệnh → xoá dòng fc_fail.'
     };
     const c = meta.conflict;
     const conflictBox = c && nm

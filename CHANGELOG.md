@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Kiểm tra mã gia đình trên môi trường thật + hướng dẫn mở khoá
+- Đã thử trên chamhoc.vercel.app với hồ sơ thử riêng "zz kiểm tra" (không đụng dữ liệu các bé): ghi thường → lưu được (ver 1); ghi đè không kèm mã → bị từ chối, dữ liệu giữ nguyên; ghi đè đúng mã (Nam tự nhập trong trình duyệt) → lưu được (ver 2). Sau đó đã xoá mã khỏi trình duyệt dùng để thử.
+- Thêm hướng dẫn mở khoá khi ghi đè bị khoá (do có người gửi nhiều mã sai): chờ 1 giờ, hoặc xoá thuộc tính `fc_fail` trong Apps Script. Ghi ở đầu `Code.gs` (chỉ là chú thích, **không cần triển khai lại**) và trong thông báo ở Khu vực Bố Mẹ.
+- Ghi rõ giới hạn: bộ đếm sai mã dùng chung cả gia đình, nên ai biết đường dẫn máy chủ có thể tạm khoá ghi đè 1 giờ.
+- Phiên bản file `?v=20261006s`.
+
 ## 2026-10-06 — 🔑 Mã gia đình bảo vệ việc ghi đè bản sao lưu (#1, bàn cùng Codex)
 - **Phạm vi bảo vệ**: chỉ chặn **ghi đè** (force) — mở file sao lưu, "Giữ bản máy này", khôi phục bản cất. **Chưa phải đăng nhập**: ai có đường dẫn máy chủ …/exec vẫn **đọc** được và **ghi thường** được (ghi thường vẫn bị chặn nếu bản trên mạng đã đổi, nhờ số phiên bản). Ghi rõ trong `Code.gs`, `cloud.js` và Khu vực Bố Mẹ.
 - **Máy chủ** (`Code.gs`, kiểm tra trong `ScriptLock`, trước mọi thao tác ghi):

@@ -23,6 +23,9 @@
  *   - Chưa cài FAMILY_CODE → mọi lệnh ghi đè bị từ chối ('family-code-unset').
  *   - Sai mã → từ chối ('family-code-wrong'); sai 10 lần trong 1 giờ → khoá ghi đè 1 giờ ('family-code-locked').
  *   - Mã không bao giờ bị ghi vào Sheet, lịch sử hay log.
+ *   GIỚI HẠN: bộ đếm sai mã dùng chung cả gia đình → ai biết URL …/exec cũng có thể cố ý gửi 10 mã sai để tạm khoá
+ *   ghi đè 1 giờ (không ảnh hưởng việc học / sao lưu thường). MỞ KHOÁ: chờ 1 giờ, HOẶC ⚙️ Cài đặt dự án →
+ *   Thuộc tính tập lệnh → xoá dòng fc_fail (mở ngay). Bị khoá lặp lại nhiều lần → đổi URL triển khai mới.
  *
  * SAU KHI SỬA FILE NÀY: Triển khai → Quản lý các bản triển khai → ✏️ → Phiên bản: "Phiên bản mới" → Triển khai
  * (giữ nguyên URL …/exec, không tạo bản triển khai mới).
