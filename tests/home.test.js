@@ -105,11 +105,32 @@ const tests = {
     ];
     assert.strictEqual(run(c, `API.weekScoreFromLogs(__logs, new Date(${ws}))`), 22);
   },
+  async 'getWeekBoard: mất mạng → ok:false, không cache; 1 tên phụ lỗi → ok:false; nhật ký rỗng hợp lệ → 0 điểm ok:true'() {
+    const mk = mode => async url => {
+      const n = decodeURIComponent(/name=([^&]*)/.exec(url)[1]);
+      if (mode === 'all' || mode === n) return { ok: false, status: 500, json: async () => ({}) };
+      if (mode === 'html' && n === 'coca') return { ok: true, status: 200, json: async () => { throw new SyntaxError('<'); } };
+      return { ok: true, status: 200, json: async () => [] };
+    };
+    for (const mode of ['all', 'MINH TRÍ', 'html']) {
+      const c = boot(); c.fetch = mk(mode);
+      const out = await run(c, 'API.getWeekBoard()');
+      assert.strictEqual(out.ok, false, mode);
+      assert.ok(!run(c, 'API._weekCache'), mode + ': không cache');
+    }
+    const c = boot(); c.fetch = mk('none');
+    const out = JSON.parse(JSON.stringify(await run(c, 'API.getWeekBoard()')));
+    assert.strictEqual(out.ok, true);
+    assert.deepStrictEqual(out.rows.map(r => r.week), [0, 0, 0]);
+    assert.ok(run(c, 'API._weekCache'), 'kết quả đầy đủ thì được cache');
+  },
 };
 
-let fail = 0;
-for (const [name, fn] of Object.entries(tests)) {
-  try { fn(); console.log('✔', name); } catch (e) { fail++; console.log('✘', name, '\n   ', e.message); }
-}
-console.log(fail ? fail + ' lỗi' : 'Tất cả đạt');
-process.exit(fail ? 1 : 0);
+(async () => {
+  let fail = 0;
+  for (const [name, fn] of Object.entries(tests)) {
+    try { await fn(); console.log('✔', name); } catch (e) { fail++; console.log('✘', name, '\n   ', e.message); }
+  }
+  console.log(fail ? fail + ' lỗi' : 'Tất cả đạt');
+  process.exit(fail ? 1 : 0);
+})();

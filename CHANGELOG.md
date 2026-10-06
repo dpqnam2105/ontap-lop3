@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Trang chủ: sửa 2 lỗi Codex tìm ra + khung tên trên điện thoại
+- **[P2] Mất mạng bị tính thành 0 điểm**: trước đây tải nhật ký lỗi thì coi như "chưa học", bảng tuần hiện cả 3 bé 0 điểm và "Tuần mới bắt đầu". Nay `API.getLogStrict()` báo lỗi nếu **bất kỳ** bé hay tên phụ nào tải không được; `getWeekBoard()` trả `{ ok: false }`, **không xếp hạng**, **không lưu tạm** kết quả lỗi; trang chủ hiện "Chưa tải được bảng xếp hạng tuần (mạng?)" + nút Thử lại. Báo cáo phụ huynh vẫn dùng `getLog()` như cũ.
+- **[P2] Ngày học 0 câu đúng không được đánh ✓**: số câu đúng chỉ được cộng khi trả lời đúng, nên lượt 0 câu đúng không để lại dấu ngày học, còn bị nhắc "học hôm nay để giữ chuỗi" dù chuỗi vẫn tăng. Nay xong lượt luôn ghi nhận ngày học (`addStudyLog(0)`); thẻ Tuần này đánh ✓ theo **có bản ghi ngày** (hoặc là ngày học gần nhất trong hồ sơ), số câu đúng vẫn tính riêng.
+- **Điện thoại**: khung tên/avatar lên trên kế hoạch (như máy tính), bản gọn; lời chào chỉ còn chữ (không lặp avatar/sao). Thẻ kế hoạch bỏ lớp khung lồng bên trong, bớt khoảng đệm, giữ cỡ chữ → nút Bắt đầu vẫn nằm trên menu đáy ở 360/390/430px (kể cả tên dài).
+- Kiểm thử: `tests/home.test.js` 12 bài (thêm `getWeekBoard` khi mất mạng / 1 tên phụ lỗi / phản hồi hỏng / nhật ký rỗng hợp lệ). `tests/home.e2e.js` 8 nhóm: thêm bảng tuần lỗi mạng, lượt 0 câu đúng chạy qua `Quiz._finish` thật; nút Bắt đầu nay đo so với **mép trên menu đáy** (trước chỉ so với chiều cao màn hình nên bỏ sót bị che). Hai bài mới **bắt được** lỗi ở bản trước.
+- Phiên bản file `?v=20261006v`.
+
 ## 2026-10-06 — Trang chủ: Tin vui chạy chữ như cũ, khung tên/avatar về cột trái (Nam chọn)
 - **Tin vui**: trả lại dòng chữ chạy ở **trên cùng** trang chủ như trước (bỏ bản tĩnh trong cột phải). Giữ lời mới cho tin mốc chuỗi: "đạt mốc N ngày học liên tục".
 - **Khung tên + avatar** (tên, danh hiệu, lớp · đổi lớp, sao, Level): về **cột trái, ngay trên Kế hoạch hôm nay** như trước. Cột phải còn: Tuần này, Bộ sưu tập, Xếp hạng tuần.

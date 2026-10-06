@@ -4,13 +4,15 @@ const { chromium } = require('playwright');
 const assert = require('assert');
 const URL = process.env.BASE_URL || 'http://localhost:8765/';
 
-async function open(b, vp, mobile, name) {
+async function open(b, vp, mobile, name, opts) {
+  opts = opts || {};
   const ctx = await b.newContext({ viewport: vp, isMobile: mobile, hasTouch: mobile });
   await ctx.route('https://script.google.com/**', r => {
     const u = new globalThis.URL(r.request().url()); const a = u.searchParams.get('action');
     const now = Date.now();
     let body = '[]';
     if (a === 'get') body = '{"ok":true,"found":false,"ver":0}';
+    else if (a === 'getLog' && (opts.logFail === 'all' || opts.logFail === u.searchParams.get('name'))) return r.fulfill({ status: 500, body: '<html>lỗi</html>' });
     else if (a === 'getLog') body = JSON.stringify(u.searchParams.get('name') === 'coca' ? [{ time: new Date(now - 36e5).toISOString(), correct: 30, total: 30 }] : []);
     else if (a === 'getLeaderboard') body = '[]';
     else if (r.request().method() === 'POST') body = '{"ok":true,"saved":true,"ver":1}';
@@ -34,21 +36,24 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
   try {
     // 1) Điện thoại 360/390/430: thứ tự khối + nút Bắt đầu nằm trong màn hình đầu, không cuộn ngang
     for (const w of [360, 390, 430]) {
-      const { p, ctx, errs } = await open(b, { width: w, height: w === 360 ? 740 : 844 }, true, 'Anh Thư');
-      const tops = await p.evaluate(() => ['#newsTicker', '#homeGreet', '#todayCard', '#homeProfile', '#weekCard', '#homeCollection', '#homeBoard']
+      const { p, ctx, errs } = await open(b, { width: w, height: w === 360 ? 740 : 844 }, true, w === 360 ? 'Nguyễn Hoàng Minh Trí' : 'Anh Thư');
+      const tops = await p.evaluate(() => ['#newsTicker', '#homeGreet', '#homeProfile', '#todayCard', '#weekCard', '#homeCollection', '#homeBoard']
         .map(s => Math.round(document.querySelector(s).getBoundingClientRect().top)));
       assert.ok(tops.every((t, i) => i === 0 || t > tops[i - 1]), w + 'px thứ tự: ' + tops);
       const m = await p.evaluate(() => { const r = document.querySelector('#todayCard .today-go').getBoundingClientRect();
-        return { bottom: r.bottom, vh: innerHeight, sw: document.documentElement.scrollWidth, cw: innerWidth,
+        const nav = document.querySelector('.side-rail').getBoundingClientRect();   // menu đáy cố định che phần dưới màn hình
+        return { bottom: r.bottom, vh: Math.min(innerHeight, nav.top), sw: document.documentElement.scrollWidth, cw: innerWidth,
           next: document.querySelector('#todayCard .tt-next').getBoundingClientRect().bottom }; });
       assert.ok(m.next < m.vh && m.bottom < m.vh, w + 'px: việc tiếp theo + nút Bắt đầu thấy ngay (' + Math.round(m.bottom) + '/' + m.vh + ')');
       assert.strictEqual(m.sw, m.cw, w + 'px: không cuộn ngang');
-      assert.ok(await visible(p, '.hg-stars'), 'sao ở đầu trang (điện thoại)');
-      assert.ok(!(await visible(p, '.hp-stars')), 'không lặp sao trong hồ sơ (điện thoại)');
+      assert.ok(await visible(p, '.hp-stars'), 'sao ở khung tên');
+      assert.ok(!(await visible(p, '.hg-stars')) && !(await visible(p, '.hg-face')), 'lời chào không lặp avatar/sao');
+      const ph = await p.evaluate(() => document.getElementById('homeProfile').getBoundingClientRect().height);
+      assert.ok(ph < 130, w + 'px: khung tên gọn (' + Math.round(ph) + 'px)');
       const titles = await p.evaluate(() => [...document.querySelectorAll('#screenRegister .dc-title')].filter(e => e.getBoundingClientRect().width > 0).length);
       assert.ok(titles <= 1, 'danh hiệu không lặp');
       assert.deepStrictEqual(errs, []);
-      ok(w + 'px: thứ tự tin vui → lời chào → kế hoạch → hồ sơ → tuần → bộ sưu tập → xếp hạng; Bắt đầu thấy ngay');
+      ok(w + 'px: thứ tự tin vui → lời chào → khung tên → kế hoạch → tuần → bộ sưu tập → xếp hạng; Bắt đầu vẫn thấy ngay');
       await ctx.close();
     }
 
@@ -102,6 +107,41 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
       assert.ok(await p.evaluate(() => document.getElementById('screenCollection').classList.contains('active')), 'Xem phần thưởng → Bộ sưu tập');
       assert.deepStrictEqual(errs, []);
       ok('hoàn thành: chỉ báo sao khi đã ghi nhận; 1 nút chính "Xem phần thưởng"; mở lại không chạy lại, không cộng');
+      await ctx.close();
+    }
+
+    // 5) Bảng tuần: mất mạng / 1 tên phụ lỗi → không xếp hạng, không hiện 0 điểm; thử lại được
+    for (const fail of ['all', 'MINH TRÍ']) {
+      const { p, ctx, errs } = await open(b, { width: 1366, height: 768 }, false, 'Anh Thư', { logFail: fail });
+      await p.waitForTimeout(500);
+      const t = await p.textContent('#homeBoard');
+      assert.ok(t.includes('Chưa tải được bảng xếp hạng tuần'), fail + ': ' + t);
+      assert.ok(!/\d+ điểm/.test(t.split('Tổng thành tích')[0]) && !t.includes('Tuần mới bắt đầu'), fail + ': không xếp hạng / không báo 0 điểm');
+      assert.strictEqual(await p.evaluate(() => !!API._weekCache), false, fail + ': không lưu tạm kết quả lỗi');
+      assert.ok(await visible(p, '#homeBoard [data-act="retry"]'));
+      assert.deepStrictEqual(errs, []);
+      await ctx.close();
+    }
+    ok('bảng tuần: mất mạng hoặc 1 tên phụ lỗi → "Chưa tải được" + Thử lại, không xếp hạng, không cache');
+
+    // 6) Xong lượt mà 0 câu đúng (qua Quiz._finish thật) → hôm nay có ✓, không nhắc "học hôm nay để giữ chuỗi"
+    {
+      const { p, ctx, errs } = await open(b, { width: 390, height: 844 }, true, 'Anh Thư');
+      await p.evaluate(() => { const d = Storage.load(); d.streak = 4; d.lastStudyDate = Today._dateKey(new Date(Date.now() - 864e5)); Storage.save(d);
+        localStorage.removeItem(Storage._scoped(Storage.STUDY_LOG_KEY)); Today.render(); });
+      assert.ok((await p.textContent('#weekCard')).includes('học hôm nay để giữ chuỗi'), 'trước khi học: có nhắc');
+      await p.evaluate(() => { const s = App.allData.subjects[0]; const t = s.topics.find(x => (x.questions || []).length);
+        Quiz.start(t, s.name, { mode: 'practice', subjectId: s.id, count: 3 }); Quiz.score = 0; Quiz._finish(); });
+      await p.waitForTimeout(400);
+      await p.evaluate(() => App.showScreen('register')); await p.waitForTimeout(400);
+      const wk = await p.evaluate(() => ({ t: document.getElementById('weekCard').textContent, todayOn: !!document.querySelector('#weekCard .wk-on .wk-dot') && [...document.querySelectorAll('#weekCard .wk-day')].some(d => d.classList.contains('wk-on') && d.querySelector('small').textContent === ['CN','T2','T3','T4','T5','T6','T7'][new Date().getDay()]),
+        log: JSON.parse(localStorage.getItem(Storage._scoped(Storage.STUDY_LOG_KEY)) || '{}') }));
+      assert.ok(wk.todayOn, 'hôm nay có ✓');
+      assert.ok(!wk.t.includes('học hôm nay để giữ chuỗi'), 'không còn nhắc chưa học: ' + wk.t);
+      assert.ok(wk.t.includes('5 ngày liền'), 'chuỗi tăng: ' + wk.t);
+      assert.strictEqual(Object.values(wk.log)[0], 0, 'bản ghi ngày có, số câu đúng vẫn là 0');
+      assert.deepStrictEqual(errs, []);
+      ok('xong lượt 0 câu đúng → ✓ hôm nay, không nhắc chưa học, chuỗi 5 ngày, số câu đúng vẫn 0');
       await ctx.close();
     }
 

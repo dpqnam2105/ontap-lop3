@@ -249,21 +249,43 @@ const API = {
     }, 0);
   },
 
+  /** Nhật ký của 1 bé (gồm mọi tên phụ), NÉM LỖI nếu bất kỳ tên nào tải không được — để không coi "lỗi" là "chưa học". */
+  async getLogStrict(name, days) {
+    const names = this.KIDS.length ? this.namesOf(name) : [name];
+    const lists = await Promise.all(names.map(async n => {
+      const res = await fetch(`${this.GS_URL}?action=getLog&name=${encodeURIComponent(n)}&days=${days}`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const out = await res.json();
+      if (!Array.isArray(out)) throw new Error('bad log');
+      return out;
+    }));
+    const seen = new Set();
+    return lists.flat().filter(l => { const k = JSON.stringify(l); if (seen.has(k)) return false; seen.add(k); return true; });
+  },
+
   /**
-   * Bảng xếp hạng TUẦN của các bé thật: [{ name, grade, week }] xếp từ cao xuống.
-   * Lấy nhật ký 8 ngày gần nhất của từng bé (gồm tên phụ) rồi lọc từ thứ Hai. Lưu tạm 5 phút.
+   * Bảng xếp hạng TUẦN: { ok: true, rows: [{ name, grade, week }] } xếp từ cao xuống, hoặc { ok: false } nếu
+   * nhật ký của BẤT KỲ bé / tên phụ nào tải lỗi (không xếp hạng khi dữ liệu thiếu). Chỉ lưu tạm 5 phút kết quả đầy đủ.
    */
   async getWeekBoard() {
-    if (this._weekCache && Date.now() - this._weekCache.at < 5 * 60 * 1000) return this._weekCache.rows;
+    if (this._weekCache && Date.now() - this._weekCache.at < 5 * 60 * 1000) return this._weekCache.board;
     const ws = this.weekStart();
     const kids = this.KIDS.length ? this.KIDS.map(k => k.name) : [];
-    const rows = await Promise.all(kids.map(async n => ({
-      name: n, grade: this.gradeOf ? this.gradeOf(n) : null,
-      week: this.weekScoreFromLogs(await this.getLog(n, 8), ws)
-    })));
+    if (!kids.length) return { ok: false, error: 'no kids' };
+    let rows;
+    try {
+      rows = await Promise.all(kids.map(async n => ({
+        name: n, grade: this.gradeOf ? this.gradeOf(n) : null,
+        week: this.weekScoreFromLogs(await this.getLogStrict(n, 8), ws)
+      })));
+    } catch (e) {
+      console.warn('getWeekBoard', e);
+      return { ok: false, error: String(e) };          // không cache kết quả lỗi
+    }
     rows.sort((a, b) => b.week - a.week || a.name.localeCompare(b.name, 'vi'));
-    this._weekCache = { at: Date.now(), rows };
-    return rows;
+    const board = { ok: true, rows };
+    this._weekCache = { at: Date.now(), board };
+    return board;
   },
 
   /** Lưu điểm + log đầy đủ (subject, topic, duration) */

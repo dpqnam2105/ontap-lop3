@@ -787,6 +787,8 @@ const Quiz = {
     Sound.play('win');
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
 
+    // Đánh dấu "hôm nay có học" khi xong lượt, kể cả lượt chưa đúng câu nào (số câu đúng vẫn cộng riêng từng câu)
+    if (Storage.addStudyLog) Storage.addStudyLog(0);
     if (Rewards.touchStreak) Rewards.touchStreak();
 
     App.showScreen('result');

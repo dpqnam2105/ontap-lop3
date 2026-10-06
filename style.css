@@ -689,11 +689,11 @@
 #screenRegister.has-today > #todayCard,#screenRegister.has-today > #homeSide{display:flex!important}
 #screenRegister.has-today > #homeProfile{display:block!important}
 .screen.active.has-today{display:flex;flex-direction:column;gap:16px}
-/* Điện thoại / máy hẹp: tin vui → lời chào → kế hoạch + Bắt đầu → hồ sơ → tuần → bộ sưu tập → xếp hạng */
+/* Điện thoại / máy hẹp: tin vui → lời chào → khung tên (gọn) → kế hoạch + Bắt đầu → tuần → bộ sưu tập → xếp hạng */
 .has-today > #newsTicker{order:0;margin:0}
 .has-today > #homeGreet{order:1}
-.has-today > #todayCard{order:2}
-.has-today > #homeProfile{order:3}
+.has-today > #homeProfile{order:2}
+.has-today > #todayCard{order:3}
 .has-today > #homeSide{order:4}
 body.on-home.home-today .topbar{display:none}
 body.on-home.home-today .main{padding-top:22px}
@@ -758,15 +758,24 @@ body.on-home.home-today .main{padding-top:22px}
 }
 @media (max-width:760px){
   .home-greet{gap:10px}
-  .hg-mascot,.hg-feedback{display:none}
-  .hg-face{display:block;width:48px;height:48px;flex-shrink:0;border-radius:50%;overflow:hidden;border:3px solid #ffd257;background:#fff;cursor:pointer}
-  .hg-face img,.hg-face .dc-face-img,.hg-face .dc-face-av{width:100%;height:100%;object-fit:cover;display:block}
-  .hg-face .dc-face-emoji{width:100%;height:100%;display:grid;place-items:center;font-size:1.6rem}
+  /* Khung tên đã có avatar + sao → lời chào chỉ còn chữ (không lặp avatar/sao) */
+  .hg-mascot,.hg-feedback,.hg-face,.hg-stars{display:none!important}
   .hg-text h1{font-size:1.3rem}
   .hg-text p{font-size:.88rem}
-  .hg-stars{display:inline-flex;font-size:.95rem;padding:4px 10px}
-  .hp-stars{display:none}
   body.on-home.home-today .main{padding-top:12px}
+  .screen.active.has-today{gap:10px}
+  /* Khung tên gọn: bớt khoảng đệm và khoảng cách, giữ cỡ chữ */
+  .home-profile{padding:8px 10px;border-radius:18px}
+  .home-profile .hp-top{gap:8px}
+  .home-profile .dc-card.dc-mini{padding:6px 8px}
+  .home-profile .today-level{margin-top:6px}
+  .home-profile .hp-stars{padding:3px 9px}
+  /* Thẻ kế hoạch gọn: bỏ khung lồng bên trong, bớt khoảng đệm (giữ cỡ chữ) */
+  #todayCard.today-card{padding:12px;gap:10px}
+  #todayCard .today-plan{padding:0;border:0;background:transparent;gap:2px}
+  #todayCard .today-plan-head{padding:0 2px 4px}
+  #todayCard .tt-row{min-height:50px;padding:6px 4px}
+  #todayCard .tt-icon{width:40px;height:40px}
 }
 .today-plan-head{flex-wrap:wrap;row-gap:2px}
 @media (max-width:420px){.today-plan-head span{text-align:left}}

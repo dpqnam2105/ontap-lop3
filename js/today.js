@@ -437,17 +437,22 @@ const Today = {
     const ws = App._weekStart();
     const labels = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
     const todayKey = this._dateKey();
+    let lastDay = null;
+    try { lastDay = Rewards._loadData().lastStudyDate; } catch (e) { lastDay = null; }
+    // Ngày có học = có bản ghi của ngày đó (tạo khi xong lượt, kể cả 0 câu đúng) hoặc là ngày học gần nhất trong hồ sơ.
+    const studied = k => Object.prototype.hasOwnProperty.call(log, k) || k === lastDay;
     let week = 0;
     const cells = labels.map((lb, i) => {
       const d = new Date(ws); d.setDate(ws.getDate() + i);
       const k = this._dateKey(d);
-      const n = log[k] || 0;
+      const n = Number(log[k] || 0);
       week += n;
-      const cls = n > 0 ? 'wk-on' : (k === todayKey ? 'wk-today' : (k < todayKey ? 'wk-miss' : 'wk-future'));
-      return `<div class="wk-day ${cls}" title="${n > 0 ? n + ' câu đúng' : ''}"><span class="wk-dot">${n > 0 ? '✓' : ''}</span><small>${lb}</small></div>`;
+      const on = studied(k);
+      const cls = on ? 'wk-on' : (k === todayKey ? 'wk-today' : (k < todayKey ? 'wk-miss' : 'wk-future'));
+      return `<div class="wk-day ${cls}" title="${on ? n + ' câu đúng' : ''}"><span class="wk-dot">${on ? '✓' : ''}</span><small>${lb}</small></div>`;
     }).join('');
     const streak = this.streakNow();
-    const learnedToday = (log[todayKey] || 0) > 0;
+    const learnedToday = studied(todayKey);
     const head = streak > 0
       ? `<span class="wk-streak">🔥 ${streak} ngày liền${learnedToday ? '' : ' · học hôm nay để giữ chuỗi'}</span>`
       : '<span class="wk-streak wk-streak-new">Học hôm nay để bắt đầu chuỗi 🔥</span>';
@@ -488,11 +493,18 @@ const Today = {
       el.dataset.ready = '1';
       el.querySelector('.hb-total').addEventListener('toggle', e => { if (e.target.open) this._renderTotalBoard(el, me); });
     }
-    let rows = [];
-    try { rows = await API.getWeekBoard(); } catch (e) { rows = []; }
+    let board = null;
+    try { board = await API.getWeekBoard(); } catch (e) { board = null; }
     const medals = ['🥇', '🥈', '🥉'];
     const list = el.querySelector('.hb-list');
-    if (!rows.length) { list.innerHTML = '<div class="loading-text">Chưa tải được bảng xếp hạng.</div>'; return; }
+    if (!board || !board.ok || !board.rows || !board.rows.length) {
+      // Thiếu dữ liệu → không xếp hạng (không hiện 0 điểm như thể chưa học)
+      list.innerHTML = '<p class="hb-note">Chưa tải được bảng xếp hạng tuần (mạng?).</p><button type="button" class="link-btn" data-act="retry">Thử lại</button>';
+      const rb = list.querySelector('[data-act="retry"]');
+      if (rb) rb.addEventListener('click', () => { list.innerHTML = '<div class="loading-text">Đang tải...</div>'; this.renderBoard(); });
+      return;
+    }
+    const rows = board.rows;
     const allZero = rows.every(r => !r.week);
     list.innerHTML = (allZero ? '<p class="hb-note">Tuần mới bắt đầu, học để lên bảng nhé!</p>' : '') +
       rows.map((r, i) => `<div class="hb-row${r.name === me ? ' hb-me' : ''}"><span>${allZero ? '•' : (medals[i] || i + 1)}</span>` +
