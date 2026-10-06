@@ -5,6 +5,18 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Sao lưu chỉ báo "đã lưu" khi máy chủ xác nhận thật (#3, bàn cùng Codex)
+- **Lỗi đã sửa**: trước đây nếu Apps Script lỗi (trả trang HTML thay vì JSON, vd. hết giờ chờ khoá, hết quota) thì web vẫn coi là **đã lưu**; và cờ "có thay đổi" bị xoá **trước** khi gửi nên lỗi xong không gửi lại. Kết quả: có lúc tiến độ chỉ nằm trên máy mà bố mẹ tưởng đã sao lưu.
+- **Cách mới** (`js/cloud.js`): mỗi bé có 2 số trong cloudmeta — `localRev` (số lần dữ liệu trên máy thay đổi) và `savedRev` (bản mới nhất máy chủ đã xác nhận). Chỉ khi HTTP thành công **và** JSON trả `ok: true, saved: true` mới cập nhật `savedRev`, đúng bằng rev của bản đã gửi. Thay đổi phát sinh trong lúc đang gửi vẫn là "chưa lưu" và được gửi tiếp ngay sau.
+- Mỗi lượt gửi giữ cố định tên bé + snapshot + rev; các lượt gửi chạy lần lượt, không chồng nhau. Đổi bé giữa chừng không làm xác nhận nhầm.
+- Lỗi mạng / HTTP / phản hồi hỏng → thử lại sau 30 giây, 2 phút, rồi 5 phút (không gửi dồn dập). Máy chủ từ chối hẳn (quá lớn…) → chờ thay đổi mới. Máy chủ báo "bản trên mạng tiến xa hơn" → ghi nhận xung đột, ngừng tự gửi (bước #2A sẽ làm phần xử lý xung đột).
+- Tải lại trang mà còn thay đổi chưa lưu (của bất kỳ bé nào trên máy) → tự gửi lại. Máy đang dùng bản web cũ: thay đổi sau lần gửi cuối được coi là chưa lưu.
+- Gửi nhanh lúc đóng tab (beacon) không có phản hồi nên **không** đánh dấu đã lưu.
+- Lấy bản trên mạng về → coi như đã đồng bộ; việc làm mới giao diện sau đó không bị tính là thay đổi mới.
+- Khu vực Bố Mẹ → Sao lưu: hiện "⏳ Còn thay đổi chưa sao lưu" hoặc cảnh báo khi trên mạng có bản tiến xa hơn.
+- Không đổi `Code.gs` (không cần triển khai lại Apps Script). Đã chạy 10 kiểm thử: thay đổi trong lúc gửi, HTTP/mất mạng/HTML lỗi, backoff, tải lại trang, đổi bé lúc gửi, beacon, xung đột, lấy bản mạng, máy bản cũ, bản giống hệt.
+- Phiên bản file `?v=20261006j`.
+
 ## 2026-10-06 — Mở bộ sticker "🦕 Thế Giới Khủng Long" (12 sticker)
 - Ảnh do Nam tạo bằng ChatGPT. Mình cắt sát hình, đặt vào khung vuông nền trong suốt, nén WebP 512×512 (36–65 KB/ảnh) ở `images/rewards/stickers/dino-world/`. Ảnh số 10 bị nền đen nên đã tách nền. Ảnh gốc nằm trong thư mục "rabbit avatar/sticker khung long" của Nam.
 - Cửa hàng sao: bộ Khủng Long hết "Sắp ra mắt", đổi bằng sao như bộ 12 Con Giáp (20 → 250 ⭐):

@@ -2,6 +2,7 @@
 // CLOUD.JS — sao lưu sao, sticker, ngọc rồng, tiến độ lên Google Sheet
 // Đổi máy / xoá trình duyệt: gõ đúng tên cũ là lấy lại được.
 // Thêm: tải file sao lưu / mở file sao lưu (không cần mạng).
+// Chỉ coi là "đã lưu" khi máy chủ trả JSON ok:true, saved:true; lỗi thì giữ trạng thái chưa lưu và thử lại.
 // =============================================
 
 const Cloud = {
@@ -89,6 +90,64 @@ const Cloud = {
     } catch (e) { /* bỏ qua */ }
   },
 
+  // ─── Trạng thái lưu ─────────────────────────────────
+  // Mỗi bé có 2 số trong cloudmeta:
+  //   localRev = số lần dữ liệu trên máy thay đổi (tăng ở schedule()).
+  //   savedRev = localRev của bản mới nhất mà MÁY CHỦ đã xác nhận lưu (ok:true, saved:true).
+  // localRev > savedRev → còn thay đổi chưa sao lưu. Lưu trong localStorage nên tải lại trang vẫn biết.
+  RETRY_MS: [30000, 120000, 300000],   // lỗi mạng / HTTP / phản hồi hỏng → thử lại sau 30 giây, 2 phút, rồi 5 phút
+  _fail: 0,
+  _retryAt: 0,
+  _pushing: false,
+  _applying: false,
+  _chain: Promise.resolve(),
+
+  _unsaved(name) {
+    const m = this._meta(name);
+    return (m.localRev || 0) > (m.savedRev || 0);
+  },
+
+  _markSaved(name, rev, extra) {
+    const m = this._meta(name);
+    this._setMeta(name, Object.assign({ savedRev: Math.max(m.savedRev || 0, rev || 0) }, extra || {}));
+  },
+
+  /** Các bé trên máy còn thay đổi chưa sao lưu và nên tự gửi lại. */
+  _pendingNames() {
+    const out = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !k.startsWith(this.META_PREFIX)) continue;
+      let m;
+      try { m = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { continue; }
+      const rev = m.localRev || 0;
+      if (rev <= (m.savedRev || 0)) continue;
+      if (m.conflict) continue;                       // bản trên mạng tiến xa hơn → chờ xử lý, không gửi liên tục
+      if (m.stuckRev != null && rev <= m.stuckRev) continue; // máy chủ đã từ chối đúng bản này → chờ thay đổi mới
+      out.push(m.name || k.slice(this.META_PREFIX.length));
+    }
+    return out;
+  },
+
+  /** Máy đang dùng bản web cũ (chưa có localRev): thay đổi sau lần gửi cuối → coi là chưa lưu. */
+  _migrateMeta() {
+    try {
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith(this.META_PREFIX)) keys.push(k);
+      }
+      keys.forEach(k => {
+        let m;
+        try { m = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { return; }
+        if (m.localRev != null) return;
+        m.localRev = (m.lastChange || 0) > (m.lastPush || 0) ? 1 : 0;
+        m.savedRev = 0;
+        localStorage.setItem(k, JSON.stringify(m));
+      });
+    } catch (e) { /* bỏ qua */ }
+  },
+
   // ─── Mạng ───────────────────────────────────────────
   async fetchRemote(name) {
     const res = await fetch(this.URL + '?action=get&key=' + encodeURIComponent(this._canon(name)) + '&t=' + Date.now());
@@ -96,52 +155,112 @@ const Cloud = {
     return res.json();
   },
 
-  async push(name, force) {
-    if (!this.enabled()) return { ok: false, error: 'off' };
-    const nm = name || Storage.getActiveName();
-    if (!nm) return { ok: false, error: 'no name' };
-    const snap = this.collect(nm);
-    const meta = this.summary(snap);
-    if (!force && !this._hasProgress(meta)) return { ok: false, error: 'empty' };
-    try {
-      const res = await fetch(this.URL, {
-        method: 'POST',
-        body: JSON.stringify({ action: 'save', key: this._canon(nm), meta, snapshot: snap, force: !!force })
-      });
-      const out = await res.json().catch(() => ({ ok: true }));
-      if (out.ok) this._setMeta(nm, { lastPush: Date.now() });
-      return out;
-    } catch (e) {
-      console.warn('Cloud.push', e);
-      return { ok: false, error: String(e) };
-    }
+  /** Gửi bản sao lưu (force = bố mẹ chủ động ghi đè). Mọi lượt gửi chạy lần lượt, không chồng nhau. */
+  push(name, force) {
+    return this._send(name || Storage.getActiveName(), { force: !!force });
   },
 
-  /** Gửi nhanh khi đóng tab / chuyển app (không chờ trả lời). */
+  _send(name, opts) {
+    const job = this._chain.then(() => this._sendNow(name, opts || {}));
+    this._chain = job.catch(() => {});
+    return job;
+  },
+
+  async _sendNow(name, opts) {
+    if (!this.enabled()) return { ok: false, error: 'off' };
+    // Giữ cố định tên bé, rev và snapshot của lượt gửi này (đổi bé giữa chừng không làm xác nhận nhầm)
+    const nm = Storage.normalizeName(name || '');
+    if (!nm) return { ok: false, error: 'no name' };
+    const rev = this._meta(nm).localRev || 0;
+    if (opts.onlyIfUnsaved && !this._unsaved(nm)) return { ok: true, skipped: true };
+    const snap = this.collect(nm);
+    const meta = this.summary(snap);
+    if (!opts.force && !this._hasProgress(meta)) {
+      this._markSaved(nm, rev);                 // chưa có gì để lưu → không thử lại
+      return { ok: false, error: 'empty' };
+    }
+    const body = { action: 'save', key: this._canon(nm), meta, snapshot: snap };
+    if (opts.force) body.force = true;
+    let res;
+    try {
+      res = await fetch(this.URL, { method: 'POST', body: JSON.stringify(body) });
+    } catch (e) {
+      console.warn('Cloud.push', e);
+      return { ok: false, error: String(e), transient: true };
+    }
+    if (!res.ok) return { ok: false, error: 'HTTP ' + res.status, transient: true };
+    let out;
+    try { out = await res.json(); } catch (e) {
+      // Apps Script lỗi (hết giờ chờ khoá, hết quota…) trả về trang HTML chứ không phải JSON → CHƯA lưu
+      return { ok: false, error: 'bad response', transient: true };
+    }
+    if (out && out.ok === true && out.saved === true) {
+      this._markSaved(nm, rev, { lastPush: Date.now(), conflict: null, stuckRev: null });
+      return out;
+    }
+    if (out && out.reason === 'older') {
+      this._setMeta(nm, { conflict: { at: Date.now(), remote: out.meta || null } });
+      return out;
+    }
+    // Máy chủ trả lời nhưng từ chối (quá lớn, thiếu dữ liệu…): gửi lại y nguyên cũng không được
+    this._setMeta(nm, { stuckRev: rev });
+    return Object.assign({}, out || {}, { ok: false, error: (out && out.error) || 'server' });
+  },
+
+  /** Hẹn lượt gửi các thay đổi chưa lưu (không sớm hơn mốc thử lại sau lỗi). */
+  _kick(delay) {
+    if (!this.enabled()) return;
+    const wait = Math.max(delay || 0, this._retryAt - Date.now(), 0);
+    clearTimeout(this._timer);
+    this._timer = setTimeout(() => { this._timer = null; this._drain(); }, wait);
+  },
+
+  async _drain() {
+    if (this._pushing) return;
+    this._pushing = true;
+    let retry = false;
+    try {
+      for (const nm of this._pendingNames()) {
+        const r = await this._send(nm, { onlyIfUnsaved: true });
+        if (r && r.transient) {
+          this._fail++;
+          this._retryAt = Date.now() + this.RETRY_MS[Math.min(this._fail, this.RETRY_MS.length) - 1];
+          retry = true;
+          break;
+        }
+      }
+      if (!retry) { this._fail = 0; this._retryAt = 0; }
+    } catch (e) {
+      console.warn('Cloud._drain', e);
+    } finally {
+      this._pushing = false;
+    }
+    // Lỗi → hẹn theo backoff. Thành công mà vẫn còn rev mới (bé học tiếp trong lúc gửi) → gửi tiếp.
+    if (retry) this._kick(0);
+    else if (this._pendingNames().length) this._kick(1000);
+  },
+
+  /** Gửi nhanh khi đóng tab / chuyển app. Không có phản hồi nên KHÔNG đánh dấu đã lưu. */
   _beacon() {
     if (!this.enabled() || !navigator.sendBeacon) return;
     const nm = Storage.getActiveName();
-    if (!nm || !this._dirty) return;
+    if (!nm || !this._unsaved(nm) || this._meta(nm).conflict) return;
     const snap = this.collect(nm);
     const meta = this.summary(snap);
     if (!this._hasProgress(meta)) return;
     try {
       navigator.sendBeacon(this.URL, JSON.stringify({ action: 'save', key: this._canon(nm), meta, snapshot: snap }));
-      this._dirty = false;
     } catch (e) { /* bỏ qua */ }
   },
 
-  /** Có thay đổi → hẹn vài giây sau mới gửi (gom nhiều thay đổi làm 1). */
+  /** Có thay đổi → tăng localRev, hẹn vài giây sau mới gửi (gom nhiều thay đổi làm 1). */
   schedule() {
+    if (this._applying) return;        // đang chép bản tải về vào máy → không phải thay đổi mới
     const nm = Storage.getActiveName();
-    if (nm) this._setMeta(nm, { lastChange: Date.now() });
-    if (!this.enabled()) return;
-    this._dirty = true;
-    clearTimeout(this._timer);
-    this._timer = setTimeout(() => {
-      this._dirty = false;
-      this.push();
-    }, this.DEBOUNCE_MS);
+    if (!nm) return;
+    const m = this._meta(nm);
+    this._setMeta(nm, { name: Storage.normalizeName(nm), lastChange: Date.now(), localRev: (m.localRev || 0) + 1 });
+    this._kick(this.DEBOUNCE_MS);
   },
 
   /**
@@ -156,15 +275,23 @@ const Cloud = {
     try {
       const r = await this.fetchRemote(nm);
       this._checked[this._canon(nm)] = true;
-      const local = this.summary(this.collect(nm));
+      const localSnap = this.collect(nm);
+      const local = this.summary(localSnap);
       if (r && r.ok && r.found && r.snapshot) {
         const remote = this.summary(r.snapshot);
-        const differs = JSON.stringify(this.collect(nm).keys) !== JSON.stringify(r.snapshot.keys);
+        const differs = JSON.stringify(localSnap.keys) !== JSON.stringify(r.snapshot.keys);
         const remoteBetter = remote.p > local.p || (remote.p === local.p && differs && remote.at > local.at);
         if (remoteBetter) {
-          this.apply(r.snapshot, nm);
-          this._setMeta(nm, { lastChange: remote.at, lastPull: Date.now() });
-          this._refreshUI();
+          this._applying = true;
+          try {
+            this.apply(r.snapshot, nm);
+            // Bản vừa tải về chính là bản trên máy chủ → coi như đã đồng bộ
+            const m = this._meta(nm);
+            this._setMeta(nm, { name: Storage.normalizeName(nm), lastChange: remote.at, lastPull: Date.now(), savedRev: m.localRev || 0, conflict: null, stuckRev: null });
+            this._refreshUI();
+          } finally {
+            this._applying = false;
+          }
           if (!(opts && opts.silent) && this._hasProgress(remote) && !this._hasProgress(local)) {
             this._toast('☁️ Đã lấy lại ⭐ ' + remote.stars + ' sao · ' + remote.stickers + ' sticker · ' + remote.balls + ' ngọc rồng của ' + Storage.normalizeName(nm) + '!');
           }
@@ -174,6 +301,7 @@ const Cloud = {
           await this.push(nm);
           return 'pushed';
         }
+        if (!differs) this._markSaved(nm, this._meta(nm).localRev || 0, { conflict: null }); // trên mạng y hệt máy
         return 'same';
       }
       if (r && r.ok && !r.found) { await this.push(nm); return 'pushed'; }
@@ -185,7 +313,6 @@ const Cloud = {
       this._busy = false;
     }
   },
-
   _refreshUI() {
     try {
       if (window.App) {
@@ -221,9 +348,16 @@ const Cloud = {
     const text = await file.text();
     const snap = JSON.parse(text);
     if (!snap || !snap.keys || !snap.name) throw new Error('File không đúng định dạng sao lưu');
-    this.apply(snap, snap.name);
-    this._setMeta(snap.name, { lastChange: Date.now() });
-    this._refreshUI();
+    this._applying = true;
+    try {
+      this.apply(snap, snap.name);
+      this._refreshUI();
+    } finally {
+      this._applying = false;
+    }
+    // Mở file là thay đổi thật trên máy → tăng localRev để nếu gửi lỗi thì web tự gửi lại
+    const m = this._meta(snap.name);
+    this._setMeta(snap.name, { name: Storage.normalizeName(snap.name), lastChange: Date.now(), localRev: (m.localRev || 0) + 1 });
     if (this.enabled()) await this.push(snap.name, true);
     return this.summary(snap);
   },
@@ -247,7 +381,9 @@ const Cloud = {
       '<h3 class="parent-section-title">☁️ Sao lưu phần thưởng</h3>' +
       (nm ? '<p class="backup-line">Bé đang dùng máy này: <b>' + nm + '</b> · ⭐ ' + sum.stars + ' sao · ' + sum.stickers + ' sticker · ' + sum.balls + ' ngọc rồng</p>' : '<p class="backup-line">Máy này chưa có tên bé.</p>') +
       (this.enabled()
-        ? '<p class="backup-note">Web tự sao lưu lên mạng sau mỗi lượt học và khi mua sticker. Đổi máy hoặc xoá trình duyệt: gõ đúng tên cũ là lấy lại được. Lần sao lưu gần nhất: <b>' + when + '</b>.</p>'
+        ? '<p class="backup-note">Web tự sao lưu lên mạng sau mỗi lượt học và khi mua sticker. Đổi máy hoặc xoá trình duyệt: gõ đúng tên cũ là lấy lại được. Lần sao lưu gần nhất: <b>' + when + '</b>.' +
+          (meta.conflict ? ' <b>⚠️ Trên mạng có bản tiến xa hơn bản ở máy này — bấm "Sao lưu ngay" để chọn giữ bản nào.</b>'
+            : (nm && this._unsaved(nm) ? ' ⏳ Còn thay đổi chưa sao lưu, web sẽ tự gửi lại.' : '')) + '</p>'
         : '<p class="backup-note">Chưa bật sao lưu tự động lên mạng. Trong lúc chờ, bố mẹ có thể tải file sao lưu về giữ.</p>') +
       '<div class="backup-actions">' +
       (this.enabled() && nm ? '<button class="btn-primary" id="btnBackupNow">☁️ Sao lưu ngay</button>' : '') +
@@ -288,6 +424,7 @@ const Cloud = {
   },
 
   init() {
+    this._migrateMeta();
     // Mỗi lần lưu hồ sơ (sao, sticker, XP, ngọc rồng) → hẹn sao lưu
     const orig = Storage.save.bind(Storage);
     Storage.save = (data) => { const r = orig(data); this.schedule(); return r; };
@@ -295,6 +432,8 @@ const Cloud = {
     window.addEventListener('pagehide', () => this._beacon());
     const nm = Storage.getActiveName();
     if (nm) this.sync(nm, { silent: false });
+    // Tải lại trang mà vẫn còn thay đổi chưa lưu (của bất kỳ bé nào trên máy) → khởi động lại việc gửi
+    if (this._pendingNames().length) this._kick(this.DEBOUNCE_MS);
   }
 };
 
