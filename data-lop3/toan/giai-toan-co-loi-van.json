@@ -27,7 +27,19 @@
             "status": "sua-loi",
             "note": "\"hái thêm\" làm vườn ít đi — lời cũ mơ hồ; đáp án giữ 383"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 2
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B2 Ôn tập cộng, trừ trong phạm vi 1000 (tr.9) — cộng trong 1000; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Cửa hàng có 420 quyển vở, đã bán 175 quyển. Hỏi cửa hàng còn lại bao nhiêu quyển vở?",
@@ -44,7 +56,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q002",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 2
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B2 Ôn tập cộng, trừ trong phạm vi 1000 (tr.9) — trừ trong 1000; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Hà có 45 viên bi, Hà nhiều hơn Nam 18 viên. Hỏi Nam có bao nhiêu viên bi?",
@@ -229,7 +253,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q011",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 2
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B2 Ôn tập cộng, trừ trong phạm vi 1000 (tr.9) — trừ trong 1000; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Thỏ đọc mỗi ngày 7 trang sách, đọc trong 6 ngày. Hỏi Thỏ đã đọc tất cả bao nhiêu trang?",

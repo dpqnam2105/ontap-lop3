@@ -17,7 +17,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q001",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "4 × 6 = ?",
@@ -32,7 +44,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q002",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "4 × 7 = ?",
@@ -47,7 +71,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q003",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "4 × 8 = ?",
@@ -62,7 +98,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q004",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "4 × 9 = ?",
@@ -77,7 +125,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q005",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "4 × 10 = ?",
@@ -88,11 +148,31 @@
           "39"
         ],
         "a": 2,
-        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "hint": "Trong bảng nhân 4, đếm thêm 4 đến lần thứ 10.",
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q006",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        },
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "gợi ý dùng bảng đang học (Codex vòng 10)"
+          }
+        ]
       },
       {
         "q": "4 × 4 = ?",
@@ -107,7 +187,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q007",
         "stage": 1,
-        "skill": "times-4"
+        "skill": "times-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 4 = ?",
@@ -149,7 +241,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q009",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "20 : 4 = ?",
@@ -164,7 +268,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q010",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "24 : 4 = ?",
@@ -179,7 +295,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q011",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "28 : 4 = ?",
@@ -194,7 +322,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q012",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "32 : 4 = ?",
@@ -209,7 +349,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q013",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "36 : 4 = ?",
@@ -224,7 +376,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q014",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "40 : 4 = ?",
@@ -239,7 +403,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q015",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "16 : 4 = ?",
@@ -254,7 +430,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q016",
         "stage": 1,
-        "skill": "divide-4"
+        "skill": "divide-4",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B6 Bảng nhân 4, bảng chia 4 (tr.19) — bảng 4; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 4 = 24",
@@ -669,7 +857,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q029",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 3 = ?",
@@ -684,7 +884,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q030",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 4 = ?",
@@ -699,7 +911,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q031",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 5 = ?",
@@ -714,7 +938,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q032",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 6 = ?",
@@ -729,7 +965,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q033",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 7 = ?",
@@ -744,7 +992,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q034",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 8 = ?",
@@ -759,7 +1019,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q035",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 9 = ?",
@@ -774,7 +1046,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q036",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "6 × 10 = ?",
@@ -785,11 +1069,31 @@
           "59"
         ],
         "a": 2,
-        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "hint": "Trong bảng nhân 6, đếm thêm 6 đến lần thứ 10.",
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q037",
         "stage": 1,
-        "skill": "times-6"
+        "skill": "times-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        },
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "gợi ý dùng bảng đang học (Codex vòng 10)"
+          }
+        ]
       },
       {
         "q": "3 × 6 = ?",
@@ -866,7 +1170,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q040",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "18 : 6 = ?",
@@ -881,7 +1197,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q041",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "24 : 6 = ?",
@@ -896,7 +1224,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q042",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "30 : 6 = ?",
@@ -911,7 +1251,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q043",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "36 : 6 = ?",
@@ -926,7 +1278,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q044",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "42 : 6 = ?",
@@ -941,7 +1305,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q045",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "48 : 6 = ?",
@@ -956,7 +1332,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q046",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "54 : 6 = ?",
@@ -971,7 +1359,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q047",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "60 : 6 = ?",
@@ -986,7 +1386,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q048",
         "stage": 1,
-        "skill": "divide-6"
+        "skill": "divide-6",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B9 Bảng nhân 6, bảng chia 6 (tr.28) — bảng 6; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  6 × ? = 42",
@@ -1577,7 +1989,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q066",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 3 = ?",
@@ -1592,7 +2016,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q067",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 4 = ?",
@@ -1607,7 +2043,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q068",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 5 = ?",
@@ -1622,7 +2070,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q069",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 6 = ?",
@@ -1637,7 +2097,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q070",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 7 = ?",
@@ -1652,7 +2124,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q071",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 8 = ?",
@@ -1667,7 +2151,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q072",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 9 = ?",
@@ -1682,7 +2178,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q073",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "7 × 10 = ?",
@@ -1693,11 +2201,31 @@
           "77"
         ],
         "a": 1,
-        "hint": "Nhân với 10 thì viết thêm chữ số 0.",
+        "hint": "Trong bảng nhân 7, đếm thêm 7 đến lần thứ 10.",
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q074",
         "stage": 1,
-        "skill": "times-7"
+        "skill": "times-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        },
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "gợi ý dùng bảng đang học (Codex vòng 10)"
+          }
+        ]
       },
       {
         "q": "5 × 7 = ?",
@@ -1774,7 +2302,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q077",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "21 : 7 = ?",
@@ -1789,7 +2329,19 @@
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q078",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "28 : 7 = ?",
@@ -1804,7 +2356,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q079",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "35 : 7 = ?",
@@ -1819,7 +2383,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q080",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "42 : 7 = ?",
@@ -1834,7 +2410,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q081",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "49 : 7 = ?",
@@ -1849,7 +2437,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q082",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "56 : 7 = ?",
@@ -1864,7 +2464,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q083",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "63 : 7 = ?",
@@ -1879,7 +2491,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q084",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "70 : 7 = ?",
@@ -1894,7 +2518,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q085",
         "stage": 1,
-        "skill": "divide-7"
+        "skill": "divide-7",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B10 Bảng nhân 7, bảng chia 7 (tr.31) — bảng 7; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  7 × ? = 56",
@@ -2474,7 +3110,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q103",
         "stage": 1,
-        "skill": "times-3"
+        "skill": "times-3",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 5
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B5 Bảng nhân 3, bảng chia 3 (tr.16) — bảng 3; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "5 × 9 = ?",
@@ -2489,7 +3137,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q104",
         "stage": 1,
-        "skill": "times-5"
+        "skill": "times-5",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 4
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B4 Ôn tập bảng nhân 2, 5, bảng chia 2, 5 (tr.14) — bảng 5; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số 42 có trong bảng nhân nào dưới đây?",
@@ -2785,7 +3445,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q113",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 3 = ?",
@@ -2801,7 +3473,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q114",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 4 = ?",
@@ -2817,7 +3501,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q115",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 5 = ?",
@@ -2833,7 +3529,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q116",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 6 = ?",
@@ -2849,7 +3557,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q117",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 7 = ?",
@@ -2865,7 +3585,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q118",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 8 = ?",
@@ -2881,7 +3613,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q119",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 9 = ?",
@@ -2897,7 +3641,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q120",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 10 = ?",
@@ -2913,7 +3669,19 @@
         "skill": "times-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q121",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "16 : 8 = ?",
@@ -2929,7 +3697,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q122",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "24 : 8 = ?",
@@ -2945,7 +3725,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q123",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "32 : 8 = ?",
@@ -2961,7 +3753,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q124",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "40 : 8 = ?",
@@ -2977,7 +3781,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q125",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "48 : 8 = ?",
@@ -2993,7 +3809,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q126",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "56 : 8 = ?",
@@ -3009,7 +3837,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q127",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "64 : 8 = ?",
@@ -3025,7 +3865,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q128",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "72 : 8 = ?",
@@ -3041,7 +3893,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q129",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "80 : 8 = ?",
@@ -3057,7 +3921,19 @@
         "skill": "divide-8",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q130",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B11 Bảng nhân 8, bảng chia 8 (tr.33) — bảng 8; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 2 = ?",
@@ -3073,7 +3949,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q131",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 3 = ?",
@@ -3089,7 +3977,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q132",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 4 = ?",
@@ -3105,7 +4005,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q133",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 5 = ?",
@@ -3121,7 +4033,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q134",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 6 = ?",
@@ -3137,7 +4061,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q135",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 7 = ?",
@@ -3153,7 +4089,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q136",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 8 = ?",
@@ -3169,7 +4117,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q137",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 9 = ?",
@@ -3185,7 +4145,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q138",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 10 = ?",
@@ -3201,7 +4173,19 @@
         "skill": "times-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q139",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "18 : 9 = ?",
@@ -3217,7 +4201,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q140",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "27 : 9 = ?",
@@ -3233,7 +4229,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q141",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "36 : 9 = ?",
@@ -3249,7 +4257,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q142",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "45 : 9 = ?",
@@ -3265,7 +4285,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q143",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "54 : 9 = ?",
@@ -3281,7 +4313,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q144",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "63 : 9 = ?",
@@ -3297,7 +4341,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q145",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "72 : 9 = ?",
@@ -3313,7 +4369,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q146",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "81 : 9 = ?",
@@ -3329,7 +4397,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q147",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "90 : 9 = ?",
@@ -3345,7 +4425,19 @@
         "skill": "divide-9",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q148",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "muc-luc",
+          "note": "Mục lục tập một: B12 Bảng nhân 9, bảng chia 9 (tr.36) — bảng 9; tra bảng / một phép tính trực tiếp",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Mỗi túi có 8 cái kẹo. Hỏi 6 túi có bao nhiêu cái kẹo?",

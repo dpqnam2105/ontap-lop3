@@ -7,6 +7,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-07 (Claude — vòng 10, lô 1, Codex duyệt)
+- Toán / Bảng nhân, chia + Ôn tập + Giải toán — `lesson` cho 93 câu (basis muc-luc); on-tap q006 → B10 suy-luan.
+- Sửa gợi ý bang-nhan q006, q037, q074 (đếm thêm đến lần thứ 10), on-tap q006 ("Đổi thành 7 × 8 rồi dùng bảng nhân 7."). Skill on-tap q006 → times-7, q008 → divide-8.
+
 ## 2026-10-07 (Claude — vòng 9, gắn bài theo trang SGK, Codex duyệt)
 - Toán / Bảng nhân, chia — `lesson` cho q008, q039, q076, q107, q109 (B10), q038 (B5), q075 (B4), q058, q095 (B9), q018/q052/q089 (B8), q049 (B9), q086 (B10), q017, q050, q087, q019, q051, q088 (B13). Sửa gợi ý q038, q075, q018, q049, q086, q052, q089.
 - Toán / Xem đồng hồ + Ôn tập q013 — B7. Toán / Một phần mấy — 30 câu B14. Toán / Đo lường — 6 câu `lessonRef.basis = nen`, không có `lesson`.

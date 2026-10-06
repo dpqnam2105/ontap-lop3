@@ -63,13 +63,19 @@ const G13 = 'Nền số đến 1000';
     assert.ok(mix.every(n => n <= 1), 'đề trộn tuần: câu có mốc bài đều ≤ B1');
     // d) trộn vào chủ đề tĩnh: lời văn là B2 → không được trộn khi mới học đến Bài 1
     await toToan(p);
+    // (sau vòng 10 mọi câu GĐ1 của chủ đề lời văn đều ≥ B2 → ở Bài 1 cả chủ đề ẩn, không có lượt nào để trộn)
+    assert.strictEqual(await card(p, 'Giải toán có lời văn').count(), 0, 'Bài 1: chủ đề lời văn không có câu nào → ẩn');
+    // Bài 2: được trộn lời văn sinh (B2), nhưng mọi câu trong lượt đều ≤ B2
+    await p.selectOption('#lessonSelect', '2'); await p.waitForTimeout(400);
     await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
-    q = await sess(p); assert.ok(q.length && q.every(y => y.topicId !== 'toan_g13'), 'Bài 1: không trộn câu lời văn sinh (B2)');
+    q = await sess(p); assert.ok(q.length && q.every(y => y.lesson === null || y.lesson <= 2), 'Bài 2: lượt lời văn chỉ có câu ≤ B2');
+    await toToan(p); await p.selectOption('#lessonSelect', '1'); await p.waitForTimeout(400);
     // câu tĩnh đã ghi số bài cũng bị lọc: Bài 1 → ẩn câu bảng 4 đã gắn B6, câu chưa gắn vẫn hiện
     const st = await p.evaluate(() => { const s = App.allData.subjects.find(x => x.id === 'toan'); const t = s.topics.find(x => x.id === 'toan_bang-nhan-chia');
       const a = new Set(App._allowedIndices(s, t)); const at = id => a.has(t.questions.findIndex(q => q.id === id));
-      return { q020: at('toan_bang-nhan-chia_q020'), q001: at('toan_bang-nhan-chia_q001') }; });
-    assert.ok(!st.q020 && st.q001, 'câu tĩnh có lesson B6 bị ẩn khi mới học Bài 1; câu chưa gắn vẫn hiện');
+      const free = t.questions.filter(q => !q.lesson).map(q => q.id).filter(at);
+      return { q020: at('toan_bang-nhan-chia_q020'), free: free.length }; });
+    assert.ok(!st.q020 && st.free > 0, 'câu tĩnh có lesson B6 bị ẩn khi mới học Bài 1; câu chưa gắn vẫn hiện (' + st.free + ')');
     // Đợt 9: mỗi câu tĩnh có lesson mở đúng ở mốc của nó, ẩn ở mốc ngay trước; câu không gắn luôn hiện
     const lv = await p.evaluate(() => {
       const s = App.allData.subjects.find(x => x.id === 'toan'); const out = { mismatch: [], spot: {}, tagged: 0 };
@@ -93,7 +99,7 @@ const G13 = 'Nền số đến 1000';
       return out;
     });
     assert.deepStrictEqual(lv.mismatch, [], 'mọi câu có lesson mở đúng mốc');
-    assert.ok(lv.tagged >= 99, 'đủ câu đã gắn bài (' + lv.tagged + ')');
+    assert.ok(lv.tagged >= 193, 'đủ câu đã gắn bài (' + lv.tagged + ')');
     for (const [id, v] of Object.entries(lv.spot)) assert.deepStrictEqual(v, [true, false], id + ' mở/ẩn đúng mốc');
     assert.deepStrictEqual(lv.doLuong, [true, true], 'câu độ dài / ước lượng kg không gắn bài, luôn hiện');
     // bỏ chọn → về hành vi giai đoạn

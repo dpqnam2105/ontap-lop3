@@ -6,6 +6,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 ---
 
 
+## 2026-10-07 — Vòng 10: ghi bài lô 1 (93 câu bảng trực tiếp + lời văn B2), đủ 193/199 câu core GĐ1
+- `tools/apply_lesson_gd1_20261007b.py`: 93 câu → bài bảng tương ứng (B4/B5/B6/B9/B10/B11/B12) và B2, basis `muc-luc` (Codex duyệt).
+- on-tap q006 (8 × 7) → B10 `suy-luan`, gợi ý "Đổi thành 7 × 8 rồi dùng bảng nhân 7.", skill `times-7`; on-tap q008 skill `divide-8`.
+- Gợi ý bang-nhan q006/q037/q074 (nhân với 10) đổi theo bảng đang học. Không đổi đề, đáp án, id.
+- Tổng: 193 câu có `lesson` (muc-luc 93, trang-sach 85, suy-luan 15) + 6 câu `nen`. Mã phiên bản `?v=20261007c`.
+
 ## 2026-10-07 — Vòng 9: ghi bài cho 56 câu Toán GĐ1 theo trang SGK (Codex duyệt)
 - `tools/apply_lesson_gd1_20261007.py`: đổi chỗ thừa số → B10 (q038 → B5, q075 → B4 sau khi đổi gợi ý về bảng 3/bảng 5); quan hệ nhân–chia q058, q095 → B9; tìm thành phần a × ? = c, a : ? = c → B8/B9/B10 (gợi ý đổi sang tra bảng), ? × b = c, ? : b = c → B13; đồng hồ/lịch → B7; 30 câu "Một phần mấy" → B14; 6 câu độ dài/ước lượng kg ghi chú nền (không gắn bài).
 - Nâng bằng chứng lên `trang-sach` cho các câu đã ghi có trang tương ứng (giữ `upgradedFrom`). Tổng: 99 câu có bài (trang-sach 85, suy-luan 14) + 6 câu nền. Chi tiết `docs/doi-chieu-sgk-toan3-t1.md` mục 6.

@@ -38,5 +38,5 @@ for (const sub of fs.readdirSync(DIR)) {
   }
 }
 assert.deepStrictEqual(errs, []);
-assert.ok(tagged >= 99, 'số câu đã gắn bài: ' + tagged);
+assert.ok(tagged >= 193, 'số câu đã gắn bài: ' + tagged);
 console.log('✔ nhãn bài: ' + n + ' câu, ' + tagged + ' câu có lesson, ' + nen + ' câu ghi chú nền');

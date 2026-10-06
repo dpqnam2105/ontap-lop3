@@ -6,10 +6,10 @@
 
 | Trạng thái | Số câu | Nghĩa |
 |---|---|---|
-| da-ghi | 99 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
+| da-ghi | 193 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
 | cho-quyet | 0 | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |
 | nen | 6 | Codex chốt không gắn bài: kiến thức nền lớp 2 (đổi độ dài, ước lượng kg) — có `lessonRef.basis = nen`, không có `lesson` |
-| cho-duyet | 94 | lô 1 (bảng nhân/chia trực tiếp, cộng trừ B2) — đề xuất muc-luc, chờ Codex duyệt |
+| cho-duyet | 0 | khớp tên bài (muc-luc), chưa duyệt |
 | chua-gan | 0 | chưa đủ căn cứ |
 
 ## Chờ quyết
@@ -29,8 +29,8 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 
 | Mức | Số câu |
 |---|---|
-| muc-luc | 94 |
-| suy-luan | 14 |
+| muc-luc | 93 |
+| suy-luan | 15 |
 | chua-gan | 0 |
 
 | Bài | Tên | Số câu đề xuất |
@@ -42,8 +42,8 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | B7 | Ôn tập hình học và đo lường | 6 |
 | B8 | Luyện tập chung | 3 |
 | B9 | Bảng nhân 6, bảng chia 6 | 33 |
-| B10 | Bảng nhân 7, bảng chia 7 | 38 |
-| B11 | Bảng nhân 8, bảng chia 8 | 22 |
+| B10 | Bảng nhân 7, bảng chia 7 | 39 |
+| B11 | Bảng nhân 8, bảng chia 8 | 21 |
 | B12 | Bảng nhân 9, bảng chia 9 | 20 |
 | B13 | Tìm thành phần trong phép nhân, phép chia | 6 |
 | B14 | Một phần mấy | 30 |
@@ -65,6 +65,7 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | `phan-so-don-gian_q030` | Có 12 quả dâu. 2 quả dâu là mấy phần của số dâu? | B14 | B14 tr.43 bài 3, tr.45 bài 3: nhận ra phần khoanh là 1/4, 1/3 qua hình; câu web chuyển sang suy luận bằng lời (chia toàn bộ thành các nhóm bằng nhau) — khó hơn câu có hình, không trùng dạng nguyên văn |
 | `giai-toan-co-loi-van_q003` | Hà có 45 viên bi, Hà nhiều hơn Nam 18 viên. Hỏi Nam có bao nhiêu viên  | B2 | một bước trừ, bẫy "nhiều hơn" hỏi số bé |
 | `giai-toan-co-loi-van_q004` | Mai có 28 nhãn vở, Mai ít hơn Lan 15 nhãn vở. Hỏi Lan có bao nhiêu nhã | B2 | một bước cộng, bẫy "ít hơn" hỏi số lớn |
+| `on-tap-tong-hop_q006` | 8 × 7 = ? | B10 | đổi 8 × 7 thành 7 × 8 rồi tra bảng nhân 7 (B10); hoạt động đổi chỗ hai thừa số ở B10 tr.32 bài 4a. Không cần chờ bảng 8 (B11) |
 | `on-tap-tong-hop_q014` | Hùng có 30 viên bi, Hùng kém Việt 12 viên. Hỏi Việt có bao nhiêu viên  | B2 | "kém" = ít hơn, hỏi số lớn: một bước cộng |
 
 ## Chưa gắn (`chua-gan`)
@@ -85,10 +86,8 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | times-6 | B9 | 9 |
 | divide-7 | B10 | 9 |
 | times-7 | B10 | 9 |
-| divide | B11 | 1 |
-| divide-8 | B11 | 9 |
+| divide-8 | B11 | 10 |
 | times-8 | B11 | 9 |
-| times-table | B11 | 1 |
 | divide-9 | B12 | 9 |
 | times-9 | B12 | 9 |
 

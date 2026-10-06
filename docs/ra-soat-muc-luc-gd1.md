@@ -1,4 +1,6 @@
-# Rà 135 câu `muc-luc` Toán GĐ1 — đề xuất theo 3 lô (CHƯA ghi lesson)
+# Rà 135 câu `muc-luc` Toán GĐ1 — đề xuất theo 3 lô
+
+> **Đã chốt (2026-10-07):** lô 2, lô 3 và q038/q075 ghi ở vòng 9 (xem `docs/doi-chieu-sgk-toan3-t1.md` mục 6). Lô 1 ghi ở vòng 10 (`tools/apply_lesson_gd1_20261007b.py`): 93 câu theo bảng 1a, basis `muc-luc`. Riêng on-tap q006 (8 × 7) → **B10** `suy-luan` (đổi thành 7 × 8, bảng 7; đổi chỗ ở B10 tr.32), gợi ý "Đổi thành 7 × 8 rồi dùng bảng nhân 7.", skill `times-7`. on-tap q008 skill → `divide-8`. Gợi ý ba câu nhân 10 (bang-nhan q006, q037, q074) đổi thành "Trong bảng nhân a, đếm thêm a đến lần thứ 10." Tổng: 193 câu core GĐ1 có lesson + 6 câu `nen`. Nội dung dưới đây là bản đề xuất gốc, giữ để đối chiếu.
 
 Định nghĩa đã chốt: `lesson` = bài sớm nhất mà kiến thức đã học đủ để làm câu **theo cách giải được hướng dẫn** (gợi ý).
 Mọi câu dưới đây giữ nguyên `source`. Nếu được duyệt, ghi `lessonRef.basis = muc-luc`.

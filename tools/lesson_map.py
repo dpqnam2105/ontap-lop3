@@ -205,7 +205,7 @@ def main():
          '| da-ghi | %d | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |' % st.get('da-ghi', 0),
          '| cho-quyet | %d | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |' % st.get('cho-quyet', 0),
          '| nen | %d | Codex chốt không gắn bài: kiến thức nền lớp 2 (đổi độ dài, ước lượng kg) — có `lessonRef.basis = nen`, không có `lesson` |' % st.get('nen', 0),
-         '| cho-duyet | %d | lô 1 (bảng nhân/chia trực tiếp, cộng trừ B2) — đề xuất muc-luc, chờ Codex duyệt |' % st.get('cho-duyet', 0),
+         '| cho-duyet | %d | khớp tên bài (muc-luc), chưa duyệt |' % st.get('cho-duyet', 0),
          '| chua-gan | %d | chưa đủ căn cứ |' % st.get('chua-gan', 0), '',
          '## Chờ quyết', '', '| id | đề | ghi chú |', '|---|---|---|'] + [
          '| `%s` | %s | %s |' % (r['id'].replace('toan_', ''), r['q'][:60], r['note']) for r in rows if r['status'] == 'cho-quyet'] + ['',
