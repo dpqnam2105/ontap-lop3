@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Bản đồ nội dung lớp 3 (rà nền, chưa sửa dữ liệu)
+- Nam chốt: tạm dừng phát triển lớp 2, tập trung lớp 3; chưa mở rộng kho đại trà trước khi rà xong nền.
+- Thêm `docs/ban-do-noi-dung-lop3.md`: mỗi môn × giai đoạn — phạm vi, mục tiêu kỹ năng, kiến thức cần trước, chủ đề + số câu, nguồn; ghi rõ [Bám sách] / [Theo chương trình] / [Tự thiết kế] / [Chưa có nguồn]; cách chuyển giai đoạn hiện tại + đề xuất; mẫu tự sinh đề xuất; việc nhờ Codex.
+- Thêm `tools/content_map.py` (đếm số câu thẳng từ `data-lop3/`) và `docs/mau-cau-dai-dien-lop3.md` (tối đa 3 câu đại diện mỗi môn × giai đoạn × chủ đề, chọn cố định theo hash id) để Codex soi.
+- Không đổi web, không đổi câu hỏi.
+
 ## 2026-10-06 — Trang chủ: sửa 2 lỗi Codex tìm ra + khung tên trên điện thoại
 - **[P2] Mất mạng bị tính thành 0 điểm**: trước đây tải nhật ký lỗi thì coi như "chưa học", bảng tuần hiện cả 3 bé 0 điểm và "Tuần mới bắt đầu". Nay `API.getLogStrict()` báo lỗi nếu **bất kỳ** bé hay tên phụ nào tải không được; `getWeekBoard()` trả `{ ok: false }`, **không xếp hạng**, **không lưu tạm** kết quả lỗi; trang chủ hiện "Chưa tải được bảng xếp hạng tuần (mạng?)" + nút Thử lại. Báo cáo phụ huynh vẫn dùng `getLog()` như cũ.
 - **[P2] Ngày học 0 câu đúng không được đánh ✓**: số câu đúng chỉ được cộng khi trả lời đúng, nên lượt 0 câu đúng không để lại dấu ngày học, còn bị nhắc "học hôm nay để giữ chuỗi" dù chuỗi vẫn tăng. Nay xong lượt luôn ghi nhận ngày học (`addStudyLog(0)`); thẻ Tuần này đánh ✓ theo **có bản ghi ngày** (hoặc là ngày học gần nhất trong hồ sơ), số câu đúng vẫn tính riêng.
