@@ -160,7 +160,10 @@
    "word-1step-addsub": "Bài toán một bước (cộng, trừ)",
    "word-2step": "Bài toán giải bằng hai bước tính",
    "skip-count": "Đếm thêm, đếm lùi theo bảng",
-   "mul-div-relation": "Từ phép nhân suy ra phép chia"
+   "mul-div-relation": "Từ phép nhân suy ra phép chia",
+   "compare-quotients": "So sánh thương của các phép chia cùng số chia",
+   "table-product-membership": "Nhận biết một số là tích trong bảng nhân nào",
+   "common-table-product": "Nhận biết tích có trong cả hai bảng nhân"
   },
   "tieng-viet": {
    "reading": "Đọc hiểu đoạn văn",

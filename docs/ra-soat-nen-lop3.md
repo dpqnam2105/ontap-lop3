@@ -1,5 +1,18 @@
 # Rà soát nền lớp 3
 
+## Vòng 3 (2026-10-06): sửa theo góp ý Codex trên commit 544bcf6
+
+- **[P2] Bộ chọn**: chỉ dùng tên mẫu có thật (tên sai bị bỏ qua, kể cả `constructor`, `toString`); không còn mẫu nào thì trả `[]` để bên gọi dùng câu tĩnh. `maxLesson`: không truyền = không lọc; `0` = chưa học bài nào → `[]`; giá trị không hợp lệ (null, âm, số lẻ, chuỗi, NaN) → `[]`, không bao giờ mở toàn bộ. `n` không phải số nguyên dương → `[]`. Có test cho từng trường hợp.
+- **[P1 khi tích hợp] Phiên bản**: chọn cách **giữ bộ dựng của phiên bản cũ**. `T_BY_VER = {1: T}`; muốn sửa mẫu thì thêm bảng `T2`, tăng `VERSION`, không sửa bảng v1. `pick()` luôn sinh theo `VERSION` mới, `build()` dựng được mọi phiên bản đã có (id phiên bản tương lai → null). Test giả lập lên v2 (đổi gợi ý mẫu cộng): cả 86 câu v1 trong ảnh chụp vẫn dựng lại y nguyên, câu mới ra `_v2_` với gợi ý mới. Lưu ý: v1 chưa phát hành, nên đợt này còn sửa được khung lời văn; từ lúc nạp lên web thì v1 đóng băng, ảnh chụp cố định bảo vệ.
+- **[P3] Id**: `_v01_`, `_v0_` bị từ chối (chỉ nhận `v` + số không có 0 đứng đầu); tên mẫu chỉ khớp khoá riêng của bảng mẫu.
+- **Skill 5 câu còn lại**: `q023, q059, q096` → `compare-quotients`; `q105` → `table-product-membership`; `q106` → `common-table-product` (đã đăng ký trong `skills.json`). Bảng nhân chia: 152/152 câu có skill.
+- **Thứ tự nhiễu**: giữ nguyên. `explain()` ghi rõ tên lỗi chỉ để rà mẫu, không dùng để kết luận bé mắc lỗi gì từ một lần chọn sai.
+- **Lời văn theo bối cảnh**: tham số mới `[khung, x, y, bối cảnh, đồ vật, A, B]`.
+  - Đồ dùng của một bé (vở, bi, hoa, que tính…): số ban đầu ≤ 99, thêm/bớt ≤ 60, kết quả ≤ 150. "Lan có 990 quyển vở" giờ là `null`.
+  - Số ba chữ số dùng thư viện (mua thêm / cho mượn), cửa hàng (nhập thêm / đã bán: kg gạo, quả trứng), trang trại (mua thêm / đã bán: gà, vịt). Số ban đầu ≥ 100.
+  - Khoảng 40% câu là đồ dùng cá nhân. Các ca 999 + 1, 1000 − 1, hiệu rất nhỏ chỉ để ở câu tính thuần.
+- Chưa làm (bước tích hợp, cần test riêng): lọc theo bài đã học, ôn lại câu sinh trên web, giao diện ba lựa chọn của câu điền dấu, quota.
+
 ## Vòng 2 (2026-10-06): đã làm theo phản hồi Codex
 
 **Bước 1 — sửa câu và nhãn đã được đồng ý** (`tools/apply_ra_soat_20261006.py`: kiểm tra giá trị cũ trước khi đổi, chạy lại không đổi gì thêm; không đổi thứ tự câu trong mảng):

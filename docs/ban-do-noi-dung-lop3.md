@@ -131,7 +131,7 @@ _Cập nhật 2026-10-06 sau đợt sửa đã được Codex đồng ý (docs/r
 |---|---|---|---|---|---|---|---|---|---|---|
 | Số đến 100 000 | theo sách | 0 | 0 | 0 | 12 | 40 | 0 | 52 | 0 | claude-audit-20260924 52 |
 | Cộng trừ trong phạm vi 100 000 | theo sách | 0 | 0 | 0 | 14 | 20 | 0 | 34 | 0 | claude-audit-20260924 34 |
-| Bảng nhân, chia (2–9) | theo sách | 147 | 4 | 1 | 0 | 0 | 0 | 152 | 5 | (trống) 112, claude-audit-20260924 40 |
+| Bảng nhân, chia (2–9) | theo sách | 147 | 4 | 1 | 0 | 0 | 0 | 152 | 0 | (trống) 112, claude-audit-20260924 40 |
 | Nhân, chia ngoài bảng | theo sách | 0 | 11 | 13 | 4 | 5 | 0 | 33 | 0 | claude-audit-20260924 33 |
 | Một phần mấy | theo sách | 29 | 2 | 0 | 0 | 0 | 0 | 31 | 0 | claude-audit-20260924 24, bo-tro-tuan6-8-20261001 7 |
 | Hình học (trung điểm, hình tròn, chu vi, diện tích) | theo sách | 0 | 15 | 0 | 13 | 0 | 0 | 28 | 0 | claude-audit-20260924 25, bo-tro-tuan6-8-20261001 3 |

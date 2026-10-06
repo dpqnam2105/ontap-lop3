@@ -104,6 +104,10 @@ MANUAL = {
     'word-problem': ['q024', 'q025', 'q026', 'q027', 'q060', 'q061', 'q062', 'q063', 'q064',
                      'q097', 'q098', 'q099', 'q100', 'q101', 'q111'],
     'cmp-tich': ['q107', 'q108', 'q109', 'q110'],
+    # Codex chốt tên (vòng 3): chỉ là nhận biết từ bảng nhân đã học, chưa gọi "bội chung" / "chia hết"
+    'compare-quotients': ['q023', 'q059', 'q096'],
+    'table-product-membership': ['q105'],
+    'common-table-product': ['q106'],
 }
 for sk, nums in MANUAL.items():
     for n in nums:

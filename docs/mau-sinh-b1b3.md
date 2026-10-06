@@ -310,19 +310,19 @@ Bộ sinh `js/gen-b1b3.js` **chưa nạp vào web**. Mỗi mẫu 5 câu. Đáp �
 
 ## Bài toán một bước (cộng, trừ) — `lv` · skill `word-1step-addsub` · B2
 
-- `toan_g13_lv_v1_5-12-11-3-7-1` [độ khó 3] Nam có 12 nhãn vở, Nam có nhiều hơn Hà 11 nhãn vở. Hỏi Hà có bao nhiêu nhãn vở?  
-  23 _(nhầm phép cộng)_ · **1** · 11 _(sai 1 ở hàng chục)_ · 101 _(sai 1 ở hàng trăm)_  
-  _Gợi ý:_ Đọc kĩ: Nam nhiều hơn Hà, vậy Hà có nhiều hơn hay ít hơn Nam?
-- `toan_g13_lv_v1_2-520-91-1-3-7` [độ khó 2] Mai có 520 hạt cườm. Nam có nhiều hơn Mai 91 hạt cườm. Hỏi Nam có bao nhiêu hạt cườm?  
-  429 _(nhầm phép trừ)_ · 511 _(quên nhớ)_ · 621 _(nhớ thừa)_ · **611**  
-  _Gợi ý:_ Ai có nhiều hơn? Số của Nam lớn hơn hay bé hơn số của Mai?
-- `toan_g13_lv_v1_4-120-227-2-3-6` [độ khó 3] Hoa có 120 tờ giấy màu, Hoa có ít hơn Nam 227 tờ giấy màu. Hỏi Nam có bao nhiêu tờ giấy màu?  
-  357 _(nhớ thừa)_ · 107 _(nhầm phép trừ)_ · **347** · 337 _(sai 1 ở hàng chục)_  
-  _Gợi ý:_ Đọc kĩ: Hoa ít hơn Nam, vậy Nam có nhiều hơn hay ít hơn Hoa?
-- `toan_g13_lv_v1_3-624-534-2-5-6` [độ khó 2] Hoa có 624 tờ giấy màu. An có ít hơn Hoa 534 tờ giấy màu. Hỏi An có bao nhiêu tờ giấy màu?  
-  110 _(trừ số bé cho số lớn từng hàng)_ · 190 _(quên trả khi mượn)_ · 80 _(trả thừa)_ · **90**  
-  _Gợi ý:_ Ai có ít hơn? Số của An lớn hơn hay bé hơn số của Hoa?
-- `toan_g13_lv_v1_1-945-677-1-4-6` [độ khó 2] Mai có 945 tờ giấy màu. Mai cho bạn 677 tờ giấy màu. Hỏi Mai còn lại bao nhiêu tờ giấy màu?  
-  332 _(trừ số bé cho số lớn từng hàng)_ · **268** · 378 _(quên trả khi mượn)_ · 278 _(quên trả ở một hàng)_  
-  _Gợi ý:_ Cho bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.
+- `toan_g13_lv_v1_5-12-8-0-6-2-4` [độ khó 3] Hoa có 12 hạt cườm, Hoa có nhiều hơn Minh 8 hạt cườm. Hỏi Minh có bao nhiêu hạt cườm?  
+  20 _(nhầm phép cộng)_ · 16 _(trừ số bé cho số lớn từng hàng)_ · 14 _(quên trả khi mượn)_ · **4**  
+  _Gợi ý:_ Đọc kĩ: Hoa nhiều hơn Minh, vậy Minh có nhiều hơn hay ít hơn Hoa?
+- `toan_g13_lv_v1_0-503-89-2-0-0-1` [độ khó 2] Cửa hàng Bình An có 503 ki-lô-gam gạo. Cửa hàng Bình An nhập thêm 89 ki-lô-gam gạo. Hỏi Cửa hàng Bình An có tất cả bao nhiêu ki-lô-gam gạo?  
+  414 _(nhầm phép trừ)_ · 582 _(quên nhớ)_ · 692 _(nhớ thừa)_ · **592**  
+  _Gợi ý:_ Có thêm thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.
+- `toan_g13_lv_v1_5-120-103-3-1-0-1` [độ khó 3] Trang trại nhà Tú có 120 con vịt, Trang trại nhà Tú có nhiều hơn Trang trại nhà Hùng 103 con vịt. Hỏi Trang trại nhà Hùng có bao nhiêu con vịt?  
+  223 _(nhầm phép cộng)_ · 23 _(trừ số bé cho số lớn từng hàng)_ · **17** · 27 _(quên trả khi mượn)_  
+  _Gợi ý:_ Đọc kĩ: Trang trại nhà Tú nhiều hơn Trang trại nhà Hùng, vậy Trang trại nhà Hùng có nhiều hơn hay ít hơn Trang trại nhà Tú?
+- `toan_g13_lv_v1_3-890-381-2-0-1-0` [độ khó 2] Cửa hàng Hòa Bình có 890 ki-lô-gam gạo. Cửa hàng Bình An có ít hơn Cửa hàng Hòa Bình 381 ki-lô-gam gạo. Hỏi Cửa hàng Bình An có bao nhiêu ki-lô-gam gạo?  
+  511 _(trừ số bé cho số lớn từng hàng)_ · 519 _(quên trả khi mượn)_ · 409 _(trả thừa)_ · **509**  
+  _Gợi ý:_ Ai có ít hơn? Số của Cửa hàng Bình An lớn hơn hay bé hơn số của Cửa hàng Hòa Bình?
+- `toan_g13_lv_v1_5-710-153-2-1-1-0` [độ khó 3] Cửa hàng Hòa Bình có 710 quả trứng, Cửa hàng Hòa Bình có nhiều hơn Cửa hàng Bình An 153 quả trứng. Hỏi Cửa hàng Bình An có bao nhiêu quả trứng?  
+  863 _(nhầm phép cộng)_ · 643 _(trừ số bé cho số lớn từng hàng)_ · **557** · 667 _(quên trả khi mượn)_  
+  _Gợi ý:_ Đọc kĩ: Cửa hàng Hòa Bình nhiều hơn Cửa hàng Bình An, vậy Cửa hàng Bình An có nhiều hơn hay ít hơn Cửa hàng Hòa Bình?
 

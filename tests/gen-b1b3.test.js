@@ -75,19 +75,61 @@ const tests = {
   },
   'lời văn: mỗi khung ra đúng phép tính (kể cả bẫy đảo chiều)'() {
     G.FRAMES.forEach((F, f) => {
-      const q = B('toan_g13_lv_v1_' + [f, 245, 38, 0, 1, 2].join('-'));
+      const q = B('toan_g13_lv_v1_' + [f, 245, 38, 1, 0, 0, 1].join('-'));   // thư viện
       const expect = FRAME_OP[F.key] === '+' ? 283 : 207;
       assert.strictEqual(num(ans(q)), expect, F.key);
       assert.ok(q.choices.includes(String(FRAME_OP[F.key] === '+' ? 207 : 283)), F.key + ': thiếu nhiễu nhầm phép tính');
-      assert.ok(!/\{[ABxyi]\}/.test(q.q + q.hint), F.key + ': còn chỗ trống chưa thay');
+      assert.ok(!/\{[ABxyi]|\{add|\{sub/.test(q.q + q.hint), F.key + ': còn chỗ trống chưa thay');
+      const small = B('toan_g13_lv_v1_' + [f, 45, 28, 0, 2, 0, 1].join('-'));   // đồ dùng của bé: số nhỏ
+      assert.strictEqual(num(ans(small)), FRAME_OP[F.key] === '+' ? 73 : 17, F.key + ' (cá nhân)');
     });
+  },
+  'lời văn: số phải hợp bối cảnh (đồ dùng của bé thì số nhỏ; số lớn dùng thư viện, cửa hàng, trang trại)'() {
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-990-9-0-0-0-1'), null, 'Lan có 990 quyển vở');
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-95-60-0-0-0-1'), null, 'kết quả 155 > 150 với đồ dùng cá nhân');
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-60-5-1-0-0-1'), null, 'thư viện mà chỉ có 60 quyển sách ban đầu');
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-245-38-9-0-0-1'), null, 'bối cảnh không có');
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-245-38-1-5-0-1'), null, 'đồ vật không có trong bối cảnh');
+    assert.strictEqual(G.build('toan_g13_lv_v1_0-245-38-1-0-1-1'), null, 'A trùng B');
+    const P = G.pick('boi-canh', 600, { templates: ['lv'] });
+    assert.ok(P.length === 600);
+    const small = P.filter(q => G.parse(q.id).params[3] === 0), big = P.filter(q => G.parse(q.id).params[3] > 0);
+    assert.ok(small.length > 100 && big.length > 200, small.length + '/' + big.length);
+    for (const q of small) { const [, x, y] = G.parse(q.id).params; assert.ok(x <= 99 && y <= 60 && num(ans(q)) <= 150, q.id); }
+    for (const q of big) assert.ok(G.parse(q.id).params[1] >= 100, q.id);
   },
   'id sai / ngoài phạm vi / sai phiên bản → null'() {
     const bad = ['', 'toan_g13_cong_v2_367-258', 'toan_g13_cong_v1_0367-258', 'toan_g13_cong_v1_999-2',
-      'toan_g13_tru_v1_5-9', 'toan_g13_cong_v1_1-2-3', 'toan_g13_xyz_v1_1', 'toan_g13_doc_v1_7', 'toan_g13_tong_v1_700',
-      'toan_g13_timsh_v1_2-1-5', 'toan_g13_lv_v1_0-245-38-1-1-0', 'toan_g13_lv_v1_9-245-38-0-1-0', 'toan_g13_lv_v1_1-1500-600-0-1-0',
+      'toan_g13_tru_v1_5-9', 'toan_g13_cong_v1_1-2-3', 'toan_g13_cong_v01_367-258', 'toan_g13_cong_v0_367-258',
+      'toan_g13_constructor_v1_1', 'toan_g13_toString_v1_1', 'toan_g13___proto___v1_1', 'toan_g13_xyz_v1_1', 'toan_g13_doc_v1_7', 'toan_g13_tong_v1_700',
+      'toan_g13_timsh_v1_2-1-5', 'toan_g13_lv_v1_9-245-38-1-0-0-1', 'toan_g13_lv_v1_1-1500-600-1-0-0-1', 'toan_g13_lv_v1_0-245-38-0-1',
       'toan_g13_max_v1_1-1-2-3', 'toan_g13_sau_v1_1000', 'toan_g13_truoc_v1_0'];
     for (const id of bad) assert.strictEqual(G.build(id), null, id);
+  },
+  'bộ chọn: danh sách mẫu rỗng / tên sai / lọc hết → [] (không lỗi); maxLesson 0 khác với không truyền'() {
+    assert.deepStrictEqual(G.pick('t', 3, { templates: [] }), []);
+    assert.deepStrictEqual(G.pick('t', 3, { templates: ['khongco', 'constructor', '__proto__', 'toString'] }), []);
+    assert.deepStrictEqual(G.pick('t', 3, { templates: 'cong' }), [], 'không phải mảng → không mở gì');
+    assert.deepStrictEqual(G.pick('t', 3, { maxLesson: 0 }), [], 'maxLesson 0 = chưa học bài nào');
+    for (const bad of [null, -1, 1.5, '3', NaN, Infinity]) assert.deepStrictEqual(G.pick('t', 3, { maxLesson: bad }), [], 'maxLesson ' + bad);
+    assert.deepStrictEqual(G.pick('t', 3, { templates: ['cong', 'tru'], maxLesson: 1 }), [], 'lọc hết (cộng, trừ là B2)');
+    assert.deepStrictEqual(G.pick('t', 0), []); assert.deepStrictEqual(G.pick('t', -2), []);
+    const mixed = G.pick('t', 20, { templates: ['khongco', 'cong'] });
+    assert.ok(mixed.length === 20 && mixed.every(q => q.id.includes('_cong_')), 'tên sai bị bỏ, tên đúng vẫn dùng');
+    const b1 = G.pick('t', 200, { maxLesson: 1 });
+    assert.ok(b1.length === 200 && b1.every(q => q.lesson.no === 1), 'maxLesson 1 chỉ ra B1');
+    assert.ok(G.pick('t', 200, { maxLesson: 3 }).some(q => q.lesson.no === 3));
+    assert.strictEqual(G.pick('t', 50, { maxLesson: undefined }).length, 50, 'undefined = không lọc');
+  },
+  'tăng phiên bản: câu v1 đã lưu (lịch ôn) vẫn dựng lại y nguyên; câu mới ra v2'() {
+    const gold = JSON.parse(fs.readFileSync(GOLDEN, 'utf8'));
+    const T2 = Object.assign({}, G.T, { cong: Object.assign({}, G.T.cong, {
+      build(p) { const c = G.T.cong.build(p); return c && Object.assign(c, { hint: 'GỢI Ý MỚI v2' }); } }) });
+    const G2 = Object.create(G, { VERSION: { value: 2 }, T_BY_VER: { value: { 1: G.T, 2: T2 } } });
+    for (const q of gold) assert.deepStrictEqual(G2.build(q.id), q, 'v1 sau khi lên v2: ' + q.id);
+    const fresh = G2.pick('v2', 40, { templates: ['cong'] });
+    assert.ok(fresh.length === 40 && fresh.every(q => /_v2_/.test(q.id) && q.hint === 'GỢI Ý MỚI v2'));
+    assert.strictEqual(G.build(fresh[0].id), null, 'bản v1 không dựng câu v2 (phiên bản tương lai)');
   },
   'cùng id → cùng câu (dựng lại để ôn câu sai); id trong câu = id đầu vào'() {
     const P = G.pick('tai-tao', 500);

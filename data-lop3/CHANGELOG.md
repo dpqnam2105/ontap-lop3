@@ -6,6 +6,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-06 (Claude — vòng 3)
+- Toán / Bảng nhân, chia — gắn skill q023, q059, q096 (`compare-quotients`), q105 (`table-product-membership`), q106 (`common-table-product`). Đủ skill 152/152 câu.
+
 ## 2026-10-06 (Claude — rà soát nền lớp 3, vòng 2, Codex đã đồng ý)
 - Toán / Giải toán có lời văn — q001 sửa lời ("Buổi sáng hái được 248 quả… buổi chiều hái thêm 135 quả", đáp án vẫn 383); q005, q013 GĐ1 → GĐ2 (hai bước).
 - Toán / Một phần mấy — q025, q026 GĐ1 → GĐ2 (hai bước). q029, q030 giữ nguyên, chờ mục lục.

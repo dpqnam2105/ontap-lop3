@@ -370,7 +370,16 @@
         "hint": "Cùng chia cho 4, số bị chia lớn hơn thì thương lớn hơn.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q023",
-        "stage": 1
+        "stage": 1,
+        "skill": "compare-quotients",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "them-skill",
+            "note": "rà tay"
+          }
+        ]
       },
       {
         "q": "Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô như vậy có bao nhiêu bánh xe?",
@@ -981,7 +990,16 @@
         "hint": "Cùng chia cho 6, số bị chia bé hơn thì thương bé hơn.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q059",
-        "stage": 1
+        "stage": 1,
+        "skill": "compare-quotients",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "them-skill",
+            "note": "rà tay"
+          }
+        ]
       },
       {
         "q": "Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc bút chì màu?",
@@ -1623,7 +1641,16 @@
         "hint": "Cùng chia cho 7, số bị chia lớn hơn thì thương lớn hơn.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q096",
-        "stage": 1
+        "stage": 1,
+        "skill": "compare-quotients",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "them-skill",
+            "note": "rà tay"
+          }
+        ]
       },
       {
         "q": "Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày?",
@@ -1805,7 +1832,16 @@
         "hint": "Thử xem 42 chia hết cho những số nào.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q105",
-        "stage": 1
+        "stage": 1,
+        "skill": "table-product-membership",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "them-skill",
+            "note": "rà tay"
+          }
+        ]
       },
       {
         "q": "Số nào vừa có trong bảng nhân 4, vừa có trong bảng nhân 6?",
@@ -1819,7 +1855,16 @@
         "hint": "Thử từng số xem có chia hết cho cả 4 và 6 không.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q106",
-        "stage": 1
+        "stage": 1,
+        "skill": "common-table-product",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "them-skill",
+            "note": "rà tay"
+          }
+        ]
       },
       {
         "q": "Hai phép tính nào dưới đây có CÙNG kết quả?",

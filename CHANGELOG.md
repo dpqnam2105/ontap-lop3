@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Bộ sinh B1–B3: sửa theo góp ý Codex (vẫn chưa lên web)
+- Bộ chọn `GenB13.pick`: bỏ tên mẫu không có thật; không còn mẫu → `[]`; `maxLesson` 0 / không hợp lệ không còn mở toàn bộ nội dung.
+- Giữ bộ dựng theo phiên bản (`T_BY_VER`): sau khi lên phiên bản mới, câu v1 trong lịch ôn vẫn dựng lại y nguyên (có test giả lập v2). Id `_v01_` bị từ chối.
+- Lời văn tách phạm vi số theo bối cảnh: đồ dùng của bé dùng số nhỏ; số ba chữ số dùng thư viện, cửa hàng, trang trại.
+- Gắn skill cho 5 câu bảng nhân chia còn lại (`compare-quotients`, `table-product-membership`, `common-table-product`, đăng ký trong `skills.json`).
+- Tài liệu: `docs/ra-soat-nen-lop3.md` mục "Vòng 3"; câu mẫu và bản kiểm kê chạy lại.
+
 ## 2026-10-06 — Lớp 3: sửa câu đã được Codex đồng ý + bộ sinh B1–B3 thử nghiệm (chưa lên web)
 - **Dữ liệu** (`tools/apply_ra_soat_20261006.py`, chi tiết ở `data-lop3/CHANGELOG.md`): sửa lời / nhiễu 5 câu; chuyển giai đoạn 15 câu (bài hai bước → GĐ2, biểu thức → GĐ3, 2 km → GĐ4); `so-do_q001` thay bằng `q001v2` (lớp 34 bạn, id mới để tiến độ câu cũ không áp sang); `prereq` cho 19 câu nâng cao; gắn skill cho 107/112 câu bảng nhân chia (72 tự động theo mẫu chắc chắn bằng `tools/tag_skills.py`, 35 rà tay, còn 5 chờ chọn tên).
 - `data-lop3/skills.json`: thêm khoá kỹ năng nền B1–B3 (`read-1000`, `add-1000`, `sub-1000`, `find-addend`…), `word-2step`, `skip-count`, `mul-div-relation`.

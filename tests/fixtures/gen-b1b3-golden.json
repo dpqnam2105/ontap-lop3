@@ -30,16 +30,16 @@
   ]
  },
  {
-  "id": "toan_g13_lv_v1_2-986-14-6-0-3",
-  "q": "Bình có 986 bông hoa. Lan có nhiều hơn Bình 14 bông hoa. Hỏi Lan có bao nhiêu bông hoa?",
+  "id": "toan_g13_lv_v1_2-763-120-3-0-0-1",
+  "q": "Trang trại nhà Tú có 763 con gà. Trang trại nhà Hùng có nhiều hơn Trang trại nhà Tú 120 con gà. Hỏi Trang trại nhà Hùng có bao nhiêu con gà?",
   "choices": [
-   "972",
-   "990",
-   "900",
-   "1 000"
+   "643",
+   "893",
+   "883",
+   "873"
   ],
-  "a": 3,
-  "hint": "Ai có nhiều hơn? Số của Lan lớn hơn hay bé hơn số của Bình?",
+  "a": 2,
+  "hint": "Ai có nhiều hơn? Số của Trang trại nhà Hùng lớn hơn hay bé hơn số của Trang trại nhà Tú?",
   "difficulty": 2,
   "skill": "word-1step-addsub",
   "track": "core",
@@ -60,18 +60,78 @@
   ]
  },
  {
-  "id": "toan_g13_gom_v1_595",
-  "q": "Số gồm 5 trăm, 9 chục và 5 đơn vị là:",
+  "id": "toan_g13_tru_v1_758-164",
+  "q": "758 − 164 = ?",
   "choices": [
-   "559",
-   "595",
-   "955",
-   "59"
+   "614",
+   "694",
+   "584",
+   "594"
+  ],
+  "a": 3,
+  "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Chữ số trên bé hơn thì mượn 1 chục (hoặc 1 trăm) và nhớ trả ở hàng bên trái.",
+  "difficulty": 2,
+  "skill": "sub-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu tru v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_cong_v1_809-110",
+  "q": "809 + 110 = ?",
+  "choices": [
+   "929",
+   "919",
+   "699",
+   "909"
   ],
   "a": 1,
-  "hint": "Viết chữ số hàng trăm, rồi hàng chục, rồi hàng đơn vị. Hàng nào có 0 thì viết chữ số 0.",
-  "difficulty": 2,
-  "skill": "place-value-1000",
+  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+  "difficulty": 1,
+  "skill": "add-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_sau_v1_641",
+  "q": "Số liền sau của 641 là:",
+  "choices": [
+   "640",
+   "651",
+   "642",
+   "741"
+  ],
+  "a": 2,
+  "hint": "Số liền sau hơn số đã cho 1 đơn vị.",
+  "difficulty": 1,
+  "skill": "sequence-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -85,83 +145,23 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu gom v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu sau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
  {
-  "id": "toan_g13_cong_v1_70-930",
-  "q": "70 + 930 = ?",
+  "id": "toan_g13_lv_v1_4-803-48-3-0-0-1",
+  "q": "Trang trại nhà Tú có 803 con gà, Trang trại nhà Tú có ít hơn Trang trại nhà Hùng 48 con gà. Hỏi Trang trại nhà Hùng có bao nhiêu con gà?",
   "choices": [
-   "900",
-   "1 000",
-   "860",
-   "0"
-  ],
-  "a": 1,
-  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
-  "difficulty": 3,
-  "skill": "add-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 2
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_timsh_v1_0-189-198",
-  "q": "Tìm số thích hợp: ? + 189 = 198",
-  "choices": [
-   "387",
-   "11",
-   "9",
-   "19"
-  ],
-  "a": 2,
-  "hint": "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết.",
-  "difficulty": 2,
-  "skill": "find-addend",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 3
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu timsh v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_cong_v1_72-928",
-  "q": "72 + 928 = ?",
-  "choices": [
-   "1 000",
-   "990",
-   "900",
-   "856"
+   "851",
+   "755",
+   "841",
+   "951"
   ],
   "a": 0,
-  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+  "hint": "Đọc kĩ: Trang trại nhà Tú ít hơn Trang trại nhà Hùng, vậy Trang trại nhà Hùng có nhiều hơn hay ít hơn Trang trại nhà Tú?",
   "difficulty": 3,
-  "skill": "add-1000",
+  "skill": "word-1step-addsub",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -175,37 +175,7 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_timsbt_v1_29-19",
-  "q": "Tìm số thích hợp: ? − 29 = 19",
-  "choices": [
-   "10",
-   "38",
-   "58",
-   "48"
-  ],
-  "a": 3,
-  "hint": "Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ.",
-  "difficulty": 2,
-  "skill": "find-minuend",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 3
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu timsbt v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu lv v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
@@ -240,16 +210,16 @@
   ]
  },
  {
-  "id": "toan_g13_lv_v1_1-909-308-2-6-0",
-  "q": "Hoa có 909 quyển vở. Hoa cho bạn 308 quyển vở. Hỏi Hoa còn lại bao nhiêu quyển vở?",
+  "id": "toan_g13_lv_v1_1-69-48-0-2-2-4",
+  "q": "Hoa có 69 viên bi. Hoa cho bạn 48 viên bi. Hỏi Hoa còn lại bao nhiêu viên bi?",
   "choices": [
-   "591",
-   "601",
-   "611",
-   "501"
+   "117",
+   "11",
+   "31",
+   "21"
   ],
-  "a": 1,
-  "hint": "Cho bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.",
+  "a": 3,
+  "hint": "Bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.",
   "difficulty": 2,
   "skill": "word-1step-addsub",
   "track": "core",
@@ -270,24 +240,24 @@
   ]
  },
  {
-  "id": "toan_g13_tong_v1_620",
-  "q": "Viết số 620 thành tổng các trăm, chục, đơn vị:",
+  "id": "toan_g13_timsh_v1_1-0-2",
+  "q": "Tìm số thích hợp: 0 + ? = 2",
   "choices": [
-   "600 + 2",
-   "600 + 20",
-   "6 + 2 + 0",
-   "60 + 2"
+   "12",
+   "102",
+   "0",
+   "2"
   ],
-  "a": 1,
-  "hint": "Mỗi chữ số có giá trị theo hàng: chữ số hàng trăm có giá trị mấy trăm, hàng chục mấy chục.",
-  "difficulty": 2,
-  "skill": "place-value-1000",
+  "a": 3,
+  "hint": "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết.",
+  "difficulty": 1,
+  "skill": "find-addend",
   "track": "core",
   "stage": 1,
   "lesson": {
    "book": "kntt-toan3",
    "vol": 1,
-   "no": 1
+   "no": 3
   },
   "source": "gen-b1b3-v1",
   "unit": "toan_g13",
@@ -295,7 +265,7 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu tong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu timsh v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
@@ -630,83 +600,24 @@
   "keepOrder": true
  },
  {
-  "id": "toan_g13_lv_v1_4-34-871-7-3-7",
-  "q": "Hà có 34 hạt cườm, Hà có ít hơn Nam 871 hạt cườm. Hỏi Nam có bao nhiêu hạt cườm?",
+  "id": "toan_g13_lv_v1_4-34-42-0-6-7-4",
+  "q": "Hà có 34 hạt cườm, Hà có ít hơn Minh 42 hạt cườm. Hỏi Minh có bao nhiêu hạt cườm?",
   "choices": [
-   "905",
-   "805",
-   "915",
-   "837"
-  ],
-  "a": 0,
-  "hint": "Đọc kĩ: Hà ít hơn Nam, vậy Nam có nhiều hơn hay ít hơn Hà?",
-  "difficulty": 3,
-  "skill": "word-1step-addsub",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 2
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu lv v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_lv_v1_4-301-297-0-4-6",
-  "q": "Lan có 301 tờ giấy màu, Lan có ít hơn Minh 297 tờ giấy màu. Hỏi Minh có bao nhiêu tờ giấy màu?",
-  "choices": [
-   "4",
-   "608",
-   "598",
-   "588"
-  ],
-  "a": 2,
-  "hint": "Đọc kĩ: Lan ít hơn Minh, vậy Minh có nhiều hơn hay ít hơn Lan?",
-  "difficulty": 3,
-  "skill": "word-1step-addsub",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 2
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu lv v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_dau_v1_50-456",
-  "q": "Điền dấu thích hợp: 50 … 456",
-  "choices": [
-   ">",
-   "<",
-   "="
+   "86",
+   "76",
+   "8",
+   "66"
   ],
   "a": 1,
-  "hint": "Số nào nhiều chữ số hơn thì lớn hơn. Cùng số chữ số thì so sánh từ hàng trăm.",
-  "difficulty": 1,
-  "skill": "compare-1000",
+  "hint": "Đọc kĩ: Hà ít hơn Minh, vậy Minh có nhiều hơn hay ít hơn Hà?",
+  "difficulty": 3,
+  "skill": "word-1step-addsub",
   "track": "core",
   "stage": 1,
   "lesson": {
    "book": "kntt-toan3",
    "vol": 1,
-   "no": 1
+   "no": 2
   },
   "source": "gen-b1b3-v1",
   "unit": "toan_g13",
@@ -714,22 +625,21 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu dau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu lv v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
-  ],
-  "keepOrder": true
+  ]
  },
  {
-  "id": "toan_g13_sau_v1_24",
-  "q": "Số liền sau của 24 là:",
+  "id": "toan_g13_truoc_v1_849",
+  "q": "Số liền trước của 849 là:",
   "choices": [
-   "25",
-   "23",
-   "34",
-   "124"
+   "850",
+   "839",
+   "749",
+   "848"
   ],
-  "a": 0,
-  "hint": "Số liền sau hơn số đã cho 1 đơn vị.",
+  "a": 3,
+  "hint": "Số liền trước kém số đã cho 1 đơn vị.",
   "difficulty": 1,
   "skill": "sequence-1000",
   "track": "core",
@@ -745,53 +655,23 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu sau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu truoc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
  {
-  "id": "toan_g13_xeptang_v1_587-857-785-758",
-  "q": "Các số 587; 857; 785; 758 xếp theo thứ tự từ bé đến lớn là:",
+  "id": "toan_g13_gop_v1_396",
+  "q": "300 + 90 + 6 = ?",
   "choices": [
-   "857; 785; 758; 587",
-   "587; 758; 785; 857",
-   "785; 857; 587; 758",
-   "587; 785; 758; 857"
-  ],
-  "a": 1,
-  "hint": "Tìm số bé nhất (hoặc lớn nhất) trước, rồi tìm tiếp trong các số còn lại.",
-  "difficulty": 2,
-  "skill": "compare-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 1
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu xeptang v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_min_v1_127-217-721-712",
-  "q": "Số bé nhất trong các số 127; 217; 721; 712 là:",
-  "choices": [
-   "217",
-   "721",
-   "712",
-   "127"
+   "369",
+   "693",
+   "936",
+   "396"
   ],
   "a": 3,
-  "hint": "So sánh số chữ số trước, rồi so sánh từ hàng trăm đến hàng đơn vị.",
-  "difficulty": 2,
-  "skill": "compare-1000",
+  "hint": "Mấy trăm, mấy chục, mấy đơn vị? Viết lần lượt từng chữ số, hàng nào không có thì viết 0.",
+  "difficulty": 1,
+  "skill": "place-value-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -805,18 +685,168 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu min v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu gop v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
  {
-  "id": "toan_g13_tru_v1_635-575",
-  "q": "635 − 575 = ?",
+  "id": "toan_g13_doc_v1_855",
+  "q": "Số 855 đọc là:",
   "choices": [
-   "60",
-   "140",
-   "160",
-   "50"
+   "năm trăm năm mươi tám",
+   "năm trăm tám mươi lăm",
+   "tám mươi lăm",
+   "tám trăm năm mươi lăm"
+  ],
+  "a": 3,
+  "hint": "Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».",
+  "difficulty": 2,
+  "skill": "read-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu doc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_cong_v1_456-347",
+  "q": "456 + 347 = ?",
+  "choices": [
+   "793",
+   "703",
+   "803",
+   "109"
+  ],
+  "a": 2,
+  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+  "difficulty": 3,
+  "skill": "add-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_tru_v1_24-24",
+  "q": "24 − 24 = ?",
+  "choices": [
+   "48",
+   "0",
+   "10",
+   "100"
+  ],
+  "a": 1,
+  "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Chữ số trên bé hơn thì mượn 1 chục (hoặc 1 trăm) và nhớ trả ở hàng bên trái.",
+  "difficulty": 1,
+  "skill": "sub-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu tru v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_tong_v1_508",
+  "q": "Viết số 508 thành tổng các trăm, chục, đơn vị:",
+  "choices": [
+   "500 + 8",
+   "500 + 80",
+   "5 + 0 + 8",
+   "50 + 8"
+  ],
+  "a": 0,
+  "hint": "Mỗi chữ số có giá trị theo hàng: chữ số hàng trăm có giá trị mấy trăm, hàng chục mấy chục.",
+  "difficulty": 2,
+  "skill": "place-value-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu tong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_cong_v1_826-110",
+  "q": "826 + 110 = ?",
+  "choices": [
+   "946",
+   "936",
+   "716",
+   "926"
+  ],
+  "a": 1,
+  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+  "difficulty": 1,
+  "skill": "add-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_tru_v1_568-274",
+  "q": "568 − 274 = ?",
+  "choices": [
+   "294",
+   "314",
+   "394",
+   "284"
   ],
   "a": 0,
   "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Chữ số trên bé hơn thì mượn 1 chục (hoặc 1 trăm) và nhớ trả ở hàng bên trái.",
@@ -840,24 +870,54 @@
   ]
  },
  {
-  "id": "toan_g13_timst_v1_862-267",
-  "q": "Tìm số thích hợp: 862 − ? = 267",
+  "id": "toan_g13_sau_v1_45",
+  "q": "Số liền sau của 45 là:",
   "choices": [
-   "595",
-   "605",
-   "695",
-   "585"
+   "44",
+   "55",
+   "46",
+   "145"
+  ],
+  "a": 2,
+  "hint": "Số liền sau hơn số đã cho 1 đơn vị.",
+  "difficulty": 1,
+  "skill": "sequence-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu sau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_lv_v1_3-190-180-2-1-1-0",
+  "q": "Cửa hàng Hòa Bình có 190 quả trứng. Cửa hàng Bình An có ít hơn Cửa hàng Hòa Bình 180 quả trứng. Hỏi Cửa hàng Bình An có bao nhiêu quả trứng?",
+  "choices": [
+   "10",
+   "370",
+   "0",
+   "20"
   ],
   "a": 0,
-  "hint": "Muốn tìm số trừ, ta lấy số bị trừ trừ đi hiệu.",
+  "hint": "Ai có ít hơn? Số của Cửa hàng Bình An lớn hơn hay bé hơn số của Cửa hàng Hòa Bình?",
   "difficulty": 2,
-  "skill": "find-subtrahend",
+  "skill": "word-1step-addsub",
   "track": "core",
   "stage": 1,
   "lesson": {
    "book": "kntt-toan3",
    "vol": 1,
-   "no": 3
+   "no": 2
   },
   "source": "gen-b1b3-v1",
   "unit": "toan_g13",
@@ -865,83 +925,53 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu timst v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu lv v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
  {
-  "id": "toan_g13_viet_v1_540",
-  "q": "Số «năm trăm bốn mươi» viết là:",
+  "id": "toan_g13_cong_v1_730-120",
+  "q": "730 + 120 = ?",
   "choices": [
-   "504",
-   "54",
-   "45",
-   "540"
+   "860",
+   "610",
+   "850",
+   "840"
+  ],
+  "a": 2,
+  "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
+  "difficulty": 1,
+  "skill": "add-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 2
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_gop_v1_490",
+  "q": "400 + 90 = ?",
+  "choices": [
+   "409",
+   "49",
+   "94",
+   "490"
   ],
   "a": 3,
-  "hint": "Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.",
-  "difficulty": 3,
-  "skill": "write-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 1
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu viet v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_doc_v1_603",
-  "q": "Số 603 đọc là:",
-  "choices": [
-   "sáu trăm ba mươi",
-   "sáu trăm linh ba",
-   "sáu mươi ba",
-   "ba trăm linh sáu"
-  ],
-  "a": 1,
-  "hint": "Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».",
-  "difficulty": 3,
-  "skill": "read-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 1
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu doc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_doc_v1_378",
-  "q": "Số 378 đọc là:",
-  "choices": [
-   "ba trăm tám mươi bảy",
-   "ba trăm bảy mươi tám",
-   "tám trăm bảy mươi ba",
-   "bảy trăm ba mươi tám"
-  ],
-  "a": 1,
-  "hint": "Đọc lần lượt hàng trăm, hàng chục, hàng đơn vị. Hàng chục là 0 thì đọc «linh».",
+  "hint": "Mấy trăm, mấy chục, mấy đơn vị? Viết lần lượt từng chữ số, hàng nào không có thì viết 0.",
   "difficulty": 2,
-  "skill": "read-1000",
+  "skill": "place-value-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -955,23 +985,23 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu doc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu gop v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
  {
-  "id": "toan_g13_viet_v1_150",
-  "q": "Số «một trăm năm mươi» viết là:",
+  "id": "toan_g13_tong_v1_849",
+  "q": "Viết số 849 thành tổng các trăm, chục, đơn vị:",
   "choices": [
-   "105",
-   "150",
-   "15",
-   "51"
+   "800 + 40 + 9",
+   "800 + 90 + 4",
+   "8 + 4 + 9",
+   "900 + 40 + 8"
   ],
-  "a": 1,
-  "hint": "Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.",
-  "difficulty": 3,
-  "skill": "write-1000",
+  "a": 0,
+  "hint": "Mỗi chữ số có giá trị theo hàng: chữ số hàng trăm có giá trị mấy trăm, hàng chục mấy chục.",
+  "difficulty": 2,
+  "skill": "place-value-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -985,7 +1015,97 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu viet v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu tong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_sau_v1_174",
+  "q": "Số liền sau của 174 là:",
+  "choices": [
+   "175",
+   "173",
+   "184",
+   "274"
+  ],
+  "a": 0,
+  "hint": "Số liền sau hơn số đã cho 1 đơn vị.",
+  "difficulty": 1,
+  "skill": "sequence-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu sau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_tong_v1_101",
+  "q": "Viết số 101 thành tổng các trăm, chục, đơn vị:",
+  "choices": [
+   "100 + 1",
+   "100 + 10",
+   "1 + 0 + 1",
+   "10 + 1"
+  ],
+  "a": 0,
+  "hint": "Mỗi chữ số có giá trị theo hàng: chữ số hàng trăm có giá trị mấy trăm, hàng chục mấy chục.",
+  "difficulty": 2,
+  "skill": "place-value-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu tong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_sau_v1_109",
+  "q": "Số liền sau của 109 là:",
+  "choices": [
+   "108",
+   "100",
+   "119",
+   "110"
+  ],
+  "a": 3,
+  "hint": "Số liền sau hơn số đã cho 1 đơn vị.",
+  "difficulty": 2,
+  "skill": "sequence-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu sau v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
@@ -1020,16 +1140,16 @@
   ]
  },
  {
-  "id": "toan_g13_lv_v1_1-548-323-4-6-5",
-  "q": "Minh có 548 que tính. Minh cho bạn 323 que tính. Hỏi Minh còn lại bao nhiêu que tính?",
+  "id": "toan_g13_lv_v1_1-562-366-2-0-1-0",
+  "q": "Cửa hàng Hòa Bình có 562 ki-lô-gam gạo. Cửa hàng Hòa Bình đã bán 366 ki-lô-gam gạo. Hỏi Cửa hàng Hòa Bình còn lại bao nhiêu ki-lô-gam gạo?",
   "choices": [
-   "871",
-   "215",
-   "235",
-   "225"
+   "928",
+   "204",
+   "206",
+   "196"
   ],
   "a": 3,
-  "hint": "Cho bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.",
+  "hint": "Bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.",
   "difficulty": 2,
   "skill": "word-1step-addsub",
   "track": "core",
@@ -1050,18 +1170,18 @@
   ]
  },
  {
-  "id": "toan_g13_gop_v1_306",
-  "q": "300 + 6 = ?",
+  "id": "toan_g13_viet_v1_306",
+  "q": "Số «ba trăm linh sáu» viết là:",
   "choices": [
    "360",
-   "306",
    "36",
+   "306",
    "603"
   ],
-  "a": 1,
-  "hint": "Mấy trăm, mấy chục, mấy đơn vị? Viết lần lượt từng chữ số, hàng nào không có thì viết 0.",
-  "difficulty": 2,
-  "skill": "place-value-1000",
+  "a": 2,
+  "hint": "Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.",
+  "difficulty": 3,
+  "skill": "write-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -1075,7 +1195,7 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu gop v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu viet v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
@@ -1200,16 +1320,16 @@
   ]
  },
  {
-  "id": "toan_g13_lv_v1_4-432-74-4-3-5",
-  "q": "Minh có 432 que tính, Minh có ít hơn Nam 74 que tính. Hỏi Nam có bao nhiêu que tính?",
+  "id": "toan_g13_lv_v1_4-43-19-0-4-1-5",
+  "q": "Mai có 43 que tính, Mai có ít hơn An 19 que tính. Hỏi An có bao nhiêu que tính?",
   "choices": [
-   "358",
-   "506",
-   "406",
-   "516"
+   "24",
+   "52",
+   "62",
+   "72"
   ],
-  "a": 1,
-  "hint": "Đọc kĩ: Minh ít hơn Nam, vậy Nam có nhiều hơn hay ít hơn Minh?",
+  "a": 2,
+  "hint": "Đọc kĩ: Mai ít hơn An, vậy An có nhiều hơn hay ít hơn Mai?",
   "difficulty": 3,
   "skill": "word-1step-addsub",
   "track": "core",
@@ -1230,17 +1350,47 @@
   ]
  },
  {
-  "id": "toan_g13_cong_v1_426-99",
-  "q": "426 + 99 = ?",
+  "id": "toan_g13_truoc_v1_747",
+  "q": "Số liền trước của 747 là:",
   "choices": [
-   "415",
-   "525",
-   "515",
-   "425"
+   "748",
+   "737",
+   "647",
+   "746"
+  ],
+  "a": 3,
+  "hint": "Số liền trước kém số đã cho 1 đơn vị.",
+  "difficulty": 1,
+  "skill": "sequence-1000",
+  "track": "core",
+  "stage": 1,
+  "lesson": {
+   "book": "kntt-toan3",
+   "vol": 1,
+   "no": 1
+  },
+  "source": "gen-b1b3-v1",
+  "unit": "toan_g13",
+  "review": [
+   {
+    "by": "claude",
+    "status": "mau-kiem-thu",
+    "note": "mẫu truoc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+   }
+  ]
+ },
+ {
+  "id": "toan_g13_cong_v1_101-17",
+  "q": "101 + 17 = ?",
+  "choices": [
+   "128",
+   "118",
+   "271",
+   "84"
   ],
   "a": 1,
   "hint": "Đặt tính thẳng hàng (đơn vị dưới đơn vị). Cộng từ hàng đơn vị; được 10 trở lên thì nhớ 1 sang hàng bên trái.",
-  "difficulty": 3,
+  "difficulty": 1,
   "skill": "add-1000",
   "track": "core",
   "stage": 1,
@@ -1260,18 +1410,18 @@
   ]
  },
  {
-  "id": "toan_g13_viet_v1_411",
-  "q": "Số «bốn trăm mười một» viết là:",
+  "id": "toan_g13_truoc_v1_411",
+  "q": "Số liền trước của 411 là:",
   "choices": [
-   "114",
-   "141",
-   "411",
-   "41"
+   "412",
+   "410",
+   "401",
+   "311"
   ],
-  "a": 2,
-  "hint": "Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.",
-  "difficulty": 2,
-  "skill": "write-1000",
+  "a": 1,
+  "hint": "Số liền trước kém số đã cho 1 đơn vị.",
+  "difficulty": 1,
+  "skill": "sequence-1000",
   "track": "core",
   "stage": 1,
   "lesson": {
@@ -1285,7 +1435,7 @@
    {
     "by": "claude",
     "status": "mau-kiem-thu",
-    "note": "mẫu viet v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
+    "note": "mẫu truoc v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },
@@ -1560,16 +1710,16 @@
   ]
  },
  {
-  "id": "toan_g13_lv_v1_2-587-344-6-3-6",
-  "q": "Bình có 587 tờ giấy màu. Nam có nhiều hơn Bình 344 tờ giấy màu. Hỏi Nam có bao nhiêu tờ giấy màu?",
+  "id": "toan_g13_lv_v1_2-594-338-2-1-1-0",
+  "q": "Cửa hàng Hòa Bình có 594 quả trứng. Cửa hàng Bình An có nhiều hơn Cửa hàng Hòa Bình 338 quả trứng. Hỏi Cửa hàng Bình An có bao nhiêu quả trứng?",
   "choices": [
-   "243",
-   "821",
-   "931",
-   "921"
+   "256",
+   "822",
+   "932",
+   "922"
   ],
   "a": 2,
-  "hint": "Ai có nhiều hơn? Số của Nam lớn hơn hay bé hơn số của Bình?",
+  "hint": "Ai có nhiều hơn? Số của Cửa hàng Bình An lớn hơn hay bé hơn số của Cửa hàng Hòa Bình?",
   "difficulty": 2,
   "skill": "word-1step-addsub",
   "track": "core",
@@ -1646,156 +1796,6 @@
     "by": "claude",
     "status": "mau-kiem-thu",
     "note": "mẫu cong v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_timsbt_v1_141-33",
-  "q": "Tìm số thích hợp: ? − 141 = 33",
-  "choices": [
-   "108",
-   "174",
-   "184",
-   "471"
-  ],
-  "a": 1,
-  "hint": "Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ.",
-  "difficulty": 1,
-  "skill": "find-minuend",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 3
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu timsbt v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_viet_v1_152",
-  "q": "Số «một trăm năm mươi hai» viết là:",
-  "choices": [
-   "125",
-   "152",
-   "251",
-   "512"
-  ],
-  "a": 1,
-  "hint": "Viết từ hàng trăm đến hàng đơn vị. «linh» nghĩa là hàng chục là chữ số 0.",
-  "difficulty": 2,
-  "skill": "write-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 1
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu viet v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_tru_v1_89-86",
-  "q": "89 − 86 = ?",
-  "choices": [
-   "175",
-   "13",
-   "3",
-   "103"
-  ],
-  "a": 2,
-  "hint": "Đặt tính thẳng hàng rồi trừ từ hàng đơn vị. Chữ số trên bé hơn thì mượn 1 chục (hoặc 1 trăm) và nhớ trả ở hàng bên trái.",
-  "difficulty": 1,
-  "skill": "sub-1000",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 2
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu tru v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_timsh_v1_0-352-460",
-  "q": "Tìm số thích hợp: ? + 352 = 460",
-  "choices": [
-   "812",
-   "108",
-   "112",
-   "118"
-  ],
-  "a": 1,
-  "hint": "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết.",
-  "difficulty": 2,
-  "skill": "find-addend",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 3
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu timsh v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
-   }
-  ]
- },
- {
-  "id": "toan_g13_timsbt_v1_5-473",
-  "q": "Tìm số thích hợp: ? − 5 = 473",
-  "choices": [
-   "468",
-   "488",
-   "478",
-   "523"
-  ],
-  "a": 2,
-  "hint": "Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ.",
-  "difficulty": 1,
-  "skill": "find-minuend",
-  "track": "core",
-  "stage": 1,
-  "lesson": {
-   "book": "kntt-toan3",
-   "vol": 1,
-   "no": 3
-  },
-  "source": "gen-b1b3-v1",
-  "unit": "toan_g13",
-  "review": [
-   {
-    "by": "claude",
-    "status": "mau-kiem-thu",
-    "note": "mẫu timsbt v1 qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể"
    }
   ]
  },

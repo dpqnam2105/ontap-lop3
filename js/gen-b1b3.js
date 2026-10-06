@@ -6,7 +6,10 @@
 // Nguyên tắc (đã chốt với Codex):
 // - Câu TÁI TẠO ĐƯỢC: id = "toan_g13_<mẫu>_v<phiên bản>_<tham số>". Cùng id → cùng đề,
 //   đáp án, gợi ý, thứ tự lựa chọn. GenB13.build(id) dựng lại đúng câu đã gặp (ôn câu sai).
-//   Sửa mẫu làm đổi nội dung thì tăng VERSION, id cũ không còn dựng được (build trả null).
+//   PHIÊN BẢN: bảng mẫu của mỗi phiên bản được GIỮ NGUYÊN mãi (T_BY_VER). Muốn sửa một mẫu:
+//   tạo bảng mới (vd T2 = Object.assign({}, T, { cong: congMoi })), thêm vào T_BY_VER, tăng VERSION.
+//   Câu luyện mới dùng VERSION mới; id v1 đã nằm trong lịch ôn vẫn dựng lại đúng câu cũ.
+//   Ảnh chụp cố định (tests/fixtures/gen-b1b3-golden.json) báo đỏ nếu lỡ đổi nội dung một phiên bản đã phát hành.
 // - Phạm vi toán học: số 0–1000 (một, hai, ba chữ số, 0 và 1000). Khi luyện ưu tiên số
 //   ba chữ số nhưng KHÔNG loại số nhỏ: hiệu nhỏ (302 − 298), số chưa biết nhỏ (? + 245 = 250),
 //   tổng bằng 1000 đều có.
@@ -425,41 +428,49 @@ const GenB13 = {
           hint: 'Muốn tìm số trừ, ta lấy số bị trừ trừ đi hiệu.', difficulty: GenB13.borrows(a, c) ? 2 : 1 };
       }
     },
-    // B2 — bài toán một bước (cộng, trừ). Tham số: [khung, x, y, tên A, tên B, đồ vật]
+    // B2 — bài toán một bước (cộng, trừ). Tham số: [khung, x, y, bối cảnh, đồ vật, bên A, bên B]
+    // Phạm vi số theo bối cảnh: đồ dùng của một bé thì số nhỏ; số ba chữ số dùng thư viện, cửa hàng, trang trại.
+    // Ca biên thuần tính (999 + 1, 1000 − 1, hiệu rất nhỏ) để ở mẫu cong / tru, không ép vào lời văn.
     lv: {
-      skill: 'word-1step-addsub', lesson: 2, n: 6,
+      skill: 'word-1step-addsub', lesson: 2, n: 7,
       gen(r) {
         const f = GenB13._int(r, 0, GenB13.FRAMES.length - 1), op = GenB13.FRAMES[f].op;
+        const s = r() < 0.4 ? 0 : GenB13._int(r, 1, GenB13.SCENES.length - 1), S = GenB13.SCENES[s];
         let x, y;
-        if (op > 0) { x = GenB13._pickNum(r, 10, 990); y = GenB13._pickNum(r, 1, 1000 - x); }
-        else { x = GenB13._pickNum(r, 10, 1000); y = GenB13._pickNum(r, 1, x - 1); }
-        const A = GenB13._int(r, 0, GenB13.NAMES.length - 1);
-        let B = GenB13._int(r, 0, GenB13.NAMES.length - 2); if (B >= A) B++;
-        return [f, x, y, A, B, GenB13._int(r, 0, GenB13.ITEMS.length - 1)];
+        if (S.small) {
+          x = GenB13._int(r, 10, S.xMax);
+          y = op > 0 ? GenB13._int(r, 1, Math.min(S.yMax, S.ansMax - x)) : GenB13._int(r, 1, Math.min(S.yMax, x - 1));
+        } else if (op > 0) { x = GenB13._int(r, 100, 950); y = GenB13._pickNum(r, 1, 1000 - x); }
+        else { x = GenB13._pickNum(r, 101, 1000); y = GenB13._pickNum(r, 1, x - 1); }
+        const A = GenB13._int(r, 0, S.parties.length - 1);
+        let B = GenB13._int(r, 0, S.parties.length - 2); if (B >= A) B++;
+        return [f, x, y, s, GenB13._int(r, 0, S.items.length - 1), A, B];
       },
-      build([f, x, y, A, B, it]) {
-        const F = GenB13.FRAMES[f], N = GenB13.NAMES, I = GenB13.ITEMS[it];
-        if (!F || x > 1000 || y > 1000 || A >= N.length || B >= N.length || A === B || !I || y < 1 || x < 1) return null;
+      build([f, x, y, s, it, A, B]) {
+        const F = GenB13.FRAMES[f], S = GenB13.SCENES[s];
+        if (!F || !S || it >= S.items.length || A >= S.parties.length || B >= S.parties.length || A === B || x < 1 || y < 1) return null;
         const ans = x + F.op * y, E = GenB13.ERR;
-        if (!GenB13._ok(ans) || ans < 1) return null;
+        if (ans < 1 || ans > 1000) return null;
+        if (S.small ? (x > S.xMax || y > S.yMax || ans > S.ansMax) : x < 100) return null;   // số phải hợp bối cảnh
         // nhiễu đầu tiên: dùng phép tính ngược lại (lỗi hay gặp nhất ở bài có lời văn)
         const errs = F.op > 0
           ? [[x - y, 'nhầm phép trừ']].concat(GenB13._addErrs(x, y))
           : [[x + y, 'nhầm phép cộng']].concat(GenB13._subErrs(x, y));
         const ds = GenB13._pick3(ans, errs);
         if (!ds) return null;
-        const q = F.text.replace(/\{A\}/g, N[A]).replace(/\{B\}/g, N[B]).replace(/\{x\}/g, GenB13.fmt(x)).replace(/\{y\}/g, GenB13.fmt(y)).replace(/\{i\}/g, I);
-        return { q, ans: GenB13.fmt(ans), wrong: ds.map(v => GenB13.fmt(v)), hint: F.hint, difficulty: F.trap ? 3 : 2 };
+        const fill = t => t.replace(/\{A\}/g, S.parties[A]).replace(/\{B\}/g, S.parties[B]).replace(/\{x\}/g, GenB13.fmt(x))
+          .replace(/\{y\}/g, GenB13.fmt(y)).replace(/\{i\}/g, S.items[it]).replace(/\{add\}/g, S.add).replace(/\{sub\}/g, S.sub);
+        return { q: fill(F.text), ans: GenB13.fmt(ans), wrong: ds.map(v => GenB13.fmt(v)), hint: fill(F.hint), difficulty: F.trap ? 3 : 2 };
       }
     }
   },
 
   // Khung lời văn: op +1 cộng, −1 trừ. trap: câu "A ít hơn B" mà hỏi B (bẫy đảo chiều).
   FRAMES: [
-    { key: 'them', op: 1, text: '{A} có {x} {i}. Mẹ cho {A} thêm {y} {i}. Hỏi {A} có tất cả bao nhiêu {i}?',
+    { key: 'them', op: 1, text: '{A} có {x} {i}. {A} {add} {y} {i}. Hỏi {A} có tất cả bao nhiêu {i}?',
       hint: 'Có thêm thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.' },
-    { key: 'bot', op: -1, text: '{A} có {x} {i}. {A} cho bạn {y} {i}. Hỏi {A} còn lại bao nhiêu {i}?',
-      hint: 'Cho bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.' },
+    { key: 'bot', op: -1, text: '{A} có {x} {i}. {A} {sub} {y} {i}. Hỏi {A} còn lại bao nhiêu {i}?',
+      hint: 'Bớt đi thì số lượng nhiều lên hay ít đi? Chọn phép tính phù hợp.' },
     { key: 'nhieu', op: 1, text: '{A} có {x} {i}. {B} có nhiều hơn {A} {y} {i}. Hỏi {B} có bao nhiêu {i}?',
       hint: 'Ai có nhiều hơn? Số của {B} lớn hơn hay bé hơn số của {A}?' },
     { key: 'it', op: -1, text: '{A} có {x} {i}. {B} có ít hơn {A} {y} {i}. Hỏi {B} có bao nhiêu {i}?',
@@ -469,8 +480,19 @@ const GenB13 = {
     { key: 'aNhieuB', op: -1, trap: true, text: '{A} có {x} {i}, {A} có nhiều hơn {B} {y} {i}. Hỏi {B} có bao nhiêu {i}?',
       hint: 'Đọc kĩ: {A} nhiều hơn {B}, vậy {B} có nhiều hơn hay ít hơn {A}?' }
   ],
-  NAMES: ['Lan', 'Mai', 'Hoa', 'Nam', 'Minh', 'An', 'Bình', 'Hà'],
-  ITEMS: ['quyển vở', 'nhãn vở', 'viên bi', 'bông hoa', 'quả cam', 'que tính', 'tờ giấy màu', 'hạt cườm'],
+  // Bối cảnh: small = đồ dùng của một bé (x ≤ 99, thêm/bớt ≤ 60, kết quả ≤ 150); còn lại số bị trừ / số ban đầu ≥ 100.
+  SCENES: [
+    { key: 'ca-nhan', small: true, xMax: 99, yMax: 60, ansMax: 150,
+      parties: ['Lan', 'Mai', 'Hoa', 'Nam', 'Minh', 'An', 'Bình', 'Hà'],
+      items: ['quyển vở', 'nhãn vở', 'viên bi', 'bông hoa', 'que tính', 'tờ giấy màu', 'hạt cườm'],
+      add: 'được mẹ cho thêm', sub: 'cho bạn' },
+    { key: 'thu-vien', parties: ['Thư viện Hoa Sen', 'Thư viện Hoa Mai'], items: ['quyển sách', 'quyển truyện'],
+      add: 'mua thêm', sub: 'cho mượn' },
+    { key: 'cua-hang', parties: ['Cửa hàng Bình An', 'Cửa hàng Hòa Bình'], items: ['ki-lô-gam gạo', 'quả trứng'],
+      add: 'nhập thêm', sub: 'đã bán' },
+    { key: 'trang-trai', parties: ['Trang trại nhà Tú', 'Trang trại nhà Hùng'], items: ['con gà', 'con vịt'],
+      add: 'mua thêm', sub: 'đã bán' }
+  ],
 
   // Tỉ trọng khi bốc câu: cộng, trừ, lời văn gấp đôi; bốn mẫu so sánh nhiều số chia nhau một suất.
   WEIGHT: { cong: 2, tru: 2, lv: 2, max: 0.5, min: 0.5, xeptang: 0.5, xepgiam: 0.5 },
@@ -543,8 +565,10 @@ const GenB13 = {
 
   // ---------- id ----------
   id(tpl, params) { return this.PREFIX + '_' + tpl + '_v' + this.VERSION + '_' + params.join('-'); },
+  /** Bảng mẫu theo phiên bản. KHÔNG sửa bảng của phiên bản đã phát hành — thêm phiên bản mới. */
+  get T_BY_VER() { return { 1: this.T }; },
   parse(id) {
-    const m = /^toan_g13_([a-zA-Z]+)_v(\d+)_(\d+(?:-\d+)*)$/.exec(String(id || ''));
+    const m = /^toan_g13_([a-zA-Z]+)_v([1-9]\d*)_(\d+(?:-\d+)*)$/.exec(String(id || ''));   // v01 bị từ chối
     if (!m) return null;
     const params = m[3].split('-').map(Number);
     if (m[3].split('-').some(s => s.length > 1 && s[0] === '0')) return null;   // không nhận số 0 đứng đầu: mỗi câu đúng một id
@@ -554,9 +578,10 @@ const GenB13 = {
   /** Dựng lại câu từ id. Id sai, sai phiên bản, tham số ngoài phạm vi, không đủ nhiễu → null. */
   build(id) {
     const p = this.parse(id);
-    if (!p || p.ver !== this.VERSION) return null;
-    const T = this.T[p.tpl];
-    if (!T || p.params.length !== T.n || !p.params.every(v => this._ok(v) || (p.tpl === 'lv' && Number.isInteger(v) && v >= 0))) return null;
+    const table = p && this.T_BY_VER[p.ver];
+    if (!table || p.ver > this.VERSION) return null;
+    const T = Object.prototype.hasOwnProperty.call(table, p.tpl) ? table[p.tpl] : null;
+    if (!T || p.params.length !== T.n || !p.params.every(v => this._ok(v))) return null;
     this._lastWhy = null;
     const core = T.build.call(T, p.params);
     if (!core) return null;
@@ -566,20 +591,19 @@ const GenB13 = {
       a = Math.floor(this._rng(id + '|a')() * 4);
       choices = core.wrong.slice(); choices.splice(a, 0, core.ans);
     }
-    const lv = p.tpl === 'lv' ? this.FRAMES[p.params[0]] : null;
-    const hint = lv ? core.hint.replace(/\{A\}/g, this.NAMES[p.params[3]]).replace(/\{B\}/g, this.NAMES[p.params[4]]) : core.hint;
     const q = {
-      id, q: core.q, choices, a, hint, difficulty: core.difficulty,
+      id, q: core.q, choices, a, hint: core.hint, difficulty: core.difficulty,
       skill: T.skill, track: 'core', stage: 1,
       lesson: { book: this.BOOK, vol: 1, no: T.lesson },
       source: this.SOURCE, unit: 'toan_g13',
-      review: [{ by: 'claude', status: 'mau-kiem-thu', note: 'mẫu ' + p.tpl + ' v' + this.VERSION + ' qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể' }]
+      review: [{ by: 'claude', status: 'mau-kiem-thu', note: 'mẫu ' + p.tpl + ' v' + p.ver + ' qua tests/gen-b1b3.test.js; chưa ai rà câu cụ thể' }]
     };
     if (T.keepOrder) q.keepOrder = true;
     return q;
   },
 
-  /** Cho người rà: câu + tên lỗi sinh ra từng nhiễu (theo thứ tự nhiễu trong core, không theo vị trí lựa chọn). */
+  /** Cho người rà: câu + tên lỗi sinh ra từng nhiễu. CHỈ để rà mẫu — không dùng để kết luận bé mắc lỗi gì
+   *  từ một lần chọn sai (một số nhiễu có thể do nhiều lỗi khác nhau sinh ra). */
   explain(id) {
     const q = this.build(id);
     if (!q) return null;
@@ -592,20 +616,31 @@ const GenB13 = {
   },
 
   /**
-   * Chọn n câu (id khác nhau) theo seed cố định. opts.templates: danh sách mẫu; opts.maxLesson: chỉ mẫu có lesson ≤.
-   * Cùng seed → cùng danh sách. Mỗi mẫu xuất hiện xấp xỉ đều nhau.
+   * Chọn n câu (id khác nhau) theo seed cố định, luôn dùng VERSION hiện tại. Cùng seed → cùng danh sách.
+   * opts.templates: chỉ lấy các tên mẫu CÓ THẬT trong danh sách (tên sai bị bỏ qua).
+   * opts.maxLesson: không truyền (undefined) = không lọc; số nguyên ≥ 0 = chỉ mẫu có lesson ≤ maxLesson;
+   *   giá trị khác (null, âm, số lẻ, chuỗi…) = không mở gì.
+   * Không còn mẫu nào → trả [] để bên gọi dùng câu tĩnh.
    */
   pick(seed, n, opts) {
     opts = opts || {};
+    if (!Number.isInteger(n) || n <= 0) return [];
     const r = this._rng('pick|' + seed);
-    let tpls = opts.templates || Object.keys(this.T);
-    if (opts.maxLesson) tpls = tpls.filter(t => this.T[t].lesson <= opts.maxLesson);
+    const TT = this.T_BY_VER[this.VERSION];                // câu mới luôn sinh theo phiên bản hiện tại
+    const has = t => typeof t === 'string' && Object.prototype.hasOwnProperty.call(TT, t);
+    let tpls = opts.templates === undefined ? Object.keys(TT) : (Array.isArray(opts.templates) ? opts.templates : []);
+    tpls = [...new Set(tpls.filter(has))];
+    if (opts.maxLesson !== undefined) {
+      if (!Number.isInteger(opts.maxLesson) || opts.maxLesson < 0) return [];
+      tpls = tpls.filter(t => TT[t].lesson <= opts.maxLesson);
+    }
+    if (!tpls.length) return [];
     const W = tpls.map(t => this.WEIGHT[t] || 1), sumW = W.reduce((x, y) => x + y, 0);
     const out = [], seen = new Set();
     let guard = 0;
     while (out.length < n && guard++ < n * 5) {
       let x = r() * sumW, k = 0; while (x >= W[k]) { x -= W[k]; k++; }
-      const tpl = tpls[k], T = this.T[tpl];
+      const tpl = tpls[k], T = TT[tpl];
       for (let tries = 0; tries < 40; tries++) {          // giữ đúng mẫu đã chọn, chỉ sinh lại tham số
         const id = this.id(tpl, T.gen.call(T, r));
         if (seen.has(id)) continue;
