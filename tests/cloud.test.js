@@ -706,6 +706,62 @@ const tests = {
     assert.ok((await run(B, 'Cloud.restoreBackup("Thỏ", ' + JSON.stringify(id) + ')')).ok);
     assert.strictEqual(run(B, 'Cloud._backups("Thỏ").length'), 0);
   },
+  async 'ghi đè đang chờ + dữ liệu hỏng (damaged) → không POST, không beacon, huỷ ghi đè; phục hồi xong mới gửi'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 500); await sleep(60);                          // bản mạng tốt: p = 600
+    // 1. Bố mẹ mở file trên B, gửi lỗi → forceRev đang chờ
+    srv.mode = 'http500';
+    const mk = (xp, extra) => JSON.stringify({ v: 1, name: 'Thỏ', at: 1, keys: Object.assign({ '@profile': JSON.stringify({ playerName: 'Thỏ', xp, stars: 1, level: 1 }) }, extra || {}) });
+    B.__file = { text: async () => mk(42) };
+    await run(B, 'Cloud.openFile(__file)');
+    assert.ok(meta(B, 'thỏ').forceRev, 'forceRev đang chờ');
+    // 2. Mở file thứ hai (lớn) → đầy bộ nhớ, rollback không đủ chỗ → damaged
+    const ls = B.localStorage, orig = ls.setItem.bind(ls);
+    let failed = false;
+    ls.setItem = (k, v) => {
+      if (!failed && k.endsWith('::thỏ') && String(v).length > 300) { failed = true; ls.quota = ls.used() - 10; throw new Error('QuotaExceededError'); }
+      return orig(k, v);
+    };
+    B.__file = { text: async () => mk(7, { big: 'z'.repeat(400) }) };
+    await assert.rejects(run(B, 'Cloud.openFile(__file)'));
+    ls.setItem = orig; ls.quota = Infinity;
+    assert.strictEqual(run(B, 'Cloud._applyState'), 'damaged');
+    assert.ok(meta(B, 'thỏ').conflict.damaged);
+    assert.ok(!meta(B, 'thỏ').forceRev, 'huỷ ý định ghi đè cũ');
+    assert.strictEqual(run(B, 'Cloud._pendingNames().length'), 0);
+    // 3. Mạng trở lại, lượt thử lại đã hẹn chạy → KHÔNG được POST
+    srv.mode = 'ok';
+    const n = srv.saves.length;
+    await sleep(250);
+    run(B, 'Cloud._beacon()');
+    const manual = await run(B, 'Cloud.push("Thỏ", true)');
+    assert.strictEqual(manual.error, 'damaged', 'bấm tay cũng bị chặn');
+    assert.strictEqual(srv.saves.length, n, 'không POST nào');
+    assert.strictEqual(B.beacons.length, 0, 'không beacon');
+    assert.strictEqual(srv.get('thỏ').meta.p, 600, 'bản mạng tốt còn nguyên');
+    // 4. sync khi damaged → ưu tiên tự sửa (chép bản mạng), không phải force-pending
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'pulled');
+    assert.ok(!meta(B, 'thỏ').conflict);
+    // 5. Đã phục hồi → thay đổi mới được gửi bình thường
+    earn(B, 'Thỏ', 1); await sleep(80);
+    assert.strictEqual(srv.get('thỏ').meta.p, 601);
+  },
+
+  async 'khôi phục bản cất thành công sau khi hỏng → hết damaged, ghi đè được'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.ok((await run(B, 'Cloud.resolveTakeRemote("Thỏ")')).ok);
+    run(B, 'Cloud._setMeta("Thỏ", { conflict: { at: 1, damaged: true } })');   // giả sử vừa bị hỏng
+    const id = run(B, 'Cloud._backups("Thỏ")[0].id');
+    const r = await run(B, 'Cloud.restoreBackup("Thỏ", ' + JSON.stringify(id) + ')');
+    assert.ok(r.ok, 'bản cất đầy đủ → được ghi đè');
+    assert.strictEqual(srv.get('thỏ').meta.p, 107);
+    assert.ok(!meta(B, 'thỏ').conflict);
+  },
 };
 
 (async () => {

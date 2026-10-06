@@ -5,6 +5,17 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — "Dữ liệu hỏng" luôn thắng "ghi đè đang chờ" (góp ý Codex)
+- **[P1] Lỗi**: nếu bố mẹ vừa chọn ghi đè (mở file / giữ bản máy) mà gửi chưa xong, rồi một lần ghi khác bị đầy bộ nhớ làm dữ liệu trên máy thành bản lai (`damaged`), thì lượt thử lại ghi đè vẫn chạy → có thể đẩy bản lai đè lên bản tốt trên mạng.
+- Nay `damaged` được ưu tiên cao nhất:
+  - Khi dữ liệu thành bản lai: **huỷ** ý định ghi đè cũ (`forceRev`).
+  - `_pendingNames()` bỏ qua bé đang hỏng, kể cả có ghi đè đang chờ; beacon cũng bỏ qua.
+  - `_sendNow()` chặn ở bước cuối: lượt đã xếp hàng trước đó hay bấm tay đều trả `error: 'damaged'`, không gửi gì.
+  - `_reconcile()` xét "hỏng" trước "ghi đè đang chờ": đang hỏng thì chỉ thử chép lại bản mạng để tự sửa; không có bản mạng thì chờ bố mẹ mở file sao lưu.
+  - Ghi trọn một bản đầy đủ (chép bản mạng, mở file, khôi phục bản cất) thành công → hết `damaged`, gửi lại bình thường.
+- `tests/cloud.test.js`: 40 kiểm thử. Thêm đúng tình huống Codex nêu: ghi đè đang chờ → ghi hỏng → không POST, không beacon, bấm tay bị chặn, bản mạng còn nguyên → đồng bộ tự sửa → thay đổi mới gửi được. Bài này **bắt được** lỗi ở bản trước.
+- Không đổi `Code.gs`. Phiên bản file `?v=20261006o`.
+
 ## 2026-10-06 — Sửa thêm 2 lỗi Codex tìm ra (đồng bộ 2 máy)
 - **[P1] Trả lại nguyên trạng khi đầy bộ nhớ chưa chắc chắn**: trước đây nếu ghi bản mới bị đầy bộ nhớ giữa chừng, web phục hồi từng key cũ theo thứ tự; một key vừa to ra có thể chiếm chỗ làm key khác không phục hồi được, mà web vẫn báo "dữ liệu cũ giữ nguyên".
   - Nay `apply()` ghi theo thứ tự ít tốn chỗ nhất (xoá key thừa trước, key nhỏ đi trước, key to ra sau). Nếu vẫn lỗi: gỡ **hết** key của bé để giải phóng chỗ, ghi lại toàn bộ giá trị cũ, rồi **kiểm tra từng key**.

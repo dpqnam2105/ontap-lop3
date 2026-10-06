@@ -94,14 +94,17 @@ const Cloud = {
         Object.keys(target).every(k => (k in before) || localStorage.getItem(k) === null);
       this._applyState = intact ? 'restored' : 'damaged';
       if (!intact) {
-        // Máy đang là bản lai: chặn mọi đường tự gửi lên (xử lý như xung đột, đánh dấu damaged)
+        // Máy đang là bản lai: chặn MỌI đường gửi lên (kể cả ghi đè đang chờ) và huỷ ý định ghi đè cũ.
         const old = this._meta(nm).conflict || {};
-        this._setMeta(nm, { conflict: Object.assign({}, old, { at: Date.now(), damaged: true }) });
+        this._setMeta(nm, { conflict: Object.assign({}, old, { at: Date.now(), damaged: true }), forceRev: null });
       }
       return false;
     }
     try { localStorage.setItem(Storage.ACTIVE_KEY, Storage.normalizeName(nm)); } catch (e) { /* bỏ qua */ }
     this._applyState = 'applied';
+    // Dữ liệu của bé giờ đúng bằng một bản đầy đủ → hết "bản lai" (xung đột, nếu có, vẫn giữ để bố mẹ chọn)
+    const cf = this._meta(nm).conflict;
+    if (cf && cf.damaged) this._setMeta(nm, { conflict: Object.assign({}, cf, { damaged: false }) });
     return true;
   },
 
@@ -200,6 +203,8 @@ const Cloud = {
   _applying: false,
   _chain: Promise.resolve(),
 
+  _isDamaged(name) { const c = this._meta(name).conflict; return !!(c && c.damaged); },
+
   _unsaved(name) {
     const m = this._meta(name);
     return (m.localRev || 0) > (m.savedRev || 0);
@@ -236,6 +241,7 @@ const Cloud = {
       try { m = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { continue; }
       const rev = m.localRev || 0;
       if (rev <= (m.savedRev || 0)) continue;
+      if (m.conflict && m.conflict.damaged) continue;          // bản lai: không bao giờ gửi, kể cả ghi đè đang chờ
       if ((m.conflict || m.needCheck) && !m.forceRev) continue; // chờ đối chiếu / bố mẹ chọn → không gửi liên tục
       if (m.stuckRev != null && rev <= m.stuckRev) continue;    // máy chủ đã từ chối đúng bản này → chờ thay đổi mới
       out.push(m.name || k.slice(this.META_PREFIX.length));
@@ -309,6 +315,8 @@ const Cloud = {
     // Giữ cố định tên bé, rev và snapshot của lượt gửi này (đổi bé giữa chừng không làm xác nhận nhầm)
     const nm = Storage.normalizeName(name || '');
     if (!nm) return { ok: false, error: 'no name' };
+    // Chốt chặn cuối: bản lai không được lên mạng, kể cả lượt đã xếp hàng trước đó hay bấm tay
+    if (this._isDamaged(nm)) return { ok: false, error: 'damaged' };
     const m0 = this._meta(nm);
     const rev = m0.localRev || 0;
     if (opts.onlyIfUnsaved && !this._unsaved(nm)) return { ok: true, skipped: true };
@@ -438,10 +446,14 @@ const Cloud = {
     const rv = typeof r.ver === 'number' ? r.ver : null;   // null = máy chủ chưa cập nhật Code.gs mới
     this._setMeta(nm, { needCheck: null });
 
+    // (Kiểm tra bản lai trước — ưu tiên hơn ghi đè đang chờ: xem bên dưới, sau khi có snapshot.)
+    const damaged = !!(m.conflict && m.conflict.damaged);
+
     // Bố mẹ đã chọn ghi đè bằng bản máy (mở file / giữ bản máy) mà chưa gửi xong → không bao giờ kéo bản mạng đè lên
-    if (m.forceRev && this._unsaved(nm)) { this._kick(0); return 'force-pending'; }
+    if (!damaged && m.forceRev && this._unsaved(nm)) { this._kick(0); return 'force-pending'; }
 
     if (!r.found || !r.snapshot) {
+      if (damaged) return 'conflict';             // không có bản mạng để tự sửa → chờ bố mẹ (mở file sao lưu)
       if (rv != null) this._setMeta(nm, { serverVer: rv });
       await this.push(nm);
       return 'pushed';
@@ -463,7 +475,7 @@ const Cloud = {
     }
 
     // Máy đang là bản lai (ghi dở vì đầy bộ nhớ) → không bao giờ gửi lên; chỉ thử chép lại bản mạng để tự sửa
-    if (m.conflict && m.conflict.damaged) return this._pull(nm, r, local, remote, opts) || 'conflict';
+    if (damaged) return this._pull(nm, r, local, remote, opts) || 'conflict';
 
     // Máy chưa có gì (máy mới / vừa xoá trình duyệt) → lấy bản mạng
     if (!this._hasProgress(local) && this._hasProgress(remote)) return this._pull(nm, r, local, remote, opts);
@@ -773,7 +785,9 @@ const Cloud = {
 
     const status = t => { const s = document.getElementById('backupStatus'); if (s) s.textContent = t; };
     const on = (id, fn) => { const b = document.getElementById(id); if (b) b.onclick = fn; };
-    const failMsg = r => r && r.error === 'empty' ? 'Máy này chưa có sao/sticker nào để sao lưu.' : '⚠️ Chưa gửi được (mạng?). Web sẽ tự thử lại.';
+    const failMsg = r => r && r.error === 'empty' ? 'Máy này chưa có sao/sticker nào để sao lưu.'
+      : r && r.error === 'damaged' ? '⚠️ Dữ liệu trên máy chưa đầy đủ (bộ nhớ đầy) nên không gửi lên. Xoá bớt bản cất rồi bấm "Lấy bản trên mạng" hoặc mở file sao lưu.'
+      : '⚠️ Chưa gửi được (mạng?). Web sẽ tự thử lại.';
 
     on('btnBackupNow', async () => {
       status('Đang sao lưu…');
