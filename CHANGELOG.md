@@ -5,6 +5,10 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Đề xuất gắn bài cho câu Toán GĐ1 (chưa sửa dữ liệu)
+- Thêm `tools/lesson_map.py` → `docs/gan-bai-toan-gd1.md` + `docs/gan-bai-toan-gd1.csv`: 199 câu core GĐ1 → bài đề xuất, kỹ năng, nguồn đối chiếu (mục lục SGK), mức tin cậy (theo tên bài 135 · suy luận 56 · chưa gắn 8). Thống kê câu nâng cao (không gắn bài).
+- Chờ Codex/Nam rà trước khi ghi `lesson` vào dữ liệu.
+
 ## 2026-10-06 — Tiến độ cũ của chủ đề "Nền số đến 1000" được chuyển và lưu ngay khi mở web (góp ý Codex)
 - Dữ liệu tiến độ lưu theo vị trí (bản 1f57129) được đổi sang id và GHI LẠI ngay lúc tải trang, cho mọi bé trên máy, không đợi bé làm thêm câu.
 - Ánh xạ kho v1 được giữ mãi ở các phiên bản sau → bé nào lâu chưa mở máy vẫn chuyển được.
