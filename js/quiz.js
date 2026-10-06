@@ -183,6 +183,8 @@ const Quiz = {
     if (this.speed) this.mode = 'test';
     if (options.drill && window.TableGen) {
       const cand = TableGen.filterIndices(topic, options.drill.tables, options.drill.group, this.allowedIdx);
+      // Phạm vi thật của lượt Thử thách: các bảng/nhóm dạng có trong kho câu của CHÍNH lượt này → ghi kèm danh hiệu
+      if (this.speed) this.speed.scope = TableGen.scopeOf(topic, cand, options.drill.group);
       if (this.mode === 'review') this.allowedIdx = cand;
       else this.pickIdx = TableGen.pickSession(topic, cand, options.drill.count || TableGen.DRILL_SIZE);
     }
@@ -892,14 +894,15 @@ const Quiz = {
   _speedFinishMsg(total) {
     const sp = this.speed;
     const L = TableGen.LEVELS[sp.level];
-    const r = TableGen.setLevelResult(sp.level, sp.inTime);
+    const r = TableGen.setLevelResult(sp.level, sp.inTime, sp.scope);
+    const scTxt = sp.scope ? TableGen.scopeText(sp.scope) : '';
     if (window.Arena) Arena.renderChip();
     const avg = sp.ms.length ? (sp.ms.reduce((a, b) => a + b, 0) / sp.ms.length / 1000).toFixed(1).replace('.', ',') : '–';
-    let msg = '⏱️ Mức ' + L.icon + ' ' + L.name + ': đúng và kịp giờ <b>' + sp.inTime + '/' + total + '</b> câu · trung bình ' + avg + ' giây/câu' +
+    let msg = '⏱️ Mức ' + L.icon + ' ' + L.name + (scTxt ? ' (' + scTxt + ')' : '') + ': đúng và kịp giờ <b>' + sp.inTime + '/' + total + '</b> câu · trung bình ' + avg + ' giây/câu' +
       (sp.timeouts ? ' · ' + sp.timeouts + ' câu hết giờ' : '') + '.';
     if (r.newBadge) {
       msg += '<div class="arena-award">' + TableGen.badgeHTML(sp.level, true, 'lg') +
-        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b>' +
+        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b>' + (scTxt ? '<br><small>với ' + scTxt + '</small>' : '') +
         (window.Decor && Decor.equipFace(L.id) ? '<br><small>Avatar của con đã đổi thành ' + L.icon + ' (đổi lại trong Đấu trường hoặc Bộ sưu tập)</small>' : '') + '</div></div>';
     }
     if (r.unlockedNew) {
@@ -908,6 +911,7 @@ const Quiz = {
     } else if (sp.inTime < TableGen.PASS_SCORE && sp.level < TableGen.LEVELS.length - 1) {
       msg += '<br>Cần ' + TableGen.PASS_SCORE + '/20 câu để mở mức tiếp theo. Cố lên con!';
     }
+    if (!r.newBadge && r.newScope && scTxt) msg += '<br>🏅 Danh hiệu ' + L.title + ' giờ có thêm phạm vi <b>' + scTxt + '</b>!';
     if (sp.inTime > r.prevBest && r.prevBest > 0) msg += '<br>🏅 Kỉ lục mới của con ở mức này!';
     return msg;
   },

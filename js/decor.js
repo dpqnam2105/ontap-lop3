@@ -88,8 +88,10 @@ const Decor = {
     if (i < 0) { try { i = TableGen.rankOf(); } catch (e) { i = -1; } }
     if (i < 0 || !this.faceUnlocked(TableGen.LEVELS[i].id)) return '';
     const L = TableGen.LEVELS[i];
-    return '<span class="dc-title" style="--t1:' + L.c[0] + ';--t2:' + L.c[1] + ';--t3:' + L.c[2] + '" title="Danh hiệu Đấu trường tính nhanh">' +
-      L.icon + ' ' + this._esc(L.title) + '</span>';
+    let sc = '', full = '';
+    try { sc = TableGen.levelScopeText(i, null, true); full = TableGen.levelScopeText(i); } catch (e) { sc = ''; }
+    return '<span class="dc-title" style="--t1:' + L.c[0] + ';--t2:' + L.c[1] + ';--t3:' + L.c[2] + '" title="Danh hiệu Đấu trường tính nhanh' + (full ? ' — ' + this._esc(full) : '') + '">' +
+      L.icon + ' ' + this._esc(L.title) + (sc ? ' <small class="dc-title-scope">· ' + this._esc(sc) + '</small>' : '') + '</span>';
   },
   faceHTML(id) {
     const f = this.faces().find(x => x.id === id);

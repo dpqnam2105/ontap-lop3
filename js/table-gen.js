@@ -305,6 +305,7 @@ const TableGen = {
     d.level = d.level || { unlocked: 0, best: {} };
     d.level.best = d.level.best || {};
     d.level.passed = d.level.passed || {};
+    d.level.scopes = d.level.scopes || {};   // { mức: [ { t: [bảng…], g: 'all'|'calc'|'rel', at: 'yyyy-mm-dd', s: điểm } ] }
     return d;
   },
   saveSpeed(d) {
@@ -351,19 +352,96 @@ const TableGen = {
   },
   factLabel(fact) { const [a, b] = fact.split('x'); return a + ' × ' + b; },
 
-  setLevelResult(level, inTime) {
+  // ---------- Phạm vi của lượt đạt ----------
+  // Mỗi lượt ĐẠT ghi đúng phạm vi của chính lượt đó (bảng + nhóm dạng). Nhiều lượt riêng
+  // KHÔNG gộp lại thành một phạm vi chưa từng thử (vd. đạt bảng 2 và bảng 5 riêng ≠ đạt "bảng 2, 5").
+
+  /** Phạm vi thật của một lượt: các bảng/nhóm dạng có trong kho câu của lượt đó. */
+  scopeOf(topic, idxs, group) {
+    const qs = (topic && topic.questions) || [];
+    const ts = new Set(), gs = new Set();
+    (idxs || []).forEach(i => { const q = qs[i]; if (!q || q._table == null) return; ts.add(q._table); gs.add(this.groupOf(q._form)); });
+    let g = group && group !== 'all' ? group : 'all';
+    if (g === 'all' && gs.size === 1) g = [...gs][0];   // chọn "tất cả" nhưng kho chỉ có 1 nhóm → ghi đúng nhóm đó
+    return { t: [...ts].sort((a, b) => a - b), g };
+  },
+
+  /** "2–9", "2, 5", "2–4, 7" */
+  fmtTables(ts) {
+    const a = (ts || []).slice().sort((x, y) => x - y);
+    const parts = [];
+    for (let i = 0; i < a.length; i++) {
+      let j = i;
+      while (j + 1 < a.length && a[j + 1] === a[j] + 1) j++;
+      parts.push(j - i >= 2 ? a[i] + '–' + a[j] : (j > i ? a[i] + ', ' + a[j] : String(a[i])));
+      i = j;
+    }
+    return parts.join(', ');
+  },
+
+  /** Lời mô tả một phạm vi. short = nhãn cạnh tên (gọn). */
+  scopeText(sc, short) {
+    if (!sc || !sc.t || !sc.t.length) return '';
+    const full = sc.t.length === this.TABLES.length && this.TABLES.every(x => sc.t.includes(x));
+    const tbl = full ? 'bảng 2–9' : (short && sc.t.length > 3 ? sc.t.length + ' bảng' : 'bảng ' + this.fmtTables(sc.t));
+    const grp = sc.g && sc.g !== 'all' && this.GROUPS[sc.g] ? (short ? (sc.g === 'rel' ? 'quan hệ' : 'tính') : this.GROUPS[sc.g].label) : '';
+    return tbl + (grp ? ' · ' + grp : '');
+  },
+
+  /** Các phạm vi đã đạt ở một mức (rỗng = huy hiệu cũ, chưa ghi nhận phạm vi). */
+  scopesOf(level, d) {
+    d = d || this.getSpeed();
+    return (d.level.scopes && Array.isArray(d.level.scopes[level])) ? d.level.scopes[level] : [];
+  },
+
+  /** Phạm vi tiêu biểu để hiện: nhiều bảng nhất, ưu tiên "tất cả dạng", rồi mới nhất. Không gộp. */
+  bestScope(level, d) {
+    const list = this.scopesOf(level, d);
+    if (!list.length) return null;
+    return list.slice().sort((a, b) =>
+      (b.t.length - a.t.length) || ((b.g === 'all') - (a.g === 'all')) || String(b.at).localeCompare(String(a.at)))[0];
+  },
+
+  /** Chữ phạm vi của danh hiệu ở một mức: '' nếu chưa đạt; huy hiệu cũ → "chưa ghi nhận phạm vi" (short → ''). */
+  levelScopeText(level, d, short) {
+    d = d || this.getSpeed();
+    if (!d.level.passed[level]) return '';
+    const sc = this.bestScope(level, d);
+    if (!sc) return short ? '' : 'chưa ghi nhận phạm vi';
+    return this.scopeText(sc, short);
+  },
+
+  /**
+   * Ghi kết quả một lượt Thử thách tốc độ.
+   * scope = { t: [bảng], g } của CHÍNH lượt này (Quiz lấy từ kho câu lúc bắt đầu). Không có scope (gọi kiểu cũ)
+   * thì vẫn ghi điểm/huy hiệu như trước, chỉ không ghi phạm vi.
+   */
+  setLevelResult(level, inTime, scope) {
     const d = this.getSpeed();
     const best = d.level.best;
     const prev = best[level] || 0;
     if (inTime > prev) best[level] = inTime;
-    let unlockedNew = false, newBadge = false;
+    let unlockedNew = false, newBadge = false, newScope = false;
     if (inTime >= this.PASS_SCORE) {
-      if (!d.level.passed[level]) { d.level.passed[level] = new Date().toISOString().slice(0, 10); newBadge = true; }
+      const today = new Date().toISOString().slice(0, 10);
+      if (!d.level.passed[level]) { d.level.passed[level] = today; newBadge = true; }   // huy hiệu cũ: giữ nguyên ngày đạt
       if (d.level.unlocked <= level && level < this.LEVELS.length - 1) { d.level.unlocked = level + 1; unlockedNew = true; }
+      if (scope && Array.isArray(scope.t) && scope.t.length) {
+        const sc = { t: scope.t.slice().sort((a, b) => a - b), g: scope.g || 'all' };
+        const list = Array.isArray(d.level.scopes[level]) ? d.level.scopes[level] : (d.level.scopes[level] = []);
+        const same = list.find(x => x.g === sc.g && x.t.join(',') === sc.t.join(','));
+        if (same) { same.at = today; same.s = Math.max(same.s || 0, inTime); }
+        else { list.push(Object.assign(sc, { at: today, s: inTime })); newScope = true; }
+        if (list.length > 12) {   // giữ gọn: bỏ phạm vi ít bảng nhất, cũ nhất (không bao giờ bỏ phạm vi rộng nhất)
+          const keep = this.bestScope(level, d);
+          list.sort((a, b) => (b.t.length - a.t.length) || String(b.at).localeCompare(String(a.at)));
+          d.level.scopes[level] = list.filter((x, i) => i < 12 || x === keep);
+        }
+      }
     }
     this.saveSpeed(d);
     if (newBadge) this._syncRank(d);
-    return { unlockedNew, newBadge, best: best[level], prevBest: prev };
+    return { unlockedNew, newBadge, newScope, best: best[level], prevBest: prev, scope: scope || null };
   },
 
   /** Danh hiệu cao nhất (chỉ số mức) bé đã đạt, -1 = chưa có. */

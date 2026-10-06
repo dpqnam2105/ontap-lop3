@@ -29,6 +29,7 @@ const Arena = {
     const hero = rank >= 0
       ? `<div class="arena-hero-badge">${TableGen.badgeHTML(rank, true, 'lg')}</div>
          <div><div class="arena-kicker">Danh hiệu của ${name}</div><h2>${L[rank].icon} ${esc(L[rank].title)}</h2>
+         <div class="arena-scope">${esc(TableGen.levelScopeText(rank, d) ? 'Đạt với ' + TableGen.levelScopeText(rank, d) : '')}</div>
          <p>${rank < L.length - 1 ? 'Mục tiêu tiếp theo: <b>' + L[nextI].icon + ' ' + esc(L[nextI].title) + '</b> — đúng & kịp giờ ' + TableGen.PASS_SCORE + '/20 câu ở mức ' + esc(L[nextI].name) + '.' : '🏆 Con đã đạt danh hiệu cao nhất! Thử giữ kỉ lục 20/20 nhé.'}</p></div>`
       : `<div class="arena-hero-badge">${TableGen.badgeHTML(0, false, 'lg')}</div>
          <div><div class="arena-kicker">Chào ${name}!</div><h2>Đấu trường tính nhanh</h2>
@@ -42,7 +43,7 @@ const Arena = {
         : '';
       return `<div class="arena-shelf-item${got ? ' got' : ''}">${TableGen.badgeHTML(i, !!got, 'md')}
         <div class="asi-title">${esc(x.title)}</div>
-        <div class="asi-sub">${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div>${avatarBtn}</div>`;
+        <div class="asi-sub">${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div>${got ? this._scopeLines(i, d) : ''}${avatarBtn}</div>`;
     }).join('');
     host.innerHTML = `
       <div class="arena-hero card">${hero}</div>
@@ -52,6 +53,17 @@ const Arena = {
     host.querySelectorAll('.asi-av[data-face]').forEach(b => b.addEventListener('click', () => {
       if (Decor.equipFace(b.dataset.face)) { this.render(); try { if (window.Today) Today.render(); } catch (e) { /* bỏ qua */ } }
     }));
+  },
+
+  /** Các phạm vi đã đạt của một mức (mỗi lượt đạt một dòng, không gộp). Huy hiệu cũ: "chưa ghi nhận phạm vi". */
+  _scopeLines(i, d) {
+    const esc = x => App._escape(x);
+    const list = TableGen.scopesOf(i, d);
+    if (!list.length) return '<div class="asi-scope old">chưa ghi nhận phạm vi</div>';
+    const best = TableGen.bestScope(i, d);
+    const rest = list.filter(x => x !== best).sort((a, b) => (b.t.length - a.t.length) || String(b.at).localeCompare(String(a.at)));
+    return '<div class="asi-scope">' + esc(TableGen.scopeText(best)) + '</div>' +
+      (rest.length ? '<div class="asi-scope more" title="' + esc(rest.map(x => TableGen.scopeText(x)).join(' | ')) + '">+ ' + rest.length + ' phạm vi khác</div>' : '');
   },
 
   /** Khu huy hiệu trong Bộ sưu tập. */
@@ -67,7 +79,7 @@ const Arena = {
     }
     const d = TableGen.getSpeed();
     box.innerHTML = '<div class="arena-sec-title">⏱️ Huy hiệu Đấu trường tính nhanh</div><div class="arena-shelf-row">' +
-      TableGen.LEVELS.map((x, i) => `<div class="arena-shelf-item${d.level.passed[i] ? ' got' : ''}">${TableGen.badgeHTML(i, !!d.level.passed[i], 'md')}<div class="asi-title">${App._escape(x.title)}</div></div>`).join('') +
+      TableGen.LEVELS.map((x, i) => `<div class="arena-shelf-item${d.level.passed[i] ? ' got' : ''}">${TableGen.badgeHTML(i, !!d.level.passed[i], 'md')}<div class="asi-title">${App._escape(x.title)}</div>${d.level.passed[i] ? this._scopeLines(i, d) : ''}</div>`).join('') +
       '</div>';
   },
 
@@ -86,7 +98,9 @@ const Arena = {
       t.parentNode.insertBefore(chip, t.nextSibling);
     }
     const L = TableGen.LEVELS[rank];
-    chip.textContent = L.icon + ' ' + L.title;
+    const sc = TableGen.levelScopeText(rank, null, true);
+    chip.textContent = L.icon + ' ' + L.title + (sc ? ' · ' + sc : '');
+    chip.title = 'Danh hiệu Đấu trường' + (TableGen.levelScopeText(rank) ? ' — ' + TableGen.levelScopeText(rank) : '');
   }
 };
 

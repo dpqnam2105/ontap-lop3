@@ -696,3 +696,5 @@
 .dc-mini .dc-title{font-size:.88rem;padding:3px 10px}
 @media(max-width:430px){.dc-mini .dc-title{font-size:.78rem;padding:2px 8px}}
 .backup-conflict{background:#fff8ed;border:1px solid #ffdda7;border-radius:16px;padding:12px 14px;margin:10px 0;color:#4c3b20;font-weight:700}.backup-conflict p{margin:6px 0}#cloudConflictDot{font-size:.85em}
+.arena-scope{font-weight:850;color:#0f4f9c;margin:2px 0 6px}.asi-scope{font-size:.74rem;font-weight:850;color:#0f4f9c;line-height:1.25}.asi-scope.old{color:#94a3b8;font-weight:750}.asi-scope.more{color:var(--muted);font-weight:750;cursor:help}.dc-title-scope{font-size:.82em;opacity:.85;font-weight:800}
+@media(max-width:760px){.asi-scope{font-size:.62rem}}

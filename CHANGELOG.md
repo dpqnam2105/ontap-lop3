@@ -5,6 +5,20 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Danh hiệu Đấu trường ghi rõ phạm vi đạt (#4a, bàn cùng Codex)
+- **Vấn đề cũ**: danh hiệu chỉ lưu theo mức. Chỉ chơi bảng 2 ở mức 🐆 Báo vẫn được "Báo Tia Chớp", dễ hiểu nhầm là đã nhanh ở cả bảng 2–9.
+- **Nay**: mỗi lượt **đạt** (≥16/20) ghi đúng phạm vi của chính lượt đó — các bảng và nhóm dạng có trong kho câu của lượt (`TableGen.scopeOf`), lưu ở `tableSpeed_v1` → `level.scopes[mức]` (được sao lưu cùng dữ liệu tốc độ).
+  - **Không gộp** nhiều lượt: đạt bảng 2 và bảng 5 ở hai lượt riêng thì có 2 phạm vi "bảng 2" và "bảng 5", không thành "bảng 2, 5". Vượt riêng "Tính & tìm số thiếu" và "Quan hệ phép nhân" không thành "tất cả dạng". Chỉ hiện "bảng 2–9" khi có một lượt đạt đúng cấu hình đó.
+  - Chọn "Tất cả dạng" mà kho câu chỉ có 1 nhóm → ghi đúng nhóm đó.
+  - Danh hiệu, mở mức tiếp theo, mở avatar giữ nguyên như cũ (theo mức). Đạt lại đúng phạm vi cũ thì không ghi trùng.
+- **Huy hiệu cũ giữ nguyên** (cả ngày đạt). Chưa có phạm vi thì ghi "chưa ghi nhận phạm vi"; lần sau bé đạt lại mức đó thì ghi phạm vi thật.
+- **Hiển thị**:
+  - Màn kết quả: "Mức 🐌 Ốc sên (bảng 3 · Quan hệ phép nhân) …", "Con nhận danh hiệu … với bảng 3 · …", hoặc "Danh hiệu … giờ có thêm phạm vi …".
+  - Đấu trường: dưới danh hiệu "Đạt với …"; mỗi huy hiệu hiện phạm vi rộng nhất (nhiều bảng nhất, ưu tiên tất cả dạng) + "+ N phạm vi khác" (rê chuột xem). Bộ sưu tập cũng vậy.
+  - Nhãn cạnh tên bé: gọn, vd. "🐆 Báo Tia Chớp · bảng 2–9" / "· 5 bảng · quan hệ"; huy hiệu cũ thì không thêm chữ.
+- Kiểm thử: `tests/arena.test.js` (11 bài: huy hiệu cũ, không gộp bảng / nhóm dạng, không đạt thì không ghi, trùng, gọi kiểu cũ, `scopeOf`, cách viết bảng, cắt danh sách dài) và `tests/arena.e2e.js` (Chromium: bấm chọn bảng 3 + "Quan hệ phép nhân" ở Đấu trường → bắt đầu → kết quả → huy hiệu hiện đúng phạm vi; huy hiệu cũ hiện "chưa ghi nhận phạm vi").
+- Phiên bản file `?v=20261006p`.
+
 ## 2026-10-06 — "Dữ liệu hỏng" luôn thắng "ghi đè đang chờ" (góp ý Codex)
 - **[P1] Lỗi**: nếu bố mẹ vừa chọn ghi đè (mở file / giữ bản máy) mà gửi chưa xong, rồi một lần ghi khác bị đầy bộ nhớ làm dữ liệu trên máy thành bản lai (`damaged`), thì lượt thử lại ghi đè vẫn chạy → có thể đẩy bản lai đè lên bản tốt trên mạng.
 - Nay `damaged` được ưu tiên cao nhất:
