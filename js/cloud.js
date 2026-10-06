@@ -122,7 +122,7 @@ const Cloud = {
       try { m = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { continue; }
       const rev = m.localRev || 0;
       if (rev <= (m.savedRev || 0)) continue;
-      if (m.conflict) continue;                       // bản trên mạng tiến xa hơn → chờ xử lý, không gửi liên tục
+      if (m.conflict && !m.forceRev) continue;        // bản trên mạng tiến xa hơn → chờ xử lý, không gửi liên tục
       if (m.stuckRev != null && rev <= m.stuckRev) continue; // máy chủ đã từ chối đúng bản này → chờ thay đổi mới
       out.push(m.name || k.slice(this.META_PREFIX.length));
     }
@@ -160,10 +160,25 @@ const Cloud = {
     return this._send(name || Storage.getActiveName(), { force: !!force });
   },
 
+  /** Mọi đường gửi (tự động, nút Sao lưu ngay, sync, mở file) đều qua đây → cùng một chỗ xử lý kết quả và hẹn thử lại. */
   _send(name, opts) {
-    const job = this._chain.then(() => this._sendNow(name, opts || {}));
+    const job = this._chain
+      .then(() => this._sendNow(name, opts || {}))
+      .then(r => { this._onResult(r); return r; });
     this._chain = job.catch(() => {});
     return job;
+  },
+
+  /** Lỗi tạm thời → tăng backoff 1 lần và hẹn gửi lại; gửi được → xoá backoff. */
+  _onResult(r) {
+    if (r && r.transient) {
+      this._fail++;
+      this._retryAt = Date.now() + this.RETRY_MS[Math.min(this._fail, this.RETRY_MS.length) - 1];
+      this._kick(0);                       // _kick tự chờ tới _retryAt
+    } else if (r && r.ok && !r.skipped) {
+      this._fail = 0;
+      this._retryAt = 0;
+    }
   },
 
   async _sendNow(name, opts) {
@@ -173,6 +188,8 @@ const Cloud = {
     if (!nm) return { ok: false, error: 'no name' };
     const rev = this._meta(nm).localRev || 0;
     if (opts.onlyIfUnsaved && !this._unsaved(nm)) return { ok: true, skipped: true };
+    // Bố mẹ chủ động ghi đè: nhớ ý định này để nếu gửi lỗi thì lần thử lại vẫn là ghi đè (không bị đổi thành "older")
+    if (opts.force) this._setMeta(nm, { forceRev: Math.max(this._meta(nm).forceRev || 0, rev) });
     const snap = this.collect(nm);
     const meta = this.summary(snap);
     if (!opts.force && !this._hasProgress(meta)) {
@@ -195,7 +212,9 @@ const Cloud = {
       return { ok: false, error: 'bad response', transient: true };
     }
     if (out && out.ok === true && out.saved === true) {
-      this._markSaved(nm, rev, { lastPush: Date.now(), conflict: null, stuckRev: null });
+      const extra = { lastPush: Date.now(), conflict: null, stuckRev: null };
+      if (opts.force) extra.forceRev = null;       // yêu cầu ghi đè đã xong
+      this._markSaved(nm, rev, extra);
       return out;
     }
     if (out && out.reason === 'older') {
@@ -221,23 +240,16 @@ const Cloud = {
     let retry = false;
     try {
       for (const nm of this._pendingNames()) {
-        const r = await this._send(nm, { onlyIfUnsaved: true });
-        if (r && r.transient) {
-          this._fail++;
-          this._retryAt = Date.now() + this.RETRY_MS[Math.min(this._fail, this.RETRY_MS.length) - 1];
-          retry = true;
-          break;
-        }
+        const r = await this._send(nm, { onlyIfUnsaved: true, force: !!this._meta(nm).forceRev });
+        if (r && r.transient) { retry = true; break; }   // backoff đã được _onResult hẹn
       }
-      if (!retry) { this._fail = 0; this._retryAt = 0; }
     } catch (e) {
       console.warn('Cloud._drain', e);
     } finally {
       this._pushing = false;
     }
-    // Lỗi → hẹn theo backoff. Thành công mà vẫn còn rev mới (bé học tiếp trong lúc gửi) → gửi tiếp.
-    if (retry) this._kick(0);
-    else if (this._pendingNames().length) this._kick(1000);
+    // Lỗi → đã hẹn theo backoff. Thành công mà vẫn còn rev mới (bé học tiếp trong lúc gửi) → gửi tiếp.
+    if (!retry && this._pendingNames().length) this._kick(1000);
   },
 
   /** Gửi nhanh khi đóng tab / chuyển app. Không có phản hồi nên KHÔNG đánh dấu đã lưu. */

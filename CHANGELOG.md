@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Sao lưu: mọi đường gửi đều tự thử lại khi lỗi (#3, theo góp ý của Codex)
+- Trước: chỉ lượt gửi tự động mới hẹn thử lại. Mở file sao lưu, nút "☁️ Sao lưu ngay" và lúc đồng bộ khi mở web nếu gặp lỗi thì dữ liệu vẫn được giữ là "chưa lưu" nhưng không ai gửi lại cho tới khi có thao tác mới hoặc tải lại trang.
+- Nay mọi đường gửi đi qua một chỗ xử lý kết quả chung (`Cloud._send` → `_onResult`): lỗi tạm thời thì tăng backoff đúng 1 lần (30 giây → 2 phút → 5 phút) và tự hẹn gửi lại; gửi được thì xoá backoff.
+- Ghi đè chủ động (mở file sao lưu) mà gặp lỗi: nhớ ý định ghi đè (`forceRev` trong cloudmeta), lần thử lại vẫn là ghi đè, không bị máy chủ trả "older" rồi coi như xong. Ghi đè thành công thì xoá ý định.
+- Thêm `tests/cloud.test.js` (14 kiểm thử, chạy `node tests/cloud.test.js`).
+- Phiên bản file `?v=20261006k`.
+
 ## 2026-10-06 — Sao lưu chỉ báo "đã lưu" khi máy chủ xác nhận thật (#3, bàn cùng Codex)
 - **Lỗi đã sửa**: trước đây nếu Apps Script lỗi (trả trang HTML thay vì JSON, vd. hết giờ chờ khoá, hết quota) thì web vẫn coi là **đã lưu**; và cờ "có thay đổi" bị xoá **trước** khi gửi nên lỗi xong không gửi lại. Kết quả: có lúc tiến độ chỉ nằm trên máy mà bố mẹ tưởng đã sao lưu.
 - **Cách mới** (`js/cloud.js`): mỗi bé có 2 số trong cloudmeta — `localRev` (số lần dữ liệu trên máy thay đổi) và `savedRev` (bản mới nhất máy chủ đã xác nhận). Chỉ khi HTTP thành công **và** JSON trả `ok: true, saved: true` mới cập nhật `savedRev`, đúng bằng rev của bản đã gửi. Thay đổi phát sinh trong lúc đang gửi vẫn là "chưa lưu" và được gửi tiếp ngay sau.
