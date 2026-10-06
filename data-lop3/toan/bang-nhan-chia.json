@@ -310,7 +310,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Đếm lùi 4:  40; 36; 32; ...; 24. Số còn thiếu là?",
@@ -333,7 +345,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Biết 4 × 6 = 24. Vậy 24 : 4 = ?",
@@ -356,7 +380,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Trong các phép chia cho 4, phép nào có kết quả LỚN NHẤT?",
@@ -379,7 +415,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô như vậy có bao nhiêu bánh xe?",
@@ -402,7 +450,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi bàn học có 4 chỗ ngồi. Hỏi 9 bàn như thế có tất cả bao nhiêu chỗ ngồi?",
@@ -425,7 +485,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Nhà Lan có 28 con gà nhốt đều vào 4 chuồng. Hỏi mỗi chuồng có bao nhiêu con gà?",
@@ -448,7 +520,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Cô giáo chia đều 36 quyển vở cho 4 tổ. Hỏi mỗi tổ được bao nhiêu quyển?",
@@ -471,7 +555,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Thỏ có 4 hộp bút, mỗi hộp 6 chiếc. Thỏ cho bạn 4 chiếc. Hỏi Thỏ còn lại bao nhiêu chiếc bút?",
@@ -877,7 +973,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Đếm lùi 6:  60; 54; 48; ...; 36. Số còn thiếu là?",
@@ -900,7 +1008,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Ba số tiếp theo của dãy 18; 24; 30; ... là?",
@@ -923,7 +1043,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Tính:  6 × 9 + 6 = ?",
@@ -934,11 +1066,19 @@
           "54"
         ],
         "a": 1,
-        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "hint": "6 × 9 là 9 nhóm 6. Thêm 1 nhóm 6 nữa thì được mấy nhóm 6?",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q056",
         "stage": 1,
-        "skill": "rel-them-bot"
+        "skill": "rel-them-bot",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
+          }
+        ]
       },
       {
         "q": "Tính:  6 × 6 + 6 = ?",
@@ -949,11 +1089,19 @@
           "48"
         ],
         "a": 2,
-        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "hint": "6 × 6 là 6 nhóm 6. Thêm 1 nhóm 6 nữa thì được mấy nhóm 6?",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q057",
         "stage": 1,
-        "skill": "rel-them-bot"
+        "skill": "rel-them-bot",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
+          }
+        ]
       },
       {
         "q": "Biết 6 × 8 = 48. Vậy 48 : 8 = ?",
@@ -999,7 +1147,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc bút chì màu?",
@@ -1022,7 +1182,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi bàn ăn xếp được 6 người. Hỏi 8 bàn như thế xếp được bao nhiêu người?",
@@ -1045,7 +1217,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Một cụm hoa súng có 6 bông. Hỏi 9 cụm hoa như vậy có bao nhiêu bông?",
@@ -1068,7 +1252,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 36 quả cam xếp đều vào 6 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cam?",
@@ -1091,7 +1287,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 48 học sinh xếp thành các hàng, mỗi hàng 6 bạn. Hỏi xếp được bao nhiêu hàng?",
@@ -1114,7 +1322,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mẹ mua 6 vỉ trứng, mỗi vỉ 6 quả. Mẹ dùng hết 6 quả. Hỏi còn lại bao nhiêu quả trứng?",
@@ -1520,7 +1740,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Đếm lùi 7:  70; 63; 56; ...; 42. Số còn thiếu là?",
@@ -1543,7 +1775,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Ba số tiếp theo của dãy 21; 28; 35; ... là?",
@@ -1566,7 +1810,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Tính:  7 × 8 + 7 = ?",
@@ -1577,11 +1833,19 @@
           "78"
         ],
         "a": 1,
-        "hint": "Làm phép nhân trước, phép cộng sau.",
+        "hint": "7 × 8 là 8 nhóm 7. Thêm 1 nhóm 7 nữa thì được mấy nhóm 7?",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q093",
         "stage": 1,
-        "skill": "rel-them-bot"
+        "skill": "rel-them-bot",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
+          }
+        ]
       },
       {
         "q": "Tính:  7 × 5 + 15 = ?",
@@ -1650,7 +1914,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày?",
@@ -1673,7 +1949,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi giỏ có 7 quả cam. Hỏi 8 giỏ như thế có bao nhiêu quả cam?",
@@ -1696,7 +1984,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Một tổ có 7 bạn. Hỏi 9 tổ như thế có bao nhiêu bạn?",
@@ -1719,7 +2019,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 49 quyển vở chia đều cho 7 bạn. Hỏi mỗi bạn được bao nhiêu quyển?",
@@ -1742,7 +2054,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 56 bông hoa cắm đều vào 7 lọ. Hỏi mỗi lọ có bao nhiêu bông?",
@@ -1765,7 +2089,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Thỏ đọc mỗi ngày 7 trang sách. Hỏi sau 2 tuần Thỏ đọc được bao nhiêu trang?",
@@ -1829,7 +2165,7 @@
           "Chỉ bảng nhân 6"
         ],
         "a": 2,
-        "hint": "Thử xem 42 chia hết cho những số nào.",
+        "hint": "Tìm số 42 trong các bảng nhân đã học: bảng nào có một phép nhân bằng 42?",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q105",
         "stage": 1,
@@ -1840,8 +2176,26 @@
             "date": "2026-10-06",
             "status": "them-skill",
             "note": "rà tay"
+          },
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "gợi ý theo bảng nhân đã học, bỏ \"chia hết\""
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "các phương án dùng bảng 4, 5, 6, 7",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Số nào vừa có trong bảng nhân 4, vừa có trong bảng nhân 6?",
@@ -1852,7 +2206,7 @@
           "24"
         ],
         "a": 3,
-        "hint": "Thử từng số xem có chia hết cho cả 4 và 6 không.",
+        "hint": "Đọc bảng nhân 4 và bảng nhân 6, tìm số có mặt ở cả hai bảng.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q106",
         "stage": 1,
@@ -1863,8 +2217,26 @@
             "date": "2026-10-06",
             "status": "them-skill",
             "note": "rà tay"
+          },
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "gợi ý theo bảng nhân đã học, bỏ \"chia hết\""
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "tìm số có trong cả bảng 4 và bảng 6; không cần bảng 7",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Hai phép tính nào dưới đây có CÙNG kết quả?",
@@ -1910,7 +2282,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phương án 6×7, 7×5, 4×8, 6×6: cần bảng 4, 6, 7",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Phép tính nào có kết quả BẰNG 6 × 7?",
@@ -1956,7 +2340,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "phương án 6×8, 7×7, 6×9, 7×8: cần bảng 6, 7",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi tuần Thỏ học 6 buổi, mỗi buổi 4 tiết. Hỏi mỗi tuần Thỏ học bao nhiêu tiết?",
@@ -1979,7 +2375,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "mỗi buổi 4 tiết, 6 buổi → 4 × 6 (số lượng mỗi nhóm quyết định bảng)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 42 cái bánh chia đều cho 6 bạn, mỗi bạn lại ăn hết 3 cái. Hỏi mỗi bạn còn lại mấy cái bánh?",
@@ -2594,7 +3002,19 @@
         "skill": "word-problem",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q149",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "mỗi túi 8 cái → bảng nhân 8",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 81 quả cam xếp đều vào 9 đĩa. Hỏi mỗi đĩa có bao nhiêu quả?",
@@ -2610,7 +3030,19 @@
         "skill": "word-problem",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q150",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "81 : 9 → bảng chia 9",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mỗi tuần Thỏ học 8 tiết Toán. Hỏi 4 tuần Thỏ học bao nhiêu tiết Toán?",
@@ -2626,7 +3058,19 @@
         "skill": "word-problem",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q151",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 11
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "mỗi tuần 8 tiết → bảng nhân 8",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Có 72 học sinh xếp thành các hàng, mỗi hàng 9 bạn. Hỏi xếp được mấy hàng?",
@@ -2642,7 +3086,19 @@
         "skill": "word-problem",
         "source": "claude-audit-20260924",
         "id": "toan_bang-nhan-chia_q152",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 12
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "72 : 9 → bảng chia 9",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       }
     ]
   }

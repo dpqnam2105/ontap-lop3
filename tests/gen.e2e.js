@@ -65,6 +65,11 @@ const G13 = 'Nền số đến 1000';
     await toToan(p);
     await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
     q = await sess(p); assert.ok(q.length && q.every(y => y.topicId !== 'toan_g13'), 'Bài 1: không trộn câu lời văn sinh (B2)');
+    // câu tĩnh đã ghi số bài cũng bị lọc: Bài 1 → ẩn câu bảng 4 đã gắn B6, câu chưa gắn vẫn hiện
+    const st = await p.evaluate(() => { const s = App.allData.subjects.find(x => x.id === 'toan'); const t = s.topics.find(x => x.id === 'toan_bang-nhan-chia');
+      const a = new Set(App._allowedIndices(s, t)); const at = id => a.has(t.questions.findIndex(q => q.id === id));
+      return { q020: at('toan_bang-nhan-chia_q020'), q001: at('toan_bang-nhan-chia_q001') }; });
+    assert.ok(!st.q020 && st.q001, 'câu tĩnh có lesson B6 bị ẩn khi mới học Bài 1; câu chưa gắn vẫn hiện');
     // bỏ chọn → về hành vi giai đoạn
     await toToan(p); await p.selectOption('#lessonSelect', ''); await p.waitForTimeout(300);
     x = await info(); assert.strictEqual(x.n, x.total, 'bỏ chọn mốc bài → như cũ');

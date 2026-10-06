@@ -6,6 +6,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-07 (Claude — gắn bài GĐ1, nhóm Codex duyệt)
+- Toán / Bảng nhân, chia + Giải toán có lời văn + Ôn tập tổng hợp — thêm `lesson` (KNTT Toán 3 tập 1) + `lessonRef` cho 40 câu (chi tiết `docs/gan-bai-toan-gd1.csv`).
+- Sửa gợi ý bang-nhan q056, q057, q093, q105, q106; sửa đề on-tap-tong-hop q013 (kim giờ nằm giữa số 4 và số 5).
+
 ## 2026-10-06 (Claude — vòng 3)
 - Toán / Bảng nhân, chia — gắn skill q023, q059, q096 (`compare-quotients`), q105 (`table-product-membership`), q106 (`common-table-product`). Đủ skill 152/152 câu.
 

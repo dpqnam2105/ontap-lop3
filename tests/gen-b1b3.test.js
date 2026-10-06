@@ -206,6 +206,12 @@ const tests = {
     const c = [0, 0, 0, 0]; P.forEach(q => c[q.a]++);
     c.forEach((x, i) => assert.ok(x / P.length > 0.2 && x / P.length < 0.3, 'ô ' + i + ': ' + c.join('/')));
   },
+  'kho web v1: 300 id đúng thứ tự như fixture (ánh xạ tiến độ cũ phụ thuộc seed, trọng số, cách sinh tham số)'() {
+    const fx = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'gen-b1b3-bank-v1.json'), 'utf8'));
+    assert.strictEqual(fx.length, 300);
+    assert.deepStrictEqual(G.legacyBankIds(), fx, 'legacyBankIds đổi → dữ liệu tiến độ cũ sẽ chuyển sai');
+    if (G.VERSION === 1) assert.deepStrictEqual(G.bank().map(q => q.id), fx, 'kho web v1 đổi');
+  },
   'skill của mọi mẫu có trong data-lop3/skills.json'() {
     const L = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data-lop3', 'skills.json'), 'utf8')).labels.toan;
     for (const [t, T] of Object.entries(G.T)) assert.ok(L[T.skill], t + ': ' + T.skill);

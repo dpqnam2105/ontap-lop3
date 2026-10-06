@@ -61,7 +61,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q003",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 2
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "một bước trừ, bẫy \"nhiều hơn\" hỏi số bé",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mai có 28 nhãn vở, Mai ít hơn Lan 15 nhãn vở. Hỏi Lan có bao nhiêu nhãn vở?",
@@ -78,7 +90,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q004",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 2
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "một bước cộng, bẫy \"ít hơn\" hỏi số lớn",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Mẹ mua 12 kg gạo, đã dùng 5 kg rồi cho bà 3 kg. Hỏi còn lại bao nhiêu ki-lô-gam gạo?",
@@ -222,7 +246,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q012",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "mỗi ngày 7 trang × 6 ngày → bảng nhân 7",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Lớp có 18 bạn nam và 17 bạn nữ. Hôm nay có 3 bạn nghỉ. Hỏi hôm nay có bao nhiêu bạn đi học?",
@@ -281,7 +317,19 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q015",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 6
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "36 : 4 → bảng chia 4",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       }
     ]
   }

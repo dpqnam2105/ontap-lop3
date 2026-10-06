@@ -561,7 +561,7 @@ const App = {
     const opts = lb.titles.map((t, i) => `<option value="${i + 1}"${cur && cur.no === i + 1 ? ' selected' : ''}>Bài ${i + 1}. ${this._escape(t)}</option>`).join('');
     return `<div class="lesson-row"><label for="lessonSelect">📖 Trên lớp đã học đến:</label>
       <select id="lessonSelect" class="lesson-select"><option value=""${cur ? '' : ' selected'}>Chưa chọn (theo giai đoạn)</option>${opts}</select>
-      <small>${this._escape(lb.label)} · hiện chỉ lọc câu tự sinh (Nền số đến 1000); câu có sẵn vẫn lọc theo giai đoạn ở trên</small></div>`;
+      <small>${this._escape(lb.label)} · lọc câu tự sinh và các câu đã ghi số bài; câu chưa ghi số bài vẫn lọc theo giai đoạn ở trên</small></div>`;
   },
 
   // ─── Đề trộn tuần này (interleaving) ─────────

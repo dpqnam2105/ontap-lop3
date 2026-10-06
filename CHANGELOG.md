@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-07 — Ghi bài (lesson) cho 40 câu Toán GĐ1 đã được Codex duyệt + sửa lời 6 câu
+- `tools/apply_lesson_gd1_20261006.py`: ghi `lesson` + `lessonRef` (căn cứ `suy-luan`, Codex duyệt) cho 40 câu: bảng 4 → B6, bảng 6 → B9, bảng 7 → B10, lời văn cuối kho → B11/B12, lời văn một bước → B2, q012 → B10, q015 → B6, q106 → B9, q111 → B6, q105/q108/q110 → B10. Giữ nguyên id, thứ tự, `source`.
+- Ý nghĩa `lesson`: bài sớm nhất mà kiến thức đã học đủ để làm câu theo cách giải được hướng dẫn (không phải "câu lấy từ bài đó").
+- Sửa lời: gợi ý q105/q106 theo "tìm trong bảng nhân đã học" (bỏ "chia hết"); gợi ý q056/q057/q093 theo số nhóm ("thêm 1 nhóm 6"); on-tap q013 "kim giờ nằm giữa số 4 và số 5".
+- Ô "đã học đến bài" giờ lọc cả câu có sẵn đã ghi số bài. Fixture 300 id kho web v1 (`tests/fixtures/gen-b1b3-bank-v1.json`). Báo cáo `docs/gan-bai-toan-gd1.md` có cột trạng thái (đã ghi 40 · chờ quyết 10 · chờ duyệt 135 · chờ trang sách 6 · chưa gắn 8). Mã phiên bản `?v=20261007a`.
+
 ## 2026-10-06 — Đề xuất gắn bài cho câu Toán GĐ1 (chưa sửa dữ liệu)
 - Thêm `tools/lesson_map.py` → `docs/gan-bai-toan-gd1.md` + `docs/gan-bai-toan-gd1.csv`: 199 câu core GĐ1 → bài đề xuất, kỹ năng, nguồn đối chiếu (mục lục SGK), mức tin cậy (theo tên bài 135 · suy luận 56 · chưa gắn 8). Thống kê câu nâng cao (không gắn bài).
 - Chờ Codex/Nam rà trước khi ghi `lesson` vào dữ liệu.
