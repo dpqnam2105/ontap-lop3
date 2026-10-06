@@ -122,7 +122,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q008",
         "stage": 1,
-        "skill": "times-9"
+        "skill": "times-9",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "gợi ý đổi về 4 × 9 (bảng 4). B10 tr.32 bài 4a: hoạt động so sánh hai tích đổi chỗ (7 × 2 ? 2 × 7). Không ghi là lần đầu dạy tính chất (tr.18, tr.29 đã có cặp đổi chỗ trong bài tìm phép tính cùng kết quả)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "12 : 4 = ?",
@@ -257,7 +269,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q017",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.39: quy tắc tìm thừa số, mẫu ? × 5 = 35, bài ? × 4 = 28 — cùng dạng ? × b = c",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  4 × ? = 36",
@@ -268,11 +292,31 @@
           "10"
         ],
         "a": 0,
-        "hint": "Chia 36 cho 4 để tìm thừa số còn thiếu.",
+        "hint": "Trong bảng nhân 4, 4 nhân với số nào được 36?",
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q018",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "tìm lại trong bảng đã học, không dùng quy tắc B13"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 8
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B8 tr.26 bài 4a có ô trống 4 × ? = 8, 12 : ? = 3, 3 × ? = 18, 25 : ? = 5 (trước B13) — cùng dạng; bảng 4 (B6)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 4 = 7",
@@ -287,7 +331,19 @@
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q019",
         "stage": 1,
-        "skill": "missing-dividend"
+        "skill": "missing-dividend",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.40–41: quy tắc tìm số bị chia, bài ? : 6 = 7, ? : 4 = 8 — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Đếm thêm 4:  4; 8; 12; ...; 20. Số còn thiếu là?",
@@ -317,11 +373,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.19 bài 2: nêu các số còn thiếu (dãy đếm thêm 4, đếm lùi) — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -352,11 +409,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.19 bài 2b: dãy đếm lùi 4 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -387,11 +445,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.20 khám phá: 4 × 6 = 24 → 24 : 4 = 6 — trùng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -422,11 +481,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.20 hoạt động 2: toa tàu nào có kết quả lớn nhất (8:4, 16:4, 40:4, 24:4) — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -457,11 +517,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.19 bài 3: \"Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô…\" — trùng đề",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -492,11 +553,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.19 bài 3: mỗi … có 4, hỏi n … — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -527,11 +589,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.20 luyện tập 2: lời văn chia cho 4 — cùng dạng (sách là chia theo nhóm, câu web là chia đều)",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -562,11 +625,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 4; kiến thức bảng nhân/chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.20 luyện tập 2: lời văn chia cho 4 — cùng dạng (sách là chia theo nhóm, câu web là chia đều)",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -736,11 +800,31 @@
           "17"
         ],
         "a": 0,
-        "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
+        "hint": "Dùng bảng nhân 3 hoặc đếm thêm 3 sáu lần.",
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q038",
         "stage": 1,
-        "skill": "times-3"
+        "skill": "times-3",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "có sẵn trong bảng nhân 3, không cần đổi chỗ"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 5
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B5 tr.16: 3 × 6 có trong bảng nhân 3 (cùng dạng)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "8 × 6 = ?",
@@ -755,7 +839,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q039",
         "stage": 1,
-        "skill": "times-8"
+        "skill": "times-8",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "gợi ý đổi về 6 × 8 (bảng 6). B10 tr.32 bài 4a: hoạt động so sánh hai tích đổi chỗ (7 × 2 ? 2 × 7). Không ghi là lần đầu dạy tính chất (tr.18, tr.29 đã có cặp đổi chỗ trong bài tìm phép tính cùng kết quả)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "12 : 6 = ?",
@@ -901,11 +997,31 @@
           "8"
         ],
         "a": 2,
-        "hint": "Chia 42 cho 6 để tìm thừa số còn thiếu.",
+        "hint": "Trong bảng nhân 6, 6 nhân với số nào được 42?",
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q049",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "tìm lại trong bảng đã học, không dùng quy tắc B13"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B8 tr.26 bài 4a có ô trống 4 × ? = 8, 12 : ? = 3, 3 × ? = 18, 25 : ? = 5 (trước B13) — cùng dạng; bảng 6 (B9)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 6 = 54",
@@ -920,7 +1036,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q050",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.39: quy tắc tìm thừa số, mẫu ? × 5 = 35, bài ? × 4 = 28 — cùng dạng ? × b = c",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 6 = 8",
@@ -935,7 +1063,19 @@
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q051",
         "stage": 1,
-        "skill": "missing-dividend"
+        "skill": "missing-dividend",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.40–41: quy tắc tìm số bị chia, bài ? : 6 = 7, ? : 4 = 8 — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  30 : ? = 5",
@@ -946,11 +1086,31 @@
           "8"
         ],
         "a": 1,
-        "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
+        "hint": "Trong bảng nhân 5, 5 nhân với số nào được 30? Thử số đó vào phép chia.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q052",
         "stage": 1,
-        "skill": "missing-divisor"
+        "skill": "missing-divisor",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "không đưa quy tắc tìm số chia (B13) vào trước bài dạy"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 8
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B8 tr.26 bài 4a có ô trống 4 × ? = 8, 12 : ? = 3, 3 × ? = 18, 25 : ? = 5 (trước B13) — cùng dạng; bảng 5 (B4)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Đếm thêm 6:  6; 12; 18; ...; 30. Số còn thiếu là?",
@@ -980,11 +1140,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.29 luyện tập 1a: dãy đếm thêm 6 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1015,11 +1176,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.29 luyện tập 1b: dãy đếm lùi 6 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1050,11 +1212,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.29 luyện tập 1a: dãy đếm thêm 6 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1085,11 +1248,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "9 nhóm 6 thêm 1 nhóm 6 → 10 nhóm 6 (quan hệ thêm một nhóm, không cần thứ tự phép tính)",
+          "basis": "trang-sach",
+          "note": "B9 tr.28: \"Thêm 6 vào kết quả của 6 × 2 ta được kết quả của 6 × 3\" — cùng dạng thêm một nhóm",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1120,11 +1284,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "6 nhóm 6 thêm 1 nhóm 6 → 7 nhóm 6 (quan hệ thêm một nhóm)",
+          "basis": "trang-sach",
+          "note": "B9 tr.28: \"Thêm 6 vào kết quả của 6 × 2…\" — cùng dạng thêm một nhóm",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1148,7 +1313,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B9 tr.29 hoạt động 1c: 6 × 5 → 30 : 6, 30 : 5 (chia cho thừa số kia) — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Trong các phép chia cho 6, phép nào có kết quả BÉ NHẤT?",
@@ -1213,11 +1390,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.30 bài 4: mỗi hộp có ? bút, 4 hộp → ? × ? — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1248,11 +1426,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.28 khám phá / tr.30 bài 4: mỗi … có 6 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1283,11 +1462,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.28 khám phá: mỗi con bọ rùa có 6 chấm, 4 con — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1318,11 +1498,12 @@
           "no": 9
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 6; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B9 tr.30 bài 5: thanh gỗ 60 cm cưa thành 6 đoạn bằng nhau — cùng dạng chia đều cho 6",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1527,11 +1708,31 @@
           "40"
         ],
         "a": 0,
-        "hint": "Đổi chỗ hai thừa số, kết quả không đổi.",
+        "hint": "Dùng bảng nhân 5 hoặc đếm thêm 5 bảy lần.",
         "difficulty": 1,
         "id": "toan_bang-nhan-chia_q075",
         "stage": 1,
-        "skill": "times-5"
+        "skill": "times-5",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "có sẵn trong bảng nhân 5, không cần đổi chỗ"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 4
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B4 tr.15: 5 × 7 có trong bảng nhân 5 (cùng dạng)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "9 × 7 = ?",
@@ -1546,7 +1747,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q076",
         "stage": 1,
-        "skill": "times-9"
+        "skill": "times-9",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "gợi ý đổi về 7 × 9 (bảng 7). B10 tr.32 bài 4a: hoạt động so sánh hai tích đổi chỗ (7 × 2 ? 2 × 7). Không ghi là lần đầu dạy tính chất (tr.18, tr.29 đã có cặp đổi chỗ trong bài tìm phép tính cùng kết quả)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "14 : 7 = ?",
@@ -1692,11 +1905,31 @@
           "10"
         ],
         "a": 1,
-        "hint": "Chia 56 cho 7 để tìm thừa số còn thiếu.",
+        "hint": "Trong bảng nhân 7, 7 nhân với số nào được 56?",
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q086",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "tìm lại trong bảng đã học, không dùng quy tắc B13"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B8 tr.26 bài 4a có ô trống 4 × ? = 8, 12 : ? = 3, 3 × ? = 18, 25 : ? = 5 (trước B13) — cùng dạng; bảng 7 (B10)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? × 7 = 63",
@@ -1711,7 +1944,19 @@
         "difficulty": 2,
         "id": "toan_bang-nhan-chia_q087",
         "stage": 1,
-        "skill": "missing-factor"
+        "skill": "missing-factor",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.39: quy tắc tìm thừa số, mẫu ? × 5 = 35, bài ? × 4 = 28 — cùng dạng ? × b = c",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  ? : 7 = 6",
@@ -1726,7 +1971,19 @@
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q088",
         "stage": 1,
-        "skill": "missing-dividend"
+        "skill": "missing-dividend",
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 13
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B13 tr.40–41: quy tắc tìm số bị chia, bài ? : 6 = 7, ? : 4 = 8 — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Số thích hợp điền vào ô trống:  35 : ? = 5",
@@ -1737,11 +1994,31 @@
           "5"
         ],
         "a": 1,
-        "hint": "Muốn tìm số chia, lấy số bị chia chia cho thương.",
+        "hint": "Trong bảng nhân 5, 5 nhân với số nào được 35? Thử số đó vào phép chia.",
         "difficulty": 3,
         "id": "toan_bang-nhan-chia_q089",
         "stage": 1,
-        "skill": "missing-divisor"
+        "skill": "missing-divisor",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-07",
+            "status": "sua-goi-y",
+            "note": "không đưa quy tắc tìm số chia (B13) vào trước bài dạy"
+          }
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 8
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B8 tr.26 bài 4a có ô trống 4 × ? = 8, 12 : ? = 3, 3 × ? = 18, 25 : ? = 5 (trước B13) — cùng dạng; bảng 5 (B4)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Đếm thêm 7:  7; 14; 21; ...; 35. Số còn thiếu là?",
@@ -1771,11 +2048,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 1a: dãy đếm thêm 7 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1806,11 +2084,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 1b: dãy đếm lùi 7 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1841,11 +2120,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 1a: dãy đếm thêm 7 — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1876,11 +2156,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "8 nhóm 7 thêm 1 nhóm 7 → 9 nhóm 7 (quan hệ thêm một nhóm)",
+          "basis": "trang-sach",
+          "note": "B10 tr.31: \"Thêm 7 vào kết quả của 7 × 2…\" — cùng dạng thêm một nhóm",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1927,7 +2208,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "vận dụng quan hệ ở B9 tr.29 bài 1c sang một tích cho sẵn (7 × 9 = 63); không cần tự nhớ bảng 7; không phải câu tương ứng trực tiếp trên trang",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Trong các phép chia cho 7, phép nào có kết quả LỚN NHẤT?",
@@ -1957,11 +2250,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 4b: so sánh thương 42 : 7 ? 42 : 6, 56 : 7 ? 49 : 7 — cùng dạng so sánh thương",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -1992,11 +2286,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 hoạt động 3: \"Mỗi tuần lễ có 7 ngày… 4 tuần lễ\" — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -2027,11 +2322,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.31 khám phá: mỗi đội có 7 bạn, 2 đội — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -2062,11 +2358,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.31 khám phá: mỗi đội có 7 bạn — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -2097,11 +2394,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 3: 42 cái cốc xếp đều vào 7 hộp — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -2132,11 +2430,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "phần bảng 7; số lượng mỗi nhóm quyết định bảng",
+          "basis": "trang-sach",
+          "note": "B10 tr.32 luyện tập 3: 42 cái cốc xếp đều vào 7 hộp — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -2295,7 +2594,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "cùng dạng: chọn hai tích đổi chỗ có cùng kết quả. B10 tr.32 bài 4a: hoạt động so sánh hai tích đổi chỗ (7 × 2 ? 2 × 7). Không ghi là lần đầu dạy tính chất (tr.18, tr.29 đã có cặp đổi chỗ trong bài tìm phép tính cùng kết quả)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Phép tính nào dưới đây có kết quả bằng 36?",
@@ -2353,7 +2664,19 @@
             "status": "them-skill",
             "note": "rà tay"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "cùng dạng: tích bằng tích đổi chỗ. B10 tr.32 bài 4a: hoạt động so sánh hai tích đổi chỗ (7 × 2 ? 2 × 7). Không ghi là lần đầu dạy tính chất (tr.18, tr.29 đã có cặp đổi chỗ trong bài tìm phép tính cùng kết quả)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Phép nhân nào dưới đây có kết quả lớn nhất?",
@@ -3045,11 +3368,12 @@
           "no": 11
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "mỗi túi 8 cái → bảng nhân 8",
+          "basis": "trang-sach",
+          "note": "B11 tr.34 hoạt động 2: mỗi hộp bút có 8 chiếc — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -3073,11 +3397,12 @@
           "no": 12
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "81 : 9 → bảng chia 9",
+          "basis": "trang-sach",
+          "note": "B12 tr.37 luyện tập 4: chia đều 45 l vào 9 can — cùng dạng chia đều cho 9",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -3101,11 +3426,12 @@
           "no": 11
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "mỗi tuần 8 tiết → bảng nhân 8",
+          "basis": "trang-sach",
+          "note": "B11 tr.34 hoạt động 2: mỗi … có 8, hỏi n … — cùng dạng",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {

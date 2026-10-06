@@ -70,6 +70,32 @@ const G13 = 'Nền số đến 1000';
       const a = new Set(App._allowedIndices(s, t)); const at = id => a.has(t.questions.findIndex(q => q.id === id));
       return { q020: at('toan_bang-nhan-chia_q020'), q001: at('toan_bang-nhan-chia_q001') }; });
     assert.ok(!st.q020 && st.q001, 'câu tĩnh có lesson B6 bị ẩn khi mới học Bài 1; câu chưa gắn vẫn hiện');
+    // Đợt 9: mỗi câu tĩnh có lesson mở đúng ở mốc của nó, ẩn ở mốc ngay trước; câu không gắn luôn hiện
+    const lv = await p.evaluate(() => {
+      const s = App.allData.subjects.find(x => x.id === 'toan'); const out = { mismatch: [], spot: {}, tagged: 0 };
+      const byId = {}; s.topics.forEach(t => t.questions.forEach((q, i) => { byId[q.id] = { t, i, q }; }));
+      const vis = (id, no) => { App.setLessonSetting(s, no); const r = byId[id]; const a = App._allowedIndices(s, r.t); return !a || a.includes(r.i); };
+      const base = id => { App.setLessonSetting(s, null); const r = byId[id]; const a = App._allowedIndices(s, r.t); return !a || a.includes(r.i); };
+      Object.keys(byId).filter(id => !id.startsWith('toan_g13_')).forEach(id => {
+        const q = byId[id].q; if (!base(id)) return;
+        if (q.lesson && q.lesson.book === 'kntt-toan3') {
+          out.tagged++; const n = q.lesson.no;
+          if (!vis(id, n) || (n > 1 && vis(id, n - 1))) out.mismatch.push(id + '@B' + n);
+        } else if (!vis(id, 1)) out.mismatch.push(id + ' (không gắn mà bị ẩn)');
+      });
+      const spot = { 'toan_bang-nhan-chia_q018': [8, 7], 'toan_bang-nhan-chia_q049': [9, 8], 'toan_bang-nhan-chia_q086': [10, 9],
+        'toan_bang-nhan-chia_q017': [13, 12], 'toan_bang-nhan-chia_q052': [8, 7], 'toan_bang-nhan-chia_q008': [10, 9],
+        'toan_bang-nhan-chia_q058': [9, 8], 'toan_bang-nhan-chia_q038': [5, 4], 'toan_bang-nhan-chia_q075': [4, 3],
+        'toan_phan-so-don-gian_q011': [14, 13], 'toan_phan-so-don-gian_q029': [14, 13], 'toan_xem-dong-ho-thoi-gian_q001': [7, 6] };
+      for (const [id, [on, off]] of Object.entries(spot)) out.spot[id] = byId[id] ? [vis(id, on), vis(id, off)] : 'thiếu';
+      out.doLuong = ['toan_do-luong_q002', 'toan_do-luong_q017'].map(id => byId[id] && !byId[id].q.lesson && vis(id, 1));
+      App.setLessonSetting(s, null);
+      return out;
+    });
+    assert.deepStrictEqual(lv.mismatch, [], 'mọi câu có lesson mở đúng mốc');
+    assert.ok(lv.tagged >= 99, 'đủ câu đã gắn bài (' + lv.tagged + ')');
+    for (const [id, v] of Object.entries(lv.spot)) assert.deepStrictEqual(v, [true, false], id + ' mở/ẩn đúng mốc');
+    assert.deepStrictEqual(lv.doLuong, [true, true], 'câu độ dài / ước lượng kg không gắn bài, luôn hiện');
     // bỏ chọn → về hành vi giai đoạn
     await toToan(p); await p.selectOption('#lessonSelect', ''); await p.waitForTimeout(300);
     x = await info(); assert.strictEqual(x.n, x.total, 'bỏ chọn mốc bài → như cũ');

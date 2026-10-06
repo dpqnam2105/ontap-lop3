@@ -1,28 +1,21 @@
 # Gắn bài cho câu Toán GĐ1
 
-**Ý nghĩa đã chốt**: `lesson` = bài SỚM NHẤT mà kiến thức đã học đủ để làm câu theo cách giải được hướng dẫn — không có nghĩa "câu lấy từ bài đó trong SGK". `source` gốc giữ nguyên; căn cứ ghi trong `lessonRef.basis` (muc-luc / suy-luan / trang-sach).
+**Ý nghĩa đã chốt**: `lesson` = bài SỚM NHẤT mà kiến thức đã học đủ để làm câu theo cách giải được hướng dẫn — không có nghĩa "câu lấy từ bài đó trong SGK". `source` gốc giữ nguyên; căn cứ ghi trong `lessonRef.basis` (muc-luc / suy-luan / trang-sach / nen).
 
 ## Trạng thái
 
 | Trạng thái | Số câu | Nghĩa |
 |---|---|---|
-| da-ghi | 43 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
-| cho-quyet | 7 | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |
-| cho-duyet | 135 | khớp tên bài (muc-luc) nhưng chưa duyệt đúng phạm vi nội dung bài (gồm 11 câu tìm thành phần B13, 28 câu Một phần mấy B14) |
-| cho-trang-sach | 6 | đo lường: ứng viên B7, chờ ảnh trang 21–23 |
-| chua-gan | 8 | chưa đủ căn cứ (đồng hồ/lịch — kiến thức nền đã học trước; "a là mấy phần của b") |
+| da-ghi | 99 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
+| cho-quyet | 0 | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |
+| nen | 6 | Codex chốt không gắn bài: kiến thức nền lớp 2 (đổi độ dài, ước lượng kg) — có `lessonRef.basis = nen`, không có `lesson` |
+| cho-duyet | 94 | lô 1 (bảng nhân/chia trực tiếp, cộng trừ B2) — đề xuất muc-luc, chờ Codex duyệt |
+| chua-gan | 0 | chưa đủ căn cứ |
 
 ## Chờ quyết
 
 | id | đề | ghi chú |
 |---|---|---|
-| `bang-nhan-chia_q008` | 9 × 4 = ? | gợi ý dùng đổi chỗ thừa số rồi bảng 4 → ứng viên B6 (không phải B12); chờ xác nhận sách dạy cách này |
-| `bang-nhan-chia_q039` | 8 × 6 = ? | gợi ý dùng đổi chỗ rồi bảng 6 → ứng viên B9; chờ xác nhận |
-| `bang-nhan-chia_q058` | Biết 6 × 8 = 48. Vậy 48 : 8 = ? | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9 |
-| `bang-nhan-chia_q076` | 9 × 7 = ? | gợi ý dùng đổi chỗ rồi bảng 7 → ứng viên B10; chờ xác nhận |
-| `bang-nhan-chia_q095` | Biết 7 × 9 = 63. Vậy 63 : 9 = ? | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10 |
-| `bang-nhan-chia_q107` | Hai phép tính nào dưới đây có CÙNG kết quả? | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
-| `bang-nhan-chia_q109` | Phép tính nào có kết quả BẰNG 6 × 7? | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
 
 ---
 
@@ -36,9 +29,9 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 
 | Mức | Số câu |
 |---|---|
-| muc-luc | 135 |
-| suy-luan | 56 |
-| chua-gan | 8 |
+| muc-luc | 94 |
+| suy-luan | 14 |
+| chua-gan | 0 |
 
 | Bài | Tên | Số câu đề xuất |
 |---|---|---|
@@ -47,94 +40,45 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | B5 | Bảng nhân 3, bảng chia 3 | 2 |
 | B6 | Bảng nhân 4, bảng chia 4 | 25 |
 | B7 | Ôn tập hình học và đo lường | 6 |
-| B9 | Bảng nhân 6, bảng chia 6 | 31 |
-| B10 | Bảng nhân 7, bảng chia 7 | 35 |
-| B11 | Bảng nhân 8, bảng chia 8 | 23 |
-| B12 | Bảng nhân 9, bảng chia 9 | 22 |
-| B13 | Tìm thành phần trong phép nhân, phép chia | 11 |
-| B14 | Một phần mấy | 28 |
+| B8 | Luyện tập chung | 3 |
+| B9 | Bảng nhân 6, bảng chia 6 | 33 |
+| B10 | Bảng nhân 7, bảng chia 7 | 38 |
+| B11 | Bảng nhân 8, bảng chia 8 | 22 |
+| B12 | Bảng nhân 9, bảng chia 9 | 20 |
+| B13 | Tìm thành phần trong phép nhân, phép chia | 6 |
+| B14 | Một phần mấy | 30 |
 
 ## Câu phân vân (`suy-luan`) — nhờ Codex/Nam rà
 
 | id | đề | bài đề xuất | lý do |
 |---|---|---|---|
-| `bang-nhan-chia_q008` | 9 × 4 = ? | B12 | gợi ý dùng đổi chỗ thừa số rồi bảng 4 → ứng viên B6 (không phải B12); chờ xác nhận sách dạy cách này |
-| `bang-nhan-chia_q020` | Đếm thêm 4:  4; 8; 12; ...; 20. Số còn thiếu là? | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q021` | Đếm lùi 4:  40; 36; 32; ...; 24. Số còn thiếu là? | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q022` | Biết 4 × 6 = 24. Vậy 24 : 4 = ? | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q023` | Trong các phép chia cho 4, phép nào có kết quả LỚN NHẤT? | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q024` | Mỗi ô tô con có 4 bánh xe. Hỏi 8 ô tô như vậy có bao nhiêu bánh xe? | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q025` | Mỗi bàn học có 4 chỗ ngồi. Hỏi 9 bàn như thế có tất cả bao nhiêu chỗ n | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q026` | Nhà Lan có 28 con gà nhốt đều vào 4 chuồng. Hỏi mỗi chuồng có bao nhiê | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q027` | Cô giáo chia đều 36 quyển vở cho 4 tổ. Hỏi mỗi tổ được bao nhiêu quyển | B6 | phần bảng 4; kiến thức bảng nhân/chia 4 |
-| `bang-nhan-chia_q039` | 8 × 6 = ? | B11 | gợi ý dùng đổi chỗ rồi bảng 6 → ứng viên B9; chờ xác nhận |
-| `bang-nhan-chia_q053` | Đếm thêm 6:  6; 12; 18; ...; 30. Số còn thiếu là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q054` | Đếm lùi 6:  60; 54; 48; ...; 36. Số còn thiếu là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q055` | Ba số tiếp theo của dãy 18; 24; 30; ... là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q056` | Tính:  6 × 9 + 6 = ? | B9 | 9 nhóm 6 thêm 1 nhóm 6 → 10 nhóm 6 (quan hệ thêm một nhóm, không cần thứ tự phép tính) |
-| `bang-nhan-chia_q057` | Tính:  6 × 6 + 6 = ? | B9 | 6 nhóm 6 thêm 1 nhóm 6 → 7 nhóm 6 (quan hệ thêm một nhóm) |
-| `bang-nhan-chia_q058` | Biết 6 × 8 = 48. Vậy 48 : 8 = ? | B9 | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9 |
 | `bang-nhan-chia_q059` | Trong các phép chia cho 6, phép nào có kết quả BÉ NHẤT? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q060` | Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc b | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q061` | Mỗi bàn ăn xếp được 6 người. Hỏi 8 bàn như thế xếp được bao nhiêu ngườ | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q062` | Một cụm hoa súng có 6 bông. Hỏi 9 cụm hoa như vậy có bao nhiêu bông? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q063` | Có 36 quả cam xếp đều vào 6 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cam? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q064` | Có 48 học sinh xếp thành các hàng, mỗi hàng 6 bạn. Hỏi xếp được bao nh | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q076` | 9 × 7 = ? | B12 | gợi ý dùng đổi chỗ rồi bảng 7 → ứng viên B10; chờ xác nhận |
-| `bang-nhan-chia_q090` | Đếm thêm 7:  7; 14; 21; ...; 35. Số còn thiếu là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q091` | Đếm lùi 7:  70; 63; 56; ...; 42. Số còn thiếu là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q092` | Ba số tiếp theo của dãy 21; 28; 35; ... là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q093` | Tính:  7 × 8 + 7 = ? | B10 | 8 nhóm 7 thêm 1 nhóm 7 → 9 nhóm 7 (quan hệ thêm một nhóm) |
-| `bang-nhan-chia_q095` | Biết 7 × 9 = 63. Vậy 63 : 9 = ? | B10 | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10 |
-| `bang-nhan-chia_q096` | Trong các phép chia cho 7, phép nào có kết quả LỚN NHẤT? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q097` | Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q098` | Mỗi giỏ có 7 quả cam. Hỏi 8 giỏ như thế có bao nhiêu quả cam? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q099` | Một tổ có 7 bạn. Hỏi 9 tổ như thế có bao nhiêu bạn? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q100` | Có 49 quyển vở chia đều cho 7 bạn. Hỏi mỗi bạn được bao nhiêu quyển? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q101` | Có 56 bông hoa cắm đều vào 7 lọ. Hỏi mỗi lọ có bao nhiêu bông? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
+| `bang-nhan-chia_q095` | Biết 7 × 9 = 63. Vậy 63 : 9 = ? | B9 | vận dụng quan hệ ở B9 tr.29 bài 1c sang một tích cho sẵn (7 × 9 = 63); không cần tự nhớ bảng 7; không phải câu tương ứng trực tiếp trên trang |
 | `bang-nhan-chia_q105` | Số 42 có trong bảng nhân nào dưới đây? | B10 | các phương án dùng bảng 4, 5, 6, 7 |
 | `bang-nhan-chia_q106` | Số nào vừa có trong bảng nhân 4, vừa có trong bảng nhân 6? | B9 | tìm số có trong cả bảng 4 và bảng 6; không cần bảng 7 |
-| `bang-nhan-chia_q107` | Hai phép tính nào dưới đây có CÙNG kết quả? | B10 | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
 | `bang-nhan-chia_q108` | Phép tính nào dưới đây có kết quả bằng 36? | B10 | phương án 6×7, 7×5, 4×8, 6×6: cần bảng 4, 6, 7 |
-| `bang-nhan-chia_q109` | Phép tính nào có kết quả BẰNG 6 × 7? | B10 | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
 | `bang-nhan-chia_q110` | Phép nhân nào dưới đây có kết quả lớn nhất? | B10 | phương án 6×8, 7×7, 6×9, 7×8: cần bảng 6, 7 |
 | `bang-nhan-chia_q111` | Mỗi tuần Thỏ học 6 buổi, mỗi buổi 4 tiết. Hỏi mỗi tuần Thỏ học bao nhi | B6 | mỗi buổi 4 tiết, 6 buổi → 4 × 6 (số lượng mỗi nhóm quyết định bảng) |
-| `bang-nhan-chia_q149` | Mỗi túi có 8 cái kẹo. Hỏi 6 túi có bao nhiêu cái kẹo? | B11 | mỗi túi 8 cái → bảng nhân 8 |
-| `bang-nhan-chia_q150` | Có 81 quả cam xếp đều vào 9 đĩa. Hỏi mỗi đĩa có bao nhiêu quả? | B12 | 81 : 9 → bảng chia 9 |
-| `bang-nhan-chia_q151` | Mỗi tuần Thỏ học 8 tiết Toán. Hỏi 4 tuần Thỏ học bao nhiêu tiết Toán? | B11 | mỗi tuần 8 tiết → bảng nhân 8 |
 | `bang-nhan-chia_q152` | Có 72 học sinh xếp thành các hàng, mỗi hàng 9 bạn. Hỏi xếp được mấy hà | B12 | 72 : 9 → bảng chia 9 |
-| `do-luong_q002` | 1 m = ? cm | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
-| `do-luong_q003` | 1 km = ? m | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
-| `do-luong_q011` | 8 dm = ? cm | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
-| `do-luong_q015` | Chọn dấu thích hợp: 1 m ... 100 cm | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
-| `do-luong_q016` | Chiếc bút chì dài khoảng: | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
-| `do-luong_q017` | Một bạn học sinh lớp 3 nặng khoảng: | B7 | đơn vị lớp 2 (m, dm, cm, km, kg) — ôn trong B7; chưa xem trang 21–23 |
+| `phan-so-don-gian_q029` | Có 18 quả cam. 9 quả cam là mấy phần của số cam? | B14 | B14 tr.43 bài 3, tr.45 bài 3: nhận ra phần khoanh là 1/4, 1/3 qua hình; câu web chuyển sang suy luận bằng lời (chia toàn bộ thành các nhóm bằng nhau) — khó hơn câu có hình, không trùng dạng nguyên văn |
+| `phan-so-don-gian_q030` | Có 12 quả dâu. 2 quả dâu là mấy phần của số dâu? | B14 | B14 tr.43 bài 3, tr.45 bài 3: nhận ra phần khoanh là 1/4, 1/3 qua hình; câu web chuyển sang suy luận bằng lời (chia toàn bộ thành các nhóm bằng nhau) — khó hơn câu có hình, không trùng dạng nguyên văn |
 | `giai-toan-co-loi-van_q003` | Hà có 45 viên bi, Hà nhiều hơn Nam 18 viên. Hỏi Nam có bao nhiêu viên  | B2 | một bước trừ, bẫy "nhiều hơn" hỏi số bé |
 | `giai-toan-co-loi-van_q004` | Mai có 28 nhãn vở, Mai ít hơn Lan 15 nhãn vở. Hỏi Lan có bao nhiêu nhã | B2 | một bước cộng, bẫy "ít hơn" hỏi số lớn |
-| `giai-toan-co-loi-van_q012` | Thỏ đọc mỗi ngày 7 trang sách, đọc trong 6 ngày. Hỏi Thỏ đã đọc tất cả | B10 | mỗi ngày 7 trang × 6 ngày → bảng nhân 7 |
-| `giai-toan-co-loi-van_q015` | Sợi dây dài 36 m, cắt thành các đoạn, mỗi đoạn dài 4 m. Hỏi cắt được m | B6 | 36 : 4 → bảng chia 4 |
 | `on-tap-tong-hop_q014` | Hùng có 30 viên bi, Hùng kém Việt 12 viên. Hỏi Việt có bao nhiêu viên  | B2 | "kém" = ít hơn, hỏi số lớn: một bước cộng |
 
 ## Chưa gắn (`chua-gan`)
 
 | id | đề | lý do |
 |---|---|---|
-| `phan-so-don-gian_q029` | Có 18 quả cam. 9 quả cam là mấy phần của số cam? | "a là mấy phần của b": chờ trang sách (có thể B14 hoặc B39) — Codex yêu cầu không đoán |
-| `phan-so-don-gian_q030` | Có 12 quả dâu. 2 quả dâu là mấy phần của số dâu? | "a là mấy phần của b": chờ trang sách (có thể B14 hoặc B39) — Codex yêu cầu không đoán |
-| `xem-dong-ho-thoi-gian_q001` | Kim giờ chỉ đúng số 3, kim phút chỉ số 12. Đồng hồ chỉ: | xem giờ / lịch là kiến thức lớp 2; mục lục tập một không có bài riêng (có thể nằm trong B7) — chờ trang sách |
-| `xem-dong-ho-thoi-gian_q002` | Kim giờ nằm giữa số 10 và số 11, kim phút chỉ số 6. Đồng hồ chỉ: | xem giờ / lịch là kiến thức lớp 2; mục lục tập một không có bài riêng (có thể nằm trong B7) — chờ trang sách |
-| `xem-dong-ho-thoi-gian_q003` | Kim giờ chỉ quá số 1 một chút, kim phút chỉ số 3. Đồng hồ chỉ: | xem giờ / lịch là kiến thức lớp 2; mục lục tập một không có bài riêng (có thể nằm trong B7) — chờ trang sách |
-| `xem-dong-ho-thoi-gian_q014` | Thứ Hai tuần này là ngày 5. Thứ Hai tuần sau là ngày mấy? | xem giờ / lịch là kiến thức lớp 2; mục lục tập một không có bài riêng (có thể nằm trong B7) — chờ trang sách |
-| `xem-dong-ho-thoi-gian_q015` | Hôm nay là thứ Sáu. Ba ngày nữa là thứ mấy? | xem giờ / lịch là kiến thức lớp 2; mục lục tập một không có bài riêng (có thể nằm trong B7) — chờ trang sách |
-| `on-tap-tong-hop_q013` | Kim giờ nằm giữa số 4 và số 5, kim phút chỉ số 6. Đồng hồ chỉ: | xem đồng hồ — như chủ đề đồng hồ |
 
 ## Gắn theo tên bài (`muc-luc`) — tóm tắt theo kỹ năng
 
 | Kỹ năng | Bài | Số câu |
 |---|---|---|
 | word-problem | B2 | 3 |
-| times-5 | B4 | 2 |
-| times-3 | B5 | 2 |
+| times-5 | B4 | 1 |
+| times-3 | B5 | 1 |
 | divide-4 | B6 | 8 |
 | times-4 | B6 | 7 |
 | divide-6 | B9 | 9 |
@@ -147,13 +91,6 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | times-table | B11 | 1 |
 | divide-9 | B12 | 9 |
 | times-9 | B12 | 9 |
-| missing-dividend | B13 | 3 |
-| missing-divisor | B13 | 2 |
-| missing-factor | B13 | 6 |
-| fraction-of | B14 | 14 |
-| unit-fraction | B14 | 6 |
-| unit-fraction-read | B14 | 4 |
-| word-problem | B14 | 4 |
 
 ## Câu nâng cao GĐ1 (track enrich) — KHÔNG gắn bài
 

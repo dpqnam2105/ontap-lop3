@@ -155,28 +155,22 @@ def enrich_stats():
     return out
 
 
-# Câu Codex yêu cầu chờ (vòng 6) — chưa ghi lesson
-PENDING = {
-    'toan_bang-nhan-chia_q008': 'gợi ý dùng đổi chỗ thừa số rồi bảng 4 → ứng viên B6 (không phải B12); chờ xác nhận sách dạy cách này',
-    'toan_bang-nhan-chia_q039': 'gợi ý dùng đổi chỗ rồi bảng 6 → ứng viên B9; chờ xác nhận',
-    'toan_bang-nhan-chia_q076': 'gợi ý dùng đổi chỗ rồi bảng 7 → ứng viên B10; chờ xác nhận',
-    'toan_bang-nhan-chia_q058': 'cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9',
-    'toan_bang-nhan-chia_q095': 'cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10',
-    'toan_bang-nhan-chia_q107': 'gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục',
-    'toan_bang-nhan-chia_q109': 'gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục',
-}
+# Câu Codex yêu cầu chờ — vòng 9 đã chốt hết (xem docs/doi-chieu-sgk-toan3-t1.md mục 6)
+PENDING = {}
 
 
 def status(r, data_q):
     if data_q.get('lesson'):
         return 'da-ghi'
+    if (data_q.get('lessonRef') or {}).get('basis') == 'nen':
+        return 'nen'                # Codex chốt: kiến thức nền lớp 2, không gắn bài
     if r['id'] in PENDING:
         return 'cho-quyet'
     if r['conf'] == 'chua-gan':
         return 'chua-gan'
     if r['conf'] == 'muc-luc':
         return 'cho-duyet'          # khớp tên bài nhưng chưa duyệt phạm vi nội dung bài (đặc biệt B13, B14)
-    return 'cho-trang-sach' if r['topic'] == 'do-luong' else 'cho-duyet'
+    return 'cho-duyet'
 
 
 def main():
@@ -190,6 +184,8 @@ def main():
         r['status'] = status(r, dq)
         if r['status'] == 'da-ghi':
             r['lesson'] = dq['lesson']['no']; r['conf'] = dq['lessonRef']['basis']; r['note'] = dq['lessonRef']['note']
+        elif r['status'] == 'nen':
+            r['lesson'] = None; r['conf'] = 'nen'; r['note'] = dq['lessonRef']['note']
         if r['id'] in PENDING:
             r['note'] = PENDING[r['id']]
     md = os.path.join(ROOT, 'docs', 'gan-bai-toan-gd1.md')
@@ -204,13 +200,13 @@ def main():
     st = collections.Counter(r['status'] for r in rows)
     o = ['# Gắn bài cho câu Toán GĐ1', '',
          '**Ý nghĩa đã chốt**: `lesson` = bài SỚM NHẤT mà kiến thức đã học đủ để làm câu theo cách giải được hướng dẫn — '
-         'không có nghĩa "câu lấy từ bài đó trong SGK". `source` gốc giữ nguyên; căn cứ ghi trong `lessonRef.basis` (muc-luc / suy-luan / trang-sach).', '',
+         'không có nghĩa "câu lấy từ bài đó trong SGK". `source` gốc giữ nguyên; căn cứ ghi trong `lessonRef.basis` (muc-luc / suy-luan / trang-sach / nen).', '',
          '## Trạng thái', '', '| Trạng thái | Số câu | Nghĩa |', '|---|---|---|',
          '| da-ghi | %d | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |' % st.get('da-ghi', 0),
          '| cho-quyet | %d | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |' % st.get('cho-quyet', 0),
-         '| cho-duyet | %d | khớp tên bài (muc-luc) nhưng chưa duyệt đúng phạm vi nội dung bài (gồm 11 câu tìm thành phần B13, 28 câu Một phần mấy B14) |' % st.get('cho-duyet', 0),
-         '| cho-trang-sach | %d | đo lường: ứng viên B7, chờ ảnh trang 21–23 |' % st.get('cho-trang-sach', 0),
-         '| chua-gan | %d | chưa đủ căn cứ (đồng hồ/lịch — kiến thức nền đã học trước; "a là mấy phần của b") |' % st.get('chua-gan', 0), '',
+         '| nen | %d | Codex chốt không gắn bài: kiến thức nền lớp 2 (đổi độ dài, ước lượng kg) — có `lessonRef.basis = nen`, không có `lesson` |' % st.get('nen', 0),
+         '| cho-duyet | %d | lô 1 (bảng nhân/chia trực tiếp, cộng trừ B2) — đề xuất muc-luc, chờ Codex duyệt |' % st.get('cho-duyet', 0),
+         '| chua-gan | %d | chưa đủ căn cứ |' % st.get('chua-gan', 0), '',
          '## Chờ quyết', '', '| id | đề | ghi chú |', '|---|---|---|'] + [
          '| `%s` | %s | %s |' % (r['id'].replace('toan_', ''), r['q'][:60], r['note']) for r in rows if r['status'] == 'cho-quyet'] + ['',
          '---', '', '# Đề xuất ban đầu (vòng 5) — giữ để đối chiếu', '',

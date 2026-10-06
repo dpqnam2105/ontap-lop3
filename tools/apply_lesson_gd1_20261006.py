@@ -25,7 +25,8 @@ def set_lesson(t, n, no, basis, note):
     q = get(t, n)
     lesson = {'book': 'kntt-toan3', 'vol': 1, 'no': no}
     ref = {'basis': basis, 'note': note, 'by': 'claude', 'approvedBy': 'codex', 'date': DATE}
-    if q.get('lesson') == lesson and q.get('lessonRef', {}).get('basis') == basis: return
+    # Đã có đúng bài thì không đụng lessonRef (đợt sau có thể đã nâng bằng chứng)
+    if q.get('lesson') == lesson: return
     if q.get('lesson') and q['lesson'] != lesson: sys.exit('%s đã có lesson khác %r' % (q['id'], q['lesson']))
     q['lesson'], q['lessonRef'] = lesson, ref
     changes.append('%s → B%d (%s)' % (q['id'], no, basis))

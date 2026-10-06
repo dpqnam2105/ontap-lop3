@@ -19,7 +19,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q001",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một cái bánh được chia làm 3 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
@@ -36,7 +48,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q002",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một cái bánh được chia làm 4 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
@@ -53,7 +77,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q003",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một cái bánh được chia làm 5 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
@@ -70,7 +106,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q004",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một cái bánh được chia làm 6 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
@@ -87,7 +135,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q005",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một cái bánh được chia làm 8 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh?",
@@ -104,7 +164,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q006",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.42 khám phá: chia bánh / hình tròn thành phần bằng nhau, lấy một phần — cùng dạng (web bằng lời, không hình)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/3 đọc là:",
@@ -121,7 +193,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q007",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.43 bài 2: chọn cách đọc một phần mấy — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/5 đọc là:",
@@ -138,7 +222,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q008",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.43 bài 2: chọn cách đọc một phần mấy — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/7 đọc là:",
@@ -155,7 +251,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q009",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.43 bài 2: chọn cách đọc một phần mấy — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/9 đọc là:",
@@ -172,7 +280,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q010",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.43 bài 2: chọn cách đọc một phần mấy — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/2 của 18 là:",
@@ -189,7 +309,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q011",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/3 của 12 là:",
@@ -206,7 +338,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q012",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/4 của 24 là:",
@@ -223,7 +367,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q013",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/5 của 35 là:",
@@ -240,7 +396,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q014",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/6 của 42 là:",
@@ -257,7 +425,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q015",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/7 của 56 là:",
@@ -274,7 +454,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q016",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/8 của 64 là:",
@@ -291,7 +483,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q017",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/9 của 81 là:",
@@ -308,7 +512,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q018",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/3 của 27 là:",
@@ -325,7 +541,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q019",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1/4 của 36 là:",
@@ -342,7 +570,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q020",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Có 24 cái kẹo, Thỏ cho em 1/4 số kẹo. Hỏi em được mấy cái kẹo?",
@@ -359,7 +599,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q021",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Lớp có 35 bạn, 1/5 số bạn đi bơi. Hỏi có mấy bạn đi bơi?",
@@ -376,7 +628,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q022",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Sợi dây dài 48 cm. Cắt đi 1/6 sợi dây. Đoạn cắt đi dài bao nhiêu xăng-ti-mét?",
@@ -393,7 +657,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q023",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Mẹ có 63 quả trứng, đã dùng 1/7 số trứng. Hỏi mẹ đã dùng mấy quả trứng?",
@@ -410,7 +686,19 @@
         "unit": "toan_phan-so-don-gian",
         "source": "claude-audit-20260924",
         "id": "toan_phan-so-don-gian_q024",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một đàn vịt có 40 con, 1/5 số vịt đang bơi dưới ao. Hỏi trên bờ có bao nhiêu con vịt?",
@@ -477,7 +765,19 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q027",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Cửa hàng có 30 kg lạc. Sau khi bán, cửa hàng còn lại 1/3 số lạc. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam lạc?",
@@ -494,7 +794,19 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q028",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Có 18 quả cam. 9 quả cam là mấy phần của số cam?",
@@ -511,7 +823,19 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q029",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "B14 tr.43 bài 3, tr.45 bài 3: nhận ra phần khoanh là 1/4, 1/3 qua hình; câu web chuyển sang suy luận bằng lời (chia toàn bộ thành các nhóm bằng nhau) — khó hơn câu có hình, không trùng dạng nguyên văn",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Có 12 quả dâu. 2 quả dâu là mấy phần của số dâu?",
@@ -528,7 +852,19 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q030",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "B14 tr.43 bài 3, tr.45 bài 3: nhận ra phần khoanh là 1/4, 1/3 qua hình; câu web chuyển sang suy luận bằng lời (chia toàn bộ thành các nhóm bằng nhau) — khó hơn câu có hình, không trùng dạng nguyên văn",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Có 18 quả cam. Bao nhiêu quả cam là 1/9 số cam?",
@@ -545,7 +881,19 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q031",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 14
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B14 tr.45 bài 4: chia 12 quả cam thành 3 phần bằng nhau, 1/3 số quả cam là ? — câu web mở rộng số liệu (dùng bảng chia đến B12) và không có hình",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       }
     ]
   }

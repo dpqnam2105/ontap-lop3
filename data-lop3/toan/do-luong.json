@@ -36,7 +36,14 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q002",
-        "stage": 1
+        "stage": 1,
+        "lessonRef": {
+          "basis": "nen",
+          "note": "kiến thức lớp 2 (m, dm, km, cm). Đã xem B7 tr.21–23: không có đổi đơn vị độ dài; cm ở đường gấp khúc không đủ làm căn cứ",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1 km = ? m",
@@ -53,7 +60,14 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q003",
-        "stage": 1
+        "stage": 1,
+        "lessonRef": {
+          "basis": "nen",
+          "note": "kiến thức lớp 2 (m, dm, km, cm). Đã xem B7 tr.21–23: không có đổi đơn vị độ dài; cm ở đường gấp khúc không đủ làm căn cứ",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "1 kg = ? g",
@@ -189,7 +203,14 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q011",
-        "stage": 1
+        "stage": 1,
+        "lessonRef": {
+          "basis": "nen",
+          "note": "kiến thức lớp 2 (m, dm, km, cm). Đã xem B7 tr.21–23: không có đổi đơn vị độ dài; cm ở đường gấp khúc không đủ làm căn cứ",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "70 mm = ? cm",
@@ -257,7 +278,14 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q015",
-        "stage": 1
+        "stage": 1,
+        "lessonRef": {
+          "basis": "nen",
+          "note": "kiến thức lớp 2 (m, dm, km, cm). Đã xem B7 tr.21–23: không có đổi đơn vị độ dài; cm ở đường gấp khúc không đủ làm căn cứ",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Chiếc bút chì dài khoảng:",
@@ -282,7 +310,14 @@
             "status": "sua-nhieu",
             "note": "mm học ở B30 (GĐ3)"
           }
-        ]
+        ],
+        "lessonRef": {
+          "basis": "nen",
+          "note": "kiến thức lớp 2 (m, dm, km, cm). Đã xem B7 tr.21–23: không có đổi đơn vị độ dài; cm ở đường gấp khúc không đủ làm căn cứ",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Một bạn học sinh lớp 3 nặng khoảng:",
@@ -307,7 +342,14 @@
             "status": "sua-nhieu",
             "note": "g học ở B31 (GĐ3)"
           }
-        ]
+        ],
+        "lessonRef": {
+          "basis": "nen",
+          "note": "ước lượng cân nặng là kỹ năng lớp 2; B7 tr.22 chỉ có đọc số trên cân — khác kỹ năng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Nhiệt độ cơ thể người khỏe mạnh khoảng:",

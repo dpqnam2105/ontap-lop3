@@ -253,11 +253,12 @@
           "no": 10
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "mỗi ngày 7 trang × 6 ngày → bảng nhân 7",
+          "basis": "trang-sach",
+          "note": "B10 tr.31 khám phá: mỗi đội 7 bạn × số đội — cùng dạng (mỗi ngày 7 trang × 6 ngày)",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       },
       {
@@ -324,11 +325,12 @@
           "no": 6
         },
         "lessonRef": {
-          "basis": "suy-luan",
-          "note": "36 : 4 → bảng chia 4",
+          "basis": "trang-sach",
+          "note": "B6 tr.20 luyện tập 2: 24 bánh, mỗi hộp 4 → mấy hộp — cùng dạng chia theo nhóm",
           "by": "claude",
           "approvedBy": "codex",
-          "date": "2026-10-06"
+          "date": "2026-10-07",
+          "upgradedFrom": "suy-luan"
         }
       }
     ]

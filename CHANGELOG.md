@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+
+## 2026-10-07 — Vòng 9: ghi bài cho 56 câu Toán GĐ1 theo trang SGK (Codex duyệt)
+- `tools/apply_lesson_gd1_20261007.py`: đổi chỗ thừa số → B10 (q038 → B5, q075 → B4 sau khi đổi gợi ý về bảng 3/bảng 5); quan hệ nhân–chia q058, q095 → B9; tìm thành phần a × ? = c, a : ? = c → B8/B9/B10 (gợi ý đổi sang tra bảng), ? × b = c, ? : b = c → B13; đồng hồ/lịch → B7; 30 câu "Một phần mấy" → B14; 6 câu độ dài/ước lượng kg ghi chú nền (không gắn bài).
+- Nâng bằng chứng lên `trang-sach` cho các câu đã ghi có trang tương ứng (giữ `upgradedFrom`). Tổng: 99 câu có bài (trang-sach 85, suy-luan 14) + 6 câu nền. Chi tiết `docs/doi-chieu-sgk-toan3-t1.md` mục 6.
+- Sửa script vòng 6 để chạy lại không hạ bằng chứng đã nâng. `tools/lesson_map.py` thêm trạng thái `nen`, hết câu chờ quyết.
+- Test: `tests/lesson-data.test.js` mới; `tests/gen.e2e.js` kiểm mọi câu có bài mở đúng mốc, ẩn ở mốc trước. Mã phiên bản `?v=20261007b`.
+
 ## 2026-10-07 — Đối chiếu trang SGK Toán 3 tập một (chưa sửa dữ liệu)
 - Thêm `docs/doi-chieu-sgk-toan3-t1.md`: bằng chứng trang sách (B1–B15) cho các câu đang chờ (đổi chỗ thừa số → B10; quan hệ nhân–chia với thừa số kia → B9; đồng hồ/lịch → B7; đổi đơn vị độ dài không có trong B7), lô tìm thành phần (dạng `a × ? = c`, `a : ? = c` có từ B8), 28 câu "Một phần mấy" (B14), nâng mức bằng chứng cho câu đã ghi, và xác nhận bộ sinh B1–B3 khớp sách (đọc "tư", viết "1 000").
 

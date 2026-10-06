@@ -19,7 +19,19 @@
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
         "id": "toan_xem-dong-ho-thoi-gian_q001",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 7
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B7 tr.23 bài 2a (đồng hồ 3 giờ 30 phút, 6 giờ 15 phút) và bài 4 (đọc giờ) — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Kim giờ nằm giữa số 10 và số 11, kim phút chỉ số 6. Đồng hồ chỉ:",
@@ -36,7 +48,19 @@
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
         "id": "toan_xem-dong-ho-thoi-gian_q002",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 7
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B7 tr.23 bài 2a (đồng hồ 3 giờ 30 phút, 6 giờ 15 phút) và bài 4 (đọc giờ) — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Kim giờ chỉ quá số 1 một chút, kim phút chỉ số 3. Đồng hồ chỉ:",
@@ -53,7 +77,19 @@
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
         "id": "toan_xem-dong-ho-thoi-gian_q003",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 7
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B7 tr.23 bài 2a (đồng hồ 3 giờ 30 phút, 6 giờ 15 phút) và bài 4 (đọc giờ) — cùng dạng",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Kim giờ chỉ gần tới số 9, kim phút chỉ số 9. Đồng hồ chỉ:",
@@ -240,7 +276,19 @@
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
         "id": "toan_xem-dong-ho-thoi-gian_q014",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 7
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B7 tr.23 bài 2b (ngày 4/10 là thứ Ba → ngày 10/10) — cùng dạng tính thứ trong tuần",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       },
       {
         "q": "Hôm nay là thứ Sáu. Ba ngày nữa là thứ mấy?",
@@ -257,7 +305,19 @@
         "unit": "toan_xem-dong-ho-thoi-gian",
         "source": "claude-audit-20260924",
         "id": "toan_xem-dong-ho-thoi-gian_q015",
-        "stage": 1
+        "stage": 1,
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 7
+        },
+        "lessonRef": {
+          "basis": "trang-sach",
+          "note": "B7 tr.23 bài 2b (ngày 4/10 là thứ Ba → ngày 10/10) — cùng dạng tính thứ trong tuần",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-07"
+        }
       }
     ]
   }

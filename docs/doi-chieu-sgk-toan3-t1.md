@@ -2,7 +2,7 @@
 
 Nguồn: bản PDF SGK Toán 3 tập một Nam gửi (126 trang; trang sách = trang PDF − 1).
 Claude đã xem các trang: 6–27 (B1–B8), 28–38 (B9–B12), 39–41 (B13), 42–45 (B14), 46 (B15).
-Mọi đề xuất dưới đây **chưa ghi** vào dữ liệu, chờ Codex duyệt.
+Mục 1–5 là đề xuất ban đầu (giữ để đối chiếu). **Kết quả Codex duyệt (vòng 9) và những gì đã ghi: xem mục 6.**
 
 ## 1. Trả lời các câu đang chờ
 
@@ -74,3 +74,26 @@ Lưu ý: gợi ý của 5 câu dạng B8 đang là quy tắc B13 ("Chia 36 cho 4
   - Gợi ý `timsh` của mình: "lấy tổng trừ đi số hạng **đã biết**"; sách viết "lấy tổng trừ đi số hạng **kia**". Có thể đổi cho khớp sách, nhưng phải lên v2 vì v1 đã phát hành → đề xuất để nguyên.
   - Sách B3 dùng số ≤ 100, mình sinh đến 1000 (đã học ở B2).
 - **Chưa có**: so sánh với biểu thức ("100 ? 90 + 9", "400 + 70 + 5 ? 475", tr.8). Nếu cần thì thêm mẫu ở v2.
+
+## 6. Vòng 9 — Codex duyệt, đã ghi vào dữ liệu (`tools/apply_lesson_gd1_20261007.py`)
+
+| Nhóm | Câu | Bài | basis | Ghi chú |
+|---|---|---|---|---|
+| Đổi chỗ thừa số | q008, q039, q076, q107, q109 | B10 | trang-sach | dẫn tr.32 bài 4a (hoạt động so sánh hai tích đổi chỗ); **không** ghi "lần đầu dạy" vì tr.18, tr.29 đã có cặp đổi chỗ |
+| | q038 | B5 | trang-sach | đổi gợi ý: "Dùng bảng nhân 3 hoặc đếm thêm 3 sáu lần." |
+| | q075 | B4 | trang-sach | đổi gợi ý: "Dùng bảng nhân 5 hoặc đếm thêm 5 bảy lần." |
+| Quan hệ nhân–chia | q058 | B9 | trang-sach | tr.29 bài 1c |
+| | q095 | B9 | suy-luan | áp quan hệ tr.29 sang tích cho sẵn (7 × 9 = 63) |
+| Tìm thành phần (a × ? = c, a : ? = c) | q018 (B8), q049 (B9), q086 (B10), q052 (B8), q089 (B8) | | trang-sach | tr.26 bài 4a; gợi ý đổi sang tra bảng: "Trong bảng nhân 4, 4 nhân với số nào được 36?"; q052/q089: "Trong bảng nhân 5, 5 nhân với số nào được 30? Thử số đó vào phép chia." |
+| Tìm thành phần (? × b = c, ? : b = c) | q017, q050, q087, q019, q051, q088 | B13 | trang-sach | tr.39–41 |
+| Đồng hồ / lịch | dong-ho q001–q003, q014, q015; on-tap q013 | B7 | trang-sach | tr.23 |
+| Độ dài, ước lượng kg | do-luong q002, q003, q011, q015, q016, q017 | — | nen | không gắn bài; ghi chú kiến thức nền lớp 2 |
+| Một phần mấy | 28 câu | B14 | trang-sach | ghi rõ nhận biết/đọc (tr.42–44) ≠ tìm số lượng (tr.45 bài 4; web mở rộng số, không hình) |
+| | phan-so q029, q030 | B14 | suy-luan | sách nhận ra "mấy phần" qua hình, câu web bằng lời |
+
+**Nâng bằng chứng → trang-sach** (mỗi câu dẫn đúng trang, ghi "cùng bài / cùng dạng / mở rộng số liệu"; giữ `upgradedFrom: suy-luan`): bảng nhân chia q020–q027, q053–q057, q060–q063, q090–q093, q096–q101, q149–q151; giải toán q012, q015.
+Giữ `suy-luan` (chưa thấy trang tương ứng đúng dạng): q059, q064, q105, q106, q108, q110, q111, q152, q095; giải toán q003, q004; on-tap q014; phan-so q029, q030. q064 không mượn ví dụ bảng 4 / bảng 7.
+
+**Tổng**: 99 câu có `lesson` (trang-sach 85, suy-luan 14) + 6 câu `nen`. Còn lô 1 (94 câu bảng trực tiếp, cộng trừ B2) chờ Codex duyệt.
+
+**Kiểm tra**: `tests/lesson-data.test.js` (mọi lessonRef có basis + note; `nen` không có lesson; `trang-sach` phải dẫn tr.N). `tests/gen.e2e.js` nhóm 1: với mọi câu có lesson, chọn mốc = bài đó thì hiện, mốc ngay trước thì ẩn; câu không gắn luôn hiện; thử riêng q018 (B8/B7), q049, q086, q017 (B13/B12), q052, q008, q058, q038 (B5/B4), q075 (B4/B3), phan-so q011, q029 (B14/B13), đồng hồ q001 (B7/B6), độ dài q002 + kg q017 luôn hiện.
