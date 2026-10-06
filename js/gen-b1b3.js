@@ -13,7 +13,8 @@
 //   LƯU Ý: bảng v1 còn gọi hàm dùng chung (read, fmt, ERR.*, _pick3, _numErrs, _addErrs, _subErrs, _offByPlace,
 //   _decomp, _extreme, _order, FRAMES, SCENES). Sửa hàm nào làm đổi câu v1 thì phải giữ bản cũ cho v1
 //   (vd đổi tên thành readV1 và cho bảng v1 gọi bản đó). Kho trên web sinh theo seed "kho-web-v<VERSION>",
-//   nên lên phiên bản thì kho đổi: tiến độ theo chỉ số của chủ đề nền bắt đầu lại, còn câu sai / lịch ôn theo id vẫn giữ.
+//   nên lên phiên bản thì kho đổi. Tiến độ chủ đề nền lưu THEO ID (Storage.registerIdTopic) → câu mới không kế thừa
+//   trạng thái của câu cũ cùng vị trí; câu cũ được dựng lại (từ lịch sử) vẫn giữ đúng trạng thái của nó.
 // - Phạm vi toán học: số 0–1000 (một, hai, ba chữ số, 0 và 1000). Khi luyện ưu tiên số
 //   ba chữ số nhưng KHÔNG loại số nhỏ: hiệu nhỏ (302 − 298), số chưa biết nhỏ (? + 245 = 250),
 //   tổng bằng 1000 đều có.
@@ -689,16 +690,39 @@ const GenB13 = {
     const toan = subjects.find(x => x && x.id === 'toan');
     if (!toan || !Array.isArray(toan.topics)) return;
     toan.lessonBook = this.LESSON_BOOK;
-    if (!toan.topics.some(t => t.id === this.TOPIC_ID)) {
-      toan.topics.unshift({ id: this.TOPIC_ID, icon: '🧮', name: 'Nền số đến 1000 (Bài 1–3)', generated: true, questions: this.bank() });
+    // MỘT đối tượng chủ đề dùng chung cho mọi lần tải dữ liệu (tải lại, đổi lớp rồi quay lại…), để câu dựng lại
+    // từ lịch sử và bảng chuyển chỉ số ↔ id của Storage luôn nhìn cùng một mảng.
+    if (!this._topic || this._topic._v !== this.VERSION) {
+      this._topic = { id: this.TOPIC_ID, icon: '🧮', name: 'Nền số đến 1000 (Bài 1–3)', generated: true, _v: this.VERSION, questions: this.bank() };
+    }
+    const topic = this._topic;
+    const at = toan.topics.findIndex(t => t.id === this.TOPIC_ID);
+    if (at >= 0) toan.topics[at] = topic; else toan.topics.unshift(topic);
+    // Tiến độ của chủ đề này lưu THEO ID (Storage chuyển đổi chỉ số ↔ id qua mảng hiện tại).
+    // Dữ liệu cũ lưu theo chỉ số (bản 1f57129, chỉ có kho v1) đổi sang id bằng kho v1; phiên bản sau không đổi.
+    if (typeof Storage !== 'undefined' && Storage && Storage.registerIdTopic) {   // dùng tên Storage của web (window.Storage là API gốc của trình duyệt)
+      const legacy = this.VERSION === 1 ? this.bank().map(q => q.id) : [];
+      Storage.registerIdTopic(this.TOPIC_ID, () => this._liveTopic().questions, () => legacy);
     }
     toan.topics.forEach(t => { if (Object.prototype.hasOwnProperty.call(this.HOSTS, t.id)) t.genMix = { templates: this.HOSTS[t.id], ratio: this.MIX_RATIO }; });
+  },
+
+  /** Chủ đề mà web ĐANG dùng: App chuẩn hoá dữ liệu bằng bản sao (LearningEngine.normalizeQuestionBank),
+   *  nên lấy từ dữ liệu lớp 3 của App; chưa có (vd chạy test Node) thì dùng bản gốc. */
+  _liveTopic() {
+    try {
+      const d = typeof App !== 'undefined' && App && App._dataByGrade && App._dataByGrade.lop3;
+      const s = d && (d.subjects || []).find(x => x.id === 'toan');
+      const t = s && s.topics.find(x => x.id === this.TOPIC_ID);
+      if (t) return t;
+    } catch (e) { /* dùng bản gốc */ }
+    return this._topic;
   },
 
   /** Gắn vào chủ đề các câu sinh có id trong danh sách mà chưa có (dựng lại từ id). Trả số câu vừa gắn. */
   ensureIds(subjects, ids) {
     const toan = (subjects || []).find(x => x && x.id === 'toan');
-    const t = toan && toan.topics.find(x => x.id === this.TOPIC_ID);
+    const t = (toan && toan.topics.find(x => x.id === this.TOPIC_ID)) || this._topic;
     if (!t) return 0;
     const have = new Set(t.questions.map(q => q.id));
     const add = [...new Set((ids || []).filter(id => typeof id === 'string' && id.indexOf(this.PREFIX + '_') === 0 && !have.has(id)))].sort();

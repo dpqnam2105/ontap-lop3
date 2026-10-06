@@ -561,7 +561,7 @@ const App = {
     const opts = lb.titles.map((t, i) => `<option value="${i + 1}"${cur && cur.no === i + 1 ? ' selected' : ''}>Bài ${i + 1}. ${this._escape(t)}</option>`).join('');
     return `<div class="lesson-row"><label for="lessonSelect">📖 Trên lớp đã học đến:</label>
       <select id="lessonSelect" class="lesson-select"><option value=""${cur ? '' : ' selected'}>Chưa chọn (theo giai đoạn)</option>${opts}</select>
-      <small>${this._escape(lb.label)} · chỉ ảnh hưởng câu có ghi số bài</small></div>`;
+      <small>${this._escape(lb.label)} · hiện chỉ lọc câu tự sinh (Nền số đến 1000); câu có sẵn vẫn lọc theo giai đoạn ở trên</small></div>`;
   },
 
   // ─── Đề trộn tuần này (interleaving) ─────────
@@ -654,6 +654,8 @@ const App = {
 
   _chooseSubject(idx, keepScroll) {
     const s = this.allData.subjects[idx];
+    // Câu tự sinh trong lịch sử của bé mà kho chưa có → dựng lại trước khi vẽ thẻ chủ đề / tính tiến độ
+    if (window.GenB13 && GenB13.ensureFromHistory(this.allData) && window.Today) Today._qIdxCache = null;
     document.getElementById('topicMenuTitle').textContent = s.name;
 
     const list = document.getElementById('topicList');

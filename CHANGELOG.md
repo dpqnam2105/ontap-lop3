@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Tiến độ chủ đề "Nền số đến 1000" lưu theo ID câu (góp ý Codex)
+- Sửa lỗi: câu tự sinh dựng lại từ lịch sử có thể đổi vị trí sau khi tải lại, làm dấu "đã đúng" rơi sang câu khác. Nay tiến độ trong ngày và tích lũy của chủ đề này lưu theo id; chủ đề có sẵn không đổi.
+- Lên phiên bản mẫu: câu mới không thừa hưởng dấu của câu cũ. Dữ liệu cũ (lưu theo vị trí) tự đổi sang id.
+- Ô "đã học đến bài" ghi rõ: hiện chỉ lọc câu tự sinh; câu có sẵn vẫn theo giai đoạn.
+- Test mới `tests/progress-id.test.js` + nhóm 3b trong `tests/gen.e2e.js` (gồm sao lưu sang máy khác). Mã phiên bản `?v=20261006y`.
+
 ## 2026-10-06 — Lên web: luyện nền Toán B1–B3 tự sinh + chọn "đã học đến bài"
 - Chủ đề mới đứng đầu Toán: **🧮 Nền số đến 1000 (Bài 1–3)**, 300 câu tự sinh cố định (đọc, viết, cấu tạo, so sánh, liền trước/sau, cộng trừ trong 1000, tìm thành phần, lời văn một bước).
 - "Giải toán có lời văn" và "Ôn tập tổng hợp" được trộn tối đa 40% câu tự sinh hợp chủ đề; các chủ đề khác không đổi.

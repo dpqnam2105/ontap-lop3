@@ -177,6 +177,47 @@ const G13 = 'Nền số đến 1000';
     await ctx.close();
   });
 
+  // ── 3b) Tiến độ chủ đề câu sinh theo ID: câu dựng lại đổi vị trí sau tải lại vẫn giữ đúng dấu (cả sang máy khác) ──
+  await T('tiến độ theo id: thêm A → làm đúng → thêm B (id đứng trước) → tải lại (B chiếm vị trí cũ của A) → dấu đúng vẫn ở A; sang máy khác cũng vậy', async () => {
+    const { p, ctx, errs } = await open(b, { name: 'Bé Tiến Độ' });
+    const [A, B] = await p.evaluate(() => { const have = new Set(GenB13.bank().map(q => q.id));
+      const out = GenB13.pick('tien-do-ab', 400).map(q => q.id).filter(id => !have.has(id)).sort(); return [out[out.length - 1], out[0]]; });
+    const addWrong = id => p.evaluate(id => { const q = GenB13.build(id);
+      Storage.recordAnswer({ questionId: id, isCorrect: false, subjectId: 'toan', topicId: 'toan_g13', question: q.q });
+      Storage.recordReview(id, false, { subjectId: 'toan', topicId: 'toan_g13' }); }, id);
+    const answerRight = async () => { await p.evaluate(() => { const q = Quiz.questions[Quiz.curIdx]; const right = String(q.choices[q.a]);
+      [...document.querySelectorAll('.ans-btn')].find(x => x.textContent === right).click(); }); await p.waitForTimeout(200); await p.click('#btnNext'); await p.waitForTimeout(300); };
+    await addWrong(A); await reload(p);
+    await toToan(p);
+    // làm đúng A trong lượt luyện của chủ đề nền (ghi tiến độ ngày + tích lũy)
+    await p.evaluate(id => { const s = App.allData.subjects.find(x => x.id === 'toan'); const t = s.topics.find(x => x.id === 'toan_g13');
+      Quiz.start(t, s.name, { mode: 'practice', subjectId: 'toan', allowed: [t.questions.findIndex(q => q.id === id)] }); }, A);
+    await p.waitForTimeout(300); await answerRight();
+    const before = await p.evaluate(id => { const t = App.allData.subjects.find(x => x.id === 'toan').topics.find(x => x.id === 'toan_g13'); return t.questions.findIndex(q => q.id === id); }, A);
+    assert.strictEqual(before, 300, 'A ở vị trí 300 lúc đầu');
+    await addWrong(B); await reload(p);
+    const check = () => p.evaluate(([a, bb]) => { Today._reviewItems();
+      const t = App.allData.subjects.find(x => x.id === 'toan').topics.find(x => x.id === 'toan_g13');
+      const ia = t.questions.findIndex(q => q.id === a), ib = t.questions.findIndex(q => q.id === bb);
+      return { ia, ib, ok: Storage.getTotalProgress('toan_g13').ok, day: Storage.getTopicProgress('toan_g13').learned }; }, [A, B]);
+    let r = await check();
+    assert.strictEqual(r.ib, 300, 'sau tải lại B chiếm vị trí 300 (như Codex tái hiện)');
+    assert.ok(r.ok.includes(r.ia) && !r.ok.includes(r.ib), 'tích lũy: đúng ở A, không ở B ' + JSON.stringify(r));
+    assert.ok(r.day.includes(r.ia) && !r.day.includes(r.ib), 'trong ngày: đúng ở A, không ở B');
+    const snap2 = await p.evaluate(() => Cloud.collect(App.playerName));
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+    const o = await open(b, { name: 'Bé Tiến Độ' });
+    await o.p.evaluate(s => Cloud.apply(s, 'Bé Tiến Độ'), snap2); await reload(o.p);
+    r = await o.p.evaluate(([a, bb]) => { Today._reviewItems();
+      const t = App.allData.subjects.find(x => x.id === 'toan').topics.find(x => x.id === 'toan_g13');
+      const ia = t.questions.findIndex(q => q.id === a), ib = t.questions.findIndex(q => q.id === bb);
+      return { ia, ib, ok: Storage.getTotalProgress('toan_g13').ok }; }, [A, B]);
+    assert.ok(r.ia >= 300 && r.ok.includes(r.ia) && !r.ok.includes(r.ib), 'máy khác: đúng ở A, không ở B ' + JSON.stringify(r));
+    assert.deepStrictEqual(o.errs, []);
+    await o.ctx.close();
+  });
+
   // ── 4) Câu điền dấu: đúng 3 lựa chọn, chấm điểm, hiển thị đáp án, bàn phím, điện thoại ──
   await T('câu điền dấu: 3 nút (>, <, =) một hàng, không thêm lựa chọn giả; chấm đúng/sai; gợi ý; bàn phím; 390px không cuộn ngang', async () => {
     const { p, ctx, errs } = await open(b, { vp: { width: 390, height: 844 }, mobile: true, name: 'Bé Điền Dấu' });

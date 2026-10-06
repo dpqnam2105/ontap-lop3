@@ -1,5 +1,19 @@
 # Rà soát nền lớp 3
 
+## Vòng 5 (2026-10-06): tiến độ chủ đề câu sinh lưu theo ID (sửa [P1] + [P2] của Codex trên 1f57129)
+
+- **[P1]** `Storage` có danh sách chủ đề lưu tiến độ theo ID (`ID_PROGRESS_TOPICS = ['toan_g13']`); chủ đề tĩnh vẫn lưu theo chỉ số như cũ.
+  - Với `toan_g13`, bộ nhớ chỉ chứa id: trong ngày `learnedIds` / `wrongIds`, tích lũy `seenIds` / `okIds`. `getTopicProgress`, `saveTopicProgress`, `getTotalProgress`, `markTotalProgress` vẫn nhận/trả chỉ số, đổi qua mảng câu *hiện tại* của web. Phần còn lại của web không phải sửa.
+  - Id đã lưu mà mảng hiện tại chưa có (câu chưa được dựng lại) được giữ nguyên khi ghi đè. Chủ đề chưa nạp: đọc ra rỗng, ghi thì bỏ qua, không bao giờ ghi theo chỉ số.
+  - Bảng chuyển chỉ số ↔ id lấy đúng mảng web đang dùng (`App._dataByGrade.lop3`; App chuẩn hoá dữ liệu bằng bản sao). Câu dựng lại từ lịch sử được gắn ngay khi mở môn, khi lập lịch ôn và khi ôn câu sai.
+- **[P2]** Lên phiên bản: kho mới có id mới nên không kế thừa dấu của câu cũ cùng vị trí; câu cũ được dựng lại từ lịch sử vẫn giữ đúng trạng thái của nó. Dữ liệu lỡ lưu theo chỉ số trong vài giờ của bản 1f57129 được đổi sang id theo kho v1 (chỉ số ngoài kho bị bỏ).
+- **Test**:
+  - `tests/progress-id.test.js` (5): đúng kịch bản Codex (A ở vị trí 300 → thêm B có id đứng trước → tải lại, B chiếm vị trí 300 → dấu đúng, cả tích lũy lẫn trong ngày, vẫn ở A); giữ id chưa dựng lại; giả lập lên phiên bản; đổi dữ liệu cũ; chủ đề chưa nạp.
+  - `tests/gen.e2e.js` thêm nhóm 3b, chạy luồng web thật: làm đúng A trong lượt luyện → thêm B → tải lại → A còn dấu, B không; sao lưu `Cloud.collect` → máy khác `Cloud.apply` → vẫn đúng.
+  - Kiểm tra lại test: khi tạm cho Storage lưu theo chỉ số như cũ, e2e tái hiện đúng lỗi Codex (`ok:[300]` rơi vào B) và unit test đỏ 5/5.
+  - Mọi bộ test khác vẫn đạt.
+- **Giới hạn còn lại (ghi rõ trên giao diện)**: ô "đã học đến bài" hiện chỉ lọc câu tự sinh. Câu tĩnh chưa có `lesson` nên vẫn chỉ lọc theo giai đoạn. Việc tiếp theo: gắn `lesson` cho câu tĩnh đã đối chiếu sách.
+
 ## Vòng 4 (2026-10-06): tích hợp bộ sinh B1–B3 lên web (phạm vi: nền Toán B1–B3)
 
 **Cách nối**: theo đúng kiểu `TableGen`. `GenB13.augment()` chạy lúc tải dữ liệu lớp 3:

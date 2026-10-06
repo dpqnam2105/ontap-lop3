@@ -153,20 +153,55 @@ const Storage = {
     };
   },
 
+  // ─── Chủ đề lưu tiến độ THEO ID CÂU (câu tự sinh) ──
+  // Câu tự sinh có thể được dựng lại / gắn thêm vào chủ đề theo thứ tự khác nhau giữa các lần tải,
+  // hoặc đổi cả kho khi lên phiên bản mẫu → không được lưu tiến độ theo vị trí (chỉ số) trong mảng.
+  // Với các chủ đề này: bộ nhớ giữ ID; hàm get/save/mark vẫn nhận/trả chỉ số theo mảng HIỆN TẠI
+  // (chuyển đổi qua resolver do GenB13 đăng ký), nên phần còn lại của web không phải đổi.
+  // ID đã lưu mà không có trong mảng hiện tại được GIỮ NGUYÊN khi lưu lại (không mất dữ liệu).
+  ID_PROGRESS_TOPICS: ['toan_g13'],
+  _idTopics: {},
+
+  /** questions(): mảng câu hiện tại của chủ đề; legacyIds(): (tuỳ chọn) id theo chỉ số của dữ liệu cũ lưu theo vị trí. */
+  registerIdTopic(topicId, questions, legacyIds) {
+    this._idTopics[topicId] = { questions, legacyIds: legacyIds || (() => []) };
+    if (!this.ID_PROGRESS_TOPICS.includes(topicId)) this.ID_PROGRESS_TOPICS.push(topicId);
+  },
+  _isIdTopic(topicId) { return this.ID_PROGRESS_TOPICS.includes(topicId); },
+  /** { ids: id theo chỉ số hiện tại, pos: Map id → chỉ số } hoặc null nếu chủ đề chưa nạp. */
+  _idView(topicId) {
+    const r = this._idTopics[topicId];
+    if (!r) return null;
+    const ids = (r.questions() || []).map(q => q && q.id);
+    const pos = new Map(); ids.forEach((id, i) => { if (id && !pos.has(id)) pos.set(id, i); });
+    return { ids, pos, legacy: r.legacyIds() || [] };
+  },
+  /** Bản ghi cũ (chỉ số, trước khi đổi sang ID) → ID theo kho cũ; chỉ số ngoài kho cũ bị bỏ. */
+  _legacyToIds(arr, v) { return (arr || []).filter(i => Number.isInteger(i) && i >= 0 && i < v.legacy.length).map(i => v.legacy[i]); },
+  _idsToIdx(ids, v) { return [...new Set((ids || []).map(id => v.pos.get(id)).filter(i => i != null))]; },
+  _idxToIds(idx, v) { return [...new Set((idx || []).map(i => v.ids[i]).filter(Boolean))]; },
+  /** Giữ các ID đã lưu mà chủ đề hiện tại không có (vd câu chưa được dựng lại) khi ghi đè. */
+  _keepUnknown(storedIds, v) { return (storedIds || []).filter(id => !v.pos.has(id)); },
+
   // ─── Daily topic progress (reset mỗi ngày) ──
 
-  /** Lấy progress của 1 chủ đề trong ngày hôm nay */
+  /** Lấy progress của 1 chủ đề trong ngày hôm nay (chỉ số theo mảng câu hiện tại). */
   getTopicProgress(topicId) {
+    const empty = { learned: [], wrong: [], date: this._getToday() };
     try {
       const raw = localStorage.getItem(this._scoped(this.PROGRESS_KEY));
       const all = raw ? JSON.parse(raw) : {};
       const today = this._getToday();
-      if (all._date !== today) {
-        return { learned: [], wrong: [], date: today };
-      }
-      return all[topicId] || { learned: [], wrong: [], date: today };
+      if (all._date !== today) return empty;
+      const p = all[topicId];
+      if (!this._isIdTopic(topicId)) return p || empty;
+      const v = this._idView(topicId);
+      if (!v || !p) return empty;
+      const learnedIds = p.learnedIds || this._legacyToIds(p.learned, v);
+      const wrongIds = p.wrongIds || this._legacyToIds(p.wrong, v);
+      return { learned: this._idsToIdx(learnedIds, v), wrong: this._idsToIdx(wrongIds, v), date: today };
     } catch (e) {
-      return { learned: [], wrong: [], date: this._getToday() };
+      return empty;
     }
   },
 
@@ -177,7 +212,16 @@ const Storage = {
       let all = raw ? JSON.parse(raw) : {};
       const today = this._getToday();
       if (all._date !== today) all = { _date: today };
-      all[topicId] = { learned, wrong, date: today };
+      if (this._isIdTopic(topicId)) {
+        const v = this._idView(topicId);
+        if (!v) return;                                  // chủ đề chưa nạp: không ghi theo chỉ số
+        const old = all[topicId] || {};
+        const oldL = old.learnedIds || this._legacyToIds(old.learned, v), oldW = old.wrongIds || this._legacyToIds(old.wrong, v);
+        all[topicId] = { learnedIds: this._keepUnknown(oldL, v).concat(this._idxToIds(learned, v)),
+          wrongIds: this._keepUnknown(oldW, v).concat(this._idxToIds(wrong, v)), date: today };
+      } else {
+        all[topicId] = { learned, wrong, date: today };
+      }
       localStorage.setItem(this._scoped(this.PROGRESS_KEY), JSON.stringify(all));
     } catch (e) {
       console.error('saveTopicProgress error:', e);
@@ -186,6 +230,7 @@ const Storage = {
 
   // ─── Tiến độ tích lũy (không reset theo ngày) ───────
   // { [topicId]: { seen: [idx...], ok: [idx...] } } — ok = câu đã từng làm đúng ngay lần đầu chọn.
+  // Chủ đề theo ID: { seenIds: [id...], okIds: [id...] }; get trả chỉ số theo mảng hiện tại.
   PROGRESS_TOTAL_KEY: 'khoBaiTap_progress_total_v1',
 
   getTotalProgress(topicId) {
@@ -193,7 +238,10 @@ const Storage = {
       const raw = localStorage.getItem(this._scoped(this.PROGRESS_TOTAL_KEY));
       const all = raw ? JSON.parse(raw) : {};
       const p = all[topicId] || {};
-      return { seen: p.seen || [], ok: p.ok || [] };
+      if (!this._isIdTopic(topicId)) return { seen: p.seen || [], ok: p.ok || [] };
+      const v = this._idView(topicId);
+      if (!v) return { seen: [], ok: [] };
+      return { seen: this._idsToIdx(p.seenIds || this._legacyToIds(p.seen, v), v), ok: this._idsToIdx(p.okIds || this._legacyToIds(p.ok, v), v) };
     } catch (e) {
       return { seen: [], ok: [] };
     }
@@ -205,10 +253,21 @@ const Storage = {
       const key = this._scoped(this.PROGRESS_TOTAL_KEY);
       const raw = localStorage.getItem(key);
       const all = raw ? JSON.parse(raw) : {};
-      const p = all[topicId] || { seen: [], ok: [] };
-      if (!p.seen.includes(idx)) p.seen.push(idx);
-      if (correct && !p.ok.includes(idx)) p.ok.push(idx);
-      all[topicId] = p;
+      if (this._isIdTopic(topicId)) {
+        const v = this._idView(topicId);
+        const id = v && v.ids[idx];
+        if (!id) return;                                 // chủ đề chưa nạp / chỉ số lạ: không ghi bừa
+        const old = all[topicId] || {};
+        const p = { seenIds: old.seenIds || this._legacyToIds(old.seen, v), okIds: old.okIds || this._legacyToIds(old.ok, v) };
+        if (!p.seenIds.includes(id)) p.seenIds.push(id);
+        if (correct && !p.okIds.includes(id)) p.okIds.push(id);
+        all[topicId] = p;
+      } else {
+        const p = all[topicId] || { seen: [], ok: [] };
+        if (!p.seen.includes(idx)) p.seen.push(idx);
+        if (correct && !p.ok.includes(idx)) p.ok.push(idx);
+        all[topicId] = p;
+      }
       localStorage.setItem(key, JSON.stringify(all));
     } catch (e) {
       console.warn('markTotalProgress error:', e);
