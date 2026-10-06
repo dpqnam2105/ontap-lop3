@@ -12,6 +12,10 @@ const Cloud = {
   URL: 'https://script.google.com/macros/s/AKfycbxA0Br0LUEf9rKDtietHfQmYcA0GyvBf1TyOt6EXlnVK9Uj2kkcpDymJ_jgLAJ9IrnVcg/exec',
   META_PREFIX: 'khoBaiTap_cloudmeta::',
   CONFLICT_PREFIX: 'khoBaiTap_conflict::',   // bản máy được cất khi xung đột — KHÔNG đưa vào snapshot sao lưu
+  // Mã gia đình: khoá riêng của MÁY (không gắn tên bé) → không nằm trong snapshot, cloudmeta, URL hay log.
+  // Chỉ bảo vệ việc GHI ĐÈ (force); CHƯA phải xác thực toàn bộ đọc/ghi.
+  FAMILY_CODE_KEY: 'khoBaiTap_familyCode_v1',
+  FAMILY_CODE_MIN: 6,
   DEBOUNCE_MS: 4000,
   VISIBLE_SYNC_MS: 30000,                     // tab hiện lại → đồng bộ, tối đa 1 lần / 30 giây
   _timer: null,
@@ -22,6 +26,39 @@ const Cloud = {
 
   enabled() { return !!this.URL; },
   _canon(name) { return Storage.canonName(name || Storage.getActiveName() || ''); },
+  // ─── Mã gia đình (chỉ cho ghi đè) ───────────────────
+  getFamilyCode() {
+    try { return localStorage.getItem(this.FAMILY_CODE_KEY) || ''; } catch (e) { return ''; }
+  },
+  /** Bố mẹ nhập mã trên máy này. Đúng/sai do MÁY CHỦ quyết định lúc ghi đè; ở đây chỉ kiểm tra độ dài. */
+  setFamilyCode(code) {
+    const c = String(code || '').trim();
+    if (c.length < this.FAMILY_CODE_MIN) return { ok: false, error: 'short' };
+    try { localStorage.setItem(this.FAMILY_CODE_KEY, c); } catch (e) { return { ok: false, error: 'storage' }; }
+    this._unblockForce();
+    return { ok: true };
+  },
+  clearFamilyCode() {
+    try { localStorage.removeItem(this.FAMILY_CODE_KEY); } catch (e) { /* bỏ qua */ }
+  },
+  /** Đã có mã mới → bỏ chặn các lượt ghi đè đang chờ và gửi lại 1 lần. */
+  _unblockForce() {
+    let any = false;
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !k.startsWith(this.META_PREFIX)) continue;
+      let m; try { m = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { continue; }
+      if (m.forceBlocked) { m.forceBlocked = null; localStorage.setItem(k, JSON.stringify(m)); any = true; }
+    }
+    if (any) this._kick(0);
+  },
+  /** Bố mẹ huỷ ý định ghi đè đang chờ → đồng bộ lại bình thường (có thể ra xung đột để chọn lại). */
+  cancelForce(nm) {
+    this._setMeta(nm, { forceRev: null, forceBlocked: null });
+    return this.sync(nm, { silent: true });
+  },
+  _isFamilyCodeReason(x) { return typeof x === 'string' && x.indexOf('family-code-') === 0; },
+
   _esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); },
 
   // ─── Gom / ghi dữ liệu của 1 bé ─────────────────────
@@ -242,6 +279,7 @@ const Cloud = {
       const rev = m.localRev || 0;
       if (rev <= (m.savedRev || 0)) continue;
       if (m.conflict && m.conflict.damaged) continue;          // bản lai: không bao giờ gửi, kể cả ghi đè đang chờ
+      if (m.forceRev && m.forceBlocked) continue;              // ghi đè thiếu/sai mã gia đình → chờ bố mẹ, không thử lại
       if ((m.conflict || m.needCheck) && !m.forceRev) continue; // chờ đối chiếu / bố mẹ chọn → không gửi liên tục
       if (m.stuckRev != null && rev <= m.stuckRev) continue;    // máy chủ đã từ chối đúng bản này → chờ thay đổi mới
       out.push(m.name || k.slice(this.META_PREFIX.length));
@@ -329,8 +367,16 @@ const Cloud = {
       return { ok: false, error: 'empty' };
     }
     const body = { action: 'save', key: this._canon(nm), meta, snapshot: snap };
-    if (opts.force) body.force = true;
-    else if (typeof m0.serverVer === 'number') body.baseVer = m0.serverVer; // máy chủ chỉ nhận nếu bản mạng chưa đổi
+    if (opts.force) {
+      // Mã lấy NGAY LÚC GỬI từ localStorage của máy; không chép vào cloudmeta/snapshot
+      const code = this.getFamilyCode();
+      if (!code) {
+        this._setMeta(nm, { forceBlocked: 'family-code-missing' });
+        return { ok: false, error: 'family-code-missing' };
+      }
+      body.force = true;
+      body.familyCode = code;
+    } else if (typeof m0.serverVer === 'number') body.baseVer = m0.serverVer; // máy chủ chỉ nhận nếu bản mạng chưa đổi
     let res;
     try {
       res = await fetch(this.URL, { method: 'POST', body: JSON.stringify(body) });
@@ -347,10 +393,15 @@ const Cloud = {
     if (out && out.ok === true && out.saved === true) {
       const extra = Object.assign({ lastPush: Date.now(), conflict: null, needCheck: null, stuckRev: null }, this._baseFrom(snap));
       if (typeof out.ver === 'number') extra.serverVer = out.ver;
-      if (opts.force) extra.forceRev = null;    // yêu cầu ghi đè đã xong
+      if (opts.force) { extra.forceRev = null; extra.forceBlocked = null; }   // yêu cầu ghi đè đã xong
       this._markSaved(nm, rev, extra);
       this._dropBackupIfSaved(nm, snap.keys);   // bản cất đã nằm nguyên trên mạng → không cần giữ nữa
       return out;
+    }
+    if (out && this._isFamilyCodeReason(out.reason)) {
+      // Máy chủ từ chối ghi đè (chưa cài mã / sai mã / bị khoá) → dừng tự thử lại, chờ bố mẹ
+      this._setMeta(nm, { forceBlocked: out.reason });
+      return Object.assign({}, out, { ok: false, error: out.reason });
     }
     if (out && (out.reason === 'conflict' || out.reason === 'older')) {
       this._setMeta(nm, { needCheck: true });   // tạm ngừng tự gửi tới khi sync() đối chiếu xong
@@ -450,7 +501,11 @@ const Cloud = {
     const damaged = !!(m.conflict && m.conflict.damaged);
 
     // Bố mẹ đã chọn ghi đè bằng bản máy (mở file / giữ bản máy) mà chưa gửi xong → không bao giờ kéo bản mạng đè lên
-    if (!damaged && m.forceRev && this._unsaved(nm)) { this._kick(0); return 'force-pending'; }
+    if (!damaged && m.forceRev && this._unsaved(nm)) {
+      if (m.forceBlocked) return 'force-blocked';   // chờ bố mẹ nhập mã gia đình (hoặc huỷ ghi đè)
+      this._kick(0);
+      return 'force-pending';
+    }
 
     if (!r.found || !r.snapshot) {
       if (damaged) return 'conflict';             // không có bản mạng để tự sửa → chờ bố mẹ (mở file sao lưu)
@@ -745,6 +800,12 @@ const Cloud = {
     const meta = nm ? this._meta(nm) : {};
     const when = meta.lastPush ? new Date(meta.lastPush).toLocaleString('vi-VN') : 'chưa';
     const line = s => '⭐ ' + s.stars + ' sao · ' + s.stickers + ' sticker · ' + s.balls + ' ngọc rồng · ' + s.p + ' điểm kinh nghiệm';
+    const fcMsg = {
+      'family-code-missing': '🔑 Cần nhập mã gia đình trên máy này để ghi đè bản trên mạng (ô bên dưới).',
+      'family-code-unset': '🔑 Máy chủ sao lưu chưa cài mã gia đình (FAMILY_CODE trong Apps Script) nên chưa cho ghi đè.',
+      'family-code-wrong': '🔑 Mã gia đình không đúng. Nhập lại mã ở ô bên dưới.',
+      'family-code-locked': '🔒 Nhập sai mã quá nhiều lần — ghi đè bị khoá 1 giờ. Thử lại sau nhé.'
+    };
     const c = meta.conflict;
     const conflictBox = c && nm
       ? '<div class="backup-conflict">' +
@@ -774,9 +835,21 @@ const Cloud = {
       (nm ? '<p class="backup-line">Bé đang dùng máy này: <b>' + this._esc(nm) + '</b> · ⭐ ' + sum.stars + ' sao · ' + sum.stickers + ' sticker · ' + sum.balls + ' ngọc rồng</p>' : '<p class="backup-line">Máy này chưa có tên bé.</p>') +
       (this.enabled()
         ? '<p class="backup-note">Web tự sao lưu lên mạng sau mỗi lượt học và khi mua sticker. Đổi máy hoặc xoá trình duyệt: gõ đúng tên cũ là lấy lại được. Lần sao lưu gần nhất: <b>' + when + '</b>.' +
-          (!c && nm && this._unsaved(nm) ? (meta.forceRev ? ' ⏳ Đang chờ gửi bản bố mẹ đã chọn, web sẽ tự gửi lại.' : ' ⏳ Còn thay đổi chưa sao lưu, web sẽ tự gửi lại.') : '') + '</p>'
+          (!c && nm && this._unsaved(nm) && !meta.forceBlocked ? (meta.forceRev ? ' ⏳ Đang chờ gửi bản bố mẹ đã chọn, web sẽ tự gửi lại.' : ' ⏳ Còn thay đổi chưa sao lưu, web sẽ tự gửi lại.') : '') + '</p>'
         : '<p class="backup-note">Chưa bật sao lưu tự động lên mạng. Trong lúc chờ, bố mẹ có thể tải file sao lưu về giữ.</p>') +
       conflictBox + restoreBox +
+      (nm && meta.forceRev && meta.forceBlocked
+        ? '<div class="backup-conflict"><p>⏸️ Bản bố mẹ chọn ghi đè <b>chưa gửi được</b>: ' + this._esc((fcMsg[meta.forceBlocked] || meta.forceBlocked)) + '</p>' +
+          '<p class="backup-note">Web không tự gửi lại cho tới khi có mã đúng. Bé vẫn học bình thường trên máy này.</p>' +
+          '<div class="backup-actions"><button class="btn-secondary" id="btnCancelForce">✖️ Huỷ ghi đè</button></div></div>'
+        : '') +
+      (this.enabled()
+        ? '<div class="backup-fc"><p><b>🔑 Mã gia đình</b> (chỉ dùng khi ghi đè bản trên mạng): ' + (this.getFamilyCode() ? 'máy này <b>đã nhập</b>.' : 'máy này <b>chưa nhập</b>.') + '</p>' +
+          '<div class="backup-actions"><input type="password" id="familyCodeInput" class="name-input backup-fc-input" autocomplete="off" placeholder="Mã gia đình (≥ ' + this.FAMILY_CODE_MIN + ' ký tự)">' +
+          '<button class="btn-secondary" id="btnSaveFamilyCode">Lưu mã</button>' +
+          (this.getFamilyCode() ? '<button class="btn-secondary" id="btnClearFamilyCode">Xoá mã khỏi máy này</button>' : '') + '</div>' +
+          '<p class="backup-note">Mã này chỉ chặn việc ghi đè (mở file sao lưu, giữ bản máy, khôi phục bản cất). Đây <b>chưa</b> phải đăng nhập: ai có đường dẫn máy chủ vẫn đọc và ghi thường được.</p></div>'
+        : '') +
       '<div class="backup-actions">' +
       (this.enabled() && nm && !c ? '<button class="btn-primary" id="btnBackupNow">☁️ Sao lưu ngay</button>' : '') +
       (nm ? '<button class="btn-secondary" id="btnBackupDownload">💾 Tải file sao lưu</button>' : '') +
@@ -785,7 +858,7 @@ const Cloud = {
 
     const status = t => { const s = document.getElementById('backupStatus'); if (s) s.textContent = t; };
     const on = (id, fn) => { const b = document.getElementById(id); if (b) b.onclick = fn; };
-    const failMsg = r => r && r.error === 'empty' ? 'Máy này chưa có sao/sticker nào để sao lưu.'
+    const failMsg = r => r && fcMsg[r.error] ? fcMsg[r.error] : r && r.error === 'empty' ? 'Máy này chưa có sao/sticker nào để sao lưu.'
       : r && r.error === 'damaged' ? '⚠️ Dữ liệu trên máy chưa đầy đủ (bộ nhớ đầy) nên không gửi lên. Xoá bớt bản cất rồi bấm "Lấy bản trên mạng" hoặc mở file sao lưu.'
       : '⚠️ Chưa gửi được (mạng?). Web sẽ tự thử lại.';
 
@@ -836,6 +909,19 @@ const Cloud = {
       status(r.ok ? '✅ Đã khôi phục và sao lưu lên mạng.' : r.error === 'apply' ? '⚠️ Không ghi được vào máy (bộ nhớ đầy?).' : failMsg(r));
     });
     on('btnBackupDownload', () => this.downloadFile(nm));
+    on('btnSaveFamilyCode', () => {
+      const inp2 = document.getElementById('familyCodeInput');
+      const r = this.setFamilyCode(inp2 ? inp2.value : '');
+      if (inp2) inp2.value = '';
+      this.renderParentCard();
+      status(r.ok ? '✅ Đã lưu mã gia đình trên máy này.' : r.error === 'short' ? '⚠️ Mã cần ít nhất ' + this.FAMILY_CODE_MIN + ' ký tự.' : '⚠️ Không lưu được mã.');
+    });
+    on('btnClearFamilyCode', () => { if (confirm('Xoá mã gia đình khỏi máy này?')) { this.clearFamilyCode(); this.renderParentCard(); } });
+    on('btnCancelForce', async () => {
+      if (!confirm('Huỷ việc ghi đè bản trên mạng? Web sẽ đồng bộ lại bình thường (nếu 2 bản khác nhau sẽ hỏi bố mẹ chọn).')) return;
+      await this.cancelForce(nm);
+      this.renderParentCard();
+    });
     const inp = document.getElementById('backupFileInput');
     if (inp) inp.onchange = async () => {
       const f = inp.files && inp.files[0];

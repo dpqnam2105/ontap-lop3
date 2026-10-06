@@ -16,6 +16,14 @@
  * GET cũng đọc dữ liệu + phiên bản trong ScriptLock, nên bản trả về và số phiên bản luôn khớp nhau.
  * Máy dùng bản web cũ (không gửi baseVer) vẫn theo luật cũ: không cho bản ít XP hơn ghi đè.
  *
+ * MÃ GIA ĐÌNH — chỉ bảo vệ việc GHI ĐÈ (force). CHƯA phải đăng nhập: ai có URL …/exec vẫn ĐỌC được
+ * và GHI THƯỜNG được (ghi thường vẫn bị chặn nếu bản trên mạng đã đổi — xem số phiên bản ở trên).
+ *   Cài (1 lần): ⚙️ Cài đặt dự án → Thuộc tính tập lệnh → Thêm thuộc tính: tên FAMILY_CODE, giá trị = mã bố mẹ tự đặt
+ *   (≥ 6 ký tự, khó đoán). Rồi nhập đúng mã đó ở web: Khu vực Bố Mẹ → Sao lưu → 🔑 Mã gia đình (mỗi máy 1 lần).
+ *   - Chưa cài FAMILY_CODE → mọi lệnh ghi đè bị từ chối ('family-code-unset').
+ *   - Sai mã → từ chối ('family-code-wrong'); sai 10 lần trong 1 giờ → khoá ghi đè 1 giờ ('family-code-locked').
+ *   - Mã không bao giờ bị ghi vào Sheet, lịch sử hay log.
+ *
  * SAU KHI SỬA FILE NÀY: Triển khai → Quản lý các bản triển khai → ✏️ → Phiên bản: "Phiên bản mới" → Triển khai
  * (giữ nguyên URL …/exec, không tạo bản triển khai mới).
  */
@@ -63,6 +71,31 @@ function _getVer(key, rowExists) {
 }
 
 function _setVer(key, v) { _props().setProperty('ver::' + key, String(v)); }
+
+const FC_MAX_FAIL = 10;            // sai quá số lần này trong 1 giờ → khoá ghi đè
+const FC_WINDOW_MS = 3600000;
+
+/** Kiểm tra mã gia đình cho lệnh ghi đè. Gọi TRONG ScriptLock. Trả về '' nếu hợp lệ, hoặc lý do từ chối. */
+function _checkFamilyCode(given) {
+  const props = _props();
+  const want = String(props.getProperty('FAMILY_CODE') || '');
+  if (!want) return 'family-code-unset';
+  const now = Date.now();
+  let f = {};
+  try { f = JSON.parse(props.getProperty('fc_fail') || '{}') || {}; } catch (err) { f = {}; }
+  if (!f.since || now - f.since > FC_WINDOW_MS) f = { n: 0, since: now };
+  if (f.n >= FC_MAX_FAIL) return 'family-code-locked';
+  const g = String(given == null ? '' : given);
+  // so sánh không dừng sớm theo ký tự
+  let diff = g.length ^ want.length;
+  for (let i = 0; i < Math.max(g.length, want.length); i++) diff |= (g.charCodeAt(i) || 0) ^ (want.charCodeAt(i) || 0);
+  if (diff !== 0) {
+    f.n++;
+    props.setProperty('fc_fail', JSON.stringify(f));
+    return f.n >= FC_MAX_FAIL ? 'family-code-locked' : 'family-code-wrong';
+  }
+  return '';
+}
 
 function _readRow(sh, row) {
   const width = Math.max(sh.getLastColumn(), FIXED + 1);
@@ -118,6 +151,11 @@ function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(15000);
   try {
+    // Ghi đè (force) phải có đúng mã gia đình — kiểm tra trước mọi thao tác ghi
+    if (body.force) {
+      const why = _checkFamilyCode(body.familyCode);
+      if (why) return _out({ ok: false, reason: why });
+    }
     const sh = _sheet(SHEET);
     let row = _findRow(sh, key);
     const cur = _getVer(key, row > 0);

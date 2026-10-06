@@ -69,14 +69,18 @@ function makeScript(file) {
 }
 
 /** Máy chủ: kind 'new' = Code.gs hiện tại, 'old' = Code.gs trước khi có số phiên bản. */
-function server(kind) {
+const CODE = 'ma-gia-dinh-1';
+function server(kind, opts) {
+  opts = opts || {};
   const file = kind === 'old' ? path.join(__dirname, 'fixtures', 'Code.v1.gs') : path.join(REPO, 'backup-apps-script', 'Code.gs');
   const sc = makeScript(file);
-  const s = { saves: [], mode: 'ok', delay: 0, sc };
+  if (!opts.noCode) sc.props.FAMILY_CODE = CODE;     // bố mẹ đã cài mã gia đình trong Apps Script
+  const s = { saves: [], urls: [], mode: 'ok', delay: 0, sc };
   const respond = text => ({ ok: true, status: 200, json: async () => JSON.parse(text) });
   s.get = key => JSON.parse(sc.g.doGet({ parameter: { action: 'get', key } }).content);
   s.post = body => JSON.parse(sc.g.doPost({ postData: { contents: body } }).content);
   s.fetch = async (url, init) => {
+    s.urls.push(url);
     if (!init) {
       if (s.delay) await sleep(s.delay);
       if (s.mode === 'neterr') throw new Error('offline');
@@ -126,6 +130,7 @@ function boot(store, srv, opts) {
   vm.runInContext(fs.readFileSync(REPO + '/js/storage.js', 'utf8'), ctx);
   vm.runInContext(fs.readFileSync(REPO + '/js/cloud.js', 'utf8'), ctx);
   vm.runInContext('Cloud.DEBOUNCE_MS = 20; Cloud.RETRY_MS = [150, 300, 500];', ctx);
+  if (!opts.noCode && !ctx.localStorage.getItem('khoBaiTap_familyCode_v1')) ctx.localStorage.setItem('khoBaiTap_familyCode_v1', CODE);
   return ctx;
 }
 
@@ -545,7 +550,7 @@ const tests = {
     await run(B, 'Cloud.sync("Thỏ", { silent: true })');
     assert.ok(meta(B, 'thỏ').conflict);
     // ví dụ: bố mẹ chép đúng bản B lên từ máy khác
-    srv.post(JSON.stringify({ action: 'save', key: 'thỏ', force: true, meta: run(B, 'Cloud.summary(Cloud.collect("Thỏ"))'), snapshot: run(B, 'Cloud.collect("Thỏ")') }));
+    srv.post(JSON.stringify({ action: 'save', key: 'thỏ', force: true, familyCode: CODE, meta: run(B, 'Cloud.summary(Cloud.collect("Thỏ"))'), snapshot: run(B, 'Cloud.collect("Thỏ")') }));
     assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'same');
     assert.ok(!meta(B, 'thỏ').conflict);
     assert.ok(!B.localStorage.getItem('khoBaiTap_conflict::thỏ'));
@@ -761,6 +766,97 @@ const tests = {
     assert.ok(r.ok, 'bản cất đầy đủ → được ghi đè');
     assert.strictEqual(srv.get('thỏ').meta.p, 107);
     assert.ok(!meta(B, 'thỏ').conflict);
+  },
+  // ═══ #1 — mã gia đình chỉ bảo vệ ghi đè ═══
+  async 'máy chủ CHƯA cài mã gia đình → từ chối mọi ghi đè, ghi thường vẫn chạy'() {
+    const srv = server('new', { noCode: true });
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    assert.strictEqual(srv.get('thỏ').meta.p, 130, 'ghi thường không cần mã');
+    const r = await run(B, 'Cloud.resolveKeepLocal("Thỏ")');
+    assert.strictEqual(r.error, 'family-code-unset');
+    assert.strictEqual(srv.get('thỏ').meta.p, 130, 'bản mạng không bị đè');
+    assert.strictEqual(meta(B, 'thỏ').forceBlocked, 'family-code-unset');
+  },
+
+  async 'sai mã → dừng tự thử lại (không lặp), nhập đúng mã → tự gửi lại 1 lần và ghi đè được'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    B.localStorage.setItem('khoBaiTap_familyCode_v1', 'sai-ma-000');
+    const r = await run(B, 'Cloud.resolveKeepLocal("Thỏ")');
+    assert.strictEqual(r.error, 'family-code-wrong');
+    const n = srv.saves.length;
+    await sleep(700);                                   // quá mọi mốc thử lại
+    assert.strictEqual(srv.saves.length, n, 'không tự gửi lại khi sai mã');
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'force-blocked', 'không kéo bản mạng đè lên, không hẹn gửi');
+    assert.strictEqual(srv.saves.length, n);
+    assert.ok(run(B, 'Cloud.setFamilyCode(' + JSON.stringify(CODE) + ')').ok);
+    await sleep(80);
+    assert.strictEqual(srv.saves.length, n + 1, 'gửi lại đúng 1 lần');
+    assert.strictEqual(srv.get('thỏ').meta.p, 100, 'ghi đè bằng bản máy B');
+    assert.ok(!meta(B, 'thỏ').forceRev && !meta(B, 'thỏ').forceBlocked);
+  },
+
+  async 'máy chưa nhập mã → không gửi gì lên; nhập mã xong mới gửi'() {
+    const srv = server();
+    const { A } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 900); await sleep(60);
+    const B = boot(new Map(), srv, { noCode: true }); run(B, 'Storage.switchPlayer("Thỏ")'); run(B, 'Cloud.init()'); await sleep(60);
+    const file = JSON.stringify({ v: 1, name: 'Thỏ', at: 1, keys: { '@profile': JSON.stringify({ playerName: 'Thỏ', xp: 50, stars: 4, level: 1 }) } });
+    B.__file = { text: async () => file };
+    const n = srv.saves.length;
+    await run(B, 'Cloud.openFile(__file)');
+    await sleep(400);
+    assert.strictEqual(srv.saves.length, n, 'không POST nào khi thiếu mã');
+    assert.strictEqual(meta(B, 'thỏ').forceBlocked, 'family-code-missing');
+    assert.strictEqual(prof(B, 'thỏ').xp, 50, 'bản bố mẹ mở vẫn trên máy');
+    assert.strictEqual(run(B, 'Cloud.setFamilyCode("12345")').error, 'short', 'mã quá ngắn');
+    run(B, 'Cloud.setFamilyCode(' + JSON.stringify(CODE) + ')');
+    await sleep(80);
+    assert.strictEqual(srv.get('thỏ').meta.p, 50);
+  },
+
+  async 'sai mã 10 lần trong 1 giờ → khoá ghi đè, kể cả mã đúng'() {
+    const srv = server();
+    await twoSyncedDevices(srv);
+    const snap = srv.get('thỏ').snapshot;
+    const post = code => srv.post(JSON.stringify({ action: 'save', key: 'thỏ', force: true, familyCode: code, meta: { p: 1 }, snapshot: snap }));
+    for (let i = 0; i < 9; i++) assert.strictEqual(post('doan-' + i).reason, 'family-code-wrong');
+    assert.strictEqual(post('doan-9').reason, 'family-code-locked');
+    assert.strictEqual(post(CODE).reason, 'family-code-locked', 'đang khoá thì mã đúng cũng bị từ chối');
+    srv.sc.props.fc_fail = JSON.stringify({ n: 10, since: Date.now() - 3700000 });   // qua 1 giờ
+    assert.strictEqual(post(CODE).ok, true);
+  },
+
+  async 'mã gia đình không lọt vào URL, snapshot, cloudmeta hay Sheet'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    await run(B, 'Cloud.resolveKeepLocal("Thỏ")');
+    assert.ok(!srv.urls.some(u => u.includes(CODE)), 'không có trong URL');
+    srv.saves.forEach(b => {
+      assert.ok(!JSON.stringify(b.snapshot).includes(CODE), 'không có trong snapshot');
+      assert.ok(!JSON.stringify(b.meta).includes(CODE), 'không có trong meta gửi lên');
+      if (!b.force) assert.ok(!('familyCode' in b), 'ghi thường không gửi mã');
+    });
+    for (const [k, v] of B.localStorage._m) if (k !== 'khoBaiTap_familyCode_v1') assert.ok(!v.includes(CODE), 'không chép vào ' + k);
+    const sheetText = JSON.stringify(Object.values(srv.sc.sheets).map(sh => sh.rows));
+    assert.ok(!sheetText.includes(CODE), 'không ghi vào Sheet / lịch sử');
+    run(B, 'Cloud._beacon()');
+    assert.ok(B.beacons.every(b => !('familyCode' in b) && !b.force));
+  },
+
+  async 'huỷ ghi đè đang bị chặn → đồng bộ lại bình thường'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    B.localStorage.removeItem('khoBaiTap_familyCode_v1');
+    await run(B, 'Cloud.resolveKeepLocal("Thỏ")');
+    assert.strictEqual(meta(B, 'thỏ').forceBlocked, 'family-code-missing');
+    const r = await run(B, 'Cloud.cancelForce("Thỏ")');
+    assert.ok(['conflict', 'pulled'].includes(r), 'sync bình thường, được: ' + r);
+    assert.ok(!meta(B, 'thỏ').forceRev);
   },
 };
 

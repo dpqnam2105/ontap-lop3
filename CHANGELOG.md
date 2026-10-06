@@ -5,6 +5,21 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — 🔑 Mã gia đình bảo vệ việc ghi đè bản sao lưu (#1, bàn cùng Codex)
+- **Phạm vi bảo vệ**: chỉ chặn **ghi đè** (force) — mở file sao lưu, "Giữ bản máy này", khôi phục bản cất. **Chưa phải đăng nhập**: ai có đường dẫn máy chủ …/exec vẫn **đọc** được và **ghi thường** được (ghi thường vẫn bị chặn nếu bản trên mạng đã đổi, nhờ số phiên bản). Ghi rõ trong `Code.gs`, `cloud.js` và Khu vực Bố Mẹ.
+- **Máy chủ** (`Code.gs`, kiểm tra trong `ScriptLock`, trước mọi thao tác ghi):
+  - Mã đặt ở **Thuộc tính tập lệnh** `FAMILY_CODE` (chỉ chủ Apps Script xem được), không nằm trong code.
+  - Chưa cài mã → từ chối mọi ghi đè (`family-code-unset`). Sai mã → `family-code-wrong`. Sai 10 lần trong 1 giờ → khoá ghi đè 1 giờ, kể cả mã đúng (`family-code-locked`).
+  - Mã không bao giờ ghi vào Sheet, trang LichSu hay log.
+- **Web** (`cloud.js`):
+  - Mã lưu ở khoá riêng của **máy** (`khoBaiTap_familyCode_v1`, không gắn tên bé) → không nằm trong bản sao lưu, cloudmeta, URL. Chỉ đọc ra **lúc gửi** lệnh ghi đè, gửi trong thân POST. Ghi thường và beacon không gửi mã.
+  - Thiếu mã trên máy → không gửi gì. Máy chủ báo thiếu/sai/khoá → **dừng tự thử lại** (không lặp), đồng bộ cũng không kéo bản mạng đè lên bản bố mẹ đã chọn (`force-blocked`). Khu vực Bố Mẹ hiện "⏸️ Bản bố mẹ chọn ghi đè chưa gửi được" + nút **✖️ Huỷ ghi đè**.
+  - Khu vực Bố Mẹ → Sao lưu có ô **🔑 Mã gia đình** (≥ 6 ký tự): Lưu mã / Xoá mã khỏi máy này. Lưu mã xong thì các lượt ghi đè đang chờ được gửi lại **1 lần**.
+- `tests/cloud.test.js`: 46 kiểm thử (máy chủ chưa cài mã, sai mã không lặp + nhập đúng gửi lại 1 lần, máy chưa nhập mã không POST, khoá sau 10 lần sai, mã không lọt vào URL/snapshot/cloudmeta/Sheet/beacon, huỷ ghi đè). 3 bài phía máy chủ **bắt được** việc `Code.gs` cũ cho ghi đè không cần mã.
+- Thử trên Chromium bắt được 1 lỗi của chính bản vá (biến thông báo dùng trước khi khai báo làm thẻ sao lưu lỗi) — đã sửa trước khi đẩy lên.
+- ⚠️ **Cần**: (1) triển khai lại Apps Script sao lưu, (2) thêm thuộc tính `FAMILY_CODE`, (3) nhập mã ở Khu vực Bố Mẹ trên máy bố mẹ hay dùng. Chưa làm (2) thì web vẫn chạy, chỉ là không ai ghi đè được.
+- Phiên bản file `?v=20261006r`.
+
 ## 2026-10-06 — Đấu trường: lời "thử thách", kỉ lục ghi rõ, sửa giới hạn 12 phạm vi (góp ý Codex)
 - **Lời hiển thị**: phạm vi là *phạm vi thử thách đã chọn* (kho câu của lượt), không phải chứng nhận bé thành thạo từng bảng — lượt 20 câu ngẫu nhiên không nhất thiết gặp đủ mọi bảng. Nay ghi "Đạt trong thử thách bảng …" (màn kết quả, Đấu trường, rê chuột trên nhãn cạnh tên), kệ huy hiệu ghi "Thử thách bảng …". Bảng tốc độ từng phép trong Khu Bố Mẹ vẫn là báo cáo thành thạo riêng.
 - **Kỉ lục**: giữ `level.best` như cũ, ghi rõ "Kỉ lục mức này, tính mọi phạm vi" (chú thích ở ô chọn mức, "kỉ lục mức …" ở kệ huy hiệu, "Kỉ lục mới của mức này (tính mọi phạm vi)!" ở màn kết quả). Khi đang chọn đúng một phạm vi đã đạt ở mức đó, thẻ chọn hiện thêm "🏅 Thử thách bảng … đã đạt X/20" — chỉ của **chính** phạm vi đó (`TableGen.findScope`), không mượn điểm bảng 2 cho lượt trộn 2–9.
