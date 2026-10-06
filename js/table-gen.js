@@ -268,12 +268,14 @@ const TableGen = {
   // phép nào con còn chậm → lượt sau hỏi lại nhiều hơn.
   // =============================================
   LEVELS: [
-    { id: 'oc-sen',   icon: '🐌', name: 'Ốc sên',   t: { calc: 15, miss: 18, rel: 25 } },
-    { id: 'rua',      icon: '🐢', name: 'Rùa',      t: { calc: 10, miss: 12, rel: 18 } },
-    { id: 'tho',      icon: '🐰', name: 'Thỏ',      t: { calc: 8,  miss: 10, rel: 15 } },
-    { id: 'dai-bang', icon: '🦅', name: 'Đại bàng', t: { calc: 5,  miss: 7,  rel: 11 } },
-    { id: 'bao',      icon: '🐆', name: 'Báo',      t: { calc: 3,  miss: 5,  rel: 8 } }
+    { id: 'oc-sen',   icon: '🐌', name: 'Ốc sên',   title: 'Ốc Sên Kiên Trì',   c: ['#bbf7d0', '#22c55e', '#166534'], t: { calc: 15, miss: 18, rel: 25 } },
+    { id: 'rua',      icon: '🐢', name: 'Rùa',      title: 'Rùa Bền Bỉ',        c: ['#bae6fd', '#0ea5e9', '#075985'], t: { calc: 10, miss: 12, rel: 18 } },
+    { id: 'tho',      icon: '🐰', name: 'Thỏ',      title: 'Thỏ Nhanh Nhẹn',    c: ['#fbcfe8', '#ec4899', '#9d174d'], t: { calc: 8,  miss: 10, rel: 15 } },
+    { id: 'dai-bang', icon: '🦅', name: 'Đại bàng', title: 'Đại Bàng Tinh Mắt', c: ['#ddd6fe', '#8b5cf6', '#5b21b6'], t: { calc: 5,  miss: 7,  rel: 11 } },
+    { id: 'bao',      icon: '🐆', name: 'Báo',      title: 'Báo Tia Chớp',      c: ['#fde68a', '#f59e0b', '#92400e'], t: { calc: 3,  miss: 5,  rel: 8 } }
   ],
+  // Có ảnh sticker riêng (images/arena/badge-<id>.webp) thì bật lên true; chưa có thì dùng huy hiệu vẽ bằng SVG.
+  BADGE_IMAGES: false,
   PASS_SCORE: 16,          // trên 20 câu
   SPEED_KEY: 'tableSpeed_v1',
   FAST_MS: 3000,           // dưới 3 giây (quy về câu tính thẳng) = nhanh
@@ -300,6 +302,7 @@ const TableGen = {
     d.facts = d.facts || {};
     d.level = d.level || { unlocked: 0, best: {} };
     d.level.best = d.level.best || {};
+    d.level.passed = d.level.passed || {};
     return d;
   },
   saveSpeed(d) {
@@ -351,12 +354,55 @@ const TableGen = {
     const best = d.level.best;
     const prev = best[level] || 0;
     if (inTime > prev) best[level] = inTime;
-    let unlockedNew = false;
-    if (inTime >= this.PASS_SCORE && d.level.unlocked === level && level < this.LEVELS.length - 1) {
-      d.level.unlocked = level + 1; unlockedNew = true;
+    let unlockedNew = false, newBadge = false;
+    if (inTime >= this.PASS_SCORE) {
+      if (!d.level.passed[level]) { d.level.passed[level] = new Date().toISOString().slice(0, 10); newBadge = true; }
+      if (d.level.unlocked <= level && level < this.LEVELS.length - 1) { d.level.unlocked = level + 1; unlockedNew = true; }
     }
     this.saveSpeed(d);
-    return { unlockedNew, best: best[level], prevBest: prev };
+    if (newBadge) this._syncRank(d);
+    return { unlockedNew, newBadge, best: best[level], prevBest: prev };
+  },
+
+  /** Danh hiệu cao nhất (chỉ số mức) bé đã đạt, -1 = chưa có. */
+  rankOf(d) {
+    d = d || this.getSpeed();
+    let r = -1;
+    Object.keys(d.level.passed || {}).forEach(k => { if (+k > r) r = +k; });
+    return r;
+  },
+
+  /** Ghi danh hiệu vào hồ sơ bé → hiện ở hồ sơ, được sao lưu, lên bảng tin vui. */
+  _syncRank(d) {
+    try {
+      const rank = this.rankOf(d);
+      const prof = Storage.load();
+      if ((prof.arenaRank || 0) < rank + 1) { prof.arenaRank = rank + 1; Storage.save(prof); }
+      if (window.Achieve && Achieve.check) Achieve.check();
+    } catch (e) { /* bỏ qua */ }
+  },
+
+  /** Huy hiệu con vật (SVG). size: 'sm' | 'md' | 'lg'. */
+  badgeHTML(level, earned, size) {
+    const L = this.LEVELS[level];
+    if (!L) return '';
+    const px = size === 'lg' ? 120 : size === 'sm' ? 44 : 78;
+    const [light, mid, dark] = L.c;
+    const gid = 'bg' + level + '_' + Math.random().toString(36).slice(2, 7);
+    let inner;
+    if (earned && this.BADGE_IMAGES) {
+      inner = '<img src="images/arena/badge-' + L.id + '.webp" alt="' + L.title + '" width="' + px + '" height="' + px + '">';
+    } else {
+      inner = '<svg viewBox="0 0 120 120" width="' + px + '" height="' + px + '" aria-hidden="true">' +
+        '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + light + '"/><stop offset="1" stop-color="' + mid + '"/></linearGradient></defs>' +
+        '<path d="M38 78 L26 116 L44 106 L52 120 L60 84 Z" fill="' + dark + '"/><path d="M82 78 L94 116 L76 106 L68 120 L60 84 Z" fill="' + dark + '"/>' +
+        '<circle cx="60" cy="54" r="46" fill="' + dark + '"/><circle cx="60" cy="54" r="40" fill="url(#' + gid + ')"/>' +
+        '<circle cx="60" cy="54" r="33" fill="#fff" opacity=".88"/>' +
+        '<g fill="#fff" opacity=".9"><circle cx="60" cy="11" r="3"/><circle cx="23" cy="34" r="2.5"/><circle cx="97" cy="34" r="2.5"/></g>' +
+        '<text x="60" y="68" text-anchor="middle" font-size="40">' + L.icon + '</text></svg>';
+    }
+    return '<span class="arena-badge ' + (earned ? 'earned' : 'locked') + ' ab-' + (size || 'md') + '" title="' + L.title + '">' + inner +
+      (earned ? '' : '<span class="ab-lock">🔒</span>') + '</span>';
   },
 
   /** Bảng tốc độ cho Khu Bố Mẹ: hàng = bảng 2–9, cột = thừa số 2–10. */
@@ -378,7 +424,7 @@ const TableGen = {
     const slow = this.slowFacts(d, 10);
     const lv = d.level || { unlocked: 0, best: {} };
     const lvText = this.LEVELS.map((L, i) => {
-      const st = i <= lv.unlocked ? (lv.best[i] != null ? 'kỉ lục ' + lv.best[i] + '/20' : 'chưa chơi') : '🔒';
+      const st = (lv.passed && lv.passed[i] ? '🏅 ' : '') + (i <= lv.unlocked ? (lv.best[i] != null ? 'kỉ lục ' + lv.best[i] + '/20' : 'chưa chơi') : '🔒');
       return '<span class="sg-lv' + (i <= lv.unlocked ? ' on' : '') + '">' + L.icon + ' ' + L.name + ' <b>' + st + '</b></span>';
     }).join('');
     let html = '<h3 class="parent-section-title">⏱️ Tốc độ bảng nhân chia</h3>';
@@ -424,14 +470,17 @@ const TableGen = {
   },
 
   // ---------- chọn câu cho 1 lượt luyện ----------
+  _prefKey() { return (window.Storage && Storage._scoped) ? Storage._scoped(this.PREF_KEY) : this.PREF_KEY; },
   getPref() {
     try {
-      const p = JSON.parse(localStorage.getItem(this.PREF_KEY) || 'null');
+      const p = JSON.parse(localStorage.getItem(this._prefKey()) || 'null');
       if (p && Array.isArray(p.tables) && p.tables.length) return { tables: p.tables.filter(t => this.TABLES.includes(t)), group: p.group || 'all', level: p.level };
     } catch (e) { /* bỏ qua */ }
-    return { tables: this.TABLES.slice(), group: 'all' };
+    // Lớp 2 chỉ học bảng 2–5
+    const g2 = window.App && App.currentGrade === 'lop2';
+    return { tables: g2 ? [2, 3, 4, 5] : this.TABLES.slice(), group: 'all' };
   },
-  setPref(p) { try { localStorage.setItem(this.PREF_KEY, JSON.stringify(p)); } catch (e) { /* bỏ qua */ } },
+  setPref(p) { try { localStorage.setItem(this._prefKey(), JSON.stringify(p)); } catch (e) { /* bỏ qua */ } },
 
   /** Chỉ số các câu trong chủ đề tự sinh hợp với bảng + nhóm dạng đã chọn. */
   filterIndices(topic, tables, group, allowed) {

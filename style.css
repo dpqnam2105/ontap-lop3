@@ -646,3 +646,35 @@
 .sg-slow-list{margin-top:10px;font-weight:750}
 .sg-chip{display:inline-block;border-radius:999px;padding:3px 10px;margin:3px 4px 0 0;font-size:.88rem}
 .sg-chip small{font-weight:700;opacity:.8}
+
+/* ⏱️ Đấu trường tính nhanh */
+.arena-wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.arena-wrap .quiz-hdr{margin-bottom:0}
+.arena-hero{display:flex;align-items:center;gap:22px;padding:22px 26px;background:linear-gradient(135deg,#fff7e6,#f3edff)}
+.arena-hero h2{font-family:var(--font-display);font-size:1.9rem;color:#4c1d95;line-height:1.1;margin:2px 0 6px}
+.arena-hero p{font-weight:750;color:#475569}
+.arena-kicker{font-weight:900;color:#a16207}
+.arena-sec-title{font-family:var(--font-display);font-weight:900;color:#0f4f9c;font-size:1.15rem;margin-bottom:10px}
+.arena-shelf{padding:18px 20px}
+.arena-shelf-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.arena-shelf-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:10px 4px;border-radius:16px;background:#f8fafc}
+.arena-shelf-item.got{background:linear-gradient(180deg,#fffbeb,#fff)}
+.asi-title{font-family:var(--font-display);font-weight:900;font-size:.95rem;color:#1e293b;line-height:1.15}
+.asi-sub{font-size:.78rem;font-weight:800;color:var(--muted)}
+.arena-badge{position:relative;display:inline-block;line-height:0}
+.arena-badge svg,.arena-badge img{display:block;filter:drop-shadow(0 6px 10px rgba(0,0,0,.15))}
+.arena-badge.locked svg{filter:grayscale(1) opacity(.45)}
+.arena-badge .ab-lock{position:absolute;right:2px;bottom:6px;font-size:1.1rem;line-height:1}
+.arena-badge.ab-lg .ab-lock{font-size:1.6rem}
+.arena-badge.earned.ab-lg{animation:badgePop .7s ease}
+@keyframes badgePop{0%{transform:scale(.4) rotate(-20deg);opacity:0}70%{transform:scale(1.12) rotate(4deg);opacity:1}100%{transform:none}}
+.arena-card{cursor:default;padding:18px 20px}
+.arena-card:hover{transform:none}
+.arena-card .speed-box{order:0;border-top:2px dashed #ffd88a;margin-top:10px}
+.arena-card .speed-go{font-size:1.2rem;padding:15px}
+.arena-extra-label{margin-top:16px}
+.speed-arena-link{display:block;width:100%;margin-top:8px;border:1px dashed #c4b5fd;background:#faf5ff;color:#6d28d9;border-radius:12px;padding:8px;font-weight:800;cursor:pointer}
+.arena-award{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px auto 4px;padding:10px 16px;background:linear-gradient(135deg,#fff7e6,#f3edff);border-radius:18px;font-family:var(--font-display);font-size:1.15rem;color:#4c1d95;max-width:420px;text-align:left}
+.arena-title-chip{display:inline-block;margin:6px 0 0 6px;background:linear-gradient(135deg,#f3edff,#fff7e6);color:#5b21b6;border:1px solid #ddd6fe;border-radius:999px;padding:4px 10px;font-weight:900;cursor:pointer}
+.rail-btn-arena{color:#6d28d9}
+@media(max-width:760px){.arena-hero{flex-direction:column;text-align:center;padding:18px}.arena-hero h2{font-size:1.5rem}.arena-shelf-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.asi-title{font-size:.72rem}.asi-sub{font-size:.66rem}.arena-shelf{padding:14px 10px}.arena-shelf .arena-badge svg{width:54px;height:54px}}

@@ -12,7 +12,8 @@ const Achieve = {
     { id: 'correct', tiers: [100, 300, 500, 1000, 2000, 5000], icon: '✅', text: (n, v) => n + ' đã làm đúng tổng cộng ' + v + ' câu hỏi!' },
     { id: 'level', tiers: [5, 10, 15, 20, 30, 50], icon: '⭐', text: (n, v) => 'Chúc mừng ' + n + ' đã lên Level ' + v + '!' },
     { id: 'balls', tiers: [7], icon: '🐉', text: (n) => n + ' đã thu thập đủ 7 viên ngọc rồng!' },
-    { id: 'stickers', tiers: [10, 20, 30, 50], icon: '🎒', text: (n, v) => n + ' đã sưu tập được ' + v + ' sticker!' }
+    { id: 'stickers', tiers: [10, 20, 30, 50], icon: '🎒', text: (n, v) => n + ' đã sưu tập được ' + v + ' sticker!' },
+    { id: 'arena', tiers: [1, 2, 3, 4, 5], icon: '⏱️', text: (n, v) => { const L = window.TableGen && TableGen.LEVELS[v - 1]; return 'Chúc mừng ' + n + ' đạt danh hiệu ' + (L ? L.icon + ' ' + L.title : 'mới') + ' ở Đấu trường tính nhanh!'; } }
   ],
   RECENT_DAYS: 14,
   MAX_ITEMS: 8,
@@ -31,7 +32,8 @@ const Achieve = {
       correct: Number(prof.totalCorrect || 0),
       level: Number(prof.level || 1),
       balls: Number(balls || 0),
-      stickers: Array.isArray(prof.inventory) ? prof.inventory.length : 0
+      stickers: Array.isArray(prof.inventory) ? prof.inventory.length : 0,
+      arena: Number(prof.arenaRank || 0)
     };
   },
 

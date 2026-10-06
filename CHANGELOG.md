@@ -5,6 +5,27 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Nút "⏱️ Đấu trường tính nhanh" + 5 danh hiệu con vật
+- **Nút mới ở thanh bên** (dưới "Vào học"; trên điện thoại là ô "⏱️ Tính nhanh" ở menu đáy, nay có 6 ô). Bấm một lần là vào thẳng màn **Đấu trường tính nhanh** (file mới `js/arena.js`), không phải qua Vào học → Toán → chủ đề nữa. Bé nào cũng dùng được, kể cả bé lớp 2: nếu bé chưa tự chọn bảng thì mặc định là bảng 2–5.
+- **Màn Đấu trường** có:
+  - Thẻ danh hiệu hiện tại của bé, kèm mục tiêu tiếp theo.
+  - **Bộ huy hiệu**: 5 huy hiệu, cái đã đạt có màu và ngày đạt; cái chưa đạt thì xám, có 🔒.
+  - Phần chọn bảng, dạng bài và mức, nút "⏱️ Bắt đầu thử thách" to. Bên dưới là "Luyện thêm (không tính giờ)".
+- **5 danh hiệu**, nhận khi đúng và kịp giờ từ 16/20 câu ở mức tương ứng:
+  - 🐌 Ốc Sên Kiên Trì
+  - 🐢 Rùa Bền Bỉ
+  - 🐰 Thỏ Nhanh Nhẹn
+  - 🦅 Đại Bàng Tinh Mắt
+  - 🐆 Báo Tia Chớp
+  - Màn kết quả hiện huy hiệu to kèm "🎉 Con nhận danh hiệu …".
+  - Danh hiệu được báo trên **bảng 📣 Tin vui** cho cả 3 bé ("Chúc mừng … đạt danh hiệu 🐰 Thỏ Nhanh Nhẹn ở Đấu trường tính nhanh!").
+  - Danh hiệu cao nhất hiện thành nhãn nhỏ dưới danh hiệu Level trong khung hồ sơ; bấm vào nhãn là mở Đấu trường.
+  - **Bộ sưu tập** có thêm khu "⏱️ Huy hiệu Đấu trường tính nhanh".
+  - Danh hiệu lưu trong hồ sơ (`arenaRank`) và số liệu tốc độ (`level.passed`) nên được sao lưu cùng.
+- Huy hiệu hiện vẽ bằng SVG (mỗi con một màu). Khi có ảnh sticker thì đặt vào `images/arena/badge-<oc-sen|rua|tho|dai-bang|bao>.webp` và đổi `TableGen.BADGE_IMAGES` thành `true`.
+- Làm bài bắt đầu từ Đấu trường: nút "Quay lại" và "🏟️ Về Đấu trường" ở màn kết quả đưa bé về lại Đấu trường. Lựa chọn bảng, dạng và mức nay được nhớ riêng cho từng bé.
+- Phiên bản file `?v=20261006d`.
+
 ## 2026-10-06 — ⏱️ Thử thách tốc độ bảng nhân chia (5 mức con vật) + bảng tốc độ cho bố mẹ
 - Thẻ **"⚡ Luyện bảng nhân chia 2–9 (tự sinh)"** có thêm khu **⏱️ Thử thách tốc độ**. Lượt thử thách dùng đúng bảng và nhóm dạng con đang chọn, mỗi lượt 20 câu mới.
 - **5 mức**, thời gian mỗi câu (tính thẳng / tìm số thiếu / quan hệ phép nhân):

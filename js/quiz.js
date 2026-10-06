@@ -34,7 +34,7 @@ const Quiz = {
   // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
   startWrongReview(limit, todayTaskId) {
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null;
+    this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
@@ -96,7 +96,7 @@ const Quiz = {
   startReviewPool(pool, todayTaskId) {
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null;
+    this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     this.mode = 'wrong_review';
     this.questions = pool.slice();
     this.currentTopic = { id: 'wrong_review', name: 'Ôn lại', questions: this.questions };
@@ -123,7 +123,7 @@ const Quiz = {
   startMixed(pool, subjectName, subjectId, mixKey, todayTaskId) {
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey }; this.speed = null; this.pickIdx = null;
+    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     this.mode = 'mixed';
     this.mixKey = mixKey || '';
     this.questions = pool.slice();
@@ -176,6 +176,7 @@ const Quiz = {
     // Luyện bảng nhân chia tự sinh: mỗi lần bắt đầu (kể cả "làm lại") bốc bộ câu mới.
     this.pickIdx = null;
     this._stopSpeedTimer();
+    this._setBack(options.back || 'topic');
     // Thử thách tốc độ: chạy như Kiểm tra (1 lần chọn, không gợi ý) + đồng hồ đếm ngược mỗi câu.
     this.speed = (options.speed != null && options.drill && window.TableGen)
       ? { level: options.speed, inTime: 0, ok: 0, timeouts: 0, ms: [] } : null;
@@ -382,6 +383,15 @@ const Quiz = {
     this._renderReportButton(q);
     if (window.Speak) Speak.attach(q, q.subjectId || this.currentSubjectId);
     this._renderSpeedTimer(q);
+  },
+
+  /** Nút "Quay lại" trên màn làm bài + nút "Chọn bài khác" ở màn kết quả về đúng nơi bé bắt đầu. */
+  _setBack(screen) {
+    this.backScreen = screen;
+    const b = document.querySelector('#screenQuiz .quiz-hdr .btn-nav');
+    if (b) b.dataset.screen = screen;
+    const c = document.getElementById('btnContinue');
+    if (c) c.textContent = screen === 'arena' ? '🏟️ Về Đấu trường' : '📚 Chọn bài khác';
   },
 
   // ─── ⏱️ Đồng hồ đếm ngược (Thử thách tốc độ) ─────────────
@@ -883,13 +893,17 @@ const Quiz = {
     const sp = this.speed;
     const L = TableGen.LEVELS[sp.level];
     const r = TableGen.setLevelResult(sp.level, sp.inTime);
+    if (window.Arena) Arena.renderChip();
     const avg = sp.ms.length ? (sp.ms.reduce((a, b) => a + b, 0) / sp.ms.length / 1000).toFixed(1).replace('.', ',') : '–';
     let msg = '⏱️ Mức ' + L.icon + ' ' + L.name + ': đúng và kịp giờ <b>' + sp.inTime + '/' + total + '</b> câu · trung bình ' + avg + ' giây/câu' +
       (sp.timeouts ? ' · ' + sp.timeouts + ' câu hết giờ' : '') + '.';
+    if (r.newBadge) {
+      msg += '<div class="arena-award">' + TableGen.badgeHTML(sp.level, true, 'lg') +
+        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b></div></div>';
+    }
     if (r.unlockedNew) {
       const N = TableGen.LEVELS[sp.level + 1];
-      msg += '<br>🎉 Con đã mở khoá mức <b>' + N.icon + ' ' + N.name + '</b>!';
-      try { Rewards._achievementPopup('🎉 Mở khoá mức ' + N.icon + ' ' + N.name + '!'); } catch (e) { /* bỏ qua */ }
+      msg += '<br>🔓 Đã mở mức <b>' + N.icon + ' ' + N.name + '</b>!';
     } else if (sp.inTime < TableGen.PASS_SCORE && sp.level < TableGen.LEVELS.length - 1) {
       msg += '<br>Cần ' + TableGen.PASS_SCORE + '/20 câu để mở mức tiếp theo. Cố lên con!';
     }

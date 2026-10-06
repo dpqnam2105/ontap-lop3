@@ -146,7 +146,7 @@ const App = {
     if (name !== 'quiz' && window.Quiz && Quiz._stopSpeedTimer) Quiz._stopSpeedTimer();
     if (name === 'register' && window.Achieve) Achieve.renderTicker();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
-    const needsName = (name === 'grade' || name === 'subject' || name === 'topic');
+    const needsName = (name === 'grade' || name === 'subject' || name === 'topic' || name === 'arena');
     if (needsName && !this.playerName) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById('screenRegister').classList.add('active');
@@ -165,7 +165,8 @@ const App = {
     const learnScreens = ['grade', 'subject', 'topic', 'quiz', 'result'];
     document.querySelectorAll('.side-rail .btn-nav').forEach(b => {
       const sc = b.dataset.screen;
-      b.classList.toggle('nav-active', sc === name || (sc === 'learn' && learnScreens.includes(name)));
+      const fromArena = window.Quiz && Quiz.backScreen === 'arena' && (name === 'quiz' || name === 'result');
+      b.classList.toggle('nav-active', fromArena ? sc === 'arena' : (sc === name || (sc === 'learn' && learnScreens.includes(name))));
     });
     if (name === 'register' || name === 'subject') DragonBall._renderHomeWidgets();
     if (name === 'register' && window.Today) Today.render();
@@ -178,11 +179,14 @@ const App = {
       if (window.Rewards && Rewards.renderShop) Rewards.renderShop();
       if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
     }
+    if (name === 'arena' && window.Arena) Arena.render();
     if (name === 'collection') {
+      if (window.Arena) Arena.renderCollection();
       DragonBall._renderCollection();
       if (window.Rewards && Rewards.renderCollection) Rewards.renderCollection();
       if (window.Decor) Decor.renderCollection();
     }
+    if (window.Arena) Arena.renderChip();
     window.scrollTo(0, 0);
   },
 
@@ -683,11 +687,14 @@ const App = {
   },
 
   /** Thẻ "⚡ Luyện bảng nhân chia (tự sinh)": chọn bảng + nhóm dạng, mỗi lượt bốc câu mới. */
-  _renderDrillCard(s, t, allowed) {
+  _renderDrillCard(s, t, allowed, opts) {
+    opts = opts || {};
+    const arena = !!opts.arena;
+    const back = arena ? 'arena' : 'topic';
     const pref = TableGen.getPref();
     const stats = TableGen.tableStats(t);
     const card = document.createElement('div');
-    card.className = 'topic-card topic-card-with-modes drill-card';
+    card.className = 'topic-card topic-card-with-modes drill-card' + (arena ? ' arena-card' : '');
     const chips = TableGen.TABLES.map(n => {
       const st = stats[n] || { total: 0, solid: 0 };
       const pct = st.total ? Math.round(st.solid / st.total * 100) : 0;
@@ -701,37 +708,45 @@ const App = {
       const best = sp.level.best[i];
       return `<button type="button" class="speed-lv${open ? '' : ' locked'}" data-lv="${i}" ${open ? '' : 'disabled'}>
         <span class="sl-ic">${open ? L.icon : '🔒'}</span><span class="sl-name">${L.name}</span>
-        <span class="sl-best">${open ? (best != null ? best + '/20' : 'chưa chơi') : 'khoá'}</span></button>`;
+        <span class="sl-best">${open ? (sp.level.passed && sp.level.passed[i] ? '🏅 ' : '') + (best != null ? best + '/20' : 'chưa chơi') : 'khoá'}</span></button>`;
     }).join('');
     const slow = TableGen.slowFacts(sp, 6);
     const slowLine = slow.length ? `<div class="speed-slow">🐢 Phép con còn chậm hoặc sai: <b>${slow.map(x => TableGen.factLabel(x.fact)).join(', ')}</b> — Thỏ sẽ hỏi lại nhiều hơn.</div>` : '';
     const groups = [['all', 'Tất cả dạng'], ['calc', TableGen.GROUPS.calc.label], ['rel', TableGen.GROUPS.rel.label]]
       .map(([k, l]) => `<button type="button" class="drill-group${pref.group === k ? ' on' : ''}" data-g="${k}">${this._escape(l)}</button>`).join('');
-    card.innerHTML = `
+    const head = arena ? '' : `
       <div class="topic-card-main">
         <div class="topic-icon">${t.icon}</div>
         <div class="topic-head-text">
           <div class="topic-name">${this._escape(t.name)}</div>
           <div class="topic-subline">Mỗi lượt 20 câu mới · ưu tiên phép con hay sai</div>
         </div>
-      </div>
+      </div>`;
+    const pickers = `
       <div class="drill-label">Chọn bảng <button type="button" class="drill-all">Chọn hết</button></div>
       <div class="drill-chips">${chips}</div>
       <div class="drill-label">Dạng bài</div>
       <div class="drill-groups">${groups}</div>
-      <div class="drill-count"></div>
+      <div class="drill-count"></div>`;
+    const modeRow = `
+      ${arena ? '<div class="drill-label arena-extra-label">Luyện thêm (không tính giờ)</div>' : ''}
       <div class="topic-mode-row">
         <button class="mode-btn practice" data-mode="practice">⚡ Luyện 20 câu</button>
         <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
         <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
-      </div>
+      </div>`;
+    const speedBox = `
       <div class="speed-box">
-        <div class="drill-label">⏱️ Thử thách tốc độ <small>đúng & kịp giờ ${TableGen.PASS_SCORE}/20 câu để mở mức mới</small></div>
+        <div class="drill-label">⏱️ ${arena ? 'Chọn mức' : 'Thử thách tốc độ'} <small>đúng & kịp giờ ${TableGen.PASS_SCORE}/20 câu để nhận danh hiệu và mở mức mới</small></div>
         <div class="speed-levels">${speedChips}</div>
         <div class="speed-info"></div>
         <button type="button" class="speed-go">⏱️ Bắt đầu thử thách</button>
         ${slowLine}
+        ${arena ? '' : '<button type="button" class="speed-arena-link">🏟️ Mở Đấu trường tính nhanh (xem danh hiệu)</button>'}
       </div>`;
+    card.innerHTML = arena ? pickers + speedBox + modeRow : head + pickers + modeRow + speedBox;
+    const arenaLink = card.querySelector('.speed-arena-link');
+    if (arenaLink) arenaLink.addEventListener('click', e => { e.stopPropagation(); this.showScreen('arena'); });
     const cur = { tables: pref.tables.slice(), group: pref.group, level: Math.min(pref.level != null ? pref.level : unlocked, unlocked) };
     const countEl = card.querySelector('.drill-count');
     const refresh = () => {
@@ -750,7 +765,7 @@ const App = {
     card.querySelector('.speed-go').addEventListener('click', e => {
       e.stopPropagation();
       if (!cur.tables.length) { Rewards._achievementPopup('🐰 Con chọn ít nhất 1 bảng nhé!'); return; }
-      Quiz.start(t, s.name, { mode: 'test', subjectId: s.id, allowed, speed: cur.level, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
+      Quiz.start(t, s.name, { mode: 'test', subjectId: s.id, allowed, back, speed: cur.level, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
     });
     card.querySelectorAll('.drill-chip').forEach(b => b.addEventListener('click', e => {
       e.stopPropagation();
@@ -763,7 +778,7 @@ const App = {
     card.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', e => {
       e.stopPropagation();
       if (!cur.tables.length) { Rewards._achievementPopup('🐰 Con chọn ít nhất 1 bảng nhé!'); return; }
-      Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
+      Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed, back, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
     }));
     refresh();
     return card;
@@ -855,6 +870,7 @@ const App = {
     document.getElementById('btnNext').addEventListener('click', () => Quiz.next());
 
     document.getElementById('btnContinue').addEventListener('click', () => {
+      if (window.Quiz && Quiz.backScreen === 'arena') { this.showScreen('arena'); return; }
       this.goLearn();
       Rewards.updateUI();
     });
