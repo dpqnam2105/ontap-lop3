@@ -276,6 +276,8 @@ const TableGen = {
   ],
   // Có ảnh sticker riêng (images/arena/badge-<id>.webp) thì bật lên true; chưa có thì dùng huy hiệu vẽ bằng SVG.
   BADGE_IMAGES: false,
+  // Giữa huy hiệu dùng ảnh avatar con vật (images/arena/avatar-<id>.webp)
+  AVATAR_IN_BADGE: true,
   PASS_SCORE: 16,          // trên 20 câu
   SPEED_KEY: 'tableSpeed_v1',
   FAST_MS: 3000,           // dưới 3 giây (quy về câu tính thẳng) = nhanh
@@ -397,9 +399,11 @@ const TableGen = {
         '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + light + '"/><stop offset="1" stop-color="' + mid + '"/></linearGradient></defs>' +
         '<path d="M38 78 L26 116 L44 106 L52 120 L60 84 Z" fill="' + dark + '"/><path d="M82 78 L94 116 L76 106 L68 120 L60 84 Z" fill="' + dark + '"/>' +
         '<circle cx="60" cy="54" r="46" fill="' + dark + '"/><circle cx="60" cy="54" r="40" fill="url(#' + gid + ')"/>' +
-        '<circle cx="60" cy="54" r="33" fill="#fff" opacity=".88"/>' +
-        '<g fill="#fff" opacity=".9"><circle cx="60" cy="11" r="3"/><circle cx="23" cy="34" r="2.5"/><circle cx="97" cy="34" r="2.5"/></g>' +
-        '<text x="60" y="68" text-anchor="middle" font-size="40">' + L.icon + '</text></svg>';
+        (this.AVATAR_IN_BADGE
+          ? '<clipPath id="' + gid + 'c"><circle cx="60" cy="54" r="34"/></clipPath>' +
+            '<image href="images/arena/avatar-' + L.id + '.webp?v=1" x="26" y="20" width="68" height="68" clip-path="url(#' + gid + 'c)" preserveAspectRatio="xMidYMid slice"/>'
+          : '<circle cx="60" cy="54" r="33" fill="#fff" opacity=".88"/><text x="60" y="68" text-anchor="middle" font-size="40">' + L.icon + '</text>') +
+        '<g fill="#fff" opacity=".9"><circle cx="60" cy="11" r="3"/><circle cx="23" cy="34" r="2.5"/><circle cx="97" cy="34" r="2.5"/></g></svg>';
     }
     return '<span class="arena-badge ' + (earned ? 'earned' : 'locked') + ' ab-' + (size || 'md') + '" title="' + L.title + '">' + inner +
       (earned ? '' : '<span class="ab-lock">🔒</span>') + '</span>';

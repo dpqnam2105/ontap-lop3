@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Ảnh avatar 5 con vật (Nam tạo bằng ChatGPT)
+- 5 ảnh `images/arena/avatar-oc-sen|rua|tho|dai-bang|bao.webp`, mỗi ảnh 15–25 KB. Đã cắt tròn và làm nền trong suốt, cỡ 360×360. Ảnh gốc PNG nằm trong thư mục "rabbit avatar/avatar update" của Nam.
+- **Avatar** (trang chủ, khung trang trí, Bộ sưu tập → Hình đại diện): dùng ảnh thay cho emoji (`Decor.AVATAR_IMAGES = true`).
+- **Huy hiệu Đấu trường** (thẻ danh hiệu, bộ huy hiệu, màn kết quả, Bộ sưu tập): giữa huy hiệu là ảnh con vật (`TableGen.AVATAR_IN_BADGE = true`). Huy hiệu chưa đạt vẫn xám và có 🔒.
+- Phiên bản file `?v=20261006g`.
+
 ## 2026-10-06 — Danh hiệu Đấu trường mở avatar con vật + gọn môn Toán
 - **Avatar con vật**: đạt danh hiệu nào thì mở **hình đại diện** con vật đó (🐌 Ốc sên, 🐢 Rùa, 🐰 Thỏ, 🦅 Đại bàng, 🐆 Báo).
   - Lúc vừa đạt danh hiệu, avatar **tự đổi** sang con vật mới (màn kết quả có báo).

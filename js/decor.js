@@ -62,7 +62,7 @@ const Decor = {
 
   // ─── Hình đại diện: Thỏ (mặc định) + 5 con vật của Đấu trường tính nhanh ───
   /** Có ảnh avatar riêng (images/arena/avatar-<id>.webp) thì bật true; chưa có dùng emoji trên nền màu. */
-  AVATAR_IMAGES: false,
+  AVATAR_IMAGES: true,
   faces() {
     const L = (window.TableGen && TableGen.LEVELS) || [];
     return [{ id: 'mascot', name: 'Thỏ Rabbit', icon: '🐰' }].concat(L.map((x, i) => ({ id: x.id, name: x.name, icon: x.icon, title: x.title, level: i, c: x.c })));
@@ -84,7 +84,7 @@ const Decor = {
   faceHTML(id) {
     const f = this.faces().find(x => x.id === id);
     if (!f || id === 'mascot') return Mascot.img('avatar', 'dc-face-img', '');
-    if (this.AVATAR_IMAGES) return '<img class="dc-face-img" src="images/arena/avatar-' + f.id + '.webp" alt="">';
+    if (this.AVATAR_IMAGES) return '<img class="dc-face-av" src="images/arena/avatar-' + f.id + '.webp?v=1" alt="' + this._esc(f.name) + '" decoding="async">';
     return '<span class="dc-face-emoji" style="background:radial-gradient(circle at 35% 30%,#fff,' + f.c[0] + ' 55%,' + f.c[1] + ')">' + f.icon + '</span>';
   },
 
