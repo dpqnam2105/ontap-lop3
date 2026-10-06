@@ -97,10 +97,17 @@ function server(kind) {
 function makeLS(store) {
   return {
     _m: store,
+    quota: Infinity,                     // giới hạn tổng dung lượng (độ dài key + giá trị), như trình duyệt
+    used() { let n = 0; this._m.forEach((v, k) => { n += k.length + v.length; }); return n; },
     get length() { return this._m.size; },
     key(i) { return [...this._m.keys()][i] ?? null; },
     getItem(k) { return this._m.has(k) ? this._m.get(k) : null; },
-    setItem(k, v) { this._m.set(k, String(v)); },
+    setItem(k, v) {
+      v = String(v);
+      const next = this.used() - (this._m.has(k) ? k.length + this._m.get(k).length : 0) + k.length + v.length;
+      if (next > this.quota) throw new Error('QuotaExceededError');
+      this._m.set(k, v);
+    },
     removeItem(k) { this._m.delete(k); },
   };
 }
@@ -459,12 +466,41 @@ const tests = {
     const srv = server();
     const { A, B } = await twoSyncedDevices(srv);
     earn(A, 'Thỏ', 30); await sleep(60);
-    run(B, 'Storage.set("todayPlan", { date: "2099-01-01", tasks: [] })');   // web tự tạo kế hoạch ngày
-    run(B, 'Storage.set("lastGrade", "lop3")');
+    run(B, 'Storage.set("todayPlan", { date: "2099-01-01", tasks: [{ id: "a", done: false }], rewarded: false })');   // web tự tạo kế hoạch ngày
     stop(B);
     const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
     assert.strictEqual(r, 'pulled');
     assert.strictEqual(prof(B, 'thỏ').xp, 130);
+  },
+
+  async 'kế hoạch hôm nay đã làm dở / lớp bé tự chọn là dữ liệu thật → xung đột, không kéo đè'() {
+    for (const code of [
+      'Storage.set("todayPlan", { date: "2099-01-01", tasks: [{ id: "a", done: true }], rewarded: false })',
+      'Storage.set("todayPlan", { date: "2099-01-01", tasks: [], rewarded: true })',
+      'Storage.set("lastGrade", "lop2")',
+    ]) {
+      const srv = server();
+      const { A, B } = await twoSyncedDevices(srv);
+      earn(A, 'Thỏ', 30); await sleep(60);
+      run(B, code); stop(B);
+      assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'conflict', code);
+    }
+  },
+
+  async 'bản cất chỉ khác ngày đạt thành tích hoặc chuỗi đúng → KHÔNG bị tự xoá'() {
+    for (const field of ['achievements', 'runNow']) {
+      const srv = server();
+      const { B } = await twoSyncedDevices(srv);
+      stop(B);
+      const val = field === 'achievements' ? '{ "streak:3": "2026-10-01" }' : '7';
+      run(B, `(() => { const d = Storage.load(); d.${field} = ${val}; localStorage.setItem(Storage.profileKey("Thỏ"), JSON.stringify(d)); Cloud._saveBackup("Thỏ"); })()`);
+      run(B, `(() => { const d = Storage.load(); d.${field} = ${field === 'achievements' ? '{ "streak:3": "2026-10-05" }' : '0'}; localStorage.setItem(Storage.profileKey("Thỏ"), JSON.stringify(d)); })()`);
+      await run(B, 'Cloud.resolveKeepLocal("Thỏ")');      // đẩy bản khác (ngày khác / chuỗi khác) lên mạng
+      // resolveKeepLocal cất lại ô conflict = bản đang gửi → tự xoá đúng; còn bản khôi phục khác chỉ ở trường này thì phải giữ:
+      run(B, `(() => { const s = Cloud.collect("Thỏ"); const p = JSON.parse(s.keys["@profile"]); p.${field} = ${val}; s.keys["@profile"] = JSON.stringify(p); localStorage.setItem(Cloud._backupKey("Thỏ", "restore"), JSON.stringify([{ id: "r1", at: 1, snapshot: s }])); })()`);
+      assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'same');
+      assert.strictEqual(run(B, 'Cloud._backups("Thỏ").length'), 1, field + ': bản cất phải được giữ');
+    }
   },
 
   async 'dữ liệu ghi thẳng localStorage (không qua schedule) vẫn được bảo toàn khi bản mạng đổi'() {
@@ -586,20 +622,65 @@ const tests = {
     assert.ok(B.localStorage.getItem('khoBaiTap_cloudmeta::thỏ'), 'cloudmeta giữ nguyên');
   },
 
-  async 'ghi bản mạng vào máy bị lỗi giữa chừng → máy giữ nguyên, KHÔNG đánh dấu đã đồng bộ'() {
+  async 'đầy bộ nhớ giữa chừng (key cũ vừa tăng vừa giảm) → trả lại ĐÚNG nguyên trạng'() {
+    // Tình huống Codex: A dài 10 → 1, B dài 1 → 10, thêm C thì vượt giới hạn
+    const ctx = boot(new Map(), server());
+    run(ctx, 'Storage.switchPlayer("Thỏ")');
+    const ls = ctx.localStorage;
+    ls.setItem('A::thỏ', 'a'.repeat(10)); ls.setItem('B::thỏ', 'b');
+    const dump = () => JSON.stringify([...ls._m.entries()].sort());
+    const before = dump();
+    ls.quota = ls.used() + 5;
+    const prof0 = ls.getItem('khoBaiTap_profile_thỏ');
+    const snap = { name: 'Thỏ', keys: { '@profile': prof0, A: 'a', B: 'b'.repeat(10), C: 'c'.repeat(20) } };
+    ctx.__s = snap;
+    assert.strictEqual(run(ctx, 'Cloud.apply(__s, "Thỏ")'), false);
+    assert.strictEqual(run(ctx, 'Cloud._applyState'), 'restored');
+    assert.strictEqual(dump(), before, 'mọi key y như trước');
+  },
+
+  async 'không trả lại được nguyên trạng → báo "damaged", chặn tự gửi bản lai, lần sau tự chép lại bản mạng'() {
     const srv = server();
     const { A, B } = await twoSyncedDevices(srv);
     earn(A, 'Thỏ', 30); await sleep(60);
+    stop(B);
+    const ls = B.localStorage;
+    const orig = ls.setItem.bind(ls);
+    let failed = false;
+    // Lần ghi đầu tiên vượt giới hạn; ngay sau đó máy khác chiếm thêm chỗ nên không trả lại được bản cũ
+    ls.setItem = (k, v) => {
+      if (!failed && k === 'khoBaiTap_profile_thỏ') { failed = true; ls.quota = ls.used() - 10; throw new Error('QuotaExceededError'); }
+      return orig(k, v);
+    };
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'conflict');
+    assert.ok(meta(B, 'thỏ').conflict.damaged, 'đánh dấu damaged');
+    assert.strictEqual(run(B, 'Cloud._pendingNames().length'), 0, 'không tự gửi');
+    ls.setItem = orig; ls.quota = Infinity;           // bố mẹ giải phóng bộ nhớ
+    earn(B, 'Thỏ', 1); await sleep(60);               // bé học tiếp trên bản lai
+    run(B, 'Cloud._beacon()');
+    assert.strictEqual(B.beacons.length, 0, 'không beacon bản lai');
+    assert.strictEqual(srv.get('thỏ').meta.p, 130, 'bản lai không lên mạng');
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'pulled', 'tự chép lại bản mạng');
+    assert.ok(!meta(B, 'thỏ').conflict);
+    assert.strictEqual(prof(B, 'thỏ').xp, 130);
+  },
+
+  async 'ghi bản mạng lỗi nhưng trả lại được → máy giữ nguyên, KHÔNG đánh dấu đã đồng bộ'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    A.localStorage.setItem('khoBaiTap_wrong_history_v1::thỏ', 'x'.repeat(400));   // bản mạng lớn hơn hẳn
+    earn(A, 'Thỏ', 30); await sleep(60);
     B.localStorage.setItem('tableSpeed_v1::thỏ', '{"facts":{"2x3":[1]}}');
     run(B, 'Cloud._setMeta("Thỏ", Cloud._baseFrom(Cloud.collect("Thỏ")))');
-    const before = run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)');
+    const before = run(B, 'Cloud._hash(Cloud.collect("Thỏ").keys)');
     const metaBefore = JSON.stringify(meta(B, 'thỏ'));
-    const ls = B.localStorage, orig = ls.setItem.bind(ls);
-    ls.setItem = (k, v) => { if (k === 'khoBaiTap_profile_thỏ') throw new Error('QuotaExceededError'); return orig(k, v); };
+    B.localStorage.quota = B.localStorage.used() + 5;   // không đủ chỗ cho bản mạng lớn hơn
     const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
-    ls.setItem = orig;
-    assert.notStrictEqual(r, 'pulled');
-    assert.strictEqual(run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)'), before, 'dữ liệu máy y nguyên');
+    B.localStorage.quota = Infinity;
+    assert.strictEqual(r, null);
+    assert.strictEqual(run(B, 'Cloud._applyState'), 'restored');
+    assert.strictEqual(run(B, 'Cloud._hash(Cloud.collect("Thỏ").keys)'), before, 'dữ liệu máy y nguyên');
     assert.strictEqual(JSON.stringify(meta(B, 'thỏ')), metaBefore, 'không đổi trạng thái đồng bộ');
   },
 

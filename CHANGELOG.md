@@ -5,6 +5,14 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Sửa thêm 2 lỗi Codex tìm ra (đồng bộ 2 máy)
+- **[P1] Trả lại nguyên trạng khi đầy bộ nhớ chưa chắc chắn**: trước đây nếu ghi bản mới bị đầy bộ nhớ giữa chừng, web phục hồi từng key cũ theo thứ tự; một key vừa to ra có thể chiếm chỗ làm key khác không phục hồi được, mà web vẫn báo "dữ liệu cũ giữ nguyên".
+  - Nay `apply()` ghi theo thứ tự ít tốn chỗ nhất (xoá key thừa trước, key nhỏ đi trước, key to ra sau). Nếu vẫn lỗi: gỡ **hết** key của bé để giải phóng chỗ, ghi lại toàn bộ giá trị cũ, rồi **kiểm tra từng key**.
+  - Kiểm tra đạt → báo "dữ liệu cũ giữ nguyên". Không đạt → trạng thái `damaged`: máy bị chặn mọi đường tự gửi lên (không gửi, không beacon, không cho "đồng bộ" đẩy bản lai lên); lần đồng bộ sau chỉ thử chép lại bản trên mạng để tự sửa. Khu vực Bố Mẹ hiện cảnh báo, dặn xoá bớt bản cất rồi bấm "Lấy bản trên mạng".
+- **[P2] Trường bị coi là "tự sinh" quá rộng**: ngày đạt thành tích, chuỗi đúng hiện tại, lớp và giai đoạn bé tự chọn đều là dữ liệu thật → bỏ khỏi danh sách bỏ qua. Nay chỉ bỏ qua **kế hoạch hôm nay khi còn mới tinh** (chưa xong việc nào, chưa nhận thưởng); kế hoạch đã làm dở hoặc đã nhận thưởng cũng là dữ liệu thật. Bản cất khác ở các trường này không còn bị tự xoá, máy khác ở các trường này không bị kéo đè.
+- `tests/cloud.test.js`: 38 kiểm thử. Bộ nhớ giả lập giới hạn theo tổng dung lượng như trình duyệt; có đúng tình huống Codex tái hiện (A 10→1, B 1→10, thêm C thì vượt). Đã thử: các bài mới **bắt được** lỗi trên bản trước.
+- Không đổi `Code.gs` (không cần triển khai lại Apps Script). Phiên bản file `?v=20261006n`.
+
 ## 2026-10-06 — Sửa 3 lỗi Codex tìm ra sau #2A (đồng bộ 2 máy)
 - **[P1] Máy chủ trả bản cũ kèm số phiên bản mới**: `doGet()` trước đây đọc dữ liệu rồi mới đọc phiên bản, không giữ khoá. Một lần lưu chen vào giữa thì máy nhận bản cũ + ver mới, rồi có thể ghi đè phần học của máy kia. Nay GET đọc cả hai trong cùng `ScriptLock`; POST ghi Sheet xong (`SpreadsheetApp.flush()`) rồi mới tăng phiên bản và nhả khoá. **Cần triển khai lại Apps Script.**
 - **[P1] Bản khôi phục bị xoá quá sớm**: sau "Lấy bản trên mạng", lần đồng bộ kế tiếp thấy hai bản giống nhau đã xoá luôn bản cất. Nay một bản cất **chỉ tự xoá khi nội dung của nó đã nằm nguyên trên mạng** (bỏ qua trường tự sinh như kế hoạch hôm nay); còn lại chỉ bố mẹ xoá.

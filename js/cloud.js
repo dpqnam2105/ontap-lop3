@@ -66,6 +66,7 @@ const Cloud = {
    * Lỗi giữa chừng (vd. hết bộ nhớ) → trả lại nguyên trạng như trước khi gọi, trả về false.
    */
   apply(snapshot, name) {
+    this._applyState = null;
     if (!this._validSnapshot(snapshot)) return false;
     const nm = name || snapshot.name;
     const c = this._canon(nm);
@@ -75,17 +76,32 @@ const Cloud = {
     Object.entries(snapshot.keys).forEach(([base, v]) => { target[base === '@profile' ? pk : base + '::' + c] = v; });
     const before = {};
     this._ownKeys(nm).forEach(k => { before[k] = localStorage.getItem(k); });
+    const len = v => (v == null ? 0 : String(v).length);
+    // Thứ tự ít tốn chỗ nhất: xoá key thừa trước, rồi ghi key nhỏ đi trước, key to ra sau
+    const stale = Object.keys(before).filter(k => !(k in target));
+    const order = Object.keys(target).sort((a, b) => (len(target[a]) - len(before[a])) - (len(target[b]) - len(before[b])));
     try {
-      Object.keys(target).forEach(k => localStorage.setItem(k, target[k]));
-      Object.keys(before).forEach(k => { if (!(k in target)) localStorage.removeItem(k); });
+      stale.forEach(k => localStorage.removeItem(k));
+      order.forEach(k => localStorage.setItem(k, target[k]));
     } catch (e) {
       console.warn('Cloud.apply', e);
-      // Trả lại nguyên trạng: xoá key mới thêm trước (giải phóng chỗ), rồi ghi lại giá trị cũ
-      Object.keys(target).forEach(k => { if (!(k in before)) { try { localStorage.removeItem(k); } catch (x) { /* bỏ qua */ } } });
-      Object.keys(before).forEach(k => { try { localStorage.setItem(k, before[k]); } catch (x) { /* bỏ qua */ } });
+      // Trả lại nguyên trạng: gỡ HẾT key của bé (cả key đã ghi lẫn key cũ) để giải phóng chỗ,
+      // rồi ghi lại toàn bộ giá trị cũ (nhỏ trước) và kiểm tra lại từng key.
+      new Set(Object.keys(target).concat(Object.keys(before))).forEach(k => { try { localStorage.removeItem(k); } catch (x) { /* bỏ qua */ } });
+      Object.keys(before).sort((a, b) => len(before[a]) - len(before[b]))
+        .forEach(k => { try { localStorage.setItem(k, before[k]); } catch (x) { /* kiểm tra ở dưới */ } });
+      const intact = Object.keys(before).every(k => localStorage.getItem(k) === before[k]) &&
+        Object.keys(target).every(k => (k in before) || localStorage.getItem(k) === null);
+      this._applyState = intact ? 'restored' : 'damaged';
+      if (!intact) {
+        // Máy đang là bản lai: chặn mọi đường tự gửi lên (xử lý như xung đột, đánh dấu damaged)
+        const old = this._meta(nm).conflict || {};
+        this._setMeta(nm, { conflict: Object.assign({}, old, { at: Date.now(), damaged: true }) });
+      }
       return false;
     }
     try { localStorage.setItem(Storage.ACTIVE_KEY, Storage.normalizeName(nm)); } catch (e) { /* bỏ qua */ }
+    this._applyState = 'applied';
     return true;
   },
 
@@ -119,10 +135,13 @@ const Cloud = {
   },
 
   /**
-   * Trường hồ sơ tự sinh lại được, KHÔNG phải tiến độ bé học: kế hoạch hôm nay, lớp/giai đoạn đang chọn,
-   * huy hiệu thành tích (tính lại từ tiến độ), chuỗi đúng hiện tại. Khác nhau ở các trường này không tính là xung đột.
+   * Trường hồ sơ mà giao diện TỰ TẠO LẠI được, nên khác nhau ở đó không phải là "bé có tiến độ chưa lưu".
+   * Chỉ một trường, kèm điều kiện: kế hoạch hôm nay (todayPlan) khi còn MỚI TINH — chưa xong việc nào, chưa nhận thưởng.
+   * Kế hoạch đã làm dở / đã nhận thưởng, ngày đạt thành tích, chuỗi đúng, lớp/giai đoạn bé chọn… đều là dữ liệu thật.
    */
-  EPHEMERAL: ['p.todayPlan', 'p.lastGrade', 'p.stageBySubject', 'p.achievements', 'p.runNow'],
+  EPHEMERAL: {
+    'p.todayPlan': plan => !plan || (!plan.rewarded && !(Array.isArray(plan.tasks) && plan.tasks.some(t => t && t.done)))
+  },
 
   /** Dấu vân tay từng mục: mỗi key một mã, riêng hồ sơ thì từng trường một mã. */
   _print(keys) {
@@ -138,12 +157,17 @@ const Cloud = {
     return out;
   },
 
-  /** Các mục bé thật sự thay đổi so với bản đã đồng bộ gần nhất (bỏ qua trường tự sinh). */
+  /** Các mục bé thật sự thay đổi so với bản đã đồng bộ gần nhất (bỏ qua trường tự sinh còn mới tinh). */
   _changedSince(localSnap, basePrint) {
     const now = this._print(localSnap.keys);
-    const skip = new Set(this.EPHEMERAL);
+    let prof = {};
+    try { prof = JSON.parse((localSnap.keys || {})['@profile'] || '{}') || {}; } catch (e) { prof = {}; }
+    const regenerable = k => {
+      const test = this.EPHEMERAL[k];
+      return !!test && k.startsWith('p.') && test(prof[k.slice(2)]);
+    };
     const all = new Set(Object.keys(now).concat(Object.keys(basePrint || {})));
-    return [...all].filter(k => !skip.has(k) && now[k] !== (basePrint || {})[k]);
+    return [...all].filter(k => now[k] !== (basePrint || {})[k] && !regenerable(k));
   },
 
   /** Ghi nhận bản đang có trên máy chính là bản đã đồng bộ. */
@@ -438,6 +462,9 @@ const Cloud = {
       return 'same';
     }
 
+    // Máy đang là bản lai (ghi dở vì đầy bộ nhớ) → không bao giờ gửi lên; chỉ thử chép lại bản mạng để tự sửa
+    if (m.conflict && m.conflict.damaged) return this._pull(nm, r, local, remote, opts) || 'conflict';
+
     // Máy chưa có gì (máy mới / vừa xoá trình duyệt) → lấy bản mạng
     if (!this._hasProgress(local) && this._hasProgress(remote)) return this._pull(nm, r, local, remote, opts);
 
@@ -471,7 +498,15 @@ const Cloud = {
     if (!this._validSnapshot(r.snapshot)) return null;
     this._applying = true;
     try {
-      if (!this.apply(r.snapshot, nm)) return null;   // ghi không được → giữ nguyên máy, KHÔNG đánh dấu đã đồng bộ
+      if (!this.apply(r.snapshot, nm)) {
+        // Ghi không được → KHÔNG đánh dấu đã đồng bộ. Nếu không trả lại được nguyên trạng thì máy đang là bản lai:
+        // chuyển sang xung đột để không tự gửi bản lai lên, chờ bố mẹ giải phóng bộ nhớ rồi chọn.
+        if (this._applyState === 'damaged') {
+          this._setMeta(nm, { conflict: { at: Date.now(), remoteVer: typeof r.ver === 'number' ? r.ver : null, remote, damaged: true } });
+          return 'conflict';
+        }
+        return null;
+      }
       this._refreshUI();
       // Bản vừa tải về chính là bản trên máy chủ → coi như đã đồng bộ.
       // Mốc so sánh = bản trên máy sau khi chép và làm mới giao diện.
@@ -563,8 +598,9 @@ const Cloud = {
   /** Xung đột: cất bản máy, ghi nhận, ngừng tự gửi. Bé vẫn học bình thường trên bản máy. */
   _enterConflict(nm, r, remote) {
     const saved = this._saveBackup(nm);
+    const damaged = !!(this._meta(nm).conflict || {}).damaged;
     this._setMeta(nm, {
-      conflict: { at: Date.now(), remoteVer: typeof r.ver === 'number' ? r.ver : null, remote, backup: saved }
+      conflict: { at: Date.now(), remoteVer: typeof r.ver === 'number' ? r.ver : null, remote, backup: saved, damaged }
     });
     return 'conflict';
   },
@@ -671,7 +707,9 @@ const Cloud = {
     } finally {
       this._applying = false;
     }
-    if (!ok) throw new Error('Không ghi được vào máy (bộ nhớ trình duyệt đầy?). Dữ liệu cũ vẫn giữ nguyên.');
+    if (!ok) throw new Error(this._applyState === 'damaged'
+      ? 'Không ghi được vào máy (bộ nhớ trình duyệt đầy) và không trả lại được trạng thái cũ — dữ liệu trên máy có thể không đầy đủ. Bố mẹ xoá bớt bản cất rồi mở lại file này nhé.'
+      : 'Không ghi được vào máy (bộ nhớ trình duyệt đầy?). Dữ liệu cũ vẫn giữ nguyên.');
     // Mở file là thay đổi thật trên máy → tăng localRev để nếu gửi lỗi thì web tự gửi lại
     this._bumpRev(snap.name);
     if (this.enabled()) await this.push(snap.name, true);
@@ -700,6 +738,7 @@ const Cloud = {
       ? '<div class="backup-conflict">' +
           '<p><b>⚠️ Có 2 bản khác nhau của ' + this._esc(nm) + '</b> — có lẽ con đã học trên máy khác. Web chưa tự lấy bản nào để không mất phần con vừa học.</p>' +
           '<p>📱 <b>Máy này:</b> ' + line(sum) + '<br>☁️ <b>Trên mạng:</b> ' + (c.remote ? line(c.remote) : '?') + '</p>' +
+          (c.damaged ? '<p>⚠️ Bộ nhớ trình duyệt đầy nên chép bản mạng bị dở dang; bản ở máy này có thể <b>không đầy đủ</b>. Bố mẹ xoá bớt bản cất cũ rồi bấm "Lấy bản trên mạng", đừng chọn "Giữ bản máy này".</p>' : '') +
           '<div class="backup-actions">' +
             '<button class="btn-secondary" id="btnKeepLocal">📱 Giữ bản máy này</button>' +
             '<button class="btn-secondary" id="btnTakeRemote">☁️ Lấy bản trên mạng</button>' +
