@@ -466,6 +466,7 @@ const App = {
 
   _visibleTopics(s) {
     return s.topics.filter(t => {
+      if (t.drill) return false; // ở Đấu trường tính nhanh, không tính là chủ đề trong môn
       const a = this._allowedIndices(s, t);
       return a === null ? true : a.length > 0;
     });
@@ -612,7 +613,7 @@ const App = {
     s.topics.forEach((t) => {
       const allowed = this._allowedIndices(s, t);
       if (allowed && !allowed.length) return; // chủ đề chưa có câu trong giai đoạn đang chọn
-      if (t.drill && window.TableGen) { list.appendChild(this._renderDrillCard(s, t, allowed)); return; }
+      if (t.drill) return; // phần tự sinh bảng nhân chia nằm ở nút ⏱️ Đấu trường tính nhanh
       const allowedSet = allowed ? new Set(allowed) : null;
       const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
 

@@ -33,18 +33,25 @@ const Arena = {
       : `<div class="arena-hero-badge">${TableGen.badgeHTML(0, false, 'lg')}</div>
          <div><div class="arena-kicker">Chào ${name}!</div><h2>Đấu trường tính nhanh</h2>
          <p>Vượt mức <b>🐌 Ốc sên</b> (đúng & kịp giờ ${TableGen.PASS_SCORE}/20 câu) để nhận danh hiệu đầu tiên <b>Ốc Sên Kiên Trì</b>.</p></div>`;
+    const face = window.Decor ? Decor.equipped().face : 'mascot';
     const shelf = L.map((x, i) => {
       const got = d.level.passed[i];
       const best = d.level.best[i];
+      const avatarBtn = got && window.Decor
+        ? (face === x.id ? '<span class="asi-av on">✓ Đang là avatar</span>' : '<button type="button" class="asi-av" data-face="' + x.id + '">Dùng làm avatar</button>')
+        : '';
       return `<div class="arena-shelf-item${got ? ' got' : ''}">${TableGen.badgeHTML(i, !!got, 'md')}
         <div class="asi-title">${esc(x.title)}</div>
-        <div class="asi-sub">${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div></div>`;
+        <div class="asi-sub">${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div>${avatarBtn}</div>`;
     }).join('');
     host.innerHTML = `
       <div class="arena-hero card">${hero}</div>
       <div class="arena-shelf card"><div class="arena-sec-title">🏅 Bộ huy hiệu</div><div class="arena-shelf-row">${shelf}</div></div>
       <div class="arena-setup"></div>`;
     host.querySelector('.arena-setup').appendChild(App._renderDrillCard(pair.s, pair.t, null, { arena: true }));
+    host.querySelectorAll('.asi-av[data-face]').forEach(b => b.addEventListener('click', () => {
+      if (Decor.equipFace(b.dataset.face)) { this.render(); try { if (window.Today) Today.render(); } catch (e) { /* bỏ qua */ } }
+    }));
   },
 
   /** Khu huy hiệu trong Bộ sưu tập. */

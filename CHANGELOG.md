@@ -5,6 +5,17 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Danh hiệu Đấu trường mở avatar con vật + gọn môn Toán
+- **Avatar con vật**: đạt danh hiệu nào thì mở **hình đại diện** con vật đó (🐌 Ốc sên, 🐢 Rùa, 🐰 Thỏ, 🦅 Đại bàng, 🐆 Báo).
+  - Lúc vừa đạt danh hiệu, avatar **tự đổi** sang con vật mới (màn kết quả có báo).
+  - Muốn đổi lại thì vào **Đấu trường** (nút "Dùng làm avatar" dưới mỗi huy hiệu đã đạt) hoặc **Bộ sưu tập → Trang trí hồ sơ → Hình đại diện**. Thỏ Rabbit cũ luôn chọn lại được.
+  - Avatar hiện ở trang chủ ("Hôm nay học gì?") và khung trang trí, vẫn giữ khung, bảng tên, nền đang mặc. Lưu trong `decor.face` của hồ sơ nên được sao lưu. Logo góc trái vẫn là Thỏ.
+  - Hiện vẽ bằng emoji trên nền tròn màu của từng mức. Khi có ảnh thì đặt vào `images/arena/avatar-<oc-sen|rua|tho|dai-bang|bao>.webp` và đổi `Decor.AVATAR_IMAGES` thành `true`.
+- **Gỡ thẻ "⚡ Luyện bảng nhân chia (tự sinh)" khỏi danh sách chủ đề môn Toán**: phần này giờ chỉ nằm ở nút ⏱️ Đấu trường tính nhanh (vẫn có Luyện 20 câu, Kiểm tra, Ôn lỗi sai không tính giờ). Chủ đề "Bảng nhân, chia (2–9)" trong môn Toán giữ nguyên.
+  - Phần tự sinh không còn được tính vào số chủ đề của môn Toán (vd. "Hôm nay: x/y").
+  - Câu sai ở Đấu trường vẫn vào Ôn câu sai, lịch ôn và báo cáo như cũ.
+- Phiên bản file `?v=20261006f`.
+
 ## 2026-10-06 — Nút "⏱️ Đấu trường tính nhanh" + 5 danh hiệu con vật
 - **Nút mới ở thanh bên** (dưới "Vào học"; trên điện thoại là ô "⏱️ Tính nhanh" ở menu đáy, nay có 6 ô). Bấm một lần là vào thẳng màn **Đấu trường tính nhanh** (file mới `js/arena.js`), không phải qua Vào học → Toán → chủ đề nữa. Bé nào cũng dùng được, kể cả bé lớp 2: nếu bé chưa tự chọn bảng thì mặc định là bảng 2–5.
 - **Màn Đấu trường** có:

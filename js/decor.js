@@ -56,7 +56,36 @@ const Decor = {
     try { e = Storage.get('decor') || {}; } catch (err) { e = {}; }
     const out = {};
     this.SLOTS.forEach(s => { out[s.key] = this.isUnlocked(e[s.key]) ? e[s.key] : 'carrot'; });
+    out.face = this.faceUnlocked(e.face) ? e.face : 'mascot';
     return out;
+  },
+
+  // ─── Hình đại diện: Thỏ (mặc định) + 5 con vật của Đấu trường tính nhanh ───
+  /** Có ảnh avatar riêng (images/arena/avatar-<id>.webp) thì bật true; chưa có dùng emoji trên nền màu. */
+  AVATAR_IMAGES: false,
+  faces() {
+    const L = (window.TableGen && TableGen.LEVELS) || [];
+    return [{ id: 'mascot', name: 'Thỏ Rabbit', icon: '🐰' }].concat(L.map((x, i) => ({ id: x.id, name: x.name, icon: x.icon, title: x.title, level: i, c: x.c })));
+  },
+  faceUnlocked(id) {
+    if (!id || id === 'mascot') return true;
+    const f = this.faces().find(x => x.id === id);
+    if (!f || !window.TableGen) return false;
+    try { return !!TableGen.getSpeed().level.passed[f.level]; } catch (e) { return false; }
+  },
+  equipFace(id) {
+    if (!this.faceUnlocked(id)) return false;
+    let e = {};
+    try { e = Storage.get('decor') || {}; } catch (err) { e = {}; }
+    e.face = id;
+    Storage.set('decor', e);
+    return true;
+  },
+  faceHTML(id) {
+    const f = this.faces().find(x => x.id === id);
+    if (!f || id === 'mascot') return Mascot.img('avatar', 'dc-face-img', '');
+    if (this.AVATAR_IMAGES) return '<img class="dc-face-img" src="images/arena/avatar-' + f.id + '.webp" alt="">';
+    return '<span class="dc-face-emoji" style="background:radial-gradient(circle at 35% 30%,#fff,' + f.c[0] + ' 55%,' + f.c[1] + ')">' + f.icon + '</span>';
   },
 
   equip(slot, setId) {
@@ -92,7 +121,7 @@ const Decor = {
       '<div class="dc-avatar dc-frame-' + e.frame + '">' +
         '<span class="dc-ring"></span>' +
         (e.frame === 'galaxy' ? '<span class="dc-orbit"><i></i></span>' : '') +
-        '<span class="dc-face">' + Mascot.img('avatar', 'dc-face-img', '') + '</span>' +
+        '<span class="dc-face">' + this.faceHTML(e.face) + '</span>' +
         (ornament ? '<span class="dc-orn">' + ornament + '</span>' : '') +
       '</div>' +
       '<div class="dc-info">' +
@@ -120,6 +149,15 @@ const Decor = {
     const sub = 'Level ' + lv + (next ? ' · còn ' + (next.level - lv) + ' Level nữa mở ' + next.icon + ' ' + next.name : ' · đã mở hết các bộ!');
     let html = '<div class="decor-head"><div><div class="shop-kicker">🎨 Trang trí hồ sơ</div><h3>Phối đồ cho hồ sơ của con</h3></div></div>';
     html += '<div class="decor-preview">' + this.render({ size: 'big', sub: this._esc(sub) }) + '</div>';
+    html += '<div class="decor-slot"><div class="decor-slot-label">Hình đại diện <small>(đạt danh hiệu ở ⏱️ Đấu trường tính nhanh để mở)</small></div><div class="decor-opts decor-faces">' +
+      this.faces().map(f => {
+        const open = this.faceUnlocked(f.id);
+        const on = e.face === f.id;
+        return '<button type="button" class="decor-opt decor-face' + (on ? ' on' : '') + (open ? '' : ' locked') + '" data-face="' + f.id + '"' + (open ? '' : ' disabled') + '>' +
+          '<span class="decor-face-pic">' + (open ? this.faceHTML(f.id) : '<span class="dc-face-emoji dc-face-lock">' + f.icon + '</span>') + '</span>' +
+          '<span class="decor-opt-name">' + this._esc(f.name) + '</span>' +
+          '<span class="decor-opt-tag">' + (open ? (on ? '✓ Đang dùng' : 'Bấm để dùng') : '🔒 ' + this._esc(f.title || '')) + '</span></button>';
+      }).join('') + '</div></div>';
     this.SLOTS.forEach(slot => {
       html += '<div class="decor-slot"><div class="decor-slot-label">' + slot.label + '</div><div class="decor-opts">';
       this.SETS.forEach(s => {
@@ -141,6 +179,9 @@ const Decor = {
     html += '<p class="decor-note">Học để lên Level là mở thêm bộ mới. Đồ đã mở luôn là của con.</p>';
     card.innerHTML = html;
 
+    card.querySelectorAll('.decor-face[data-face]').forEach(b => b.addEventListener('click', () => {
+      if (this.equipFace(b.dataset.face)) { this.renderCollection(); this._refreshHome(); }
+    }));
     card.querySelectorAll('.decor-opt[data-slot]').forEach(b => b.addEventListener('click', () => {
       if (this.equip(b.dataset.slot, b.dataset.set)) { this.renderCollection(); this._refreshHome(); }
     }));

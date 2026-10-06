@@ -678,3 +678,13 @@
 .arena-title-chip{display:inline-block;margin:6px 0 0 6px;background:linear-gradient(135deg,#f3edff,#fff7e6);color:#5b21b6;border:1px solid #ddd6fe;border-radius:999px;padding:4px 10px;font-weight:900;cursor:pointer}
 .rail-btn-arena{color:#6d28d9}
 @media(max-width:760px){.arena-hero{flex-direction:column;text-align:center;padding:18px}.arena-hero h2{font-size:1.5rem}.arena-shelf-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.asi-title{font-size:.72rem}.asi-sub{font-size:.66rem}.arena-shelf{padding:14px 10px}.arena-shelf .arena-badge svg{width:54px;height:54px}}
+/* Avatar con vật (Đấu trường) */
+.dc-face-emoji{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font-size:calc(var(--av, 60px) * .5);line-height:1}
+.dc-face-lock{background:#e2e8f0;filter:grayscale(1);opacity:.5}
+.decor-opts.decor-faces{grid-template-columns:repeat(6,minmax(0,1fr))}
+.decor-face-pic{display:block;width:54px;height:54px;border-radius:50%;overflow:hidden;margin:0 auto 4px;--av:54px;background:#fff}
+.decor-face-pic .dc-face-img{width:118%;height:118%;margin:-4% 0 0 -9%}
+.decor-slot-label small{font-weight:700;color:var(--muted)}
+.asi-av{margin-top:4px;border:1px solid #c4b5fd;background:#fff;color:#6d28d9;border-radius:999px;padding:3px 10px;font-size:.75rem;font-weight:800;cursor:pointer}
+.asi-av.on{border-color:#86efac;background:#f0fdf4;color:#15803d;cursor:default}
+@media(max-width:760px){.decor-opts.decor-faces{grid-template-columns:repeat(3,minmax(0,1fr))}.asi-av{font-size:.62rem;padding:2px 6px}}

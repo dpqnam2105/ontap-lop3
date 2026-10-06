@@ -899,7 +899,8 @@ const Quiz = {
       (sp.timeouts ? ' · ' + sp.timeouts + ' câu hết giờ' : '') + '.';
     if (r.newBadge) {
       msg += '<div class="arena-award">' + TableGen.badgeHTML(sp.level, true, 'lg') +
-        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b></div></div>';
+        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b>' +
+        (window.Decor && Decor.equipFace(L.id) ? '<br><small>Avatar của con đã đổi thành ' + L.icon + ' (đổi lại trong Đấu trường hoặc Bộ sưu tập)</small>' : '') + '</div></div>';
     }
     if (r.unlockedNew) {
       const N = TableGen.LEVELS[sp.level + 1];
