@@ -35,7 +35,7 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
     // 1) Điện thoại 360/390/430: thứ tự khối + nút Bắt đầu nằm trong màn hình đầu, không cuộn ngang
     for (const w of [360, 390, 430]) {
       const { p, ctx, errs } = await open(b, { width: w, height: w === 360 ? 740 : 844 }, true, 'Anh Thư');
-      const tops = await p.evaluate(() => ['#homeGreet', '#todayCard', '#homeProfile', '#weekCard', '#homeCollection', '#homeBoard', '#homeNews']
+      const tops = await p.evaluate(() => ['#newsTicker', '#homeGreet', '#todayCard', '#homeProfile', '#weekCard', '#homeCollection', '#homeBoard']
         .map(s => Math.round(document.querySelector(s).getBoundingClientRect().top)));
       assert.ok(tops.every((t, i) => i === 0 || t > tops[i - 1]), w + 'px thứ tự: ' + tops);
       const m = await p.evaluate(() => { const r = document.querySelector('#todayCard .today-go').getBoundingClientRect();
@@ -48,7 +48,7 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
       const titles = await p.evaluate(() => [...document.querySelectorAll('#screenRegister .dc-title')].filter(e => e.getBoundingClientRect().width > 0).length);
       assert.ok(titles <= 1, 'danh hiệu không lặp');
       assert.deepStrictEqual(errs, []);
-      ok(w + 'px: thứ tự lời chào → kế hoạch → hồ sơ → tuần → bộ sưu tập → xếp hạng → tin vui; Bắt đầu thấy ngay');
+      ok(w + 'px: thứ tự tin vui → lời chào → kế hoạch → hồ sơ → tuần → bộ sưu tập → xếp hạng; Bắt đầu thấy ngay');
       await ctx.close();
     }
 
@@ -61,8 +61,12 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
       assert.ok((await p.textContent('#homeProfile')).includes('Lớp 3'), 'lớp ở hồ sơ');
       const shopBtns = await p.evaluate(() => [...document.querySelectorAll('#screenRegister button')].filter(e => /Mở shop/.test(e.textContent) && e.getBoundingClientRect().width > 0).length);
       assert.strictEqual(shopBtns, 0, 'không có nút Mở shop ở trang chủ');
-      assert.strictEqual(await p.evaluate(() => document.querySelectorAll('.nt-track').length), 0, 'tin vui không chạy chữ');
-      assert.ok(await visible(p, '#homeNews .news-static'), 'tin vui nằm trong cột phải');
+      assert.ok(await visible(p, '#newsTicker .nt-track'), 'tin vui chạy chữ như trước');
+      const pos = await p.evaluate(() => { const r = s => document.querySelector(s).getBoundingClientRect();
+        return { news: r('#newsTicker'), greet: r('#homeGreet'), prof: r('#homeProfile'), plan: r('#todayCard'), side: r('#homeSide') }; });
+      assert.ok(pos.news.bottom <= pos.greet.top + 1, 'tin vui ở trên cùng');
+      assert.ok(pos.prof.left < pos.side.left && Math.abs(pos.prof.left - pos.plan.left) < 2, 'khung tên/avatar ở cột trái');
+      assert.ok(pos.prof.bottom <= pos.plan.top + 1, 'khung tên/avatar ngay trên kế hoạch');
       const board = await p.evaluate(() => [...document.querySelectorAll('#homeBoard .hb-list .hb-row')].map(r => ({ me: r.classList.contains('hb-me'), t: r.textContent.replace(/\s+/g, ' ').trim() })));
       assert.ok(board[0].t.includes('coca') && board[0].t.includes('30 điểm'), 'xếp theo điểm tuần: ' + JSON.stringify(board));
       assert.ok(board.some(r => r.me && r.t.includes('Anh Thư')), 'tô sáng dòng của bé');
@@ -71,7 +75,7 @@ const visible = (p, sel) => p.evaluate(s => { const e = document.querySelector(s
       assert.ok(await visible(p, '.topbar'), 'màn khác vẫn có thanh tiêu đề');
       assert.ok((await p.textContent('#topKicker')).includes('Anh Thư'), 'dòng phụ theo tên bé (không cố định "Anh Thư" cho mọi bé)');
       assert.deepStrictEqual(errs, []);
-      ok('máy tính: lời chào thay "Kho Bài Tập", logo không có lớp, không có Mở shop, tin vui tĩnh, xếp hạng tuần tô sáng bé');
+      ok('máy tính: lời chào thay "Kho Bài Tập", logo không có lớp, không có Mở shop, tin vui chạy chữ trên cùng, khung tên bên trái, xếp hạng tuần tô sáng bé');
       await ctx.close();
     }
 

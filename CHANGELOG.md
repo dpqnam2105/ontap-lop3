@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Trang chủ: Tin vui chạy chữ như cũ, khung tên/avatar về cột trái (Nam chọn)
+- **Tin vui**: trả lại dòng chữ chạy ở **trên cùng** trang chủ như trước (bỏ bản tĩnh trong cột phải). Giữ lời mới cho tin mốc chuỗi: "đạt mốc N ngày học liên tục".
+- **Khung tên + avatar** (tên, danh hiệu, lớp · đổi lớp, sao, Level): về **cột trái, ngay trên Kế hoạch hôm nay** như trước. Cột phải còn: Tuần này, Bộ sưu tập, Xếp hạng tuần.
+- Điện thoại giữ thứ tự đã thống nhất: tin vui → lời chào → kế hoạch + Bắt đầu học → hồ sơ → tuần → bộ sưu tập → xếp hạng.
+- `tests/home.e2e.js` cập nhật: tin vui chạy chữ và nằm trên cùng; trên máy tính khung tên ở cột trái, ngay trên kế hoạch.
+- Phiên bản file `?v=20261006u`.
+
 ## 2026-10-06 — Trang chủ mới: lời chào theo tên, kế hoạch hôm nay làm trọng tâm (bàn cùng Codex)
 - **Tiêu đề**: logo chỉ còn "Rabbit Academy" (bỏ "Lớp 3"); lớp nằm ở hồ sơ ("Lớp 3 · Đổi lớp"). Trang chủ bỏ tiêu đề "Kho Bài Tập", thay bằng lời chào **"Hôm nay mình học gì, [tên]?"** + một dòng "Rabbit chọn sẵn 3 việc · khoảng 20 phút" (hoặc "Còn 2 việc…"). Các màn khác vẫn có thanh tiêu đề; dòng phụ trên đó nay theo tên bé (trước ghi cố định "Anh Thư" cho mọi bé).
 - **Thứ tự**: lời chào → kế hoạch hôm nay + Bắt đầu học → hồ sơ → tuần này → bộ sưu tập → xếp hạng tuần → tin vui. Máy tính: kế hoạch bên trái, các thẻ còn lại bên phải. Điện thoại: lời chào có avatar nhỏ + sao; hồ sơ đầy đủ ở dưới (không lặp sao, danh hiệu chỉ ở hồ sơ).

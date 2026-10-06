@@ -317,12 +317,12 @@ const Today = {
     if (!App.playerName || !p) {
       screen.classList.remove('has-today');
       document.body.classList.remove('home-today');
-      [box, greet, side].forEach(el => el && el.classList.add('hidden'));
+      [box, greet, side, document.getElementById('homeProfile')].forEach(el => el && el.classList.add('hidden'));
       return;
     }
     screen.classList.add('has-today');
     document.body.classList.add('home-today');
-    [box, greet, side].forEach(el => el && el.classList.remove('hidden'));
+    [box, greet, side, document.getElementById('homeProfile')].forEach(el => el && el.classList.remove('hidden'));
 
     const L = this._levelInfo();
     const doneN = p.tasks.filter(t => t.done).length;
@@ -380,7 +380,6 @@ const Today = {
     this.renderWeek();
     this.renderCollection();
     this.renderBoard();
-    if (window.Achieve && Achieve.renderTicker) Achieve.renderTicker();
   },
 
   _resLinks() {
