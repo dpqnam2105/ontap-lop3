@@ -160,7 +160,7 @@ def main():
     md = os.path.join(ROOT, 'docs', 'gan-bai-toan-gd1.md')
     cv = os.path.join(ROOT, 'docs', 'gan-bai-toan-gd1.csv')
     with open(cv, 'w', encoding='utf-8', newline='') as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator='\n')
         w.writerow(['id', 'chủ đề', 'kỹ năng', 'bài đề xuất', 'mức tin cậy', 'nguồn đối chiếu', 'ghi chú', 'đề'])
         for r in rows:
             w.writerow([r['id'], r['topic'], r['skill'], ('B%d' % r['lesson']) if r['lesson'] else '', r['conf'], r['source'], r['note'], r['q']])
