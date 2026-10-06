@@ -5,6 +5,12 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Danh hiệu hiện cạnh tên bé
+- Khung hồ sơ ở trang chủ ("Hôm nay học gì?") và ô xem trước ở Bộ sưu tập → Trang trí hồ sơ: cạnh bảng tên có thêm nhãn danh hiệu, vd. **[Anh Thư 🥕] [🐌 Ốc Sên Kiên Trì]**. Nhãn có màu theo mức (xanh lá, xanh dương, hồng, tím, vàng).
+- Nhãn đi theo con vật đang làm avatar. Nếu đang để avatar Thỏ Rabbit thì hiện danh hiệu cao nhất đã đạt; chưa có danh hiệu thì không hiện nhãn.
+- Khung hẹp (điện thoại) thì nhãn tự xuống dòng dưới tên.
+- Phiên bản file `?v=20261006h`.
+
 ## 2026-10-06 — Ảnh avatar 5 con vật (Nam tạo bằng ChatGPT)
 - 5 ảnh `images/arena/avatar-oc-sen|rua|tho|dai-bang|bao.webp`, mỗi ảnh 15–25 KB. Đã cắt tròn và làm nền trong suốt, cỡ 360×360. Ảnh gốc PNG nằm trong thư mục "rabbit avatar/avatar update" của Nam.
 - **Avatar** (trang chủ, khung trang trí, Bộ sưu tập → Hình đại diện): dùng ảnh thay cho emoji (`Decor.AVATAR_IMAGES = true`).

@@ -81,6 +81,16 @@ const Decor = {
     Storage.set('decor', e);
     return true;
   },
+  /** Danh hiệu cạnh bảng tên: theo con vật đang làm avatar; avatar Thỏ Rabbit thì lấy danh hiệu cao nhất (nếu có). */
+  titleHTML(face) {
+    if (!window.TableGen) return '';
+    let i = TableGen.LEVELS.findIndex(x => x.id === face);
+    if (i < 0) { try { i = TableGen.rankOf(); } catch (e) { i = -1; } }
+    if (i < 0 || !this.faceUnlocked(TableGen.LEVELS[i].id)) return '';
+    const L = TableGen.LEVELS[i];
+    return '<span class="dc-title" style="--t1:' + L.c[0] + ';--t2:' + L.c[1] + ';--t3:' + L.c[2] + '" title="Danh hiệu Đấu trường tính nhanh">' +
+      L.icon + ' ' + this._esc(L.title) + '</span>';
+  },
   faceHTML(id) {
     const f = this.faces().find(x => x.id === id);
     if (!f || id === 'mascot') return Mascot.img('avatar', 'dc-face-img', '');
@@ -125,7 +135,8 @@ const Decor = {
         (ornament ? '<span class="dc-orn">' + ornament + '</span>' : '') +
       '</div>' +
       '<div class="dc-info">' +
-        '<span class="dc-plate dc-plate-' + e.plate + '">' + name + ' <i>' + (this.PLATE_ICON[e.plate] || '') + '</i></span>' +
+        '<span class="dc-name-row"><span class="dc-plate dc-plate-' + e.plate + '">' + name + ' <i>' + (this.PLATE_ICON[e.plate] || '') + '</i></span>' +
+          (o.noTitle ? '' : this.titleHTML(e.face)) + '</span>' +
         (o.sub ? '<span class="dc-sub">' + o.sub + '</span>' : '') +
       '</div>' +
     '</div>';
