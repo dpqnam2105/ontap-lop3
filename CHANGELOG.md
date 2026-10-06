@@ -5,6 +5,26 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Đồng bộ 2 máy không còn kéo đè phần bé vừa học (#2A, bàn cùng Codex)
+- **Lỗi cũ**: web chọn nguyên cả bản theo XP. Máy ít XP hơn mà có phần học riêng (câu sai, sticker vừa mua, tốc độ…) sẽ bị bản mạng đè mất khi mở lại.
+- **Số phiên bản trên máy chủ** (`Code.gs`): mỗi lần lưu thành công phiên bản của bé tăng 1. Máy gửi kèm phiên bản nó biết gần nhất; nếu bản trên mạng đã đổi thì máy chủ từ chối (`reason: 'conflict'`). Kiểm tra ngay trong `ScriptLock` nên 2 máy gửi cùng lúc thì chỉ 1 máy được nhận. Máy dùng bản web cũ vẫn theo luật XP như trước.
+- **Quy tắc đồng bộ** (`js/cloud.js`), chạy khi mở web, nhập tên, **khi tab hiện lại** (tối đa 1 lần/30 giây) và khi máy chủ báo bản mạng đã đổi:
+  - Giống hệt → đã đồng bộ.
+  - Máy chưa có gì (máy mới) → lấy bản mạng.
+  - Bản mạng chưa đổi kể từ lần máy biết → gửi bản máy lên.
+  - Bản mạng đã đổi + máy **không** còn tiến độ chưa lên mạng → lấy bản mạng.
+  - Bản mạng đã đổi + máy **còn** tiến độ chưa lên mạng → **xung đột**, bất kể XP bên nào cao hơn.
+- "Tiến độ chưa lên mạng" so **từng mục** với bản đồng bộ gần nhất (từng key, riêng hồ sơ thì từng trường), nên bắt được cả dữ liệu ghi thẳng localStorage. Bỏ qua các trường tự sinh lại: kế hoạch hôm nay, lớp/giai đoạn đang chọn, huy hiệu thành tích, chuỗi đúng hiện tại — để sáng mở web sang ngày mới không bị báo xung đột nhầm.
+- **Khi xung đột**: không tự kéo đè; cất bản máy vào `khoBaiTap_conflict::<tên>` (khoá này **không** nằm trong bản sao lưu); ngừng tự gửi; bé vẫn học bình thường. Cạnh link "Phụ huynh" hiện ☁️⚠️. Khu vực Bố Mẹ → Sao lưu hiện thẻ "Có 2 bản khác nhau" (sao, sticker, ngọc rồng, điểm kinh nghiệm mỗi bản) với 3 nút:
+  - **📱 Giữ bản máy này** — gửi bản máy **hiện tại** (gồm cả phần bé học thêm sau lúc phát hiện) đè lên mạng. Bản mạng cũ vẫn còn trong trang LichSu.
+  - **☁️ Lấy bản trên mạng** — trước khi lấy, cất lại bản máy hiện tại; sau đó có nút **↩️ Khôi phục bản đó**, **💾 Tải bản đó về**, **🗑️ Xoá bản cất**. Không cất được (máy đầy) thì không lấy.
+  - **💾 Tải cả hai bản về** — 2 file JSON.
+- Bố mẹ đã chọn ghi đè (mở file sao lưu / giữ bản máy) mà gửi chưa xong → đồng bộ **không bao giờ** kéo bản mạng đè lên bản đó.
+- Beacon lúc đóng tab của chính máy đã lên (máy chủ tăng phiên bản mà máy không biết) → nhận ra là bản của mình, không báo xung đột.
+- `tests/cloud.test.js`: 26 kiểm thử, máy chủ là **chính `Code.gs`** chạy trên Google Sheet giả lập (bản cũ ở `tests/fixtures/Code.v1.gs` để thử máy chủ chưa cập nhật).
+- ⚠️ **Cần triển khai lại Apps Script sao lưu** để bật số phiên bản. Chưa triển khai thì web vẫn chạy (không kéo đè khi còn thay đổi chưa lưu), chỉ là chưa có kiểm tra phiên bản phía máy chủ.
+- Phiên bản file `?v=20261006l`.
+
 ## 2026-10-06 — Sao lưu: mọi đường gửi đều tự thử lại khi lỗi (#3, theo góp ý của Codex)
 - Trước: chỉ lượt gửi tự động mới hẹn thử lại. Mở file sao lưu, nút "☁️ Sao lưu ngay" và lúc đồng bộ khi mở web nếu gặp lỗi thì dữ liệu vẫn được giữ là "chưa lưu" nhưng không ai gửi lại cho tới khi có thao tác mới hoặc tải lại trang.
 - Nay mọi đường gửi đi qua một chỗ xử lý kết quả chung (`Cloud._send` → `_onResult`): lỗi tạm thời thì tăng backoff đúng 1 lần (30 giây → 2 phút → 5 phút) và tự hẹn gửi lại; gửi được thì xoá backoff.

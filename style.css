@@ -695,3 +695,4 @@
 .dc-title{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:999px;font-family:var(--font-display);font-weight:900;font-size:.95rem;line-height:1.15;color:var(--t3);background:linear-gradient(135deg,#fff,var(--t1));border:2px solid var(--t2);box-shadow:0 3px 8px rgba(0,0,0,.08);white-space:nowrap}
 .dc-mini .dc-title{font-size:.88rem;padding:3px 10px}
 @media(max-width:430px){.dc-mini .dc-title{font-size:.78rem;padding:2px 8px}}
+.backup-conflict{background:#fff8ed;border:1px solid #ffdda7;border-radius:16px;padding:12px 14px;margin:10px 0;color:#4c3b20;font-weight:700}.backup-conflict p{margin:6px 0}#cloudConflictDot{font-size:.85em}

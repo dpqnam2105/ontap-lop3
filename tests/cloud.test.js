@@ -1,9 +1,75 @@
-// Kiểm thử Cloud (#3) trong Node: localStorage giả, fetch giả.
-const fs = require('fs'), vm = require('vm'), assert = require('assert');
-// Chạy: node tests/cloud.test.js   (cần Node 18+, không cần cài gì thêm)
-const REPO = process.argv[2] || require('path').join(__dirname, '..');
+// Kiểm thử sao lưu / đồng bộ (js/cloud.js) với máy chủ là CHÍNH file backup-apps-script/Code.gs
+// chạy trên Google Sheet giả lập. Mỗi "máy" là một localStorage riêng.
+// Chạy: node tests/cloud.test.js   (Node 18+, không cần cài gì thêm)
+const fs = require('fs'), vm = require('vm'), path = require('path'), assert = require('assert');
+const REPO = process.argv[2] || path.join(__dirname, '..');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// ─── Google Apps Script giả lập ───────────────────────
+function makeSheet() {
+  const sh = { rows: [] };
+  const empty = v => v === '' || v == null;
+  sh.appendRow = a => { sh.rows.push(a.slice()); };
+  sh.setFrozenRows = () => {};
+  sh.getLastRow = () => { for (let i = sh.rows.length - 1; i >= 0; i--) if ((sh.rows[i] || []).some(v => !empty(v))) return i + 1; return 0; };
+  sh.getLastColumn = () => { let m = 0; sh.rows.forEach(r => { for (let j = (r || []).length - 1; j >= 0; j--) if (!empty(r[j])) { m = Math.max(m, j + 1); break; } }); return m; };
+  sh.deleteRows = (start, n) => { sh.rows.splice(start - 1, n); };
+  sh.getRange = (r, c, nr, nc) => ({
+    getValues() {
+      const out = [];
+      for (let i = 0; i < nr; i++) { const row = sh.rows[r - 1 + i] || []; const o = []; for (let j = 0; j < nc; j++) o.push(empty(row[c - 1 + j]) ? '' : row[c - 1 + j]); out.push(o); }
+      return out;
+    },
+    setValues(vals) {
+      vals.forEach((v, i) => { const row = sh.rows[r - 1 + i] || (sh.rows[r - 1 + i] = []); v.forEach((x, j) => { row[c - 1 + j] = x; }); });
+    },
+    clearContent() {
+      for (let i = 0; i < nr; i++) { const row = sh.rows[r - 1 + i]; if (row) for (let j = 0; j < nc; j++) row[c - 1 + j] = ''; }
+    }
+  });
+  return sh;
+}
+
+function makeScript(file) {
+  const sheets = {}, props = {};
+  const g = {
+    console, JSON, Date, Math, Number, String, Object, Array,
+    SpreadsheetApp: { getActiveSpreadsheet: () => ({ getSheetByName: n => sheets[n] || null, insertSheet: n => (sheets[n] = makeSheet()) }) },
+    ContentService: { MimeType: { JSON: 'json' }, createTextOutput: s => ({ content: s, setMimeType() { return this; } }) },
+    LockService: { getScriptLock: () => ({ waitLock() {}, releaseLock() {} }) },
+    PropertiesService: { getScriptProperties: () => ({ getProperty: k => (k in props ? props[k] : null), setProperty: (k, v) => { props[k] = String(v); } }) }
+  };
+  vm.createContext(g);
+  vm.runInContext(fs.readFileSync(file, 'utf8'), g);
+  return { g, sheets, props };
+}
+
+/** Máy chủ: kind 'new' = Code.gs hiện tại, 'old' = Code.gs trước khi có số phiên bản. */
+function server(kind) {
+  const file = kind === 'old' ? path.join(__dirname, 'fixtures', 'Code.v1.gs') : path.join(REPO, 'backup-apps-script', 'Code.gs');
+  const sc = makeScript(file);
+  const s = { saves: [], mode: 'ok', delay: 0, sc };
+  const respond = text => ({ ok: true, status: 200, json: async () => JSON.parse(text) });
+  s.get = key => JSON.parse(sc.g.doGet({ parameter: { action: 'get', key } }).content);
+  s.post = body => JSON.parse(sc.g.doPost({ postData: { contents: body } }).content);
+  s.fetch = async (url, init) => {
+    if (!init) {
+      if (s.delay) await sleep(s.delay);
+      if (s.mode === 'neterr') throw new Error('offline');
+      const q = Object.fromEntries(new URL(url).searchParams);
+      return respond(sc.g.doGet({ parameter: q }).content);
+    }
+    s.saves.push(JSON.parse(init.body));
+    if (s.delay) await sleep(s.delay);
+    if (s.mode === 'neterr') throw new Error('offline');
+    if (s.mode === 'http500') return { ok: false, status: 500, json: async () => ({}) };
+    if (s.mode === 'html') return { ok: true, status: 200, json: async () => { throw new SyntaxError('Unexpected token <'); } };
+    return respond(sc.g.doPost({ postData: { contents: init.body } }).content);
+  };
+  return s;
+}
+
+// ─── Một "máy" (trình duyệt) ──────────────────────────
 function makeLS(store) {
   return {
     _m: store,
@@ -15,16 +81,16 @@ function makeLS(store) {
   };
 }
 
-function boot(store, fetchImpl, extra) {
-  const ctx = { console, setTimeout, clearTimeout, Promise, JSON, Date, Math, Object, String, Number, Array, Error, encodeURIComponent };
+function boot(store, srv, opts) {
+  opts = opts || {};
+  const ctx = { console, setTimeout, clearTimeout, Promise, JSON, Date, Math, Object, String, Number, Array, Error, Set, encodeURIComponent };
   ctx.window = ctx;
   ctx.localStorage = makeLS(store);
   ctx.beacons = [];
-  ctx.navigator = { sendBeacon: (u, b) => { ctx.beacons.push(JSON.parse(b)); return true; } };
+  ctx.navigator = { sendBeacon: (u, b) => { ctx.beacons.push(JSON.parse(b)); if (opts.deliverBeacon) srv.post(b); return true; } };
   ctx.document = { addEventListener() {}, querySelector() { return null; }, getElementById() { return null; } };
   ctx.addEventListener = () => {};
-  ctx.fetch = fetchImpl;
-  Object.assign(ctx, extra || {});
+  ctx.fetch = srv.fetch;
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(REPO + '/js/storage.js', 'utf8'), ctx);
   vm.runInContext(fs.readFileSync(REPO + '/js/cloud.js', 'utf8'), ctx);
@@ -32,57 +98,49 @@ function boot(store, fetchImpl, extra) {
   return ctx;
 }
 
-// Máy chủ giả
-function server(opts) {
-  const s = { saves: [], mode: 'ok', delay: 0, rows: {} };
-  s.fetch = async (url, init) => {
-    if (!init) { // GET
-      if (s.delay) await sleep(s.delay);
-      const key = decodeURIComponent(/key=([^&]*)/.exec(url)[1]);
-      const row = s.rows[key];
-      return { ok: true, status: 200, json: async () => row ? { ok: true, found: true, snapshot: row.snapshot, meta: row.meta } : { ok: true, found: false } };
-    }
-    const body = JSON.parse(init.body);
-    s.saves.push(body);
-    if (s.delay) await sleep(s.delay);
-    if (s.mode === 'neterr') throw new Error('offline');
-    if (s.mode === 'http500') return { ok: false, status: 500, json: async () => ({}) };
-    if (s.mode === 'html') return { ok: true, status: 200, json: async () => { throw new SyntaxError('Unexpected token <'); } };
-    const old = s.rows[body.key];
-    if (old && !body.force && body.meta.p < old.meta.p) return { ok: true, status: 200, json: async () => ({ ok: false, reason: 'older', meta: old.meta }) };
-    s.rows[body.key] = { snapshot: body.snapshot, meta: body.meta };
-    return { ok: true, status: 200, json: async () => ({ ok: true, saved: true }) };
-  };
-  return s;
-}
-
 const meta = (ctx, n) => JSON.parse(ctx.localStorage.getItem('khoBaiTap_cloudmeta::' + n) || '{}');
 const run = (ctx, code) => vm.runInContext(code, ctx);
+const prof = (ctx, n) => JSON.parse(ctx.localStorage.getItem('khoBaiTap_profile_' + n) || '{}');
 function earn(ctx, name, xp, stars) {
   run(ctx, `(() => { const d = Storage.switchPlayer(${JSON.stringify(name)}); d.xp = (d.xp||0) + ${xp}; d.stars = (d.stars||0) + ${stars || 0}; Storage.save(d); })()`);
 }
+function buySticker(ctx, name, id, cost) {
+  run(ctx, `(() => { const d = Storage.switchPlayer(${JSON.stringify(name)}); d.stars -= ${cost}; d.inventory = (d.inventory||[]).concat(${JSON.stringify(id)}); Storage.save(d); })()`);
+}
+const stop = ctx => run(ctx, 'clearTimeout(Cloud._timer)');
+/** Hai máy A, B cùng bé Thỏ, đã đồng bộ cùng 1 bản (xp 100, 20 sao). */
+async function twoSyncedDevices(srv) {
+  const A = boot(new Map(), srv); run(A, 'Cloud.init()');
+  earn(A, 'Thỏ', 100, 20);
+  await sleep(60);
+  const B = boot(new Map(), srv); run(B, 'Storage.switchPlayer("Thỏ")'); run(B, 'Cloud.init()');
+  await sleep(60);
+  assert.strictEqual(prof(B, 'thỏ').xp, 100, 'B phải lấy được bản của A');
+  return { A, B };
+}
 
 const tests = {
+  // ═══ #3 — xác nhận sao lưu ═══
   async 'thay đổi trong lúc đang gửi vẫn là chưa lưu, rồi được gửi tiếp'() {
     const srv = server(); srv.delay = 80;
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
-    earn(ctx, 'Thỏ', 10);                       // rev 1
-    await sleep(40);                            // lượt gửi rev 1 đang chạy
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
+    earn(ctx, 'Thỏ', 10);
+    await sleep(40);
     assert.strictEqual(srv.saves.length, 1);
-    earn(ctx, 'Thỏ', 5);                        // rev 2 phát sinh giữa lúc gửi
-    await sleep(100);                            // rev 1 xác nhận xong
+    earn(ctx, 'Thỏ', 5);
+    await sleep(100);
     let m = meta(ctx, 'thỏ');
     assert.strictEqual(m.savedRev, 1); assert.strictEqual(m.localRev, 2);
     await sleep(1300);
     m = meta(ctx, 'thỏ');
     assert.strictEqual(m.savedRev, 2, 'rev 2 phải được gửi tiếp');
-    assert.strictEqual(srv.saves.length, 2);
+    assert.strictEqual(srv.get('thỏ').meta.p, 15);
   },
 
   async 'HTTP 500 / mất mạng / phản hồi HTML: giữ chưa lưu và thử lại theo backoff'() {
     for (const mode of ['http500', 'neterr', 'html']) {
       const srv = server(); srv.mode = mode;
-      const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+      const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
       earn(ctx, 'Thỏ', 10);
       await sleep(50);
       assert.strictEqual(srv.saves.length, 1, mode);
@@ -91,7 +149,7 @@ const tests = {
       await sleep(60);
       assert.strictEqual(srv.saves.length, 1, mode + ': chưa tới mốc thử lại thì không gửi');
       srv.mode = 'ok';
-      await sleep(120);                         // mốc 150ms
+      await sleep(150);
       assert.strictEqual(srv.saves.length, 2, mode + ': thử lại sau backoff');
       assert.ok(!run(ctx, 'Cloud._unsaved("Thỏ")'), mode + ': thử lại thành công → đã lưu');
     }
@@ -99,92 +157,75 @@ const tests = {
 
   async 'lỗi liên tục: khoảng chờ tăng dần, không gửi dồn dập'() {
     const srv = server(); srv.mode = 'http500';
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
     await sleep(1100);                          // 20 + 150 + 300 + 500 = 970ms → 4 lần
-    assert.ok(srv.saves.length === 4, 'số lần gửi: ' + srv.saves.length);
+    assert.strictEqual(srv.saves.length, 4);
+    stop(ctx);
   },
 
   async 'tải lại trang khi còn chưa lưu → tự gửi lại'() {
     const store = new Map();
     const srv = server(); srv.mode = 'neterr';
-    let ctx = boot(store, srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(store, srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
     await sleep(40);
     assert.ok(run(ctx, 'Cloud._unsaved("Thỏ")'));
-    run(ctx, 'clearTimeout(Cloud._timer)');     // "đóng tab"
+    stop(ctx);
     srv.mode = 'ok'; srv.saves.length = 0;
-    const ctx2 = boot(store, srv.fetch);        // mở lại, cùng localStorage
+    const ctx2 = boot(store, srv);
     run(ctx2, 'Cloud.init()');
-    await sleep(100);
+    await sleep(120);
     assert.ok(srv.saves.some(b => b.key === 'thỏ'), 'phải gửi lại sau khi tải trang');
     assert.ok(!run(ctx2, 'Cloud._unsaved("Thỏ")'));
   },
 
   async 'đổi bé giữa lúc gửi: xác nhận đúng bé, đúng rev'() {
     const srv = server(); srv.delay = 80;
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
-    await sleep(40);                            // đang gửi Thỏ rev 1
-    earn(ctx, 'Coca', 7);                       // đổi sang Coca, Coca rev 1
-    await sleep(110);                           // lượt Thỏ (xong ở ~100ms) đã xác nhận
+    await sleep(40);
+    earn(ctx, 'Coca', 7);
+    await sleep(110);
     assert.strictEqual(meta(ctx, 'thỏ').savedRev, 1);
     assert.ok(!meta(ctx, 'coca').savedRev, 'Coca chưa được gửi thì chưa được đánh dấu');
     assert.strictEqual(srv.saves[0].key, 'thỏ');
     assert.strictEqual(srv.saves[0].meta.p, 10);
     await sleep(1300);
     assert.strictEqual(meta(ctx, 'coca').savedRev, 1, 'Coca được gửi ở lượt sau');
-    assert.strictEqual(srv.rows['coca'].meta.p, 7);
+    assert.strictEqual(srv.get('coca').meta.p, 7);
   },
 
   async 'beacon không đánh dấu đã lưu'() {
     const srv = server(); srv.mode = 'neterr';
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
     run(ctx, 'Cloud._beacon()');
     assert.strictEqual(ctx.beacons.length, 1);
     assert.ok(run(ctx, 'Cloud._unsaved("Thỏ")'));
-    run(ctx, 'clearTimeout(Cloud._timer)');
-  },
-
-  async 'máy chủ trả older: đánh dấu xung đột, không gửi lại liên tục'() {
-    const srv = server();
-    srv.rows['thỏ'] = { snapshot: { v: 1, name: 'Thỏ', keys: {} }, meta: { p: 999 } };
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
-    earn(ctx, 'Thỏ', 10);
-    await sleep(600);
-    assert.strictEqual(srv.saves.length, 1);
-    assert.ok(meta(ctx, 'thỏ').conflict, 'phải ghi nhận xung đột');
-    assert.ok(run(ctx, 'Cloud._unsaved("Thỏ")'), 'vẫn là chưa lưu');
-    assert.strictEqual(run(ctx, 'Cloud._pendingNames().length'), 0);
-    run(ctx, 'Cloud._beacon()');
-    assert.strictEqual(ctx.beacons.length, 0, 'không beacon khi đang xung đột');
+    stop(ctx);
   },
 
   async 'lấy bản mạng về: coi như đã đồng bộ, làm mới giao diện không tạo rev mới'() {
     const srv = server();
-    // máy khác đã lưu bản tiến xa hơn
-    const other = boot(new Map(), srv.fetch); run(other, 'Cloud.init()');
+    const other = boot(new Map(), srv); run(other, 'Cloud.init()');
     earn(other, 'Thỏ', 200, 30);
     await sleep(60);
-    assert.ok(srv.rows['thỏ']);
-    const ctx = boot(new Map(), srv.fetch, {});
-    // giả lập Rewards.updateUI có gọi Storage.save
-    run(ctx, 'window.Rewards = { updateUI(){ Storage.save(Storage.load()); } }');
+    const ctx = boot(new Map(), srv);
+    run(ctx, 'window.Rewards = { updateUI(){ Storage.save(Storage.load()); } }');   // giao diện có gọi Storage.save
     run(ctx, 'Storage.switchPlayer("Thỏ")');
     run(ctx, 'Cloud.init()');
     await sleep(60);
-    const m = meta(ctx, 'thỏ');
-    assert.strictEqual(m.lastPull > 0, true, 'phải lấy bản mạng về');
+    assert.ok(meta(ctx, 'thỏ').lastPull > 0, 'phải lấy bản mạng về');
     assert.ok(!run(ctx, 'Cloud._unsaved("Thỏ")'), 'sau khi lấy về không được coi là thay đổi mới');
-    assert.strictEqual(JSON.parse(ctx.localStorage.getItem('khoBaiTap_profile_thỏ')).stars, 30);
+    assert.strictEqual(prof(ctx, 'thỏ').stars, 30);
   },
 
   async 'máy dùng bản web cũ: thay đổi sau lần gửi cuối → chưa lưu'() {
     const store = new Map();
     store.set('khoBaiTap_cloudmeta::thỏ', JSON.stringify({ lastChange: 2000, lastPush: 1000 }));
     store.set('khoBaiTap_cloudmeta::coca', JSON.stringify({ lastChange: 1000, lastPush: 2000 }));
-    const ctx = boot(store, server().fetch);
+    const ctx = boot(store, server());
     run(ctx, 'Cloud._migrateMeta()');
     assert.ok(run(ctx, 'Cloud._unsaved("thỏ")'));
     assert.ok(!run(ctx, 'Cloud._unsaved("coca")'));
@@ -192,41 +233,43 @@ const tests = {
 
   async 'bản trên mạng y hệt máy → đánh dấu đã lưu, không gửi'() {
     const srv = server();
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
     await sleep(60);
     const n = srv.saves.length;
-    run(ctx, 'Cloud._setMeta("Thỏ", { localRev: 5 })');   // giả sử beacon đã lưu nhưng máy không biết
-    run(ctx, 'clearTimeout(Cloud._timer)');
+    run(ctx, 'Cloud._setMeta("Thỏ", { localRev: 5 })');
+    stop(ctx);
     const r = await run(ctx, 'Cloud.sync("Thỏ")');
     assert.strictEqual(r, 'same');
     assert.ok(!run(ctx, 'Cloud._unsaved("Thỏ")'));
     assert.strictEqual(srv.saves.length, n);
   },
+
   async 'mở file sao lưu gặp HTTP 500 → tự thử lại, vẫn là ghi đè (force)'() {
-    const srv = server(); srv.mode = 'http500';
-    srv.rows['thỏ'] = { snapshot: { v: 1, name: 'Thỏ', keys: {} }, meta: { p: 999 } }; // trên mạng "tiến xa hơn"
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const srv = server();
+    const { A } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 900);                        // trên mạng tiến xa hơn file
+    await sleep(60);
+    srv.mode = 'http500';
     const file = JSON.stringify({ v: 1, name: 'Thỏ', at: 1, keys: { '@profile': JSON.stringify({ playerName: 'Thỏ', xp: 50, stars: 4, level: 1 }) } });
-    ctx.__file = { text: async () => file };
-    await run(ctx, 'Cloud.openFile(__file)');
-    assert.strictEqual(srv.saves.length, 1); assert.strictEqual(srv.saves[0].force, true);
-    assert.ok(run(ctx, 'Cloud._unsaved("Thỏ")'));
-    assert.strictEqual(run(ctx, 'Cloud._fail'), 1);
+    A.__file = { text: async () => file };
+    const before = srv.saves.length;
+    await run(A, 'Cloud.openFile(__file)');
+    assert.strictEqual(srv.saves.length, before + 1); assert.strictEqual(srv.saves.at(-1).force, true);
+    assert.ok(run(A, 'Cloud._unsaved("Thỏ")'));
     srv.mode = 'ok';
-    await sleep(200);                           // không thao tác gì thêm, không tải lại
-    assert.strictEqual(srv.saves.length, 2, 'phải tự thử lại');
-    assert.strictEqual(srv.saves[1].force, true, 'lần thử lại vẫn là ghi đè');
-    assert.ok(!run(ctx, 'Cloud._unsaved("Thỏ")'));
-    assert.strictEqual(srv.rows['thỏ'].meta.p, 50);
-    assert.ok(!meta(ctx, 'thỏ').forceRev, 'ghi đè xong thì xoá ý định');
+    await sleep(200);
+    assert.strictEqual(srv.saves.at(-1).force, true, 'lần thử lại vẫn là ghi đè');
+    assert.ok(!run(A, 'Cloud._unsaved("Thỏ")'));
+    assert.strictEqual(srv.get('thỏ').meta.p, 50);
+    assert.ok(!meta(A, 'thỏ').forceRev, 'ghi đè xong thì xoá ý định');
   },
 
   async 'nút Sao lưu ngay gặp lỗi → tự thử lại'() {
     const srv = server();
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
-    run(ctx, 'clearTimeout(Cloud._timer)');     // bỏ lượt tự động, chỉ còn nút bấm
+    stop(ctx);
     srv.mode = 'html';
     const r = await run(ctx, 'Cloud.push("Thỏ")');
     assert.strictEqual(r.ok, false);
@@ -239,38 +282,224 @@ const tests = {
   async 'sync gửi lên gặp lỗi mạng → tự thử lại'() {
     const srv = server();
     const store = new Map();
-    const ctx0 = boot(store, srv.fetch); run(ctx0, 'Cloud.init()');
-    earn(ctx0, 'Thỏ', 10);                      // có dữ liệu trên máy, chưa gửi
-    run(ctx0, 'clearTimeout(Cloud._timer)');
-    srv.mode = 'neterr';
-    const ctx = boot(store, srv.fetch);
-    run(ctx, 'Cloud.DEBOUNCE_MS = 100000');     // bỏ lượt tự động lúc init, chỉ còn sync
+    const ctx0 = boot(store, srv); run(ctx0, 'Cloud.init()');
+    earn(ctx0, 'Thỏ', 10);
+    stop(ctx0);
+    const ctx = boot(store, srv);
+    run(ctx, 'Cloud.DEBOUNCE_MS = 100000');
+    srv.mode = 'ok';
+    // GET thành công, POST lỗi
+    const realFetch = srv.fetch;
+    ctx.fetch = async (u, init) => { if (init && srv.mode === 'postfail') throw new Error('offline'); return realFetch(u, init); };
+    srv.mode = 'postfail';
     run(ctx, 'Cloud.init()');
     await sleep(30);
-    assert.strictEqual(srv.saves.length, 1, 'sync đã thử gửi 1 lần');
     srv.mode = 'ok';
     await sleep(200);
-    assert.strictEqual(srv.saves.length, 2, 'phải tự thử lại sau lỗi của sync');
+    assert.ok(srv.saves.length >= 1 && srv.get('thỏ').found, 'phải tự thử lại sau lỗi của sync');
     assert.ok(!run(ctx, 'Cloud._unsaved("Thỏ")'));
   },
 
   async 'lượt tự động lỗi chỉ tăng backoff 1 lần'() {
     const srv = server(); srv.mode = 'http500';
-    const ctx = boot(new Map(), srv.fetch); run(ctx, 'Cloud.init()');
+    const ctx = boot(new Map(), srv); run(ctx, 'Cloud.init()');
     earn(ctx, 'Thỏ', 10);
     await sleep(60);
     assert.strictEqual(run(ctx, 'Cloud._fail'), 1);
-    run(ctx, 'clearTimeout(Cloud._timer)');
+    stop(ctx);
+  },
+
+  // ═══ #2A — đồng bộ có bảo toàn dữ liệu ═══
+  async 'máy sạch (không còn thay đổi) → tự lấy bản mạng mới hơn'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30, 5);
+    await sleep(60);
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'pulled');
+    assert.strictEqual(prof(B, 'thỏ').xp, 130);
+  },
+
+  async 'máy còn thay đổi chưa lưu + bản mạng đã đổi → xung đột, KHÔNG kéo đè, cất bản máy'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr';
+    earn(B, 'Thỏ', 7, 1);                       // B học lúc mất mạng
+    await sleep(50); stop(B);
+    srv.mode = 'ok';
+    earn(A, 'Thỏ', 30, 5);                      // A học và lưu
+    await sleep(60);
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'conflict');
+    assert.strictEqual(prof(B, 'thỏ').xp, 107, 'bản máy B còn nguyên');
+    assert.strictEqual(srv.get('thỏ').meta.p, 130, 'bản mạng của A còn nguyên');
+    assert.ok(B.localStorage.getItem('khoBaiTap_conflict::thỏ'), 'đã cất bản máy');
+    assert.ok(!Object.keys(run(B, 'Cloud.collect("Thỏ")').keys).some(k => k.includes('conflict')), 'khoá conflict không nằm trong snapshot');
+    assert.strictEqual(run(B, 'Cloud._pendingNames().length'), 0, 'ngừng tự gửi');
+    run(B, 'Cloud._beacon()');
+    assert.strictEqual(B.beacons.length, 0, 'không beacon khi xung đột');
+  },
+
+  async 'xung đột không phụ thuộc XP: máy nhiều XP hơn cũng không được đè (máy chủ chặn trong khoá)'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    buySticker(A, 'Thỏ', 'dino-1', 10);        // A: XP giữ nguyên 100, mua sticker
+    await sleep(60);
+    assert.strictEqual(srv.get('thỏ').ver, 2);    // A lưu lần 1 (ver 1), mua sticker (ver 2)
+    earn(B, 'Thỏ', 5);                          // B: XP 105 > 100, gửi với baseVer cũ
+    await sleep(120);
+    const s = srv.get('thỏ');
+    assert.deepStrictEqual(JSON.parse(s.snapshot.keys['@profile']).inventory, ['dino-1'], 'sticker A mua không bị mất');
+    assert.ok(meta(B, 'thỏ').conflict, 'B phải vào trạng thái xung đột');
+    assert.strictEqual(prof(B, 'thỏ').xp, 105, 'bản B còn nguyên');
+  },
+
+  async 'hai máy gửi cùng lúc cùng baseVer → máy chủ chỉ nhận 1, máy kia bị từ chối'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    stop(A); stop(B);
+    run(A, '(() => { const d = Storage.load(); d.xp += 1; localStorage.setItem(Storage.profileKey("Thỏ"), JSON.stringify(d)); Cloud._bumpRev("Thỏ"); })()');
+    run(B, '(() => { const d = Storage.load(); d.xp += 2; localStorage.setItem(Storage.profileKey("Thỏ"), JSON.stringify(d)); Cloud._bumpRev("Thỏ"); })()');
+    const [ra, rb] = await Promise.all([run(A, 'Cloud.push("Thỏ")'), run(B, 'Cloud.push("Thỏ")')]);
+    assert.strictEqual([ra, rb].filter(r => r.ok).length, 1);
+    assert.strictEqual([ra, rb].filter(r => r.reason === 'conflict').length, 1);
+  },
+
+  async 'bé học thêm sau lúc phát hiện xung đột → "Giữ bản máy này" gửi cả phần học thêm'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'conflict');
+    earn(B, 'Thỏ', 4, 2);                        // học tiếp trên B
+    await sleep(60);
+    assert.strictEqual(srv.get('thỏ').meta.p, 130, 'trong lúc xung đột B không tự gửi');
+    const r = await run(B, 'Cloud.resolveKeepLocal("Thỏ")');
+    assert.ok(r.ok);
+    assert.strictEqual(srv.get('thỏ').meta.p, 111, 'trên mạng là bản B gồm cả phần học thêm');
+    assert.ok(!meta(B, 'thỏ').conflict);
+    assert.ok(!B.localStorage.getItem('khoBaiTap_conflict::thỏ'), 'xong thì xoá bản cất');
+  },
+
+  async '"Lấy bản trên mạng" → bản B (gồm phần học thêm) được cất, khôi phục lại được'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    earn(B, 'Thỏ', 4); stop(B);                  // học thêm sau khi phát hiện
+    const r = await run(B, 'Cloud.resolveTakeRemote("Thỏ")');
+    assert.ok(r.ok);
+    assert.strictEqual(prof(B, 'thỏ').xp, 130, 'máy B giờ là bản A');
+    const bk = JSON.parse(B.localStorage.getItem('khoBaiTap_conflict::thỏ'));
+    assert.strictEqual(JSON.parse(bk.snapshot.keys['@profile']).xp, 111, 'bản cất có cả phần học thêm');
+    assert.ok(!run(B, 'Cloud._unsaved("Thỏ")'));
+    const rr = await run(B, 'Cloud.restoreBackup("Thỏ")');
+    assert.ok(rr.ok);
+    assert.strictEqual(srv.get('thỏ').meta.p, 111);
+  },
+
+  async 'đang chờ gửi ghi đè (forceRev) → sync KHÔNG kéo bản mạng đè lên'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 500); await sleep(60);       // trên mạng tiến xa
+    srv.mode = 'http500';
+    const file = JSON.stringify({ v: 1, name: 'Thỏ', at: 1, keys: { '@profile': JSON.stringify({ playerName: 'Thỏ', xp: 42, stars: 1, level: 1 }) } });
+    B.__file = { text: async () => file };
+    await run(B, 'Cloud.openFile(__file)');      // bố mẹ khôi phục file, gửi lỗi
+    srv.mode = 'ok';
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'force-pending');
+    assert.strictEqual(prof(B, 'thỏ').xp, 42, 'bản bố mẹ chọn còn nguyên');
+    await sleep(250);
+    assert.strictEqual(srv.get('thỏ').meta.p, 42, 'lần thử lại ghi đè thành công');
+  },
+
+  async 'beacon của chính máy đã lên (ver tăng) → không bị coi là xung đột'() {
+    const srv = server();
+    const { B } = await twoSyncedDevices(srv);
+    stop(B);
+    B.navigator.sendBeacon = (u, b) => { srv.post(b); return true; };   // beacon lên được nhưng máy không biết
+    run(B, '(() => { const d = Storage.load(); d.xp += 3; localStorage.setItem(Storage.profileKey("Thỏ"), JSON.stringify(d)); Cloud._bumpRev("Thỏ"); })()');
+    run(B, 'Cloud._beacon()');
+    const v = srv.get('thỏ').ver;
+    earn(B, 'Thỏ', 2);                           // bé học tiếp → gửi với baseVer cũ → máy chủ từ chối → sync đối chiếu
+    await sleep(200);
+    assert.ok(!meta(B, 'thỏ').conflict, 'không được báo xung đột');
+    assert.strictEqual(srv.get('thỏ').meta.p, 105);
+    assert.ok(srv.get('thỏ').ver > v);
+  },
+
+  async 'sang ngày mới chỉ đổi kế hoạch hôm nay → không phải xung đột, lấy bản mạng'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    run(B, 'Storage.set("todayPlan", { date: "2099-01-01", tasks: [] })');   // web tự tạo kế hoạch ngày
+    run(B, 'Storage.set("lastGrade", "lop3")');
+    stop(B);
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'pulled');
+    assert.strictEqual(prof(B, 'thỏ').xp, 130);
+  },
+
+  async 'dữ liệu ghi thẳng localStorage (không qua schedule) vẫn được bảo toàn khi bản mạng đổi'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    B.localStorage.setItem('khoBaiTap_wrong_history_v1::thỏ', JSON.stringify([{ q: 'x', at: 1 }]));
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'conflict');
+    assert.ok(B.localStorage.getItem('khoBaiTap_wrong_history_v1::thỏ'));
+  },
+
+  async 'máy mới chưa có gì → lấy bản mạng, không báo xung đột'() {
+    const srv = server();
+    await twoSyncedDevices(srv);
+    const C = boot(new Map(), srv);
+    run(C, 'Cloud.init()');
+    run(C, '(() => { const d = Storage.switchPlayer("Thỏ"); Storage.save(d); })()');   // nhập tên → có lưu hồ sơ trống
+    const r = await run(C, 'Cloud.sync("Thỏ")');
+    assert.strictEqual(r, 'pulled');
+    assert.strictEqual(prof(C, 'thỏ').xp, 100);
+  },
+
+  async 'máy chủ CŨ (chưa triển khai lại Code.gs): vẫn không kéo đè khi còn thay đổi chưa lưu'() {
+    const srv = server('old');
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'conflict');
+    assert.strictEqual(prof(B, 'thỏ').xp, 107);
+    // máy sạch thì vẫn lấy về như trước
+    const C = boot(new Map(), srv); run(C, 'Storage.switchPlayer("Thỏ")'); run(C, 'Cloud.init()');
+    await sleep(60);
+    assert.strictEqual(prof(C, 'thỏ').xp, 130);
+  },
+
+  async 'hết xung đột khi hai bản giống nhau trở lại'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.ok(meta(B, 'thỏ').conflict);
+    // ví dụ: bố mẹ chép đúng bản B lên từ máy khác
+    srv.post(JSON.stringify({ action: 'save', key: 'thỏ', force: true, meta: run(B, 'Cloud.summary(Cloud.collect("Thỏ"))'), snapshot: run(B, 'Cloud.collect("Thỏ")') }));
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'same');
+    assert.ok(!meta(B, 'thỏ').conflict);
+    assert.ok(!B.localStorage.getItem('khoBaiTap_conflict::thỏ'));
   },
 };
 
 (async () => {
   let fail = 0;
+  const only = process.argv[3];
   for (const [name, fn] of Object.entries(tests)) {
+    if (only && !name.includes(only)) continue;
     try { await fn(); console.log('✔', name); }
     catch (e) { fail++; console.log('✘', name, '\n   ', e.message); }
+    await sleep(30);
   }
-  await sleep(50);
   console.log(fail ? fail + ' lỗi' : 'Tất cả đạt');
   process.exit(fail ? 1 : 0);
 })();

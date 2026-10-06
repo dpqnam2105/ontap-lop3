@@ -9,14 +9,6 @@
  * 4. Cấp quyền, rồi sao chép "URL ứng dụng web" (…/exec) gửi cho Claude.
  *
  * Mỗi bé 1 dòng ở trang "SaoLuu". Bản cũ trước mỗi lần ghi đè được chép sang trang "LichSu".
- *
- * Số phiên bản (ver): mỗi lần lưu thành công ver tăng 1 (lưu trong Thuộc tính tập lệnh, khoá "ver::<tên>").
- * Máy gửi kèm baseVer = phiên bản nó biết gần nhất. Nếu bản trên mạng đã đổi (ver khác baseVer) thì
- * từ chối với reason 'conflict' — kiểm tra NGAY TRONG ScriptLock nên không có kẽ hở giữa lúc đọc và lúc ghi.
- * Máy dùng bản web cũ (không gửi baseVer) vẫn theo luật cũ: không cho bản ít XP hơn ghi đè.
- *
- * SAU KHI SỬA FILE NÀY: Triển khai → Quản lý các bản triển khai → ✏️ → Phiên bản: "Phiên bản mới" → Triển khai
- * (giữ nguyên URL …/exec, không tạo bản triển khai mới).
  */
 const SHEET = 'SaoLuu';
 const HIST = 'LichSu';
@@ -53,16 +45,6 @@ function _findRow(sh, key) {
   return -1;
 }
 
-function _props() { return PropertiesService.getScriptProperties(); }
-
-/** Phiên bản hiện tại. Dòng có từ trước khi có số phiên bản → coi là 1. */
-function _getVer(key, rowExists) {
-  const v = Number(_props().getProperty('ver::' + key));
-  return v > 0 ? v : (rowExists ? 1 : 0);
-}
-
-function _setVer(key, v) { _props().setProperty('ver::' + key, String(v)); }
-
 function _readRow(sh, row) {
   const width = Math.max(sh.getLastColumn(), FIXED + 1);
   const v = sh.getRange(row, 1, 1, width).getValues()[0];
@@ -82,11 +64,11 @@ function doGet(e) {
     if (!key) return _out({ ok: false, error: 'no key' });
     const sh = _sheet(SHEET);
     const row = _findRow(sh, key);
-    if (row < 0) return _out({ ok: true, found: false, ver: _getVer(key, false) });
+    if (row < 0) return _out({ ok: true, found: false });
     const r = _readRow(sh, row);
     let snap = null;
     try { snap = JSON.parse(r.data); } catch (err) { return _out({ ok: false, error: 'bad data' }); }
-    return _out({ ok: true, found: true, meta: r.meta, snapshot: snap, ver: _getVer(key, true) });
+    return _out({ ok: true, found: true, meta: r.meta, snapshot: snap });
   }
   return _out({ ok: false, error: 'unknown action' });
 }
@@ -111,17 +93,11 @@ function doPost(e) {
   try {
     const sh = _sheet(SHEET);
     let row = _findRow(sh, key);
-    const cur = _getVer(key, row > 0);
-    const hasBase = body.baseVer !== undefined && body.baseVer !== null;
-    // Máy mới: bản trên mạng đã đổi kể từ lúc máy đọc → không ghi, để máy hỏi bố mẹ (trừ khi bố mẹ chủ động ghi đè)
-    if (!body.force && hasBase && Number(body.baseVer) !== cur) {
-      return _out({ ok: false, reason: 'conflict', ver: cur, meta: row > 0 ? _readRow(sh, row).meta : null });
-    }
     if (row > 0) {
       const old = _readRow(sh, row);
-      // Máy dùng bản web cũ (không có baseVer): bản ít XP hơn không được ghi đè bản tốt hơn, trừ khi bố mẹ chủ động.
-      if (!body.force && !hasBase && Number(meta.p || 0) < old.meta.p) {
-        return _out({ ok: false, reason: 'older', meta: old.meta, ver: cur });
+      // Chống mất dữ liệu: máy mới (tiến độ thấp hơn) không được ghi đè bản tốt hơn, trừ khi bố mẹ chủ động.
+      if (!body.force && Number(meta.p || 0) < old.meta.p) {
+        return _out({ ok: false, reason: 'older', meta: old.meta });
       }
       const hs = _sheet(HIST);
       hs.appendRow(old.raw.filter((x, i) => i < FIXED || (x !== '' && x !== null)));
@@ -134,9 +110,7 @@ function doPost(e) {
     const values = [key, String(meta.name || ''), new Date(Number(meta.at) || Date.now()), Number(meta.p || 0),
       Number(meta.stars || 0), Number(meta.stickers || 0), Number(meta.balls || 0), text.length].concat(chunks);
     sh.getRange(row, 1, 1, values.length).setValues([values]);
-    const ver = cur + 1;
-    _setVer(key, ver);
-    return _out({ ok: true, saved: true, at: Number(meta.at) || Date.now(), ver: ver });
+    return _out({ ok: true, saved: true, at: Number(meta.at) || Date.now() });
   } finally {
     lock.releaseLock();
   }
