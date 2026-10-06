@@ -5,6 +5,16 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Sửa 3 lỗi Codex tìm ra sau #2A (đồng bộ 2 máy)
+- **[P1] Máy chủ trả bản cũ kèm số phiên bản mới**: `doGet()` trước đây đọc dữ liệu rồi mới đọc phiên bản, không giữ khoá. Một lần lưu chen vào giữa thì máy nhận bản cũ + ver mới, rồi có thể ghi đè phần học của máy kia. Nay GET đọc cả hai trong cùng `ScriptLock`; POST ghi Sheet xong (`SpreadsheetApp.flush()`) rồi mới tăng phiên bản và nhả khoá. **Cần triển khai lại Apps Script.**
+- **[P1] Bản khôi phục bị xoá quá sớm**: sau "Lấy bản trên mạng", lần đồng bộ kế tiếp thấy hai bản giống nhau đã xoá luôn bản cất. Nay một bản cất **chỉ tự xoá khi nội dung của nó đã nằm nguyên trên mạng** (bỏ qua trường tự sinh như kế hoạch hôm nay); còn lại chỉ bố mẹ xoá.
+  - Bản cất chia 2 loại: ô **xung đột** (bản máy lúc đang xung đột) và **danh sách khôi phục** (bản máy trước mỗi lần "Lấy bản trên mạng", giữ tối đa 3 bản, mới nhất trước). Xung đột lần sau không ghi đè bản khôi phục cũ.
+  - Khu vực Bố Mẹ liệt kê từng bản cất: ↩️ Khôi phục bản này / 💾 Tải về / 🗑️ Xoá.
+- **[P2] Lấy bản mạng tạo "bản lai"**: trước chỉ ghi đè các key có trong bản mạng, key chỉ máy có (vd. dữ liệu tốc độ) vẫn còn mà lại bị coi là đã đồng bộ. Nay `apply()` đặt dữ liệu của bé **đúng bằng** bản được chọn: ghi key có trong bản đó, xoá key dữ liệu của bé không có trong bản đó. Không đụng cloudmeta, bản cất, PIN, dữ liệu bé khác. Kiểm tra snapshot trước khi ghi; ghi lỗi giữa chừng (vd. đầy bộ nhớ) thì trả lại nguyên trạng và **không** đánh dấu đã đồng bộ. Dùng chung cho lấy bản mạng, mở file sao lưu, khôi phục bản cất.
+- Thêm: file sao lưu có mục tên trùng khoá hệ thống (vd. `khoBaiTap_cloudmeta`) bị từ chối — trước đây có thể ghi đè trạng thái đồng bộ của bé.
+- `tests/cloud.test.js`: 34 kiểm thử. Có bài cho POST chen vào lúc GET đang đọc (đã thử: bài này **bắt được** lỗi trên `Code.gs` cũ), bài flush trước khi nhả khoá, lấy bản mạng → đồng bộ/tải lại trang → vẫn khôi phục được, xung đột 2 lần giữ cả 2 bản khôi phục, không tạo bản lai, ghi lỗi giữa chừng, file sai định dạng.
+- Phiên bản file `?v=20261006m`.
+
 ## 2026-10-06 — Đồng bộ 2 máy không còn kéo đè phần bé vừa học (#2A, bàn cùng Codex)
 - **Lỗi cũ**: web chọn nguyên cả bản theo XP. Máy ít XP hơn mà có phần học riêng (câu sai, sticker vừa mua, tốc độ…) sẽ bị bản mạng đè mất khi mở lại.
 - **Số phiên bản trên máy chủ** (`Code.gs`): mỗi lần lưu thành công phiên bản của bé tăng 1. Máy gửi kèm phiên bản nó biết gần nhất; nếu bản trên mạng đã đổi thì máy chủ từ chối (`reason: 'conflict'`). Kiểm tra ngay trong `ScriptLock` nên 2 máy gửi cùng lúc thì chỉ 1 máy được nhận. Máy dùng bản web cũ vẫn theo luật XP như trước.

@@ -51,17 +51,40 @@ const Cloud = {
     return { v: 1, name: Storage.normalizeName(name || Storage.getActiveName()), at: this._meta(name).lastChange || 0, keys };
   },
 
+  /** Snapshot hợp lệ: keys là object, mọi giá trị là chuỗi, không đụng khoá hệ thống của web. */
+  _validSnapshot(snapshot) {
+    if (!snapshot || typeof snapshot.keys !== 'object' || !snapshot.keys || Array.isArray(snapshot.keys)) return false;
+    return Object.entries(snapshot.keys).every(([base, v]) =>
+      typeof v === 'string' && typeof base === 'string' && base.length > 0 &&
+      // base + '::<tên>' là khoá thật → không được trùng cloudmeta hay bản cất (vd. base 'khoBaiTap_cloudmeta')
+      !(base + '::').startsWith(this.META_PREFIX) && !(base + '::').startsWith(this.CONFLICT_PREFIX));
+  },
+
+  /**
+   * Đặt dữ liệu của 1 bé thành ĐÚNG snapshot: ghi các key có trong snapshot, xoá key dữ liệu của bé đó
+   * không có trong snapshot. Không đụng cloudmeta, bản cất xung đột, PIN và dữ liệu bé khác.
+   * Lỗi giữa chừng (vd. hết bộ nhớ) → trả lại nguyên trạng như trước khi gọi, trả về false.
+   */
   apply(snapshot, name) {
-    if (!snapshot || !snapshot.keys) return false;
+    if (!this._validSnapshot(snapshot)) return false;
     const nm = name || snapshot.name;
     const c = this._canon(nm);
     if (!c) return false;
-    Object.entries(snapshot.keys).forEach(([base, v]) => {
-      try {
-        if (base === '@profile') localStorage.setItem(Storage.profileKey(nm), v);
-        else localStorage.setItem(base + '::' + c, v);
-      } catch (e) { console.warn('Cloud.apply', base, e); }
-    });
+    const pk = Storage.profileKey(nm);
+    const target = {};
+    Object.entries(snapshot.keys).forEach(([base, v]) => { target[base === '@profile' ? pk : base + '::' + c] = v; });
+    const before = {};
+    this._ownKeys(nm).forEach(k => { before[k] = localStorage.getItem(k); });
+    try {
+      Object.keys(target).forEach(k => localStorage.setItem(k, target[k]));
+      Object.keys(before).forEach(k => { if (!(k in target)) localStorage.removeItem(k); });
+    } catch (e) {
+      console.warn('Cloud.apply', e);
+      // Trả lại nguyên trạng: xoá key mới thêm trước (giải phóng chỗ), rồi ghi lại giá trị cũ
+      Object.keys(target).forEach(k => { if (!(k in before)) { try { localStorage.removeItem(k); } catch (x) { /* bỏ qua */ } } });
+      Object.keys(before).forEach(k => { try { localStorage.setItem(k, before[k]); } catch (x) { /* bỏ qua */ } });
+      return false;
+    }
     try { localStorage.setItem(Storage.ACTIVE_KEY, Storage.normalizeName(nm)); } catch (e) { /* bỏ qua */ }
     return true;
   },
@@ -294,7 +317,7 @@ const Cloud = {
       if (typeof out.ver === 'number') extra.serverVer = out.ver;
       if (opts.force) extra.forceRev = null;    // yêu cầu ghi đè đã xong
       this._markSaved(nm, rev, extra);
-      if (opts.force) this._dropBackup(nm);     // bố mẹ đã chọn giữ bản máy → không cần bản cất nữa
+      this._dropBackupIfSaved(nm, snap.keys);   // bản cất đã nằm nguyên trên mạng → không cần giữ nữa
       return out;
     }
     if (out && (out.reason === 'conflict' || out.reason === 'older')) {
@@ -411,7 +434,7 @@ const Cloud = {
       const patch = Object.assign({ savedRev: this._meta(nm).localRev || 0, conflict: null }, this._baseFrom(localSnap));
       if (rv != null) patch.serverVer = rv;
       this._setMeta(nm, patch);
-      this._dropBackup(nm);
+      this._dropBackupIfSaved(nm, localSnap.keys);   // chỉ xoá bản cất đã nằm nguyên trên mạng; bản khác thì giữ
       return 'same';
     }
 
@@ -445,9 +468,10 @@ const Cloud = {
 
   /** Lấy bản mạng về. Chỉ gọi khi máy KHÔNG còn thay đổi chưa lưu (hoặc máy chưa có gì). */
   _pull(nm, r, local, remote, opts) {
+    if (!this._validSnapshot(r.snapshot)) return null;
     this._applying = true;
     try {
-      this.apply(r.snapshot, nm);
+      if (!this.apply(r.snapshot, nm)) return null;   // ghi không được → giữ nguyên máy, KHÔNG đánh dấu đã đồng bộ
       this._refreshUI();
       // Bản vừa tải về chính là bản trên máy chủ → coi như đã đồng bộ.
       // Mốc so sánh = bản trên máy sau khi chép và làm mới giao diện.
@@ -467,18 +491,15 @@ const Cloud = {
     return 'pulled';
   },
 
-  /** Xung đột: cất bản máy, ghi nhận, ngừng tự gửi. Bé vẫn học bình thường trên bản máy. */
-  _enterConflict(nm, r, remote) {
-    const saved = this._saveBackup(nm);
-    this._setMeta(nm, {
-      conflict: { at: Date.now(), remoteVer: typeof r.ver === 'number' ? r.ver : null, remote, backup: saved }
-    });
-    return 'conflict';
-  },
+  // ─── Bản cất (không bao giờ nằm trong snapshot sao lưu) ─
+  // • Ô "conflict": bản máy lúc đang xung đột, được cất lại mỗi lần phát hiện (cùng một máy đang học tiếp).
+  // • Danh sách "restore": bản máy trước khi bố mẹ chọn "Lấy bản trên mạng", giữ tối đa 3 bản.
+  // Chỉ tự xoá một bản cất khi nội dung của nó đã nằm nguyên trên mạng; còn lại chỉ bố mẹ xoá.
+  RESTORE_KEEP: 3,
+  _backupKey(nm, slot) { return this.CONFLICT_PREFIX + (slot === 'restore' ? 'restore::' : '') + this._canon(nm); },
+  _readJSON(k, def) { try { return JSON.parse(localStorage.getItem(k) || 'null') || def; } catch (e) { return def; } },
 
-  _backupKey(nm) { return this.CONFLICT_PREFIX + this._canon(nm); },
-
-  /** Cất bản máy HIỆN TẠI (gồm cả phần bé học thêm sau lúc phát hiện xung đột). */
+  /** Cất bản máy HIỆN TẠI vào ô xung đột (gồm cả phần bé học thêm sau lúc phát hiện). */
   _saveBackup(nm) {
     try {
       localStorage.setItem(this._backupKey(nm), JSON.stringify({ at: Date.now(), snapshot: this.collect(nm) }));
@@ -488,41 +509,97 @@ const Cloud = {
       return false;
     }
   },
-  _getBackup(nm) {
-    try { return JSON.parse(localStorage.getItem(this._backupKey(nm)) || 'null'); } catch (e) { return null; }
+
+  /** Thêm bản máy hiện tại vào danh sách khôi phục (mới nhất ở đầu, tối đa 3). */
+  _addRestore(nm) {
+    const k = this._backupKey(nm, 'restore');
+    const list = this._readJSON(k, []).filter(x => x && x.snapshot);
+    const snap = this.collect(nm);
+    if (!list.length || this._hash(list[0].snapshot.keys) !== this._hash(snap.keys)) {
+      list.unshift({ id: 'r' + Date.now(), at: Date.now(), snapshot: snap });
+    }
+    try {
+      localStorage.setItem(k, JSON.stringify(list.slice(0, this.RESTORE_KEEP)));
+      return true;
+    } catch (e) {
+      console.warn('Cloud._addRestore', e);
+      return false;
+    }
   },
-  _dropBackup(nm) {
-    try { localStorage.removeItem(this._backupKey(nm)); } catch (e) { /* bỏ qua */ }
-    const m = this._meta(nm);
-    if (m.restorePoint) this._setMeta(nm, { restorePoint: null });
+
+  /** Mọi bản cất của bé: id 'conflict' (ô xung đột) và các id 'r…' (danh sách khôi phục). */
+  _backups(nm) {
+    const out = [];
+    const c = this._readJSON(this._backupKey(nm), null);
+    if (c && c.snapshot) out.push({ id: 'conflict', at: c.at, snapshot: c.snapshot });
+    this._readJSON(this._backupKey(nm, 'restore'), []).forEach(x => { if (x && x.snapshot) out.push(x); });
+    return out;
+  },
+  _getBackup(nm, id) { return this._backups(nm).find(x => x.id === (id || 'conflict')) || null; },
+
+  _dropBackup(nm, id) {
+    try {
+      if (!id || id === 'conflict') localStorage.removeItem(this._backupKey(nm));
+      else {
+        const k = this._backupKey(nm, 'restore');
+        const list = this._readJSON(k, []).filter(x => x && x.id !== id);
+        if (list.length) localStorage.setItem(k, JSON.stringify(list)); else localStorage.removeItem(k);
+      }
+    } catch (e) { /* bỏ qua */ }
+  },
+
+  /**
+   * Tự xoá bản cất CHỈ khi nội dung của nó đã nằm nguyên trên mạng: không khác bản vừa đồng bộ ở mục nào,
+   * trừ các trường tự sinh (kế hoạch hôm nay…) mà giao diện ghi lại khi làm mới.
+   */
+  _dropBackupIfSaved(nm, syncedKeys) {
+    if (!syncedKeys) return;
+    const base = this._print(syncedKeys);
+    this._backups(nm).forEach(b => {
+      if (this._changedSince({ keys: b.snapshot.keys }, base).length === 0) this._dropBackup(nm, b.id);
+    });
+  },
+
+  /** Xung đột: cất bản máy, ghi nhận, ngừng tự gửi. Bé vẫn học bình thường trên bản máy. */
+  _enterConflict(nm, r, remote) {
+    const saved = this._saveBackup(nm);
+    this._setMeta(nm, {
+      conflict: { at: Date.now(), remoteVer: typeof r.ver === 'number' ? r.ver : null, remote, backup: saved }
+    });
+    return 'conflict';
   },
 
   // ─── Bố mẹ xử lý xung đột ───────────────────────────
   /** Giữ bản máy này (bản hiện tại, gồm cả phần học thêm) → ghi đè bản mạng. */
   async resolveKeepLocal(nm) {
+    this._saveBackup(nm);          // cất bản đúng lúc bấm; gửi lên y hệt thì bản cất tự xoá
     this._bumpRev(nm);
     return this.push(nm, true);
   },
 
-  /** Lấy bản mạng về; bản máy hiện tại được cất lại để tải về / khôi phục sau. */
+  /** Lấy bản mạng về; bản máy hiện tại được đưa vào danh sách khôi phục trước. */
   async resolveTakeRemote(nm) {
     let r;
     try { r = await this.fetchRemote(nm); } catch (e) { return { ok: false, error: 'network' }; }
-    if (!r || !r.ok || !r.found || !r.snapshot) return { ok: false, error: 'network' };
-    if (!this._saveBackup(nm)) return { ok: false, error: 'backup' };   // không cất được thì KHÔNG kéo đè
+    if (!r || !r.ok || !r.found || !this._validSnapshot(r.snapshot)) return { ok: false, error: 'network' };
+    if (!this._addRestore(nm)) return { ok: false, error: 'backup' };   // không cất được thì KHÔNG kéo đè
     const local = this.summary(this.collect(nm));
-    this._pull(nm, r, local, this.summary(r.snapshot), { silent: true });
-    this._setMeta(nm, { restorePoint: { at: Date.now(), summary: local } });
+    if (this._pull(nm, r, local, this.summary(r.snapshot), { silent: true }) !== 'pulled') return { ok: false, error: 'apply' };
+    // Ô xung đột là bản cũ hơn của chính bản vừa đưa vào danh sách khôi phục → không cần giữ thêm
+    this._dropBackup(nm, 'conflict');
     return { ok: true };
   },
 
-  /** Khôi phục bản máy đã cất (sau khi đã lấy bản mạng) → như mở file sao lưu. */
-  async restoreBackup(nm) {
-    const b = this._getBackup(nm);
-    if (!b || !b.snapshot) return { ok: false, error: 'none' };
+  /** Khôi phục một bản cất → đặt máy đúng bằng bản đó rồi ghi đè lên mạng. */
+  async restoreBackup(nm, id) {
+    const b = this._getBackup(nm, id);
+    if (!b || !this._validSnapshot(b.snapshot)) return { ok: false, error: 'none' };
+    let ok = false;
     this._applying = true;
-    try { this.apply(b.snapshot, nm); this._refreshUI(); } finally { this._applying = false; }
-    return this.resolveKeepLocal(nm);
+    try { ok = this.apply(b.snapshot, nm); if (ok) this._refreshUI(); } finally { this._applying = false; }
+    if (!ok) return { ok: false, error: 'apply' };
+    this._bumpRev(nm);
+    return this.push(nm, true);      // gửi lên y hệt bản cất → bản cất tự xoá
   },
 
   _refreshUI() {
@@ -585,14 +662,16 @@ const Cloud = {
   async openFile(file) {
     const text = await file.text();
     const snap = JSON.parse(text);
-    if (!snap || !snap.keys || !snap.name) throw new Error('File không đúng định dạng sao lưu');
+    if (!snap || !snap.name || !this._validSnapshot(snap)) throw new Error('File không đúng định dạng sao lưu');
+    let ok = false;
     this._applying = true;
     try {
-      this.apply(snap, snap.name);
-      this._refreshUI();
+      ok = this.apply(snap, snap.name);
+      if (ok) this._refreshUI();
     } finally {
       this._applying = false;
     }
+    if (!ok) throw new Error('Không ghi được vào máy (bộ nhớ trình duyệt đầy?). Dữ liệu cũ vẫn giữ nguyên.');
     // Mở file là thay đổi thật trên máy → tăng localRev để nếu gửi lỗi thì web tự gửi lại
     this._bumpRev(snap.name);
     if (this.enabled()) await this.push(snap.name, true);
@@ -629,12 +708,15 @@ const Cloud = {
           '<p class="backup-note">Lấy bản trên mạng thì bản của máy này vẫn được cất lại, tải về hoặc khôi phục được.</p>' +
         '</div>'
       : '';
-    const rp = !c && meta.restorePoint && nm && this._getBackup(nm);
-    const restoreBox = rp
-      ? '<div class="backup-conflict"><p>🗂️ Bản cũ của máy này đã được cất lúc ' + new Date(meta.restorePoint.at).toLocaleString('vi-VN') + ' (' + line(meta.restorePoint.summary || this.summary(rp.snapshot)) + ').</p>' +
-          '<div class="backup-actions"><button class="btn-secondary" id="btnRestoreBackup">↩️ Khôi phục bản đó</button>' +
-          '<button class="btn-secondary" id="btnDownloadBackup">💾 Tải bản đó về</button>' +
-          '<button class="btn-secondary" id="btnDropBackup">🗑️ Xoá bản cất</button></div></div>'
+    const saved = !c && nm ? this._backups(nm) : [];
+    const restoreBox = saved.length
+      ? '<div class="backup-conflict"><p><b>🗂️ Bản cũ của máy này đang được cất</b> (chỉ bố mẹ xoá được):</p>' +
+          saved.map(b => '<p>• ' + new Date(b.at).toLocaleString('vi-VN') + ': ' + line(this.summary(b.snapshot)) + '</p>' +
+            '<div class="backup-actions">' +
+            '<button class="btn-secondary" data-bk="restore" data-id="' + b.id + '">↩️ Khôi phục bản này</button>' +
+            '<button class="btn-secondary" data-bk="download" data-id="' + b.id + '">💾 Tải về</button>' +
+            '<button class="btn-secondary" data-bk="drop" data-id="' + b.id + '">🗑️ Xoá</button></div>').join('') +
+        '</div>'
       : '';
     card.innerHTML =
       '<h3 class="parent-section-title">☁️ Sao lưu phần thưởng</h3>' +
@@ -688,15 +770,18 @@ const Cloud = {
         else status('⚠️ Chưa tải được bản trên mạng (mạng?).');
       } catch (e) { status('⚠️ Chưa tải được bản trên mạng (mạng?).'); }
     });
-    on('btnRestoreBackup', async () => {
-      if (!confirm('Khôi phục bản cũ đã cất của máy này và ghi đè bản trên mạng?')) return;
+    card.querySelectorAll('[data-bk]').forEach(btn => btn.onclick = async () => {
+      const id = btn.dataset.id;
+      const b = this._getBackup(nm, id);
+      if (!b) return;
+      if (btn.dataset.bk === 'download') { this._saveJSON(b.snapshot, this._fileName(nm, 'ban-cat')); return; }
+      if (btn.dataset.bk === 'drop') { if (confirm('Xoá bản cất này? Không lấy lại được.')) { this._dropBackup(nm, id); this.renderParentCard(); } return; }
+      if (!confirm('Khôi phục bản cất này và ghi đè bản trên mạng?')) return;
       status('Đang khôi phục…');
-      const r = await this.restoreBackup(nm);
+      const r = await this.restoreBackup(nm, id);
       this.renderParentCard();
-      status(r.ok ? '✅ Đã khôi phục và sao lưu lên mạng.' : failMsg(r));
+      status(r.ok ? '✅ Đã khôi phục và sao lưu lên mạng.' : r.error === 'apply' ? '⚠️ Không ghi được vào máy (bộ nhớ đầy?).' : failMsg(r));
     });
-    on('btnDownloadBackup', () => { const b = this._getBackup(nm); if (b) this._saveJSON(b.snapshot, this._fileName(nm, 'ban-cat')); });
-    on('btnDropBackup', () => { if (confirm('Xoá bản cất của máy này?')) { this._dropBackup(nm); this.renderParentCard(); } });
     on('btnBackupDownload', () => this.downloadFile(nm));
     const inp = document.getElementById('backupFileInput');
     if (inp) inp.onchange = async () => {

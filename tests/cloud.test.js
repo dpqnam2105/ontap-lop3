@@ -32,16 +32,40 @@ function makeSheet() {
 
 function makeScript(file) {
   const sheets = {}, props = {};
+  // Khoá giả lập: một lượt chạy khác (intruder) chỉ chen vào được khi KHÔNG ai giữ khoá.
+  const sc = { held: false, intruder: null, flushedBeforeRelease: true, dirtyWrite: false };
+  const maybeIntrude = () => {
+    if (sc.intruder && !sc.held) { const f = sc.intruder; sc.intruder = null; f(); }
+  };
   const g = {
     console, JSON, Date, Math, Number, String, Object, Array,
-    SpreadsheetApp: { getActiveSpreadsheet: () => ({ getSheetByName: n => sheets[n] || null, insertSheet: n => (sheets[n] = makeSheet()) }) },
+    SpreadsheetApp: {
+      getActiveSpreadsheet: () => ({ getSheetByName: n => sheets[n] || null, insertSheet: n => (sheets[n] = makeSheet()) }),
+      flush: () => { sc.dirtyWrite = false; }
+    },
     ContentService: { MimeType: { JSON: 'json' }, createTextOutput: s => ({ content: s, setMimeType() { return this; } }) },
-    LockService: { getScriptLock: () => ({ waitLock() {}, releaseLock() {} }) },
-    PropertiesService: { getScriptProperties: () => ({ getProperty: k => (k in props ? props[k] : null), setProperty: (k, v) => { props[k] = String(v); } }) }
+    LockService: { getScriptLock: () => ({
+      waitLock() { sc.held = true; },
+      releaseLock() { if (sc.dirtyWrite) sc.flushedBeforeRelease = false; sc.held = false; maybeIntrude(); }
+    }) },
+    PropertiesService: { getScriptProperties: () => ({
+      getProperty: k => { maybeIntrude(); return k in props ? props[k] : null; },
+      setProperty: (k, v) => { props[k] = String(v); }
+    }) }
   };
+  const origSheet = makeSheet;
+  g.SpreadsheetApp.getActiveSpreadsheet = () => ({
+    getSheetByName: n => sheets[n] || null,
+    insertSheet: n => {
+      const sh = (sheets[n] = origSheet());
+      const gr = sh.getRange;
+      sh.getRange = (...a) => { const r = gr(...a); const sv = r.setValues; r.setValues = v => { sc.dirtyWrite = true; return sv(v); }; return r; };
+      return sh;
+    }
+  });
   vm.createContext(g);
   vm.runInContext(fs.readFileSync(file, 'utf8'), g);
-  return { g, sheets, props };
+  return Object.assign(sc, { g, sheets, props });
 }
 
 /** Máy chủ: kind 'new' = Code.gs hiện tại, 'old' = Code.gs trước khi có số phiên bản. */
@@ -391,10 +415,11 @@ const tests = {
     const r = await run(B, 'Cloud.resolveTakeRemote("Thỏ")');
     assert.ok(r.ok);
     assert.strictEqual(prof(B, 'thỏ').xp, 130, 'máy B giờ là bản A');
-    const bk = JSON.parse(B.localStorage.getItem('khoBaiTap_conflict::thỏ'));
-    assert.strictEqual(JSON.parse(bk.snapshot.keys['@profile']).xp, 111, 'bản cất có cả phần học thêm');
+    const list = run(B, 'Cloud._backups("Thỏ")');
+    assert.strictEqual(list.length, 1);
+    assert.strictEqual(JSON.parse(list[0].snapshot.keys['@profile']).xp, 111, 'bản cất có cả phần học thêm');
     assert.ok(!run(B, 'Cloud._unsaved("Thỏ")'));
-    const rr = await run(B, 'Cloud.restoreBackup("Thỏ")');
+    const rr = await run(B, 'Cloud.restoreBackup("Thỏ", ' + JSON.stringify(list[0].id) + ')');
     assert.ok(rr.ok);
     assert.strictEqual(srv.get('thỏ').meta.p, 111);
   },
@@ -488,6 +513,117 @@ const tests = {
     assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'same');
     assert.ok(!meta(B, 'thỏ').conflict);
     assert.ok(!B.localStorage.getItem('khoBaiTap_conflict::thỏ'));
+  },
+  // ═══ Góp ý của Codex sau #2A ═══
+  async 'GET bị một POST chen vào giữa: snapshot và ver luôn khớp nhau'() {
+    const srv = server();
+    const { A } = await twoSyncedDevices(srv);
+    const before = srv.get('thỏ');
+    const intruderSnap = run(A, '(() => { const s = Cloud.collect("Thỏ"); const p = JSON.parse(s.keys["@profile"]); p.xp = 999; s.keys["@profile"] = JSON.stringify(p); return s; })()');
+    srv.sc.intruder = () => srv.post(JSON.stringify({ action: 'save', key: 'thỏ', baseVer: before.ver, meta: { p: 999 }, snapshot: intruderSnap }));
+    const got = srv.get('thỏ');                  // POST chen vào lúc GET đang chạy (nếu GET không giữ khoá)
+    const xp = JSON.parse(got.snapshot.keys['@profile']).xp;
+    if (got.ver === before.ver) assert.strictEqual(xp, 100, 'ver cũ phải đi với bản cũ');
+    else { assert.strictEqual(got.ver, before.ver + 1); assert.strictEqual(xp, 999, 'ver mới phải đi với bản mới'); }
+    assert.strictEqual(srv.sc.intruder, null, 'POST chen ngang đã chạy');
+    assert.strictEqual(srv.get('thỏ').ver, before.ver + 1);
+  },
+
+  async 'POST ghi Sheet xong (flush) rồi mới nhả khoá'() {
+    const srv = server();
+    await twoSyncedDevices(srv);
+    assert.strictEqual(srv.sc.flushedBeforeRelease, true);
+  },
+
+  async 'Lấy bản mạng → sync/tải lại trang → vẫn còn bản cất và khôi phục được'() {
+    const srv = server();
+    const store = new Map();
+    const { A } = await twoSyncedDevices(srv);
+    const B = boot(store, srv); run(B, 'Storage.switchPlayer("Thỏ")'); run(B, 'Cloud.init()'); await sleep(60);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'conflict');
+    assert.ok((await run(B, 'Cloud.resolveTakeRemote("Thỏ")')).ok);
+    assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'same');
+    assert.strictEqual(run(B, 'Cloud._backups("Thỏ").length'), 1, 'nhánh same không được xoá bản khôi phục');
+    const B2 = boot(store, srv); run(B2, 'Cloud.init()'); await sleep(60);   // tải lại trang
+    const list = run(B2, 'Cloud._backups("Thỏ")');
+    assert.strictEqual(list.length, 1, 'tải lại trang vẫn còn');
+    assert.ok((await run(B2, 'Cloud.restoreBackup("Thỏ", ' + JSON.stringify(list[0].id) + ')')).ok);
+    assert.strictEqual(srv.get('thỏ').meta.p, 107);
+    assert.strictEqual(run(B2, 'Cloud._backups("Thỏ").length'), 0, 'khôi phục xong (đã lên mạng y hệt) thì tự xoá');
+  },
+
+  async 'xung đột lần sau không ghi đè bản khôi phục cũ'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    for (const add of [7, 3]) {
+      srv.mode = 'neterr'; earn(B, 'Thỏ', add); await sleep(50); stop(B); srv.mode = 'ok';
+      earn(A, 'Thỏ', 30); await sleep(60);
+      assert.strictEqual(await run(B, 'Cloud.sync("Thỏ", { silent: true })'), 'conflict');
+      assert.ok((await run(B, 'Cloud.resolveTakeRemote("Thỏ")')).ok);
+    }
+    const xs = run(B, 'Cloud._backups("Thỏ")').map(b => JSON.parse(b.snapshot.keys['@profile']).xp);
+    assert.strictEqual(JSON.stringify(xs), '[133,107]', 'giữ cả 2 bản khôi phục, mới nhất trước');
+  },
+
+  async 'lấy bản mạng thay hẳn dữ liệu của bé (không tạo bản lai), giữ nguyên bé khác + cloudmeta'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    B.localStorage.setItem('tableSpeed_v1::thỏ', '{"facts":{}}');          // B có, bản mạng không có
+    run(B, 'Cloud._setMeta("Thỏ", Cloud._baseFrom(Cloud.collect("Thỏ")))'); // coi như đã đồng bộ (máy sạch)
+    B.localStorage.setItem('khoBaiTap_profile_coca', '{"xp":5}');
+    B.localStorage.setItem('tableSpeed_v1::coca', '{"x":1}');
+    B.localStorage.setItem('rabbit_parent_pin', '1234');
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.strictEqual(r, 'pulled');
+    assert.strictEqual(B.localStorage.getItem('tableSpeed_v1::thỏ'), null, 'key không có trong bản mạng phải bị xoá');
+    assert.strictEqual(run(B, 'Cloud._hash(Cloud.collect("Thỏ").keys)'), run(B, 'Cloud._hash(' + JSON.stringify(srv.get('thỏ').snapshot.keys) + ')'));
+    assert.strictEqual(B.localStorage.getItem('tableSpeed_v1::coca'), '{"x":1}', 'dữ liệu bé khác giữ nguyên');
+    assert.strictEqual(B.localStorage.getItem('khoBaiTap_profile_coca'), '{"xp":5}');
+    assert.strictEqual(B.localStorage.getItem('rabbit_parent_pin'), '1234', 'PIN giữ nguyên');
+    assert.ok(B.localStorage.getItem('khoBaiTap_cloudmeta::thỏ'), 'cloudmeta giữ nguyên');
+  },
+
+  async 'ghi bản mạng vào máy bị lỗi giữa chừng → máy giữ nguyên, KHÔNG đánh dấu đã đồng bộ'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    earn(A, 'Thỏ', 30); await sleep(60);
+    B.localStorage.setItem('tableSpeed_v1::thỏ', '{"facts":{"2x3":[1]}}');
+    run(B, 'Cloud._setMeta("Thỏ", Cloud._baseFrom(Cloud.collect("Thỏ")))');
+    const before = run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)');
+    const metaBefore = JSON.stringify(meta(B, 'thỏ'));
+    const ls = B.localStorage, orig = ls.setItem.bind(ls);
+    ls.setItem = (k, v) => { if (k === 'khoBaiTap_profile_thỏ') throw new Error('QuotaExceededError'); return orig(k, v); };
+    const r = await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    ls.setItem = orig;
+    assert.notStrictEqual(r, 'pulled');
+    assert.strictEqual(run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)'), before, 'dữ liệu máy y nguyên');
+    assert.strictEqual(JSON.stringify(meta(B, 'thỏ')), metaBefore, 'không đổi trạng thái đồng bộ');
+  },
+
+  async 'mở file sao lưu sai định dạng → từ chối, không đụng dữ liệu'() {
+    const srv = server();
+    const { B } = await twoSyncedDevices(srv);
+    const before = run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)');
+    for (const bad of [{ name: 'Thỏ', keys: { '@profile': { xp: 1 } } }, { name: 'Thỏ', keys: { 'khoBaiTap_cloudmeta': 'x' } }, { name: 'Thỏ', keys: { 'khoBaiTap_conflict::restore': '[]' } }, { name: 'Thỏ', keys: [] }]) {
+      B.__file = { text: async () => JSON.stringify(bad) };
+      await assert.rejects(run(B, 'Cloud.openFile(__file)'));
+    }
+    assert.strictEqual(run(B, 'JSON.stringify(Cloud.collect("Thỏ").keys)'), before);
+  },
+  async 'khôi phục xong mà giao diện tự ghi lại kế hoạch hôm nay → bản cất vẫn được tự xoá'() {
+    const srv = server();
+    const { A, B } = await twoSyncedDevices(srv);
+    srv.mode = 'neterr'; earn(B, 'Thỏ', 7); await sleep(50); stop(B); srv.mode = 'ok';
+    earn(A, 'Thỏ', 30); await sleep(60);
+    await run(B, 'Cloud.sync("Thỏ", { silent: true })');
+    assert.ok((await run(B, 'Cloud.resolveTakeRemote("Thỏ")')).ok);
+    run(B, 'window.Today = { render(){ Storage.set("todayPlan", { date: "2099-01-02", tasks: [1] }); } }');
+    const id = run(B, 'Cloud._backups("Thỏ")[0].id');
+    assert.ok((await run(B, 'Cloud.restoreBackup("Thỏ", ' + JSON.stringify(id) + ')')).ok);
+    assert.strictEqual(run(B, 'Cloud._backups("Thỏ").length'), 0);
   },
 };
 

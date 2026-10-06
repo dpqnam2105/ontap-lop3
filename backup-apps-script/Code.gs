@@ -13,6 +13,7 @@
  * Số phiên bản (ver): mỗi lần lưu thành công ver tăng 1 (lưu trong Thuộc tính tập lệnh, khoá "ver::<tên>").
  * Máy gửi kèm baseVer = phiên bản nó biết gần nhất. Nếu bản trên mạng đã đổi (ver khác baseVer) thì
  * từ chối với reason 'conflict' — kiểm tra NGAY TRONG ScriptLock nên không có kẽ hở giữa lúc đọc và lúc ghi.
+ * GET cũng đọc dữ liệu + phiên bản trong ScriptLock, nên bản trả về và số phiên bản luôn khớp nhau.
  * Máy dùng bản web cũ (không gửi baseVer) vẫn theo luật cũ: không cho bản ít XP hơn ghi đè.
  *
  * SAU KHI SỬA FILE NÀY: Triển khai → Quản lý các bản triển khai → ✏️ → Phiên bản: "Phiên bản mới" → Triển khai
@@ -80,13 +81,21 @@ function doGet(e) {
   if (p.action === 'get') {
     const key = _key(p.key);
     if (!key) return _out({ ok: false, error: 'no key' });
-    const sh = _sheet(SHEET);
-    const row = _findRow(sh, key);
-    if (row < 0) return _out({ ok: true, found: false, ver: _getVer(key, false) });
-    const r = _readRow(sh, row);
-    let snap = null;
-    try { snap = JSON.parse(r.data); } catch (err) { return _out({ ok: false, error: 'bad data' }); }
-    return _out({ ok: true, found: true, meta: r.meta, snapshot: snap, ver: _getVer(key, true) });
+    // Đọc dữ liệu VÀ phiên bản trong cùng ScriptLock với lúc ghi: không bao giờ trả bản cũ kèm số phiên bản mới.
+    const lock = LockService.getScriptLock();
+    lock.waitLock(15000);
+    try {
+      const sh = _sheet(SHEET);
+      const row = _findRow(sh, key);
+      if (row < 0) return _out({ ok: true, found: false, ver: _getVer(key, false) });
+      const r = _readRow(sh, row);
+      const ver = _getVer(key, true);
+      let snap = null;
+      try { snap = JSON.parse(r.data); } catch (err) { return _out({ ok: false, error: 'bad data' }); }
+      return _out({ ok: true, found: true, meta: r.meta, snapshot: snap, ver: ver });
+    } finally {
+      lock.releaseLock();
+    }
   }
   return _out({ ok: false, error: 'unknown action' });
 }
@@ -134,6 +143,7 @@ function doPost(e) {
     const values = [key, String(meta.name || ''), new Date(Number(meta.at) || Date.now()), Number(meta.p || 0),
       Number(meta.stars || 0), Number(meta.stickers || 0), Number(meta.balls || 0), text.length].concat(chunks);
     sh.getRange(row, 1, 1, values.length).setValues([values]);
+    SpreadsheetApp.flush();      // ghi Sheet xong hẳn rồi mới tăng phiên bản và nhả khoá
     const ver = cur + 1;
     _setVer(key, ver);
     return _out({ ok: true, saved: true, at: Number(meta.at) || Date.now(), ver: ver });
