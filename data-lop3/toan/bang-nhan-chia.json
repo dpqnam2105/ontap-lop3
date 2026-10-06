@@ -1078,7 +1078,19 @@
             "status": "sua-loi",
             "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "9 nhóm 6 thêm 1 nhóm 6 → 10 nhóm 6 (quan hệ thêm một nhóm, không cần thứ tự phép tính)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Tính:  6 × 6 + 6 = ?",
@@ -1101,7 +1113,19 @@
             "status": "sua-loi",
             "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 9
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "6 nhóm 6 thêm 1 nhóm 6 → 7 nhóm 6 (quan hệ thêm một nhóm)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Biết 6 × 8 = 48. Vậy 48 : 8 = ?",
@@ -1845,7 +1869,19 @@
             "status": "sua-loi",
             "note": "gợi ý theo số nhóm (dạng thêm một nhóm), chờ chốt bài"
           }
-        ]
+        ],
+        "lesson": {
+          "book": "kntt-toan3",
+          "vol": 1,
+          "no": 10
+        },
+        "lessonRef": {
+          "basis": "suy-luan",
+          "note": "8 nhóm 7 thêm 1 nhóm 7 → 9 nhóm 7 (quan hệ thêm một nhóm)",
+          "by": "claude",
+          "approvedBy": "codex",
+          "date": "2026-10-06"
+        }
       },
       {
         "q": "Tính:  7 × 5 + 15 = ?",

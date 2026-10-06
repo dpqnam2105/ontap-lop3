@@ -162,9 +162,6 @@ PENDING = {
     'toan_bang-nhan-chia_q076': 'gợi ý dùng đổi chỗ rồi bảng 7 → ứng viên B10; chờ xác nhận',
     'toan_bang-nhan-chia_q058': 'cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9',
     'toan_bang-nhan-chia_q095': 'cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10',
-    'toan_bang-nhan-chia_q056': 'đã đổi gợi ý sang "thêm 1 nhóm 6" (dạng bảng nhân) → đề xuất B9, chờ Codex xác nhận',
-    'toan_bang-nhan-chia_q057': 'đã đổi gợi ý sang "thêm 1 nhóm 6" → đề xuất B9, chờ Codex xác nhận',
-    'toan_bang-nhan-chia_q093': 'đã đổi gợi ý sang "thêm 1 nhóm 7" → đề xuất B10, chờ Codex xác nhận',
     'toan_bang-nhan-chia_q107': 'gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục',
     'toan_bang-nhan-chia_q109': 'gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục',
 }

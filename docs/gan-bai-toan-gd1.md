@@ -6,8 +6,8 @@
 
 | Trạng thái | Số câu | Nghĩa |
 |---|---|---|
-| da-ghi | 40 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
-| cho-quyet | 10 | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |
+| da-ghi | 43 | đã ghi `lesson` + `lessonRef` vào dữ liệu (nhóm Codex duyệt) |
+| cho-quyet | 7 | Codex yêu cầu chờ: cách giải trong gợi ý chưa khớp bài, hoặc cần xác nhận |
 | cho-duyet | 135 | khớp tên bài (muc-luc) nhưng chưa duyệt đúng phạm vi nội dung bài (gồm 11 câu tìm thành phần B13, 28 câu Một phần mấy B14) |
 | cho-trang-sach | 6 | đo lường: ứng viên B7, chờ ảnh trang 21–23 |
 | chua-gan | 8 | chưa đủ căn cứ (đồng hồ/lịch — kiến thức nền đã học trước; "a là mấy phần của b") |
@@ -18,11 +18,8 @@
 |---|---|---|
 | `bang-nhan-chia_q008` | 9 × 4 = ? | gợi ý dùng đổi chỗ thừa số rồi bảng 4 → ứng viên B6 (không phải B12); chờ xác nhận sách dạy cách này |
 | `bang-nhan-chia_q039` | 8 × 6 = ? | gợi ý dùng đổi chỗ rồi bảng 6 → ứng viên B9; chờ xác nhận |
-| `bang-nhan-chia_q056` | Tính:  6 × 9 + 6 = ? | đã đổi gợi ý sang "thêm 1 nhóm 6" (dạng bảng nhân) → đề xuất B9, chờ Codex xác nhận |
-| `bang-nhan-chia_q057` | Tính:  6 × 6 + 6 = ? | đã đổi gợi ý sang "thêm 1 nhóm 6" → đề xuất B9, chờ Codex xác nhận |
 | `bang-nhan-chia_q058` | Biết 6 × 8 = 48. Vậy 48 : 8 = ? | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9 |
 | `bang-nhan-chia_q076` | 9 × 7 = ? | gợi ý dùng đổi chỗ rồi bảng 7 → ứng viên B10; chờ xác nhận |
-| `bang-nhan-chia_q093` | Tính:  7 × 8 + 7 = ? | đã đổi gợi ý sang "thêm 1 nhóm 7" → đề xuất B10, chờ Codex xác nhận |
 | `bang-nhan-chia_q095` | Biết 7 × 9 = 63. Vậy 63 : 9 = ? | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10 |
 | `bang-nhan-chia_q107` | Hai phép tính nào dưới đây có CÙNG kết quả? | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
 | `bang-nhan-chia_q109` | Phép tính nào có kết quả BẰNG 6 × 7? | gợi ý dùng tính chất đổi chỗ thừa số — chưa chốt từ mục lục |
@@ -74,8 +71,8 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | `bang-nhan-chia_q053` | Đếm thêm 6:  6; 12; 18; ...; 30. Số còn thiếu là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q054` | Đếm lùi 6:  60; 54; 48; ...; 36. Số còn thiếu là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q055` | Ba số tiếp theo của dãy 18; 24; 30; ... là? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q056` | Tính:  6 × 9 + 6 = ? | B9 | đã đổi gợi ý sang "thêm 1 nhóm 6" (dạng bảng nhân) → đề xuất B9, chờ Codex xác nhận |
-| `bang-nhan-chia_q057` | Tính:  6 × 6 + 6 = ? | B9 | đã đổi gợi ý sang "thêm 1 nhóm 6" → đề xuất B9, chờ Codex xác nhận |
+| `bang-nhan-chia_q056` | Tính:  6 × 9 + 6 = ? | B9 | 9 nhóm 6 thêm 1 nhóm 6 → 10 nhóm 6 (quan hệ thêm một nhóm, không cần thứ tự phép tính) |
+| `bang-nhan-chia_q057` | Tính:  6 × 6 + 6 = ? | B9 | 6 nhóm 6 thêm 1 nhóm 6 → 7 nhóm 6 (quan hệ thêm một nhóm) |
 | `bang-nhan-chia_q058` | Biết 6 × 8 = 48. Vậy 48 : 8 = ? | B9 | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B9 |
 | `bang-nhan-chia_q059` | Trong các phép chia cho 6, phép nào có kết quả BÉ NHẤT? | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q060` | Một hộp bút chì màu có 6 chiếc. Hỏi 7 hộp như thế có bao nhiêu chiếc b | B9 | phần bảng 6; số lượng mỗi nhóm quyết định bảng |
@@ -87,7 +84,7 @@ _Sinh bởi `python3 tools/lesson_map.py`. Bảng đầy đủ: `docs/gan-bai-to
 | `bang-nhan-chia_q090` | Đếm thêm 7:  7; 14; 21; ...; 35. Số còn thiếu là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q091` | Đếm lùi 7:  70; 63; 56; ...; 42. Số còn thiếu là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q092` | Ba số tiếp theo của dãy 21; 28; 35; ... là? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
-| `bang-nhan-chia_q093` | Tính:  7 × 8 + 7 = ? | B10 | đã đổi gợi ý sang "thêm 1 nhóm 7" → đề xuất B10, chờ Codex xác nhận |
+| `bang-nhan-chia_q093` | Tính:  7 × 8 + 7 = ? | B10 | 8 nhóm 7 thêm 1 nhóm 7 → 9 nhóm 7 (quan hệ thêm một nhóm) |
 | `bang-nhan-chia_q095` | Biết 7 × 9 = 63. Vậy 63 : 9 = ? | B10 | cho tích rồi hỏi phép chia ngược: cần xác nhận quan hệ nhân–chia đã được hướng dẫn ở B10 |
 | `bang-nhan-chia_q096` | Trong các phép chia cho 7, phép nào có kết quả LỚN NHẤT? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |
 | `bang-nhan-chia_q097` | Một tuần lễ có 7 ngày. Hỏi 6 tuần lễ có bao nhiêu ngày? | B10 | phần bảng 7; số lượng mỗi nhóm quyết định bảng |

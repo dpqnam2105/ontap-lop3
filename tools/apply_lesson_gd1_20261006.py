@@ -61,6 +61,10 @@ set_lesson(BN, 'q111', 6, 'suy-luan', 'mỗi buổi 4 tiết, 6 buổi → 4 × 
 set_lesson(BN, 'q105', 10, 'suy-luan', 'các phương án dùng bảng 4, 5, 6, 7')
 set_lesson(BN, 'q108', 10, 'suy-luan', 'phương án 6×7, 7×5, 4×8, 6×6: cần bảng 4, 6, 7')
 set_lesson(BN, 'q110', 10, 'suy-luan', 'phương án 6×8, 7×7, 6×9, 7×8: cần bảng 6, 7')
+# ---- Vòng 7 (Codex duyệt 2026-10-07): dạng thêm một nhóm, gợi ý theo số nhóm ----
+set_lesson(BN, 'q056', 9, 'suy-luan', '9 nhóm 6 thêm 1 nhóm 6 → 10 nhóm 6 (quan hệ thêm một nhóm, không cần thứ tự phép tính)')
+set_lesson(BN, 'q057', 9, 'suy-luan', '6 nhóm 6 thêm 1 nhóm 6 → 7 nhóm 6 (quan hệ thêm một nhóm)')
+set_lesson(BN, 'q093', 10, 'suy-luan', '8 nhóm 7 thêm 1 nhóm 7 → 9 nhóm 7 (quan hệ thêm một nhóm)')
 # ---- Sửa lời đã thống nhất ----
 set_text(BN, 'q105', 'hint', 'Thử xem 42 chia hết cho những số nào.',
          'Tìm số 42 trong các bảng nhân đã học: bảng nào có một phép nhân bằng 42?', 'gợi ý theo bảng nhân đã học, bỏ "chia hết"')

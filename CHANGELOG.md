@@ -5,6 +5,10 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-07 — Ghi bài thêm 3 câu (q056, q057, q093) + bản rà 135 câu muc-luc
+- Ghi `lesson` (suy-luan, Codex duyệt): bảng nhân chia q056 → B9, q057 → B9, q093 → B10 (dạng thêm một nhóm). Tổng đã gắn bài: 43 câu.
+- Thêm `docs/ra-soat-muc-luc-gd1.md`: rà 135 câu muc-luc theo 3 lô (94 đề xuất duyệt, 2 chuyển chờ vì gợi ý dùng đổi chỗ thừa số, 11 tìm thành phần đề xuất B13, 28 "Một phần mấy" chờ ảnh B14). Chưa ghi lesson cho các lô này.
+
 ## 2026-10-07 — Ghi bài (lesson) cho 40 câu Toán GĐ1 đã được Codex duyệt + sửa lời 6 câu
 - `tools/apply_lesson_gd1_20261006.py`: ghi `lesson` + `lessonRef` (căn cứ `suy-luan`, Codex duyệt) cho 40 câu: bảng 4 → B6, bảng 6 → B9, bảng 7 → B10, lời văn cuối kho → B11/B12, lời văn một bước → B2, q012 → B10, q015 → B6, q106 → B9, q111 → B6, q105/q108/q110 → B10. Giữ nguyên id, thứ tự, `source`.
 - Ý nghĩa `lesson`: bài sớm nhất mà kiến thức đã học đủ để làm câu theo cách giải được hướng dẫn (không phải "câu lấy từ bài đó").
