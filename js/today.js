@@ -58,6 +58,8 @@ const Today = {
   _qIndex() {
     const d = this._data();
     if (!d) return new Map();
+    // Câu tự sinh trong lịch sử mà chưa có trong kho → dựng lại từ id trước khi lập bản đồ
+    if (window.GenB13 && GenB13.ensureFromHistory(d)) this._qIdxCache = null;
     if (this._qIdxCache && this._qIdxCache.data === d) return this._qIdxCache.map;
     const map = new Map();
     d.subjects.forEach(s => (s.topics || []).forEach(t => (t.questions || []).forEach((q, i) => {

@@ -36,6 +36,8 @@ const Quiz = {
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
+    // Câu tự sinh đã gặp nhưng không có trong kho hiện tại (vd sau khi lên phiên bản mẫu) → dựng lại từ id
+    if (window.GenB13 && window.App && App.allData && GenB13.ensureFromHistory(App.allData) && window.Today) Today._qIdxCache = null;
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
       for (const it of items) {
@@ -197,6 +199,7 @@ const Quiz = {
     const selection = this._selectQuestions(topic, this.mode);
     this.questions = selection.questions;
     this.sessionInfo = selection.info;
+    if (topic.genMix && !this.pickIdx && (this.mode === 'practice' || this.mode === 'test')) this._mixGenerated(topic);
 
     if (!this.questions.length) {
       Rewards._achievementPopup(this.mode === 'review'
@@ -207,6 +210,27 @@ const Quiz = {
 
     App.showScreen('quiz');
     this.render();
+  },
+
+  /**
+   * Trộn câu tự sinh B1–B3 vào lượt của chủ đề tĩnh (tối đa 40%, chỉ mẫu hợp chủ đề, qua cùng bộ lọc
+   * giai đoạn + bài đã học). Câu sinh giữ topicId 'toan_g13' và chỉ số trong chủ đề đó → tiến độ,
+   * câu sai, lịch ôn ghi đúng nơi; không ghi vào tiến độ ngày của chủ đề tĩnh.
+   */
+  _mixGenerated(topic) {
+    try {
+      if (!window.GenB13 || !App || !App.allData) return;
+      const s = (App.allData.subjects || []).find(x => x.id === this.currentSubjectId);
+      const g = s && s.topics.find(t => t.id === GenB13.TOPIC_ID);
+      if (!g) return;
+      const allowed = App._allowedIndices(s, g);
+      const genIdx = allowed === null ? g.questions.map((_, i) => i) : allowed;
+      const seen = new Set(Object.keys((Storage.getReviewMap && Storage.getReviewMap()) || {}));
+      const plan = GenB13.mixPlan(this.questions.length, g, genIdx, topic.genMix.templates, seen);
+      if (!plan.pick.length) return;
+      const gen = plan.pick.map(i => ({ ...g.questions[i], _idx: i, subjectId: s.id, topicId: g.id, _subjectName: s.name, _topicName: g.name }));
+      this.questions = this._shuffle(this.questions.slice(0, plan.keep).concat(gen));
+    } catch (e) { console.warn('Trộn câu tự sinh lỗi:', e); }
   },
 
   _selectQuestions(topic, mode) {
@@ -373,6 +397,7 @@ const Quiz = {
     // Shuffle display order of answers so the correct one is not always
     // in the same slot. Grading and logging still use ORIGINAL indices,
     // so wrong-history, session details and report button stay correct.
+    grid.classList.toggle('answers-3', q.choices.length === 3);   // câu điền dấu: đúng 3 lựa chọn, một hàng
     const displayOrder = q.keepOrder ? q.choices.map((_, i) => i) : this._shuffle(q.choices.map((_, i) => i));
     displayOrder.forEach((origIdx) => {
       const btn = document.createElement('button');
@@ -765,7 +790,8 @@ const Quiz = {
     }
     // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
     // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
-    if (this.mode !== 'wrong_review' && this.mode !== 'mixed') this._markLearned(q._idx, this.canEarnPoint);
+    // Câu tự sinh trộn vào chủ đề tĩnh mang topicId riêng → không ghi vào tiến độ ngày của chủ đề tĩnh.
+    if (this.mode !== 'wrong_review' && this.mode !== 'mixed' && (!q.topicId || q.topicId === this.currentTopicId)) this._markLearned(q._idx, this.canEarnPoint);
     // Tiến độ tích lũy theo chủ đề gốc của câu (mọi chế độ), không reset theo ngày.
     if (Storage.markTotalProgress) Storage.markTotalProgress(q.topicId || this.currentTopicId, q._idx, this.canEarnPoint);
 

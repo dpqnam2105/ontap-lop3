@@ -781,3 +781,9 @@ body.on-home.home-today .main{padding-top:22px}
 @media (max-width:420px){.today-plan-head span{text-align:left}}
 .hc-balls img{width:20px;height:20px;margin-right:-4px}
 .hc-txt b{white-space:nowrap}
+
+/* Câu điền dấu (>, <, =): 3 lựa chọn trên một hàng, cả điện thoại */
+.answers.answers-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.lesson-row{margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:800;color:#24527f}
+.lesson-select{max-width:100%;border:1px solid #cfe4fa;border-radius:12px;padding:8px 10px;font-weight:800;background:#fff}
+.lesson-row small{flex-basis:100%;color:#6b84a0;font-weight:700}

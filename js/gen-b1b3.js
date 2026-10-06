@@ -10,6 +10,10 @@
 //   tạo bảng mới (vd T2 = Object.assign({}, T, { cong: congMoi })), thêm vào T_BY_VER, tăng VERSION.
 //   Câu luyện mới dùng VERSION mới; id v1 đã nằm trong lịch ôn vẫn dựng lại đúng câu cũ.
 //   Ảnh chụp cố định (tests/fixtures/gen-b1b3-golden.json) báo đỏ nếu lỡ đổi nội dung một phiên bản đã phát hành.
+//   LƯU Ý: bảng v1 còn gọi hàm dùng chung (read, fmt, ERR.*, _pick3, _numErrs, _addErrs, _subErrs, _offByPlace,
+//   _decomp, _extreme, _order, FRAMES, SCENES). Sửa hàm nào làm đổi câu v1 thì phải giữ bản cũ cho v1
+//   (vd đổi tên thành readV1 và cho bảng v1 gọi bản đó). Kho trên web sinh theo seed "kho-web-v<VERSION>",
+//   nên lên phiên bản thì kho đổi: tiến độ theo chỉ số của chủ đề nền bắt đầu lại, còn câu sai / lịch ôn theo id vẫn giữ.
 // - Phạm vi toán học: số 0–1000 (một, hai, ba chữ số, 0 và 1000). Khi luyện ưu tiên số
 //   ba chữ số nhưng KHÔNG loại số nhỏ: hiệu nhỏ (302 − 298), số chưa biết nhỏ (? + 245 = 250),
 //   tổng bằng 1000 đều có.
@@ -645,6 +649,89 @@ const GenB13 = {
       }
     }
     return out;
+  },
+
+  // =============================================
+  // TÍCH HỢP WEB (lớp 3, Toán). Không đụng bảng mẫu T — chỉ dùng build()/pick().
+  // - Chủ đề riêng "Nền số đến 1000" (toan_g13): kho CỐ ĐỊNH sinh từ seed theo phiên bản,
+  //   nên chỉ số câu trong chủ đề ổn định → tiến độ, câu sai, lịch ôn, sao lưu dùng chung luồng câu tĩnh.
+  // - Trộn vào chủ đề tĩnh (genMix): tối đa 40% lượt luyện/kiểm tra, chỉ mẫu hợp chủ đề đó.
+  // - Câu sinh có trong lịch sử (câu sai / lịch ôn) mà không có trong kho → dựng lại từ id và gắn vào chủ đề.
+  // =============================================
+  TOPIC_ID: 'toan_g13',
+  BANK_SIZE: 300,
+  MIX_RATIO: 0.4,
+  // Chủ đề tĩnh được trộn câu sinh: id chủ đề → danh sách mẫu (null = mọi mẫu B1–B3)
+  HOSTS: { 'toan_giai-toan-co-loi-van': ['lv'], 'toan_on-tap-tong-hop': null },
+  LESSON_BOOK: {
+    book: 'kntt-toan3', vol: 1, label: 'Toán 3 (Kết nối tri thức) tập một',
+    titles: ['Ôn tập các số đến 1000', 'Ôn tập cộng, trừ trong phạm vi 1000', 'Tìm thành phần trong phép cộng, phép trừ',
+      'Ôn tập bảng nhân 2, 5, bảng chia 2, 5', 'Bảng nhân 3, bảng chia 3', 'Bảng nhân 4, bảng chia 4', 'Ôn tập hình học và đo lường',
+      'Luyện tập chung', 'Bảng nhân 6, bảng chia 6', 'Bảng nhân 7, bảng chia 7', 'Bảng nhân 8, bảng chia 8', 'Bảng nhân 9, bảng chia 9',
+      'Tìm thành phần trong phép nhân, phép chia', 'Một phần mấy', 'Luyện tập chung', 'Điểm ở giữa, trung điểm của đoạn thẳng',
+      'Hình tròn, tâm, bán kính, đường kính', 'Góc, góc vuông, góc không vuông', 'Hình tam giác, hình tứ giác, hình chữ nhật, hình vuông',
+      'Thực hành vẽ', 'Khối lập phương, khối hộp chữ nhật', 'Luyện tập chung', 'Nhân số có hai chữ số với số có một chữ số',
+      'Gấp một số lên một số lần', 'Phép chia hết, phép chia có dư', 'Chia số có hai chữ số cho số có một chữ số',
+      'Giảm một số đi một số lần', 'Bài toán giải bằng hai bước tính', 'Luyện tập chung', 'Mi-li-mét', 'Gam', 'Mi-li-lít', 'Nhiệt độ',
+      'Thực hành, trải nghiệm', 'Luyện tập chung', 'Nhân số có ba chữ số với số có một chữ số', 'Chia số có ba chữ số cho số có một chữ số',
+      'Biểu thức số, tính giá trị của biểu thức', 'So sánh số lớn gấp mấy lần số bé', 'Luyện tập chung', 'Ôn tập phép nhân, phép chia',
+      'Ôn tập biểu thức số', 'Ôn tập hình học và đo lường', 'Ôn tập chung']
+  },
+
+  /** Kho cố định của phiên bản hiện tại (cùng phiên bản → cùng danh sách, cùng thứ tự). */
+  bank() {
+    if (!this._bank || this._bank.v !== this.VERSION) this._bank = { v: this.VERSION, qs: this.pick('kho-web-v' + this.VERSION, this.BANK_SIZE) };
+    return this._bank.qs.map(q => Object.assign({}, q, { lesson: Object.assign({}, q.lesson) }));
+  },
+
+  augment(subjects, gradeId) {
+    if (gradeId !== 'lop3' || !Array.isArray(subjects)) return;
+    const toan = subjects.find(x => x && x.id === 'toan');
+    if (!toan || !Array.isArray(toan.topics)) return;
+    toan.lessonBook = this.LESSON_BOOK;
+    if (!toan.topics.some(t => t.id === this.TOPIC_ID)) {
+      toan.topics.unshift({ id: this.TOPIC_ID, icon: '🧮', name: 'Nền số đến 1000 (Bài 1–3)', generated: true, questions: this.bank() });
+    }
+    toan.topics.forEach(t => { if (Object.prototype.hasOwnProperty.call(this.HOSTS, t.id)) t.genMix = { templates: this.HOSTS[t.id], ratio: this.MIX_RATIO }; });
+  },
+
+  /** Gắn vào chủ đề các câu sinh có id trong danh sách mà chưa có (dựng lại từ id). Trả số câu vừa gắn. */
+  ensureIds(subjects, ids) {
+    const toan = (subjects || []).find(x => x && x.id === 'toan');
+    const t = toan && toan.topics.find(x => x.id === this.TOPIC_ID);
+    if (!t) return 0;
+    const have = new Set(t.questions.map(q => q.id));
+    const add = [...new Set((ids || []).filter(id => typeof id === 'string' && id.indexOf(this.PREFIX + '_') === 0 && !have.has(id)))].sort();
+    let n = 0;
+    add.forEach(id => { const q = this.build(id); if (q) { t.questions.push(q); n++; } });
+    return n;
+  },
+
+  /** Câu sinh trong lịch sử của bé đang chơi (câu sai + lịch ôn). */
+  historyIds() {
+    const ids = [];
+    try { if (window.Storage && Storage.getWrongHistory) Object.keys(Storage.getWrongHistory() || {}).forEach(k => ids.push(k)); } catch (e) { /* bỏ qua */ }
+    try { if (window.Storage && Storage.getReviewMap) Object.keys(Storage.getReviewMap() || {}).forEach(k => ids.push(k)); } catch (e) { /* bỏ qua */ }
+    return ids.filter(id => id.indexOf(this.PREFIX + '_') === 0);
+  },
+  ensureFromHistory(data) {
+    try { return this.ensureIds(data && data.subjects, this.historyIds()); } catch (e) { console.warn('GenB13.ensureFromHistory', e); return 0; }
+  },
+
+  /**
+   * Trộn câu sinh vào lượt của chủ đề tĩnh. Giữ tổng số câu; câu sinh ≤ ratio × tổng.
+   * genIdx: chỉ số câu (trong chủ đề toan_g13) đã qua bộ lọc giai đoạn + bài đã học.
+   * Trả { keep: số câu tĩnh giữ lại, pick: chỉ số câu sinh } — ưu tiên câu bé chưa gặp.
+   */
+  mixPlan(n, genTopic, genIdx, templates, seen, rnd) {
+    if (!genTopic || !Array.isArray(genIdx) || n <= 0) return { keep: n, pick: [] };
+    const okTpl = i => { const p = this.parse(genTopic.questions[i] && genTopic.questions[i].id); return p && (!templates || templates.includes(p.tpl)); };
+    const cand = genIdx.filter(okTpl);
+    const g = Math.min(Math.floor(n * this.MIX_RATIO), cand.length);
+    if (g <= 0) return { keep: n, pick: [] };
+    rnd = rnd || Math.random;
+    const scored = cand.map(i => ({ i, s: (seen && seen.has(genTopic.questions[i].id) ? 0 : 1) + rnd() })).sort((a, b) => b.s - a.s);
+    return { keep: n - g, pick: scored.slice(0, g).map(x => x.i) };
   }
 };
 

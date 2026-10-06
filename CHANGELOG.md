@@ -5,6 +5,14 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Lên web: luyện nền Toán B1–B3 tự sinh + chọn "đã học đến bài"
+- Chủ đề mới đứng đầu Toán: **🧮 Nền số đến 1000 (Bài 1–3)**, 300 câu tự sinh cố định (đọc, viết, cấu tạo, so sánh, liền trước/sau, cộng trừ trong 1000, tìm thành phần, lời văn một bước).
+- "Giải toán có lời văn" và "Ôn tập tổng hợp" được trộn tối đa 40% câu tự sinh hợp chủ đề; các chủ đề khác không đổi.
+- Thanh giai đoạn có thêm ô **"📖 Trên lớp đã học đến: Bài N"** (Toán 3 KNTT tập một). Chưa chọn thì vẫn theo giai đoạn như cũ.
+- Câu điền dấu (>, <, =) hiện 3 nút trên một hàng.
+- Câu tự sinh làm sai vẫn ôn lại được sau khi tải lại trang, sang máy khác hay lên phiên bản mẫu mới.
+- Test mới `tests/gen.e2e.js` (7 nhóm luồng thật); toàn bộ test cũ vẫn đạt. Mã phiên bản `?v=20261006x`.
+
 ## 2026-10-06 — Bộ sinh B1–B3: đọc «tư» theo sách (Nam chốt)
 - `GenB13.read`: 24 «hai mươi tư», 104 «một trăm linh tư», 14 vẫn «mười bốn». Câu đọc/viết số giờ có cả các số này. Test: bảng đọc viết tay thêm 11 số có chữ số 4; «mươi bốn» / «linh bốn» không xuất hiện ở lựa chọn nào. Test "gợi ý không lộ đáp án" đổi sang kiểm tra gợi ý không phụ thuộc số trong đề. Vẫn chưa lên web.
 

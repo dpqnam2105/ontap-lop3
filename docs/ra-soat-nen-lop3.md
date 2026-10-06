@@ -1,5 +1,38 @@
 # Rà soát nền lớp 3
 
+## Vòng 4 (2026-10-06): tích hợp bộ sinh B1–B3 lên web (phạm vi: nền Toán B1–B3)
+
+**Cách nối**: theo đúng kiểu `TableGen`. `GenB13.augment()` chạy lúc tải dữ liệu lớp 3:
+- Thêm chủ đề **"Nền số đến 1000 (Bài 1–3)"** (`toan_g13`, đứng đầu danh sách Toán), gồm kho cố định 300 câu sinh từ seed `kho-web-v1`. Kho cố định nên chỉ số câu ổn định. Nhờ vậy tiến độ, câu sai, lịch ôn, điểm, sao lưu đều đi qua đúng luồng của câu tĩnh, không có nhánh riêng.
+- Chủ đề này 100% câu sinh (lượt riêng "Luyện nền B1–B3").
+
+**1. Quota**: `Quiz._mixGenerated` chỉ chạy cho chủ đề tĩnh có `genMix`, ở chế độ Luyện tập / Kiểm tra.
+- "Giải toán có lời văn" chỉ trộn mẫu `lv`; "Ôn tập tổng hợp" trộn mọi mẫu B1–B3. Các chủ đề khác (hình học, bảng nhân chia, một phần mấy, đếm hình…) không có câu sinh.
+- Giữ nguyên tổng số câu; câu sinh ≤ ⌊40% × tổng⌋, ưu tiên câu bé chưa gặp.
+- Câu sinh giữ `topicId = toan_g13` và chỉ số trong kho, nên không ghi vào tiến độ ngày của chủ đề tĩnh (`next()` có kiểm tra).
+- Ôn lỗi sai của từng chủ đề, đấu trường, đề trộn, ôn câu sai không trộn thêm.
+
+**2. Mốc bài đã học**:
+- Thanh "Con đang học đến đâu?" có thêm ô chọn "📖 Trên lớp đã học đến: Bài N" (44 bài Toán 3 KNTT tập một). Lưu riêng từng bé, theo lớp + môn, khoá `lessonBySubject`, gồm sách + tập.
+- Lọc nằm trong `App._allowedIndices`, chỗ mà mọi đường tạo lượt mới đều đi qua: thẻ chủ đề, kế hoạch hôm nay (`Today._allowed`), đề trộn tuần, chủ đề gợi ý, và cả câu sinh được trộn vào chủ đề tĩnh.
+- Chỉ lọc câu có `lesson` cùng bộ sách; câu tĩnh hiện chưa có `lesson` nên không bị ảnh hưởng.
+- Chưa chọn mốc, hoặc giá trị lưu hỏng → giữ hành vi theo giai đoạn như cũ, không coi là "chưa học bài nào".
+
+**Dựng lại câu cũ**: `GenB13.ensureFromHistory()` chạy trước khi lập lịch ôn (`Today._qIndex`) và trước khi mở ôn câu sai. Câu sinh có trong lịch sử (câu sai hoặc lịch ôn) mà không có trong kho thì được dựng lại từ id và gắn vào chủ đề nền.
+
+**3–5. Kiểm thử luồng thật** (`tests/gen.e2e.js`, Chromium, 7 nhóm, đều đạt):
+- **Mốc bài**: chọn Bài 1 thì cả 4 đường (thẻ chủ đề, kế hoạch hôm nay, đề trộn tuần, trộn vào lời văn) chỉ ra câu B1. Lời văn (B2) không bị trộn. Bỏ chọn hoặc giá trị hỏng → về như cũ. Chọn "chỉ GĐ3" → ẩn chủ đề nền.
+- **Quota**: Luyện tập / Kiểm tra ở 2 chủ đề host đều ≤ 40% và đúng mẫu; 3 chủ đề khác không có câu sinh. Làm hết một lượt: tiến độ ngày chủ đề tĩnh = đúng các câu tĩnh, câu sinh vào tiến độ tích lũy của chủ đề nền.
+- **Ôn câu sai**: làm sai một câu sinh (Kiểm tra) → tải lại trang → lịch ôn hôm nay có câu đó → bấm thanh "Ôn lại câu con hay sai" ở màn Vào học → câu hiện ra trùng id, đề, mảng lựa chọn, đáp án và gợi ý → bấm đúng → hết khỏi danh sách câu sai. (Thứ tự *hiển thị* nút vẫn được xáo như mọi câu tĩnh; mảng lựa chọn và đáp án giữ nguyên.)
+- **Sao lưu / đồng bộ**: `Cloud.collect` → máy mới `Cloud.apply` → tải lại → ôn câu sai dựng đúng câu.
+- **Câu ngoài kho** (giả lập sau khi lên phiên bản): vẫn vào lịch ôn và ôn được, nội dung đúng `build(id)`.
+- **Câu điền dấu** ở 390px: đúng 3 nút `>`, `<`, `=` trên một hàng, thứ tự cố định, không tràn ngang. Sai → hiện gợi ý; Tab tới nút đúng + Enter → chấm đúng; chế độ Kiểm tra sai → kết quả 0/1.
+- **Điểm**: một câu sinh và một câu tĩnh cùng chế độ cộng sao / XP / số câu đúng bằng nhau.
+- Đã thử cài lần lượt 4 lỗi (bỏ lọc bài, tăng tỉ lệ trộn lên 90%, bỏ chặn ghi tiến độ, bỏ dựng lại câu ngoài kho): lần nào cũng đúng nhóm test tương ứng báo đỏ.
+- Các bộ test cũ (cloud 46, arena 13, home 12, gen-b1b3, home.e2e, arena.e2e) vẫn đạt.
+
+**Chưa làm**: tín hiệu chuyển giai đoạn; gắn `lesson` cho câu tĩnh; mở rộng mẫu.
+
 ## Vòng 3 (2026-10-06): sửa theo góp ý Codex trên commit 544bcf6
 
 - **Đọc chữ số 4 (Nam chốt theo sách)**: «tư» sau «mươi» và sau «linh» (24 «hai mươi tư», 104 «một trăm linh tư»); sau «mười» vẫn là «bốn» (14 «mười bốn»). Bỏ chặn các số này khỏi câu đọc/viết số. Test chặn «mươi bốn», «linh bốn», «mười tư», «lẻ», «ngàn», «nhăm» xuất hiện ở bất kỳ lựa chọn nào. Còn chờ: 1000 viết «1 000» hay «1000» (đang để «1 000»).

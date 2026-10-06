@@ -1,0 +1,239 @@
+// Kiểm thử tích hợp bộ sinh B1–B3 trên trình duyệt thật (Chromium), đi qua luồng web thật.
+// Chạy: (cd <repo> && python3 -m http.server 8765) rồi  node tests/gen.e2e.js   (cần Playwright + Chromium)
+// Ảnh chụp câu điền dấu trên điện thoại: tests/out/dau-390.png
+const { chromium } = require('playwright');
+const assert = require('assert');
+const fs = require('fs'), path = require('path');
+const URL = process.env.BASE_URL || 'http://localhost:8765/';
+const OUT = path.join(__dirname, 'out');
+
+async function open(b, opts) {
+  opts = opts || {};
+  const ctx = await b.newContext({ viewport: opts.vp || { width: 1280, height: 900 }, isMobile: !!opts.mobile, hasTouch: !!opts.mobile });
+  await ctx.route('https://script.google.com/**', r => {
+    const a = new globalThis.URL(r.request().url()).searchParams.get('action');
+    let body = '[]';
+    if (a === 'get') body = '{"ok":true,"found":false,"ver":0}';
+    else if (r.request().method() === 'POST') body = '{"ok":true,"saved":true,"ver":1}';
+    r.fulfill({ contentType: 'application/json', body });
+  });
+  const p = await ctx.newPage();
+  const errs = []; p.on('pageerror', e => errs.push(e.message));
+  await p.goto(URL); await p.waitForTimeout(800);
+  await p.fill('#nameInput', opts.name || 'Bé Thử Sinh'); await p.click('#btnStart'); await p.waitForTimeout(1200);
+  return { p, ctx, errs };
+}
+const reload = async p => { await p.goto(URL); await p.waitForTimeout(1500); };
+const toToan = async p => {
+  await p.click('.rail-btn-learn'); await p.waitForTimeout(500);
+  await p.evaluate(() => App._chooseSubject(App.allData.subjects.findIndex(s => s.id === 'toan'))); await p.waitForTimeout(400);
+};
+const card = (p, topicName) => p.locator('.topic-card', { hasText: topicName }).first();
+const sess = p => p.evaluate(() => Quiz.questions.filter(q => !q._retry).map(q => ({ id: q.id, topicId: q.topicId, idx: q._idx, lesson: q.lesson ? q.lesson.no : null, tpl: (GenB13.parse(q.id) || {}).tpl || null })));
+const G13 = 'Nền số đến 1000';
+
+(async () => {
+  fs.mkdirSync(OUT, { recursive: true });
+  const b = await chromium.launch();
+  const ok = m => console.log('✔', m);
+  let fail = 0;
+  const T = async (name, fn) => { try { await fn(); ok(name); } catch (e) { fail++; console.log('✘', name, '\n   ', e.message); } };
+
+  // ── 1) Mốc bài đã học: áp dụng ở mọi đường tạo lượt mới; chưa chọn → theo giai đoạn ──
+  await T('mốc bài: chủ đề, kế hoạch hôm nay, đề trộn tuần, trộn vào chủ đề tĩnh đều lọc theo bài; chưa chọn / giá trị hỏng → theo giai đoạn', async () => {
+    const { p, ctx, errs } = await open(b);
+    await toToan(p);
+    const info = () => p.evaluate(() => { const s = App.allData.subjects.find(x => x.id === 'toan'); const g = s.topics.find(t => t.id === 'toan_g13');
+      const a = App._allowedIndices(s, g); return { n: a.length, maxLesson: Math.max(...a.map(i => g.questions[i].lesson.no)), total: g.questions.length }; });
+    let x = await info();
+    assert.strictEqual(x.n, x.total, 'chưa chọn mốc: cả kho GĐ1 hiện'); assert.strictEqual(x.maxLesson, 3);
+    await p.selectOption('#lessonSelect', '1'); await p.waitForTimeout(400);
+    x = await info();
+    assert.ok(x.n > 50 && x.n < x.total && x.maxLesson === 1, 'chọn Bài 1: chỉ câu B1 (' + x.n + ')');
+    // a) tự chọn bài: bấm Luyện tập ở thẻ chủ đề
+    await card(p, G13).locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
+    let q = await sess(p); assert.ok(q.length && q.every(y => y.lesson === 1), 'lượt chủ đề: chỉ B1');
+    // b) kế hoạch hôm nay (đường Today.start)
+    await p.evaluate(() => { Storage.set('todayPlan', { date: Today._dateKey(), grade: App.currentGrade, player: Storage.canonName(App.playerName), rewarded: false,
+      tasks: [{ id: 'practice', kind: 'topic', subjectId: 'toan', topicId: 'toan_g13', title: 'x', done: false }] }); Today.start(0); });
+    await p.waitForTimeout(400);
+    q = await sess(p); assert.ok(q.length === 10 && q.every(y => y.lesson === 1), 'kế hoạch hôm nay: 10 câu, chỉ B1');
+    // c) ôn tổng hợp: đề trộn tuần
+    const mix = await p.evaluate(() => App._buildWeeklyMix(App.allData.subjects.find(x => x.id === 'toan')).pool.filter(q => q.lesson).map(q => q.lesson.no));
+    assert.ok(mix.every(n => n <= 1), 'đề trộn tuần: câu có mốc bài đều ≤ B1');
+    // d) trộn vào chủ đề tĩnh: lời văn là B2 → không được trộn khi mới học đến Bài 1
+    await toToan(p);
+    await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
+    q = await sess(p); assert.ok(q.length && q.every(y => y.topicId !== 'toan_g13'), 'Bài 1: không trộn câu lời văn sinh (B2)');
+    // bỏ chọn → về hành vi giai đoạn
+    await toToan(p); await p.selectOption('#lessonSelect', ''); await p.waitForTimeout(300);
+    x = await info(); assert.strictEqual(x.n, x.total, 'bỏ chọn mốc bài → như cũ');
+    // giá trị lưu hỏng không mở/không khoá gì thêm: coi như chưa chọn
+    await p.evaluate(() => Storage.set('lessonBySubject', { 'lop3:toan': { book: 'kntt-toan3', vol: 1, no: 99 } }));
+    x = await info(); assert.strictEqual(x.n, x.total, 'mốc bài hỏng → theo giai đoạn');
+    // giai đoạn khác: chỉ GĐ3 → chủ đề nền B1–B3 không hiện
+    await toToan(p);
+    await p.click('.stage-chip[data-stage="3"]'); await p.waitForTimeout(300); await p.click('.stage-mode-btn[data-only="1"]'); await p.waitForTimeout(300);
+    assert.strictEqual(await card(p, G13).count(), 0, 'chỉ GĐ3: ẩn chủ đề nền');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  // ── 2) Quota: ≤ 40%, chỉ mẫu hợp chủ đề, không chèn vào chủ đề khác; tiến độ ghi đúng nơi ──
+  await T('trộn câu sinh: ≤ 40% lượt, đúng mẫu theo chủ đề, không vào chủ đề khác; tiến độ ngày của chủ đề tĩnh không nhận chỉ số câu sinh', async () => {
+    const { p, ctx, errs } = await open(b);
+    await toToan(p);
+    for (const [name, onlyLv] of [['Giải toán có lời văn', true], ['Ôn tập tổng hợp', false]]) {
+      for (const mode of ['practice', 'test']) {
+        await toToan(p);
+        await card(p, name).locator(`[data-mode="${mode}"]`).click(); await p.waitForTimeout(400);
+        const q = await sess(p);
+        const gen = q.filter(y => y.topicId === 'toan_g13');
+        assert.ok(gen.length > 0 && gen.length <= Math.floor(q.length * 0.4), name + '/' + mode + ': ' + gen.length + '/' + q.length);
+        if (onlyLv) assert.ok(gen.every(y => y.tpl === 'lv'), name + ': chỉ lời văn');
+      }
+    }
+    for (const name of ['Đếm hình', 'Bảng nhân, chia', 'Một phần mấy']) {
+      await toToan(p);
+      await card(p, name).locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
+      assert.ok((await sess(p)).every(y => y.topicId !== 'toan_g13'), name + ': không có câu sinh');
+    }
+    // làm hết lượt Giải toán có lời văn (đúng ngay) → tiến độ ngày chủ đề tĩnh chỉ có chỉ số câu tĩnh
+    await toToan(p);
+    await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
+    const q = await sess(p);
+    for (let k = 0; k < q.length; k++) {
+      await p.evaluate(() => { const q = Quiz.questions[Quiz.curIdx]; const right = String(q.choices[q.a]);
+        [...document.querySelectorAll('.ans-btn')].find(x => x.textContent === right).click(); });
+      await p.waitForTimeout(150);
+      await p.click('#btnNext'); await p.waitForTimeout(150);
+    }
+    const prog = await p.evaluate(() => ({ host: Storage.getTopicProgress('toan_giai-toan-co-loi-van').learned, g: Storage.getTotalProgress('toan_g13').ok }));
+    const st = q.filter(y => y.topicId !== 'toan_g13').map(y => y.idx).sort(), gn = q.filter(y => y.topicId === 'toan_g13').map(y => y.idx).sort();
+    assert.deepStrictEqual(prog.host.slice().sort(), st, 'tiến độ ngày chủ đề tĩnh = đúng các câu tĩnh');
+    assert.ok(gn.every(i => prog.g.includes(i)), 'câu sinh ghi vào tiến độ tích lũy của chủ đề nền');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  // ── 3) Ôn câu sai qua luồng thật: sai → lưu → tải lại → mở ôn → đúng câu → trả lời đúng; lịch ôn; sao lưu sang máy khác ──
+  let snap = null, wrongQ = null;
+  await T('ôn câu sai câu sinh: làm sai → tải lại trang → bấm "Ôn lại câu con hay sai" → đúng đề / lựa chọn / đáp án → trả lời đúng là xong', async () => {
+    const { p, ctx, errs } = await open(b, { name: 'Bé Ôn Sai' });
+    await toToan(p);
+    await card(p, G13).locator('[data-mode="test"]').click(); await p.waitForTimeout(400);
+    wrongQ = await p.evaluate(() => { const q = Quiz.questions[0]; return { id: q.id, q: q.q, choices: q.choices.slice(), a: q.a, hint: q.hint }; });
+    await p.evaluate(() => { const q = Quiz.questions[0]; const right = String(q.choices[q.a]);
+      [...document.querySelectorAll('.ans-btn')].find(x => x.textContent !== right).click(); });
+    await p.waitForTimeout(300);
+    const rec = await p.evaluate(id => ({ w: Storage.getUnresolvedWrong(40).map(x => x.questionId), r: Storage.getReviewMap()[id] }), wrongQ.id);
+    assert.ok(rec.w.includes(wrongQ.id) && rec.r && rec.r.topicId === 'toan_g13', 'đã ghi câu sai + lịch ôn');
+    snap = await p.evaluate(() => Cloud.collect(App.playerName));
+    await reload(p);
+    const items = await p.evaluate(() => Today._reviewItems().map(x => x.qid));
+    assert.ok(items.includes(wrongQ.id), 'lịch ôn hôm nay có câu sinh đã sai');
+    await p.click('.rail-btn-learn'); await p.waitForTimeout(500);
+    await p.click('.wrong-review-bar'); await p.waitForTimeout(500);
+    const cur = await p.evaluate(() => { const q = Quiz.questions[Quiz.curIdx]; return { id: q.id, q: q.q, choices: q.choices.slice(), a: q.a, hint: q.hint, shown: document.getElementById('qText').textContent, btns: [...document.querySelectorAll('.ans-btn')].map(x => x.textContent) }; });
+    assert.deepStrictEqual({ id: cur.id, q: cur.q, choices: cur.choices, a: cur.a, hint: cur.hint }, wrongQ, 'dựng lại đúng câu');
+    assert.strictEqual(cur.shown, wrongQ.q);
+    assert.deepStrictEqual(cur.btns.slice().sort(), wrongQ.choices.slice().sort(), 'nút = các lựa chọn của câu');
+    await p.locator('.ans-btn', { hasText: new RegExp('^' + wrongQ.choices[wrongQ.a].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click(); await p.waitForTimeout(300);
+    assert.ok(await p.evaluate(() => document.getElementById('feedback').className.includes('correct')), 'chấm đúng');
+    await p.click('#btnNext'); await p.waitForTimeout(400);
+    assert.ok(!(await p.evaluate(id => Storage.getUnresolvedWrong(40).some(x => x.questionId === id), wrongQ.id)), 'đã sửa → không còn trong câu sai');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  await T('sao lưu / đồng bộ: dữ liệu bé (Cloud.collect) mở trên máy khác → ôn câu sai dựng lại đúng câu sinh', async () => {
+    assert.ok(snap && wrongQ);
+    const { p, ctx, errs } = await open(b, { name: 'Bé Ôn Sai' });
+    assert.ok(await p.evaluate(s => Cloud.apply(s, 'Bé Ôn Sai'), snap), 'áp bản sao lưu');
+    await reload(p);
+    await p.click('.rail-btn-learn'); await p.waitForTimeout(500);
+    await p.click('.wrong-review-bar'); await p.waitForTimeout(500);
+    const got = await p.evaluate(() => Quiz.questions.map(q => ({ id: q.id, q: q.q, choices: q.choices, a: q.a, hint: q.hint })));
+    assert.ok(got.some(x => JSON.stringify(x) === JSON.stringify(wrongQ)), 'máy mới có đúng câu');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  await T('câu sinh trong lịch sử nhưng KHÔNG có trong kho (như sau khi lên phiên bản) → vẫn dựng lại và ôn được; lịch ôn cũng thấy', async () => {
+    const { p, ctx, errs } = await open(b, { name: 'Bé Ngoài Kho' });
+    const outId = await p.evaluate(() => { const have = new Set(GenB13.bank().map(q => q.id));
+      const q = GenB13.pick('ngoai-kho', 200).find(x => !have.has(x.id));
+      Storage.recordAnswer({ questionId: q.id, isCorrect: false, subjectId: 'toan', topicId: 'toan_g13', question: q.q });
+      Storage.recordReview(q.id, false, { subjectId: 'toan', topicId: 'toan_g13' });
+      return q.id; });
+    await reload(p);
+    assert.ok(await p.evaluate(id => Today._reviewItems().some(x => x.qid === id), outId), 'lịch ôn thấy câu ngoài kho');
+    await p.click('.rail-btn-learn'); await p.waitForTimeout(500);
+    await p.click('.wrong-review-bar'); await p.waitForTimeout(500);
+    const same = await p.evaluate(id => { const q = Quiz.questions.find(x => x.id === id); const b = GenB13.build(id);
+      return !!q && q.q === b.q && JSON.stringify(q.choices) === JSON.stringify(b.choices) && q.a === b.a; }, outId);
+    assert.ok(same, 'ôn câu sai có câu ngoài kho, đúng nội dung build(id)');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  // ── 4) Câu điền dấu: đúng 3 lựa chọn, chấm điểm, hiển thị đáp án, bàn phím, điện thoại ──
+  await T('câu điền dấu: 3 nút (>, <, =) một hàng, không thêm lựa chọn giả; chấm đúng/sai; gợi ý; bàn phím; 390px không cuộn ngang', async () => {
+    const { p, ctx, errs } = await open(b, { vp: { width: 390, height: 844 }, mobile: true, name: 'Bé Điền Dấu' });
+    await toToan(p);
+    const startDau = mode => p.evaluate(m => { const s = App.allData.subjects.find(x => x.id === 'toan'); const t = s.topics.find(x => x.id === 'toan_g13');
+      const i = t.questions.findIndex(q => GenB13.parse(q.id).tpl === 'dau' && q.choices[q.a] !== '=');
+      Quiz.start(t, s.name, { mode: m, subjectId: s.id, allowed: [i] }); return t.questions[i]; }, mode);
+    const q = await startDau('practice'); await p.waitForTimeout(400);
+    const ui = await p.evaluate(() => { const bs = [...document.querySelectorAll('.ans-btn')];
+      return { texts: bs.map(x => x.textContent), tops: bs.map(x => Math.round(x.getBoundingClientRect().top)), three: document.getElementById('ansGrid').classList.contains('answers-3'),
+        sw: document.documentElement.scrollWidth, cw: innerWidth, right: Math.max(...bs.map(x => x.getBoundingClientRect().right)) }; });
+    assert.deepStrictEqual(ui.texts, ['>', '<', '='], 'đúng 3 nút, thứ tự cố định');
+    assert.ok(ui.three && new Set(ui.tops).size === 1, 'một hàng');
+    assert.ok(ui.sw === ui.cw && ui.right <= ui.cw, 'không tràn ngang');
+    await p.screenshot({ path: path.join(OUT, 'dau-390.png') });
+    const wrong = ['>', '<'].find(x => x !== q.choices[q.a]);
+    await p.locator('.ans-btn', { hasText: wrong }).first().click(); await p.waitForTimeout(300);
+    const fb = await p.evaluate(() => ({ cls: document.getElementById('feedback').className, ans: document.getElementById('fbAns').textContent }));
+    assert.ok(fb.cls.includes('wrong') && fb.ans.includes(q.hint), 'sai → hiện gợi ý');
+    // bàn phím: Tab tới nút đúng rồi Enter
+    const rightIdx = ['>', '<', '='].indexOf(q.choices[q.a]);
+    await p.evaluate(i => document.querySelectorAll('.ans-btn')[i].focus(), rightIdx); await p.keyboard.press('Enter'); await p.waitForTimeout(300);
+    assert.ok(await p.evaluate(() => document.getElementById('feedback').className.includes('correct')), 'Enter trên nút đúng → chấm đúng');
+    await p.screenshot({ path: path.join(OUT, 'dau-390-dung.png') });
+    // kiểm tra (test mode): sai → ghi nhận, điểm 0/1
+    await startDau('test'); await p.waitForTimeout(300);
+    await p.locator('.ans-btn', { hasText: wrong }).first().click(); await p.waitForTimeout(200);
+    await p.click('#btnNext'); await p.waitForTimeout(400);
+    assert.strictEqual(await p.evaluate(() => document.getElementById('resScore').textContent), '0/1');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  // ── 5) Điểm: câu sinh đi qua cùng luồng chấm điểm, XP, sao, lần đầu như câu tĩnh ──
+  await T('điểm: câu sinh và câu tĩnh cộng sao / XP / số câu đúng như nhau (cùng chế độ, cùng trạng thái)', async () => {
+    const { p, ctx, errs } = await open(b, { name: 'Bé Tính Điểm' });
+    await toToan(p);
+    const one = (topicId, pickFirst) => p.evaluate(([tid]) => {
+      const s = App.allData.subjects.find(x => x.id === 'toan'); const t = s.topics.find(x => x.id === tid);
+      const allowed = App._allowedIndices(s, t);
+      const before = Storage.load();
+      Quiz.start(t, s.name, { mode: 'test', subjectId: s.id, allowed: [allowed[0]] });
+      const q = Quiz.questions[0]; const right = String(q.choices[q.a]);
+      [...document.querySelectorAll('.ans-btn')].find(x => x.textContent === right).click();
+      const after = Storage.load();
+      return { stars: after.stars - before.stars, xp: (after.xp || 0) - (before.xp || 0), correct: (after.totalCorrect || 0) - (before.totalCorrect || 0), score: Quiz.score };
+    }, [topicId]);
+    const st = await one('toan_giai-toan-co-loi-van');
+    await p.click('#btnNext'); await p.waitForTimeout(300);
+    const gn = await one('toan_g13');
+    assert.deepStrictEqual(gn, st, 'câu sinh ' + JSON.stringify(gn) + ' vs câu tĩnh ' + JSON.stringify(st));
+    assert.ok(st.score === 1 && st.correct === 1, 'có cộng điểm');
+    assert.deepStrictEqual(errs, []);
+    await ctx.close();
+  });
+
+  await b.close();
+  console.log(fail ? fail + ' lỗi' : 'Tất cả đạt');
+  process.exit(fail ? 1 : 0);
+})();

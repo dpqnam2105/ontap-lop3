@@ -127,6 +127,10 @@ const API = {
     if (window.TableGen) {
       try { TableGen.augment(list, gradeId); } catch (e) { console.warn('TableGen.augment failed:', e); }
     }
+    // Lớp 3: chủ đề nền B1–B3 tự sinh + trộn vào chủ đề tĩnh (js/gen-b1b3.js)
+    if (window.GenB13) {
+      try { GenB13.augment(list, gradeId); } catch (e) { console.warn('GenB13.augment failed:', e); }
+    }
     return {
       version: manifest.version,
       lastUpdated: manifest.lastUpdated,

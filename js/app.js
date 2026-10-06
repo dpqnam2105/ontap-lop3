@@ -382,6 +382,7 @@ const App = {
     // Toan -- topic cu
     toan_so: 'Dem, doc, viet so · So sanh so · So chan, so le',
     toan_cong: 'Cong trong pham vi 100 · Cong co nho · Cong nham',
+    toan_g13: 'Đọc, viết, so sánh số đến 1000 · Cộng trừ có nhớ · Tìm số chưa biết · Bài toán một bước',
     toan_tru: 'Tru trong pham vi 100 · Tru co nho · Tru nham',
     toan_nhan: 'Bang nhan 2-5 · Nhan & chia tong hop SGK · Nhan nham',
     toan_chia: 'Bang chia 2-5 · Chia trong pham vi 100 · Chia nham',
@@ -453,14 +454,49 @@ const App = {
     Storage.set(this.STAGE_STORE_KEY, all);
   },
 
-  /** Chỉ số các câu trong chủ đề hợp với giai đoạn đang chọn (null = môn không chia giai đoạn). */
+  // ─── Mốc bài đã học (theo môn + bộ sách + tập sách) ─────────
+  // Chỉ lọc câu có trường lesson cùng bộ sách. Chưa chọn mốc → giữ nguyên hành vi theo giai đoạn.
+  LESSON_STORE_KEY: 'lessonBySubject',
+
+  getLessonSetting(s) {
+    const lb = s && s.lessonBook;
+    if (!lb || !Array.isArray(lb.titles)) return null;
+    let all = {};
+    try { all = Storage.get(this.LESSON_STORE_KEY) || {}; } catch (e) { all = {}; }
+    const v = all[this._stageKey(s)];
+    if (!v || v.book !== lb.book || v.vol !== lb.vol || !Number.isInteger(v.no) || v.no < 1 || v.no > lb.titles.length) return null;
+    return { book: v.book, vol: v.vol, no: v.no };
+  },
+
+  setLessonSetting(s, no) {
+    const lb = s && s.lessonBook;
+    if (!lb) return;
+    let all = {};
+    try { all = Storage.get(this.LESSON_STORE_KEY) || {}; } catch (e) { all = {}; }
+    const k = this._stageKey(s);
+    if (Number.isInteger(no) && no >= 1 && no <= lb.titles.length) all[k] = { book: lb.book, vol: lb.vol, no };
+    else delete all[k];
+    Storage.set(this.LESSON_STORE_KEY, all);
+  },
+
+  /** Câu có mốc bài (cùng bộ sách) vượt bài đã học → ẩn. Câu không có mốc bài: không bị lọc. */
+  _lessonOk(q, ls) {
+    const l = q && q.lesson;
+    if (!ls || !l || l.book !== ls.book) return true;
+    if (l.vol !== ls.vol) return l.vol < ls.vol;
+    return l.no <= ls.no;
+  },
+
+  /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài). */
   _allowedIndices(s, t) {
     const st = this.getStageSetting(s);
-    if (!st) return null;
+    const ls = this.getLessonSetting(s);
+    if (!st && !ls) return null;
     const out = [];
     (t.questions || []).forEach((q, i) => {
+      if (!this._lessonOk(q, ls)) return;
       const qs = Number(q.stage || 0);
-      if (!qs) { out.push(i); return; }           // câu chưa gắn nhãn: luôn hiện
+      if (!st || !qs) { out.push(i); return; }    // câu chưa gắn nhãn: luôn hiện
       if (st.only ? qs === st.stage : qs <= st.stage) out.push(i);
     });
     return out;
@@ -500,7 +536,8 @@ const App = {
       </div>
       <div class="stage-chips">${chips}</div>
       <div class="stage-desc"><b>${this._escape(cur.name)}:</b> ${this._escape(cur.desc || '')}</div>
-      ${st.chosen ? '' : '<div class="stage-nudge">👨‍👩‍👧 Bố mẹ chọn giúp con giai đoạn đang học trên lớp nhé.</div>'}`;
+      ${st.chosen ? '' : '<div class="stage-nudge">👨‍👩‍👧 Bố mẹ chọn giúp con giai đoạn đang học trên lớp nhé.</div>'}
+      ${this._lessonRowHTML(s)}`;
     bar.querySelectorAll('.stage-chip').forEach(b => b.addEventListener('click', () => {
       this.setStageSetting(s, Number(b.dataset.stage), st.only);
       this._chooseSubject(subjectIdx, true);
@@ -509,7 +546,22 @@ const App = {
       this.setStageSetting(s, st.stage, b.dataset.only === '1');
       this._chooseSubject(subjectIdx, true);
     }));
+    const sel = bar.querySelector('#lessonSelect');
+    if (sel) sel.addEventListener('change', () => {
+      this.setLessonSetting(s, sel.value ? Number(sel.value) : null);
+      this._chooseSubject(subjectIdx, true);
+    });
     return bar;
+  },
+
+  _lessonRowHTML(s) {
+    const lb = s.lessonBook;
+    if (!lb) return '';
+    const cur = this.getLessonSetting(s);
+    const opts = lb.titles.map((t, i) => `<option value="${i + 1}"${cur && cur.no === i + 1 ? ' selected' : ''}>Bài ${i + 1}. ${this._escape(t)}</option>`).join('');
+    return `<div class="lesson-row"><label for="lessonSelect">📖 Trên lớp đã học đến:</label>
+      <select id="lessonSelect" class="lesson-select"><option value=""${cur ? '' : ' selected'}>Chưa chọn (theo giai đoạn)</option>${opts}</select>
+      <small>${this._escape(lb.label)} · chỉ ảnh hưởng câu có ghi số bài</small></div>`;
   },
 
   // ─── Đề trộn tuần này (interleaving) ─────────
