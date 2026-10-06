@@ -5,6 +5,9 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-07 — Đối chiếu trang SGK Toán 3 tập một (chưa sửa dữ liệu)
+- Thêm `docs/doi-chieu-sgk-toan3-t1.md`: bằng chứng trang sách (B1–B15) cho các câu đang chờ (đổi chỗ thừa số → B10; quan hệ nhân–chia với thừa số kia → B9; đồng hồ/lịch → B7; đổi đơn vị độ dài không có trong B7), lô tìm thành phần (dạng `a × ? = c`, `a : ? = c` có từ B8), 28 câu "Một phần mấy" (B14), nâng mức bằng chứng cho câu đã ghi, và xác nhận bộ sinh B1–B3 khớp sách (đọc "tư", viết "1 000").
+
 ## 2026-10-07 — Ghi bài thêm 3 câu (q056, q057, q093) + bản rà 135 câu muc-luc
 - Ghi `lesson` (suy-luan, Codex duyệt): bảng nhân chia q056 → B9, q057 → B9, q093 → B10 (dạng thêm một nhóm). Tổng đã gắn bài: 43 câu.
 - Thêm `docs/ra-soat-muc-luc-gd1.md`: rà 135 câu muc-luc theo 3 lô (94 đề xuất duyệt, 2 chuyển chờ vì gợi ý dùng đổi chỗ thừa số, 11 tìm thành phần đề xuất B13, 28 "Một phần mấy" chờ ảnh B14). Chưa ghi lesson cho các lô này.
