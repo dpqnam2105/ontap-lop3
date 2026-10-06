@@ -1090,7 +1090,24 @@ const Rewards = {
       ]
     },
     { id: 'robot-academy', name: 'Học Viện Robot', icon: '🤖', comingSoon: true },
-    { id: 'dino-world', name: 'Thế Giới Khủng Long', icon: '🦕', comingSoon: true },
+    {
+      id: 'dino-world', name: 'Thế Giới Khủng Long', icon: '🦕',
+      desc: 'Sưu tập 12 bạn khủng long — Khủng Long Bạo Chúa đang chờ con!',
+      items: [
+        { id: 'dn-baby-egg', name: 'Khủng Long Con Nở Trứng', icon: '🥚', file: 'rewards/stickers/dino-world/dino-baby-egg.webp', cost: 20 },
+        { id: 'dn-hello-dino', name: 'Khủng Long Vẫy Chào', icon: '👋', file: 'rewards/stickers/dino-world/dino-hello-dino.webp', cost: 30 },
+        { id: 'dn-brachiosaurus', name: 'Khủng Long Cổ Dài', icon: '🦕', file: 'rewards/stickers/dino-world/dino-brachiosaurus.webp', cost: 40 },
+        { id: 'dn-stegosaurus', name: 'Khủng Long Gai Lưng', icon: '🌵', file: 'rewards/stickers/dino-world/dino-stegosaurus.webp', cost: 50 },
+        { id: 'dn-ankylosaurus', name: 'Khủng Long Bọc Giáp', icon: '🛡️', file: 'rewards/stickers/dino-world/dino-ankylosaurus.webp', cost: 65 },
+        { id: 'dn-pachycephalosaurus', name: 'Khủng Long Đầu Cứng', icon: '🪖', file: 'rewards/stickers/dino-world/dino-pachycephalosaurus.webp', cost: 80 },
+        { id: 'dn-parasaurolophus', name: 'Khủng Long Mào Kèn', icon: '🎺', file: 'rewards/stickers/dino-world/dino-parasaurolophus.webp', cost: 100 },
+        { id: 'dn-pteranodon', name: 'Thằn Lằn Bay', icon: '🪽', file: 'rewards/stickers/dino-world/dino-pteranodon.webp', cost: 120 },
+        { id: 'dn-velociraptor', name: 'Khủng Long Chạy Nhanh', icon: '⚡', file: 'rewards/stickers/dino-world/dino-velociraptor.webp', cost: 140 },
+        { id: 'dn-triceratops', name: 'Khủng Long Ba Sừng', icon: '🔱', file: 'rewards/stickers/dino-world/dino-triceratops.webp', cost: 170 },
+        { id: 'dn-spinosaurus', name: 'Khủng Long Gai Buồm', icon: '⛵', file: 'rewards/stickers/dino-world/dino-spinosaurus.webp', cost: 210 },
+        { id: 'dn-t-rex', name: 'Khủng Long Bạo Chúa', icon: '🦖', file: 'rewards/stickers/dino-world/dino-t-rex.webp', cost: 250 }
+      ]
+    },
     { id: 'space-explorer', name: 'Du Hành Vũ Trụ', icon: '🌌', comingSoon: true },
     { id: 'block-world', name: 'Thế Giới Khối Hộp', icon: '🧱', comingSoon: true }
   ],

@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Mở bộ sticker "🦕 Thế Giới Khủng Long" (12 sticker)
+- Ảnh do Nam tạo bằng ChatGPT. Mình cắt sát hình, đặt vào khung vuông nền trong suốt, nén WebP 512×512 (36–65 KB/ảnh) ở `images/rewards/stickers/dino-world/`. Ảnh số 10 bị nền đen nên đã tách nền. Ảnh gốc nằm trong thư mục "rabbit avatar/sticker khung long" của Nam.
+- Cửa hàng sao: bộ Khủng Long hết "Sắp ra mắt", đổi bằng sao như bộ 12 Con Giáp (20 → 250 ⭐):
+  Khủng Long Con Nở Trứng 20 · Khủng Long Vẫy Chào 30 · Khủng Long Cổ Dài 40 · Khủng Long Gai Lưng 50 · Khủng Long Bọc Giáp 65 · Khủng Long Đầu Cứng 80 · Khủng Long Mào Kèn 100 · Thằn Lằn Bay 120 · Khủng Long Chạy Nhanh 140 · Khủng Long Ba Sừng 170 · Khủng Long Gai Buồm 210 · **Khủng Long Bạo Chúa 250**.
+- Sticker đã đổi hiện trong Bộ sưu tập / Túi đồ như các bộ khác. Chưa có quà thưởng khi sưu tập đủ bộ; nếu muốn thì thêm `bonus` cho pack sau.
+- Phiên bản file `?v=20261006i`.
+
 ## 2026-10-06 — Danh hiệu hiện cạnh tên bé
 - Khung hồ sơ ở trang chủ ("Hôm nay học gì?") và ô xem trước ở Bộ sưu tập → Trang trí hồ sơ: cạnh bảng tên có thêm nhãn danh hiệu, vd. **[Anh Thư 🥕] [🐌 Ốc Sên Kiên Trì]**. Nhãn có màu theo mức (xanh lá, xanh dương, hồng, tím, vàng).
 - Nhãn đi theo con vật đang làm avatar. Nếu đang để avatar Thỏ Rabbit thì hiện danh hiệu cao nhất đã đạt; chưa có danh hiệu thì không hiện nhãn.
