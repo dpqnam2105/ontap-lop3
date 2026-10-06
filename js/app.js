@@ -540,7 +540,7 @@ const App = {
     const key = this._mixKey(s);
     const rand = this._seededRandom(key + '|' + Storage.canonName(this.playerName || ''));
     const shuffle = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-    const buckets = shuffle(s.topics.map(t => {
+    const buckets = shuffle(s.topics.filter(t => !t.drill).map(t => {
       const allowed = this._allowedIndices(s, t);
       const idxs = allowed === null ? (t.questions || []).map((_, i) => i) : allowed;
       return { t, idxs: shuffle(idxs) };
@@ -607,6 +607,7 @@ const App = {
     s.topics.forEach((t) => {
       const allowed = this._allowedIndices(s, t);
       if (allowed && !allowed.length) return; // chủ đề chưa có câu trong giai đoạn đang chọn
+      if (t.drill && window.TableGen) { list.appendChild(this._renderDrillCard(s, t, allowed)); return; }
       const allowedSet = allowed ? new Set(allowed) : null;
       const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
 
@@ -678,6 +679,66 @@ const App = {
 
     if (keepScroll) return; // đổi giai đoạn: vẽ lại tại chỗ, không cuộn lên đầu
     this.showScreen('topic');
+  },
+
+  /** Thẻ "⚡ Luyện bảng nhân chia (tự sinh)": chọn bảng + nhóm dạng, mỗi lượt bốc câu mới. */
+  _renderDrillCard(s, t, allowed) {
+    const pref = TableGen.getPref();
+    const stats = TableGen.tableStats(t);
+    const card = document.createElement('div');
+    card.className = 'topic-card topic-card-with-modes drill-card';
+    const chips = TableGen.TABLES.map(n => {
+      const st = stats[n] || { total: 0, solid: 0 };
+      const pct = st.total ? Math.round(st.solid / st.total * 100) : 0;
+      return `<button type="button" class="drill-chip${pref.tables.includes(n) ? ' on' : ''}" data-t="${n}" title="Đã vững ${st.solid}/${st.total} câu">
+        <span class="drill-chip-n">${n}</span><span class="drill-chip-bar"><i style="width:${pct}%"></i></span></button>`;
+    }).join('');
+    const groups = [['all', 'Tất cả dạng'], ['calc', TableGen.GROUPS.calc.label], ['rel', TableGen.GROUPS.rel.label]]
+      .map(([k, l]) => `<button type="button" class="drill-group${pref.group === k ? ' on' : ''}" data-g="${k}">${this._escape(l)}</button>`).join('');
+    card.innerHTML = `
+      <div class="topic-card-main">
+        <div class="topic-icon">${t.icon}</div>
+        <div class="topic-head-text">
+          <div class="topic-name">${this._escape(t.name)}</div>
+          <div class="topic-subline">Mỗi lượt 20 câu mới · ưu tiên phép con hay sai</div>
+        </div>
+      </div>
+      <div class="drill-label">Chọn bảng <button type="button" class="drill-all">Chọn hết</button></div>
+      <div class="drill-chips">${chips}</div>
+      <div class="drill-label">Dạng bài</div>
+      <div class="drill-groups">${groups}</div>
+      <div class="drill-count"></div>
+      <div class="topic-mode-row">
+        <button class="mode-btn practice" data-mode="practice">⚡ Luyện 20 câu</button>
+        <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
+        <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
+      </div>`;
+    const cur = { tables: pref.tables.slice(), group: pref.group };
+    const countEl = card.querySelector('.drill-count');
+    const refresh = () => {
+      card.querySelectorAll('.drill-chip').forEach(b => b.classList.toggle('on', cur.tables.includes(+b.dataset.t)));
+      card.querySelectorAll('.drill-group').forEach(b => b.classList.toggle('on', b.dataset.g === cur.group));
+      const n = TableGen.filterIndices(t, cur.tables, cur.group, allowed).length;
+      countEl.textContent = cur.tables.length
+        ? 'Bảng ' + cur.tables.slice().sort((a, b) => a - b).join(', ') + ' · kho ' + n + ' câu'
+        : 'Con chọn ít nhất 1 bảng nhé';
+      TableGen.setPref(cur);
+    };
+    card.querySelectorAll('.drill-chip').forEach(b => b.addEventListener('click', e => {
+      e.stopPropagation();
+      const n = +b.dataset.t;
+      cur.tables = cur.tables.includes(n) ? cur.tables.filter(x => x !== n) : cur.tables.concat(n);
+      refresh();
+    }));
+    card.querySelector('.drill-all').addEventListener('click', e => { e.stopPropagation(); cur.tables = TableGen.TABLES.slice(); refresh(); });
+    card.querySelectorAll('.drill-group').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); cur.group = b.dataset.g; refresh(); }));
+    card.querySelectorAll('.mode-btn').forEach(btn => btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (!cur.tables.length) { Rewards._achievementPopup('🐰 Con chọn ít nhất 1 bảng nhé!'); return; }
+      Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
+    }));
+    refresh();
+    return card;
   },
 
   /** Đổi % tiến độ thành nhãn + màu trạng thái cho card chủ đề. */

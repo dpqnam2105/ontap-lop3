@@ -5,6 +5,22 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Tự sinh câu hỏi bảng nhân, chia 2–9
+- **File mới `js/table-gen.js`** sinh câu bảng nhân/chia 2–9 (thừa số 2–10, không có chia có dư). Mỗi câu có id cố định theo dạng + phép tính (vd. `toan_gen_mfac_6x9`), nên cùng một câu luôn ra cùng đề, cùng đáp án nhiễu → Ôn câu sai, lịch ôn "sắp quên", báo cáo kỹ năng đều nhận ra.
+- **Hai nhóm dạng**:
+  - Tính & tìm số thiếu: `7 × 8 = ?`, `56 : 7 = ?`, `6 × ? = 54`, `36 : ? = 4`, `? : 8 = 7`.
+  - Quan hệ phép nhân: `7 × 9 = 7 × 10 − ?`, `9 × 6 = 9 × 5 + ?`, `6 × 7 = 6 × 8 − ?`, `8 × 7 = 8 × 5 + 8 × ?`, `4 + 4 + 4 + 4 = 4 × ?`, `3 × 8 = 8 × ?`, so sánh hai tích `7 × 7 … 6 × 8` (>, <, =).
+  - Đáp án nhiễu sát đáp án (±1–2, ± một lần thừa số), vị trí đáp án đúng chia đều A/B/C/D; gợi ý chỉ cách làm, không lộ đáp án.
+- **Chủ đề cũ "Bảng nhân, chia"** đổi tên thành **"Bảng nhân, chia (2–9)"**: giữ nguyên 152 câu cũ, thêm 108 câu tự sinh phía sau (bổ sung bảng 2, 3, 5 còn thiếu + các dạng tìm số thiếu, quan hệ phép nhân, so sánh) → 260 câu.
+- **Chủ đề mới "⚡ Luyện bảng nhân chia 2–9 (tự sinh)"** (ngay dưới chủ đề cũ, kho 552 câu):
+  - Bấm chọn bảng muốn luyện (2…9, có nút "Chọn hết"; mỗi ô có vạch xanh = phần đã vững của bảng đó) và nhóm dạng (Tất cả / Tính & tìm số thiếu / Quan hệ phép nhân). Lựa chọn được nhớ trên máy.
+  - **⚡ Luyện 20 câu**: mỗi lần bấm (kể cả "làm lại") bốc 20 câu mới; **ưu tiên phép con hay sai** (gộp cả câu cũ, vd. sai `6 × 9 = ?` thì lượt sau có `6 × ? = 54`, `54 : 6`…), câu chưa làm, bớt câu đã vững; mỗi phép tối đa 1 câu/lượt; chọn "Tất cả" thì khoảng 12 câu tính + 8 câu quan hệ.
+  - 📝 Kiểm tra (20 câu, không gợi ý) và 🔁 Ôn lỗi sai theo đúng bảng đã chọn.
+  - Không đưa vào "Đề trộn tuần" và không được chọn làm nhiệm vụ "Hôm nay học gì?" (tránh kho 552 câu lấn các chủ đề khác).
+- `skills.json`: thêm tên 9 dạng mới cho báo cáo kỹ năng (tìm thừa số, tìm số chia, tìm số bị chia, nhân 9 = nhân 10 bớt một lần, thêm/bớt một lần, tách thừa số, tổng thành tích, đổi chỗ thừa số, so sánh hai tích).
+- Lưu ý khi sửa sau này: câu tự sinh nằm **sau** câu trong `bang-nhan-chia.json`; thêm câu tĩnh vào file đó sẽ làm lệch chỉ số tiến độ của phần tự sinh — nên thêm dạng mới vào `table-gen.js` thay vì vào file JSON.
+- Phiên bản file `?v=20261006a`.
+
 ## 2026-10-02 — Linh vật Thỏ mới (ảnh Gemini) + sửa lỗi không hiện lời nhận xét
 - **Bộ 9 ảnh Thỏ** (Nam tạo bằng Gemini; tách nền, cắt, nén WebP 15–57 KB) ở `images/mascot/`: avatar, vẫy tay, giơ ngón cái, cổ vũ, ôm sao, động viên, đọc sách, ngủ, ăn mừng.
 - Gắn vào web:

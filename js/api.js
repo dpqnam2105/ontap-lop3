@@ -122,10 +122,15 @@ const API = {
       return out;
     }));
 
+    const list = subjects.filter(Boolean);
+    // Lớp 3: gắn câu bảng nhân chia tự sinh (js/table-gen.js)
+    if (window.TableGen) {
+      try { TableGen.augment(list, gradeId); } catch (e) { console.warn('TableGen.augment failed:', e); }
+    }
     return {
       version: manifest.version,
       lastUpdated: manifest.lastUpdated,
-      subjects: subjects.filter(Boolean)
+      subjects: list
     };
   },
 

@@ -6,6 +6,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-06 (Claude — bảng nhân chia tự sinh)
+- Toán / Bảng nhân, chia (2–9) — +108 câu tự sinh (152 → 260), sinh lúc tải trang từ `js/table-gen.js`, không nằm trong file JSON. Id dạng `toan_gen_<dạng>_<a>x<b>`.
+- Toán / ⚡ Luyện bảng nhân chia 2–9 (tự sinh) — chủ đề mới, 552 câu (mul 72, div 72, mfac 72, mdsr 40, mdvd 32, rnext 32, rprev 32, rsplit 56, rsum 32, rswap 56, r10 8, cmp 48 — gồm đủ 8 cặp tích bằng nhau). Tất cả `stage: 1`.
+- Đã kiểm tra bằng chương trình: 552 id không trùng, đáp án đúng, không có phương án trùng nhau, vị trí đáp án 128/128/128/120.
+
 ## 2026-10-02 (Claude — sửa hình)
 - Toán / Đếm hình & đường gấp khúc: q014 dùng hình mới `dem-hinh-luoi-2x2-cn.svg` (ô 130×80, đếm bằng chương trình: 9 hình chữ nhật, 0 hình vuông), bỏ câu "Hình vuông cũng là hình chữ nhật" trong gợi ý. `dem-hinh-dai-3.svg` vẽ lại ô 100×70 (q011, vẫn 6).
 

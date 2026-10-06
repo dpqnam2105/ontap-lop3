@@ -173,6 +173,13 @@ const Quiz = {
     // Giai đoạn học: chỉ lấy câu có chỉ số nằm trong options.allowed (null = cả chủ đề).
     // Giữ nguyên chỉ số gốc để tiến độ và câu sai không bị lệch.
     this.allowedIdx = Array.isArray(options.allowed) ? options.allowed.slice() : null;
+    // Luyện bảng nhân chia tự sinh: mỗi lần bắt đầu (kể cả "làm lại") bốc bộ câu mới.
+    this.pickIdx = null;
+    if (options.drill && window.TableGen) {
+      const cand = TableGen.filterIndices(topic, options.drill.tables, options.drill.group, this.allowedIdx);
+      if (this.mode === 'review') this.allowedIdx = cand;
+      else this.pickIdx = TableGen.pickSession(topic, cand, options.drill.count || TableGen.DRILL_SIZE);
+    }
 
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     this.sessionGuard = window.LearningEngine && window.LearningEngine.installSessionGuard
@@ -195,6 +202,12 @@ const Quiz = {
   },
 
   _selectQuestions(topic, mode) {
+    if (this.pickIdx) {
+      return {
+        questions: this.pickIdx.filter(i => topic.questions[i]).map(i => this._prepareQuestion(topic.questions[i], i)),
+        info: { mode, modeLabel: mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡', current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: this.pickIdx.length }
+      };
+    }
     const allIndices = this.allowedIdx
       ? this.allowedIdx.filter(i => topic.questions[i])
       : topic.questions.map((_, i) => i);

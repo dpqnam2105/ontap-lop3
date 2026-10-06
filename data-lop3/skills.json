@@ -137,7 +137,16 @@
    "kg-chia-keo": "Đố vui: chia kẹo",
    "kg-oc-sen": "Đố vui: ốc sên leo cột",
    "kg-so-sanh": "Đố vui: so sánh cao thấp",
-   "kg-xoay-hinh": "Đố vui: xoay hình"
+   "kg-xoay-hinh": "Đố vui: xoay hình",
+   "missing-factor": "Tìm thừa số chưa biết (bảng nhân)",
+   "missing-divisor": "Tìm số chia chưa biết (bảng chia)",
+   "missing-dividend": "Tìm số bị chia chưa biết (bảng chia)",
+   "rel-9-10": "Nhân 9 = nhân 10 bớt một lần",
+   "rel-them-bot": "Thêm / bớt một lần trong bảng nhân",
+   "rel-tach": "Tách thừa số: a × 7 = a × 5 + a × 2",
+   "rel-tong": "Tổng các số bằng nhau thành phép nhân",
+   "rel-doi-cho": "Đổi chỗ thừa số",
+   "cmp-tich": "So sánh hai tích"
   },
   "tieng-viet": {
    "reading": "Đọc hiểu đoạn văn",

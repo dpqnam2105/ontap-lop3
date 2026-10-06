@@ -590,3 +590,20 @@
 .res-insight{display:flex;flex-direction:column;gap:8px;margin:14px auto 4px;max-width:520px;text-align:left}
 .res-insight:empty{display:none}
 .res-insight-line{background:#f3f9ff;border:1.5px solid #d6e9ff;border-radius:14px;padding:10px 14px;font-weight:750;line-height:1.45;color:#1e293b}
+
+/* Luyện bảng nhân chia tự sinh (js/table-gen.js) */
+.drill-card{grid-column:1/-1;border-color:#ffd88a;background:linear-gradient(180deg,#fffaf0,#fff)}
+.drill-label{display:flex;align-items:center;justify-content:space-between;font-family:var(--font-display);font-weight:900;color:#0f4f9c;margin:6px 0 6px}
+.drill-all{border:1px solid #d9eafd;background:#fff;border-radius:999px;padding:3px 12px;font-weight:800;font-size:.85rem;color:var(--blue2);cursor:pointer}
+.drill-chips{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:6px}
+.drill-chip{border:2px solid #d9eafd;background:#fff;border-radius:14px;padding:8px 4px 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;transition:.15s}
+.drill-chip-n{font-family:var(--font-display);font-weight:900;font-size:1.3rem;color:#94a3b8;line-height:1}
+.drill-chip-bar{display:block;width:80%;height:5px;border-radius:999px;background:#e5eef8;overflow:hidden}
+.drill-chip-bar i{display:block;height:100%;background:var(--green)}
+.drill-chip.on{border-color:var(--orange);background:#fff3e0}
+.drill-chip.on .drill-chip-n{color:#c2410c}
+.drill-groups{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.drill-group{border:1.5px solid #d9eafd;background:#fff;border-radius:999px;padding:6px 14px;font-weight:800;color:var(--muted);cursor:pointer}
+.drill-group.on{border-color:var(--blue);background:#eaf4ff;color:var(--blue2)}
+.drill-count{font-weight:750;color:var(--muted);font-size:.92rem;margin-bottom:10px}
+@media(max-width:760px){.drill-chips{grid-template-columns:repeat(4,minmax(0,1fr))}}

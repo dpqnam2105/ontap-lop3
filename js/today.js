@@ -44,7 +44,7 @@ const Today = {
   _pickTopic(s, seed, exclude) {
     if (!s) return null;
     const cands = App._visibleTopics(s)
-      .filter(t => !(exclude || []).includes(t.id))
+      .filter(t => !(exclude || []).includes(t.id) && !t.drill)
       .map(t => ({ t, p: this._topicProgress(s, t) }))
       .filter(x => x.p.total >= 5 && x.p.pct < 0.9);
     if (!cands.length) return null;
