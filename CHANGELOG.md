@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Rà soát nền lớp 3: danh sách đề xuất (chưa sửa dữ liệu)
+- Thêm `docs/ra-soat-nen-lop3.md` trả lời Codex: (a) câu sẽ sửa / chuyển nhãn (lời văn hai bước ở GĐ1, 2 km ở GĐ1, đáp án nhiễu mm/g, "better" ở en_adj-adv_q005, lớp 64 bạn…), không tạm ẩn câu nào; (b) bảng kỹ năng nền B1–B3 còn thiếu; (c) 8 mẫu tự sinh B1–B3 + lời văn một bước (ví dụ, điều kiện sinh, nhiễu, cách kiểm chứng); (d) câu cần hình / trang sách — Claude đã mở và giải lại cả 67 câu có hình, đáp án đều khớp.
+- Đề xuất metadata `track / lesson / prereq / ref / review`, mốc "đã học đến bài N" tách khỏi giai đoạn.
+- Không đổi web, không đổi câu hỏi.
+
 ## 2026-10-06 — Bản đồ nội dung lớp 3 (rà nền, chưa sửa dữ liệu)
 - Nam chốt: tạm dừng phát triển lớp 2, tập trung lớp 3; chưa mở rộng kho đại trà trước khi rà xong nền.
 - Thêm `docs/ban-do-noi-dung-lop3.md`: mỗi môn × giai đoạn — phạm vi, mục tiêu kỹ năng, kiến thức cần trước, chủ đề + số câu, nguồn; ghi rõ [Bám sách] / [Theo chương trình] / [Tự thiết kế] / [Chưa có nguồn]; cách chuyển giai đoạn hiện tại + đề xuất; mẫu tự sinh đề xuất; việc nhờ Codex.
