@@ -162,6 +162,8 @@ const App = {
     const screen = document.getElementById(id);
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
+    // Trang chủ có lời chào riêng → ẩn tiêu đề chung "Kho Bài Tập" (xem style.css: body.on-home.home-today)
+    document.body.classList.toggle('on-home', name === 'register');
     const learnScreens = ['grade', 'subject', 'topic', 'quiz', 'result'];
     document.querySelectorAll('.side-rail .btn-nav').forEach(b => {
       const sc = b.dataset.screen;

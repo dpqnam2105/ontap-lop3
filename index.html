@@ -28,9 +28,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20261006s" />
-  <link rel="stylesheet" href="mobile-compact.css?v=20261006s" />
-  <link rel="stylesheet" href="decor.css?v=20261006s" />
+  <link rel="stylesheet" href="style.css?v=20261006t" />
+  <link rel="stylesheet" href="mobile-compact.css?v=20261006t" />
+  <link rel="stylesheet" href="decor.css?v=20261006t" />
   <style>
     /* Hero banner trang chu - dung aspect-ratio dung ti le anh (~2.3:1) de
        banner LUON keo sat 2 mep (full width) MA KHONG can cat/zoom anh,
@@ -63,14 +63,13 @@
     }
   </style>
 </head>
-<body>
+<body class="on-home">
   <div class="app-shell">
     <aside class="side-rail">
       <div class="brand-block">
         <div class="brand-bunny"><img src="images/mascot/tho-avatar.webp?v=1" alt="Thỏ"></div>
         <div>
           <div class="brand-name">Rabbit Academy</div>
-          <div class="brand-grade">Tiểu học</div>
         </div>
       </div>
 
@@ -90,14 +89,13 @@
 
       <div class="rail-mascot">
         <div class="mascot-face"><img src="images/mascot/tho-vay-tay.webp?v=1" alt="Thỏ vẫy tay"></div>
-        <div class="mascot-text" id="mascotText">Học bài để tích sao và đổi phần thưởng nhé!</div>
       </div>
     </aside>
 
     <div class="app-content">
       <header class="topbar">
         <div>
-          <div class="top-kicker">Học vui mỗi ngày cùng Anh Thư ✨</div>
+          <div class="top-kicker" id="topKicker">Học vui mỗi ngày cùng Rabbit ✨</div>
           <h1>🌟 Kho Bài Tập</h1>
         </div>
         <div class="top-actions">
@@ -107,10 +105,17 @@
 
       <main class="main">
         <section class="screen active" id="screenRegister">
+          <div id="homeGreet" class="home-greet hidden"></div>
           <div id="todayCard" class="today-card hidden" aria-live="polite"></div>
-          <div id="weekCard" class="week-card hidden"></div>
+          <div id="homeSide" class="home-side hidden">
+            <div id="homeProfile" class="home-card home-profile"></div>
+            <div id="weekCard" class="week-card"></div>
+            <div id="homeCollection" class="home-card home-coll"></div>
+            <div id="homeBoard" class="home-card home-board"></div>
+            <div id="homeNews" class="home-news"></div>
+          </div>
           <div class="home-hero-banner">
-            <img src="images/hero-banner.jpg?v=20261006s" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
+            <img src="images/hero-banner.jpg?v=20261006t" alt="Vương Quốc Thỏ - Bé chăm học, mỗi ngày một giỏi"
                  onerror="this.closest('.home-hero-banner').style.display='none';" />
           </div>
           <div class="welcome-grid">
@@ -351,21 +356,21 @@
     </div>
   </div>
 
-  <script src="js/storage.js?v=20261006s"></script>
-  <script src="js/learning-engine.js?v=20261006s"></script>
-  <script src="js/table-gen.js?v=20261006s"></script>
-  <script src="js/api.js?v=20261006s"></script>
-  <script src="js/arena.js?v=20261006s"></script>
-  <script src="js/speak.js?v=20261006s"></script>
-  <script src="js/quiz.js?v=20261006s"></script>
-  <script src="js/achieve.js?v=20261006s"></script>
-  <script src="js/decor.js?v=20261006s"></script>
-  <script src="js/dragonball.js?v=20261006s"></script>
-  <script src="js/skill-report.js?v=20261006s"></script>
-  <script src="js/parent-dashboard.js?v=20261006s"></script>
-  <script src="js/cloud.js?v=20261006s"></script>
-  <script src="js/app.js?v=20261006s"></script>
-  <script src="js/today.js?v=20261006s"></script>
-  <script src="js/guest-flow-guard.js?v=20261006s"></script>
+  <script src="js/storage.js?v=20261006t"></script>
+  <script src="js/learning-engine.js?v=20261006t"></script>
+  <script src="js/table-gen.js?v=20261006t"></script>
+  <script src="js/api.js?v=20261006t"></script>
+  <script src="js/arena.js?v=20261006t"></script>
+  <script src="js/speak.js?v=20261006t"></script>
+  <script src="js/quiz.js?v=20261006t"></script>
+  <script src="js/achieve.js?v=20261006t"></script>
+  <script src="js/decor.js?v=20261006t"></script>
+  <script src="js/dragonball.js?v=20261006t"></script>
+  <script src="js/skill-report.js?v=20261006t"></script>
+  <script src="js/parent-dashboard.js?v=20261006t"></script>
+  <script src="js/cloud.js?v=20261006t"></script>
+  <script src="js/app.js?v=20261006t"></script>
+  <script src="js/today.js?v=20261006t"></script>
+  <script src="js/guest-flow-guard.js?v=20261006t"></script>
 </body>
 </html>

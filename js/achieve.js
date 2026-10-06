@@ -7,7 +7,7 @@
 const Achieve = {
   // tiers: các mốc; v(profile, extra) trả về giá trị hiện tại
   DEFS: [
-    { id: 'streak', tiers: [3, 7, 14, 30, 60, 100], icon: '🔥', text: (n, v) => 'Chúc mừng ' + n + ' đã học liên tục ' + v + ' ngày!' },
+    { id: 'streak', tiers: [3, 7, 14, 30, 60, 100], icon: '🔥', text: (n, v) => 'Chúc mừng ' + n + ' đạt mốc ' + v + ' ngày học liên tục!' },
     { id: 'run', tiers: [10, 20, 50, 100, 200], icon: '🎯', text: (n, v) => 'Chúc mừng ' + n + ' đã trả lời đúng liên tiếp ' + v + ' câu!' },
     { id: 'correct', tiers: [100, 300, 500, 1000, 2000, 5000], icon: '✅', text: (n, v) => n + ' đã làm đúng tổng cộng ' + v + ' câu hỏi!' },
     { id: 'level', tiers: [5, 10, 15, 20, 30, 50], icon: '⭐', text: (n, v) => 'Chúc mừng ' + n + ' đã lên Level ' + v + '!' },
@@ -125,53 +125,36 @@ const Achieve = {
     return items;
   },
 
+  /**
+   * "Tin vui" TĨNH: lời chúc mừng của cả nhà (thành tích mới của các bé). Hiện 1 tin gần nhất, tối đa 2 dòng,
+   * "Xem thêm" để mở danh sách. Không chạy chữ, không tự đổi tin khi bé đang đọc.
+   * Trang chủ đã có kế hoạch → nằm cuối cột phải (#homeNews); chưa nhập tên → nằm đầu trang như trước.
+   */
   async renderTicker() {
     const screen = document.getElementById('screenRegister');
     if (!screen) return;
+    const home = document.getElementById('homeNews');
+    const useHome = home && screen.classList.contains('has-today');
     let bar = document.getElementById('newsTicker');
     if (!bar) {
       bar = document.createElement('div');
       bar.id = 'newsTicker';
-      bar.className = 'news-ticker';
+      bar.className = 'news-ticker news-static';
       bar.setAttribute('role', 'status');
-      screen.insertBefore(bar, screen.firstChild);
     }
+    if (useHome) { if (bar.parentNode !== home) home.appendChild(bar); }
+    else if (bar.parentNode !== screen || screen.firstChild !== bar) screen.insertBefore(bar, screen.firstChild);
     let items = [];
     try { items = await this.items(); } catch (e) { items = []; }
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    const texts = items.length ? items.map(i => i.text) : ['🐰 Bảng tin Vương Quốc Thỏ: học đều mỗi ngày để có tên ở đây nhé!'];
-    const line = texts.map(t => '<span class="nt-item">' + esc(t) + '</span>').join('<span class="nt-sep">✦</span>');
-    bar.innerHTML = '<span class="nt-label"><span class="nt-mega">📣</span> Tin vui</span><div class="nt-view"><div class="nt-track">' +
-      line + '<span class="nt-sep">✦</span>' + line + '<span class="nt-sep">✦</span></div></div>';
-    this._startScroll(bar);
-  },
-
-  /** Chạy chữ bằng JS (không phụ thuộc cài đặt "giảm hiệu ứng" của máy): chậm, đều, từ phải sang trái. */
-  SPEED: 38, // px mỗi giây
-  _startScroll(bar) {
-    const track = bar.querySelector('.nt-track');
-    if (!track) return;
-    if (this._raf) cancelAnimationFrame(this._raf);
-    let x = bar.querySelector('.nt-view').clientWidth * 0.6; // bắt đầu từ bên phải
-    let last = performance.now();
-    let paused = false;
-    bar.onmouseenter = () => { paused = true; };
-    bar.onmouseleave = () => { paused = false; };
-    bar.ontouchstart = () => { paused = true; };
-    bar.ontouchend = () => { setTimeout(() => { paused = false; }, 1500); };
-    const step = (now) => {
-      if (!document.body.contains(track)) return;
-      const dt = Math.min(0.1, (now - last) / 1000);
-      last = now;
-      const half = track.scrollWidth / 2;
-      if (!paused && !document.hidden && half > 0) {
-        x -= this.SPEED * dt;
-        if (x <= -half) x += half;
-        track.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
-      }
-      this._raf = requestAnimationFrame(step);
-    };
-    this._raf = requestAnimationFrame(step);
+    const texts = items.length ? items.map(i => i.text) : ['🐰 Học đều mỗi ngày để có tên ở bảng tin nhé!'];
+    const sig = texts.join('|');
+    if (bar.dataset.sig === sig) return;            // cùng nội dung → không vẽ lại (không làm bé mất chỗ đang đọc)
+    bar.dataset.sig = sig;
+    bar.innerHTML = '<span class="nt-label"><span class="nt-mega">📣</span> Tin vui</span>' +
+      '<div class="nt-body"><p class="nt-one">' + esc(texts[0]) + '</p>' +
+      (texts.length > 1 ? '<details class="nt-more"><summary>Xem thêm</summary><ul>' + texts.slice(1).map(t => '<li>' + esc(t) + '</li>').join('') + '</ul></details>' : '') +
+      '</div>';
   },
 
   init() {

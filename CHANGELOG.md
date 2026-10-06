@@ -5,6 +5,18 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Trang chủ mới: lời chào theo tên, kế hoạch hôm nay làm trọng tâm (bàn cùng Codex)
+- **Tiêu đề**: logo chỉ còn "Rabbit Academy" (bỏ "Lớp 3"); lớp nằm ở hồ sơ ("Lớp 3 · Đổi lớp"). Trang chủ bỏ tiêu đề "Kho Bài Tập", thay bằng lời chào **"Hôm nay mình học gì, [tên]?"** + một dòng "Rabbit chọn sẵn 3 việc · khoảng 20 phút" (hoặc "Còn 2 việc…"). Các màn khác vẫn có thanh tiêu đề; dòng phụ trên đó nay theo tên bé (trước ghi cố định "Anh Thư" cho mọi bé).
+- **Thứ tự**: lời chào → kế hoạch hôm nay + Bắt đầu học → hồ sơ → tuần này → bộ sưu tập → xếp hạng tuần → tin vui. Máy tính: kế hoạch bên trái, các thẻ còn lại bên phải. Điện thoại: lời chào có avatar nhỏ + sao; hồ sơ đầy đủ ở dưới (không lặp sao, danh hiệu chỉ ở hồ sơ).
+- **Bỏ trùng lặp**: bỏ bong bóng lời Thỏ trong thẻ, bỏ chữ ở khung Thỏ thanh bên, bỏ khối chào/bảng xếp hạng/ngọc rồng cũ khi đã có kế hoạch.
+- **Hoàn thành kế hoạch**: "🎉 Con đã hoàn thành kế hoạch hôm nay! / Con nhận thêm 10 ⭐ · Túi sao hiện có X ⭐ / [Xem phần thưởng] / Muốn chơi thêm? Đấu trường tính nhanh · Ôn thêm 5 phút". Dòng "nhận thêm 10 ⭐" chỉ hiện khi thưởng đã được ghi nhận. Cộng sao và đánh dấu "đã nhận" nay trong **một** lần lưu hồ sơ (`Today.grantReward`) → không thể cộng 2 lần hay báo nhận mà chưa cộng. Mở lại trang không chạy lại thông báo, không cộng thêm.
+- **Chuỗi ngày**: một nguồn chung `Today.streakNow()` — học hôm nay hoặc hôm qua thì giữ chuỗi (sáng chưa học không bị về 0), quá 1 ngày thì 0 (trước đây ô vẫn hiện số cũ). Thẻ "Tuần này": ✓ ngày đã học + "🔥 N ngày liền"; bỏ dòng "0 câu đúng" đầu tuần. Tin mốc chuỗi đổi lời thành "đạt mốc 3 ngày học liên tục" để không lẫn với chuỗi hiện tại.
+- **Bộ sưu tập**: thẻ ngọc rồng thu thành 1 dòng "Ngọc rồng 3/7 · 12 sticker · 2 huy hiệu → Bộ sưu tập ›". Không còn nút "Mở shop" ở trang chủ.
+- **Xếp hạng tuần**: điểm học = số câu đúng trong nhật ký làm bài từ 00:00 thứ Hai (không phải số sao, nên mua sticker không làm tụt hạng). Tô sáng dòng của bé. "Tổng thành tích" ở mục phụ (bấm để xem). Không cần sửa Apps Script.
+- **Tin vui**: hết chạy chữ. Một tin gần nhất, tối đa 2 dòng, "Xem thêm" để mở danh sách; không tự đổi khi bé đang đọc.
+- Kiểm thử: `tests/home.test.js` (11 bài: chuỗi ngày qua nửa đêm/tuần/tháng/năm và sáng chưa học, thưởng 1 lần 1 lần lưu, mở lại không cộng, tuần bắt đầu thứ Hai, điểm tuần) và `tests/home.e2e.js` (Chromium: thứ tự khối và nút Bắt đầu thấy ngay ở 360/390/430px, không cuộn ngang, không lặp sao/danh hiệu; máy tính; trạng thái hoàn thành; chưa nhập tên).
+- Phiên bản file `?v=20261006t`.
+
 ## 2026-10-06 — Kiểm tra mã gia đình trên môi trường thật + hướng dẫn mở khoá
 - Đã thử trên chamhoc.vercel.app với hồ sơ thử riêng "zz kiểm tra" (không đụng dữ liệu các bé): ghi thường → lưu được (ver 1); ghi đè không kèm mã → bị từ chối, dữ liệu giữ nguyên; ghi đè đúng mã (Nam tự nhập trong trình duyệt) → lưu được (ver 2). Sau đó đã xoá mã khỏi trình duyệt dùng để thử.
 - Thêm hướng dẫn mở khoá khi ghi đè bị khoá (do có người gửi nhiều mã sai): chờ 1 giờ, hoặc xoá thuộc tính `fc_fail` trong Apps Script. Ghi ở đầu `Code.gs` (chỉ là chú thích, **không cần triển khai lại**) và trong thông báo ở Khu vực Bố Mẹ.

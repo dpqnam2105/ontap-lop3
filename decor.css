@@ -118,13 +118,6 @@
 .nt-sep{color:#ffb020;margin:0 16px}
 @keyframes ntScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:760px){.news-ticker{margin:0 0 10px;padding:6px 8px 6px 6px}.nt-label{font-size:.78rem;padding:4px 8px}.nt-item{font-size:.9rem}}
-@media (min-width:1100px){
-  .has-today .news-ticker{grid-column:1 / -1;grid-row:1;margin:0}
-  .has-today .today-card{grid-row:2 / span 3}
-  .has-today .week-card{grid-row:2}
-  .has-today .dragon-card{grid-row:3}
-  .has-today .leaderboard-card{grid-row:4}
-}
 
 /* Tin vui: nhãn có vệt sáng lướt qua, chữ nổi nhẹ */
 .nt-label{position:relative;overflow:hidden;background:linear-gradient(135deg,#1f7af5,#6d4bc4);box-shadow:0 3px 0 #1a3f9e}

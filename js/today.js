@@ -233,17 +233,52 @@ const Today = {
     if (!changed) return;
     const allDone = p.tasks.length && p.tasks.every(t => t.done);
     if (allDone && !p.rewarded) {
-      p.rewarded = true;
-      this.save(p);
-      Rewards.addStar(this.REWARD);
-      setTimeout(() => {
-        Rewards._achievementPopup('🎉 Con đã xong việc hôm nay! Thưởng ' + this.REWARD + ' sao!');
-        if (Quiz._confettiBurst) Quiz._confettiBurst();
-      }, 600);
+      // Hiệu ứng chỉ chạy đúng lúc vừa nhận thưởng thật; mở lại trang chủ không chạy lại, không cộng thêm.
+      if (this.grantReward(p)) {
+        setTimeout(() => {
+          Rewards._achievementPopup('🎉 Con đã hoàn thành kế hoạch hôm nay! Thưởng ' + this.REWARD + ' sao!');
+          if (Quiz._confettiBurst) Quiz._confettiBurst();
+        }, 600);
+      }
     } else {
       this.save(p);
     }
     this.render();
+  },
+
+  /**
+   * Cộng sao thưởng VÀ đánh dấu kế hoạch đã nhận thưởng trong CÙNG MỘT lần lưu hồ sơ
+   * (không có lúc "đã nhận" mà chưa cộng sao, hay cộng sao mà chưa đánh dấu → cộng 2 lần).
+   * Trả về true nếu vừa cộng; false nếu kế hoạch hôm đó đã nhận rồi.
+   */
+  grantReward(p) {
+    const data = Rewards._loadData();
+    const cur = data.todayPlan;
+    if (cur && cur.date === p.date && cur.player === p.player && cur.rewarded) return false;
+    const oldTitle = Rewards._calcTitle ? Rewards._calcTitle(data.totalCorrect) : null;
+    p.rewarded = true;
+    p.rewardStars = this.REWARD;
+    data.todayPlan = p;
+    data.stars = Number(data.stars || 0) + this.REWARD;
+    data.totalCorrect = Number(data.totalCorrect || 0) + this.REWARD;   // giữ như addStar() trước đây
+    Rewards._saveData(data);
+    if (Rewards.updateUI) Rewards.updateUI();
+    if (oldTitle !== null && Rewards._calcTitle(data.totalCorrect) !== oldTitle && Rewards._titleUpgradeAnimation) Rewards._titleUpgradeAnimation();
+    return true;
+  },
+
+  /**
+   * Chuỗi ngày học HIỆN TẠI (một nguồn dùng chung): hồ sơ chỉ cập nhật chuỗi khi bé học xong bài,
+   * nên nếu lần học cuối không phải hôm nay hoặc hôm qua thì chuỗi đã đứt → 0.
+   * Sáng nay chưa học nhưng hôm qua có học → vẫn giữ chuỗi (chuỗi có thể bắt đầu từ tuần trước).
+   */
+  streakNow(data, now) {
+    const d = data || Rewards._loadData();
+    const n = Number(d.streak || 0);
+    if (!n || !d.lastStudyDate) return 0;
+    const t = now ? new Date(now) : new Date();
+    const y = new Date(t); y.setDate(t.getDate() - 1);
+    return (d.lastStudyDate === this._dateKey(t) || d.lastStudyDate === this._dateKey(y)) ? n : 0;
   },
 
   // ─── Giao diện ─────────────────────────────
@@ -266,7 +301,7 @@ const Today = {
     try {
       const d = Rewards._loadData();
       const need = Rewards._xpForNextLevel(d.level);
-      return { level: d.level || 1, xp: d.xp || 0, need, stars: d.stars || 0, streak: d.streak || 0 };
+      return { level: d.level || 1, xp: d.xp || 0, need, stars: d.stars || 0, streak: this.streakNow(d) };
     } catch (e) { return { level: 1, xp: 0, need: 80, stars: 0, streak: 0 }; }
   },
 
@@ -275,83 +310,125 @@ const Today = {
     const box = document.getElementById('todayCard');
     if (!screen || !box) return;
     const p = this.plan();
-    this.renderWeek();
+    const greet = document.getElementById('homeGreet');
+    const side = document.getElementById('homeSide');
+    const kicker = document.getElementById('topKicker');
+    if (kicker) kicker.textContent = 'Học vui mỗi ngày cùng ' + (App.playerName || 'Rabbit') + ' ✨';
     if (!App.playerName || !p) {
       screen.classList.remove('has-today');
-      box.classList.add('hidden');
+      document.body.classList.remove('home-today');
+      [box, greet, side].forEach(el => el && el.classList.add('hidden'));
       return;
     }
     screen.classList.add('has-today');
-    box.classList.remove('hidden');
+    document.body.classList.add('home-today');
+    [box, greet, side].forEach(el => el && el.classList.remove('hidden'));
 
     const L = this._levelInfo();
-    const names = { lop2: 'Lớp 2', lop3: 'Lớp 3', lop4: 'Lớp 4', lop5: 'Lớp 5' };
     const doneN = p.tasks.filter(t => t.done).length;
-    const allDone = doneN === p.tasks.length;
+    const allDone = p.tasks.length > 0 && doneN === p.tasks.length;
     const nextI = p.tasks.findIndex(t => !t.done);
     const minutes = p.tasks.filter(t => !t.done).reduce((a, t) => a + (t.minutes || 0), 0);
-    const bubble = allDone
-      ? 'Con đã xong việc hôm nay rồi! Giỏi quá! Muốn luyện thêm thì bấm nút bên dưới nhé.'
-      : (doneN === 0
-        ? 'Hôm nay mình học khoảng <b>' + minutes + ' phút</b> nhé! Rabbit đã chọn sẵn ' + p.tasks.length + ' việc cho con.'
-        : 'Con làm tốt lắm! Còn <b>' + (p.tasks.length - doneN) + ' việc</b> nữa, khoảng ' + minutes + ' phút thôi.');
 
-    const rows = p.tasks.map((t, i) => {
-      const state = t.done ? 'done' : (i === nextI ? 'next' : 'todo');
-      const icon = t.done ? '<div class="tt-icon tt-icon-done">' + this.ICONS.check + '</div>'
-        : '<div class="tt-icon tt-icon-' + t.icon + '">' + (this.ICONS[t.icon] || this.ICONS.book) + '</div>';
-      return `<button type="button" class="tt-row tt-${state}" data-task="${i}">
-        ${icon}
-        <span class="tt-text"><b>${this._esc(t.title)}</b><small>${t.done ? 'Xong rồi!' : this._esc(t.sub)}</small></span>
-        <span class="tt-min">${t.done ? '✓' : t.minutes + ' phút'}</span>
-      </button>`;
-    }).join('<div class="tt-sep"></div>');
+    this.renderGreet(p, L, { doneN, allDone, minutes });
 
-    const btnLabel = allDone ? 'Làm thêm một lượt' : (doneN === 0 ? 'Bắt đầu học' : 'Học tiếp');
-
-    box.innerHTML = `
-      <div class="today-head">
-        ${window.Decor ? Decor.render({ size: 'mini', name: App.playerName, sub: (names[App.currentGrade] || '') + ' · <button type="button" class="link-btn" data-act="grade">Đổi lớp</button>' }) : `
-        <div class="today-avatar">${this._esc((App.playerName || '?').split(' ').map(w => w[0]).slice(-2).join('').toUpperCase())}</div>
-        <div class="today-hello">
-          <b>Chào ${this._esc(App.playerName)}!</b>
-          <span>${names[App.currentGrade] || ''} · <button type="button" class="link-btn" data-act="grade">Đổi lớp</button></span>
-        </div>`}
-        <div class="today-chips">
-          <span class="today-chip chip-streak">${this.ICONS.flame}${L.streak} ngày</span>
-          <span class="today-chip chip-star">${this.ICONS.star}${L.stars}</span>
+    if (allDone) {
+      // Trạng thái hoàn thành: ghi nhận + phần thưởng là chính; học thêm chỉ là lựa chọn phụ.
+      box.innerHTML = `
+        <div class="today-plan-head"><b>Kế hoạch hôm nay</b><span>${doneN}/${p.tasks.length} xong ✓</span></div>
+        <div class="today-done">
+          ${window.Mascot ? Mascot.img('om-sao', 'today-done-img') : ''}
+          <h2>🎉 Con đã hoàn thành kế hoạch hôm nay!</h2>
+          ${p.rewarded ? `<p class="today-done-stars">Con nhận thêm ${p.rewardStars || this.REWARD} ⭐ · Túi sao hiện có ${L.stars} ⭐</p>` : ''}
+          <button type="button" class="today-go" data-act="rewards">Xem phần thưởng</button>
+          <div class="today-more">Muốn chơi thêm?
+            <button type="button" class="link-btn" data-act="arena">Đấu trường tính nhanh</button> ·
+            <button type="button" class="link-btn" data-act="extra">Ôn thêm 5 phút</button></div>
         </div>
+        <div class="today-res">${this._resLinks()}</div>`;
+      box.querySelector('[data-act="rewards"]').addEventListener('click', () => App.showScreen('collection'));
+      box.querySelector('[data-act="arena"]').addEventListener('click', () => App.showScreen('arena'));
+      box.querySelector('[data-act="extra"]').addEventListener('click', () => this.startExtra());
+    } else {
+      const rows = p.tasks.map((t, i) => {
+        const state = t.done ? 'done' : (i === nextI ? 'next' : 'todo');
+        const icon = t.done ? '<div class="tt-icon tt-icon-done">' + this.ICONS.check + '</div>'
+          : '<div class="tt-icon tt-icon-' + t.icon + '">' + (this.ICONS[t.icon] || this.ICONS.book) + '</div>';
+        return `<button type="button" class="tt-row tt-${state}" data-task="${i}">
+          ${icon}
+          <span class="tt-text"><b>${this._esc(t.title)}</b><small>${t.done ? 'Xong rồi!' : this._esc(t.sub)}</small></span>
+          <span class="tt-min">${t.done ? '✓' : t.minutes + ' phút'}</span>
+        </button>`;
+      }).join('<div class="tt-sep"></div>');
+      box.innerHTML = `
+        <div class="today-plan">
+          <div class="today-plan-head"><b>Kế hoạch hôm nay</b><span>${doneN}/${p.tasks.length} xong · xong hết +${this.REWARD} ⭐</span></div>
+          ${rows}
+        </div>
+        <button type="button" class="today-go" data-act="go">${this.ICONS.play}${doneN === 0 ? 'Bắt đầu học' : 'Học tiếp'}</button>
+        <div class="today-links"><button type="button" class="link-btn" data-act="pick">Con muốn tự chọn bài</button></div>
+        <div class="today-res">${this._resLinks()}</div>`;
+      box.querySelectorAll('.tt-row').forEach(b => b.addEventListener('click', () => {
+        const i = Number(b.dataset.task);
+        if (p.tasks[i] && !p.tasks[i].done) this.start(i);
+      }));
+      box.querySelector('[data-act="go"]').addEventListener('click', () => this.startNext());
+      box.querySelector('[data-act="pick"]').addEventListener('click', () => App.goLearn());
+    }
+
+    this.renderProfile(L);
+    this.renderWeek();
+    this.renderCollection();
+    this.renderBoard();
+    if (window.Achieve && Achieve.renderTicker) Achieve.renderTicker();
+  },
+
+  _resLinks() {
+    return [...document.querySelectorAll('.side-rail .rail-link')].map(a => `<a href="${a.getAttribute('href')}" target="_blank" rel="noopener noreferrer">${this._esc(a.textContent.trim())}</a>`).join('');
+  },
+
+  /** Lời chào đầu trang chủ (thay tiêu đề "Kho Bài Tập"). Điện thoại: avatar nhỏ + sao; máy tính: Thỏ vẫy tay. */
+  renderGreet(p, L, st) {
+    const el = document.getElementById('homeGreet');
+    if (!el) return;
+    const sub = st.allDone ? 'Hôm nay con đã học xong rồi, giỏi quá!'
+      : (st.doneN === 0 ? 'Rabbit chọn sẵn ' + p.tasks.length + ' việc · khoảng ' + st.minutes + ' phút'
+        : 'Còn ' + (p.tasks.length - st.doneN) + ' việc · khoảng ' + st.minutes + ' phút');
+    const face = window.Decor ? Decor.faceHTML(Decor.equipped().face) : '';
+    el.innerHTML = `
+      <span class="hg-mascot">${window.Mascot ? Mascot.img(st.allDone ? 'om-sao' : 'vay-tay', 'hg-mascot-img') : ''}</span>
+      <span class="hg-face" data-act="decor" title="Trang trí hồ sơ">${face}</span>
+      <div class="hg-text"><h1>Hôm nay mình học gì, ${this._esc(App.playerName)}?</h1><p>${this._esc(sub)}</p></div>
+      <span class="hg-stars" title="Túi sao">${this.ICONS.star}${L.stars}</span>
+      <button type="button" class="pill-action hg-feedback" data-act="feedback">💌 Góp ý</button>`;
+    const fb = el.querySelector('[data-act="feedback"]');
+    if (fb) fb.addEventListener('click', () => { const b = document.getElementById('btnFeedback'); if (b) b.click(); });
+    const fc = el.querySelector('[data-act="decor"]');
+    if (fc) fc.addEventListener('click', () => App.showScreen('collection'));
+  },
+
+  /** Hồ sơ: avatar + tên + danh hiệu (Decor), lớp · đổi lớp, Level, sao. */
+  renderProfile(L) {
+    const el = document.getElementById('homeProfile');
+    if (!el) return;
+    const names = { lop2: 'Lớp 2', lop3: 'Lớp 3', lop4: 'Lớp 4', lop5: 'Lớp 5' };
+    const grade = (names[App.currentGrade] || '') + ' · <button type="button" class="link-btn" data-act="grade">Đổi lớp</button>';
+    el.innerHTML = `
+      <div class="hp-top">
+        ${window.Decor ? Decor.render({ size: 'mini', name: App.playerName, sub: grade }) : `<div class="today-hello"><b>${this._esc(App.playerName)}</b><span>${grade}</span></div>`}
+        <span class="hp-stars" title="Túi sao">${this.ICONS.star}${L.stars}</span>
       </div>
       <div class="today-level" title="Level ${L.level}">
         <span>Level ${L.level}</span>
         <div class="today-level-bar"><div style="width:${Math.min(100, Math.round(L.xp / L.need * 100))}%"></div></div>
-        <small>còn ${Math.max(0, L.need - L.xp)} XP lên Level ${L.level + 1}</small>
-      </div>
-      <div class="today-say">${window.Mascot ? Mascot.img(allDone ? 'om-sao' : (doneN > 0 ? 'co-vu' : ((p.tasks[nextI] || {}).id === 'review' ? 'doc-sach' : 'vay-tay')), 'today-rabbit-img') : this.RABBIT}<div class="today-bubble">${bubble}</div></div>
-      <div class="today-plan">
-        <div class="today-plan-head"><b>Kế hoạch hôm nay</b><span>${doneN}/${p.tasks.length} xong${p.rewarded ? ' · đã nhận ' + this.REWARD + ' ⭐' : ' · xong hết +' + this.REWARD + ' ⭐'}</span></div>
-        ${rows}
-      </div>
-      <button type="button" class="today-go${allDone ? ' today-go-extra' : ''}" data-act="go">${this.ICONS.play}${btnLabel}</button>
-      <div class="today-links"><button type="button" class="link-btn" data-act="pick">Con muốn tự chọn bài</button></div>
-      <div class="today-res">${[...document.querySelectorAll('.side-rail .rail-link')].map(a => `<a href="${a.getAttribute('href')}" target="_blank" rel="noopener noreferrer">${this._esc(a.textContent.trim())}</a>`).join('')}</div>`;
-
-    const mascot = document.getElementById('mascotText');
-    if (mascot) mascot.textContent = allDone ? 'Con đã xong việc hôm nay rồi! Giỏi quá! 🎉'
-      : (doneN === 0 ? 'Hôm nay có ' + p.tasks.length + ' việc nhỏ, mình bắt đầu nhé!' : 'Còn ' + (p.tasks.length - doneN) + ' việc nữa thôi, cố lên con!');
-
-    box.querySelectorAll('.tt-row').forEach(b => b.addEventListener('click', () => {
-      const i = Number(b.dataset.task);
-      if (p.tasks[i] && !p.tasks[i].done) this.start(i);
-    }));
-    box.querySelector('[data-act="go"]').addEventListener('click', () => this.startNext());
-    box.querySelector('[data-act="pick"]').addEventListener('click', () => App.goLearn());
-    box.querySelector('[data-act="grade"]').addEventListener('click', () => App.showScreen('grade'));
-    const av = box.querySelector('.dc-mini .dc-avatar');
+        <small>còn ${Math.max(0, L.need - L.xp)} XP</small>
+      </div>`;
+    el.querySelector('[data-act="grade"]').addEventListener('click', () => App.showScreen('grade'));
+    const av = el.querySelector('.dc-avatar');
     if (av) { av.title = 'Trang trí hồ sơ'; av.style.cursor = 'pointer'; av.addEventListener('click', () => App.showScreen('collection')); }
   },
 
-  /** Thẻ "Tuần này": 7 ô ngày (sáng lên ngày có học) + số câu đúng tuần này so với tuần trước. */
+  /** Thẻ "Tuần này": ✓ ngày có học + chuỗi ngày hiện tại (chuỗi có thể kéo dài từ tuần trước). */
   renderWeek() {
     const box = document.getElementById('weekCard');
     if (!box) return;
@@ -361,23 +438,78 @@ const Today = {
     const ws = App._weekStart();
     const labels = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
     const todayKey = this._dateKey();
-    let week = 0, last = 0, days = 0;
+    let week = 0;
     const cells = labels.map((lb, i) => {
       const d = new Date(ws); d.setDate(ws.getDate() + i);
       const k = this._dateKey(d);
       const n = log[k] || 0;
-      week += n; if (n > 0) days++;
+      week += n;
       const cls = n > 0 ? 'wk-on' : (k === todayKey ? 'wk-today' : (k < todayKey ? 'wk-miss' : 'wk-future'));
-      return `<div class="wk-day ${cls}"><span class="wk-dot">${n > 0 ? n : ''}</span><small>${lb}</small></div>`;
+      return `<div class="wk-day ${cls}" title="${n > 0 ? n + ' câu đúng' : ''}"><span class="wk-dot">${n > 0 ? '✓' : ''}</span><small>${lb}</small></div>`;
     }).join('');
-    for (let i = 1; i <= 7; i++) { const d = new Date(ws); d.setDate(ws.getDate() - i); last += log[this._dateKey(d)] || 0; }
-    const diff = week - last;
-    // Không hiện số âm để bé khỏi nản giữa tuần: hơn tuần trước thì khen, chưa bằng thì chỉ ghi mốc tuần trước.
-    const cmp = last === 0 ? '' : (diff > 0 ? `<span class="wk-up">nhiều hơn tuần trước ${diff} câu</span>` : `<span class="wk-down">· tuần trước ${last} câu</span>`);
+    const streak = this.streakNow();
+    const learnedToday = (log[todayKey] || 0) > 0;
+    const head = streak > 0
+      ? `<span class="wk-streak">🔥 ${streak} ngày liền${learnedToday ? '' : ' · học hôm nay để giữ chuỗi'}</span>`
+      : '<span class="wk-streak wk-streak-new">Học hôm nay để bắt đầu chuỗi 🔥</span>';
     box.innerHTML = `
-      <div class="wk-head"><b>Tuần này của con</b><span>${days}/7 ngày học</span></div>
+      <div class="wk-head"><b>Tuần này</b>${head}</div>
       <div class="wk-row">${cells}</div>
-      <div class="wk-foot"><b>${week}</b> câu đúng ${cmp}</div>`;
+      ${week > 0 ? `<div class="wk-foot">Tuần này con đúng <b>${week}</b> câu</div>` : ''}`;
+  },
+
+  /** Một dòng tiến độ bộ sưu tập → sang trang Bộ sưu tập (không có nút mở shop ở trang chủ). */
+  renderCollection() {
+    const el = document.getElementById('homeCollection');
+    if (!el) return;
+    let balls = [];
+    try { balls = window.DragonBall && DragonBall._getDragonCollection ? DragonBall._getDragonCollection() : []; } catch (e) { balls = []; }
+    const own = new Set((balls || []).map(Number));
+    let stickers = 0, badges = 0;
+    try { stickers = (Storage.load().inventory || []).length; } catch (e) { stickers = 0; }
+    try { const sp = window.TableGen ? TableGen.getSpeed() : null; badges = sp ? Object.keys(sp.level.passed || {}).length : 0; } catch (e) { badges = 0; }
+    const imgs = [1, 2, 3, 4, 5, 6, 7].map(n => `<img src="images/rewards/dragonballs/dragonball_${n}.png" alt="" class="${own.has(n) ? '' : 'off'}" onerror="this.style.display='none'">`).join('');
+    el.innerHTML = `
+      <button type="button" class="hc-row" data-act="coll">
+        <span class="hc-balls">${imgs}</span>
+        <span class="hc-txt"><b>Ngọc rồng ${own.size}/7</b><small>${stickers} sticker · ${badges} huy hiệu</small></span>
+        <span class="hc-go">Bộ sưu tập ›</span>
+      </button>`;
+    el.querySelector('[data-act="coll"]').addEventListener('click', () => App.showScreen('collection'));
+  },
+
+  /** Bảng xếp hạng TUẦN (điểm học = số câu đúng trong tuần, không phải số sao). Tổng thành tích ở mục phụ. */
+  async renderBoard() {
+    const el = document.getElementById('homeBoard');
+    if (!el || !window.API) return;
+    const me = API.kidOf ? API.kidOf(App.playerName) : App.playerName;
+    if (!el.dataset.ready) {
+      el.innerHTML = '<div class="hb-head"><b>🏆 Bảng xếp hạng tuần</b><small>từ thứ Hai</small></div><div class="hb-list"><div class="loading-text">Đang tải...</div></div>' +
+        '<details class="hb-total"><summary>Tổng thành tích</summary><div class="hb-total-list"></div></details>';
+      el.dataset.ready = '1';
+      el.querySelector('.hb-total').addEventListener('toggle', e => { if (e.target.open) this._renderTotalBoard(el, me); });
+    }
+    let rows = [];
+    try { rows = await API.getWeekBoard(); } catch (e) { rows = []; }
+    const medals = ['🥇', '🥈', '🥉'];
+    const list = el.querySelector('.hb-list');
+    if (!rows.length) { list.innerHTML = '<div class="loading-text">Chưa tải được bảng xếp hạng.</div>'; return; }
+    const allZero = rows.every(r => !r.week);
+    list.innerHTML = (allZero ? '<p class="hb-note">Tuần mới bắt đầu, học để lên bảng nhé!</p>' : '') +
+      rows.map((r, i) => `<div class="hb-row${r.name === me ? ' hb-me' : ''}"><span>${allZero ? '•' : (medals[i] || i + 1)}</span>` +
+        `${r.grade ? `<span class="lb-grade lb-grade-${r.grade}">Lớp ${r.grade}</span>` : ''}<b>${this._esc(r.name)}</b><em>${r.week} điểm</em></div>`).join('');
+  },
+
+  async _renderTotalBoard(el, me) {
+    const box = el.querySelector('.hb-total-list');
+    if (!box || box.dataset.done) return;
+    box.innerHTML = '<div class="loading-text">Đang tải...</div>';
+    let data = [];
+    try { data = await API.getLeaderboard(); } catch (e) { data = []; }
+    box.dataset.done = '1';
+    box.innerHTML = (data || []).slice(0, 5).map(r =>
+      `<div class="hb-row${r.name === me ? ' hb-me' : ''}"><b>${this._esc(r.name)}</b><em>${Number(r.totalScore || 0)} điểm</em></div>`).join('') ||
+      '<div class="loading-text">Chưa có điểm.</div>';
   },
 
   /** Phần thêm ở màn kết quả: sao/XP vừa nhận, thanh level, việc tiếp theo, làm thêm một lượt. */

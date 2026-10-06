@@ -230,6 +230,42 @@ const API = {
     }
   },
 
+  /** 00:00 thứ Hai của tuần chứa ngày d, theo giờ của máy (cùng cách tính ngày với nhật ký học trên máy). */
+  weekStart(d) {
+    const x = new Date(d || Date.now());
+    const day = (x.getDay() + 6) % 7; // thứ Hai = 0
+    x.setHours(0, 0, 0, 0);
+    x.setDate(x.getDate() - day);
+    return x;
+  },
+
+  /** Điểm học của 1 bé trong tuần = tổng số câu đúng trong nhật ký làm bài từ thứ Hai (không phải số sao). */
+  weekScoreFromLogs(logs, ws) {
+    const from = (ws || this.weekStart()).getTime();
+    return (logs || []).reduce((sum, l) => {
+      const t = new Date(l && l.time).getTime();
+      if (!(t >= from)) return sum;
+      return sum + Number((l.correct != null ? l.correct : l.score) || 0);
+    }, 0);
+  },
+
+  /**
+   * Bảng xếp hạng TUẦN của các bé thật: [{ name, grade, week }] xếp từ cao xuống.
+   * Lấy nhật ký 8 ngày gần nhất của từng bé (gồm tên phụ) rồi lọc từ thứ Hai. Lưu tạm 5 phút.
+   */
+  async getWeekBoard() {
+    if (this._weekCache && Date.now() - this._weekCache.at < 5 * 60 * 1000) return this._weekCache.rows;
+    const ws = this.weekStart();
+    const kids = this.KIDS.length ? this.KIDS.map(k => k.name) : [];
+    const rows = await Promise.all(kids.map(async n => ({
+      name: n, grade: this.gradeOf ? this.gradeOf(n) : null,
+      week: this.weekScoreFromLogs(await this.getLog(n, 8), ws)
+    })));
+    rows.sort((a, b) => b.week - a.week || a.name.localeCompare(b.name, 'vi'));
+    this._weekCache = { at: Date.now(), rows };
+    return rows;
+  },
+
   /** Lưu điểm + log đầy đủ (subject, topic, duration) */
   async saveScore(name, score, total, subject, topic, durationSec) {
     const clean = (window.Storage && Storage.normalizeName) ? Storage.normalizeName(name) : String(name || '').trim();
