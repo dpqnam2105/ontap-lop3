@@ -750,7 +750,12 @@
         "unit": "tu-duy-so",
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q044",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "sub-1000"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Một số trừ đi 34 thì bằng 43 + 58. Số đó là:",
@@ -767,7 +772,12 @@
         "unit": "tu-duy-so",
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q045",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "find-minuend"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Lấy một số nhân với 4 rồi cộng thêm 7 thì được 39. Số đó là:",
@@ -784,7 +794,12 @@
         "unit": "tu-duy-so",
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q046",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sub-1000",
+          "divide-4"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Lấy một số chia cho 6 rồi trừ đi 3 thì được 5. Số đó là:",
@@ -801,7 +816,12 @@
         "unit": "tu-duy-so",
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q047",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "times-6"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Nhân một số với 5 rồi cộng thêm 4 thì được 29. Số đó là:",
@@ -818,7 +838,12 @@
         "unit": "tu-duy-so",
         "source": "cai-bien-de-hk1-20260929",
         "id": "toan_tu-duy-so_q048",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sub-1000",
+          "divide-5"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Biết hiệu là 245, số trừ là 162. Số bị trừ là:",

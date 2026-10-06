@@ -427,7 +427,15 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q025",
-        "stage": 1
+        "stage": 2,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "tìm 1/n rồi trừ: hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Trong hộp có 45 viên kẹo, Mai lấy ra 1/5 số kẹo. Hỏi trong hộp còn lại bao nhiêu viên?",
@@ -444,7 +452,15 @@
         "unit": "phan-so-don-gian",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_phan-so-don-gian_q026",
-        "stage": 1
+        "stage": 2,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "tìm 1/n rồi trừ: hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Mẹ nuôi 45 con gà, hôm qua bán đi 1/9 số gà. Hỏi mẹ đã bán bao nhiêu con gà?",

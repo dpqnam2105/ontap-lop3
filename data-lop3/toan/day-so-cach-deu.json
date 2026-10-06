@@ -104,7 +104,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q006",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-2"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 2; 5; 8; 11; …; 26 có tất cả bao nhiêu số hạng?",
@@ -121,7 +127,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q007",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-3"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 11; 14; 17; 20; …; 68 có tất cả bao nhiêu số hạng?",
@@ -138,7 +150,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q008",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 5; 7; 9; 11; …; 25 có tất cả bao nhiêu số hạng?",
@@ -155,7 +173,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q009",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-2"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 1; 4; 7; 10; …; 28 có tất cả bao nhiêu số hạng?",
@@ -172,7 +196,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q010",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-3"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 5; 10; 15; 20; …; 50 có tất cả bao nhiêu số hạng?",
@@ -189,7 +219,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q011",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-5"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 2; 4; 6; 8; …; 22 có tất cả bao nhiêu số hạng?",
@@ -206,7 +242,13 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q012",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "sequence-1000",
+          "sub-1000",
+          "divide-2"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Dãy số 1; 2; 3; 5; 8; … Số tiếp theo là:",

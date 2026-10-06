@@ -53,7 +53,12 @@
         "unit": "kieu-kangaroo",
         "source": "tu-soan-y-tuong-kangaroo-20260930",
         "id": "toan_kieu-kangaroo_q003",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "divide-4",
+          "add-1000"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Để xếp 1 hình vuông cần 4 que diêm. Xếp 3 hình vuông liền nhau thành một hàng (dùng chung cạnh) cần bao nhiêu que diêm?",
@@ -308,7 +313,12 @@
         "unit": "kieu-kangaroo",
         "source": "tu-soan-y-tuong-kangaroo-20260930",
         "id": "toan_kieu-kangaroo_q018",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "sub-1000"
+        ],
+        "track": "enrich"
       },
       {
         "q": "An cao hơn Bình. Chi thấp hơn Bình. Dũng cao hơn An. Bạn nào thấp nhất?",

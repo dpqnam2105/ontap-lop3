@@ -943,7 +943,12 @@
         "unit": "tu-duy-logic",
         "source": "tu-soan-y-tuong-bebras-20260930",
         "id": "toan_tu-duy-logic_q054",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "duration"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Thỏ phải làm 3 việc, mỗi việc mất 10 phút: tưới cây, cho mèo ăn, quét nhà. Anh trai giúp làm cùng lúc, mỗi người chỉ làm một việc một lúc. Ít nhất bao nhiêu phút thì xong cả 3 việc?",
@@ -960,7 +965,12 @@
         "unit": "tu-duy-logic",
         "source": "tu-soan-y-tuong-bebras-20260930",
         "id": "toan_tu-duy-logic_q055",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "duration"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Sáng thứ Bảy Thỏ cần: đánh răng (5 phút), ăn sáng (15 phút), đi bộ đến lớp vẽ (10 phút). Lớp vẽ bắt đầu lúc 8 giờ. Thỏ phải bắt đầu đánh răng muộn nhất lúc mấy giờ?",
@@ -977,7 +987,13 @@
         "unit": "tu-duy-logic",
         "source": "tu-soan-y-tuong-bebras-20260930",
         "id": "toan_tu-duy-logic_q056",
-        "stage": 1
+        "stage": 1,
+        "prereq": [
+          "add-1000",
+          "clock",
+          "duration"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Ở quầy bán kem, ai đến trước thì mua trước. Lan đến, rồi Minh đến, rồi Hoa đến. Lan mua xong đi về. Sau đó Tú đến xếp hàng. Bạn nào mua tiếp theo?",

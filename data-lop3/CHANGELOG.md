@@ -6,6 +6,17 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 
 ---
 
+## 2026-10-06 (Claude — rà soát nền lớp 3, vòng 2, Codex đã đồng ý)
+- Toán / Giải toán có lời văn — q001 sửa lời ("Buổi sáng hái được 248 quả… buổi chiều hái thêm 135 quả", đáp án vẫn 383); q005, q013 GĐ1 → GĐ2 (hai bước).
+- Toán / Một phần mấy — q025, q026 GĐ1 → GĐ2 (hai bước). q029, q030 giữ nguyên, chờ mục lục.
+- Toán / Bảng nhân, chia — q094 → GĐ3 (biểu thức); q028, q065, q102, q112 → GĐ2 (hai bước, tìm ra khi rà tay). Gắn skill 107 câu; còn trống q023, q059, q096, q105, q106.
+- Toán / Ôn tập tổng hợp — q012 (2 km = 2000 m) → GĐ4.
+- Toán / Đo lường — q016 nhiễu "15 mm" → "15 dm"; q017 "28 g" → "8 kg".
+- Toán / Sơ đồ đoạn thẳng — q001 → **q001v2** (34 bạn, 16 nam, đáp án 18 bạn nữ; hình `so-do-01-v2.svg`, bỏ `so-do-01.svg`); q008–q010 → GĐ2.
+- Toán / nâng cao — thêm `track: enrich` + `prereq` cho 19 câu (sơ đồ q017–q018, dãy số q006–q012, tư duy số q044–q048, Kangaroo q003, q018, logic q054–q056).
+- Tiếng Anh / Adjectives & Adverbs — q005 lựa chọn "better" → "nicely" (trước đây hai đáp án cùng đúng).
+- Câu đã sửa có trường `review` (danh sách {by, date, status, note}). Không thêm, không xoá, không đổi thứ tự câu.
+
 ## 2026-10-06 (Claude — bảng nhân chia tự sinh)
 - Toán / Bảng nhân, chia (2–9) — +108 câu tự sinh (152 → 260), sinh lúc tải trang từ `js/table-gen.js`, không nằm trong file JSON. Id dạng `toan_gen_<dạng>_<a>x<b>`.
 - Toán / ⚡ Luyện bảng nhân chia 2–9 (tự sinh) — chủ đề mới, 552 câu (mul 72, div 72, mfac 72, mdsr 40, mdvd 32, rnext 32, rprev 32, rsplit 56, rsum 32, rswap 56, r10 8, cmp 48 — gồm đủ 8 cặp tích bằng nhau). Tất cả `stage: 1`.

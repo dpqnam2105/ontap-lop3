@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Lớp 3: sửa câu đã được Codex đồng ý + bộ sinh B1–B3 thử nghiệm (chưa lên web)
+- **Dữ liệu** (`tools/apply_ra_soat_20261006.py`, chi tiết ở `data-lop3/CHANGELOG.md`): sửa lời / nhiễu 5 câu; chuyển giai đoạn 15 câu (bài hai bước → GĐ2, biểu thức → GĐ3, 2 km → GĐ4); `so-do_q001` thay bằng `q001v2` (lớp 34 bạn, id mới để tiến độ câu cũ không áp sang); `prereq` cho 19 câu nâng cao; gắn skill cho 107/112 câu bảng nhân chia (72 tự động theo mẫu chắc chắn bằng `tools/tag_skills.py`, 35 rà tay, còn 5 chờ chọn tên).
+- `data-lop3/skills.json`: thêm khoá kỹ năng nền B1–B3 (`read-1000`, `add-1000`, `sub-1000`, `find-addend`…), `word-2step`, `skip-count`, `mul-div-relation`.
+- **Bộ sinh** `js/gen-b1b3.js` (CHƯA nạp trong index.html): 18 mẫu B1–B3 + lời văn một bước, id tái tạo được, nhiễu mô phỏng lỗi có quy tắc trong 0–1000. Kiểm thử `tests/gen-b1b3.test.js` (12 nhóm, ảnh chụp cố định `tests/fixtures/gen-b1b3-golden.json`). Câu mẫu cho Codex: `docs/mau-sinh-b1b3.md` (`node tools/gen_samples.js`).
+- Tài liệu: `docs/ra-soat-nen-lop3.md` thêm mục "Vòng 2"; bản kiểm kê và mẫu câu đại diện chạy lại.
+- Web không đổi giao diện; các bộ test cũ (cloud, arena, home, e2e) vẫn đạt.
+
 ## 2026-10-06 — Rà soát nền lớp 3: danh sách đề xuất (chưa sửa dữ liệu)
 - Thêm `docs/ra-soat-nen-lop3.md` trả lời Codex: (a) câu sẽ sửa / chuyển nhãn (lời văn hai bước ở GĐ1, 2 km ở GĐ1, đáp án nhiễu mm/g, "better" ở en_adj-adv_q005, lớp 64 bạn…), không tạm ẩn câu nào; (b) bảng kỹ năng nền B1–B3 còn thiếu; (c) 8 mẫu tự sinh B1–B3 + lời văn một bước (ví dụ, điều kiện sinh, nhiễu, cách kiểm chứng); (d) câu cần hình / trang sách — Claude đã mở và giải lại cả 67 câu có hình, đáp án đều khớp.
 - Đề xuất metadata `track / lesson / prereq / ref / review`, mốc "đã học đến bài N" tách khỏi giai đoạn.

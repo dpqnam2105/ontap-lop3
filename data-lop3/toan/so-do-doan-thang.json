@@ -5,12 +5,12 @@
     "name": "Sơ đồ đoạn thẳng (toán có lời văn)",
     "questions": [
       {
-        "q": "Lớp 3A có 64 bạn, trong đó có 28 bạn nam. Nhìn sơ đồ, hỏi lớp 3A có bao nhiêu bạn nữ?",
+        "q": "Lớp 3A có 34 bạn, trong đó có 16 bạn nam. Nhìn sơ đồ, hỏi lớp 3A có bao nhiêu bạn nữ?",
         "choices": [
-          "46 bạn nữ",
-          "92 bạn nữ",
-          "36 bạn nữ",
-          "26 bạn nữ"
+          "16 bạn nữ",
+          "22 bạn nữ",
+          "18 bạn nữ",
+          "50 bạn nữ"
         ],
         "a": 2,
         "hint": "Cả đoạn là tổng. Biết một phần, muốn tìm phần kia thì lấy tổng trừ phần đã biết.",
@@ -18,9 +18,18 @@
         "skill": "so-do-phan-tong",
         "unit": "so-do-doan-thang",
         "source": "claude-singapore-bar-model-20260930",
-        "id": "toan_so-do-doan-thang_q001",
+        "id": "toan_so-do-doan-thang_q001v2",
         "stage": 1,
-        "image": "images/questions/lop3/so-do-01.svg"
+        "image": "images/questions/lop3/so-do-01-v2.svg",
+        "replaces": "toan_so-do-doan-thang_q001",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "thay-cau",
+            "note": "lớp 64 bạn không thực tế → 34 bạn; nhiễu: 50 (nhầm phép cộng), 22 (trừ số bé cho số lớn từng hàng), 16 (chép số đã cho)"
+          }
+        ]
       },
       {
         "q": "Cửa hàng có 350 kg gạo, đã bán 125 kg. Nhìn sơ đồ, hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?",
@@ -145,8 +154,16 @@
         "unit": "so-do-doan-thang",
         "source": "claude-singapore-bar-model-20260930",
         "id": "toan_so-do-doan-thang_q008",
-        "stage": 1,
-        "image": "images/questions/lop3/so-do-08.svg"
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-08.svg",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "sơ đồ hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Buổi sáng cửa hàng bán được 138 cái bánh (Sáng). Buổi chiều bán được ít hơn buổi sáng 45 cái (Chiều). Hỏi cả ngày cửa hàng bán được bao nhiêu cái bánh?",
@@ -163,8 +180,16 @@
         "unit": "so-do-doan-thang",
         "source": "claude-singapore-bar-model-20260930",
         "id": "toan_so-do-doan-thang_q009",
-        "stage": 1,
-        "image": "images/questions/lop3/so-do-09.svg"
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-09.svg",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "sơ đồ hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Đàn gà có 215 con. Đàn vịt nhiều hơn đàn gà 90 con. Hỏi cả hai đàn có tất cả bao nhiêu con?",
@@ -181,8 +206,16 @@
         "unit": "so-do-doan-thang",
         "source": "claude-singapore-bar-model-20260930",
         "id": "toan_so-do-doan-thang_q010",
-        "stage": 1,
-        "image": "images/questions/lop3/so-do-10.svg"
+        "stage": 2,
+        "image": "images/questions/lop3/so-do-10.svg",
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "sơ đồ hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Mẹ có 32 quả táo, cho bà 1/4 số táo. Nhìn sơ đồ, phần tô màu là bao nhiêu quả táo?",
@@ -308,7 +341,12 @@
         "source": "claude-singapore-bar-model-20260930",
         "id": "toan_so-do-doan-thang_q017",
         "stage": 1,
-        "image": "images/questions/lop3/so-do-17.svg"
+        "image": "images/questions/lop3/so-do-17.svg",
+        "prereq": [
+          "sub-1000",
+          "divide"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Thùng to và thùng nhỏ có tất cả 90 lít. Thùng to có nhiều hơn thùng nhỏ 16 lít. Hỏi thùng nhỏ có bao nhiêu lít?",
@@ -326,7 +364,12 @@
         "source": "claude-singapore-bar-model-20260930",
         "id": "toan_so-do-doan-thang_q018",
         "stage": 1,
-        "image": "images/questions/lop3/so-do-18.svg"
+        "image": "images/questions/lop3/so-do-18.svg",
+        "prereq": [
+          "sub-1000",
+          "divide"
+        ],
+        "track": "enrich"
       },
       {
         "q": "Hoa có 20 cái kẹo (hàng trên). Hồng có nhiều hơn Hoa 10 cái kẹo (hàng dưới). Sơ đồ nào vẽ ĐÚNG bài toán?",

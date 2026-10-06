@@ -264,7 +264,7 @@
         "choices": [
           "15 cm",
           "15 m",
-          "15 mm",
+          "15 dm",
           "15 km"
         ],
         "a": 0,
@@ -274,7 +274,15 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q016",
-        "stage": 1
+        "stage": 1,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-nhieu",
+            "note": "mm học ở B30 (GĐ3)"
+          }
+        ]
       },
       {
         "q": "Một bạn học sinh lớp 3 nặng khoảng:",
@@ -282,7 +290,7 @@
           "28 kg",
           "280 kg",
           "2 kg",
-          "28 g"
+          "8 kg"
         ],
         "a": 0,
         "hint": "So với túi gạo 1 kg mẹ hay mua.",
@@ -291,7 +299,15 @@
         "unit": "toan_do-luong",
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q017",
-        "stage": 1
+        "stage": 1,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-nhieu",
+            "note": "g học ở B31 (GĐ3)"
+          }
+        ]
       },
       {
         "q": "Nhiệt độ cơ thể người khỏe mạnh khoảng:",

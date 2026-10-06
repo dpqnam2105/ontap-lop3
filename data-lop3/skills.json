@@ -146,7 +146,21 @@
    "rel-tach": "Tách thừa số: a × 7 = a × 5 + a × 2",
    "rel-tong": "Tổng các số bằng nhau thành phép nhân",
    "rel-doi-cho": "Đổi chỗ thừa số",
-   "cmp-tich": "So sánh hai tích"
+   "cmp-tich": "So sánh hai tích",
+   "read-1000": "Đọc số đến 1000",
+   "write-1000": "Viết số đến 1000",
+   "place-value-1000": "Cấu tạo số, viết thành tổng (đến 1000)",
+   "compare-1000": "So sánh, sắp xếp số đến 1000",
+   "sequence-1000": "Số liền trước, liền sau (đến 1000)",
+   "add-1000": "Cộng trong phạm vi 1000 (có nhớ, không nhớ)",
+   "sub-1000": "Trừ trong phạm vi 1000 (có nhớ, không nhớ)",
+   "find-addend": "Tìm số hạng",
+   "find-minuend": "Tìm số bị trừ",
+   "find-subtrahend": "Tìm số trừ",
+   "word-1step-addsub": "Bài toán một bước (cộng, trừ)",
+   "word-2step": "Bài toán giải bằng hai bước tính",
+   "skip-count": "Đếm thêm, đếm lùi theo bảng",
+   "mul-div-relation": "Từ phép nhân suy ra phép chia"
   },
   "tieng-viet": {
    "reading": "Đọc hiểu đoạn văn",
@@ -249,5 +263,6 @@
    "measurement": "Measurement – đo lường",
    "word-problems": "Word problems – toán đố"
   }
- }
+ },
+ "note_scope": "Khóa có hậu tố -1000 là kỹ năng nền B1–B3 (Toán 3 KNTT tập 1, phạm vi đến 1000); khóa không hậu tố (add, subtract, read-number…) dùng cho phạm vi 10 000 / 100 000 ở HK2. Trường prereq của câu hỏi chỉ được dùng khóa có trong labels.toan."
 }

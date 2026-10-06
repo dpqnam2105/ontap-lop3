@@ -5,30 +5,30 @@ Mỗi ô môn × giai đoạn × chủ đề lấy tối đa 3 câu, chọn cố
 
 ## Toán
 
-### GĐ1 · Bảng nhân, chia (2–9) (152 câu)
+### GĐ1 · Bảng nhân, chia (2–9) (147 câu)
 - `toan_bang-nhan-chia_q135` [độ khó 1, times-9] 9 × 6 = ? — 48 / **54** / 63 / 45
-- `toan_bang-nhan-chia_q032` [độ khó 1, không skill] 6 × 5 = ? — **30** / 36 / 24 / 25
-- `toan_bang-nhan-chia_q094` [độ khó 3, không skill] Tính: 7 × 5 + 15 = ? — 57 / 42 / 49 / **50**
+- `toan_bang-nhan-chia_q032` [độ khó 1, times-6] 6 × 5 = ? — **30** / 36 / 24 / 25
+- `toan_bang-nhan-chia_q010` [độ khó 1, divide-4] 20 : 4 = ? — 6 / 7 / **5** / 4
 
 ### GĐ1 · Dãy số cách đều (15 câu)
 - `toan_day-so-cach-deu_q011` [độ khó 1, so-so-hang] Dãy số 5; 10; 15; 20; …; 50 có tất cả bao nhiêu số hạng? — 12 / 9 / 11 / **10**
 - `toan_day-so-cach-deu_q008` [độ khó 3, so-so-hang] Dãy số 11; 14; 17; 20; …; 68 có tất cả bao nhiêu số hạng? — **20** / 19 / 21 / 22
 - `toan_day-so-cach-deu_q004` [độ khó 2, so-hang-thu-n] Cho dãy số 1; 4; 7; 10; … Số hạng thứ 8 của dãy là: — 19 / **22** / 25 / 24
 
-### GĐ1 · Giải toán có lời văn (9 câu)
+### GĐ1 · Giải toán có lời văn (7 câu)
 - `toan_giai-toan-co-loi-van_q004` [độ khó 2, word-problem] Mai có 28 nhãn vở, Mai ít hơn Lan 15 nhãn vở. Hỏi Lan có bao nhiêu nhãn vở? — 13 / 33 / **43** / 42
 - `toan_giai-toan-co-loi-van_q011` [độ khó 2, word-problem] Thùng có 100 lít nước. Đã dùng 36 lít. Hỏi thùng còn bao nhiêu lít nước? — **64** / 54 / 136 / 74
-- `toan_giai-toan-co-loi-van_q001` [độ khó 2, word-problem] Vườn có 248 quả cam, hái thêm 135 quả. Hỏi vườn có tất cả bao nhiêu quả cam? — 373 / 483 / **383** / 113
+- `toan_giai-toan-co-loi-van_q001` [độ khó 2, word-problem] Buổi sáng hái được 248 quả cam, buổi chiều hái thêm 135 quả cam. Hỏi cả ngày hái được bao nhiêu quả cam? — 373 / 483 / **383** / 113
 
-### GĐ1 · Một phần mấy (31 câu)
-- `toan_phan-so-don-gian_q026` [độ khó 3, phan-con-lai] Trong hộp có 45 viên kẹo, Mai lấy ra 1/5 số kẹo. Hỏi trong hộp còn lại bao nhiêu viên? — 9 / 35 / 40 / **36**
+### GĐ1 · Một phần mấy (29 câu)
 - `toan_phan-so-don-gian_q002` [độ khó 1, unit-fraction] Một cái bánh được chia làm 3 phần bằng nhau. Lấy ra 1 phần. Phần lấy ra bằng mấy phần của cái bánh? — 1/2 / 3/1 / 1/4 / **1/3**
 - `toan_phan-so-don-gian_q018` [độ khó 2, fraction-of] 1/9 của 81 là: — 11 / 10 / 8 / **9**
+- `toan_phan-so-don-gian_q017` [độ khó 2, fraction-of] 1/8 của 64 là: — 9 / 7 / **8** / 10
 
-### GĐ1 · Sơ đồ đoạn thẳng (toán có lời văn) (16 câu)
+### GĐ1 · Sơ đồ đoạn thẳng (toán có lời văn) (13 câu)
 - `toan_so-do-doan-thang_q017` [độ khó 3, so-do-tong-hieu] Anh và em có tất cả 50 viên bi. Anh có nhiều hơn em 10 viên bi. Hỏi em có bao nhiêu viên bi? — **20 viên bi** / 40 viên bi / 30 viên bi / 25 viên bi
+- `toan_so-do-doan-thang_q001v2` [độ khó 1, so-do-phan-tong] Lớp 3A có 34 bạn, trong đó có 16 bạn nam. Nhìn sơ đồ, hỏi lớp 3A có bao nhiêu bạn nữ? — 16 bạn nữ / 22 bạn nữ / **18 bạn nữ** / 50 bạn nữ
 - `toan_so-do-doan-thang_q013` [độ khó 2, so-do-mot-phan] Có 54 học sinh, 1/6 số học sinh đi bơi. Nhìn sơ đồ, phần tô màu là bao nhiêu học sinh? — 11 học sinh / 10 học sinh / **9 học sinh** / 8 học sinh
-- `toan_so-do-doan-thang_q018` [độ khó 3, so-do-tong-hieu] Thùng to và thùng nhỏ có tất cả 90 lít. Thùng to có nhiều hơn thùng nhỏ 16 lít. Hỏi thùng nhỏ có bao nhiêu lít? — 45 lít / **37 lít** / 74 lít / 53 lít
 
 ### GĐ1 · Toán có lời văn hay (44 câu)
 - `toan_loi-van-hay_q002` [độ khó 3, cho-qua-cho-lai] Thái cho Hùng 14 viên bi, sau đó Hùng cho lại Thái 9 viên thì mỗi bạn có 40 viên. Lúc đầu Hùng có bao nhiêu viên bi? — 40 viên / 49 viên / **35 viên** / 45 viên
@@ -55,22 +55,28 @@ Mỗi ô môn × giai đoạn × chủ đề lấy tối đa 3 câu, chọn cố
 - `toan_xem-dong-ho-thoi-gian_q001` [độ khó 1, clock] Kim giờ chỉ đúng số 3, kim phút chỉ số 12. Đồng hồ chỉ: — 12 giờ 15 phút / **3 giờ** / 12 giờ 3 phút / 3 giờ 12 phút
 - `toan_xem-dong-ho-thoi-gian_q002` [độ khó 2, clock] Kim giờ nằm giữa số 10 và số 11, kim phút chỉ số 6. Đồng hồ chỉ: — 6 giờ 10 phút / 10 giờ 6 phút / **10 giờ 30 phút** / 11 giờ 30 phút
 
-### GĐ1 · Ôn tập tổng hợp (6 câu)
+### GĐ1 · Ôn tập tổng hợp (5 câu)
 - `toan_on-tap-tong-hop_q009` [độ khó 2, fraction-of] 1/4 của 28 là: — 112 / 24 / **7** / 32
 - `toan_on-tap-tong-hop_q014` [độ khó 2, word-problem] Hùng có 30 viên bi, Hùng kém Việt 12 viên. Hỏi Việt có bao nhiêu viên bi? — **42** / 40 / 18 / 32
-- `toan_on-tap-tong-hop_q012` [độ khó 1, convert] 2 km = ? m — 200 / **2000** / 20 000 / 20
+- `toan_on-tap-tong-hop_q013` [độ khó 2, clock] Kim giờ chỉ quá số 4 một chút, kim phút chỉ số 6. Đồng hồ chỉ: — 5 giờ 30 phút / 4 giờ 6 phút / 6 giờ 20 phút / **4 giờ 30 phút**
 
 ### GĐ1 · Đo lường (độ dài, khối lượng, dung tích) (6 câu)
 - `toan_do-luong_q015` [độ khó 2, compare] Chọn dấu thích hợp: 1 m ... 100 cm — > / không so sánh được / < / **=**
 - `toan_do-luong_q011` [độ khó 2, convert] 8 dm = ? cm — 18 / 8 / **80** / 800
-- `toan_do-luong_q017` [độ khó 1, estimate] Một bạn học sinh lớp 3 nặng khoảng: — **28 kg** / 280 kg / 2 kg / 28 g
+- `toan_do-luong_q017` [độ khó 1, estimate] Một bạn học sinh lớp 3 nặng khoảng: — **28 kg** / 280 kg / 2 kg / 8 kg
 
 ### GĐ1 · Đếm hình & đường gấp khúc (20 câu)
 - `toan_dem-hinh-gap-khuc_q018` [độ khó 2, duong-gap-khuc] Đường gấp khúc ABCD dài 45 cm. Đoạn thẳng CD dài bao nhiêu xăng-ti-mét? — 30 cm / 27 cm / **18 cm** / 33 cm
 - `toan_dem-hinh-gap-khuc_q012` [độ khó 3, dem-hinh] Hình bên có tất cả bao nhiêu hình chữ nhật? — 8 / 7 / **10** / 4
 - `toan_dem-hinh-gap-khuc_q004` [độ khó 2, dem-hinh] Hình bên có tất cả bao nhiêu tam giác? — 4 / **6** / 8 / 3
 
-### GĐ2 · Giải toán có lời văn (2 câu)
+### GĐ2 · Bảng nhân, chia (2–9) (4 câu)
+- `toan_bang-nhan-chia_q065` [độ khó 3, word-2step] Mẹ mua 6 vỉ trứng, mỗi vỉ 6 quả. Mẹ dùng hết 6 quả. Hỏi còn lại bao nhiêu quả trứng? — **30 quả** / 24 quả / 29 quả / 36 quả
+- `toan_bang-nhan-chia_q028` [độ khó 3, word-2step] Thỏ có 4 hộp bút, mỗi hộp 6 chiếc. Thỏ cho bạn 4 chiếc. Hỏi Thỏ còn lại bao nhiêu chiếc bút? — 19 chiếc / 21 chiếc / **20 chiếc** / 24 chiếc
+- `toan_bang-nhan-chia_q102` [độ khó 3, word-2step] Thỏ đọc mỗi ngày 7 trang sách. Hỏi sau 2 tuần Thỏ đọc được bao nhiêu trang? — 97 trang / 100 trang / 99 trang / **98 trang**
+
+### GĐ2 · Giải toán có lời văn (4 câu)
+- `toan_giai-toan-co-loi-van_q005` [độ khó 3, word-problem] Mẹ mua 12 kg gạo, đã dùng 5 kg rồi cho bà 3 kg. Hỏi còn lại bao nhiêu ki-lô-gam gạo? — **4** / 7 / 9 / 20
 - `toan_giai-toan-co-loi-van_q014` [độ khó 3, word-problem] Có 5 hộp bút, mỗi hộp 8 cái. Chia đều số bút cho 4 nhóm. Hỏi mỗi nhóm được bao nhiêu cái bút? — **10** / 40 / 17 / 13
 - `toan_giai-toan-co-loi-van_q007` [độ khó 2, word-problem] Có 96 học sinh xếp đều thành 6 hàng. Hỏi mỗi hàng có bao nhiêu học sinh? — 90 / **16** / 15 / 102
 
@@ -79,18 +85,25 @@ Mỗi ô môn × giai đoạn × chủ đề lấy tối đa 3 câu, chọn cố
 - `toan_hinh-hoc_q028` [độ khó 1, midpoint] M là trung điểm của đoạn thẳng AB. AM = 7 cm. Độ dài đoạn thẳng AB là: — 12 cm / 7 cm / 21 cm / **14 cm**
 - `toan_hinh-hoc_q008` [độ khó 2, midpoint] M là trung điểm của đoạn thẳng AB. AB dài 16 cm. Đoạn AM dài bao nhiêu xăng-ti-mét? — 10 / 16 / 32 / **8**
 
+### GĐ2 · Một phần mấy (2 câu)
+- `toan_phan-so-don-gian_q026` [độ khó 3, phan-con-lai] Trong hộp có 45 viên kẹo, Mai lấy ra 1/5 số kẹo. Hỏi trong hộp còn lại bao nhiêu viên? — 9 / 35 / 40 / **36**
+- `toan_phan-so-don-gian_q025` [độ khó 3, phan-con-lai] Một đàn vịt có 40 con, 1/5 số vịt đang bơi dưới ao. Hỏi trên bờ có bao nhiêu con vịt? — 8 / 30 / **32** / 35
+
 ### GĐ2 · Nhân, chia ngoài bảng (11 câu)
 - `toan_nhan-chia-ngoai-bang_q028` [độ khó 2, times-less] Giảm 96 đi 3 lần được: — 93 / 99 / **32** / 288
 - `toan_nhan-chia-ngoai-bang_q012` [độ khó 2, divide] 84 : 7 = ? — 102 / 13 / **12** / 11
 - `toan_nhan-chia-ngoai-bang_q026` [độ khó 2, divide-remainder] 83 : 6 = ? (phép chia có dư) — 14 dư 5 / 13 dư 4 / 12 dư 11 / **13 dư 5**
 
-### GĐ2 · Sơ đồ đoạn thẳng (toán có lời văn) (4 câu)
+### GĐ2 · Sơ đồ đoạn thẳng (toán có lời văn) (7 câu)
 - `toan_so-do-doan-thang_q016` [độ khó 2, so-do-gap-lan] Lan hái được 24 bông hoa. Mai hái được gấp 2 lần Lan. Hỏi Mai hái được bao nhiêu bông hoa? — 24 bông hoa / 26 bông hoa / 72 bông hoa / **48 bông hoa**
 - `toan_so-do-doan-thang_q020` [độ khó 2, so-do-chon] Minh có 15 bút chì (hàng trên). Số bút màu gấp 3 lần số bút chì (hàng dưới). Sơ đồ nào vẽ ĐÚNG? — Sơ đồ A / Sơ đồ B / **Sơ đồ C** / Sơ đồ D
-- `toan_so-do-doan-thang_q014` [độ khó 1, so-do-gap-lan] Em 8 tuổi. Tuổi anh gấp 3 lần tuổi em. Hỏi anh bao nhiêu tuổi? — 16 tuổi / 11 tuổi / **24 tuổi** / 32 tuổi
+- `toan_so-do-doan-thang_q008` [độ khó 2, so-do-hai-buoc] An có 25 quyển truyện. Bình có nhiều hơn An 12 quyển truyện. Hỏi cả hai có tất cả bao nhiêu quyển truyện? — **62 quyển truyện** / 37 quyển truyện / 50 quyển truyện / 13 quyển truyện
 
 ### GĐ2 · Ôn tập tổng hợp (1 câu)
 - `toan_on-tap-tong-hop_q016` [độ khó 2, divide-remainder] 50 : 8 = ? (phép chia có dư) — 5 dư 10 / 6 dư 8 / **6 dư 2** / 7 dư 2
+
+### GĐ3 · Bảng nhân, chia (2–9) (1 câu)
+- `toan_bang-nhan-chia_q094` [độ khó 3, expression] Tính: 7 × 5 + 15 = ? — 57 / 42 / 49 / **50**
 
 ### GĐ3 · Giải toán có lời văn (3 câu)
 - `toan_giai-toan-co-loi-van_q010` [độ khó 3, word-problem] Buổi sáng cửa hàng bán 150 cái bánh, buổi chiều bán gấp đôi buổi sáng. Hỏi cả ngày bán bao nhiêu cái bánh? — 152 / **450** / 302 / 300
@@ -127,7 +140,7 @@ Mỗi ô môn × giai đoạn × chủ đề lấy tối đa 3 câu, chọn cố
 - `toan_so-den-100000_q052` [độ khó 2, roman] Số La Mã XX là số: — 11 / **20** / 2 / 10
 - `toan_so-den-100000_q044` [độ khó 2, rounding] Làm tròn số 1499 đến hàng nghìn ta được: — 2000 / 1500 / **1000** / 1400
 
-### GĐ4 · Ôn tập tổng hợp (4 câu)
+### GĐ4 · Ôn tập tổng hợp (5 câu)
 - `toan_on-tap-tong-hop_q011` [độ khó 3, area] Hình chữ nhật dài 7 cm, rộng 5 cm có diện tích là: — 24 cm² / **35 cm²** / 12 cm² / 35 cm
 - `toan_on-tap-tong-hop_q015` [độ khó 2, rounding] Làm tròn số 6473 đến hàng trăm ta được: — 6000 / 6470 / 6400 / **6500**
 - `toan_on-tap-tong-hop_q007` [độ khó 2, multiply] 1208 × 4 = ? — 4822 / **4832** / 4032 / 4812
@@ -246,7 +259,7 @@ Mỗi ô môn × giai đoạn × chủ đề lấy tối đa 3 câu, chọn cố
 ### GĐ1 · Adjectives & Adverbs (25 câu)
 - `en_adj-adv_q010` [độ khó 2, adj-adv] Be ___! The road is busy. — carefully / carely / **careful** / care
 - `en_adj-adv_q020` [độ khó 2, adj-adv] They work ___ together. — quietful / quiet / quiets / **quietly**
-- `en_adj-adv_q005` [độ khó 2, adj-adv] Tom is a ___ swimmer. — **good** / well / better / goodly
+- `en_adj-adv_q005` [độ khó 2, adj-adv] Tom is a ___ swimmer. — **good** / well / nicely / goodly
 
 ### GĐ1 · At School (16 câu)
 - `en_at-school_q001` [độ khó 1, at-school] I write with a ___. — **pen** / desk / bag / board

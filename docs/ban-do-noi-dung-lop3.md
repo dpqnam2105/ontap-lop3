@@ -123,28 +123,30 @@ Theo cách của bảng nhân chia tự sinh (đáp án nhiễu là lỗi điể
 
 <!-- Sinh bởi: python3 tools/content_map.py -->
 
+_Cập nhật 2026-10-06 sau đợt sửa đã được Codex đồng ý (docs/ra-soat-nen-lop3.md). Toàn bộ câu tĩnh hiện **chưa có `lesson`** → đều tính là *chưa đối chiếu trang sách*; giai đoạn vẫn chạy theo `stage` như cũ._
+
 ### Toán — giai đoạn: GĐ1, GĐ2, GĐ3, GĐ4, GĐ5
 
 | Chủ đề | Loại | GĐ1 | GĐ2 | GĐ3 | GĐ4 | GĐ5 | Chưa gắn GĐ | Tổng | Thiếu skill | Nguồn (source) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Số đến 100 000 | theo sách | 0 | 0 | 0 | 12 | 40 | 0 | 52 | 0 | claude-audit-20260924 52 |
 | Cộng trừ trong phạm vi 100 000 | theo sách | 0 | 0 | 0 | 14 | 20 | 0 | 34 | 0 | claude-audit-20260924 34 |
-| Bảng nhân, chia (2–9) | theo sách | 152 | 0 | 0 | 0 | 0 | 0 | 152 | 112 | (trống) 112, claude-audit-20260924 40 |
+| Bảng nhân, chia (2–9) | theo sách | 147 | 4 | 1 | 0 | 0 | 0 | 152 | 5 | (trống) 112, claude-audit-20260924 40 |
 | Nhân, chia ngoài bảng | theo sách | 0 | 11 | 13 | 4 | 5 | 0 | 33 | 0 | claude-audit-20260924 33 |
-| Một phần mấy | theo sách | 31 | 0 | 0 | 0 | 0 | 0 | 31 | 0 | claude-audit-20260924 24, bo-tro-tuan6-8-20261001 7 |
+| Một phần mấy | theo sách | 29 | 2 | 0 | 0 | 0 | 0 | 31 | 0 | claude-audit-20260924 24, bo-tro-tuan6-8-20261001 7 |
 | Hình học (trung điểm, hình tròn, chu vi, diện tích) | theo sách | 0 | 15 | 0 | 13 | 0 | 0 | 28 | 0 | claude-audit-20260924 25, bo-tro-tuan6-8-20261001 3 |
 | Đếm hình & đường gấp khúc | nâng cao | 20 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | cai-bien-de-hk1-20260930 20 |
 | Đo lường (độ dài, khối lượng, dung tích) | theo sách | 6 | 0 | 12 | 0 | 2 | 0 | 20 | 0 | claude-audit-20260924 20 |
 | Xem đồng hồ, thời gian | theo sách | 5 | 0 | 0 | 0 | 10 | 0 | 15 | 0 | claude-audit-20260924 15 |
-| Giải toán có lời văn | theo sách | 9 | 2 | 3 | 0 | 1 | 0 | 15 | 0 | claude-audit-20260924 15 |
-| Sơ đồ đoạn thẳng (toán có lời văn) | nâng cao | 16 | 4 | 0 | 0 | 0 | 0 | 20 | 0 | claude-singapore-bar-model-20260930 20 |
+| Giải toán có lời văn | theo sách | 7 | 4 | 3 | 0 | 1 | 0 | 15 | 0 | claude-audit-20260924 15 |
+| Sơ đồ đoạn thẳng (toán có lời văn) | nâng cao | 13 | 7 | 0 | 0 | 0 | 0 | 20 | 0 | claude-singapore-bar-model-20260930 20 |
 | Dãy số cách đều | nâng cao | 15 | 0 | 0 | 0 | 0 | 0 | 15 | 0 | bo-tro-tuan6-8-20261001 15 |
-| Ôn tập tổng hợp | theo sách | 6 | 1 | 0 | 4 | 5 | 0 | 16 | 0 | claude-audit-20260924 16 |
+| Ôn tập tổng hợp | theo sách | 5 | 1 | 0 | 5 | 5 | 0 | 16 | 0 | claude-audit-20260924 16 |
 | Tư duy số & phép tính | nâng cao | 76 | 0 | 0 | 0 | 0 | 0 | 76 | 0 | cai-bien-de-hk1-20260929 55, bo-tro-tuan6-8-20261001 21 |
 | Toán có lời văn hay | nâng cao | 44 | 0 | 0 | 0 | 0 | 0 | 44 | 0 | cai-bien-de-hk1-20260929 39, bo-tro-tuan6-8-20261001 5 |
 | Tư duy logic (kiểu Bebras) | nâng cao | 70 | 0 | 0 | 0 | 0 | 0 | 70 | 0 | cai-bien-de-hk1-20260929 30, tu-soan-y-tuong-bebras-20260930 24, cai-bien-de-hk1-20260930 16 |
 | Toán đố vui kiểu Kangaroo | nâng cao | 21 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | tu-soan-y-tuong-kangaroo-20260930 21 |
-| **Tổng** | | 471 | 33 | 28 | 47 | 83 | 0 | 662 | | |
+| **Tổng** | | 458 | 44 | 29 | 48 | 83 | 0 | 662 | | |
 
 ### Tiếng Việt — CHƯA chia giai đoạn
 

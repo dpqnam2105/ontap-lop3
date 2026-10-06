@@ -1,4 +1,32 @@
-# Rà soát nền lớp 3: danh sách đề xuất (CHƯA sửa dữ liệu)
+# Rà soát nền lớp 3
+
+## Vòng 2 (2026-10-06): đã làm theo phản hồi Codex
+
+**Bước 1 — sửa câu và nhãn đã được đồng ý** (`tools/apply_ra_soat_20261006.py`: kiểm tra giá trị cũ trước khi đổi, chạy lại không đổi gì thêm; không đổi thứ tự câu trong mảng):
+
+- Sửa lời `loi-van_q001`; đổi nhiễu `do-luong_q016` (15 mm → 15 dm), `q017` (28 g → 8 kg); `en_adj-adv_q005` thay **`better` → `nicely`** (`goodly` giữ nguyên, vốn đã sai rõ ràng).
+- Chuyển GĐ: hai bước → GĐ2 (`loi-van_q005, q013`, `phan-so_q025, q026`, `so-do_q008–q010`, và 4 câu mới tìm ra khi rà tay: `bang-nhan_q028, q065, q102, q112`); `bang-nhan_q094` → GĐ3; `on-tap_q012` → GĐ4. `phan-so_q029/q030` **giữ nguyên, vẫn chờ mục lục**.
+- `so-do_q001`: đổi dữ kiện và đáp án nên **đổi id thành `toan_so-do-doan-thang_q001v2`** (giữ vị trí trong mảng, ghi `replaces`). Ôn câu sai / lịch ôn tìm theo id (rồi theo nội dung đề), nên không khớp câu cũ: tiến độ của câu cũ không áp sang câu mới. Hình mới `so-do-01-v2.svg`.
+- Skill bảng nhân chia: `tools/tag_skills.py` chỉ gắn khi khớp mẫu chắc chắn (72 câu: `times-N`, `divide-N`, `missing-*`, `rel-them-bot` cho q056/q057/q093). Rà tay 35 câu (đếm thêm/lùi, nhân suy ra chia, lời văn một bước, so sánh tích, 4 bài hai bước). **Còn 5 câu chưa gắn**, chờ chọn tên kỹ năng: `q023, q059, q096` (phép chia nào lớn/bé nhất), `q105, q106` (số có trong bảng nhân nào).
+- `prereq` + `track: enrich` cho 19 câu nâng cao, dùng khoá có trong `data-lop3/skills.json` (đã tách `add-1000` / `sub-1000`). Trồng cây `kieu-kangaroo_q003` cần `divide-4`, `add-1000`. Phát hiện thêm: `so-do_q017–q018` (tổng – hiệu) và `day-so_q008` cần **chia ngoài bảng** (40 : 2, 74 : 2, 57 : 3), nên prereq là `divide` (GĐ2), không phải `divide-2`.
+- `review` là danh sách `{by, date, status, note}`, chỉ ghi ở câu đã sửa. Câu tĩnh chưa có `lesson` đều tính là chưa đối chiếu sách.
+- Bản kiểm kê (mục 6 `docs/ban-do-noi-dung-lop3.md`) và mẫu câu đại diện đã chạy lại.
+
+**Bước 2 — bộ sinh B1–B3 thử nghiệm** `js/gen-b1b3.js` (**chưa nạp vào web**, chưa vào kế hoạch học). Câu mẫu: `docs/mau-sinh-b1b3.md`. Kiểm thử: `node tests/gen-b1b3.test.js`.
+
+- 18 mẫu trong 8 nhóm: đọc số, viết số từ chữ; cấu tạo số (gồm…), viết thành tổng, gộp tổng; điền dấu, lớn nhất/bé nhất, xếp tăng/giảm; liền trước/sau; cộng; trừ; tìm số hạng / số bị trừ / số trừ; lời văn một bước (6 khung, có 2 khung bẫy "A ít hơn B, hỏi B").
+- **Phạm vi**: số 0–1000. Khi bốc câu: khoảng 70% số ba chữ số, 17% hai chữ số, 5% một chữ số, 8% số biên (0, 1, 9, 10, 99, 100, 101, 110, 500, 909, 990, 999, 1000). Riêng câu trừ và tìm thành phần có thêm 25–30% ca **hiệu hoặc số chưa biết nhỏ** (302 − 298, ? + 245 = 250). Có tổng bằng 1000. Câu đọc/viết số dùng số từ 10 (đọc số một chữ số là kiến thức lớp 1).
+- **Nhiễu**: chỉ một chính sách — mọi lựa chọn dạng số đều trong 0–1000. Nhiễu sinh bằng mô phỏng lỗi có quy tắc, theo thứ tự ưu tiên: quên nhớ, quên nhớ ở một hàng, nhớ thừa, đặt tính lệch hàng, nhầm phép tính; trừ số bé cho số lớn từng hàng, quên trả khi mượn; đảo chữ số, bỏ sót / viết thừa chữ số 0; chép số đã cho. Dự phòng cuối là "sai 1 ở hàng chục / trăm" (ví dụ 1000 − 1: lỗi khác đều vượt 1000). Không đủ 3 nhiễu thì bộ tham số bị từ chối, bộ chọn sinh lại. `GenB13.explain(id)` in tên lỗi của từng nhiễu.
+- **Đọc số**: cách đọc chuẩn là "linh", "mốt", "lăm", "một nghìn". Nhiễu là cách đọc chuẩn của *số khác*, nên "lẻ / ngàn / nhăm / tư" không bao giờ là đáp án sai (test chặn). **Chưa chốt** "… mươi tư / bốn" và "linh tư / bốn": các số đó tạm chưa ra trong câu đọc/viết, chờ Nam đối chiếu sách.
+- **Tái tạo**: id = `toan_g13_<mẫu>_v1_<tham số>`. `GenB13.build(id)` luôn ra cùng đề, đáp án, gợi ý và vị trí đáp án. Id sai, sai phiên bản, có số 0 đứng đầu hoặc tham số ngoài phạm vi thì trả `null`. Không dùng vị trí trong mảng.
+- **Metadata** mỗi câu sinh: `skill, track: core, stage: 1, lesson {book: kntt-toan3, vol: 1, no: 1|2|3}, source: gen-b1b3-v1, difficulty, review` (ghi "mẫu đã qua kiểm thử; chưa ai rà câu cụ thể").
+- **Kiểm thử**: bảng đọc số viết tay (0, mốt, lăm, linh, tròn chục/trăm, 1000); 26 câu viết tay kèm nhiễu bắt buộc; khung lời văn ↔ phép tính; id hỏng → null; ảnh chụp cố định 86 câu (`tests/fixtures/gen-b1b3-golden.json`: đổi nội dung là test đỏ, phải tăng VERSION); quét 4000 câu seed cố định, đáp án tính lại độc lập; phủ phạm vi; vị trí đáp án 20–30% mỗi ô; skill có trong `skills.json`. Đã thử cố ý cài 4 lỗi vào bộ sinh: lần nào test cũng báo đỏ.
+- Chưa làm (bước 4, sau khi Codex duyệt): nạp vào web, quota để câu sinh không lấn chủ đề tĩnh trong kế hoạch hôm nay, giao diện câu điền dấu (3 lựa chọn).
+- **Tín hiệu chuyển giai đoạn: chưa triển khai.** Giữ trong tài liệu, cần câu khác nhau, nhiều ngày, đủ dạng mỗi skill (theo Codex).
+
+---
+
+# Vòng 1: danh sách đề xuất gửi Codex (giữ nguyên để đối chiếu; chỗ sai đã sửa ở vòng 2)
 
 Trả lời góp ý của Codex trên commit 88d4782. Mọi thay đổi bên dưới chỉ là **đề xuất**: chưa động vào câu nào trong `data-lop3`. Câu sửa tại chỗ thì **giữ nguyên id**.
 
@@ -17,7 +45,7 @@ Ký hiệu: **SỬA** = sửa nội dung/đáp án nhiễu · **NHÃN** = đổi
 | `phan-so-don-gian_q029`, `q030` | CHỜ, dự kiến GĐ3 | Dạng "a là mấy phần của b", gần với bài "số bé bằng một phần mấy số lớn" (CĐ6). Cần mục lục để chốt số bài. |
 | `bang-nhan-chia_q094` | NHÃN GĐ1→GĐ3 | 7 × 5 + 15 là tính giá trị biểu thức, chưa phải dạng "nhân thêm một lần". |
 | `bang-nhan-chia_q056`, `q057`, `q093` | Giữ GĐ1, thêm `skill` | Dạng 6 × 9 + 6 = 6 × 10 dùng quan hệ trong bảng nhân, hợp GĐ1. |
-| `bang-nhan-chia` (112 câu thiếu skill) | Gắn `skill` tự động | Gắn theo mẫu phép tính (`times-N` / `divide-N`). Không đổi nội dung câu. |
+| `bang-nhan-chia` (112 câu thiếu skill) | Gắn `skill` | ~~Gắn tất cả theo `times-N` / `divide-N`~~ → vòng 2: chỉ gắn tự động khi khớp mẫu chắc chắn, còn lại rà tay. |
 | `on-tap-tong-hop_q012` (2 km = ? m) | NHÃN GĐ1→GĐ4 | Đáp án 2000 vượt phạm vi 1000. |
 | `do-luong_q016` | SỬA nhiễu | Thay "15 mm" (mm học ở CĐ5) bằng "15 dm". |
 | `do-luong_q017` | SỬA nhiễu | Thay "28 g" (g học ở CĐ5) bằng "8 kg". |
@@ -28,24 +56,24 @@ Ký hiệu: **SỬA** = sửa nội dung/đáp án nhiễu · **NHÃN** = đổi
 |---|---|---|
 | `so-do-doan-thang_q001` | SỬA số | Một lớp 3 có 64 bạn là không thực tế. Đổi thành tổng 34, nam 16, nữ 18; sửa nhãn trong SVG `so-do-01.svg` và các phương án theo. |
 | `so-do-doan-thang_q008`, `q009`, `q010` | NHÃN GĐ1→GĐ2 | Sơ đồ hai bước (hơn/kém rồi tính tổng). |
-| `so-do-doan-thang_q017`, `q018` | Giữ ở nâng cao, thêm `prereq` | Bài tổng – hiệu là phương pháp của lớp 4. Chỉ mở khi đã vững `add-sub-1000` và `divide-2`. |
+| `so-do-doan-thang_q017`, `q018` | Giữ ở nâng cao, thêm `prereq` | Bài tổng – hiệu là phương pháp của lớp 4. Chỉ mở khi đã vững `sub-1000` và `divide` (chia ngoài bảng — sửa ở vòng 2). |
 
 Các dạng nâng cao Codex nêu sẽ giữ trong kho nhưng **không tính vào tín hiệu chuyển giai đoạn**. Mỗi dạng có điều kiện mở (`prereq`):
 
 | Dạng | Câu ví dụ | prereq |
 |---|---|---|
-| Tổng – hiệu | `so-do-doan-thang_q017–018` | `add-sub-1000`, `divide-2` |
+| Tổng – hiệu | `so-do-doan-thang_q017–018` | `sub-1000`, `divide` |
 | Đếm số hạng | `day-so-cach-deu_q006` (1; 3; …; 21) | `sequence-1000`, `divide-2-9` |
 | Suy ngược | `tu-duy-so_q044` | `find-addend`, `find-minuend` (B3) |
-| Ốc sên | `kieu-kangaroo_q018` | `add-sub-100` |
-| Xếp lịch | `tu-duy-logic_q054` | `add-sub-100`, `clock` |
-| Trồng cây | Chưa có câu nào | Chưa làm |
+| Ốc sên | `kieu-kangaroo_q018` | `add-1000`, `sub-1000` |
+| Xếp lịch | `tu-duy-logic_q054–q056` | `add-1000`, `duration` (+ `clock` cho q056) |
+| Trồng cây | `kieu-kangaroo_q003` (20 m, cứ 4 m một cây, hai đầu → 6 cây) — vòng 1 bỏ sót | `divide-4`, `add-1000` |
 
 ### Tiếng Anh
 
 | Câu | Việc | Lý do |
 |---|---|---|
-| `en_adj-adv_q005` ("Tom is a ___ swimmer") | SỬA nhiễu | "better" cũng hợp ngữ pháp ("a better swimmer"). Thay bằng "goodly" → "nicely" hoặc một trạng từ khác sai rõ ràng. |
+| `en_adj-adv_q005` ("Tom is a ___ swimmer") | SỬA nhiễu | "better" cũng hợp ngữ pháp ("a better swimmer"). Vòng 2: thay **`better` → `nicely`**. |
 | 104 câu không gắn unit | Phân 4 nhóm ở vòng sau | Làm thành danh sách riêng (nền GĐ1 / dời giai đoạn sau / cần sửa / bỏ) sau khi chốt nền Toán, để vòng này không bị loãng. |
 
 **Tạm ẩn: không có câu nào.** Mọi lỗi tìm thấy đều sửa được tại chỗ hoặc chỉ cần đổi nhãn.
@@ -115,7 +143,7 @@ Thêm vào mỗi câu (đều không bắt buộc; câu cũ thiếu trường n�
 track:   "core" | "enrich"
 lesson:  số bài trong SGK (vd 3 = B3)   ← mốc bài, tách khỏi stage
 skill:   như hiện tại
-prereq:  ["add-sub-1000", ...]          ← chỉ dùng cho enrich
+prereq:  ["add-1000", "sub-1000", ...]          ← chỉ dùng cho enrich
 ref:     "KNTT T3 t1 B3"                 ← chỉ ghi khi đã đối chiếu trang sách
 review:  "claude" | "codex" | "nam"      ← ai đã soát
 ```

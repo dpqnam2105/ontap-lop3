@@ -5,7 +5,7 @@
     "name": "Giải toán có lời văn",
     "questions": [
       {
-        "q": "Vườn có 248 quả cam, hái thêm 135 quả. Hỏi vườn có tất cả bao nhiêu quả cam?",
+        "q": "Buổi sáng hái được 248 quả cam, buổi chiều hái thêm 135 quả cam. Hỏi cả ngày hái được bao nhiêu quả cam?",
         "choices": [
           "373",
           "483",
@@ -13,13 +13,21 @@
           "113"
         ],
         "a": 2,
-        "hint": "Có thêm vào thì số lượng tăng lên. Chọn phép tính phù hợp.",
+        "hint": "Gộp số quả hái buổi sáng với số quả hái buổi chiều. Chọn phép tính phù hợp.",
         "difficulty": 2,
         "skill": "word-problem",
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q001",
-        "stage": 1
+        "stage": 1,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-loi",
+            "note": "\"hái thêm\" làm vườn ít đi — lời cũ mơ hồ; đáp án giữ 383"
+          }
+        ]
       },
       {
         "q": "Cửa hàng có 420 quyển vở, đã bán 175 quyển. Hỏi cửa hàng còn lại bao nhiêu quyển vở?",
@@ -87,7 +95,15 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q005",
-        "stage": 1
+        "stage": 2,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "bài hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Một thùng có 125 quyển sách. Hỏi 4 thùng như thế có bao nhiêu quyển sách?",
@@ -223,7 +239,15 @@
         "unit": "toan_giai-toan-co-loi-van",
         "source": "claude-audit-20260924",
         "id": "toan_giai-toan-co-loi-van_q013",
-        "stage": 1
+        "stage": 2,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "doi-nhan",
+            "note": "bài hai bước (B28) → GĐ2"
+          }
+        ]
       },
       {
         "q": "Có 5 hộp bút, mỗi hộp 8 cái. Chia đều số bút cho 4 nhóm. Hỏi mỗi nhóm được bao nhiêu cái bút?",

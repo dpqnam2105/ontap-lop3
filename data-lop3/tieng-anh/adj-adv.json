@@ -77,7 +77,7 @@
         "choices": [
           "good",
           "well",
-          "better",
+          "nicely",
           "goodly"
         ],
         "a": 0,
@@ -87,7 +87,15 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q005",
-        "stage": 1
+        "stage": 1,
+        "review": [
+          {
+            "by": "claude",
+            "date": "2026-10-06",
+            "status": "sua-nhieu",
+            "note": "\"a better swimmer\" cũng đúng ngữ pháp → hai đáp án đúng; thay bằng trạng từ sai rõ ràng"
+          }
+        ]
       },
       {
         "q": "Tom swims ___.",
