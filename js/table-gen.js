@@ -259,11 +259,175 @@ const TableGen = {
     }
   },
 
+
+  // =============================================
+  // ⏱️ THỬ THÁCH TỐC ĐỘ
+  // 5 mức: Ốc sên → Rùa → Thỏ → Đại bàng → Báo. Thời gian mỗi câu theo nhóm dạng
+  // (tính thẳng / tìm số thiếu / quan hệ phép nhân). Đạt ≥16/20 câu đúng và kịp giờ
+  // thì mở mức tiếp theo. Thời gian mỗi phép (a×b) lưu riêng cho từng bé để biết
+  // phép nào con còn chậm → lượt sau hỏi lại nhiều hơn.
+  // =============================================
+  LEVELS: [
+    { id: 'oc-sen',   icon: '🐌', name: 'Ốc sên',   t: { calc: 15, miss: 18, rel: 25 } },
+    { id: 'rua',      icon: '🐢', name: 'Rùa',      t: { calc: 10, miss: 12, rel: 18 } },
+    { id: 'tho',      icon: '🐰', name: 'Thỏ',      t: { calc: 8,  miss: 10, rel: 15 } },
+    { id: 'dai-bang', icon: '🦅', name: 'Đại bàng', t: { calc: 5,  miss: 7,  rel: 11 } },
+    { id: 'bao',      icon: '🐆', name: 'Báo',      t: { calc: 3,  miss: 5,  rel: 8 } }
+  ],
+  PASS_SCORE: 16,          // trên 20 câu
+  SPEED_KEY: 'tableSpeed_v1',
+  FAST_MS: 3000,           // dưới 3 giây (quy về câu tính thẳng) = nhanh
+  SLOW_MS: 6000,           // từ 6 giây = chậm
+  FORM_FACTOR: { calc: 1, miss: 1.25, rel: 1.9 },
+
+  kindOf(form) {
+    if (form === 'mul' || form === 'div') return 'calc';
+    if (form === 'mfac' || form === 'mdsr' || form === 'mdvd') return 'miss';
+    return 'rel';
+  },
+  timeLimit(level, form) {
+    const L = this.LEVELS[level] || this.LEVELS[2];
+    return L.t[this.kindOf(form)] || L.t.calc;
+  },
+
+  _speedKey() {
+    return (window.Storage && Storage._scoped) ? Storage._scoped(this.SPEED_KEY) : this.SPEED_KEY;
+  },
+  getSpeed(raw) {
+    let d = null;
+    try { d = raw != null ? JSON.parse(raw) : JSON.parse(localStorage.getItem(this._speedKey()) || 'null'); } catch (e) { d = null; }
+    d = d && typeof d === 'object' ? d : {};
+    d.facts = d.facts || {};
+    d.level = d.level || { unlocked: 0, best: {} };
+    d.level.best = d.level.best || {};
+    return d;
+  },
+  saveSpeed(d) {
+    try { localStorage.setItem(this._speedKey(), JSON.stringify(d)); } catch (e) { /* bỏ qua */ }
+    if (window.Cloud && Cloud.schedule) { try { Cloud.schedule(); } catch (e) { /* bỏ qua */ } }
+  },
+
+  /** Ghi thời gian 1 câu: [ms quy đổi, đúng 1/0, hết giờ 1/0, dạng, ngày]. Giữ 6 lần gần nhất mỗi phép. */
+  recordSpeed(q, ms, ok, timedOut) {
+    if (!q || !q._fact || q._form === 'cmp') return;
+    const d = this.getSpeed();
+    const norm = Math.round(ms / (this.FORM_FACTOR[this.kindOf(q._form)] || 1));
+    const day = new Date().toISOString().slice(0, 10);
+    const arr = d.facts[q._fact] || (d.facts[q._fact] = []);
+    arr.push([norm, ok ? 1 : 0, timedOut ? 1 : 0, q._form, day]);
+    if (arr.length > 6) arr.splice(0, arr.length - 6);
+    this.saveSpeed(d);
+  },
+
+  /** Xếp loại 1 phép theo 3 lần gần nhất: fast / ok / slow / wrong (null = chưa có). */
+  factClass(rec) {
+    if (!rec || !rec.length) return null;
+    const last3 = rec.slice(-3);
+    const last = last3[last3.length - 1];
+    if (!last[1] && !last[2]) return { cls: 'wrong', ms: last[0] };
+    const times = last3.map(r => r[2] ? 99999 : r[0]).sort((a, b) => a - b);
+    const med = times[Math.floor(times.length / 2)];
+    const anyTO = last3.some(r => r[2]);
+    if (anyTO || med >= this.SLOW_MS) return { cls: 'slow', ms: med, to: anyTO };
+    if (med < this.FAST_MS) return { cls: 'fast', ms: med };
+    return { cls: 'ok', ms: med };
+  },
+
+  /** Các phép còn chậm/sai, chậm nhất trước. */
+  slowFacts(d, limit) {
+    d = d || this.getSpeed();
+    const out = [];
+    Object.entries(d.facts || {}).forEach(([fact, rec]) => {
+      const c = this.factClass(rec);
+      if (c && (c.cls === 'slow' || c.cls === 'wrong')) out.push({ fact, cls: c.cls, ms: c.ms, to: c.to });
+    });
+    out.sort((a, b) => (a.cls === 'wrong' ? -1 : 0) - (b.cls === 'wrong' ? -1 : 0) || b.ms - a.ms);
+    return limit ? out.slice(0, limit) : out;
+  },
+  factLabel(fact) { const [a, b] = fact.split('x'); return a + ' × ' + b; },
+
+  setLevelResult(level, inTime) {
+    const d = this.getSpeed();
+    const best = d.level.best;
+    const prev = best[level] || 0;
+    if (inTime > prev) best[level] = inTime;
+    let unlockedNew = false;
+    if (inTime >= this.PASS_SCORE && d.level.unlocked === level && level < this.LEVELS.length - 1) {
+      d.level.unlocked = level + 1; unlockedNew = true;
+    }
+    this.saveSpeed(d);
+    return { unlockedNew, best: best[level], prevBest: prev };
+  },
+
+  /** Bảng tốc độ cho Khu Bố Mẹ: hàng = bảng 2–9, cột = thừa số 2–10. */
+  speedGridHTML(d, childName, source) {
+    d = d || this.getSpeed();
+    const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const cnt = { fast: 0, ok: 0, slow: 0, wrong: 0 };
+    let rows = '<tr><th></th>' + this.KS.map(k => '<th>×' + k + '</th>').join('') + '</tr>';
+    this.TABLES.forEach(a => {
+      rows += '<tr><th>' + a + '</th>' + this.KS.map(b => {
+        const key = Math.min(a, b) + 'x' + Math.max(a, b);
+        const c = this.factClass(d.facts[key]);
+        const cls = c ? c.cls : 'none';
+        const tip = a + ' × ' + b + ' = ' + (a * b) + (c ? ' · ' + (c.ms >= 99999 ? 'hết giờ' : (c.ms / 1000).toFixed(1) + ' giây') : ' · chưa đo');
+        return '<td class="sg-' + cls + '" title="' + tip + '">' + (a * b) + '</td>';
+      }).join('') + '</tr>';
+    });
+    Object.values(d.facts).forEach(rec => { const c = this.factClass(rec); if (c) cnt[c.cls]++; });
+    const slow = this.slowFacts(d, 10);
+    const lv = d.level || { unlocked: 0, best: {} };
+    const lvText = this.LEVELS.map((L, i) => {
+      const st = i <= lv.unlocked ? (lv.best[i] != null ? 'kỉ lục ' + lv.best[i] + '/20' : 'chưa chơi') : '🔒';
+      return '<span class="sg-lv' + (i <= lv.unlocked ? ' on' : '') + '">' + L.icon + ' ' + L.name + ' <b>' + st + '</b></span>';
+    }).join('');
+    let html = '<h3 class="parent-section-title">⏱️ Tốc độ bảng nhân chia</h3>';
+    if (!Object.keys(d.facts).length) {
+      return html + '<div class="no-log">' + esc(childName) + ' chưa làm Thử thách tốc độ / Luyện bảng nhân chia tự sinh.</div>';
+    }
+    html += '<div class="sg-levels">' + lvText + '</div>';
+    html += '<div class="sg-sum"><span class="sg-dot sg-fast"></span>Nhanh <b>' + cnt.fast + '</b> · <span class="sg-dot sg-ok"></span>Ổn <b>' + cnt.ok +
+      '</b> · <span class="sg-dot sg-slow"></span>Chậm <b>' + cnt.slow + '</b> · <span class="sg-dot sg-wrong"></span>Đang sai <b>' + cnt.wrong + '</b> · <span class="sg-dot sg-none"></span>Chưa đo</div>';
+    html += '<div class="sg-wrap"><table class="speed-grid">' + rows + '</table></div>';
+    if (slow.length) {
+      html += '<div class="sg-slow-list"><b>🐢 Nên ôn thêm:</b> ' + slow.map(x => '<span class="sg-chip sg-' + x.cls + '">' + this.factLabel(x.fact) +
+        ' <small>' + (x.cls === 'wrong' ? 'sai' : x.to ? 'có lần hết giờ' : (x.ms / 1000).toFixed(1).replace('.', ',') + ' giây') + '</small></span>').join('') + '</div>';
+    }
+    html += '<p class="sk-note">Mỗi ô tính theo 3 lần gần nhất của phép đó (gộp cả hai chiều, vd. 7 × 8 và 8 × 7, và mọi dạng: 56 : 7, 7 × ? = 56…). Thời gian câu tìm số thiếu / quan hệ đã quy đổi về câu tính thẳng. Nhanh: dưới 3 giây · Chậm: từ 6 giây hoặc hết giờ. ' +
+      (source === 'cloud' ? 'Số liệu lấy từ bản sao lưu trên mạng.' : 'Số liệu trên máy này.') + '</p>';
+    return html;
+  },
+
+  async renderParent(name) {
+    const host = document.querySelector('#screenParent .parent-wrap');
+    if (!host || !name) return;
+    let card = document.getElementById('speedCard');
+    if (!card) {
+      card = document.createElement('div');
+      card.className = 'card'; card.id = 'speedCard';
+      const after = document.getElementById('skillCard') || document.getElementById('parentSummary');
+      if (after && after.nextSibling) host.insertBefore(card, after.nextSibling); else host.appendChild(card);
+    }
+    const token = (this._pToken = (this._pToken || 0) + 1);
+    card.innerHTML = '<h3 class="parent-section-title">⏱️ Tốc độ bảng nhân chia</h3><div class="loading-text">Đang tải...</div>';
+    let d = null, source = 'local';
+    const c = Storage.canonName(name);
+    if (c && c === Storage.canonName(Storage.getActiveName())) d = this.getSpeed();
+    else if (window.Cloud && Cloud.enabled()) {
+      try {
+        const r = await Cloud.fetchRemote(name);
+        if (r && r.ok && r.found && r.snapshot) { d = this.getSpeed((r.snapshot.keys || {})[this.SPEED_KEY] || '{}'); source = 'cloud'; }
+      } catch (e) { /* bỏ qua */ }
+    }
+    if (token !== this._pToken) return;
+    card.innerHTML = this.speedGridHTML(d || this.getSpeed('{}'), name, source);
+  },
+
   // ---------- chọn câu cho 1 lượt luyện ----------
   getPref() {
     try {
       const p = JSON.parse(localStorage.getItem(this.PREF_KEY) || 'null');
-      if (p && Array.isArray(p.tables) && p.tables.length) return { tables: p.tables.filter(t => this.TABLES.includes(t)), group: p.group || 'all' };
+      if (p && Array.isArray(p.tables) && p.tables.length) return { tables: p.tables.filter(t => this.TABLES.includes(t)), group: p.group || 'all', level: p.level };
     } catch (e) { /* bỏ qua */ }
     return { tables: this.TABLES.slice(), group: 'all' };
   },
@@ -310,6 +474,15 @@ const TableGen = {
         bump(fact, Math.min(3, v.wrongCount) + (unresolved ? 3 : 0));
       });
     } catch (e) { /* chưa có lịch sử */ }
+    // Phép làm chậm / hết giờ ở Thử thách tốc độ cũng được ưu tiên hỏi lại
+    try {
+      const sp = this.getSpeed();
+      Object.entries(sp.facts).forEach(([fact, rec]) => {
+        const c = this.factClass(rec);
+        if (!c) return;
+        bump(fact, c.cls === 'wrong' ? 3 : c.cls === 'slow' ? (c.to ? 4 : 3) : c.cls === 'ok' ? 1 : 0);
+      });
+    } catch (e) { /* chưa có số liệu tốc độ */ }
     return w;
   },
 

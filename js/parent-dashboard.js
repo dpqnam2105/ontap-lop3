@@ -141,6 +141,7 @@ const ParentDashboard = {
 
   async _loadParentLog(name) {
     if (window.SkillReport) SkillReport.render(name);
+    if (window.TableGen && TableGen.renderParent) TableGen.renderParent(name);
     document.getElementById('summaryContent').innerHTML = '<div class="loading-text">Đang tải...</div>';
     document.getElementById('dailyContent').innerHTML = '<div class="loading-text">Đang tải...</div>';
 

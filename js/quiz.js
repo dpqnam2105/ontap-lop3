@@ -34,7 +34,7 @@ const Quiz = {
   // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
   startWrongReview(limit, todayTaskId) {
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'wrong', limit: limit };
+    this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null;
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
@@ -96,7 +96,7 @@ const Quiz = {
   startReviewPool(pool, todayTaskId) {
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'pool', pool };
+    this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null;
     this.mode = 'wrong_review';
     this.questions = pool.slice();
     this.currentTopic = { id: 'wrong_review', name: 'Ôn lại', questions: this.questions };
@@ -123,7 +123,7 @@ const Quiz = {
   startMixed(pool, subjectName, subjectId, mixKey, todayTaskId) {
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey };
+    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey }; this.speed = null; this.pickIdx = null;
     this.mode = 'mixed';
     this.mixKey = mixKey || '';
     this.questions = pool.slice();
@@ -175,6 +175,11 @@ const Quiz = {
     this.allowedIdx = Array.isArray(options.allowed) ? options.allowed.slice() : null;
     // Luyện bảng nhân chia tự sinh: mỗi lần bắt đầu (kể cả "làm lại") bốc bộ câu mới.
     this.pickIdx = null;
+    this._stopSpeedTimer();
+    // Thử thách tốc độ: chạy như Kiểm tra (1 lần chọn, không gợi ý) + đồng hồ đếm ngược mỗi câu.
+    this.speed = (options.speed != null && options.drill && window.TableGen)
+      ? { level: options.speed, inTime: 0, ok: 0, timeouts: 0, ms: [] } : null;
+    if (this.speed) this.mode = 'test';
     if (options.drill && window.TableGen) {
       const cand = TableGen.filterIndices(topic, options.drill.tables, options.drill.group, this.allowedIdx);
       if (this.mode === 'review') this.allowedIdx = cand;
@@ -205,7 +210,7 @@ const Quiz = {
     if (this.pickIdx) {
       return {
         questions: this.pickIdx.filter(i => topic.questions[i]).map(i => this._prepareQuestion(topic.questions[i], i)),
-        info: { mode, modeLabel: mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡', current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: this.pickIdx.length }
+        info: { mode, modeLabel: this.speed ? '⏱️ ' + TableGen.LEVELS[this.speed.level].icon + ' ' + TableGen.LEVELS[this.speed.level].name : (mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡'), current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: this.pickIdx.length }
       };
     }
     const allIndices = this.allowedIdx
@@ -331,7 +336,7 @@ const Quiz = {
     if (this.mode === 'practice' && info.total > 1) {
       titleText += info.isAllDone ? ' · Ôn lại 🔄' : ' · Lần ' + info.current + '/' + info.total;
     }
-    if (this.mode === 'test') titleText += ' · Không dùng gợi ý';
+    if (this.mode === 'test' && !this.speed) titleText += ' · Không dùng gợi ý';
     if (q._retry) titleText = '🔁 Làm lại câu vừa sai · ' + (q._topicName || this.currentTopic.name);
     document.getElementById('quizTopicName').textContent = titleText;
 
@@ -376,6 +381,95 @@ const Quiz = {
 
     this._renderReportButton(q);
     if (window.Speak) Speak.attach(q, q.subjectId || this.currentSubjectId);
+    this._renderSpeedTimer(q);
+  },
+
+  // ─── ⏱️ Đồng hồ đếm ngược (Thử thách tốc độ) ─────────────
+  _renderSpeedTimer(q) {
+    this._stopSpeedTimer();
+    let box = document.getElementById('speedTimer');
+    if (!this.speed || !q || q._retry) { if (box) box.remove(); return; }
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'speedTimer';
+      box.className = 'speed-timer';
+      box.innerHTML = '<span class="st-icon"></span><div class="st-track"><div class="st-fill"></div></div><span class="st-sec"></span>';
+      const card = document.querySelector('#screenQuiz .question-card') || document.getElementById('qText').parentNode;
+      card.insertBefore(box, card.firstChild);
+    }
+    const L = TableGen.LEVELS[this.speed.level];
+    const limit = TableGen.timeLimit(this.speed.level, q._form) * 1000;
+    const fill = box.querySelector('.st-fill'), sec = box.querySelector('.st-sec');
+    box.querySelector('.st-icon').textContent = L.icon;
+    box.classList.remove('warn', 'over');
+    const t = { start: performance.now(), paused: 0, hiddenAt: null, hidden: false, limit, q, done: false };
+    this._spd = t;
+    const tick = () => {
+      if (t.done) return;
+      const now = performance.now();
+      if (document.hidden) { if (t.hiddenAt == null) t.hiddenAt = now; t.hidden = true; return; }
+      if (t.hiddenAt != null) { t.paused += now - t.hiddenAt; t.hiddenAt = null; }
+      const used = now - t.start - t.paused;
+      const left = Math.max(0, limit - used);
+      fill.style.width = (left / limit * 100) + '%';
+      sec.textContent = Math.ceil(left / 1000) + 's';
+      box.classList.toggle('warn', left <= 3000);
+      if (left <= 0) this._speedTimeout();
+    };
+    tick();
+    this._spdTimer = setInterval(tick, 100);
+  },
+
+  _stopSpeedTimer() {
+    if (this._spdTimer) { clearInterval(this._spdTimer); this._spdTimer = null; }
+    if (this._autoNext) { clearTimeout(this._autoNext); this._autoNext = null; }
+    if (this._spd) this._spd.done = true;
+  },
+
+  /** Thời gian đã dùng (ms, không tính lúc chuyển tab) rồi dừng đồng hồ. */
+  _speedElapsed() {
+    const t = this._spd;
+    if (!t || t.done) return null;
+    const now = performance.now();
+    if (t.hiddenAt != null) { t.paused += now - t.hiddenAt; t.hiddenAt = null; }
+    t.done = true;
+    if (this._spdTimer) { clearInterval(this._spdTimer); this._spdTimer = null; }
+    return { ms: Math.min(t.limit, now - t.start - t.paused), hidden: t.hidden, limit: t.limit };
+  },
+
+  /** Hết giờ: hiện đáp án đúng, KHÔNG tính là câu sai (không vào Ôn câu sai), rồi tự sang câu khác. */
+  _speedTimeout() {
+    const t = this._speedElapsed();
+    if (!t || this.questionAnswered) return;
+    const q = this.questions[this.curIdx];
+    this.questionAnswered = true;
+    this.canEarnPoint = false;
+    this.speed.timeouts++;
+    if (!t.hidden) TableGen.recordSpeed(q, t.limit, false, true);
+    const choices = q.choices || [];
+    this.sessionDetails.push({
+      questionId: q.id, questionIndex: q._idx, question: q.q || '', choices, selectedIndex: -1, correctIndex: q.a,
+      selectedAnswer: '(hết giờ)', correctAnswer: choices[q.a], isCorrect: false, timedOut: true,
+      timeSpentSec: Math.round(t.limit / 1000), usedHint: false, subject: this.currentSubject || '', subjectId: this.currentSubjectId,
+      topic: this.currentTopic && this.currentTopic.name || '', topicId: this.currentTopicId, mode: 'speed', answeredAt: new Date().toISOString()
+    });
+    document.querySelectorAll('.ans-btn').forEach(b => { b.disabled = true; if (b.textContent === String(choices[q.a])) b.classList.add('correct'); });
+    const box = document.getElementById('speedTimer'); if (box) box.classList.add('over');
+    const fb = document.getElementById('feedback');
+    fb.className = 'feedback wrong';
+    document.getElementById('fbText').textContent = '⏰ Hết giờ rồi! Lần sau con nhanh hơn nhé';
+    document.getElementById('fbAns').textContent = (q.q || '').replace('?', choices[q.a]).replace('…', choices[q.a]);
+    this._fbMascot('dong-vien');
+    this._speedAutoNext(2200);
+  },
+
+  _speedAutoNext(delay) {
+    const btnNext = document.getElementById('btnNext');
+    btnNext.classList.remove('hidden');
+    btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+    if (this._autoNext) clearTimeout(this._autoNext);
+    const idx = this.curIdx;
+    this._autoNext = setTimeout(() => { this._autoNext = null; if (this.curIdx === idx && this.speed) this.next(); }, delay);
   },
 
   /** Tạo (hoặc cập nhật) nút "Báo lỗi câu này" trên màn làm bài. */
@@ -458,6 +552,14 @@ const Quiz = {
     // Câu làm lại: chỉ để củng cố, không tính điểm/sao/độ vững (số liệu giữ theo lần trả lời đầu).
     if (q._retry) { this._checkRetry(q, btn, isCorrect); return; }
 
+    let spd = null;
+    if (this.speed && !this.questionAnswered) {
+      spd = this._speedElapsed();
+      if (!spd) return; // đã hết giờ
+      if (isCorrect) { this.speed.ok++; this.speed.inTime++; this.speed.ms.push(spd.ms); }
+      if (!spd.hidden) TableGen.recordSpeed(q, spd.ms, isCorrect, false);
+    }
+
     if (!this.questionAnswered) {
       this._recordLearningAnswer(q, selected);
       this._recordSessionDetail(q, selected, correct, isCorrect);
@@ -487,13 +589,14 @@ const Quiz = {
 
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
-      fbText.textContent = this.mode === 'test' ? 'Đã ghi nhận đáp án! ✅' : 'Chính xác! Con làm tốt lắm! 👏';
+      fbText.textContent = spd ? 'Chính xác! ⚡ ' + (spd.ms / 1000).toFixed(1).replace('.', ',') + ' giây' : (this.mode === 'test' ? 'Đã ghi nhận đáp án! ✅' : 'Chính xác! Con làm tốt lắm! 👏');
       this._fbMascot(this.mode === 'test' ? '' : 'ngon-cai');
       fbAns.textContent = this.mode === 'test' ? '' : (q.explain || '');
 
       const btnNext = document.getElementById('btnNext');
       btnNext.classList.remove('hidden');
       btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+      if (spd) { this._fbMascot('ngon-cai'); this._speedAutoNext(900); }
     } else {
       Sound.play('wrong');
       btn.classList.add('wrong');
@@ -513,6 +616,13 @@ const Quiz = {
         const btnNext = document.getElementById('btnNext');
         btnNext.classList.remove('hidden');
         btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+      }
+      if (spd) {
+        const right = String((q.choices || [])[q.a]);
+        document.querySelectorAll('.ans-btn').forEach(b => { if (b.textContent === right) b.classList.add('correct'); });
+        fbText.textContent = 'Chưa đúng rồi!';
+        fbAns.textContent = (q.q || '').replace('?', right).replace('…', right);
+        this._speedAutoNext(2200);
       }
     }
   },
@@ -634,6 +744,7 @@ const Quiz = {
   },
 
   next() {
+    this._stopSpeedTimer();
     const q = this.questions[this.curIdx];
     if (q && q._retry) {
       this.curIdx++;
@@ -660,6 +771,7 @@ const Quiz = {
   },
 
   _finish() {
+    this._stopSpeedTimer();
     Sound.play('win');
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
 
@@ -676,7 +788,9 @@ const Quiz = {
     if (resultMsg) {
       const info = this.sessionInfo || {};
       let progressMsg = '';
-      if (this.mode === 'test') {
+      if (this.speed) {
+        progressMsg = this._speedFinishMsg(total);
+      } else if (this.mode === 'test') {
         progressMsg = '📝 Đây là kết quả kiểm tra. Câu sai sẽ được đưa vào phần ôn lỗi sai.';
       } else if (this.mode === 'mixed') {
         progressMsg = '🎲 Đề trộn tuần này: con đúng ' + this.score + '/' + total + ' câu. Câu sai đã được đưa vào phần Ôn câu sai.';
@@ -756,7 +870,31 @@ const Quiz = {
         if (weak) lines.push('🌱 Thử ôn thêm <b>' + esc(weak.label) + '</b> nhé (đúng ' + weak.ok + '/' + weak.n + ' câu). Rabbit sẽ đưa lại các câu sai vào phần Ôn lại.');
       }
     } catch (e) { console.warn('session insight', e); }
+    if (this.speed && window.TableGen) {
+      const slow = TableGen.slowFacts(null, 6);
+      if (slow.length) lines.push('🐢 Phép con còn chậm hoặc sai: <b>' + slow.map(x => TableGen.factLabel(x.fact)).join(', ') + '</b> — lượt sau Thỏ hỏi lại các phép này nhé.');
+      else lines.push('⚡ Các phép con đã làm đều nhanh. Giỏi quá!');
+    }
     if (lines.length) box.innerHTML = lines.map(l => '<div class="res-insight-line">' + l + '</div>').join('');
+  },
+
+  /** Kết quả Thử thách tốc độ: số câu kịp giờ, thời gian trung bình, mở khoá mức mới. */
+  _speedFinishMsg(total) {
+    const sp = this.speed;
+    const L = TableGen.LEVELS[sp.level];
+    const r = TableGen.setLevelResult(sp.level, sp.inTime);
+    const avg = sp.ms.length ? (sp.ms.reduce((a, b) => a + b, 0) / sp.ms.length / 1000).toFixed(1).replace('.', ',') : '–';
+    let msg = '⏱️ Mức ' + L.icon + ' ' + L.name + ': đúng và kịp giờ <b>' + sp.inTime + '/' + total + '</b> câu · trung bình ' + avg + ' giây/câu' +
+      (sp.timeouts ? ' · ' + sp.timeouts + ' câu hết giờ' : '') + '.';
+    if (r.unlockedNew) {
+      const N = TableGen.LEVELS[sp.level + 1];
+      msg += '<br>🎉 Con đã mở khoá mức <b>' + N.icon + ' ' + N.name + '</b>!';
+      try { Rewards._achievementPopup('🎉 Mở khoá mức ' + N.icon + ' ' + N.name + '!'); } catch (e) { /* bỏ qua */ }
+    } else if (sp.inTime < TableGen.PASS_SCORE && sp.level < TableGen.LEVELS.length - 1) {
+      msg += '<br>Cần ' + TableGen.PASS_SCORE + '/20 câu để mở mức tiếp theo. Cố lên con!';
+    }
+    if (sp.inTime > r.prevBest && r.prevBest > 0) msg += '<br>🏅 Kỉ lục mới của con ở mức này!';
+    return msg;
   },
 
   _saveLocalSessionDetails(durationSec) {

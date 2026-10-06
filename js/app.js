@@ -143,6 +143,7 @@ const App = {
 
   showScreen(name) {
     if (window.Speak) Speak.stop();
+    if (name !== 'quiz' && window.Quiz && Quiz._stopSpeedTimer) Quiz._stopSpeedTimer();
     if (name === 'register' && window.Achieve) Achieve.renderTicker();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
     const needsName = (name === 'grade' || name === 'subject' || name === 'topic');
@@ -693,6 +694,17 @@ const App = {
       return `<button type="button" class="drill-chip${pref.tables.includes(n) ? ' on' : ''}" data-t="${n}" title="Đã vững ${st.solid}/${st.total} câu">
         <span class="drill-chip-n">${n}</span><span class="drill-chip-bar"><i style="width:${pct}%"></i></span></button>`;
     }).join('');
+    const sp = TableGen.getSpeed();
+    const unlocked = sp.level.unlocked || 0;
+    const speedChips = TableGen.LEVELS.map((L, i) => {
+      const open = i <= unlocked;
+      const best = sp.level.best[i];
+      return `<button type="button" class="speed-lv${open ? '' : ' locked'}" data-lv="${i}" ${open ? '' : 'disabled'}>
+        <span class="sl-ic">${open ? L.icon : '🔒'}</span><span class="sl-name">${L.name}</span>
+        <span class="sl-best">${open ? (best != null ? best + '/20' : 'chưa chơi') : 'khoá'}</span></button>`;
+    }).join('');
+    const slow = TableGen.slowFacts(sp, 6);
+    const slowLine = slow.length ? `<div class="speed-slow">🐢 Phép con còn chậm hoặc sai: <b>${slow.map(x => TableGen.factLabel(x.fact)).join(', ')}</b> — Thỏ sẽ hỏi lại nhiều hơn.</div>` : '';
     const groups = [['all', 'Tất cả dạng'], ['calc', TableGen.GROUPS.calc.label], ['rel', TableGen.GROUPS.rel.label]]
       .map(([k, l]) => `<button type="button" class="drill-group${pref.group === k ? ' on' : ''}" data-g="${k}">${this._escape(l)}</button>`).join('');
     card.innerHTML = `
@@ -712,8 +724,15 @@ const App = {
         <button class="mode-btn practice" data-mode="practice">⚡ Luyện 20 câu</button>
         <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
         <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
+      </div>
+      <div class="speed-box">
+        <div class="drill-label">⏱️ Thử thách tốc độ <small>đúng & kịp giờ ${TableGen.PASS_SCORE}/20 câu để mở mức mới</small></div>
+        <div class="speed-levels">${speedChips}</div>
+        <div class="speed-info"></div>
+        <button type="button" class="speed-go">⏱️ Bắt đầu thử thách</button>
+        ${slowLine}
       </div>`;
-    const cur = { tables: pref.tables.slice(), group: pref.group };
+    const cur = { tables: pref.tables.slice(), group: pref.group, level: Math.min(pref.level != null ? pref.level : unlocked, unlocked) };
     const countEl = card.querySelector('.drill-count');
     const refresh = () => {
       card.querySelectorAll('.drill-chip').forEach(b => b.classList.toggle('on', cur.tables.includes(+b.dataset.t)));
@@ -722,8 +741,17 @@ const App = {
       countEl.textContent = cur.tables.length
         ? 'Bảng ' + cur.tables.slice().sort((a, b) => a - b).join(', ') + ' · kho ' + n + ' câu'
         : 'Con chọn ít nhất 1 bảng nhé';
+      card.querySelectorAll('.speed-lv').forEach(b => b.classList.toggle('on', +b.dataset.lv === cur.level));
+      const L = TableGen.LEVELS[cur.level];
+      card.querySelector('.speed-info').textContent = L.icon + ' ' + L.name + ': tính ' + L.t.calc + ' giây · tìm số thiếu ' + L.t.miss + ' giây · quan hệ phép nhân ' + L.t.rel + ' giây mỗi câu';
       TableGen.setPref(cur);
     };
+    card.querySelectorAll('.speed-lv:not(.locked)').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); cur.level = +b.dataset.lv; refresh(); }));
+    card.querySelector('.speed-go').addEventListener('click', e => {
+      e.stopPropagation();
+      if (!cur.tables.length) { Rewards._achievementPopup('🐰 Con chọn ít nhất 1 bảng nhé!'); return; }
+      Quiz.start(t, s.name, { mode: 'test', subjectId: s.id, allowed, speed: cur.level, drill: { tables: cur.tables.slice(), group: cur.group, count: TableGen.DRILL_SIZE } });
+    });
     card.querySelectorAll('.drill-chip').forEach(b => b.addEventListener('click', e => {
       e.stopPropagation();
       const n = +b.dataset.t;

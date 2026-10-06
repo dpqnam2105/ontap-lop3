@@ -5,6 +5,32 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — ⏱️ Thử thách tốc độ bảng nhân chia (5 mức con vật) + bảng tốc độ cho bố mẹ
+- Thẻ **"⚡ Luyện bảng nhân chia 2–9 (tự sinh)"** có thêm khu **⏱️ Thử thách tốc độ**. Lượt thử thách dùng đúng bảng và nhóm dạng con đang chọn, mỗi lượt 20 câu mới.
+- **5 mức**, thời gian mỗi câu (tính thẳng / tìm số thiếu / quan hệ phép nhân):
+  - 🐌 Ốc sên 15 / 18 / 25 giây
+  - 🐢 Rùa 10 / 12 / 18 giây
+  - 🐰 Thỏ 8 / 10 / 15 giây
+  - 🦅 Đại bàng 5 / 7 / 11 giây
+  - 🐆 Báo 3 / 5 / 8 giây
+  - Ban đầu chỉ mở Ốc sên. **Đúng và kịp giờ từ 16/20 câu** thì mở mức tiếp theo (có thông báo chúc mừng). Mỗi mức lưu kỉ lục của con.
+- **Khi làm bài**: thanh đếm ngược phía trên câu hỏi (xanh, 3 giây cuối đổi cam). Không có tiếng tích tắc. Đúng thì hiện "Chính xác! ⚡ 2,3 giây" rồi tự sang câu. Sai hoặc hết giờ thì hiện đáp án đúng khoảng 2 giây rồi tự sang câu; bé cũng có thể bấm "Câu tiếp theo".
+  - **Hết giờ không tính là sai**: không vào Ôn câu sai, không trừ gì, chỉ ghi là "chậm".
+  - Con chuyển sang tab hoặc ứng dụng khác thì đồng hồ dừng, và câu đó không tính vào số liệu tốc độ. Thoát giữa chừng thì đồng hồ tắt.
+  - Chạy như chế độ Kiểm tra: chọn 1 lần, không gợi ý.
+- **Ghi thời gian từng phép** (cả ở Luyện 20 câu, Kiểm tra, Thử thách) cho từng bé, khoá `tableSpeed_v1`, có sao lưu lên mạng:
+  - Gộp hai chiều và mọi dạng của cùng phép (7 × 8, 8 × 7, 56 : 7, 7 × ? = 56…).
+  - Thời gian câu tìm số thiếu / quan hệ được quy đổi về câu tính thẳng.
+  - Xếp loại theo 3 lần gần nhất: **Nhanh** (dưới 3 giây), **Ổn**, **Chậm** (từ 6 giây hoặc có lần hết giờ), **Đang sai**.
+- **Ôn đúng chỗ chậm**: phép chậm hoặc hết giờ được ưu tiên ở các lượt Luyện và Thử thách sau, cùng với phép hay sai.
+  - Màn kết quả ghi số câu kịp giờ, thời gian trung bình, số câu hết giờ và "🐢 Phép con còn chậm hoặc sai: 7 × 8, 6 × 9…".
+  - Thẻ chủ đề cũng hiện dòng này.
+- **Khu Bố Mẹ → "⏱️ Tốc độ bảng nhân chia"**:
+  - Lưới bảng 2–9 × thừa số 2–10, tô màu theo 4 mức (xanh / vàng / cam / đỏ, xám = chưa đo); rê chuột vào ô để xem số giây.
+  - Mức con vật đã mở + kỉ lục từng mức, và danh sách "Nên ôn thêm" (dùng để in phiếu ôn riêng).
+  - Xem được cả bé ở máy khác, lấy từ bản sao lưu.
+- Phiên bản file `?v=20261006b`.
+
 ## 2026-10-06 — Tự sinh câu hỏi bảng nhân, chia 2–9
 - **File mới `js/table-gen.js`** sinh câu bảng nhân/chia 2–9 (thừa số 2–10, không có chia có dư). Mỗi câu có id cố định theo dạng + phép tính (vd. `toan_gen_mfac_6x9`), nên cùng một câu luôn ra cùng đề, cùng đáp án nhiễu → Ôn câu sai, lịch ôn "sắp quên", báo cáo kỹ năng đều nhận ra.
 - **Hai nhóm dạng**:
