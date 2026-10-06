@@ -279,6 +279,7 @@ const TableGen = {
   // Giữa huy hiệu dùng ảnh avatar con vật (images/arena/avatar-<id>.webp)
   AVATAR_IN_BADGE: true,
   PASS_SCORE: 16,          // trên 20 câu
+  SCOPES_KEEP: 12,         // số phạm vi đã đạt giữ lại cho mỗi mức
   SPEED_KEY: 'tableSpeed_v1',
   FAST_MS: 3000,           // dưới 3 giây (quy về câu tính thẳng) = nhanh
   SLOW_MS: 6000,           // từ 6 giây = chậm
@@ -394,12 +395,23 @@ const TableGen = {
     return (d.level.scopes && Array.isArray(d.level.scopes[level])) ? d.level.scopes[level] : [];
   },
 
-  /** Phạm vi tiêu biểu để hiện: nhiều bảng nhất, ưu tiên "tất cả dạng", rồi mới nhất. Không gộp. */
+  /** Thứ tự ưu tiên phạm vi (dùng CHUNG cho chọn tiêu biểu và cắt danh sách): nhiều bảng, "tất cả dạng", mới nhất. */
+  _scopeOrder(a, b) {
+    return (b.t.length - a.t.length) || ((b.g === 'all') - (a.g === 'all')) || String(b.at).localeCompare(String(a.at));
+  },
+
+  /** Phạm vi tiêu biểu để hiện. Là một phạm vi thật đã đạt, không gộp. */
   bestScope(level, d) {
     const list = this.scopesOf(level, d);
     if (!list.length) return null;
-    return list.slice().sort((a, b) =>
-      (b.t.length - a.t.length) || ((b.g === 'all') - (a.g === 'all')) || String(b.at).localeCompare(String(a.at)))[0];
+    return list.slice().sort((a, b) => this._scopeOrder(a, b))[0];
+  },
+
+  /** Phạm vi đã đạt trùng đúng cấu hình đang chọn (để hiện điểm của chính phạm vi đó). */
+  findScope(level, sc, d) {
+    if (!sc || !sc.t || !sc.t.length) return null;
+    const key = sc.t.slice().sort((a, b) => a - b).join(',');
+    return this.scopesOf(level, d).find(x => x.g === (sc.g || 'all') && x.t.join(',') === key) || null;
   },
 
   /** Chữ phạm vi của danh hiệu ở một mức: '' nếu chưa đạt; huy hiệu cũ → "chưa ghi nhận phạm vi" (short → ''). */
@@ -432,10 +444,9 @@ const TableGen = {
         const same = list.find(x => x.g === sc.g && x.t.join(',') === sc.t.join(','));
         if (same) { same.at = today; same.s = Math.max(same.s || 0, inTime); }
         else { list.push(Object.assign(sc, { at: today, s: inTime })); newScope = true; }
-        if (list.length > 12) {   // giữ gọn: bỏ phạm vi ít bảng nhất, cũ nhất (không bao giờ bỏ phạm vi rộng nhất)
-          const keep = this.bestScope(level, d);
-          list.sort((a, b) => (b.t.length - a.t.length) || String(b.at).localeCompare(String(a.at)));
-          d.level.scopes[level] = list.filter((x, i) => i < 12 || x === keep);
+        if (list.length > this.SCOPES_KEEP) {
+          // Giữ gọn đúng SCOPES_KEEP mục theo cùng thứ tự ưu tiên với bestScope → mục tiêu biểu luôn là mục đầu, không bao giờ bị cắt
+          d.level.scopes[level] = list.slice().sort((a, b) => this._scopeOrder(a, b)).slice(0, this.SCOPES_KEEP);
         }
       }
     }

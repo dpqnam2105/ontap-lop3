@@ -902,7 +902,7 @@ const Quiz = {
       (sp.timeouts ? ' · ' + sp.timeouts + ' câu hết giờ' : '') + '.';
     if (r.newBadge) {
       msg += '<div class="arena-award">' + TableGen.badgeHTML(sp.level, true, 'lg') +
-        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b>' + (scTxt ? '<br><small>với ' + scTxt + '</small>' : '') +
+        '<div>🎉 Con nhận danh hiệu<br><b>' + TableGen.LEVELS[sp.level].title + '</b>' + (scTxt ? '<br><small>Đạt trong thử thách ' + scTxt + '</small>' : '') +
         (window.Decor && Decor.equipFace(L.id) ? '<br><small>Avatar của con đã đổi thành ' + L.icon + ' (đổi lại trong Đấu trường hoặc Bộ sưu tập)</small>' : '') + '</div></div>';
     }
     if (r.unlockedNew) {
@@ -911,8 +911,8 @@ const Quiz = {
     } else if (sp.inTime < TableGen.PASS_SCORE && sp.level < TableGen.LEVELS.length - 1) {
       msg += '<br>Cần ' + TableGen.PASS_SCORE + '/20 câu để mở mức tiếp theo. Cố lên con!';
     }
-    if (!r.newBadge && r.newScope && scTxt) msg += '<br>🏅 Danh hiệu ' + L.title + ' giờ có thêm phạm vi <b>' + scTxt + '</b>!';
-    if (sp.inTime > r.prevBest && r.prevBest > 0) msg += '<br>🏅 Kỉ lục mới của con ở mức này!';
+    if (!r.newBadge && r.newScope && scTxt) msg += '<br>🏅 Danh hiệu ' + L.title + ' giờ có thêm thử thách <b>' + scTxt + '</b>!';
+    if (sp.inTime > r.prevBest && r.prevBest > 0) msg += '<br>🏅 Kỉ lục mới của mức này (tính mọi phạm vi)!';
     return msg;
   },
 

@@ -34,6 +34,14 @@ const URL = process.env.BASE_URL || 'http://localhost:8765/';
   const shelf = await p.$$eval('#arenaBody .arena-shelf-item', els => els.map(e => e.innerText.replace(/\s+/g, ' ').trim()));
   assert.ok(shelf[0].includes('bảng 3 · Quan hệ phép nhân'), 'huy hiệu Ốc sên hiện phạm vi: ' + shelf[0]);
   assert.ok(shelf[1].includes('chưa ghi nhận phạm vi'), 'huy hiệu cũ mức Rùa: ' + shelf[1]);
+  assert.ok(shelf[0].includes('Thử thách bảng 3'), 'ghi là thử thách, không phải thành thạo');
+  // Thẻ chọn: đang chọn đúng phạm vi vừa đạt → hiện điểm của chính phạm vi đó; đổi sang bảng khác → không hiện
+  await p.click('#arenaBody .speed-lv[data-lv="0"]');
+  const info1 = await p.textContent('#arenaBody .speed-info');
+  assert.ok(info1.includes('Thử thách bảng 3 · Quan hệ phép nhân đã đạt 17/20'), info1);
+  await p.click('#arenaBody .drill-chip[data-t="4"]');
+  const info2 = await p.textContent('#arenaBody .speed-info');
+  assert.ok(!info2.includes('đã đạt'), 'phạm vi bảng 3, 4 chưa đạt → không mượn điểm bảng 3: ' + info2);
   if (process.env.SHOT) await p.locator('#arenaBody .arena-shelf').screenshot({ path: process.env.SHOT });
   assert.deepStrictEqual(errs, [], 'không lỗi JS');
   console.log('✔ chọn bảng/nhóm ở giao diện → Quiz → kết quả → Đấu trường: phạm vi đúng'); console.log('Tất cả đạt');

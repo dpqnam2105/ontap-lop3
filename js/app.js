@@ -709,7 +709,7 @@ const App = {
       const best = sp.level.best[i];
       return `<button type="button" class="speed-lv${open ? '' : ' locked'}" data-lv="${i}" ${open ? '' : 'disabled'}>
         <span class="sl-ic">${open ? L.icon : '🔒'}</span><span class="sl-name">${L.name}</span>
-        <span class="sl-best">${open ? (sp.level.passed && sp.level.passed[i] ? '🏅 ' : '') + (best != null ? best + '/20' : 'chưa chơi') : 'khoá'}</span></button>`;
+        <span class="sl-best" title="Kỉ lục mức này, tính mọi phạm vi">${open ? (sp.level.passed && sp.level.passed[i] ? '🏅 ' : '') + (best != null ? best + '/20' : 'chưa chơi') : 'khoá'}</span></button>`;
     }).join('');
     const slow = TableGen.slowFacts(sp, 6);
     const slowLine = slow.length ? `<div class="speed-slow">🐢 Phép con còn chậm hoặc sai: <b>${slow.map(x => TableGen.factLabel(x.fact)).join(', ')}</b> — Thỏ sẽ hỏi lại nhiều hơn.</div>` : '';
@@ -759,7 +759,11 @@ const App = {
         : 'Con chọn ít nhất 1 bảng nhé';
       card.querySelectorAll('.speed-lv').forEach(b => b.classList.toggle('on', +b.dataset.lv === cur.level));
       const L = TableGen.LEVELS[cur.level];
-      card.querySelector('.speed-info').textContent = L.icon + ' ' + L.name + ': tính ' + L.t.calc + ' giây · tìm số thiếu ' + L.t.miss + ' giây · quan hệ phép nhân ' + L.t.rel + ' giây mỗi câu';
+      // Điểm đã đạt của ĐÚNG phạm vi đang chọn (không lấy kỉ lục của phạm vi khác làm mục tiêu)
+      const curScope = cur.tables.length ? TableGen.scopeOf(t, TableGen.filterIndices(t, cur.tables, cur.group, allowed), cur.group) : null;
+      const got = TableGen.findScope(cur.level, curScope);
+      card.querySelector('.speed-info').textContent = L.icon + ' ' + L.name + ': tính ' + L.t.calc + ' giây · tìm số thiếu ' + L.t.miss + ' giây · quan hệ phép nhân ' + L.t.rel + ' giây mỗi câu' +
+        (got ? ' · 🏅 Thử thách ' + TableGen.scopeText(curScope) + ' đã đạt ' + got.s + '/20' : '');
       TableGen.setPref(cur);
     };
     card.querySelectorAll('.speed-lv:not(.locked)').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); cur.level = +b.dataset.lv; refresh(); }));

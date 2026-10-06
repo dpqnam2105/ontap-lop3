@@ -29,7 +29,7 @@ const Arena = {
     const hero = rank >= 0
       ? `<div class="arena-hero-badge">${TableGen.badgeHTML(rank, true, 'lg')}</div>
          <div><div class="arena-kicker">Danh hiệu của ${name}</div><h2>${L[rank].icon} ${esc(L[rank].title)}</h2>
-         <div class="arena-scope">${esc(TableGen.levelScopeText(rank, d) ? 'Đạt với ' + TableGen.levelScopeText(rank, d) : '')}</div>
+         <div class="arena-scope">${esc(TableGen.bestScope(rank, d) ? 'Đạt trong thử thách ' + TableGen.levelScopeText(rank, d) : '')}</div>
          <p>${rank < L.length - 1 ? 'Mục tiêu tiếp theo: <b>' + L[nextI].icon + ' ' + esc(L[nextI].title) + '</b> — đúng & kịp giờ ' + TableGen.PASS_SCORE + '/20 câu ở mức ' + esc(L[nextI].name) + '.' : '🏆 Con đã đạt danh hiệu cao nhất! Thử giữ kỉ lục 20/20 nhé.'}</p></div>`
       : `<div class="arena-hero-badge">${TableGen.badgeHTML(0, false, 'lg')}</div>
          <div><div class="arena-kicker">Chào ${name}!</div><h2>Đấu trường tính nhanh</h2>
@@ -43,7 +43,7 @@ const Arena = {
         : '';
       return `<div class="arena-shelf-item${got ? ' got' : ''}">${TableGen.badgeHTML(i, !!got, 'md')}
         <div class="asi-title">${esc(x.title)}</div>
-        <div class="asi-sub">${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div>${got ? this._scopeLines(i, d) : ''}${avatarBtn}</div>`;
+        <div class="asi-sub"${!got && best != null ? ' title="Kỉ lục mức này, tính mọi phạm vi"' : ''}>${got ? '🏅 ' + got.split('-').reverse().join('/') : (i <= d.level.unlocked ? (best != null ? 'kỉ lục mức ' + best + '/20' : 'chưa chơi') : '🔒 chưa mở')}</div>${got ? this._scopeLines(i, d) : ''}${avatarBtn}</div>`;
     }).join('');
     host.innerHTML = `
       <div class="arena-hero card">${hero}</div>
@@ -62,7 +62,7 @@ const Arena = {
     if (!list.length) return '<div class="asi-scope old">chưa ghi nhận phạm vi</div>';
     const best = TableGen.bestScope(i, d);
     const rest = list.filter(x => x !== best).sort((a, b) => (b.t.length - a.t.length) || String(b.at).localeCompare(String(a.at)));
-    return '<div class="asi-scope">' + esc(TableGen.scopeText(best)) + '</div>' +
+    return '<div class="asi-scope" title="Phạm vi thử thách đã đạt (không phải mức thành thạo từng bảng)">Thử thách ' + esc(TableGen.scopeText(best)) + '</div>' +
       (rest.length ? '<div class="asi-scope more" title="' + esc(rest.map(x => TableGen.scopeText(x)).join(' | ')) + '">+ ' + rest.length + ' phạm vi khác</div>' : '');
   },
 
@@ -100,7 +100,7 @@ const Arena = {
     const L = TableGen.LEVELS[rank];
     const sc = TableGen.levelScopeText(rank, null, true);
     chip.textContent = L.icon + ' ' + L.title + (sc ? ' · ' + sc : '');
-    chip.title = 'Danh hiệu Đấu trường' + (TableGen.levelScopeText(rank) ? ' — ' + TableGen.levelScopeText(rank) : '');
+    chip.title = 'Danh hiệu Đấu trường' + (TableGen.bestScope(rank) ? ' — đạt trong thử thách ' + TableGen.levelScopeText(rank) : '');
   }
 };
 

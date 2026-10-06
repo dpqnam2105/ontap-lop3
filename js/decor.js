@@ -90,7 +90,7 @@ const Decor = {
     const L = TableGen.LEVELS[i];
     let sc = '', full = '';
     try { sc = TableGen.levelScopeText(i, null, true); full = TableGen.levelScopeText(i); } catch (e) { sc = ''; }
-    return '<span class="dc-title" style="--t1:' + L.c[0] + ';--t2:' + L.c[1] + ';--t3:' + L.c[2] + '" title="Danh hiệu Đấu trường tính nhanh' + (full ? ' — ' + this._esc(full) : '') + '">' +
+    return '<span class="dc-title" style="--t1:' + L.c[0] + ';--t2:' + L.c[1] + ';--t3:' + L.c[2] + '" title="Danh hiệu Đấu trường tính nhanh' + (full ? ' — ' + (TableGen.bestScope(i) ? 'đạt trong thử thách ' : '') + this._esc(full) : '') + '">' +
       L.icon + ' ' + this._esc(L.title) + (sc ? ' <small class="dc-title-scope">· ' + this._esc(sc) + '</small>' : '') + '</span>';
   },
   faceHTML(id) {

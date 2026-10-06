@@ -120,6 +120,32 @@ const tests = {
     assert.ok(list.length <= 13);
     assert.strictEqual(run(c, 'TableGen.levelScopeText(2)'), 'bảng 2–9');
   },
+  'cắt danh sách: phạm vi "tất cả dạng" cũ được chọn tiêu biểu vẫn giữ, tổng đúng 12 (không thành 13)'() {
+    const c = boot();
+    // 11 phạm vi 2 bảng (tính / quan hệ) mới, 1 phạm vi 2 bảng "tất cả dạng" CŨ → tiêu biểu là mục cũ này
+    const pairs = [[2,3],[3,4],[4,5],[5,6],[6,7],[7,8]];
+    const list = [];
+    pairs.forEach(t => list.push({ t, g: 'calc', at: '2026-10-05', s: 16 }));
+    pairs.slice(0, 5).forEach(t => list.push({ t, g: 'rel', at: '2026-10-05', s: 16 }));
+    list.push({ t: [8, 9], g: 'all', at: '2026-09-01', s: 18 });
+    run(c, `localStorage.setItem(TableGen._speedKey(), JSON.stringify({ facts: {}, level: { unlocked: 4, best: {}, passed: { 3: '2026-09-01' }, scopes: { 3: ${JSON.stringify(list)} } } }))`);
+    assert.strictEqual(J(c, 'TableGen.bestScope(3)').g, 'all');
+    pass(c, 3, [8, 9], 'calc');                   // mục thứ 13 → phải cắt còn 12
+    const after = J(c, 'TableGen.scopesOf(3)');
+    assert.strictEqual(after.length, 12, 'đúng 12 mục, có: ' + after.length);
+    assert.ok(after.some(x => x.g === 'all' && x.t.join() === '8,9'), 'phạm vi tiêu biểu không bị cắt');
+    assert.strictEqual(J(c, 'TableGen.bestScope(3)').g, 'all');
+  },
+
+  'findScope: chỉ trả điểm của ĐÚNG phạm vi đang chọn, không lấy phạm vi khác'() {
+    const c = boot();
+    pass(c, 2, [2], 'all', 20);
+    pass(c, 2, ALL, 'all', 16);
+    assert.strictEqual(J(c, 'TableGen.findScope(2, { t: [2], g: "all" })').s, 20);
+    assert.strictEqual(J(c, 'TableGen.findScope(2, { t: [9,8,7,6,5,4,3,2], g: "all" })').s, 16, 'thứ tự bảng không ảnh hưởng');
+    assert.strictEqual(run(c, 'TableGen.findScope(2, { t: [2], g: "calc" })'), null, 'khác nhóm dạng → không có');
+    assert.strictEqual(run(c, 'TableGen.findScope(2, { t: [2, 5], g: "all" })'), null, 'chưa đạt [2,5] → không có');
+  },
 };
 
 let fail = 0;

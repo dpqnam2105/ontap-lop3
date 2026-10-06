@@ -5,6 +5,13 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Đấu trường: lời "thử thách", kỉ lục ghi rõ, sửa giới hạn 12 phạm vi (góp ý Codex)
+- **Lời hiển thị**: phạm vi là *phạm vi thử thách đã chọn* (kho câu của lượt), không phải chứng nhận bé thành thạo từng bảng — lượt 20 câu ngẫu nhiên không nhất thiết gặp đủ mọi bảng. Nay ghi "Đạt trong thử thách bảng …" (màn kết quả, Đấu trường, rê chuột trên nhãn cạnh tên), kệ huy hiệu ghi "Thử thách bảng …". Bảng tốc độ từng phép trong Khu Bố Mẹ vẫn là báo cáo thành thạo riêng.
+- **Kỉ lục**: giữ `level.best` như cũ, ghi rõ "Kỉ lục mức này, tính mọi phạm vi" (chú thích ở ô chọn mức, "kỉ lục mức …" ở kệ huy hiệu, "Kỉ lục mới của mức này (tính mọi phạm vi)!" ở màn kết quả). Khi đang chọn đúng một phạm vi đã đạt ở mức đó, thẻ chọn hiện thêm "🏅 Thử thách bảng … đã đạt X/20" — chỉ của **chính** phạm vi đó (`TableGen.findScope`), không mượn điểm bảng 2 cho lượt trộn 2–9.
+- **[P3] Giới hạn 12 phạm vi có thể thành 13**: chọn tiêu biểu và cắt danh sách dùng 2 thứ tự khác nhau, nên phạm vi "tất cả dạng" cũ được chọn tiêu biểu có thể nằm ngoài 12 mục đầu rồi bị thêm vào thành 13. Nay dùng **chung** một thứ tự (`_scopeOrder`: nhiều bảng → "tất cả dạng" → mới nhất) và cắt đúng `SCOPES_KEEP = 12`; mục tiêu biểu luôn đứng đầu nên không bao giờ bị cắt.
+- `tests/arena.test.js`: 13 bài (thêm đúng ca 13 mục Codex tái hiện — **bắt được** lỗi ở bản trước — và `findScope`). `tests/arena.e2e.js`: thêm kiểm tra chữ "Thử thách", điểm của phạm vi đang chọn, và không mượn điểm khi đổi sang bảng 3, 4.
+- Phiên bản file `?v=20261006q`.
+
 ## 2026-10-06 — Danh hiệu Đấu trường ghi rõ phạm vi đạt (#4a, bàn cùng Codex)
 - **Vấn đề cũ**: danh hiệu chỉ lưu theo mức. Chỉ chơi bảng 2 ở mức 🐆 Báo vẫn được "Báo Tia Chớp", dễ hiểu nhầm là đã nhanh ở cả bảng 2–9.
 - **Nay**: mỗi lượt **đạt** (≥16/20) ghi đúng phạm vi của chính lượt đó — các bảng và nhóm dạng có trong kho câu của lượt (`TableGen.scopeOf`), lưu ở `tableSpeed_v1` → `level.scopes[mức]` (được sao lưu cùng dữ liệu tốc độ).
