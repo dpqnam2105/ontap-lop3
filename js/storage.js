@@ -166,6 +166,40 @@ const Storage = {
   registerIdTopic(topicId, questions, legacyIds) {
     this._idTopics[topicId] = { questions, legacyIds: legacyIds || (() => []) };
     if (!this.ID_PROGRESS_TOPICS.includes(topicId)) this.ID_PROGRESS_TOPICS.push(topicId);
+    this.migrateLegacyIdProgress(topicId);
+  },
+
+  /**
+   * Đổi NGAY và LƯU BỀN dữ liệu cũ lưu theo vị trí (seen/ok, learned/wrong) sang id, cho MỌI bé trên máy,
+   * không đợi bé làm thêm câu. Chỉ chạy khi có ánh xạ kho cũ; bản ghi đã có id thì giữ nguyên.
+   */
+  migrateLegacyIdProgress(topicId) {
+    const r = this._idTopics[topicId];
+    const legacy = r ? (r.legacyIds() || []) : [];
+    if (!legacy.length) return 0;
+    const v = { legacy };
+    let n = 0;
+    const keys = [];
+    for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
+    keys.forEach(k => {
+      const total = k === this.PROGRESS_TOTAL_KEY || (k && k.indexOf(this.PROGRESS_TOTAL_KEY + '::') === 0);
+      const daily = k === this.PROGRESS_KEY || (k && k.indexOf(this.PROGRESS_KEY + '::') === 0);
+      if (!total && !daily) return;
+      try {
+        const all = JSON.parse(localStorage.getItem(k) || '{}');
+        const p = all && all[topicId];
+        if (!p || typeof p !== 'object') return;
+        let changed = false;
+        if (total && !p.seenIds && !p.okIds && (p.seen || p.ok)) {
+          all[topicId] = { seenIds: this._legacyToIds(p.seen, v), okIds: this._legacyToIds(p.ok, v) }; changed = true;
+        }
+        if (daily && !p.learnedIds && !p.wrongIds && (p.learned || p.wrong)) {
+          all[topicId] = { learnedIds: this._legacyToIds(p.learned, v), wrongIds: this._legacyToIds(p.wrong, v), date: p.date }; changed = true;
+        }
+        if (changed) { localStorage.setItem(k, JSON.stringify(all)); n++; }
+      } catch (e) { /* bản ghi hỏng: để nguyên */ }
+    });
+    return n;
   },
   _isIdTopic(topicId) { return this.ID_PROGRESS_TOPICS.includes(topicId); },
   /** { ids: id theo chỉ số hiện tại, pos: Map id → chỉ số } hoặc null nếu chủ đề chưa nạp. */

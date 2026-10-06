@@ -626,7 +626,11 @@ const GenB13 = {
     opts = opts || {};
     if (!Number.isInteger(n) || n <= 0) return [];
     const r = this._rng('pick|' + seed);
-    const TT = this.T_BY_VER[this.VERSION];                // câu mới luôn sinh theo phiên bản hiện tại
+    // Câu mới luôn sinh theo phiên bản hiện tại. opts.version (nội bộ) chỉ để dựng lại kho của phiên bản cũ
+    // (vd ánh xạ dữ liệu tiến độ cũ lưu theo vị trí trong kho v1).
+    const ver = opts.version === undefined ? this.VERSION : opts.version;
+    const TT = this.T_BY_VER[ver];
+    if (!TT || ver > this.VERSION) return [];
     const has = t => typeof t === 'string' && Object.prototype.hasOwnProperty.call(TT, t);
     let tpls = opts.templates === undefined ? Object.keys(TT) : (Array.isArray(opts.templates) ? opts.templates : []);
     tpls = [...new Set(tpls.filter(has))];
@@ -642,7 +646,7 @@ const GenB13 = {
       let x = r() * sumW, k = 0; while (x >= W[k]) { x -= W[k]; k++; }
       const tpl = tpls[k], T = TT[tpl];
       for (let tries = 0; tries < 40; tries++) {          // giữ đúng mẫu đã chọn, chỉ sinh lại tham số
-        const id = this.id(tpl, T.gen.call(T, r));
+        const id = this.PREFIX + '_' + tpl + '_v' + ver + '_' + T.gen.call(T, r).join('-');
         if (seen.has(id)) continue;
         const q = this.build(id);
         if (!q) continue;
@@ -679,6 +683,12 @@ const GenB13 = {
       'Ôn tập biểu thức số', 'Ôn tập hình học và đo lường', 'Ôn tập chung']
   },
 
+  /** Id theo vị trí của kho web v1 — bản 1f57129 lưu tiến độ chủ đề nền theo vị trí trong kho này. Không bao giờ đổi. */
+  legacyBankIds() {
+    if (!this._legacy) this._legacy = this.pick('kho-web-v1', this.BANK_SIZE, { version: 1 }).map(q => q.id);
+    return this._legacy.slice();
+  },
+
   /** Kho cố định của phiên bản hiện tại (cùng phiên bản → cùng danh sách, cùng thứ tự). */
   bank() {
     if (!this._bank || this._bank.v !== this.VERSION) this._bank = { v: this.VERSION, qs: this.pick('kho-web-v' + this.VERSION, this.BANK_SIZE) };
@@ -701,7 +711,7 @@ const GenB13 = {
     // Tiến độ của chủ đề này lưu THEO ID (Storage chuyển đổi chỉ số ↔ id qua mảng hiện tại).
     // Dữ liệu cũ lưu theo chỉ số (bản 1f57129, chỉ có kho v1) đổi sang id bằng kho v1; phiên bản sau không đổi.
     if (typeof Storage !== 'undefined' && Storage && Storage.registerIdTopic) {   // dùng tên Storage của web (window.Storage là API gốc của trình duyệt)
-      const legacy = this.VERSION === 1 ? this.bank().map(q => q.id) : [];
+      const legacy = this.legacyBankIds();             // GIỮ ở mọi phiên bản sau (dữ liệu cũ của bé nào chưa mở lại vẫn chuyển được)
       Storage.registerIdTopic(this.TOPIC_ID, () => this._liveTopic().questions, () => legacy);
     }
     toan.topics.forEach(t => { if (Object.prototype.hasOwnProperty.call(this.HOSTS, t.id)) t.genMix = { templates: this.HOSTS[t.id], ratio: this.MIX_RATIO }; });

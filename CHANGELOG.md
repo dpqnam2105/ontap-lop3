@@ -5,6 +5,11 @@ Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 
 ---
 
+## 2026-10-06 — Tiến độ cũ của chủ đề "Nền số đến 1000" được chuyển và lưu ngay khi mở web (góp ý Codex)
+- Dữ liệu tiến độ lưu theo vị trí (bản 1f57129) được đổi sang id và GHI LẠI ngay lúc tải trang, cho mọi bé trên máy, không đợi bé làm thêm câu.
+- Ánh xạ kho v1 được giữ mãi ở các phiên bản sau → bé nào lâu chưa mở máy vẫn chuyển được.
+- Test: `tests/progress-id.test.js` thêm 3 ca (chỉ mở / không trả lời → lên v2 → dựng lại câu v1 → còn dấu; bé chưa mở lại mở thẳng ở v2; ánh xạ không đổi). Mã phiên bản `?v=20261006z`.
+
 ## 2026-10-06 — Tiến độ chủ đề "Nền số đến 1000" lưu theo ID câu (góp ý Codex)
 - Sửa lỗi: câu tự sinh dựng lại từ lịch sử có thể đổi vị trí sau khi tải lại, làm dấu "đã đúng" rơi sang câu khác. Nay tiến độ trong ngày và tích lũy của chủ đề này lưu theo id; chủ đề có sẵn không đổi.
 - Lên phiên bản mẫu: câu mới không thừa hưởng dấu của câu cũ. Dữ liệu cũ (lưu theo vị trí) tự đổi sang id.

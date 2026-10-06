@@ -1,5 +1,15 @@
 # Rà soát nền lớp 3
 
+## Vòng 5b: chuyển dữ liệu cũ lưu bền (sửa [P2] Codex trên 2c464ac)
+
+- `Storage.registerIdTopic` gọi `migrateLegacyIdProgress`: đổi bản ghi cũ theo vị trí (`seen/ok`, `learned/wrong`) của chủ đề sang id và ghi lại ngay khi tải trang, cho mọi bé trên máy. Bản ghi đã có id giữ nguyên.
+- Ánh xạ legacy (`GenB13.legacyBankIds()`, dựng kho web v1 bằng bảng mẫu v1) giữ ở mọi phiên bản sau.
+- Test (Node, giả lập v2 bằng cách đổi `VERSION` + `T_BY_VER`):
+  · đúng kịch bản Codex: dữ liệu cũ theo chỉ số → chỉ mở, không trả lời → localStorage đã thành id → lên v2 → dựng lại câu v1 → còn dấu, cả tích lũy lẫn trong ngày
+  · bé chưa mở lại ở v1, mở thẳng ở v2 → vẫn chuyển được
+  · ánh xạ v1 = kho web v1 và không đổi ở v2
+  Kiểm tra lại test: bỏ bước chuyển lúc tải trang → 2 ca đỏ; bỏ ánh xạ ở v2 → 1 ca đỏ.
+
 ## Vòng 5 (2026-10-06): tiến độ chủ đề câu sinh lưu theo ID (sửa [P1] + [P2] của Codex trên 1f57129)
 
 - **[P1]** `Storage` có danh sách chủ đề lưu tiến độ theo ID (`ID_PROGRESS_TOPICS = ['toan_g13']`); chủ đề tĩnh vẫn lưu theo chỉ số như cũ.
