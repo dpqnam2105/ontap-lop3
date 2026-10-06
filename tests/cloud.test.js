@@ -70,7 +70,7 @@ const tests = {
     await sleep(40);                            // lượt gửi rev 1 đang chạy
     assert.strictEqual(srv.saves.length, 1);
     earn(ctx, 'Thỏ', 5);                        // rev 2 phát sinh giữa lúc gửi
-    await sleep(70);                            // rev 1 xác nhận xong
+    await sleep(100);                            // rev 1 xác nhận xong
     let m = meta(ctx, 'thỏ');
     assert.strictEqual(m.savedRev, 1); assert.strictEqual(m.localRev, 2);
     await sleep(1300);
@@ -127,7 +127,7 @@ const tests = {
     earn(ctx, 'Thỏ', 10);
     await sleep(40);                            // đang gửi Thỏ rev 1
     earn(ctx, 'Coca', 7);                       // đổi sang Coca, Coca rev 1
-    await sleep(60);
+    await sleep(110);                           // lượt Thỏ (xong ở ~100ms) đã xác nhận
     assert.strictEqual(meta(ctx, 'thỏ').savedRev, 1);
     assert.ok(!meta(ctx, 'coca').savedRev, 'Coca chưa được gửi thì chưa được đánh dấu');
     assert.strictEqual(srv.saves[0].key, 'thỏ');
