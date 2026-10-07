@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Khung phòng cún (nhánh pet-room-frame, chờ review)
+- Thêm template 1000×625 và manifest giữ id/giá cũ; chuyển phòng phẳng sang slots có tương thích bản web cũ. Hành vi tìm điểm theo khả năng, depth theo chân đang hiển thị, giường tách lưng/viền trước; kích thước cún theo giai đoạn nằm trong template. Chuyển style bộ hình sang pet.css. Có test dữ liệu, mobile và khôi phục sao lưu; chưa thêm bộ hình phòng mới, không đổi Storage/Cloud.
+
 ## 2026-10-07 — Bộ hình cún nâu (nhánh pet-art, chờ review)
 - Phân phối WebP: 3 atlas giữ 1254px; nơ 512px. Tổng 7,52MB PNG → 1,42MB WebP (giảm 81,1%), alpha giữ nguyên; chỉ tải atlas giai đoạn đang dùng. Giữ PNG nguồn riêng, thêm test lượt mở lạnh mobile.
 - V2 theo mẫu Nam duyệt: sơ sinh mũm mĩm như cục bông, lớn vừa có chỏm tóc, trưởng thành thân/ngực rộng và đầu nhỏ hơn tương đối. Thay bảng hình v1 bằng v2; nơ xanh/chỏm tóc là ảnh riêng với nút thử đeo/tháo trong trang duyệt, chưa thêm vào shop hoặc hồ sơ.
