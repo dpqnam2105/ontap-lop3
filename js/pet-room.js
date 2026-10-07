@@ -1,4 +1,4 @@
-// Room data + coordinate helpers. Artwork is deliberately empty in this frame PR.
+// Stable room geometry, inventory and delivery artwork.
 const PetRoom = {
   DEFAULT_TEMPLATE:'room-cozy-v1',
   SLOTS:['bed','rug','bowl','toy','plant','wall'],
@@ -6,8 +6,8 @@ const PetRoom = {
   TEMPLATES:{
     'room-cozy-v1':{
       id:'room-cozy-v1',width:1000,height:625,
-      viewports:{wide:{x:0,w:1000},narrow:{x:140,w:720,minWidthPx:0,maxWidthPx:750}},
-      background:{img:null,horizon:320,wall:'#fbefdf',floor:'#edcca4',window:{x:160,y:80,w:180,h:210}},
+      viewports:{wide:{x:0,w:1000,walkArea:{polygon:[[160,390],[850,390],[850,585],[160,585]]}},narrow:{x:140,w:720,minWidthPx:0,maxWidthPx:750,walkArea:{polygon:[[310,390],[690,390],[690,585],[310,585]]}}},
+      background:{img:'assets/pet/room/cozy-background-v1.webp',horizon:320,wall:'#fbefdf',floor:'#edcca4'},
       dog:{widthByStage:[255,295,320],spawn:{x:490,y:520},wander:{x:300,y:80},speech:{x:500,y:95}},
       slots:{
         bed:{x:690,y:445,w:330,h:185,layer:'back',frontLayer:'depth',frontDepthY:457,spot:{x:690,y:425},does:['sleep']},
@@ -86,10 +86,11 @@ const PetRoom = {
     const t=this.template(room),w=t.dog.widthByStage[stage]||t.dog.widthByStage[0];
     let p={x:Number.isFinite(point?.x)?point.x:t.dog.spawn.x,y:Number.isFinite(point?.y)?point.y:t.dog.spawn.y};
     const v=this.viewport(room,widthPx);
+    const polygon=(v.walkArea||t.walkArea).polygon;
     const bounds=q=>({x:Math.max(v.x+w/2+8,Math.min(v.x+v.w-w/2-8,q.x)),y:Math.max(w,Math.min(t.height-8,q.y))});
     p=bounds(p);
-    for(let i=0;i<3&&!this.inside(t.walkArea.polygon,p);i++)p=bounds(this.closest(t.walkArea.polygon,p));
-    return this.inside(t.walkArea.polygon,p)?p:bounds(t.dog.spawn);
+    for(let i=0;i<3&&!this.inside(polygon,p);i++)p=bounds(this.closest(polygon,p));
+    return this.inside(polygon,p)?p:bounds(t.dog.spawn);
   },
   depth(layer,y=0){return ({background:0,wall:100,back:200,floor:300,depth:1000,front:3000,effect:4000,speech:5000}[layer]??1000)+(layer==='depth'?Math.round(y):0);}
 };
@@ -104,3 +105,7 @@ for(const [slot,label] of Object.entries({bed:'Giường',rug:'Thảm',bowl:'Bá
   }
 }
 window.PetRoom=PetRoom;
+
+// Only basic items have approved pilot artwork; paid colour variants remain placeholders until reviewed.
+for(const slot of ['bed','rug','bowl','toy','plant'])PetRoom.ITEMS[slot+'-default'].img='assets/pet/room/'+slot+'-default-v1.webp';
+PetRoom.ITEMS['bed-default'].frontImg='assets/pet/room/bed-front-v1.webp';

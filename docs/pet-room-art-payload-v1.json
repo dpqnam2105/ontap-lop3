@@ -1,0 +1,65 @@
+[
+  {
+    "file": "cozy-background-v1.webp",
+    "size": [
+      1586,
+      992
+    ],
+    "bytes": 62092,
+    "alphaExact": true
+  },
+  {
+    "file": "bed-default-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 26058,
+    "alphaExact": true
+  },
+  {
+    "file": "bed-front-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 14062,
+    "alphaExact": true
+  },
+  {
+    "file": "rug-default-v1.webp",
+    "size": [
+      512,
+      171
+    ],
+    "bytes": 24760,
+    "alphaExact": true
+  },
+  {
+    "file": "bowl-default-v1.webp",
+    "size": [
+      512,
+      320
+    ],
+    "bytes": 18628,
+    "alphaExact": true
+  },
+  {
+    "file": "toy-default-v1.webp",
+    "size": [
+      512,
+      410
+    ],
+    "bytes": 48306,
+    "alphaExact": true
+  },
+  {
+    "file": "plant-default-v1.webp",
+    "size": [
+      389,
+      512
+    ],
+    "bytes": 31488,
+    "alphaExact": true
+  }
+]

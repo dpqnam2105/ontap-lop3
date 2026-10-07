@@ -20,11 +20,16 @@ const root=path.resolve(__dirname,'..');
   await page.goto('http://pet.test/');await page.waitForFunction(()=>App.allData&&App.allData.subjects.length>=3);
   await page.evaluate(stage=>{Storage.switchPlayer('Bé Đo Tải');App.playerName='Bé Đo Tải';const p=Storage.load();p.petAdopt={earnedAt:new Date().toISOString(),runId:'payload',score:15,total:15};Storage.save(p);Pet.adopt('Bông');const d=Storage.load();d.pet.stage=stage;d.pet.growth=[0,10,30][stage];Storage.save(d);App.showScreen('pet')},stage);
   await page.waitForTimeout(2500); // Covers the initial greeting and multiple frame changes.
-  assert.equal(requests.length,1,'cold opening and animation must fetch only one pet image');
-  assert.equal(requests[0].file,'dog-fluffy-brown-stage'+stage+'-v2.webp');
-  assert.ok(requests[0].bytes<500000,'atlas payload below 500kB');
+  const atlas=requests.filter(r=>r.file.startsWith('dog-fluffy'));
+  const room=requests.filter(r=>!r.file.startsWith('dog-fluffy'));
+  assert.equal(atlas.length,1,'only current stage atlas');
+  assert.equal(room.length,7,'background and five equipped pieces, with split bed');
+  assert.ok(!requests.some(r=>r.file.includes('bow-blue')));
+  assert.ok(room.reduce((n,r)=>n+r.bytes,0)<350000,'room art delivery budget');
+  assert.equal(atlas[0].file,'dog-fluffy-brown-stage'+stage+'-v2.webp');
+  assert.ok(atlas[0].bytes<500000,'atlas payload below 500kB');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  report.push({stage,viewport:'390x844',requests:requests.length,imageBytes:requests[0].bytes,file:requests[0].file});
+  report.push({stage,viewport:'390x844',requests:requests.length,imageBytes:atlas[0].bytes,file:atlas[0].file});
   await context.close();
  }
  const bowBytes=fs.statSync(path.join(root,'assets/pet/bow-blue-tuft-v1.webp')).size;

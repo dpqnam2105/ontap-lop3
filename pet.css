@@ -21,4 +21,5 @@
 #petRoom>.pet-heart{z-index:4000;transform:translateX(-50%)}
 
 .pet-canvas{position:absolute;top:0;height:100%}
+.pet-wall-art-tint{position:absolute;top:0;left:0;width:100%;mix-blend-mode:multiply;opacity:.3;pointer-events:none}
 #petCanvas>.pet-heart{z-index:4000;transform:translateX(-50%)}

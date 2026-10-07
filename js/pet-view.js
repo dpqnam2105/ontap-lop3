@@ -50,6 +50,8 @@ const PetView = {
     let html='<div class="pet-room" id="petRoom" data-template="'+this.esc(t.id)+'" style="--room-ratio:'+v.w+'/'+t.height+';--room-wall:'+this.esc(wall.tint||bg.wall)+';--room-floor:'+this.esc(bg.floor)+';--room-horizon:'+bg.horizon/t.height*100+'%"><div id="petCanvas" class="pet-canvas" style="width:'+t.width/v.w*100+'%;left:'+(-v.x/v.w*100)+'%">';
     if(bg.img)html+='<img class="pet-room-background" src="'+this.esc(bg.img)+'" alt="">';
     else if(win)html+='<div class="pet-stage-window" style="'+place(win)+'"></div>';
+    // Existing paid wall colours still work with a painted background; do not tint floor or furniture.
+    if(bg.img&&wall.id!=='wall-default')html+='<div class="pet-wall-art-tint" data-wall-id="'+this.esc(wall.id)+'" style="height:'+bg.horizon/t.height*100+'%;background:'+this.esc(wall.id==='wall-pink'?'#f2a1bf':'#95c9f3')+'"></div>';
     for(const slot of Object.keys(t.slots)){
       const entry=PetRoom.placement(p.room,slot),item=entry.item;
       const image=item.img?'<img src="'+this.esc(item.img)+'" alt="">':slot==='plant'||slot==='bowl'||slot==='toy'?'<svg viewBox="0 0 '+entry.w+' '+entry.h+'" aria-hidden="true"><text x="50%" y="85%" text-anchor="middle" font-size="'+Math.min(entry.w,entry.h)*.85+'">'+({plant:'🪴',bowl:'🍲',toy:'🎾'})[slot]+'</text></svg>':'';

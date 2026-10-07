@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Phòng cún mẫu (nhánh pet-room-art, chờ duyệt hình)
+- Vẽ nền tường/sàn gỗ/cửa sổ và năm món cơ bản, giường hai lớp; WebP khoảng 225KB, chỉ tải đồ đang đặt. Tách vùng đi wide/narrow; giữ id/giá/dữ liệu cũ và màu tường đã mua. Có ảnh 390px/1280px để Nam duyệt; chưa làm biến thể màu hoặc phụ kiện.
+
 ## 2026-10-07 — Khung nhìn phòng cún mobile
 - Viewport x140–860 cho màn ≤750px; dời đồ và giới hạn vùng đi để cún không bị cắt. Resize không chào lại; thêm hợp đồng hình và mốc gỡ mirror. Chưa vẽ phòng mẫu.
 
