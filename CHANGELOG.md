@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Nhà cún v1 (nhánh pet, chờ review)
+- Thêm màn Nhà cún, tương tác cho ăn/chơi/trang trí và dữ liệu trong hồ sơ; tối đa 3 bữa lớn/ngày, lớn ở 10/30 bữa. Giá và nhận nuôi chưa mở khi chưa chốt. Không đổi Storage/Cloud.
+
 Nhật ký mỗi lần sửa website và push lên GitHub. Mới nhất ở trên cùng.
 Chi tiết từng câu hỏi xem thêm ở `data-lop3/CHANGELOG.md`.
 

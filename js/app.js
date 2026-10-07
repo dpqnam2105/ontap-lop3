@@ -142,11 +142,12 @@ const App = {
   },
 
   showScreen(name) {
+    if (window.PetView) PetView.stop();
     if (window.Speak) Speak.stop();
     if (name !== 'quiz' && window.Quiz && Quiz._stopSpeedTimer) Quiz._stopSpeedTimer();
     if (name === 'register' && window.Achieve) Achieve.renderTicker();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
-    const needsName = (name === 'grade' || name === 'subject' || name === 'topic' || name === 'arena');
+    const needsName = (name === 'grade' || name === 'subject' || name === 'topic' || name === 'arena' || name === 'pet');
     if (needsName && !this.playerName) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById('screenRegister').classList.add('active');
@@ -162,6 +163,7 @@ const App = {
     const screen = document.getElementById(id);
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
+    if (name === 'pet' && window.PetView) PetView.open();
     // Trang chủ có lời chào riêng → ẩn tiêu đề chung "Kho Bài Tập" (xem style.css: body.on-home.home-today)
     document.body.classList.toggle('on-home', name === 'register');
     const learnScreens = ['grade', 'subject', 'topic', 'quiz', 'result'];
