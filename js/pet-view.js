@@ -5,7 +5,7 @@ const PetView = {
   state:'idle', reduced:window.matchMedia('(prefers-reduced-motion: reduce)'),
   esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));},
   token(){return 'pet-'+Date.now()+'-'+Math.random().toString(36).slice(2);},
-  stop(){clearInterval(this.poseTimer);this.poseTimer=null;this.active=false;this.epoch++;this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);this.busy=false;this.state='idle';},
+  stop(){clearInterval(this.poseTimer);this.poseTimer=null;cancelAnimationFrame(this.depthFrame);this.depthFrame=null;this.active=false;this.epoch++;this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);this.busy=false;this.state='idle';},
   later(fn,ms,realTime=false){const e=this.epoch;const t=setTimeout(()=>{if(this.active&&this.epoch===e)fn();},this.reduced.matches&&!realTime?0:ms);this.timers.push(t);},
   // KIND lives in Pet data; artwork revisions only change these assets and frame rectangles.
   artVersion:'20261007dog3', poseTimer:null, artSerial:0,
@@ -13,18 +13,51 @@ const PetView = {
   frameRects:[[[35,56,308,294],[353,55,626,291],[668,56,907,293],[949,114,1231,293],[40,368,308,581],[348,389,620,579],[646,347,914,582],[972,339,1215,583],[50,623,298,878],[334,681,600,883],[656,658,950,881],[980,673,1219,894],[56,902,279,1188],[354,961,626,1175],[670,945,941,1176],[950,1003,1229,1179]],[[25,37,317,304],[343,39,644,298],[682,36,901,302],[946,121,1230,296],[25,347,312,607],[353,348,617,590],[647,340,926,602],[973,347,1231,604],[50,626,294,890],[338,656,613,882],[639,647,954,882],[1009,642,1231,894],[49,905,268,1202],[327,938,638,1189],[667,918,933,1195],[945,1008,1229,1189]],[[10,26,317,313],[333,31,657,307],[682,32,938,312],[949,140,1249,313],[17,321,326,615],[344,328,646,598],[652,348,950,616],[988,336,1242,616],[27,621,286,892],[322,632,621,895],[638,656,962,906],[991,635,1234,916],[21,889,289,1217],[313,928,649,1205],[659,920,954,1213],[930,1033,1244,1210]]],
   artPath(stage){return 'assets/pet/dog-fluffy-brown-stage'+stage+'-v2.webp?v='+this.artVersion;},
   bowPath(){return 'assets/pet/bow-blue-tuft-v1.webp?v='+this.artVersion;},
-  artStyle(){
-    if(document.getElementById('petArtStyle'))return;
-    const style=document.createElement('style');style.id='petArtStyle';
-    // The painted poses already contain their anatomy: do not squash sleep or rotate sniff again.
-    style.textContent='#screenPet .pet-actor{width:210px;height:210px}#screenPet .pet-actor svg{rotate:0;scale:1}#screenPet .pet-stage-0 svg{scale:.85}#screenPet .pet-stage-2 svg{scale:1.1}';
-    document.head.appendChild(style);
+  depthFrame:null,
+  positionActor(point,instant=false){
+    const actor=document.getElementById('petActor'),pet=Pet.snapshot();if(!actor||!pet)return;
+    cancelAnimationFrame(this.depthFrame);this.depthFrame=null;
+    const t=PetRoom.template(pet.room),p=PetRoom.clamp(pet.room,point,pet.stage);
+    if(instant)actor.style.transition='none';
+    this.actorPoint=p;actor.style.left=(p.x/t.width*100)+'%';actor.style.top=(p.y/t.height*100)+'%';
+    const current=this.syncActorDepth();
+    if(instant){actor.getBoundingClientRect();actor.style.transition='';return;}
+    // Native CSS moves the dog; depth must follow its displayed foot, not jump to the destination.
+    if(this.active&&!this.reduced.matches&&Math.abs(current-p.y)>.2){
+      const start=performance.now(),tick=()=>{
+        if(!this.active||document.hidden){this.depthFrame=null;return;}
+        const y=this.syncActorDepth();
+        this.depthFrame=Math.abs(y-p.y)>.2&&performance.now()-start<2000?requestAnimationFrame(tick):null;
+      };
+      this.depthFrame=requestAnimationFrame(tick);
+    }
   },
-  positionActor(left){
-    const actor=document.getElementById('petActor'),room=document.getElementById('petRoom');if(!actor||!room)return;
-    const scale=Pet.snapshot()?.stage===2?1.1:1;
-    const margin=Math.min(49,(actor.offsetWidth*scale/2+8)/room.clientWidth*100);
-    actor.style.left=Math.max(margin,Math.min(100-margin,left))+'%';
+  syncActorDepth(){
+    const actor=document.getElementById('petActor'),room=document.getElementById('petRoom');
+    if(!actor||!room)return this.actorPoint?.y||0;
+    const y=parseFloat(getComputedStyle(actor).top)/room.clientHeight*PetRoom.template({template:room.dataset.template}).height;
+    actor.dataset.roomY=Number.isFinite(y)?y:this.actorPoint.y;this.orderScene();return Number(actor.dataset.roomY);
+  },
+  orderScene(){
+    const nodes=[...document.querySelectorAll('#petRoom [data-room-layer]')];
+    const ordered=PetRoom.order(nodes.map(node=>({id:node.id,layer:node.dataset.roomLayer,y:Number(node.dataset.roomY),node})));
+    ordered.forEach((entry,i)=>{if(entry.node.style.zIndex!==String(i+1))entry.node.style.zIndex=i+1;});
+  },
+  roomStage(p){
+    const t=PetRoom.template(p.room),wall=PetRoom.ITEMS[p.room.slots.wall],bg=t.background,win=bg.window;
+    const place=(item)=>'left:'+item.x/t.width*100+'%;top:'+item.y/t.height*100+'%;width:'+item.w/t.width*100+'%;height:'+item.h/t.height*100+'%;';
+    let html='<div class="pet-room" id="petRoom" data-template="'+this.esc(t.id)+'" style="--room-ratio:'+t.width+'/'+t.height+';--room-wall:'+this.esc(wall.tint||bg.wall)+';--room-floor:'+this.esc(bg.floor)+';--room-horizon:'+bg.horizon/t.height*100+'%">';
+    if(bg.img)html+='<img class="pet-room-background" src="'+this.esc(bg.img)+'" alt="">';
+    else if(win)html+='<div class="pet-stage-window" style="'+place(win)+'"></div>';
+    for(const slot of Object.keys(t.slots)){
+      const entry=PetRoom.placement(p.room,slot),item=entry.item;
+      const image=item.img?'<img src="'+this.esc(item.img)+'" alt="">':slot==='plant'||slot==='bowl'||slot==='toy'?'<svg viewBox="0 0 '+entry.w+' '+entry.h+'" aria-hidden="true"><text x="50%" y="85%" text-anchor="middle" font-size="'+Math.min(entry.w,entry.h)*.85+'">'+({plant:'🪴',bowl:'🍲',toy:'🎾'})[slot]+'</text></svg>':'';
+      html+='<div id="petSlot-'+slot+'" class="pet-room-prop pet-prop-'+slot+(slot==='bed'?'-back':'')+'" data-room-layer="'+entry.layer+'" data-room-y="'+entry.y+'" data-item-id="'+this.esc(item.id)+'" style="'+place(entry)+'--prop-tint:'+this.esc(item.placeholderTint||'#a5c8db')+'">'+image+'</div>';
+      if(entry.frontLayer)html+='<div id="petSlot-'+slot+'-front" class="pet-room-prop pet-prop-'+slot+'-front" data-room-layer="'+entry.frontLayer+'" data-room-y="'+entry.frontDepthY+'" style="'+place(entry)+'--prop-tint:'+this.esc(item.placeholderTint||'#a5c8db')+'">'+(item.frontImg?'<img src="'+this.esc(item.frontImg)+'" alt="">':'<span class="pet-bed-lip"></span>')+'</div>';
+    }
+    const width=t.dog.widthByStage[p.stage];
+    html+='<button class="pet-actor pet-stage-'+p.stage+'" id="petActor" data-room-layer="depth" data-room-y="'+t.dog.spawn.y+'" aria-label="Vuốt ve cún" style="width:'+width/t.width*100+'%;height:'+width/t.height*100+'%">'+this.svg(p.stage)+'</button>';
+    return html+'<div class="pet-speech" id="petSpeech" style="left:'+t.dog.speech.x/t.width*100+'%;top:'+t.dog.speech.y/t.height*100+'%">Gâu! Mình ở đây nè 💛</div></div>';
   },
   svg(stage=0,pose='idle',frame,bow=false){
     stage=Number.isInteger(stage)&&stage>=0&&stage<=2?stage:0;
@@ -76,7 +109,7 @@ const PetView = {
   },
   render(){
     clearInterval(this.poseTimer);this.poseTimer=null;
-    this.artStyle();
+    cancelAnimationFrame(this.depthFrame);this.depthFrame=null;
     const host=document.getElementById('screenPet');if(!host)return;
     const p=Pet.snapshot(), stars=Storage.load().stars||0;
     host.innerHTML='<div class="pet-heading"><div><h2>🐶 Nhà cún</h2><p>Một người bạn nhỏ, lớn lên cùng con.</p></div><b>⭐ '+this.esc(stars)+'</b></div>';
@@ -90,13 +123,13 @@ const PetView = {
       return;
     }
     const today=Pet.dateKey(), meals=p.day.date===today?p.day.meals:0, labels=['Cún sơ sinh','Cún lớn vừa','Trưởng thành'];
-    host.innerHTML+='<div class="pet-layout"><div class="pet-card"><div class="pet-room pet-wall-'+p.room.wall.split('-').pop()+'" id="petRoom"><div class="pet-window"></div><span class="pet-plant pet-color-'+p.room.plant.split('-').pop()+'">🪴</span><div class="pet-bed pet-color-'+p.room.bed.split('-').pop()+'"></div><div class="pet-rug pet-color-'+p.room.rug.split('-').pop()+'"></div><span class="pet-bowl pet-color-'+p.room.bowl.split('-').pop()+'">🍲</span><span class="pet-toy pet-color-'+p.room.toy.split('-').pop()+'">🎾</span><div class="pet-speech" id="petSpeech">Gâu! Mình ở đây nè 💛</div><button class="pet-actor pet-stage-'+p.stage+'" id="petActor" aria-label="Vuốt ve cún">'+this.svg(p.stage)+'</button></div><div class="pet-name"><b>'+this.esc(p.name)+'</b><button id="petRename">Đổi tên</button><span>'+labels[p.stage]+'</span></div><div class="pet-growth"><label>Đang lớn lên · '+p.growth+' bữa lớn</label><progress max="'+(p.stage===0?10:30)+'" value="'+Math.min(p.growth,30)+'"></progress><p>'+meals+'/3 bữa lớn hôm nay · '+(meals===3?'Mai lớn tiếp nhé 💛':'Mỗi bữa giúp cún lớn thêm.')+'</p></div><div class="pet-actions"><button id="petFood">🍲 Cho ăn</button><button id="petPlay">🎾 Chơi cùng</button><button id="petDecor">🏡 Trang trí</button></div><p id="petStatus" role="status" aria-live="polite"></p></div><aside class="pet-card" id="petPanel"></aside></div>';
+    host.innerHTML+='<div class="pet-layout"><div class="pet-card">'+this.roomStage(p)+'<div class="pet-name"><b>'+this.esc(p.name)+'</b><button id="petRename">Đổi tên</button><span>'+labels[p.stage]+'</span></div><div class="pet-growth"><label>Đang lớn lên · '+p.growth+' bữa lớn</label><progress max="'+(p.stage===0?10:30)+'" value="'+Math.min(p.growth,30)+'"></progress><p>'+meals+'/3 bữa lớn hôm nay · '+(meals===3?'Mai lớn tiếp nhé 💛':'Mỗi bữa giúp cún lớn thêm.')+'</p></div><div class="pet-actions"><button id="petFood">🍲 Cho ăn</button><button id="petPlay">🎾 Chơi cùng</button><button id="petDecor">🏡 Trang trí</button></div><p id="petStatus" role="status" aria-live="polite"></p></div><aside class="pet-card" id="petPanel"></aside></div>';
     document.getElementById('petActor').onclick=()=>this.react();
     document.getElementById('petFood').onclick=()=>this.feedNow();
     document.getElementById('petDecor').onclick=()=>this.showPanel('decor');
     document.getElementById('petPlay').onclick=()=>this.perform('play');
     document.getElementById('petRename').onclick=()=>{if(this.busy)return;const name=window.prompt('Con muốn đặt tên gì?',p.name);if(name!==null)this.commit(()=>Pet.rename(name,this.token()));};
-    this.renderPanel();this.buttons();
+    this.positionActor(PetRoom.template(p.room).dog.spawn);this.renderPanel();this.buttons();
   },
   renderPanel(){
     const h=document.getElementById('petPanel'),p=Pet.snapshot();if(!h||!p)return;
@@ -108,7 +141,7 @@ const PetView = {
       h.querySelectorAll('[data-food]').forEach(b=>{if(Date.now()<this.buyUntil)b.disabled=true;b.onclick=()=>this.buy(()=>Pet.buyFood(b.dataset.food,this.token()));});
     }else{
       h.innerHTML='<h3>Góc trang trí</h3><p>Đồ đã có có thể dùng lại.</p>'+Object.entries(Pet.ITEMS).map(([id,item])=>{
-        const owned=item.free||p.owned.includes(id), equipped=p.room[item.slot]===id;
+        const owned=item.free||p.owned.includes(id), equipped=p.room.slots[item.slot]===id;
         return '<div class="pet-item"><b>'+this.esc(item.name)+'</b><button data-item="'+id+'" '+(equipped||this.busy||!owned&&item.price===null?'disabled':'')+'>'+ (equipped?'Đang dùng':owned?'Đặt vào phòng':item.price===null?'Chờ chốt giá':'Mua · '+item.price+' ⭐')+'</button></div>';
       }).join('');
       h.querySelectorAll('[data-item]').forEach(b=>{const id=b.dataset.item,owned=Pet.ITEMS[id].free||p.owned.includes(id);if(!owned&&Date.now()<this.buyUntil)b.disabled=true;b.onclick=()=>owned?this.commit(()=>Pet.equip(id,this.token())):this.buy(()=>Pet.buyItem(id,this.token()));});
@@ -128,7 +161,12 @@ const PetView = {
   },
   react(){
     const actor=document.getElementById('petActor');if(!actor)return;
-    if(this.busy){const heart=document.createElement('span');heart.className='pet-heart';heart.textContent='💛';actor.appendChild(heart);this.later(()=>heart.remove(),900);return;}
+    if(this.busy){
+      const room=document.getElementById('petRoom'),style=getComputedStyle(actor);
+      const heart=document.createElement('span');heart.className='pet-heart';heart.textContent='💛';
+      heart.style.left=parseFloat(style.left)/room.clientWidth*100+'%';heart.style.top=(parseFloat(style.top)-actor.offsetHeight*.8)/room.clientHeight*100+'%';
+      room.appendChild(heart);this.later(()=>heart.remove(),900);return;
+    }
     this.state='react';
     const choices=['wag','tilt','hop'].filter(x=>x!==this.lastReaction);this.lastReaction=choices[Math.floor(Math.random()*choices.length)];
     actor.className='pet-actor pet-stage-'+Pet.snapshot().stage+' pet-'+this.lastReaction;this.setPose(this.lastReaction);this.say('Thích quá! 💛');
@@ -140,23 +178,36 @@ const PetView = {
     this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);
     this.busy=true;this.state=action;this.buttons();this.renderPanel();
     const a=document.getElementById('petActor');if(!a){this.busy=false;return;}
-    const stage=Pet.snapshot().stage;
-    const move=(left,cls)=>{this.positionActor(left);a.className='pet-actor pet-stage-'+stage+' pet-'+cls;this.setPose(cls);};
+    const pet=Pet.snapshot(),stage=pet.stage,t=PetRoom.template(pet.room),home=t.dog.spawn;
+    const target=does=>PetRoom.target(pet.room,does)||home;
+    const move=(point,pose,instant=false)=>{this.positionActor(point,instant);a.className='pet-actor pet-stage-'+stage+' pet-'+pose;this.setPose(pose);};
     if(action==='eat'||action==='celebrate'){
-      move(22,'walk');this.say('Có đồ ăn rồi! Mình tới ngay.');
-      this.later(()=>{move(22,'eat');this.say('Măm măm… ngon quá!');},1600);
-      this.later(()=>{move(40,action==='celebrate'?'celebrate':slot==='treat'?'hop':'happy');this.say(action==='celebrate'?'Mình lớn thêm rồi! 💛':slot==='treat'?'Bánh thưởng! Vui quá, cảm ơn con 💛':'No rồi! Cảm ơn con 💛');},3200);
-    }else if(action==='play'){move(76,'chase');this.say('Mình đuổi theo bóng nhé!');this.later(()=>move(76,'hop'),1600);this.later(()=>move(48,'walk'),2600);this.later(()=>move(48,'happy'),3300);}
-    else if(action==='inspect'){move(slot==='bowl'?22:slot==='plant'||slot==='bed'?75:50,'walk');this.say('Nhà mới đẹp quá!');this.later(()=>move(50,'happy'),1800);}
-    else if(action==='wake'){move(48,'sleep');this.say('Cún đang ngủ…');this.later(()=>{move(48,'wake');this.say('Mình dậy rồi! Chào con 💛');},1100);this.later(()=>move(48,'happy'),2400);}
-    else {move(48,'walk');this.say('Con về rồi! Mình vui quá!');this.later(()=>move(48,'happy'),2000);}
-    this.later(()=>{move(48,'idle');this.busy=false;this.state='idle';this.buttons();this.renderPanel();this.idle();},action==='eat'||action==='celebrate'?4700:3900);
+      const spot=target('eat');move(spot,'walk');this.say('Có đồ ăn rồi! Mình tới ngay.');
+      this.later(()=>{move(spot,'eat');this.say('Măm măm… ngon quá!');},1600);
+      this.later(()=>{move(home,action==='celebrate'?'celebrate':slot==='treat'?'hop':'happy');this.say(action==='celebrate'?'Mình lớn thêm rồi! 💛':slot==='treat'?'Bánh thưởng! Vui quá, cảm ơn con 💛':'No rồi! Cảm ơn con 💛');},3200);
+    }else if(action==='play'){
+      const spot=target('play');move(spot,'chase');this.say('Mình đuổi theo bóng nhé!');
+      this.later(()=>move(spot,'hop'),1600);this.later(()=>move(home,'walk'),2600);this.later(()=>move(home,'happy'),3300);
+    }else if(action==='inspect'){
+      const spot=PetRoom.placement(pet.room,slot)?.spot||home;move(spot,'walk');this.say('Nhà mới đẹp quá!');this.later(()=>move(home,'happy'),1800);
+    }else if(action==='wake'){
+      const spot=target('sleep');move(spot,'sleep',true);this.say('Cún đang ngủ…');
+      this.later(()=>{move(spot,'wake');this.say('Mình dậy rồi! Chào con 💛');},1100);this.later(()=>move(home,'happy'),2400);
+    }else{move(home,'walk');this.say('Con về rồi! Mình vui quá!');this.later(()=>move(home,'happy'),2000);}
+    this.later(()=>{move(home,'idle');this.busy=false;this.state='idle';this.buttons();this.renderPanel();this.idle();},action==='eat'||action==='celebrate'?4700:3900);
   },
   idle(){
     clearTimeout(this.idleTimer);if(!this.active)return;
     this.idleTimer=setTimeout(()=>{
       if(!this.active)return;
-      if(!this.busy&&!document.hidden){const a=document.getElementById('petActor'),p=Pet.snapshot();if(a&&p){const actions=['walk','sniff','rest','sit','sleep'];const action=actions[Math.floor(Math.random()*actions.length)];a.className='pet-actor pet-stage-'+p.stage+' pet-'+action;this.setPose(action);if(action==='walk')this.positionActor(30+Math.random()*40);if(action==='sniff')this.positionActor(72);}}
+      if(!this.busy&&!document.hidden){
+        const a=document.getElementById('petActor'),p=Pet.snapshot();
+        if(a&&p){
+          const t=PetRoom.template(p.room),actions=['walk','sniff','rest','sit','sleep'],action=actions[Math.floor(Math.random()*actions.length)];
+          const spot=action==='sniff'?PetRoom.target(p.room,'sniff'):action==='sleep'?PetRoom.target(p.room,'sleep'):action==='rest'?PetRoom.target(p.room,'rest'):action==='walk'?{x:t.dog.spawn.x+(Math.random()-.5)*t.dog.wander.x,y:t.dog.spawn.y+(Math.random()-.5)*t.dog.wander.y}:t.dog.spawn;
+          this.positionActor(spot);a.className='pet-actor pet-stage-'+p.stage+' pet-'+action;this.setPose(action);
+        }
+      }
       this.idle();
     },6000+Math.random()*6000);
   }

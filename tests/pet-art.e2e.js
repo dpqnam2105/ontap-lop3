@@ -37,7 +37,7 @@ const root=path.resolve(__dirname,'..');
   for(const width of [360,390,430,1280]){
    await page.setViewportSize({width,height:844});
    await page.waitForTimeout(350); // Let the existing rail width transition settle after changing viewport.
-   await page.evaluate(()=>{PetView.setPose('chase');PetView.positionActor(76)});
+   await page.evaluate(()=>{PetView.setPose('chase');PetView.positionActor(PetRoom.target(Pet.snapshot().room,'play'))});
    const actor=await page.locator('#petActor').boundingBox(), room=await page.locator('#petRoom').boundingBox();
    assert.ok(actor.x>=room.x-1 && actor.x+actor.width<=room.x+room.width+1,'dog stays in room');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no horizontal overflow');
@@ -49,6 +49,7 @@ const root=path.resolve(__dirname,'..');
  await page.evaluate(()=>PetView.setPose('walk'));await page.waitForTimeout(350);
  assert.equal(await page.locator('#petActor>svg').getAttribute('data-pet-frame'),'13','second walking frame');
  await page.evaluate(()=>App.showScreen('register'));assert.equal(await page.evaluate(()=>PetView.poseTimer),null);
+ assert.equal(await page.evaluate(()=>PetView.depthFrame),null,'depth RAF stops off screen');
  await page.evaluate(()=>App.showScreen('pet'));await page.waitForTimeout(50);
  await page.evaluate(()=>PetView.setPose('walk'));assert.ok(await page.evaluate(()=>PetView.poseTimer));
  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>PetView.poseTimer===null,{},{timeout:1500});

@@ -7,19 +7,23 @@ const Pet = {
   CHALLENGE_SUBJECTS: ['toan','tieng-viet','tieng-anh'],
   ENRICH_TOPICS: ['toan_tu-duy-so','toan_loi-van-hay','toan_tu-duy-logic','toan_kieu-kangaroo','toan_dem-hinh-gap-khuc','toan_day-so-cach-deu','toan_so-do-doan-thang'],
   FOODS: { kibble: { name: 'Hạt cho cún', price: 10 }, treat: { name: 'Bánh thưởng', price: 15 } },
-  SLOTS: PetRoom.SLOTS,
-  ITEMS: PetRoom.ITEMS, _inTx: false,
+  SLOTS: ['bed', 'rug', 'bowl', 'toy', 'plant', 'wall'],
+  ITEMS: {}, _inTx: false,
   dateKey(d = new Date()) {
     return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
   },
   count(n, max = 1000000) { return Number.isSafeInteger(n) && n >= 0 ? Math.min(n,max) : 0; },
-  defaults() { return PetRoom.normalize(null); },
+  defaults() { return Object.fromEntries(this.SLOTS.map(s => [s,s+'-default'])); },
   normalize(raw) {
     if (!raw || typeof raw !== 'object' || raw.kind !== this.KIND) return null;
     const growth = this.count(raw.growth);
     const stage = Math.max(this.count(raw.stage,2), growth >= 30 ? 2 : growth >= 10 ? 1 : 0);
     const owned = [...new Set((Array.isArray(raw.owned) ? raw.owned : []).filter(id => Object.hasOwn(this.ITEMS,id)))];
-    const room = PetRoom.normalize(raw.room,owned);
+    const room = this.defaults();
+    for (const slot of this.SLOTS) {
+      const id = raw.room && raw.room[slot], item = this.ITEMS[id];
+      if (item && item.slot === slot && (item.free || owned.includes(id))) room[slot] = id;
+    }
     const bag = Object.fromEntries(Object.keys(this.FOODS).map(id=>[id,this.count(raw.bag && raw.bag[id],999)]));
     return {v:1,kind:this.KIND,name:(typeof raw.name==='string'?raw.name.trim().slice(0,20):'') || 'Cún Nâu',
       adoptedDate:typeof raw.adoptedDate==='string'?raw.adoptedDate:this.dateKey(),stage,growth,
@@ -114,7 +118,6 @@ const Pet = {
         return result || {ok:false,error:'invalid'};
       }
       if (requestId && profile.pet) profile.pet.receipts=[...profile.pet.receipts,requestId].slice(-20);
-      if (profile.pet) profile.pet.room=PetRoom.normalize(profile.pet.room,profile.pet.owned);
       const expected=JSON.stringify({stars:profile.stars,pet:profile.pet,petAdopt:profile.petAdopt,petBroken:profile.petBroken});
       Storage.save(profile);
       const saved=Storage.load();
@@ -176,7 +179,7 @@ const Pet = {
       const item=Object.hasOwn(this.ITEMS,id)?this.ITEMS[id]:null;
       if(!item)return {ok:false,error:'id'};
       if(!item.free&&!p.pet.owned.includes(id))return {ok:false,error:'not-owned'};
-      p.pet.room.slots[item.slot]=id;return {ok:true,action:'inspect',slot:item.slot};
+      p.pet.room[item.slot]=id;return {ok:true,action:'inspect',slot:item.slot};
     },requestId);
   },
   buyItem(id, requestId) {
@@ -187,9 +190,13 @@ const Pet = {
       if(item.free||p.pet.owned.includes(id))return {ok:false,error:'owned'};
       if(!Number.isSafeInteger(item.price)||item.price<0)return {ok:false,error:'price-pending'};
       if(p.stars<item.price)return {ok:false,error:'stars'};
-      p.stars-=item.price;p.pet.owned.push(id);p.pet.room.slots[item.slot]=id;
+      p.stars-=item.price;p.pet.owned.push(id);p.pet.room[item.slot]=id;
       return {ok:true,action:'inspect',slot:item.slot};
     },requestId);
   }
 };
+for(const [slot,label] of Object.entries({bed:'Giường',rug:'Thảm',bowl:'Bát',toy:'Đồ chơi',plant:'Cây',wall:'Màu tường'})) {
+  for(const [suffix,name,free] of [['default',label+' cơ bản',true],['blue',label+' xanh',false],['pink',label+' hồng',false]])
+    Pet.ITEMS[slot+'-'+suffix]={slot,name,free,price:free?0:50};
+}
 window.Pet=Pet;
