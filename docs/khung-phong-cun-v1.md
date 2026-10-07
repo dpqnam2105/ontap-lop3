@@ -31,3 +31,11 @@ pet-room.test.js: chuyển phòng cũ, giao dịch, bản web cũ, id lạ, pos 
 pet-room.e2e.js: vị trí ăn theo template, hai lớp giường trong lúc đi, ba kích thước cún ở 360/390/430/1280px, khôi phục Cloud từ phòng phẳng và không chèn stylesheet.
 
 Sau Claude review khung: dựng một phòng mẫu và năm món cơ bản để Nam duyệt, rồi mới làm biến thể và phụ kiện.
+
+## Khung nhìn mobile — chốt trước khi vẽ
+
+Viewports: wide x=0,w=1000; narrow x=140,w=720 cho màn ≤750px. Cùng sân khấu 1000×625, mobile chỉ cắt hai mép nền; không đổi dữ liệu hồ sơ. Resize không gọi visit/chào lại.
+
+Vùng an toàn hình x=140–860: toàn bộ hộp ảnh năm món và spot nằm bên trong. Chỉ cửa sổ/tranh nền được ra ngoài. Giường tâm690 rộng330, cây tâm230 rộng160. WalkArea chân x310–690,y390–585, đủ hộp cún trưởng thành rộng320. Nền vẫn 1000×625; không vẽ đồ chức năng dính nền ngoài vùng an toàn.
+
+Gỡ mirror ở PR riêng sau khi Nam xác nhận mọi máy đã tải bản có slots và không còn tab phiên bản cũ. Không tự bỏ theo ngày.

@@ -30,12 +30,12 @@ const root=path.resolve(__dirname,'..');
  await page.evaluate(()=>{PetView.stop();PetView.active=true;PetView.render();PetRoom.TEMPLATES['room-cozy-v1'].slots.bowl.spot={x:410,y:545}});
  await page.locator('#petFood').click();
  assert.deepEqual(await page.evaluate(()=>PetView.actorPoint),{x:410,y:545});
- await page.locator('#petActor').click();assert.equal(await page.locator('#petRoom>.pet-heart').count(),1,'effect above the scene, not trapped inside dog depth');
+ await page.locator('#petActor').click();assert.equal(await page.locator('#petCanvas>.pet-heart').count(),1,'effect above the scene, not trapped inside dog depth');
  await page.waitForTimeout(4800);
  // The split bed surrounds the dog at the sleep target and stops surrounding it once it walks out.
  await page.evaluate(()=>PetView.perform('wake'));await page.waitForTimeout(100);
  const lying=await page.evaluate(()=>({point:PetView.actorPoint,back:+document.getElementById('petSlot-bed').style.zIndex,dog:+document.getElementById('petActor').style.zIndex,front:+document.getElementById('petSlot-bed-front').style.zIndex}));
- assert.deepEqual(lying.point,{x:805,y:425});assert.ok(lying.back<lying.dog&&lying.dog<lying.front);
+ assert.deepEqual(lying.point,{x:690,y:425});assert.ok(lying.back<lying.dog&&lying.dog<lying.front);
  await page.waitForTimeout(800);fs.mkdirSync(path.join(__dirname,'out'),{recursive:true});
  await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-sleep.png')});
  await page.evaluate(()=>{PetView.stop();PetView.active=true;PetView.positionActor({x:490,y:530});PetView.setPose('idle')});
@@ -48,8 +48,13 @@ const root=path.resolve(__dirname,'..');
   for(let stage=0;stage<3;stage++){
    await page.evaluate(stage=>{const p=Storage.load();p.pet.stage=stage;p.pet.growth=[0,10,30][stage];Storage.save(p);PetView.render()},stage);
    const size=await page.evaluate(()=>({actor:document.getElementById('petActor').getBoundingClientRect().width,room:document.getElementById('petRoom').clientWidth,bed:document.getElementById('petSlot-bed').getBoundingClientRect().width}));
-   assert.ok(Math.abs(size.actor/size.room-[.255,.295,.32][stage])<.005);assert.ok(size.actor<=size.bed,'adult cannot cover whole bed by size');
+   assert.ok(Math.abs(size.actor/size.room-[255,295,320][stage]/(width<=750?720:1000))<.005);assert.ok(size.actor<=size.bed,'adult cannot cover whole bed by size');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+   if(width<=750){
+    await page.evaluate(()=>PetView.positionActor({x:9999,y:9999},true));
+    assert.ok(await page.evaluate(()=>{const r=document.getElementById('petRoom').getBoundingClientRect();return [...document.querySelectorAll('.pet-room-prop,#petActor')].every(n=>{const b=n.getBoundingClientRect();return b.left>=r.left-1&&b.right<=r.right+1&&b.top>=r.top-1&&b.bottom<=r.bottom+1})}),'all furniture and dog inside narrow frame');
+    assert.ok(await page.locator('#petRoom').evaluate(n=>n.clientHeight)>245);
+   }
   }
  }
  // Backups from before this PR still restore equipment; no inventory or stars reset.

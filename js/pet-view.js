@@ -17,7 +17,7 @@ const PetView = {
   positionActor(point,instant=false){
     const actor=document.getElementById('petActor'),pet=Pet.snapshot();if(!actor||!pet)return;
     cancelAnimationFrame(this.depthFrame);this.depthFrame=null;
-    const t=PetRoom.template(pet.room),p=PetRoom.clamp(pet.room,point,pet.stage);
+    const t=PetRoom.template(pet.room),p=PetRoom.clamp(pet.room,point,pet.stage,window.innerWidth);
     if(instant)actor.style.transition='none';
     this.actorPoint=p;actor.style.left=(p.x/t.width*100)+'%';actor.style.top=(p.y/t.height*100)+'%';
     const current=this.syncActorDepth();
@@ -45,8 +45,9 @@ const PetView = {
   },
   roomStage(p){
     const t=PetRoom.template(p.room),wall=PetRoom.ITEMS[p.room.slots.wall],bg=t.background,win=bg.window;
+    const v=PetRoom.viewport(p.room,window.innerWidth);
     const place=(item)=>'left:'+item.x/t.width*100+'%;top:'+item.y/t.height*100+'%;width:'+item.w/t.width*100+'%;height:'+item.h/t.height*100+'%;';
-    let html='<div class="pet-room" id="petRoom" data-template="'+this.esc(t.id)+'" style="--room-ratio:'+t.width+'/'+t.height+';--room-wall:'+this.esc(wall.tint||bg.wall)+';--room-floor:'+this.esc(bg.floor)+';--room-horizon:'+bg.horizon/t.height*100+'%">';
+    let html='<div class="pet-room" id="petRoom" data-template="'+this.esc(t.id)+'" style="--room-ratio:'+v.w+'/'+t.height+';--room-wall:'+this.esc(wall.tint||bg.wall)+';--room-floor:'+this.esc(bg.floor)+';--room-horizon:'+bg.horizon/t.height*100+'%"><div id="petCanvas" class="pet-canvas" style="width:'+t.width/v.w*100+'%;left:'+(-v.x/v.w*100)+'%">';
     if(bg.img)html+='<img class="pet-room-background" src="'+this.esc(bg.img)+'" alt="">';
     else if(win)html+='<div class="pet-stage-window" style="'+place(win)+'"></div>';
     for(const slot of Object.keys(t.slots)){
@@ -57,7 +58,15 @@ const PetView = {
     }
     const width=t.dog.widthByStage[p.stage];
     html+='<button class="pet-actor pet-stage-'+p.stage+'" id="petActor" data-room-layer="depth" data-room-y="'+t.dog.spawn.y+'" aria-label="Vuốt ve cún" style="width:'+width/t.width*100+'%;height:'+width/t.height*100+'%">'+this.svg(p.stage)+'</button>';
-    return html+'<div class="pet-speech" id="petSpeech" style="left:'+t.dog.speech.x/t.width*100+'%;top:'+t.dog.speech.y/t.height*100+'%">Gâu! Mình ở đây nè 💛</div></div>';
+    return html+'<div class="pet-speech" id="petSpeech" style="left:'+t.dog.speech.x/t.width*100+'%;top:'+t.dog.speech.y/t.height*100+'%">Gâu! Mình ở đây nè 💛</div></div></div>';
+  },
+  resizeRoom(){
+    if(!this.active)return;
+    const p=Pet.snapshot(),room=document.getElementById('petRoom'),canvas=document.getElementById('petCanvas');
+    if(!this.active||!p||!room||!canvas)return;
+    const t=PetRoom.template(p.room),v=PetRoom.viewport(p.room,window.innerWidth);
+    room.style.setProperty('--room-ratio',v.w+'/'+t.height);canvas.style.width=t.width/v.w*100+'%';canvas.style.left=-v.x/v.w*100+'%';
+    this.positionActor(this.actorPoint||t.dog.spawn,true);
   },
   svg(stage=0,pose='idle',frame,bow=false){
     stage=Number.isInteger(stage)&&stage>=0&&stage<=2?stage:0;
@@ -162,7 +171,7 @@ const PetView = {
   react(){
     const actor=document.getElementById('petActor');if(!actor)return;
     if(this.busy){
-      const room=document.getElementById('petRoom'),style=getComputedStyle(actor);
+      const room=document.getElementById('petCanvas'),style=getComputedStyle(actor);
       const heart=document.createElement('span');heart.className='pet-heart';heart.textContent='💛';
       heart.style.left=parseFloat(style.left)/room.clientWidth*100+'%';heart.style.top=(parseFloat(style.top)-actor.offsetHeight*.8)/room.clientHeight*100+'%';
       room.appendChild(heart);this.later(()=>heart.remove(),900);return;
@@ -215,3 +224,5 @@ const PetView = {
 window.PetView=PetView;
 PetView.reduced.addEventListener('change',()=>{if(PetView.active){const pose=document.querySelector('#petActor>svg')?.dataset.petPose;if(pose)PetView.setPose(pose);}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)PetView.stop();else if(document.getElementById('screenPet')?.classList.contains('active'))PetView.resume();});
+
+window.addEventListener('resize',()=>PetView.resizeRoom());
