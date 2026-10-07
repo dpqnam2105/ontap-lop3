@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Khung nhìn phòng cún mobile
+- Viewport x140–860 cho màn ≤750px; dời đồ và giới hạn vùng đi để cún không bị cắt. Resize không chào lại; thêm hợp đồng hình và mốc gỡ mirror. Chưa vẽ phòng mẫu.
+
 ## 2026-10-07 — Khung phòng cún (nhánh pet-room-frame, chờ review)
 - Thêm template 1000×625 và manifest giữ id/giá cũ; chuyển phòng phẳng sang slots có tương thích bản web cũ. Hành vi tìm điểm theo khả năng, depth theo chân đang hiển thị, giường tách lưng/viền trước; kích thước cún theo giai đoạn nằm trong template. Chuyển style bộ hình sang pet.css. Có test dữ liệu, mobile và khôi phục sao lưu; chưa thêm bộ hình phòng mới, không đổi Storage/Cloud.
 

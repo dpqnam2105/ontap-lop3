@@ -29,7 +29,7 @@ test('nested slots are authoritative; unknown/unowned/wrong-slot IDs and templat
 });
 test('reserved pos accepts valid known-slot logical coordinates, but is not applied to layout',()=>{
  const b=boot();const r=b.R.normalize({pos:{bed:{x:600,y:430},toy:{x:-1,y:500},plant:{x:Infinity,y:1},wall:{x:0,y:0},rug:{x:'50',y:5}}});
- assert.deepEqual(plain(r.pos),{bed:{x:600,y:430}});assert.equal(b.R.placement(r,'bed').x,805);assert.deepEqual(plain(b.R.normalize(r).pos),{bed:{x:600,y:430}});
+ assert.deepEqual(plain(r.pos),{bed:{x:600,y:430}});assert.equal(b.R.placement(r,'bed').x,690);assert.deepEqual(plain(b.R.normalize(r).pos),{bed:{x:600,y:430}});
 });
 test('capability routing responds to template/manifest data without changing behavior code',()=>{
  const b=boot(),room=b.R.normalize(null);assert.equal(b.R.target(room,'eat').slot,'bowl');assert.equal(b.R.target(room,'sleep').slot,'bed');assert.equal(b.R.target(room,'unknown'),null);
@@ -38,7 +38,7 @@ test('capability routing responds to template/manifest data without changing beh
 });
 test('manifest size/offset adjust imagery without changing interaction spot',()=>{
  const b=boot();b.R.ITEMS['toy-default'].size={w:115,h:85};b.R.ITEMS['toy-default'].offset={x:5,y:-6};const p=b.R.placement(b.R.normalize(null),'toy');
- assert.deepEqual([p.x,p.y,p.w,p.h],[755,549,115,85]);assert.deepEqual(plain(p.spot),{x:695,y:530});
+ assert.deepEqual([p.x,p.y,p.w,p.h],[755,549,115,85]);assert.deepEqual(plain(p.spot),{x:680,y:530});
 });
 test('depth ordering places dog between bed back/front when lying, then in front when walking out',()=>{
  const b=boot(),nodes=[{id:'bed-back',layer:'back',y:445},{id:'rug',layer:'floor',y:605},{id:'bed-front',layer:'depth',y:457},{id:'dog',layer:'depth',y:425}];
@@ -54,5 +54,19 @@ test('out-of-range movement is clamped inside walk polygon and stage bounds for 
 test('JSON backup preserves nested room, equipment, stars and reserved pos',()=>{
  const b=boot();b.P.adopt('Bông');b.P.buyItem('bed-pink');b.read().pet.room.pos={bed:{x:700,y:430}};const c=boot(plain(b.read()));
  assert.equal(c.P.snapshot().room.slots.bed,'bed-pink');assert.equal(c.read().stars,150);assert.deepEqual(plain(c.P.snapshot().room.pos),{bed:{x:700,y:430}});assert.ok(c.P.visit().ok);assert.equal(c.read().pet.room.bed,'bed-pink');
+});
+test('mobile viewport contains every furniture box and exact action spot for all stages',()=>{
+ const b=boot(),room=b.R.normalize(null),t=b.R.template(room);
+ for(const px of [360,390,750]){
+  const v=b.R.viewport(room,px);assert.equal(v.x,140);assert.equal(v.w,720);
+  for(const slot of Object.keys(t.slots)){
+   const p=b.R.placement(room,slot);assert.ok(p.x-p.w/2>=140&&p.x+p.w/2<=860);
+   for(let stage=0;stage<3;stage++)assert.deepEqual(plain(b.R.clamp(room,p.spot,stage,px)),plain(p.spot));
+  }
+  for(let stage=0;stage<3;stage++)for(const x of [-999,9999]){
+   const p=b.R.clamp(room,{x,y:555},stage,px),w=t.dog.widthByStage[stage];assert.ok(p.x-w/2>=140&&p.x+w/2<=860);
+  }
+ }
+ assert.equal(b.R.viewport(room,751).w,1000);
 });
 console.log(count+' room tests passed');

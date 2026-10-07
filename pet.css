@@ -19,3 +19,6 @@
 #screenPet .pet-actor svg{rotate:0;scale:1}
 #petRoom .pet-speech{z-index:5000;font-size:13px;padding:7px 10px;pointer-events:none}
 #petRoom>.pet-heart{z-index:4000;transform:translateX(-50%)}
+
+.pet-canvas{position:absolute;top:0;height:100%}
+#petCanvas>.pet-heart{z-index:4000;transform:translateX(-50%)}

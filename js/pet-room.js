@@ -6,20 +6,25 @@ const PetRoom = {
   TEMPLATES:{
     'room-cozy-v1':{
       id:'room-cozy-v1',width:1000,height:625,
+      viewports:{wide:{x:0,w:1000},narrow:{x:140,w:720,minWidthPx:0,maxWidthPx:750}},
       background:{img:null,horizon:320,wall:'#fbefdf',floor:'#edcca4',window:{x:160,y:80,w:180,h:210}},
       dog:{widthByStage:[255,295,320],spawn:{x:490,y:520},wander:{x:300,y:80},speech:{x:500,y:95}},
       slots:{
-        bed:{x:805,y:445,w:330,h:185,layer:'back',frontLayer:'depth',frontDepthY:457,spot:{x:805,y:425},does:['sleep']},
-        plant:{x:125,y:395,w:160,h:210,layer:'depth',spot:{x:220,y:435},does:['sniff']},
+        bed:{x:690,y:445,w:330,h:185,layer:'back',frontLayer:'depth',frontDepthY:457,spot:{x:690,y:425},does:['sleep']},
+        plant:{x:230,y:395,w:160,h:210,layer:'depth',spot:{x:310,y:435},does:['sniff']},
         rug:{x:500,y:605,w:720,h:150,layer:'floor',spot:{x:500,y:530},does:['rest']},
         bowl:{x:300,y:555,w:130,h:80,layer:'depth',spot:{x:335,y:530},does:['eat']},
-        toy:{x:750,y:555,w:100,h:80,layer:'depth',spot:{x:695,y:530},does:['play']}
+        toy:{x:750,y:555,w:100,h:80,layer:'depth',spot:{x:680,y:530},does:['play']}
       },
-      walkArea:{polygon:[[160,390],[850,390],[940,585],[80,585]]}
+      walkArea:{polygon:[[310,390],[690,390],[690,585],[310,585]]}
     }
   },
   own(object,key){return !!object && Object.hasOwn(object,key);},
   template(room){return this.own(this.TEMPLATES,room?.template)?this.TEMPLATES[room.template]:this.TEMPLATES[this.DEFAULT_TEMPLATE];},
+  viewport(room,widthPx=Infinity){
+    const t=this.template(room),views=t.viewports;
+    return views?.narrow&&widthPx>=views.narrow.minWidthPx&&widthPx<=views.narrow.maxWidthPx?views.narrow:(views?.wide||{x:0,w:t.width});
+  },
   defaults(){return Object.fromEntries(this.SLOTS.map(slot=>[slot,slot+'-default']));},
   normalize(raw,owned=[]){
     owned=Array.isArray(owned)?owned:[];
@@ -77,10 +82,11 @@ const PetRoom = {
     }
     return best;
   },
-  clamp(room,point,stage=0){
+  clamp(room,point,stage=0,widthPx=Infinity){
     const t=this.template(room),w=t.dog.widthByStage[stage]||t.dog.widthByStage[0];
     let p={x:Number.isFinite(point?.x)?point.x:t.dog.spawn.x,y:Number.isFinite(point?.y)?point.y:t.dog.spawn.y};
-    const bounds=q=>({x:Math.max(w/2+8,Math.min(t.width-w/2-8,q.x)),y:Math.max(w,Math.min(t.height-8,q.y))});
+    const v=this.viewport(room,widthPx);
+    const bounds=q=>({x:Math.max(v.x+w/2+8,Math.min(v.x+v.w-w/2-8,q.x)),y:Math.max(w,Math.min(t.height-8,q.y))});
     p=bounds(p);
     for(let i=0;i<3&&!this.inside(t.walkArea.polygon,p);i++)p=bounds(this.closest(t.walkArea.polygon,p));
     return this.inside(t.walkArea.polygon,p)?p:bounds(t.dog.spawn);
