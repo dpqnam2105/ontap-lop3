@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Bộ hình cún nâu (nhánh pet-art, chờ review)
+- Phân phối WebP: 3 atlas giữ 1254px; nơ 512px. Tổng 7,52MB PNG → 1,42MB WebP (giảm 81,1%), alpha giữ nguyên; chỉ tải atlas giai đoạn đang dùng. Giữ PNG nguồn riêng, thêm test lượt mở lạnh mobile.
+- V2 theo mẫu Nam duyệt: sơ sinh mũm mĩm như cục bông, lớn vừa có chỏm tóc, trưởng thành thân/ngực rộng và đầu nhỏ hơn tương đối. Thay bảng hình v1 bằng v2; nơ xanh/chỏm tóc là ảnh riêng với nút thử đeo/tháo trong trang duyệt, chưa thêm vào shop hoặc hồ sơ.
+- Thay SVG demo bằng hình cún nâu lông xoăn đã duyệt: 3 giai đoạn, đủ 13 tư thế; đi bộ/vẫy đuôi dùng hai khung. Giữ KIND và toàn bộ luật/dữ liệu/giá. Chặn đi ra ngoài phòng trên mobile, dừng timer khung khi rời màn/ẩn tab, tôn trọng giảm chuyển động. Sửa nhãn Trang chủ ở 360px; thêm trang duyệt bộ hình và test luồng vẽ.
+
 ## 2026-10-07 — Nhà cún v1 (nhánh pet, chờ review)
 - Mở shop theo giá Nam chốt: hạt 10⭐/phần, bánh 15⭐/phần, đồ xanh/hồng cùng 50⭐. Bánh tăng trưởng như hạt, có phản ứng vui riêng; không thêm hoạt động mới.
 - Review vòng 2: Cho ăn trực tiếp từ túi, mở/cuộn panel khi hết đồ hoặc đủ bữa; menu mobile 7 ô nằm trong CSS chung với nhãn ngắn. Giữ bản cún lỗi trong petBroken, cho đón lại bằng quyền đã dùng nếu cún không còn hợp lệ; khóa mua 600ms và quay lại tab chỉ tiếp tục idle.
