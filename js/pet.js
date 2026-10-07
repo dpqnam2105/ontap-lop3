@@ -2,11 +2,11 @@
 const Pet = {
   // KIND is a persistent data identifier; never change it when replacing the artwork.
   VERSION: 1, KIND: 'dog-fluffy-brown', DAILY_MEALS: 3, THRESHOLDS: [0, 10, 30],
-  // Adoption is earned through the three-subject challenge. Shop prices await Nam's approval.
+  // Adoption is earned through the three-subject challenge; meals are optional, never a penalty.
   STARTER_FOOD: 6,
   CHALLENGE_SUBJECTS: ['toan','tieng-viet','tieng-anh'],
   ENRICH_TOPICS: ['toan_tu-duy-so','toan_loi-van-hay','toan_tu-duy-logic','toan_kieu-kangaroo','toan_dem-hinh-gap-khuc','toan_day-so-cach-deu','toan_so-do-doan-thang'],
-  FOODS: { kibble: { name: 'Hạt cho cún', price: null }, treat: { name: 'Bánh thưởng', price: null } },
+  FOODS: { kibble: { name: 'Hạt cho cún', price: 10 }, treat: { name: 'Bánh thưởng', price: 15 } },
   SLOTS: ['bed', 'rug', 'bowl', 'toy', 'plant', 'wall'],
   ITEMS: {}, _inTx: false,
   dateKey(d = new Date()) {
@@ -159,7 +159,7 @@ const Pet = {
       if(p.pet.bag[id]<1)return {ok:false,error:'food'};
       const before=p.pet.stage;p.pet.bag[id]--;day.meals++;p.pet.day=day;p.pet.growth++;
       p.pet.stage=Math.max(before,p.pet.growth>=30?2:p.pet.growth>=10?1:0);
-      return {ok:true,action:'eat',celebrate:p.pet.stage>before};
+      return {ok:true,action:'eat',food:id,celebrate:p.pet.stage>before};
     },requestId);
   },
   buyFood(id, requestId) {
@@ -197,6 +197,6 @@ const Pet = {
 };
 for(const [slot,label] of Object.entries({bed:'Giường',rug:'Thảm',bowl:'Bát',toy:'Đồ chơi',plant:'Cây',wall:'Màu tường'})) {
   for(const [suffix,name,free] of [['default',label+' cơ bản',true],['blue',label+' xanh',false],['pink',label+' hồng',false]])
-    Pet.ITEMS[slot+'-'+suffix]={slot,name,free,price:free?0:null};
+    Pet.ITEMS[slot+'-'+suffix]={slot,name,free,price:free?0:50};
 }
 window.Pet=Pet;

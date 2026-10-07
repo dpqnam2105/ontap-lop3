@@ -77,7 +77,7 @@ const PetView = {
     this.busy=true;this.buttons();const r=fn();this.busy=false;
     if(!r.ok){const errors={full:'Hôm nay cún đã ăn đủ để lớn rồi 💛',food:'Túi hết đồ ăn rồi.',stars:'Con chưa đủ sao.',guest:'Con nhập tên trước nhé.',save:'Chưa lưu được. Mình thử lại sau nhé.', 'price-pending':'Giá đang chờ chốt.',owned:'Con đã có món này rồi.'};this.buttons();this.say(errors[r.error]||'Mình chưa thực hiện được.');return;}
     this.render();if(r.action==='adopt'){this.say('Chào con! Cùng chăm mình nhé 💛');this.idle();}
-    else if(r.action==='eat')this.perform(r.celebrate?'celebrate':'eat');
+    else if(r.action==='eat')this.perform(r.celebrate?'celebrate':'eat',r.food);
     else if(r.action==='inspect')this.perform('inspect',r.slot);
     else this.say('Đã lưu rồi 💛');
     return r;
@@ -101,7 +101,7 @@ const PetView = {
     if(action==='eat'||action==='celebrate'){
       move(22,'walk');this.say('Có đồ ăn rồi! Mình tới ngay.');
       this.later(()=>{move(22,'eat');this.say('Măm măm… ngon quá!');},1600);
-      this.later(()=>{move(40,action==='celebrate'?'hop':'wag');this.say(action==='celebrate'?'Mình lớn thêm rồi! 💛':'No rồi! Cảm ơn con 💛');},3200);
+      this.later(()=>{move(40,action==='celebrate'||slot==='treat'?'hop':'wag');this.say(action==='celebrate'?'Mình lớn thêm rồi! 💛':slot==='treat'?'Bánh thưởng! Vui quá, cảm ơn con 💛':'No rồi! Cảm ơn con 💛');},3200);
     }else if(action==='play'){move(76,'walk');this.say('Mình đuổi theo bóng nhé!');this.later(()=>move(76,'hop'),1600);this.later(()=>move(48,'walk'),2600);}
     else if(action==='inspect'){move(slot==='bowl'?22:slot==='plant'||slot==='bed'?75:50,'walk');this.say('Nhà mới đẹp quá!');}
     else if(action==='wake'){move(48,'rest');this.say('Cún đang ngủ…');this.later(()=>{move(48,'wake');this.say('Mình dậy rồi! Chào con 💛');},1100);}
