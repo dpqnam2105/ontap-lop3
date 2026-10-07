@@ -1,6 +1,7 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
 ## 2026-10-07 — Nhà cún v1 (nhánh pet, chờ review)
+- Review vòng 2: Cho ăn trực tiếp từ túi, mở/cuộn panel khi hết đồ hoặc đủ bữa; menu mobile 7 ô nằm trong CSS chung với nhãn ngắn. Giữ bản cún lỗi trong petBroken, cho đón lại bằng quyền đã dùng nếu cún không còn hợp lệ; khóa mua 600ms và quay lại tab chỉ tiếp tục idle.
 - Thêm màn Nhà cún, tương tác cho ăn/chơi/trang trí và dữ liệu trong hồ sơ; tối đa 3 bữa lớn/ngày, lớn ở 10/30 bữa. Hoàn thành thử thách 15 câu (5 câu mỗi môn Toán/Tiếng Việt/Tiếng Anh, theo bộ lọc hiện tại) để nhận nuôi miễn phí và có 6 phần hạt. Quyền nhận nuôi được lưu trước khi đặt tên; không tính thử thách vào đề trộn tuần hoặc nhiệm vụ hôm nay. Shop đã có giao diện/logic, giá còn chờ chốt nên PR giữ nháp. Không đổi Storage/Cloud.
 
 Nhật ký mỗi lần sửa website và push lên GitHub. Mới nhất ở trên cùng.

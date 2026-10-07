@@ -1,5 +1,6 @@
 // Nhà cún: profile transactions; persist before starting animation.
 const Pet = {
+  // KIND is a persistent data identifier; never change it when replacing the artwork.
   VERSION: 1, KIND: 'dog-fluffy-brown', DAILY_MEALS: 3, THRESHOLDS: [0, 10, 30],
   // Adoption is earned through the three-subject challenge. Shop prices await Nam's approval.
   STARTER_FOOD: 6,
@@ -32,9 +33,13 @@ const Pet = {
   },
   snapshot() { return this.normalize(Storage.load().pet); },
   adoptionRight(profile) {
-    const r=(profile||Storage.load()).petAdopt;
+    const p=profile||Storage.load(), r=p.petAdopt;
     return r && typeof r.runId==='string' && r.runId.length>0 && typeof r.earnedAt==='string'
-      && Number.isFinite(Date.parse(r.earnedAt)) && r.total===15 && Number.isInteger(r.score) && r.score>=0 && r.score<=15 && !r.usedAt ? r : null;
+      && Number.isFinite(Date.parse(r.earnedAt)) && r.total===15 && Number.isInteger(r.score) && r.score>=0 && r.score<=15 && (!r.usedAt || !this.normalize(p.pet)) ? r : null;
+  },
+  recoveryName(profile) {
+    const p=profile||Storage.load(), old=p.pet || p.petBroken;
+    return typeof old?.name==='string' && old.name.trim() ? old.name.trim().slice(0,20) : 'Cún Nâu';
   },
   isCore(q,t) {
     if (q.track) return q.track==='core';
@@ -101,16 +106,23 @@ const Pet = {
       const profile = Storage.load();
       if (!profile.playerName || !Storage.getActiveName()) return {ok:false,error:'guest'};
       profile.stars=this.count(profile.stars);
-      profile.pet=this.normalize(profile.pet);
+      const normalized=this.normalize(profile.pet);
+      const broken=profile.pet!=null && !normalized;
+      if(broken && !Object.hasOwn(profile,'petBroken'))profile.petBroken=profile.pet;
+      profile.pet=normalized;
       if (requestId && profile.pet?.receipts.includes(requestId)) return {ok:false,error:'duplicate'};
       const result=fn(profile);
-      if (!result || !result.ok) return result || {ok:false,error:'invalid'};
+      if (!result || !result.ok) {
+        // Preserve the original even if this action cannot continue (e.g. feed a broken pet).
+        if(broken){Storage.save(profile);if(JSON.stringify(Storage.load().petBroken)!==JSON.stringify(profile.petBroken))return {ok:false,error:'save'};}
+        return result || {ok:false,error:'invalid'};
+      }
       if (requestId && profile.pet) profile.pet.receipts=[...profile.pet.receipts,requestId].slice(-20);
-      const expected=JSON.stringify({stars:profile.stars,pet:profile.pet,petAdopt:profile.petAdopt});
+      const expected=JSON.stringify({stars:profile.stars,pet:profile.pet,petAdopt:profile.petAdopt,petBroken:profile.petBroken});
       Storage.save(profile);
       const saved=Storage.load();
       // Storage.save catches quota errors; do not play a success animation unless readback matches.
-      if (JSON.stringify({stars:saved.stars,pet:saved.pet,petAdopt:saved.petAdopt})!==expected) return {ok:false,error:'save'};
+      if (JSON.stringify({stars:saved.stars,pet:saved.pet,petAdopt:saved.petAdopt,petBroken:saved.petBroken})!==expected) return {ok:false,error:'save'};
       try { if (window.Rewards && Rewards.updateUI) Rewards.updateUI(); }
       catch(e) { console.warn('Pet: saved, UI refresh failed',e); }
       return {...result,pet:this.normalize(saved.pet)};

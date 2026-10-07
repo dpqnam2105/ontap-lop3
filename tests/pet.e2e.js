@@ -52,7 +52,12 @@ const root=path.resolve(__dirname,'..');
  assert.equal(await p.evaluate(()=>Storage.load().pet.bag.kibble),6);
  const adoptionStars=await p.evaluate(()=>Storage.load().stars);
  await p.waitForTimeout(4100);
+ await p.emulateMedia({reducedMotion:'reduce'});
  await p.locator('[data-food="kibble"]').click();
+ await p.evaluate(()=>document.querySelector('[data-food="kibble"]').click());
+ assert.equal(await p.evaluate(()=>Storage.load().stars),adoptionStars-5,'rapid purchase blocked');
+ await p.waitForTimeout(650);assert.equal(await p.locator('[data-food="kibble"]').isDisabled(),false);
+ await p.emulateMedia({reducedMotion:'no-preference'});
  const before=await p.evaluate(()=>Storage.load().pet.growth);
  await p.locator('[data-feed="kibble"]').click();await p.evaluate(()=>document.querySelector('[data-feed="kibble"]').click());
  assert.equal(await p.evaluate(()=>Storage.load().pet.growth),before+1,'double feed blocked');
@@ -65,10 +70,29 @@ const root=path.resolve(__dirname,'..');
  assert.ok(await p.evaluate(s=>Cloud.apply(s,App.playerName),snapshot));
  assert.equal(await p.evaluate(()=>Storage.load().pet.name),'Bông');
  await p.evaluate(()=>{App.showScreen('register');App.showScreen('pet')});await p.waitForTimeout(4100);
+ await p.setViewportSize({width:390,height:844});
+ const growth=await p.evaluate(()=>Storage.load().pet.growth);
+ await p.locator('#petFood').click();assert.equal(await p.evaluate(()=>Storage.load().pet.growth),growth+1,'primary feed acts immediately');
+ await p.waitForTimeout(4800);
+ await p.evaluate(()=>{const d=Storage.load();d.pet.bag.kibble=0;d.pet.bag.treat=0;Storage.save(d)});
+ await p.locator('#petFood').click();await p.waitForTimeout(700);
+ assert.match(await p.locator('#petStatus').textContent(),/Túi hết/);assert.ok((await p.locator('#petPanel').boundingBox()).y<600,'empty bag opens visible shop');
+ await p.evaluate(()=>{const d=Storage.load();d.pet.bag.kibble=0;d.pet.bag.treat=1;Storage.save(d)});
+ await p.locator('#petFood').click();assert.equal(await p.evaluate(()=>Storage.load().pet.bag.treat),0,'treat fallback');await p.waitForTimeout(4800);
+ const cap=await p.evaluate(()=>Storage.load().pet.growth);
+ await p.locator('#petFood').click();await p.waitForTimeout(1400);
+ assert.equal(await p.evaluate(()=>Storage.load().pet.growth),cap,'cap does not feed');
+ assert.match(await p.locator('#petStatus').textContent(),/đã ăn đủ/);
+ assert.ok((await p.locator('#petPanel').boundingBox()).y<600,'panel scrolled into view');
+ await p.locator('#petDecor').click();await p.waitForTimeout(700);assert.equal(await p.locator('#petPanel h3').textContent(),'Góc trang trí');
+ // Returning to a visible tab resumes idle without writing a visit or greeting.
+ const resumed=await p.evaluate(()=>{let visits=0;const old=Pet.visit;Pet.visit=()=>{visits++;return old.call(Pet)};PetView.stop();PetView.resume();Pet.visit=old;return {visits,state:PetView.state,busy:PetView.busy,idle:!!PetView.idleTimer}});
+ assert.deepEqual(resumed,{visits:0,state:'idle',busy:false,idle:true});
  for(const width of [360,390,430,1280]){
    await p.setViewportSize({width,height:844});
    assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no overflow '+width);
    const nav=await p.locator('.rail-btn[data-screen="pet"]').boundingBox();assert.ok(nav&&nav.x+nav.width<=width,'pet nav visible '+width);
+   if(width<=430){const labels=await p.evaluate(()=>[...document.querySelectorAll('.side-rail .lbl-short')].filter(e=>e.getBoundingClientRect().width>0).map(e=>({text:e.textContent,width:e.clientWidth,scroll:e.scrollWidth})));assert.ok(labels.every(e=>e.scroll<=e.width),'short labels not clipped '+width+' '+JSON.stringify(labels));}
    if(width===390||width===1280){fs.mkdirSync(path.join(__dirname,'out'),{recursive:true});await p.screenshot({path:path.join(__dirname,'out','pet-'+width+'.png'),fullPage:true});}
  }
  await p.evaluate(()=>App.showScreen('register'));assert.equal(await p.evaluate(()=>PetView.active),false);assert.equal(await p.evaluate(()=>PetView.busy),false);
