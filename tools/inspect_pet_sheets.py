@@ -2,9 +2,10 @@
 from PIL import Image
 from pathlib import Path
 import json
+import sys
 
 result = {}
-for path in Path('assets/pet').glob('*stage*.png'):
+for path in Path('assets/pet').glob('*stage*-v2.png' if '--v2' in sys.argv else '*stage*.png'):
     image = Image.open(path)
     width, height = image.size
     alpha = image.getchannel('A').tobytes()

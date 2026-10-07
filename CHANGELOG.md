@@ -1,6 +1,7 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
 ## 2026-10-07 — Bộ hình cún nâu (nhánh pet-art, chờ review)
+- V2 theo mẫu Nam duyệt: sơ sinh mũm mĩm như cục bông, lớn vừa có chỏm tóc, trưởng thành thân/ngực rộng và đầu nhỏ hơn tương đối. Thay bảng hình v1 bằng v2; nơ xanh/chỏm tóc là ảnh riêng với nút thử đeo/tháo trong trang duyệt, chưa thêm vào shop hoặc hồ sơ.
 - Thay SVG demo bằng hình cún nâu lông xoăn đã duyệt: 3 giai đoạn, đủ 13 tư thế; đi bộ/vẫy đuôi dùng hai khung. Giữ KIND và toàn bộ luật/dữ liệu/giá. Chặn đi ra ngoài phòng trên mobile, dừng timer khung khi rời màn/ẩn tab, tôn trọng giảm chuyển động. Sửa nhãn Trang chủ ở 360px; thêm trang duyệt bộ hình và test luồng vẽ.
 
 ## 2026-10-07 — Nhà cún v1 (nhánh pet, chờ review)

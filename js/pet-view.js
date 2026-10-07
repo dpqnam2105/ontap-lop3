@@ -8,14 +8,11 @@ const PetView = {
   stop(){clearInterval(this.poseTimer);this.poseTimer=null;this.active=false;this.epoch++;this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);this.busy=false;this.state='idle';},
   later(fn,ms,realTime=false){const e=this.epoch;const t=setTimeout(()=>{if(this.active&&this.epoch===e)fn();},this.reduced.matches&&!realTime?0:ms);this.timers.push(t);},
   // KIND lives in Pet data; artwork revisions only change these assets and frame rectangles.
-  artVersion:'20261007dog1', poseTimer:null, artSerial:0,
+  artVersion:'20261007dog2', poseTimer:null, artSerial:0,
   poses:{idle:0,walk:1,sit:2,sleep:3,wake:4,eat:5,wag:6,tilt:7,hop:8,sniff:9,chase:10,happy:11,celebrate:12,rest:15},
-  frameRects:[
-    [[19,23,306,300],[339,30,611,300],[658,25,901,301],[933,107,1239,279],[16,330,304,603],[322,340,612,598],[640,332,923,610],[960,331,1237,615],[31,627,300,890],[322,679,620,892],[634,655,939,883],[975,642,1224,906],[40,904,270,1209],[331,938,608,1189],[641,927,923,1199],[949,993,1232,1180]],
-    [[20,55,301,312],[348,56,622,310],[676,49,895,312],[941,138,1237,307],[29,347,306,615],[347,346,616,605],[654,347,917,615],[972,343,1227,615],[37,640,284,892],[327,686,623,897],[642,662,956,883],[994,646,1214,912],[38,912,268,1206],[337,946,622,1190],[647,938,924,1200],[958,1006,1230,1188]],
-    [[19,32,304,302],[332,30,631,301],[685,21,919,302],[942,132,1242,301],[16,321,313,620],[337,320,628,607],[650,320,939,615],[991,325,1242,619],[40,628,285,902],[320,661,621,896],[632,648,972,889],[990,640,1218,911],[37,899,259,1218],[321,925,618,1195],[644,920,937,1205],[964,1004,1241,1195]]
-  ],
-  artPath(stage){return 'assets/pet/dog-fluffy-brown-stage'+stage+'-v1.png?v='+this.artVersion;},
+  frameRects:[[[35,56,308,294],[353,55,626,291],[668,56,907,293],[949,114,1231,293],[40,368,308,581],[348,389,620,579],[646,347,914,582],[972,339,1215,583],[50,623,298,878],[334,681,600,883],[656,658,950,881],[980,673,1219,894],[56,902,279,1188],[354,961,626,1175],[670,945,941,1176],[950,1003,1229,1179]],[[25,37,317,304],[343,39,644,298],[682,36,901,302],[946,121,1230,296],[25,347,312,607],[353,348,617,590],[647,340,926,602],[973,347,1231,604],[50,626,294,890],[338,656,613,882],[639,647,954,882],[1009,642,1231,894],[49,905,268,1202],[327,938,638,1189],[667,918,933,1195],[945,1008,1229,1189]],[[10,26,317,313],[333,31,657,307],[682,32,938,312],[949,140,1249,313],[17,321,326,615],[344,328,646,598],[652,348,950,616],[988,336,1242,616],[27,621,286,892],[322,632,621,895],[638,656,962,906],[991,635,1234,916],[21,889,289,1217],[313,928,649,1205],[659,920,954,1213],[930,1033,1244,1210]]],
+  artPath(stage){return 'assets/pet/dog-fluffy-brown-stage'+stage+'-v2.png?v='+this.artVersion;},
+  bowPath(){return 'assets/pet/bow-blue-tuft-v1.png?v='+this.artVersion;},
   artStyle(){
     if(document.getElementById('petArtStyle'))return;
     const style=document.createElement('style');style.id='petArtStyle';
@@ -29,18 +26,21 @@ const PetView = {
     const margin=Math.min(49,(actor.offsetWidth*scale/2+8)/room.clientWidth*100);
     actor.style.left=Math.max(margin,Math.min(100-margin,left))+'%';
   },
-  svg(stage=0,pose='idle',frame){
+  svg(stage=0,pose='idle',frame,bow=false){
     stage=Number.isInteger(stage)&&stage>=0&&stage<=2?stage:0;
     const index=Number.isInteger(frame)&&frame>=0&&frame<16?frame:(Object.hasOwn(this.poses,pose)?this.poses[pose]:0);
     const [x,y,right,bottom]=this.frameRects[stage][index], w=right-x, h=bottom-y;
     const left=(360-w)/2, top=350-h, clip='pet-art-'+(++this.artSerial);
-    // These two atlas poses share a few boundary pixels with the neighboring row.
-    // Clip only that corner, retaining the character's own paws/head and the original PNG.
-    const corners=stage===2&&index===8?[[40,628],[285,628],[285,896],[120,896],[120,902],[40,902]]:
-      stage===2&&index===12?[[37,905],[110,905],[110,899],[259,899],[259,1218],[37,1218]]:null;
+    // Two v2 atlas corners contain a few pixels from a neighboring pose.
+    const corners=stage===2&&index===12?[[21,897],[126,897],[126,889],[289,889],[289,1217],[21,1217]]:
+      stage===2&&index===15?[[960,1033],[1244,1033],[1244,1210],[930,1210],[930,1080],[960,1080]]:null;
     const region=corners?'<polygon points="'+corners.map(([px,py])=>(px-x+left)+','+(py-y+top)).join(' ')+'"/>':'<rect x="'+left+'" y="'+top+'" width="'+w+'" height="'+h+'"/>';
+    // Only the baby accessory is approved. Separate overlay, never baked into the atlas or profile.
+    const anchors=[[150,60],[499,60],[787,62],[1060,140],[133,398],[455,429],[755,350],[1096,340],[170,630],[463,730],[829,662],[1097,675],[166,907],[506,964],[786,949],[1099,1018]];
+    let accessory='';
+    if(bow&&stage===0){const [hx,hy]=anchors[index], ax=left+hx-x-55, ay=top+hy-y-50;accessory='<image data-pet-accessory="bow-blue" href="'+this.bowPath()+'" x="'+ax+'" y="'+ay+'" width="110" height="73.333"'+(pose==='tilt'?' transform="rotate(-12 '+(ax+55)+' '+(ay+50)+')"':'')+'/>';}
     // Clip the atlas in SVG at render time; generated PNGs are preserved untouched.
-    return '<svg viewBox="0 0 360 360" aria-hidden="true" data-pet-pose="'+this.esc(pose)+'" data-pet-stage="'+stage+'" data-pet-frame="'+index+'"><defs><clipPath id="'+clip+'">'+region+'</clipPath></defs><image href="'+this.artPath(stage)+'" x="'+(left-x)+'" y="'+(top-y)+'" width="1254" height="1254" clip-path="url(#'+clip+')"/></svg>';
+    return '<svg viewBox="0 0 360 360" aria-hidden="true" data-pet-pose="'+this.esc(pose)+'" data-pet-stage="'+stage+'" data-pet-frame="'+index+'"><defs><clipPath id="'+clip+'">'+region+'</clipPath></defs><image href="'+this.artPath(stage)+'" x="'+(left-x)+'" y="'+(top-y)+'" width="1254" height="1254" clip-path="url(#'+clip+')"/>'+accessory+'</svg>';
   },
   setPose(pose){
     clearInterval(this.poseTimer);this.poseTimer=null;
@@ -89,7 +89,7 @@ const PetView = {
       const c=document.getElementById('petChallenge');if(c)c.onclick=()=>{if(!this.active)return;c.disabled=true;const r=Pet.startChallenge();if(!r.ok){c.disabled=false;this.say(r.error==='questions'?'Chưa chuẩn bị được đủ 5 câu phù hợp cho môn '+r.subject+'. Mình thử lại sau nhé.':'Con chưa bắt đầu được thử thách.');}};
       return;
     }
-    const today=Pet.dateKey(), meals=p.day.date===today?p.day.meals:0, labels=['Cún con','Cún lớn','Trưởng thành'];
+    const today=Pet.dateKey(), meals=p.day.date===today?p.day.meals:0, labels=['Cún sơ sinh','Cún lớn vừa','Trưởng thành'];
     host.innerHTML+='<div class="pet-layout"><div class="pet-card"><div class="pet-room pet-wall-'+p.room.wall.split('-').pop()+'" id="petRoom"><div class="pet-window"></div><span class="pet-plant pet-color-'+p.room.plant.split('-').pop()+'">🪴</span><div class="pet-bed pet-color-'+p.room.bed.split('-').pop()+'"></div><div class="pet-rug pet-color-'+p.room.rug.split('-').pop()+'"></div><span class="pet-bowl pet-color-'+p.room.bowl.split('-').pop()+'">🍲</span><span class="pet-toy pet-color-'+p.room.toy.split('-').pop()+'">🎾</span><div class="pet-speech" id="petSpeech">Gâu! Mình ở đây nè 💛</div><button class="pet-actor pet-stage-'+p.stage+'" id="petActor" aria-label="Vuốt ve cún">'+this.svg(p.stage)+'</button></div><div class="pet-name"><b>'+this.esc(p.name)+'</b><button id="petRename">Đổi tên</button><span>'+labels[p.stage]+'</span></div><div class="pet-growth"><label>Đang lớn lên · '+p.growth+' bữa lớn</label><progress max="'+(p.stage===0?10:30)+'" value="'+Math.min(p.growth,30)+'"></progress><p>'+meals+'/3 bữa lớn hôm nay · '+(meals===3?'Mai lớn tiếp nhé 💛':'Mỗi bữa giúp cún lớn thêm.')+'</p></div><div class="pet-actions"><button id="petFood">🍲 Cho ăn</button><button id="petPlay">🎾 Chơi cùng</button><button id="petDecor">🏡 Trang trí</button></div><p id="petStatus" role="status" aria-live="polite"></p></div><aside class="pet-card" id="petPanel"></aside></div>';
     document.getElementById('petActor').onclick=()=>this.react();
     document.getElementById('petFood').onclick=()=>this.feedNow();

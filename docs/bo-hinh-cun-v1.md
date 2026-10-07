@@ -1,22 +1,23 @@
-# Bộ hình cún nâu v1 — 2026-10-07
+# Bộ hình cún nâu v2 — 2026-10-07
 
-Nam đã duyệt mẫu cún nâu lông xoăn. Mèo Ba Tư xám giữ riêng ở thư mục output của workspace, không nằm trong catalog hoặc dữ liệu web.
+Nam đã duyệt bảng so sánh v2: sơ sinh tròn mũm mĩm, lớn vừa thân/chân rõ hơn và chỏm tóc, trưởng thành ngực rộng và đầu nhỏ hơn so với thân. Mèo Ba Tư xám giữ riêng ở thư mục output của workspace, không nằm trong catalog hoặc dữ liệu web.
 
 ## Tệp và cách dùng
 
-- `assets/pet/dog-fluffy-brown-stage0-v1.png`: cún con.
-- `assets/pet/dog-fluffy-brown-stage1-v1.png`: cún lớn.
-- `assets/pet/dog-fluffy-brown-stage2-v1.png`: trưởng thành.
-- Cả ba: 1254 × 1254, RGBA, alpha có giá trị 0 và 255, nền trong suốt thật. Tổng khoảng 6 MB PNG; màn game chỉ tham chiếu bảng của giai đoạn hiện tại. Trang duyệt tải cả ba.
+- `assets/pet/dog-fluffy-brown-stage0-v2.png`: cún sơ sinh.
+- `assets/pet/dog-fluffy-brown-stage1-v2.png`: cún lớn vừa.
+- `assets/pet/dog-fluffy-brown-stage2-v2.png`: trưởng thành.
+- Cả ba: 1254 × 1254, RGBA, alpha có giá trị 0 và 255, nền trong suốt thật. Màn game chỉ tham chiếu bảng của giai đoạn hiện tại. Trang duyệt tải cả ba.
+- `assets/pet/bow-blue-tuft-v1.png`: chỏm tóc/nơ xanh riêng, 1536 × 1024, RGBA. Chỉ thử trong trang duyệt, có checkbox đeo/tháo và vị trí riêng theo từng tư thế sơ sinh. Không tính tiền, không tạo vật phẩm owned, không lưu trạng thái nơ vào hồ sơ. Các vùng màu ngoài vật thể của PNG có alpha 0 và không hiện khi ghép.
 - `docs/pet-art-preview.html`: xem ba giai đoạn và từng tư thế.
 
-Ảnh được tạo bằng imagegen tích hợp, ba lượt, lấy mẫu cún đã duyệt làm tham chiếu. Không chỉnh pixel PNG sau khi tạo. Vùng cắt SVG nằm trong `PetView.frameRects`; hai góc nhỏ của bảng trưởng thành có clip polygon để loại pixel tư thế hàng bên cạnh.
+Ảnh được tạo bằng imagegen tích hợp, lấy bảng tạo hình v2 đã duyệt làm tham chiếu. Bản trưởng thành chỉnh thêm tỉ lệ đầu/thân để phân biệt rõ hơn; phụ kiện tạo riêng. Prompt của tài nguyên được chọn ghi trong pet-art-v2-prompts.json. Không chỉnh pixel PNG bằng script. Vùng cắt SVG nằm trong `PetView.frameRects`; hai góc nhỏ của bảng trưởng thành có clip polygon để loại pixel tư thế hàng bên cạnh. Bảng v1 giữ trong lịch sử Git và thư mục ảnh sinh gốc.
 
 ## Hợp đồng tư thế
 
 Thứ tự 16 vùng: idle, walk-A, sit, sleep, wake, eat, wag-A, tilt, hop, sniff, chase, happy, celebrate, walk-B, wag-B, rest.
 
-13 tư thế đã chốt đều có ở mỗi giai đoạn. Đây là hoạt ảnh đổi tư thế; walk/wag luân phiên hai khung, kết hợp chuyển vị trí và hiệu ứng CSS của game. Không phải 16 khung liên tiếp của cùng một chuyển động. Hai giai đoạn đầu gần nhau về nét mặt; thân/chân và kích thước trong game tăng dần, trưởng thành có tỉ lệ rõ hơn.
+13 tư thế đã chốt đều có ở mỗi giai đoạn. Đây là hoạt ảnh đổi tư thế; walk/wag luân phiên hai khung, kết hợp chuyển vị trí và hiệu ứng CSS của game. Không phải 16 khung liên tiếp của cùng một chuyển động. Sơ sinh có đầu to/bụng tròn/chân rất ngắn; lớn vừa có thân/chân rõ hơn; trưởng thành thân/ngực rộng và đầu nhỏ hơn tương đối. Cùng màu lông và khuôn mặt để nhận ra cùng một bạn cún.
 
 ## Giới hạn thay đổi
 
@@ -30,5 +31,6 @@ Thứ tự 16 vùng: idle, walk-A, sit, sleep, wake, eat, wag-A, tilt, hop, snif
 
 - `node tests/pet-art.e2e.js`: 3 giai đoạn × 13 tư thế; ảnh thật tải được; vẽ không đổi hồ sơ; mã KIND; giới hạn phòng 360/390/430/1280px; nhãn rail; đổi khung đi bộ; dừng timer; giảm chuyển động.
 - `node tests/pet.test.js`, `node tests/pet-challenge.test.js`, `node tests/pet.e2e.js`: kiểm tra lại luật chăm cún và luồng nhận nuôi/sao lưu.
-- `python tools/inspect_pet_sheets.py`: đọc alpha và đo vùng nhân vật; chỉ đọc, không sửa ảnh.
+- `python tools/inspect_pet_sheets.py --v2`: đọc alpha và đo vùng nhân vật; chỉ đọc, không sửa ảnh.
+- Test trang duyệt: nơ là lớp riêng, có ở cả 14 tư thế sơ sinh khi bật; tháo nơ không thay bảng hình gốc và không hiện trên hai giai đoạn chưa duyệt phụ kiện.
 - Đã xem ảnh chụp từng tư thế và màn mobile. Chờ Claude review trên nhánh mới trước khi merge.
