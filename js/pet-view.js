@@ -59,7 +59,7 @@ const PetView = {
       if(entry.frontLayer)html+='<div id="petSlot-'+slot+'-front" class="pet-room-prop pet-prop-'+slot+'-front" data-room-layer="'+entry.frontLayer+'" data-room-y="'+entry.frontDepthY+'" style="'+place(entry)+'--prop-tint:'+this.esc(item.placeholderTint||'#a5c8db')+'">'+(item.frontImg?'<img src="'+this.esc(item.frontImg)+'" alt="">':'<span class="pet-bed-lip"></span>')+'</div>';
     }
     const width=t.dog.widthByStage[p.stage];
-    html+='<button class="pet-actor pet-stage-'+p.stage+'" id="petActor" data-room-layer="depth" data-room-y="'+t.dog.spawn.y+'" aria-label="Vuốt ve cún" style="width:'+width/t.width*100+'%;height:'+width/t.height*100+'%">'+this.svg(p.stage)+'</button>';
+    html+='<button class="pet-actor pet-stage-'+p.stage+'" id="petActor" data-room-layer="depth" data-room-y="'+t.dog.spawn.y+'" aria-label="Vuốt ve cún" style="width:'+width/t.width*100+'%;height:'+width/t.height*100+'%">'+this.svg(p.stage,'idle',undefined,Pet.wardrobe().equipped.head)+'</button>';
     return html+'<div class="pet-speech" id="petSpeech" style="left:'+t.dog.speech.x/t.width*100+'%;top:'+t.dog.speech.y/t.height*100+'%">Gâu! Mình ở đây nè 💛</div></div></div>';
   },
   resizeRoom(){
@@ -79,17 +79,21 @@ const PetView = {
     const corners=stage===2&&index===12?[[21,897],[126,897],[126,889],[289,889],[289,1217],[21,1217]]:
       stage===2&&index===15?[[960,1033],[1244,1033],[1244,1210],[930,1210],[930,1080],[960,1080]]:null;
     const region=corners?'<polygon points="'+corners.map(([px,py])=>(px-x+left)+','+(py-y+top)).join(' ')+'"/>':'<rect x="'+left+'" y="'+top+'" width="'+w+'" height="'+h+'"/>';
-    // Only the baby accessory is approved. Separate overlay, never baked into the atlas or profile.
-    const anchors=[[150,60],[499,60],[787,62],[1060,140],[133,398],[455,429],[755,350],[1096,340],[170,630],[463,730],[829,662],[1097,675],[166,907],[506,964],[786,949],[1099,1018]];
+    const id=bow===true?'bow-blue':bow,item=Object.hasOwn(PetAccessories.ITEMS,id)?PetAccessories.ITEMS[id]:null;
+    const anchor=item?PetAccessories.anchor(stage,index,this.frameRects[stage][index],item.slot):null;
     let accessory='';
-    if(bow&&stage===0){const [hx,hy]=anchors[index], ax=left+hx-x-55, ay=top+hy-y-50;accessory='<image data-pet-accessory="bow-blue" href="'+this.bowPath()+'" x="'+ax+'" y="'+ay+'" width="110" height="73.333"'+(pose==='tilt'?' transform="rotate(-12 '+(ax+55)+' '+(ay+50)+')"':'')+'/>';}
+    if(anchor?.visible){const aw=item.width*anchor.scale,ah=aw*341/512,ax=anchor.x-aw/2,ay=anchor.y-ah*.68;
+      accessory='<image data-pet-accessory="'+this.esc(id)+'" data-anchor="'+item.slot+'" href="'+(id==='bow-blue'?this.bowPath():item.img+'?v='+this.artVersion)+'" x="'+ax+'" y="'+ay+'" width="'+aw+'" height="'+ah+'" transform="rotate('+anchor.angle+' '+anchor.x+' '+anchor.y+')"/>';
+    }
+    // Accessory layer follows its anchor; head is in front, future back items can be behind.
     // Clip the atlas in SVG at render time; generated PNGs are preserved untouched.
-    return '<svg viewBox="0 0 360 360" aria-hidden="true" data-pet-pose="'+this.esc(pose)+'" data-pet-stage="'+stage+'" data-pet-frame="'+index+'"><defs><clipPath id="'+clip+'">'+region+'</clipPath></defs><image href="'+this.artPath(stage)+'" x="'+(left-x)+'" y="'+(top-y)+'" width="1254" height="1254" clip-path="url(#'+clip+')"/>'+accessory+'</svg>';
+    return '<svg viewBox="0 0 360 360" aria-hidden="true" data-pet-pose="'+this.esc(pose)+'" data-pet-stage="'+stage+'" data-pet-frame="'+index+'"><defs><clipPath id="'+clip+'">'+region+'</clipPath></defs>'+(anchor?.layer==='behind'?accessory:'')+'<image href="'+this.artPath(stage)+'" x="'+(left-x)+'" y="'+(top-y)+'" width="1254" height="1254" clip-path="url(#'+clip+')"/>'+(anchor?.layer==='front'?accessory:'')+'</svg>';
   },
   setPose(pose){
     clearInterval(this.poseTimer);this.poseTimer=null;
     const actor=document.getElementById('petActor'), pet=Pet.snapshot();if(!actor||!pet)return;
-    const paint=frame=>{const previous=actor.querySelector('svg');if(previous)previous.outerHTML=this.svg(pet.stage,pose,frame);};
+    const equipped=Pet.wardrobe().equipped.head;
+    const paint=frame=>{const previous=actor.querySelector('svg');if(previous)previous.outerHTML=this.svg(pet.stage,pose,frame,equipped);};
     paint();
     const frames=pose==='walk'?[1,13]:pose==='wag'?[6,14]:null;
     if(frames&&!this.reduced.matches&&this.active&&!document.hidden){let i=0;this.poseTimer=setInterval(()=>{if(!this.active||document.hidden||this.reduced.matches){clearInterval(this.poseTimer);this.poseTimer=null;return;}paint(frames[++i%frames.length]);},pose==='walk'?320:420);}
@@ -151,12 +155,21 @@ const PetView = {
       h.querySelectorAll('[data-feed]').forEach(b=>b.onclick=()=>{if(full){this.react();return;}this.commit(()=>Pet.feed(b.dataset.feed,this.token()));});
       h.querySelectorAll('[data-food]').forEach(b=>{if(Date.now()<this.buyUntil)b.disabled=true;b.onclick=()=>this.buy(()=>Pet.buyFood(b.dataset.food,this.token()));});
     }else{
-      h.innerHTML='<h3>Góc trang trí</h3><p>Đồ đã có có thể dùng lại.</p>'+Object.entries(Pet.ITEMS).map(([id,item])=>{
+      h.innerHTML=this.accessoryPanel(p)+'<h3>Góc trang trí</h3><p>Đồ đã có có thể dùng lại.</p>'+Object.entries(Pet.ITEMS).map(([id,item])=>{
         const owned=item.free||p.owned.includes(id), equipped=p.room.slots[item.slot]===id;
         return '<div class="pet-item"><b>'+this.esc(item.name)+'</b><button data-item="'+id+'" '+(equipped||this.busy||!owned&&item.price===null?'disabled':'')+'>'+ (equipped?'Đang dùng':owned?'Đặt vào phòng':item.price===null?'Chờ chốt giá':'Mua · '+item.price+' ⭐')+'</button></div>';
       }).join('');
+      h.querySelectorAll('[data-accessory]').forEach(b=>{const id=b.dataset.accessory,w=Pet.wardrobe(),owned=w.owned.includes(id);if(!owned&&Date.now()<this.buyUntil)b.disabled=true;b.onclick=()=>owned?this.commit(()=>Pet.equipAccessory(id,this.token())):this.buy(()=>Pet.buyAccessory(id,this.token()));});
+      h.querySelectorAll('[data-unwear]').forEach(b=>b.onclick=()=>this.commit(()=>Pet.removeAccessory(b.dataset.unwear,this.token())));
       h.querySelectorAll('[data-item]').forEach(b=>{const id=b.dataset.item,owned=Pet.ITEMS[id].free||p.owned.includes(id);if(!owned&&Date.now()<this.buyUntil)b.disabled=true;b.onclick=()=>owned?this.commit(()=>Pet.equip(id,this.token())):this.buy(()=>Pet.buyItem(id,this.token()));});
     }
+  },
+  accessoryPanel(p){
+    const w=Pet.wardrobe();
+    return '<h3>Nơ & phụ kiện</h3>'+Object.entries(Pet.ACCESSORIES).map(([id,item])=>{
+      const owned=w.owned.includes(id),equipped=w.equipped[item.slot]===id;
+      return '<div class="pet-item pet-accessory-card"><img src="'+this.esc(item.img)+'" alt=""><b>'+this.esc(item.name)+'</b><small>Mua một lần · dùng cho cả 3 giai đoạn</small><button data-accessory="'+id+'" '+(equipped||this.busy?'disabled':'')+'>'+(equipped?'Đang đeo':owned?'Đeo nơ':'Mua · '+item.price+' ⭐')+'</button>'+(equipped?'<button data-unwear="'+item.slot+'" '+(this.busy?'disabled':'')+'>Tháo nơ</button>':'')+'</div>';
+    }).join('');
   },
   buttons(){document.querySelectorAll('#screenPet .pet-actions button,#petRename').forEach(b=>b.disabled=this.busy);},
   say(text){const a=document.getElementById('petSpeech'),b=document.getElementById('petStatus');if(a)a.textContent=text;if(b)b.textContent=text;},

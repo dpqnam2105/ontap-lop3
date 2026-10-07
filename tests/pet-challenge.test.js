@@ -3,7 +3,7 @@ let profile,writes,started;
 const box={window:{},console,Storage:{load:()=>JSON.parse(JSON.stringify(profile)),getActiveName:()=>profile.playerName||'',canonName:s=>s.toLowerCase(),save:p=>{profile=JSON.parse(JSON.stringify(p));writes++;}},
 App:{currentGrade:'lop3',_seededRandom:()=>()=>.4,_allowedIndices:(s,t)=>t.questions.map((_,i)=>i).filter(i=>!t.questions[i].blocked)},
 Quiz:{startMixed:(pool,name,id,key,task,options)=>{started={pool,options}}}};
-vm.createContext(box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet-room.js'),'utf8'),box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet.js'),'utf8'),box);
+vm.createContext(box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet-room.js'),'utf8'),box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet-accessories.js'),'utf8'),box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet.js'),'utf8'),box);
 const P=box.window.Pet;
 function bank(){return {subjects:['toan','tieng-viet','tieng-anh'].map(id=>({id,name:id,topics:[{id:id+'_core',name:'core',questions:Array.from({length:7},(_,i)=>({id:id+i,q:'?',choices:['0','1'],a:0,track:'core'}))}]}))};}
 function reset(){profile={playerName:'Thỏ',stars:100};writes=0;started=null;P._challengeRun=null;box.App.allData=bank();}
