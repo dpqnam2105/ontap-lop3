@@ -74,4 +74,16 @@ test('desktop wander is wider than mobile and still contains the whole dog',()=>
  const wide=b.R.clamp(r,{x:100,y:530},2,1280),narrow=b.R.clamp(r,{x:100,y:530},2,390);
  assert.ok(wide.x<narrow.x);assert.ok(wide.x>=168);assert.equal(narrow.x,310);
 });
+test('every paid item has real artwork, bed layers keep the same canvas',()=>{
+ const b=boot();
+ for(const item of Object.values(b.R.ITEMS)){
+  assert.ok(item.img,item.id+' must not fall back to a placeholder');
+  assert.ok(fs.existsSync(path.join(__dirname,'..',item.img)),item.id+' image exists');
+  if(item.slot==='bed')assert.ok(fs.existsSync(path.join(__dirname,'..',item.frontImg)),item.id+' front exists');
+ }
+ const report=JSON.parse(fs.readFileSync(path.join(__dirname,'../docs/pet-room-recolor-payload-v1.json'),'utf8'));
+ assert.equal(report.length,12);
+ for(const entry of report){assert.ok(entry.alphaExact);assert.ok(entry.valueExact);assert.ok(Math.max(...entry.size)<=512);assert.ok(entry.changedPixels>100);}
+ for(const colour of ['blue','pink'])assert.deepEqual(report.find(x=>x.file==='bed-'+colour+'-v1.webp').size,report.find(x=>x.file==='bed-front-'+colour+'-v1.webp').size);
+});
 console.log(count+' room tests passed');

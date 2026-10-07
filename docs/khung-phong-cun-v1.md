@@ -42,4 +42,4 @@ Gỡ mirror ở PR riêng sau khi Nam xác nhận mọi máy đã tải bản c�
 
 ## Phòng mẫu đã dựng trên nhánh pet-room-art
 
-Xem phong-cun-mau-v1.md và ảnh 390px/1280px. Món mặc định và nền đã có WebP; câu ghi img=null ở phần khung phía trên mô tả đợt trước. Wide có walkArea riêng x160–850; narrow giữ x310–690. Bộ hình mẫu chưa được merge/duyệt nên chưa thay biến thể trả sao.
+Xem phong-cun-mau-v1.md và ảnh 390px/1280px. Món mặc định và nền đã có WebP; câu ghi img=null ở phần khung phía trên mô tả đợt trước. Wide có walkArea riêng x160–850; narrow giữ x310–690. Bộ hình mẫu chưa merge; biến thể trả sao được recolor từ hình mặc định trong cùng PR, xem phong-cun-mau-v1.md.

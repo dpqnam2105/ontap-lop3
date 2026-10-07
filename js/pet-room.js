@@ -106,6 +106,11 @@ for(const [slot,label] of Object.entries({bed:'Giường',rug:'Thảm',bowl:'Bá
 }
 window.PetRoom=PetRoom;
 
-// Only basic items have approved pilot artwork; paid colour variants remain placeholders until reviewed.
-for(const slot of ['bed','rug','bowl','toy','plant'])PetRoom.ITEMS[slot+'-default'].img='assets/pet/room/'+slot+'-default-v1.webp';
-PetRoom.ITEMS['bed-default'].frontImg='assets/pet/room/bed-front-v1.webp';
+// All physical inventory IDs use the same approved shape; paid variants recolour its material.
+for(const slot of ['bed','rug','bowl','toy','plant'])for(const colour of ['default','blue','pink']){
+  const item=PetRoom.ITEMS[slot+'-'+colour];
+  item.img='assets/pet/room/'+slot+'-'+colour+'-v1.webp';
+  if(slot==='bed')item.frontImg='assets/pet/room/bed-front'+(colour==='default'?'':'-'+colour)+'-v1.webp';
+}
+// Wall is a colour overlay, not a physical prop sprite; expose its underlying painted asset too.
+for(const colour of ['default','blue','pink'])PetRoom.ITEMS['wall-'+colour].img=PetRoom.TEMPLATES['room-cozy-v1'].background.img;

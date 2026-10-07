@@ -1,0 +1,146 @@
+[
+  {
+    "file": "bed-blue-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 25244,
+    "changedPixels": 43933,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bed-default-v1.png"
+  },
+  {
+    "file": "bed-pink-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 24884,
+    "changedPixels": 43936,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bed-default-v1.png"
+  },
+  {
+    "file": "bed-front-blue-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 13292,
+    "changedPixels": 26379,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bed-front-v1.png"
+  },
+  {
+    "file": "bed-front-pink-v1.webp",
+    "size": [
+      512,
+      287
+    ],
+    "bytes": 13032,
+    "changedPixels": 26381,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bed-front-v1.png"
+  },
+  {
+    "file": "rug-blue-v1.webp",
+    "size": [
+      512,
+      171
+    ],
+    "bytes": 24412,
+    "changedPixels": 22525,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "rug-default-v1.png"
+  },
+  {
+    "file": "rug-pink-v1.webp",
+    "size": [
+      512,
+      171
+    ],
+    "bytes": 23532,
+    "changedPixels": 22083,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "rug-default-v1.png"
+  },
+  {
+    "file": "bowl-blue-v1.webp",
+    "size": [
+      512,
+      320
+    ],
+    "bytes": 18292,
+    "changedPixels": 50451,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bowl-default-v1.png"
+  },
+  {
+    "file": "bowl-pink-v1.webp",
+    "size": [
+      512,
+      320
+    ],
+    "bytes": 17386,
+    "changedPixels": 50480,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "bowl-default-v1.png"
+  },
+  {
+    "file": "toy-blue-v1.webp",
+    "size": [
+      512,
+      410
+    ],
+    "bytes": 51348,
+    "changedPixels": 58084,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "toy-default-v1.png"
+  },
+  {
+    "file": "toy-pink-v1.webp",
+    "size": [
+      512,
+      410
+    ],
+    "bytes": 49228,
+    "changedPixels": 58085,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "toy-default-v1.png"
+  },
+  {
+    "file": "plant-blue-v1.webp",
+    "size": [
+      389,
+      512
+    ],
+    "bytes": 32652,
+    "changedPixels": 29768,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "plant-default-v1.png"
+  },
+  {
+    "file": "plant-pink-v1.webp",
+    "size": [
+      389,
+      512
+    ],
+    "bytes": 31212,
+    "changedPixels": 29713,
+    "alphaExact": true,
+    "valueExact": true,
+    "source": "plant-default-v1.png"
+  }
+]
