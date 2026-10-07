@@ -8,11 +8,11 @@ const PetView = {
   stop(){clearInterval(this.poseTimer);this.poseTimer=null;this.active=false;this.epoch++;this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);this.busy=false;this.state='idle';},
   later(fn,ms,realTime=false){const e=this.epoch;const t=setTimeout(()=>{if(this.active&&this.epoch===e)fn();},this.reduced.matches&&!realTime?0:ms);this.timers.push(t);},
   // KIND lives in Pet data; artwork revisions only change these assets and frame rectangles.
-  artVersion:'20261007dog2', poseTimer:null, artSerial:0,
+  artVersion:'20261007dog3', poseTimer:null, artSerial:0,
   poses:{idle:0,walk:1,sit:2,sleep:3,wake:4,eat:5,wag:6,tilt:7,hop:8,sniff:9,chase:10,happy:11,celebrate:12,rest:15},
   frameRects:[[[35,56,308,294],[353,55,626,291],[668,56,907,293],[949,114,1231,293],[40,368,308,581],[348,389,620,579],[646,347,914,582],[972,339,1215,583],[50,623,298,878],[334,681,600,883],[656,658,950,881],[980,673,1219,894],[56,902,279,1188],[354,961,626,1175],[670,945,941,1176],[950,1003,1229,1179]],[[25,37,317,304],[343,39,644,298],[682,36,901,302],[946,121,1230,296],[25,347,312,607],[353,348,617,590],[647,340,926,602],[973,347,1231,604],[50,626,294,890],[338,656,613,882],[639,647,954,882],[1009,642,1231,894],[49,905,268,1202],[327,938,638,1189],[667,918,933,1195],[945,1008,1229,1189]],[[10,26,317,313],[333,31,657,307],[682,32,938,312],[949,140,1249,313],[17,321,326,615],[344,328,646,598],[652,348,950,616],[988,336,1242,616],[27,621,286,892],[322,632,621,895],[638,656,962,906],[991,635,1234,916],[21,889,289,1217],[313,928,649,1205],[659,920,954,1213],[930,1033,1244,1210]]],
-  artPath(stage){return 'assets/pet/dog-fluffy-brown-stage'+stage+'-v2.png?v='+this.artVersion;},
-  bowPath(){return 'assets/pet/bow-blue-tuft-v1.png?v='+this.artVersion;},
+  artPath(stage){return 'assets/pet/dog-fluffy-brown-stage'+stage+'-v2.webp?v='+this.artVersion;},
+  bowPath(){return 'assets/pet/bow-blue-tuft-v1.webp?v='+this.artVersion;},
   artStyle(){
     if(document.getElementById('petArtStyle'))return;
     const style=document.createElement('style');style.id='petArtStyle';

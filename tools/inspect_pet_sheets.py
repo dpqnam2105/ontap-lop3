@@ -5,7 +5,10 @@ import json
 import sys
 
 result = {}
-for path in Path('assets/pet').glob('*stage*-v2.png' if '--v2' in sys.argv else '*stage*.png'):
+files=list(Path('assets/pet').glob('*stage*-v2.webp' if '--v2' in sys.argv else '*stage*.webp'))
+if not files:
+    files=list(Path('assets/pet').glob('*stage*-v2.png' if '--v2' in sys.argv else '*stage*.png'))
+for path in files:
     image = Image.open(path)
     width, height = image.size
     alpha = image.getchannel('A').tobytes()

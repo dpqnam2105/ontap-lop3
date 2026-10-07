@@ -9,7 +9,7 @@ const root=path.resolve(__dirname,'..');
      const file=path.resolve(root,'.'+decodeURIComponent(u.pathname==='/'?'/index.html':u.pathname));
      if(!file.startsWith(root+path.sep))return r.fulfill({status:403,body:''});
      if(!fs.existsSync(file))return r.fulfill({status:404,body:''});
-     const ext=path.extname(file),types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg'};
+     const ext=path.extname(file),types={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg'};
      return r.fulfill({contentType:types[ext]||'application/octet-stream',body:fs.readFileSync(file)});
    }
    if(u.hostname==='script.google.com')return r.fulfill({contentType:'application/json',body:u.searchParams.get('action')==='get'?'{"ok":true,"found":false,"ver":0}':r.request().method()==='POST'?'{"ok":true,"saved":true,"ver":1}':'[]'});

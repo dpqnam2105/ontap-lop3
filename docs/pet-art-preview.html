@@ -5,8 +5,8 @@
 <div id="growth"></div><p><label><input type="checkbox" id="tryBow"> Thử đeo nơ riêng trên các tư thế sơ sinh</label> · Đây là bản xem trước phụ kiện, chưa thêm vào shop.</p><main id="poses"></main>
 <script src="../js/pet-view.js"></script>
 <script>
-PetView.artPath=s=>'../assets/pet/dog-fluffy-brown-stage'+s+'-v2.png';
-PetView.bowPath=()=>'../assets/pet/bow-blue-tuft-v1.png';
+PetView.artPath=s=>'../assets/pet/dog-fluffy-brown-stage'+s+'-v2.webp';
+PetView.bowPath=()=>'../assets/pet/bow-blue-tuft-v1.webp';
 const stages=['Cún sơ sinh','Cún lớn vừa','Trưởng thành'];
 const names={idle:'Đứng',walk:'Đi bộ',sit:'Ngồi',sleep:'Ngủ',wake:'Thức dậy',eat:'Ăn',wag:'Vẫy đuôi',tilt:'Nghiêng đầu',hop:'Nhảy',sniff:'Đánh hơi',chase:'Chạy đuổi',happy:'Vui',celebrate:'Ăn mừng',rest:'Nằm nghỉ'};
 document.getElementById('growth').innerHTML=stages.map((s,i)=>'<div class="card">'+PetView.svg(i)+'<b>'+s+'</b></div>').join('')+'<div class="card">'+PetView.svg(0,'idle',undefined,true)+'<b>Sơ sinh đeo nơ</b></div>';

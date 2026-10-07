@@ -9,7 +9,7 @@ const root=path.resolve(__dirname,'..');
   if(url.hostname==='pet.test'){
    const file=path.resolve(root,'.'+decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname));
    if(!file.startsWith(root+path.sep)||!fs.existsSync(file))return route.fulfill({status:404,body:''});
-   const type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png'}[path.extname(file)];
+   const type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'}[path.extname(file)];
    return route.fulfill({contentType:type||'application/octet-stream',body:fs.readFileSync(file)});
   }
   if(url.hostname==='script.google.com')return route.fulfill({contentType:'application/json',body:url.searchParams.get('action')==='get'?'{"ok":true,"found":false,"ver":0}':route.request().method()==='POST'?'{"ok":true,"saved":true,"ver":1}':'[]'});
@@ -28,7 +28,7 @@ const root=path.resolve(__dirname,'..');
    const sprite=page.locator('#petActor>svg');
    assert.equal(await sprite.getAttribute('data-pet-frame'),String(frame));
    assert.equal(await sprite.getAttribute('data-pet-stage'),String(stage));
-   assert.ok((await sprite.locator('image').getAttribute('href')).includes('stage'+stage+'-v2.png'));
+   assert.ok((await sprite.locator('image').getAttribute('href')).includes('stage'+stage+'-v2.webp'));
   }
   assert.equal(await page.evaluate(()=>JSON.stringify(Storage.load())),before,'drawing never modifies profile');
   await page.evaluate(()=>PetView.setPose('unknown'));assert.equal(await page.locator('#petActor>svg').getAttribute('data-pet-frame'),'0');
@@ -64,6 +64,6 @@ const root=path.resolve(__dirname,'..');
  await page.screenshot({path:path.join(__dirname,'out','pet-art-bow-poses.png'),fullPage:true});
  await page.locator('#tryBow').uncheck();assert.equal(await page.locator('#poses [data-pet-accessory]').count(),0,'bow removes without changing base image');
  await page.screenshot({path:path.join(__dirname,'out','pet-art-poses.png'),fullPage:true});
- await page.locator('#growth').screenshot({path:path.join(__dirname,'out','pet-growth-v2.png')});
- assert.deepEqual(errors,[]);await context.close();await browser.close();console.log('pet art e2e passed: 3 stages / 13 contract poses / real PNGs / no profile mutations / bounds / rail / animation cleanup / reduced motion');
+ await page.locator('#growth').screenshot({path:path.join(__dirname,'out','pet-growth-v2.webp')});
+ assert.deepEqual(errors,[]);await context.close();await browser.close();console.log('pet art e2e passed: 3 stages / 13 contract poses / real WebP / no profile mutations / bounds / rail / animation cleanup / reduced motion');
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -4,14 +4,15 @@ Nam đã duyệt bảng so sánh v2: sơ sinh tròn mũm mĩm, lớn vừa thân
 
 ## Tệp và cách dùng
 
-- `assets/pet/dog-fluffy-brown-stage0-v2.png`: cún sơ sinh.
-- `assets/pet/dog-fluffy-brown-stage1-v2.png`: cún lớn vừa.
-- `assets/pet/dog-fluffy-brown-stage2-v2.png`: trưởng thành.
-- Cả ba: 1254 × 1254, RGBA, alpha có giá trị 0 và 255, nền trong suốt thật. Màn game chỉ tham chiếu bảng của giai đoạn hiện tại. Trang duyệt tải cả ba.
-- `assets/pet/bow-blue-tuft-v1.png`: chỏm tóc/nơ xanh riêng, 1536 × 1024, RGBA. Chỉ thử trong trang duyệt, có checkbox đeo/tháo và vị trí riêng theo từng tư thế sơ sinh. Không tính tiền, không tạo vật phẩm owned, không lưu trạng thái nơ vào hồ sơ. Các vùng màu ngoài vật thể của PNG có alpha 0 và không hiện khi ghép.
+- `assets/pet/dog-fluffy-brown-stage0-v2.webp`: cún sơ sinh, 433.420 byte.
+- `assets/pet/dog-fluffy-brown-stage1-v2.webp`: cún lớn vừa, 484.554 byte.
+- `assets/pet/dog-fluffy-brown-stage2-v2.webp`: trưởng thành, 479.902 byte.
+- Cả ba: 1254 × 1254, alpha có giá trị 0 và 255, nền trong suốt thật. Màn game chỉ tham chiếu bảng của giai đoạn hiện tại. Trang duyệt tải cả ba.
+- `assets/pet/bow-blue-tuft-v1.webp`: chỏm tóc/nơ xanh riêng, 512 × 341, 23.882 byte. Chỉ thử trong trang duyệt, có checkbox đeo/tháo và vị trí riêng theo từng tư thế sơ sinh. Không tính tiền, không tạo vật phẩm owned, không lưu trạng thái nơ vào hồ sơ.
+- Tổng WebP: 1.421.758 byte so với PNG 7.523.287 byte, giảm khoảng 81,1%. PNG gốc không đổi, giữ trong lịch sử Git và workspace `output/pet-art/masters-v2`; chỉ phân phối WebP trên web.
 - `docs/pet-art-preview.html`: xem ba giai đoạn và từng tư thế.
 
-Ảnh được tạo bằng imagegen tích hợp, lấy bảng tạo hình v2 đã duyệt làm tham chiếu. Bản trưởng thành chỉnh thêm tỉ lệ đầu/thân để phân biệt rõ hơn; phụ kiện tạo riêng. Prompt của tài nguyên được chọn ghi trong pet-art-v2-prompts.json. Không chỉnh pixel PNG bằng script. Vùng cắt SVG nằm trong `PetView.frameRects`; hai góc nhỏ của bảng trưởng thành có clip polygon để loại pixel tư thế hàng bên cạnh. Bảng v1 giữ trong lịch sử Git và thư mục ảnh sinh gốc.
+Ảnh được tạo bằng imagegen tích hợp, lấy bảng tạo hình v2 đã duyệt làm tham chiếu. Bản trưởng thành chỉnh thêm tỉ lệ đầu/thân để phân biệt rõ hơn; phụ kiện tạo riêng. Prompt ghi trong pet-art-v2-prompts.json. Theo yêu cầu Claude, đổi định dạng bằng Pillow quality 88/method 6; atlas không resize, nơ thu nhỏ Lanczos. Kiểm tra alpha WebP giải mã khớp chính xác với ảnh đầu vào sau bước resize. Vùng cắt SVG trong `PetView.frameRects` giữ nguyên; hai góc trưởng thành có clip polygon để loại pixel hàng bên cạnh. PNG v1/v2 giữ trong lịch sử Git và thư mục ảnh sinh gốc.
 
 ## Hợp đồng tư thế
 
@@ -33,4 +34,6 @@ Thứ tự 16 vùng: idle, walk-A, sit, sleep, wake, eat, wag-A, tilt, hop, snif
 - `node tests/pet.test.js`, `node tests/pet-challenge.test.js`, `node tests/pet.e2e.js`: kiểm tra lại luật chăm cún và luồng nhận nuôi/sao lưu.
 - `python tools/inspect_pet_sheets.py --v2`: đọc alpha và đo vùng nhân vật; chỉ đọc, không sửa ảnh.
 - Test trang duyệt: nơ là lớp riêng, có ở cả 14 tư thế sơ sinh khi bật; tháo nơ không thay bảng hình gốc và không hiện trên hai giai đoạn chưa duyệt phụ kiện.
+- `node tests/pet-mobile-payload.e2e.js`: mở lạnh từng giai đoạn ở 390×844 trong context Chromium mới, theo dõi byte ảnh qua HTTP route local. Mỗi lần chỉ 1 request ảnh cún, không tải atlas giai đoạn khác hoặc nơ. Báo cáo `tests/out/pet-mobile-payload.json`; đây là byte thân ảnh, không phải thời gian mạng Production.
+- Tạo lại WebP: `python tools/convert_pet_webp.py --source-dir <thư mục PNG gốc>`; script không sửa nguồn và xác nhận alpha.
 - Đã xem ảnh chụp từng tư thế và màn mobile. Chờ Claude review trên nhánh mới trước khi merge.
