@@ -33,6 +33,7 @@ const Quiz = {
   // roi chay mot phien quiz tron cac mon. Khong dong vao tien do ngay cua tung
   // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
   startWrongReview(limit, todayTaskId) {
+    this.challenge = null;
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
@@ -96,6 +97,7 @@ const Quiz = {
 
   // Phiên ôn tập tổng hợp: câu sai chưa sửa + câu đến hạn ôn (App/Today dựng sẵn pool).
   startReviewPool(pool, todayTaskId) {
+    this.challenge = null;
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null; this._setBack('topic');
@@ -122,14 +124,18 @@ const Quiz = {
 
   // Đề trộn tuần: câu hỏi lấy từ nhiều chủ đề của một môn (App dựng sẵn pool, cố định theo tuần).
   // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
-  startMixed(pool, subjectName, subjectId, mixKey, todayTaskId) {
+  startMixed(pool, subjectName, subjectId, mixKey, todayTaskId, options) {
+    this.challenge = null;
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
+    this.challenge = (options && options.challenge) || null;
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey }; this.speed = null; this.pickIdx = null; this._setBack('topic');
+    if (this.challenge) this._lastLaunch = null;
     this.mode = 'mixed';
     this.mixKey = mixKey || '';
     this.questions = pool.slice();
     this.currentTopic = { id: 'weekly_mix', name: 'Đề trộn tuần này', questions: this.questions };
+    if (this.challenge) this.currentTopic.name = 'Thử thách đón cún 🐶';
     this.currentSubject = subjectName || '';
     this.currentTopicId = 'weekly_mix';
     this.currentSubjectId = subjectId || 'mixed';
@@ -152,11 +158,14 @@ const Quiz = {
       learnedBefore: 0, totalInTopic: this.questions.length
     };
 
+    if (this.challenge) this.sessionInfo.modeLabel = 'Thử thách đón cún 🐶';
+
     App.showScreen('quiz');
     this.render();
   },
 
   start(topic, subjectName, options) {
+    this.challenge = null;
     options = options || {};
     this.todayTaskId = options.todayTaskId || null;
     this.sessionCount = options.count || null;
@@ -812,6 +821,13 @@ const Quiz = {
     this._stopSpeedTimer();
     Sound.play('win');
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
+    // Keep the result identity after challenge is cleared, even if finish is invoked again.
+    const isPetChallenge = !!this.challenge || (this.sessionInfo && this.sessionInfo.modeLabel === 'Thử thách đón cún 🐶');
+    let petChallengeResult = null;
+    if (this.challenge) {
+      try { if (window.Pet) petChallengeResult = Pet.onChallengeFinish({ ...this.challenge, score: this.score, mainTotal: this._mainTotal() }); }
+      catch (e) { console.warn('pet challenge hook', e); }
+    }
 
     // Đánh dấu "hôm nay có học" khi xong lượt, kể cả lượt chưa đúng câu nào (số câu đúng vẫn cộng riêng từng câu)
     if (Storage.addStudyLog) Storage.addStudyLog(0);
@@ -833,6 +849,11 @@ const Quiz = {
       } else if (this.mode === 'test') {
         progressMsg = '📝 Đây là kết quả kiểm tra. Câu sai sẽ được đưa vào phần ôn lỗi sai.';
       } else if (this.mode === 'mixed') {
+        if (isPetChallenge) {
+          progressMsg = petChallengeResult && petChallengeResult.ok
+            ? '🐶 Con đã hoàn thành thử thách! Vào Nhà cún để đặt tên và đón bạn về nhà nhé.'
+            : (window.Pet && Pet.adoptionRight() ? '🐶 Quyền nhận cún đã được lưu. Con vào Nhà cún để đón bạn nhé.' : '🐶 Chưa lưu được quyền nhận cún. Con quay lại Nhà cún để thử lại nhé.');
+        } else {
         progressMsg = '🎲 Đề trộn tuần này: con đúng ' + this.score + '/' + total + ' câu. Câu sai đã được đưa vào phần Ôn câu sai.';
         try {
           const all = Storage.get('weeklyMix') || {};
@@ -842,6 +863,7 @@ const Quiz = {
           keys.slice(30).forEach(k => delete all[k]);
           Storage.set('weeklyMix', all);
         } catch (e) { /* bỏ qua nếu không lưu được */ }
+        }
       } else if (this.mode === 'review') {
         progressMsg = '🔁 Con vừa ôn lại các câu từng làm sai. Rất tốt!';
       } else {
@@ -865,7 +887,7 @@ const Quiz = {
     if (ratio >= 0.8) this._confettiBurst();
     if (window.Today) {
       try {
-        Today.onSessionFinish({ mode: this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
+        Today.onSessionFinish({ mode: isPetChallenge ? 'pet_challenge' : this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
         Today.renderResult({ stars: this.sessionStars || 0, xp: this.sessionXP || 0 });
       } catch (e) { console.warn('Today result error', e); }
     }
@@ -874,6 +896,7 @@ const Quiz = {
     this._saveLocalSessionDetails(durationSec);
     API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
       .then(() => App.loadLeaderboard());
+    this.challenge = null;
   },
 
   /** Nhận xét kỹ năng sau lượt (chỉ khi có ≥3 câu cùng dạng) + số câu sửa được. */
