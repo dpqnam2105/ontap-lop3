@@ -83,7 +83,12 @@ test('every paid item has real artwork, bed layers keep the same canvas',()=>{
  }
  const report=JSON.parse(fs.readFileSync(path.join(__dirname,'../docs/pet-room-recolor-payload-v1.json'),'utf8'));
  assert.equal(report.length,12);
- for(const entry of report){assert.ok(entry.alphaExact);assert.ok(entry.valueExact);assert.ok(Math.max(...entry.size)<=512);assert.ok(entry.changedPixels>100);}
- for(const colour of ['blue','pink'])assert.deepEqual(report.find(x=>x.file==='bed-'+colour+'-v1.webp').size,report.find(x=>x.file==='bed-front-'+colour+'-v1.webp').size);
+ for(const item of Object.values(b.R.ITEMS).filter(x=>!x.free&&x.slot!=='wall')){
+  assert.ok(report.some(x=>x.file===path.basename(item.img)),item.id+' uses a colour-tested paid asset');
+ }
+ assert.ok(b.R.ITEMS['bed-blue'].img.endsWith('bed-blue-navy-v1.webp'));
+ assert.ok(b.R.ITEMS['bowl-blue'].img.endsWith('bowl-blue-navy-v1.webp'));
+ for(const entry of report){assert.ok(entry.alphaExact);assert.ok(entry.valueExact||entry.navy);assert.ok(Math.max(...entry.size)<=512);assert.ok(entry.changedPixels>100);}
+ for(const colour of ['blue-navy','pink'])assert.deepEqual(report.find(x=>x.file==='bed-'+colour+'-v1.webp').size,report.find(x=>x.file==='bed-front-'+colour+'-v1.webp').size);
 });
 console.log(count+' room tests passed');

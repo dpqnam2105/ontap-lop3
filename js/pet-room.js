@@ -111,6 +111,8 @@ for(const slot of ['bed','rug','bowl','toy','plant'])for(const colour of ['defau
   const item=PetRoom.ITEMS[slot+'-'+colour];
   item.img='assets/pet/room/'+slot+'-'+colour+'-v1.webp';
   if(slot==='bed')item.frontImg='assets/pet/room/bed-front'+(colour==='default'?'':'-'+colour)+'-v1.webp';
+  if(colour==='blue'&&(slot==='bed'||slot==='bowl'))item.img='assets/pet/room/'+slot+'-blue-navy-v1.webp';
+  if(colour==='blue'&&slot==='bed')item.frontImg='assets/pet/room/bed-front-blue-navy-v1.webp';
 }
 // Wall is a colour overlay, not a physical prop sprite; expose its underlying painted asset too.
 for(const colour of ['default','blue','pink'])PetRoom.ITEMS['wall-'+colour].img=PetRoom.TEMPLATES['room-cozy-v1'].background.img;

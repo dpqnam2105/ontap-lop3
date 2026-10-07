@@ -12,7 +12,7 @@ Một phòng tường kem, sàn gỗ, cửa sổ bên trái; tranh/kệ ở mép
 
 Hình dùng thật trên web ở assets/pet/room: nền ≤1600px, sáu lớp đồ ≤512px. Tổng 225394 byte (nền và năm món; giường hai ảnh). WebP giữ chính xác alpha sau resize; bed/front giữ cùng canvas 512×287 để khớp nhau. PNG gốc giữ nguyên ở output/pet-room/masters-v1 ngoài checkout. tools/convert_room_webp.py chỉ resize/encode, không vẽ lại hoặc tách hình. Nguồn từng ảnh ghi trong pet-room-art-sources-v1.json.
 
-Đồ mặc định và toàn bộ đồ trả sao xanh/hồng đều có hình WebP. Biến thể được recolor xác định từ PNG mặc định đã duyệt bằng tools/recolor_pet_room.py, không gọi imagegen thêm. Chỉ vùng vật liệu có màu đổi hue/saturation; phần kem, thức ăn và lá cây giữ nguyên. Độ sáng HSV value trước encode và alpha sau encode được kiểm tra giữ chính xác. Hai lớp giường giữ cùng canvas. Màu tường đã mua vẫn phủ màu lên vùng tường; sàn và đồ không bị đổi màu. Không đổi id, giá, hồ sơ, phụ kiện hoặc luật chơi.
+Đồ mặc định và toàn bộ đồ trả sao xanh/hồng đều có hình WebP. Biến thể được recolor xác định từ PNG mặc định đã duyệt bằng tools/recolor_pet_room.py, không gọi imagegen thêm. Chỉ vùng vật liệu có màu đổi hue/saturation; phần kem, thức ăn và lá cây giữ nguyên. Alpha sau encode giữ chính xác. Biến thể thông thường giữ HSV value; riêng giường/bát navy giảm value theo tỉ lệ để màu đậm rõ, giữ tương quan sáng tối của texture và phần kem. Hai lớp giường giữ cùng canvas. Màu tường đã mua vẫn phủ màu lên vùng tường; sàn và đồ không bị đổi màu. Không đổi id, giá, hồ sơ, phụ kiện hoặc luật chơi.
 
 Desktop walkArea chân x160–850, bị chặn thêm theo hộp cún từng giai đoạn; mobile giữ x310–690. Resize chỉ đổi viewport/vùng đi, không ghi dữ liệu hoặc chào lại.
 
@@ -29,3 +29,11 @@ PR này chờ Nam duyệt hình và Claude review trước merge. Biến thể x
 ![Full hồng 1280px](pet-room-full-pink-1280.png)
 
 Test kiểm tra mọi item trả sao có img, bed có frontImg; wall dùng asset nền và lớp phủ màu. Luồng browser mua thật từng món, kiểm tra ảnh tải được và không dùng SVG/emoji/CSS placeholder, ở cả 1280px và 390px. Chỉ món đang đặt được vẽ; không tải trước toàn bộ bộ màu. Giữ nguyên giá 50 sao và id đang bán trên main.
+
+## Giường/bát xanh trả sao — navy
+
+Đồ miễn phí giữ nguyên; id bed-blue/bowl-blue giữ giá 50 sao nhưng trỏ ảnh navy mới. Hai lớp giường cùng phép đổi màu để khớp viền; bát giữ thức ăn và logo kem. Không gọi imagegen.
+
+So sánh ở viewport 1280px: ảnh bộ mặc định ở đầu tài liệu và full xanh ở trên đã cập nhật navy.
+
+Chạy tests/pet-room-colors.test.py bằng Python/Pillow: so trực tiếp WebP với default cùng canvas/alpha. Mỗi lớp trả sao cần mean RGB distance toàn vật thể ≥8, và tại vùng vật liệu phải lệch hue trung bình ≥30° hoặc value trung bình ≥0.12. Navy còn phải có value vùng xanh dưới 70% bản default. Cream/lá cây được loại khỏi mẫu vật liệu; phép so toàn ảnh vẫn tính chúng. Bản sao default có mọi độ lệch bằng 0, không đạt tiêu chí.

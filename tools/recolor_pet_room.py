@@ -24,6 +24,7 @@ for slot in ['bed', 'bed-front', 'rug', 'bowl', 'toy', 'plant']:
     base = original.copy()
     base.thumbnail((512, 512), Image.Resampling.LANCZOS)
     for colour in ['blue', 'pink']:
+        navy = colour == 'blue' and slot in ['bed','bed-front','bowl']
         pixels = []
         changed = 0
         for r,g,b,a in base.get_flattened_data():
@@ -43,11 +44,14 @@ for slot in ['bed', 'bed-front', 'rug', 'bowl', 'toy', 'plant']:
             if mask:
                 target_h = (202 if colour == 'blue' else 344)/360
                 target_s = min(.50 if colour=='blue' else .40,max(.22,s*(1.25 if colour=='blue' else .85)))
-                nr,ng,nb = colorsys.hsv_to_rgb(target_h,target_s,v)
+                if navy:target_h,target_s=218/360,min(.82,.65+s*.2)
+                target_v=v*(.62 if navy else 1)
+                nr,ng,nb = colorsys.hsv_to_rgb(target_h,target_s,target_v)
                 rgb = tuple(round(c*(1-mask)+n*255*mask) for c,n in zip((r,g,b),(nr,ng,nb)))
                 # Feather hue selection without dimming highlights along the mask edge.
                 peak=max(rgb)
-                if peak:rgb=tuple(round(c*max(r,g,b)/peak) for c in rgb)
+                wanted_peak=max(r,g,b)*(1-mask*(.38 if navy else 0))
+                if peak:rgb=tuple(round(c*wanted_peak/peak) for c in rgb)
                 pixels.append((*rgb,a))
                 changed += rgb != (r,g,b)
             else:
@@ -56,14 +60,15 @@ for slot in ['bed', 'bed-front', 'rug', 'bowl', 'toy', 'plant']:
         im = Image.new('RGBA',base.size)
         im.putdata(pixels)
         assert im.getchannel('A').tobytes() == base.getchannel('A').tobytes()
-        assert all(max(old[:3])==max(new[:3]) for old,new in zip(base.get_flattened_data(),pixels)), 'painted brightness changed'
-        name = slot+'-'+colour+'-v1.webp'
+        if not navy:
+            assert all(max(old[:3])==max(new[:3]) for old,new in zip(base.get_flattened_data(),pixels)), 'painted brightness changed'
+        name = slot+'-'+colour+('-navy' if navy else '')+'-v1.webp'
         dest = out / name
         im.save(dest,'WEBP',quality=88,method=6)
         decoded = Image.open(dest).convert('RGBA')
         assert decoded.size == base.size
         assert decoded.getchannel('A').tobytes() == base.getchannel('A').tobytes()
         report.append({'file':name,'size':list(base.size),'bytes':dest.stat().st_size,
-                       'changedPixels':changed,'alphaExact':True,'valueExact':True,'source':stem+'.png'})
+                       'changedPixels':changed,'alphaExact':True,'valueExact':not navy,'navy':navy,'source':stem+'.png'})
 (root / 'docs/pet-room-recolor-payload-v1.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report,indent=2))

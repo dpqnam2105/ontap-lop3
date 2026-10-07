@@ -1,14 +1,15 @@
 [
   {
-    "file": "bed-blue-v1.webp",
+    "file": "bed-blue-navy-v1.webp",
     "size": [
       512,
       287
     ],
-    "bytes": 25244,
-    "changedPixels": 43933,
+    "bytes": 22704,
+    "changedPixels": 43946,
     "alphaExact": true,
-    "valueExact": true,
+    "valueExact": false,
+    "navy": true,
     "source": "bed-default-v1.png"
   },
   {
@@ -21,18 +22,20 @@
     "changedPixels": 43936,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "bed-default-v1.png"
   },
   {
-    "file": "bed-front-blue-v1.webp",
+    "file": "bed-front-blue-navy-v1.webp",
     "size": [
       512,
       287
     ],
-    "bytes": 13292,
-    "changedPixels": 26379,
+    "bytes": 12434,
+    "changedPixels": 26384,
     "alphaExact": true,
-    "valueExact": true,
+    "valueExact": false,
+    "navy": true,
     "source": "bed-front-v1.png"
   },
   {
@@ -45,6 +48,7 @@
     "changedPixels": 26381,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "bed-front-v1.png"
   },
   {
@@ -57,6 +61,7 @@
     "changedPixels": 22525,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "rug-default-v1.png"
   },
   {
@@ -69,18 +74,20 @@
     "changedPixels": 22083,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "rug-default-v1.png"
   },
   {
-    "file": "bowl-blue-v1.webp",
+    "file": "bowl-blue-navy-v1.webp",
     "size": [
       512,
       320
     ],
-    "bytes": 18292,
-    "changedPixels": 50451,
+    "bytes": 18770,
+    "changedPixels": 50585,
     "alphaExact": true,
-    "valueExact": true,
+    "valueExact": false,
+    "navy": true,
     "source": "bowl-default-v1.png"
   },
   {
@@ -93,6 +100,7 @@
     "changedPixels": 50480,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "bowl-default-v1.png"
   },
   {
@@ -105,6 +113,7 @@
     "changedPixels": 58084,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "toy-default-v1.png"
   },
   {
@@ -117,6 +126,7 @@
     "changedPixels": 58085,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "toy-default-v1.png"
   },
   {
@@ -129,6 +139,7 @@
     "changedPixels": 29768,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "plant-default-v1.png"
   },
   {
@@ -141,6 +152,7 @@
     "changedPixels": 29713,
     "alphaExact": true,
     "valueExact": true,
+    "navy": false,
     "source": "plant-default-v1.png"
   }
 ]
