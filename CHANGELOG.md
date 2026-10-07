@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Phòng cún mẫu (nhánh pet-room-art, chờ duyệt hình)
+- Review tiếp: giường/bát xanh trả sao chuyển sang navy, đồ cơ bản giữ nguyên; id/giá không đổi. Test so trực tiếp màu WebP với default cho mọi món, kèm ảnh so default/full xanh 1280px.
+- Review: toàn bộ đồ trả sao xanh/hồng có hình recolor từ default, giữ texture/độ sáng/alpha, không imagegen thêm; giường gồm hai lớp cùng canvas. Thêm test mọi item có ảnh và mua full bộ trên web, kèm ảnh 1280px xanh/hồng.
+- Vẽ nền tường/sàn gỗ/cửa sổ và năm món cơ bản, giường hai lớp; WebP khoảng 225KB, chỉ tải đồ đang đặt. Tách vùng đi wide/narrow; giữ id/giá/dữ liệu cũ và màu tường đã mua. Có ảnh 390px/1280px để Nam duyệt; chưa làm biến thể màu hoặc phụ kiện.
+
 ## 2026-10-07 — Khung nhìn phòng cún mobile
 - Viewport x140–860 cho màn ≤750px; dời đồ và giới hạn vùng đi để cún không bị cắt. Resize không chào lại; thêm hợp đồng hình và mốc gỡ mirror. Chưa vẽ phòng mẫu.
 

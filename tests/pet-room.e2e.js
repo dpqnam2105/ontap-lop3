@@ -67,6 +67,40 @@ const root=path.resolve(__dirname,'..');
  assert.equal(await page.locator('#petSlot-bed').getAttribute('data-item-id'),'bed-blue');
  assert.ok(await page.evaluate(s=>Cloud.apply(s,App.playerName),backup));
  await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{PetView.stop();PetView.active=true;PetView.render()});await page.waitForTimeout(500);
+ await page.evaluate(()=>{PetView.stop();PetView.active=true;PetView.render();PetView.positionActor(PetRoom.template(Pet.snapshot().room).dog.spawn,true);PetView.setPose('idle')});
+ await page.waitForFunction(()=>[...document.querySelectorAll('#petRoom img')].every(i=>i.complete&&i.naturalWidth>0));
+ assert.equal(await page.locator('#petRoom img').count(),7);
  await page.screenshot({path:path.join(__dirname,'out','pet-room-frame-390.png'),fullPage:true});
+ await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-pilot-390.png')});
+ await page.setViewportSize({width:1280,height:900});await page.waitForTimeout(400);
+ await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-pilot-1280.png')});
+ await page.screenshot({path:path.join(__dirname,'out','pet-room-page-1280.png'),fullPage:true});
+ await page.evaluate(()=>PetView.perform('wake'));await page.waitForTimeout(100);
+ await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-pilot-sleep.png')});
+ const beforeWall=await page.evaluate(()=>Storage.load());
+ await page.evaluate(()=>{const p=Storage.load();p.pet.owned.push('wall-pink');Storage.save(p);Pet.equip('wall-pink');PetView.render()});
+ assert.equal(await page.locator('.pet-wall-art-tint').getAttribute('data-wall-id'),'wall-pink');
+ assert.ok(await page.locator('.pet-wall-art-tint').evaluate(n=>n.getBoundingClientRect().height/document.getElementById('petCanvas').clientHeight<.52),'wall tint stays above wood floor');
+ await page.evaluate(p=>Storage.save(p),beforeWall);
+ for(const colour of ['blue','pink']){
+  // Buy through the real transaction flow, then verify every paid prop is an image, never CSS/emoji.
+  await page.evaluate(colour=>{
+   const p=Storage.load();p.stars=1000;Storage.save(p);
+   for(const slot of Pet.SLOTS){const id=slot+'-'+colour;const r=Pet.buyItem(id);if(!r.ok&&r.error==='owned')Pet.equip(id);else if(!r.ok)throw Error(id+': '+r.error);}
+   PetView.stop();PetView.active=true;PetView.render();PetView.positionActor(PetRoom.template(Pet.snapshot().room).dog.spawn,true);PetView.setPose('idle');
+  },colour);
+  await page.waitForFunction(()=>[...document.querySelectorAll('#petRoom img')].every(i=>i.complete&&i.naturalWidth>0));
+  for(const slot of ['bed','rug','bowl','toy','plant']){
+   assert.equal(await page.locator('#petSlot-'+slot).getAttribute('data-item-id'),slot+'-'+colour);
+   assert.equal(await page.locator('#petSlot-'+slot+'>img').count(),1);
+   assert.equal(await page.locator('#petSlot-'+slot+'>svg').count(),0);
+  }
+  assert.equal(await page.locator('#petSlot-bed-front>img').count(),1);
+  await page.setViewportSize({width:1280,height:900});await page.waitForTimeout(350);
+  await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-full-'+colour+'-1280.png')});
+  await page.setViewportSize({width:390,height:844});await page.waitForTimeout(350);
+  assert.ok(await page.evaluate(()=>{const r=document.getElementById('petRoom').getBoundingClientRect();return [...document.querySelectorAll('.pet-room-prop')].every(n=>{const b=n.getBoundingClientRect();return b.left>=r.left-1&&b.right<=r.right+1})}));
+  await page.locator('#petRoom').screenshot({path:path.join(__dirname,'out','pet-room-full-'+colour+'-390.png')});
+ }
  assert.deepEqual(errors,[]);await context.close();await browser.close();console.log('room e2e passed: data-driven eat / bed back-front depth / stage sizes / mobile ratio / legacy Cloud backup / CSS styles');
 })().catch(e=>{console.error(e);process.exit(1)});

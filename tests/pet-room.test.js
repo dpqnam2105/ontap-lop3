@@ -47,7 +47,7 @@ test('depth ordering places dog between bed back/front when lying, then in front
 test('out-of-range movement is clamped inside walk polygon and stage bounds for all sizes',()=>{
  const b=boot(),room=b.R.normalize(null),t=b.R.template(room);
  for(let stage=0;stage<3;stage++)for(const x of [-500,0,160,500,850,1500])for(const y of [-500,0,390,550,1000]){
-  const p=b.R.clamp(room,{x,y},stage),w=t.dog.widthByStage[stage];assert.ok(b.R.inside(t.walkArea.polygon,p));assert.ok(p.x-w/2>=0&&p.x+w/2<=1000);assert.ok(p.y-w>=0&&p.y<=625);
+  const p=b.R.clamp(room,{x,y},stage),w=t.dog.widthByStage[stage];assert.ok(b.R.inside(b.R.viewport(room).walkArea.polygon,p));assert.ok(p.x-w/2>=0&&p.x+w/2<=1000);assert.ok(p.y-w>=0&&p.y<=625);
  }
  assert.deepEqual(plain(b.R.clamp(room,{x:NaN,y:NaN})),plain(t.dog.spawn));assert.ok(t.slots.bed.w>=t.dog.widthByStage[2]);
 });
@@ -68,5 +68,27 @@ test('mobile viewport contains every furniture box and exact action spot for all
   }
  }
  assert.equal(b.R.viewport(room,751).w,1000);
+});
+test('desktop wander is wider than mobile and still contains the whole dog',()=>{
+ const b=boot(),r=b.R.normalize(null);
+ const wide=b.R.clamp(r,{x:100,y:530},2,1280),narrow=b.R.clamp(r,{x:100,y:530},2,390);
+ assert.ok(wide.x<narrow.x);assert.ok(wide.x>=168);assert.equal(narrow.x,310);
+});
+test('every paid item has real artwork, bed layers keep the same canvas',()=>{
+ const b=boot();
+ for(const item of Object.values(b.R.ITEMS)){
+  assert.ok(item.img,item.id+' must not fall back to a placeholder');
+  assert.ok(fs.existsSync(path.join(__dirname,'..',item.img)),item.id+' image exists');
+  if(item.slot==='bed')assert.ok(fs.existsSync(path.join(__dirname,'..',item.frontImg)),item.id+' front exists');
+ }
+ const report=JSON.parse(fs.readFileSync(path.join(__dirname,'../docs/pet-room-recolor-payload-v1.json'),'utf8'));
+ assert.equal(report.length,12);
+ for(const item of Object.values(b.R.ITEMS).filter(x=>!x.free&&x.slot!=='wall')){
+  assert.ok(report.some(x=>x.file===path.basename(item.img)),item.id+' uses a colour-tested paid asset');
+ }
+ assert.ok(b.R.ITEMS['bed-blue'].img.endsWith('bed-blue-navy-v1.webp'));
+ assert.ok(b.R.ITEMS['bowl-blue'].img.endsWith('bowl-blue-navy-v1.webp'));
+ for(const entry of report){assert.ok(entry.alphaExact);assert.ok(entry.valueExact||entry.navy);assert.ok(Math.max(...entry.size)<=512);assert.ok(entry.changedPixels>100);}
+ for(const colour of ['blue-navy','pink'])assert.deepEqual(report.find(x=>x.file==='bed-'+colour+'-v1.webp').size,report.find(x=>x.file==='bed-front-'+colour+'-v1.webp').size);
 });
 console.log(count+' room tests passed');

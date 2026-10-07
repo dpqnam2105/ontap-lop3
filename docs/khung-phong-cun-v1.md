@@ -39,3 +39,7 @@ Viewports: wide x=0,w=1000; narrow x=140,w=720 cho màn ≤750px. Cùng sân kh�
 Vùng an toàn hình x=140–860: toàn bộ hộp ảnh năm món và spot nằm bên trong. Chỉ cửa sổ/tranh nền được ra ngoài. Giường tâm690 rộng330, cây tâm230 rộng160. WalkArea chân x310–690,y390–585, đủ hộp cún trưởng thành rộng320. Nền vẫn 1000×625; không vẽ đồ chức năng dính nền ngoài vùng an toàn.
 
 Gỡ mirror ở PR riêng sau khi Nam xác nhận mọi máy đã tải bản có slots và không còn tab phiên bản cũ. Không tự bỏ theo ngày.
+
+## Phòng mẫu đã dựng trên nhánh pet-room-art
+
+Xem phong-cun-mau-v1.md và ảnh 390px/1280px. Món mặc định và nền đã có WebP; câu ghi img=null ở phần khung phía trên mô tả đợt trước. Wide có walkArea riêng x160–850; narrow giữ x310–690. Bộ hình mẫu chưa merge; biến thể trả sao được recolor từ hình mặc định trong cùng PR, xem phong-cun-mau-v1.md.
