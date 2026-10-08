@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Tách kiểm tra dữ liệu Tiếng Anh (Codex góp ý)
+- tests/en-data.test.js: quy tắc chung (ID, lựa chọn, đáp án, track/book, cấu trúc nguồn basis toc|school-weekly|page, đoạn đọc) tách khỏi quy tắc riêng lô 1 (theo source: toc, không trang, ghi chú phiên bản). Ghi rõ giới hạn: kiểm gợi ý chỉ bắt trùng nguyên văn đáp án. Không đổi dữ liệu.
+
 ## 2026-10-08 — Tiếng Anh lô 1: ôn NIK3 U1–U2 (Claude soạn, Codex duyệt nội dung)
 - +34 câu core (U1 16, U2 18): hội thoại, tình huống, mẫu câu Do/Does/Are…-ing, have to / doesn't have to theo nội quy nêu trong đề, nghĩa từ theo ngữ cảnh, 3 đoạn đọc (A, B, C). Chưa đổi nhãn 104 câu cũ (chốt riêng). Thêm tests/en-data.test.js.
 
