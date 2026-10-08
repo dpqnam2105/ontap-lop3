@@ -377,6 +377,705 @@
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q022",
         "stage": 1
+      },
+      {
+        "q": "\"Dinosaurs are extinct.\" In this sentence, \"extinct\" means:",
+        "choices": [
+          "đã tuyệt chủng",
+          "ăn thịt",
+          "ăn cỏ",
+          "rất to lớn"
+        ],
+        "a": 0,
+        "hint": "Nhớ lại từ mới trong bài về khủng long.",
+        "explain": "extinct nghĩa là đã tuyệt chủng. \"ăn thịt\" là carnivore, \"ăn cỏ\" là herbivore.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-01",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "extinct",
+            "herbivore",
+            "carnivore"
+          ],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q023"
+      },
+      {
+        "q": "\"Today is Sunday. Linh doesn't have to go to school.\" This means:",
+        "choices": [
+          "Linh không được phép đi học hôm nay.",
+          "Linh không bắt buộc phải đi học hôm nay.",
+          "Linh phải đi học hôm nay.",
+          "Linh không thích đi học."
+        ],
+        "a": 1,
+        "hint": "doesn't have to khác \"không được phép\" thế nào?",
+        "explain": "doesn't have to = không bắt buộc. \"Không được phép\" là nghĩa khác.",
+        "difficulty": 2,
+        "skill": "meaning-have-to",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-02",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "don't/doesn't have to"
+          ],
+          "extraWords": [
+            "Sunday"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q024"
+      },
+      {
+        "q": "A: \"Do you have to wear a uniform at school?\" B: \"___\"",
+        "choices": [
+          "Yes, I have.",
+          "Yes, I am.",
+          "Yes, I do.",
+          "Yes, I has."
+        ],
+        "a": 2,
+        "hint": "Câu hỏi bắt đầu bằng từ nào? Trả lời bằng chính từ đó.",
+        "explain": "Câu hỏi bắt đầu bằng Do → \"Yes, I do.\" Không trả lời \"Yes, I have\".",
+        "difficulty": 2,
+        "skill": "dialogue",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-03",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do… have to?"
+          ],
+          "extraWords": [
+            "wear",
+            "uniform"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q025"
+      },
+      {
+        "q": "Nội quy: Học sinh phải mặc đồng phục từ thứ Hai đến thứ Sáu. Chủ nhật không bắt buộc mặc đồng phục. Today is Tuesday. Mai is a student at this school. She ___ wear a uniform today.",
+        "choices": [
+          "doesn't have to",
+          "have to",
+          "has",
+          "has to"
+        ],
+        "a": 3,
+        "hint": "Thứ Ba có nằm trong ngày nội quy bắt buộc không? Chủ ngữ là \"she\".",
+        "explain": "Nội quy bắt buộc thứ Hai–thứ Sáu, hôm nay thứ Ba → she has to wear.",
+        "difficulty": 2,
+        "skill": "situation-have-to",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-04",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "has/have to"
+          ],
+          "extraWords": [
+            "wear",
+            "uniform",
+            "Tuesday"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q026"
+      },
+      {
+        "q": "Nội quy: Học sinh phải mặc đồng phục từ thứ Hai đến thứ Sáu. Chủ nhật không bắt buộc mặc đồng phục. Today is Sunday. Mai stays at home. She ___ wear a uniform today.",
+        "choices": [
+          "doesn't have to",
+          "has to",
+          "don't have to",
+          "doesn't has to"
+        ],
+        "a": 0,
+        "hint": "Nội quy nói gì về Chủ nhật? Chủ ngữ là \"she\".",
+        "explain": "Nội quy ghi rõ Chủ nhật không bắt buộc → she doesn't have to wear. Sau doesn't dùng \"have\".",
+        "difficulty": 2,
+        "skill": "situation-have-to",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-05",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "doesn't have to"
+          ],
+          "extraWords": [
+            "wear",
+            "uniform",
+            "Sunday",
+            "stay at home"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q027"
+      },
+      {
+        "q": "In the museum, you can look at the exhibits, but you can't touch them. Which sign is right?",
+        "choices": [
+          "PLEASE TOUCH.",
+          "DON'T TOUCH.",
+          "DON'T LOOK.",
+          "TOUCH SLOWLY."
+        ],
+        "a": 1,
+        "hint": "Điều gì không được làm trong bảo tàng?",
+        "explain": "\"can't touch\" → biển \"DON'T TOUCH.\" Vẫn được nhìn nên không chọn DON'T LOOK.",
+        "difficulty": 1,
+        "skill": "situation",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-06",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "exhibit",
+            "museum",
+            "don't + imperative"
+          ],
+          "extraWords": [
+            "touch",
+            "look",
+            "sign",
+            "slowly"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q028"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "He don't have to wear a hat.",
+          "He doesn't has to wear a hat.",
+          "He doesn't have to wear a hat.",
+          "He not have to wear a hat."
+        ],
+        "a": 2,
+        "hint": "Với \"he\": doesn't + have to + động từ.",
+        "explain": "He → doesn't have to + động từ nguyên mẫu.",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-07",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "doesn't have to"
+          ],
+          "extraWords": [
+            "wear",
+            "hat"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q029"
+      },
+      {
+        "q": "Nội quy bảo tàng: Mọi người phải mua vé. Trẻ em dưới 6 tuổi không phải mua vé. Ben is 8. His sister Kim is 4. Which sentence is right?",
+        "choices": [
+          "Ben doesn't have to buy a ticket.",
+          "Kim has to buy a ticket.",
+          "Ben and Kim don't have to buy tickets.",
+          "Ben has to buy a ticket."
+        ],
+        "a": 3,
+        "hint": "So tuổi từng bạn với mốc 6 tuổi.",
+        "explain": "Ben 8 tuổi, không thuộc nhóm dưới 6 tuổi → Ben has to buy a ticket. Kim 4 tuổi thì không phải mua.",
+        "difficulty": 3,
+        "skill": "situation-have-to",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-08",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "has to / don't have to",
+            "museum"
+          ],
+          "extraWords": [
+            "buy",
+            "ticket"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q030"
+      },
+      {
+        "q": "\"Diplodocus eats leaves and plants. It doesn't eat meat.\" It is a ___.",
+        "choices": [
+          "herbivore",
+          "carnivore",
+          "claw",
+          "tail"
+        ],
+        "a": 0,
+        "hint": "Con vật này ăn gì, không ăn gì?",
+        "explain": "Chỉ ăn lá và cây, không ăn thịt → herbivore.",
+        "difficulty": 1,
+        "skill": "vocab-context",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-09",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "herbivore",
+            "carnivore",
+            "claw",
+            "tail"
+          ],
+          "extraWords": [
+            "Diplodocus (tên riêng)",
+            "leaves",
+            "plants",
+            "meat"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q031"
+      },
+      {
+        "q": "\"The T-Rex has sharp claws. It uses them to catch food.\" What are claws?",
+        "choices": [
+          "cái đuôi",
+          "móng vuốt",
+          "cái sừng",
+          "răng"
+        ],
+        "a": 1,
+        "hint": "Bộ phận sắc nhọn ở chân dùng để bắt mồi.",
+        "explain": "claws = móng vuốt. Răng tiếng Anh là teeth.",
+        "difficulty": 1,
+        "skill": "vocab-context",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-10",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "claw",
+            "tail"
+          ],
+          "extraWords": [
+            "T-Rex",
+            "sharp",
+            "catch",
+            "food"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q032"
+      },
+      {
+        "q": "\"The dinosaur has a long tail.\" Where is the tail?",
+        "choices": [
+          "on its head",
+          "on its feet",
+          "at the back of its body",
+          "in its mouth"
+        ],
+        "a": 2,
+        "hint": "Cái đuôi nằm ở đâu trên cơ thể con vật?",
+        "explain": "tail = cái đuôi, ở phía sau thân → at the back of its body.",
+        "difficulty": 1,
+        "skill": "vocab-context",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-11",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "tail"
+          ],
+          "extraWords": [
+            "back",
+            "body",
+            "head",
+            "feet",
+            "mouth"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q033"
+      },
+      {
+        "q": "\"There is a lot of treasure in the pharaoh's tomb.\" In this sentence, \"treasure\" means:",
+        "choices": [
+          "lăng mộ",
+          "nhà khảo cổ",
+          "hiện vật trưng bày",
+          "kho báu"
+        ],
+        "a": 3,
+        "hint": "Thứ gì quý giá được để trong lăng mộ?",
+        "explain": "treasure = kho báu. tomb = lăng mộ, archeologist = nhà khảo cổ, exhibit = hiện vật trưng bày.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-12",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "treasure",
+            "tomb",
+            "pharaoh",
+            "archeologist",
+            "exhibit"
+          ],
+          "extraWords": [
+            "There is (đã học, foundation)"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q034"
+      },
+      {
+        "q": "A: \"Do we have to be quiet in the museum?\" B: \"___\"",
+        "choices": [
+          "Yes, we do.",
+          "Yes, we have.",
+          "Yes, we are.",
+          "No, we aren't."
+        ],
+        "a": 0,
+        "hint": "Câu hỏi bắt đầu bằng Do we…",
+        "explain": "Hỏi \"Do we…?\" → \"Yes, we do.\"",
+        "difficulty": 2,
+        "skill": "dialogue",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-13",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do… have to?",
+            "museum"
+          ],
+          "extraWords": [
+            "quiet"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q035"
+      },
+      {
+        "q": "Read: \"This is the tomb of a pharaoh in Egypt. It has a lot of gold treasure inside. Today, two archeologists are working in the tomb. They have to move very slowly. On Fridays, they don't have to work. They stay at home.\" Who is working in the tomb today?",
+        "choices": [
+          "the pharaoh",
+          "two archeologists",
+          "two teachers",
+          "two children"
+        ],
+        "a": 1,
+        "hint": "Tìm câu có \"Today\".",
+        "explain": "\"Today, two archeologists are working in the tomb.\"",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-14",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "tomb",
+            "pharaoh",
+            "treasure",
+            "archeologist",
+            "have to / don't have to",
+            "Are…-ing"
+          ],
+          "extraWords": [
+            "Egypt",
+            "gold",
+            "inside",
+            "move",
+            "Friday",
+            "stay at home",
+            "teachers",
+            "children"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q036",
+        "passage": "en-lo1-B"
+      },
+      {
+        "q": "Read: \"This is the tomb of a pharaoh in Egypt. It has a lot of gold treasure inside. Today, two archeologists are working in the tomb. They have to move very slowly. On Fridays, they don't have to work. They stay at home.\" What do the archeologists have to do in the tomb?",
+        "choices": [
+          "work on Fridays",
+          "take the gold home",
+          "move very slowly",
+          "stay at home"
+        ],
+        "a": 2,
+        "hint": "Tìm câu có \"have to\".",
+        "explain": "\"They have to move very slowly.\"",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-15",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "tomb",
+            "pharaoh",
+            "treasure",
+            "archeologist",
+            "have to / don't have to",
+            "Are…-ing"
+          ],
+          "extraWords": [
+            "Egypt",
+            "gold",
+            "inside",
+            "move",
+            "Friday",
+            "stay at home",
+            "take … home"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q037",
+        "passage": "en-lo1-B"
+      },
+      {
+        "q": "Read: \"This is the tomb of a pharaoh in Egypt. It has a lot of gold treasure inside. Today, two archeologists are working in the tomb. They have to move very slowly. On Fridays, they don't have to work. They stay at home.\" What do the archeologists do on Fridays?",
+        "choices": [
+          "They have to work.",
+          "They move slowly in the tomb.",
+          "They work in the tomb.",
+          "They stay at home."
+        ],
+        "a": 3,
+        "hint": "Tìm câu nói về Fridays và câu ngay sau nó.",
+        "explain": "Đoạn viết \"They stay at home.\" ở câu cuối.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-16",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "tomb",
+            "pharaoh",
+            "treasure",
+            "archeologist",
+            "have to / don't have to",
+            "Are…-ing"
+          ],
+          "extraWords": [
+            "Egypt",
+            "gold",
+            "inside",
+            "move",
+            "Friday",
+            "stay at home"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit2_q038",
+        "passage": "en-lo1-B"
+      },
+      {
+        "q": "Read: \"Lan is an archeologist. Today she is working near a tomb. She finds a small gold statue of a cat (statue = bức tượng). It is very old, so she has to be careful with it. Lan doesn't have to work tomorrow.\" Why does Lan have to be careful with the statue?",
+        "choices": [
+          "Because it is very old.",
+          "Because she doesn't have to work tomorrow.",
+          "Because she is near a museum.",
+          "Because the statue is big."
+        ],
+        "a": 0,
+        "hint": "Tìm câu có \"so she has to be careful\".",
+        "explain": "\"It is very old, so she has to be careful with it.\" → Because it is very old.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-17",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "archeologist",
+            "tomb",
+            "has to / doesn't have to"
+          ],
+          "extraWords": [
+            "gold",
+            "statue (có chú nghĩa trong đoạn)",
+            "find",
+            "careful",
+            "tomorrow",
+            "big"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08",
+          "supplementRef": "careful — phiếu bổ trợ tuần 6–8 của trường (Unit2-Adjectives-Adverbs, 28/09/2026; source bo-tro-tuan6-8-20261001)"
+        },
+        "id": "en_nik3-unit2_q039",
+        "passage": "en-lo1-C"
+      },
+      {
+        "q": "Read: \"Lan is an archeologist. Today she is working near a tomb. She finds a small gold statue of a cat (statue = bức tượng). It is very old, so she has to be careful with it. Lan doesn't have to work tomorrow.\" What does Lan find?",
+        "choices": [
+          "a big gold statue of a cat",
+          "a small gold statue of a cat",
+          "a pharaoh's tomb",
+          "a dinosaur tail"
+        ],
+        "a": 1,
+        "hint": "Tìm câu có \"She finds\".",
+        "explain": "\"She finds a small gold statue of a cat.\" Tượng nhỏ, không phải tượng to.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U2-18",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U2; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "archeologist",
+            "tomb",
+            "pharaoh",
+            "tail"
+          ],
+          "extraWords": [
+            "gold",
+            "statue (có chú nghĩa trong đoạn)",
+            "find",
+            "small",
+            "big"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08",
+          "supplementRef": "careful — phiếu bổ trợ tuần 6–8 của trường (Unit2-Adjectives-Adverbs, 28/09/2026; source bo-tro-tuan6-8-20261001)"
+        },
+        "id": "en_nik3-unit2_q040",
+        "passage": "en-lo1-C"
       }
     ]
   }

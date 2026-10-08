@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-08 — Tiếng Anh lô 1: ôn NIK3 U1–U2 (Claude soạn, Codex duyệt nội dung)
+- +34 câu core (U1 16, U2 18): hội thoại, tình huống, mẫu câu Do/Does/Are…-ing, have to / doesn't have to theo nội quy nêu trong đề, nghĩa từ theo ngữ cảnh, 3 đoạn đọc (A, B, C). Chưa đổi nhãn 104 câu cũ (chốt riêng). Thêm tests/en-data.test.js.
+
 ## 2026-10-08 — Phản hồi Thỏ (nhánh pet-smooth-growth, chờ review)
 - Giữ vị trí cún qua render, đi tới nơi mới làm hành động, quay hướng và dừng CSS/RAF khi ẩn tab; thêm test chuyển động. Chỉnh atlas trưởng thành v3 cho đầu/mặt cân đối, rà lại neo nơ và silhouette chống lẫn ô. Nới phòng mobile/desktop nhẹ; không thêm nhà tắm, không đổi dữ liệu/giá/luật. Kèm GIF và ảnh trước/sau để duyệt.
 

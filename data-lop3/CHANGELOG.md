@@ -7,6 +7,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-08 (Claude — Tiếng Anh lô 1, Codex duyệt nội dung)
+- Tiếng Anh / NIK3 Unit 1 — +16 câu en_nik3-unit1_q023–q038; NIK3 Unit 2 — +18 câu en_nik3-unit2_q023–q040. source claude-nik3-lo1-20261008, track core, book nik3, stage 1.
+- Nhãn mới: `book`, `track` (core|foundation|enrich), `ref` {basis "toc", note (mục lục chưa xác nhận khớp sách trường), toc[], extraWords[], supplementRef?, contentReview}, `passage` (en-lo1-A/B/C, đoạn viết trong q). Không ghi số trang.
+- Đáp án xoay đều A/B/C/D (U1 4/4/4/4, U2 5/5/4/4). Mỗi câu có hint (không lộ đáp án) và explain.
+
 ## 2026-10-07 (Claude — vòng 10, lô 1, Codex duyệt)
 - Toán / Bảng nhân, chia + Ôn tập + Giải toán — `lesson` cho 93 câu (basis muc-luc); on-tap q006 → B10 suy-luan.
 - Sửa gợi ý bang-nhan q006, q037, q074 (đếm thêm đến lần thứ 10), on-tap q006 ("Đổi thành 7 × 8 rồi dùng bảng nhân 7."). Skill on-tap q006 → times-7, q008 → divide-8.

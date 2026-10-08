@@ -377,6 +377,587 @@
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q022",
         "stage": 1
+      },
+      {
+        "q": "A: \"Excuse me. Where is the museum?\" B: \"___\"",
+        "choices": [
+          "It's beside the theater.",
+          "Yes, it is.",
+          "I'm going to the museum.",
+          "Don't go to the theater."
+        ],
+        "a": 0,
+        "hint": "Câu hỏi bắt đầu bằng Where → cần trả lời bằng một vị trí.",
+        "explain": "Where hỏi vị trí → trả lời \"It's beside the theater.\" \"Yes, it is\" chỉ trả lời câu hỏi Is…?",
+        "difficulty": 1,
+        "skill": "dialogue",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-01",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "beside",
+            "museum",
+            "theater"
+          ],
+          "extraWords": [
+            "excuse me"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q023"
+      },
+      {
+        "q": "Your friend is talking loudly in the museum. What do you say?",
+        "choices": [
+          "Please talk more loudly.",
+          "Please don't talk loudly.",
+          "Don't look at the paintings.",
+          "Let's run to the theater."
+        ],
+        "a": 1,
+        "hint": "Con muốn bạn DỪNG việc gì? Dùng Don't + việc đó.",
+        "explain": "Muốn bạn thôi nói to → \"Please don't talk loudly.\"",
+        "difficulty": 1,
+        "skill": "situation",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-02",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "don't + imperative",
+            "museum",
+            "theater"
+          ],
+          "extraWords": [
+            "talk",
+            "loudly",
+            "paintings"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q024"
+      },
+      {
+        "q": "Look! Mai ___ to the harbor now.",
+        "choices": [
+          "walks",
+          "walk",
+          "is walking",
+          "walking"
+        ],
+        "a": 2,
+        "hint": "Mai đang làm việc đó ngay lúc này hay làm thường xuyên?",
+        "explain": "Mai đang đi bộ ở thời điểm nói → is walking. \"walking\" thiếu \"is\".",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-03",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Is…-ing",
+            "harbor"
+          ],
+          "extraWords": [
+            "walk"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q025"
+      },
+      {
+        "q": "A: \"Are you going to the museum now?\" B: \"___\"",
+        "choices": [
+          "Yes, I do.",
+          "Yes, it is.",
+          "No, he isn't.",
+          "Yes, I am."
+        ],
+        "a": 3,
+        "hint": "Câu hỏi bắt đầu bằng Are you… thì trả lời bằng I + gì?",
+        "explain": "Hỏi \"Are you…?\" → trả lời \"Yes, I am.\" \"I do\" dùng cho câu hỏi Do you…?",
+        "difficulty": 1,
+        "skill": "dialogue",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-04",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Are…-ing",
+            "museum"
+          ],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q026"
+      },
+      {
+        "q": "Choose the question for this answer: \"No, she doesn't. She goes by bike.\"",
+        "choices": [
+          "Does she go to school by bus?",
+          "Is she going to school by bus?",
+          "Do she go to school by bus?",
+          "Does she goes to school by bus?"
+        ],
+        "a": 0,
+        "hint": "Câu trả lời dùng \"doesn't\" → câu hỏi bắt đầu bằng từ nào?",
+        "explain": "\"No, she doesn't\" trả lời câu Does she + động từ nguyên mẫu. \"Is she going…?\" sẽ trả lời \"No, she isn't\".",
+        "difficulty": 2,
+        "skill": "grammar",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-05",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do/Does…?"
+          ],
+          "extraWords": [
+            "bike",
+            "bus"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q027"
+      },
+      {
+        "q": "Read: \"Kim's house is close to the harbor. Every Saturday, she goes to the art gallery. The art gallery is beside her house, so she walks there. Kim doesn't take the bus.\" How does Kim go to the art gallery?",
+        "choices": [
+          "She takes the bus.",
+          "She walks.",
+          "She goes by boat.",
+          "She goes by car."
+        ],
+        "a": 1,
+        "hint": "Tìm câu có chữ \"so\" trong đoạn.",
+        "explain": "Đoạn viết \"so she walks there\" và \"Kim doesn't take the bus\".",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-06",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "close to",
+            "beside",
+            "harbor",
+            "art gallery"
+          ],
+          "extraWords": [
+            "walk",
+            "boat"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q028",
+        "passage": "en-lo1-A"
+      },
+      {
+        "q": "Read: \"Kim's house is close to the harbor. Every Saturday, she goes to the art gallery. The art gallery is beside her house, so she walks there. Kim doesn't take the bus.\" Where is the art gallery?",
+        "choices": [
+          "far from Kim's house",
+          "beside the theater",
+          "beside Kim's house",
+          "below the harbor"
+        ],
+        "a": 2,
+        "hint": "Tìm câu bắt đầu bằng \"The art gallery is…\".",
+        "explain": "\"The art gallery is beside her house\" → beside Kim's house.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-07",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "beside",
+            "below",
+            "harbor",
+            "art gallery",
+            "theater"
+          ],
+          "extraWords": [
+            "far from"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q029",
+        "passage": "en-lo1-A"
+      },
+      {
+        "q": "Read: \"Kim's house is close to the harbor. Every Saturday, she goes to the art gallery. The art gallery is beside her house, so she walks there. Kim doesn't take the bus.\" Does Kim take the bus to the art gallery?",
+        "choices": [
+          "Yes, she does.",
+          "No, she isn't.",
+          "Yes, she is.",
+          "No, she doesn't."
+        ],
+        "a": 3,
+        "hint": "Đọc câu cuối của đoạn; câu hỏi bắt đầu bằng Does.",
+        "explain": "Đoạn viết \"Kim doesn't take the bus\"; hỏi Does → \"No, she doesn't.\"",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-08",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do/Does…?"
+          ],
+          "extraWords": [
+            "bus"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q030",
+        "passage": "en-lo1-A"
+      },
+      {
+        "q": "A: \"Does your dad go to the harbor every morning?\" B: \"Yes, he does. He ___ there by bike.\"",
+        "choices": [
+          "goes",
+          "go",
+          "going",
+          "to go"
+        ],
+        "a": 0,
+        "hint": "Bố làm việc này mỗi sáng; chủ ngữ là \"he\".",
+        "explain": "Thói quen mỗi sáng của \"he\" → goes.",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-09",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do/Does…? + time expressions",
+            "harbor"
+          ],
+          "extraWords": [
+            "bike"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q031"
+      },
+      {
+        "q": "You are at the harbor with your little brother. He is very close to the water. What do you say?",
+        "choices": [
+          "Go close to the water!",
+          "Don't go close to the water!",
+          "Don't look at the boats!",
+          "Let's swim to the boats!"
+        ],
+        "a": 1,
+        "hint": "Em đang ở chỗ nguy hiểm. Con khuyên em đừng làm gì?",
+        "explain": "Em sát mép nước, nguy hiểm → \"Don't go close to the water!\"",
+        "difficulty": 1,
+        "skill": "situation",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-10",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "don't + imperative",
+            "harbor",
+            "close to"
+          ],
+          "extraWords": [
+            "water",
+            "boats",
+            "swim"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q032"
+      },
+      {
+        "q": "Con đang đứng ở ngã tư. Muốn đến nhà hát (theater), con phải đi vào con đường bên tay trái. What do you say?",
+        "choices": [
+          "Turn right.",
+          "Don't turn left.",
+          "Turn left.",
+          "Go back home."
+        ],
+        "a": 2,
+        "hint": "Con đường cần đi nằm bên tay nào?",
+        "explain": "Phải đi đường bên trái → \"Turn left.\"",
+        "difficulty": 1,
+        "skill": "situation",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-11",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "imperative",
+            "theater"
+          ],
+          "extraWords": [
+            "turn left",
+            "turn right"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q033"
+      },
+      {
+        "q": "Mai is at the recreation center. She is in the pool now. \"___ Mai swimming now?\" – \"Yes, she is.\"",
+        "choices": [
+          "Does",
+          "Are",
+          "Do",
+          "Is"
+        ],
+        "a": 3,
+        "hint": "Câu trả lời là \"she is\" → câu hỏi bắt đầu bằng từ nào?",
+        "explain": "Hỏi việc Mai đang làm, trả lời \"she is\" → Is Mai swimming now?",
+        "difficulty": 1,
+        "skill": "grammar",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-12",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Is…-ing",
+            "recreation center"
+          ],
+          "extraWords": [
+            "pool",
+            "swim"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q034"
+      },
+      {
+        "q": "A: \"Is your brother reading at the art gallery?\" B: \"No, he ___. He is drawing pictures.\"",
+        "choices": [
+          "isn't",
+          "doesn't",
+          "aren't",
+          "not"
+        ],
+        "a": 0,
+        "hint": "Câu hỏi bắt đầu bằng Is → câu trả lời dùng lại từ đó.",
+        "explain": "Hỏi \"Is…?\" → \"No, he isn't.\"",
+        "difficulty": 1,
+        "skill": "dialogue",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-13",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Is…-ing",
+            "art gallery"
+          ],
+          "extraWords": [
+            "reading",
+            "drawing pictures"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q035"
+      },
+      {
+        "q": "Read: \"The theater is close to the museum. The art gallery is far from the museum.\" Which place is far from the museum?",
+        "choices": [
+          "the theater",
+          "the art gallery",
+          "the museum",
+          "the theater and the art gallery"
+        ],
+        "a": 1,
+        "hint": "Tìm câu có \"far from the museum\".",
+        "explain": "Câu 2: \"The art gallery is far from the museum.\" Theater thì \"close to\".",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-14",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "close to",
+            "museum",
+            "theater",
+            "art gallery"
+          ],
+          "extraWords": [
+            "far from"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q036"
+      },
+      {
+        "q": "My bedroom is above the kitchen. The kitchen is ___ my bedroom.",
+        "choices": [
+          "above",
+          "beside",
+          "below",
+          "inside"
+        ],
+        "a": 2,
+        "hint": "Phòng ngủ ở trên → bếp ở đâu?",
+        "explain": "above/below là vị trí trên–dưới; beside là bên cạnh; inside là bên trong. Phòng ngủ ở trên nên bếp ở dưới → below.",
+        "difficulty": 2,
+        "skill": "prepositions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-15",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "above",
+            "below",
+            "beside"
+          ],
+          "extraWords": [
+            "bedroom",
+            "kitchen",
+            "inside"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q037"
+      },
+      {
+        "q": "A: \"Do you walk to school?\" B: \"No, I ___. I go by bus.\"",
+        "choices": [
+          "doesn't",
+          "am not",
+          "isn't",
+          "don't"
+        ],
+        "a": 3,
+        "hint": "Câu hỏi bắt đầu bằng Do you…",
+        "explain": "Hỏi \"Do you…?\" → \"No, I don't.\" doesn't dùng cho he/she.",
+        "difficulty": 1,
+        "skill": "dialogue",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo1-20261008",
+        "draftCode": "U1-16",
+        "ref": {
+          "basis": "toc",
+          "note": "Tự biên soạn theo mục tiêu NIK3 U1; căn cứ mục lục. Mục lục NIK3 đang lưu chưa xác nhận khớp phiên bản sách trường dùng.",
+          "toc": [
+            "Do/Does…?"
+          ],
+          "extraWords": [
+            "walk",
+            "bus"
+          ],
+          "contentReview": "codex-noi-dung-20261008",
+          "by": "claude",
+          "date": "2026-10-08"
+        },
+        "id": "en_nik3-unit1_q038"
       }
     ]
   }
