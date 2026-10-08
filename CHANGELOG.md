@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Tiếng Anh U3: thêm V23 "blanket", sửa test phủ từ (Codex duyệt)
+- +1 câu en_nik3-unit3_q023 ("cái chăn" → blanket), giữ nguyên ID/thứ tự 22 câu cũ; index count 23. Test phủ từ chỉ đếm chữ bé nhìn thấy (đề + lựa chọn), bỏ ref.schoolWords; mỗi từ trường là trọng tâm ≥ 2 câu; ghi rõ đây là kiểm tra sơ bộ.
+
 ## 2026-10-09 — Tiếng Anh lô 2: NIK3 U3 Vocabulary 1 (Claude soạn, Codex duyệt nội dung)
 - Chủ đề mới "NIK3 Unit 3: Vacation & camping" (nik3-unit3.json, 22 câu, Giai đoạn 2): nghĩa từ hai chiều, chọn đồ theo tình huống, cụm hành động, phân loại, đoạn đọc D tự biên soạn. Nguồn school-weekly (lịch tuần 7, trang 38–39 do trường chỉ định). Hồ sơ để GĐ1 không thấy U3; chọn GĐ2 thì thấy U3, kế hoạch và đề trộn tuần lấy được câu U3. tests/en-data.test.js thêm quy tắc lô 2.
 

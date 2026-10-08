@@ -889,6 +889,43 @@
         "id": "en_nik3-unit3_q022",
         "passage": "en-lo2-D",
         "passageNote": "Đoạn tự biên soạn để ôn từ U3 + hiện tại tiếp diễn (U1); KHÔNG phải Reading 1 \"A relaxing vacation\" trong sách."
+      },
+      {
+        "q": "\"cái chăn\" in English is:",
+        "choices": [
+          "sleeping bag",
+          "flashlight",
+          "blanket",
+          "camping stove"
+        ],
+        "a": 2,
+        "hint": "Thứ con đắp lên người cho ấm khi ngủ.",
+        "explain": "cái chăn = blanket. sleeping bag là túi ngủ (chui vào bên trong).",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V23",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "blanket",
+            "sleeping bag",
+            "flashlight",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q023"
       }
     ]
   }

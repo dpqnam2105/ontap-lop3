@@ -13,20 +13,21 @@ const BASES = new Set(['toc', 'school-weekly', 'page']);
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
 const BATCH_RULES = {
-  'claude-nik3-lo2-u3v1-20261009': { count: 22, passages: ['en-lo2-D'], check(q, err) {
+  'claude-nik3-lo2-u3v1-20261009': { count: 23, passages: ['en-lo2-D'], check(q, err) {
     if (q.ref.basis !== 'school-weekly' || q.ref.scheduledPages !== '38–39') err('lô 2 phải school-weekly, scheduledPages 38–39');
     if (q.stage !== 2 || q.unit !== 'nik3-unit3') err('lô 2 phải stage 2, unit nik3-unit3');
     if (q.passage && !/tự biên soạn/.test(q.passageNote || '')) err('đoạn D phải ghi tự biên soạn');
     if (/please\s+(___\s+)?get lost/i.test(q.q + ' ' + q.choices.join(' '))) err('không dùng "Please get lost"');
     q.ref.schoolWords.forEach(w => { if (!LO2_WORDS.includes(w)) err('schoolWords lạ: ' + w); });
   }, after(qs, errs) {
-    // Mỗi từ/cụm của trường: là trọng tâm (nằm trong đề hoặc đáp án đúng) ở ≥ 1 câu và xuất hiện (đề hoặc bất kỳ lựa chọn) ở ≥ 2 câu.
-    // Lưu ý: "blanket" hiện chỉ là trọng tâm ở 1 câu (V8) — đề xuất thêm 1 câu ở lượt rà sau.
+    // Kiểm tra SƠ BỘ độ phủ 10 từ/cụm của trường, chỉ đếm chữ bé nhìn thấy (đề + lựa chọn), KHÔNG đếm metadata (ref.schoolWords).
+    // "Trọng tâm" = từ nằm trong đề hoặc đáp án đúng, ≥ 2 câu; "xuất hiện" = đề hoặc bất kỳ lựa chọn, ≥ 2 câu.
+    // Giới hạn: từ nằm trong đoạn đọc chưa chắc là kỹ năng câu hỏi đang kiểm — việc đó vẫn cần người rà.
     const has = (txt, w) => txt.toLowerCase().includes(w) || (w === 'set up a tent' && /setting up a tent/i.test(txt));
     for (const w of LO2_WORDS) {
       const focus = qs.filter(q => has(q.q + ' ' + q.choices[q.a], w)).length;
-      const seen = qs.filter(q => has(q.q + ' ' + q.choices.join(' ') + ' ' + q.ref.schoolWords.join(' '), w)).length;
-      if (focus < 1 || seen < 2) errs.push('lô 2: "' + w + '" trọng tâm ' + focus + ', xuất hiện ' + seen);
+      const seen = qs.filter(q => has(q.q + ' ' + q.choices.join(' '), w)).length;
+      if (focus < 2 || seen < 2) errs.push('lô 2: "' + w + '" trọng tâm ' + focus + ', xuất hiện ' + seen);
     }
   } },
   'claude-nik3-lo1-20261008': { count: 34, passages: ['en-lo1-A', 'en-lo1-B', 'en-lo1-C'], check(q, err) {

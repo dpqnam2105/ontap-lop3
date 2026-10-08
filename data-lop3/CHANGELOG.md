@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-09 (Claude — Tiếng Anh U3 bổ sung, Codex duyệt)
+- Tiếng Anh / NIK3 Unit 3 — +1 câu en_nik3-unit3_q023 (V23: "cái chăn" in English is → blanket), đáp án vị trí C. 22 câu cũ giữ nguyên ID/thứ tự.
+
 ## 2026-10-09 (Claude — Tiếng Anh lô 2, Codex duyệt nội dung)
 - Tiếng Anh / NIK3 Unit 3 (chủ đề mới en_nik3-unit3) — +22 câu en_nik3-unit3_q001–q022 (mã nháp V1–V22). source claude-nik3-lo2-u3v1-20261009, track core, book nik3, stage 2.
 - ref: basis "school-weekly", scheduledPages "38–39" (trang lịch trường chỉ định, chưa đối chiếu trực tiếp), schoolWords, extraWords; trash can = supplementRef (nhãn trong tranh trên lịch tuần 7). Đoạn D (en-lo2-D) có passageNote "tự biên soạn, không phải Reading 1".
