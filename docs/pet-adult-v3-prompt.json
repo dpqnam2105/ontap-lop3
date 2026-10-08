@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-08",
+  "prompt": "Edit target: the exact supplied transparent 4x4 sprite atlas of one adult brown fluffy toy poodle. Make ONLY adult proportions more balanced and cute: increase HEAD AND FACE together by about 25–30% relative to its torso in every one of the 16 poses. Eyes and muzzle readable and larger, keep same identity, warm apricot brown curled fur, expression and soft lighting, mature taller legs and body (not a newborn). Slightly reduce bulky chest/torso if needed. Preserve exactly the same 16 poses, same order, 4 equal columns x4 equal rows. Row1 idle, walkA, sit, sleep; row2 wake/stretch, eat, wagA, tilt; row3 hop, sniff, chase, happy; row4 celebrate, walkB, wagB, rest. Keep entire sprite within its own cell with at least 12px transparent gap at cell boundaries. No overlaps, no stray pixels from adjacent cells. Real transparent background, no text, no UI, no bow/accessory. Preserve camera and brown fur palette; no new characters. This is a proportion edit, not a redesign. Square canvas.",
+  "source": "assets/pet/dog-fluffy-brown-stage2-v2.webp",
+  "output": "assets/pet/dog-fluffy-brown-stage2-v3.webp",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 451824,
+  "quality": 86,
+  "alphaExact": true
+}

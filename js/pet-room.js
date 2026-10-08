@@ -6,17 +6,17 @@ const PetRoom = {
   TEMPLATES:{
     'room-cozy-v1':{
       id:'room-cozy-v1',width:1000,height:625,
-      viewports:{wide:{x:0,w:1000,walkArea:{polygon:[[160,390],[850,390],[850,585],[160,585]]}},narrow:{x:140,w:720,minWidthPx:0,maxWidthPx:750,walkArea:{polygon:[[310,390],[690,390],[690,585],[310,585]]}}},
+      viewports:{wide:{x:0,w:1000,walkArea:{polygon:[[160,390],[850,390],[850,585],[160,585]]}},narrow:{x:120,w:760,minWidthPx:0,maxWidthPx:750,walkArea:{polygon:[[290,390],[710,390],[710,585],[290,585]]}}},
       background:{img:'assets/pet/room/cozy-background-v1.webp',horizon:320,wall:'#fbefdf',floor:'#edcca4'},
       dog:{widthByStage:[255,295,320],spawn:{x:490,y:520},wander:{x:300,y:80},speech:{x:500,y:95}},
       slots:{
         bed:{x:690,y:445,w:330,h:185,layer:'back',frontLayer:'depth',frontDepthY:457,spot:{x:690,y:425},does:['sleep']},
-        plant:{x:230,y:395,w:160,h:210,layer:'depth',spot:{x:310,y:435},does:['sniff']},
-        rug:{x:500,y:605,w:720,h:150,layer:'floor',spot:{x:500,y:530},does:['rest']},
-        bowl:{x:300,y:555,w:130,h:80,layer:'depth',spot:{x:335,y:530},does:['eat']},
-        toy:{x:750,y:555,w:100,h:80,layer:'depth',spot:{x:680,y:530},does:['play']}
+        plant:{x:230,y:395,w:150,h:200,layer:'depth',spot:{x:310,y:435},does:['sniff']},
+        rug:{x:500,y:605,w:680,h:145,layer:'floor',spot:{x:500,y:530},does:['rest']},
+        bowl:{x:300,y:555,w:120,h:76,layer:'depth',spot:{x:335,y:530},does:['eat']},
+        toy:{x:750,y:555,w:90,h:75,layer:'depth',spot:{x:680,y:530},does:['play']}
       },
-      walkArea:{polygon:[[310,390],[690,390],[690,585],[310,585]]}
+      walkArea:{polygon:[[290,390],[710,390],[710,585],[290,585]]}
     }
   },
   own(object,key){return !!object && Object.hasOwn(object,key);},

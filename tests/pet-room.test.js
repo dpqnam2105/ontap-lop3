@@ -58,13 +58,13 @@ test('JSON backup preserves nested room, equipment, stars and reserved pos',()=>
 test('mobile viewport contains every furniture box and exact action spot for all stages',()=>{
  const b=boot(),room=b.R.normalize(null),t=b.R.template(room);
  for(const px of [360,390,750]){
-  const v=b.R.viewport(room,px);assert.equal(v.x,140);assert.equal(v.w,720);
+  const v=b.R.viewport(room,px);assert.equal(v.x,120);assert.equal(v.w,760);
   for(const slot of Object.keys(t.slots)){
    const p=b.R.placement(room,slot);assert.ok(p.x-p.w/2>=140&&p.x+p.w/2<=860);
    for(let stage=0;stage<3;stage++)assert.deepEqual(plain(b.R.clamp(room,p.spot,stage,px)),plain(p.spot));
   }
   for(let stage=0;stage<3;stage++)for(const x of [-999,9999]){
-   const p=b.R.clamp(room,{x,y:555},stage,px),w=t.dog.widthByStage[stage];assert.ok(p.x-w/2>=140&&p.x+w/2<=860);
+   const p=b.R.clamp(room,{x,y:555},stage,px),w=t.dog.widthByStage[stage];assert.ok(p.x-w/2>=v.x&&p.x+w/2<=v.x+v.w);
   }
  }
  assert.equal(b.R.viewport(room,751).w,1000);
@@ -72,7 +72,7 @@ test('mobile viewport contains every furniture box and exact action spot for all
 test('desktop wander is wider than mobile and still contains the whole dog',()=>{
  const b=boot(),r=b.R.normalize(null);
  const wide=b.R.clamp(r,{x:100,y:530},2,1280),narrow=b.R.clamp(r,{x:100,y:530},2,390);
- assert.ok(wide.x<narrow.x);assert.ok(wide.x>=168);assert.equal(narrow.x,310);
+ assert.ok(wide.x<narrow.x);assert.ok(wide.x>=168);assert.equal(narrow.x,290);
 });
 test('every paid item has real artwork, bed layers keep the same canvas',()=>{
  const b=boot();

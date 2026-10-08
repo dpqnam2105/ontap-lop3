@@ -26,7 +26,7 @@ const root=path.resolve(__dirname,'..');
   assert.equal(room.length,7,'background and five equipped pieces, with split bed');
   assert.ok(!requests.some(r=>r.file.includes('bow-blue')));
   assert.ok(room.reduce((n,r)=>n+r.bytes,0)<350000,'room art delivery budget');
-  assert.equal(atlas[0].file,'dog-fluffy-brown-stage'+stage+'-v2.webp');
+  assert.equal(atlas[0].file,'dog-fluffy-brown-stage'+stage+(stage===2?'-v3.webp':'-v2.webp'));
   assert.ok(atlas[0].bytes<500000,'atlas payload below 500kB');
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   report.push({stage,viewport:'390x844',requests:requests.length,imageBytes:atlas[0].bytes,file:atlas[0].file});
