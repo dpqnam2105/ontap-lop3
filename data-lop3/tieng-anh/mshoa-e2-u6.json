@@ -1,0 +1,831 @@
+{
+  "topic": {
+    "id": "en_mshoa-e2-u6",
+    "icon": "🕖",
+    "name": "Ms Hoa Explorer 2 · Unit 6: My Day",
+    "questions": [
+      {
+        "q": "Where ___ you take a bath? – In the bathroom.",
+        "choices": [
+          "do",
+          "are",
+          "does",
+          "is"
+        ],
+        "a": 0,
+        "hint": "Câu hỏi Where với \"you\" và động từ thường (take).",
+        "explain": "Where do you + động từ…? → Where do you take a bath? Không viết \"Where are you take…\".",
+        "difficulty": 1,
+        "skill": "grammar-where",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H1",
+        "ref": {
+          "basis": "page",
+          "page": 119,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.119 (Structure), tr.122 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q001"
+      },
+      {
+        "q": "My bed is in the bedroom. Where do I go to bed?",
+        "choices": [
+          "In the bathroom.",
+          "In the bedroom.",
+          "In the kitchen.",
+          "In the dining room."
+        ],
+        "a": 1,
+        "hint": "Giường ở phòng nào?",
+        "explain": "Giường ở phòng ngủ → đi ngủ ở phòng ngủ: In the bedroom.",
+        "difficulty": 1,
+        "skill": "room",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H2",
+        "ref": {
+          "basis": "page",
+          "page": 119,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.119 Check-up 3, tr.122 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [
+            "bed"
+          ],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q002"
+      },
+      {
+        "q": "I ___ breakfast every morning.",
+        "choices": [
+          "get",
+          "take",
+          "eat",
+          "do"
+        ],
+        "a": 2,
+        "hint": "Nhớ cụm \"___ breakfast / ___ lunch / ___ dinner\" trong bài.",
+        "explain": "eat breakfast = ăn sáng (cùng nhóm eat lunch, eat dinner). Không nói \"get breakfast\".",
+        "difficulty": 1,
+        "skill": "collocation",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H3",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex1, tr.121 Ex2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [
+            "every morning"
+          ],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q003"
+      },
+      {
+        "q": "I ___ a bath in the evening.",
+        "choices": [
+          "eat",
+          "get",
+          "do",
+          "take"
+        ],
+        "a": 3,
+        "hint": "Nhớ cụm \"đi tắm\" trong bài.",
+        "explain": "take a bath = đi tắm.",
+        "difficulty": 1,
+        "skill": "collocation",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H4",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex1, tr.119 Check-up 2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q004"
+      },
+      {
+        "q": "I ___ my homework in my bedroom.",
+        "choices": [
+          "do",
+          "take",
+          "get",
+          "eat"
+        ],
+        "a": 0,
+        "hint": "Nhớ cụm \"làm bài tập về nhà\" trong bài.",
+        "explain": "do homework = làm bài tập về nhà.",
+        "difficulty": 1,
+        "skill": "collocation",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H5",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex1, tr.121 Ex2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q005"
+      },
+      {
+        "q": "\"get dressed\" means:",
+        "choices": [
+          "thức dậy",
+          "mặc quần áo",
+          "đi ngủ",
+          "đi tắm"
+        ],
+        "a": 1,
+        "hint": "Việc con làm sau khi thức dậy, trước khi đi học: thay đồ.",
+        "explain": "get dressed = mặc quần áo. \"thức dậy\" là get up, \"đi ngủ\" là go to bed, \"đi tắm\" là take a bath.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H6",
+        "ref": {
+          "basis": "page",
+          "page": 118,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.118 Vocabulary (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q006"
+      },
+      {
+        "q": "\"đi ngủ\" in English is:",
+        "choices": [
+          "get up",
+          "get dressed",
+          "go to bed",
+          "take a bath"
+        ],
+        "a": 2,
+        "hint": "Nhớ cụm trong bài có chữ \"bed\".",
+        "explain": "Cụm trong bài là go to bed (đi ngủ, lên giường đi ngủ). \"go to sleep\" cũng là tiếng Anh đúng, thường nói lúc bắt đầu ngủ; bài này học cụm go to bed.",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H7",
+        "ref": {
+          "basis": "page",
+          "page": 118,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.118 Vocabulary, tr.117 Ex1 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q007"
+      },
+      {
+        "q": "\"phòng ăn\" in English is:",
+        "choices": [
+          "living room",
+          "bedroom",
+          "bathroom",
+          "dining room"
+        ],
+        "a": 3,
+        "hint": "Phòng có bàn ăn của cả nhà.",
+        "explain": "phòng ăn = dining room. living room là phòng khách, bedroom là phòng ngủ, bathroom là phòng tắm.",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H8",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex2, tr.119 Structure (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q008"
+      },
+      {
+        "q": "Where do you get dressed? – ___",
+        "choices": [
+          "In my bedroom.",
+          "At my bedroom.",
+          "On my bedroom.",
+          "In bedroom my."
+        ],
+        "a": 0,
+        "hint": "Trả lời câu Where theo mẫu trong bài: \"___ my + phòng\".",
+        "explain": "Mẫu trả lời: In my bedroom. (ở trong phòng ngủ của tớ).",
+        "difficulty": 1,
+        "skill": "answer-form",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H9",
+        "ref": {
+          "basis": "page",
+          "page": 119,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.119 Structure (\"In my ___.\"), tr.122 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q009"
+      },
+      {
+        "q": "Which question is correct?",
+        "choices": [
+          "Where are you eat lunch?",
+          "Where do you eat lunch?",
+          "Where you eat lunch?",
+          "Where do eat you lunch?"
+        ],
+        "a": 1,
+        "hint": "Thứ tự: Where + từ để hỏi phụ + you + động từ…?",
+        "explain": "Đúng: Where do you eat lunch? — có \"do\", \"you\" đứng trước \"eat\".",
+        "difficulty": 2,
+        "skill": "grammar-where",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H10",
+        "ref": {
+          "basis": "page",
+          "page": 119,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.119 Structure, tr.122 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q010"
+      },
+      {
+        "q": "Choose the correct spelling for \"bữa trưa\".",
+        "choices": [
+          "luch",
+          "lanch",
+          "lunch",
+          "lunck"
+        ],
+        "a": 2,
+        "hint": "Đọc chậm từng âm: l – u – n – ch.",
+        "explain": "Viết đúng: l-u-n-c-h (lunch). Nhớ có chữ n trước \"ch\".",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H11",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex1, tr.120 Ex1 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q011"
+      },
+      {
+        "q": "Choose the correct spelling for \"bữa tối\".",
+        "choices": [
+          "dinnner",
+          "dinne",
+          "dinor",
+          "dinner"
+        ],
+        "a": 3,
+        "hint": "Từ này có hai chữ n liền nhau, kết thúc bằng \"er\".",
+        "explain": "Viết đúng: d-i-n-n-e-r (dinner) — hai chữ n, không phải ba.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 1
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H12",
+        "ref": {
+          "basis": "page",
+          "page": 117,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 1; đối chiếu tr.117 Ex1, tr.121 Ex2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q012"
+      },
+      {
+        "q": "Read: \"Hi! I'm Linh. I get up at six o'clock in the morning. I eat lunch at school. In the evening, I take a bath in the bathroom. Then I do my homework in my bedroom. I go to bed at nine o'clock.\" You ask Linh: \"Where do you take a bath?\" Linh says: \"___\"",
+        "choices": [
+          "In the bathroom.",
+          "At school.",
+          "In the kitchen.",
+          "In the yard."
+        ],
+        "a": 0,
+        "hint": "Tìm câu có \"take a bath\" trong đoạn.",
+        "explain": "Đoạn viết: \"I take a bath in the bathroom.\" → In the bathroom.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H13",
+        "ref": {
+          "basis": "page",
+          "page": 119,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.119 Structure, tr.121 Ex2; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [
+            "school"
+          ],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q013",
+        "passage": "en-mshoa-E",
+        "passageNote": "Đoạn tự biên soạn theo từ vựng Explorer 2 U6 L1–L2 (có giờ và buổi trong ngày của L2); KHÔNG phải đoạn trong sách. Chỉ mở sau L2."
+      },
+      {
+        "q": "Read: \"Hi! I'm Linh. I get up at six o'clock in the morning. I eat lunch at school. In the evening, I take a bath in the bathroom. Then I do my homework in my bedroom. I go to bed at nine o'clock.\" Linh says: \"I do my homework in my ___.\"",
+        "choices": [
+          "bathroom",
+          "bedroom",
+          "kitchen",
+          "dining room"
+        ],
+        "a": 1,
+        "hint": "Tìm câu có \"homework\" trong đoạn.",
+        "explain": "Đoạn viết: \"I do my homework in my bedroom.\"",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H14",
+        "ref": {
+          "basis": "page",
+          "page": 121,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.121 Ex2; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q014",
+        "passage": "en-mshoa-E",
+        "passageNote": "Đoạn tự biên soạn theo từ vựng Explorer 2 U6 L1–L2 (có giờ và buổi trong ngày của L2); KHÔNG phải đoạn trong sách. Chỉ mở sau L2."
+      },
+      {
+        "q": "Read: \"Hi! I'm Linh. I get up at six o'clock in the morning. I eat lunch at school. In the evening, I take a bath in the bathroom. Then I do my homework in my bedroom. I go to bed at nine o'clock.\" Linh says: \"I take a bath in the ___.\"",
+        "choices": [
+          "morning",
+          "afternoon",
+          "evening",
+          "night"
+        ],
+        "a": 2,
+        "hint": "Tìm câu bắt đầu bằng \"In the …\" đứng trước \"take a bath\".",
+        "explain": "Đoạn viết: \"In the evening, I take a bath…\" → buổi tối.",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H15",
+        "ref": {
+          "basis": "page",
+          "page": 123,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.119 Check-up 2, tr.123 Vocabulary; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q015",
+        "passage": "en-mshoa-E",
+        "passageNote": "Đoạn tự biên soạn theo từ vựng Explorer 2 U6 L1–L2 (có giờ và buổi trong ngày của L2); KHÔNG phải đoạn trong sách. Chỉ mở sau L2."
+      },
+      {
+        "q": "Bây giờ là 3 giờ chiều. It's three o'clock in the ___.",
+        "choices": [
+          "morning",
+          "evening",
+          "night",
+          "afternoon"
+        ],
+        "a": 3,
+        "hint": "Lời dẫn nói \"chiều\".",
+        "explain": "3 giờ chiều = three o'clock in the afternoon.",
+        "difficulty": 1,
+        "skill": "time-of-day",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H16",
+        "ref": {
+          "basis": "page",
+          "page": 125,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.125 Structure (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q016"
+      },
+      {
+        "q": "\"afternoon\" means:",
+        "choices": [
+          "buổi chiều",
+          "buổi sáng",
+          "buổi tối",
+          "ban đêm"
+        ],
+        "a": 0,
+        "hint": "Nhớ thứ tự trong ngày: morning → afternoon → evening → night.",
+        "explain": "afternoon = buổi chiều. morning là buổi sáng, evening là buổi tối, night là ban đêm.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H17",
+        "ref": {
+          "basis": "page",
+          "page": 123,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.123 Ex1 + Vocabulary (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q017"
+      },
+      {
+        "q": "My father goes to bed ___ night.",
+        "choices": [
+          "in",
+          "at",
+          "on",
+          "to"
+        ],
+        "a": 1,
+        "hint": "Cụm cố định với \"night\" trong bài.",
+        "explain": "Trong câu này dùng cụm \"at night\" (vào ban đêm).",
+        "difficulty": 1,
+        "skill": "preposition",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H18",
+        "ref": {
+          "basis": "page",
+          "page": 127,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.127 Ex1 (4), tr.128 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [
+            "father"
+          ],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q018"
+      },
+      {
+        "q": "Kim ngắn chỉ số 8, kim dài chỉ số 12. What time is it?",
+        "choices": [
+          "It's twelve o'clock.",
+          "It's two o'clock.",
+          "It's eight o'clock.",
+          "It's four o'clock."
+        ],
+        "a": 2,
+        "hint": "Kim ngắn chỉ giờ; kim dài chỉ số 12 là giờ đúng.",
+        "explain": "Kim ngắn ở số 8, kim dài ở 12 → 8 giờ đúng: It's eight o'clock.",
+        "difficulty": 1,
+        "skill": "clock",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H19",
+        "ref": {
+          "basis": "page",
+          "page": 126,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.126 Check-up 4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q019"
+      },
+      {
+        "q": "What time ___ it? – It's seven o'clock.",
+        "choices": [
+          "are",
+          "do",
+          "does",
+          "is"
+        ],
+        "a": 3,
+        "hint": "Mẫu hỏi giờ trong bài; câu trả lời bắt đầu bằng \"It's\".",
+        "explain": "Mẫu: What time is it? – It's … o'clock.",
+        "difficulty": 1,
+        "skill": "grammar-time",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H20",
+        "ref": {
+          "basis": "page",
+          "page": 125,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.125 Structure (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q020"
+      },
+      {
+        "q": "Bây giờ là 7 giờ tối. What time is it?",
+        "choices": [
+          "It's seven o'clock in the evening.",
+          "It's seven o'clock in evening.",
+          "It's seven o'clock at the evening.",
+          "It's seven in o'clock the evening."
+        ],
+        "a": 0,
+        "hint": "Nhớ mẫu: It's … o'clock + in the + buổi.",
+        "explain": "Đúng: It's seven o'clock in the evening. Có \"in the\" trước evening.",
+        "difficulty": 2,
+        "skill": "answer-form",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H21",
+        "ref": {
+          "basis": "page",
+          "page": 125,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.125 Structure, tr.128 Ex4 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q021"
+      },
+      {
+        "q": "\"wait\" means:",
+        "choices": [
+          "tìm thấy",
+          "chờ đợi",
+          "yêu",
+          "bị đau"
+        ],
+        "a": 1,
+        "hint": "Nhớ tranh chú đứng nhìn đồng hồ trong bài.",
+        "explain": "wait = chờ đợi. find là tìm thấy, love là yêu, hurt là bị đau.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H22",
+        "ref": {
+          "basis": "page",
+          "page": 123,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.123 Vocabulary, tr.124 Check-up 2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q022"
+      },
+      {
+        "q": "I can't find my ball. Let's look in the ___.",
+        "choices": [
+          "penguin",
+          "wait",
+          "yard",
+          "hurt"
+        ],
+        "a": 2,
+        "hint": "Chỗ trống là một nơi chốn.",
+        "explain": "yard = cái sân, là nơi chốn. penguin là con vật; wait, hurt không phải nơi chốn.",
+        "difficulty": 1,
+        "skill": "vocab-use",
+        "unit": "e2-u6",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 6,
+          "lesson": 2
+        },
+        "source": "claude-mshoa-e2u6-l12-20261010",
+        "draftCode": "H23",
+        "ref": {
+          "basis": "page",
+          "page": 124,
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.123 Vocabulary, tr.124 Check-up 2, tr.127 Ex2 (ảnh sách Nam gửi).",
+          "toc": [],
+          "extraWords": [
+            "ball",
+            "look in"
+          ],
+          "contentReview": "codex-noi-dung-20261010",
+          "by": "claude",
+          "date": "2026-10-10"
+        },
+        "id": "en_mshoa-e2-u6_q023"
+      }
+    ]
+  }
+}

@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-10 — Tiếng Anh: Ms Hoa Explorer 2 Unit 6 "My Day" L1–L2 (Claude soạn, Codex duyệt nội dung)
+- Chủ đề mới mshoa-e2-u6.json (23 câu): mẫu Where do you…?, cụm động từ hằng ngày, phòng trong nhà, 2 câu chính tả (lỗi thật), buổi trong ngày, What time is it? – It's … o'clock, at night, từ mới L2; đoạn E tự biên soạn. Nguồn basis page (tr.117–128). Không mang stage nên hiện ở mọi giai đoạn NIK, không đổi thiết lập NIK. tests/en-data.test.js: thêm sách mshoa-explorer2 và quy tắc lô (bookLesson, trang, phạm vi L1 không lẫn L2/đoạn E, không does/late/early, ≤ 2 câu chính tả, đáp án xoay đều).
+
 ## 2026-10-09 — Rà 101 câu Tiếng Anh cũ: sửa 11 câu lỗi (giữ ID)
 - NIK3 U1 q010 (nhiễu "close to" cũng đúng), U2 q008 (bỏ quá khứ bị động), q009 (nhiễu vô nghĩa), q018 (không suy từ Chủ nhật); Reading NIK3 đoạn Ben q005–q008 (bỏ "will", "gold statue of a cat"), q011 (nhiễu cũng đúng); adj-adv q012, q013 (nhiễu cũng đúng). Không đổi đáp án/bản chất câu, không đổi giao diện.
 

@@ -7,6 +7,12 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-10 (Claude — Tiếng Anh Ms Hoa Explorer 2 U6 L1–L2, Codex duyệt nội dung)
+- Tiếng Anh / chủ đề mới en_mshoa-e2-u6 "Ms Hoa Explorer 2 · Unit 6: My Day" — +23 câu en_mshoa-e2-u6_q001–q023 (mã nháp H1–H23). source claude-mshoa-e2u6-l12-20261010, track core, book mshoa-explorer2, unit e2-u6.
+- `bookLesson` {book, unit 6, lesson 1|2}: L1 = q001–q012, L2 = q013–q023 (gồm đoạn E q013–q015, chỉ mở sau L2). Không có `stage` → không phụ thuộc giai đoạn NIK; không dùng `lesson` (dành cho Toán).
+- ref basis "page", `page` = trang chính đối chiếu (117–128), note "Câu tự biên soạn… đối chiếu tr.…". Đoạn E passageNote "tự biên soạn, không phải đoạn trong sách".
+- Chỉnh theo Codex: H18 bỏ late ("goes to bed ___ night"), H3 "I ___ breakfast every morning.", H7 giải thích go to sleep cũng đúng. Đáp án xoay A/B/C/D 6/6/6/5.
+
 ## 2026-10-09 (Claude — rà 101 câu Tiếng Anh cũ, sửa lỗi giữ ID)
 - en_nik3-unit1_q010: nhiễu close to → on. en_nik3-unit2_q008: "A ___ is a room for a pharaoh's body."; q009: nhiễu → sand/stone/paper; q018: "There is no school on Sunday. Sam ___ go to school on Sunday."
 - en_reading-nik3 đoạn Ben (q005–q008): bỏ "Soon it will be in the museum."; "a small gold statue of a cat (statue = bức tượng)"; q011: nhiễu close to the harbor → beside the recreation center.

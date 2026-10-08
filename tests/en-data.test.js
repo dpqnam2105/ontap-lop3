@@ -6,13 +6,35 @@
 const fs = require('fs'), path = require('path'), assert = require('assert');
 const DIR = path.join(__dirname, '..', 'data-lop3', 'tieng-anh');
 const TRACKS = new Set(['core', 'foundation', 'enrich']);
-const BOOKS = new Set(['nik3', 'gs3', 'none']);
+const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // Cơ sở nguồn: toc = theo mục lục; school-weekly = lịch/nội dung tuần của trường; page = đã đối chiếu trang sách thật.
 const BASES = new Set(['toc', 'school-weekly', 'page']);
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
 const BATCH_RULES = {
+  'claude-mshoa-e2u6-l12-20261010': { count: 23, passages: ['en-mshoa-E'], check(q, err) {
+    const bl = q.bookLesson || {};
+    if (q.unit !== 'e2-u6' || q.book !== 'mshoa-explorer2') err('Ms Hoa phải unit e2-u6, book mshoa-explorer2');
+    if (bl.book !== 'mshoa-explorer2' || bl.unit !== 6 || ![1, 2].includes(bl.lesson)) err('bookLesson hỏng (chỉ L1–L2)');
+    if ('stage' in q) err('Ms Hoa không mang stage (không phụ thuộc thiết lập giai đoạn NIK)');
+    if ('lesson' in q) err('không dùng trường lesson (dành cho mốc bài Toán)');
+    if (q.ref.basis !== 'page' || !Number.isInteger(q.ref.page) || q.ref.page < 117 || q.ref.page > 128) err('ref.page phải là trang L1–L2 (117–128)');
+    if (!/tự biên soạn/.test(q.ref.note) || !/tr\.\d/.test(q.ref.note)) err('note phải ghi tự biên soạn + trang');
+    if (bl.lesson === 1 && q.ref.page > 122) err('câu L1 dẫn trang L2');
+    if (q.passage && (bl.lesson !== 2 || !/tự biên soạn/.test(q.passageNote || ''))) err('đoạn E: lesson 2 + ghi tự biên soạn');
+    if (/\bdoes\b/i.test(q.q)) err('đề không dùng does (ngôi 3 chưa học)');
+    if (/\b(late|early)\b/i.test(q.q + ' ' + q.choices.join(' '))) err('late/early thuộc L3');
+  }, after(qs, errs) {
+    // Phạm vi theo bài: học đến L1 → chỉ câu L1, không có đoạn E; học đến L2 → đủ 23 câu.
+    const upTo = n => qs.filter(q => q.bookLesson.lesson <= n);
+    const l1 = upTo(1);
+    if (l1.length !== 12 || l1.some(q => q.passage || q.ref.page > 122)) errs.push('Ms Hoa: phạm vi L1 lẫn câu L2/đoạn E');
+    if (upTo(2).length !== 23) errs.push('Ms Hoa: phạm vi L2 phải đủ 23 câu');
+    if (qs.filter(q => q.skill === 'spelling').length > 2) errs.push('Ms Hoa: tối đa 2 câu chính tả');
+    const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
+    if (Math.min(...pos) < 5) errs.push('Ms Hoa: đáp án lệch vị trí ' + pos.join('/'));
+  } },
   'claude-nik3-lo2-u3v1-20261009': { count: 23, passages: ['en-lo2-D'], check(q, err) {
     if (q.ref.basis !== 'school-weekly' || q.ref.scheduledPages !== '38–39') err('lô 2 phải school-weekly, scheduledPages 38–39');
     if (q.stage !== 2 || q.unit !== 'nik3-unit3') err('lô 2 phải stage 2, unit nik3-unit3');
