@@ -28,7 +28,7 @@ const root=path.resolve(__dirname,'..');
    const sprite=page.locator('#petActor>svg');
    assert.equal(await sprite.getAttribute('data-pet-frame'),String(frame));
    assert.equal(await sprite.getAttribute('data-pet-stage'),String(stage));
-   assert.ok((await sprite.locator('image').getAttribute('href')).includes('stage'+stage+'-v2.webp'));
+   assert.ok((await sprite.locator('image').getAttribute('href')).includes('stage'+stage+(stage===2?'-v3.webp':'-v2.webp')));
   }
   assert.equal(await page.evaluate(()=>JSON.stringify(Storage.load())),before,'drawing never modifies profile');
   await page.evaluate(()=>PetView.setPose('unknown'));assert.equal(await page.locator('#petActor>svg').getAttribute('data-pet-frame'),'0');

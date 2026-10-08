@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-08 — Phản hồi Thỏ (nhánh pet-smooth-growth, chờ review)
+- Giữ vị trí cún qua render, đi tới nơi mới làm hành động, quay hướng và dừng CSS/RAF khi ẩn tab; thêm test chuyển động. Chỉnh atlas trưởng thành v3 cho đầu/mặt cân đối, rà lại neo nơ và silhouette chống lẫn ô. Nới phòng mobile/desktop nhẹ; không thêm nhà tắm, không đổi dữ liệu/giá/luật. Kèm GIF và ảnh trước/sau để duyệt.
+
 ## 2026-10-07 — Nơ cho cún (nhánh pet-accessory, chờ review)
 - Thêm nơ xanh 50 sao trong Trang trí, mua một lần và đeo/tháo miễn phí cho cả ba giai đoạn; neo theo từng khung, tạm ẩn khi ngủ. Tủ phụ kiện nằm ở profile.petWardrobe, ghi cùng sao qua Pet.tx và giữ được khi tab pet v1 chăm cún. Có test bấm đúp/save lỗi/khôi phục Cloud/tư thế; dùng ảnh đã có, không imagegen thêm.
 

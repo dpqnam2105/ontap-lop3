@@ -48,7 +48,7 @@ const root=path.resolve(__dirname,'..');
   for(let stage=0;stage<3;stage++){
    await page.evaluate(stage=>{const p=Storage.load();p.pet.stage=stage;p.pet.growth=[0,10,30][stage];Storage.save(p);PetView.render()},stage);
    const size=await page.evaluate(()=>({actor:document.getElementById('petActor').getBoundingClientRect().width,room:document.getElementById('petRoom').clientWidth,bed:document.getElementById('petSlot-bed').getBoundingClientRect().width}));
-   assert.ok(Math.abs(size.actor/size.room-[255,295,320][stage]/(width<=750?720:1000))<.005);assert.ok(size.actor<=size.bed,'adult cannot cover whole bed by size');
+   assert.ok(Math.abs(size.actor/size.room-[255,295,320][stage]/(width<=750?760:1000))<.005);assert.ok(size.actor<=size.bed,'adult cannot cover whole bed by size');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    if(width<=750){
     await page.evaluate(()=>PetView.positionActor({x:9999,y:9999},true));
