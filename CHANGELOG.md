@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-11 — Chia giáo trình: sửa theo review Codex (nhánh en-chia-giao-trinh)
+- [P1] Thẻ Ôn tổng hợp của môn chia giáo trình hiện cả khi chỉ 1 chủ đề (vd chỉ bật Ms Hoa), miễn ≥ 5 câu; môn khác giữ điều kiện cũ. Thẻ chuyển lên đầu, trước các mục sách.
+- [P2] Bỏ cờ `reviewed` cấp chủ đề. Câu vào Ôn tổng hợp xét từng câu: câu lô có `ref.contentReview`, hoặc câu cũ có `review` {round, status ok|fixed} thuộc lượt rà đã `confirmed` trong `reviewRounds` của index. Gắn `review` cho 101 câu theo báo cáo rà (87 ok, 11 fixed, 3 pending); lượt `claude-ra-101-20261009` để confirmed = false, chờ Codex xác nhận. Câu pending và 104 câu claude-audit không vào.
+- [P2] Test: thêm ca thiếu nguồn (6 câu → 6 + 14), tests/en-books.e2e.js kiểm tại điểm khởi chạy (thẻ Ôn tổng hợp, Luyện tập/Kiểm tra, Today.start, Pet.startChallenge) ở mốc L1 và L2; en-data kiểm danh sách lượt rà 101 câu.
+
 ## 2026-10-11 — Tiếng Anh chia theo giáo trình (nhánh en-chia-giao-trinh, chờ Codex review)
 - index.json Tiếng Anh: `books` (NIK3 theo giai đoạn, Ms Hoa Explorer 2 theo bài U6 L1/L2 mặc định L2, GS3 "Bài bổ trợ", Kiến thức nền & bài tập trường) + mỗi chủ đề `book`, `reviewed` (7 chủ đề claude-audit chưa rà). api.js gắn các nhãn này vào chủ đề.
 - Màn Tiếng Anh: nhóm chủ đề theo sách, nhãn phạm vi ("GĐ1 · học cộng dồn", "Đã học đến U6 L2", "Bài bổ trợ"); thanh giai đoạn nằm trong mục NIK; Ôn tổng hợp (đề trộn tuần) ở cuối, ghi 1 dòng nguồn câu. Môn khác giữ nguyên.

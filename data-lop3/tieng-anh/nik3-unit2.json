@@ -19,7 +19,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q001",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "A T-Rex eats meat. It is a ___.",
@@ -36,7 +40,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q002",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "There are no dinosaurs today. Dinosaurs are ___.",
@@ -53,7 +61,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q003",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "pending"
+        }
       },
       {
         "q": "The long part at the back of an animal is its ___.",
@@ -70,7 +82,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q004",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "A hard, pointed part on an animal's head is a ___.",
@@ -87,7 +103,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q005",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "A person who studies old things from the past is an ___.",
@@ -104,7 +124,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q006",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The king of ancient Egypt was called a ___.",
@@ -121,7 +145,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q007",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "A ___ is a room for a pharaoh's body.",
@@ -138,7 +166,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q008",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "Tutankhamun's mask is made of ___. It is yellow and very expensive.",
@@ -155,7 +187,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q009",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "Bad people who take things that are not theirs are ___.",
@@ -172,7 +208,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q010",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Archeologists ___ in the sand to find old things.",
@@ -189,7 +229,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q011",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Odd one out: herbivore · carnivore · dinosaur · gold",
@@ -206,7 +250,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q012",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Odd one out: pharaoh · tomb · treasure · tail",
@@ -223,7 +271,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q013",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Odd one out: quick · careful · loud · dig",
@@ -240,7 +292,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q014",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Tilly ___ be careful near the T-Rex.",
@@ -257,7 +313,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q015",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Archeologists ___ dig very slowly.",
@@ -274,7 +334,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q016",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The museum is free today. We ___ pay.",
@@ -291,7 +355,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q017",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "There is no school on Sunday. Sam ___ go to school on Sunday.",
@@ -308,7 +376,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q018",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "___ you have to wear a hat in the desert? – Yes, we do.",
@@ -325,7 +397,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q019",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "___ Linh have to feed the cat? – No, she doesn't.",
@@ -342,7 +418,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q020",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which sentence is correct?",
@@ -359,7 +439,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q021",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We have to be quiet in the museum. What does 'have to' mean?",
@@ -376,7 +460,11 @@
         "unit": "nik3-unit2",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit2_q022",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "\"Dinosaurs are extinct.\" In this sentence, \"extinct\" means:",

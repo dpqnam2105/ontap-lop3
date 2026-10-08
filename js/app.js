@@ -544,6 +544,21 @@ const App = {
     return bl.unit !== cur.unit ? bl.unit < cur.unit : bl.lesson <= cur.lesson;
   },
 
+  /**
+   * Câu đủ điều kiện vào Ôn tổng hợp (xét TỪNG CÂU, không theo cờ chủ đề):
+   * - câu thuộc lô đã được duyệt nội dung (q.ref.contentReview), hoặc
+   * - câu cũ có q.review.status ok/fixed thuộc lượt rà đã được xác nhận (s.reviewRounds[round].confirmed === true).
+   * Câu "pending" (chờ quyết định) và câu chưa rà không vào.
+   */
+  _mixEligible(s, q) {
+    if (!q) return false;
+    if (q.ref && q.ref.contentReview) return true;
+    const r = q.review;
+    if (!r || (r.status !== 'ok' && r.status !== 'fixed')) return false;
+    const round = s && s.reviewRounds && s.reviewRounds[r.round];
+    return !!(round && round.confirmed === true);
+  },
+
   /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài). */
   _allowedIndices(s, t) {
     const st = this.getStageSetting(s);
@@ -660,7 +675,7 @@ const App = {
 
   /**
    * Đề trộn tuần cho môn chia giáo trình (Ôn tổng hợp):
-   * nguồn = sách được chọn "vào Ôn tổng hợp" và có câu hợp lệ; chỉ chủ đề đã rà (reviewed === true);
+   * nguồn = sách được chọn "vào Ôn tổng hợp" và có câu hợp lệ; chỉ câu đã rà (_mixEligible, xét từng câu);
    * vẫn trong phạm vi giai đoạn / bài đã học. Hạn mức chia đều N / số nguồn (phần dư chia lần lượt),
    * nguồn thiếu câu lấy hết rồi bù đều từ nguồn còn câu. Trong một nguồn xoay vòng theo chủ đề.
    * Không lặp ID. Tổng < N → đề ngắn đúng số câu có, không kéo câu ngoài phạm vi.
@@ -668,9 +683,9 @@ const App = {
   _buildBookMix(s, key, shuffle) {
     const bs = this.getBookScope(s);
     const sources = s.books.filter(b => bs.mix[b.id]).map(b => {
-      const buckets = shuffle(s.topics.filter(t => !t.drill && t.reviewed === true && this._bookOf(s, t) === b).map(t => {
+      const buckets = shuffle(s.topics.filter(t => !t.drill && this._bookOf(s, t) === b).map(t => {
         const allowed = this._allowedIndices(s, t);
-        const idxs = allowed === null ? (t.questions || []).map((_, i) => i) : allowed;
+        const idxs = (allowed === null ? (t.questions || []).map((_, i) => i) : allowed).filter(i => this._mixEligible(s, t.questions[i]));
         return { t, idxs: shuffle(idxs) };
       }).filter(x => x.idxs.length));
       return { b, buckets, avail: buckets.reduce((n, x) => n + x.idxs.length, 0) };
@@ -756,7 +771,8 @@ const App = {
 
   _renderMixCard(s) {
     const { key, pool, topicCount, sources, short } = this._buildWeeklyMix(s);
-    if (pool.length < 5 || topicCount < 2) return null;
+    // Môn chia giáo trình: một chủ đề vẫn được (vd chỉ bật Ms Hoa) khi đủ ≥ 5 câu; môn khác giữ điều kiện cũ.
+    if (pool.length < 5 || (!sources && topicCount < 2)) return null;
     // Môn chia giáo trình: 1 dòng ngắn nguồn câu + báo đề ngắn
     const srcLine = sources ? `<div class="mix-src">Lấy từ: ${sources.map(x => `${x.icon} ${this._escape(x.name)} (${x.n})`).join(' · ')}${short ? ` · đề ngắn ${pool.length} câu vì chưa đủ ${this.MIX_SIZE} câu đã rà` : ''}</div>` : '';
     let best = null;
@@ -796,8 +812,9 @@ const App = {
       .filter(x => !x.t.drill && !(x.allowed && !x.allowed.length));
 
     if (Array.isArray(s.books) && s.books.length) {
-      // Môn chia giáo trình: nhóm chủ đề theo sách; thanh giai đoạn nằm trong mục sách chia giai đoạn (NIK);
-      // Ôn tổng hợp (đề trộn tuần) ở cuối. Bé không có bộ lọc nào khác — phạm vi sách khác do bố mẹ chỉnh.
+      // Môn chia giáo trình: Ôn tổng hợp (đề trộn tuần) ở đầu, rồi các mục sách; thanh giai đoạn nằm trong
+      // mục sách chia giai đoạn (NIK). Bé không có bộ lọc nào khác — phạm vi sách khác do bố mẹ chỉnh.
+      if (mixCard) list.appendChild(mixCard);
       s.books.forEach(b => {
         const items = shown.filter(x => this._bookOf(s, x.t) === b);
         const hasStage = b.scope === 'stage' && stageBar;
@@ -812,7 +829,6 @@ const App = {
           list.appendChild(empty);
         }
       });
-      if (mixCard) list.appendChild(mixCard);
       if (keepScroll) return;
       this.showScreen('topic');
       return;

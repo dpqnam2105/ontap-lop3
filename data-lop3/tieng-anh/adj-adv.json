@@ -19,7 +19,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q001",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "pending"
+        }
       },
       {
         "q": "The rabbit is very ___.",
@@ -36,7 +40,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q002",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The classroom is very ___.",
@@ -53,7 +61,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q003",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The children read very ___.",
@@ -70,7 +82,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q004",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Tom is a ___ swimmer.",
@@ -88,14 +104,10 @@
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q005",
         "stage": 1,
-        "review": [
-          {
-            "by": "claude",
-            "date": "2026-10-06",
-            "status": "sua-nhieu",
-            "note": "\"a better swimmer\" cũng đúng ngữ pháp → hai đáp án đúng; thay bằng trạng từ sai rõ ràng"
-          }
-        ]
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Tom swims ___.",
@@ -112,7 +124,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q006",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "He runs ___.",
@@ -129,7 +145,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q007",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "happy → ___ (adverb)",
@@ -146,7 +166,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q008",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "easy → ___ (adverb)",
@@ -163,7 +187,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q009",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Be ___! The road is busy.",
@@ -180,7 +208,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q010",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Please cross the street ___.",
@@ -197,7 +229,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q011",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which sentence is correct?",
@@ -214,7 +250,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q012",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "Which word is an ADVERB?",
@@ -231,7 +271,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q013",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "He is a quick runner. = He runs ___.",
@@ -248,7 +292,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q014",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "pending"
+        }
       },
       {
         "q": "The T-Rex has a ___ roar.",
@@ -265,7 +313,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q015",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Please sit ___ and listen.",
@@ -282,7 +334,11 @@
         "unit": "adj-adv",
         "source": "claude-nik3-20260930",
         "id": "en_adj-adv_q016",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Please be ___ when you cross the street.",
@@ -299,7 +355,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q017",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The dog is running ___.",
@@ -316,7 +376,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q018",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The children are playing ___ in the park.",
@@ -333,7 +397,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q019",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "They work ___ together.",
@@ -350,7 +418,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q020",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "She is a ___ student.",
@@ -367,7 +439,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q021",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "He plays the piano very ___.",
@@ -384,7 +460,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q022",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Put the words in order: fast / running / is / very / She",
@@ -401,7 +481,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q023",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Put the words in order: write / your / name / carefully / Please",
@@ -418,7 +502,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q024",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which sentence is correct?",
@@ -435,7 +523,11 @@
         "unit": "adj-adv",
         "source": "bo-tro-tuan6-8-20261001",
         "id": "en_adj-adv_q025",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       }
     ]
   }

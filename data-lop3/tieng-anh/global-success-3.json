@@ -19,7 +19,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q001",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "What's your name? – ___",
@@ -36,7 +40,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q002",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "How old are you? – ___",
@@ -53,7 +61,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q003",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Is that your teacher? – Yes, ___",
@@ -70,7 +82,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q004",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "___ is my friend Lucy. (Lucy is next to me.)",
@@ -87,7 +103,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q005",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "I see with my ___.",
@@ -104,7 +124,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q006",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Touch your ___! (the part you smell with)",
@@ -121,7 +145,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q007",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "What's your hobby? – ___",
@@ -138,7 +166,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q008",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which word is NOT a hobby?",
@@ -155,7 +187,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q009",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We use computers in the ___.",
@@ -172,7 +208,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q010",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We play sports in the ___.",
@@ -189,7 +229,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q011",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Let's go to the playground! – ___",
@@ -206,7 +250,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q012",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "May I come in? – ___",
@@ -223,7 +271,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q013",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The teacher says: '___ down, please!'",
@@ -240,7 +292,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q014",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Do you have a pencil case? – No, ___",
@@ -257,7 +313,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q015",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "I have a ___. I use it to rub out mistakes.",
@@ -274,7 +334,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q016",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "What colour are they? – ___",
@@ -291,7 +355,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q017",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "What colour is the sky on a sunny day?",
@@ -308,7 +376,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q018",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "What do you do at break time? – ___",
@@ -325,7 +397,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q019",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which game do you play with a small ball and a table?",
@@ -342,7 +418,11 @@
         "unit": "global-success-3",
         "source": "claude-global-success-20260930",
         "id": "en_global-success-3_q020",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       }
     ]
   }

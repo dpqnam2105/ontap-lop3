@@ -71,6 +71,15 @@ const BATCH_RULES = {
   } }
 };
 
+// Lượt rà câu cũ (q.review): khớp báo cáo rà 101 câu (project claude/tieng-anh-ra-101-cau.md).
+const IDX = JSON.parse(fs.readFileSync(path.join(DIR, 'index.json'), 'utf8'));
+const ROUNDS = IDX.reviewRounds || {};
+const RA101 = { round: 'claude-ra-101-20261009', total: 101, ok: 87,
+  fixed: ['en_nik3-unit1_q010', 'en_nik3-unit2_q008', 'en_nik3-unit2_q009', 'en_nik3-unit2_q018',
+    'en_reading-nik3_q005', 'en_reading-nik3_q006', 'en_reading-nik3_q007', 'en_reading-nik3_q008', 'en_reading-nik3_q011',
+    'en_adj-adv_q012', 'en_adj-adv_q013'],
+  pending: ['en_nik3-unit2_q003', 'en_adj-adv_q001', 'en_adj-adv_q014'] };
+const reviewed = [];
 const errs = [], ids = new Set(), passages = {}, bySource = {};
 let tagged = 0;
 for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'index.json')) {
@@ -81,6 +90,11 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     if (ids.has(q.id)) err('trùng id'); ids.add(q.id);
     if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
     if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    if (q.review !== undefined) {
+      reviewed.push(q);
+      if (!ROUNDS[q.review.round] || !['ok', 'fixed', 'pending'].includes(q.review.status)) err('review lạ');
+      if (q.ref) err('câu thuộc lô (có ref) không mang review của lượt rà câu cũ');
+    }
     if (q.track === undefined && q.book === undefined && q.ref === undefined) continue;
     // ── Chung cho câu có nhãn mới
     tagged++;
@@ -114,6 +128,16 @@ for (const [src, rule] of Object.entries(BATCH_RULES)) {
   const ps = [...new Set(qs.map(q => q.passage).filter(Boolean))].sort();
   if (JSON.stringify(ps) !== JSON.stringify(rule.passages)) errs.push(src + ': đoạn đọc ' + ps.join(','));
   if (rule.after) rule.after(qs, errs);
+}
+// Lượt rà 101 câu: đúng số câu, đúng danh sách đã sửa / chờ quyết định
+{
+  const r = reviewed.filter(q => q.review.round === RA101.round);
+  const ids = st => r.filter(q => q.review.status === st).map(q => q.id).sort();
+  if (r.length !== RA101.total) errs.push('rà 101: có ' + r.length + ' câu');
+  if (ids('ok').length !== RA101.ok) errs.push('rà 101: ok ' + ids('ok').length);
+  if (JSON.stringify(ids('fixed')) !== JSON.stringify([...RA101.fixed].sort())) errs.push('rà 101: danh sách fixed lệch');
+  if (JSON.stringify(ids('pending')) !== JSON.stringify([...RA101.pending].sort())) errs.push('rà 101: danh sách pending lệch');
+  if (r.some(q => q.source === 'claude-audit-20260924')) errs.push('rà 101 không gồm 104 câu claude-audit');
 }
 assert.deepStrictEqual(errs, []);
 console.log('en-data OK —', tagged, 'câu có nhãn mới,', Object.keys(passages).length, 'đoạn đọc,', Object.keys(BATCH_RULES).length, 'lô có quy tắc riêng');

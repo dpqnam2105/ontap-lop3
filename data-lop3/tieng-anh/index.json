@@ -8,112 +8,98 @@
       "name": "NIK3 Unit 1: Places & directions",
       "file": "nik3-unit1.json",
       "count": 38,
-      "book": "nik3",
-      "reviewed": true
+      "book": "nik3"
     },
     {
       "id": "en_nik3-unit2",
       "name": "NIK3 Unit 2: Dinosaurs & Ancient Egypt",
       "file": "nik3-unit2.json",
       "count": 40,
-      "book": "nik3",
-      "reviewed": true
+      "book": "nik3"
     },
     {
       "id": "en_nik3-unit3",
       "name": "NIK3 Unit 3: Vacation & camping",
       "file": "nik3-unit3.json",
       "count": 23,
-      "book": "nik3",
-      "reviewed": true
+      "book": "nik3"
     },
     {
       "id": "en_mshoa-e2-u6",
       "name": "Ms Hoa Explorer 2 · Unit 6: My Day",
       "file": "mshoa-e2-u6.json",
       "count": 23,
-      "book": "mshoa-explorer2",
-      "reviewed": true
+      "book": "mshoa-explorer2"
     },
     {
       "id": "en_adj-adv",
       "name": "Adjectives & Adverbs",
       "file": "adj-adv.json",
       "count": 25,
-      "book": "nen",
-      "reviewed": true
+      "book": "nen"
     },
     {
       "id": "en_reading-nik3",
       "name": "Reading: NIK3 Unit 1–2",
       "file": "reading-nik3.json",
       "count": 12,
-      "book": "nik3",
-      "reviewed": true
+      "book": "nik3"
     },
     {
       "id": "en_global-success-3",
       "name": "Global Success 3 (tập 1)",
       "file": "global-success-3.json",
       "count": 20,
-      "book": "gs3",
-      "reviewed": true
+      "book": "gs3"
     },
     {
       "id": "en_unit-placeholder-01",
       "name": "At School",
       "file": "unit-placeholder-01.json",
       "count": 16,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_unit-placeholder-02",
       "name": "My Family",
       "file": "unit-placeholder-02.json",
       "count": 16,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_unit-placeholder-03",
       "name": "Daily Activities",
       "file": "unit-placeholder-03.json",
       "count": 16,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_vocabulary",
       "name": "Vocabulary",
       "file": "vocabulary.json",
       "count": 16,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_grammar",
       "name": "Grammar",
       "file": "grammar.json",
       "count": 16,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_reading",
       "name": "Reading",
       "file": "reading.json",
       "count": 12,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     },
     {
       "id": "en_on-tap-tong-hop",
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",
       "count": 12,
-      "book": "nen",
-      "reviewed": false
+      "book": "nen"
     }
   ],
   "books": [
@@ -165,6 +151,15 @@
       "fallback": true
     }
   ],
+  "reviewRounds": {
+    "claude-ra-101-20261009": {
+      "confirmed": false,
+      "by": "claude",
+      "date": "2026-10-09",
+      "doc": "project claude/tieng-anh-ra-101-cau.md",
+      "note": "Rà 101 câu cũ (NIK3 U1–U2, Reading NIK3, GS3, adj–adv). confirmed = true chỉ khi Codex xác nhận kết quả rà."
+    }
+  },
   "stages": [
     {
       "id": 1,

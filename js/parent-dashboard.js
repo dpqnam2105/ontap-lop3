@@ -153,8 +153,10 @@ const ParentDashboard = {
       const st = App.getStageSetting(s);
       const rows = s.books.map(b => {
         const topics = s.topics.filter(t => !t.drill && App._bookOf(s, t) === b);
-        const reviewed = topics.filter(t => t.reviewed === true)
-          .reduce((n, t) => { const a = App._allowedIndices(s, t); return n + (a === null ? t.questions.length : a.length); }, 0);
+        const reviewed = topics.reduce((n, t) => {
+          const a = App._allowedIndices(s, t);
+          return n + (a === null ? t.questions.map((_, i) => i) : a).filter(i => App._mixEligible(s, t.questions[i])).length;
+        }, 0);
         let scope = '';
         if (b.scope === 'stage') {
           const cur = st && s.stages.find(x => x.id === st.stage);

@@ -19,7 +19,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q001",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We watch a play or a show at the ___.",
@@ -36,7 +40,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q002",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Big ships and boats stop at the ___.",
@@ -53,7 +61,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q003",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We look at paintings at the ___.",
@@ -70,7 +82,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q004",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "I swim and play badminton at the ___.",
@@ -87,7 +103,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q005",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "I borrow books at the ___.",
@@ -104,7 +124,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q006",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "We walk across the ___ to go over the river.",
@@ -121,7 +145,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q007",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Which word is NOT a place in town?",
@@ -138,7 +166,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q008",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The clock is on the wall. The sofa is under the clock. The clock is ___ the sofa.",
@@ -155,7 +187,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q009",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The shoes are under the bed. The shoes are ___ the bed.",
@@ -172,7 +208,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q010",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "fixed"
+        }
       },
       {
         "q": "The cat sits next to the dog. The cat is ___ the dog.",
@@ -189,7 +229,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q011",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "My school is only five minutes from my house. My school is ___ my house.",
@@ -206,7 +250,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q012",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The bird is flying over the tree. The bird is ___ the tree.",
@@ -223,7 +271,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q013",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "You see a sign: NO SWIMMING. What does it mean?",
@@ -240,7 +292,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q014",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "You are in the library. What does the teacher say?",
@@ -257,7 +313,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q015",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The light for walkers is red. Which sentence is right?",
@@ -274,7 +334,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q016",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Put the words in order: feed / Don't / the / animals",
@@ -291,7 +355,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q017",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "The arrow points to the RIGHT. What do you say?",
@@ -308,7 +376,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q018",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "___ you going to the museum now? – Yes, I am.",
@@ -325,7 +397,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q019",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "___ she go to the library on Saturdays? – Yes, she does.",
@@ -342,7 +418,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q020",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "Is Tom taking the bus now? – No, he ___.",
@@ -359,7 +439,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q021",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "How do you go to school every day? – I go ___.",
@@ -376,7 +460,11 @@
         "unit": "nik3-unit1",
         "source": "claude-nik3-20260930",
         "id": "en_nik3-unit1_q022",
-        "stage": 1
+        "stage": 1,
+        "review": {
+          "round": "claude-ra-101-20261009",
+          "status": "ok"
+        }
       },
       {
         "q": "A: \"Excuse me. Where is the museum?\" B: \"___\"",
