@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-07 — Nơ cho cún (nhánh pet-accessory, chờ review)
+- Thêm nơ xanh 50 sao trong Trang trí, mua một lần và đeo/tháo miễn phí cho cả ba giai đoạn; neo theo từng khung, tạm ẩn khi ngủ. Tủ phụ kiện nằm ở profile.petWardrobe, ghi cùng sao qua Pet.tx và giữ được khi tab pet v1 chăm cún. Có test bấm đúp/save lỗi/khôi phục Cloud/tư thế; dùng ảnh đã có, không imagegen thêm.
+
 ## 2026-10-07 — Phòng cún mẫu (nhánh pet-room-art, chờ duyệt hình)
 - Review tiếp: giường/bát xanh trả sao chuyển sang navy, đồ cơ bản giữ nguyên; id/giá không đổi. Test so trực tiếp màu WebP với default cho mọi món, kèm ảnh so default/full xanh 1280px.
 - Review: toàn bộ đồ trả sao xanh/hồng có hình recolor từ default, giữ texture/độ sáng/alpha, không imagegen thêm; giường gồm hai lớp cùng canvas. Thêm test mọi item có ảnh và mua full bộ trên web, kèm ảnh 1280px xanh/hồng.

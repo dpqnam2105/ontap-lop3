@@ -84,7 +84,7 @@ const root=path.resolve(__dirname,'..');
  assert.equal(await p.evaluate(()=>Storage.load().pet.growth),cap,'cap does not feed');
  assert.match(await p.locator('#petStatus').textContent(),/đã ăn đủ/);
  assert.ok((await p.locator('#petPanel').boundingBox()).y<600,'panel scrolled into view');
- await p.locator('#petDecor').click();await p.waitForTimeout(700);assert.equal(await p.locator('#petPanel h3').textContent(),'Góc trang trí');
+ await p.locator('#petDecor').click();await p.waitForTimeout(700);assert.equal(await p.locator('#petPanel h3').last().textContent(),'Góc trang trí');
  // Returning to a visible tab resumes idle without writing a visit or greeting.
  const resumed=await p.evaluate(()=>{let visits=0;const old=Pet.visit;Pet.visit=()=>{visits++;return old.call(Pet)};PetView.stop();PetView.resume();Pet.visit=old;return {visits,state:PetView.state,busy:PetView.busy,idle:!!PetView.idleTimer}});
  assert.deepEqual(resumed,{visits:0,state:'idle',busy:false,idle:true});

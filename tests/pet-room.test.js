@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const roomSource=fs.readFileSync(path.join(__dirname,'../js/pet-room.js'),'utf8'),petSource=fs.readFileSync(path.join(__dirname,'../js/pet.js'),'utf8');
 function boot(initial={playerName:'Thỏ',stars:200,petAdopt:{earnedAt:'2026-10-07T00:00:00Z',runId:'room',score:15,total:15}}){
  let profile=JSON.parse(JSON.stringify(initial)),writes=0;const storage={load:()=>JSON.parse(JSON.stringify(profile)),getActiveName:()=>profile.playerName,save:p=>{profile=JSON.parse(JSON.stringify(p));writes++;}};
- const box={window:{},console,Storage:storage};vm.createContext(box);vm.runInContext(roomSource,box);vm.runInContext(petSource,box);
+ const box={window:{},console,Storage:storage};vm.createContext(box);vm.runInContext(roomSource,box);vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/pet-accessories.js'),'utf8'),box);vm.runInContext(petSource,box);
  return {R:box.window.PetRoom,P:box.window.Pet,storage,read:()=>profile,writes:()=>writes};
 }
 const plain=x=>JSON.parse(JSON.stringify(x));let count=0;function test(name,fn){fn();console.log('OK',name);count++;}

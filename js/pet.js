@@ -9,6 +9,15 @@ const Pet = {
   FOODS: { kibble: { name: 'Hạt cho cún', price: 10 }, treat: { name: 'Bánh thưởng', price: 15 } },
   SLOTS: PetRoom.SLOTS,
   ITEMS: PetRoom.ITEMS, _inTx: false,
+  ACCESSORIES:PetAccessories.ITEMS,
+  wardrobe(profile=Storage.load()){
+    const raw=profile.petWardrobe,owned=[...new Set((Array.isArray(raw?.owned)?raw.owned:[]).filter(id=>Object.hasOwn(this.ACCESSORIES,id)))];
+    const equipped=Object.fromEntries(PetAccessories.SLOTS.map(slot=>{
+      const id=raw?.equipped?.[slot],item=Object.hasOwn(this.ACCESSORIES,id)?this.ACCESSORIES[id]:null;
+      return [slot,item?.slot===slot&&owned.includes(id)?id:null];
+    }));
+    return {v:1,owned,equipped};
+  },
   dateKey(d = new Date()) {
     return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
   },
@@ -115,11 +124,11 @@ const Pet = {
       }
       if (requestId && profile.pet) profile.pet.receipts=[...profile.pet.receipts,requestId].slice(-20);
       if (profile.pet) profile.pet.room=PetRoom.normalize(profile.pet.room,profile.pet.owned);
-      const expected=JSON.stringify({stars:profile.stars,pet:profile.pet,petAdopt:profile.petAdopt,petBroken:profile.petBroken});
+      const expected=JSON.stringify({stars:profile.stars,pet:profile.pet,petAdopt:profile.petAdopt,petBroken:profile.petBroken,petWardrobe:profile.petWardrobe});
       Storage.save(profile);
       const saved=Storage.load();
       // Storage.save catches quota errors; do not play a success animation unless readback matches.
-      if (JSON.stringify({stars:saved.stars,pet:saved.pet,petAdopt:saved.petAdopt,petBroken:saved.petBroken})!==expected) return {ok:false,error:'save'};
+      if (JSON.stringify({stars:saved.stars,pet:saved.pet,petAdopt:saved.petAdopt,petBroken:saved.petBroken,petWardrobe:saved.petWardrobe})!==expected) return {ok:false,error:'save'};
       try { if (window.Rewards && Rewards.updateUI) Rewards.updateUI(); }
       catch(e) { console.warn('Pet: saved, UI refresh failed',e); }
       return {...result,pet:this.normalize(saved.pet)};
@@ -189,6 +198,32 @@ const Pet = {
       if(p.stars<item.price)return {ok:false,error:'stars'};
       p.stars-=item.price;p.pet.owned.push(id);p.pet.room.slots[item.slot]=id;
       return {ok:true,action:'inspect',slot:item.slot};
+    },requestId);
+  },
+  buyAccessory(id,requestId){
+    return this.tx(p=>{
+      if(!p.pet)return {ok:false,error:'no-pet'};
+      const item=Object.hasOwn(this.ACCESSORIES,id)?this.ACCESSORIES[id]:null;if(!item)return {ok:false,error:'id'};
+      const w=this.wardrobe(p);if(w.owned.includes(id))return {ok:false,error:'owned'};
+      if(!Number.isSafeInteger(item.price)||item.price<0)return {ok:false,error:'price-pending'};
+      if(p.stars<item.price)return {ok:false,error:'stars'};
+      p.stars-=item.price;w.owned.push(id);w.equipped[item.slot]=id;p.petWardrobe=w;
+      return {ok:true,action:'accessory'};
+    },requestId);
+  },
+  equipAccessory(id,requestId){
+    return this.tx(p=>{
+      if(!p.pet)return {ok:false,error:'no-pet'};
+      const item=Object.hasOwn(this.ACCESSORIES,id)?this.ACCESSORIES[id]:null;if(!item)return {ok:false,error:'id'};
+      const w=this.wardrobe(p);if(!w.owned.includes(id))return {ok:false,error:'not-owned'};
+      w.equipped[item.slot]=id;p.petWardrobe=w;return {ok:true,action:'accessory'};
+    },requestId);
+  },
+  removeAccessory(slot,requestId){
+    return this.tx(p=>{
+      if(!p.pet)return {ok:false,error:'no-pet'};
+      if(!PetAccessories.SLOTS.includes(slot))return {ok:false,error:'id'};
+      const w=this.wardrobe(p);w.equipped[slot]=null;p.petWardrobe=w;return {ok:true,action:'accessory'};
     },requestId);
   }
 };

@@ -61,7 +61,7 @@ const root=path.resolve(__dirname,'..');
  await page.goto('http://pet.test/docs/pet-art-preview.html');await page.setViewportSize({width:1280,height:900});
  await page.waitForTimeout(500);assert.equal(await page.locator('#poses .card').count(),42);
  assert.equal(await page.locator('#growth [data-pet-accessory]').count(),1,'bow is a separate layer');
- await page.locator('#tryBow').check();assert.equal(await page.locator('#poses [data-pet-accessory]').count(),14,'bow follows every baby pose only');
+ await page.locator('#tryBow').check();assert.equal(await page.locator('#poses [data-pet-accessory]').count(),39,'bow follows three stages, hidden during sleep');
  await page.screenshot({path:path.join(__dirname,'out','pet-art-bow-poses.png'),fullPage:true});
  await page.locator('#tryBow').uncheck();assert.equal(await page.locator('#poses [data-pet-accessory]').count(),0,'bow removes without changing base image');
  await page.screenshot({path:path.join(__dirname,'out','pet-art-poses.png'),fullPage:true});
