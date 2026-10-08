@@ -1,5 +1,12 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-11 — Tiếng Anh chia theo giáo trình (nhánh en-chia-giao-trinh, chờ Codex review)
+- index.json Tiếng Anh: `books` (NIK3 theo giai đoạn, Ms Hoa Explorer 2 theo bài U6 L1/L2 mặc định L2, GS3 "Bài bổ trợ", Kiến thức nền & bài tập trường) + mỗi chủ đề `book`, `reviewed` (7 chủ đề claude-audit chưa rà). api.js gắn các nhãn này vào chủ đề.
+- Màn Tiếng Anh: nhóm chủ đề theo sách, nhãn phạm vi ("GĐ1 · học cộng dồn", "Đã học đến U6 L2", "Bài bổ trợ"); thanh giai đoạn nằm trong mục NIK; Ôn tổng hợp (đề trộn tuần) ở cuối, ghi 1 dòng nguồn câu. Môn khác giữ nguyên.
+- Lọc Ms Hoa theo `bookLesson` đi qua `_allowedIndices` → áp dụng cho luyện, kế hoạch hôm nay, đề trộn, thử thách cún. Không đụng `stageBySubject`.
+- Đề trộn tuần Tiếng Anh: chỉ sách được tích "vào Ôn tổng hợp" (mặc định NIK, Ms Hoa, Nền; GS3 tắt) + chủ đề đã rà; chia đều 20 câu, nguồn thiếu bù đều, không lặp ID, đề ngắn nếu < 20. Khoá đề tuần có thêm nguồn + mốc bài.
+- Trang phụ huynh: thẻ "Phạm vi Tiếng Anh" cho bé đang dùng máy (mốc bài Ms Hoa, tích vào Ôn tổng hợp). tests/en-books.test.js (9 test).
+
 ## 2026-10-10 — Ms Hoa U6: thu hẹp kiểm tra nhiễu "get" (Codex), đóng lô L1–L2
 - Bỏ luật cấm get cho mọi câu collocation (get up, get dressed là cụm đúng của bài); thay bằng khoá bộ lựa chọn đã chốt của q003–q005. Không đổi dữ liệu. Ghi nhận: bookLesson chưa được app lọc — kiểm 4 luồng ở mốc L1/L2 khi chia giáo trình.
 

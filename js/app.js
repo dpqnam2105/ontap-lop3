@@ -489,14 +489,71 @@ const App = {
     return l.no <= ls.no;
   },
 
+  // ─── Chia theo giáo trình (môn có "books" trong index.json — hiện là Tiếng Anh) ─────────
+  // Mỗi chủ đề mang t.book; sách có scope "lesson" lọc câu theo q.bookLesson {book, unit, lesson}.
+  // Cài đặt lưu theo bé + lớp + môn: { lesson: {bookId: {unit, lesson}}, mix: {bookId: bool} }.
+  // "mix" CHỈ điều khiển đề trộn tuần (Ôn tổng hợp); không ảnh hưởng luyện từng chủ đề, kế hoạch hôm nay, thử thách cún.
+  BOOK_STORE_KEY: 'bookScopeBySubject',
+
+  /** Sách của chủ đề; chủ đề chưa gắn sách thuộc sách "fallback" (Kiến thức nền). */
+  _bookOf(s, t) {
+    const books = (s && s.books) || [];
+    return books.find(b => b.id === t.book) || books.find(b => b.fallback) || null;
+  },
+
+  getBookScope(s) {
+    if (!s || !Array.isArray(s.books) || !s.books.length) return null;
+    let all = {};
+    try { all = Storage.get(this.BOOK_STORE_KEY) || {}; } catch (e) { all = {}; }
+    const saved = all[this._stageKey(s)] || {};
+    const out = { lesson: {}, mix: {}, chosen: {} };
+    s.books.forEach(b => {
+      if (b.scope === 'lesson' && Array.isArray(b.lessons) && b.lessons.length) {
+        const v = saved.lesson && saved.lesson[b.id];
+        const ok = v && b.lessons.some(l => l.unit === v.unit && l.lesson === v.lesson);
+        const def = b.defaultLesson || b.lessons[b.lessons.length - 1];
+        out.lesson[b.id] = ok ? { unit: v.unit, lesson: v.lesson } : { unit: def.unit, lesson: def.lesson };
+        out.chosen[b.id] = !!ok;
+      }
+      const m = saved.mix && saved.mix[b.id];
+      out.mix[b.id] = typeof m === 'boolean' ? m : !!b.mixDefault;
+    });
+    return out;
+  },
+
+  /** patch: { lesson: {bookId: {unit, lesson}}, mix: {bookId: bool} } — chỉ ghi phần được đưa vào. */
+  setBookScope(s, patch) {
+    if (!s || !Array.isArray(s.books)) return;
+    let all = {};
+    try { all = Storage.get(this.BOOK_STORE_KEY) || {}; } catch (e) { all = {}; }
+    const k = this._stageKey(s);
+    const cur = all[k] || {};
+    const next = { lesson: { ...(cur.lesson || {}) }, mix: { ...(cur.mix || {}) } };
+    Object.entries((patch && patch.lesson) || {}).forEach(([id, v]) => { next.lesson[id] = { unit: v.unit, lesson: v.lesson }; });
+    Object.entries((patch && patch.mix) || {}).forEach(([id, v]) => { next.mix[id] = !!v; });
+    all[k] = next;
+    Storage.set(this.BOOK_STORE_KEY, all);
+  },
+
+  /** Câu có mốc bài của sách chia theo bài (bookLesson) vượt bài đã học → ẩn. Câu không có mốc: không lọc. */
+  _bookLessonOk(q, bs) {
+    const bl = q && q.bookLesson;
+    if (!bs || !bl) return true;
+    const cur = bs.lesson[bl.book];
+    if (!cur) return true;
+    return bl.unit !== cur.unit ? bl.unit < cur.unit : bl.lesson <= cur.lesson;
+  },
+
   /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài). */
   _allowedIndices(s, t) {
     const st = this.getStageSetting(s);
     const ls = this.getLessonSetting(s);
-    if (!st && !ls) return null;
+    const bs = this.getBookScope(s);
+    if (!st && !ls && !bs) return null;
     const out = [];
     (t.questions || []).forEach((q, i) => {
       if (!this._lessonOk(q, ls)) return;
+      if (!this._bookLessonOk(q, bs)) return;
       const qs = Number(q.stage || 0);
       if (!st || !qs) { out.push(i); return; }    // câu chưa gắn nhãn: luôn hiện
       if (st.only ? qs === st.stage : qs <= st.stage) out.push(i);
@@ -595,11 +652,77 @@ const App = {
     const wk = ws.getFullYear() + '-' + String(ws.getMonth() + 1).padStart(2, '0') + '-' + String(ws.getDate()).padStart(2, '0');
     const st = this.getStageSetting(s);
     const stTag = st ? (st.only ? 'only' : 'upto') + st.stage : 'all';
-    return wk + '|' + this.currentGrade + ':' + s.id + '|' + stTag;
+    const bs = this.getBookScope(s);
+    // Môn chia giáo trình: đổi nguồn vào đề trộn hoặc mốc bài → bộ đề mới (điểm cũ không lẫn)
+    const bTag = bs ? '|b:' + s.books.filter(b => bs.mix[b.id]).map(b => b.id + (bs.lesson[b.id] ? '@' + bs.lesson[b.id].unit + '.' + bs.lesson[b.id].lesson : '')).join(',') : '';
+    return wk + '|' + this.currentGrade + ':' + s.id + '|' + stTag + bTag;
+  },
+
+  /**
+   * Đề trộn tuần cho môn chia giáo trình (Ôn tổng hợp):
+   * nguồn = sách được chọn "vào Ôn tổng hợp" và có câu hợp lệ; chỉ chủ đề đã rà (reviewed === true);
+   * vẫn trong phạm vi giai đoạn / bài đã học. Hạn mức chia đều N / số nguồn (phần dư chia lần lượt),
+   * nguồn thiếu câu lấy hết rồi bù đều từ nguồn còn câu. Trong một nguồn xoay vòng theo chủ đề.
+   * Không lặp ID. Tổng < N → đề ngắn đúng số câu có, không kéo câu ngoài phạm vi.
+   */
+  _buildBookMix(s, key, shuffle) {
+    const bs = this.getBookScope(s);
+    const sources = s.books.filter(b => bs.mix[b.id]).map(b => {
+      const buckets = shuffle(s.topics.filter(t => !t.drill && t.reviewed === true && this._bookOf(s, t) === b).map(t => {
+        const allowed = this._allowedIndices(s, t);
+        const idxs = allowed === null ? (t.questions || []).map((_, i) => i) : allowed;
+        return { t, idxs: shuffle(idxs) };
+      }).filter(x => x.idxs.length));
+      return { b, buckets, avail: buckets.reduce((n, x) => n + x.idxs.length, 0) };
+    }).filter(x => x.avail > 0);
+
+    // Hạn mức: chia đều, phần dư cho các nguồn đầu (thứ tự đã xáo theo tuần); thiếu thì bù đều
+    const order = shuffle(sources);
+    const quota = new Map(order.map(x => [x, 0]));
+    let left = Math.min(this.MIX_SIZE, order.reduce((n, x) => n + x.avail, 0));
+    while (left > 0) {
+      const open = order.filter(x => quota.get(x) < x.avail);
+      const share = Math.max(1, Math.floor(left / open.length));
+      for (const x of open) {
+        if (left <= 0) break;
+        const add = Math.min(share, x.avail - quota.get(x), left);
+        quota.set(x, quota.get(x) + add);
+        left -= add;
+      }
+    }
+
+    const pool = [], seen = new Set(), used = [];
+    for (const x of order) {
+      const want = quota.get(x);
+      let got = 0, round = 0;
+      while (got < want && x.buckets.some(bk => bk.idxs.length > round)) {
+        for (const bk of x.buckets) {
+          if (got >= want) break;
+          const i = bk.idxs[round];
+          if (i == null) continue;
+          const q = bk.t.questions[i];
+          const topicId = (bk.t.id || bk.t.name).toString();
+          const id = q.id || (topicId + '_' + i);
+          if (seen.has(id)) continue;
+          seen.add(id);
+          pool.push({ ...q, _idx: i, subjectId: s.id, topicId, id, _subjectName: s.name, _topicName: bk.t.name });
+          got++;
+        }
+        round++;
+      }
+      if (got) used.push({ id: x.b.id, icon: x.b.icon, name: x.b.name, n: got });
+    }
+    const topicCount = new Set(pool.map(q => q.topicId)).size;
+    return { key, pool: shuffle(pool), topicCount, sources: used, short: pool.length < this.MIX_SIZE };
   },
 
   _buildWeeklyMix(s) {
     const key = this._mixKey(s);
+    if (Array.isArray(s.books) && s.books.length) {
+      const rand0 = this._seededRandom(key + '|' + Storage.canonName(this.playerName || ''));
+      const shuffle0 = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand0() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      return this._buildBookMix(s, key, shuffle0);
+    }
     const rand = this._seededRandom(key + '|' + Storage.canonName(this.playerName || ''));
     const shuffle = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
     const buckets = shuffle(s.topics.filter(t => !t.drill).map(t => {
@@ -632,8 +755,10 @@ const App = {
   },
 
   _renderMixCard(s) {
-    const { key, pool, topicCount } = this._buildWeeklyMix(s);
+    const { key, pool, topicCount, sources, short } = this._buildWeeklyMix(s);
     if (pool.length < 5 || topicCount < 2) return null;
+    // Môn chia giáo trình: 1 dòng ngắn nguồn câu + báo đề ngắn
+    const srcLine = sources ? `<div class="mix-src">Lấy từ: ${sources.map(x => `${x.icon} ${this._escape(x.name)} (${x.n})`).join(' · ')}${short ? ` · đề ngắn ${pool.length} câu vì chưa đủ ${this.MIX_SIZE} câu đã rà` : ''}</div>` : '';
     let best = null;
     try { best = (Storage.get('weeklyMix') || {})[key] || null; } catch (e) { best = null; }
     const ws = this._weekStart();
@@ -642,9 +767,10 @@ const App = {
     card.innerHTML = `
       <div class="mix-icon">🎲</div>
       <div class="mix-text">
-        <div class="mix-title">Đề trộn tuần này</div>
+        <div class="mix-title">${sources ? 'Ôn tổng hợp · đề trộn tuần' : 'Đề trộn tuần này'}</div>
         <div class="mix-sub">${pool.length} câu xen kẽ từ ${topicCount} chủ đề · tuần từ ${ws.getDate()}/${ws.getMonth() + 1}${best ? ` · <b>Điểm cao nhất: ${best.score}/${best.total}</b>` : ''}</div>
         <div class="mix-why">Trộn nhiều dạng giúp con tự nhận ra bài nào dùng cách nào — nhớ lâu hơn làm từng dạng riêng.</div>
+        ${srcLine}
       </div>
       <button class="mix-btn">${best ? 'Làm lại ▶' : 'Làm đề ▶'}</button>`;
     card.querySelector('.mix-btn').addEventListener('click', e => {
@@ -664,75 +790,37 @@ const App = {
     list.innerHTML = '';
 
     const stageBar = this._renderStageBar(s, idx);
-    if (stageBar) list.appendChild(stageBar);
     const mixCard = this._renderMixCard(s);
-    if (mixCard) list.appendChild(mixCard);
+    // Chủ đề đang có câu trong phạm vi (giai đoạn / bài đã học); phần tự sinh bảng nhân chia ở Đấu trường
+    const shown = s.topics.map(t => ({ t, allowed: this._allowedIndices(s, t) }))
+      .filter(x => !x.t.drill && !(x.allowed && !x.allowed.length));
 
-    s.topics.forEach((t) => {
-      const allowed = this._allowedIndices(s, t);
-      if (allowed && !allowed.length) return; // chủ đề chưa có câu trong giai đoạn đang chọn
-      if (t.drill) return; // phần tự sinh bảng nhân chia nằm ở nút ⏱️ Đấu trường tính nhanh
-      const allowedSet = allowed ? new Set(allowed) : null;
-      const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
-
-      const card = document.createElement('div');
-      card.className = 'topic-card topic-card-with-modes';
-
-      const topicId = (t.id || t.name).toString();
-      const totalQ = allowed ? allowed.length : (t.questions || []).length;
-      let learned = 0, wrong = 0, today = 0;
-      try {
-        // Tiến độ tích lũy: số câu đã từng làm đúng (không reset theo ngày).
-        const tot = (window.Storage && Storage.getTotalProgress) ? Storage.getTotalProgress(topicId) : null;
-        if (tot) learned = (tot.ok || []).filter(inScope).length;
-        const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
-        if (prog) {
-          today = (prog.learned || []).filter(inScope).length;
-          wrong = (prog.wrong || []).filter(inScope).length;
+    if (Array.isArray(s.books) && s.books.length) {
+      // Môn chia giáo trình: nhóm chủ đề theo sách; thanh giai đoạn nằm trong mục sách chia giai đoạn (NIK);
+      // Ôn tổng hợp (đề trộn tuần) ở cuối. Bé không có bộ lọc nào khác — phạm vi sách khác do bố mẹ chỉnh.
+      s.books.forEach(b => {
+        const items = shown.filter(x => this._bookOf(s, x.t) === b);
+        const hasStage = b.scope === 'stage' && stageBar;
+        if (!items.length && !hasStage) return;
+        list.appendChild(this._bookHeader(s, b));
+        if (hasStage) list.appendChild(stageBar);
+        items.forEach(x => list.appendChild(this._topicCard(s, x.t, x.allowed)));
+        if (hasStage && !items.length) {
+          const empty = document.createElement('div');
+          empty.className = 'stage-empty';
+          empty.innerHTML = '🌱 Bài cho giai đoạn này đang được soạn thêm. Con chọn giai đoạn khác hoặc bấm <b>Ôn cả phần trước</b> nhé!';
+          list.appendChild(empty);
         }
-      } catch (e) { /* chưa có tiến độ thì để 0 */ }
-      let solid = 0;
-      try {
-        const rv = Storage.getReviewMap ? Storage.getReviewMap() : {};
-        (t.questions || []).forEach((q, i) => { const r = q.id && rv[q.id]; if (r && r.box >= Storage.MASTER_BOX && inScope(i)) solid++; });
-      } catch (e) { solid = 0; }
-      const solidAll = totalQ > 0 && solid / totalQ >= 0.8;
-      const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
-      const st = solidAll ? { label: '🌟 Đã vững', color: '#16a34a' } : this._topicStatus(pct);
-      const desc = this.TOPIC_DESC[topicId] || '';
-
-      card.innerHTML = `
-        <div class="topic-card-main">
-          <div class="topic-icon">${t.icon}</div>
-          <div class="topic-head-text">
-            <div class="topic-name">${this._escape(t.name)}</div>
-            <div class="topic-subline">${totalQ} câu hỏi${solid ? ` · <span class="solid-tag">⭐ ${solid} câu đã vững</span>` : ''}</div>
-          </div>
-        </div>
-        ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
-        <div class="topic-progress-wrap">
-          <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
-          <div class="topic-prog-meta">
-            <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
-            <span class="topic-pct">${learned}/${totalQ} câu đã đúng${today ? ' · hôm nay ' + today : ''}${wrong ? ' · ' + wrong + ' cần ôn' : ''}</span>
-          </div>
-        </div>
-        <div class="topic-mode-hint">👇 Chọn cách học để bắt đầu</div>
-        <div class="topic-mode-row">
-          <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
-          <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
-          <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
-        </div>`;
-
-      card.querySelectorAll('.mode-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed });
-        });
       });
+      if (mixCard) list.appendChild(mixCard);
+      if (keepScroll) return;
+      this.showScreen('topic');
+      return;
+    }
 
-      list.appendChild(card);
-    });
+    if (stageBar) list.appendChild(stageBar);
+    if (mixCard) list.appendChild(mixCard);
+    shown.forEach(x => list.appendChild(this._topicCard(s, x.t, x.allowed)));
 
     if (stageBar && !list.querySelector('.topic-card')) {
       const empty = document.createElement('div');
@@ -743,6 +831,89 @@ const App = {
 
     if (keepScroll) return; // đổi giai đoạn: vẽ lại tại chỗ, không cuộn lên đầu
     this.showScreen('topic');
+  },
+
+  /** Thẻ một chủ đề (luyện / kiểm tra / ôn lỗi) — allowed: chỉ số câu trong phạm vi hoặc null. */
+  _topicCard(s, t, allowed) {
+    const allowedSet = allowed ? new Set(allowed) : null;
+    const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
+
+    const card = document.createElement('div');
+    card.className = 'topic-card topic-card-with-modes';
+
+    const topicId = (t.id || t.name).toString();
+    const totalQ = allowed ? allowed.length : (t.questions || []).length;
+    let learned = 0, wrong = 0, today = 0;
+    try {
+      // Tiến độ tích lũy: số câu đã từng làm đúng (không reset theo ngày).
+      const tot = (window.Storage && Storage.getTotalProgress) ? Storage.getTotalProgress(topicId) : null;
+      if (tot) learned = (tot.ok || []).filter(inScope).length;
+      const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
+      if (prog) {
+        today = (prog.learned || []).filter(inScope).length;
+        wrong = (prog.wrong || []).filter(inScope).length;
+      }
+    } catch (e) { /* chưa có tiến độ thì để 0 */ }
+    let solid = 0;
+    try {
+      const rv = Storage.getReviewMap ? Storage.getReviewMap() : {};
+      (t.questions || []).forEach((q, i) => { const r = q.id && rv[q.id]; if (r && r.box >= Storage.MASTER_BOX && inScope(i)) solid++; });
+    } catch (e) { solid = 0; }
+    const solidAll = totalQ > 0 && solid / totalQ >= 0.8;
+    const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
+    const st = solidAll ? { label: '🌟 Đã vững', color: '#16a34a' } : this._topicStatus(pct);
+    const desc = this.TOPIC_DESC[topicId] || '';
+
+    card.innerHTML = `
+      <div class="topic-card-main">
+        <div class="topic-icon">${t.icon}</div>
+        <div class="topic-head-text">
+          <div class="topic-name">${this._escape(t.name)}</div>
+          <div class="topic-subline">${totalQ} câu hỏi${solid ? ` · <span class="solid-tag">⭐ ${solid} câu đã vững</span>` : ''}</div>
+        </div>
+      </div>
+      ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
+      <div class="topic-progress-wrap">
+        <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
+        <div class="topic-prog-meta">
+          <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
+          <span class="topic-pct">${learned}/${totalQ} câu đã đúng${today ? ' · hôm nay ' + today : ''}${wrong ? ' · ' + wrong + ' cần ôn' : ''}</span>
+        </div>
+      </div>
+      <div class="topic-mode-hint">👇 Chọn cách học để bắt đầu</div>
+      <div class="topic-mode-row">
+        <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
+        <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
+        <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
+      </div>`;
+
+    card.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed });
+      });
+    });
+
+    return card;
+  },
+
+  /** Tiêu đề mục sách: biểu tượng, tên, nhãn phạm vi đang dùng (chỉ để xem). */
+  _bookHeader(s, b) {
+    const el = document.createElement('div');
+    el.className = 'book-head';
+    let tag = b.tag || '';
+    if (b.scope === 'stage') {
+      const st = this.getStageSetting(s);
+      const cur = st && s.stages.find(x => x.id === st.stage);
+      if (cur) tag = st.only ? 'Chỉ ' + (cur.short || cur.name) : (cur.short || cur.name) + ' · học cộng dồn';
+    } else if (b.scope === 'lesson') {
+      const bs = this.getBookScope(s);
+      const cur = bs && bs.lesson[b.id];
+      const l = cur && (b.lessons || []).find(x => x.unit === cur.unit && x.lesson === cur.lesson);
+      if (l) tag = 'Đã học đến ' + (l.short || l.name);
+    }
+    el.innerHTML = `<span class="book-icon">${b.icon || '📚'}</span><span class="book-name">${this._escape(b.name)}</span>${tag ? `<span class="book-tag">${this._escape(tag)}</span>` : ''}`;
+    return el;
   },
 
   /** Thẻ "⚡ Luyện bảng nhân chia (tự sinh)": chọn bảng + nhóm dạng, mỗi lượt bốc câu mới. */

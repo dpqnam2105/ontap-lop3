@@ -435,6 +435,21 @@
 .mix-title{font-family:var(--font-display);font-weight:900;font-size:1.1rem;color:#4a2a8a}
 .mix-sub{font-size:.9rem;color:#3a4a60;margin-top:2px}
 .mix-why{font-size:.8rem;color:var(--muted);margin-top:4px}
+/* Chia theo giáo trình (Tiếng Anh): tiêu đề mục sách, nguồn đề trộn, thẻ phạm vi ở trang phụ huynh */
+.book-head{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:10px;padding:8px 4px 2px;border-bottom:2px solid #e6eefb}
+.book-head:first-child{margin-top:0}
+.book-icon{font-size:1.35rem;line-height:1}
+.book-name{font-family:var(--font-display);font-weight:900;font-size:1.08rem;color:var(--ink)}
+.book-tag{font-size:.82rem;font-weight:800;color:#2563eb;background:#eef5ff;border:1px solid #cfe0fb;border-radius:999px;padding:3px 10px}
+.mix-src{font-size:.8rem;color:#3a4a60;margin-top:4px;font-weight:700}
+.scope-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:6px 12px;align-items:center;padding:10px 0;border-bottom:1px dashed #dbe4f0}
+.scope-row:last-of-type{border-bottom:0}
+.scope-detail{font-size:.9rem;color:#3a4a60}
+.scope-select{display:block;width:100%;max-width:100%;box-sizing:border-box;margin-top:4px;padding:7px 10px;border-radius:10px;border:1.5px solid #cfe0fb;background:#fff;font:inherit;font-weight:700;color:var(--ink)}
+.scope-detail{min-width:0}
+.scope-mix{font-size:.88rem;font-weight:700;white-space:nowrap}
+.scope-note{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+@media (max-width:640px){.scope-row{grid-template-columns:1fr}.scope-mix{white-space:normal}}
 .mix-btn{border:0;background:#7c4dff;color:#fff;font-weight:900;border-radius:14px;padding:11px 18px;cursor:pointer;white-space:nowrap;box-shadow:0 6px 14px rgba(124,77,255,.28)}
 .mix-btn:hover{transform:translateY(-1px)}
 @media (max-width:640px){.mix-card{flex-wrap:wrap}.mix-btn{width:100%}}

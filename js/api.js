@@ -109,7 +109,13 @@ const API = {
       );
 
       const topics = loaded
-        .map(d => d && d.topic)
+        .map((d, i) => {
+          const t = d && d.topic;
+          // Nhãn chia giáo trình ghi ở index.json (book, reviewed) → gắn vào chủ đề
+          if (t && wanted[i].book !== undefined) t.book = wanted[i].book;
+          if (t && wanted[i].reviewed !== undefined) t.reviewed = wanted[i].reviewed;
+          return t;
+        })
         .filter(t => t && Array.isArray(t.questions) && t.questions.length > 0);
 
       if (!topics.length) return null;
@@ -119,6 +125,8 @@ const API = {
         out.stages = idx.stages;
         out.defaultStage = idx.defaultStage || idx.stages[0].id;
       }
+      // Chia theo giáo trình (Tiếng Anh): danh sách sách + phạm vi từng sách
+      if (Array.isArray(idx.books) && idx.books.length) out.books = idx.books;
       return out;
     }));
 

@@ -96,6 +96,7 @@ const ParentDashboard = {
   async _openDashboard() {
     App.showScreen('parent');
     if (window.Cloud) Cloud.renderParentCard();
+    this._renderScopeCard();
 
     const select = document.getElementById('parentNameSelect');
     select.innerHTML = '<option>Đang tải...</option>';
@@ -126,6 +127,64 @@ const ParentDashboard = {
     select.value = current && names.includes(current) ? current : names[0];
     this._ensurePrivacyNote();
     await this._loadParentLog(select.value);
+  },
+
+  // ─── Phạm vi theo giáo trình (môn có "books", hiện là Tiếng Anh) — chỉnh cho bé đang dùng máy ───
+  _renderScopeCard() {
+    const host = document.querySelector('#screenParent .parent-wrap');
+    const subs = ((window.App && App.allData && App.allData.subjects) || []).filter(s => Array.isArray(s.books) && s.books.length);
+    let card = document.getElementById('bookScopeCard');
+    if (!host || !subs.length) { if (card) card.remove(); return; }
+    if (!card) {
+      card = document.createElement('div');
+      card.className = 'card';
+      card.id = 'bookScopeCard';
+      const anchor = document.getElementById('parentSummary');
+      host.insertBefore(card, anchor || null);
+    }
+    const nm = (window.Storage && Storage.getActiveName && Storage.getActiveName()) || '';
+    if (!nm) {
+      card.innerHTML = '<h3 class="parent-section-title">📚 Phạm vi theo giáo trình</h3><p class="scope-note">Bé cần nhập tên ở trang chủ trước, rồi bố mẹ chỉnh phạm vi cho bé đó.</p>';
+      return;
+    }
+    const esc = x => this._escape(x);
+    card.innerHTML = subs.map((s, si) => {
+      const bs = App.getBookScope(s);
+      const st = App.getStageSetting(s);
+      const rows = s.books.map(b => {
+        const topics = s.topics.filter(t => !t.drill && App._bookOf(s, t) === b);
+        const reviewed = topics.filter(t => t.reviewed === true)
+          .reduce((n, t) => { const a = App._allowedIndices(s, t); return n + (a === null ? t.questions.length : a.length); }, 0);
+        let scope = '';
+        if (b.scope === 'stage') {
+          const cur = st && s.stages.find(x => x.id === st.stage);
+          scope = 'Giai đoạn: <b>' + esc(cur ? (cur.short || cur.name) : '—') + (st && st.only ? ' (chỉ giai đoạn này)' : ' · học cộng dồn') + '</b> — chỉnh ở màn ' + esc(s.name) + '.';
+        } else if (b.scope === 'lesson') {
+          const cur = bs.lesson[b.id] || {};
+          scope = '<label>Đã học đến: <select class="scope-select scope-lesson" data-s="' + si + '" data-b="' + esc(b.id) + '">' +
+            (b.lessons || []).map(l => '<option value="' + l.unit + '.' + l.lesson + '"' + (l.unit === cur.unit && l.lesson === cur.lesson ? ' selected' : '') + '>' + esc(l.short + ' — ' + l.name) + '</option>').join('') +
+            '</select></label>';
+        } else if (b.parentNote) {
+          scope = esc(b.parentNote);
+        }
+        if (!topics.length) scope = 'Chưa có câu hỏi.';
+        const mix = topics.length
+          ? '<label class="scope-mix"><input type="checkbox" class="scope-mixcb" data-s="' + si + '" data-b="' + esc(b.id) + '"' + (bs.mix[b.id] ? ' checked' : '') + (reviewed ? '' : ' disabled') + '> vào Ôn tổng hợp' + (reviewed ? ' (' + reviewed + ' câu đã rà)' : ' (chưa có câu đã rà)') + '</label>'
+          : '';
+        return '<div class="scope-row"><div class="scope-book">' + (b.icon || '📚') + ' <b>' + esc(b.name) + '</b></div><div class="scope-detail">' + scope + '</div>' + mix + '</div>';
+      }).join('');
+      return '<h3 class="parent-section-title">📚 Phạm vi ' + esc(s.name) + ' — ' + esc(nm) + '</h3>' + rows +
+        '<p class="scope-note">"Vào Ôn tổng hợp" chỉ áp dụng cho đề trộn tuần. Luyện từng chủ đề, kế hoạch hôm nay và thử thách cún vẫn lấy câu theo phạm vi ở trên. Chỉ câu đã rà mới vào đề trộn.</p>';
+    }).join('');
+    card.querySelectorAll('.scope-lesson').forEach(sel => sel.addEventListener('change', () => {
+      const [unit, lesson] = sel.value.split('.').map(Number);
+      App.setBookScope(subs[+sel.dataset.s], { lesson: { [sel.dataset.b]: { unit, lesson } } });
+      this._renderScopeCard();
+    }));
+    card.querySelectorAll('.scope-mixcb').forEach(cb => cb.addEventListener('change', () => {
+      App.setBookScope(subs[+cb.dataset.s], { mix: { [cb.dataset.b]: cb.checked } });
+      this._renderScopeCard();
+    }));
   },
 
   _ensurePrivacyNote() {

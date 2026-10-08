@@ -7,85 +7,162 @@
       "id": "en_nik3-unit1",
       "name": "NIK3 Unit 1: Places & directions",
       "file": "nik3-unit1.json",
-      "count": 38
+      "count": 38,
+      "book": "nik3",
+      "reviewed": true
     },
     {
       "id": "en_nik3-unit2",
       "name": "NIK3 Unit 2: Dinosaurs & Ancient Egypt",
       "file": "nik3-unit2.json",
-      "count": 40
+      "count": 40,
+      "book": "nik3",
+      "reviewed": true
     },
     {
       "id": "en_nik3-unit3",
       "name": "NIK3 Unit 3: Vacation & camping",
       "file": "nik3-unit3.json",
-      "count": 23
+      "count": 23,
+      "book": "nik3",
+      "reviewed": true
     },
     {
       "id": "en_mshoa-e2-u6",
       "name": "Ms Hoa Explorer 2 · Unit 6: My Day",
       "file": "mshoa-e2-u6.json",
-      "count": 23
+      "count": 23,
+      "book": "mshoa-explorer2",
+      "reviewed": true
     },
     {
       "id": "en_adj-adv",
       "name": "Adjectives & Adverbs",
       "file": "adj-adv.json",
-      "count": 25
+      "count": 25,
+      "book": "nen",
+      "reviewed": true
     },
     {
       "id": "en_reading-nik3",
       "name": "Reading: NIK3 Unit 1–2",
       "file": "reading-nik3.json",
-      "count": 12
+      "count": 12,
+      "book": "nik3",
+      "reviewed": true
     },
     {
       "id": "en_global-success-3",
       "name": "Global Success 3 (tập 1)",
       "file": "global-success-3.json",
-      "count": 20
+      "count": 20,
+      "book": "gs3",
+      "reviewed": true
     },
     {
       "id": "en_unit-placeholder-01",
       "name": "At School",
       "file": "unit-placeholder-01.json",
-      "count": 16
+      "count": 16,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_unit-placeholder-02",
       "name": "My Family",
       "file": "unit-placeholder-02.json",
-      "count": 16
+      "count": 16,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_unit-placeholder-03",
       "name": "Daily Activities",
       "file": "unit-placeholder-03.json",
-      "count": 16
+      "count": 16,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_vocabulary",
       "name": "Vocabulary",
       "file": "vocabulary.json",
-      "count": 16
+      "count": 16,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_grammar",
       "name": "Grammar",
       "file": "grammar.json",
-      "count": 16
+      "count": 16,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_reading",
       "name": "Reading",
       "file": "reading.json",
-      "count": 12
+      "count": 12,
+      "book": "nen",
+      "reviewed": false
     },
     {
       "id": "en_on-tap-tong-hop",
       "name": "Ôn tập tổng hợp",
       "file": "on-tap-tong-hop.json",
-      "count": 12
+      "count": 12,
+      "book": "nen",
+      "reviewed": false
+    }
+  ],
+  "books": [
+    {
+      "id": "nik3",
+      "icon": "📘",
+      "name": "Now I Know 3",
+      "scope": "stage",
+      "mixDefault": true
+    },
+    {
+      "id": "mshoa-explorer2",
+      "icon": "📙",
+      "name": "Ms Hoa Junior · Explorer 2",
+      "scope": "lesson",
+      "mixDefault": true,
+      "lessons": [
+        {
+          "unit": 6,
+          "lesson": 1,
+          "short": "U6 L1",
+          "name": "Unit 6 Lesson 1 — việc trong ngày, các phòng"
+        },
+        {
+          "unit": 6,
+          "lesson": 2,
+          "short": "U6 L2",
+          "name": "Unit 6 Lesson 2 — buổi trong ngày, giờ đúng"
+        }
+      ],
+      "defaultLesson": {
+        "unit": 6,
+        "lesson": 2
+      }
+    },
+    {
+      "id": "gs3",
+      "icon": "📗",
+      "name": "Global Success 3",
+      "tag": "Bài bổ trợ",
+      "parentNote": "Vai trò: chờ xác nhận (bài bổ trợ). Chưa có phạm vi Unit.",
+      "mixDefault": false
+    },
+    {
+      "id": "nen",
+      "icon": "🧩",
+      "name": "Kiến thức nền & bài tập trường",
+      "mixDefault": true,
+      "fallback": true
     }
   ],
   "stages": [
