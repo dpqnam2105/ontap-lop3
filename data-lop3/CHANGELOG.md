@@ -7,6 +7,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-09 (Claude — Tiếng Anh lô 2, Codex duyệt nội dung)
+- Tiếng Anh / NIK3 Unit 3 (chủ đề mới en_nik3-unit3) — +22 câu en_nik3-unit3_q001–q022 (mã nháp V1–V22). source claude-nik3-lo2-u3v1-20261009, track core, book nik3, stage 2.
+- ref: basis "school-weekly", scheduledPages "38–39" (trang lịch trường chỉ định, chưa đối chiếu trực tiếp), schoolWords, extraWords; trash can = supplementRef (nhãn trong tranh trên lịch tuần 7). Đoạn D (en-lo2-D) có passageNote "tự biên soạn, không phải Reading 1".
+- Đã sửa theo Codex: V15 (north = hướng Bắc → compass), V10 ("Which one describes an action? (action = hành động)"), V17 bỏ nhiễu get lost. Đáp án xoay A/B/C/D 6/6/5/5.
+
 ## 2026-10-08 (Claude — Tiếng Anh lô 1, Codex duyệt nội dung)
 - Tiếng Anh / NIK3 Unit 1 — +16 câu en_nik3-unit1_q023–q038; NIK3 Unit 2 — +18 câu en_nik3-unit2_q023–q040. source claude-nik3-lo1-20261008, track core, book nik3, stage 1.
 - Nhãn mới: `book`, `track` (core|foundation|enrich), `ref` {basis "toc", note (mục lục chưa xác nhận khớp sách trường), toc[], extraWords[], supplementRef?, contentReview}, `passage` (en-lo1-A/B/C, đoạn viết trong q). Không ghi số trang.

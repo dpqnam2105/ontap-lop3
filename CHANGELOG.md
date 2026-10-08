@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Tiếng Anh lô 2: NIK3 U3 Vocabulary 1 (Claude soạn, Codex duyệt nội dung)
+- Chủ đề mới "NIK3 Unit 3: Vacation & camping" (nik3-unit3.json, 22 câu, Giai đoạn 2): nghĩa từ hai chiều, chọn đồ theo tình huống, cụm hành động, phân loại, đoạn đọc D tự biên soạn. Nguồn school-weekly (lịch tuần 7, trang 38–39 do trường chỉ định). Hồ sơ để GĐ1 không thấy U3; chọn GĐ2 thì thấy U3, kế hoạch và đề trộn tuần lấy được câu U3. tests/en-data.test.js thêm quy tắc lô 2.
+
 ## 2026-10-09 — Tách kiểm tra dữ liệu Tiếng Anh (Codex góp ý)
 - tests/en-data.test.js: quy tắc chung (ID, lựa chọn, đáp án, track/book, cấu trúc nguồn basis toc|school-weekly|page, đoạn đọc) tách khỏi quy tắc riêng lô 1 (theo source: toc, không trang, ghi chú phiên bản). Ghi rõ giới hạn: kiểm gợi ý chỉ bắt trùng nguyên văn đáp án. Không đổi dữ liệu.
 

@@ -1,0 +1,895 @@
+{
+  "topic": {
+    "id": "en_nik3-unit3",
+    "icon": "⛺",
+    "name": "NIK3 Unit 3: Vacation & camping",
+    "questions": [
+      {
+        "q": "\"sleeping bag\" means:",
+        "choices": [
+          "túi ngủ",
+          "cái chăn",
+          "cái lều",
+          "bếp cắm trại"
+        ],
+        "a": 0,
+        "hint": "Con chui vào bên trong nó để ngủ cho ấm.",
+        "explain": "sleeping bag = túi ngủ. \"cái chăn\" là blanket, \"bếp cắm trại\" là camping stove.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V1",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "sleeping bag",
+            "blanket",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [
+            "tent"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q001"
+      },
+      {
+        "q": "It is dark. You can't see anything. Which one do you need?",
+        "choices": [
+          "compass",
+          "flashlight",
+          "blanket",
+          "sleeping bag"
+        ],
+        "a": 1,
+        "hint": "Thứ nào giúp con nhìn thấy khi trời tối?",
+        "explain": "Trời tối, không nhìn thấy → cần đèn pin (flashlight). La bàn chỉ hướng, không giúp nhìn.",
+        "difficulty": 1,
+        "skill": "vocab-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V2",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "flashlight",
+            "compass",
+            "blanket",
+            "sleeping bag"
+          ],
+          "toc": [],
+          "extraWords": [
+            "dark",
+            "see"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q002"
+      },
+      {
+        "q": "You want to cook noodles at the campsite. What do you use?",
+        "choices": [
+          "flashlight",
+          "compass",
+          "camping stove",
+          "sleeping bag"
+        ],
+        "a": 2,
+        "hint": "Đồ nào dùng để nấu ăn?",
+        "explain": "Nấu mì → dùng bếp cắm trại (camping stove).",
+        "difficulty": 1,
+        "skill": "vocab-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V3",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "camping stove",
+            "campsite",
+            "flashlight",
+            "compass",
+            "sleeping bag"
+          ],
+          "toc": [],
+          "extraWords": [
+            "cook",
+            "noodles"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q003"
+      },
+      {
+        "q": "Con cần biết phải đi theo hướng nào. Con dùng đồ vật nào?",
+        "choices": [
+          "flashlight",
+          "blanket",
+          "camping stove",
+          "compass"
+        ],
+        "a": 3,
+        "hint": "Đồ vật có kim chỉ hướng.",
+        "explain": "La bàn (compass) cho biết hướng đi.",
+        "difficulty": 1,
+        "skill": "vocab-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V4",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "compass",
+            "flashlight",
+            "blanket",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q004"
+      },
+      {
+        "q": "\"get lost\" means:",
+        "choices": [
+          "bị lạc",
+          "dọn dẹp",
+          "dựng lều",
+          "nhóm lửa"
+        ],
+        "a": 0,
+        "hint": "Khi con không biết đường về.",
+        "explain": "get lost = bị lạc. \"dọn dẹp\" là clean up, \"dựng lều\" là set up a tent, \"nhóm lửa\" là make a fire.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V5",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "get lost",
+            "clean up",
+            "set up a tent",
+            "make a fire"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q005"
+      },
+      {
+        "q": "You want to sleep in a tent tonight. What do you need to do?",
+        "choices": [
+          "Clean up.",
+          "Set up a tent.",
+          "Make a fire.",
+          "Use a compass."
+        ],
+        "a": 1,
+        "hint": "Muốn ngủ trong lều thì lều phải có sẵn chưa?",
+        "explain": "Muốn ngủ trong lều → phải dựng lều: Set up a tent.",
+        "difficulty": 1,
+        "skill": "phrase-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V6",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "set up a tent",
+            "clean up",
+            "make a fire",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [
+            "tonight",
+            "use"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q006"
+      },
+      {
+        "q": "The camping trip is over. There is trash on the ground. \"Let's ___ before we go home.\"",
+        "choices": [
+          "set up a tent",
+          "make a fire",
+          "clean up",
+          "use a compass"
+        ],
+        "a": 2,
+        "hint": "Có rác trên mặt đất thì mình nên làm gì?",
+        "explain": "Có rác → dọn dẹp: Let's clean up.",
+        "difficulty": 1,
+        "skill": "phrase-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V7",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "clean up",
+            "set up a tent",
+            "make a fire",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [
+            "trip",
+            "ground",
+            "before",
+            "use"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09",
+          "supplementRef": "trash can — nhãn trong tranh Reading 1 in trên lịch Tiếng Anh tuần 7 của trường (Claude đã xem ảnh PDF Nam gửi 08/10); không dùng nội dung bài đọc"
+        },
+        "id": "en_nik3-unit3_q007"
+      },
+      {
+        "q": "A: \"I'm cold.\" B: \"___\"",
+        "choices": [
+          "Take this flashlight.",
+          "Take this compass.",
+          "Clean up, please.",
+          "Take this blanket."
+        ],
+        "a": 3,
+        "hint": "Bạn bị lạnh. Thứ nào giúp bạn ấm hơn?",
+        "explain": "Lạnh → đưa chăn: Take this blanket.",
+        "difficulty": 1,
+        "skill": "dialogue",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V8",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "blanket",
+            "flashlight",
+            "compass",
+            "clean up"
+          ],
+          "toc": [],
+          "extraWords": [
+            "cold",
+            "take"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q008"
+      },
+      {
+        "q": "Stay with your group so you don't ___.",
+        "choices": [
+          "get lost",
+          "clean up",
+          "set up a tent",
+          "use a compass"
+        ],
+        "a": 0,
+        "hint": "Vì sao phải đi cùng nhóm (group)?",
+        "explain": "Đi cùng nhóm để không bị lạc: so you don't get lost.",
+        "difficulty": 2,
+        "skill": "phrase-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V9",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "get lost",
+            "clean up",
+            "set up a tent",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [
+            "stay with",
+            "group (nhóm)",
+            "use"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q009"
+      },
+      {
+        "q": "Which one describes an action? (action = hành động)",
+        "choices": [
+          "blanket",
+          "make a fire",
+          "flashlight",
+          "compass"
+        ],
+        "a": 1,
+        "hint": "Ba lựa chọn là đồ vật, một lựa chọn là việc làm.",
+        "explain": "\"make a fire\" (nhóm lửa) là hành động; blanket, flashlight, compass là đồ vật.",
+        "difficulty": 1,
+        "skill": "classify",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V10",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "make a fire",
+            "blanket",
+            "flashlight",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [
+            "describe",
+            "action (có chú nghĩa)"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q010"
+      },
+      {
+        "q": "\"khu cắm trại\" in English is:",
+        "choices": [
+          "camping stove",
+          "sleeping bag",
+          "campsite",
+          "compass"
+        ],
+        "a": 2,
+        "hint": "Nơi mọi người dựng lều để ở.",
+        "explain": "khu cắm trại = campsite. camping stove là bếp, sleeping bag là túi ngủ.",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V11",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "campsite",
+            "camping stove",
+            "sleeping bag",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q011"
+      },
+      {
+        "q": "\"nhóm lửa\" in English is:",
+        "choices": [
+          "set up a tent",
+          "clean up",
+          "get lost",
+          "make a fire"
+        ],
+        "a": 3,
+        "hint": "Nhớ lại 4 cụm hành động trong bài: dựng lều, dọn dẹp, nhóm lửa, bị lạc.",
+        "explain": "nhóm lửa = make a fire.",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V12",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "make a fire",
+            "set up a tent",
+            "clean up",
+            "get lost"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q012"
+      },
+      {
+        "q": "\"đèn pin\" in English is:",
+        "choices": [
+          "flashlight",
+          "compass",
+          "blanket",
+          "camping stove"
+        ],
+        "a": 0,
+        "hint": "Nhớ lại tranh từ vựng Vocabulary 1: đồ vật cầm tay khi trời tối.",
+        "explain": "đèn pin = flashlight.",
+        "difficulty": 1,
+        "skill": "vocab-en",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V13",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "flashlight",
+            "compass",
+            "blanket",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q013"
+      },
+      {
+        "q": "\"camping stove\" means:",
+        "choices": [
+          "túi ngủ",
+          "bếp cắm trại",
+          "đèn pin",
+          "la bàn"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại tranh từ vựng Vocabulary 1.",
+        "explain": "camping stove = bếp cắm trại.",
+        "difficulty": 1,
+        "skill": "vocab-meaning",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V14",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "camping stove",
+            "sleeping bag",
+            "flashlight",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q014"
+      },
+      {
+        "q": "A: \"We need to go north. Which way is north?\" (north = hướng Bắc) B: \"Let's look at the ___.\"",
+        "choices": [
+          "blanket",
+          "sleeping bag",
+          "compass",
+          "camping stove"
+        ],
+        "a": 2,
+        "hint": "Đồ vật nào chỉ hướng Bắc?",
+        "explain": "Muốn biết hướng Bắc → nhìn la bàn (compass).",
+        "difficulty": 2,
+        "skill": "dialogue",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V15",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "compass",
+            "blanket",
+            "sleeping bag",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [
+            "north (có chú nghĩa)",
+            "which way",
+            "look at"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q015"
+      },
+      {
+        "q": "A: \"Is it cold at night here?\" B: \"Yes. Bring your ___. You can sleep in it.\"",
+        "choices": [
+          "flashlight",
+          "compass",
+          "camping stove",
+          "sleeping bag"
+        ],
+        "a": 3,
+        "hint": "\"sleep in it\" — ngủ BÊN TRONG nó.",
+        "explain": "Ngủ bên trong → túi ngủ (sleeping bag).",
+        "difficulty": 2,
+        "skill": "dialogue",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V16",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "sleeping bag",
+            "flashlight",
+            "compass",
+            "camping stove"
+          ],
+          "toc": [],
+          "extraWords": [
+            "night",
+            "bring",
+            "sleep in"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q016"
+      },
+      {
+        "q": "\"Please ___ after lunch. Put the trash in the trash can.\"",
+        "choices": [
+          "clean up",
+          "set up a tent",
+          "make a fire",
+          "use a compass"
+        ],
+        "a": 0,
+        "hint": "Bỏ rác vào thùng rác là việc gì?",
+        "explain": "Bỏ rác vào thùng = dọn dẹp: Please clean up.",
+        "difficulty": 1,
+        "skill": "phrase-situation",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V17",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "clean up",
+            "set up a tent",
+            "make a fire",
+            "compass"
+          ],
+          "toc": [],
+          "extraWords": [
+            "lunch",
+            "put",
+            "use"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09",
+          "supplementRef": "trash can — nhãn trong tranh Reading 1 in trên lịch Tiếng Anh tuần 7 của trường (Claude đã xem ảnh PDF Nam gửi 08/10); không dùng nội dung bài đọc"
+        },
+        "id": "en_nik3-unit3_q017"
+      },
+      {
+        "q": "Which one do you NOT use for sleeping?",
+        "choices": [
+          "blanket",
+          "compass",
+          "sleeping bag",
+          "tent"
+        ],
+        "a": 1,
+        "hint": "Ba thứ dùng khi ngủ, một thứ dùng để tìm hướng.",
+        "explain": "La bàn (compass) để tìm hướng, không dùng để ngủ.",
+        "difficulty": 2,
+        "skill": "classify",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V18",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "compass",
+            "blanket",
+            "sleeping bag"
+          ],
+          "toc": [],
+          "extraWords": [
+            "use",
+            "sleeping",
+            "tent"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q018"
+      },
+      {
+        "q": "Which one is a place?",
+        "choices": [
+          "compass",
+          "blanket",
+          "campsite",
+          "flashlight"
+        ],
+        "a": 2,
+        "hint": "Một lựa chọn là nơi chốn, ba cái là đồ vật.",
+        "explain": "campsite (khu cắm trại) là nơi chốn.",
+        "difficulty": 1,
+        "skill": "classify",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V19",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "campsite",
+            "compass",
+            "blanket",
+            "flashlight"
+          ],
+          "toc": [],
+          "extraWords": [
+            "place"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q019"
+      },
+      {
+        "q": "Read: \"Linh and her family are at a campsite. Dad is setting up a tent. Mom is cooking on a camping stove. Linh has a flashlight and a compass. She stays with her family, so she doesn't get lost.\" What is Dad doing?",
+        "choices": [
+          "cooking",
+          "making a fire",
+          "cleaning up",
+          "setting up a tent"
+        ],
+        "a": 3,
+        "hint": "Tìm câu bắt đầu bằng \"Dad is…\".",
+        "explain": "\"Dad is setting up a tent.\" Cooking là việc của Mom.",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V20",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "campsite",
+            "set up a tent",
+            "camping stove",
+            "flashlight",
+            "compass",
+            "get lost",
+            "make a fire",
+            "clean up"
+          ],
+          "toc": [],
+          "extraWords": [
+            "family",
+            "cooking",
+            "stays with"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q020",
+        "passage": "en-lo2-D",
+        "passageNote": "Đoạn tự biên soạn để ôn từ U3 + hiện tại tiếp diễn (U1); KHÔNG phải Reading 1 \"A relaxing vacation\" trong sách."
+      },
+      {
+        "q": "Read: \"Linh and her family are at a campsite. Dad is setting up a tent. Mom is cooking on a camping stove. Linh has a flashlight and a compass. She stays with her family, so she doesn't get lost.\" What does Mom use to cook?",
+        "choices": [
+          "a camping stove",
+          "a fire",
+          "a flashlight",
+          "a compass"
+        ],
+        "a": 0,
+        "hint": "Tìm câu bắt đầu bằng \"Mom is…\".",
+        "explain": "\"Mom is cooking on a camping stove.\"",
+        "difficulty": 1,
+        "skill": "reading",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V21",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "campsite",
+            "set up a tent",
+            "camping stove",
+            "flashlight",
+            "compass",
+            "get lost"
+          ],
+          "toc": [],
+          "extraWords": [
+            "family",
+            "cooking",
+            "stays with",
+            "fire"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q021",
+        "passage": "en-lo2-D",
+        "passageNote": "Đoạn tự biên soạn để ôn từ U3 + hiện tại tiếp diễn (U1); KHÔNG phải Reading 1 \"A relaxing vacation\" trong sách."
+      },
+      {
+        "q": "Read: \"Linh and her family are at a campsite. Dad is setting up a tent. Mom is cooking on a camping stove. Linh has a flashlight and a compass. She stays with her family, so she doesn't get lost.\" Why doesn't Linh get lost?",
+        "choices": [
+          "Because she has a flashlight.",
+          "Because she stays with her family.",
+          "Because Dad is setting up a tent.",
+          "Because Mom is cooking."
+        ],
+        "a": 1,
+        "hint": "Tìm câu có chữ \"so\" ở cuối đoạn.",
+        "explain": "\"She stays with her family, so she doesn't get lost.\"",
+        "difficulty": 2,
+        "skill": "reading",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo2-u3v1-20261009",
+        "draftCode": "V22",
+        "ref": {
+          "basis": "school-weekly",
+          "note": "Lịch \"Nội dung môn Tiếng Anh – Tuần 7 (05/10–09/10/2026)\" của trường, mục Vocabulary 1. Trang SGK 38–39 do lịch trường chỉ định, chưa đối chiếu trực tiếp trang sách. Câu tự biên soạn.",
+          "scheduledPages": "38–39",
+          "schoolWords": [
+            "campsite",
+            "set up a tent",
+            "camping stove",
+            "flashlight",
+            "compass",
+            "get lost"
+          ],
+          "toc": [],
+          "extraWords": [
+            "family",
+            "cooking",
+            "stays with"
+          ],
+          "contentReview": "codex-noi-dung-20261009",
+          "by": "claude",
+          "date": "2026-10-09"
+        },
+        "id": "en_nik3-unit3_q022",
+        "passage": "en-lo2-D",
+        "passageNote": "Đoạn tự biên soạn để ôn từ U3 + hiện tại tiếp diễn (U1); KHÔNG phải Reading 1 \"A relaxing vacation\" trong sách."
+      }
+    ]
+  }
+}

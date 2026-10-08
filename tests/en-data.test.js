@@ -11,7 +11,24 @@ const BOOKS = new Set(['nik3', 'gs3', 'none']);
 const BASES = new Set(['toc', 'school-weekly', 'page']);
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
+const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
 const BATCH_RULES = {
+  'claude-nik3-lo2-u3v1-20261009': { count: 22, passages: ['en-lo2-D'], check(q, err) {
+    if (q.ref.basis !== 'school-weekly' || q.ref.scheduledPages !== '38–39') err('lô 2 phải school-weekly, scheduledPages 38–39');
+    if (q.stage !== 2 || q.unit !== 'nik3-unit3') err('lô 2 phải stage 2, unit nik3-unit3');
+    if (q.passage && !/tự biên soạn/.test(q.passageNote || '')) err('đoạn D phải ghi tự biên soạn');
+    if (/please\s+(___\s+)?get lost/i.test(q.q + ' ' + q.choices.join(' '))) err('không dùng "Please get lost"');
+    q.ref.schoolWords.forEach(w => { if (!LO2_WORDS.includes(w)) err('schoolWords lạ: ' + w); });
+  }, after(qs, errs) {
+    // Mỗi từ/cụm của trường: là trọng tâm (nằm trong đề hoặc đáp án đúng) ở ≥ 1 câu và xuất hiện (đề hoặc bất kỳ lựa chọn) ở ≥ 2 câu.
+    // Lưu ý: "blanket" hiện chỉ là trọng tâm ở 1 câu (V8) — đề xuất thêm 1 câu ở lượt rà sau.
+    const has = (txt, w) => txt.toLowerCase().includes(w) || (w === 'set up a tent' && /setting up a tent/i.test(txt));
+    for (const w of LO2_WORDS) {
+      const focus = qs.filter(q => has(q.q + ' ' + q.choices[q.a], w)).length;
+      const seen = qs.filter(q => has(q.q + ' ' + q.choices.join(' ') + ' ' + q.ref.schoolWords.join(' '), w)).length;
+      if (focus < 1 || seen < 2) errs.push('lô 2: "' + w + '" trọng tâm ' + focus + ', xuất hiện ' + seen);
+    }
+  } },
   'claude-nik3-lo1-20261008': { count: 34, passages: ['en-lo1-A', 'en-lo1-B', 'en-lo1-C'], check(q, err) {
     if (q.ref.basis !== 'toc') err('lô 1 phải basis toc');
     if ('page' in q.ref || /tr\.\s?\d/.test(q.ref.note || '')) err('lô 1 không ghi trang');
@@ -37,6 +54,10 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     const r = q.ref;
     if (!r || !BASES.has(r.basis) || !r.note || !Array.isArray(r.toc) || !Array.isArray(r.extraWords) || !r.by || !r.date) err('ref thiếu trường / basis lạ');
     if (r && r.basis === 'page' && !Number.isInteger(r.page) && !/tr\.\s?\d/.test(r.note || '')) err('basis page phải có số trang');
+    if (r && r.basis === 'school-weekly') {
+      if (!r.scheduledPages || !Array.isArray(r.schoolWords) || !r.schoolWords.length) err('school-weekly cần scheduledPages + schoolWords');
+      if ('page' in r) err('school-weekly không ghi page (trang chỉ là trang lịch trường chỉ định)');
+    }
     if (r && /approvedBy/.test(JSON.stringify(r))) err('không dùng approvedBy');
     if (!q.hint || !q.explain) err('thiếu hint/explain');
     if (q.hint && q.choices && q.choices[q.a] && q.hint.includes(q.choices[q.a])) err('gợi ý chứa nguyên văn đáp án');
@@ -57,6 +78,7 @@ for (const [src, rule] of Object.entries(BATCH_RULES)) {
   if (qs.length !== rule.count) errs.push(src + ': cần ' + rule.count + ' câu, có ' + qs.length);
   const ps = [...new Set(qs.map(q => q.passage).filter(Boolean))].sort();
   if (JSON.stringify(ps) !== JSON.stringify(rule.passages)) errs.push(src + ': đoạn đọc ' + ps.join(','));
+  if (rule.after) rule.after(qs, errs);
 }
 assert.deepStrictEqual(errs, []);
 console.log('en-data OK —', tagged, 'câu có nhãn mới,', Object.keys(passages).length, 'đoạn đọc,', Object.keys(BATCH_RULES).length, 'lô có quy tắc riêng');
