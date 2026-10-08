@@ -310,7 +310,7 @@
           "I haven't."
         ],
         "a": 1,
-        "hint": "Do you…? → trả lời No, I + don't.",
+        "hint": "Câu hỏi dùng Do you…; câu trả lời phủ định cần cùng trợ động từ.",
         "difficulty": 2,
         "skill": "gs-school-things",
         "unit": "global-success-3",
