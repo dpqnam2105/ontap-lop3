@@ -203,7 +203,7 @@
         "q": "Which sentence is correct?",
         "choices": [
           "The music is very loudly.",
-          "He sings very loud.",
+          "She sings very good.",
           "She is a carefully girl.",
           "He sings very loudly."
         ],
@@ -222,7 +222,7 @@
           "neat",
           "softly",
           "soft",
-          "slow"
+          "kind"
         ],
         "a": 1,
         "hint": "Adverbs often end in -ly.",

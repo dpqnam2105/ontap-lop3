@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Rà 101 câu Tiếng Anh cũ: sửa 11 câu lỗi (giữ ID)
+- NIK3 U1 q010 (nhiễu "close to" cũng đúng), U2 q008 (bỏ quá khứ bị động), q009 (nhiễu vô nghĩa), q018 (không suy từ Chủ nhật); Reading NIK3 đoạn Ben q005–q008 (bỏ "will", "gold statue of a cat"), q011 (nhiễu cũng đúng); adj-adv q012, q013 (nhiễu cũng đúng). Không đổi đáp án/bản chất câu, không đổi giao diện.
+
 ## 2026-10-09 — Tiếng Anh U3: thêm V23 "blanket", sửa test phủ từ (Codex duyệt)
 - +1 câu en_nik3-unit3_q023 ("cái chăn" → blanket), giữ nguyên ID/thứ tự 22 câu cũ; index count 23. Test phủ từ chỉ đếm chữ bé nhìn thấy (đề + lựa chọn), bỏ ref.schoolWords; mỗi từ trường là trọng tâm ≥ 2 câu; ghi rõ đây là kiểm tra sơ bộ.
 

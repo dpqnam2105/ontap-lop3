@@ -124,7 +124,7 @@
         "stage": 1
       },
       {
-        "q": "The pharaoh was buried in a ___ under the pyramid.",
+        "q": "A ___ is a room for a pharaoh's body.",
         "choices": [
           "tomb",
           "library",
@@ -143,10 +143,10 @@
       {
         "q": "Tutankhamun's mask is made of ___. It is yellow and very expensive.",
         "choices": [
-          "steps",
-          "tail",
+          "sand",
+          "stone",
           "gold",
-          "horn"
+          "paper"
         ],
         "a": 2,
         "hint": "A yellow metal. (vàng)",
@@ -294,7 +294,7 @@
         "stage": 1
       },
       {
-        "q": "Sam ___ go to school on Sunday. He stays at home.",
+        "q": "There is no school on Sunday. Sam ___ go to school on Sunday.",
         "choices": [
           "has to",
           "doesn't have to",

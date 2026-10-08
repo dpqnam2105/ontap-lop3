@@ -73,7 +73,7 @@
         "stage": 1
       },
       {
-        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What is Ben's job?",
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold statue of a cat (statue = bức tượng) in an old tomb.\" What is Ben's job?",
         "choices": [
           "an archeologist",
           "a teacher",
@@ -90,7 +90,7 @@
         "stage": 1
       },
       {
-        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" Why does Ben wear a big hat?",
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold statue of a cat (statue = bức tượng) in an old tomb.\" Why does Ben wear a big hat?",
         "choices": [
           "Because it is very hot.",
           "Because he likes hats.",
@@ -107,10 +107,10 @@
         "stage": 1
       },
       {
-        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" What does Ben find today?",
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold statue of a cat (statue = bức tượng) in an old tomb.\" What does Ben find today?",
         "choices": [
           "a pharaoh",
-          "a small gold cat",
+          "a small gold statue of a cat",
           "a big dinosaur",
           "a gold mask"
         ],
@@ -124,7 +124,7 @@
         "stage": 1
       },
       {
-        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold cat in an old tomb. Soon it will be in the museum.\" How does Ben dig?",
+        "q": "Read: \"Ben is an archeologist. Every day he has to get up early. He goes to the desert by car. It is very hot, so he has to wear a big hat. He digs slowly and carefully. Today he finds a small gold statue of a cat (statue = bức tượng) in an old tomb.\" How does Ben dig?",
         "choices": [
           "slow and careful",
           "quickly and loudly",
@@ -177,7 +177,7 @@
       {
         "q": "Read: \"Mai lives close to the harbor. On Saturdays, she goes to the recreation center by bike. She swims there with her brother. On Sundays, she doesn't have to get up early. She reads books from the library beside her house.\" Where is the library?",
         "choices": [
-          "close to the harbor",
+          "beside the recreation center",
           "above the recreation center",
           "beside Mai's house",
           "far from Mai's house"

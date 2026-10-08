@@ -7,6 +7,12 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-09 (Claude — rà 101 câu Tiếng Anh cũ, sửa lỗi giữ ID)
+- en_nik3-unit1_q010: nhiễu close to → on. en_nik3-unit2_q008: "A ___ is a room for a pharaoh's body."; q009: nhiễu → sand/stone/paper; q018: "There is no school on Sunday. Sam ___ go to school on Sunday."
+- en_reading-nik3 đoạn Ben (q005–q008): bỏ "Soon it will be in the museum."; "a small gold statue of a cat (statue = bức tượng)"; q011: nhiễu close to the harbor → beside the recreation center.
+- en_adj-adv_q012: nhiễu "He sings very loud." → "She sings very good."; q013: nhiễu slow → kind.
+- Chờ quyết định (chưa sửa): en_nik3-unit2_q003, en_adj-adv_q001, q014. Chi tiết: tieng-anh-ra-101-cau.md (project).
+
 ## 2026-10-09 (Claude — Tiếng Anh U3 bổ sung, Codex duyệt)
 - Tiếng Anh / NIK3 Unit 3 — +1 câu en_nik3-unit3_q023 (V23: "cái chăn" in English is → blanket), đáp án vị trí C. 22 câu cũ giữ nguyên ID/thứ tự.
 
