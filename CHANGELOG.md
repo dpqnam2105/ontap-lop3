@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-10 — Ms Hoa U6: sửa nhiễu "get" ở 3 câu cụm động từ, tách căn cứ đoạn E (Codex)
+- q003–q005 bỏ nhiễu get (get breakfast/get homework vẫn có nghĩa hợp lệ), q003 thêm lời dẫn nghĩa "ăn"; giữ ID và vị trí đáp án. Note nguồn q013–q015 ghi rõ căn cứ L1, mở sau L2. Test lô: câu collocation không dùng nhiễu get; note đoạn E phải tách căn cứ L1 và lý do mở sau L2; câu thường ghi đúng Lesson.
+
 ## 2026-10-10 — Tiếng Anh: Ms Hoa Explorer 2 Unit 6 "My Day" L1–L2 (Claude soạn, Codex duyệt nội dung)
 - Chủ đề mới mshoa-e2-u6.json (23 câu): mẫu Where do you…?, cụm động từ hằng ngày, phòng trong nhà, 2 câu chính tả (lỗi thật), buổi trong ngày, What time is it? – It's … o'clock, at night, từ mới L2; đoạn E tự biên soạn. Nguồn basis page (tr.117–128). Không mang stage nên hiện ở mọi giai đoạn NIK, không đổi thiết lập NIK. tests/en-data.test.js: thêm sách mshoa-explorer2 và quy tắc lô (bookLesson, trang, phạm vi L1 không lẫn L2/đoạn E, không does/late/early, ≤ 2 câu chính tả, đáp án xoay đều).
 

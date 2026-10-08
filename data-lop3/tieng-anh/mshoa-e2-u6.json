@@ -77,16 +77,16 @@
         "id": "en_mshoa-e2-u6_q002"
       },
       {
-        "q": "I ___ breakfast every morning.",
+        "q": "Điền từ mang nghĩa \"ăn\": I ___ breakfast every morning.",
         "choices": [
-          "get",
-          "take",
+          "read",
+          "write",
           "eat",
-          "do"
+          "play"
         ],
         "a": 2,
-        "hint": "Nhớ cụm \"___ breakfast / ___ lunch / ___ dinner\" trong bài.",
-        "explain": "eat breakfast = ăn sáng (cùng nhóm eat lunch, eat dinner). Không nói \"get breakfast\".",
+        "hint": "Chỗ trống cần động từ nghĩa là \"ăn\".",
+        "explain": "Trong bài này, eat breakfast nghĩa là ăn sáng.",
         "difficulty": 1,
         "skill": "collocation",
         "unit": "e2-u6",
@@ -117,13 +117,13 @@
         "q": "I ___ a bath in the evening.",
         "choices": [
           "eat",
-          "get",
-          "do",
+          "read",
+          "play",
           "take"
         ],
         "a": 3,
         "hint": "Nhớ cụm \"đi tắm\" trong bài.",
-        "explain": "take a bath = đi tắm.",
+        "explain": "Trong bài này, take a bath nghĩa là đi tắm.",
         "difficulty": 1,
         "skill": "collocation",
         "unit": "e2-u6",
@@ -152,13 +152,13 @@
         "q": "I ___ my homework in my bedroom.",
         "choices": [
           "do",
-          "take",
-          "get",
-          "eat"
+          "eat",
+          "drink",
+          "sleep"
         ],
         "a": 0,
         "hint": "Nhớ cụm \"làm bài tập về nhà\" trong bài.",
-        "explain": "do homework = làm bài tập về nhà.",
+        "explain": "Trong bài này, do homework nghĩa là làm bài tập về nhà.",
         "difficulty": 1,
         "skill": "collocation",
         "unit": "e2-u6",
@@ -454,7 +454,7 @@
         "ref": {
           "basis": "page",
           "page": 119,
-          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.119 Structure, tr.121 Ex2; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\". Nội dung câu hỏi căn cứ L1: mẫu Where do you…? tr.119 (Structure), phòng tắm tr.121 Ex2. Đoạn E tự biên soạn, dùng giờ và buổi trong ngày của L2 (tr.123–125) nên chỉ mở sau L2.",
           "toc": [],
           "extraWords": [
             "school"
@@ -493,7 +493,7 @@
         "ref": {
           "basis": "page",
           "page": 121,
-          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.121 Ex2; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\". Nội dung câu hỏi căn cứ L1: do homework + phòng ngủ tr.121 Ex2. Đoạn E tự biên soạn, dùng giờ và buổi trong ngày của L2 (tr.123–125) nên chỉ mở sau L2.",
           "toc": [],
           "extraWords": [],
           "contentReview": "codex-noi-dung-20261010",
@@ -530,7 +530,7 @@
         "ref": {
           "basis": "page",
           "page": 123,
-          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\" Lesson 2; đối chiếu tr.119 Check-up 2, tr.123 Vocabulary; đoạn tự biên soạn (ảnh sách Nam gửi).",
+          "note": "Câu tự biên soạn theo Ms Hoa Junior Explorer 2, Unit 6 \"My Day\". Nội dung câu hỏi căn cứ L1: take a bath … in the evening tr.119 Check-up 2; từ evening học ở L2 tr.123 Vocabulary. Đoạn E tự biên soạn, dùng giờ và buổi trong ngày của L2 (tr.123–125) nên chỉ mở sau L2.",
           "toc": [],
           "extraWords": [],
           "contentReview": "codex-noi-dung-20261010",

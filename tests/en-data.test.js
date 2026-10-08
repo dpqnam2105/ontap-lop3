@@ -23,6 +23,10 @@ const BATCH_RULES = {
     if (!/tự biên soạn/.test(q.ref.note) || !/tr\.\d/.test(q.ref.note)) err('note phải ghi tự biên soạn + trang');
     if (bl.lesson === 1 && q.ref.page > 122) err('câu L1 dẫn trang L2');
     if (q.passage && (bl.lesson !== 2 || !/tự biên soạn/.test(q.passageNote || ''))) err('đoạn E: lesson 2 + ghi tự biên soạn');
+    if (q.passage && !/căn cứ L1/.test(q.ref.note) || q.passage && !/chỉ mở sau L2/.test(q.ref.note)) err('đoạn E: note tách căn cứ L1 và lý do mở sau L2');
+    if (!q.passage && !new RegExp('Lesson ' + bl.lesson + '\\b').test(q.ref.note)) err('note phải ghi đúng Lesson của câu');
+    // Nhiễu "get" không dùng cho câu cụm động từ: get breakfast / get my homework vẫn có nghĩa hợp lệ (lấy, mua, nhận).
+    if (q.skill === 'collocation' && q.choices.includes('get')) err('collocation không dùng nhiễu get');
     if (/\bdoes\b/i.test(q.q)) err('đề không dùng does (ngôi 3 chưa học)');
     if (/\b(late|early)\b/i.test(q.q + ' ' + q.choices.join(' '))) err('late/early thuộc L3');
   }, after(qs, errs) {

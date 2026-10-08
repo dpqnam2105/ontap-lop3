@@ -7,6 +7,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-10 (Claude — sửa Ms Hoa U6 theo Codex, giữ ID và vị trí đáp án)
+- en_mshoa-e2-u6_q003 (H3): 'Điền từ mang nghĩa "ăn": I ___ breakfast every morning.' → eat | read | write | play (bỏ get: "get breakfast" = lấy/mua/chuẩn bị bữa sáng vẫn đúng). Giải thích "Trong bài này, eat breakfast nghĩa là ăn sáng."
+- Cùng lý do, sửa luôn q004 (H4) take | eat | read | play và q005 (H5) do | eat | drink | sleep (bỏ get); giải thích ghi "Trong bài này…".
+- q013–q015 (đoạn E): ref.note tách căn cứ nội dung L1 (tr.119/121) và lý do chỉ mở sau L2 (đoạn dùng giờ/buổi của L2, tr.123–125).
+
 ## 2026-10-10 (Claude — Tiếng Anh Ms Hoa Explorer 2 U6 L1–L2, Codex duyệt nội dung)
 - Tiếng Anh / chủ đề mới en_mshoa-e2-u6 "Ms Hoa Explorer 2 · Unit 6: My Day" — +23 câu en_mshoa-e2-u6_q001–q023 (mã nháp H1–H23). source claude-mshoa-e2u6-l12-20261010, track core, book mshoa-explorer2, unit e2-u6.
 - `bookLesson` {book, unit 6, lesson 1|2}: L1 = q001–q012, L2 = q013–q023 (gồm đoạn E q013–q015, chỉ mở sau L2). Không có `stage` → không phụ thuộc giai đoạn NIK; không dùng `lesson` (dành cho Toán).
