@@ -12,6 +12,12 @@ const BASES = new Set(['toc', 'school-weekly', 'page']);
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
+// Bộ lựa chọn Codex đã chốt cho 3 câu cụm động từ Ms Hoa (đáp án đứng đầu).
+const MSHOA_LOCKED = {
+  'en_mshoa-e2-u6_q003': ['eat', 'read', 'write', 'play'],
+  'en_mshoa-e2-u6_q004': ['take', 'eat', 'read', 'play'],
+  'en_mshoa-e2-u6_q005': ['do', 'eat', 'drink', 'sleep'],
+};
 const BATCH_RULES = {
   'claude-mshoa-e2u6-l12-20261010': { count: 23, passages: ['en-mshoa-E'], check(q, err) {
     const bl = q.bookLesson || {};
@@ -25,8 +31,10 @@ const BATCH_RULES = {
     if (q.passage && (bl.lesson !== 2 || !/tự biên soạn/.test(q.passageNote || ''))) err('đoạn E: lesson 2 + ghi tự biên soạn');
     if (q.passage && !/căn cứ L1/.test(q.ref.note) || q.passage && !/chỉ mở sau L2/.test(q.ref.note)) err('đoạn E: note tách căn cứ L1 và lý do mở sau L2');
     if (!q.passage && !new RegExp('Lesson ' + bl.lesson + '\\b').test(q.ref.note)) err('note phải ghi đúng Lesson của câu');
-    // Nhiễu "get" không dùng cho câu cụm động từ: get breakfast / get my homework vẫn có nghĩa hợp lệ (lấy, mua, nhận).
-    if (q.skill === 'collocation' && q.choices.includes('get')) err('collocation không dùng nhiễu get');
+    // q003–q005: khoá bộ lựa chọn đã chốt (bỏ nhiễu get vì get breakfast / get my homework vẫn có nghĩa hợp lệ).
+    // Không cấm get chung: get up, get dressed là cụm đúng của bài.
+    const locked = MSHOA_LOCKED[q.id];
+    if (locked && (q.choices[q.a] !== locked[0] || JSON.stringify([...q.choices].sort()) !== JSON.stringify([...locked].sort()))) err('bộ lựa chọn đã chốt bị đổi');
     if (/\bdoes\b/i.test(q.q)) err('đề không dùng does (ngôi 3 chưa học)');
     if (/\b(late|early)\b/i.test(q.q + ' ' + q.choices.join(' '))) err('late/early thuộc L3');
   }, after(qs, errs) {

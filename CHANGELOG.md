@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-10 — Ms Hoa U6: thu hẹp kiểm tra nhiễu "get" (Codex), đóng lô L1–L2
+- Bỏ luật cấm get cho mọi câu collocation (get up, get dressed là cụm đúng của bài); thay bằng khoá bộ lựa chọn đã chốt của q003–q005. Không đổi dữ liệu. Ghi nhận: bookLesson chưa được app lọc — kiểm 4 luồng ở mốc L1/L2 khi chia giáo trình.
+
 ## 2026-10-10 — Ms Hoa U6: sửa nhiễu "get" ở 3 câu cụm động từ, tách căn cứ đoạn E (Codex)
 - q003–q005 bỏ nhiễu get (get breakfast/get homework vẫn có nghĩa hợp lệ), q003 thêm lời dẫn nghĩa "ăn"; giữ ID và vị trí đáp án. Note nguồn q013–q015 ghi rõ căn cứ L1, mở sau L2. Test lô: câu collocation không dùng nhiễu get; note đoạn E phải tách căn cứ L1 và lý do mở sau L2; câu thường ghi đúng Lesson.
 
