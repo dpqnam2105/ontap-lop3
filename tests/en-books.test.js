@@ -63,17 +63,31 @@ const tests = {
     const vis = b.J(`App._visibleTopics(${S}).map(t => t.id)`);
     assert.ok(vis.includes('en_nik3-unit3') && vis.includes('en_mshoa-e2-u6') && !vis.includes('en_nik3-unit1'));
   },
-  async 'câu vào Ôn tổng hợp xét từng câu: lô đã duyệt luôn vào; 101 câu cũ chỉ vào khi lượt rà được xác nhận; pending và câu chưa rà không bao giờ vào'() {
+  async 'câu vào Ôn tổng hợp xét từng câu: lô đã duyệt vào; 101 câu cũ chỉ vào khi lượt rà được xác nhận; câu chưa rà không vào'() {
     const b = await boot();
     const elig = () => b.J(`${S}.topics.flatMap(t => t.questions.filter(q => App._mixEligible(${S}, q)).map(q => q.id))`);
     const e1 = new Set(elig());
     assert.strictEqual(e1.size, 34 + 23 + 23); // lô 1, lô 2 (U3), Ms Hoa
-    assert.ok(![...e1].some(id => /_q0(0\d|1\d|2[0-2])$/.test(id) && /nik3-unit[12]_/.test(id)));
     confirm(b);
     const e2 = new Set(elig());
-    assert.strictEqual(e2.size, 80 + 98); // + 87 ok + 11 fixed
-    for (const id of ['en_nik3-unit2_q003', 'en_adj-adv_q001', 'en_adj-adv_q014']) assert.ok(!e2.has(id), id);
+    assert.strictEqual(e2.size, 80 + 101); // + 71 ok + 30 fixed
     assert.ok(b.J(`${S}.topics.flatMap(t => t.questions).filter(q => q.source === 'claude-audit-20260924')`).every(q => !e2.has(q.id)));
+  },
+  async 'chặn trước: câu có contentReview nhưng review pending / rejected → bị loại; lượt rà đã xác nhận cũng không cứu được câu pending'() {
+    const b = await boot();
+    confirm(b);
+    const base = `{ id: 'x', ref: { contentReview: 'codex-noi-dung-20261010' } }`;
+    assert.strictEqual(b.J(`App._mixEligible(${S}, ${base})`), true);
+    for (const st of ['pending', 'rejected']) {
+      assert.strictEqual(b.J(`App._mixEligible(${S}, Object.assign(${base}, { review: { round: '${ROUND}', status: '${st}' } }))`), false, st);
+      assert.strictEqual(b.J(`App._mixEligible(${S}, { id: 'y', review: { round: '${ROUND}', status: '${st}' } })`), false, 'cũ ' + st);
+    }
+    // Đánh dấu một câu Ms Hoa là pending → biến mất khỏi đề trộn chỉ-Ms-Hoa
+    mixOnly(b, ['mshoa-explorer2']);
+    b.run(`${MS}.questions[0].review = { round: '${ROUND}', status: 'pending' }`);
+    const pool = b.J(`App._buildWeeklyMix(${S}).pool.map(q => q.id)`);
+    assert.strictEqual(pool.length, 20);
+    assert.ok(!pool.includes('en_mshoa-e2-u6_q001'));
   },
   async 'Ôn tổng hợp mặc định (GĐ1, lượt rà chưa xác nhận): NIK 10 + Ms Hoa 10, Nền không có câu hợp lệ nên không vào'() {
     const b = await boot();
@@ -84,13 +98,13 @@ const tests = {
     assert.deepStrictEqual(Object.fromEntries(mix.sources.map(x => [x.id, x.n])), { nik3: 10, 'mshoa-explorer2': 10 });
     assert.ok(mix.pool.filter(q => q.passage).every(q => /^Read: "/.test(q.q)));
   },
-  async 'Ôn tổng hợp sau khi xác nhận lượt rà: NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt, không có câu pending'() {
+  async 'Ôn tổng hợp sau khi xác nhận lượt rà: NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt'() {
     const b = await boot();
     confirm(b);
     const mix = b.J(`App._buildWeeklyMix(${S})`);
     assert.deepStrictEqual(mix.sources.map(x => x.n).sort(), [6, 7, 7]);
     assert.ok(!mix.sources.some(x => x.id === 'gs3'));
-    assert.ok(!mix.pool.some(q => ['en_nik3-unit2_q003', 'en_adj-adv_q001', 'en_adj-adv_q014'].includes(q.id)));
+    assert.strictEqual(new Set(mix.pool.map(q => q.id)).size, 20);
   },
   async 'chỉ bật Ms Hoa: L1 → đề ngắn 12 câu (1 chủ đề), L2 → 20 câu'() {
     const b = await boot();

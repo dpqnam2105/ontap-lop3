@@ -7,6 +7,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-11 (Claude — lượt rà 101 câu Tiếng Anh cũ, lượt 2, chờ Codex chốt)
+- Gắn `review` {round claude-ra-101-20261009, status} cho 101 câu cũ (NIK3 U1/U2 q001–q022, Reading NIK3, GS3, adj–adv). Kết quả: 71 ok · 30 fixed · 0 pending.
+- Sửa nội dung: en_nik3-unit2_q003 (hỏi nghĩa "Extinct"), en_adj-adv_q001/q014 (nhiễu quickness), en_adj-adv_q025 (tình huống em bé ngủ).
+- Sửa gợi ý lộ đáp án: 15 câu (xem CHANGELOG gốc). Giữ ID, giữ vị trí đáp án.
+
 ## 2026-10-10 (Claude — sửa Ms Hoa U6 theo Codex, giữ ID và vị trí đáp án)
 - en_mshoa-e2-u6_q003 (H3): 'Điền từ mang nghĩa "ăn": I ___ breakfast every morning.' → eat | read | write | play (bỏ get: "get breakfast" = lấy/mua/chuẩn bị bữa sáng vẫn đúng). Giải thích "Trong bài này, eat breakfast nghĩa là ăn sáng."
 - Cùng lý do, sửa luôn q004 (H4) take | eat | read | play và q005 (H5) do | eat | drink | sleep (bỏ get); giải thích ghi "Trong bài này…".

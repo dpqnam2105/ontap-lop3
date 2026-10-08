@@ -548,13 +548,15 @@ const App = {
    * Câu đủ điều kiện vào Ôn tổng hợp (xét TỪNG CÂU, không theo cờ chủ đề):
    * - câu thuộc lô đã được duyệt nội dung (q.ref.contentReview), hoặc
    * - câu cũ có q.review.status ok/fixed thuộc lượt rà đã được xác nhận (s.reviewRounds[round].confirmed === true).
-   * Câu "pending" (chờ quyết định) và câu chưa rà không vào.
+   * Chặn trước: câu có review.status khác ok/fixed (pending, rejected…) KHÔNG vào, kể cả câu lô đã duyệt
+   * mà sau đó phát hiện lỗi. Câu chưa rà không vào.
    */
   _mixEligible(s, q) {
     if (!q) return false;
-    if (q.ref && q.ref.contentReview) return true;
     const r = q.review;
-    if (!r || (r.status !== 'ok' && r.status !== 'fixed')) return false;
+    if (r && r.status !== 'ok' && r.status !== 'fixed') return false;
+    if (q.ref && q.ref.contentReview) return true;
+    if (!r) return false;
     const round = s && s.reviewRounds && s.reviewRounds[r.round];
     return !!(round && round.confirmed === true);
   },

@@ -47,15 +47,15 @@
         }
       },
       {
-        "q": "There are no dinosaurs today. Dinosaurs are ___.",
+        "q": "\"Extinct\" means ___.",
         "choices": [
-          "loud",
-          "careful",
-          "quick",
-          "extinct"
+          "rất to lớn",
+          "biết bay",
+          "ăn cỏ",
+          "đã tuyệt chủng"
         ],
         "a": 3,
-        "hint": "All of them are gone. (tuyệt chủng)",
+        "hint": "Nhớ lại từ vựng NIK3 Unit 2 về khủng long.",
         "difficulty": 1,
         "skill": "dinosaurs",
         "unit": "nik3-unit2",
@@ -64,8 +64,9 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "pending"
-        }
+          "status": "fixed"
+        },
+        "explain": "extinct = đã tuyệt chủng."
       },
       {
         "q": "The long part at the back of an animal is its ___.",
@@ -307,7 +308,7 @@
           "has to"
         ],
         "a": 3,
-        "hint": "Tilly = she → has to.",
+        "hint": "Tilly là một bạn (ngôi thứ ba số ít: she).",
         "difficulty": 1,
         "skill": "have-to",
         "unit": "nik3-unit2",
@@ -316,7 +317,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -328,7 +330,7 @@
           "haves to"
         ],
         "a": 1,
-        "hint": "Archeologists = they → have to.",
+        "hint": "Archeologists là nhiều người (they).",
         "difficulty": 1,
         "skill": "have-to",
         "unit": "nik3-unit2",
@@ -337,7 +339,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -349,7 +352,7 @@
           "has to"
         ],
         "a": 1,
-        "hint": "Free = no money. We → don't have to.",
+        "hint": "Free = không mất tiền. Chủ ngữ là We.",
         "difficulty": 2,
         "skill": "have-to",
         "unit": "nik3-unit2",
@@ -358,7 +361,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {

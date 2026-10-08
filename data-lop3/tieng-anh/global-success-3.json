@@ -76,7 +76,7 @@
           "it is."
         ],
         "a": 3,
-        "hint": "Is that…? → Yes, it is. / No, it isn't.",
+        "hint": "Is that…? → trả lời bằng it + is / isn't. Câu này trả lời Yes.",
         "difficulty": 2,
         "skill": "gs-friends",
         "unit": "global-success-3",
@@ -85,7 +85,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -244,7 +245,7 @@
           "Fine, thanks."
         ],
         "a": 1,
-        "hint": "Let's… → OK, let's go.",
+        "hint": "Bạn rủ đi chơi bằng Let's… → đồng ý thì bắt đầu bằng OK.",
         "difficulty": 2,
         "skill": "gs-school",
         "unit": "global-success-3",
@@ -253,7 +254,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -265,7 +267,7 @@
           "Yes, I am."
         ],
         "a": 2,
-        "hint": "May I…? → Yes, you can. / No, you can't.",
+        "hint": "May I…? (xin phép) → đồng ý thì trả lời với you + can.",
         "difficulty": 2,
         "skill": "gs-instructions",
         "unit": "global-success-3",
@@ -274,7 +276,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -307,7 +310,7 @@
           "I haven't."
         ],
         "a": 1,
-        "hint": "Do you…? → Yes, I do. / No, I don't.",
+        "hint": "Do you…? → trả lời No, I + don't.",
         "difficulty": 2,
         "skill": "gs-school-things",
         "unit": "global-success-3",
@@ -316,7 +319,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {

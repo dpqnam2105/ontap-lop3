@@ -1,5 +1,11 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-11 — Chốt lượt rà 101 câu Tiếng Anh cũ (lượt 2) + chặn câu pending trước (nhánh en-chia-giao-trinh)
+- Sửa theo Codex: en_nik3-unit2_q003 → '"Extinct" means ___.' (đã tuyệt chủng | rất to lớn | biết bay | ăn cỏ), bỏ hint "All of them are gone"; en_adj-adv_q001, q014 nhiễu quick → quickness (q014 bỏ gợi ý lộ "runs quickly"); en_adj-adv_q025 → "The baby is sleeping. What should you say?" (Please be quiet. | Please talk loudly. | Please sing loudly. | Please shout.).
+- Test mới bắt 15 câu cũ có gợi ý chứa nguyên văn đáp án → viết lại gợi ý (adj-adv q006, q007, q016, q018, q022; NIK3 U1 q019, q021, q022; U2 q015–q017; GS3 q004, q012, q013, q015). Không đổi đề / lựa chọn / đáp án.
+- Thống kê lượt rà claude-ra-101-20261009: 71 ok · 30 fixed · 0 pending. confirmed vẫn false, chờ Codex chốt diff.
+- `_mixEligible`: review.status khác ok/fixed chặn trước cả contentReview. Test: câu lô + pending/rejected bị loại.
+
 ## 2026-10-11 — Chia giáo trình: sửa theo review Codex (nhánh en-chia-giao-trinh)
 - [P1] Thẻ Ôn tổng hợp của môn chia giáo trình hiện cả khi chỉ 1 chủ đề (vd chỉ bật Ms Hoa), miễn ≥ 5 câu; môn khác giữ điều kiện cũ. Thẻ chuyển lên đầu, trước các mục sách.
 - [P2] Bỏ cờ `reviewed` cấp chủ đề. Câu vào Ôn tổng hợp xét từng câu: câu lô có `ref.contentReview`, hoặc câu cũ có `review` {round, status ok|fixed} thuộc lượt rà đã `confirmed` trong `reviewRounds` của index. Gắn `review` cho 101 câu theo báo cáo rà (87 ok, 11 fixed, 3 pending); lượt `claude-ra-101-20261009` để confirmed = false, chờ Codex xác nhận. Câu pending và 104 câu claude-audit không vào.

@@ -9,7 +9,7 @@
         "choices": [
           "quicker",
           "quickful",
-          "quick",
+          "quickness",
           "quickly"
         ],
         "a": 3,
@@ -22,7 +22,7 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "pending"
+          "status": "fixed"
         }
       },
       {
@@ -118,7 +118,7 @@
           "good"
         ],
         "a": 1,
-        "hint": "good → well (special word).",
+        "hint": "Tính từ good đổi sang trạng từ là một từ đặc biệt, không thêm -ly.",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -127,7 +127,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -139,7 +140,7 @@
           "fasty"
         ],
         "a": 2,
-        "hint": "fast → fast. There is no 'fastly'.",
+        "hint": "Từ này đặc biệt: tính từ và trạng từ viết giống nhau, không thêm -ly.",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -148,7 +149,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -281,12 +283,12 @@
         "q": "He is a quick runner. = He runs ___.",
         "choices": [
           "quicker",
-          "quick",
+          "quickness",
           "fastly",
           "quickly"
         ],
         "a": 3,
-        "hint": "a quick runner → runs quickly.",
+        "hint": "quick runner → động từ runs cần trạng từ (đuôi -ly).",
         "difficulty": 3,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -295,7 +297,7 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "pending"
+          "status": "fixed"
         }
       },
       {
@@ -328,7 +330,7 @@
           "nicer"
         ],
         "a": 0,
-        "hint": "sit is an action → adverb. nice → nicely.",
+        "hint": "sit là hành động → cần trạng từ (đuôi -ly), nhớ viết đúng chính tả.",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -337,7 +339,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -370,7 +373,7 @@
           "happyly"
         ],
         "a": 1,
-        "hint": "running là hành động → trạng từ. happy → happily.",
+        "hint": "running là hành động → trạng từ. Tính từ tận cùng -y: đổi y → i rồi thêm -ly.",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -379,7 +382,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -454,7 +458,7 @@
           "beautifuly"
         ],
         "a": 2,
-        "hint": "plays là hành động → trạng từ. beautiful → beautifully.",
+        "hint": "plays là hành động → trạng từ: tính từ + -ly (giữ nguyên chữ l của tính từ).",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -463,7 +467,8 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
+          "status": "fixed",
+          "note": "sửa gợi ý lộ đáp án (lượt 2)"
         }
       },
       {
@@ -509,15 +514,15 @@
         }
       },
       {
-        "q": "Which sentence is correct?",
+        "q": "The baby is sleeping. What should you say?",
         "choices": [
-          "Please talk loud in the library.",
-          "The baby sleeps quiet.",
-          "The baby is sleeping. Be quiet.",
-          "The baby is sleeping. Be quietly."
+          "Please talk loudly.",
+          "Please sing loudly.",
+          "Please be quiet.",
+          "Please shout."
         ],
         "a": 2,
-        "hint": "Be + tính từ; hành động + trạng từ.",
+        "hint": "Em bé đang ngủ — mình nên nói gì để không đánh thức em?",
         "difficulty": 3,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -526,8 +531,9 @@
         "stage": 1,
         "review": {
           "round": "claude-ra-101-20261009",
-          "status": "ok"
-        }
+          "status": "fixed"
+        },
+        "explain": "Em bé đang ngủ thì nhắc mọi người giữ yên lặng: Please be quiet. (be + tính từ quiet)"
       }
     ]
   }
