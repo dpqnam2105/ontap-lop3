@@ -32,22 +32,23 @@ const isMs = q => /^en_mshoa-e2-u6_/.test(q.id);
       const { p, ctx, errs } = await open(b, vp, mobile);
       const W = vp.width + 'px';
 
-      // 1) Trang phụ huynh: chọn Ms Hoa L1, bỏ tích NIK → chỉ Ms Hoa vào Ôn tổng hợp (Nền chưa có câu đã rà: ô bị khoá)
+      // 1) Trang phụ huynh: chọn Ms Hoa L1, bỏ tích NIK và Nền → chỉ Ms Hoa vào Ôn tổng hợp (GS3 mặc định tắt)
       await p.evaluate(() => ParentDashboard._openDashboard()); await p.waitForTimeout(600);
+      const before = await p.evaluate(() => ['nik3', 'mshoa-explorer2', 'gs3', 'nen'].map(b => { const c = document.querySelector('.scope-mixcb[data-b="' + b + '"]'); return [b, c.checked, c.disabled]; }));
+      assert.deepStrictEqual(before, [['nik3', true, false], ['mshoa-explorer2', true, false], ['gs3', false, false], ['nen', true, false]]);
       await p.selectOption('#bookScopeCard .scope-lesson', '6.1');
       await p.click('#bookScopeCard .scope-mixcb[data-b="nik3"]');
-      const st = await p.evaluate(() => ({ nen: document.querySelector('.scope-mixcb[data-b="nen"]').disabled, gs3: document.querySelector('.scope-mixcb[data-b="gs3"]').checked,
-        saved: Storage.get('bookScopeBySubject')['lop3:tieng-anh'] }));
-      assert.deepStrictEqual(st.saved, { lesson: { 'mshoa-explorer2': { unit: 6, lesson: 1 } }, mix: { nik3: false } });
-      assert.strictEqual(st.nen, true); assert.strictEqual(st.gs3, false);
-      ok(W + ': trang phụ huynh lưu mốc U6 L1 và bỏ NIK khỏi Ôn tổng hợp');
+      await p.click('#bookScopeCard .scope-mixcb[data-b="nen"]');
+      const saved = await p.evaluate(() => Storage.get('bookScopeBySubject')['lop3:tieng-anh']);
+      assert.deepStrictEqual(saved, { lesson: { 'mshoa-explorer2': { unit: 6, lesson: 1 } }, mix: { nik3: false, nen: false } });
+      ok(W + ': trang phụ huynh lưu mốc U6 L1, bỏ NIK và Nền khỏi Ôn tổng hợp');
 
       // 2) Thẻ Ôn tổng hợp: đứng đầu danh sách; chỉ Ms Hoa (1 chủ đề) vẫn hiện; bấm → 12 câu L1, không lặp, không đoạn E
       await openEnglish(p); await p.waitForTimeout(300);
       const first = await p.evaluate(() => document.querySelector('#topicList > *').className);
       assert.ok(/mix-card/.test(first), 'thẻ Ôn tổng hợp phải đứng đầu: ' + first);
       const src = await p.textContent('#topicList .mix-src');
-      assert.ok(/Ms Hoa/.test(src) && /đề ngắn 12 câu/.test(src) && !/Now I Know/.test(src), src);
+      assert.ok(/Ms Hoa/.test(src) && /đề ngắn 12 câu/.test(src) && !/Now I Know|Kiến thức nền/.test(src), src);
       await p.click('#topicList .mix-card .mix-btn'); await p.waitForTimeout(400);
       let qs = await quizQs(p);
       assert.strictEqual(qs.length, 12);

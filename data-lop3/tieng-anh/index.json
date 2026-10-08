@@ -153,11 +153,13 @@
   ],
   "reviewRounds": {
     "claude-ra-101-20261009": {
-      "confirmed": false,
+      "confirmed": true,
       "by": "claude",
       "date": "2026-10-09",
       "doc": "project claude/tieng-anh-ra-101-cau.md",
-      "note": "Rà 101 câu cũ (NIK3 U1–U2, Reading NIK3, GS3, adj–adv). confirmed = true chỉ khi Codex xác nhận kết quả rà."
+      "note": "Rà 101 câu cũ (NIK3 U1–U2, Reading NIK3, GS3, adj–adv). confirmed = true chỉ khi Codex xác nhận kết quả rà.",
+      "confirmedBy": "codex",
+      "confirmedNote": "Codex chốt diff lượt 2 (71 ok · 30 fixed · 0 pending)"
     }
   },
   "stages": [

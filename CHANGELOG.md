@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-11 — Chốt lượt rà 101 câu Tiếng Anh cũ (Codex xác nhận)
+- reviewRounds["claude-ra-101-20261009"].confirmed = true → 101 câu cũ (71 ok · 30 fixed) vào được Ôn tổng hợp; mặc định GĐ1 chia NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt. GS3 q015 đổi gợi ý (commit riêng trước đó). Test cập nhật: ca "chưa xác nhận" giả lập trong test; e2e bỏ tích cả NIK và Nền để còn chỉ Ms Hoa.
+- Còn mở (xử lý riêng): e2e pet-art ("drawing never modifies profile" — hồ sơ thêm "achievements":{}), pet-mobile-payload ("only current stage atlas" 5 !== 1); cùng lỗi trên main 679b18d.
+
 ## 2026-10-11 — Chốt lượt rà 101 câu Tiếng Anh cũ (lượt 2) + chặn câu pending trước (nhánh en-chia-giao-trinh)
 - Sửa theo Codex: en_nik3-unit2_q003 → '"Extinct" means ___.' (đã tuyệt chủng | rất to lớn | biết bay | ăn cỏ), bỏ hint "All of them are gone"; en_adj-adv_q001, q014 nhiễu quick → quickness (q014 bỏ gợi ý lộ "runs quickly"); en_adj-adv_q025 → "The baby is sleeping. What should you say?" (Please be quiet. | Please talk loudly. | Please sing loudly. | Please shout.).
 - Test mới bắt 15 câu cũ có gợi ý chứa nguyên văn đáp án → viết lại gợi ý (adj-adv q006, q007, q016, q018, q022; NIK3 U1 q019, q021, q022; U2 q015–q017; GS3 q004, q012, q013, q015). Không đổi đề / lựa chọn / đáp án.

@@ -27,6 +27,7 @@ const setLesson = (b, n) => b.run(`App.setBookScope(${S}, { lesson: { 'mshoa-exp
 
 const ROUND = 'claude-ra-101-20261009';
 const confirm = b => b.run(`${S}.reviewRounds['${ROUND}'].confirmed = true`);
+const unconfirm = b => b.run(`${S}.reviewRounds['${ROUND}'].confirmed = false`); // giả lập lượt rà chưa chốt
 const mixOnly = (b, ids) => b.run(`App.setBookScope(${S}, { mix: { ${['nik3', 'mshoa-explorer2', 'gs3', 'nen'].map(id => `'${id}': ${ids.includes(id)}`).join(', ')} } })`);
 // Môn giả để kiểm hạn mức: sách A có đúng 6 câu hợp lệ (+ 4 câu ngoài giai đoạn), sách B có 30 câu hợp lệ (+ 5 câu chưa rà).
 const FAKE = `(() => {
@@ -38,12 +39,12 @@ const FAKE = `(() => {
 })()`;
 
 const tests = {
-  async 'nạp index: sách, book của chủ đề, lượt rà 101 câu (chưa xác nhận)'() {
+  async 'nạp index: sách, book của chủ đề, lượt rà 101 câu (đã xác nhận)'() {
     const b = await boot();
     assert.deepStrictEqual(b.J(`${S}.books.map(x => x.id)`), ['nik3', 'mshoa-explorer2', 'gs3', 'nen']);
     assert.strictEqual(b.J(`${MS}.book`), 'mshoa-explorer2');
     assert.strictEqual(b.J(`${S}.topics.filter(t => !t.book).length`), 0);
-    assert.strictEqual(b.J(`${S}.reviewRounds['${ROUND}'].confirmed`), false);
+    assert.strictEqual(b.J(`${S}.reviewRounds['${ROUND}'].confirmed`), true);
     assert.strictEqual(b.J(`App.getBookScope(App.allData.subjects.find(x => x.id === 'toan'))`), null);
   },
   async 'Ms Hoa mặc định U6 L2: đủ 23 câu; chọn L1: 12 câu, không có câu L2 / đoạn E'() {
@@ -66,6 +67,7 @@ const tests = {
   async 'câu vào Ôn tổng hợp xét từng câu: lô đã duyệt vào; 101 câu cũ chỉ vào khi lượt rà được xác nhận; câu chưa rà không vào'() {
     const b = await boot();
     const elig = () => b.J(`${S}.topics.flatMap(t => t.questions.filter(q => App._mixEligible(${S}, q)).map(q => q.id))`);
+    unconfirm(b);
     const e1 = new Set(elig());
     assert.strictEqual(e1.size, 34 + 23 + 23); // lô 1, lô 2 (U3), Ms Hoa
     confirm(b);
@@ -89,8 +91,9 @@ const tests = {
     assert.strictEqual(pool.length, 20);
     assert.ok(!pool.includes('en_mshoa-e2-u6_q001'));
   },
-  async 'Ôn tổng hợp mặc định (GĐ1, lượt rà chưa xác nhận): NIK 10 + Ms Hoa 10, Nền không có câu hợp lệ nên không vào'() {
+  async 'lượt rà chưa xác nhận (giả lập): NIK 10 + Ms Hoa 10, Nền không có câu hợp lệ nên không vào'() {
     const b = await boot();
+    unconfirm(b);
     const mix = b.J(`App._buildWeeklyMix(${S})`);
     assert.strictEqual(mix.pool.length, 20);
     assert.strictEqual(new Set(mix.pool.map(q => q.id)).size, 20);
@@ -98,9 +101,8 @@ const tests = {
     assert.deepStrictEqual(Object.fromEntries(mix.sources.map(x => [x.id, x.n])), { nik3: 10, 'mshoa-explorer2': 10 });
     assert.ok(mix.pool.filter(q => q.passage).every(q => /^Read: "/.test(q.q)));
   },
-  async 'Ôn tổng hợp sau khi xác nhận lượt rà: NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt'() {
+  async 'Ôn tổng hợp mặc định (lượt rà đã xác nhận): NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt'() {
     const b = await boot();
-    confirm(b);
     const mix = b.J(`App._buildWeeklyMix(${S})`);
     assert.deepStrictEqual(mix.sources.map(x => x.n).sort(), [6, 7, 7]);
     assert.ok(!mix.sources.some(x => x.id === 'gs3'));
