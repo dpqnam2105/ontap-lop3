@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Nhà cún: giữ thời gian tương tác khi giảm chuyển động (chờ review)
+- Edge máy Nam báo prefers-reduced-motion: reduce; scheduler cũ ép mọi callback về0ms khiến cả lượt chơi biến mất trong~7ms. later() nay giữ thời gian thật; positionActor vẫn bỏ nội suy và setPose vẫn không chạy interval ở reduced.
+- Giữ dừng chơi450ms, ăn1100ms, phản ứng/lời nói và hủy callback khi rời màn. Không sửa dữ liệu, sao, giá, stage hoặc room. Tăng cache pet-view.js=20261009pet2.
+- tests/pet-reduced-motion.e2e.js đo trong browser mỗi10ms: hop tại đúng spot≥400ms, chỉ vị trí đầu/cuối, không RAF/pose interval/transition; ăn có dwell và chỉ trừ một phần; stop hủy phần còn lại. Ba stage ở548/1280/2560px.
+
 ## 2026-10-09 — Sửa Cửa hàng sao bị cắt trên điện thoại (nhánh riêng, chờ Claude review)
 - Review Claude: test dùng khoảng cách nhỏ nhất trong các mẫu hop thay vì mẫu đầu (tránh CSS transition chưa kết thúc); Chromium mặc định, channel chỉ khi có biến môi trường; thêm hướng dẫn chạy. Không đổi CSS hoặc logic pet ở lượt này.
 - Cho cột grid shop và thẻ con co đúng viewport; pack sắp ra mắt dùng minmax(0,1fr), tên dài xuống dòng, ảnh sticker không vượt thẻ. Giữ hai cột mobile và bố cục desktop.
