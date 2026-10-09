@@ -1,5 +1,12 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Thỏ đồng hành ở thanh bên desktop (chờ Claude review)
+- Dùng sáu ảnh mascot sẵn có: chào, cổ vũ, ăn mừng, đọc sách, ngón cái và ôm sao. Chào/nhắc số việc mỗi lượt mở trang, ăn mừng một lần mỗi bé/ngày; bấm Thỏ hiện số câu đúng/ngày học trong tuần hoặc số việc thực tế.
+- Trong quiz: Thỏ đọc sách, không hoạt ảnh/không bấm được, không phản ứng câu sai. Bong bóng 3 giây rồi tắt, không lặp tự động. Reduced motion chỉ đổi hình/chữ, giữ thời gian đọc. Giữ ẩn ở <=1100px. Desktop thấp <=950px thu gọn khoảng cách/đệm thanh bên, không giảm cỡ chữ.
+- Cờ ăn mừng là khóa UI rabbit_companion_celebrated_v1/<bé>/<ngày> riêng localStorage (không có hậu tố ::tên, không vào Cloud.collect). Không ghi hồ sơ, sao, XP, điểm hay kế hoạch; không đồng bộ cờ này giữa các máy.
+- Module js/companion.js + companion.css; chỉ nối init/showScreen của App và render của Today. Cache 20261009rabbit1. Test và ảnh review: docs/companion/README.md.
+
+
 ## 2026-10-09 — Thu gọn màn chọn chủ đề (nhánh compact-topic-cards, chờ Claude review)
 - Thẻ chủ đề chỉ hiện tên, số câu và tiến độ; bấm mới mở Luyện tập / Kiểm tra / Ôn lỗi sai. Mỗi lúc mở một thẻ; hỗ trợ Enter/Space và focus. Thẻ tự sinh bảng nhân chia ở Đấu trường giữ nguyên.
 - Nút Ôn lỗi sai và phiên ôn dùng chung Quiz.reviewCandidates, lọc đúng phạm vi và tối đa 20 câu/lượt. Không đổi banner ôn sai theo wrong-history, ID, dữ liệu tiến độ hoặc chấm điểm.

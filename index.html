@@ -62,10 +62,11 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="companion.css?v=20261009rabbit1">
 </head>
 <body class="on-home">
   <div class="app-shell">
-    <aside class="side-rail">
+    <aside class="side-rail rail-with-companion">
       <div class="brand-block">
         <div class="brand-bunny"><img src="images/mascot/tho-avatar.webp?v=1" alt="Thỏ"></div>
         <div>
@@ -88,8 +89,11 @@
       <div class="rail-spacer"></div>
       <a class="rail-parent-link" href="#" id="footerParent">👨‍👩‍👧 <span class="lbl-long">Dành cho phụ huynh</span><span class="lbl-short">Phụ huynh</span></a>
 
-      <div class="rail-mascot">
-        <div class="mascot-face"><img src="images/mascot/tho-vay-tay.webp?v=1" alt="Thỏ vẫy tay"></div>
+      <div class="rail-mascot rail-companion">
+        <div class="companion-bubble" role="status" aria-live="polite"></div>
+        <button type="button" class="companion-button" title="Bấm Thỏ để xem lời cổ vũ" aria-label="Thỏ đồng hành — bấm để xem lời cổ vũ">
+          <img src="images/mascot/tho-vay-tay.webp?v=1" alt="">
+        </button>
       </div>
     </aside>
 
@@ -377,8 +381,9 @@
   <script src="js/pet.js?v=20261008pet1"></script>
   <script src="js/pet-adult-art-v3.js?v=20261008pet1"></script>
   <script src="js/pet-view.js?v=20261009pet2"></script>
-  <script src="js/app.js?v=20261009topics1"></script>
-  <script src="js/today.js?v=20261007c"></script>
+  <script src="js/companion.js?v=20261009rabbit1"></script>
+  <script src="js/app.js?v=20261009rabbit1"></script>
+  <script src="js/today.js?v=20261009rabbit1"></script>
   <script src="js/guest-flow-guard.js?v=20261009topics1"></script>
 </body>
 </html>

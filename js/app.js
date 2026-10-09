@@ -32,6 +32,7 @@ const App = {
     if (window.Speak) Speak.init();
     if (window.Decor) Decor.init();
     if (window.Achieve) Achieve.init();
+    if (window.Companion) Companion.init();
   },
 
   _restoreSession() {
@@ -151,6 +152,7 @@ const App = {
     if (needsName && !this.playerName) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById('screenRegister').classList.add('active');
+      if (window.Companion) Companion.sync();
       DragonBall._renderHomeWidgets();
       const ni = document.getElementById('nameInput');
       if (ni) { ni.focus(); ni.classList.add('name-input-nudge'); setTimeout(() => ni.classList.remove('name-input-nudge'), 1200); }
@@ -163,6 +165,7 @@ const App = {
     const screen = document.getElementById(id);
     if (!screen) { console.warn('Screen not found:', id); return; }
     screen.classList.add('active');
+    if (window.Companion) Companion.sync();
     if (name === 'pet' && window.PetView) PetView.open();
     // Trang chủ có lời chào riêng → ẩn tiêu đề chung "Kho Bài Tập" (xem style.css: body.on-home.home-today)
     document.body.classList.toggle('on-home', name === 'register');
