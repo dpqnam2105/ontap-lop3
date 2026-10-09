@@ -6,7 +6,8 @@ const PetView = {
   esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));},
   token(){return 'pet-'+Date.now()+'-'+Math.random().toString(36).slice(2);},
   stop(){this.freezePosition();clearInterval(this.poseTimer);this.poseTimer=null;cancelAnimationFrame(this.depthFrame);this.depthFrame=null;this.active=false;this.epoch++;this.timers.forEach(clearTimeout);this.timers=[];clearTimeout(this.idleTimer);this.busy=false;this.state='idle';},
-  later(fn,ms,realTime=false){const e=this.epoch;const t=setTimeout(()=>{if(this.active&&this.epoch===e)fn();},this.reduced.matches&&!realTime?0:ms);this.timers.push(t);},
+  // Reduced motion removes travel/frame animation, not meaningful interaction or reading time.
+  later(fn,ms){const e=this.epoch;const t=setTimeout(()=>{if(this.active&&this.epoch===e)fn();},ms);this.timers.push(t);},
   // KIND lives in Pet data; artwork revisions only change these assets and frame rectangles.
   artVersion:'20261008dog1', poseTimer:null, artSerial:0,
   poses:{idle:0,walk:1,sit:2,sleep:3,wake:4,eat:5,wag:6,tilt:7,hop:8,sniff:9,chase:10,happy:11,celebrate:12,rest:15},
@@ -112,7 +113,7 @@ const PetView = {
     const pet=Pet.snapshot();if(pet){const r=Pet.visit();if(r.ok)this.perform(r.action);}
     this.idle();
   },
-  resume(){this.active=true;this.render();if(this.buyUntil>Date.now())this.later(()=>this.renderPanel(),this.buyUntil-Date.now(),true);this.idle();},
+  resume(){this.active=true;this.render();if(this.buyUntil>Date.now())this.later(()=>this.renderPanel(),this.buyUntil-Date.now());this.idle();},
   showPanel(panel,message){
     if(this.busy)return;
     this.panel=panel;this.renderPanel();if(message)this.say(message);
@@ -129,7 +130,7 @@ const PetView = {
   buy(fn){
     if(this.busy||Date.now()<this.buyUntil)return;
     const r=this.commit(fn);
-    if(r?.ok){this.buyUntil=Date.now()+600;this.renderPanel();this.later(()=>this.renderPanel(),600,true);}
+    if(r?.ok){this.buyUntil=Date.now()+600;this.renderPanel();this.later(()=>this.renderPanel(),600);}
   },
   render(){
     const previous=this.displayedPoint();
