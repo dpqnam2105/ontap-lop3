@@ -1,6 +1,7 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
 ## 2026-10-09 — Sửa Cửa hàng sao bị cắt trên điện thoại (nhánh riêng, chờ Claude review)
+- Review Claude: test dùng khoảng cách nhỏ nhất trong các mẫu hop thay vì mẫu đầu (tránh CSS transition chưa kết thúc); Chromium mặc định, channel chỉ khi có biến môi trường; thêm hướng dẫn chạy. Không đổi CSS hoặc logic pet ở lượt này.
 - Cho cột grid shop và thẻ con co đúng viewport; pack sắp ra mắt dùng minmax(0,1fr), tên dài xuống dòng, ảnh sticker không vượt thẻ. Giữ hai cột mobile và bố cục desktop.
 - Tái hiện trước sửa: khung shop rộng ~516px ở viewport 360–430px, bị overflow-x:hidden che cột phải. Edge kiểm lại 360/390/430/1280/1920/2560px không có phần shop vượt màn.
 - Thêm tests/layout-regression.e2e.js: kiểm biên phần tử shop và chân cún tới spot bóng, chuyển động có vị trí trung gian. Chưa tái hiện lỗi pet riêng trên PC Nam; không đổi logic pet.
