@@ -20,11 +20,11 @@ async function open(b, vp, mobile, name, opts) {
   });
   const p = await ctx.newPage();
   const errs = []; p.on('pageerror', e => errs.push(e.message));
-  await p.goto(URL); await p.waitForTimeout(800);
+  await p.goto(URL); await p.waitForFunction(() => App.allData && App._dataByGrade.lop3);
   if (name) {
     await p.fill('#nameInput', name); await p.click('#btnStart'); await p.waitForTimeout(300);
     await p.evaluate(() => { const d = Storage.load(); Object.assign(d, { stars: 175, level: 12, xp: 40, streak: 4, lastStudyDate: Today._dateKey() }); Storage.save(d); });
-    await p.goto(URL); await p.waitForTimeout(1500);
+    await p.goto(URL); await p.waitForFunction(() => App.allData && App._dataByGrade.lop3);
   }
   return { p, ctx, errs };
 }

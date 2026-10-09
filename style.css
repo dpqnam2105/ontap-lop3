@@ -802,3 +802,27 @@ body.on-home.home-today .main{padding-top:22px}
 .lesson-row{margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:800;color:#24527f}
 .lesson-select{max-width:100%;border:1px solid #cfe4fa;border-radius:12px;padding:8px 10px;font-weight:800;background:#fff}
 .lesson-row small{flex-basis:100%;color:#6b84a0;font-weight:700}
+
+/* Compact topic cards: one expandable topic, unchanged drill cards. */
+.topic-card.topic-card-compact{padding:0!important;min-height:0!important;align-self:start;cursor:default;overflow:hidden}
+.topic-card-compact:hover{transform:none}
+.topic-toggle{display:block;width:100%;border:0;padding:16px;background:transparent;text-align:left;color:inherit;font:inherit;cursor:pointer;border-radius:18px}
+.topic-toggle:focus-visible{outline:3px solid #2563eb;outline-offset:-4px}
+.topic-toggle .topic-card-main{margin-bottom:0}
+.topic-toggle .topic-head-text{flex:1;min-width:0}
+.topic-toggle .topic-name,.topic-toggle .topic-subline,.topic-toggle .topic-progress-wrap,.topic-toggle .topic-prog-bar,.topic-toggle .topic-prog-fill{display:block}
+.topic-toggle .topic-progress-wrap{margin:10px 0 0}
+.topic-toggle .topic-prog-meta{gap:8px;flex-wrap:wrap}
+.topic-chevron{font-size:1.8rem;line-height:1;color:#487cae;flex:none}
+.is-open .topic-chevron{transform:rotate(90deg)}
+.topic-actions{padding:0 16px 16px;border-top:1px solid #e6eefb}
+.topic-actions[hidden]{display:none!important}
+.topic-actions .topic-desc{margin:12px 0}
+.topic-actions .topic-mode-row{margin-top:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.topic-actions .topic-mode-pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+.topic-actions .mode-btn.practice{background:#176fd4;color:#fff;border-color:#176fd4}
+.topic-actions .mode-btn:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+@media(max-width:760px){.topic-toggle{padding:14px}.topic-actions{padding:0 14px 14px}.topic-actions .topic-mode-row{grid-template-columns:1fr}.topic-actions .mode-btn{min-height:44px}}
+
+#topicList > *{min-width:0}
+.topic-card-compact .topic-name{overflow-wrap:anywhere}

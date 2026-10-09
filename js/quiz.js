@@ -242,6 +242,13 @@ const Quiz = {
     } catch (e) { console.warn('Trộn câu tự sinh lỗi:', e); }
   },
 
+  /** Wrong indices in the selected scope; shared by topic button counts and review sessions. */
+  reviewCandidates(topic, allowed) {
+    const scope = Array.isArray(allowed) ? new Set(allowed) : null;
+    const progress = Storage.getTopicProgress((topic.id || topic.name).toString());
+    return [...new Set(progress.wrong || [])].filter(i => Number.isInteger(i) && topic.questions[i] && (!scope || scope.has(i)));
+  },
+
   _selectQuestions(topic, mode) {
     if (this.pickIdx) {
       return {
@@ -262,7 +269,7 @@ const Quiz = {
     };
 
     if (mode === 'review') {
-      const wrong = (progress.wrong || []).filter(i => topic.questions[i]);
+      const wrong = this.reviewCandidates(topic, this.allowedIdx);
       const indices = wrong.length ? this._shuffle(wrong).slice(0, this.TARGET_PER_SESSION) : [];
       return {
         questions: indices.map(i => this._prepareQuestion(topic.questions[i], i)),
