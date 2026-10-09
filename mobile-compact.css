@@ -614,3 +614,17 @@
   .side-rail .rail-btn span, .side-rail .rail-parent-link span { font-size: 0.62rem !important; text-align: center !important; }
   .side-rail .lbl-short { white-space: normal !important; text-overflow: clip !important; }
 }
+/* Shop grids must shrink inside the phone viewport rather than widen their 1fr track. */
+@media (max-width: 760px) {
+  #screenShop .shop-layout { grid-template-columns: minmax(0, 1fr) !important; }
+  #screenShop .shop-layout > *,
+  #screenShop .sticker-pack,
+  #screenShop .reward-card,
+  #screenShop .dragon-shop-section,
+  #screenShop .dragon-shop-card { min-width: 0; }
+  #screenShop .packs-soon-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #screenShop .pack-head { flex-wrap: wrap; }
+  #screenShop .reward-name,
+  #screenShop .dragon-shop-name { overflow-wrap: anywhere; }
+  #screenShop .reward-sticker-img { max-width: 100%; }
+}

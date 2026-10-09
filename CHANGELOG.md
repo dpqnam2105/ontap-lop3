@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Sửa Cửa hàng sao bị cắt trên điện thoại (nhánh riêng, chờ Claude review)
+- Cho cột grid shop và thẻ con co đúng viewport; pack sắp ra mắt dùng minmax(0,1fr), tên dài xuống dòng, ảnh sticker không vượt thẻ. Giữ hai cột mobile và bố cục desktop.
+- Tái hiện trước sửa: khung shop rộng ~516px ở viewport 360–430px, bị overflow-x:hidden che cột phải. Edge kiểm lại 360/390/430/1280/1920/2560px không có phần shop vượt màn.
+- Thêm tests/layout-regression.e2e.js: kiểm biên phần tử shop và chân cún tới spot bóng, chuyển động có vị trí trung gian. Chưa tái hiện lỗi pet riêng trên PC Nam; không đổi logic pet.
+
 ## 2026-10-11 — Chốt lượt rà 101 câu Tiếng Anh cũ (Codex xác nhận)
 - reviewRounds["claude-ra-101-20261009"].confirmed = true → 101 câu cũ (71 ok · 30 fixed) vào được Ôn tổng hợp; mặc định GĐ1 chia NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt. GS3 q015 đổi gợi ý (commit riêng trước đó). Test cập nhật: ca "chưa xác nhận" giả lập trong test; e2e bỏ tích cả NIK và Nền để còn chỉ Ms Hoa.
 - Còn mở (xử lý riêng): e2e pet-art ("drawing never modifies profile" — hồ sơ thêm "achievements":{}), pet-mobile-payload ("only current stage atlas" 5 !== 1); cùng lỗi trên main 679b18d.
