@@ -61,6 +61,7 @@ const isMs = q => /^en_mshoa-e2-u6_/.test(q.id);
       for (const mode of ['practice', 'test']) {
         await openEnglish(p); await p.waitForTimeout(200);
         await p.evaluate(m => { const card = [...document.querySelectorAll('#topicList .topic-card')].find(c => /Ms Hoa/.test(c.querySelector('.topic-name').textContent));
+          card.querySelector('.topic-toggle').click();
           card.querySelector('.mode-btn.' + m).click(); }, mode);
         await p.waitForTimeout(300);
         qs = await quizQs(p);

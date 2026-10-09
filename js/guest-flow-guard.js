@@ -94,6 +94,8 @@
     // Chặn menu/lớp/shop/chủ đề/môn/câu trả lời khi chưa có tên.
     if (target.closest('.grade-card')) return true;
     if (target.closest('.sub-card')) return true;
+    // Opening a compact topic only previews choices; starting a mode still requires a name.
+    if (target.closest('.topic-card-compact')) return !!target.closest('.mode-btn');
     if (target.closest('.topic-card')) return true;
     if (target.closest('.ans-btn')) return true;
     if (target.closest('.reward-buy-btn')) return true;

@@ -855,23 +855,22 @@ const App = {
   _topicCard(s, t, allowed) {
     const allowedSet = allowed ? new Set(allowed) : null;
     const inScope = i => (allowedSet ? allowedSet.has(i) : i < (t.questions || []).length);
-
     const card = document.createElement('div');
-    card.className = 'topic-card topic-card-with-modes';
-
+    card.className = 'topic-card topic-card-with-modes topic-card-compact';
     const topicId = (t.id || t.name).toString();
+    card.dataset.topicId = topicId;
+    const panelId = 'topic-actions-' + (this._topicCardSerial = (this._topicCardSerial || 0) + 1);
     const totalQ = allowed ? allowed.length : (t.questions || []).length;
-    let learned = 0, wrong = 0, today = 0;
+    let learned = 0, today = 0;
     try {
-      // Tiến độ tích lũy: số câu đã từng làm đúng (không reset theo ngày).
-      const tot = (window.Storage && Storage.getTotalProgress) ? Storage.getTotalProgress(topicId) : null;
+      const tot = Storage.getTotalProgress ? Storage.getTotalProgress(topicId) : null;
       if (tot) learned = (tot.ok || []).filter(inScope).length;
-      const prog = (window.Storage && Storage.getTopicProgress) ? Storage.getTopicProgress(topicId) : null;
-      if (prog) {
-        today = (prog.learned || []).filter(inScope).length;
-        wrong = (prog.wrong || []).filter(inScope).length;
-      }
-    } catch (e) { /* chưa có tiến độ thì để 0 */ }
+      const prog = Storage.getTopicProgress(topicId);
+      today = (prog.learned || []).filter(inScope).length;
+    } catch (e) { /* chưa có tiến độ */ }
+    // Same candidate source and session cap as Quiz review (not wrong-history banner).
+    const wrong = Quiz.reviewCandidates(t, allowed).length;
+    const reviewCount = Math.min(wrong, Quiz.TARGET_PER_SESSION);
     let solid = 0;
     try {
       const rv = Storage.getReviewMap ? Storage.getReviewMap() : {};
@@ -881,37 +880,52 @@ const App = {
     const pct = totalQ ? Math.round(learned / totalQ * 100) : 0;
     const st = solidAll ? { label: '🌟 Đã vững', color: '#16a34a' } : this._topicStatus(pct);
     const desc = this.TOPIC_DESC[topicId] || '';
-
     card.innerHTML = `
-      <div class="topic-card-main">
-        <div class="topic-icon">${t.icon}</div>
-        <div class="topic-head-text">
-          <div class="topic-name">${this._escape(t.name)}</div>
-          <div class="topic-subline">${totalQ} câu hỏi${solid ? ` · <span class="solid-tag">⭐ ${solid} câu đã vững</span>` : ''}</div>
+      <button type="button" class="topic-toggle" aria-expanded="false" aria-controls="${panelId}">
+        <span class="topic-card-main">
+          <span class="topic-icon">${t.icon}</span>
+          <span class="topic-head-text">
+            <span class="topic-name">${this._escape(t.name)}</span>
+            <span class="topic-subline">${totalQ} câu hỏi${solid ? ` · <span class="solid-tag">⭐ ${solid} câu đã vững</span>` : ''}</span>
+          </span>
+          <span class="topic-chevron" aria-hidden="true">›</span>
+        </span>
+        <span class="topic-progress-wrap">
+          <span class="topic-prog-bar"><span class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></span></span>
+          <span class="topic-prog-meta">
+            <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
+            <span class="topic-pct">${learned}/${totalQ} câu đã đúng${today ? ' · hôm nay ' + today : ''}${wrong ? ' · ' + wrong + ' cần ôn' : ''}</span>
+          </span>
+        </span>
+      </button>
+      <div class="topic-actions" id="${panelId}" hidden>
+        ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
+        <div class="topic-mode-row${reviewCount ? '' : ' topic-mode-pair'}">
+          <button type="button" class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
+          <button type="button" class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
+          ${reviewCount ? `<button type="button" class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai · ${reviewCount} câu</button>` : ''}
         </div>
-      </div>
-      ${desc ? `<div class="topic-desc">${this._escape(desc)}</div>` : ''}
-      <div class="topic-progress-wrap">
-        <div class="topic-prog-bar"><div class="topic-prog-fill" style="width:${pct}%;background:${st.color}"></div></div>
-        <div class="topic-prog-meta">
-          <span class="topic-status-tag" style="color:${st.color}">${st.label}</span>
-          <span class="topic-pct">${learned}/${totalQ} câu đã đúng${today ? ' · hôm nay ' + today : ''}${wrong ? ' · ' + wrong + ' cần ôn' : ''}</span>
-        </div>
-      </div>
-      <div class="topic-mode-hint">👇 Chọn cách học để bắt đầu</div>
-      <div class="topic-mode-row">
-        <button class="mode-btn practice" data-mode="practice">🧠 Luyện tập</button>
-        <button class="mode-btn test" data-mode="test">📝 Kiểm tra</button>
-        <button class="mode-btn review" data-mode="review">🔁 Ôn lỗi sai</button>
       </div>`;
-
+    const toggle = card.querySelector('.topic-toggle');
+    const panel = card.querySelector('.topic-actions');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      (card.closest('#topicList') || card.parentElement || card).querySelectorAll('.topic-toggle[aria-expanded="true"]').forEach(other => {
+        other.setAttribute('aria-expanded', 'false');
+        const otherCard = other.closest('.topic-card-compact');
+        otherCard.classList.remove('is-open');
+        otherCard.querySelector('.topic-actions').hidden = true;
+      });
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+      card.classList.toggle('is-open', open);
+    });
     card.querySelectorAll('.mode-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', e => {
         e.stopPropagation();
         Quiz.start(t, s.name, { mode: btn.dataset.mode, subjectId: s.id, allowed });
       });
     });
-
     return card;
   },
 
@@ -1038,10 +1052,8 @@ const App = {
 
   /** Đổi % tiến độ thành nhãn + màu trạng thái cho card chủ đề. */
   _topicStatus(pct) {
-    if (pct >= 90) return { label: 'Làm gần hết rồi', color: '#16a34a' };
-    if (pct >= 70) return { label: 'Đang tốt', color: '#22c55e' };
-    if (pct >= 40) return { label: 'Đang học', color: '#f59e0b' };
-    if (pct > 0)   return { label: 'Cần cố gắng', color: '#f97316' };
+    if (pct >= 90) return { label: 'Đã làm gần hết', color: '#16a34a' };
+    if (pct > 0) return { label: 'Đang luyện', color: '#2563eb' };
     return { label: 'Chưa bắt đầu', color: '#94a3b8' };
   },
 

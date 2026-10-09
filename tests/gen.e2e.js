@@ -19,11 +19,11 @@ async function open(b, opts) {
   });
   const p = await ctx.newPage();
   const errs = []; p.on('pageerror', e => errs.push(e.message));
-  await p.goto(URL); await p.waitForTimeout(800);
+  await p.goto(URL); await p.waitForFunction(() => App.allData && App._dataByGrade.lop3);
   await p.fill('#nameInput', opts.name || 'Bé Thử Sinh'); await p.click('#btnStart'); await p.waitForTimeout(1200);
   return { p, ctx, errs };
 }
-const reload = async p => { await p.goto(URL); await p.waitForTimeout(1500); };
+const reload = async p => { await p.goto(URL); await p.waitForFunction(() => App.allData && App._dataByGrade.lop3); };
 const toToan = async p => {
   await p.click('.rail-btn-learn'); await p.waitForTimeout(500);
   await p.evaluate(() => App._chooseSubject(App.allData.subjects.findIndex(s => s.id === 'toan'))); await p.waitForTimeout(400);
@@ -51,6 +51,7 @@ const G13 = 'Nền số đến 1000';
     x = await info();
     assert.ok(x.n > 50 && x.n < x.total && x.maxLesson === 1, 'chọn Bài 1: chỉ câu B1 (' + x.n + ')');
     // a) tự chọn bài: bấm Luyện tập ở thẻ chủ đề
+    await card(p, G13).locator('.topic-toggle').click();
     await card(p, G13).locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
     let q = await sess(p); assert.ok(q.length && q.every(y => y.lesson === 1), 'lượt chủ đề: chỉ B1');
     // b) kế hoạch hôm nay (đường Today.start)
@@ -67,6 +68,7 @@ const G13 = 'Nền số đến 1000';
     assert.strictEqual(await card(p, 'Giải toán có lời văn').count(), 0, 'Bài 1: chủ đề lời văn không có câu nào → ẩn');
     // Bài 2: được trộn lời văn sinh (B2), nhưng mọi câu trong lượt đều ≤ B2
     await p.selectOption('#lessonSelect', '2'); await p.waitForTimeout(400);
+    await card(p, 'Giải toán có lời văn').locator('.topic-toggle').click();
     await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
     q = await sess(p); assert.ok(q.length && q.every(y => y.lesson === null || y.lesson <= 2), 'Bài 2: lượt lời văn chỉ có câu ≤ B2');
     await toToan(p); await p.selectOption('#lessonSelect', '1'); await p.waitForTimeout(400);
@@ -123,6 +125,7 @@ const G13 = 'Nền số đến 1000';
     for (const [name, onlyLv] of [['Giải toán có lời văn', true], ['Ôn tập tổng hợp', false]]) {
       for (const mode of ['practice', 'test']) {
         await toToan(p);
+        await card(p, name).locator(".topic-toggle").click();
         await card(p, name).locator(`[data-mode="${mode}"]`).click(); await p.waitForTimeout(400);
         const q = await sess(p);
         const gen = q.filter(y => y.topicId === 'toan_g13');
@@ -132,11 +135,13 @@ const G13 = 'Nền số đến 1000';
     }
     for (const name of ['Đếm hình', 'Bảng nhân, chia', 'Một phần mấy']) {
       await toToan(p);
+      await card(p, name).locator('.topic-toggle').click();
       await card(p, name).locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
       assert.ok((await sess(p)).every(y => y.topicId !== 'toan_g13'), name + ': không có câu sinh');
     }
     // làm hết lượt Giải toán có lời văn (đúng ngay) → tiến độ ngày chủ đề tĩnh chỉ có chỉ số câu tĩnh
     await toToan(p);
+    await card(p, 'Giải toán có lời văn').locator('.topic-toggle').click();
     await card(p, 'Giải toán có lời văn').locator('[data-mode="practice"]').click(); await p.waitForTimeout(400);
     const q = await sess(p);
     for (let k = 0; k < q.length; k++) {
@@ -158,6 +163,7 @@ const G13 = 'Nền số đến 1000';
   await T('ôn câu sai câu sinh: làm sai → tải lại trang → bấm "Ôn lại câu con hay sai" → đúng đề / lựa chọn / đáp án → trả lời đúng là xong', async () => {
     const { p, ctx, errs } = await open(b, { name: 'Bé Ôn Sai' });
     await toToan(p);
+    await card(p, G13).locator('.topic-toggle').click();
     await card(p, G13).locator('[data-mode="test"]').click(); await p.waitForTimeout(400);
     wrongQ = await p.evaluate(() => { const q = Quiz.questions[0]; return { id: q.id, q: q.q, choices: q.choices.slice(), a: q.a, hint: q.hint }; });
     await p.evaluate(() => { const q = Quiz.questions[0]; const right = String(q.choices[q.a]);

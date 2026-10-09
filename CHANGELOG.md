@@ -1,5 +1,12 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-09 — Thu gọn màn chọn chủ đề (nhánh compact-topic-cards, chờ Claude review)
+- Thẻ chủ đề chỉ hiện tên, số câu và tiến độ; bấm mới mở Luyện tập / Kiểm tra / Ôn lỗi sai. Mỗi lúc mở một thẻ; hỗ trợ Enter/Space và focus. Thẻ tự sinh bảng nhân chia ở Đấu trường giữ nguyên.
+- Nút Ôn lỗi sai và phiên ôn dùng chung Quiz.reviewCandidates, lọc đúng phạm vi và tối đa 20 câu/lượt. Không đổi banner ôn sai theo wrong-history, ID, dữ liệu tiến độ hoặc chấm điểm.
+- Nhãn độ phủ: Chưa bắt đầu / Đang luyện / Đã làm gần hết; Đã vững vẫn dựa vào hộp ôn tập. Khách mở thẻ được, chỉ bị nhắc nhập tên khi bắt đầu học. Vẽ lại theo phạm vi đóng thẻ đang mở.
+- Sửa ô lưới màn chủ đề giữ chiều rộng tối thiểu làm cắt mobile; kiểm vị trí thẻ thật trong viewport, không chỉ scrollWidth. Ảnh trước/sau 390/1280px trong docs/topic-cards. Cache app/quiz/guest-flow-guard/style = 20261009topics1.
+
+
 ## 2026-10-09 — Nhà cún: giữ thời gian tương tác khi giảm chuyển động (chờ review)
 - Edge máy Nam báo prefers-reduced-motion: reduce; scheduler cũ ép mọi callback về0ms khiến cả lượt chơi biến mất trong~7ms. later() nay giữ thời gian thật; positionActor vẫn bỏ nội suy và setPose vẫn không chạy interval ở reduced.
 - Giữ dừng chơi450ms, ăn1100ms, phản ứng/lời nói và hủy callback khi rời màn. Không sửa dữ liệu, sao, giá, stage hoặc room. Tăng cache pet-view.js=20261009pet2.
