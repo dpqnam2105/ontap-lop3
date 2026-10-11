@@ -312,6 +312,7 @@ const Today = {
     const box = document.getElementById('todayCard');
     if (!screen || !box) return;
     const p = this.plan();
+    if (window.Companion) Companion.sync();
     const greet = document.getElementById('homeGreet');
     const side = document.getElementById('homeSide');
     const kicker = document.getElementById('topKicker');
