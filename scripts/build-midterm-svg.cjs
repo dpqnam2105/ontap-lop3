@@ -39,12 +39,26 @@ save('en-u1-map-a.svg','Town map with start arrow pointing up',`
  ${rect(233,470,174,29,'#f3ead7',5)}${text(320,493,'square',25)}
  `,640,510);
 function sign(name,title,body,prohibit=true,bg='#fff',extra=''){
- save(name,title,`<circle cx="200" cy="200" r="163" fill="${bg}" stroke="${prohibit?red:bg}" stroke-width="15"/>${body}${prohibit?line('M88 88 L312 312',red,20):''}${extra}`,400,400);
+ save(name,title,`<circle cx="200" cy="200" r="163" fill="${bg}" stroke="${prohibit?red:bg}" stroke-width="15"/>${body}${prohibit?line('M88 88 L312 312',red,['en-sign-no-sitting-stairs.svg','en-sign-no-feeding.svg'].includes(name)?14:20):''}${extra}`,400,400);
 }
 sign('en-sign-no-talking.svg','Do not talk',`<path d="M125 267 V164 C125 100 220 91 230 150 L263 182 L238 188 V221 H208 V267Z" fill="${ink}"/>${line('M279 153 Q307 180 279 207',ink,7)}${line('M303 132 Q350 180 303 228',ink,7)}`,true,'#fff',`${rect(14,302,24,60,'#799ac9',2)}${rect(40,312,22,50,'#d9a46a',2)}`);
-sign('en-sign-no-feeding.svg','Do not feed the animals',`${rect(65,170,65,48,'#dce6f4',4)}${line('M132 180 H163 M132 194 H170 M132 208 H159',ink,9)}${circle(187,192,10,'#dca85d')}${circle(267,135,40,'#e7bd8e')}${circle(238,105,13,'#e7bd8e')}${circle(295,105,13,'#e7bd8e')}${circle(255,134,4,ink,ink,0)}${circle(280,134,4,ink,ink,0)}${circle(267,257,39,'#ccb2e2')}<path d="M239 229 L234 204 L252 222 M283 223 L302 204 L298 233" fill="#ccb2e2" stroke="${ink}" stroke-width="5"/>${circle(255,253,4,ink,ink,0)}${circle(280,253,4,ink,ink,0)}`);
+sign('en-sign-no-feeding.svg','Do not feed the animals',`<path d="M58 183 H101 L119 168 Q126 162 137 168 L160 189 H196 Q210 189 210 198 Q210 207 196 207 H157 L184 218 Q195 224 189 233 Q185 239 175 235 L145 224 L163 236 Q172 243 165 250 Q159 256 150 250 L125 236 L139 248 Q144 255 138 261 Q132 266 123 259 L102 240 H58Z" fill="#f6cba7" stroke="#20334a" stroke-width="5" stroke-linejoin="round"/>
+<path d="M55 180 V244" stroke="#1978c9" stroke-width="13"/>
+<path d="M204 183 L240 190 L211 211Z" fill="#ed9b36" stroke="#20334a" stroke-width="4"/>
+<path d="M236 187 L248 173 M238 190 L255 188" stroke="#25845b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="290" cy="125" r="37" fill="#e7bd8e" stroke="#20334a" stroke-width="5"/>
+<circle cx="261" cy="97" r="13" fill="#e7bd8e" stroke="#20334a" stroke-width="5"/>
+<circle cx="319" cy="97" r="13" fill="#e7bd8e" stroke="#20334a" stroke-width="5"/>
+<circle cx="278" cy="122" r="4" fill="#20334a"/><circle cx="301" cy="122" r="4" fill="#20334a"/>
+<path d="M281 146 Q290 156 301 146" fill="none" stroke="#20334a" stroke-width="4"/>
+<path d="M252 252 L246 224 L266 238 Q291 224 314 239 L332 224 L326 254 Q335 282 311 298 Q284 313 261 294 Q247 278 252 252Z" fill="#ccb2e2" stroke="#20334a" stroke-width="5"/>
+<circle cx="275" cy="262" r="4" fill="#20334a"/><circle cx="302" cy="262" r="4" fill="#20334a"/>
+<path d="M281 279 Q288 289 297 279" fill="none" stroke="#20334a" stroke-width="4"/>`);
 sign('en-sign-no-grass.svg','Do not walk on the grass',`${person(193,182,1.5,ink)}${line('M90 288 H309',green,5)}${[105,140,180,220,260,295].map(x=>line(`M${x} 288 l-9 -23 M${x} 288 l10 -20`,green,4)).join('')}`);
-sign('en-sign-no-sitting-stairs.svg','Do not sit on the stairs',`${line('M75 290 H132 V247 H193 V204 H252 V161 H314',ink,7)}${person(193,178,1,ink,'sit')}`);
+sign('en-sign-no-sitting-stairs.svg','Do not sit on the stairs',`<path d="M65 325 H125 V280 H195 V230 H265 V180 H325 V130 H340" fill="none" stroke="#20334a" stroke-width="8" stroke-linejoin="round"/>
+<circle cx="226" cy="100" r="24" fill="#f6cba7" stroke="#20334a" stroke-width="5"/>
+<path d="M226 137 V218 H159 V269 H178" fill="none" stroke="#20334a" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M223 155 L203 199 H174" fill="none" stroke="#20334a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`);
 sign('en-sign-no-bikes.svg','Do not ride a bike',`${circle(116,247,53,'#fff')}${circle(286,247,53,'#fff')}${line('M116 247 L163 164 L231 247 H116 M163 164 L198 247 M198 247 L253 161 L286 247',ink,9)}${line('M146 150 H185 M251 160 V139 H276',ink,8)}`);
 sign('en-sign-trash-bin.svg','Put trash in the bin',`${person(145,178,1.45,'#fff')}${rect(225,210,77,98,'none',4,'#fff')}${line('M216 203 H312','#fff',9)}${line('M158 168 L203 200','#fff',9)}${rect(201,181,15,15,'#fff',1,'#fff')}${line('M249 229 V290 M278 229 V290','#fff',5)}`,false,blue);
 sign('en-sign-please-sit.svg','Please sit down',`${line('M170 119 V238 H276 V313 M170 239 V313', '#fff',13)}${line('M95 145 L213 220','#fff',10)}<path d="M210 190 L218 224 L185 217" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>`,false,green);

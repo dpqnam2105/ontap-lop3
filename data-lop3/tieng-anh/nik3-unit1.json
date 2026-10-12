@@ -1792,11 +1792,10 @@
         "draftCode": "D4",
         "image": "images/questions/lop3/en-sign-no-sitting-stairs.svg",
         "imageReview": {
-          "status": "pending",
-          "by": null,
-          "date": null,
-          "checkedOn": null,
-          "note": "Claude rà PR #12 (12/10): ở 390 px người trong biển trông như đang đứng/bước lên, chưa thể hiện rõ NGỒI. Chờ Codex vẽ lại."
+          "status": "ok",
+          "by": "codex",
+          "date": "2026-10-12",
+          "checkedOn": "mobile-390"
         },
         "ref": {
           "basis": "school-midterm",
