@@ -16,6 +16,8 @@ async function boot() {
   for (const f of ['storage', 'api', 'today', 'pet-room', 'pet-accessories', 'pet', 'quiz', 'app']) vm.runInContext(fs.readFileSync(path.join(REPO, 'js', f + '.js'), 'utf8'), ctx);
   vm.runInContext(`Storage.switchPlayer('Thỏ'); App.playerName = 'Thỏ'; App.currentGrade = 'lop3';`, ctx);
   await vm.runInContext(`API.getAllData('lop3').then(d => { App.allData = d; App._dataByGrade = { lop3: d }; })`, ctx);
+  // Exercise the pending state even after the real artwork has been approved.
+  vm.runInContext(`App.allData.subjects.find(x => x.id === 'tieng-anh').topics.flatMap(t => t.questions).forEach(q => { if (q.source === 'claude-nik3-lo3-giuaky-20261012' && q.image) q.imageReview = { status: 'pending' }; })`, ctx);
   const run = code => vm.runInContext(code, ctx);
   return { run, J: code => JSON.parse(run('JSON.stringify(' + code + ')')) };
 }
@@ -27,6 +29,23 @@ const ALLOWED_IDS = `${S}.topics.flatMap(t => (App._allowedIndices(${S}, t) || t
 const allStages = b => b.run(`App.setStageSetting ? App.setStageSetting(${S}, 2, false) : null`);
 
 const tests = {
+  async 'Quiz lọc pending khi có pickIdx và khi ôn sai không có allowedIdx'() {
+    const b = await boot();
+    b.run(`Quiz.currentTopicId = 'gate-test'; Quiz.allowedIdx = null; Quiz.speed = null; Quiz._prepareQuestion = q => q;
+      gateTopic = { id: 'gate-test', questions: [{id:'pending',image:'x.svg',imageReview:{status:'pending'}}, {id:'ready'}] };
+      Quiz.pickIdx = [0,1];`);
+    assert.deepStrictEqual(b.J(`Quiz._selectQuestions(gateTopic, 'practice').questions.map(q => q.id)`), ['ready']);
+    b.run(`Quiz.pickIdx = null; Quiz.reviewCandidates = (t, allowed) => [0,1].filter(i => allowed.includes(i));`);
+    assert.deepStrictEqual(b.J(`Quiz._selectQuestions(gateTopic, 'review').questions.map(q => q.id)`), ['ready']);
+  },
+  async 'Quiz lọc pending tại cổng startMixed và startReviewPool'() {
+    const b = await boot();
+    b.run(`Quiz.render = () => {}; App.showScreen = () => {}; Quiz._setBack = () => {};`);
+    for (const method of ['startMixed', 'startReviewPool']) {
+      b.run(`Quiz.${method}([{id: 'pending', image: 'x.svg', imageReview: {status: 'pending'}}, {id: 'ready'}])`);
+      assert.deepStrictEqual(b.J('Quiz.questions.map(q => q.id)'), ['ready']);
+    }
+  },
   async 'nạp reviewSets qua API; 20 câu chờ hình'() {
     const b = await boot();
     assert.strictEqual(b.J(`${SET}.groups.length`), 8);

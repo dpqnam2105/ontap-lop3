@@ -99,6 +99,7 @@ const Quiz = {
   // Phiên ôn tập tổng hợp: câu sai chưa sửa + câu đến hạn ôn (App/Today dựng sẵn pool).
   startReviewPool(pool, todayTaskId) {
     this.challenge = null;
+    pool = (pool || []).filter(q => q && !(window.App && App.questionReady && !App.questionReady(q)));
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null; this._setBack('topic');
@@ -127,6 +128,7 @@ const Quiz = {
   // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
   startMixed(pool, subjectName, subjectId, mixKey, todayTaskId, options) {
     this.challenge = null;
+    pool = (pool || []).filter(q => q && !(window.App && App.questionReady && !App.questionReady(q)));
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
     this.challenge = (options && options.challenge) || null;
     this.todayTaskId = todayTaskId || null;
@@ -254,13 +256,14 @@ const Quiz = {
   },
 
   _selectQuestions(topic, mode) {
+    const ready = i => topic.questions[i] && !(window.App && App.questionReady && !App.questionReady(topic.questions[i]));
     if (this.pickIdx) {
+      const indices = this.pickIdx.filter(ready);
       return {
-        questions: this.pickIdx.filter(i => topic.questions[i]).map(i => this._prepareQuestion(topic.questions[i], i)),
-        info: { mode, modeLabel: this.speed ? '⏱️ ' + TableGen.LEVELS[this.speed.level].icon + ' ' + TableGen.LEVELS[this.speed.level].name : (mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡'), current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: this.pickIdx.length }
+        questions: indices.map(i => this._prepareQuestion(topic.questions[i], i)),
+        info: { mode, modeLabel: this.speed ? '⏱️ ' + TableGen.LEVELS[this.speed.level].icon + ' ' + TableGen.LEVELS[this.speed.level].name : (mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡'), current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: indices.length }
       };
     }
-    const ready = i => topic.questions[i] && !(window.App && App.questionReady && !App.questionReady(topic.questions[i]));
     const allIndices = this.allowedIdx
       ? this.allowedIdx.filter(ready)
       : topic.questions.map((_, i) => i).filter(ready);
@@ -274,7 +277,7 @@ const Quiz = {
     };
 
     if (mode === 'review') {
-      const wrong = this.reviewCandidates(topic, this.allowedIdx);
+      const wrong = this.reviewCandidates(topic, allIndices);
       const indices = wrong.length ? this._shuffle(wrong).slice(0, this.TARGET_PER_SESSION) : [];
       return {
         questions: indices.map(i => this._prepareQuestion(topic.questions[i], i)),

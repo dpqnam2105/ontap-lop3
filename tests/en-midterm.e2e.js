@@ -7,7 +7,7 @@ const URL = process.env.BASE_URL || 'http://localhost:8765/';
 const SHOT = process.env.SHOT_DIR || '';
 
 (async () => {
-  const b = await chromium.launch();
+  const b = await chromium.launch(process.env.PLAYWRIGHT_CHANNEL ? { channel: process.env.PLAYWRIGHT_CHANNEL } : {});
   try {
     for (const [vp, mobile] of [[{ width: 390, height: 844 }, true], [{ width: 1280, height: 900 }, false]]) {
       const ctx = await b.newContext({ viewport: vp, isMobile: mobile, hasTouch: mobile });
