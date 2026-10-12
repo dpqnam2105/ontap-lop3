@@ -7,6 +7,14 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-12 (Claude — lô 3 ôn giữa kỳ I Tiếng Anh, Codex duyệt chữ)
+- tieng-anh / nik3-unit1 — +23 câu (q039–q061: từ vựng U1, chuyển động, chỉ đường, biển báo); 18 câu có hình đang chờ duyệt hình.
+- tieng-anh / nik3-unit2 — +4 câu (q041–q044: chính tả extinct/herbivore, dead/extinct); sửa nhiễu q001, q002, q004, q005, q031.
+- tieng-anh / nik3-unit3 — +3 câu (q024–q026: chính tả flashlight, sleeping bag, camping stove).
+- tieng-anh / adj-adv — +6 câu (q026–q031); sửa gợi ý q002, q003, q010, q017.
+- tieng-anh / nik3-unit1 — sửa gợi ý q018.
+- index.json: thêm reviewSets "Ôn giữa kỳ I" (en-giuaky1-2026).
+
 ## 2026-10-11 (Claude — lượt rà 101 câu Tiếng Anh cũ, lượt 2, chờ Codex chốt)
 - Gắn `review` {round claude-ra-101-20261009, status} cho 101 câu cũ (NIK3 U1/U2 q001–q022, Reading NIK3, GS3, adj–adv). Kết quả: 71 ok · 30 fixed · 0 pending.
 - Sửa nội dung: en_nik3-unit2_q003 (hỏi nghĩa "Extinct"), en_adj-adv_q001/q014 (nhiễu quickness), en_adj-adv_q025 (tình huống em bé ngủ).

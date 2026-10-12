@@ -8,7 +8,7 @@
         "q": "An animal that eats only plants is a ___.",
         "choices": [
           "dinosaur",
-          "pharaoh",
+          "horn",
           "carnivore",
           "herbivore"
         ],
@@ -23,12 +23,21 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "choices: pharaoh→horn",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "A T-Rex eats meat. It is a ___.",
         "choices": [
-          "tomb",
+          "tail",
           "carnivore",
           "herbivore",
           "horn"
@@ -44,7 +53,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "choices: tomb→tail",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "\"Extinct\" means ___.",
@@ -72,9 +90,9 @@
         "q": "The long part at the back of an animal is its ___.",
         "choices": [
           "tail",
-          "claw",
+          "dinosaur",
           "horn",
-          "steps"
+          "carnivore"
         ],
         "a": 0,
         "hint": "A dog wags it when it is happy.",
@@ -87,15 +105,24 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "choices: claw→dinosaur, steps→carnivore",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "A hard, pointed part on an animal's head is a ___.",
         "choices": [
-          "tomb",
+          "dinosaur",
           "horn",
           "tail",
-          "gold"
+          "herbivore"
         ],
         "a": 1,
         "hint": "A Triceratops has three of them. (sừng)",
@@ -108,7 +135,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "choices: tomb→dinosaur, gold→herbivore",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "A person who studies old things from the past is an ___.",
@@ -761,7 +797,7 @@
         "choices": [
           "herbivore",
           "carnivore",
-          "claw",
+          "horn",
           "tail"
         ],
         "a": 0,
@@ -794,7 +830,16 @@
           "by": "claude",
           "date": "2026-10-08"
         },
-        "id": "en_nik3-unit2_q031"
+        "id": "en_nik3-unit2_q031",
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "choices: claw→horn",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "\"The T-Rex has sharp claws. It uses them to catch food.\" What are claws?",
@@ -1168,6 +1213,153 @@
         },
         "id": "en_nik3-unit2_q040",
         "passage": "en-lo1-C"
+      },
+      {
+        "q": "Tom wrote \"Mammoths are exting.\" Fix the word: Mammoths are extin___.",
+        "choices": [
+          "g",
+          "k",
+          "gt",
+          "ct"
+        ],
+        "a": 3,
+        "hint": "Đánh vần chậm từ \"tuyệt chủng\" đã học trong bài khủng long, rồi so với phần còn thiếu.",
+        "explain": "Sửa \"exting\" thành extinct (e-x-t-i-n-c-t): cuối từ là -ct, không có g, không có k. Mammoths are extinct.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "G4",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)",
+            "Lỗi thật của Thỏ ở Review 3: \"exting\""
+          ],
+          "toc": [],
+          "extraWords": [
+            "mammoth"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit2_q041"
+      },
+      {
+        "q": "A goat eats only plants. It is a ___.",
+        "choices": [
+          "herbivore",
+          "herbivor",
+          "carnivore",
+          "carnivor"
+        ],
+        "a": 0,
+        "hint": "Bước 1: dê ăn cỏ hay ăn thịt? Bước 2: kiểm tra chữ cái cuối của từ.",
+        "explain": "Dê chỉ ăn cây cỏ → herbivore (có e ở cuối). carnivore là động vật ăn thịt; herbivor, carnivor thiếu chữ e.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "G6",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)",
+            "nhiễu giả lập, không phải lỗi thật (herbivor, carnivor)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "goat"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit2_q042"
+      },
+      {
+        "q": "Grandpa's old tree is not alive now. It is ___.",
+        "choices": [
+          "extinct",
+          "dead",
+          "careful",
+          "quick"
+        ],
+        "a": 1,
+        "hint": "Câu nói về MỘT cái cây, hay về cả một loài?",
+        "explain": "Một cái cây không còn sống → dead (chết). extinct dùng cho CẢ LOÀI không còn cá thể nào sống (như dinosaurs). careful (cẩn thận), quick (nhanh) không hợp nghĩa.",
+        "difficulty": 2,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "H1",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "alive",
+            "tree"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit2_q043"
+      },
+      {
+        "q": "Which sentence is right?",
+        "choices": [
+          "My cat is extinct.",
+          "This flower is extinct. It has no water.",
+          "Dinosaurs are extinct. We can't see them today.",
+          "Dinosaurs are extinct. We can see them at the zoo."
+        ],
+        "a": 2,
+        "hint": "extinct nói về MỘT con vật, cái cây — hay về CẢ một loài? Loài đã extinct thì hôm nay còn gặp được không?",
+        "explain": "extinct = cả loài không còn con nào sống, ngày nay không thể thấy. Dinosaurs are extinct. We can't see them today. ✓. Một con mèo hay một bông hoa thì không dùng extinct (một con/cây không còn sống là dead). Loài đã tuyệt chủng thì không thể thấy ở sở thú.",
+        "difficulty": 3,
+        "skill": "dinosaurs",
+        "unit": "nik3-unit2",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "H2",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 1 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "flower",
+            "zoo"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit2_q044"
       }
     ]
   }

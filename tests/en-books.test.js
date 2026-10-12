@@ -69,10 +69,10 @@ const tests = {
     const elig = () => b.J(`${S}.topics.flatMap(t => t.questions.filter(q => App._mixEligible(${S}, q)).map(q => q.id))`);
     unconfirm(b);
     const e1 = new Set(elig());
-    assert.strictEqual(e1.size, 34 + 23 + 23); // lô 1, lô 2 (U3), Ms Hoa
+    assert.strictEqual(e1.size, 34 + 23 + 23 + 16); // lô 1, lô 2 (U3), Ms Hoa, lô 3 giữa kỳ (36 câu − 20 câu chờ duyệt hình)
     confirm(b);
     const e2 = new Set(elig());
-    assert.strictEqual(e2.size, 80 + 101); // + 71 ok + 30 fixed
+    assert.strictEqual(e2.size, 96 + 101); // + 71 ok + 30 fixed
     assert.ok(b.J(`${S}.topics.flatMap(t => t.questions).filter(q => q.source === 'claude-audit-20260924')`).every(q => !e2.has(q.id)));
   },
   async 'chặn trước: câu có contentReview nhưng review pending / rejected → bị loại; lượt rà đã xác nhận cũng không cứu được câu pending'() {
@@ -91,14 +91,14 @@ const tests = {
     assert.strictEqual(pool.length, 20);
     assert.ok(!pool.includes('en_mshoa-e2-u6_q001'));
   },
-  async 'lượt rà chưa xác nhận (giả lập): NIK 10 + Ms Hoa 10, Nền không có câu hợp lệ nên không vào'() {
+  async 'lượt rà chưa xác nhận (giả lập): NIK / Ms Hoa / Nền 7-7-6 (Nền chỉ có 6 câu adj-adv lô 3 đã duyệt)'() {
     const b = await boot();
     unconfirm(b);
     const mix = b.J(`App._buildWeeklyMix(${S})`);
     assert.strictEqual(mix.pool.length, 20);
     assert.strictEqual(new Set(mix.pool.map(q => q.id)).size, 20);
     assert.ok(mix.pool.every(q => b.J(`App._mixEligible(${S}, ${JSON.stringify(q)})`)));
-    assert.deepStrictEqual(Object.fromEntries(mix.sources.map(x => [x.id, x.n])), { nik3: 10, 'mshoa-explorer2': 10 });
+    assert.deepStrictEqual(Object.fromEntries(mix.sources.map(x => [x.id, x.n])), { nik3: 7, 'mshoa-explorer2': 7, nen: 6 });
     assert.ok(mix.pool.filter(q => q.passage).every(q => /^Read: "/.test(q.q)));
   },
   async 'Ôn tổng hợp mặc định (lượt rà đã xác nhận): NIK / Ms Hoa / Nền 7-7-6, GS3 vẫn tắt'() {

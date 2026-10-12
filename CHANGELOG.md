@@ -1,5 +1,14 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-12 — Tiếng Anh lớp 3: lô 3 ôn giữa kỳ I + mục "Ôn giữa kỳ I" + cổng duyệt hình
+- +36 câu (U1 q039–q061, U2 q041–q044, U3 q024–q026, adj-adv q026–q031), source claude-nik3-lo3-giuaky-20261012, ref.basis school-midterm, chữ đã được Codex duyệt (contentReview codex-noi-dung-20261012). Câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3).
+- Cổng duyệt hình: câu có `image` + `imageReview.status !== 'ok'` không vào bất kỳ luồng nào (luyện chủ đề, kế hoạch hôm nay, thử thách cún, đề trộn, Ôn giữa kỳ, ôn câu sai). 20 câu của lô đang `pending` chờ Codex vẽ 17 SVG + kiểm 390 px. App.questionReady dùng trong _allowedIndices, _mixEligible, Quiz.
+- Mục "🎯 Ôn giữa kỳ I" (index.json reviewSets, ngay sau thẻ Ôn tổng hợp): Ôn theo 8 nhóm, Đề thử 20 câu rút đều phần bắt buộc, Ôn câu sai trong danh sách, Bài thêm (extra, chỉ khi bé bấm). Câu vẫn ở chủ đề gốc, giữ ID/tiến độ; không lọc theo giai đoạn.
+- Câu cũ: sửa gợi ý adj-adv q002, q003, q010, q017 (bỏ mẹo is/be → tính từ) và U1 q018 (đề không có hình); sửa nhiễu U2 q001, q002, q004, q005, q031 (bỏ pharaoh/tomb/claw/gold/steps). Ghi `revisions`, giữ ID và đáp án.
+- skills.json: movement, directions, spelling. Test: tests/en-midterm.test.js, tests/en-midterm.e2e.js; en-data thêm quy tắc lô 3 + kiểm reviewSets; en-books cập nhật số câu đủ điều kiện (+16). Cache app/api/quiz/today/style = 20261012gk1.
+- Tài liệu: project claude/tieng-anh-lo3-on-giua-ky.md.
+
+
 ## 2026-10-09 — Thỏ đồng hành ở thanh bên desktop (chờ Claude review)
 - Dùng sáu ảnh mascot sẵn có: chào, cổ vũ, ăn mừng, đọc sách, ngón cái và ôm sao. Chào/nhắc số việc mỗi lượt mở trang, ăn mừng một lần mỗi bé/ngày; bấm Thỏ hiện số câu đúng/ngày học trong tuần hoặc số việc thực tế.
 - Trong quiz: Thỏ đọc sách, không hoạt ảnh/không bấm được, không phản ứng câu sai. Bong bóng 3 giây rồi tắt, không lặp tự động. Reduced motion chỉ đổi hình/chữ, giữ thời gian đọc. Giữ ẩn ở <=1100px. Desktop thấp <=950px thu gọn khoảng cách/đệm thanh bên, không giảm cỡ chữ.

@@ -926,6 +926,114 @@
           "date": "2026-10-09"
         },
         "id": "en_nik3-unit3_q023"
+      },
+      {
+        "q": "It's dark. I need a ___.",
+        "choices": [
+          "flash light",
+          "sleepingbag",
+          "campingstove",
+          "flashlight"
+        ],
+        "a": 3,
+        "hint": "Bước 1: trời tối cần đồ vật gì? Bước 2: từ đó viết liền hay tách?",
+        "explain": "Trời tối cần đèn pin → flashlight, viết LIỀN một từ. \"flash light\" tách đôi là viết sai; sleeping bag, camping stove viết tách hai từ và không giúp nhìn trong tối.",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "G7",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)",
+            "Lỗi thật của Thỏ ở Review 3: \"flash light\"",
+            "nhiễu giả lập, không phải lỗi thật (sleepingbag, campingstove)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "dark"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit3_q024"
+      },
+      {
+        "q": "Which one is written correctly?",
+        "choices": [
+          "sleeping bag",
+          "flash light",
+          "campingstove",
+          "artgallery"
+        ],
+        "a": 0,
+        "hint": "Kiểm tra từng cụm: từ nào viết liền một từ, từ nào viết tách hai từ?",
+        "explain": "sleeping bag viết TÁCH hai từ — đúng. Sửa các lựa chọn còn lại: flashlight (liền), camping stove (tách), art gallery (tách).",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "G1",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)",
+            "nhiễu giả lập, không phải lỗi thật (campingstove, artgallery)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit3_q025"
+      },
+      {
+        "q": "Which one is written correctly?",
+        "choices": [
+          "sleepingbag",
+          "camping stove",
+          "flash light",
+          "recreationcenter"
+        ],
+        "a": 1,
+        "hint": "Kiểm tra từng cụm: từ nào viết liền một từ, từ nào viết tách hai từ?",
+        "explain": "camping stove viết TÁCH hai từ — đúng. Sửa các lựa chọn còn lại: sleeping bag (tách), flashlight (liền), recreation center (tách).",
+        "difficulty": 2,
+        "skill": "spelling",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "G2",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)",
+            "nhiễu giả lập, không phải lỗi thật (sleepingbag, recreationcenter)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit3_q026"
       }
     ]
   }

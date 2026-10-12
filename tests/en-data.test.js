@@ -8,7 +8,8 @@ const DIR = path.join(__dirname, '..', 'data-lop3', 'tieng-anh');
 const TRACKS = new Set(['core', 'foundation', 'enrich']);
 const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // Cơ sở nguồn: toc = theo mục lục; school-weekly = lịch/nội dung tuần của trường; page = đã đối chiếu trang sách thật.
-const BASES = new Set(['toc', 'school-weekly', 'page']);
+// school-midterm = phạm vi đề thi giữa kỳ theo tài liệu trường (phiếu ôn GV, tờ tranh GV, Review); câu vẫn tự biên soạn.
+const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm']);
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
@@ -18,7 +19,30 @@ const MSHOA_LOCKED = {
   'en_mshoa-e2-u6_q004': ['take', 'eat', 'read', 'play'],
   'en_mshoa-e2-u6_q005': ['do', 'eat', 'drink', 'sleep'],
 };
+// Lô 3 — ôn giữa kỳ I: từ ngoài phạm vi cô không được hiện trong chữ bé thấy (đề + lựa chọn).
+const LO3_OFFSCOPE = /\b(pharaohs?|tombs?|claws?|gold|treasure|archeologists?|exhibits?|thie(f|ves)|dig|mask|pyramid|has to|have to|steps)\b/i;
 const BATCH_RULES = {
+  'claude-nik3-lo3-giuaky-20261012': { count: 36, passages: [], check(q, err) {
+    const r = q.ref;
+    if (r.basis !== 'school-midterm') err('lô 3 phải basis school-midterm');
+    if (!Array.isArray(r.sources) || !r.sources.length) err('lô 3 cần ref.sources');
+    if (!/tự biên soạn/.test(r.note)) err('lô 3: note ghi câu/hình tự biên soạn');
+    if (r.sources && r.sources.some(x => /Bài ôn|bộ Word/.test(x))) err('bộ Word tự soạn không phải nguồn phạm vi');
+    if (!r.contentReview) err('lô 3 cần contentReview (Codex duyệt chữ)');
+    if (q.image) {
+      if (!q.imageReview || !['pending', 'ok'].includes(q.imageReview.status)) err('câu có hình cần imageReview pending/ok');
+      if (q.imageReview && q.imageReview.status === 'ok' && (!q.imageReview.by || !q.imageReview.date || q.imageReview.checkedOn !== 'mobile-390')) err('imageReview ok cần by, date, checkedOn mobile-390');
+    } else if (q.imageReview) err('imageReview chỉ cho câu có hình');
+    if (LO3_OFFSCOPE.test(q.q + ' ' + q.choices.join(' '))) err('chữ ngoài phạm vi cô');
+    if (q.unit === 'nik3-unit3' && q.stage !== 2) err('câu có từ U3 phải stage 2');
+    if (q.unit === 'adj-adv' && (q.book !== 'none' || q.track !== 'foundation')) err('adj-adv: book none, track foundation');
+    if (/^nik3-/.test(q.unit) && (q.book !== 'nik3' || q.track !== 'core')) err('NIK3: book nik3, track core');
+    if (q.skill === 'adj-adv' && /\b(is|are|be)\s*(→|->|\+)/i.test(q.hint)) err('không dạy mẹo is/are/be → tính từ');
+  }, after(qs, errs) {
+    const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
+    if (Math.min(...pos) < 8) errs.push('lô 3: đáp án lệch vị trí ' + pos.join('/'));
+    if (qs.filter(q => q.image).length !== 20) errs.push('lô 3: cần 20 câu có hình');
+  } },
   'claude-mshoa-e2u6-l12-20261010': { count: 23, passages: ['en-mshoa-E'], check(q, err) {
     const bl = q.bookLesson || {};
     if (q.unit !== 'e2-u6' || q.book !== 'mshoa-explorer2') err('Ms Hoa phải unit e2-u6, book mshoa-explorer2');
@@ -96,6 +120,7 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     if (ids.has(q.id)) err('trùng id'); ids.add(q.id);
     if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
     if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    if (q.imageReview !== undefined && !q.image) err('imageReview chỉ cho câu có hình');
     if (q.review !== undefined) {
       reviewed.push(q);
       if (!ROUNDS[q.review.round] || !['ok', 'fixed', 'pending', 'rejected'].includes(q.review.status)) err('review lạ');
@@ -148,6 +173,29 @@ for (const [src, rule] of Object.entries(BATCH_RULES)) {
   const byId = Object.fromEntries(r.map(q => [q.id, q]));
   for (const id of ['en_adj-adv_q001', 'en_adj-adv_q014']) if (byId[id].choices.includes('quick') || byId[id].choices[byId[id].a] !== 'quickly') errs.push(id + ': bỏ nhiễu quick, đáp án quickly');
   if (r.some(q => q.hint && q.hint.includes(q.choices[q.a]))) errs.push('rà 101: gợi ý chứa nguyên văn đáp án ' + r.filter(q => q.hint && q.hint.includes(q.choices[q.a])).map(q => q.id));
+}
+// Đợt ôn theo danh sách (index.json reviewSets): ID có thật, không trùng, required/extra tách rời, chữ bé thấy trong phạm vi
+{
+  const all = {};
+  for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'index.json'))
+    JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')).topic.questions.forEach(q => { all[q.id] = q; });
+  for (const set of IDX.reviewSets || []) {
+    const seen = new Set();
+    if (!set.imageGate || set.imageGate.field !== 'imageReview.status' || set.imageGate.mustEqual !== 'ok') errs.push(set.id + ': thiếu imageGate');
+    for (const g of set.groups) for (const [kind, list] of [['required', g.required], ['extra', g.extra]]) for (const id of list) {
+      if (!all[id]) errs.push(set.id + ': ID không có ' + id);
+      else if (LO3_OFFSCOPE.test(all[id].q + ' ' + all[id].choices.join(' '))) errs.push(set.id + ': ' + id + ' có chữ ngoài phạm vi');
+      if (seen.has(id)) errs.push(set.id + ': trùng ID ' + id); seen.add(id);
+    }
+  }
+  const gk = (IDX.reviewSets || []).find(x => x.id === 'en-giuaky1-2026');
+  if (!gk) errs.push('thiếu đợt en-giuaky1-2026');
+  else {
+    const where = id => gk.groups.some(g => g.required.includes(id)) ? 'required' : gk.groups.some(g => g.extra.includes(id)) ? 'extra' : null;
+    // Nam chốt: cho thú ăn, mời ngồi, the animals → extra; diplodocus (U2 q031) → extra
+    for (const id of ['en_nik3-unit1_q054', 'en_nik3-unit1_q059', 'en_nik3-unit1_q061', 'en_nik3-unit2_q031']) if (where(id) !== 'extra') errs.push('giữa kỳ: ' + id + ' phải ở extra');
+    for (const id of ['en_nik3-unit2_q001', 'en_nik3-unit2_q002', 'en_nik3-unit2_q004', 'en_nik3-unit2_q005']) if (where(id) !== 'required') errs.push('giữa kỳ: ' + id + ' phải ở required (đã sửa nhiễu)');
+  }
 }
 assert.deepStrictEqual(errs, []);
 console.log('en-data OK —', tagged, 'câu có nhãn mới,', Object.keys(passages).length, 'đoạn đọc,', Object.keys(BATCH_RULES).length, 'lô có quy tắc riêng');

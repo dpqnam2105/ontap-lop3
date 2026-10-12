@@ -555,7 +555,7 @@ const App = {
    * mà sau đó phát hiện lỗi. Câu chưa rà không vào.
    */
   _mixEligible(s, q) {
-    if (!q) return false;
+    if (!q || !this.questionReady(q)) return false;
     const r = q.review;
     if (r && r.status !== 'ok' && r.status !== 'fixed') return false;
     if (q.ref && q.ref.contentReview) return true;
@@ -564,14 +564,28 @@ const App = {
     return !!(round && round.confirmed === true);
   },
 
-  /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài). */
+  /**
+   * Cổng duyệt hình: câu có hình mang imageReview (lô mới) chỉ dùng khi imageReview.status === 'ok'
+   * (hình thật đã xong và kiểm ở điện thoại). Câu có hình cũ không có imageReview: không bị chặn.
+   * Áp cho MỌI luồng chọn câu vì đều đi qua _allowedIndices / _mixEligible / Quiz.
+   */
+  questionReady(q) {
+    return !(q && q.image && q.imageReview && q.imageReview.status !== 'ok');
+  },
+
+  /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài và không có câu chờ hình). */
   _allowedIndices(s, t) {
     const st = this.getStageSetting(s);
     const ls = this.getLessonSetting(s);
     const bs = this.getBookScope(s);
-    if (!st && !ls && !bs) return null;
+    if (!st && !ls && !bs) {
+      const qs = t.questions || [];
+      if (qs.every(q => this.questionReady(q))) return null;
+      return qs.map((q, i) => (this.questionReady(q) ? i : -1)).filter(i => i >= 0);
+    }
     const out = [];
     (t.questions || []).forEach((q, i) => {
+      if (!this.questionReady(q)) return;
       if (!this._lessonOk(q, ls)) return;
       if (!this._bookLessonOk(q, bs)) return;
       const qs = Number(q.stage || 0);
@@ -801,6 +815,148 @@ const App = {
     return card;
   },
 
+  // ─── Đợt ôn theo danh sách ID (vd Ôn giữa kỳ I Tiếng Anh, index.json "reviewSets") ─────────
+  // Câu vẫn nằm ở chủ đề gốc (giữ ID, tiến độ, lịch sử sai). Chỉ dùng câu qua cổng duyệt (_mixEligible:
+  // đã rà + hình đã duyệt). Không lọc theo giai đoạn: danh sách đã chốt đúng phạm vi đề thi.
+  // required = phần bắt buộc; extra = bài thêm, chỉ chạy khi bé tự bấm, không tự mở.
+  REVIEW_SET_SESSION: 20,
+
+  _reviewSetHits(s, ids) {
+    const map = new Map();
+    (s.topics || []).forEach(t => (t.questions || []).forEach((q, i) => { if (q && q.id) map.set(q.id, { t, q, i }); }));
+    const out = [];
+    (ids || []).forEach(id => {
+      const h = map.get(id);
+      if (h && this._mixEligible(s, h.q)) out.push(h);
+    });
+    return out;
+  },
+
+  _reviewSetItem(s, h) {
+    const topicId = (h.t.id || h.t.name).toString();
+    return { ...h.q, _idx: h.i, subjectId: s.id, topicId, id: h.q.id, _subjectName: s.name, _topicName: h.t.name };
+  },
+
+  _shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  },
+
+  /** Lấy tối đa n câu, ưu tiên câu con chưa từng làm đúng. */
+  _reviewSetPick(s, hits, n) {
+    const okOf = new Map();
+    const isOk = h => {
+      const tid = (h.t.id || h.t.name).toString();
+      if (!okOf.has(tid)) {
+        let ok = [];
+        try { ok = (Storage.getTotalProgress(tid) || {}).ok || []; } catch (e) { ok = []; }
+        okOf.set(tid, new Set(ok));
+      }
+      return okOf.get(tid).has(h.i);
+    };
+    const sh = this._shuffled(hits);
+    const fresh = sh.filter(h => !isOk(h)), done = sh.filter(h => isOk(h));
+    return this._shuffled(fresh.concat(done).slice(0, n)).map(h => this._reviewSetItem(s, h));
+  },
+
+  /** Đề thử: rút đều theo nhóm (xoay vòng), chỉ phần bắt buộc, không lặp ID. */
+  _reviewSetMock(s, set) {
+    const n = set.mockSize || this.REVIEW_SET_SESSION;
+    const buckets = this._shuffled((set.groups || []).map(g => this._shuffled(this._reviewSetHits(s, g.required))).filter(b => b.length));
+    const out = [], seen = new Set();
+    for (let round = 0; out.length < n && buckets.some(b => b.length > round); round++) {
+      for (const b of buckets) {
+        if (out.length >= n) break;
+        const h = b[round];
+        if (!h || seen.has(h.q.id)) continue;
+        seen.add(h.q.id); out.push(h);
+      }
+    }
+    return this._shuffled(out).map(h => this._reviewSetItem(s, h));
+  },
+
+  _reviewSetWrong(s, set) {
+    let wrong = [];
+    try { wrong = Storage.getUnresolvedWrong ? Storage.getUnresolvedWrong(200) : []; } catch (e) { wrong = []; }
+    const inSet = new Set((set.groups || []).flatMap(g => (g.required || []).concat(g.extra || [])));
+    const ids = [...new Set(wrong.map(w => w.questionId).filter(id => inSet.has(id)))];
+    return this._reviewSetHits(s, ids);
+  },
+
+  _reviewSetKey(s, set) {
+    const ws = this._weekStart();
+    return 'set:' + set.id + '|' + ws.getFullYear() + '-' + (ws.getMonth() + 1) + '-' + ws.getDate() + '|' + this.currentGrade + ':' + s.id;
+  },
+
+  _renderReviewSetCard(s, set) {
+    const groups = (set.groups || []).map(g => ({ g, req: this._reviewSetHits(s, g.required), ext: this._reviewSetHits(s, g.extra) }));
+    const nReq = groups.reduce((n, x) => n + x.req.length, 0);
+    if (nReq < 5) return null;
+    const nExt = groups.reduce((n, x) => n + x.ext.length, 0);
+    const listed = (set.groups || []).reduce((n, g) => n + (g.required || []).length, 0);
+    const waiting = listed - nReq;
+    const key = this._reviewSetKey(s, set);
+    let best = null;
+    try { best = (Storage.get('weeklyMix') || {})[key] || null; } catch (e) { best = null; }
+    const wrongN = this._reviewSetWrong(s, set).length;
+    const card = document.createElement('div');
+    card.className = 'gk-card';
+    card.dataset.set = set.id;
+    card.innerHTML = `
+      <div class="gk-icon">🎯</div>
+      <div class="gk-text">
+        <div class="gk-title">${this._escape(set.name)}</div>
+        <div class="gk-sub">${nReq} câu bắt buộc · ${groups.filter(x => x.req.length).length} nhóm${best ? ` · <b>Đề thử cao nhất: ${best.score}/${best.total}</b>` : ''}</div>
+        ${waiting > 0 ? `<div class="gk-why">Còn ${waiting} câu có hình sẽ mở khi hình sẵn sàng.</div>` : ''}
+      </div>
+      <button class="gk-toggle" aria-expanded="false">Mở ▾</button>
+      <div class="gk-panel" hidden>
+        <div class="gk-step">1️⃣ Ôn theo nhóm</div>
+        ${groups.filter(x => x.req.length).map(x => `
+          <div class="gk-row"><span class="gk-name">${this._escape(x.g.name)} <small>(${x.req.length})</small></span>
+          <button class="gk-btn" data-act="group" data-g="${this._escape(x.g.id)}">Ôn ▶</button></div>`).join('')}
+        <div class="gk-step">2️⃣ Làm đề thử</div>
+        <div class="gk-row"><span class="gk-name">${Math.min(set.mockSize || this.REVIEW_SET_SESSION, nReq)} câu rút đều các nhóm</span>
+          <button class="gk-btn gk-main" data-act="mock">Làm đề ▶</button></div>
+        <div class="gk-step">3️⃣ Ôn câu sai</div>
+        <div class="gk-row"><span class="gk-name">${wrongN ? wrongN + ' câu sai cần sửa' : 'Chưa có câu sai 🎉'}</span>
+          <button class="gk-btn" data-act="wrong"${wrongN ? '' : ' disabled'}>Ôn ▶</button></div>
+        ${nExt ? `<div class="gk-step">➕ Bài thêm (tùy chọn)</div>
+        <div class="gk-row"><span class="gk-name">${nExt} câu mở rộng, không bắt buộc</span>
+          <button class="gk-btn gk-extra" data-act="extra">Làm thêm ▶</button></div>` : ''}
+      </div>`;
+    const panel = card.querySelector('.gk-panel');
+    const tg = card.querySelector('.gk-toggle');
+    tg.addEventListener('click', e => {
+      e.stopPropagation();
+      panel.hidden = !panel.hidden;
+      tg.setAttribute('aria-expanded', String(!panel.hidden));
+      tg.textContent = panel.hidden ? 'Mở ▾' : 'Thu gọn ▴';
+    });
+    const short = set.short || set.name;
+    panel.querySelectorAll('.gk-btn').forEach(btn => btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const act = btn.dataset.act;
+      if (act === 'group') {
+        const x = groups.find(y => y.g.id === btn.dataset.g);
+        Quiz.startMixed(this._reviewSetPick(s, x.req, this.REVIEW_SET_SESSION), s.name, s.id, '', null,
+          { title: short + ' · ' + x.g.name, modeLabel: '🎯 ' + short, finishLabel: '🎯 ' + x.g.name });
+      } else if (act === 'mock') {
+        Quiz.startMixed(this._reviewSetMock(s, set), s.name, s.id, key, null,
+          { title: short + ' · Đề thử', modeLabel: '📝 Đề thử', finishLabel: '📝 Đề thử ' + short });
+      } else if (act === 'wrong') {
+        Quiz.startMixed(this._reviewSetPick(s, this._reviewSetWrong(s, set), this.REVIEW_SET_SESSION), s.name, s.id, '', null,
+          { title: short + ' · Ôn câu sai', modeLabel: '🔁 Ôn câu sai', finishLabel: '🔁 Ôn câu sai ' + short });
+      } else if (act === 'extra') {
+        const all = groups.flatMap(y => y.ext);
+        Quiz.startMixed(this._reviewSetPick(s, all, this.REVIEW_SET_SESSION), s.name, s.id, '', null,
+          { title: short + ' · Bài thêm', modeLabel: '➕ Bài thêm', finishLabel: '➕ Bài thêm ' + short });
+      }
+    }));
+    return card;
+  },
+
   _chooseSubject(idx, keepScroll) {
     const s = this.allData.subjects[idx];
     // Câu tự sinh trong lịch sử của bé mà kho chưa có → dựng lại trước khi vẽ thẻ chủ đề / tính tiến độ
@@ -820,6 +976,11 @@ const App = {
       // Môn chia giáo trình: Ôn tổng hợp (đề trộn tuần) ở đầu, rồi các mục sách; thanh giai đoạn nằm trong
       // mục sách chia giai đoạn (NIK). Bé không có bộ lọc nào khác — phạm vi sách khác do bố mẹ chỉnh.
       if (mixCard) list.appendChild(mixCard);
+      // Đợt ôn theo danh sách (Ôn giữa kỳ) ngay sau Ôn tổng hợp, chỉ ở lớp có cấu hình
+      (s.reviewSets || []).filter(x => !x.grade || x.grade === this.currentGrade).forEach(set => {
+        const c = this._renderReviewSetCard(s, set);
+        if (c) list.appendChild(c);
+      });
       s.books.forEach(b => {
         const items = shown.filter(x => this._bookOf(s, x.t) === b);
         const hasStage = b.scope === 'stage' && stageBar;

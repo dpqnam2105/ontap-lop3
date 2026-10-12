@@ -34,7 +34,7 @@
           "quick"
         ],
         "a": 3,
-        "hint": "is → use an adjective.",
+        "hint": "Câu có việc làm nào không? Chỗ trống tả con thỏ là con vật thế nào, hay tả cách nó làm một việc?",
         "difficulty": 1,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -44,7 +44,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "hint",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "The classroom is very ___.",
@@ -55,7 +64,7 @@
           "quieter than"
         ],
         "a": 0,
-        "hint": "Look at the word before 'very': is → adjective.",
+        "hint": "Câu có việc làm nào không? Chỗ trống tả lớp học là nơi thế nào, hay tả cách ai đó làm một việc?",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -65,7 +74,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "hint",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "The children read very ___.",
@@ -204,7 +222,7 @@
           "care"
         ],
         "a": 2,
-        "hint": "Be → adjective.",
+        "hint": "Đường đông xe: con cần là người thế nào? Chỗ trống tả con, hay tả cách làm một việc?",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -214,7 +232,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "hint",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "Please cross the street ___.",
@@ -352,7 +379,7 @@
           "care"
         ],
         "a": 1,
-        "hint": "\"be\" + tính từ. Sau \"be\" không dùng trạng từ -ly.",
+        "hint": "Chỗ trống tả con phải là người thế nào khi qua đường. Việc \"cross\" nằm ở vế sau, không phải chỗ trống.",
         "difficulty": 2,
         "skill": "adj-adv",
         "unit": "adj-adv",
@@ -362,7 +389,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "hint",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "The dog is running ___.",
@@ -534,6 +570,225 @@
           "status": "fixed"
         },
         "explain": "Em bé đang ngủ thì nhắc mọi người giữ yên lặng: Please be quiet. (be + tính từ quiet)"
+      },
+      {
+        "q": "Mẹ nói: \"Dan ăn chậm quá, cả nhà sắp muộn rồi.\" Which sentence is right?",
+        "choices": [
+          "Look! Dan is too slowly.",
+          "Look! Dan is eating too quickly.",
+          "Look! Dan is eating too slowly.",
+          "Look! Dan slowly is eating too."
+        ],
+        "a": 2,
+        "hint": "Bước 1: câu nào đúng ý \"ăn chậm\"? Bước 2: từ đó tả Dan là người thế nào, hay tả CÁCH Dan ăn?",
+        "explain": "Câu đúng phải tả CÁCH Dan ăn → slowly: Dan is eating too slowly. Chữ too không làm đổi đáp án. \"Dan is too slowly\" sai: câu không có việc làm nào để tả cách làm. quickly sai nghĩa; câu cuối sai thứ tự từ.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E1",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "Review 1 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "late"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q026"
+      },
+      {
+        "q": "The boys are so ___. I can't hear the teacher.",
+        "choices": [
+          "loudly",
+          "quiet",
+          "quietly",
+          "loud"
+        ],
+        "a": 3,
+        "hint": "Câu đầu có việc làm nào không (nói, hát, chạy…)? Chỗ trống tả các bạn là người thế nào, hay tả cách các bạn làm một việc?",
+        "explain": "Câu không có việc làm; chỗ trống tả CÁC BẠN → tính từ loud: The boys are so loud. Chữ so không quyết định. quiet sai nghĩa: các bạn yên lặng thì vẫn nghe được cô.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E2",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "hear"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q027"
+      },
+      {
+        "q": "The boys are so ___. They are speaking very ___. I can't hear the teacher.",
+        "choices": [
+          "loud – loudly",
+          "loudly – loud",
+          "loudly – loudly",
+          "quiet – quietly"
+        ],
+        "a": 0,
+        "hint": "Chỗ trống 1 tả ai/cái gì? Chỗ trống 2 tả cái gì của việc \"speaking\"?",
+        "explain": "Chỗ 1 tả các bạn → loud. Chỗ 2 tả CÁCH các bạn nói → loudly. Câu: The boys are so loud. They are speaking very loudly. \"quiet – quietly\" sai nghĩa vì cả lớp không nghe được cô.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E3",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "speak",
+            "hear"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q028"
+      },
+      {
+        "q": "Linh is always ___. She looks left and right before she crosses the street.",
+        "choices": [
+          "carefully",
+          "careful",
+          "carefuly",
+          "care"
+        ],
+        "a": 1,
+        "hint": "Câu đầu có việc làm nào không? Chỗ trống tả Linh là người thế nào, hay tả cách Linh làm một việc?",
+        "explain": "Câu đầu không có việc làm; chỗ trống tả LINH → tính từ careful (cẩn thận). carefully dùng để tả cách làm một việc; \"carefuly\" viết sai (thiếu một chữ l); care là danh từ/động từ.",
+        "difficulty": 1,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E4",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "look",
+            "left",
+            "right"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q029"
+      },
+      {
+        "q": "My dad drives ___. He always stops at the red light.",
+        "choices": [
+          "careful",
+          "carefuly",
+          "carefully",
+          "care"
+        ],
+        "a": 2,
+        "hint": "Chỗ trống đứng ngay sau việc làm nào? Nó tả người, hay tả cách làm việc đó?",
+        "explain": "Chỗ trống tả CÁCH bố lái xe (drives) → trạng từ carefully. careful tả người/vật; \"carefuly\" viết sai (đúng là careful + ly = carefully, hai chữ l).",
+        "difficulty": 1,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E5",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "drive",
+            "stop",
+            "red light"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q030"
+      },
+      {
+        "q": "Grandpa is very ___ today. He sings ___ in the garden.",
+        "choices": [
+          "happily – happy",
+          "happily – happily",
+          "happy – happy",
+          "happy – happily"
+        ],
+        "a": 3,
+        "hint": "Chỗ trống 1 tả ai? Chỗ trống 2 tả cái gì của việc \"sings\"?",
+        "explain": "Chỗ 1 tả ÔNG → happy (vui). Chỗ 2 tả CÁCH ông hát → happily (một cách vui vẻ; y đổi thành i rồi thêm -ly). Câu: Grandpa is very happy today. He sings happily in the garden.",
+        "difficulty": 2,
+        "skill": "adj-adv",
+        "unit": "adj-adv",
+        "book": "none",
+        "track": "foundation",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "E6",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "garden"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_adj-adv_q031"
       }
     ]
   }

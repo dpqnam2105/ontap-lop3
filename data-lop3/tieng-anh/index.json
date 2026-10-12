@@ -7,21 +7,21 @@
       "id": "en_nik3-unit1",
       "name": "NIK3 Unit 1: Places & directions",
       "file": "nik3-unit1.json",
-      "count": 38,
+      "count": 61,
       "book": "nik3"
     },
     {
       "id": "en_nik3-unit2",
       "name": "NIK3 Unit 2: Dinosaurs & Ancient Egypt",
       "file": "nik3-unit2.json",
-      "count": 40,
+      "count": 44,
       "book": "nik3"
     },
     {
       "id": "en_nik3-unit3",
       "name": "NIK3 Unit 3: Vacation & camping",
       "file": "nik3-unit3.json",
-      "count": 23,
+      "count": 26,
       "book": "nik3"
     },
     {
@@ -35,7 +35,7 @@
       "id": "en_adj-adv",
       "name": "Adjectives & Adverbs",
       "file": "adj-adv.json",
-      "count": 25,
+      "count": 31,
       "book": "nen"
     },
     {
@@ -199,5 +199,182 @@
       "desc": "Now I Know 3 Unit 10–12: cơ thể và sức khỏe, should / shouldn't; Nam Cực, There is / There are; lễ hội, will / won't"
     }
   ],
-  "defaultStage": 1
+  "defaultStage": 1,
+  "reviewSets": [
+    {
+      "id": "en-giuaky1-2026",
+      "name": "Ôn giữa kỳ I",
+      "short": "Giữa kỳ I",
+      "grade": "lop3",
+      "doc": "project claude/tieng-anh-lo3-on-giua-ky.md",
+      "imageGate": {
+        "field": "imageReview.status",
+        "mustEqual": "ok"
+      },
+      "mockSize": 20,
+      "groups": [
+        {
+          "id": "u1-places",
+          "name": "U1 · Nơi chốn & vị trí",
+          "required": [
+            "en_nik3-unit1_q001",
+            "en_nik3-unit1_q002",
+            "en_nik3-unit1_q003",
+            "en_nik3-unit1_q004",
+            "en_nik3-unit1_q005",
+            "en_nik3-unit1_q007",
+            "en_nik3-unit1_q009",
+            "en_nik3-unit1_q010",
+            "en_nik3-unit1_q011",
+            "en_nik3-unit1_q012",
+            "en_nik3-unit1_q013",
+            "en_nik3-unit1_q023",
+            "en_nik3-unit1_q037",
+            "en_nik3-unit1_q039",
+            "en_nik3-unit1_q040",
+            "en_nik3-unit1_q041",
+            "en_nik3-unit1_q042",
+            "en_nik3-unit1_q043"
+          ],
+          "extra": [
+            "en_nik3-unit1_q022"
+          ]
+        },
+        {
+          "id": "u1-movement",
+          "name": "U1 · Chuyển động",
+          "required": [
+            "en_nik3-unit1_q044",
+            "en_nik3-unit1_q045",
+            "en_nik3-unit1_q046",
+            "en_nik3-unit1_q047"
+          ],
+          "extra": []
+        },
+        {
+          "id": "u1-directions",
+          "name": "U1 · Chỉ đường, bản đồ",
+          "required": [
+            "en_nik3-unit1_q016",
+            "en_nik3-unit1_q018",
+            "en_nik3-unit1_q033",
+            "en_nik3-unit1_q048",
+            "en_nik3-unit1_q049",
+            "en_nik3-unit1_q050",
+            "en_nik3-unit1_q051",
+            "en_nik3-unit1_q052"
+          ],
+          "extra": []
+        },
+        {
+          "id": "u1-signs",
+          "name": "U1 · Biển báo & câu mệnh lệnh",
+          "required": [
+            "en_nik3-unit1_q015",
+            "en_nik3-unit1_q017",
+            "en_nik3-unit1_q024",
+            "en_nik3-unit1_q053",
+            "en_nik3-unit1_q055",
+            "en_nik3-unit1_q056",
+            "en_nik3-unit1_q057",
+            "en_nik3-unit1_q058",
+            "en_nik3-unit1_q060"
+          ],
+          "extra": [
+            "en_nik3-unit1_q014",
+            "en_nik3-unit1_q032",
+            "en_nik3-unit1_q054",
+            "en_nik3-unit1_q059",
+            "en_nik3-unit1_q061"
+          ]
+        },
+        {
+          "id": "adj-adv",
+          "name": "Tính từ – trạng từ",
+          "required": [
+            "en_adj-adv_q001",
+            "en_adj-adv_q002",
+            "en_adj-adv_q003",
+            "en_adj-adv_q004",
+            "en_adj-adv_q007",
+            "en_adj-adv_q010",
+            "en_adj-adv_q011",
+            "en_adj-adv_q017",
+            "en_adj-adv_q018",
+            "en_adj-adv_q019",
+            "en_adj-adv_q025",
+            "en_adj-adv_q026",
+            "en_adj-adv_q027",
+            "en_adj-adv_q028",
+            "en_adj-adv_q029",
+            "en_adj-adv_q030",
+            "en_adj-adv_q031"
+          ],
+          "extra": [
+            "en_adj-adv_q005",
+            "en_adj-adv_q006"
+          ]
+        },
+        {
+          "id": "spelling",
+          "name": "Chính tả",
+          "required": [
+            "en_nik3-unit2_q041",
+            "en_nik3-unit2_q042",
+            "en_nik3-unit3_q024",
+            "en_nik3-unit3_q025",
+            "en_nik3-unit3_q026"
+          ],
+          "extra": []
+        },
+        {
+          "id": "u2-dinosaurs",
+          "name": "U2 · Khủng long, dead / extinct",
+          "required": [
+            "en_nik3-unit2_q003",
+            "en_nik3-unit2_q033",
+            "en_nik3-unit2_q001",
+            "en_nik3-unit2_q002",
+            "en_nik3-unit2_q004",
+            "en_nik3-unit2_q005",
+            "en_nik3-unit2_q043",
+            "en_nik3-unit2_q044"
+          ],
+          "extra": [
+            "en_nik3-unit2_q031"
+          ]
+        },
+        {
+          "id": "u3-camping",
+          "name": "U3 · Nghĩa từ & tình huống (10 từ của cô)",
+          "required": [
+            "en_nik3-unit3_q001",
+            "en_nik3-unit3_q002",
+            "en_nik3-unit3_q003",
+            "en_nik3-unit3_q004",
+            "en_nik3-unit3_q005",
+            "en_nik3-unit3_q006",
+            "en_nik3-unit3_q007",
+            "en_nik3-unit3_q008",
+            "en_nik3-unit3_q009",
+            "en_nik3-unit3_q010",
+            "en_nik3-unit3_q011",
+            "en_nik3-unit3_q012",
+            "en_nik3-unit3_q013",
+            "en_nik3-unit3_q014",
+            "en_nik3-unit3_q015",
+            "en_nik3-unit3_q016",
+            "en_nik3-unit3_q017",
+            "en_nik3-unit3_q018",
+            "en_nik3-unit3_q019",
+            "en_nik3-unit3_q020",
+            "en_nik3-unit3_q021",
+            "en_nik3-unit3_q022",
+            "en_nik3-unit3_q023"
+          ],
+          "extra": []
+        }
+      ]
+    }
+  ]
 }

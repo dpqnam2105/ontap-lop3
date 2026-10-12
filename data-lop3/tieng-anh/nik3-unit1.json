@@ -370,7 +370,7 @@
           "Go back."
         ],
         "a": 0,
-        "hint": "Look at the arrow's direction. (rẽ phải)",
+        "hint": "Đề nói mũi tên chỉ sang phía nào? Chọn câu rẽ về đúng phía đó.",
         "difficulty": 1,
         "skill": "imperatives",
         "unit": "nik3-unit1",
@@ -380,7 +380,16 @@
         "review": {
           "round": "claude-ra-101-20261009",
           "status": "ok"
-        }
+        },
+        "revisions": [
+          {
+            "date": "2026-10-12",
+            "by": "claude",
+            "change": "hint",
+            "reviewedBy": "codex",
+            "doc": "project claude/tieng-anh-lo3-on-giua-ky.md"
+          }
+        ]
       },
       {
         "q": "___ you going to the museum now? – Yes, I am.",
@@ -1049,6 +1058,965 @@
           "date": "2026-10-08"
         },
         "id": "en_nik3-unit1_q038"
+      },
+      {
+        "q": "Look at the picture. What is it?",
+        "choices": [
+          "map",
+          "sign",
+          "bridge",
+          "building"
+        ],
+        "a": 0,
+        "hint": "Người ta mở thứ này ra và xem nó khi muốn tìm đường đến một nơi.",
+        "explain": "Tờ giấy vẽ đường phố và các địa điểm là map (bản đồ). sign là biển báo, bridge là cây cầu, building là tòa nhà.",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "A1",
+        "image": "images/questions/lop3/en-u1-map.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 1 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q039"
+      },
+      {
+        "q": "It is very tall. It has many windows. Many people work in it. It is a ___.",
+        "choices": [
+          "bridge",
+          "building",
+          "map",
+          "sign"
+        ],
+        "a": 1,
+        "hint": "Thứ này rất cao, có nhiều tầng, nhiều cửa sổ, người ta vào bên trong làm việc.",
+        "explain": "building = tòa nhà. bridge (cây cầu), map (bản đồ), sign (biển báo) không có cửa sổ và người không làm việc bên trong.",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "A2",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "window",
+            "work"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q040"
+      },
+      {
+        "q": "Look at the picture. Many people meet in this big open place in the city. What is it?",
+        "choices": [
+          "harbor",
+          "bridge",
+          "square",
+          "museum"
+        ],
+        "a": 2,
+        "hint": "Đây là một khoảng sân rộng giữa thành phố, không có tàu thuyền, không có sông.",
+        "explain": "square ở đây là QUẢNG TRƯỜNG (sân rộng giữa thành phố, nhiều người đến gặp nhau), không phải hình vuông. harbor có tàu thuyền, bridge bắc qua sông, museum là một tòa nhà trưng bày.",
+        "difficulty": 2,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "A3",
+        "image": "images/questions/lop3/en-u1-square.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "meet",
+            "open"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q041"
+      },
+      {
+        "q": "This part of the city is very busy. There are many tall buildings, shops and banks. Which word is it?",
+        "choices": [
+          "harbor",
+          "bridge",
+          "museum",
+          "downtown"
+        ],
+        "a": 3,
+        "hint": "Khu này là nơi đông đúc nhất thành phố, có nhiều nhà cao tầng và cửa hàng.",
+        "explain": "downtown = trung tâm thành phố (khu đông đúc, nhiều nhà cao tầng, cửa hàng). harbor là bến cảng có tàu thuyền; bridge là cây cầu; museum chỉ là một tòa nhà, không phải cả một khu.",
+        "difficulty": 2,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "A4",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "busy",
+            "shop",
+            "bank"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q042"
+      },
+      {
+        "q": "Look at the picture. What is it?",
+        "choices": [
+          "sign",
+          "map",
+          "bridge",
+          "square"
+        ],
+        "a": 0,
+        "hint": "Nó đứng trên một cái cột cạnh đường, có hình vẽ để nhắc mọi người.",
+        "explain": "sign = biển báo. map là bản đồ, bridge là cây cầu, square là quảng trường.",
+        "difficulty": 1,
+        "skill": "places",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "A5",
+        "image": "images/questions/lop3/en-u1-sign.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "Review 3 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q043"
+      },
+      {
+        "q": "Look at the picture. She is going ___ the stairs.",
+        "choices": [
+          "down",
+          "up",
+          "along",
+          "around"
+        ],
+        "a": 1,
+        "hint": "Nhìn mũi tên: bạn ấy đi về phía bậc cao hơn hay bậc thấp hơn?",
+        "explain": "Mũi tên chỉ lên bậc cao hơn → up (lên). down là xuống, along là dọc theo, around là vòng quanh.",
+        "difficulty": 1,
+        "skill": "movement",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "B1",
+        "image": "images/questions/lop3/en-u1-up.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "stairs"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q044"
+      },
+      {
+        "q": "Look at the picture. The ball rolls ___ the hill.",
+        "choices": [
+          "up",
+          "around",
+          "down",
+          "along"
+        ],
+        "a": 2,
+        "hint": "Quả bóng đang lăn về phía đỉnh đồi hay về phía chân đồi?",
+        "explain": "Quả bóng lăn từ trên cao xuống chân đồi → down (xuống). up là lên, around là vòng quanh, along là dọc theo.",
+        "difficulty": 1,
+        "skill": "movement",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "B2",
+        "image": "images/questions/lop3/en-u1-down.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "ball",
+            "roll",
+            "hill"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q045"
+      },
+      {
+        "q": "Look at the picture. We walk ___ the river.",
+        "choices": [
+          "around",
+          "across",
+          "above",
+          "along"
+        ],
+        "a": 3,
+        "hint": "Các bạn có sang bờ bên kia không? Có đi vòng tròn không? Mũi tên chạy theo chiều nào của dòng sông?",
+        "explain": "Đi bên cạnh sông, theo chiều dài của sông → along (dọc theo). across là băng qua sang bờ bên kia, around là vòng quanh, above là ở phía trên.",
+        "difficulty": 2,
+        "skill": "movement",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "B3",
+        "image": "images/questions/lop3/en-u1-along.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "river"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q046"
+      },
+      {
+        "q": "Look at the picture. The children run ___ the tree.",
+        "choices": [
+          "around",
+          "along",
+          "up",
+          "down"
+        ],
+        "a": 0,
+        "hint": "Nhìn đường mũi tên: nó chạy thẳng hay khép lại thành một vòng?",
+        "explain": "Chạy thành vòng, cái cây ở giữa → around (vòng quanh). along là dọc theo, up là lên, down là xuống.",
+        "difficulty": 1,
+        "skill": "movement",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "B4",
+        "image": "images/questions/lop3/en-u1-around.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô"
+          ],
+          "toc": [],
+          "extraWords": [
+            "tree"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q047"
+      },
+      {
+        "q": "Look at the arrow. What do you do?",
+        "choices": [
+          "Turn left.",
+          "Cross the street.",
+          "Turn right.",
+          "Don't cross the street."
+        ],
+        "a": 1,
+        "hint": "Mũi tên bắt đầu ở đâu và kết thúc ở đâu?",
+        "explain": "Mũi tên đi từ lề đường bên này sang lề bên kia → Cross the street. (Băng qua đường.) Mũi tên không rẽ nên không phải turn left / turn right; mũi tên đi qua đường nên không phải Don't cross.",
+        "difficulty": 1,
+        "skill": "directions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "C1",
+        "image": "images/questions/lop3/en-u1-cross.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)",
+            "Review 1 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "light",
+            "green",
+            "arrow"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q048"
+      },
+      {
+        "q": "Look at the arrow. What do you do at the crossroads (ngã tư)?",
+        "choices": [
+          "Turn left.",
+          "Turn right.",
+          "Go straight.",
+          "Cross the bridge."
+        ],
+        "a": 2,
+        "hint": "Mũi tên có cong sang bên nào không?",
+        "explain": "Mũi tên đi thẳng qua ngã tư, không rẽ → Go straight. (Đi thẳng.) Turn left / Turn right là rẽ; trong hình không có cây cầu.",
+        "difficulty": 1,
+        "skill": "directions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "C7",
+        "image": "images/questions/lop3/en-u1-straight.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "crossroads"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q049"
+      },
+      {
+        "q": "Look at the map. Start at the ★. Go straight to the crossroads (ngã tư). Turn right. Go to the end of the street. Where are you?",
+        "choices": [
+          "at the harbor",
+          "at the theater",
+          "at the square",
+          "at the museum"
+        ],
+        "a": 3,
+        "hint": "Đứng ở ★, quay mặt theo mũi tên. Đến ngã tư thì giơ tay phải lên xem nó chỉ về phía nào.",
+        "explain": "Ở ★ mặt nhìn lên phía trên bản đồ, nên tay phải chỉ sang phía bên phải bản đồ. Đến ngã tư rẽ phải, đi tới cuối đường → museum. Rẽ trái qua cầu là harbor; đi thẳng là theater.",
+        "difficulty": 2,
+        "skill": "directions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "C2",
+        "image": "images/questions/lop3/en-u1-map-a.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "crossroads",
+            "end",
+            "street"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q050"
+      },
+      {
+        "q": "Look at the map. The art gallery is across from the ___.",
+        "choices": [
+          "recreation center",
+          "theater",
+          "museum",
+          "square"
+        ],
+        "a": 0,
+        "hint": "across from = ở bên kia đường, nhìn thẳng sang. Đứng ở cửa phòng tranh, nhìn thẳng qua đường thấy gì?",
+        "explain": "Phòng tranh và trung tâm giải trí ở hai bên cùng một con đường, nhìn thẳng sang nhau → The art gallery is across from the recreation center. theater, museum, square đều ở cuối các con đường, không đối diện phòng tranh.",
+        "difficulty": 2,
+        "skill": "directions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "C4",
+        "image": "images/questions/lop3/en-u1-map-a.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q051"
+      },
+      {
+        "q": "Look at the map. You are at the ★. You want to go to the harbor. Which is the right way?",
+        "choices": [
+          "Go straight to the crossroads. Turn right.",
+          "Go straight to the crossroads. Turn left. Cross the bridge.",
+          "Go straight. Don't turn at the crossroads.",
+          "Turn left. Go straight."
+        ],
+        "a": 1,
+        "hint": "Tìm bến cảng trên bản đồ trước. Đứng ở ngã tư, mặt theo mũi tên, bến cảng ở bên tay nào? Trên đường đến đó có gì?",
+        "explain": "Từ ★ đi thẳng đến ngã tư; bến cảng ở bên tay trái, phải qua cầu → Go straight to the crossroads. Turn left. Cross the bridge. Rẽ phải sẽ tới museum; không rẽ sẽ tới theater; ở ★ không có đường rẽ trái.",
+        "difficulty": 2,
+        "skill": "directions",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "C5",
+        "image": "images/questions/lop3/en-u1-map-a.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: danh sách 40 từ của cô",
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "crossroads"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q052"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Don't read in the library.",
+          "Don't run in the library.",
+          "Don't talk in the library.",
+          "Talk in the library."
+        ],
+        "a": 2,
+        "hint": "Vòng tròn đỏ có gạch chéo nghĩa là KHÔNG được làm việc vẽ trong biển. Trong biển, người đó đang làm gì?",
+        "explain": "Biển vẽ người đang nói, có gạch chéo → cấm nói chuyện: Don't talk in the library. Trong biển không có người đọc sách hay chạy; câu không có Don't thì ngược ý biển.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D1",
+        "image": "images/questions/lop3/en-sign-no-talking.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "Review 3 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "library"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q053"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Feed the animals.",
+          "Don't eat at the zoo.",
+          "Don't talk at the zoo.",
+          "Don't feed the animals."
+        ],
+        "a": 3,
+        "hint": "Vòng đỏ gạch chéo là cấm. Bàn tay trong biển đang làm gì?",
+        "explain": "Biển cấm đưa thức ăn cho thú → Don't feed the animals. Câu không có Don't thì ngược ý biển; bàn tay đưa thức ăn cho con vật, không phải người đang ăn; biển không vẽ ai nói chuyện.",
+        "difficulty": 2,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D2",
+        "image": "images/questions/lop3/en-sign-no-feeding.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "zoo"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q054"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Don't walk on the grass.",
+          "Walk on the grass.",
+          "Don't sit on the grass.",
+          "Don't ride a bike here."
+        ],
+        "a": 0,
+        "hint": "Vòng đỏ gạch chéo là cấm. Người trong biển đang đứng trên cái gì, và đang làm gì?",
+        "explain": "Người đang bước đi trên cỏ, có gạch chéo → Don't walk on the grass. Người trong biển không ngồi; không có xe đạp; câu không có Don't thì ngược ý biển.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D3",
+        "image": "images/questions/lop3/en-sign-no-grass.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "Review 3 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "grass"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q055"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Don't run on the stairs.",
+          "Don't sit on the stairs.",
+          "Sit on the stairs, please.",
+          "Don't sit on the grass."
+        ],
+        "a": 1,
+        "hint": "Vòng đỏ gạch chéo là cấm. Người trong biển đang ngồi hay đang chạy? Ở trên cái gì?",
+        "explain": "Người đang NGỒI trên cầu thang → Don't sit on the stairs. Người không chạy; \"Sit…, please\" là mời ngồi, ngược ý biển; biển không có cỏ.",
+        "difficulty": 2,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D4",
+        "image": "images/questions/lop3/en-sign-no-sitting-stairs.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: tờ tranh cô gửi"
+          ],
+          "toc": [],
+          "extraWords": [
+            "stairs"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q056"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Ride a bike here.",
+          "Don't walk here.",
+          "Don't ride a bike here.",
+          "Don't drive a car here."
+        ],
+        "a": 2,
+        "hint": "Vòng đỏ gạch chéo là cấm. Trong biển vẽ phương tiện gì?",
+        "explain": "Xe đạp có gạch chéo → Don't ride a bike here. Biển không vẽ người đi bộ hay ô tô; câu không có Don't thì ngược ý biển.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D5",
+        "image": "images/questions/lop3/en-sign-no-bikes.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: tờ tranh cô gửi"
+          ],
+          "toc": [],
+          "extraWords": [
+            "ride",
+            "drive"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q057"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Don't put the trash in the bin.",
+          "Put the trash on the ground.",
+          "Don't use the bin.",
+          "Put the trash in the bin."
+        ],
+        "a": 3,
+        "hint": "Biển này KHÔNG có gạch chéo. Rác được bỏ vào đâu?",
+        "explain": "Biển xanh không gạch chéo là biển bảo mọi người LÀM việc trong hình: bỏ rác vào thùng → Put the trash in the bin. Hai câu có Don't ngược ý; rác không vứt xuống đất.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D6",
+        "image": "images/questions/lop3/en-sign-trash-bin.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: tờ tranh cô gửi"
+          ],
+          "toc": [],
+          "extraWords": [
+            "trash",
+            "bin",
+            "ground"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q058"
+      },
+      {
+        "q": "Look at the sign. What does it say?",
+        "choices": [
+          "Please sit down.",
+          "Don't sit down.",
+          "Please stand up.",
+          "Don't sit on the stairs."
+        ],
+        "a": 0,
+        "hint": "Biển này KHÔNG có gạch chéo. Biển vẽ đồ vật gì, mời mình làm gì với nó?",
+        "explain": "Biển xanh vẽ chiếc ghế, mời ngồi → Please sit down. Don't sit down ngược ý; stand up là đứng lên; biển không có cầu thang.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D7",
+        "image": "images/questions/lop3/en-sign-please-sit.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "stand up"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q059"
+      },
+      {
+        "q": "Look at the sign. ___ in the library.",
+        "choices": [
+          "Talk",
+          "Be quiet",
+          "Be loud",
+          "Run"
+        ],
+        "a": 1,
+        "hint": "Biển cấm nói chuyện. Ở thư viện, mình phải giữ cho mọi người đọc sách được yên.",
+        "explain": "Biển cấm nói chuyện trong thư viện → Be quiet in the library. (Cùng ý với Don't talk in the library — Review 3 dùng cách nói này.) Talk, Be loud ngược ý biển; biển không nói về chạy.",
+        "difficulty": 1,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D8",
+        "image": "images/questions/lop3/en-sign-no-talking.svg",
+        "imageReview": {
+          "status": "pending",
+          "by": null,
+          "date": null,
+          "checkedOn": null
+        },
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "Review 3 (trường)"
+          ],
+          "toc": [],
+          "extraWords": [
+            "library"
+          ],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q060"
+      },
+      {
+        "q": "Biển báo vẽ NHIỀU con vật. Viết câu cho cả nhóm con vật: \"Don't feed ___.\"",
+        "choices": [
+          "the animal",
+          "an animal",
+          "the animals",
+          "animal"
+        ],
+        "a": 2,
+        "hint": "Đề yêu cầu nói về NHIỀU con vật. Từ chỉ nhiều con có thêm chữ gì ở cuối?",
+        "explain": "Nói về nhiều con vật → animals (thêm -s): Don't feed the animals. the animal / an animal chỉ một con; \"animal\" đứng một mình thiếu the.",
+        "difficulty": 2,
+        "skill": "imperatives",
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-nik3-lo3-giuaky-20261012",
+        "draftCode": "D9",
+        "ref": {
+          "basis": "school-midterm",
+          "note": "Ôn giữa kỳ I. Câu, cách đặt câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3 của trường).",
+          "sources": [
+            "GV: phiếu ôn giữa kỳ (Codex đối chiếu ảnh phiếu, 12/10)",
+            "Luyện số nhiều theo yêu cầu rõ (thay nhiễu số ít ở D2/D4)"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261012",
+          "by": "claude",
+          "date": "2026-10-12"
+        },
+        "id": "en_nik3-unit1_q061"
       }
     ]
   }

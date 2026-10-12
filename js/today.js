@@ -567,7 +567,7 @@ const Today = {
     if (!l) { this.startExtra(); return; }
     if (l.type === 'wrong') Quiz.startWrongReview(l.limit);
     else if (l.type === 'pool') Quiz.startReviewPool(this._reviewPool(8));
-    else if (l.type === 'mixed') Quiz.startMixed(l.pool, l.subjectName, l.subjectId, l.mixKey);
+    else if (l.type === 'mixed') Quiz.startMixed(l.pool, l.subjectName, l.subjectId, l.mixKey, null, l.options || undefined);
     else Quiz.start(l.topic, l.subjectName, l.options);
   }
 };

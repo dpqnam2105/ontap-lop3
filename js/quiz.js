@@ -49,6 +49,7 @@ const Quiz = {
         let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
         if (idx < 0 && it.question) idx = topic.questions.findIndex(q => (q.q || '') === it.question);
         if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
+        if (window.App && App.questionReady && !App.questionReady(topic.questions[idx])) continue; // cau cho duyet hinh
         pool.push({
           ...topic.questions[idx],
           _idx: idx,
@@ -129,13 +130,15 @@ const Quiz = {
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
     this.challenge = (options && options.challenge) || null;
     this.todayTaskId = todayTaskId || null;
-    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey }; this.speed = null; this.pickIdx = null; this._setBack('topic');
+    this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey, options: options && (options.title || options.modeLabel) ? { title: options.title, modeLabel: options.modeLabel, finishLabel: options.finishLabel } : null }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     if (this.challenge) this._lastLaunch = null;
     this.mode = 'mixed';
     this.mixKey = mixKey || '';
+    this.mixFinishLabel = (options && options.finishLabel) || null;
     this.questions = pool.slice();
     this.currentTopic = { id: 'weekly_mix', name: 'Đề trộn tuần này', questions: this.questions };
     if (this.challenge) this.currentTopic.name = 'Thử thách đón cún 🐶';
+    if (options && options.title) this.currentTopic.name = options.title;
     this.currentSubject = subjectName || '';
     this.currentTopicId = 'weekly_mix';
     this.currentSubjectId = subjectId || 'mixed';
@@ -159,6 +162,7 @@ const Quiz = {
     };
 
     if (this.challenge) this.sessionInfo.modeLabel = 'Thử thách đón cún 🐶';
+    if (options && options.modeLabel) this.sessionInfo.modeLabel = options.modeLabel;
 
     App.showScreen('quiz');
     this.render();
@@ -256,9 +260,10 @@ const Quiz = {
         info: { mode, modeLabel: this.speed ? '⏱️ ' + TableGen.LEVELS[this.speed.level].icon + ' ' + TableGen.LEVELS[this.speed.level].name : (mode === 'test' ? 'Kiểm tra ⚡' : 'Luyện nhanh ⚡'), current: 1, total: 1, isAllDone: false, learnedBefore: 0, totalInTopic: this.pickIdx.length }
       };
     }
+    const ready = i => topic.questions[i] && !(window.App && App.questionReady && !App.questionReady(topic.questions[i]));
     const allIndices = this.allowedIdx
-      ? this.allowedIdx.filter(i => topic.questions[i])
-      : topic.questions.map((_, i) => i);
+      ? this.allowedIdx.filter(ready)
+      : topic.questions.map((_, i) => i).filter(ready);
     const allowedSet = new Set(allIndices);
     const totalInTopic = allIndices.length;
     const rawProgress = Storage.getTopicProgress(this.currentTopicId);
@@ -861,8 +866,8 @@ const Quiz = {
             ? '🐶 Con đã hoàn thành thử thách! Vào Nhà cún để đặt tên và đón bạn về nhà nhé.'
             : (window.Pet && Pet.adoptionRight() ? '🐶 Quyền nhận cún đã được lưu. Con vào Nhà cún để đón bạn nhé.' : '🐶 Chưa lưu được quyền nhận cún. Con quay lại Nhà cún để thử lại nhé.');
         } else {
-        progressMsg = '🎲 Đề trộn tuần này: con đúng ' + this.score + '/' + total + ' câu. Câu sai đã được đưa vào phần Ôn câu sai.';
-        try {
+        progressMsg = (this.mixFinishLabel || '🎲 Đề trộn tuần này') + ': con đúng ' + this.score + '/' + total + ' câu. Câu sai đã được đưa vào phần Ôn câu sai.';
+        if (this.mixKey) try {
           const all = Storage.get('weeklyMix') || {};
           const prev = all[this.mixKey];
           if (!prev || this.score >= prev.score) all[this.mixKey] = { score: this.score, total: total, at: new Date().toISOString() };

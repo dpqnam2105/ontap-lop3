@@ -128,6 +128,8 @@ const API = {
       if (Array.isArray(idx.books) && idx.books.length) out.books = idx.books;
       // Các lượt rà nội dung câu cũ (q.review.round) — chỉ lượt confirmed mới cho câu vào Ôn tổng hợp
       if (idx.reviewRounds && typeof idx.reviewRounds === 'object') out.reviewRounds = idx.reviewRounds;
+      // Đợt ôn theo danh sách ID (vd Ôn giữa kỳ I Tiếng Anh): câu vẫn nằm ở chủ đề gốc, không nhân bản
+      if (Array.isArray(idx.reviewSets) && idx.reviewSets.length) out.reviewSets = idx.reviewSets;
       return out;
     }));
 
