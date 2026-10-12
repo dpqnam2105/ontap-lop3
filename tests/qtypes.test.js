@@ -206,6 +206,11 @@ const tests = {
     assert.strictEqual(parts[0].text, 'Put the words in order.');
   },
 
+  'Ôn câu sai: dự phòng tìm theo chữ đề chỉ áp cho trắc nghiệm (dạng mới trùng đề → chỉ theo id)'() {
+    const src = fs.readFileSync(path.join(REPO, 'js/quiz.js'), 'utf8');
+    assert.ok(/findIndex\(q => !q\.type && \(q\.q \|\| ''\) === it\.question\)/.test(src));
+  },
+
   'Pet: thử thách nhận cún chỉ lấy câu trắc nghiệm'() {
     const src = fs.readFileSync(path.join(REPO, 'js/pet.js'), 'utf8');
     assert.ok(/QTypes\.isMcq\(q\)/.test(src));

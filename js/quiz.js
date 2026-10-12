@@ -47,7 +47,8 @@ const Quiz = {
         const topic = (subj.topics || []).find(t => (t.id || t.name).toString() === String(it.topicId));
         if (!topic || !Array.isArray(topic.questions)) continue;
         let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
-        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => (q.q || '') === it.question);
+        // Dự phòng theo chữ đề CHỈ cho trắc nghiệm: dạng mới hay trùng đề ("Put the words in order.") → chỉ tìm theo id
+        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
         if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
         if (window.App && App.questionReady && !App.questionReady(topic.questions[idx])) continue; // cau cho duyet hinh
         pool.push({
