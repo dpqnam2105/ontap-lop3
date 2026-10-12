@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-12 — Merge PR #12 (17 SVG ôn giữa kỳ, Codex) + khoá lại biển cầu thang
+- Claude rà PR #12: code + test đạt; 16/17 hình đúng. Mở 19 câu có hình (imageReview ok).
+- U1 q056 (en-sign-no-sitting-stairs.svg) chuyển lại imageReview pending: ở 390 px người chưa rõ đang NGỒI. Chờ Codex vẽ lại. Góp ý thêm (không chặn): biển cho thú ăn q054 nên vẽ rõ bàn tay cầm thức ăn.
+
 ## 2026-10-12 — Tiếng Anh lớp 3: lô 3 ôn giữa kỳ I + mục "Ôn giữa kỳ I" + cổng duyệt hình
 - +36 câu (U1 q039–q061, U2 q041–q044, U3 q024–q026, adj-adv q026–q031), source claude-nik3-lo3-giuaky-20261012, ref.basis school-midterm, chữ đã được Codex duyệt (contentReview codex-noi-dung-20261012). Câu và hình tự biên soạn; nguồn chỉ là căn cứ phạm vi (phiếu ôn GV, tờ tranh GV, Review 1/3).
 - Cổng duyệt hình: câu có `image` + `imageReview.status !== 'ok'` không vào bất kỳ luồng nào (luyện chủ đề, kế hoạch hôm nay, thử thách cún, đề trộn, Ôn giữa kỳ, ôn câu sai). 20 câu của lô đang `pending` chờ Codex vẽ 17 SVG + kiểm 390 px. App.questionReady dùng trong _allowedIndices, _mixEligible, Quiz.
