@@ -886,12 +886,15 @@ const Quiz = {
       bar.querySelector('#btnCheck').addEventListener('click', () => this.submit());
     }
     bar.hidden = false;
-    const st = this._qtState = { type: T.name, attempts: 0, done: false, dirty: false, complete: false, busy: false, qid: q.id };
+    // lastKey: khoá của câu trả lời VỪA nộp; same: câu trả lời hiện tại trùng lần vừa nộp (chọn lại đúng tranh sai,
+    // tháo rồi xếp lại y thứ tự cũ…) → chưa cho nộp lại, tránh "đổi giả" mở lần nộp thứ hai.
+    const st = this._qtState = { type: T.name, attempts: 0, done: false, complete: false, busy: false, qid: q.id, lastKey: null, same: false };
     this._qt = T.render({
       host, q, mode: this.mode,
       onChange: complete => {
         if (this._qtState !== st) return;      // callback trễ từ câu cũ
-        st.complete = !!complete; st.dirty = true;
+        st.complete = !!complete;
+        st.same = st.lastKey != null && !!this._qt && QTypes.responseKey(q, this._qt.getResponse()) === st.lastKey;
         this._qtSync();
       }
     });
@@ -902,9 +905,10 @@ const Quiz = {
     const st = this._qtState, btn = document.getElementById('btnCheck');
     if (!btn) return;
     if (!st) { btn.disabled = true; return; }
-    btn.disabled = st.done || st.busy || !st.complete || (st.attempts > 0 && !st.dirty);
+    btn.disabled = st.done || st.busy || !st.complete || st.same;
     btn.classList.toggle('hidden', st.done);
-    btn.textContent = st.complete || st.attempts ? 'Kiểm tra ✔'
+    btn.textContent = st.same && st.complete ? (st.type === 'order' ? 'Con đổi thứ tự thẻ rồi kiểm tra lại' : 'Con chọn tranh khác rồi kiểm tra lại')
+      : st.complete || st.attempts ? 'Kiểm tra ✔'
       : (st.type === 'order' ? 'Xếp đủ thẻ rồi bấm Kiểm tra' : 'Chọn một tranh rồi bấm Kiểm tra');
   },
 
@@ -934,8 +938,10 @@ const Quiz = {
     const T = q && window.QTypes ? QTypes.forQuestion(q) : null;
     const st = this._qtState, c = this._qt;
     if (!T || T.legacy || !c || !st || st.done || st.busy || st.qid !== q.id) return { ok: false, reason: 'closed' };
-    if (st.attempts > 0 && !st.dirty) return { ok: false, reason: 'unchanged' };   // nộp lặp đúng câu trả lời vừa chấm
     const response = c.getResponse();
+    // So câu trả lời hiện tại với câu vừa nộp (không dựa vào "đã chạm"): trùng → không nộp lại
+    const key = QTypes.responseKey(q, response);
+    if (st.lastKey != null && key === st.lastKey) { st.same = true; this._qtSync(); return { ok: false, reason: 'unchanged' }; }
     const v = T.validateResponse(q, response) || {};
     const fb = document.getElementById('feedback'), fbText = document.getElementById('fbText'), fbAns = document.getElementById('fbAns');
     if (!v.ok) {
@@ -944,7 +950,7 @@ const Quiz = {
       fbAns.textContent = '';
       return { ok: false, reason: v.reason || 'invalid' };
     }
-    st.busy = true; st.dirty = false;
+    st.busy = true; st.lastKey = key; st.same = true;
     this._qtSync();
     try {
       if (window.Speak) Speak.stop();

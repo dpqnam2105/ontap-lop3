@@ -95,6 +95,8 @@
       return this._texts(q, r.tokenIds).filter(Boolean).join(' ') + (r.tokenIds.length === q.tokens.length ? q.end : ' …');
     },
     describeAnswer(q) { return String(q.answers[0]) + q.end; },
+    /** Cùng dãy CHỮ = cùng câu trả lời (đổi chỗ hai thẻ "the", hay tháo rồi xếp lại y cũ, không phải câu mới). */
+    responseKey(q, r) { const ids = (r && Array.isArray(r.tokenIds)) ? r.tokenIds : []; return 't:' + ids.length + ':' + norm(this._texts(q, ids).join(' ')); },
     speakParts(q) { return [{ text: q.q }]; },
 
     render(ctx) {

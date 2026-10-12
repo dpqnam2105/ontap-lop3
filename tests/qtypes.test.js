@@ -211,6 +211,53 @@ const tests = {
     assert.ok(/findIndex\(q => !q\.type && \(q\.q \|\| ''\) === it\.question\)/.test(src));
   },
 
+  'responseKey: cùng nội dung = cùng khoá (đổi chỗ thẻ cùng chữ, chọn lại cùng tranh)'() {
+    const c = boot(QFILES); const Q = c.QTypes;
+    const o = byId(ORDER_THE);
+    const k = ids => Q.responseKey(o, { tokenIds: ids });
+    assert.strictEqual(k(['t0', 't1', 't5', 't3', 't4', 't2']), k(['t0', 't4', 't5', 't3', 't1', 't2']), 'hai thẻ "the" đổi chỗ');
+    assert.notStrictEqual(k(['t0', 't1', 't5', 't3', 't4', 't2']), k(['t0', 't1', 't2', 't3', 't4', 't5']));
+    assert.notStrictEqual(k(['t0', 't1']), k(['t0', 't1', 't2']));
+    const l = byId(LP);
+    assert.strictEqual(Q.responseKey(l, { selectedIndex: 2 }), Q.responseKey(l, { selectedIndex: 2 }));
+    assert.notStrictEqual(Q.responseKey(l, { selectedIndex: 2 }), Q.responseKey(l, { selectedIndex: 1 }));
+  },
+
+  'Quiz.submit: so khoá câu trả lời với lần vừa nộp (không dựa vào "đã chạm")'() {
+    const src = fs.readFileSync(path.join(REPO, 'js/quiz.js'), 'utf8');
+    assert.ok(/key === st\.lastKey/.test(src) && !/dirty/.test(src));
+  },
+
+  'pilot-guard: khoá ghi bằng tiền tố pilot::, không đọc/ghi khoá thật; không bật khi thiếu cờ'() {
+    const real = new Map([['khoBaiTap_profile_Thỏ', '{"stars":9}'], ['other', 'x']]);
+    const mk = (search, flag) => {
+      const ss = new Map(flag ? [['rabbit_pilot', '1']] : []);
+      const ctx = { console, URLSearchParams, Object, String };
+      ctx.window = ctx; ctx.location = { search };
+      ctx.sessionStorage = { getItem: k => ss.has(k) ? ss.get(k) : null, setItem: (k, v) => ss.set(k, String(v)), removeItem: k => ss.delete(k) };
+      ctx.localStorage = makeLS(real);
+      vm.createContext(ctx);
+      vm.runInContext(fs.readFileSync(path.join(REPO, 'js/pilot-guard.js'), 'utf8'), ctx);
+      return ctx;
+    };
+    const off = mk('', false);
+    assert.strictEqual(off.__PILOT__, false);
+    assert.strictEqual(off.localStorage.getItem('other'), 'x');
+    const on = mk('?pilot=1', false);
+    assert.strictEqual(on.__PILOT__, true);
+    assert.strictEqual(on.localStorage.getItem('khoBaiTap_profile_Thỏ'), null, 'không thấy hồ sơ thật');
+    on.localStorage.setItem('khoBaiTap_profile_Thỏ', '{"stars":1}');
+    assert.strictEqual(real.get('khoBaiTap_profile_Thỏ'), '{"stars":9}', 'hồ sơ thật không đổi');
+    assert.strictEqual(real.get('pilot::khoBaiTap_profile_Thỏ'), '{"stars":1}');
+    assert.strictEqual(on.localStorage.length, 1);
+    assert.strictEqual(on.localStorage.key(0), 'khoBaiTap_profile_Thỏ');
+    on.localStorage.clear();
+    assert.ok(!real.has('pilot::khoBaiTap_profile_Thỏ') && real.get('other') === 'x', 'clear chỉ xoá vùng thử');
+    const sticky = mk('', true);
+    assert.strictEqual(sticky.__PILOT__, true, 'cờ trong phiên tab giữ chế độ thử');
+    assert.strictEqual(mk('?pilot=0', true).__PILOT__, false, '?pilot=0 tắt');
+  },
+
   'Pet: thử thách nhận cún chỉ lấy câu trắc nghiệm'() {
     const src = fs.readFileSync(path.join(REPO, 'js/pet.js'), 'utf8');
     assert.ok(/QTypes\.isMcq\(q\)/.test(src));
