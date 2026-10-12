@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-12 — Merge PR #13: vẽ lại biển cầu thang (q056) và biển cho thú ăn (q054)
+- Claude rà: người ngồi rõ (đùi ngang, cẳng chân xuống bậc dưới), bàn tay cầm thức ăn rõ ở cỡ nhỏ. Mở q056 → đủ 20/20 câu có hình của lô 3.
+- Sửa tests/en-books.test.js theo số câu đủ điều kiện mới (+1).
+
 ## 2026-10-12 — Merge PR #12 (17 SVG ôn giữa kỳ, Codex) + khoá lại biển cầu thang
 - Claude rà PR #12: code + test đạt; 16/17 hình đúng. Mở 19 câu có hình (imageReview ok).
 - U1 q056 (en-sign-no-sitting-stairs.svg) chuyển lại imageReview pending: ở 390 px người chưa rõ đang NGỒI. Chờ Codex vẽ lại. Góp ý thêm (không chặn): biển cho thú ăn q054 nên vẽ rõ bàn tay cầm thức ăn.
