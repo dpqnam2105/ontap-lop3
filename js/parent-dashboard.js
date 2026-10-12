@@ -360,7 +360,7 @@ const ParentDashboard = {
             <div class="insight-item">
               <span class="wrong-badge">${q.wrongCount}×</span>
               <span class="wrong-q">${this._escape(q.question || q.questionId)}</span>
-              ${q.lastCorrect && q.lastCorrect >= q.lastWrong
+              ${!Storage.isWrongUnresolved(q)
                 ? '<span class="resolved-tag">✅ đã sửa</span>'
                 : '<span class="unresolved-tag">❌ chưa sửa</span>'}
             </div>`).join('')}
@@ -665,7 +665,7 @@ const ParentDashboard = {
           <div class="wrong-question-head">❌ Câu sai ${i + 1} · ${this._escape(w.subject || '')} / ${this._escape(w.topic || '')}</div>
           <div><b>Câu hỏi:</b> ${this._escape(w.question || '')}</div>
           ${w.image ? `<div><b>Ảnh:</b> ${this._escape(w.image)}</div>` : ''}
-          <div><b>Bé chọn:</b> ${this._escape(w.selectedAnswer || '')}</div>
+          <div><b>${w.questionType === 'order' ? 'Bé xếp' : 'Bé chọn'}:</b> ${this._escape(w.selectedAnswer || '')}${w.questionType && w.questionType !== 'mcq' ? ' <small>(' + (w.questionType === 'order' ? 'sắp xếp câu' : w.questionType === 'listen-pick' ? 'nghe chọn tranh' : this._escape(w.questionType)) + ')</small>' : ''}</div>
           <div><b>Đáp án đúng:</b> ${this._escape(w.correctAnswer || '')}</div>
           <div><b>Thời gian:</b> ${this._formatSec(w.timeSpentSec || 0)} · <b>ID:</b> <code>${this._escape(w.questionId || '')}</code></div>
         </div>`).join('')

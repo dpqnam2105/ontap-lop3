@@ -52,6 +52,19 @@ const API = {
     }
   },
 
+  // ─── Chế độ thử (?pilot=1) ─────────────────────────────
+  // Bật: hiện chủ đề "pilot" (dạng bài mới) và CHẶN mọi ghi lên Sheets/Cloud (bảng xếp hạng, nhật ký, sao lưu)
+  // để lượt thử không đụng dữ liệu học thật. ?pilot=0 để tắt. Giữ trong phiên tab (sessionStorage).
+  PILOT_KEY: 'rabbit_pilot',
+  pilotOn() {
+    try {
+      const v = new URLSearchParams(location.search).get('pilot');
+      if (v === '1') sessionStorage.setItem(this.PILOT_KEY, '1');
+      else if (v === '0') sessionStorage.removeItem(this.PILOT_KEY);
+      return sessionStorage.getItem(this.PILOT_KEY) === '1';
+    } catch (e) { return false; }
+  },
+
   // ─── Load toàn bộ data (dùng cho App.init) ──────────────
 
   /**
@@ -103,7 +116,7 @@ const API = {
       const idx = await this._fetchJSON(base + sub.index);
       if (!idx) return null;
 
-      const wanted = (idx.topics || []).filter(t => t.count > 0 && t.file && !t.hidden);
+      const wanted = (idx.topics || []).filter(t => t.count > 0 && t.file && !t.hidden && (!t.pilot || this.pilotOn()));
       const loaded = await Promise.all(
         wanted.map(t => this._fetchJSON(base + (sub.dir ? sub.dir + '/' : '') + t.file))
       );
@@ -307,6 +320,7 @@ const API = {
   async saveScore(name, score, total, subject, topic, durationSec) {
     const clean = (window.Storage && Storage.normalizeName) ? Storage.normalizeName(name) : String(name || '').trim();
     if (clean.length < 2) return false;
+    if (this.pilotOn()) return false;      // chế độ thử: không ghi bảng xếp hạng / nhật ký
     try {
       await fetch(this.GS_URL, {
         method: 'POST',

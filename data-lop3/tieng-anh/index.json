@@ -121,6 +121,14 @@
       "file": "on-tap-tong-hop.json",
       "count": 12,
       "book": "nen"
+    },
+    {
+      "id": "en_thu-dang-moi",
+      "name": "🧪 Thử dạng bài mới",
+      "file": "thu-dang-moi.json",
+      "count": 10,
+      "book": "nen",
+      "pilot": true
     }
   ],
   "books": [

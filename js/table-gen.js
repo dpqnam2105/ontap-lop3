@@ -612,7 +612,7 @@ const TableGen = {
         if (!v || !v.wrongCount) return;
         const fact = String(id).startsWith('toan_gen_') ? factOfId(id) : factOfText(v.question);
         if (!fact) return;
-        const unresolved = v.lastWrong && (!v.lastCorrect || v.lastCorrect < v.lastWrong);
+        const unresolved = Storage.isWrongUnresolved ? Storage.isWrongUnresolved(v) : (v.lastWrong && (!v.lastCorrect || v.lastCorrect < v.lastWrong));
         bump(fact, Math.min(3, v.wrongCount) + (unresolved ? 3 : 0));
       });
     } catch (e) { /* chưa có lịch sử */ }

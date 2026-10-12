@@ -12,6 +12,16 @@ const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // school-sheet = phạm vi theo phiếu bài tập trường phát (ảnh Nam gửi); câu tự biên soạn, tránh câu của phiếu.
 const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet']);
 
+// Sổ dạng bài (js/qtypes) — kiểm schema theo type, không nới lỏng chung cho mọi câu.
+const vm = require('vm');
+const QCTX = { console }; QCTX.globalThis = QCTX; vm.createContext(QCTX);
+for (const f of ['registry', 'listen-pick', 'order']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'js', 'qtypes', f + '.js'), 'utf8'), QCTX);
+const QT = QCTX.QTypes;
+// Mọi câu tiếng Anh theo id (để đối chiếu hình nguồn của lô thử dạng mới)
+const ALLQ = {};
+for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'index.json'))
+  JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8')).topic.questions.forEach(q => { ALLQ[q.id] = q; });
+
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
 // Bộ lựa chọn Codex đã chốt cho 3 câu cụm động từ Ms Hoa (đáp án đứng đầu).
@@ -86,6 +96,31 @@ const BATCH_RULES = {
   }, after(qs, errs) {
     const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
     if (Math.min(...pos) < 7) errs.push('lô 4: đáp án lệch vị trí ' + pos.join('/'));
+  } },
+  'claude-qtypes-pilot-20261012': { count: 10, passages: [], check(q, err) {
+    if (!['listen-pick', 'order'].includes(q.type)) err('lô thử: chỉ listen-pick / order');
+    if (q.ref.basis !== 'toc' || !/tự biên soạn/.test(q.ref.note)) err('lô thử: basis toc + ghi tự biên soạn');
+    if (q.ref.contentReview) err('lô thử chưa được Codex duyệt chữ → không gắn contentReview');
+    if (q.type === 'listen-pick') {
+      const r = q.choiceImageReview || {};
+      if (r.status !== 'ok' || !Array.isArray(r.from) || r.from.length !== q.choiceImages.length) err('choiceImageReview phải ok + from đủ từng ảnh');
+      else q.choiceImages.forEach((img, i) => {
+        const src = ALLQ[r.from[i]];
+        if (!src || src.image !== img) err('ảnh ' + img + ' không khớp câu nguồn ' + r.from[i]);
+        else if (!src.imageReview || src.imageReview.status !== 'ok') err('câu nguồn ' + r.from[i] + ' chưa duyệt hình');
+        if (!fs.existsSync(path.join(__dirname, '..', img))) err('thiếu file ' + img);
+      });
+      if (q.choices.indexOf(q.audio.text) !== q.a) err('lời nghe phải trùng nhãn đáp án đúng');
+      if (q.hint && q.hint.includes(q.audio.text)) err('gợi ý chứa lời nghe');
+    }
+    if (q.type === 'order' && q.hint && q.answers.some(a => q.hint.includes(a))) err('gợi ý chứa nguyên câu');
+  }, after(qs, errs) {
+    const n = t => qs.filter(q => q.type === t).length;
+    if (n('listen-pick') !== 5 || n('order') !== 5) errs.push('lô thử: cần 5 listen-pick + 5 order');
+    const pos = new Set(qs.filter(q => q.type === 'listen-pick').map(q => q.a));
+    if (pos.size < 3) errs.push('lô thử: đáp án nghe dồn vị trí');
+    if (!qs.some(q => q.type === 'order' && q.answers.length > 1)) errs.push('lô thử: cần ≥1 câu order nhiều thứ tự đúng');
+    if (!qs.some(q => q.type === 'order' && new Set(q.tokens.map(t => t.text.toLowerCase())).size < q.tokens.length)) errs.push('lô thử: cần ≥1 câu order có từ lặp');
   } },
   'claude-nik3-lo3-giuaky-20261012': { count: 36, passages: [], check(q, err) {
     const r = q.ref;
@@ -183,8 +218,12 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     const err = m => errs.push(q.id + ': ' + m);
     // ── Chung cho mọi câu
     if (ids.has(q.id)) err('trùng id'); ids.add(q.id);
-    if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
-    if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    const qt = QT.typeOf(q);
+    if (qt !== 'mcq') QT.validate(q).forEach(m => err('[' + qt + '] ' + m));
+    if (qt !== 'order') {
+      if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
+      if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    }
     if (q.imageReview !== undefined && !q.image) err('imageReview chỉ cho câu có hình');
     if (q.review !== undefined) {
       reviewed.push(q);

@@ -94,7 +94,7 @@ const SkillReport = {
         else if (r.box >= Storage.MASTER_BOX) state = 'solid';
         else state = 'once';
       } else if (w) {
-        state = (w.lastWrong && (!w.lastCorrect || w.lastWrong > w.lastCorrect)) ? 'wrong' : 'once';
+        state = (Storage.isWrongUnresolved ? Storage.isWrongUnresolved(w) : (w.lastWrong && (!w.lastCorrect || w.lastWrong > w.lastCorrect))) ? 'wrong' : 'once';
       }
       const due = !!(r && r.box >= 1 && r.due && r.due <= now);
       const wc = (w && w.wrongCount) || 0;

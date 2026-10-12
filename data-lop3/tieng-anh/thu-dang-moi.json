@@ -1,0 +1,505 @@
+{
+  "topic": {
+    "id": "en_thu-dang-moi",
+    "icon": "🧪",
+    "name": "🧪 Thử dạng bài mới",
+    "questions": [
+      {
+        "id": "en_thu-dang-moi_q001",
+        "type": "listen-pick",
+        "q": "Listen. Which sign is it?",
+        "audio": {
+          "text": "Don't feed the animals.",
+          "lang": "en"
+        },
+        "choices": [
+          "Don't walk on the grass.",
+          "Don't ride a bike here.",
+          "Don't feed the animals.",
+          "Don't talk in the library."
+        ],
+        "choiceImages": [
+          "images/questions/lop3/en-sign-no-grass.svg",
+          "images/questions/lop3/en-sign-no-bikes.svg",
+          "images/questions/lop3/en-sign-no-feeding.svg",
+          "images/questions/lop3/en-sign-no-talking.svg"
+        ],
+        "a": 2,
+        "choiceImageReview": {
+          "status": "ok",
+          "by": "claude",
+          "date": "2026-10-12",
+          "from": [
+            "en_nik3-unit1_q055",
+            "en_nik3-unit1_q057",
+            "en_nik3-unit1_q054",
+            "en_nik3-unit1_q053"
+          ],
+          "note": "Tái dùng hình biển báo đã duyệt (imageReview ok) của câu nguồn; không vẽ hình mới."
+        },
+        "hint": "Nghe kỹ xem câu nhắc tới con vật hay đồ vật nào.",
+        "explain": "Câu nghe: \"Don't feed the animals.\" = Không cho động vật ăn.",
+        "skill": "listening-sign",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q002",
+        "type": "listen-pick",
+        "q": "Listen. Which sign is it?",
+        "audio": {
+          "text": "Don't walk on the grass.",
+          "lang": "en"
+        },
+        "choices": [
+          "Don't feed the animals.",
+          "Don't walk on the grass.",
+          "Don't sit on the stairs.",
+          "Please sit down."
+        ],
+        "choiceImages": [
+          "images/questions/lop3/en-sign-no-feeding.svg",
+          "images/questions/lop3/en-sign-no-grass.svg",
+          "images/questions/lop3/en-sign-no-sitting-stairs.svg",
+          "images/questions/lop3/en-sign-please-sit.svg"
+        ],
+        "a": 1,
+        "choiceImageReview": {
+          "status": "ok",
+          "by": "claude",
+          "date": "2026-10-12",
+          "from": [
+            "en_nik3-unit1_q054",
+            "en_nik3-unit1_q055",
+            "en_nik3-unit1_q056",
+            "en_nik3-unit1_q059"
+          ],
+          "note": "Tái dùng hình biển báo đã duyệt (imageReview ok) của câu nguồn; không vẽ hình mới."
+        },
+        "hint": "Nghe kỹ xem người ta không được đi trên cái gì.",
+        "explain": "Câu nghe: \"Don't walk on the grass.\" = Không đi trên cỏ.",
+        "skill": "listening-sign",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q003",
+        "type": "listen-pick",
+        "q": "Listen. Which sign is it?",
+        "audio": {
+          "text": "Put the trash in the bin.",
+          "lang": "en"
+        },
+        "choices": [
+          "Put the trash in the bin.",
+          "Don't ride a bike here.",
+          "Don't talk in the library.",
+          "Don't walk on the grass."
+        ],
+        "choiceImages": [
+          "images/questions/lop3/en-sign-trash-bin.svg",
+          "images/questions/lop3/en-sign-no-bikes.svg",
+          "images/questions/lop3/en-sign-no-talking.svg",
+          "images/questions/lop3/en-sign-no-grass.svg"
+        ],
+        "a": 0,
+        "choiceImageReview": {
+          "status": "ok",
+          "by": "claude",
+          "date": "2026-10-12",
+          "from": [
+            "en_nik3-unit1_q058",
+            "en_nik3-unit1_q057",
+            "en_nik3-unit1_q053",
+            "en_nik3-unit1_q055"
+          ],
+          "note": "Tái dùng hình biển báo đã duyệt (imageReview ok) của câu nguồn; không vẽ hình mới."
+        },
+        "hint": "Câu này bảo con LÀM một việc, không phải cấm.",
+        "explain": "Câu nghe: \"Put the trash in the bin.\" = Bỏ rác vào thùng.",
+        "skill": "listening-sign",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q004",
+        "type": "listen-pick",
+        "q": "Listen. Which sign is it?",
+        "audio": {
+          "text": "Don't ride a bike here.",
+          "lang": "en"
+        },
+        "choices": [
+          "Don't walk on the grass.",
+          "Put the trash in the bin.",
+          "Don't feed the animals.",
+          "Don't ride a bike here."
+        ],
+        "choiceImages": [
+          "images/questions/lop3/en-sign-no-grass.svg",
+          "images/questions/lop3/en-sign-trash-bin.svg",
+          "images/questions/lop3/en-sign-no-feeding.svg",
+          "images/questions/lop3/en-sign-no-bikes.svg"
+        ],
+        "a": 3,
+        "choiceImageReview": {
+          "status": "ok",
+          "by": "claude",
+          "date": "2026-10-12",
+          "from": [
+            "en_nik3-unit1_q055",
+            "en_nik3-unit1_q058",
+            "en_nik3-unit1_q054",
+            "en_nik3-unit1_q057"
+          ],
+          "note": "Tái dùng hình biển báo đã duyệt (imageReview ok) của câu nguồn; không vẽ hình mới."
+        },
+        "hint": "Nghe xem câu nhắc tới phương tiện nào.",
+        "explain": "Câu nghe: \"Don't ride a bike here.\" = Không đi xe đạp ở đây.",
+        "skill": "listening-sign",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q005",
+        "type": "listen-pick",
+        "q": "Listen. Which sign is it?",
+        "audio": {
+          "text": "Don't sit on the stairs.",
+          "lang": "en"
+        },
+        "choices": [
+          "Please sit down.",
+          "Don't talk in the library.",
+          "Don't sit on the stairs.",
+          "Don't ride a bike here."
+        ],
+        "choiceImages": [
+          "images/questions/lop3/en-sign-please-sit.svg",
+          "images/questions/lop3/en-sign-no-talking.svg",
+          "images/questions/lop3/en-sign-no-sitting-stairs.svg",
+          "images/questions/lop3/en-sign-no-bikes.svg"
+        ],
+        "a": 2,
+        "choiceImageReview": {
+          "status": "ok",
+          "by": "claude",
+          "date": "2026-10-12",
+          "from": [
+            "en_nik3-unit1_q059",
+            "en_nik3-unit1_q053",
+            "en_nik3-unit1_q056",
+            "en_nik3-unit1_q057"
+          ],
+          "note": "Tái dùng hình biển báo đã duyệt (imageReview ok) của câu nguồn; không vẽ hình mới."
+        },
+        "hint": "Nghe xem câu có bắt đầu bằng Don't không nhé.",
+        "explain": "Câu nghe: \"Don't sit on the stairs.\" = Không ngồi trên cầu thang.",
+        "skill": "listening-sign",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q006",
+        "type": "order",
+        "q": "Put the words in order.",
+        "tokens": [
+          {
+            "id": "t0",
+            "text": "Don't"
+          },
+          {
+            "id": "t1",
+            "text": "feed"
+          },
+          {
+            "id": "t2",
+            "text": "the"
+          },
+          {
+            "id": "t3",
+            "text": "animals"
+          }
+        ],
+        "end": ".",
+        "answers": [
+          "Don't feed the animals"
+        ],
+        "hint": "Câu cấm bắt đầu bằng thẻ có dấu nháy.",
+        "explain": "Biển báo: \"Don't feed the animals.\" = Không cho động vật ăn.",
+        "skill": "sentence-order",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q007",
+        "type": "order",
+        "q": "Put the words in order.",
+        "tokens": [
+          {
+            "id": "t0",
+            "text": "Put"
+          },
+          {
+            "id": "t1",
+            "text": "the"
+          },
+          {
+            "id": "t2",
+            "text": "trash"
+          },
+          {
+            "id": "t3",
+            "text": "in"
+          },
+          {
+            "id": "t4",
+            "text": "the"
+          },
+          {
+            "id": "t5",
+            "text": "bin"
+          }
+        ],
+        "end": ".",
+        "answers": [
+          "Put the trash in the bin"
+        ],
+        "hint": "Có hai thẻ giống nhau — mỗi thẻ đứng trước một đồ vật.",
+        "explain": "\"Put the trash in the bin.\" = Bỏ rác vào thùng.",
+        "skill": "sentence-order",
+        "difficulty": 1,
+        "unit": "nik3-unit1",
+        "book": "nik3",
+        "track": "core",
+        "stage": 1,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; nội dung và hình biển báo tái dùng từ các câu NIK3 Unit 1 đã duyệt (Ôn giữa kỳ I). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q008",
+        "type": "order",
+        "q": "Put the words in order.",
+        "tokens": [
+          {
+            "id": "t0",
+            "text": "I"
+          },
+          {
+            "id": "t1",
+            "text": "need"
+          },
+          {
+            "id": "t2",
+            "text": "a flashlight"
+          },
+          {
+            "id": "t3",
+            "text": "and"
+          },
+          {
+            "id": "t4",
+            "text": "a compass"
+          }
+        ],
+        "end": ".",
+        "answers": [
+          "I need a flashlight and a compass",
+          "I need a compass and a flashlight"
+        ],
+        "hint": "Hai đồ vật nối với nhau bằng từ and.",
+        "explain": "Câu này có hai cách xếp đúng: đổi chỗ \"a flashlight\" và \"a compass\" vẫn đúng nghĩa.",
+        "skill": "sentence-order",
+        "difficulty": 1,
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; từ vựng NIK3 Unit 3 (lô 2 đã duyệt: flashlight, compass, blanket, tent, camping stove). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q009",
+        "type": "order",
+        "q": "Put the words in order.",
+        "tokens": [
+          {
+            "id": "t0",
+            "text": "Is"
+          },
+          {
+            "id": "t1",
+            "text": "there"
+          },
+          {
+            "id": "t2",
+            "text": "a blanket"
+          },
+          {
+            "id": "t3",
+            "text": "in"
+          },
+          {
+            "id": "t4",
+            "text": "the tent"
+          }
+        ],
+        "end": "?",
+        "answers": [
+          "Is there a blanket in the tent"
+        ],
+        "hint": "Câu kết thúc bằng dấu hỏi nên là câu hỏi.",
+        "explain": "\"Is there a blanket in the tent?\" = Trong lều có cái chăn không? Câu kể là \"There is…\", câu hỏi đảo thành \"Is there…?\".",
+        "skill": "sentence-order",
+        "difficulty": 1,
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; từ vựng NIK3 Unit 3 (lô 2 đã duyệt: flashlight, compass, blanket, tent, camping stove). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      },
+      {
+        "id": "en_thu-dang-moi_q010",
+        "type": "order",
+        "q": "Put the words in order.",
+        "tokens": [
+          {
+            "id": "t0",
+            "text": "Mom"
+          },
+          {
+            "id": "t1",
+            "text": "is"
+          },
+          {
+            "id": "t2",
+            "text": "cooking"
+          },
+          {
+            "id": "t3",
+            "text": "on"
+          },
+          {
+            "id": "t4",
+            "text": "a camping stove"
+          }
+        ],
+        "end": ".",
+        "answers": [
+          "Mom is cooking on a camping stove"
+        ],
+        "hint": "Ai đang làm gì, làm ở đâu?",
+        "explain": "\"Mom is cooking on a camping stove.\" = Mẹ đang nấu ăn trên bếp cắm trại.",
+        "skill": "sentence-order",
+        "difficulty": 1,
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-qtypes-pilot-20261012",
+        "ref": {
+          "basis": "toc",
+          "note": "Câu tự biên soạn để thử dạng bài mới; từ vựng NIK3 Unit 3 (lô 2 đã duyệt: flashlight, compass, blanket, tent, camping stove). Mục lục NIK3, chưa xác nhận khớp sách trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-12"
+        }
+      }
+    ]
+  }
+}
