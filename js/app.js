@@ -20,6 +20,7 @@ const App = {
   DRAGON_REWARD_KEY: 'rabbit_shenron_unlocked',
 
   async init() {
+    this._pilotBanner();
     this._bindEvents();
     this._restoreSession();
     this._syncGradeUI();
@@ -140,6 +141,17 @@ const App = {
     }).join('');
 
     lbDiv.innerHTML = `<table class="lb-table">${rows}</table>`;
+  },
+
+  /** Chế độ thử (?pilot=1): dải báo cố định — lượt thử không ghi bảng xếp hạng/nhật ký/sao lưu. */
+  _pilotBanner() {
+    if (!window.API || !API.pilotOn || !API.pilotOn() || document.getElementById('pilotBanner')) return;
+    const b = document.createElement('div');
+    b.id = 'pilotBanner';
+    b.setAttribute('role', 'status');
+    b.style.cssText = 'background:#fff7d6;border-bottom:2px solid #f5c542;color:#6b4e00;font-weight:800;font-size:.85rem;text-align:center;padding:6px 10px';
+    b.textContent = '🧪 Chế độ thử dạng bài mới — không lưu lên mạng, không tính bảng xếp hạng';
+    document.body.insertBefore(b, document.body.firstChild);
   },
 
   showScreen(name) {
@@ -570,7 +582,10 @@ const App = {
    * Áp cho MỌI luồng chọn câu vì đều đi qua _allowedIndices / _mixEligible / Quiz.
    */
   questionReady(q) {
-    return !(q && q.image && q.imageReview && q.imageReview.status !== 'ok');
+    if (q && q.image && q.imageReview && q.imageReview.status !== 'ok') return false;
+    // Dạng bài (js/qtypes): dạng chưa hỗ trợ / sai schema / ảnh lựa chọn chưa duyệt → không dùng ở MỌI luồng
+    if (q && window.QTypes && !QTypes.ready(q)) return false;
+    return true;
   },
 
   /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài và không có câu chờ hình). */

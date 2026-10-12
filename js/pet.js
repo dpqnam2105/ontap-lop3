@@ -67,7 +67,7 @@ const Pet = {
         const list=[];
         for(const i of shuffle(idx)){
           const q=t.questions[i],qid=q&&(q.id || t.id+'_'+i);
-          if(!q||!this.isCore(q,t)||seen.has(qid)||!Array.isArray(q.choices)||q.choices.length<2||!Number.isInteger(q.a)||q.a<0||q.a>=q.choices.length)continue;
+          if(!q||!this.isCore(q,t)||seen.has(qid)||(window.QTypes&&!QTypes.isMcq(q))||!Array.isArray(q.choices)||q.choices.length<2||!Number.isInteger(q.a)||q.a<0||q.a>=q.choices.length)continue;
           seen.add(qid);list.push({...q,id:qid,_idx:i,subjectId:s.id,topicId:t.id,_subjectName:s.name,_topicName:t.name});
         }
         if(list.length)buckets.push(list);

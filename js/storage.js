@@ -404,11 +404,18 @@ const Storage = {
    * Ghi nhận kết quả 1 câu hỏi vào wrong history.
    * Gọi từ quiz.js sau mỗi câu trả lời.
    */
-  recordAnswer({ questionId, isCorrect, subjectId, topicId, question }) {
+  /**
+   * response (tuỳ chọn, từ QTypes.pack): { questionType, responseVersion, response, text }.
+   * Sai → lưu lastWrongResponse (lần đúng sau KHÔNG ghi đè, để ôn sai còn xem được câu con đã trả lời sai).
+   * Ngoài ngày (lastWrong/lastCorrect, giữ cho dữ liệu cũ) còn ghi mốc thời gian lastWrongAt/lastCorrectAt (ms)
+   * để phân biệt đúng → sai trong CÙNG một ngày (xem isWrongUnresolved).
+   */
+  recordAnswer({ questionId, isCorrect, subjectId, topicId, question, response, now }) {
     if (!questionId) return;
     try {
       const history = this.getWrongHistory();
       const today = this._getToday();
+      const ts = typeof now === 'number' ? now : Date.now();
       const existing = history[questionId] || {
         wrongCount: 0,
         lastWrong: null,
@@ -420,9 +427,20 @@ const Storage = {
 
       if (isCorrect) {
         existing.lastCorrect = today;
+        existing.lastCorrectAt = ts;
       } else {
         existing.wrongCount = (existing.wrongCount || 0) + 1;
         existing.lastWrong = today;
+        existing.lastWrongAt = ts;
+        if (response && response.questionType) {
+          existing.lastWrongResponse = {
+            questionType: response.questionType,
+            responseVersion: response.responseVersion || 1,
+            response: response.response,
+            text: String(response.text || '').slice(0, 300),
+            at: new Date(ts).toISOString()
+          };
+        }
       }
 
       // Cập nhật meta phòng khi thiếu
@@ -455,14 +473,26 @@ const Storage = {
    * Lấy danh sách câu sai rồi nhưng chưa làm lại đúng.
    * lastWrong có, lastCorrect null hoặc lastCorrect < lastWrong
    */
+  /**
+   * Câu sai chưa sửa? Ưu tiên mốc thời gian (ms); dữ liệu cũ chỉ có ngày thì so ngày như trước.
+   * - có cả lastWrongAt + lastCorrectAt: so mốc → đúng rồi sai lại cùng ngày vẫn là CHƯA sửa.
+   * - chỉ có lastWrongAt: lần sai ghi bằng code mới, mọi lần đúng cũ đều trước nó → chưa sửa.
+   * - chỉ có lastCorrectAt: lần đúng mới hơn lần sai cũ → đã sửa.
+   */
+  isWrongUnresolved(v) {
+    if (!v || !v.lastWrong) return false;
+    const w = typeof v.lastWrongAt === 'number', c = typeof v.lastCorrectAt === 'number';
+    if (w && c) return v.lastCorrectAt < v.lastWrongAt;
+    if (w) return true;
+    if (c) return false;
+    if (!v.lastCorrect) return true;
+    return v.lastCorrect < v.lastWrong;
+  },
+
   getUnresolvedWrong(limit = 50) {
     const history = this.getWrongHistory();
     return Object.entries(history)
-      .filter(([, v]) => {
-        if (!v.lastWrong) return false;
-        if (!v.lastCorrect) return true;
-        return v.lastCorrect < v.lastWrong;
-      })
+      .filter(([, v]) => this.isWrongUnresolved(v))
       .map(([questionId, v]) => ({ questionId, ...v }))
       .sort((a, b) => b.wrongCount - a.wrongCount)
       .slice(0, limit);
@@ -534,7 +564,7 @@ const Storage = {
     let pruned = 0;
     Object.keys(history).forEach(qId => {
       const v = history[qId];
-      const resolved = v.lastCorrect && (!v.lastWrong || v.lastCorrect >= v.lastWrong);
+      const resolved = !!v.lastCorrect && !this.isWrongUnresolved(v);
       const stale = v.lastWrong && v.lastWrong < cutoff;
       if (resolved && stale) {
         delete history[qId];

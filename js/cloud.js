@@ -24,7 +24,7 @@ const Cloud = {
   _syncAgain: null,
   _lastVisibleSync: 0,
 
-  enabled() { return !!this.URL; },
+  enabled() { return !!this.URL && !(window.API && API.pilotOn && API.pilotOn()); }, // chế độ thử: tắt sao lưu
   _canon(name) { return Storage.canonName(name || Storage.getActiveName() || ''); },
   // ─── Mã gia đình (chỉ cho ghi đè) ───────────────────
   getFamilyCode() {
@@ -308,6 +308,7 @@ const Cloud = {
 
   // ─── Mạng ───────────────────────────────────────────
   async fetchRemote(name) {
+    if (!this.enabled()) throw new Error('cloud off');
     const res = await fetch(this.URL + '?action=get&key=' + encodeURIComponent(this._canon(name)) + '&t=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     return res.json();
@@ -320,6 +321,7 @@ const Cloud = {
 
   /** Mọi đường gửi (tự động, nút Sao lưu ngay, sync, mở file) đều qua đây → cùng một chỗ xử lý kết quả và hẹn thử lại. */
   _send(name, opts) {
+    if (!this.enabled()) return Promise.resolve({ ok: false, error: 'off' });
     const job = this._chain
       .then(() => this._sendNow(name, opts || {}))
       .then(r => { this._onResult(r, name); return r; });
