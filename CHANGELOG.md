@@ -10,6 +10,7 @@
 - Cổng: App.questionReady chặn type chưa hỗ trợ / sai schema / ảnh lựa chọn chưa duyệt (choiceImageReview.status ok). Thử thách cún chỉ lấy mcq; bộ sinh câu và tính nhanh vẫn mcq.
 - Chủ đề thử `en_thu-dang-moi` (index.json `pilot: true`) chỉ nạp khi mở `?pilot=1`: 5 listen-pick (tái dùng hình biển báo U1 đã duyệt) + 5 order (U1 biển báo, U3 cắm trại; có câu từ lặp và câu 2 thứ tự đúng). Chưa gắn contentReview — chờ Codex duyệt chữ. Chế độ thử tắt Cloud và chặn ghi Sheets (saveScore), có dải báo.
 - Test: tests/qtypes.test.js, tests/qtypes.e2e.js (390 + 1280 px); en-data kiểm schema theo type + quy tắc lô thử. Cache 20261012qt1.
+- Sửa theo review Codex (P1, P2): `js/pilot-guard.js` nạp đầu trang — chế độ thử thay localStorage bằng vùng riêng tiền tố `pilot::` (hồ sơ thật cùng tên không đổi; không thay được thì không bật thử). `Quiz.submit` so `QTypes.responseKey` với câu vừa nộp: chọn lại đúng tranh sai, tháo rồi xếp lại y cũ, đổi chỗ hai thẻ cùng chữ → khoá Kiểm tra, không mở lần nộp 2. Test thêm (unit + e2e 145 kiểm tra). Cache 20261012qt2.
 
 ## 2026-10-12 — Merge PR #13: vẽ lại biển cầu thang (q056) và biển cho thú ăn (q054)
 - Claude rà: người ngồi rõ (đùi ngang, cẳng chân xuống bậc dưới), bàn tay cầm thức ăn rõ ở cỡ nhỏ. Mở q056 → đủ 20/20 câu có hình của lô 3.

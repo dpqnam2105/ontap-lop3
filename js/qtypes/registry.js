@@ -46,6 +46,13 @@
       return { questionType: this.typeOf(q), responseVersion: this.RESPONSE_VERSION, response: response, text: text };
     },
 
+    /** Khoá so sánh hai câu trả lời "giống nhau về nội dung" (dạng tự định nghĩa, mặc định JSON). */
+    responseKey(q, response) {
+      const T = this.forQuestion(q);
+      try { return T && T.responseKey ? String(T.responseKey(q, response)) : JSON.stringify(response == null ? null : response); }
+      catch (e) { return JSON.stringify(response == null ? null : response); }
+    },
+
     describeAnswer(q) {
       const T = this.forQuestion(q);
       try { return T ? String(T.describeAnswer(q)) : ''; } catch (e) { return ''; }

@@ -57,6 +57,7 @@ const API = {
   // để lượt thử không đụng dữ liệu học thật. ?pilot=0 để tắt. Giữ trong phiên tab (sessionStorage).
   PILOT_KEY: 'rabbit_pilot',
   pilotOn() {
+    if (typeof window.__PILOT__ === 'boolean') return window.__PILOT__;   // js/pilot-guard.js quyết định (vùng lưu riêng)
     try {
       const v = new URLSearchParams(location.search).get('pilot');
       if (v === '1') sessionStorage.setItem(this.PILOT_KEY, '1');

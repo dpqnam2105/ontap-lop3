@@ -92,6 +92,14 @@ const FAKE_SPEECH = () => {
       const det = await p.evaluate(() => Quiz.sessionDetails[Quiz.sessionDetails.length - 1]);
       eq([det.questionType, det.responseVersion, det.selectedAnswer, det.correctAnswer, det.isCorrect], ['order', 1, 'Put the bin in the trash.', 'Put the trash in the bin.', false], tag + ': chi tiết phiên');
       eq(det.response, { tokenIds: ['t0', 't1', 't5', 't3', 't4', 't2'] }, tag + ': lưu tokenIds');
+      // Codex P2: tháo hết rồi xếp lại y thứ tự cũ, hoặc đổi chỗ hai thẻ "the" (cùng chữ) → vẫn là câu trả lời cũ
+      await p.click('.od-reset'); await tap(['t0', 't1', 't5', 't3', 't4', 't2']);
+      ok((await state()).check.disabled, tag + ': xếp lại y thứ tự vừa nộp → khoá Kiểm tra');
+      eq(await p.evaluate(() => Quiz.submit().reason), 'unchanged', tag + ': submit trả unchanged');
+      await p.click('.od-reset'); await tap(['t0', 't4', 't5', 't3', 't1', 't2']);
+      ok((await state()).check.disabled, tag + ': đổi chỗ hai thẻ "the" (cùng chữ) → vẫn khoá');
+      eq(await p.evaluate(() => [Quiz._qtState.attempts, Quiz.submit().reason]), [1, 'unchanged'], tag + ': không mở lần nộp thứ hai');
+      ok(await p.isHidden('.od-solution'), tag + ': vẫn chưa lộ câu đúng');
       // sửa: Làm lại rồi xếp đúng, hai thẻ "the" đổi chỗ
       await p.click('.od-reset');
       await tap(['t0', 't4', 't2', 't3', 't1', 't5']);
@@ -168,6 +176,11 @@ const FAKE_SPEECH = () => {
       const s0 = await state();
       await p.click(`.lp-tile[data-idx="${wrongIdx}"]`); await p.click('#btnCheck');
       ok(!(await p.evaluate(() => document.getElementById('screenQuiz').innerText)).includes(lpInfo.audio), tag + ': sai lần đầu vẫn chưa lộ lời nghe');
+      // Codex P2: chạm lại đúng tranh sai → không mở lần nộp thứ hai
+      await p.click(`.lp-tile[data-idx="${wrongIdx}"]`);
+      ok((await state()).check.disabled, tag + ': chọn lại tranh vừa sai → khoá Kiểm tra');
+      eq(await p.evaluate(() => [Quiz.submit().reason, Quiz._qtState.attempts, Quiz._qtState.done]), ['unchanged', 1, false], tag + ': listen-pick không tính lần nộp 2');
+      ok(await p.isHidden('.lp-transcript'), tag + ': vẫn chưa hiện lời nghe');
       await p.click(`.lp-tile[data-idx="${lpInfo.a}"]`); await p.click('#btnCheck');
       st = await state();
       eq([st.score - s0.score, st.details - s0.details], [0, 1], tag + ': listen-pick sửa đúng không thưởng, ghi 1 lần');
@@ -217,6 +230,56 @@ const FAKE_SPEECH = () => {
       eq(gas.filter(x => x.startsWith('POST')), [], tag + ': chế độ thử không POST lên Apps Script');
       eq(errs, [], tag + ': không lỗi JS');
       await ctx.close();
+    }
+
+    // ── 10. Codex P1: chế độ thử dùng vùng lưu riêng — hồ sơ thật (cùng tên) không đổi ──
+    {
+      const ctx3 = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+      await ctx3.route('https://script.google.com/**', r => r.fulfill({ contentType: 'application/json', body: '[]' }));
+      await ctx3.addInitScript(FAKE_SPEECH);
+      const p3 = await ctx3.newPage();
+      const errs3 = []; p3.on('pageerror', e => errs3.push(e.message));
+      const BASE = URL.replace('?pilot=1', '');
+      const ready = () => p3.waitForFunction(() => window.App && App.allData && App.allData.subjects && App.allData.subjects.length);
+      const realLS = async () => {
+        const o = (await ctx3.storageState()).origins.find(x => BASE.startsWith(x.origin));
+        return Object.fromEntries(((o && o.localStorage) || []).map(e => [e.name, e.value]));
+      };
+      // hồ sơ thật "Thỏ" có dữ liệu: làm đúng 1 câu trắc nghiệm, kết thúc lượt
+      await p3.goto(BASE); await p3.waitForTimeout(600);
+      await p3.fill('#nameInput', 'Thỏ'); await p3.click('#btnStart'); await ready();
+      await p3.evaluate(() => { const s = App.allData.subjects.find(x => x.id === 'tieng-anh'); Quiz.start(s.topics.find(x => x.id === 'en_nik3-unit3'), s.name, { subjectId: s.id, allowed: [0] }); });
+      const right = await p3.evaluate(() => { const q = Quiz.questions[0]; return q.choices[q.a]; });
+      await p3.click(`#ansGrid .ans-btn:text-is("${right}")`);
+      await p3.evaluate(() => Quiz._finish()); await p3.waitForTimeout(300);
+      await p3.goto('about:blank');
+      const real0 = await realLS();
+      ok(Object.keys(real0).some(k => /Thỏ|thỏ|tho/i.test(k)), 'P1: có hồ sơ thật trước khi thử');
+      // vào chế độ thử, CÙNG tên "Thỏ", làm bài nghe + sắp xếp, kết thúc lượt
+      await p3.goto(BASE + '?pilot=1'); await p3.waitForTimeout(600);
+      eq(await p3.evaluate(() => [window.__PILOT__, Storage.load ? (Storage.load() || {}).stars || 0 : 0]), [true, 0], 'P1: chế độ thử bắt đầu với vùng lưu trống');
+      await p3.fill('#nameInput', 'Thỏ'); await p3.click('#btnStart'); await ready();
+      const openP = id => p3.evaluate(id => { const s = App.allData.subjects.find(x => x.id === 'tieng-anh'); const t = s.topics.find(x => x.id === 'en_thu-dang-moi'); Quiz.start(t, s.name, { subjectId: s.id, allowed: [t.questions.findIndex(q => q.id === id)] }); }, id);
+      await openP(LP);
+      const a = await p3.evaluate(() => Quiz.questions[0].a);
+      await p3.click(`.lp-tile[data-idx="${(a + 1) % 4}"]`); await p3.click('#btnCheck');    // sai → câu sai, lịch ôn
+      await p3.click(`.lp-tile[data-idx="${a}"]`); await p3.click('#btnCheck');
+      await openP('en_thu-dang-moi_q006');
+      for (const id of ['t0', 't1', 't2', 't3']) await p3.click(`.od-pool .od-chip[data-id="${id}"]`);
+      await p3.click('#btnCheck');
+      await p3.evaluate(() => Quiz._finish()); await p3.waitForTimeout(300);
+      const inPilot = await p3.evaluate(() => [Storage.getUnresolvedWrong().length, Quiz.sessionDetails.length]);
+      await p3.goto('about:blank');
+      const real1 = await realLS();
+      const plain = o => Object.fromEntries(Object.entries(o).filter(([k]) => !k.startsWith('pilot::')));
+      eq(plain(real1), plain(real0), 'P1: mọi khoá dữ liệu thật giữ nguyên sau lượt thử');
+      ok(Object.keys(real1).some(k => k.startsWith('pilot::')), 'P1: dữ liệu thử nằm riêng dưới pilot::');
+      ok(inPilot[0] >= 1 && inPilot[1] >= 1, 'P1: trong chế độ thử vẫn ghi bình thường (vào vùng riêng)');
+      // tắt thử: hồ sơ thật như cũ, không thấy câu sai của lượt thử
+      await p3.goto(BASE + '?pilot=0'); await p3.waitForTimeout(600);
+      eq(await p3.evaluate(() => [window.__PILOT__, Storage.getUnresolvedWrong().filter(x => /thu-dang-moi/.test(x.questionId)).length]), [false, 0], 'P1: ?pilot=0 về dữ liệu thật, không lẫn câu thử');
+      eq(errs3, [], 'P1: không lỗi JS');
+      await ctx3.close();
     }
 
     // ── 9. Không có ?pilot → chủ đề thử không nạp ──

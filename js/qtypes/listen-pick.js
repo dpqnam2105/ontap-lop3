@@ -32,6 +32,7 @@
     grade(q, r) { return { valid: true, correct: r.selectedIndex === q.a }; },
     describeResponse(q, r) { const c = (q.choices || [])[r && r.selectedIndex]; return c != null ? String(c) : ''; },
     describeAnswer(q) { return String((q.choices || [])[q.a] || ''); },
+    responseKey(q, r) { return 'i:' + (r && Number.isInteger(r.selectedIndex) ? r.selectedIndex : ''); },
     speakParts(q, slow) { return [{ text: q.audio.text, lang: q.audio.lang || 'en', rate: slow ? RATE.slow : RATE.normal }]; },
 
     render(ctx) {
