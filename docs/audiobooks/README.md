@@ -16,7 +16,7 @@ Nam xác nhận trường đồng ý cho phát sách trên web Thỏ trong hội
 | Token/expires/signature | URL không có query/token; không phải cam kết tồn tại lâu dài |
 | Kiểm lại >=24 giờ | CHƯA KIỂM; phải mở lại trang trường, so URL và phát lại trước khi kết luận độ bền |
 | Chrome desktop / Android / Safari iOS | CHƯA KIỂM trên thiết bị thật |
-| Preview Vercel | Chờ cập nhật sau khi push |
+| Preview Vercel | Build READY; chuyển hướng đăng nhập Vercel. Chưa kiểm phát từ preview; automatic approval review từ chối tạo share URL vì mở rộng quyền truy cập. Nam có thể kiểm bằng phiên đăng nhập sẵn có |
 
 ## Hành vi
 
@@ -30,3 +30,5 @@ node tests/audiobooks.test.js
 BASE_URL=http://localhost:8770/ PLAYWRIGHT_CHANNEL=msedge node tests/audiobooks.e2e.js
 
 E2E chuẩn chặn MP3 để kiểm nhánh lỗi mà không cần mạng trường. REAL_AUDIO=1 bật kiểm phát và tua nguồn thực tế; báo lỗi nếu nguồn không phát được, không tự bỏ qua.
+
+Kiểm hồi quy: home.e2e trên Edge đạt các khổ 360/390/430 và desktop; unit home đạt. E2E audiobook nhánh lỗi đạt 390/1280. Phát MP3 thật được kiểm riêng trên Edge local, không phải Safari/Chrome Android.
