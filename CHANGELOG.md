@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-14 — Tài nguyên dễ bấm trên điện thoại
+- Thêm nhãn Tài nguyên, tăng chữ liên kết lên 1rem và vùng bấm tối thiểu 44px. Menu đáy giữ nguyên.
+
 ## 2026-10-14 — Thêm Sách nói vào Tài nguyên
 - Thêm liên kết Sách nói cạnh Thư viện đọc và Video Shadowing, mở danh mục sách nói tại thư viện Tiểu học Đoàn Thị Điểm trong tab mới. Liên kết tự xuất hiện trong Tài nguyên dưới kế hoạch học trên điện thoại qua Today._resLinks().
 

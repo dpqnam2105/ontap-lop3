@@ -386,7 +386,7 @@ const Today = {
   },
 
   _resLinks() {
-    return [...document.querySelectorAll('.side-rail .rail-link')].map(a => `<a href="${a.getAttribute('href')}" target="_blank" rel="noopener noreferrer">${this._esc(a.textContent.trim())}</a>`).join('');
+    return '<span class="today-res-label">Tài nguyên:</span>' + [...document.querySelectorAll('.side-rail .rail-link')].map(a => `<a href="${a.getAttribute('href')}" target="_blank" rel="noopener noreferrer">${this._esc(a.textContent.trim())}</a>`).join('');
   },
 
   /** Lời chào đầu trang chủ (thay tiêu đề "Kho Bài Tập"). Điện thoại: avatar nhỏ + sao; máy tính: Thỏ vẫy tay. */
