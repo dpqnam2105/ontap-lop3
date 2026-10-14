@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ke-chuyen-bac-ho",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2026/8/6a90e2d428988f6bfb953377.mp3",
+    "range": "bytes 0-1/17781827",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "nhung-anh-hung-tre-tuoi-tran-van-on",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2026/4/69defd64aab632001dd273be.mp3",
+    "range": "bytes 0-1/6535791",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "nhung-anh-hung-tre-tuoi-ly-tu-trong",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6937e2db1e5c71749ae531d5.mp3",
+    "range": "bytes 0-1/25162760",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "nhung-anh-hung-tre-tuoi-vu-a-dinh",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6937a4981e5c71749ae52bc7.mp3",
+    "range": "bytes 0-1/7628323",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "nhung-anh-hung-tre-tuoi-be-van-dan",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693938a01e5c71749ae54404.mp3",
+    "range": "bytes 0-1/12095306",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-tinh-than-tuong-than-tuong-ai",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693391061e5c71749ae50d94.mp3",
+    "range": "bytes 0-1/5934986",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-phep-mau-cua-su-hop-tac",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/69338fc21e5c71749ae50d86.mp3",
+    "range": "bytes 0-1/5988509",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-la-chuyen-gia-xu-ly-rac-thai",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/69338e6e1e5c71749ae50d77.mp3",
+    "range": "bytes 0-1/7320322",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-xung-dang-duoc-tin-nhiem",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693385891e5c71749ae50d15.mp3",
+    "range": "bytes 0-1/5266206",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-phai-chu-dong-noi-ra",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693384501e5c71749ae50d07.mp3",
+    "range": "bytes 0-1/7037638",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "nhung-ngay-tet-ta",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693680ce1e5c71749ae51d7f.mp3",
+    "range": "bytes 0-1/31467550",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "vong-quanh-the-gioi-uc",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6933946f1e5c71749ae50dbe.mp3",
+    "range": "bytes 0-1/5392769",
+    "type": "audio/mpeg",
+    "status": 206
+  },
+  {
+    "id": "vong-quanh-the-gioi-phap",
+    "length": "2",
+    "url": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693393cf1e5c71749ae50db4.mp3",
+    "range": "bytes 0-1/5134154",
+    "type": "audio/mpeg",
+    "status": 206
+  }
+]

@@ -7,3 +7,5 @@
 .audiobook-dialog audio{display:block;width:100%;margin:16px 0}
 .ab-source{color:#39699e}.ab-status{margin-top:12px;min-height:3em}.ab-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.ab-tools label{display:flex;gap:8px;align-items:center}.audiobook-dialog a{display:inline-flex;align-items:center;margin-top:12px;color:#0d63d8}
 .audiobook-dialog :focus-visible{outline:3px solid #1769e0;outline-offset:3px}
+
+.ab-book-label{display:block;margin:12px 0;font-weight:800}.ab-book-label select{display:block;width:100%;max-width:100%;margin-top:8px;color:#142033}.audiobook-dialog h2{overflow-wrap:anywhere}.ab-source{margin-top:12px}
