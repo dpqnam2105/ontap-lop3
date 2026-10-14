@@ -594,8 +594,9 @@
 }
 .today-res { display: none; }
 @media (max-width: 760px) {
-  .today-res { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; font-weight: 800; font-size: 0.9rem; }
-  .today-res a { color: #0d63d8; }
+  .today-res { display: flex; justify-content: center; align-items: center; gap: 6px 10px; flex-wrap: wrap; font-weight: 800; font-size: 1rem; }
+  .today-res-label { flex-basis: 100%; text-align: center; color: #39699e; }
+  .today-res a { color: #0d63d8; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 10px; }
 }
 .lbl-short { display: none !important; }
 @media (max-width: 760px) {
