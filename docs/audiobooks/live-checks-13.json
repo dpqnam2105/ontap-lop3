@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-10-14",
+  "environment": "Edge desktop local, 390px viewport; HTTP sources tested with web Thỏ Referer",
+  "books": [
+    {
+      "id": "ke-chuyen-bac-ho",
+      "duration": 1111.364188,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "nhung-anh-hung-tre-tuoi-tran-van-on",
+      "duration": 424.646531,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "nhung-anh-hung-tre-tuoi-ly-tu-trong",
+      "duration": 857.536145,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "nhung-anh-hung-tre-tuoi-vu-a-dinh",
+      "duration": 486.968889,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "nhung-anh-hung-tre-tuoi-be-van-dan",
+      "duration": 397.966803,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "tu-sach-ren-nhan-cach-song-cho-tre-tinh-than-tuong-than-tuong-ai",
+      "duration": 370.449705,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "tu-sach-ren-nhan-cach-song-cho-tre-phep-mau-cua-su-hop-tac",
+      "duration": 369.592018,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-la-chuyen-gia-xu-ly-rac-thai",
+      "duration": 460.96254,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-xung-dang-duoc-tin-nhiem",
+      "duration": 327.88898,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "tu-sach-ren-nhan-cach-song-cho-tre-phai-chu-dong-noi-ra",
+      "duration": 439.321542,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "nhung-ngay-tet-ta",
+      "duration": 3933.413875,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "vong-quanh-the-gioi-uc",
+      "duration": 355.681814,
+      "play": true,
+      "seek": true
+    },
+    {
+      "id": "vong-quanh-the-gioi-phap",
+      "duration": 324.590295,
+      "play": true,
+      "seek": true
+    }
+  ]
+}

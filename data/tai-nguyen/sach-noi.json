@@ -1,10 +1,106 @@
 [
   {
-    "id": "ke-chuyen-bac-ho",
-    "title": "Kể chuyện Bác Hồ",
-    "group": "Lịch sử",
-    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/ke-chuyen-bac-ho-2240980",
     "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2026/8/6a90e2d428988f6bfb953377.mp3",
-    "checkedAt": "2026-10-14"
+    "id": "ke-chuyen-bac-ho",
+    "group": "Truyện và lịch sử",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/ke-chuyen-bac-ho-2240980",
+    "checkedAt": "2026-10-14",
+    "title": "Kể chuyện Bác Hồ"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2026/4/69defd64aab632001dd273be.mp3",
+    "id": "nhung-anh-hung-tre-tuoi-tran-van-on",
+    "group": "Truyện và lịch sử",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/nhung-anh-hung-tre-tuoi-tran-van-on-1999664",
+    "checkedAt": "2026-10-14",
+    "title": "Những anh hùng trẻ tuổi: Trần Văn Ơn"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6937e2db1e5c71749ae531d5.mp3",
+    "id": "nhung-anh-hung-tre-tuoi-ly-tu-trong",
+    "group": "Truyện và lịch sử",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/nhung-anh-hung-tre-tuoi-ly-tu-trong-1679212",
+    "checkedAt": "2026-10-14",
+    "title": "Những anh hùng trẻ tuổi: Lý Tự Trọng"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6937a4981e5c71749ae52bc7.mp3",
+    "id": "nhung-anh-hung-tre-tuoi-vu-a-dinh",
+    "group": "Truyện và lịch sử",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/nhung-anh-hung-tre-tuoi-vu-a-dinh-1679209",
+    "checkedAt": "2026-10-14",
+    "title": "Những anh hùng trẻ tuổi: Vừ A Dính"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693938a01e5c71749ae54404.mp3",
+    "id": "nhung-anh-hung-tre-tuoi-be-van-dan",
+    "group": "Truyện và lịch sử",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/nhung-anh-hung-tre-tuoi-be-van-dan-1679206",
+    "checkedAt": "2026-10-14",
+    "title": "Những anh hùng trẻ tuổi: Bế Văn Đàn"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693391061e5c71749ae50d94.mp3",
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-tinh-than-tuong-than-tuong-ai",
+    "group": "Kỹ năng sống",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/tu-sach-ren-nhan-cach-song-cho-tre-tinh-than-tuong-than-tuong-ai-1674078",
+    "checkedAt": "2026-10-14",
+    "title": "Tủ Sách Rèn Nhân Cách Sống Cho Trẻ - Tinh Thần Tương Thân Tương Ái"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/69338fc21e5c71749ae50d86.mp3",
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-phep-mau-cua-su-hop-tac",
+    "group": "Kỹ năng sống",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/tu-sach-ren-nhan-cach-song-cho-tre-phep-mau-cua-su-hop-tac-1674074",
+    "checkedAt": "2026-10-14",
+    "title": "Tủ sách rèn nhân cách sống cho trẻ: Phép màu của sự hợp tác"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/69338e6e1e5c71749ae50d77.mp3",
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-la-chuyen-gia-xu-ly-rac-thai",
+    "group": "Kỹ năng sống",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/tu-sach-ren-nhan-cach-song-cho-tre-toi-la-chuyen-gia-xu-ly-rac-thai-1674069",
+    "checkedAt": "2026-10-14",
+    "title": "Tủ sách rèn nhân cách sống cho trẻ: Tôi là chuyên gia xử lý rác thải"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693385891e5c71749ae50d15.mp3",
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-toi-xung-dang-duoc-tin-nhiem",
+    "group": "Kỹ năng sống",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/tu-sach-ren-nhan-cach-song-cho-tre-toi-xung-dang-duoc-tin-nhiem-1673959",
+    "checkedAt": "2026-10-14",
+    "title": "Tủ sách rèn nhân cách sống cho trẻ: Tôi xứng đáng được tín nhiệm"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693384501e5c71749ae50d07.mp3",
+    "id": "tu-sach-ren-nhan-cach-song-cho-tre-phai-chu-dong-noi-ra",
+    "group": "Kỹ năng sống",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/tu-sach-ren-nhan-cach-song-cho-tre-phai-chu-dong-noi-ra-1673952",
+    "checkedAt": "2026-10-14",
+    "title": "Tủ sách rèn nhân cách sống cho trẻ: Phải chủ động nói ra"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693680ce1e5c71749ae51d7f.mp3",
+    "id": "nhung-ngay-tet-ta",
+    "group": "Khám phá thế giới",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/nhung-ngay-tet-ta-1676256",
+    "checkedAt": "2026-10-14",
+    "title": "Những ngày Tết Ta"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/6933946f1e5c71749ae50dbe.mp3",
+    "id": "vong-quanh-the-gioi-uc",
+    "group": "Khám phá thế giới",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/vong-quanh-the-gioi-uc-1674131",
+    "checkedAt": "2026-10-14",
+    "title": "Vòng quanh Thế Giới: Úc"
+  },
+  {
+    "audioUrl": "https://media.thuvien.edu.vn/v_lib/upload/01019421/audiobook/2025/12/693393cf1e5c71749ae50db4.mp3",
+    "id": "vong-quanh-the-gioi-phap",
+    "group": "Khám phá thế giới",
+    "pageUrl": "https://thdoanthidiem.thuvien.edu.vn/tai-lieu/sach-noi/vong-quanh-the-gioi-phap-1674128",
+    "checkedAt": "2026-10-14",
+    "title": "Vòng quanh thế giới: Pháp"
   }
 ]

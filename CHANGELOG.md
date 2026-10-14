@@ -1,6 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
-## 2026-10-14 — Trình phát sách nói pilot (chờ review)
+## 2026-10-14 — Danh mục 13 sách nói (chờ review)
+- Bộ chọn 13 cuốn theo 3 nhóm; đổi sách dừng/lưu cuốn cũ, nhớ vị trí và tốc độ riêng từng sách. Chỉ tải âm thanh cuốn đang chọn. Đã kiểm HTTP Range và phát/tua thật đủ 13 nguồn trên Edge local; còn chờ Android/iOS và kiểm lại sau 24 giờ.
+
+## 2026-10-14 — Trình phát sách nói pilot (đã merge PR #16)
 - Kể chuyện Bác Hồ: phát MP3 gốc trong dialog, tua/tốc độ, nhớ vị trí theo hồ sơ trên máy; link nguồn khi lỗi. Không tự phát, không proxy, không đăng lại file. Kiểm tra và các mục chưa kiểm trong docs/audiobooks/README.md.
 
 ## 2026-10-14 — Tài nguyên dễ bấm trên điện thoại
