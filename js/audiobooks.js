@@ -78,7 +78,7 @@
   }
   document.addEventListener('click', e => {
     const a = e.target.closest('a');
-    if (!a || a.href !== catalog || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    if (!a || a.closest('.audiobook-dialog') || a.href !== catalog || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault(); open();
   });
   window.AudioBooks = { open, close, valid };

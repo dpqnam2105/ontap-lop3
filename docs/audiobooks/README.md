@@ -1,6 +1,6 @@
 # Sách nói pilot — Kể chuyện Bác Hồ
 
-Nam xác nhận trường đồng ý cho phát sách trên web Thỏ trong hội thoại ngày 2026-10-14. Chỉ dùng MP3 gốc; không tải/đăng lại MP3 hoặc ảnh bìa.
+Nam đã báo trường; Ban giám hiệu đồng ý cho phát sách nói của thư viện trên web Thỏ (Nam xác nhận 2026-10-14). Chỉ phát MP3 gốc từ máy chủ trường, ghi nguồn, không tải/đăng lại MP3 hay ảnh bìa.
 
 ## Kiểm tra 2026-10-14
 
