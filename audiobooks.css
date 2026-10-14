@@ -1,0 +1,9 @@
+.audiobook-dialog{width:min(540px,calc(100% - 24px));max-height:calc(100dvh - 32px);overflow:auto;margin:auto;border:1px solid #cfe4fa;border-radius:22px;padding:24px;color:#142033;background:#fff;font-family:var(--font-body);box-shadow:0 16px 60px #14203340}
+.audiobook-dialog::backdrop{background:#14203380}
+.audiobook-dialog h2{padding-right:40px;font-size:1.5rem;margin-bottom:12px}
+.audiobook-dialog .ab-close{position:absolute;top:12px;right:12px}
+.audiobook-dialog button,.audiobook-dialog select,.audiobook-dialog a{min-height:44px;font:inherit}
+.audiobook-dialog button,.audiobook-dialog select{border:1px solid #bcd9f5;border-radius:10px;padding:8px 12px;background:#eff7ff;color:#0d63d8;cursor:pointer}
+.audiobook-dialog audio{display:block;width:100%;margin:16px 0}
+.ab-source{color:#39699e}.ab-status{margin-top:12px;min-height:3em}.ab-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.ab-tools label{display:flex;gap:8px;align-items:center}.audiobook-dialog a{display:inline-flex;align-items:center;margin-top:12px;color:#0d63d8}
+.audiobook-dialog :focus-visible{outline:3px solid #1769e0;outline-offset:3px}
