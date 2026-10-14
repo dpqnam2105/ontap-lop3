@@ -143,6 +143,7 @@ const App = {
   },
 
   showScreen(name) {
+    if (window.AudioBooks) AudioBooks.close();
     if (window.PetView) PetView.stop();
     if (window.Speak) Speak.stop();
     if (name !== 'quiz' && window.Quiz && Quiz._stopSpeedTimer) Quiz._stopSpeedTimer();

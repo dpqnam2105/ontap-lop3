@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-14 — Trình phát sách nói pilot (chờ review)
+- Kể chuyện Bác Hồ: phát MP3 gốc trong dialog, tua/tốc độ, nhớ vị trí theo hồ sơ trên máy; link nguồn khi lỗi. Không tự phát, không proxy, không đăng lại file. Kiểm tra và các mục chưa kiểm trong docs/audiobooks/README.md.
+
 ## 2026-10-14 — Tài nguyên dễ bấm trên điện thoại
 - Thêm nhãn Tài nguyên, tăng chữ liên kết lên 1rem và vùng bấm tối thiểu 44px. Menu đáy giữ nguyên.
 

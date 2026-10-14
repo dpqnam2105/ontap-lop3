@@ -1,0 +1,5 @@
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
+const root=path.join(__dirname,'..'), books=JSON.parse(fs.readFileSync(path.join(root,'data/tai-nguyen/sach-noi.json'),'utf8'));
+const ctx={URL,window:{},document:{addEventListener(){}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'js/audiobooks.js'),'utf8'),ctx);
+assert.equal(books.length,1);const ids=new Set(),urls=new Set();for(const b of books){assert(ctx.window.AudioBooks.valid(b));assert(!ids.has(b.id));assert(!urls.has(b.pageUrl));ids.add(b.id);urls.add(b.pageUrl);assert(/^\d{4}-\d{2}-\d{2}$/.test(b.checkedAt));for(const bad of [b.audioUrl.replace('https:','http:'),b.audioUrl.replace('media.thuvien.edu.vn','example.com')])assert(!ctx.window.AudioBooks.valid({...b,audioUrl:bad}));assert(!ctx.window.AudioBooks.valid({...b,pageUrl:'https://example.com/'}));}
+console.log('audiobooks unit OK — metadata, HTTPS, allowlist, unique IDs/URLs');
