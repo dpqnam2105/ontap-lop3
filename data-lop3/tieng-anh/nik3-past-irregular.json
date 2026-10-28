@@ -1,0 +1,855 @@
+{
+  "topic": {
+    "id": "en_nik3-past-irregular",
+    "icon": "🔀",
+    "name": "NIK3 Unit 3: Động từ bất quy tắc",
+    "questions": [
+      {
+        "q": "Yesterday, my sister ___ sick, so she stayed at home.",
+        "choices": [
+          "was",
+          "be",
+          "were",
+          "is"
+        ],
+        "a": 0,
+        "hint": "Chủ ngữ là I / he / she / it hay you / we / they? Hai nhóm này dùng hai dạng quá khứ khác nhau của be.",
+        "explain": "Yesterday → quá khứ. Chủ ngữ my sister = she → was. (were dùng với you / we / they.)",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I01",
+        "irrGroup": 1,
+        "verbs": [
+          "be"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "sick (ốm)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q001"
+      },
+      {
+        "q": "Last weekend, we ___ at the zoo.",
+        "choices": [
+          "are",
+          "were",
+          "was",
+          "be"
+        ],
+        "a": 1,
+        "hint": "Chủ ngữ là I / he / she / it hay you / we / they? Hai nhóm này dùng hai dạng quá khứ khác nhau của be.",
+        "explain": "Last weekend → quá khứ. Chủ ngữ we → were.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I02",
+        "irrGroup": 1,
+        "verbs": [
+          "be"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "zoo (sở thú)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q002"
+      },
+      {
+        "q": "The school concert ___ (begin: bắt đầu) at 7 o'clock last night.",
+        "choices": [
+          "begined",
+          "begins",
+          "began",
+          "beginned"
+        ],
+        "a": 2,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "begin là động từ bất quy tắc: begin → began. Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I03",
+        "irrGroup": 1,
+        "verbs": [
+          "begin"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "concert (buổi hòa nhạc)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q003"
+      },
+      {
+        "q": "Yesterday, I ___ a pencil. I didn't ___ the ruler. (break: vỡ, gãy)",
+        "choices": [
+          "breaked / break",
+          "break / broke",
+          "broke / broke",
+          "broke / break"
+        ],
+        "a": 3,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "Câu 1 khẳng định → dạng quá khứ: broke. Câu 2 có didn't → dạng gốc: break.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I04",
+        "irrGroup": 1,
+        "verbs": [
+          "break"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "ruler (thước kẻ)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q004"
+      },
+      {
+        "q": "Last Monday, Linh ___ (bring: mang) her new book to school.",
+        "choices": [
+          "brought",
+          "bringed",
+          "brings",
+          "brang"
+        ],
+        "a": 0,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "bring → brought (đọc /brɔːt/, gh không đọc). Không có bringed, brang.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I05",
+        "irrGroup": 1,
+        "verbs": [
+          "bring"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q005"
+      },
+      {
+        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"builded\": \"Last summer, the children builded a sandcastle on the beach.\"",
+        "choices": [
+          "buildt",
+          "built",
+          "build",
+          "builted"
+        ],
+        "a": 1,
+        "hint": "Câu có từ chỉ quá khứ. Động từ bất quy tắc không thêm -ed: tìm dạng quá khứ đúng trong bảng của cô.",
+        "explain": "✅ Câu đúng: Last summer, the children built a sandcastle on the beach. — build → built (bất quy tắc, không thêm -ed).",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I06",
+        "irrGroup": 1,
+        "verbs": [
+          "build"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "sandcastle (lâu đài cát)",
+            "beach (bãi biển)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q006"
+      },
+      {
+        "q": "Which pair is correct? (động từ → quá khứ)",
+        "choices": [
+          "break → breaked",
+          "build → builded",
+          "bring → brought",
+          "begin → begined"
+        ],
+        "a": 2,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "Đúng: bring → brought. Sửa các cặp sai — \"breaked\" → \"broke\"; \"begined\" → \"began\"; \"builded\" → \"built\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I07",
+        "irrGroup": 1,
+        "verbs": [
+          "bring",
+          "break",
+          "begin",
+          "build"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 1",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q007"
+      },
+      {
+        "q": "Mom ___ (buy: mua) some apples at the market yesterday.",
+        "choices": [
+          "buys",
+          "buyed",
+          "brought",
+          "bought"
+        ],
+        "a": 3,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "buy → bought (mua). Chú ý: brought là quá khứ của bring (mang) — hai từ gần giống nhau.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I08",
+        "irrGroup": 2,
+        "verbs": [
+          "buy"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "market (chợ)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q008"
+      },
+      {
+        "q": "Last Sunday, Dad ___ (catch: bắt) a big fish in the lake.",
+        "choices": [
+          "caught",
+          "catches",
+          "catched",
+          "cought"
+        ],
+        "a": 0,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "catch → caught (c-a-u-g-h-t). Không có catched.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I09",
+        "irrGroup": 2,
+        "verbs": [
+          "catch"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "lake (hồ)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q009"
+      },
+      {
+        "q": "Yesterday, I ___ (choose: chọn) a red balloon.",
+        "choices": [
+          "chosed",
+          "chose",
+          "choosed",
+          "chooses"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "choose → chose (bớt một chữ o). Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I10",
+        "irrGroup": 2,
+        "verbs": [
+          "choose"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "balloon (bóng bay)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q010"
+      },
+      {
+        "q": "Yesterday, Ben ___ to my birthday party, but Tom didn't ___. (come: đến)",
+        "choices": [
+          "came / came",
+          "come / came",
+          "came / come",
+          "comed / come"
+        ],
+        "a": 2,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "Câu khẳng định → dạng quá khứ: came. Sau didn't → dạng gốc: come.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I11",
+        "irrGroup": 2,
+        "verbs": [
+          "come"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q011"
+      },
+      {
+        "q": "Last week, my new pencil case ___ (cost: trị giá) 20,000 dong.",
+        "choices": [
+          "coast",
+          "costed",
+          "costs",
+          "cost"
+        ],
+        "a": 3,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "cost → cost: quá khứ giống hệt dạng gốc. Last week cho biết việc đã qua.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I12",
+        "irrGroup": 2,
+        "verbs": [
+          "cost"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "pencil case (hộp bút)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q012"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "The game began at 9 o'clock.",
+          "He builded a tree house last year.",
+          "We catched a butterfly yesterday.",
+          "She choosed the blue dress."
+        ],
+        "a": 0,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "Đúng: began (begin → began). Sửa các câu sai — \"catched\" → \"caught\"; \"choosed\" → \"chose\"; \"builded\" → \"built\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I13",
+        "irrGroup": 2,
+        "verbs": [
+          "catch",
+          "choose",
+          "begin",
+          "build"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "butterfly (con bướm)",
+            "tree house (nhà trên cây)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q013"
+      },
+      {
+        "q": "Câu sau có lỗi. Giữ nghĩa buy = mua, chọn từ sửa đúng cho \"buyed\": \"Yesterday, Dad buyed a kite for me.\"",
+        "choices": [
+          "boughted",
+          "bought",
+          "buy",
+          "brought"
+        ],
+        "a": 1,
+        "hint": "Câu có từ chỉ quá khứ. Động từ bất quy tắc không thêm -ed: tìm dạng quá khứ đúng trong bảng của cô.",
+        "explain": "✅ Câu đúng: Yesterday, Dad bought a kite for me. — buy → bought (mua). brought là quá khứ của bring (mang).",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I14",
+        "irrGroup": 2,
+        "verbs": [
+          "buy",
+          "bring"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 2",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "kite (diều)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q014"
+      },
+      {
+        "q": "Yesterday, Mom ___ (cut: cắt) the cake into eight pieces.",
+        "choices": [
+          "cutted",
+          "cuted",
+          "cut",
+          "cuts"
+        ],
+        "a": 2,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "cut → cut: quá khứ giống dạng gốc. Yesterday cho biết việc đã qua.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I15",
+        "irrGroup": 3,
+        "verbs": [
+          "cut"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "piece (miếng)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q015"
+      },
+      {
+        "q": "I ___ (do: làm) my homework after dinner last night.",
+        "choices": [
+          "doed",
+          "does",
+          "dids",
+          "did"
+        ],
+        "a": 3,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "do → did. Không có doed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I16",
+        "irrGroup": 3,
+        "verbs": [
+          "do"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "homework (bài tập về nhà)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q016"
+      },
+      {
+        "q": "Last Friday, Mai ___ (draw: vẽ) a picture of her cat.",
+        "choices": [
+          "drew",
+          "drawed",
+          "drewed",
+          "draws"
+        ],
+        "a": 0,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "draw → drew. Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I17",
+        "irrGroup": 3,
+        "verbs": [
+          "draw"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "picture (bức tranh)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q017"
+      },
+      {
+        "q": "Yesterday, Uncle Tom ___ (drive: lái xe) us to the beach.",
+        "choices": [
+          "drived",
+          "drove",
+          "drives",
+          "droved"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "drive → drove. Không có drived.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I18",
+        "irrGroup": 3,
+        "verbs": [
+          "drive"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "uncle (chú, bác)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q018"
+      },
+      {
+        "q": "Last night, the baby ___ her rice. She didn't ___ her vegetables. (eat: ăn)",
+        "choices": [
+          "ate / ate",
+          "eat / ate",
+          "ate / eat",
+          "eated / eat"
+        ],
+        "a": 2,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "Câu 1 khẳng định → dạng quá khứ: ate. Câu 2 có didn't → dạng gốc: eat.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I19",
+        "irrGroup": 3,
+        "verbs": [
+          "eat"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "rice (cơm)",
+            "vegetables (rau)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q019"
+      },
+      {
+        "q": "Which pair is correct? (động từ → quá khứ)",
+        "choices": [
+          "catch → catched",
+          "cut → cutted",
+          "buy → buyed",
+          "draw → drew"
+        ],
+        "a": 3,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "Đúng: draw → drew. Sửa các cặp sai — \"catched\" → \"caught\"; \"cutted\" → \"cut\"; \"buyed\" → \"bought\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I20",
+        "irrGroup": 3,
+        "verbs": [
+          "draw",
+          "catch",
+          "cut",
+          "buy"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q020"
+      },
+      {
+        "q": "Which verb does NOT change in the past? (quá khứ giống dạng gốc)",
+        "choices": [
+          "cut",
+          "catch",
+          "come",
+          "choose"
+        ],
+        "a": 0,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "cut → cut (giữ nguyên). catch → caught, choose → chose, come → came. (cost → cost cũng giữ nguyên.)",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6-irregular-20261028",
+        "draftCode": "I21",
+        "irrGroup": 3,
+        "verbs": [
+          "cut",
+          "catch",
+          "choose",
+          "come"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" (ảnh 30.jpg, Codex đối chiếu 28/10/2026) — 30 từ, nhóm 3",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách 30 động từ bất quy tắc của trường (nghĩa theo phiếu); chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu; tránh câu của các phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-irregular_q021"
+      }
+    ]
+  }
+}

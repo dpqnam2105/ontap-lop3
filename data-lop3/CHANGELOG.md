@@ -7,6 +7,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-28 (Claude — lô 6a động từ bất quy tắc nhóm 1–3, Codex duyệt chữ)
+- tieng-anh / nik3-past-irregular (file mới) — +21 câu (q001–q021: nhóm 1 be–build, nhóm 2 buy–cost, nhóm 3 cut–eat; mỗi dạng quá khứ là đáp án ở ≥ 1 câu riêng; câu ôn tích lũy; không V3); contentReview codex-noi-dung-20261028.
+- index.json — reviewSet en-batquytac-2026 (scope stage, mockSize 12, 3 nhóm × 7).
+
 ## 2026-10-28 (Claude — lô 5 Past Simple didn't, Codex duyệt chữ)
 - tieng-anh / nik3-past-didnt (file mới) — +20 câu (q001–q020: 8 chọn dạng didn't + V, 6 chính tả/sửa lỗi, 6 đổi khẳng định ↔ phủ định); đáp án 5/5/5/5; contentReview codex-noi-dung-20261028.
 

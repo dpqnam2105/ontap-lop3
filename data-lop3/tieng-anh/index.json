@@ -39,6 +39,13 @@
       "book": "nik3"
     },
     {
+      "id": "en_nik3-past-irregular",
+      "name": "NIK3 Unit 3: Động từ bất quy tắc",
+      "file": "nik3-past-irregular.json",
+      "count": 21,
+      "book": "nik3"
+    },
+    {
       "id": "en_mshoa-e2-u6",
       "name": "Ms Hoa Explorer 2 · Unit 6: My Day",
       "file": "mshoa-e2-u6.json",
@@ -385,6 +392,63 @@
             "en_nik3-unit3_q021",
             "en_nik3-unit3_q022",
             "en_nik3-unit3_q023"
+          ],
+          "extra": []
+        }
+      ]
+    },
+    {
+      "id": "en-batquytac-2026",
+      "name": "Động từ bất quy tắc (danh sách cô)",
+      "short": "Bất quy tắc",
+      "grade": "lop3",
+      "doc": "project claude/tieng-anh-lo6-bat-quy-tac.md",
+      "imageGate": {
+        "field": "imageReview.status",
+        "mustEqual": "ok"
+      },
+      "scope": "stage",
+      "mockSize": 12,
+      "groups": [
+        {
+          "id": "g1",
+          "name": "Nhóm 1: be – build",
+          "required": [
+            "en_nik3-past-irregular_q001",
+            "en_nik3-past-irregular_q002",
+            "en_nik3-past-irregular_q003",
+            "en_nik3-past-irregular_q004",
+            "en_nik3-past-irregular_q005",
+            "en_nik3-past-irregular_q006",
+            "en_nik3-past-irregular_q007"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g2",
+          "name": "Nhóm 2: buy – cost",
+          "required": [
+            "en_nik3-past-irregular_q008",
+            "en_nik3-past-irregular_q009",
+            "en_nik3-past-irregular_q010",
+            "en_nik3-past-irregular_q011",
+            "en_nik3-past-irregular_q012",
+            "en_nik3-past-irregular_q013",
+            "en_nik3-past-irregular_q014"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g3",
+          "name": "Nhóm 3: cut – eat",
+          "required": [
+            "en_nik3-past-irregular_q015",
+            "en_nik3-past-irregular_q016",
+            "en_nik3-past-irregular_q017",
+            "en_nik3-past-irregular_q018",
+            "en_nik3-past-irregular_q019",
+            "en_nik3-past-irregular_q020",
+            "en_nik3-past-irregular_q021"
           ],
           "extra": []
         }

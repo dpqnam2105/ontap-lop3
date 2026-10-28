@@ -26,7 +26,37 @@ const LO3_OFFSCOPE = /\b(pharaohs?|tombs?|claws?|gold|treasure|archeologists?|ex
 const LO4_SHEET_SENTENCES = [/football yesterday/i, /dishes last night/i, /walk(ed)? to school in the morning/i, /movie last Sunday/i,
   /grandparents last weekend/i, /dinner for the whole family/i, /for the test\b/i, /clean(ed)? my room/i, /class at 8/i, /party last night/i,
   /basketball after school/i, /lost her toy/i, /red light/i, /at his mother/i, /museum last weekend/i, /mom with dinner/i, /computer games/i];
+// Lô 6 — động từ bất quy tắc theo danh sách 30 từ của cô (6 nhóm × 5, theo thứ tự trên phiếu).
+const IRR_ORDER = ['be', 'begin', 'break', 'bring', 'build', 'buy', 'catch', 'choose', 'come', 'cost', 'cut', 'do', 'draw', 'drive', 'eat',
+  'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave'];
+const IRR_PAST = { be: ['was', 'were'], begin: ['began'], break: ['broke'], bring: ['brought'], build: ['built'], buy: ['bought'], catch: ['caught'],
+  choose: ['chose'], come: ['came'], cost: ['cost'], cut: ['cut'], do: ['did'], draw: ['drew'], drive: ['drove'], eat: ['ate'] };
+const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten)\b/;   // V3 khác V2 — lô này chỉ luyện gốc – quá khứ
 const BATCH_RULES = {
+  'claude-nik3-lo6-irregular-20261028': { count: 21, passages: [], check(q, err) {
+    const r = q.ref;
+    if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 6: school-sheet + sources + note tự biên soạn');
+    if (r.contentReview !== 'codex-noi-dung-20261028') err('lô 6 cần contentReview codex-noi-dung-20261028');
+    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 6: nik3-unit3, nik3, core, stage 2');
+    if (q.skill !== 'past-irregular') err('lô 6: skill past-irregular');
+    if (![1, 2, 3].includes(q.irrGroup) || !Array.isArray(q.verbs) || !q.verbs.length) err('lô 6: irrGroup 1–3 + verbs');
+    else for (const v of q.verbs) if (!IRR_ORDER.includes(v) || Math.floor(IRR_ORDER.indexOf(v) / 5) + 1 > q.irrGroup) err('lô 6: từ ' + v + ' ngoài danh sách / thuộc nhóm sau');
+    if (IRR_V3.test(q.choices.join(' '))) err('lô 6: không dùng V3 làm nhiễu');
+    if (/(^|[\s(;—-])[ABCD][:.)]\s/.test(q.explain)) err('lô 6: giải thích không dùng nhãn A–D (web xáo lựa chọn)');
+    if (/smilied|builded a sandcastle|buyed a kite/.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err('lô 6: câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
+  }, after(qs, errs) {
+    // Mỗi dạng quá khứ của 15 từ nhóm 1–3 phải là đáp án đúng ở ≥ 1 câu riêng (1 động từ) thuộc nhóm mình
+    for (const [v, forms] of Object.entries(IRR_PAST)) for (const f of forms) {
+      const g = Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
+      if (!qs.some(q => q.irrGroup === g && q.verbs.length === 1 && q.verbs[0] === v && new RegExp('\\b' + f + '\\b').test(q.choices[q.a]))) errs.push('lô 6: chưa kiểm dạng quá khứ ' + v + ' → ' + f);
+    }
+    const set = (IDX.reviewSets || []).find(x => x.id === 'en-batquytac-2026');
+    if (!set || set.scope !== 'stage' || set.mockSize !== 12) errs.push('lô 6: reviewSet en-batquytac-2026 cần scope stage, mockSize 12');
+    else set.groups.forEach((gr, i) => {
+      const want = qs.filter(q => q.irrGroup === i + 1).map(q => q.id).sort();
+      if (JSON.stringify([...gr.required].sort()) !== JSON.stringify(want)) errs.push('lô 6: nhóm ' + (i + 1) + ' lệch danh sách câu');
+    });
+  } },
   'claude-nik3-lo5-didnt-20261028': { count: 20, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 5: school-sheet + sources + note tự biên soạn');

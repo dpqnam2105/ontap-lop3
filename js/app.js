@@ -820,15 +820,25 @@ const App = {
   // Câu vẫn nằm ở chủ đề gốc (giữ ID, tiến độ, lịch sử sai). Chỉ dùng câu qua cổng duyệt (_mixEligible:
   // đã rà + hình đã duyệt). Không lọc theo giai đoạn: danh sách đã chốt đúng phạm vi đề thi.
   // required = phần bắt buộc; extra = bài thêm, chỉ chạy khi bé tự bấm, không tự mở.
+  // set.scope === 'stage': bộ theo bài đang học (vd Động từ bất quy tắc) — chỉ lấy câu trong phạm vi
+  // giai đoạn / sách đã chọn (_allowedIndices); bộ giữa kỳ không đặt scope nên giữ nguyên hành vi cũ.
   REVIEW_SET_SESSION: 20,
 
-  _reviewSetHits(s, ids) {
+  _reviewSetHits(s, ids, set) {
     const map = new Map();
     (s.topics || []).forEach(t => (t.questions || []).forEach((q, i) => { if (q && q.id) map.set(q.id, { t, q, i }); }));
+    const scoped = set && set.scope === 'stage';
+    const allowedOf = new Map();
+    const inScope = h => {
+      if (!scoped) return true;
+      if (!allowedOf.has(h.t)) { const a = this._allowedIndices(s, h.t); allowedOf.set(h.t, a === null ? null : new Set(a)); }
+      const a = allowedOf.get(h.t);
+      return a === null || a.has(h.i);
+    };
     const out = [];
     (ids || []).forEach(id => {
       const h = map.get(id);
-      if (h && this._mixEligible(s, h.q)) out.push(h);
+      if (h && this._mixEligible(s, h.q) && inScope(h)) out.push(h);
     });
     return out;
   },
@@ -864,7 +874,7 @@ const App = {
   /** Đề thử: rút đều theo nhóm (xoay vòng), chỉ phần bắt buộc, không lặp ID. */
   _reviewSetMock(s, set) {
     const n = set.mockSize || this.REVIEW_SET_SESSION;
-    const buckets = this._shuffled((set.groups || []).map(g => this._shuffled(this._reviewSetHits(s, g.required))).filter(b => b.length));
+    const buckets = this._shuffled((set.groups || []).map(g => this._shuffled(this._reviewSetHits(s, g.required, set))).filter(b => b.length));
     const out = [], seen = new Set();
     for (let round = 0; out.length < n && buckets.some(b => b.length > round); round++) {
       for (const b of buckets) {
@@ -882,7 +892,7 @@ const App = {
     try { wrong = Storage.getUnresolvedWrong ? Storage.getUnresolvedWrong(200) : []; } catch (e) { wrong = []; }
     const inSet = new Set((set.groups || []).flatMap(g => (g.required || []).concat(g.extra || [])));
     const ids = [...new Set(wrong.map(w => w.questionId).filter(id => inSet.has(id)))];
-    return this._reviewSetHits(s, ids);
+    return this._reviewSetHits(s, ids, set);
   },
 
   _reviewSetKey(s, set) {
@@ -891,12 +901,12 @@ const App = {
   },
 
   _renderReviewSetCard(s, set) {
-    const groups = (set.groups || []).map(g => ({ g, req: this._reviewSetHits(s, g.required), ext: this._reviewSetHits(s, g.extra) }));
+    const groups = (set.groups || []).map(g => ({ g, req: this._reviewSetHits(s, g.required, set), ext: this._reviewSetHits(s, g.extra, set) }));
     const nReq = groups.reduce((n, x) => n + x.req.length, 0);
     if (nReq < 5) return null;
     const nExt = groups.reduce((n, x) => n + x.ext.length, 0);
     const listed = (set.groups || []).reduce((n, g) => n + (g.required || []).length, 0);
-    const waiting = listed - nReq;
+    const waiting = set.scope === 'stage' ? 0 : listed - nReq; // bộ theo giai đoạn: câu ngoài phạm vi không phải 'chờ hình'
     const key = this._reviewSetKey(s, set);
     let best = null;
     try { best = (Storage.get('weeklyMix') || {})[key] || null; } catch (e) { best = null; }

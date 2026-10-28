@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-28 — Tiếng Anh: Động từ bất quy tắc nhóm 1–3 (lô 6a) + thẻ ôn theo nhóm
+- Chủ đề mới "NIK3 Unit 3: Động từ bất quy tắc" (21 câu, 15 từ đầu danh sách cô, Giai đoạn 2), Codex duyệt chữ.
+- Thẻ "Động từ bất quy tắc (danh sách cô)" sau Ôn tổng hợp: ôn Nhóm 1/2/3, đề thử 12 câu (4/nhóm), ôn câu sai. reviewSets có tùy chọn scope "stage": chỉ lấy câu trong giai đoạn đang chọn (GĐ1 không thấy thẻ); bộ Ôn giữa kỳ giữ hành vi cũ. Test mới en-irregular (5), quy tắc lô 6 trong en-data, nhãn kỹ năng past-irregular.
+
 ## 2026-10-28 — Tiếng Anh: chủ đề mới Quá khứ đơn – didn't (lô 5)
 - Thêm chủ đề NIK3 Unit 3 "Quá khứ đơn – didn't" (20 câu, Giai đoạn 2), Codex duyệt chữ: chọn dạng didn't + động từ gốc, sửa lỗi chính tả thật của Thỏ (didin't, smilied, sdudy), đổi khẳng định ↔ phủ định giữ thì quá khứ. Test en-data có quy tắc riêng lô 5; nhãn kỹ năng past-negative.
 
