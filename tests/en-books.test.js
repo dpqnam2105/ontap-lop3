@@ -69,10 +69,10 @@ const tests = {
     const elig = () => b.J(`${S}.topics.flatMap(t => t.questions.filter(q => App._mixEligible(${S}, q)).map(q => q.id))`);
     unconfirm(b);
     const e1 = new Set(elig());
-    assert.strictEqual(e1.size, 34 + 23 + 23 + 36); // lô 1, U3, Ms Hoa, lô 3: đủ 20 hình đã duyệt (q056 vẽ lại ở PR #13)
+    assert.strictEqual(e1.size, 34 + 23 + 23 + 36 + 30); // lô 1, U3, Ms Hoa, lô 3 (đủ 20 hình đã duyệt), lô 4 Past -ed
     confirm(b);
     const e2 = new Set(elig());
-    assert.strictEqual(e2.size, 116 + 101); // + 71 ok + 30 fixed
+    assert.strictEqual(e2.size, 146 + 101); // + 71 ok + 30 fixed
     assert.ok(b.J(`${S}.topics.flatMap(t => t.questions).filter(q => q.source === 'claude-audit-20260924')`).every(q => !e2.has(q.id)));
   },
   async 'chặn trước: câu có contentReview nhưng review pending / rejected → bị loại; lượt rà đã xác nhận cũng không cứu được câu pending'() {

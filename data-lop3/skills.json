@@ -259,7 +259,9 @@
    "jobs": "Nghề nghiệp",
    "movement": "Từ chỉ chuyển động (up, down, along, around)",
    "directions": "Chỉ đường, đọc bản đồ",
-   "spelling": "Chính tả"
+   "spelling": "Chính tả",
+   "past-ed": "Quá khứ đơn: thêm -ed",
+   "past-time": "Từ chỉ thời gian quá khứ"
   },
   "toan-tieng-anh": {
    "numbers": "Numbers – số đếm",

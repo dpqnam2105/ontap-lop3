@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-28 — Tiếng Anh: chủ đề mới Quá khứ đơn – thêm -ed (lô 4)
+- Thêm chủ đề NIK3 Unit 3 "Quá khứ đơn – thêm -ed" (30 câu, Giai đoạn 2), Codex duyệt chữ. Test en-data có quy tắc riêng lô 4 (basis school-sheet, chặn câu phiếu trường); nhãn kỹ năng past-ed / past-time cho báo cáo phụ huynh.
+
 ## 2026-10-14 — Danh mục 13 sách nói (chờ review)
 - Bộ chọn 13 cuốn theo 3 nhóm; đổi sách dừng/lưu cuốn cũ, nhớ vị trí và tốc độ riêng từng sách. Chỉ tải âm thanh cuốn đang chọn. Đã kiểm HTTP Range và phát/tua thật đủ 13 nguồn trên Edge local; còn chờ Android/iOS và kiểm lại sau 24 giờ.
 

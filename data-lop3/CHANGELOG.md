@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-28 (Claude — lô 4 Past Simple -ed, Codex duyệt chữ)
+- tieng-anh / nik3-past-ed (file mới) — +30 câu (q001–q030: 5 quy tắc thêm -ed, nhận biết từ chỉ thời gian quá khứ); contentReview codex-noi-dung-20261028. Đổi P05 (help Grandpa in the garden) và P21 (last Saturday) để không gần câu phiếu trường 23/10.
+
 ## 2026-10-12 (Claude — lô 3 ôn giữa kỳ I Tiếng Anh, Codex duyệt chữ)
 - tieng-anh / nik3-unit1 — +23 câu (q039–q061: từ vựng U1, chuyển động, chỉ đường, biển báo); 18 câu có hình đang chờ duyệt hình.
 - tieng-anh / nik3-unit2 — +4 câu (q041–q044: chính tả extinct/herbivore, dead/extinct); sửa nhiễu q001, q002, q004, q005, q031.

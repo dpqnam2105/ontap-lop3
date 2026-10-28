@@ -1,0 +1,1157 @@
+{
+  "topic": {
+    "id": "en_nik3-past-ed",
+    "icon": "⏪",
+    "name": "NIK3 Unit 3: Quá khứ đơn – thêm -ed",
+    "questions": [
+      {
+        "q": "Yesterday, it ___ (rain) all day.",
+        "choices": [
+          "rained",
+          "rain",
+          "rains",
+          "raining"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "Yesterday (hôm qua) → việc đã xảy ra → động từ quá khứ: rain + ed = rained (trời mưa).",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P01",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 1: phần lớn động từ thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "rain (mưa)",
+            "all day"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q001"
+      },
+      {
+        "q": "We ___ (camp: cắm trại) near the river last summer.",
+        "choices": [
+          "camp",
+          "camped",
+          "campped",
+          "camping"
+        ],
+        "a": 1,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "last summer → quá khứ. camp tận cùng m-p (hai phụ âm) → chỉ thêm -ed: camped. Không gấp đôi chữ p.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P02",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 1: phần lớn động từ thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "camp (cắm trại)",
+            "river",
+            "summer"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q002"
+      },
+      {
+        "q": "Yesterday, Mai ___ (open) the window.",
+        "choices": [
+          "openned",
+          "open",
+          "opened",
+          "opens"
+        ],
+        "a": 2,
+        "hint": "Bước 1: từ chỉ thời gian cho biết việc đã xảy ra chưa? Bước 2: quy tắc gấp đôi chữ cuối dùng cho từ 1 âm tiết; với từ 2 âm tiết phải xem trọng âm rơi vào âm nào.",
+        "explain": "Yesterday → quá khứ: open + ed = opened. open có 2 âm tiết (O-pen), trọng âm ở âm đầu → KHÔNG gấp đôi chữ n.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P03",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 1: phần lớn động từ thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "window"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q003"
+      },
+      {
+        "q": "\"jump\" in the past is:",
+        "choices": [
+          "jumpped",
+          "jump",
+          "jumping",
+          "jumped"
+        ],
+        "a": 3,
+        "hint": "Cuối động từ có e? phụ âm + y? nguyên âm + y? · Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "jump + ed = jumped. Hai phụ âm cuối (m-p) → không gấp đôi.",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P04",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 1: phần lớn động từ thêm -ed",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q004"
+      },
+      {
+        "q": "Yesterday, I ___ (help) Grandpa in the garden.",
+        "choices": [
+          "helped",
+          "help",
+          "helps",
+          "helping"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "Yesterday (hôm qua) → quá khứ: help + ed = helped.",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P05",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 1: phần lớn động từ thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "garden"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q005"
+      },
+      {
+        "q": "\"like\" in the past is:",
+        "choices": [
+          "likeed",
+          "liked",
+          "likked",
+          "likes"
+        ],
+        "a": 1,
+        "hint": "Cuối động từ có e? phụ âm + y? nguyên âm + y? · Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "like tận cùng bằng e → chỉ thêm -d: liked. \"likeed\" thừa chữ e.",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P06",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 2: tận cùng e → chỉ thêm -d",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q006"
+      },
+      {
+        "q": "Last Sunday, Mom and I ___ (bake: nướng bánh) a big cake.",
+        "choices": [
+          "bakeed",
+          "bake",
+          "baked",
+          "baking"
+        ],
+        "a": 2,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "Last Sunday → quá khứ. bake tận cùng e → thêm -d: baked (nướng bánh).",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P07",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 2: tận cùng e → chỉ thêm -d",
+          "toc": [],
+          "extraWords": [
+            "bake (nướng bánh)",
+            "cake"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q007"
+      },
+      {
+        "q": "The baby ___ (wave: vẫy tay) at me yesterday.",
+        "choices": [
+          "waveed",
+          "wavved",
+          "waves",
+          "waved"
+        ],
+        "a": 3,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "wave (vẫy tay) tận cùng e → thêm -d: waved. Không gấp đôi chữ v.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P08",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 2: tận cùng e → chỉ thêm -d",
+          "toc": [],
+          "extraWords": [
+            "wave (vẫy tay)",
+            "baby"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q008"
+      },
+      {
+        "q": "We ___ (use) a map to find the museum last week.",
+        "choices": [
+          "used",
+          "useed",
+          "uses",
+          "using"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "last week → quá khứ. use tận cùng e → thêm -d: used.",
+        "difficulty": 1,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P09",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 2: tận cùng e → chỉ thêm -d",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q009"
+      },
+      {
+        "q": "Last winter, we ___ (skate: trượt băng) on the ice.",
+        "choices": [
+          "skateed",
+          "skated",
+          "skatted",
+          "skate"
+        ],
+        "a": 1,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "skate (trượt băng) tận cùng e → thêm -d: skated. Không gấp đôi chữ t.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P10",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 2: tận cùng e → chỉ thêm -d",
+          "toc": [],
+          "extraWords": [
+            "skate (trượt băng)",
+            "winter",
+            "ice"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q010"
+      },
+      {
+        "q": "\"copy\" (chép lại) in the past is:",
+        "choices": [
+          "copyed",
+          "copies",
+          "copied",
+          "copyied"
+        ],
+        "a": 2,
+        "hint": "Cuối động từ có e? phụ âm + y? nguyên âm + y? · Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "copy: trước y là phụ âm p → bỏ y, thêm -ied: copied (chép lại).",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P11",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 3: phụ âm + y → bỏ y, thêm -ied",
+          "toc": [],
+          "extraWords": [
+            "copy (chép)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q011"
+      },
+      {
+        "q": "Yesterday, Linh ___ (tidy: dọn gọn) her room. It is very clean now.",
+        "choices": [
+          "tidyed",
+          "tidies",
+          "tidy",
+          "tidied"
+        ],
+        "a": 3,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "tidy (dọn gọn): trước y là phụ âm d → bỏ y, thêm -ied: tidied.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P12",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 3: phụ âm + y → bỏ y, thêm -ied",
+          "toc": [],
+          "extraWords": [
+            "tidy (dọn gọn)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q012"
+      },
+      {
+        "q": "Last night, Dad ___ (fry: rán) some eggs for dinner.",
+        "choices": [
+          "fried",
+          "fryed",
+          "fries",
+          "fry"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "fry (rán): trước y là phụ âm r → bỏ y, thêm -ied: fried.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P13",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 3: phụ âm + y → bỏ y, thêm -ied",
+          "toc": [],
+          "extraWords": [
+            "fry (rán)",
+            "egg",
+            "dinner"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q013"
+      },
+      {
+        "q": "I ___ (worry: lo lắng) about the test last week.",
+        "choices": [
+          "worryed",
+          "worried",
+          "worries",
+          "worry"
+        ],
+        "a": 1,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "worry (lo lắng): trước y là phụ âm r → bỏ y, thêm -ied: worried.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P14",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 3: phụ âm + y → bỏ y, thêm -ied",
+          "toc": [],
+          "extraWords": [
+            "worry (lo lắng)",
+            "test"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q014"
+      },
+      {
+        "q": "\"dry\" (làm khô) in the past is:",
+        "choices": [
+          "dryed",
+          "dries",
+          "dried",
+          "drying"
+        ],
+        "a": 2,
+        "hint": "Cuối động từ có e? phụ âm + y? nguyên âm + y? · Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "dry (làm khô, phơi khô): trước y là phụ âm r → bỏ y, thêm -ied: dried.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P15",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 3: phụ âm + y → bỏ y, thêm -ied",
+          "toc": [],
+          "extraWords": [
+            "dry (phơi khô)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q015"
+      },
+      {
+        "q": "The rabbit ___ (hop: nhảy) into the garden yesterday.",
+        "choices": [
+          "hoped",
+          "hops",
+          "hopping",
+          "hopped"
+        ],
+        "a": 3,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "hop (nhảy lò cò) theo mẫu phụ âm–nguyên âm–phụ âm → gấp đôi p: hopped. \"hoped\" là quá khứ của hope (hy vọng) — nghĩa khác.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P16",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 4: 1 âm tiết, phụ âm–nguyên âm–phụ âm → gấp đôi phụ âm cuối + -ed (không gấp đôi w, x, y)",
+          "toc": [],
+          "extraWords": [
+            "hop (nhảy)",
+            "garden"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q016"
+      },
+      {
+        "q": "Yesterday, Grandma ___ (hug: ôm) me.",
+        "choices": [
+          "hugged",
+          "huged",
+          "hugs",
+          "hugging"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "hug (ôm) → gấp đôi g rồi thêm -ed: hugged.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P17",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 4: 1 âm tiết, phụ âm–nguyên âm–phụ âm → gấp đôi phụ âm cuối + -ed (không gấp đôi w, x, y)",
+          "toc": [],
+          "extraWords": [
+            "hug (ôm)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q017"
+      },
+      {
+        "q": "Oh no! I ___ (drop: làm rơi) my ice cream on the floor yesterday.",
+        "choices": [
+          "droped",
+          "dropped",
+          "drops",
+          "dropping"
+        ],
+        "a": 1,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "drop (làm rơi) → gấp đôi p: dropped.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P18",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 4: 1 âm tiết, phụ âm–nguyên âm–phụ âm → gấp đôi phụ âm cuối + -ed (không gấp đôi w, x, y)",
+          "toc": [],
+          "extraWords": [
+            "drop (làm rơi)",
+            "ice cream",
+            "floor"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q018"
+      },
+      {
+        "q": "We ___ (chat: trò chuyện) with our friends after school yesterday.",
+        "choices": [
+          "chated",
+          "chats",
+          "chatted",
+          "chatting"
+        ],
+        "a": 2,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "chat (trò chuyện) → gấp đôi t: chatted.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P19",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 4: 1 âm tiết, phụ âm–nguyên âm–phụ âm → gấp đôi phụ âm cuối + -ed (không gấp đôi w, x, y)",
+          "toc": [],
+          "extraWords": [
+            "chat (trò chuyện)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q019"
+      },
+      {
+        "q": "Yesterday, Tom ___ (nod: gật đầu) his head to say \"yes\".",
+        "choices": [
+          "noded",
+          "nods",
+          "nodding",
+          "nodded"
+        ],
+        "a": 3,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "Yesterday → quá khứ. nod (gật đầu): 1 âm tiết, kết thúc n-o-d (phụ âm – nguyên âm – phụ âm) → gấp đôi d rồi thêm -ed: nodded.",
+        "difficulty": 3,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P20",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 4: 1 âm tiết, phụ âm–nguyên âm–phụ âm → gấp đôi phụ âm cuối + -ed (không gấp đôi w, x, y)",
+          "toc": [],
+          "extraWords": [
+            "nod (gật đầu)",
+            "head"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q020"
+      },
+      {
+        "q": "The children ___ (play) in the park last Saturday.",
+        "choices": [
+          "played",
+          "plaied",
+          "plays",
+          "playing"
+        ],
+        "a": 0,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "play: trước y là nguyên âm a → giữ y, thêm -ed: played. \"plaied\" sai vì chỉ đổi y → i khi trước y là phụ âm.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P21",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 5: nguyên âm + y → giữ y, thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "park"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q021"
+      },
+      {
+        "q": "Last weekend, our family ___ (stay) at a campsite near the lake.",
+        "choices": [
+          "staied",
+          "stayed",
+          "stays",
+          "staying"
+        ],
+        "a": 1,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "stay (ở lại): trước y là nguyên âm a → giữ y, thêm -ed: stayed.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P22",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 5: nguyên âm + y → giữ y, thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "lake"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q022"
+      },
+      {
+        "q": "I ___ (enjoy) the trip to the art gallery last month.",
+        "choices": [
+          "enjoied",
+          "enjoys",
+          "enjoyed",
+          "enjoying"
+        ],
+        "a": 2,
+        "hint": "B1: Từ chỉ thời gian cho biết việc đã xảy ra chưa? · B2: Cuối động từ có e? phụ âm + y? nguyên âm + y? · B3: Từ 1 âm tiết: xét mẫu phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "enjoy (thích thú): trước y là nguyên âm o → giữ y, thêm -ed: enjoyed.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P23",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 5: nguyên âm + y → giữ y, thêm -ed",
+          "toc": [],
+          "extraWords": [
+            "trip",
+            "month"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q023"
+      },
+      {
+        "q": "Which verb keeps the \"y\" and just adds -ed?",
+        "choices": [
+          "cry",
+          "copy",
+          "tidy",
+          "play"
+        ],
+        "a": 3,
+        "hint": "Nhìn chữ cái đứng ngay trước y của từng từ: phụ âm hay nguyên âm?",
+        "explain": "play: trước y là nguyên âm a → played. cry, copy, tidy: trước y là phụ âm → cried, copied, tidied.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P24",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Quy tắc 5: nguyên âm + y → giữ y, thêm -ed",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q024"
+      },
+      {
+        "q": "Which verb doubles its last letter before -ed?",
+        "choices": [
+          "hug",
+          "jump",
+          "like",
+          "stay"
+        ],
+        "a": 0,
+        "hint": "Tìm từ 1 âm tiết tận cùng bằng phụ âm – nguyên âm – phụ âm; không gấp đôi w, x, y ở cuối.",
+        "explain": "hug (h-u-g) → hugged. jump → jumped (hai phụ âm cuối), like → liked (có e), stay → stayed (nguyên âm + y).",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P25",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Phân loại",
+          "toc": [],
+          "extraWords": [
+            "hug (ôm)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q025"
+      },
+      {
+        "q": "Which verb only adds -d (because it already ends in \"e\")?",
+        "choices": [
+          "cook",
+          "bake",
+          "cry",
+          "hop"
+        ],
+        "a": 1,
+        "hint": "Từ nào đã có chữ e ở cuối?",
+        "explain": "bake → baked. cook → cooked, cry → cried, hop → hopped.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P26",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Phân loại",
+          "toc": [],
+          "extraWords": [
+            "bake (nướng bánh)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q026"
+      },
+      {
+        "q": "Which word is spelled correctly?",
+        "choices": [
+          "cryed",
+          "likeed",
+          "dropped",
+          "plaied"
+        ],
+        "a": 2,
+        "hint": "Kiểm tra từng từ theo các quy tắc: có e sẵn? phụ âm + y? nguyên âm + y? gấp đôi?",
+        "explain": "dropped đúng (drop → gấp đôi p). Sửa: cryed → cried, likeed → liked, plaied → played.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P27",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Tổng hợp",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q027"
+      },
+      {
+        "q": "Which word is spelled correctly?",
+        "choices": [
+          "hopeed",
+          "chated",
+          "enjoied",
+          "tidied"
+        ],
+        "a": 3,
+        "hint": "Kiểm tra từng từ theo các quy tắc: có e sẵn? phụ âm + y? nguyên âm + y? gấp đôi?",
+        "explain": "tidied đúng. Sửa: hopeed → hoped, chated → chatted, enjoied → enjoyed.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P28",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Tổng hợp",
+          "toc": [],
+          "extraWords": [
+            "tidy (dọn gọn)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q028"
+      },
+      {
+        "q": "Which sentence is about the past?",
+        "choices": [
+          "I painted a picture yesterday.",
+          "I paint a picture every day.",
+          "I am painting a picture now.",
+          "I paint pictures on Sundays."
+        ],
+        "a": 0,
+        "hint": "Tìm câu có từ chỉ thời gian đã qua và động từ có đuôi quá khứ.",
+        "explain": "yesterday + painted → việc đã xảy ra. every day, on Sundays: việc thường làm; now + am painting: đang làm.",
+        "difficulty": 1,
+        "skill": "past-time",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P29",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Thời gian",
+          "toc": [],
+          "extraWords": [
+            "paint (vẽ, tô màu)",
+            "picture"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q029"
+      },
+      {
+        "q": "We picked flowers in the garden ___.",
+        "choices": [
+          "next week",
+          "yesterday",
+          "now",
+          "tomorrow"
+        ],
+        "a": 1,
+        "hint": "picked là động từ quá khứ. Từ chỉ thời gian nào hợp với việc đã xảy ra?",
+        "explain": "\"picked\" diễn tả việc đã xảy ra; trong các lựa chọn, \"yesterday\" phù hợp. \"next week\" và \"tomorrow\" chỉ tương lai; \"now\" chỉ hiện tại.",
+        "difficulty": 1,
+        "skill": "past-time",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo4-past-ed-20261022",
+        "draftCode": "P30",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu bài về nhà của trường \"PAST SIMPLE – Adding -ED for regular verbs\" (ảnh Nam gửi 22/10/2026)",
+            "NIK3 U3: verb + -ed",
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026) — chỉ để tránh trùng câu"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (quy tắc thêm -ed cho động từ có quy tắc); tránh câu của phiếu bài về nhà 22/10 và phiếu Positive/Negative 23/10. Động từ nguyên âm + y (play, stay, enjoy) trùng bảng phiếu nhưng câu khác.",
+          "rule": "Thời gian",
+          "toc": [],
+          "extraWords": [
+            "pick (hái)",
+            "flower",
+            "garden"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-ed_q030"
+      }
+    ]
+  }
+}

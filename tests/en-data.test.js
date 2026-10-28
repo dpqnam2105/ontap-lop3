@@ -9,7 +9,8 @@ const TRACKS = new Set(['core', 'foundation', 'enrich']);
 const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // Cơ sở nguồn: toc = theo mục lục; school-weekly = lịch/nội dung tuần của trường; page = đã đối chiếu trang sách thật.
 // school-midterm = phạm vi đề thi giữa kỳ theo tài liệu trường (phiếu ôn GV, tờ tranh GV, Review); câu vẫn tự biên soạn.
-const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm']);
+// school-sheet = phạm vi theo phiếu bài tập trường phát (ảnh Nam gửi); câu tự biên soạn, tránh câu của phiếu.
+const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet']);
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
@@ -21,7 +22,25 @@ const MSHOA_LOCKED = {
 };
 // Lô 3 — ôn giữa kỳ I: từ ngoài phạm vi cô không được hiện trong chữ bé thấy (đề + lựa chọn).
 const LO3_OFFSCOPE = /\b(pharaohs?|tombs?|claws?|gold|treasure|archeologists?|exhibits?|thie(f|ves)|dig|mask|pyramid|has to|have to|steps)\b/i;
+// Lô 4 — Past Simple thêm -ed: câu của phiếu trường (22/10, 23/10) không được chép sang kho.
+const LO4_SHEET_SENTENCES = [/football yesterday/i, /dishes last night/i, /walk(ed)? to school in the morning/i, /movie last Sunday/i,
+  /grandparents last weekend/i, /dinner for the whole family/i, /for the test\b/i, /clean(ed)? my room/i, /class at 8/i, /party last night/i,
+  /basketball after school/i, /lost her toy/i, /red light/i, /at his mother/i, /museum last weekend/i, /mom with dinner/i, /computer games/i];
 const BATCH_RULES = {
+  'claude-nik3-lo4-past-ed-20261022': { count: 30, passages: [], check(q, err) {
+    const r = q.ref;
+    if (r.basis !== 'school-sheet') err('lô 4 phải basis school-sheet');
+    if (!Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 4: cần sources + note tự biên soạn');
+    if (r.contentReview !== 'codex-noi-dung-20261028') err('lô 4 cần contentReview codex-noi-dung-20261028');
+    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 4: nik3-unit3, nik3, core, stage 2');
+    if (!['past-ed', 'past-time'].includes(q.skill)) err('lô 4: skill past-ed / past-time');
+    if (q.image) err('lô 4 không có hình');
+    if (LO4_SHEET_SENTENCES.some(re => re.test(q.q))) err('lô 4: trùng câu phiếu trường');
+    if (q.skill === 'past-ed' && q.q.includes('___') && !/\(\w+(: [^)]+)?\)/.test(q.q)) err('câu điền phải có động từ gốc trong ngoặc');
+  }, after(qs, errs) {
+    const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
+    if (Math.min(...pos) < 7) errs.push('lô 4: đáp án lệch vị trí ' + pos.join('/'));
+  } },
   'claude-nik3-lo3-giuaky-20261012': { count: 36, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-midterm') err('lô 3 phải basis school-midterm');
