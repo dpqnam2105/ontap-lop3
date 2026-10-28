@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-28 — Tiếng Anh: chủ đề mới Quá khứ đơn – didn't (lô 5)
+- Thêm chủ đề NIK3 Unit 3 "Quá khứ đơn – didn't" (20 câu, Giai đoạn 2), Codex duyệt chữ: chọn dạng didn't + động từ gốc, sửa lỗi chính tả thật của Thỏ (didin't, smilied, sdudy), đổi khẳng định ↔ phủ định giữ thì quá khứ. Test en-data có quy tắc riêng lô 5; nhãn kỹ năng past-negative.
+
 ## 2026-10-28 — Tiếng Anh: chủ đề mới Quá khứ đơn – thêm -ed (lô 4)
 - Thêm chủ đề NIK3 Unit 3 "Quá khứ đơn – thêm -ed" (30 câu, Giai đoạn 2), Codex duyệt chữ. Test en-data có quy tắc riêng lô 4 (basis school-sheet, chặn câu phiếu trường); nhãn kỹ năng past-ed / past-time cho báo cáo phụ huynh.
 

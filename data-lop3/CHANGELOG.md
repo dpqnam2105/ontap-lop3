@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-10-28 (Claude — lô 5 Past Simple didn't, Codex duyệt chữ)
+- tieng-anh / nik3-past-didnt (file mới) — +20 câu (q001–q020: 8 chọn dạng didn't + V, 6 chính tả/sửa lỗi, 6 đổi khẳng định ↔ phủ định); đáp án 5/5/5/5; contentReview codex-noi-dung-20261028.
+
 ## 2026-10-28 (Claude — lô 4 Past Simple -ed, Codex duyệt chữ)
 - tieng-anh / nik3-past-ed (file mới) — +30 câu (q001–q030: 5 quy tắc thêm -ed, nhận biết từ chỉ thời gian quá khứ); contentReview codex-noi-dung-20261028. Đổi P05 (help Grandpa in the garden) và P21 (last Saturday) để không gần câu phiếu trường 23/10.
 

@@ -32,6 +32,13 @@
       "book": "nik3"
     },
     {
+      "id": "en_nik3-past-didnt",
+      "name": "NIK3 Unit 3: Quá khứ đơn – didn't",
+      "file": "nik3-past-didnt.json",
+      "count": 20,
+      "book": "nik3"
+    },
+    {
       "id": "en_mshoa-e2-u6",
       "name": "Ms Hoa Explorer 2 · Unit 6: My Day",
       "file": "mshoa-e2-u6.json",

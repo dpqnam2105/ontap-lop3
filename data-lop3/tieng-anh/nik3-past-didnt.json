@@ -1,0 +1,742 @@
+{
+  "topic": {
+    "id": "en_nik3-past-didnt",
+    "icon": "🚫",
+    "name": "NIK3 Unit 3: Quá khứ đơn – didn't",
+    "questions": [
+      {
+        "q": "It was sunny yesterday. It ___ (not rain).",
+        "choices": [
+          "didn't rain",
+          "doesn't rain",
+          "not rained",
+          "didn't rained"
+        ],
+        "a": 0,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Yesterday → quá khứ. Phủ định: didn't + động từ gốc: didn't rain. Sau didn't không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N01",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q001"
+      },
+      {
+        "q": "Last night, Mai ___ (not open) the window. It was cold.",
+        "choices": [
+          "don't open",
+          "didn't opened",
+          "didn't open",
+          "not opened"
+        ],
+        "a": 2,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Last night → quá khứ: didn't open. \"didn't opened\" sai vì sau didn't động từ giữ nguyên.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N02",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "cold (lạnh)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q002"
+      },
+      {
+        "q": "The rabbit ___ (not hop: nhảy) into the garden yesterday.",
+        "choices": [
+          "doesn't hop",
+          "didn't hop",
+          "didn't hopping",
+          "didn't hopped"
+        ],
+        "a": 1,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "didn't + hop (gốc, một chữ p). hopped chỉ dùng ở câu khẳng định: The rabbit hopped.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N03",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "garden"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q003"
+      },
+      {
+        "q": "We ___ (not stay) at a hotel last summer. We camped by the lake.",
+        "choices": [
+          "didn't stay",
+          "didn't stayed",
+          "don't stay",
+          "not stayed"
+        ],
+        "a": 0,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Last summer → quá khứ. Phủ định: didn't stay. Câu sau là khẳng định nên có -ed: camped.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N04",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "hotel (khách sạn)",
+            "lake (hồ)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q004"
+      },
+      {
+        "q": "Dad ___ (not fry: rán) any eggs yesterday morning.",
+        "choices": [
+          "doesn't fry",
+          "didn't fried",
+          "didn't fry",
+          "didn't fryed"
+        ],
+        "a": 2,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Sau didn't động từ trở về gốc: fry (không fried, không fryed).",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N05",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "any"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q005"
+      },
+      {
+        "q": "Last Sunday, Tom ___ (not tidy: dọn gọn) his room.",
+        "choices": [
+          "doesn't tidy",
+          "not tidy",
+          "didn't tidied",
+          "didn't tidy"
+        ],
+        "a": 3,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Last Sunday → quá khứ: didn't tidy. \"not tidy\" sai vì thiếu trợ động từ did: phủ định quá khứ phải là did + not (didn't) + động từ gốc.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N06",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q006"
+      },
+      {
+        "q": "The children ___ (not kick) the ball in the classroom yesterday.",
+        "choices": [
+          "didn't kicking",
+          "didn't kick",
+          "didn't kicked",
+          "don't kick"
+        ],
+        "a": 1,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "Yesterday → quá khứ: didn't kick. Sau didn't không thêm -ed, không thêm -ing.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N07",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "classroom"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q007"
+      },
+      {
+        "q": "Linh ___ (not wait) for the bus yesterday. She walked home.",
+        "choices": [
+          "doesn't wait",
+          "not waited",
+          "didn't waited",
+          "didn't wait"
+        ],
+        "a": 3,
+        "hint": "Câu phủ định ở quá khứ: \"did not\" viết gọn thành từ nào? Sau từ đó, động từ để dạng gốc hay dạng có -ed?",
+        "explain": "didn't + wait. Câu sau khẳng định nên có -ed: walked.",
+        "difficulty": 1,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N08",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "bus"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q008"
+      },
+      {
+        "q": "Which word is spelled correctly? (did not)",
+        "choices": [
+          "did'nt",
+          "didnt'",
+          "didn't",
+          "didin't"
+        ],
+        "a": 2,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "did + n't = didn't: một chữ i, dấu nháy đứng giữa n và t (thay cho chữ o của not).",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N09",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q009"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "We didn't chat after lunch.",
+          "We don't chatted after lunch.",
+          "We didn't chatted after lunch.",
+          "We didin't chat after lunch."
+        ],
+        "a": 0,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "✅ Câu đúng: We didn't chat after lunch. — didn't viết đúng chính tả + chat (gốc). Các câu kia: thêm -ed sau didn't, viết sai didin't, dùng don't với -ed.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N10",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "lunch (bữa trưa)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q010"
+      },
+      {
+        "q": "Câu sau có lỗi. Chọn cách sửa đúng: \"Last night, Grandma didn't baked a cake.\"",
+        "choices": [
+          "Last night, Grandma don't bake a cake.",
+          "Last night, Grandma didn't bake a cake.",
+          "Last night, Grandma not baked a cake.",
+          "Last night, Grandma didn't bakeed a cake."
+        ],
+        "a": 1,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "✅ Câu đúng: Last night, Grandma didn't bake a cake. — Sau didn't, động từ về dạng gốc: bake. Không dùng don't cho việc tối qua.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N11",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q011"
+      },
+      {
+        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"smilied\": \"Yesterday, the baby smilied at me.\"",
+        "choices": [
+          "smileed",
+          "smilyed",
+          "smilled",
+          "smiled"
+        ],
+        "a": 3,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "✅ Câu đúng: Yesterday, the baby smiled at me. — smile tận cùng bằng e → chỉ thêm d: smiled. Không có chữ i thêm vào.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N12",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "baby"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q012"
+      },
+      {
+        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"paint\": \"Last weekend, Dad paint our door.\"",
+        "choices": [
+          "painted",
+          "painting",
+          "paints",
+          "paintted"
+        ],
+        "a": 0,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "✅ Câu đúng: Last weekend, Dad painted our door. — Last weekend → câu khẳng định ở quá khứ → động từ phải có -ed: painted. paint tận cùng 2 phụ âm (n, t) nên không gấp đôi.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N13",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "door (cửa)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q013"
+      },
+      {
+        "q": "Which word is spelled correctly? (study → past)",
+        "choices": [
+          "studdied",
+          "studyed",
+          "studied",
+          "sdudied"
+        ],
+        "a": 2,
+        "hint": "Soát từng chữ: dạng viết gọn của \"did not\" có mấy chữ i, dấu nháy nằm ở đâu? Sau từ phủ định quá khứ, động từ có thêm -ed không? Câu khẳng định có từ chỉ quá khứ thì động từ cần gì?",
+        "explain": "s-t-u-d-y: phụ âm d + y → bỏ y, thêm -ied: studied. Chú ý chữ thứ hai là t, không phải d.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N14",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q014"
+      },
+      {
+        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"We picked apples.\" → We ___ apples.",
+        "choices": [
+          "don't pick",
+          "didn't pick",
+          "didn't picked",
+          "didn't picking"
+        ],
+        "a": 1,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "picked → bỏ -ed → pick: We didn't pick apples.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N15",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "pick (hái)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q015"
+      },
+      {
+        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Tom dropped his cup.\" → Tom ___ his cup.",
+        "choices": [
+          "didn't dropped",
+          "didn't dropp",
+          "doesn't drop",
+          "didn't drop"
+        ],
+        "a": 3,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "dropped → bỏ -ed và bỏ một chữ p → drop: Tom didn't drop his cup.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N16",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "drop (làm rơi)",
+            "cup"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q016"
+      },
+      {
+        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Mom hugged me.\" → Mom ___ me.",
+        "choices": [
+          "didn't hug",
+          "didn't hugg",
+          "doesn't hug",
+          "didn't hugged"
+        ],
+        "a": 0,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "hugged → hug (bỏ -ed, bỏ một chữ g): Mom didn't hug me.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N17",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "hug (ôm)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q017"
+      },
+      {
+        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Ben copied the new words.\" → Ben ___ the new words.",
+        "choices": [
+          "doesn't copy",
+          "didn't copy",
+          "didn't copie",
+          "didn't copied"
+        ],
+        "a": 1,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "copied → ied trở lại y → copy: Ben didn't copy the new words.",
+        "difficulty": 2,
+        "skill": "past-negative",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N18",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "copy (chép lại)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q018"
+      },
+      {
+        "q": "Đổi sang câu khẳng định, giữ thì quá khứ: \"Lan didn't laugh.\" → Lan ___.",
+        "choices": [
+          "laughs",
+          "didn't laughed",
+          "laughed",
+          "laughted"
+        ],
+        "a": 2,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "Bỏ didn't, thêm -ed vào động từ: laugh → laughed.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N19",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "laugh (cười to)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q019"
+      },
+      {
+        "q": "Đổi sang câu khẳng định, giữ thì quá khứ: \"We didn't skate on the ice.\" → We ___ on the ice.",
+        "choices": [
+          "skate",
+          "skatted",
+          "skateed",
+          "skated"
+        ],
+        "a": 3,
+        "hint": "Giữ thì quá khứ. Sang phủ định: thêm từ phủ định quá khứ, rồi đưa động từ về dạng gốc (không chỉ cắt đuôi máy móc: nhớ chữ e cuối, chữ gấp đôi, ied ↔ y). Sang khẳng định: bỏ từ phủ định, viết động từ ở dạng quá khứ.",
+        "explain": "Bỏ didn't; skate tận cùng e → chỉ thêm d: skated.",
+        "difficulty": 2,
+        "skill": "past-ed",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo5-didnt-20261028",
+        "draftCode": "N20",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"PAST SIMPLE – Positive and Negative sentences\" (Thỏ làm 23/10/2026), phần 3–4 didn't",
+            "Phiếu U3 Grammar 1 / 1.2 (WS5, WS6) — phạm vi didn't + V",
+            "NIK3 U3: did / didn't"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu (didn't + động từ gốc, đối chiếu khẳng định – phủ định, lỗi chính tả thật của Thỏ); chỉ dùng động từ có quy tắc, tránh câu và động từ phủ định của phiếu trường.",
+          "toc": [],
+          "extraWords": [
+            "skate (trượt băng)",
+            "ice (băng)"
+          ],
+          "by": "claude",
+          "date": "2026-10-28",
+          "contentReview": "codex-noi-dung-20261028"
+        },
+        "id": "en_nik3-past-didnt_q020"
+      }
+    ]
+  }
+}

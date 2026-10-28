@@ -27,6 +27,22 @@ const LO4_SHEET_SENTENCES = [/football yesterday/i, /dishes last night/i, /walk(
   /grandparents last weekend/i, /dinner for the whole family/i, /for the test\b/i, /clean(ed)? my room/i, /class at 8/i, /party last night/i,
   /basketball after school/i, /lost her toy/i, /red light/i, /at his mother/i, /museum last weekend/i, /mom with dinner/i, /computer games/i];
 const BATCH_RULES = {
+  'claude-nik3-lo5-didnt-20261028': { count: 20, passages: [], check(q, err) {
+    const r = q.ref;
+    if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 5: school-sheet + sources + note tự biên soạn');
+    if (r.contentReview !== 'codex-noi-dung-20261028') err('lô 5 cần contentReview codex-noi-dung-20261028');
+    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 5: nik3-unit3, nik3, core, stage 2');
+    if (!['past-negative', 'past-ed'].includes(q.skill)) err('lô 5: skill past-negative / past-ed');
+    if (q.image) err('lô 5 không có hình');
+    if (LO4_SHEET_SENTENCES.some(re => re.test(q.q))) err('lô 5: trùng câu phiếu trường');
+    // Câu có lỗi để sửa: phải báo rõ và giải thích mở đầu bằng câu đúng
+    if (/smilied|didn't baked|Dad paint /.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err('lô 5: câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
+    if (/" → /.test(q.q) && !/^Đổi sang câu (phủ định|khẳng định), giữ thì quá khứ/.test(q.q)) err('lô 5: câu đổi phải ghi rõ hướng đổi và giữ thì quá khứ');
+    if (/(this|tomorrow) morning/.test(q.q)) err('lô 5: mốc thời gian phải rõ quá khứ');
+  }, after(qs, errs) {
+    const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
+    if (pos.some(n => n !== 5)) errs.push('lô 5: đáp án cần 5/5/5/5, có ' + pos.join('/'));
+  } },
   'claude-nik3-lo4-past-ed-20261022': { count: 30, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-sheet') err('lô 4 phải basis school-sheet');
