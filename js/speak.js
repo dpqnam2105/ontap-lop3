@@ -134,7 +134,7 @@ const Speak = {
 
   _parts() {
     const q = this._q;
-    if (!q) return [];
+    if (!q || q._spNoHelp) return [];
     // Dạng mới: tự quyết đọc gì (vd. sắp xếp câu chỉ đọc đề; nghe-chọn-tranh không dùng nút này)
     const T = this._type();
     if (T && !T.legacy) return T.readAloud === false || !T.speakParts ? [] : T.speakParts(q);
@@ -168,7 +168,7 @@ const Speak = {
     }
     const lang = this._q ? this.detect(this._q.q, this._hint) : this._hint;
     const T = this._type();
-    const ok = this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang) && !(T && T.readAloud === false);
+    const ok = !(this._q && this._q._spNoHelp) && this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang) && !(T && T.readAloud === false);
     btn.classList.toggle('hidden', !ok);
     this._setBtnState(this._speaking);
   },

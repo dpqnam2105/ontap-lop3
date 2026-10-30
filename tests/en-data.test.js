@@ -15,7 +15,7 @@ const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school
 // Sổ dạng bài (js/qtypes) — kiểm schema theo type, không nới lỏng chung cho mọi câu.
 const vm = require('vm');
 const QCTX = { console }; QCTX.globalThis = QCTX; vm.createContext(QCTX);
-for (const f of ['registry', 'listen-pick', 'order']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'js', 'qtypes', f + '.js'), 'utf8'), QCTX);
+for (const f of ['registry', 'listen-pick', 'order', 'spell-fix']) vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'js', 'qtypes', f + '.js'), 'utf8'), QCTX);
 const QT = QCTX.QTypes;
 // Mọi câu tiếng Anh theo id (để đối chiếu hình nguồn của lô thử dạng mới)
 const ALLQ = {};

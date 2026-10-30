@@ -54,5 +54,5 @@ for (const q of K) {
 for (const t of T.pilot.targets) ok(bank[t.checkId] && t.practiceIds.every(id => bank[id]), 'bảng targets trỏ đúng id: ' + t.targetId);
 // pilot chưa được liệt kê trong index.json (chỉ mở sau khi tích hợp ?pilot=1)
 const idx = JSON.parse(fs.readFileSync(path.join(DIR, 'index.json'), 'utf8'));
-ok(!JSON.stringify(idx).includes('pilot-spell-fix'), 'chưa vào index.json');
+const item=idx.topics.find(t=>t.id===T.id);ok(item && item.pilot===true && item.manualOnly===true && item.count===16,'index: pilot + manualOnly + count');
 console.log('✔ pilot sửa chính tả: ' + n + ' kiểm tra đạt');

@@ -127,6 +127,7 @@ const API = {
           const t = d && d.topic;
           // Nhãn chia giáo trình ghi ở index.json (book) → gắn vào chủ đề
           if (t && wanted[i].book !== undefined) t.book = wanted[i].book;
+          if (t && wanted[i].manualOnly) t.manualOnly = true;
           return t;
         })
         .filter(t => t && Array.isArray(t.questions) && t.questions.length > 0);

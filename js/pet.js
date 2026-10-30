@@ -47,6 +47,7 @@ const Pet = {
     return typeof old?.name==='string' && old.name.trim() ? old.name.trim().slice(0,20) : 'Cún Nâu';
   },
   isCore(q,t) {
+    if(q.pilotCheck || q.type==='spell-fix' || (t && t.manualOnly)) return false;
     if (q.track) return q.track==='core';
     if (t.track) return t.track==='core';
     // Untagged legacy questions in established core topics remain eligible.

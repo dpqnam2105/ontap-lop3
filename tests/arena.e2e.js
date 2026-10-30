@@ -14,6 +14,8 @@ const URL = process.env.BASE_URL || 'http://localhost:8765/';
   // Huy hiệu cũ ở mức Rùa (chưa có phạm vi)
   await p.evaluate(() => { const d = TableGen.getSpeed(); d.level.passed[1] = '2026-10-01'; d.level.unlocked = 2; TableGen.saveSpeed(d); });
   await p.evaluate(() => App.showScreen('arena')); await p.waitForTimeout(1200);
+  // Wait for asynchronous bank/render readiness rather than treating an empty chip list as all tables selected.
+  await p.waitForFunction(() => document.querySelectorAll('#arenaBody .drill-chip').length === 8);
   // Chỉ chọn bảng 3, nhóm "Quan hệ phép nhân", mức Ốc sên
   const chips = await p.$$eval('#arenaBody .drill-chip', els => els.map(e => ({ t: +e.dataset.t, on: e.classList.contains('on') })));
   for (const c of chips) if ((c.t === 3) !== c.on) await p.click(`#arenaBody .drill-chip[data-t="${c.t}"]`);

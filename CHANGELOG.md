@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-31 — Pilot sửa chính tả (chờ Claude review)
+- Tích hợp khung dạng bài Đợt 0 và 13 mục sửa chữ/12 từ sau `?pilot=1`, dùng hồ sơ thử tách biệt. Có đo trước, luyện có trợ giúp, đo lại từ ngày thứ 3; giữ kết quả theo ID và tiếp tục lượt dở sau tải lại.
+- Lượt luyện và lượt đo không ghi hộp thành thạo, lịch sử lỗi sai, tiến độ chủ đề hay kế hoạch hôm nay. Sao/XP vẫn theo lần trả lời đầu của Quiz, chỉ trong hồ sơ thử. Câu trắc nghiệm thường giữ luồng cũ.
+- Câu kiểm tra tắt gợi ý/đọc đề; sửa chữ một thao tác, chấp nhận mọi vị trí tạo cùng từ; kết quả ghi số lần thử, mức trợ giúp và thời gian. Không vào luồng tự động. Chi tiết: docs/spell-pilot-integration.md.
+
 ## 2026-10-28 — Tiếng Anh: Động từ bất quy tắc nhóm 1–3 (lô 6a) + thẻ ôn theo nhóm
 - Chủ đề mới "NIK3 Unit 3: Động từ bất quy tắc" (21 câu, 15 từ đầu danh sách cô, Giai đoạn 2), Codex duyệt chữ.
 - Thẻ "Động từ bất quy tắc (danh sách cô)" sau Ôn tổng hợp: ôn Nhóm 1/2/3, đề thử 12 câu (4/nhóm), ôn câu sai. reviewSets có tùy chọn scope "stage": chỉ lấy câu trong giai đoạn đang chọn (GĐ1 không thấy thẻ); bộ Ôn giữa kỳ giữ hành vi cũ. Test mới en-irregular (5), quy tắc lô 6 trong en-data, nhãn kỹ năng past-irregular.
