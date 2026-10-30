@@ -565,6 +565,7 @@ const Today = {
   relaunch() {
     const l = Quiz._lastLaunch;
     if (!l) { this.startExtra(); return; }
+    if (l.type === 'spelling' && window.SpellPilot) { SpellPilot.start(l.kind); return; }
     if (l.type === 'wrong') Quiz.startWrongReview(l.limit);
     else if (l.type === 'pool') Quiz.startReviewPool(this._reviewPool(8));
     else if (l.type === 'mixed') Quiz.startMixed(l.pool, l.subjectName, l.subjectId, l.mixKey, null, l.options || undefined);

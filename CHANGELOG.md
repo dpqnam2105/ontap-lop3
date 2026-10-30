@@ -1,5 +1,11 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-10-31 — PR #18: pilot sửa chính tả đã được Claude duyệt
+- Chỉ hiện khi mở `?pilot=1`; bé dùng website bình thường không thấy pilot. Claude review `162f474`: không có lỗi chặn; đã chạy thêm Chromium (spell-pilot 102, qtypes 145, gen/home/arena).
+- Tích hợp khung dạng bài Đợt 0 và 13 mục sửa chữ/12 từ sau `?pilot=1`, dùng hồ sơ thử tách biệt. Có đo trước, luyện có trợ giúp, đo lại từ ngày thứ 3; giữ kết quả theo ID và tiếp tục lượt dở sau tải lại.
+- Lượt luyện và lượt đo không ghi hộp thành thạo, lịch sử lỗi sai, tiến độ chủ đề hay kế hoạch hôm nay. Sao/XP vẫn theo lần trả lời đầu của Quiz, chỉ trong hồ sơ thử. Câu trắc nghiệm thường giữ luồng cũ.
+- Câu kiểm tra tắt gợi ý/đọc đề; sửa chữ một thao tác, chấp nhận mọi vị trí tạo cùng từ; kết quả ghi số lần thử, mức trợ giúp và thời gian. Không vào luồng tự động. Chi tiết: docs/spell-pilot-integration.md.
+
 ## 2026-10-28 — Tiếng Anh: Động từ bất quy tắc nhóm 1–3 (lô 6a) + thẻ ôn theo nhóm
 - Chủ đề mới "NIK3 Unit 3: Động từ bất quy tắc" (21 câu, 15 từ đầu danh sách cô, Giai đoạn 2), Codex duyệt chữ.
 - Thẻ "Động từ bất quy tắc (danh sách cô)" sau Ôn tổng hợp: ôn Nhóm 1/2/3, đề thử 12 câu (4/nhóm), ôn câu sai. reviewSets có tùy chọn scope "stage": chỉ lấy câu trong giai đoạn đang chọn (GĐ1 không thấy thẻ); bộ Ôn giữa kỳ giữ hành vi cũ. Test mới en-irregular (5), quy tắc lô 6 trong en-data, nhãn kỹ năng past-irregular.
@@ -22,6 +28,18 @@
 ## 2026-10-14 — Thêm Sách nói vào Tài nguyên
 - Thêm liên kết Sách nói cạnh Thư viện đọc và Video Shadowing, mở danh mục sách nói tại thư viện Tiểu học Đoàn Thị Điểm trong tab mới. Liên kết tự xuất hiện trong Tài nguyên dưới kế hoạch học trên điện thoại qua Today._resLinks().
 
+
+## 2026-10-12 — Dạng bài mới Đợt 0 + bản thử A/B (nhánh feat/dang-bai-moi-dot0, chờ Codex review)
+- Sổ dạng bài `js/qtypes/` (registry, listen-pick, order). Câu không có `type` = mcq, vẫn đi đường render/chấm cũ. Hợp đồng: validateQuestion / validateResponse / grade / describeResponse / describeAnswer / render → controller (getResponse, showResult, lock, unlock, destroy).
+- `Quiz.submit()`: renderer chỉ đưa câu trả lời; Quiz validate → grade → ghi. Ghi học tập/thưởng đúng 1 lần theo lần nộp đầu (`_recordFirst`, `_award` dùng chung với mcq). Chống nộp đôi / nộp lặp khi chưa đổi gì / callback trễ của câu cũ. Chưa đủ thẻ → khoá Kiểm tra, không tính sai. Luyện tập: sai 2 lần thì hiện câu đúng; Kiểm tra: 1 lần nộp, không tô từng phần, không hiện câu đúng. `_retry` chỉ củng cố.
+- Lưu: sessionDetails thêm questionType, responseVersion, response (giữ selectedAnswer/correctAnswer dạng chuỗi); wrongHistory thêm lastWrongResponse (lần đúng không ghi đè), lastWrongAt/lastCorrectAt.
+- Sửa lỗi cũ: đúng rồi sai lại TRONG CÙNG NGÀY bị coi là đã sửa. `Storage.isWrongUnresolved` so mốc thời gian, dữ liệu cũ chỉ có ngày vẫn đọc như trước; dùng ở storage, table-gen, skill-report, parent-dashboard.
+- LearningEngine nhận `graded {correct, valid}` + `questionType` cho dạng mới (không selectedIndex giả; chỉ valid:false mới gắn invalid-answer); mcq giữ nguyên.
+- Speak: dạng tự quyết đọc gì (listen-pick ẩn nút 🔊 chung, order chỉ đọc đề); hỗ trợ tốc độ (nghe vừa 0.85 / chậm 0.6).
+- Cổng: App.questionReady chặn type chưa hỗ trợ / sai schema / ảnh lựa chọn chưa duyệt (choiceImageReview.status ok). Thử thách cún chỉ lấy mcq; bộ sinh câu và tính nhanh vẫn mcq.
+- Chủ đề thử `en_thu-dang-moi` (index.json `pilot: true`) chỉ nạp khi mở `?pilot=1`: 5 listen-pick (tái dùng hình biển báo U1 đã duyệt) + 5 order (U1 biển báo, U3 cắm trại; có câu từ lặp và câu 2 thứ tự đúng). Chưa gắn contentReview — chờ Codex duyệt chữ. Chế độ thử tắt Cloud và chặn ghi Sheets (saveScore), có dải báo.
+- Test: tests/qtypes.test.js, tests/qtypes.e2e.js (390 + 1280 px); en-data kiểm schema theo type + quy tắc lô thử. Cache 20261012qt1.
+- Sửa theo review Codex (P1, P2): `js/pilot-guard.js` nạp đầu trang — chế độ thử thay localStorage bằng vùng riêng tiền tố `pilot::` (hồ sơ thật cùng tên không đổi; không thay được thì không bật thử). `Quiz.submit` so `QTypes.responseKey` với câu vừa nộp: chọn lại đúng tranh sai, tháo rồi xếp lại y cũ, đổi chỗ hai thẻ cùng chữ → khoá Kiểm tra, không mở lần nộp 2. Test thêm (unit + e2e 145 kiểm tra). Cache 20261012qt2.
 
 ## 2026-10-12 — Merge PR #13: vẽ lại biển cầu thang (q056) và biển cho thú ăn (q054)
 - Claude rà: người ngồi rõ (đùi ngang, cẳng chân xuống bậc dưới), bàn tay cầm thức ăn rõ ở cỡ nhỏ. Mở q056 → đủ 20/20 câu có hình của lô 3.

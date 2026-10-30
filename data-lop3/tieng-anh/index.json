@@ -121,6 +121,23 @@
       "file": "on-tap-tong-hop.json",
       "count": 12,
       "book": "nen"
+    },
+    {
+      "id": "en_thu-dang-moi",
+      "name": "🧪 Thử dạng bài mới",
+      "file": "thu-dang-moi.json",
+      "count": 10,
+      "book": "nen",
+      "pilot": true
+    },
+    {
+      "id": "en_pilot-spell-fix",
+      "name": "Thử: Sửa chính tả",
+      "file": "pilot-spell-fix.json",
+      "count": 16,
+      "book": "nen",
+      "pilot": true,
+      "manualOnly": true
     }
   ],
   "books": [

@@ -169,13 +169,20 @@ function diversify(items, count) {
   return picked;
 }
 
-function recordAnswer({ learnerId = 'default', question, selectedIndex, startedAt, usedHint = false, visibilityChanges = 0 }) {
+/**
+ * Ghi 1 lần trả lời ĐẦU TIÊN của câu.
+ * - Trắc nghiệm cũ: truyền selectedIndex (tự so với question.a như trước).
+ * - Dạng mới (js/qtypes): Quiz đã chấm → truyền graded = { correct, valid } và questionType; không dùng selectedIndex giả.
+ *   valid === false (câu trả lời không hợp lệ) mới gắn 'invalid-answer'. Câu chưa trả lời không gọi hàm này.
+ */
+function recordAnswer({ learnerId = 'default', question, selectedIndex, graded = null, questionType = 'mcq', startedAt, usedHint = false, visibilityChanges = 0 }) {
   const state = loadLearningState();
   const learner = getLearner(state, learnerId);
   const now = Date.now();
   const elapsedMs = Math.max(0, now - (startedAt || now));
-  const correct = selectedIndex === question.a;
-  const cheat = detectSuspicion({ question, elapsedMs, usedHint, visibilityChanges, selectedIndex });
+  const hasGrade = !!graded && typeof graded.correct === 'boolean';
+  const correct = hasGrade ? graded.correct : selectedIndex === question.a;
+  const cheat = detectSuspicion({ question, elapsedMs, usedHint, visibilityChanges, selectedIndex, graded: hasGrade ? graded : null });
 
   updateQuestionStats(learner, question, correct, elapsedMs, usedHint, now);
   updateTopicStats(learner, question.topicId, correct, elapsedMs);
@@ -184,8 +191,8 @@ function recordAnswer({ learnerId = 'default', question, selectedIndex, startedA
   updateAntiCheat(learner, cheat, now);
 
   state.analytics.events.push({
-    type: 'answer', at: now, learnerId, questionId: question.id, topicId: question.topicId,
-    correct, selectedIndex, elapsedMs, usedHint, suspicious: cheat.suspicious, reasons: cheat.reasons
+    type: 'answer', at: now, learnerId, questionId: question.id, topicId: question.topicId, questionType: questionType || 'mcq',
+    correct, ...(Number.isInteger(selectedIndex) ? { selectedIndex } : {}), elapsedMs, usedHint, suspicious: cheat.suspicious, reasons: cheat.reasons
   });
   state.analytics.events = state.analytics.events.slice(-1000);
   saveLearningState(state);
@@ -227,11 +234,11 @@ function updateRecent(learner, questionId) {
   learner.recentQuestionIds = [...new Set(learner.recentQuestionIds)].slice(0, 40);
 }
 
-function detectSuspicion({ question, elapsedMs, usedHint, visibilityChanges = 0, selectedIndex }) {
+function detectSuspicion({ question, elapsedMs, usedHint, visibilityChanges = 0, selectedIndex, graded = null }) {
   const reasons = [];
   if (elapsedMs < 700 && !usedHint) reasons.push('answer-too-fast');
   if (visibilityChanges >= 2) reasons.push('tab-switching');
-  if (selectedIndex == null || selectedIndex < 0) reasons.push('invalid-answer');
+  if (graded ? graded.valid === false : (selectedIndex == null || selectedIndex < 0)) reasons.push('invalid-answer');
   if ((question?.difficulty || 1) >= 3 && elapsedMs < 1200) reasons.push('hard-question-too-fast');
   return { suspicious: reasons.length > 0, reasons };
 }

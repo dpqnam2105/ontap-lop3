@@ -20,6 +20,7 @@ const App = {
   DRAGON_REWARD_KEY: 'rabbit_shenron_unlocked',
 
   async init() {
+    this._pilotBanner();
     this._bindEvents();
     this._restoreSession();
     this._syncGradeUI();
@@ -140,6 +141,17 @@ const App = {
     }).join('');
 
     lbDiv.innerHTML = `<table class="lb-table">${rows}</table>`;
+  },
+
+  /** Chế độ thử (?pilot=1): dải báo cố định — lượt thử không ghi bảng xếp hạng/nhật ký/sao lưu. */
+  _pilotBanner() {
+    if (!window.API || !API.pilotOn || !API.pilotOn() || document.getElementById('pilotBanner')) return;
+    const b = document.createElement('div');
+    b.id = 'pilotBanner';
+    b.setAttribute('role', 'status');
+    b.style.cssText = 'background:#fff7d6;border-bottom:2px solid #f5c542;color:#6b4e00;font-weight:800;font-size:.85rem;text-align:center;padding:6px 10px';
+    b.textContent = '🧪 Chế độ thử dạng bài mới — không lưu lên mạng, không tính bảng xếp hạng';
+    document.body.insertBefore(b, document.body.firstChild);
   },
 
   showScreen(name) {
@@ -557,6 +569,7 @@ const App = {
    */
   _mixEligible(s, q) {
     if (!q || !this.questionReady(q)) return false;
+    if (q.pilotCheck || q.type === 'spell-fix') return false;
     const r = q.review;
     if (r && r.status !== 'ok' && r.status !== 'fixed') return false;
     if (q.ref && q.ref.contentReview) return true;
@@ -571,7 +584,10 @@ const App = {
    * Áp cho MỌI luồng chọn câu vì đều đi qua _allowedIndices / _mixEligible / Quiz.
    */
   questionReady(q) {
-    return !(q && q.image && q.imageReview && q.imageReview.status !== 'ok');
+    if (q && q.image && q.imageReview && q.imageReview.status !== 'ok') return false;
+    // Dạng bài (js/qtypes): dạng chưa hỗ trợ / sai schema / ảnh lựa chọn chưa duyệt → không dùng ở MỌI luồng
+    if (q && window.QTypes && !QTypes.ready(q)) return false;
+    return true;
   },
 
   /** Chỉ số các câu trong chủ đề hợp với giai đoạn + bài đã học (null = môn không chia giai đoạn, không có mốc bài và không có câu chờ hình). */
@@ -598,7 +614,7 @@ const App = {
 
   _visibleTopics(s) {
     return s.topics.filter(t => {
-      if (t.drill) return false; // ở Đấu trường tính nhanh, không tính là chủ đề trong môn
+      if (t.drill || t.manualOnly) return false; // ở Đấu trường tính nhanh, không tính là chủ đề trong môn
       const a = this._allowedIndices(s, t);
       return a === null ? true : a.length > 0;
     });
@@ -703,7 +719,7 @@ const App = {
   _buildBookMix(s, key, shuffle) {
     const bs = this.getBookScope(s);
     const sources = s.books.filter(b => bs.mix[b.id]).map(b => {
-      const buckets = shuffle(s.topics.filter(t => !t.drill && this._bookOf(s, t) === b).map(t => {
+      const buckets = shuffle(s.topics.filter(t => !t.drill && !t.manualOnly && this._bookOf(s, t) === b).map(t => {
         const allowed = this._allowedIndices(s, t);
         const idxs = (allowed === null ? (t.questions || []).map((_, i) => i) : allowed).filter(i => this._mixEligible(s, t.questions[i]));
         return { t, idxs: shuffle(idxs) };
@@ -977,11 +993,12 @@ const App = {
     const list = document.getElementById('topicList');
     list.innerHTML = '';
 
+    if (s.id === 'tieng-anh' && window.SpellPilot) { const card = SpellPilot.card(); if (card) list.appendChild(card); }
     const stageBar = this._renderStageBar(s, idx);
     const mixCard = this._renderMixCard(s);
     // Chủ đề đang có câu trong phạm vi (giai đoạn / bài đã học); phần tự sinh bảng nhân chia ở Đấu trường
     const shown = s.topics.map(t => ({ t, allowed: this._allowedIndices(s, t) }))
-      .filter(x => !x.t.drill && !(x.allowed && !x.allowed.length));
+      .filter(x => !x.t.drill && !x.t.manualOnly && !(x.allowed && !x.allowed.length));
 
     if (Array.isArray(s.books) && s.books.length) {
       // Môn chia giáo trình: Ôn tổng hợp (đề trộn tuần) ở đầu, rồi các mục sách; thanh giai đoạn nằm trong

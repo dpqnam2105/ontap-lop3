@@ -47,6 +47,7 @@ const Pet = {
     return typeof old?.name==='string' && old.name.trim() ? old.name.trim().slice(0,20) : 'Cún Nâu';
   },
   isCore(q,t) {
+    if(q.pilotCheck || q.type==='spell-fix' || (t && t.manualOnly)) return false;
     if (q.track) return q.track==='core';
     if (t.track) return t.track==='core';
     // Untagged legacy questions in established core topics remain eligible.
@@ -67,7 +68,7 @@ const Pet = {
         const list=[];
         for(const i of shuffle(idx)){
           const q=t.questions[i],qid=q&&(q.id || t.id+'_'+i);
-          if(!q||!this.isCore(q,t)||seen.has(qid)||!Array.isArray(q.choices)||q.choices.length<2||!Number.isInteger(q.a)||q.a<0||q.a>=q.choices.length)continue;
+          if(!q||!this.isCore(q,t)||seen.has(qid)||(window.QTypes&&!QTypes.isMcq(q))||!Array.isArray(q.choices)||q.choices.length<2||!Number.isInteger(q.a)||q.a<0||q.a>=q.choices.length)continue;
           seen.add(qid);list.push({...q,id:qid,_idx:i,subjectId:s.id,topicId:t.id,_subjectName:s.name,_topicName:t.name});
         }
         if(list.length)buckets.push(list);

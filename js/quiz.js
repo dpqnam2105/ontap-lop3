@@ -34,6 +34,8 @@ const Quiz = {
   // chu de; viec "da sua" duoc ghi nhan qua Storage.recordAnswer nhu binh thuong.
   startWrongReview(limit, todayTaskId) {
     this.challenge = null;
+    this.spellingRun = null;
+    this._spellFinished = false;
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'wrong', limit: limit }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
@@ -47,7 +49,8 @@ const Quiz = {
         const topic = (subj.topics || []).find(t => (t.id || t.name).toString() === String(it.topicId));
         if (!topic || !Array.isArray(topic.questions)) continue;
         let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
-        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => (q.q || '') === it.question);
+        // Dự phòng theo chữ đề CHỈ cho trắc nghiệm: dạng mới hay trùng đề ("Put the words in order.") → chỉ tìm theo id
+        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
         if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
         if (window.App && App.questionReady && !App.questionReady(topic.questions[idx])) continue; // cau cho duyet hinh
         pool.push({
@@ -99,6 +102,8 @@ const Quiz = {
   // Phiên ôn tập tổng hợp: câu sai chưa sửa + câu đến hạn ôn (App/Today dựng sẵn pool).
   startReviewPool(pool, todayTaskId) {
     this.challenge = null;
+    this.spellingRun = null;
+    this._spellFinished = false;
     pool = (pool || []).filter(q => q && !(window.App && App.questionReady && !App.questionReady(q)));
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
@@ -128,13 +133,17 @@ const Quiz = {
   // Giống ôn câu sai: không ghi tiến độ ngày của từng chủ đề, nhưng câu sai vẫn vào lịch sử câu sai.
   startMixed(pool, subjectName, subjectId, mixKey, todayTaskId, options) {
     this.challenge = null;
+    this.spellingRun = null;
+    this._spellFinished = false;
     pool = (pool || []).filter(q => q && !(window.App && App.questionReady && !App.questionReady(q)));
     if (!pool || !pool.length) { Rewards._achievementPopup('🌱 Chưa có câu hỏi để trộn con nhé'); return; }
     this.challenge = (options && options.challenge) || null;
+    this.spellingRun = options && options.spellingRun && window.SpellPilot && SpellPilot.enabled() ? options.spellingRun : null;
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'mixed', pool, subjectName, subjectId, mixKey, options: options && (options.title || options.modeLabel) ? { title: options.title, modeLabel: options.modeLabel, finishLabel: options.finishLabel } : null }; this.speed = null; this.pickIdx = null; this._setBack('topic');
     if (this.challenge) this._lastLaunch = null;
-    this.mode = 'mixed';
+    if (this.spellingRun) this._lastLaunch = {type:'spelling',kind:this.spellingRun.kind};
+    this.mode = this.spellingRun && this.spellingRun.kind !== 'practice' ? 'test' : 'mixed';
     this.mixKey = mixKey || '';
     this.mixFinishLabel = (options && options.finishLabel) || null;
     this.questions = pool.slice();
@@ -172,6 +181,8 @@ const Quiz = {
 
   start(topic, subjectName, options) {
     this.challenge = null;
+    this.spellingRun = null;
+    this._spellFinished = false;
     options = options || {};
     this.todayTaskId = options.todayTaskId || null;
     this.sessionCount = options.count || null;
@@ -389,6 +400,7 @@ const Quiz = {
     }
     if (this.mode === 'test' && !this.speed) titleText += ' · Không dùng gợi ý';
     if (q._retry) titleText = '🔁 Làm lại câu vừa sai · ' + (q._topicName || this.currentTopic.name);
+    if (this.spellingRun) titleText=(this.sessionInfo.modeLabel||'Sửa từ')+' · Câu '+num+'/'+total;
     document.getElementById('quizTopicName').textContent = titleText;
 
     const imgContainer = document.getElementById('qImage');
@@ -418,6 +430,17 @@ const Quiz = {
 
     const grid = document.getElementById('ansGrid');
     grid.innerHTML = '';
+    // Dạng bài mới (js/qtypes): renderer riêng + nút Kiểm tra. Trắc nghiệm giữ nguyên đường cũ bên dưới.
+    this._destroyQt();
+    this._prevWrongText = !this.spellingRun && this.mode === 'wrong_review' ? this._lastWrongText(q) : '';
+    const QT = window.QTypes ? QTypes.forQuestion(q) : null;
+    if (QT && !QT.legacy) {
+      this._renderQt(q, QT);
+      this._renderReportButton(q);
+      if (window.Speak) Speak.attach(q, q.subjectId || this.currentSubjectId);
+      this._renderSpeedTimer(q);
+      return;
+    }
     // Shuffle display order of answers so the correct one is not always
     // in the same slot. Grading and logging still use ORIGINAL indices,
     // so wrong-history, session details and report button stay correct.
@@ -575,8 +598,7 @@ const Quiz = {
       'Chủ đề: ' + (this.currentTopic && this.currentTopic.name ? this.currentTopic.name : ''),
       'Mã câu: ' + (q.id || ''),
       'Câu hỏi: ' + (q.q || ''),
-      'Các đáp án: ' + (Array.isArray(q.choices) ? q.choices.join(' | ') : ''),
-      'Đáp án app cho là đúng: ' + (Array.isArray(q.choices) && q.choices[q.a] != null ? q.choices[q.a] : q.a),
+      ...this._reportTypeLines(q),
       '(Bé/phụ huynh mô tả lỗi ở đây: ...)'
     ].join('\n');
 
@@ -592,6 +614,16 @@ const Quiz = {
     } else {
       this._reportFallback(info, openForm);
     }
+  },
+
+  _reportTypeLines(q) {
+    const type = window.QTypes ? QTypes.typeOf(q) : 'mcq';
+    if (type === 'order') return ['Dạng bài: sắp xếp câu', 'Các thẻ: ' + (q.tokens || []).map(t => t.text).join(' | '), 'Đáp án app cho là đúng: ' + QTypes.describeAnswer(q)];
+    if (type === 'listen-pick') return ['Dạng bài: nghe chọn tranh', 'Câu nghe: ' + ((q.audio && q.audio.text) || ''), 'Các tranh: ' + (q.choices || []).map((c, i) => c + ' (' + ((q.choiceImages || [])[i] || '') + ')').join(' | '), 'Đáp án app cho là đúng: ' + QTypes.describeAnswer(q)];
+    return [
+      'Các đáp án: ' + (Array.isArray(q.choices) ? q.choices.join(' | ') : ''),
+      'Đáp án app cho là đúng: ' + (Array.isArray(q.choices) && q.choices[q.a] != null ? q.choices[q.a] : q.a)
+    ];
   },
 
   _reportFallback(info, openForm) {
@@ -622,37 +654,21 @@ const Quiz = {
     }
 
     if (!this.questionAnswered) {
-      this._recordLearningAnswer(q, selected);
-      this._recordSessionDetail(q, selected, correct, isCorrect);
-      this.questionAnswered = true;
-      if (window.Achieve) Achieve.recordAnswer(isCorrect);
-      if (!isCorrect) this._scheduleRetry(q);
+      if (this.spellingRun && !SpellPilot.record(q,{selectedIndex:selected},isCorrect,{ms:Date.now()-this.questionStartedAt})) return;
+      this._recordFirst(q, window.QTypes ? QTypes.get('mcq') : null, { selectedIndex: selected }, isCorrect);
     }
 
     if (isCorrect) {
       Sound.play('correct');
       btn.classList.add('correct');
 
-      if (this.canEarnPoint) {
-        this.score++;
-        Rewards.addStar(1);
-        const xpGain = this.mode === 'test' ? 12 : 8;
-        if (Rewards.addXP) Rewards.addXP(xpGain);
-        this.sessionStars = (this.sessionStars || 0) + 1;
-        if (Storage.addStudyLog) Storage.addStudyLog(1);
-        this.sessionXP = (this.sessionXP || 0) + xpGain;
-        document.getElementById('scoreDisp').textContent = this.score;
-        this._flyStar(btn);
-        const scoreBadge = document.getElementById('scoreDisp').parentElement;
-        scoreBadge.classList.add('pop');
-        setTimeout(() => scoreBadge.classList.remove('pop'), 500);
-      }
+      if (this.canEarnPoint) this._award(btn);
 
       document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
       fb.className = 'feedback correct';
       fbText.textContent = spd ? 'Chính xác! ⚡ ' + (spd.ms / 1000).toFixed(1).replace('.', ',') + ' giây' : (this.mode === 'test' ? 'Đã ghi nhận đáp án! ✅' : 'Chính xác! Con làm tốt lắm! 👏');
       this._fbMascot(this.mode === 'test' ? '' : 'ngon-cai');
-      fbAns.textContent = this.mode === 'test' ? '' : (q.explain || '');
+      fbAns.textContent = this.mode === 'test' ? '' : this._withPrev(q.explain || '');
 
       const btnNext = document.getElementById('btnNext');
       btnNext.classList.remove('hidden');
@@ -670,7 +686,7 @@ const Quiz = {
       this._fbMascot(this.mode === 'test' ? '' : 'dong-vien');
       fbAns.textContent = this.mode === 'test'
         ? 'Chế độ kiểm tra không hiện gợi ý để điểm công bằng hơn.'
-        : (q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.');
+        : this._withPrev(q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.');
 
       if (this.mode === 'test') {
         document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
@@ -744,21 +760,59 @@ const Quiz = {
     }
   },
 
-  _recordSessionDetail(q, selected, correct, isCorrect) {
+  /** Ghi kết quả LẦN NỘP ĐẦU của câu (mọi dạng) — gọi đúng 1 lần/câu (questionAnswered chặn lần sau). */
+  _recordFirst(q, T, response, isCorrect) {
+    const pilot = q.type === 'spell-fix' || !!this.spellingRun;
+    if (!pilot) this._recordLearningAnswer(q, response, isCorrect, T);
+    this._recordSessionDetail(q, response, isCorrect, T);
+    this.questionAnswered = true;
+    if (!pilot && window.Achieve) Achieve.recordAnswer(isCorrect);
+    if (!pilot && !isCorrect) this._scheduleRetry(q);
+  },
+
+  /** Cộng sao/XP cho câu đúng ngay lần đầu (canEarnPoint) — dùng chung trắc nghiệm và dạng mới. */
+  _award(fromEl) {
+    this.score++;
+    Rewards.addStar(1);
+    const xpGain = this.mode === 'test' ? 12 : 8;
+    if (Rewards.addXP) Rewards.addXP(xpGain);
+    this.sessionStars = (this.sessionStars || 0) + 1;
+    if (Storage.addStudyLog) Storage.addStudyLog(1);
+    this.sessionXP = (this.sessionXP || 0) + xpGain;
+    document.getElementById('scoreDisp').textContent = this.score;
+    if (fromEl) this._flyStar(fromEl);
+    const scoreBadge = document.getElementById('scoreDisp').parentElement;
+    scoreBadge.classList.add('pop');
+    setTimeout(() => scoreBadge.classList.remove('pop'), 500);
+  },
+
+  _recordSessionDetail(q, response, isCorrect, T) {
+    const type = T ? T.name : 'mcq';
     const choices = Array.isArray(q.choices) ? q.choices : [];
     const timeSpentSec = Math.max(0, Math.round((Date.now() - (this.questionStartedAt || Date.now())) / 1000));
     const questionId = q.id || (this.currentTopicId + '_' + (q._idx != null ? q._idx : this.curIdx));
+    const packed = window.QTypes ? QTypes.pack(q, response) : null;
+    const hasIdx = response && Number.isInteger(response.selectedIndex);
+    const selected = hasIdx ? response.selectedIndex : null;
+    const correct = Number.isInteger(q.a) ? q.a : null;
 
     this.sessionDetails.push({
       questionId,
       questionIndex: q._idx != null ? q._idx : this.curIdx,
-      question: q.q || '',
+      question: (q.q || '') + (type === 'listen-pick' && q.audio ? ' 🎧 ' + q.audio.text : ''),
       image: q.image || '',
       choices: choices,
       selectedIndex: selected,
       correctIndex: correct,
-      selectedAnswer: choices[selected] != null ? choices[selected] : String(selected),
-      correctAnswer: choices[correct] != null ? choices[correct] : String(correct),
+      selectedAnswer: type === 'mcq'
+        ? (choices[selected] != null ? choices[selected] : String(selected))
+        : (packed ? packed.text : ''),
+      correctAnswer: type === 'mcq'
+        ? (choices[correct] != null ? choices[correct] : String(correct))
+        : (window.QTypes ? QTypes.describeAnswer(q) : ''),
+      questionType: type,
+      responseVersion: packed ? packed.responseVersion : 1,
+      response: response || null,
       isCorrect: !!isCorrect,
       timeSpentSec: timeSpentSec,
       usedHint: !!this.questionUsedHint,
@@ -770,6 +824,9 @@ const Quiz = {
       answeredAt: new Date().toISOString()
     });
 
+    // Pilot records its own evidence; assisted practice and probes never alter mastery or wrong history.
+    if (this.spellingRun || type === "spell-fix") return;
+
     // Hộp ôn tập: lên lịch ôn lại đúng lúc sắp quên
     if (Storage.recordReview) Storage.recordReview(questionId, !!isCorrect, {
       subjectId: q.subjectId || this.currentSubjectId || '',
@@ -777,30 +834,241 @@ const Quiz = {
       idx: q._idx
     });
 
-    // Ghi vào wrong history tích lũy lâu dài
+    // Ghi vào wrong history tích lũy lâu dài (sai → kèm câu trả lời của bé để ôn sai xem lại)
     Storage.recordAnswer({
       questionId,
       isCorrect: !!isCorrect,
       subjectId: q.subjectId || this.currentSubjectId || '',
       topicId: q.topicId || this.currentTopicId || '',
-      question: q.q || ''
+      question: q.q || '',
+      response: packed
     });
   },
 
-  _recordLearningAnswer(q, selected) {
+  _recordLearningAnswer(q, response, isCorrect, T) {
     if (!window.LearningEngine || !window.LearningEngine.recordAnswer) return;
     try {
       const guard = this.sessionGuard && this.sessionGuard.get ? this.sessionGuard.get() : { visibilityChanges: 0 };
+      const legacy = !T || T.legacy;
       window.LearningEngine.recordAnswer({
         learnerId: this._learnerId(),
         question: q,
-        selectedIndex: selected,
+        // Trắc nghiệm: giữ nguyên cách cũ (engine tự so a). Dạng mới: đưa kết quả đã chấm, không có selectedIndex giả.
+        selectedIndex: legacy ? response.selectedIndex : undefined,
+        graded: legacy ? null : { correct: !!isCorrect, valid: true },
+        questionType: T ? T.name : 'mcq',
         startedAt: this.questionStartedAt,
         usedHint: this.questionUsedHint,
         visibilityChanges: guard.visibilityChanges || 0
       });
     } catch (e) {
       console.warn('LearningEngine.recordAnswer failed:', e);
+    }
+  },
+
+  // ─── Dạng bài mới (js/qtypes): render, nút Kiểm tra, nộp/chấm ─────────
+  QT_MAX_TRIES: 2,   // luyện tập: sai 2 lần thì hiện câu đúng (tránh bé bí mãi)
+
+  _destroyQt() {
+    if (this._qt && this._qt.destroy) { try { this._qt.destroy(); } catch (e) { /* bỏ qua */ } }
+    this._qt = null;
+    this._qtState = null;
+    const host = document.getElementById('qtHost'), bar = document.getElementById('qtBar');
+    if (host) { host.innerHTML = ''; host.hidden = true; }
+    if (bar) bar.hidden = true;
+    const grid = document.getElementById('ansGrid');
+    if (grid) grid.hidden = false;
+  },
+
+  _renderQt(q, T) {
+    const grid = document.getElementById('ansGrid');
+    grid.classList.remove('answers-3');
+    grid.hidden = true;
+    let host = document.getElementById('qtHost');
+    if (!host) {
+      host = document.createElement('div');
+      host.id = 'qtHost';
+      grid.parentNode.insertBefore(host, grid.nextSibling);
+    }
+    host.className = 'qt-host qt-type-' + T.name;
+    host.hidden = false;
+    let bar = document.getElementById('qtBar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'qtBar';
+      bar.className = 'qt-bar';
+      bar.innerHTML = '<button type="button" id="btnCheck" class="btn-check">Kiểm tra ✔</button>';
+      host.parentNode.insertBefore(bar, host.nextSibling);
+      bar.querySelector('#btnCheck').addEventListener('click', () => this.submit());
+    }
+    bar.hidden = false;
+    // lastKey: khoá của câu trả lời VỪA nộp; same: câu trả lời hiện tại trùng lần vừa nộp (chọn lại đúng tranh sai,
+    // tháo rồi xếp lại y thứ tự cũ…) → chưa cho nộp lại, tránh "đổi giả" mở lần nộp thứ hai.
+    const st = this._qtState = { type: T.name, attempts: 0, done: false, complete: false, busy: false, qid: q.id, lastKey: null, same: false };
+    this._qt = T.render({
+      host, q, mode: this.mode,
+      onChange: complete => {
+        if (this._qtState !== st) return;      // callback trễ từ câu cũ
+        st.complete = !!complete;
+        st.same = st.lastKey != null && !!this._qt && QTypes.responseKey(q, this._qt.getResponse()) === st.lastKey;
+        this._qtSync();
+      }
+    });
+    if (q.type === 'spell-fix' && this.spellingRun) {
+      const entry=SpellPilot.entry(q), last=entry && entry.attempts[entry.attempts.length-1];
+      if(last){st.complete=true;st.same=true;st.attempts=entry.attempts.length;st.lastKey=last.key;st.lastSubmitAt=Date.now();this.canEarnPoint=false;this.questionAnswered=true;
+        if(this._qt.restore)this._qt.restore(last.response);this._qt.showResult({correct:false,reveal:false});}
+    }
+    this._qtSync();
+  },
+
+  _qtSync() {
+    const st = this._qtState, btn = document.getElementById('btnCheck');
+    if (!btn) return;
+    if (!st) { btn.disabled = true; return; }
+    btn.disabled = st.done || st.busy || !st.complete || st.same;
+    btn.classList.toggle('hidden', st.done);
+    btn.textContent = st.same && st.complete ? (st.type === 'order' ? 'Con đổi thứ tự thẻ rồi kiểm tra lại' : st.type === 'spell-fix' ? 'Con đổi cách sửa rồi kiểm tra lại' : 'Con chọn tranh khác rồi kiểm tra lại')
+      : st.complete || st.attempts ? 'Kiểm tra ✔'
+      : (st.type === 'order' ? 'Xếp đủ thẻ rồi bấm Kiểm tra' : st.type === 'spell-fix' ? 'Chọn cách sửa rồi bấm Kiểm tra' : 'Chọn một tranh rồi bấm Kiểm tra');
+  },
+
+  _showNext() {
+    const btnNext = document.getElementById('btnNext');
+    btnNext.classList.remove('hidden');
+    btnNext.textContent = this.curIdx + 1 >= this.questions.length ? 'Xem kết quả 🎉' : 'Câu tiếp theo →';
+  },
+
+  /** Câu trả lời sai lần trước (từ lịch sử câu sai) — chỉ hiện ở chế độ ôn, SAU khi bé đã nộp. */
+  _lastWrongText(q) {
+    try {
+      const h = Storage.getWrongHistory()[q.id];
+      return h && h.lastWrongResponse && h.lastWrongResponse.text ? String(h.lastWrongResponse.text) : '';
+    } catch (e) { return ''; }
+  },
+  _withPrev(text) {
+    return this._prevWrongText ? (text ? text + '\n' : '') + '🕘 Lần trước con trả lời: ' + this._prevWrongText : text;
+  },
+
+  /**
+   * Nộp câu trả lời của dạng mới. Renderer chỉ đưa response; ở đây validate → grade → ghi kết quả.
+   * Ghi học tập/thưởng đúng 1 lần theo lần nộp đầu; nhấn đôi / callback trễ / chưa đủ thẻ không ghi gì.
+   */
+  submit() {
+    const q = this.questions[this.curIdx];
+    const T = q && window.QTypes ? QTypes.forQuestion(q) : null;
+    const st = this._qtState, c = this._qt;
+    if (!T || T.legacy || !c || !st || st.done || st.busy || st.qid !== q.id) return { ok: false, reason: 'closed' };
+    const response = c.getResponse();
+    // So câu trả lời hiện tại với câu vừa nộp (không dựa vào "đã chạm"): trùng → không nộp lại
+    const key = QTypes.responseKey(q, response);
+    if (st.lastKey != null && key === st.lastKey) { st.same = true; this._qtSync(); return { ok: false, reason: 'unchanged' }; }
+    const v = T.validateResponse(q, response) || {};
+    const fb = document.getElementById('feedback'), fbText = document.getElementById('fbText'), fbAns = document.getElementById('fbAns');
+    if (!v.ok) {
+      fb.className = 'feedback';
+      fbText.textContent = T.name === 'spell-fix' ? 'Con chọn một cách sửa rồi bấm Kiểm tra nhé.' : T.name === 'order' ? 'Con xếp hết các thẻ rồi bấm Kiểm tra nhé.' : 'Con chọn một tranh rồi bấm Kiểm tra nhé.';
+      fbAns.textContent = '';
+      return { ok: false, reason: v.reason || 'invalid' };
+    }
+    const priorKey=st.lastKey;
+    st.busy = true; st.lastKey = key; st.same = true;
+    this._qtSync();
+    try {
+      if (window.Speak) Speak.stop();
+      const g = T.grade(q, response);
+      if(this.spellingRun){
+        const used=st.attempts?1:0, shown=!g.correct?(st.attempts+1>=this.QT_MAX_TRIES?2:1):used;
+        if(!SpellPilot.record(q,response,g.correct,{used,shown,ms:Date.now()-(st.lastSubmitAt||this.questionStartedAt)})){
+          st.lastKey=priorKey;st.same=false;fbText.textContent='Chưa lưu được lượt thử. Con thử lại nhé.';return {ok:false,reason:'not-saved'};
+        }
+        st.lastSubmitAt=Date.now();
+      }
+      st.attempts++;
+      if (q._retry) { this._qtRetryResult(q, T, g, st, c); return { ok: true, correct: g.correct }; }
+      if (!this.questionAnswered) this._recordFirst(q, T, response, g.correct);
+      const test = this.mode === 'test';
+      if (g.correct) {
+        const earned = this.canEarnPoint;
+        if (earned) this._award(document.getElementById('btnCheck'));
+        Sound.play('correct');
+        st.done = true;
+        c.showResult({ correct: true, markSelection: true, reveal: !test });
+        c.lock();
+        fb.className = 'feedback correct';
+        fbText.textContent = test ? 'Đã ghi nhận đáp án! ✅' : (earned ? 'Chính xác! Con làm tốt lắm! 👏' : 'Đúng rồi! Lần sau con làm đúng ngay từ đầu nhé 🌱');
+        this._fbMascot(test ? '' : 'ngon-cai');
+        fbAns.textContent = test ? '' : this._withPrev(q.explain || '');
+        this._showNext();
+      } else {
+        Sound.play('wrong');
+        this.canEarnPoint = false;
+        this.questionUsedHint = true;
+        fb.className = 'feedback wrong';
+        if (test) {
+          // Kiểm tra: 1 lần nộp, không tô từng phần, không hiện đáp án mẫu trước khi kết thúc
+          st.done = true;
+          c.lock();
+          fbText.textContent = 'Đã ghi nhận. Sang câu tiếp theo nhé!';
+          this._fbMascot('');
+          fbAns.textContent = 'Chế độ kiểm tra không hiện gợi ý để điểm công bằng hơn.';
+          this._showNext();
+        } else if (st.attempts >= this.QT_MAX_TRIES) {
+          st.done = true;
+          c.showResult({ correct: false, parts: g.parts, markSelection: true, reveal: true });
+          c.lock();
+          fbText.textContent = 'Chưa đúng rồi. Con xem câu đúng nhé!';
+          this._fbMascot('dong-vien');
+          fbAns.textContent = this._withPrev(q.explain || '');
+          this._showNext();
+        } else {
+          c.showResult({ correct: false, parts: g.parts, markSelection: true, reveal: false });
+          c.unlock();
+          fbText.textContent = T.name === 'spell-fix' ? 'Chưa đúng rồi, con xem vùng chữ được tô rồi sửa lại nhé!' : T.name === 'order' ? 'Chưa đúng rồi, con sửa lại thẻ màu đỏ nhé!' : 'Chưa đúng rồi, con nghe lại rồi chọn nhé!';
+          this._fbMascot('dong-vien');
+          fbAns.textContent = this._withPrev(q.hint ? '💡 Gợi ý: ' + q.hint : '');
+        }
+      }
+      return { ok: true, correct: g.correct };
+    } finally {
+      st.busy = false;
+      this._qtSync();
+    }
+  },
+
+  /** Câu làm lại (_retry) của dạng mới: chỉ củng cố — không ghi học tập/thưởng. */
+  _qtRetryResult(q, T, g, st, c) {
+    const fb = document.getElementById('feedback'), fbText = document.getElementById('fbText'), fbAns = document.getElementById('fbAns');
+    const firstTry = !q._retryTried;
+    q._retryTried = true;
+    if (g.correct) {
+      Sound.play('correct');
+      if (firstTry) q._fixed = true;
+      st.done = true;
+      c.showResult({ correct: true, markSelection: true, reveal: true });
+      c.lock();
+      fb.className = 'feedback correct';
+      fbText.textContent = firstTry ? 'Sửa được rồi! Con giỏi lắm 💪' : 'Đúng rồi! Lần sau con sẽ nhớ ngay thôi 🌱';
+      this._fbMascot(firstTry ? 'co-vu' : 'ngon-cai');
+      fbAns.textContent = '';
+      this._showNext();
+    } else {
+      Sound.play('wrong');
+      fb.className = 'feedback wrong';
+      this._fbMascot('dong-vien');
+      if (st.attempts >= this.QT_MAX_TRIES) {
+        st.done = true;
+        c.showResult({ correct: false, parts: g.parts, markSelection: true, reveal: true });
+        c.lock();
+        fbText.textContent = 'Không sao, con xem câu đúng rồi lần sau làm lại nhé!';
+        fbAns.textContent = '';
+        this._showNext();
+      } else {
+        c.showResult({ correct: false, parts: g.parts, markSelection: true, reveal: false });
+        c.unlock();
+        fbText.textContent = 'Không sao, câu này hơi khó. Xem gợi ý rồi thử lại nhé!';
+        fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : '';
+      }
     }
   },
 
@@ -815,9 +1083,9 @@ const Quiz = {
     // Che do on cau sai dung chu de ao 'wrong_review' nen khong ghi tien do ngay;
     // viec "da sua" da duoc Storage.recordAnswer ghi nhan theo dung mon/chu de goc.
     // Câu tự sinh trộn vào chủ đề tĩnh mang topicId riêng → không ghi vào tiến độ ngày của chủ đề tĩnh.
-    if (this.mode !== 'wrong_review' && this.mode !== 'mixed' && (!q.topicId || q.topicId === this.currentTopicId)) this._markLearned(q._idx, this.canEarnPoint);
+    if (!this.spellingRun && q.type !== 'spell-fix' && this.mode !== 'wrong_review' && this.mode !== 'mixed' && (!q.topicId || q.topicId === this.currentTopicId)) this._markLearned(q._idx, this.canEarnPoint);
     // Tiến độ tích lũy theo chủ đề gốc của câu (mọi chế độ), không reset theo ngày.
-    if (Storage.markTotalProgress) Storage.markTotalProgress(q.topicId || this.currentTopicId, q._idx, this.canEarnPoint);
+    if (!this.spellingRun && q.type !== 'spell-fix' && Storage.markTotalProgress) Storage.markTotalProgress(q.topicId || this.currentTopicId, q._idx, this.canEarnPoint);
 
     this.curIdx++;
     if (this.curIdx >= this.questions.length) this._finish();
@@ -833,7 +1101,10 @@ const Quiz = {
   },
 
   _finish() {
+    if (this._spellFinished) return;
+    if (this.spellingRun) this._spellFinished = true;
     this._stopSpeedTimer();
+    this._destroyQt();
     Sound.play('win');
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     // Keep the result identity after challenge is cleared, even if finish is invoked again.
@@ -859,7 +1130,9 @@ const Quiz = {
     if (resultMsg) {
       const info = this.sessionInfo || {};
       let progressMsg = '';
-      if (this.speed) {
+      if (this.spellingRun) {
+        progressMsg=SpellPilot.summary(SpellPilot.finish());
+      } else if (this.speed) {
         progressMsg = this._speedFinishMsg(total);
       } else if (this.mode === 'test') {
         progressMsg = '📝 Đây là kết quả kiểm tra. Câu sai sẽ được đưa vào phần ôn lỗi sai.';
@@ -894,7 +1167,7 @@ const Quiz = {
       else if (ratio >= 0.5) praiseMsg = 'Khá tốt! Tiếp tục cố gắng nhé! 💪';
       else praiseMsg = 'Con đã hoàn thành rồi! Lần sau sẽ tốt hơn nhé! 🌱';
 
-      const analytics = this._analyticsText();
+      const analytics = this.spellingRun ? '' : this._analyticsText();
       resultMsg.innerHTML = praiseMsg + '<br><br><span style="font-size:0.9rem;font-weight:700">' + progressMsg + '</span>' + analytics;
     }
     this._renderSessionInsight();
@@ -902,16 +1175,17 @@ const Quiz = {
     if (ratio >= 0.8) this._confettiBurst();
     if (window.Today) {
       try {
-        Today.onSessionFinish({ mode: isPetChallenge ? 'pet_challenge' : this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
+        if (!this.spellingRun) Today.onSessionFinish({ mode: isPetChallenge ? 'pet_challenge' : this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
         Today.renderResult({ stars: this.sessionStars || 0, xp: this.sessionXP || 0 });
       } catch (e) { console.warn('Today result error', e); }
     }
 
     const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
-    this._saveLocalSessionDetails(durationSec);
-    API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
+    if (!this.spellingRun) this._saveLocalSessionDetails(durationSec);
+    if (!this.spellingRun) API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)
       .then(() => App.loadLeaderboard());
     this.challenge = null;
+    this.spellingRun = null;
   },
 
   /** Nhận xét kỹ năng sau lượt (chỉ khi có ≥3 câu cùng dạng) + số câu sửa được. */
@@ -921,6 +1195,7 @@ const Quiz = {
     let box = document.getElementById('resInsight');
     if (!box) { box = document.createElement('div'); box.id = 'resInsight'; box.className = 'res-insight'; host.parentNode.insertBefore(box, host); }
     box.innerHTML = '';
+    if (this.spellingRun) return;
     const lines = [];
     const retries = (this.questions || []).filter(x => x._retry);
     if (retries.length) {

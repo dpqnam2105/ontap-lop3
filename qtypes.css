@@ -1,0 +1,55 @@
+/* =============================================
+   QTYPES.CSS — dạng bài mới (nghe chọn tranh, sắp xếp câu) + nút Kiểm tra
+   Ưu tiên điện thoại 390 px: vùng chạm ≥ 44 px, không tràn ngang.
+   ============================================= */
+.fb-ans{white-space:pre-line}
+.qt-host{margin-top:20px}
+.qt-host[hidden],.qt-bar[hidden],#ansGrid[hidden]{display:none!important}
+.qt-bar{margin-top:16px;display:flex;justify-content:center}
+.btn-check{width:100%;min-height:56px;border:0;border-radius:16px;padding:14px 18px;background:linear-gradient(135deg,#2f8bff,#1f6fe0);color:#fff;font-family:var(--font-display);font-weight:900;font-size:1.2rem;cursor:pointer;box-shadow:0 10px 20px rgba(31,122,245,.22);touch-action:manipulation}
+.btn-check:disabled{background:#d9e4ef;color:#5f7489;box-shadow:none;cursor:not-allowed;font-size:1.02rem}
+
+/* ─── Nghe rồi chọn tranh ─── */
+.lp-bar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.lp-play{min-height:52px;min-width:44px;border:2px solid #bcdcff;background:#fff;border-radius:16px;padding:10px 18px;font-family:var(--font-display);font-weight:900;font-size:1.1rem;color:#0d63d8;cursor:pointer;touch-action:manipulation}
+.lp-play.playing{background:#e4f1ff;border-color:#2f8bff}
+.lp-play:disabled{opacity:.5;cursor:not-allowed}
+.lp-warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:14px;padding:10px 12px;font-weight:750;margin-bottom:12px;text-align:center}
+.lp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lp-tile{position:relative;background:#fff;border:3px solid #d9eafd;border-radius:20px;padding:10px;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;box-shadow:var(--shadow2);touch-action:manipulation;transition:border-color .15s,transform .15s}
+.lp-tile img{width:100%;max-width:220px;aspect-ratio:1/1;object-fit:contain;pointer-events:none;user-select:none}
+.lp-tile.selected{border-color:#2f8bff;box-shadow:0 0 0 4px rgba(47,139,255,.18)}
+.lp-tile.correct{border-color:#39c66d;background:#effcf3}
+.lp-tile.wrong{border-color:#ef5045;background:#fff1f0}
+.lp-tile:disabled{cursor:default}
+.lp-label{font-weight:850;font-size:.95rem;color:#183553;line-height:1.25}
+.lp-transcript{margin-top:14px;text-align:center;font-weight:800;color:#183553;background:#f3f9ff;border:1px solid #d4e8ff;border-radius:14px;padding:10px 12px}
+
+/* ─── Sắp xếp câu ─── */
+.od-line{min-height:72px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#f8fbff;border:2px dashed #b9d8f7;border-radius:18px;padding:12px}
+.od-slot{display:inline-block;width:46px;height:44px;border-bottom:3px solid #b9d8f7;border-radius:4px}
+.od-end{font-family:var(--font-display);font-weight:900;font-size:1.5rem;color:#183553;margin-left:-2px}
+.od-pool{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px;min-height:52px}
+.od-chip{min-height:48px;min-width:48px;max-width:100%;border:2px solid #9fcbff;background:#fff;border-radius:14px;padding:8px 14px;font-family:var(--font-display);font-weight:900;font-size:1.2rem;color:#0f3b6e;cursor:pointer;box-shadow:0 4px 0 #cfe4fb;touch-action:manipulation;overflow-wrap:anywhere}
+.od-line .od-chip{border-color:#2f8bff;background:#eef6ff}
+.od-chip.correct{border-color:#39c66d;background:#effcf3;color:#14632f;box-shadow:0 4px 0 #bfeccc}
+.od-chip.wrong{border-color:#ef5045;background:#fff1f0;color:#8f1d16;box-shadow:0 4px 0 #f7c6c2}
+.od-chip:disabled{cursor:default}
+.od-gap{min-height:48px;padding:8px 14px;border-radius:14px;border:2px dashed #dbe7f3;color:transparent;font-family:var(--font-display);font-weight:900;font-size:1.2rem;user-select:none}
+.od-tools{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.od-tools button{min-height:44px;border:1px solid #d9eafd;background:#fff;border-radius:12px;padding:8px 14px;font-family:var(--font-display);font-weight:850;color:#183553;cursor:pointer}
+.od-tools button:disabled{opacity:.45;cursor:not-allowed}
+.od-solution{margin-top:14px;text-align:center;font-weight:800;color:#14632f;background:#effcf3;border:1px solid #bfeccc;border-radius:14px;padding:10px 12px}
+
+@media(max-width:760px){
+  .qt-host{margin-top:14px}
+  .lp-grid{gap:10px}
+  .lp-tile{min-height:0;padding:8px;border-radius:16px}
+  .od-chip,.od-gap{font-size:1.05rem;padding:8px 11px}
+  .od-line{padding:10px;gap:6px}
+  .od-slot{width:34px}
+}
+
+/* Spell-fix: touch targets and wrapping, including insert gaps on 360px. */
+.sf-sentence{font-size:1.25rem;line-height:1.6}.sf-sentence strong{color:#b45309;border-bottom:2px dashed #f59e0b}.sf-meaning{margin:10px 0;color:#466681}.sf-meaning small{font-size:.9rem}.sf-instruction{font-weight:800;margin:12px 0}
+.sf-word,.sf-letters{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px;margin:14px 0}.sf-char,.sf-gap,.sf-letter{min-width:44px;min-height:44px;border:2px solid #cfe0fb;border-radius:12px;background:#fff;color:#173c65;font:inherit;font-size:1.3rem;font-weight:800;padding:4px 8px}.sf-static{display:inline-flex;align-items:center;justify-content:center;min-width:20px;padding:0 2px;border:0}.sf-word button,.sf-letters button,.sf-reset{cursor:pointer}.sf-word [aria-pressed=true]{background:#dbeafe;border-color:#2563eb}.sf-help{outline:3px solid #fbbf24;outline-offset:1px}.sf-reset{padding:10px 16px;border:1px solid #cfe0fb;border-radius:12px;background:white;font:inherit;min-height:44px}.sf-preview{font-weight:800;min-height:28px}.sf-solution{margin-top:14px;padding:12px;background:#dcfce7;border-radius:12px;font-weight:800}.qt-type-spell-fix button:focus-visible{outline:3px solid #2563eb;outline-offset:2px}.sf-gap:disabled,.sf-letter:disabled,.sf-reset:disabled{opacity:.6;cursor:default}.sp-pilot-card{grid-column:1/-1;border:2px solid #c4b5fd;border-radius:20px;background:#faf5ff;padding:16px}.sp-pilot-card p{margin:8px 0}.sp-actions{display:flex;flex-wrap:wrap;gap:10px}.sp-actions button{min-height:44px;padding:10px 14px;border:1px solid #b7cfff;border-radius:12px;font:inherit;font-weight:800;background:white;cursor:pointer}.sp-actions button:disabled{opacity:.55;cursor:default}

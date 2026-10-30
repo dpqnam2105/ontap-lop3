@@ -73,12 +73,12 @@ const Speak = {
     return t.replace(/\s+/g, ' ').trim();
   },
 
-  _utter(text, lang) {
+  _utter(text, lang, rate) {
     const u = new SpeechSynthesisUtterance(this.normalize(text, lang));
     const v = this.voiceFor(lang);
     if (v) u.voice = v;
     u.lang = v ? v.lang : (lang === 'vi' ? 'vi-VN' : 'en-US');
-    u.rate = lang === 'vi' ? 0.95 : 0.85;
+    u.rate = typeof rate === 'number' ? rate : (lang === 'vi' ? 0.95 : 0.85);
     return u;
   },
 
@@ -93,7 +93,7 @@ const Speak = {
     const token = {};
     this._current = token;
     list.forEach((p, i) => {
-      const u = this._utter(p.text, p.lang);
+      const u = this._utter(p.text, p.lang || this.detect(p.text, this._hint), p.rate);
       if (i === list.length - 1) {
         u.onend = u.onerror = () => {
           if (this._current !== token) return;
@@ -129,9 +129,15 @@ const Speak = {
     this.refreshButton();
   },
 
+  /** Dạng bài của câu đang hiện (registry js/qtypes). Không có registry → trắc nghiệm. */
+  _type() { return (window.QTypes && this._q) ? QTypes.forQuestion(this._q) : null; },
+
   _parts() {
     const q = this._q;
-    if (!q) return [];
+    if (!q || q._spNoHelp) return [];
+    // Dạng mới: tự quyết đọc gì (vd. sắp xếp câu chỉ đọc đề; nghe-chọn-tranh không dùng nút này)
+    const T = this._type();
+    if (T && !T.legacy) return T.readAloud === false || !T.speakParts ? [] : T.speakParts(q);
     const qLang = this.detect(q.q, this._hint);
     const parts = [{ text: q.q, lang: qLang }];
     const btns = Array.from(document.querySelectorAll('#ansGrid .ans-btn'));
@@ -161,7 +167,8 @@ const Speak = {
       card.insertBefore(btn, card.firstChild);
     }
     const lang = this._q ? this.detect(this._q.q, this._hint) : this._hint;
-    const ok = this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang);
+    const T = this._type();
+    const ok = !(this._q && this._q._spNoHelp) && this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang) && !(T && T.readAloud === false);
     btn.classList.toggle('hidden', !ok);
     this._setBtnState(this._speaking);
   },
