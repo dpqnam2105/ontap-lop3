@@ -1,6 +1,7 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
-## 2026-10-31 — Pilot sửa chính tả (chờ Claude review)
+## 2026-10-31 — PR #18: pilot sửa chính tả đã được Claude duyệt
+- Chỉ hiện khi mở `?pilot=1`; bé dùng website bình thường không thấy pilot. Claude review `162f474`: không có lỗi chặn; đã chạy thêm Chromium (spell-pilot 102, qtypes 145, gen/home/arena).
 - Tích hợp khung dạng bài Đợt 0 và 13 mục sửa chữ/12 từ sau `?pilot=1`, dùng hồ sơ thử tách biệt. Có đo trước, luyện có trợ giúp, đo lại từ ngày thứ 3; giữ kết quả theo ID và tiếp tục lượt dở sau tải lại.
 - Lượt luyện và lượt đo không ghi hộp thành thạo, lịch sử lỗi sai, tiến độ chủ đề hay kế hoạch hôm nay. Sao/XP vẫn theo lần trả lời đầu của Quiz, chỉ trong hồ sơ thử. Câu trắc nghiệm thường giữ luồng cũ.
 - Câu kiểm tra tắt gợi ý/đọc đề; sửa chữ một thao tác, chấp nhận mọi vị trí tạo cùng từ; kết quả ghi số lần thử, mức trợ giúp và thời gian. Không vào luồng tự động. Chi tiết: docs/spell-pilot-integration.md.
