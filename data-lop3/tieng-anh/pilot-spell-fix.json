@@ -1,0 +1,802 @@
+{
+  "topic": {
+    "id": "en_pilot-spell-fix",
+    "icon": "✏️",
+    "name": "✏️ Thử: Sửa chính tả",
+    "pilot": {
+      "onlyWith": "?pilot=1",
+      "measure": "Lần 0 trước khi luyện + lần 1 sau 3–5 ngày: làm 12 câu checkId, tắt mọi trợ giúp (không gợi ý, không từ sai từng sửa, không đáp án cũ, không tự đọc từ đúng). Đúng → \"đã kiểm tra lại đúng\", không phải \"thành thạo viết\".",
+      "onePerSession": [
+        "variantGroup"
+      ],
+      "errorSources": {
+        "that": "Lỗi Thỏ đã viết sai",
+        "phieu": "Lỗi đặt sẵn trong bài sửa lỗi của phiếu luyện (không phải lỗi của bé)",
+        "tk": "Nhiễu tự thiết kế"
+      },
+      "targets": [
+        {
+          "targetId": "didnt",
+          "word": "didn't",
+          "checkId": "en_nik3-past-didnt_q009",
+          "practiceIds": [
+            "en_sp_pilot_p01"
+          ]
+        },
+        {
+          "targetId": "smiled",
+          "word": "smiled",
+          "checkId": "en_sp_pilot_k01",
+          "practiceIds": [
+            "en_sp_pilot_p02"
+          ]
+        },
+        {
+          "targetId": "dinner",
+          "word": "dinner",
+          "checkId": "en_mshoa-e2-u6_q012",
+          "practiceIds": [
+            "en_sp_pilot_p03",
+            "en_sp_pilot_p04"
+          ]
+        },
+        {
+          "targetId": "brush",
+          "word": "brush",
+          "checkId": "en_sp_pilot_k02",
+          "practiceIds": [
+            "en_sp_pilot_p05"
+          ]
+        },
+        {
+          "targetId": "lunch",
+          "word": "lunch",
+          "checkId": "en_mshoa-e2-u6_q011",
+          "practiceIds": [
+            "en_sp_pilot_p06"
+          ]
+        },
+        {
+          "targetId": "liked",
+          "word": "liked",
+          "checkId": "en_nik3-past-ed_q006",
+          "practiceIds": [
+            "en_sp_pilot_p07"
+          ]
+        },
+        {
+          "targetId": "jumped",
+          "word": "jumped",
+          "checkId": "en_nik3-past-ed_q004",
+          "practiceIds": [
+            "en_sp_pilot_p08"
+          ]
+        },
+        {
+          "targetId": "chatted",
+          "word": "chatted",
+          "checkId": "en_nik3-past-ed_q019",
+          "practiceIds": [
+            "en_sp_pilot_p09"
+          ]
+        },
+        {
+          "targetId": "waved",
+          "word": "waved",
+          "checkId": "en_nik3-past-ed_q008",
+          "practiceIds": [
+            "en_sp_pilot_p10"
+          ]
+        },
+        {
+          "targetId": "dropped",
+          "word": "dropped",
+          "checkId": "en_nik3-past-ed_q018",
+          "practiceIds": [
+            "en_sp_pilot_p11"
+          ]
+        },
+        {
+          "targetId": "nodded",
+          "word": "nodded",
+          "checkId": "en_nik3-past-ed_q020",
+          "practiceIds": [
+            "en_sp_pilot_p12"
+          ]
+        },
+        {
+          "targetId": "stopped",
+          "word": "stopped",
+          "checkId": "en_sp_pilot_k03",
+          "practiceIds": [
+            "en_sp_pilot_p13"
+          ]
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": "en_sp_pilot_p01",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "It was sunny. It ___ rain yesterday.",
+        "wrong": "didin't",
+        "target": "didn't",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 3
+          }
+        ],
+        "meaning": "không (phủ định, quá khứ)",
+        "glosses": [],
+        "targetId": "didnt",
+        "checkId": "en_nik3-past-didnt_q009",
+        "errorSource": "that",
+        "errorSourceNote": "Phiếu trường \"PAST SIMPLE – Positive and Negative\" Thỏ làm 23/10/2026: viết \"didin't\" ở 6 câu",
+        "hint": "did + n't: chỉ có một chữ i.",
+        "explain": "didn't = did not. Chỉ một chữ i: d-i-d-n-'-t.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Phiếu trường \"PAST SIMPLE – Positive and Negative\" Thỏ làm 23/10/2026: viết \"didin't\" ở 6 câu.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p02",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "The baby ___ at me yesterday.",
+        "wrong": "smilied",
+        "target": "smiled",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 4
+          }
+        ],
+        "meaning": "mỉm cười (smile → quá khứ)",
+        "glosses": [],
+        "targetId": "smiled",
+        "checkId": "en_sp_pilot_k01",
+        "errorSource": "that",
+        "errorSourceNote": "Phiếu trường 23/10/2026: viết \"smilied\" 2 lần",
+        "hint": "smile tận cùng bằng e → chỉ thêm d.",
+        "explain": "smile + d = smiled. Không có chữ i chen vào.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Phiếu trường 23/10/2026: viết \"smilied\" 2 lần.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p03",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "We eat ___ at seven o'clock in the evening.",
+        "wrong": "dinnner",
+        "target": "dinner",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 2
+          },
+          {
+            "op": "delete",
+            "index": 3
+          },
+          {
+            "op": "delete",
+            "index": 4
+          }
+        ],
+        "meaning": "bữa tối",
+        "glosses": [],
+        "targetId": "dinner",
+        "checkId": "en_mshoa-e2-u6_q012",
+        "errorSource": "that",
+        "errorSourceNote": "Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"dinnner\"",
+        "hint": "Đếm lại số chữ n.",
+        "explain": "dinner có hai chữ n: d-i-n-n-e-r.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"dinnner\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        },
+        "variantGroup": "dinner"
+      },
+      {
+        "id": "en_sp_pilot_p04",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "Mom cooked fish for ___ last night.",
+        "wrong": "diner",
+        "target": "dinner",
+        "op": "insert",
+        "letters": [
+          "n",
+          "m",
+          "r"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 2,
+            "letter": "n"
+          },
+          {
+            "op": "insert",
+            "index": 3,
+            "letter": "n"
+          }
+        ],
+        "meaning": "bữa tối",
+        "glosses": [],
+        "targetId": "dinner",
+        "checkId": "en_mshoa-e2-u6_q012",
+        "errorSource": "that",
+        "errorSourceNote": "Bài thi giữa kỳ I Tiếng Anh: viết \"diner\"",
+        "hint": "Bữa tối viết có hai chữ n.",
+        "explain": "dinner (bữa tối) có hai chữ n: d-i-n-n-e-r.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Bài thi giữa kỳ I Tiếng Anh: viết \"diner\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        },
+        "variantGroup": "dinner"
+      },
+      {
+        "id": "en_sp_pilot_p05",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "I ___ my teeth every morning.",
+        "wrong": "broush",
+        "target": "brush",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 2
+          }
+        ],
+        "meaning": "đánh (răng)",
+        "glosses": [],
+        "targetId": "brush",
+        "checkId": "en_sp_pilot_k02",
+        "errorSource": "that",
+        "errorSourceNote": "Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"broush\"",
+        "hint": "Đọc chậm: /brʌʃ/ — chỉ có một nguyên âm.",
+        "explain": "brush: b-r-u-s-h, không có chữ o.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"broush\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p06",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "We eat ___ at school at twelve o'clock.",
+        "wrong": "luch",
+        "target": "lunch",
+        "op": "insert",
+        "letters": [
+          "n",
+          "m",
+          "t"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 2,
+            "letter": "n"
+          }
+        ],
+        "meaning": "bữa trưa",
+        "glosses": [],
+        "targetId": "lunch",
+        "checkId": "en_mshoa-e2-u6_q011",
+        "errorSource": "that",
+        "errorSourceNote": "Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"luch\"",
+        "hint": "Đọc chậm: lun-ch — nghe thấy âm n.",
+        "explain": "lunch: l-u-n-c-h.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi Thỏ đã viết sai — Sách Ms Hoa Junior Explorer 2 U6 — cô chữa \"luch\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p07",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "I ___ the story about dinosaurs yesterday.",
+        "wrong": "likeed",
+        "target": "liked",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 3
+          },
+          {
+            "op": "delete",
+            "index": 4
+          }
+        ],
+        "meaning": "thích (like → quá khứ)",
+        "glosses": [],
+        "targetId": "liked",
+        "checkId": "en_nik3-past-ed_q006",
+        "errorSource": "phieu",
+        "errorSourceNote": "PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"likeed\"",
+        "hint": "like tận cùng bằng e → chỉ thêm d.",
+        "explain": "like + d = liked. \"likeed\" thừa một chữ e.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi đặt sẵn trong bài sửa lỗi của phiếu luyện (không phải lỗi của bé) — PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"likeed\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p08",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "The cat ___ onto the table last night.",
+        "wrong": "jumpped",
+        "target": "jumped",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 3
+          },
+          {
+            "op": "delete",
+            "index": 4
+          }
+        ],
+        "meaning": "nhảy (jump → quá khứ)",
+        "glosses": [
+          {
+            "text": "onto the table",
+            "vi": "lên trên bàn"
+          }
+        ],
+        "targetId": "jumped",
+        "checkId": "en_nik3-past-ed_q004",
+        "errorSource": "phieu",
+        "errorSourceNote": "PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"jumpped\"",
+        "hint": "jump tận cùng bằng hai phụ âm (m, p) → không gấp đôi.",
+        "explain": "jump + ed = jumped, chỉ một chữ p.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi đặt sẵn trong bài sửa lỗi của phiếu luyện (không phải lỗi của bé) — PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"jumpped\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p09",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "We ___ with Grandma on the phone last Sunday.",
+        "wrong": "chated",
+        "target": "chatted",
+        "op": "insert",
+        "letters": [
+          "t",
+          "d",
+          "l"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 3,
+            "letter": "t"
+          },
+          {
+            "op": "insert",
+            "index": 4,
+            "letter": "t"
+          }
+        ],
+        "meaning": "trò chuyện (chat → quá khứ)",
+        "glosses": [
+          {
+            "text": "on the phone",
+            "vi": "qua điện thoại"
+          }
+        ],
+        "targetId": "chatted",
+        "checkId": "en_nik3-past-ed_q019",
+        "errorSource": "phieu",
+        "errorSourceNote": "PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"chated\"",
+        "hint": "chat: phụ âm – nguyên âm – phụ âm → gấp đôi chữ cuối.",
+        "explain": "chat → chatted (gấp đôi t rồi thêm ed).",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Lỗi đặt sẵn trong bài sửa lỗi của phiếu luyện (không phải lỗi của bé) — PastSimple-ED-Phieu1 (22/10/2026) Bài 4 sửa lỗi: \"chated\".",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p10",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "The children ___ goodbye to their teacher yesterday.",
+        "wrong": "waveed",
+        "target": "waved",
+        "op": "delete",
+        "acceptEdits": [
+          {
+            "op": "delete",
+            "index": 3
+          },
+          {
+            "op": "delete",
+            "index": 4
+          }
+        ],
+        "meaning": "vẫy tay (wave → quá khứ)",
+        "glosses": [
+          {
+            "text": "wave goodbye",
+            "vi": "vẫy tay chào tạm biệt"
+          }
+        ],
+        "targetId": "waved",
+        "checkId": "en_nik3-past-ed_q008",
+        "errorSource": "tk",
+        "errorSourceNote": "Nhiễu của câu web en_nik3-past-ed_q008",
+        "hint": "wave tận cùng bằng e → chỉ thêm d.",
+        "explain": "wave + d = waved.",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Nhiễu tự thiết kế — Nhiễu của câu web en_nik3-past-ed_q008.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p11",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "Ben ___ his ball into the river last week.",
+        "wrong": "droped",
+        "target": "dropped",
+        "op": "insert",
+        "letters": [
+          "p",
+          "d",
+          "t"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 3,
+            "letter": "p"
+          },
+          {
+            "op": "insert",
+            "index": 4,
+            "letter": "p"
+          }
+        ],
+        "meaning": "làm rơi (drop → quá khứ)",
+        "glosses": [],
+        "targetId": "dropped",
+        "checkId": "en_nik3-past-ed_q018",
+        "errorSource": "tk",
+        "errorSourceNote": "Nhiễu của câu web en_nik3-past-ed_q018",
+        "hint": "drop: phụ âm – nguyên âm – phụ âm → gấp đôi chữ cuối.",
+        "explain": "drop → dropped (gấp đôi p rồi thêm ed).",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Nhiễu tự thiết kế — Nhiễu của câu web en_nik3-past-ed_q018.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p12",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "Mai ___ when Mom asked, \"Are you hungry?\"",
+        "wrong": "noded",
+        "target": "nodded",
+        "op": "insert",
+        "letters": [
+          "d",
+          "t",
+          "n"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 2,
+            "letter": "d"
+          },
+          {
+            "op": "insert",
+            "index": 3,
+            "letter": "d"
+          }
+        ],
+        "meaning": "gật đầu (nod → quá khứ)",
+        "glosses": [],
+        "targetId": "nodded",
+        "checkId": "en_nik3-past-ed_q020",
+        "errorSource": "tk",
+        "errorSourceNote": "Nhiễu của câu web en_nik3-past-ed_q020",
+        "hint": "nod: phụ âm – nguyên âm – phụ âm → gấp đôi chữ cuối.",
+        "explain": "nod → nodded (gấp đôi d rồi thêm ed).",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Nhiễu tự thiết kế — Nhiễu của câu web en_nik3-past-ed_q020.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_p13",
+        "type": "spell-fix",
+        "q": "Sửa từ viết sai trong câu.",
+        "sentence": "The bus ___ at the zoo last Sunday.",
+        "wrong": "stoped",
+        "target": "stopped",
+        "op": "insert",
+        "letters": [
+          "p",
+          "t",
+          "d"
+        ],
+        "acceptEdits": [
+          {
+            "op": "insert",
+            "index": 3,
+            "letter": "p"
+          },
+          {
+            "op": "insert",
+            "index": 4,
+            "letter": "p"
+          }
+        ],
+        "meaning": "dừng lại (stop → quá khứ)",
+        "glosses": [],
+        "targetId": "stopped",
+        "checkId": "en_sp_pilot_k03",
+        "errorSource": "tk",
+        "errorSourceNote": "Nhiễu tự thiết kế (Codex chọn 30/10)",
+        "hint": "stop: phụ âm – nguyên âm – phụ âm → gấp đôi chữ cuối.",
+        "explain": "stop → stopped (gấp đôi p rồi thêm ed).",
+        "skill": "spelling-fix",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Pilot sửa chính tả. Nguồn lỗi: Nhiễu tự thiết kế — Nhiễu tự thiết kế (Codex chọn 30/10).",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_k01",
+        "q": "\"smile\" in the past is:",
+        "choices": [
+          "smiled",
+          "smilied",
+          "smileed",
+          "smilled"
+        ],
+        "a": 0,
+        "pilotCheck": true,
+        "noHint": true,
+        "targetId": "smiled",
+        "explain": "smile tận cùng bằng e → chỉ thêm d: smiled.",
+        "skill": "spelling",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Câu kiểm tra độc lập của pilot: đề không chứa từ sai; chỉ dùng trong lượt đo, không hiện gợi ý.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_k02",
+        "q": "Choose the correct spelling: ___ your teeth (đánh răng)",
+        "choices": [
+          "brush",
+          "broush",
+          "brosh",
+          "bruhs"
+        ],
+        "a": 0,
+        "pilotCheck": true,
+        "noHint": true,
+        "targetId": "brush",
+        "explain": "brush your teeth = đánh răng. brush: b-r-u-s-h.",
+        "skill": "spelling",
+        "difficulty": 1,
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Câu kiểm tra độc lập của pilot: đề không chứa từ sai; chỉ dùng trong lượt đo, không hiện gợi ý.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      },
+      {
+        "id": "en_sp_pilot_k03",
+        "q": "\"stop\" in the past is:",
+        "choices": [
+          "stopped",
+          "stoped",
+          "stopet",
+          "stoppd"
+        ],
+        "a": 0,
+        "pilotCheck": true,
+        "noHint": true,
+        "targetId": "stopped",
+        "explain": "stop: phụ âm – nguyên âm – phụ âm → gấp đôi p rồi thêm ed: stopped.",
+        "skill": "spelling",
+        "difficulty": 1,
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-pilot-spell-fix-20261030",
+        "ref": {
+          "basis": "pilot",
+          "note": "Câu kiểm tra độc lập của pilot: đề không chứa từ sai; chỉ dùng trong lượt đo, không hiện gợi ý.",
+          "toc": [],
+          "extraWords": [],
+          "by": "claude",
+          "date": "2026-10-30",
+          "contentReview": "codex-noi-dung-20261030"
+        }
+      }
+    ]
+  }
+}
