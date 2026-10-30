@@ -10,7 +10,7 @@ const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // Cơ sở nguồn: toc = theo mục lục; school-weekly = lịch/nội dung tuần của trường; page = đã đối chiếu trang sách thật.
 // school-midterm = phạm vi đề thi giữa kỳ theo tài liệu trường (phiếu ôn GV, tờ tranh GV, Review); câu vẫn tự biên soạn.
 // school-sheet = phạm vi theo phiếu bài tập trường phát (ảnh Nam gửi); câu tự biên soạn, tránh câu của phiếu.
-const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet']);
+const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet', 'pilot']);   // pilot = nội dung thử dạng bài mới, chỉ mở với ?pilot=1
 
 // Quy tắc riêng từng lô (thêm lô mới vào đây).
 const LO2_WORDS = ['campsite', 'blanket', 'sleeping bag', 'camping stove', 'flashlight', 'compass', 'set up a tent', 'make a fire', 'clean up', 'get lost'];
@@ -157,7 +157,12 @@ const BATCH_RULES = {
     if (q.ref.basis !== 'toc') err('lô 1 phải basis toc');
     if ('page' in q.ref || /tr\.\s?\d/.test(q.ref.note || '')) err('lô 1 không ghi trang');
     if (!/chưa xác nhận khớp/.test(q.ref.note || '')) err('lô 1 phải ghi mục lục chưa xác nhận khớp sách trường');
-  } }
+  } },
+  // Pilot sửa chính tả (Codex duyệt 30/10): 13 spell-fix + 3 câu kiểm tra; chi tiết ở tests/pilot-spell-fix.test.js
+  'claude-pilot-spell-fix-20261030': { count: 16, passages: [], check(q, err) {
+    if (q.ref.basis !== 'pilot' || q.ref.contentReview !== 'codex-noi-dung-20261030') err('pilot: basis pilot + contentReview');
+    if (!(q.type === 'spell-fix' || q.pilotCheck)) err('pilot: chỉ spell-fix hoặc câu kiểm tra');
+  } },
 };
 
 // Lượt rà câu cũ (q.review): khớp báo cáo rà 101 câu (project claude/tieng-anh-ra-101-cau.md).
@@ -183,8 +188,11 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     const err = m => errs.push(q.id + ': ' + m);
     // ── Chung cho mọi câu
     if (ids.has(q.id)) err('trùng id'); ids.add(q.id);
-    if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
-    if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    // Câu có type (dạng bài mới) kiểm schema riêng theo dạng — spell-fix: tests/pilot-spell-fix.test.js
+    if (!q.type) {
+      if (!Array.isArray(q.choices) || q.choices.length !== 4 || new Set(q.choices).size !== 4) err('cần 4 lựa chọn khác nhau');
+      if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
+    } else if (q.type !== 'spell-fix') err('type lạ ' + q.type);
     if (q.imageReview !== undefined && !q.image) err('imageReview chỉ cho câu có hình');
     if (q.review !== undefined) {
       reviewed.push(q);
@@ -205,7 +213,8 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
       if ('page' in r) err('school-weekly không ghi page (trang chỉ là trang lịch trường chỉ định)');
     }
     if (r && /approvedBy/.test(JSON.stringify(r))) err('không dùng approvedBy');
-    if (!q.hint || !q.explain) err('thiếu hint/explain');
+    if ((!q.hint && !q.noHint) || !q.explain) err('thiếu hint/explain');
+    if (q.noHint && (q.hint || !q.pilotCheck)) err('noHint chỉ cho câu kiểm tra pilot, không kèm hint');
     if (q.hint && q.choices && q.choices[q.a] && q.hint.includes(q.choices[q.a])) err('gợi ý chứa nguyên văn đáp án');
     if (q.passage) {
       const m = /^Read: "(.+?)" /.exec(q.q);
