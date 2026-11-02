@@ -42,7 +42,7 @@
       "id": "en_nik3-past-irregular",
       "name": "NIK3 Unit 3: Động từ bất quy tắc",
       "file": "nik3-past-irregular.json",
-      "count": 21,
+      "count": 42,
       "book": "nik3"
     },
     {
@@ -466,6 +466,48 @@
             "en_nik3-past-irregular_q019",
             "en_nik3-past-irregular_q020",
             "en_nik3-past-irregular_q021"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g4",
+          "name": "Nhóm 4: fall – give",
+          "required": [
+            "en_nik3-past-irregular_q022",
+            "en_nik3-past-irregular_q023",
+            "en_nik3-past-irregular_q024",
+            "en_nik3-past-irregular_q025",
+            "en_nik3-past-irregular_q026",
+            "en_nik3-past-irregular_q027",
+            "en_nik3-past-irregular_q028"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g5",
+          "name": "Nhóm 5: go – hit",
+          "required": [
+            "en_nik3-past-irregular_q029",
+            "en_nik3-past-irregular_q030",
+            "en_nik3-past-irregular_q031",
+            "en_nik3-past-irregular_q032",
+            "en_nik3-past-irregular_q033",
+            "en_nik3-past-irregular_q034",
+            "en_nik3-past-irregular_q035"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g6",
+          "name": "Nhóm 6: hold – leave",
+          "required": [
+            "en_nik3-past-irregular_q036",
+            "en_nik3-past-irregular_q037",
+            "en_nik3-past-irregular_q038",
+            "en_nik3-past-irregular_q039",
+            "en_nik3-past-irregular_q040",
+            "en_nik3-past-irregular_q041",
+            "en_nik3-past-irregular_q042"
           ],
           "extra": []
         }

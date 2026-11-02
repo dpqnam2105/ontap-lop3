@@ -40,33 +40,45 @@ const LO4_SHEET_SENTENCES = [/football yesterday/i, /dishes last night/i, /walk(
 const IRR_ORDER = ['be', 'begin', 'break', 'bring', 'build', 'buy', 'catch', 'choose', 'come', 'cost', 'cut', 'do', 'draw', 'drive', 'eat',
   'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave'];
 const IRR_PAST = { be: ['was', 'were'], begin: ['began'], break: ['broke'], bring: ['brought'], build: ['built'], buy: ['bought'], catch: ['caught'],
-  choose: ['chose'], come: ['came'], cost: ['cost'], cut: ['cut'], do: ['did'], draw: ['drew'], drive: ['drove'], eat: ['ate'] };
-const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten)\b/;   // V3 khác V2 — lô này chỉ luyện gốc – quá khứ
-const BATCH_RULES = {
-  'claude-nik3-lo6-irregular-20261028': { count: 21, passages: [], check(q, err) {
+  choose: ['chose'], come: ['came'], cost: ['cost'], cut: ['cut'], do: ['did'], draw: ['drew'], drive: ['drove'], eat: ['ate'],
+  fall: ['fell'], feel: ['felt'], find: ['found'], get: ['got'], give: ['gave'], go: ['went'], grow: ['grew'], have: ['had'], hear: ['heard'], hit: ['hit'],
+  hold: ['held'], keep: ['kept'], know: ['knew'], lead: ['led'], leave: ['left'] };
+// V3 khác V2 — lô này chỉ luyện gốc – quá khứ (built, brought, held, kept… trùng V2 nên không chặn)
+const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone|grown|known|gotten)\b/;
+const IRR_GROUP = v => Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
+// Một lô bất quy tắc = 3 nhóm liên tiếp; đề thử của thẻ ôn rút đều 2 câu/nhóm khi đủ 6 nhóm (Codex chốt 02/11).
+function irrRule(tag, groups, review) {
+  return { count: 21, passages: [], check(q, err) {
     const r = q.ref;
-    if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 6: school-sheet + sources + note tự biên soạn');
-    if (r.contentReview !== 'codex-noi-dung-20261028') err('lô 6 cần contentReview codex-noi-dung-20261028');
-    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 6: nik3-unit3, nik3, core, stage 2');
-    if (q.skill !== 'past-irregular') err('lô 6: skill past-irregular');
-    if (![1, 2, 3].includes(q.irrGroup) || !Array.isArray(q.verbs) || !q.verbs.length) err('lô 6: irrGroup 1–3 + verbs');
-    else for (const v of q.verbs) if (!IRR_ORDER.includes(v) || Math.floor(IRR_ORDER.indexOf(v) / 5) + 1 > q.irrGroup) err('lô 6: từ ' + v + ' ngoài danh sách / thuộc nhóm sau');
-    if (IRR_V3.test(q.choices.join(' '))) err('lô 6: không dùng V3 làm nhiễu');
-    if (/(^|[\s(;—-])[ABCD][:.)]\s/.test(q.explain)) err('lô 6: giải thích không dùng nhãn A–D (web xáo lựa chọn)');
-    if (/smilied|builded a sandcastle|buyed a kite/.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err('lô 6: câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
+    if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err(tag + ': school-sheet + sources + note tự biên soạn');
+    if (r.contentReview !== review) err(tag + ' cần contentReview ' + review);
+    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err(tag + ': nik3-unit3, nik3, core, stage 2');
+    if (q.skill !== 'past-irregular') err(tag + ': skill past-irregular');
+    if (!groups.includes(q.irrGroup) || !Array.isArray(q.verbs) || !q.verbs.length) err(tag + ': irrGroup ' + groups.join('–') + ' + verbs');
+    else for (const v of q.verbs) if (!IRR_ORDER.includes(v) || IRR_GROUP(v) > q.irrGroup) err(tag + ': từ ' + v + ' ngoài danh sách / thuộc nhóm sau');
+    if (IRR_V3.test(q.choices.join(' '))) err(tag + ': không dùng V3 làm nhiễu');
+    if (/(^|[\s(;—-])[ABCD][:.)]\s/.test(q.explain)) err(tag + ': giải thích không dùng nhãn A–D (web xáo lựa chọn)');
+    if (/có lỗi/.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err(tag + ': câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
   }, after(qs, errs) {
-    // Mỗi dạng quá khứ của 15 từ nhóm 1–3 phải là đáp án đúng ở ≥ 1 câu riêng (1 động từ) thuộc nhóm mình
-    for (const [v, forms] of Object.entries(IRR_PAST)) for (const f of forms) {
-      const g = Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
-      if (!qs.some(q => q.irrGroup === g && q.verbs.length === 1 && q.verbs[0] === v && new RegExp('\\b' + f + '\\b').test(q.choices[q.a]))) errs.push('lô 6: chưa kiểm dạng quá khứ ' + v + ' → ' + f);
+    // Mỗi dạng quá khứ của các từ trong lô phải là đáp án đúng ở ≥ 1 câu riêng (1 động từ) thuộc nhóm mình
+    for (const [v, forms] of Object.entries(IRR_PAST)) if (groups.includes(IRR_GROUP(v))) for (const f of forms) {
+      if (!qs.some(q => q.irrGroup === IRR_GROUP(v) && q.verbs.length === 1 && q.verbs[0] === v && new RegExp('\\b' + f + '\\b').test(q.choices[q.a]))) errs.push(tag + ': chưa kiểm dạng quá khứ ' + v + ' → ' + f);
     }
+    // Mỗi nhóm có ít nhất 1 câu didn't + dạng gốc là đáp án
+    for (const g of groups) if (!qs.some(q => q.irrGroup === g && /didn't/.test(q.q + ' ' + q.choices[q.a]))) errs.push(tag + ': nhóm ' + g + ' thiếu câu didn\'t');
     const set = (IDX.reviewSets || []).find(x => x.id === 'en-batquytac-2026');
-    if (!set || set.scope !== 'stage' || set.mockSize !== 12) errs.push('lô 6: reviewSet en-batquytac-2026 cần scope stage, mockSize 12');
-    else set.groups.forEach((gr, i) => {
-      const want = qs.filter(q => q.irrGroup === i + 1).map(q => q.id).sort();
-      if (JSON.stringify([...gr.required].sort()) !== JSON.stringify(want)) errs.push('lô 6: nhóm ' + (i + 1) + ' lệch danh sách câu');
-    });
-  } },
+    if (!set || set.scope !== 'stage') return errs.push(tag + ': reviewSet en-batquytac-2026 cần scope stage');
+    if (set.mockSize !== 2 * set.groups.length) errs.push(tag + ': đề thử phải 2 câu/nhóm (mockSize ' + set.mockSize + ', ' + set.groups.length + ' nhóm)');
+    for (const g of groups) {
+      const gr = set.groups[g - 1];
+      const want = qs.filter(q => q.irrGroup === g).map(q => q.id).sort();
+      if (!gr || JSON.stringify([...gr.required].sort()) !== JSON.stringify(want)) errs.push(tag + ': nhóm ' + g + ' lệch danh sách câu');
+    }
+  } };
+}
+const BATCH_RULES = {
+  'claude-nik3-lo6-irregular-20261028': irrRule('lô 6a', [1, 2, 3], 'codex-noi-dung-20261028'),
+  'claude-nik3-lo6b-irregular-20261102': irrRule('lô 6b', [4, 5, 6], 'codex-noi-dung-20261102'),
   'claude-nik3-lo5-didnt-20261028': { count: 20, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 5: school-sheet + sources + note tự biên soạn');

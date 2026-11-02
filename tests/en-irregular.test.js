@@ -53,14 +53,14 @@ const tests = {
       }
     });
   },
-  async 'đề thử: 12 câu, rút đều mỗi nhóm 4, không lặp'() {
+  async 'đề thử: rút đều theo nhóm (12 câu: 4/nhóm khi 3 nhóm, 2/nhóm khi 6 nhóm), không lặp'() {
     const b = await boot();
     b.run(`App.setStageSetting(${S}, 2, false)`);
     const mock = b.J(`App._reviewSetMock(${S}, ${IRR}).map(q => q.id)`);
     const groups = b.J(`${IRR}.groups.map(g => g.required)`);
     assert.strictEqual(mock.length, 12);
     assert.strictEqual(new Set(mock).size, 12);
-    if (groups.length === 3) groups.forEach(g => assert.strictEqual(mock.filter(id => g.includes(id)).length, 4));
+    groups.forEach(g => assert.strictEqual(mock.filter(id => g.includes(id)).length, 12 / groups.length));
   },
   async 'bộ giữa kỳ giữ hành vi cũ: không lọc theo giai đoạn'() {
     const b = await boot();

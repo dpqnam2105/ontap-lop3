@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-02 — Tiếng Anh: Động từ bất quy tắc nhóm 4–6 (lô 6b)
+- Thêm 21 câu nhóm 4–6 (fall … leave) vào chủ đề "NIK3 Unit 3: Động từ bất quy tắc" — đủ 30 từ danh sách cô, Codex duyệt chữ. Thẻ ôn bất quy tắc có 6 nhóm (vẫn chỉ ở Giai đoạn 2); đề thử 12 câu rút 2 câu/nhóm.
+- Test en-data gộp quy tắc lô 6a/6b (mỗi dạng quá khứ là đáp án ở câu riêng, mỗi nhóm có câu didn't, chặn V3 khác V2, đề thử = 2 × số nhóm); en-irregular kiểm rút đều theo số nhóm.
+
 ## 2026-10-31 — PR #18: pilot sửa chính tả đã được Claude duyệt
 - Chỉ hiện khi mở `?pilot=1`; bé dùng website bình thường không thấy pilot. Claude review `162f474`: không có lỗi chặn; đã chạy thêm Chromium (spell-pilot 102, qtypes 145, gen/home/arena).
 - Tích hợp khung dạng bài Đợt 0 và 13 mục sửa chữ/12 từ sau `?pilot=1`, dùng hồ sơ thử tách biệt. Có đo trước, luyện có trợ giúp, đo lại từ ngày thứ 3; giữ kết quả theo ID và tiếp tục lượt dở sau tải lại.
