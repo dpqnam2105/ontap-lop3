@@ -77,7 +77,7 @@
         "id": "en_nik3-past-didnt_q002"
       },
       {
-        "q": "The rabbit ___ (not hop: nhảy) into the garden yesterday.",
+        "q": "The rabbit ___ (not hop) into the garden yesterday.",
         "choices": [
           "doesn't hop",
           "didn't hop",
@@ -111,7 +111,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q003"
+        "id": "en_nik3-past-didnt_q003",
+        "gloss": "hop: nhảy",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "We ___ (not stay) at a hotel last summer. We camped by the lake.",
@@ -152,7 +161,7 @@
         "id": "en_nik3-past-didnt_q004"
       },
       {
-        "q": "Dad ___ (not fry: rán) any eggs yesterday morning.",
+        "q": "Dad ___ (not fry) any eggs yesterday morning.",
         "choices": [
           "doesn't fry",
           "didn't fried",
@@ -186,10 +195,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q005"
+        "id": "en_nik3-past-didnt_q005",
+        "gloss": "fry: rán",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last Sunday, Tom ___ (not tidy: dọn gọn) his room.",
+        "q": "Last Sunday, Tom ___ (not tidy) his room.",
         "choices": [
           "doesn't tidy",
           "not tidy",
@@ -221,7 +239,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q006"
+        "id": "en_nik3-past-didnt_q006",
+        "gloss": "tidy: dọn gọn",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "The children ___ (not kick) the ball in the classroom yesterday.",
@@ -370,7 +397,7 @@
         "id": "en_nik3-past-didnt_q010"
       },
       {
-        "q": "Câu sau có lỗi. Chọn cách sửa đúng: \"Last night, Grandma didn't baked a cake.\"",
+        "q": "Find the mistake. Choose the correct sentence: \"Last night, Grandma didn't baked a cake.\"",
         "choices": [
           "Last night, Grandma don't bake a cake.",
           "Last night, Grandma didn't bake a cake.",
@@ -402,10 +429,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q011"
+        "id": "en_nik3-past-didnt_q011",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "Find the mistake: tìm lỗi sai"
       },
       {
-        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"smilied\": \"Yesterday, the baby smilied at me.\"",
+        "q": "Find the mistake. Choose the correct word for \"smilied\": \"Yesterday, the baby smilied at me.\"",
         "choices": [
           "smileed",
           "smilyed",
@@ -439,10 +475,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q012"
+        "id": "en_nik3-past-didnt_q012",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "Find the mistake: tìm lỗi sai"
       },
       {
-        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"paint\": \"Last weekend, Dad paint our door.\"",
+        "q": "Find the mistake. Choose the correct word for \"paint\": \"Last weekend, Dad paint our door.\"",
         "choices": [
           "painted",
           "painting",
@@ -476,7 +521,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q013"
+        "id": "en_nik3-past-didnt_q013",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "Find the mistake: tìm lỗi sai"
       },
       {
         "q": "Which word is spelled correctly? (study → past)",
@@ -514,7 +568,7 @@
         "id": "en_nik3-past-didnt_q014"
       },
       {
-        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"We picked apples.\" → We ___ apples.",
+        "q": "Make the sentence negative. Keep it in the past: \"We picked apples.\" → We ___ apples.",
         "choices": [
           "don't pick",
           "didn't pick",
@@ -548,10 +602,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q015"
+        "id": "en_nik3-past-didnt_q015",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Tom dropped his cup.\" → Tom ___ his cup.",
+        "q": "Make the sentence negative. Keep it in the past: \"Tom dropped his cup.\" → Tom ___ his cup.",
         "choices": [
           "didn't dropped",
           "didn't dropp",
@@ -586,10 +649,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q016"
+        "id": "en_nik3-past-didnt_q016",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Mom hugged me.\" → Mom ___ me.",
+        "q": "Make the sentence negative. Keep it in the past: \"Mom hugged me.\" → Mom ___ me.",
         "choices": [
           "didn't hug",
           "didn't hugg",
@@ -623,10 +695,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q017"
+        "id": "en_nik3-past-didnt_q017",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Ben copied the new words.\" → Ben ___ the new words.",
+        "q": "Make the sentence negative. Keep it in the past: \"Ben copied the new words.\" → Ben ___ the new words.",
         "choices": [
           "doesn't copy",
           "didn't copy",
@@ -660,10 +741,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q018"
+        "id": "en_nik3-past-didnt_q018",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "Đổi sang câu khẳng định, giữ thì quá khứ: \"Lan didn't laugh.\" → Lan ___.",
+        "q": "Make the sentence positive. Keep it in the past: \"Lan didn't laugh.\" → Lan ___.",
         "choices": [
           "laughs",
           "didn't laughed",
@@ -697,10 +787,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q019"
+        "id": "en_nik3-past-didnt_q019",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "positive: khẳng định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "Đổi sang câu khẳng định, giữ thì quá khứ: \"We didn't skate on the ice.\" → We ___ on the ice.",
+        "q": "Make the sentence positive. Keep it in the past: \"We didn't skate on the ice.\" → We ___ on the ice.",
         "choices": [
           "skate",
           "skatted",
@@ -735,7 +834,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-didnt_q020"
+        "id": "en_nik3-past-didnt_q020",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "positive: khẳng định · keep it in the past: giữ thì quá khứ"
       }
     ]
   }

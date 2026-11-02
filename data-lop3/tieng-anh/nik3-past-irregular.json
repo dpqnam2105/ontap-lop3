@@ -85,7 +85,7 @@
         "id": "en_nik3-past-irregular_q002"
       },
       {
-        "q": "The school concert ___ (begin: bắt đầu) at 7 o'clock last night.",
+        "q": "The school concert ___ (begin) at 7 o'clock last night.",
         "choices": [
           "begined",
           "begins",
@@ -122,10 +122,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q003"
+        "id": "en_nik3-past-irregular_q003",
+        "gloss": "begin: bắt đầu",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, I ___ a pencil. I didn't ___ the ruler. (break: vỡ, gãy)",
+        "q": "Yesterday, I ___ a pencil. I didn't ___ the ruler. (break)",
         "choices": [
           "breaked / break",
           "break / broke",
@@ -162,7 +171,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q004"
+        "id": "en_nik3-past-irregular_q004",
+        "gloss": "break: vỡ, gãy",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "Last Monday, Linh ___ (bring: mang) her new book to school.",
@@ -203,7 +221,7 @@
         "id": "en_nik3-past-irregular_q005"
       },
       {
-        "q": "Câu sau có lỗi. Chọn từ sửa đúng cho \"builded\": \"Last summer, the children builded a sandcastle on the beach.\"",
+        "q": "Find the mistake. Choose the correct word for \"builded\": \"Last summer, the children builded a sandcastle on the beach.\"",
         "choices": [
           "buildt",
           "built",
@@ -241,10 +259,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q006"
+        "id": "en_nik3-past-irregular_q006",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "Find the mistake: tìm lỗi sai"
       },
       {
-        "q": "Which pair is correct? (động từ → quá khứ)",
+        "q": "Which pair is correct? (verb → past)",
         "choices": [
           "break → breaked",
           "build → builded",
@@ -282,7 +309,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q007"
+        "id": "en_nik3-past-irregular_q007",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "verb: động từ · past: quá khứ"
       },
       {
         "q": "Mom ___ (buy: mua) some apples at the market yesterday.",
@@ -325,7 +361,7 @@
         "id": "en_nik3-past-irregular_q008"
       },
       {
-        "q": "Last Sunday, Dad ___ (catch: bắt) a big fish in the lake.",
+        "q": "Last Sunday, Dad ___ (catch) a big fish in the lake.",
         "choices": [
           "caught",
           "catches",
@@ -362,10 +398,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q009"
+        "id": "en_nik3-past-irregular_q009",
+        "gloss": "catch: bắt",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, I ___ (choose: chọn) a red balloon.",
+        "q": "Yesterday, I ___ (choose) a red balloon.",
         "choices": [
           "chosed",
           "chose",
@@ -402,10 +447,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q010"
+        "id": "en_nik3-past-irregular_q010",
+        "gloss": "choose: chọn",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Ben ___ to my birthday party, but Tom didn't ___. (come: đến)",
+        "q": "Yesterday, Ben ___ to my birthday party, but Tom didn't ___. (come)",
         "choices": [
           "came / came",
           "come / came",
@@ -440,10 +494,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q011"
+        "id": "en_nik3-past-irregular_q011",
+        "gloss": "come: đến",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last week, my new pencil case ___ (cost: trị giá) 20,000 dong.",
+        "q": "Last week, my new pencil case ___ (cost) 20,000 dong.",
         "choices": [
           "coast",
           "costed",
@@ -480,7 +543,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q012"
+        "id": "en_nik3-past-irregular_q012",
+        "gloss": "cost: trị giá",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "Which sentence is correct?",
@@ -527,7 +599,7 @@
         "id": "en_nik3-past-irregular_q013"
       },
       {
-        "q": "Câu sau có lỗi. Giữ nghĩa buy = mua, chọn từ sửa đúng cho \"buyed\": \"Yesterday, Dad buyed a kite for me.\"",
+        "q": "Find the mistake. Keep the meaning of \"buy\". Choose the correct word for \"buyed\": \"Yesterday, Dad buyed a kite for me.\"",
         "choices": [
           "boughted",
           "bought",
@@ -565,10 +637,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q014"
+        "id": "en_nik3-past-irregular_q014",
+        "gloss": "Find the mistake: tìm lỗi sai · keep the meaning: giữ nghĩa · buy: mua",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Mom ___ (cut: cắt) the cake into eight pieces.",
+        "q": "Yesterday, Mom ___ (cut) the cake into eight pieces.",
         "choices": [
           "cutted",
           "cuted",
@@ -605,10 +686,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q015"
+        "id": "en_nik3-past-irregular_q015",
+        "gloss": "cut: cắt",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "I ___ (do: làm) my homework after dinner last night.",
+        "q": "I ___ (do) my homework after dinner last night.",
         "choices": [
           "doed",
           "does",
@@ -645,10 +735,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q016"
+        "id": "en_nik3-past-irregular_q016",
+        "gloss": "do: làm",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last Friday, Mai ___ (draw: vẽ) a picture of her cat.",
+        "q": "Last Friday, Mai ___ (draw) a picture of her cat.",
         "choices": [
           "drew",
           "drawed",
@@ -685,10 +784,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q017"
+        "id": "en_nik3-past-irregular_q017",
+        "gloss": "draw: vẽ",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Uncle Tom ___ (drive: lái xe) us to the beach.",
+        "q": "Yesterday, Uncle Tom ___ (drive) us to the beach.",
         "choices": [
           "drived",
           "drove",
@@ -725,10 +833,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q018"
+        "id": "en_nik3-past-irregular_q018",
+        "gloss": "drive: lái xe",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last night, the baby ___ her rice. She didn't ___ her vegetables. (eat: ăn)",
+        "q": "Last night, the baby ___ her rice. She didn't ___ her vegetables. (eat)",
         "choices": [
           "ate / ate",
           "eat / ate",
@@ -766,10 +883,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q019"
+        "id": "en_nik3-past-irregular_q019",
+        "gloss": "eat: ăn",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Which pair is correct? (động từ → quá khứ)",
+        "q": "Which pair is correct? (verb → past)",
         "choices": [
           "catch → catched",
           "cut → cutted",
@@ -807,10 +933,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q020"
+        "id": "en_nik3-past-irregular_q020",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "verb: động từ · past: quá khứ"
       },
       {
-        "q": "Which verb does NOT change in the past? (quá khứ giống dạng gốc)",
+        "q": "Which verb does NOT change in the past?",
         "choices": [
           "cut",
           "catch",
@@ -848,10 +983,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-irregular_q021"
+        "id": "en_nik3-past-irregular_q021",
+        "gloss": "does NOT change: không thay đổi (quá khứ giống dạng gốc)",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Ben ___ (fall: ngã) off his bike.",
+        "q": "Yesterday, Ben ___ (fall) off his bike.",
         "choices": [
           "falls",
           "fell",
@@ -888,10 +1032,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q022"
+        "id": "en_nik3-past-irregular_q022",
+        "gloss": "fall: ngã",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "I ___ (feel: cảm thấy) very happy at my birthday party last Sunday.",
+        "q": "I ___ (feel) very happy at my birthday party last Sunday.",
         "choices": [
           "fell",
           "feels",
@@ -926,10 +1079,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q023"
+        "id": "en_nik3-past-irregular_q023",
+        "gloss": "feel: cảm thấy",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, I ___ my pencil, but I didn't ___ my eraser. (find: tìm thấy)",
+        "q": "Yesterday, I ___ my pencil, but I didn't ___ my eraser. (find)",
         "choices": [
           "find / found",
           "finded / find",
@@ -966,10 +1128,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q024"
+        "id": "en_nik3-past-irregular_q024",
+        "gloss": "find: tìm thấy",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last week, Linh ___ (get: nhận) a nice present from her aunt.",
+        "q": "Last week, Linh ___ (get) a nice present from her aunt.",
         "choices": [
           "got",
           "getted",
@@ -1007,10 +1178,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q025"
+        "id": "en_nik3-past-irregular_q025",
+        "gloss": "get: nhận",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Câu sau có lỗi. Giữ nghĩa give = đưa, tặng, chọn từ sửa đúng cho \"gived\": \"Yesterday, Grandpa gived me a big apple.\"",
+        "q": "Find the mistake. Keep the meaning of \"give\". Choose the correct word for \"gived\": \"Yesterday, Grandpa gived me a big apple.\"",
         "choices": [
           "gaved",
           "gave",
@@ -1045,10 +1225,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q026"
+        "id": "en_nik3-past-irregular_q026",
+        "gloss": "Find the mistake: tìm lỗi sai · keep the meaning: giữ nghĩa · give: đưa, tặng",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Which pair is correct? (động từ → quá khứ)",
+        "q": "Which pair is correct? (verb → past)",
         "choices": [
           "get → getted",
           "build → builded",
@@ -1086,7 +1275,16 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q027"
+        "id": "en_nik3-past-irregular_q027",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "verb: động từ · past: quá khứ"
       },
       {
         "q": "Which sentence is correct?",
@@ -1130,7 +1328,7 @@
         "id": "en_nik3-past-irregular_q028"
       },
       {
-        "q": "Last summer, my family ___ (go: đi) to the beach.",
+        "q": "Last summer, my family ___ (go) to the beach.",
         "choices": [
           "went",
           "goes",
@@ -1167,10 +1365,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q029"
+        "id": "en_nik3-past-irregular_q029",
+        "gloss": "go: đi",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last month, the sunflowers in our garden ___ (grow: lớn, mọc) very tall.",
+        "q": "Last month, the sunflowers in our garden ___ (grow) very tall.",
         "choices": [
           "growed",
           "grew",
@@ -1207,10 +1414,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q030"
+        "id": "en_nik3-past-irregular_q030",
+        "gloss": "grow: lớn, mọc",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last night, we ___ fish for dinner. We didn't ___ chicken. (have: ăn, có)",
+        "q": "Last night, we ___ fish for dinner. We didn't ___ chicken. (have)",
         "choices": [
           "had / had",
           "have / had",
@@ -1247,7 +1463,16 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q031"
+        "id": "en_nik3-past-irregular_q031",
+        "gloss": "have: ăn, có",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "Yesterday, I ___ (hear: nghe) a bird singing outside my window.",
@@ -1290,7 +1515,7 @@
         "id": "en_nik3-past-irregular_q032"
       },
       {
-        "q": "Yesterday, Tom ___ (hit: đánh) the ball very hard.",
+        "q": "Yesterday, Tom ___ (hit) the ball very hard.",
         "choices": [
           "hit",
           "hits",
@@ -1325,10 +1550,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q033"
+        "id": "en_nik3-past-irregular_q033",
+        "gloss": "hit: đánh",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Which pair is correct? (động từ → quá khứ)",
+        "q": "Which pair is correct? (verb → past)",
         "choices": [
           "hear → heared",
           "go → went",
@@ -1366,10 +1600,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q034"
+        "id": "en_nik3-past-irregular_q034",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "verb: động từ · past: quá khứ"
       },
       {
-        "q": "Đổi sang câu phủ định, giữ thì quá khứ: \"Mai drew a cat.\" → Mai ___ a cat.",
+        "q": "Make the sentence negative. Keep it in the past: \"Mai drew a cat.\" → Mai ___ a cat.",
         "choices": [
           "didn't drew",
           "doesn't draw",
@@ -1404,10 +1647,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q035"
+        "id": "en_nik3-past-irregular_q035",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ],
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
       },
       {
-        "q": "At the zoo last week, I ___ (hold: cầm, bế) a baby rabbit.",
+        "q": "At the zoo last week, I ___ (hold) a baby rabbit.",
         "choices": [
           "holds",
           "holded",
@@ -1444,10 +1696,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q036"
+        "id": "en_nik3-past-irregular_q036",
+        "gloss": "hold: cầm, bế",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last winter, Grandma ___ (keep: giữ) the old photos in a box.",
+        "q": "Last winter, Grandma ___ (keep) the old photos in a box.",
         "choices": [
           "kept",
           "keeped",
@@ -1484,10 +1745,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q037"
+        "id": "en_nik3-past-irregular_q037",
+        "gloss": "keep: giữ",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, I ___ (know: biết) all the answers in the quiz.",
+        "q": "Yesterday, I ___ (know) all the answers in the quiz.",
         "choices": [
           "knowed",
           "knew",
@@ -1524,10 +1794,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q038"
+        "id": "en_nik3-past-irregular_q038",
+        "gloss": "know: biết",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last Monday, the teacher ___ (lead: dẫn) us to the library.",
+        "q": "Last Monday, the teacher ___ (lead) us to the library.",
         "choices": [
           "leaded",
           "lead",
@@ -1564,10 +1843,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q039"
+        "id": "en_nik3-past-irregular_q039",
+        "gloss": "lead: dẫn",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday morning, Dad ___ home at 7 o'clock. He didn't ___ home late. (leave: rời đi)",
+        "q": "Yesterday morning, Dad ___ home at 7 o'clock. He didn't ___ home late. (leave)",
         "choices": [
           "leaved / leave",
           "left / left",
@@ -1602,10 +1890,19 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q040"
+        "id": "en_nik3-past-irregular_q040",
+        "gloss": "leave: rời đi",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Which verb does NOT change in the past? (quá khứ giống dạng gốc)",
+        "q": "Which verb does NOT change in the past?",
         "choices": [
           "hit",
           "hold",
@@ -1643,7 +1940,16 @@
           "by": "claude",
           "date": "2026-11-02"
         },
-        "id": "en_nik3-past-irregular_q041"
+        "id": "en_nik3-past-irregular_q041",
+        "gloss": "does NOT change: không thay đổi (quá khứ giống dạng gốc)",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "Which sentence is correct?",

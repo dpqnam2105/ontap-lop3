@@ -421,6 +421,9 @@ const Quiz = {
     const qTextEl = document.getElementById('qText');
     qTextEl.textContent = q.q;
     qTextEl.classList.toggle('q-long', String(q.q || '').length > 110);
+    // Chú nghĩa tiếng Việt (vd "fry: rán") tách khỏi đề để giọng đọc tiếng Anh không bị kéo sang giọng Việt
+    const glossEl = document.getElementById('qGloss');
+    if (glossEl) { glossEl.textContent = q.gloss ? '📖 ' + q.gloss : ''; glossEl.classList.toggle('hidden', !q.gloss); }
     document.getElementById('scoreDisp').textContent = this.score;
     document.getElementById('progFill').style.width = (Math.max(0, num - (q._retry ? 0 : 1)) / Math.max(total, 1) * 100) + '%';
 

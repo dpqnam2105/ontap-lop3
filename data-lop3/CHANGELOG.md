@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-02 (Claude — audit giọng đọc của Codex)
+- tieng-anh / nik3-past-ed (14), nik3-past-didnt (12), nik3-past-irregular (34) — 60 câu: đề sang tiếng Anh ("Find the mistake.", "Make the sentence negative. Keep it in the past: …", "(verb → past)"), chú nghĩa Việt từ đề chuyển sang trường gloss; ghi revisions. ID, choices, a giữ nguyên.
+
 ## 2026-11-02 (Claude — lô 6b động từ bất quy tắc nhóm 4–6, Codex duyệt chữ)
 - tieng-anh / nik3-past-irregular — +21 câu (q022–q042: nhóm 4 fall–give, nhóm 5 go–hit, nhóm 6 hold–leave; ôn tích lũy, xen didn't + dạng gốc); contentReview codex-noi-dung-20261102.
 - index.json — reviewSet en-batquytac-2026 thêm g4–g6, mockSize 12 (2/nhóm).

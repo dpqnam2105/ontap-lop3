@@ -45,6 +45,13 @@ const IRR_PAST = { be: ['was', 'were'], begin: ['began'], break: ['broke'], brin
   hold: ['held'], keep: ['kept'], know: ['knew'], lead: ['led'], leave: ['left'] };
 // V3 khác V2 — lô này chỉ luyện gốc – quá khứ (built, brought, held, kept… trùng V2 nên không chặn)
 const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone|grown|known|gotten)\b/;
+// Lô 4–6 (Past Simple): đề hoàn toàn tiếng Anh để nút 🔊 đọc giọng Anh; chú nghĩa Việt nằm ở q.gloss (hiện riêng, không đọc).
+// Audit giọng đọc 02/11: đề trộn Việt–Anh làm bộ đọc chọn giọng Việt cho cả câu và cả đáp án một từ.
+const VI_CHARS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
+function enOnlyQ(q, err, tag) {
+  if (VI_CHARS.test(q.q) || q.choices.some(c => VI_CHARS.test(c))) err(tag + ': đề/lựa chọn phải hoàn toàn tiếng Anh (chú nghĩa Việt để ở gloss)');
+  if ('gloss' in q && (typeof q.gloss !== 'string' || !q.gloss.trim() || !VI_CHARS.test(q.gloss))) err(tag + ': gloss là chú nghĩa tiếng Việt, không rỗng');
+}
 const IRR_GROUP = v => Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
 // Một lô bất quy tắc = 3 nhóm liên tiếp; đề thử của thẻ ôn rút đều 2 câu/nhóm khi đủ 6 nhóm (Codex chốt 02/11).
 function irrRule(tag, groups, review) {
@@ -58,7 +65,9 @@ function irrRule(tag, groups, review) {
     else for (const v of q.verbs) if (!IRR_ORDER.includes(v) || IRR_GROUP(v) > q.irrGroup) err(tag + ': từ ' + v + ' ngoài danh sách / thuộc nhóm sau');
     if (IRR_V3.test(q.choices.join(' '))) err(tag + ': không dùng V3 làm nhiễu');
     if (/(^|[\s(;—-])[ABCD][:.)]\s/.test(q.explain)) err(tag + ': giải thích không dùng nhãn A–D (web xáo lựa chọn)');
-    if (/có lỗi/.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err(tag + ': câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
+    if (/mistake|builded|buyed|gived/.test(q.q) && (!/^Find the mistake\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err(tag + ': câu sửa lỗi cần "Find the mistake." + "✅ Câu đúng:"');
+    if (/" → /.test(q.q) && !/^Make the sentence (negative|positive)\. Keep it in the past/.test(q.q)) err(tag + ': câu đổi phải ghi rõ hướng đổi và giữ thì quá khứ');
+    enOnlyQ(q, err, tag);
   }, after(qs, errs) {
     // Mỗi dạng quá khứ của các từ trong lô phải là đáp án đúng ở ≥ 1 câu riêng (1 động từ) thuộc nhóm mình
     for (const [v, forms] of Object.entries(IRR_PAST)) if (groups.includes(IRR_GROUP(v))) for (const f of forms) {
@@ -88,8 +97,9 @@ const BATCH_RULES = {
     if (q.image) err('lô 5 không có hình');
     if (LO4_SHEET_SENTENCES.some(re => re.test(q.q))) err('lô 5: trùng câu phiếu trường');
     // Câu có lỗi để sửa: phải báo rõ và giải thích mở đầu bằng câu đúng
-    if (/smilied|didn't baked|Dad paint /.test(q.q) && (!/^Câu sau có lỗi\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err('lô 5: câu sửa lỗi cần "Câu sau có lỗi." + "✅ Câu đúng:"');
-    if (/" → /.test(q.q) && !/^Đổi sang câu (phủ định|khẳng định), giữ thì quá khứ/.test(q.q)) err('lô 5: câu đổi phải ghi rõ hướng đổi và giữ thì quá khứ');
+    if (/smilied|didn't baked|Dad paint /.test(q.q) && (!/^Find the mistake\./.test(q.q) || !/^✅ Câu đúng: /.test(q.explain))) err('lô 5: câu sửa lỗi cần "Find the mistake." + "✅ Câu đúng:"');
+    if (/" → /.test(q.q) && !/^Make the sentence (negative|positive)\. Keep it in the past/.test(q.q)) err('lô 5: câu đổi phải ghi rõ hướng đổi và giữ thì quá khứ');
+    enOnlyQ(q, err, 'lô 5');
     if (/(this|tomorrow) morning/.test(q.q)) err('lô 5: mốc thời gian phải rõ quá khứ');
   }, after(qs, errs) {
     const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
@@ -100,6 +110,7 @@ const BATCH_RULES = {
     if (r.basis !== 'school-sheet') err('lô 4 phải basis school-sheet');
     if (!Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 4: cần sources + note tự biên soạn');
     if (r.contentReview !== 'codex-noi-dung-20261028') err('lô 4 cần contentReview codex-noi-dung-20261028');
+    enOnlyQ(q, err, 'lô 4');
     if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 4: nik3-unit3, nik3, core, stage 2');
     if (!['past-ed', 'past-time'].includes(q.skill)) err('lô 4: skill past-ed / past-time');
     if (q.image) err('lô 4 không có hình');

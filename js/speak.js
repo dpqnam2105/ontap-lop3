@@ -35,13 +35,44 @@ const Speak = {
 
   hasVoice(lang) { return !!this.voiceFor(lang); },
 
-  /** Đoán ngôn ngữ của một đoạn chữ. */
+  VI_RE: /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i,
+
+  /** Đoán ngôn ngữ của một đoạn chữ. Môn tiếng Anh (hint 'en'): đoạn không dấu Việt luôn là 'en', kể cả một từ (camped, began). */
   detect(text, hint) {
     const t = String(text || '');
-    if (/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(t)) return 'vi';
+    if (this.VI_RE.test(t)) return 'vi';
+    if (hint === 'en' && /[A-Za-z]/.test(t)) return 'en';
     const words = (t.match(/[A-Za-z]{2,}/g) || []).length;
-    if (words >= 1 && (hint === 'en' || words >= 2)) return 'en';
+    if (words >= 2) return 'en';
     return hint || 'vi';
+  },
+
+  /**
+   * Tách chuỗi trộn Việt–Anh thành các đoạn [{text, lang}] theo từng từ (chỉ dùng cho môn tiếng Anh).
+   * Từ có dấu Việt → vi; từ Latin không dấu → en, trừ khi nằm kẹp giữa các từ Việt (vd "con", "Kim" trong câu Việt).
+   * Số, dấu câu đi theo đoạn đang đọc. Môn khác: giữ nguyên một đoạn như cũ.
+   */
+  segments(text, hint) {
+    const t = String(text || '');
+    if (hint !== 'en') return t.trim() ? [{ text: t, lang: this.detect(t, hint) }] : [];
+    if (!this.VI_RE.test(t)) return /[A-Za-z0-9]/.test(t) ? [{ text: t, lang: 'en' }] : [];
+    const toks = t.split(/(\s+)/).filter(x => x !== '');
+    const kind = toks.map(w => (/^\s+$/.test(w) ? 'sp' : this.VI_RE.test(w) ? 'vi' : /[A-Za-z]/.test(w) ? 'en' : 'neu'));
+    const near = (i, step) => { for (let j = i + step; j >= 0 && j < toks.length; j += step) if (kind[j] === 'vi' || kind[j] === 'en') return kind[j]; return null; };
+    const lang = kind.map((k, i) => {
+      if (k !== 'en') return k;
+      const l = near(i, -1), r = near(i, 1);
+      return (l === 'vi' || l === null) && (r === 'vi' || r === null) && (l || r) ? 'vi' : 'en';
+    });
+    const out = [];
+    let cur = null;
+    toks.forEach((w, i) => {
+      const k = lang[i];
+      if (k === 'sp' || k === 'neu') { if (cur) cur.text += w; else out.pending = (out.pending || '') + w; return; }
+      if (!cur || cur.lang !== k) { cur = { text: (out.pending || '') + w, lang: k }; out.pending = ''; out.push(cur); }
+      else cur.text += w;
+    });
+    return out.map(p => ({ text: p.text.trim(), lang: p.lang })).filter(p => /[A-Za-zÀ-ỹ0-9]/.test(p.text));
   },
 
   UNITS_VI: { mm: 'mi-li-mét', cm: 'xăng-ti-mét', dm: 'đề-xi-mét', km: 'ki-lô-mét', m: 'mét', kg: 'ki-lô-gam', g: 'gam', ml: 'mi-li-lít', l: 'lít' },
@@ -86,14 +117,20 @@ const Speak = {
   speakParts(parts, onDone) {
     if (!this.supported) return;
     this.stop();
-    const list = parts.filter(p => p && String(p.text || '').trim());
+    // Đoạn chưa ghi lang → tách theo ngôn ngữ; đoạn Việt chỉ đọc khi máy có giọng Việt (không ép giọng Anh đọc tiếng Việt)
+    const list = [];
+    parts.forEach(p => {
+      if (!p || !String(p.text || '').trim()) return;
+      const segs = p.lang ? [p] : this.segments(p.text, this._hint).map(s => ({ ...s, rate: p.rate }));
+      segs.forEach(s => { if (!(this._hint === 'en' && s.lang === 'vi' && !this.hasVoice('vi'))) list.push(s); });
+    });
     if (!list.length) return;
     this._speaking = true;
     this._setBtnState(true);
     const token = {};
     this._current = token;
     list.forEach((p, i) => {
-      const u = this._utter(p.text, p.lang || this.detect(p.text, this._hint), p.rate);
+      const u = this._utter(p.text, p.lang, p.rate);
       if (i === list.length - 1) {
         u.onend = u.onerror = () => {
           if (this._current !== token) return;
@@ -138,13 +175,14 @@ const Speak = {
     // Dạng mới: tự quyết đọc gì (vd. sắp xếp câu chỉ đọc đề; nghe-chọn-tranh không dùng nút này)
     const T = this._type();
     if (T && !T.legacy) return T.readAloud === false || !T.speakParts ? [] : T.speakParts(q);
-    const qLang = this.detect(q.q, this._hint);
-    const parts = [{ text: q.q, lang: qLang }];
+    // Đề đọc theo từng đoạn ngôn ngữ; đáp án đọc đúng thứ tự nút đang hiện (đã đảo), không đọc gợi ý / giải thích / chú nghĩa
+    const parts = this.segments(q.q, this._hint);
     const btns = Array.from(document.querySelectorAll('#ansGrid .ans-btn'));
     const choices = btns.length ? btns.map(b => b.textContent) : (q.choices || []);
     if (choices.length) {
-      parts.push({ text: qLang === 'en' ? 'The answers are:' : 'Các đáp án là:', lang: qLang });
-      choices.forEach(c => parts.push({ text: c, lang: this.detect(c, qLang) }));
+      const lead = this._hint === 'en' ? 'en' : (parts[0] ? parts[0].lang : this._hint);
+      parts.push({ text: lead === 'en' ? 'The answers are:' : 'Các đáp án là:', lang: lead });
+      choices.forEach(c => this.segments(c, this._hint).forEach(s => parts.push(s)));
     }
     return parts;
   },
@@ -166,7 +204,8 @@ const Speak = {
       });
       card.insertBefore(btn, card.firstChild);
     }
-    const lang = this._q ? this.detect(this._q.q, this._hint) : this._hint;
+    // Môn tiếng Anh: cần giọng Anh (đoạn Việt chỉ đọc nếu máy có giọng Việt). Môn khác giữ cách cũ.
+    const lang = this._hint === 'en' ? 'en' : (this._q ? this.detect(this._q.q, this._hint) : this._hint);
     const T = this._type();
     const ok = !(this._q && this._q._spNoHelp) && this.supported && this.ENABLED_SUBJECTS.includes(this._subject) && this.hasVoice(lang) && !(T && T.readAloud === false);
     btn.classList.toggle('hidden', !ok);

@@ -44,7 +44,7 @@
         "id": "en_nik3-past-ed_q001"
       },
       {
-        "q": "We ___ (camp: cắm trại) near the river last summer.",
+        "q": "We ___ (camp) near the river last summer.",
         "choices": [
           "camp",
           "camped",
@@ -81,7 +81,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q002"
+        "id": "en_nik3-past-ed_q002",
+        "gloss": "camp: cắm trại",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "Yesterday, Mai ___ (open) the window.",
@@ -232,7 +241,7 @@
         "id": "en_nik3-past-ed_q006"
       },
       {
-        "q": "Last Sunday, Mom and I ___ (bake: nướng bánh) a big cake.",
+        "q": "Last Sunday, Mom and I ___ (bake) a big cake.",
         "choices": [
           "bakeed",
           "bake",
@@ -268,10 +277,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q007"
+        "id": "en_nik3-past-ed_q007",
+        "gloss": "bake: nướng bánh",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "The baby ___ (wave: vẫy tay) at me yesterday.",
+        "q": "The baby ___ (wave) at me yesterday.",
         "choices": [
           "waveed",
           "wavved",
@@ -307,7 +325,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q008"
+        "id": "en_nik3-past-ed_q008",
+        "gloss": "wave: vẫy tay",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "We ___ (use) a map to find the museum last week.",
@@ -346,7 +373,7 @@
         "id": "en_nik3-past-ed_q009"
       },
       {
-        "q": "Last winter, we ___ (skate: trượt băng) on the ice.",
+        "q": "Last winter, we ___ (skate) on the ice.",
         "choices": [
           "skateed",
           "skated",
@@ -383,10 +410,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q010"
+        "id": "en_nik3-past-ed_q010",
+        "gloss": "skate: trượt băng",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "\"copy\" (chép lại) in the past is:",
+        "q": "\"copy\" in the past is:",
         "choices": [
           "copyed",
           "copies",
@@ -421,10 +457,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q011"
+        "id": "en_nik3-past-ed_q011",
+        "gloss": "copy: chép lại",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Linh ___ (tidy: dọn gọn) her room. It is very clean now.",
+        "q": "Yesterday, Linh ___ (tidy) her room. It is very clean now.",
         "choices": [
           "tidyed",
           "tidies",
@@ -459,10 +504,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q012"
+        "id": "en_nik3-past-ed_q012",
+        "gloss": "tidy: dọn gọn",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Last night, Dad ___ (fry: rán) some eggs for dinner.",
+        "q": "Last night, Dad ___ (fry) some eggs for dinner.",
         "choices": [
           "fried",
           "fryed",
@@ -499,10 +553,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q013"
+        "id": "en_nik3-past-ed_q013",
+        "gloss": "fry: rán",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "I ___ (worry: lo lắng) about the test last week.",
+        "q": "I ___ (worry) about the test last week.",
         "choices": [
           "worryed",
           "worried",
@@ -538,10 +601,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q014"
+        "id": "en_nik3-past-ed_q014",
+        "gloss": "worry: lo lắng",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "\"dry\" (làm khô) in the past is:",
+        "q": "\"dry\" in the past is:",
         "choices": [
           "dryed",
           "dries",
@@ -576,10 +648,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q015"
+        "id": "en_nik3-past-ed_q015",
+        "gloss": "dry: làm khô",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "The rabbit ___ (hop: nhảy) into the garden yesterday.",
+        "q": "The rabbit ___ (hop) into the garden yesterday.",
         "choices": [
           "hoped",
           "hops",
@@ -615,10 +696,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q016"
+        "id": "en_nik3-past-ed_q016",
+        "gloss": "hop: nhảy",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Grandma ___ (hug: ôm) me.",
+        "q": "Yesterday, Grandma ___ (hug) me.",
         "choices": [
           "hugged",
           "huged",
@@ -653,10 +743,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q017"
+        "id": "en_nik3-past-ed_q017",
+        "gloss": "hug: ôm",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Oh no! I ___ (drop: làm rơi) my ice cream on the floor yesterday.",
+        "q": "Oh no! I ___ (drop) my ice cream on the floor yesterday.",
         "choices": [
           "droped",
           "dropped",
@@ -693,10 +792,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q018"
+        "id": "en_nik3-past-ed_q018",
+        "gloss": "drop: làm rơi",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "We ___ (chat: trò chuyện) with our friends after school yesterday.",
+        "q": "We ___ (chat) with our friends after school yesterday.",
         "choices": [
           "chated",
           "chats",
@@ -731,10 +839,19 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q019"
+        "id": "en_nik3-past-ed_q019",
+        "gloss": "chat: trò chuyện",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
-        "q": "Yesterday, Tom ___ (nod: gật đầu) his head to say \"yes\".",
+        "q": "Yesterday, Tom ___ (nod) his head to say \"yes\".",
         "choices": [
           "noded",
           "nods",
@@ -770,7 +887,16 @@
           "date": "2026-10-28",
           "contentReview": "codex-noi-dung-20261028"
         },
-        "id": "en_nik3-past-ed_q020"
+        "id": "en_nik3-past-ed_q020",
+        "gloss": "nod: gật đầu",
+        "revisions": [
+          {
+            "date": "2026-11-02",
+            "by": "claude",
+            "change": "q: đề tiếng Anh; chú nghĩa Việt chuyển sang gloss (audit giọng đọc 02/11)",
+            "doc": "audit-tieng-anh-giong-doc-20261102.md"
+          }
+        ]
       },
       {
         "q": "The children ___ (play) in the park last Saturday.",

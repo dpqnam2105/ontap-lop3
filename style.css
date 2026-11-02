@@ -846,3 +846,6 @@ body.on-home.home-today .main{padding-top:22px}
 .gk-btn.gk-main{background:#ff7a1a;color:#fff}
 .gk-btn.gk-extra{background:#eef1f6;color:#3a4a60}
 .gk-btn[disabled]{opacity:.5;cursor:default}
+/* Chú nghĩa tiếng Việt cho đề tiếng Anh (q.gloss) — hiển thị riêng, nút 🔊 không đọc */
+.q-gloss{margin-top:10px;display:inline-block;background:#fff8e6;border:1px dashed #f3c766;color:#6b4a07;border-radius:12px;padding:6px 12px;font-weight:750;font-size:1rem;line-height:1.45}
+@media(max-width:760px){.q-gloss{font-size:.92rem}}
