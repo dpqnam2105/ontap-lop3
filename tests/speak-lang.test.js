@@ -33,7 +33,7 @@ function boot({ voices = ['en-US', 'vi-VN'], buttons = null, lateVoices = false 
   return { S, spoken, btn: btnEl, loadVoices: () => { voiceList = mkVoices(); listeners.voiceschanged && listeners.voiceschanged(); } };
 }
 const data = f => JSON.parse(fs.readFileSync(path.join(REPO, 'data-lop3', 'tieng-anh', f), 'utf8')).topic.questions;
-const byId = id => ['nik3-past-ed.json', 'nik3-past-didnt.json', 'nik3-past-irregular.json', 'mshoa-e2-u6.json', 'nik3-unit1.json']
+const byId = id => ['nik3-past-ed.json', 'nik3-past-didnt.json', 'nik3-past-irregular.json', 'mshoa-e2-u6.json', 'nik3-unit1.json', 'nik3-unit3.json']
   .flatMap(data).find(q => q.id === id);
 
 const tests = {
@@ -77,6 +77,29 @@ const tests = {
     const i = parts.findIndex(p => p.text === 'The answers are:');
     assert.ok(i > 0 && parts.slice(i).every(p => p.lang === 'en'), JSON.stringify(parts));
     assert.deepStrictEqual(parts.slice(0, i).map(p => p.lang), ['en', 'vi', 'en']);
+  },
+  'đề cũ trộn Việt–Anh dùng q.speak khai báo: "đèn pin", "nhà hát (theater), con phải…" — so đủ chữ + giọng từng câu đọc'() {
+    const said = (id, voices) => {
+      const q = byId(id);
+      const r = boot({ voices, buttons: q.choices });
+      r.S.attach(q, 'tieng-anh'); r.S.speakParts(r.S._parts());
+      return JSON.parse(JSON.stringify(r.spoken.map(u => [String(u.lang).slice(0, 2), u.text, u.voice ? String(u.voice.lang).slice(0, 2) : null])));
+    };
+    const ans = id => byId(id).choices.map(c => ['en', c, 'en']);
+    const lead = [['en', 'The answers are:', 'en']];
+    // có cả giọng vi + en
+    assert.deepStrictEqual(said('en_nik3-unit3_q013', ['en-US', 'vi-VN']), [['vi', 'đèn pin', 'vi'], ['en', 'in English is:', 'en'], ...lead, ...ans('en_nik3-unit3_q013')]);
+    assert.deepStrictEqual(said('en_nik3-unit1_q033', ['en-US', 'vi-VN']), [
+      ['vi', 'Con đang đứng ở ngã tư. Muốn đến nhà hát', 'vi'], ['en', '(theater),', 'en'],
+      ['vi', 'con phải đi vào con đường bên tay trái.', 'vi'], ['en', 'What do you say?', 'en'], ...lead, ...ans('en_nik3-unit1_q033')]);
+    // chỉ có giọng en: bỏ trọn cụm Việt — không sót "pin", "con" đọc giọng Anh
+    assert.deepStrictEqual(said('en_nik3-unit3_q013', ['en-US']), [['en', 'in English is:', 'en'], ...lead, ...ans('en_nik3-unit3_q013')]);
+    assert.deepStrictEqual(said('en_nik3-unit1_q033', ['en-US']), [['en', '(theater),', 'en'], ['en', 'What do you say?', 'en'], ...lead, ...ans('en_nik3-unit1_q033')]);
+  },
+  'đáp án tiếng Việt (câu hỏi nghĩa) đọc trọn giọng vi; đáp án không dấu đọc en'() {
+    const { S } = boot();
+    S.attach({ id: 'm', q: '"Extinct" means ___.', choices: ['rất to lớn', 'đã tuyệt chủng'] }, 'tieng-anh');
+    assert.deepStrictEqual(JSON.parse(JSON.stringify(S._parts().map(p => p.lang))), ['en', 'en', 'vi', 'vi']);
   },
   'đáp án đọc theo thứ tự nút đang hiện (sau khi đảo)'() {
     const q = byId('en_nik3-past-irregular_q006'); // câu "builded"

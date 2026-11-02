@@ -875,7 +875,25 @@
           "by": "claude",
           "date": "2026-10-08"
         },
-        "id": "en_nik3-unit1_q033"
+        "id": "en_nik3-unit1_q033",
+        "speak": [
+          {
+            "text": "Con đang đứng ở ngã tư. Muốn đến nhà hát",
+            "lang": "vi"
+          },
+          {
+            "text": "(theater),",
+            "lang": "en"
+          },
+          {
+            "text": "con phải đi vào con đường bên tay trái.",
+            "lang": "vi"
+          },
+          {
+            "text": "What do you say?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Mai is at the recreation center. She is in the pool now. \"___ Mai swimming now?\" – \"Yes, she is.\"",
@@ -1514,7 +1532,17 @@
           "by": "claude",
           "date": "2026-10-12"
         },
-        "id": "en_nik3-unit1_q049"
+        "id": "en_nik3-unit1_q049",
+        "speak": [
+          {
+            "text": "Look at the arrow. What do you do at the crossroads",
+            "lang": "en"
+          },
+          {
+            "text": "(ngã tư)?",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "q": "Look at the map. Start at the ★. Go straight to the crossroads (ngã tư). Turn right. Go to the end of the street. Where are you?",
@@ -1559,7 +1587,21 @@
           "by": "claude",
           "date": "2026-10-12"
         },
-        "id": "en_nik3-unit1_q050"
+        "id": "en_nik3-unit1_q050",
+        "speak": [
+          {
+            "text": "Look at the map. Start at the ★. Go straight to the crossroads",
+            "lang": "en"
+          },
+          {
+            "text": "(ngã tư).",
+            "lang": "vi"
+          },
+          {
+            "text": "Turn right. Go to the end of the street. Where are you?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Look at the map. The art gallery is across from the ___.",
@@ -2016,7 +2058,17 @@
           "by": "claude",
           "date": "2026-10-12"
         },
-        "id": "en_nik3-unit1_q061"
+        "id": "en_nik3-unit1_q061",
+        "speak": [
+          {
+            "text": "Biển báo vẽ NHIỀU con vật. Viết câu cho cả nhóm con vật:",
+            "lang": "vi"
+          },
+          {
+            "text": "\"Don't feed ___.\"",
+            "lang": "en"
+          }
+        ]
       }
     ]
   }

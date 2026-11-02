@@ -643,7 +643,17 @@
           "by": "claude",
           "date": "2026-10-08"
         },
-        "id": "en_nik3-unit2_q026"
+        "id": "en_nik3-unit2_q026",
+        "speak": [
+          {
+            "text": "Nội quy: Học sinh phải mặc đồng phục từ thứ Hai đến thứ Sáu. Chủ nhật không bắt buộc mặc đồng phục.",
+            "lang": "vi"
+          },
+          {
+            "text": "Today is Tuesday. Mai is a student at this school. She ___ wear a uniform today.",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Nội quy: Học sinh phải mặc đồng phục từ thứ Hai đến thứ Sáu. Chủ nhật không bắt buộc mặc đồng phục. Today is Sunday. Mai stays at home. She ___ wear a uniform today.",
@@ -680,7 +690,17 @@
           "by": "claude",
           "date": "2026-10-08"
         },
-        "id": "en_nik3-unit2_q027"
+        "id": "en_nik3-unit2_q027",
+        "speak": [
+          {
+            "text": "Nội quy: Học sinh phải mặc đồng phục từ thứ Hai đến thứ Sáu. Chủ nhật không bắt buộc mặc đồng phục.",
+            "lang": "vi"
+          },
+          {
+            "text": "Today is Sunday. Mai stays at home. She ___ wear a uniform today.",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "In the museum, you can look at the exhibits, but you can't touch them. Which sign is right?",
@@ -790,7 +810,17 @@
           "by": "claude",
           "date": "2026-10-08"
         },
-        "id": "en_nik3-unit2_q030"
+        "id": "en_nik3-unit2_q030",
+        "speak": [
+          {
+            "text": "Nội quy bảo tàng: Mọi người phải mua vé. Trẻ em dưới 6 tuổi không phải mua vé.",
+            "lang": "vi"
+          },
+          {
+            "text": "Ben is 8. His sister Kim is 4. Which sentence is right?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"Diplodocus eats leaves and plants. It doesn't eat meat.\" It is a ___.",
@@ -1169,7 +1199,21 @@
           "supplementRef": "careful — phiếu bổ trợ tuần 6–8 của trường (Unit2-Adjectives-Adverbs, 28/09/2026; source bo-tro-tuan6-8-20261001)"
         },
         "id": "en_nik3-unit2_q039",
-        "passage": "en-lo1-C"
+        "passage": "en-lo1-C",
+        "speak": [
+          {
+            "text": "Read: \"Lan is an archeologist. Today she is working near a tomb. She finds a small gold statue of a cat (statue =",
+            "lang": "en"
+          },
+          {
+            "text": "bức tượng).",
+            "lang": "vi"
+          },
+          {
+            "text": "It is very old, so she has to be careful with it. Lan doesn't have to work tomorrow.\" Why does Lan have to be careful with the statue?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Read: \"Lan is an archeologist. Today she is working near a tomb. She finds a small gold statue of a cat (statue = bức tượng). It is very old, so she has to be careful with it. Lan doesn't have to work tomorrow.\" What does Lan find?",
@@ -1212,7 +1256,21 @@
           "supplementRef": "careful — phiếu bổ trợ tuần 6–8 của trường (Unit2-Adjectives-Adverbs, 28/09/2026; source bo-tro-tuan6-8-20261001)"
         },
         "id": "en_nik3-unit2_q040",
-        "passage": "en-lo1-C"
+        "passage": "en-lo1-C",
+        "speak": [
+          {
+            "text": "Read: \"Lan is an archeologist. Today she is working near a tomb. She finds a small gold statue of a cat (statue =",
+            "lang": "en"
+          },
+          {
+            "text": "bức tượng).",
+            "lang": "vi"
+          },
+          {
+            "text": "It is very old, so she has to be careful with it. Lan doesn't have to work tomorrow.\" What does Lan find?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Tom wrote \"Mammoths are exting.\" Fix the word: Mammoths are extin___.",

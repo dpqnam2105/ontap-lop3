@@ -253,6 +253,19 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
       if (!Number.isInteger(q.a) || q.a < 0 || q.a >= (q.choices || []).length) err('a hỏng');
     }
     if (q.imageReview !== undefined && !q.image) err('imageReview chỉ cho câu có hình');
+    // Giọng đọc (review dc4c8ca): đề trộn Việt–Anh mà nút 🔊 đọc (trắc nghiệm, sắp xếp) phải khai báo q.speak — không để máy đoán ranh giới.
+    // Các đoạn ghép lại đúng nguyên đề (không thêm/bớt chữ, không lộ đáp án); đoạn en không có dấu Việt, đoạn vi có ít nhất một chữ có dấu.
+    if (VI_CHARS.test(q.q || '') && qt !== 'spell-fix' && qt !== 'listen-pick' && !Array.isArray(q.speak)) err('đề trộn Việt–Anh cần q.speak');
+    if (q.speak !== undefined) {
+      const sp = Array.isArray(q.speak) ? q.speak : [];
+      const norm = x => String(x || '').replace(/\s+/g, ' ').trim();
+      if (!sp.length || sp.some(p => !p || !['vi', 'en'].includes(p.lang) || !norm(p.text))) err('q.speak hỏng');
+      else {
+        if (norm(sp.map(p => p.text).join(' ')) !== norm(q.q)) err('q.speak ghép lại phải đúng nguyên đề');
+        if (sp.some(p => p.lang === 'en' && VI_CHARS.test(p.text))) err('q.speak: đoạn en có dấu Việt');
+        if (sp.some(p => p.lang === 'vi' && !VI_CHARS.test(p.text))) err('q.speak: đoạn vi không có chữ Việt có dấu');
+      }
+    }
     if (q.review !== undefined) {
       reviewed.push(q);
       if (!ROUNDS[q.review.round] || !['ok', 'fixed', 'pending', 'rejected'].includes(q.review.status)) err('review lạ');

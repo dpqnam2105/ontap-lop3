@@ -765,7 +765,17 @@
           "by": "claude",
           "date": "2026-10-30",
           "contentReview": "codex-noi-dung-20261030"
-        }
+        },
+        "speak": [
+          {
+            "text": "Choose the correct spelling: ___ your teeth",
+            "lang": "en"
+          },
+          {
+            "text": "(đánh răng)",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "id": "en_sp_pilot_k03",

@@ -111,7 +111,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q003"
+        "id": "en_mshoa-e2-u6_q003",
+        "speak": [
+          {
+            "text": "Điền từ mang nghĩa \"ăn\":",
+            "lang": "vi"
+          },
+          {
+            "text": "I ___ breakfast every morning.",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "I ___ a bath in the evening.",
@@ -251,7 +261,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q007"
+        "id": "en_mshoa-e2-u6_q007",
+        "speak": [
+          {
+            "text": "\"đi ngủ\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"phòng ăn\" in English is:",
@@ -286,7 +306,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q008"
+        "id": "en_mshoa-e2-u6_q008",
+        "speak": [
+          {
+            "text": "\"phòng ăn\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "Where do you get dressed? – ___",
@@ -391,7 +421,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q011"
+        "id": "en_mshoa-e2-u6_q011",
+        "speak": [
+          {
+            "text": "Choose the correct spelling for",
+            "lang": "en"
+          },
+          {
+            "text": "\"bữa trưa\".",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "q": "Choose the correct spelling for \"bữa tối\".",
@@ -426,7 +466,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q012"
+        "id": "en_mshoa-e2-u6_q012",
+        "speak": [
+          {
+            "text": "Choose the correct spelling for",
+            "lang": "en"
+          },
+          {
+            "text": "\"bữa tối\".",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "q": "Read: \"Hi! I'm Linh. I get up at six o'clock in the morning. I eat lunch at school. In the evening, I take a bath in the bathroom. Then I do my homework in my bedroom. I go to bed at nine o'clock.\" You ask Linh: \"Where do you take a bath?\" Linh says: \"___\"",
@@ -574,7 +624,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q016"
+        "id": "en_mshoa-e2-u6_q016",
+        "speak": [
+          {
+            "text": "Bây giờ là 3 giờ chiều.",
+            "lang": "vi"
+          },
+          {
+            "text": "It's three o'clock in the ___.",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"afternoon\" means:",
@@ -681,7 +741,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q019"
+        "id": "en_mshoa-e2-u6_q019",
+        "speak": [
+          {
+            "text": "Kim ngắn chỉ số 8, kim dài chỉ số 12.",
+            "lang": "vi"
+          },
+          {
+            "text": "What time is it?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "What time ___ it? – It's seven o'clock.",
@@ -751,7 +821,17 @@
           "by": "claude",
           "date": "2026-10-10"
         },
-        "id": "en_mshoa-e2-u6_q021"
+        "id": "en_mshoa-e2-u6_q021",
+        "speak": [
+          {
+            "text": "Bây giờ là 7 giờ tối.",
+            "lang": "vi"
+          },
+          {
+            "text": "What time is it?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"wait\" means:",

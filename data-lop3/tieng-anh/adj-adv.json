@@ -604,7 +604,17 @@
           "by": "claude",
           "date": "2026-10-12"
         },
-        "id": "en_adj-adv_q026"
+        "id": "en_adj-adv_q026",
+        "speak": [
+          {
+            "text": "Mẹ nói: \"Dan ăn chậm quá, cả nhà sắp muộn rồi.\"",
+            "lang": "vi"
+          },
+          {
+            "text": "Which sentence is right?",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "The boys are so ___. I can't hear the teacher.",

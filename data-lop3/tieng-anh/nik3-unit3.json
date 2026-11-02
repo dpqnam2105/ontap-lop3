@@ -158,7 +158,13 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q004"
+        "id": "en_nik3-unit3_q004",
+        "speak": [
+          {
+            "text": "Con cần biết phải đi theo hướng nào. Con dùng đồ vật nào?",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "q": "\"get lost\" means:",
@@ -399,7 +405,17 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q010"
+        "id": "en_nik3-unit3_q010",
+        "speak": [
+          {
+            "text": "Which one describes an action? (action =",
+            "lang": "en"
+          },
+          {
+            "text": "hành động)",
+            "lang": "vi"
+          }
+        ]
       },
       {
         "q": "\"khu cắm trại\" in English is:",
@@ -436,7 +452,17 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q011"
+        "id": "en_nik3-unit3_q011",
+        "speak": [
+          {
+            "text": "\"khu cắm trại\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"nhóm lửa\" in English is:",
@@ -473,7 +499,17 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q012"
+        "id": "en_nik3-unit3_q012",
+        "speak": [
+          {
+            "text": "\"nhóm lửa\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"đèn pin\" in English is:",
@@ -510,7 +546,17 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q013"
+        "id": "en_nik3-unit3_q013",
+        "speak": [
+          {
+            "text": "\"đèn pin\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "\"camping stove\" means:",
@@ -588,7 +634,21 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q015"
+        "id": "en_nik3-unit3_q015",
+        "speak": [
+          {
+            "text": "A: \"We need to go north. Which way is north?\" (north =",
+            "lang": "en"
+          },
+          {
+            "text": "hướng Bắc)",
+            "lang": "vi"
+          },
+          {
+            "text": "B: \"Let's look at the ___.\"",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "A: \"Is it cold at night here?\" B: \"Yes. Bring your ___. You can sleep in it.\"",
@@ -925,7 +985,17 @@
           "by": "claude",
           "date": "2026-10-09"
         },
-        "id": "en_nik3-unit3_q023"
+        "id": "en_nik3-unit3_q023",
+        "speak": [
+          {
+            "text": "\"cái chăn\"",
+            "lang": "vi"
+          },
+          {
+            "text": "in English is:",
+            "lang": "en"
+          }
+        ]
       },
       {
         "q": "It's dark. I need a ___.",

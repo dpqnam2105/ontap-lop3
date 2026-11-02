@@ -121,7 +121,8 @@ const Speak = {
     const list = [];
     parts.forEach(p => {
       if (!p || !String(p.text || '').trim()) return;
-      const segs = p.lang ? [p] : this.segments(p.text, this._hint).map(s => ({ ...s, rate: p.rate }));
+      const own = this._q && p.text === this._q.q ? this._questionParts(this._q) : null;  // dạng bài mới đọc lại đề
+      const segs = p.lang ? [p] : (own || this.segments(p.text, this._hint)).map(s => ({ ...s, rate: p.rate }));
       segs.forEach(s => { if (!(this._hint === 'en' && s.lang === 'vi' && !this.hasVoice('vi'))) list.push(s); });
     });
     if (!list.length) return;
@@ -175,16 +176,29 @@ const Speak = {
     // Dạng mới: tự quyết đọc gì (vd. sắp xếp câu chỉ đọc đề; nghe-chọn-tranh không dùng nút này)
     const T = this._type();
     if (T && !T.legacy) return T.readAloud === false || !T.speakParts ? [] : T.speakParts(q);
-    // Đề đọc theo từng đoạn ngôn ngữ; đáp án đọc đúng thứ tự nút đang hiện (đã đảo), không đọc gợi ý / giải thích / chú nghĩa
-    const parts = this.segments(q.q, this._hint);
+    // Đề: dùng các đoạn khai báo sẵn q.speak [{text, lang}] nếu có (đề trộn Việt–Anh); đề không dấu Việt → một đoạn.
+    // Đáp án đọc đúng thứ tự nút đang hiện (đã đảo); không đọc gợi ý / giải thích / chú nghĩa.
+    const parts = this._questionParts(q);
     const btns = Array.from(document.querySelectorAll('#ansGrid .ans-btn'));
     const choices = btns.length ? btns.map(b => b.textContent) : (q.choices || []);
     if (choices.length) {
       const lead = this._hint === 'en' ? 'en' : (parts[0] ? parts[0].lang : this._hint);
       parts.push({ text: lead === 'en' ? 'The answers are:' : 'Các đáp án là:', lang: lead });
-      choices.forEach(c => this.segments(c, this._hint).forEach(s => parts.push(s)));
+      choices.forEach(c => parts.push({ text: c, lang: this._choiceLang(c) }));
     }
     return parts;
+  },
+
+  /** Đoạn đọc của đề. q.speak (khai báo trong dữ liệu) được ưu tiên; segments() chỉ là dự phòng cho đề chưa khai báo. */
+  _questionParts(q) {
+    if (Array.isArray(q.speak) && q.speak.length) return q.speak.filter(p => p && p.text && (p.lang === 'vi' || p.lang === 'en')).map(p => ({ text: p.text, lang: p.lang }));
+    return this.segments(q.q, this._hint);
+  },
+
+  /** Đáp án là một mục ngắn một ngôn ngữ: môn tiếng Anh → có dấu Việt thì cả đáp án giọng vi, còn lại en. */
+  _choiceLang(c) {
+    if (this._hint === 'en') return this.VI_RE.test(String(c || '')) ? 'vi' : 'en';
+    return this.detect(c, this._hint);
   },
 
   refreshButton() {

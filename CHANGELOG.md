@@ -3,7 +3,8 @@
 ## 2026-11-02 — Sửa giọng đọc 🔊 Tiếng Anh + đề lô 4–6 bằng tiếng Anh
 - Speak: môn tiếng Anh tách đề trộn Việt–Anh thành từng đoạn theo ngôn ngữ; phần tiếng Anh và đáp án (kể cả một từ như camped, began) luôn giọng en; đoạn Việt chỉ đọc khi máy có giọng Việt. Nút hiện khi có giọng en. Môn khác giữ cách cũ.
 - 60 đề lô 4–6 (-ed, didn't, bất quy tắc) đổi yêu cầu sang tiếng Anh ngắn; chú nghĩa Việt chuyển sang dòng 📖 hiện dưới đề (q.gloss, không đọc). Không đổi ID, đáp án, phạm vi.
-- Test mới speak-lang (8) + speak-lang e2e; en-data chặn dấu Việt trong đề/lựa chọn lô 4–6.
+- Đề cũ trộn Việt–Anh (29 câu: Ms Hoa, Unit 1–3, đọc hiểu, adj-adv + 1 câu pilot) khai báo đoạn đọc q.speak [{text, lang}] — không để máy đoán ranh giới (lỗi "đèn pin", "(theater), con"). Đáp án có dấu Việt đọc trọn giọng vi.
+- Test mới speak-lang (10) + speak-lang e2e (cả máy chỉ có giọng en); en-data: chặn dấu Việt trong đề/lựa chọn lô 4–6, đề trộn phải có q.speak ghép đúng nguyên đề.
 
 ## 2026-11-02 — Tiếng Anh: Động từ bất quy tắc nhóm 4–6 (lô 6b)
 - Thêm 21 câu nhóm 4–6 (fall … leave) vào chủ đề "NIK3 Unit 3: Động từ bất quy tắc" — đủ 30 từ danh sách cô, Codex duyệt chữ. Thẻ ôn bất quy tắc có 6 nhóm (vẫn chỉ ở Giai đoạn 2); đề thử 12 câu rút 2 câu/nhóm.
