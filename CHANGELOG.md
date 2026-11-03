@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-03 — Tiếng Anh: đủ 60 động từ bất quy tắc (lô 6d) + Unit 3 Vocabulary 2 (lô 7)
+- Lô 6d: 21 câu nhóm 10–12 (set … write) → thẻ "Động từ bất quy tắc" đủ 60 từ danh sách cô, 12 nhóm, 84 câu; đề thử 24 câu (2/nhóm).
+- Lô 7: 24 câu từ vựng theo phiếu U3-WS8 (waterfall, coast, go kayaking, go zip-lining, go rock climbing, meet new people, light, heavy, safe, unsafe, dangerous, beautiful) trong chủ đề NIK3 Unit 3: Vacation & camping. Codex duyệt chữ cả hai lô.
+- en-data: quy tắc lô 6d, lô 7 (đề tiếng Anh, chỉ câu "means:" có đáp án tiếng Việt, mỗi từ phiếu là đáp án ≥ 1 câu, gloss không lộ đáp án).
+
 ## 2026-11-03 — Tiếng Anh: Động từ bất quy tắc nhóm 7–9 (lô 6c)
 - Thêm 21 câu nhóm 7–9 (let … send, mặt sau danh sách cô) vào chủ đề "NIK3 Unit 3: Động từ bất quy tắc", Codex duyệt chữ. Đề tiếng Anh, nghĩa ở dòng 📖; lie dùng nghĩa nằm (lie → lay; nói dối → lied). Thẻ ôn có 9 nhóm, đề thử 18 câu (2/nhóm).
 - en-data: danh sách 60 từ, quy tắc lô 6c, chặn thêm V3 (lain, ridden, risen, seen…), kiểm gloss không lộ đáp án; en-irregular kiểm mockSize = 2 × số nhóm.

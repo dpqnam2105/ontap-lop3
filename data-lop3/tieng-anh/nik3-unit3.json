@@ -1104,6 +1104,898 @@
           "date": "2026-10-12"
         },
         "id": "en_nik3-unit3_q026"
+      },
+      {
+        "q": "Water falls down from a high place into a river. What is it?",
+        "choices": [
+          "waterfall",
+          "rock",
+          "campsite",
+          "coast"
+        ],
+        "a": 0,
+        "hint": "Đọc kỹ từng ý trong câu tả rồi nghĩ xem từ nào trong bài Vocabulary 2 khớp với tất cả các ý đó.",
+        "explain": "waterfall = thác nước: nước chảy từ trên cao xuống.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V01",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "waterfall"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q027",
+        "gloss": "falls down: rơi xuống"
+      },
+      {
+        "q": "It is the land next to the sea. Sometimes it has a beach. What is it?",
+        "choices": [
+          "waterfall",
+          "coast",
+          "river",
+          "rock"
+        ],
+        "a": 1,
+        "hint": "Đọc kỹ từng ý trong câu tả rồi nghĩ xem từ nào trong bài Vocabulary 2 khớp với tất cả các ý đó.",
+        "explain": "coast = bờ biển: vùng đất sát biển, đôi khi có bãi cát.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V02",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "coast"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q028",
+        "gloss": "land: đất liền · sea: biển"
+      },
+      {
+        "q": "You can pick it up easily. It is not heavy. It is ___.",
+        "choices": [
+          "unsafe",
+          "dangerous",
+          "light",
+          "beautiful"
+        ],
+        "a": 2,
+        "hint": "Đọc kỹ từng ý trong câu tả rồi nghĩ xem từ nào trong bài Vocabulary 2 khớp với tất cả các ý đó.",
+        "explain": "light = nhẹ: dễ nhấc lên, trái nghĩa với heavy.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V03",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "light"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q029",
+        "gloss": "pick up: nhấc lên · easily: dễ dàng"
+      },
+      {
+        "q": "It is very hard to pick up or move. It is ___.",
+        "choices": [
+          "beautiful",
+          "light",
+          "safe",
+          "heavy"
+        ],
+        "a": 3,
+        "hint": "Đọc kỹ từng ý trong câu tả rồi nghĩ xem từ nào trong bài Vocabulary 2 khớp với tất cả các ý đó.",
+        "explain": "heavy = nặng: rất khó nhấc lên hay di chuyển.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V04",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "heavy"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q030",
+        "gloss": "pick up: nhấc lên · move: di chuyển"
+      },
+      {
+        "q": "It can hurt you, so you have to be careful. It is ___.",
+        "choices": [
+          "dangerous",
+          "light",
+          "beautiful",
+          "safe"
+        ],
+        "a": 0,
+        "hint": "Đọc kỹ từng ý trong câu tả rồi nghĩ xem từ nào trong bài Vocabulary 2 khớp với tất cả các ý đó.",
+        "explain": "dangerous = nguy hiểm: có thể làm mình bị thương. (unsafe cũng gần nghĩa, nhưng không có trong lựa chọn.)",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V05",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "dangerous"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q031",
+        "gloss": "hurt: làm đau"
+      },
+      {
+        "q": "Which word means the opposite of \"safe\"?",
+        "choices": [
+          "beautiful",
+          "unsafe",
+          "heavy",
+          "light"
+        ],
+        "a": 1,
+        "hint": "Từ trái nghĩa là từ có nghĩa ngược lại.",
+        "explain": "safe (an toàn) ↔ unsafe (không an toàn). un- đứng trước làm nghĩa ngược lại.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V06",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "safe",
+            "unsafe"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q032",
+        "gloss": "opposite: trái nghĩa"
+      },
+      {
+        "q": "Always wear a helmet when you go rock climbing. It keeps you ___.",
+        "choices": [
+          "heavy",
+          "dangerous",
+          "safe",
+          "unsafe"
+        ],
+        "a": 2,
+        "hint": "Đọc cả câu, chú ý các từ xung quanh chỗ trống để biết cần từ chỉ nơi chốn, hoạt động hay tính chất.",
+        "explain": "Mũ bảo hiểm giữ cho mình an toàn → safe. dangerous / unsafe là ngược lại.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V07",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "safe",
+            "go rock climbing"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q033",
+        "gloss": "helmet: mũ bảo hiểm · keeps you: giữ cho con"
+      },
+      {
+        "q": "You sit in a small boat and move it with a paddle. What do you do?",
+        "choices": [
+          "meet new people",
+          "go rock climbing",
+          "go zip-lining",
+          "go kayaking"
+        ],
+        "a": 3,
+        "hint": "Hình dung việc người đó đang làm: ở dưới nước, trên cao hay trên vách đá? Chọn hoạt động phù hợp.",
+        "explain": "go kayaking = chèo thuyền kayak: ngồi trong thuyền nhỏ và chèo bằng mái chèo.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V08",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go kayaking"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q034",
+        "gloss": "boat: thuyền · paddle: mái chèo"
+      },
+      {
+        "q": "You slide along a cable high above the ground. What do you do?",
+        "choices": [
+          "go zip-lining",
+          "go kayaking",
+          "go rock climbing",
+          "set up a tent"
+        ],
+        "a": 0,
+        "hint": "Hình dung việc người đó đang làm: ở dưới nước, trên cao hay trên vách đá? Chọn hoạt động phù hợp.",
+        "explain": "go zip-lining = trượt zipline: treo người trên dây cáp, trượt dọc theo dây ở trên cao.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V09",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go zip-lining"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q035",
+        "gloss": "slide along: trượt dọc theo · cable: dây cáp"
+      },
+      {
+        "q": "You use your hands and feet to go up a big rock. What do you do?",
+        "choices": [
+          "go zip-lining",
+          "go rock climbing",
+          "make a fire",
+          "go kayaking"
+        ],
+        "a": 1,
+        "hint": "Hình dung việc người đó đang làm: ở dưới nước, trên cao hay trên vách đá? Chọn hoạt động phù hợp.",
+        "explain": "go rock climbing = leo núi đá: dùng tay chân leo lên vách đá.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V10",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go rock climbing"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q036",
+        "gloss": "hands and feet: tay và chân"
+      },
+      {
+        "q": "On vacation, I like to talk and play with children from other countries. I like to ___.",
+        "choices": [
+          "go rock climbing",
+          "go kayaking",
+          "meet new people",
+          "clean up"
+        ],
+        "a": 2,
+        "hint": "Câu đang nói đến việc làm quen với ai hay tham gia hoạt động thể thao?",
+        "explain": "meet new people = gặp gỡ, làm quen người mới.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V11",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "meet new people"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q037",
+        "gloss": "countries: các nước"
+      },
+      {
+        "q": "Be careful! The rocks are wet. Climbing here is ___.",
+        "choices": [
+          "light",
+          "beautiful",
+          "safe",
+          "dangerous"
+        ],
+        "a": 3,
+        "hint": "Đọc cả câu, chú ý các từ xung quanh chỗ trống để biết cần từ chỉ nơi chốn, hoạt động hay tính chất.",
+        "explain": "Đá ướt, dễ trượt ngã → dangerous (nguy hiểm). \"Be careful!\" là dấu hiệu.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V12",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "dangerous"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q038",
+        "gloss": "wet: ướt"
+      },
+      {
+        "q": "This box is very ___. I can't pick it up.",
+        "choices": [
+          "heavy",
+          "light",
+          "beautiful",
+          "safe"
+        ],
+        "a": 0,
+        "hint": "Đọc cả câu, chú ý các từ xung quanh chỗ trống để biết cần từ chỉ nơi chốn, hoạt động hay tính chất.",
+        "explain": "Không nhấc lên được → hộp nặng: heavy.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V13",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "heavy"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q039",
+        "gloss": "pick up: nhấc lên"
+      },
+      {
+        "q": "Look at the ___! Water is falling from high rocks into the river below.",
+        "choices": [
+          "compass",
+          "waterfall",
+          "coast",
+          "campsite"
+        ],
+        "a": 1,
+        "hint": "Đọc cả câu, chú ý các từ xung quanh chỗ trống để biết cần từ chỉ nơi chốn, hoạt động hay tính chất.",
+        "explain": "Nước đổ từ vách đá cao xuống sông bên dưới → waterfall (thác nước).",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V14",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "waterfall"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q040",
+        "gloss": "falling from: đổ xuống từ · below: bên dưới"
+      },
+      {
+        "q": "The sunset at the beach is very ___. I want to take a photo.",
+        "choices": [
+          "unsafe",
+          "dangerous",
+          "beautiful",
+          "heavy"
+        ],
+        "a": 2,
+        "hint": "Đọc cả câu, chú ý các từ xung quanh chỗ trống để biết cần từ chỉ nơi chốn, hoạt động hay tính chất.",
+        "explain": "Muốn chụp ảnh hoàng hôn → cảnh đẹp: beautiful.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V15",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "beautiful"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q041",
+        "gloss": "sunset: hoàng hôn · take a photo: chụp ảnh"
+      },
+      {
+        "q": "\"coast\" means:",
+        "choices": [
+          "khu cắm trại",
+          "thác nước",
+          "vách đá",
+          "bờ biển"
+        ],
+        "a": 3,
+        "hint": "Nhớ lại tranh và nghĩa của từ trong bài Vocabulary 2.",
+        "explain": "coast = bờ biển. thác nước là waterfall, khu cắm trại là campsite.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V16",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "coast"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q042"
+      },
+      {
+        "q": "\"go kayaking\" means:",
+        "choices": [
+          "chèo thuyền kayak",
+          "gặp người mới",
+          "leo núi đá",
+          "đu dây trượt"
+        ],
+        "a": 0,
+        "hint": "Nhớ lại tranh và nghĩa của từ trong bài Vocabulary 2.",
+        "explain": "go kayaking = chèo thuyền kayak. leo núi đá là go rock climbing, đu dây trượt là go zip-lining.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V17",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go kayaking"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q043"
+      },
+      {
+        "q": "\"light\" in \"a light bag\" means:",
+        "choices": [
+          "nguy hiểm",
+          "nhẹ",
+          "ánh sáng",
+          "nặng"
+        ],
+        "a": 1,
+        "hint": "Nhớ lại tranh và nghĩa của từ trong bài Vocabulary 2.",
+        "explain": "Trong \"a light bag\", light là tính từ: nhẹ. (light còn có nghĩa là ánh sáng, nhưng không hợp với \"a light bag\".)",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V18",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "light"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q044"
+      },
+      {
+        "q": "Odd one out: Which word is different?",
+        "choices": [
+          "go zip-lining",
+          "go kayaking",
+          "waterfall",
+          "go rock climbing"
+        ],
+        "a": 2,
+        "hint": "Xếp các từ thành nhóm: nơi chốn, hoạt động, hay từ chỉ tính chất? Từ nào không cùng nhóm với ba từ còn lại?",
+        "explain": "waterfall là nơi chốn; ba từ còn lại là hoạt động (go + -ing).",
+        "difficulty": 2,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V19",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "waterfall",
+            "go kayaking",
+            "go zip-lining",
+            "go rock climbing"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q045",
+        "gloss": "odd one out: tìm từ khác loại"
+      },
+      {
+        "q": "Odd one out: Which word is different?",
+        "choices": [
+          "light",
+          "heavy",
+          "beautiful",
+          "coast"
+        ],
+        "a": 3,
+        "hint": "Xếp các từ thành nhóm: nơi chốn, hoạt động, hay từ chỉ tính chất? Từ nào không cùng nhóm với ba từ còn lại?",
+        "explain": "coast là danh từ chỉ nơi chốn; heavy, light, beautiful là từ chỉ tính chất.",
+        "difficulty": 2,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V20",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "coast",
+            "heavy",
+            "light",
+            "beautiful"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q046",
+        "gloss": "odd one out: tìm từ khác loại"
+      },
+      {
+        "q": "Odd one out: Which word is different?",
+        "choices": [
+          "meet new people",
+          "rock",
+          "coast",
+          "waterfall"
+        ],
+        "a": 0,
+        "hint": "Xếp các từ thành nhóm: nơi chốn, hoạt động, hay từ chỉ tính chất? Từ nào không cùng nhóm với ba từ còn lại?",
+        "explain": "meet new people là hoạt động; waterfall, coast, rock là những thứ trong tự nhiên.",
+        "difficulty": 2,
+        "skill": "odd-one-out",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V21",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "meet new people",
+            "waterfall",
+            "coast"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q047",
+        "gloss": "odd one out: tìm từ khác loại"
+      },
+      {
+        "q": "Which one is written correctly?",
+        "choices": [
+          "wotterfall",
+          "waterfall",
+          "waterfal",
+          "water fall"
+        ],
+        "a": 1,
+        "hint": "Đọc chậm từng phần của từ; từ ghép viết liền hay có dấu gạch nối như trong bài.",
+        "explain": "waterfall viết liền một từ: water + fall, hai chữ l ở cuối.",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V22",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "waterfall"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q048"
+      },
+      {
+        "q": "Which one is written correctly?",
+        "choices": [
+          "go kayakking",
+          "go kaiaking",
+          "go kayaking",
+          "go kayacking"
+        ],
+        "a": 2,
+        "hint": "Đọc chậm từng phần của từ; từ ghép viết liền hay có dấu gạch nối như trong bài.",
+        "explain": "kayaking: k-a-y-a-k-i-n-g (kayak + ing, không gấp đôi k).",
+        "difficulty": 1,
+        "skill": "spelling",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V23",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go kayaking"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q049"
+      },
+      {
+        "q": "Last summer, we ___ on the river. It was so much fun!",
+        "choices": [
+          "goed kayaking",
+          "went kayak",
+          "go kayaking",
+          "went kayaking"
+        ],
+        "a": 3,
+        "hint": "Có từ chỉ quá khứ (last summer). go là động từ bất quy tắc.",
+        "explain": "Last summer → quá khứ: go → went, giữ kayaking: went kayaking.",
+        "difficulty": 1,
+        "skill": "vocabulary",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo7-u3v2-20261103",
+        "draftCode": "V24",
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Phiếu trường \"Unit 3 – Why do we go on vacation? VOCABULARY 2\" (U3-WS8, ảnh Nam gửi 03/11/2026)"
+          ],
+          "note": "Câu tự biên soạn theo từ và dạng bài của phiếu (định nghĩa → từ, chọn hoạt động, từ trái nghĩa, tìm từ khác loại, chính tả); không chép câu phiếu; không có hình (bài chọn từ theo tranh của phiếu chuyển thành câu tả).",
+          "schoolWords": [
+            "go kayaking"
+          ],
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103b",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-unit3_q050"
       }
     ]
   }

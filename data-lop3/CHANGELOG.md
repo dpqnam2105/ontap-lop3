@@ -7,6 +7,11 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-03 (Claude — lô 6d + lô 7, Codex duyệt chữ)
+- tieng-anh / nik3-past-irregular — +21 câu (q064–q084: nhóm 10 set–spend, nhóm 11 stand–think, nhóm 12 throw–write); reviewSet en-batquytac-2026 thêm g10–g12, mockSize 24.
+- tieng-anh / nik3-unit3 — +24 câu (q027–q050: U3 Vocabulary 2 theo phiếu U3-WS8).
+- contentReview codex-noi-dung-20261103b.
+
 ## 2026-11-03 (Claude — lô 6c động từ bất quy tắc nhóm 7–9, Codex duyệt chữ)
 - tieng-anh / nik3-past-irregular — +21 câu (q043–q063: nhóm 7 let–meet, nhóm 8 pay–rise, nhóm 9 run–send); contentReview codex-noi-dung-20261103.
 - index.json — reviewSet en-batquytac-2026 thêm g7–g9, mockSize 18.

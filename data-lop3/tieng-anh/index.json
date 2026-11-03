@@ -21,7 +21,7 @@
       "id": "en_nik3-unit3",
       "name": "NIK3 Unit 3: Vacation & camping",
       "file": "nik3-unit3.json",
-      "count": 26,
+      "count": 50,
       "book": "nik3"
     },
     {
@@ -42,7 +42,7 @@
       "id": "en_nik3-past-irregular",
       "name": "NIK3 Unit 3: Động từ bất quy tắc",
       "file": "nik3-past-irregular.json",
-      "count": 63,
+      "count": 84,
       "book": "nik3"
     },
     {
@@ -425,7 +425,7 @@
         "mustEqual": "ok"
       },
       "scope": "stage",
-      "mockSize": 18,
+      "mockSize": 24,
       "groups": [
         {
           "id": "g1",
@@ -550,6 +550,48 @@
             "en_nik3-past-irregular_q061",
             "en_nik3-past-irregular_q062",
             "en_nik3-past-irregular_q063"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g10",
+          "name": "Nhóm 10: set – spend",
+          "required": [
+            "en_nik3-past-irregular_q064",
+            "en_nik3-past-irregular_q065",
+            "en_nik3-past-irregular_q066",
+            "en_nik3-past-irregular_q067",
+            "en_nik3-past-irregular_q068",
+            "en_nik3-past-irregular_q069",
+            "en_nik3-past-irregular_q070"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g11",
+          "name": "Nhóm 11: stand – think",
+          "required": [
+            "en_nik3-past-irregular_q071",
+            "en_nik3-past-irregular_q072",
+            "en_nik3-past-irregular_q073",
+            "en_nik3-past-irregular_q074",
+            "en_nik3-past-irregular_q075",
+            "en_nik3-past-irregular_q076",
+            "en_nik3-past-irregular_q077"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g12",
+          "name": "Nhóm 12: throw – write",
+          "required": [
+            "en_nik3-past-irregular_q078",
+            "en_nik3-past-irregular_q079",
+            "en_nik3-past-irregular_q080",
+            "en_nik3-past-irregular_q081",
+            "en_nik3-past-irregular_q082",
+            "en_nik3-past-irregular_q083",
+            "en_nik3-past-irregular_q084"
           ],
           "extra": []
         }

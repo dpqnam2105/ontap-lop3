@@ -47,7 +47,9 @@ const IRR_PAST = { be: ['was', 'were'], begin: ['began'], break: ['broke'], brin
   fall: ['fell'], feel: ['felt'], find: ['found'], get: ['got'], give: ['gave'], go: ['went'], grow: ['grew'], have: ['had'], hear: ['heard'], hit: ['hit'],
   hold: ['held'], keep: ['kept'], know: ['knew'], lead: ['led'], leave: ['left'],
   let: ['let'], lie: ['lay'], lose: ['lost'], make: ['made'], meet: ['met'], pay: ['paid'], put: ['put'], read: ['read'], ride: ['rode'], rise: ['rose'],
-  run: ['ran'], say: ['said'], see: ['saw'], sell: ['sold'], send: ['sent'] };
+  run: ['ran'], say: ['said'], see: ['saw'], sell: ['sold'], send: ['sent'],
+  set: ['set'], sit: ['sat'], sleep: ['slept'], speak: ['spoke'], spend: ['spent'], stand: ['stood'], take: ['took'], teach: ['taught'], tell: ['told'], think: ['thought'],
+  throw: ['threw'], understand: ['understood'], wear: ['wore'], win: ['won'], write: ['wrote'] };
 // V3 khác V2 — lô này chỉ luyện gốc – quá khứ (built, brought, held, kept… trùng V2 nên không chặn)
 const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone|grown|known|gotten|lain|ridden|risen|seen|spoken|taken|thrown|worn|written)\b/;
 // Lô 4–6 (Past Simple): đề hoàn toàn tiếng Anh để nút 🔊 đọc giọng Anh; chú nghĩa Việt nằm ở q.gloss (hiện riêng, không đọc).
@@ -61,6 +63,7 @@ function enOnlyQ(q, err, tag) {
   if (q.gloss && ans && !(q.verbs || []).includes(ans) && new RegExp('(^|[^A-Za-z])' + esc(ans) + '($|[^A-Za-z])').test(q.gloss)) err(tag + ': gloss lộ đáp án');
   if ('gloss' in q && (typeof q.gloss !== 'string' || !q.gloss.trim() || !VI_CHARS.test(q.gloss))) err(tag + ': gloss là chú nghĩa tiếng Việt, không rỗng');
 }
+const LO7_WORDS = ['waterfall', 'coast', 'go kayaking', 'go zip-lining', 'go rock climbing', 'meet new people', 'light', 'heavy', 'safe', 'unsafe', 'dangerous', 'beautiful'];
 const IRR_GROUP = v => Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
 // Một lô bất quy tắc = 3 nhóm liên tiếp; đề thử của thẻ ôn rút đều 2 câu/nhóm khi đủ 6 nhóm (Codex chốt 02/11).
 function irrRule(tag, groups, review) {
@@ -98,6 +101,24 @@ const BATCH_RULES = {
   'claude-nik3-lo6-irregular-20261028': irrRule('lô 6a', [1, 2, 3], 'codex-noi-dung-20261028'),
   'claude-nik3-lo6b-irregular-20261102': irrRule('lô 6b', [4, 5, 6], 'codex-noi-dung-20261102'),
   'claude-nik3-lo6c-irregular-20261103': irrRule('lô 6c', [7, 8, 9], 'codex-noi-dung-20261103'),
+  'claude-nik3-lo6d-irregular-20261103': irrRule('lô 6d', [10, 11, 12], 'codex-noi-dung-20261103b'),
+  // Lô 7 — U3 Vocabulary 2 (phiếu trường U3-WS8): đề tiếng Anh; chỉ câu hỏi nghĩa ('… means:') có đáp án tiếng Việt.
+  'claude-nik3-lo7-u3v2-20261103': { count: 24, passages: [], check(q, err) {
+    const r = q.ref;
+    if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 7: school-sheet + sources + note tự biên soạn');
+    if (r.contentReview !== 'codex-noi-dung-20261103b') err('lô 7 cần contentReview codex-noi-dung-20261103b');
+    if (q.unit !== 'nik3-unit3' || q.book !== 'nik3' || q.track !== 'core' || q.stage !== 2) err('lô 7: nik3-unit3, nik3, core, stage 2');
+    if (!Array.isArray(r.schoolWords) || !r.schoolWords.length || r.schoolWords.some(w => !LO7_WORDS.includes(w))) err('lô 7: schoolWords phải thuộc 12 từ phiếu');
+    if (VI_CHARS.test(q.q)) err('lô 7: đề phải tiếng Anh (chú nghĩa ở gloss)');
+    if (q.choices.some(c => VI_CHARS.test(c)) && !/ means:$/.test(q.q)) err('lô 7: chỉ câu hỏi nghĩa mới có đáp án tiếng Việt');
+    const ans = q.choices[q.a];
+    if (q.gloss && new RegExp('(^|[^A-Za-z])' + ans.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^A-Za-z])').test(q.gloss)) err('lô 7: gloss lộ đáp án');
+    if (q.image) err('lô 7 không có hình');
+  }, after(qs, errs) {
+    for (const w of LO7_WORDS) if (!qs.some(q => q.choices[q.a] === w || (q.ref.schoolWords || []).includes(w) && / means:$/.test(q.q))) errs.push('lô 7: chưa có câu mà đáp án là ' + w);
+    const pos = [0, 0, 0, 0]; qs.forEach(q => pos[q.a]++);
+    if (pos.some(n => n !== 6)) errs.push('lô 7: đáp án cần 6/6/6/6, có ' + pos.join('/'));
+  } },
   'claude-nik3-lo5-didnt-20261028': { count: 20, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 5: school-sheet + sources + note tự biên soạn');
