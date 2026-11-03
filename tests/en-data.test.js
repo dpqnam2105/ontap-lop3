@@ -38,18 +38,27 @@ const LO4_SHEET_SENTENCES = [/football yesterday/i, /dishes last night/i, /walk(
   /basketball after school/i, /lost her toy/i, /red light/i, /at his mother/i, /museum last weekend/i, /mom with dinner/i, /computer games/i];
 // Lô 6 — động từ bất quy tắc theo danh sách 30 từ của cô (6 nhóm × 5, theo thứ tự trên phiếu).
 const IRR_ORDER = ['be', 'begin', 'break', 'bring', 'build', 'buy', 'catch', 'choose', 'come', 'cost', 'cut', 'do', 'draw', 'drive', 'eat',
-  'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave'];
+  'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave',
+  // 31–60: mặt sau phiếu cô (ảnh 60.jpg, 03/11)
+  'let', 'lie', 'lose', 'make', 'meet', 'pay', 'put', 'read', 'ride', 'rise', 'run', 'say', 'see', 'sell', 'send',
+  'set', 'sit', 'sleep', 'speak', 'spend', 'stand', 'take', 'teach', 'tell', 'think', 'throw', 'understand', 'wear', 'win', 'write'];
 const IRR_PAST = { be: ['was', 'were'], begin: ['began'], break: ['broke'], bring: ['brought'], build: ['built'], buy: ['bought'], catch: ['caught'],
   choose: ['chose'], come: ['came'], cost: ['cost'], cut: ['cut'], do: ['did'], draw: ['drew'], drive: ['drove'], eat: ['ate'],
   fall: ['fell'], feel: ['felt'], find: ['found'], get: ['got'], give: ['gave'], go: ['went'], grow: ['grew'], have: ['had'], hear: ['heard'], hit: ['hit'],
-  hold: ['held'], keep: ['kept'], know: ['knew'], lead: ['led'], leave: ['left'] };
+  hold: ['held'], keep: ['kept'], know: ['knew'], lead: ['led'], leave: ['left'],
+  let: ['let'], lie: ['lay'], lose: ['lost'], make: ['made'], meet: ['met'], pay: ['paid'], put: ['put'], read: ['read'], ride: ['rode'], rise: ['rose'],
+  run: ['ran'], say: ['said'], see: ['saw'], sell: ['sold'], send: ['sent'] };
 // V3 khác V2 — lô này chỉ luyện gốc – quá khứ (built, brought, held, kept… trùng V2 nên không chặn)
-const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone|grown|known|gotten)\b/;
+const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone|grown|known|gotten|lain|ridden|risen|seen|spoken|taken|thrown|worn|written)\b/;
 // Lô 4–6 (Past Simple): đề hoàn toàn tiếng Anh để nút 🔊 đọc giọng Anh; chú nghĩa Việt nằm ở q.gloss (hiện riêng, không đọc).
 // Audit giọng đọc 02/11: đề trộn Việt–Anh làm bộ đọc chọn giọng Việt cho cả câu và cả đáp án một từ.
 const VI_CHARS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
 function enOnlyQ(q, err, tag) {
   if (VI_CHARS.test(q.q) || q.choices.some(c => VI_CHARS.test(c))) err(tag + ': đề/lựa chọn phải hoàn toàn tiếng Anh (chú nghĩa Việt để ở gloss)');
+  // gloss hiện ngay dưới đề: không được chứa đáp án (trừ khi đáp án trùng động từ gốc đang chú nghĩa, vd let, put)
+  const ans = String(q.choices[q.a] || '').split(' / ')[0];
+  const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (q.gloss && ans && !(q.verbs || []).includes(ans) && new RegExp('(^|[^A-Za-z])' + esc(ans) + '($|[^A-Za-z])').test(q.gloss)) err(tag + ': gloss lộ đáp án');
   if ('gloss' in q && (typeof q.gloss !== 'string' || !q.gloss.trim() || !VI_CHARS.test(q.gloss))) err(tag + ': gloss là chú nghĩa tiếng Việt, không rỗng');
 }
 const IRR_GROUP = v => Math.floor(IRR_ORDER.indexOf(v) / 5) + 1;
@@ -88,6 +97,7 @@ function irrRule(tag, groups, review) {
 const BATCH_RULES = {
   'claude-nik3-lo6-irregular-20261028': irrRule('lô 6a', [1, 2, 3], 'codex-noi-dung-20261028'),
   'claude-nik3-lo6b-irregular-20261102': irrRule('lô 6b', [4, 5, 6], 'codex-noi-dung-20261102'),
+  'claude-nik3-lo6c-irregular-20261103': irrRule('lô 6c', [7, 8, 9], 'codex-noi-dung-20261103'),
   'claude-nik3-lo5-didnt-20261028': { count: 20, passages: [], check(q, err) {
     const r = q.ref;
     if (r.basis !== 'school-sheet' || !Array.isArray(r.sources) || !r.sources.length || !/tự biên soạn/.test(r.note)) err('lô 5: school-sheet + sources + note tự biên soạn');

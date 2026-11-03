@@ -42,7 +42,7 @@
       "id": "en_nik3-past-irregular",
       "name": "NIK3 Unit 3: Động từ bất quy tắc",
       "file": "nik3-past-irregular.json",
-      "count": 42,
+      "count": 63,
       "book": "nik3"
     },
     {
@@ -425,7 +425,7 @@
         "mustEqual": "ok"
       },
       "scope": "stage",
-      "mockSize": 12,
+      "mockSize": 18,
       "groups": [
         {
           "id": "g1",
@@ -508,6 +508,48 @@
             "en_nik3-past-irregular_q040",
             "en_nik3-past-irregular_q041",
             "en_nik3-past-irregular_q042"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g7",
+          "name": "Nhóm 7: let – meet",
+          "required": [
+            "en_nik3-past-irregular_q043",
+            "en_nik3-past-irregular_q044",
+            "en_nik3-past-irregular_q045",
+            "en_nik3-past-irregular_q046",
+            "en_nik3-past-irregular_q047",
+            "en_nik3-past-irregular_q048",
+            "en_nik3-past-irregular_q049"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g8",
+          "name": "Nhóm 8: pay – rise",
+          "required": [
+            "en_nik3-past-irregular_q050",
+            "en_nik3-past-irregular_q051",
+            "en_nik3-past-irregular_q052",
+            "en_nik3-past-irregular_q053",
+            "en_nik3-past-irregular_q054",
+            "en_nik3-past-irregular_q055",
+            "en_nik3-past-irregular_q056"
+          ],
+          "extra": []
+        },
+        {
+          "id": "g9",
+          "name": "Nhóm 9: run – send",
+          "required": [
+            "en_nik3-past-irregular_q057",
+            "en_nik3-past-irregular_q058",
+            "en_nik3-past-irregular_q059",
+            "en_nik3-past-irregular_q060",
+            "en_nik3-past-irregular_q061",
+            "en_nik3-past-irregular_q062",
+            "en_nik3-past-irregular_q063"
           ],
           "extra": []
         }

@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-03 — Tiếng Anh: Động từ bất quy tắc nhóm 7–9 (lô 6c)
+- Thêm 21 câu nhóm 7–9 (let … send, mặt sau danh sách cô) vào chủ đề "NIK3 Unit 3: Động từ bất quy tắc", Codex duyệt chữ. Đề tiếng Anh, nghĩa ở dòng 📖; lie dùng nghĩa nằm (lie → lay; nói dối → lied). Thẻ ôn có 9 nhóm, đề thử 18 câu (2/nhóm).
+- en-data: danh sách 60 từ, quy tắc lô 6c, chặn thêm V3 (lain, ridden, risen, seen…), kiểm gloss không lộ đáp án; en-irregular kiểm mockSize = 2 × số nhóm.
+
 ## 2026-11-02 — Sửa giọng đọc 🔊 Tiếng Anh + đề lô 4–6 bằng tiếng Anh
 - Speak: môn tiếng Anh tách đề trộn Việt–Anh thành từng đoạn theo ngôn ngữ; phần tiếng Anh và đáp án (kể cả một từ như camped, began) luôn giọng en; đoạn Việt chỉ đọc khi máy có giọng Việt. Nút hiện khi có giọng en. Môn khác giữ cách cũ.
 - 60 đề lô 4–6 (-ed, didn't, bất quy tắc) đổi yêu cầu sang tiếng Anh ngắn; chú nghĩa Việt chuyển sang dòng 📖 hiện dưới đề (q.gloss, không đọc). Không đổi ID, đáp án, phạm vi.

@@ -1991,6 +1991,867 @@
           "date": "2026-11-02"
         },
         "id": "en_nik3-past-irregular_q042"
+      },
+      {
+        "q": "Yesterday, Mom ___ (let) me play in the garden.",
+        "choices": [
+          "letted",
+          "leted",
+          "let",
+          "lets"
+        ],
+        "a": 2,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "let → let: quá khứ giống hệt dạng gốc. Yesterday cho biết việc đã qua.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K01",
+        "irrGroup": 7,
+        "verbs": [
+          "let"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "garden (vườn)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q043",
+        "gloss": "let: cho phép"
+      },
+      {
+        "q": "Last Sunday, our cat ___ (lie) in the sun all afternoon.",
+        "choices": [
+          "lied",
+          "lyed",
+          "lies",
+          "lay"
+        ],
+        "a": 3,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "lie (nằm) → lay. Chú ý: lied là quá khứ của lie khi nghĩa là nói dối — ở câu này con mèo nằm phơi nắng nên dùng lay.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K02",
+        "irrGroup": 7,
+        "verbs": [
+          "lie"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "afternoon (buổi chiều)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q044",
+        "gloss": "lie: nằm"
+      },
+      {
+        "q": "Last week, our team ___ the first game, but we didn't ___ the second game. (lose)",
+        "choices": [
+          "lost / lose",
+          "losed / lose",
+          "lose / lost",
+          "lost / lost"
+        ],
+        "a": 0,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "Câu khẳng định → dạng quá khứ: lost. Sau didn't → dạng gốc: lose.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K03",
+        "irrGroup": 7,
+        "verbs": [
+          "lose"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "team (đội)",
+            "game (trận đấu)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q045",
+        "gloss": "lose: mất, thua"
+      },
+      {
+        "q": "Last weekend, Grandma ___ (make) a big cake for my birthday.",
+        "choices": [
+          "maded",
+          "made",
+          "maked",
+          "makes"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "make → made. Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K04",
+        "irrGroup": 7,
+        "verbs": [
+          "make"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "birthday (sinh nhật)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q046",
+        "gloss": "make: làm"
+      },
+      {
+        "q": "Find the mistake. Choose the correct word for \"meeted\": \"Yesterday, I meeted my best friend at the park.\"",
+        "choices": [
+          "mett",
+          "meets",
+          "met",
+          "meet"
+        ],
+        "a": 2,
+        "hint": "Câu có từ chỉ quá khứ. Động từ bất quy tắc không thêm -ed: tìm dạng quá khứ đúng trong bảng của cô.",
+        "explain": "✅ Câu đúng: Yesterday, I met my best friend at the park. — meet → met (bất quy tắc, không thêm -ed).",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K05",
+        "irrGroup": 7,
+        "verbs": [
+          "meet"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q047",
+        "gloss": "Find the mistake: tìm lỗi sai · meet: gặp"
+      },
+      {
+        "q": "Which pair is correct? (verb → past)",
+        "choices": [
+          "give → gived",
+          "meet → meeted",
+          "lose → losed",
+          "make → made"
+        ],
+        "a": 3,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "Đúng: make → made. Sửa các cặp sai — \"meeted\" → \"met\"; \"losed\" → \"lost\"; \"gived\" → \"gave\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K06",
+        "irrGroup": 7,
+        "verbs": [
+          "make",
+          "meet",
+          "lose",
+          "give"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q048",
+        "gloss": "verb: động từ · past: quá khứ"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "Mom didn't let me watch TV last night.",
+          "Tom didn't made his bed yesterday.",
+          "She losed her bag yesterday.",
+          "We meeted our teacher at the zoo yesterday."
+        ],
+        "a": 0,
+        "hint": "Xét từng câu: câu khẳng định quá khứ dùng dạng quá khứ; sau didn't dùng động từ nguyên mẫu.",
+        "explain": "Đúng: didn't let (sau didn't dùng dạng gốc). Sửa các câu sai — \"didn't made\" → \"didn't make\"; \"losed\" → \"lost\"; \"meeted\" → \"met\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K07",
+        "irrGroup": 7,
+        "verbs": [
+          "let",
+          "make",
+          "lose",
+          "meet"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 7",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q049"
+      },
+      {
+        "q": "Last Saturday, Dad ___ (pay) for our lunch.",
+        "choices": [
+          "pays",
+          "paid",
+          "payed",
+          "paied"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "Với nghĩa trả tiền, pay → paid (bất quy tắc). Không viết payed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K08",
+        "irrGroup": 8,
+        "verbs": [
+          "pay"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "lunch (bữa trưa)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q050",
+        "gloss": "pay: trả tiền"
+      },
+      {
+        "q": "Yesterday, I ___ (put) my books in my school bag.",
+        "choices": [
+          "puts",
+          "puted",
+          "put",
+          "putted"
+        ],
+        "a": 2,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "put → put: quá khứ giống hệt dạng gốc. Yesterday cho biết việc đã qua.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K09",
+        "irrGroup": 8,
+        "verbs": [
+          "put"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "school bag (cặp sách)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q051",
+        "gloss": "put: đặt, để"
+      },
+      {
+        "q": "Last night, I ___ a story book, but I didn't ___ a comic. (read)",
+        "choices": [
+          "reads / read",
+          "readed / read",
+          "read / readed",
+          "read / read"
+        ],
+        "a": 3,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "read → read: chữ viết giống nhau. Câu khẳng định viết read (đọc là /red/); sau didn't viết read (đọc là /riːd/).",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K10",
+        "irrGroup": 8,
+        "verbs": [
+          "read"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "comic (truyện tranh)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q052",
+        "gloss": "read: đọc"
+      },
+      {
+        "q": "Last summer, I ___ (ride) my bike to the lake every morning.",
+        "choices": [
+          "rode",
+          "rod",
+          "rided",
+          "rides"
+        ],
+        "a": 0,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "ride → rode. rod là từ khác (cái que), không phải quá khứ của ride.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K11",
+        "irrGroup": 8,
+        "verbs": [
+          "ride"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "lake (hồ)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q053",
+        "gloss": "ride: đi (xe đạp)"
+      },
+      {
+        "q": "Yesterday, the sun ___ (rise) at 6 o'clock.",
+        "choices": [
+          "rises",
+          "rose",
+          "rosed",
+          "rised"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "rise → rose (mặt trời mọc). Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K12",
+        "irrGroup": 8,
+        "verbs": [
+          "rise"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q054",
+        "gloss": "rise: mọc (mặt trời), tăng lên"
+      },
+      {
+        "q": "Make the sentence negative. Keep it in the past: \"Lan made a card for her mom.\" → Lan ___ a card for her mom.",
+        "choices": [
+          "doesn't make",
+          "didn't maked",
+          "didn't make",
+          "didn't made"
+        ],
+        "a": 2,
+        "hint": "Sau từ phủ định quá khứ, động từ ở dạng nào: dạng gốc hay dạng quá khứ? Động từ bất quy tắc cũng theo luật này.",
+        "explain": "Sang phủ định: thêm didn't, động từ về dạng gốc: made → make. Lan didn't make a card for her mom.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K13",
+        "irrGroup": 8,
+        "verbs": [
+          "make"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "card (thiệp)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q055",
+        "gloss": "negative: phủ định · keep it in the past: giữ thì quá khứ"
+      },
+      {
+        "q": "Which pair is correct? (verb → past)",
+        "choices": [
+          "pay → paied",
+          "let → letted",
+          "rise → rised",
+          "ride → rode"
+        ],
+        "a": 3,
+        "hint": "Đọc từng cặp / từng câu, so với bảng bất quy tắc của cô: động từ bất quy tắc không thêm -ed.",
+        "explain": "Đúng: ride → rode. Sửa các cặp sai — \"paied\" → \"paid\"; \"rised\" → \"rose\"; \"letted\" → \"let\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K14",
+        "irrGroup": 8,
+        "verbs": [
+          "ride",
+          "pay",
+          "rise",
+          "let"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 8",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q056",
+        "gloss": "verb: động từ · past: quá khứ"
+      },
+      {
+        "q": "Yesterday, Tom ___ (run) very fast in the race.",
+        "choices": [
+          "ran",
+          "rann",
+          "runned",
+          "runs"
+        ],
+        "a": 0,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "run → ran. Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K15",
+        "irrGroup": 9,
+        "verbs": [
+          "run"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "race (cuộc đua)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q057",
+        "gloss": "run: chạy"
+      },
+      {
+        "q": "Last night, Dad ___ (say) \"Good night!\" to me.",
+        "choices": [
+          "says",
+          "said",
+          "sed",
+          "sayed"
+        ],
+        "a": 1,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "say → said, đọc là /sed/ nhưng viết s-a-i-d.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K16",
+        "irrGroup": 9,
+        "verbs": [
+          "say"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q058",
+        "gloss": "say: nói"
+      },
+      {
+        "q": "Yesterday, we ___ a big elephant at the zoo, but we didn't ___ any lions. (see)",
+        "choices": [
+          "seed / see",
+          "saw / saw",
+          "saw / see",
+          "see / saw"
+        ],
+        "a": 2,
+        "hint": "Mỗi chỗ trống thuộc một câu: câu khẳng định ở quá khứ cần dạng nào? Sau từ phủ định quá khứ cần dạng nào?",
+        "explain": "Câu khẳng định → dạng quá khứ: saw. Sau didn't → dạng gốc: see.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K17",
+        "irrGroup": 9,
+        "verbs": [
+          "see"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "elephant (con voi)",
+            "lion (sư tử)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q059",
+        "gloss": "see: nhìn thấy"
+      },
+      {
+        "q": "Last month, Uncle Ben ___ (sell) his old bike.",
+        "choices": [
+          "selled",
+          "sells",
+          "seld",
+          "sold"
+        ],
+        "a": 3,
+        "hint": "Động từ này thêm -ed hay đổi dạng riêng? Nhớ lại cặp động từ trong bảng bất quy tắc của cô. Từ chỉ thời gian cho biết việc đã xảy ra chưa?",
+        "explain": "sell → sold. Không thêm -ed.",
+        "difficulty": 1,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K18",
+        "irrGroup": 9,
+        "verbs": [
+          "sell"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "uncle (chú, bác)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q060",
+        "gloss": "sell: bán"
+      },
+      {
+        "q": "Find the mistake. Choose the correct word for \"sended\": \"Last week, Grandma sended me a letter.\"",
+        "choices": [
+          "sent",
+          "sends",
+          "sant",
+          "send"
+        ],
+        "a": 0,
+        "hint": "Câu có từ chỉ quá khứ. Động từ bất quy tắc không thêm -ed: tìm dạng quá khứ đúng trong bảng của cô.",
+        "explain": "✅ Câu đúng: Last week, Grandma sent me a letter. — send → sent (bất quy tắc, không thêm -ed).",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K19",
+        "irrGroup": 9,
+        "verbs": [
+          "send"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "letter (lá thư)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q061",
+        "gloss": "Find the mistake: tìm lỗi sai · send: gửi"
+      },
+      {
+        "q": "Which verb does NOT change in the past?",
+        "choices": [
+          "ride",
+          "put",
+          "pay",
+          "see"
+        ],
+        "a": 1,
+        "hint": "So sánh dạng gốc và dạng quá khứ của từng động từ.",
+        "explain": "put → put (giữ nguyên). pay → paid, ride → rode, see → saw. (let, cut, cost, hit cũng giữ nguyên.)",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K20",
+        "irrGroup": 9,
+        "verbs": [
+          "put",
+          "pay",
+          "ride",
+          "see"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q062",
+        "gloss": "does NOT change: không thay đổi (quá khứ giống dạng gốc)"
+      },
+      {
+        "q": "Which sentence is correct?",
+        "choices": [
+          "Yesterday, we didn't saw a rainbow.",
+          "Yesterday, we seed a rainbow and ran to the window.",
+          "Yesterday, we saw a rainbow and ran to the window.",
+          "Yesterday, he sayed hello to me."
+        ],
+        "a": 2,
+        "hint": "Xét từng câu: câu khẳng định quá khứ dùng dạng quá khứ; sau didn't dùng động từ nguyên mẫu.",
+        "explain": "Đúng: saw, ran (câu khẳng định ở quá khứ). Sửa các câu sai — \"seed\" → \"saw\"; \"didn't saw\" → \"didn't see\"; \"sayed\" → \"said\".",
+        "difficulty": 2,
+        "skill": "past-irregular",
+        "unit": "nik3-unit3",
+        "book": "nik3",
+        "track": "core",
+        "stage": 2,
+        "source": "claude-nik3-lo6c-irregular-20261103",
+        "draftCode": "K21",
+        "irrGroup": 9,
+        "verbs": [
+          "see",
+          "run",
+          "say"
+        ],
+        "ref": {
+          "basis": "school-sheet",
+          "sources": [
+            "Danh sách trường \"PAST SIMPLE – IRREGULAR VERB LIST\" mặt sau 31–60 (ảnh 60.jpg, Nam gửi 03/11/2026) — nhóm 9",
+            "NIK3 U3: Past simple — irregular verbs"
+          ],
+          "note": "Câu tự biên soạn theo danh sách động từ bất quy tắc của trường (nghĩa theo phiếu, chọn nghĩa theo ngữ cảnh câu); đề tiếng Anh, chú nghĩa ở gloss; chỉ luyện dạng gốc – quá khứ, không dùng phân từ V3 làm nhiễu. lie dùng nghĩa nằm (lie → lay).",
+          "toc": [],
+          "extraWords": [
+            "rainbow (cầu vồng)"
+          ],
+          "contentReview": "codex-noi-dung-20261103",
+          "by": "claude",
+          "date": "2026-11-03"
+        },
+        "id": "en_nik3-past-irregular_q063"
       }
     ]
   }

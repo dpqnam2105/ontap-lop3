@@ -25,7 +25,9 @@ const GK = `${S}.reviewSets.find(x => x.id === 'en-giuaky1-2026')`;
 const hitIds = (b, set, g) => b.J(`App._reviewSetHits(${S}, ${set}.groups[${g}].required, ${set}).map(h => h.q.id)`);
 const allHits = (b, set) => b.J(`${set}.groups.flatMap(g => App._reviewSetHits(${S}, g.required, ${set}).map(h => h.q.id))`);
 const ORDER = ['be', 'begin', 'break', 'bring', 'build', 'buy', 'catch', 'choose', 'come', 'cost', 'cut', 'do', 'draw', 'drive', 'eat',
-  'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave'];
+  'fall', 'feel', 'find', 'get', 'give', 'go', 'grow', 'have', 'hear', 'hit', 'hold', 'keep', 'know', 'lead', 'leave',
+  'let', 'lie', 'lose', 'make', 'meet', 'pay', 'put', 'read', 'ride', 'rise', 'run', 'say', 'see', 'sell', 'send',
+  'set', 'sit', 'sleep', 'speak', 'spend', 'stand', 'take', 'teach', 'tell', 'think', 'throw', 'understand', 'wear', 'win', 'write'];
 
 const tests = {
   async 'bộ bất quy tắc có scope stage; bộ giữa kỳ không có scope'() {
@@ -53,14 +55,16 @@ const tests = {
       }
     });
   },
-  async 'đề thử: rút đều theo nhóm (12 câu: 4/nhóm khi 3 nhóm, 2/nhóm khi 6 nhóm), không lặp'() {
+  async 'đề thử: rút đều theo nhóm (mockSize = 2 câu × số nhóm), không lặp'() {
     const b = await boot();
     b.run(`App.setStageSetting(${S}, 2, false)`);
     const mock = b.J(`App._reviewSetMock(${S}, ${IRR}).map(q => q.id)`);
     const groups = b.J(`${IRR}.groups.map(g => g.required)`);
-    assert.strictEqual(mock.length, 12);
-    assert.strictEqual(new Set(mock).size, 12);
-    groups.forEach(g => assert.strictEqual(mock.filter(id => g.includes(id)).length, 12 / groups.length));
+    const n = b.J(`${IRR}.mockSize`);
+    assert.strictEqual(n, 2 * groups.length);
+    assert.strictEqual(mock.length, n);
+    assert.strictEqual(new Set(mock).size, n);
+    groups.forEach(g => assert.strictEqual(mock.filter(id => g.includes(id)).length, 2));
   },
   async 'bộ giữa kỳ giữ hành vi cũ: không lọc theo giai đoạn'() {
     const b = await boot();

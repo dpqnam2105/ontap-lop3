@@ -7,6 +7,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-03 (Claude — lô 6c động từ bất quy tắc nhóm 7–9, Codex duyệt chữ)
+- tieng-anh / nik3-past-irregular — +21 câu (q043–q063: nhóm 7 let–meet, nhóm 8 pay–rise, nhóm 9 run–send); contentReview codex-noi-dung-20261103.
+- index.json — reviewSet en-batquytac-2026 thêm g7–g9, mockSize 18.
+
 ## 2026-11-02 (Claude — audit giọng đọc của Codex)
 - tieng-anh / adj-adv (1), mshoa-e2-u6 (8), nik3-unit1 (4), nik3-unit2 (5), nik3-unit3 (7), reading-nik3 (4), pilot-spell-fix (k02) — thêm q.speak (đoạn đọc có lang), không đổi chữ đề/đáp án.
 - tieng-anh / nik3-past-ed (14), nik3-past-didnt (12), nik3-past-irregular (34) — 60 câu: đề sang tiếng Anh ("Find the mistake.", "Make the sentence negative. Keep it in the past: …", "(verb → past)"), chú nghĩa Việt từ đề chuyển sang trường gloss; ghi revisions. ID, choices, a giữ nguyên.
