@@ -29,7 +29,7 @@ let ID_LISTS = isNode ? require('../data-lop3/toan/toan-batch1-ids.json') : null
 function configure(lists) {
   if (!lists || lists.version !== GEN.VERSION || !Array.isArray(lists.topics) || lists.topics.length !== 2) throw new Error('Invalid batch 1 manifest');
   const all = lists.topics.flatMap(t => t.ids || []);
-  if (all.length !== 120 || new Set(all).size !== 120 || !lists.topics.every(t => typeof t.topicId === 'string' && typeof t.title === 'string' && t.ids.length === 60 && ['chia-co-du', 'day-so-cach-deu'].includes(t.unit)) || !all.every(id => isBatchId(id))) throw new Error('Invalid batch 1 IDs');
+  if (!all.length || new Set(all).size !== all.length || new Set(lists.topics.map(t => t.topicId)).size !== 2 || new Set(lists.topics.map(t => t.unit)).size !== 2 || !lists.topics.every(t => typeof t.topicId === 'string' && typeof t.title === 'string' && Array.isArray(t.ids) && t.ids.length > 0 && ['chia-co-du', 'day-so-cach-deu'].includes(t.unit)) || !all.every(id => isBatchId(id))) throw new Error('Invalid batch 1 IDs');
   ID_LISTS = lists;
 }
 

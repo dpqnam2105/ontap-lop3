@@ -35,6 +35,16 @@ fs.mkdirSync(SHOT, { recursive: true });
       const before = (await ctx.storageState()).origins;
       await p.goto(BASE + '?pilot=1');
       await p.waitForFunction(() => window.App && App.allData && App.allData._batch1Pilot);
+      const twice = await p.evaluate(async () => {
+        const original=ToanBatch1Adapter.augment,seen=[];
+        ToanBatch1Adapter.augment=function(list,grade){ original.call(this,list,grade); const r=original.call(this,list,grade); seen.push([r.added,r.present]); return r; };
+        try {
+          const m=await API._fetchJSON(API.GRADE_MANIFESTS.lop3);
+          const a=await API._getAllDataV3(m,'lop3'),b=await API._getAllDataV3(m,'lop3');
+          return {ready:a._batch1Pilot&&b._batch1Pilot,counts:[a,b].map(d=>d.subjects.find(s=>s.id==='toan').topics.filter(t=>ToanBatch1Adapter.ID_LISTS.topics.some(m=>m.topicId===t.id)).length),seen};
+        } finally {ToanBatch1Adapter.augment=original;}
+      });
+      eq(twice,{ready:true,counts:[2,2],seen:[[0,120],[0,120]]},width+': repeated API loads retain present bank');
       await p.fill('#nameInput', 'Thử toán'); await p.click('#btnStart');
       const state = await p.evaluate(() => {
         const s = App.allData.subjects.find(s => s.id === 'toan');
@@ -81,6 +91,16 @@ fs.mkdirSync(SHOT, { recursive: true });
       await p.locator('#btnNext').scrollIntoViewIfNeeded();
       await p.screenshot({ path: path.join(SHOT,width+'-feedback.png') });
       ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth), width + ': no horizontal overflow');
+      if(width===390){
+        await p.evaluate(()=>{
+          const s=App.allData.subjects.find(s=>s.id==='toan'),t=s.topics.find(t=>t.id==='toan-chia-het-co-du');
+          const xs=t.questions.map((q,i)=>({q,i})).filter(x=>x.q.skill==='dung-het').sort((a,b)=>b.q.q.length-a.q.q.length);
+          Quiz.start(t,s.name,{subjectId:s.id,allowed:[xs[0].i]});window.scrollTo(0,0);
+        });
+        await p.waitForFunction(()=>!document.querySelector('.achievement-toast'));
+        await p.screenshot({path:path.join(SHOT,'390-dung-het-full.png'),fullPage:true});
+        ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'390: longest capacity question fits');
+      }
       // Persist a previously seen question outside the sample bank.
       const external = 'toan_so-hang-thu-n_bo-tro-v1_sbn9_kc5_n23';
       await p.evaluate(id => {
@@ -108,6 +128,20 @@ fs.mkdirSync(SHOT, { recursive: true });
         return {message,retained:!!Storage.getWrongHistory()[id]};
       },broken);
       ok(msg.retained && msg.message.includes('chưa tải được') && !msg.message.includes('không còn'),width+': bad ID retained, no false completion');
+      const lifecycle=await p.evaluate(()=>{
+        const old={onSessionFinish:Today.onSessionFinish,render:Today.render,plan:Today.plan,save:Today.save,grantReward:Today.grantReward};
+        const calls=[],task={id:'blocked-batch-test',kind:'wrong',done:false};let rewards=0;
+        Today.render=()=>{};Today.plan=()=>({tasks:[task]});Today.save=()=>{};Today.grantReward=()=>{rewards++;};
+        Today.onSessionFinish=function(info){calls.push(info);return old.onSessionFinish.call(this,info);};
+        try {
+          Quiz.startWrongReview(10,task.id);Quiz.startReviewPool([],task.id);
+          const s=App.allData.subjects.find(s=>s.id==='toan'),t=s.topics.find(t=>t.id==='toan-chia-het-co-du');
+          Quiz.startReviewPool([{...t.questions[0],_idx:0,subjectId:s.id,topicId:t.id}],task.id);
+          Quiz._finish();
+          return {blocked:calls.filter(c=>c.blocked&&c.taskId===task.id).length,partial:calls.some(c=>c.partial&&c.taskId===task.id),notice:document.querySelector('.result-msg').textContent.includes('Một số câu ôn chưa tải được'),empty:calls.some(c=>c.empty),done:task.done,rewards};
+        }finally{Object.assign(Today,old);}
+      });
+      eq(lifecycle,{blocked:2,partial:true,notice:true,empty:false,done:false,rewards:0},width+': blocked/partial Today task retryable, no bonus');
       await p.evaluate(async () => { await App._chooseGrade('lop2'); });
       ok(await p.evaluate(() => !ToanBatch1Web.active(App.allData)),width+': grade 2 not mounted');
       ok(await p.evaluate(() => { let m=''; const old=Rewards._achievementPopup;Rewards._achievementPopup=x=>{m=x;};Quiz.startWrongReview();Rewards._achievementPopup=old;return m.includes('chưa tải được'); }),width+': another grade does not falsely complete pilot wrong history');

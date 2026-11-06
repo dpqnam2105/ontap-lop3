@@ -4,6 +4,7 @@
 - Chỉ khi `?pilot=1`: hai chủ đề Toán Giai đoạn 2, 60 câu/chủ đề, gồm chia hết/chia có dư/còn thừa/đựng hết và dãy số cách đều. Kho mẫu theo ID cố định; không sinh toàn bộ 3165 câu lúc mở app.
 - Nối khôi phục câu ngoài kho mẫu từ wrongHistory/lịch ôn theo hồ sơ, tiến độ theo ID, chuẩn hóa câu trước khi thêm. ID hỏng giữ lịch sử và báo chưa tải được, không báo nhầm đã ôn hết.
 - Chủ đề thử chỉ mở thủ công, không vào kế hoạch chủ đề tự động, đề trộn hay thử thách cún. Dùng vùng lưu pilot hiện có; không ghi Sheets/Cloud. Công thức số hạng giữ `(n − 1) × KC + SBN`.
+- Sửa sau review: nạp lại dùng added + present và tổng từ manifest; lượt ôn bị chặn/thiếu câu giữ nhiệm vụ Today để thử lại, không thưởng kế hoạch và có thông báo cuối lượt.
 - Test bộ sinh (24), adapter (17), E2E tích hợp 390/1280px, khôi phục sau reload, đổi hồ sơ/lớp và kiểm hồ sơ thật không đổi. Chi tiết `docs/toan-batch1-pilot.md`.
 
 ## 2026-11-03 — Tiếng Anh: đủ 60 động từ bất quy tắc (lô 6d) + Unit 3 Vocabulary 2 (lô 7)

@@ -47,3 +47,11 @@ E2E kiểm 390/1280px: ngoài pilot không có chủ đề hoặc request manife
 - Chưa merge/main, chưa mở ngoài pilot. Không tính khả năng nghe máy thật: đây là Toán, nút đọc chung vẫn giữ quy tắc cũ.
 - Source của Claude đã được đối chiếu trực tiếp từ ZIP và hai file adapter gửi lại; lần gửi lặp có hash giống nhau.
 - Sau review, việc mở chính thức cần chốt phạm vi bổ trợ và cách chọn lượt mới từ nguồn 3165 câu; bản này chỉ có kho mẫu cố định 120 câu để kiểm luồng.
+
+## Sửa sau review PR #19
+
+- API lấy số câu dự kiến từ manifest; `added + present` đủ mới bật pilot. Test gọi API hai lần và giả lập augment trên cùng list để lần trả về `added: 0, present: 120` vẫn giữ hai chủ đề.
+- Lượt ôn không tải được gọi Today với `blocked`; lượt ôn được một phần gọi với `partial`. Không đánh dấu xong nhiệm vụ, không thưởng kế hoạch. Phần tải được vẫn học bình thường; cuối lượt có thông báo phần chưa tải được.
+- `ToanBatch1Web.restore()` tự đặt `Today._qIdxCache = null` khi thêm câu. Không cần lặp thao tác này ở App.
+- E2E tích hợp: 40 kiểm tra, gồm cả hai đường mở ôn, trạng thái Today và thông báo cuối lượt thiếu câu. Ảnh là thao tác kiểm thử tự động, không phải bài làm của Thỏ.
+- Ảnh `390-dung-het-full.png`: câu dài nhất dạng đựng hết trong kho mẫu; `390-large-text-wrong.png`: vừa chọn sai, chưa chữa, khung đáp án 220px và chữ 28px. Khung 220px là phép thử CSS tạm thời, không phải chiều rộng toàn màn hình.

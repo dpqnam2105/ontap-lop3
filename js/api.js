@@ -164,7 +164,8 @@ const API = {
         const ids = await this._fetchJSON(base + 'toan/toan-batch1-ids.json');
         ToanBatch1Adapter.configure(ids);
         const result = ToanBatch1Adapter.augment(list, gradeId);
-        batch1Pilot = result.added === 120 && !result.unresolvedIds.length;
+        const expected = ToanBatch1Adapter.ID_LISTS.topics.reduce((n, t) => n + t.ids.length, 0);
+        batch1Pilot = result.added + result.present === expected && !result.unresolvedIds.length;
         if (!batch1Pilot) list.forEach(s => { s.topics = s.topics.filter(t => !ToanBatch1Adapter.ID_LISTS.topics.some(m => m.topicId === t.id)); });
       } catch (e) { console.warn('Toan batch 1 pilot unavailable:', e); }
     }

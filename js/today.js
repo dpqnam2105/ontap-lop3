@@ -222,6 +222,8 @@ const Today = {
   },
 
   onSessionFinish(info) {
+    // A failed/partial review is retryable, not an empty completed task. Do not award the plan bonus.
+    if (info && (info.blocked || info.partial)) { this.render(); return; }
     const p = this.plan();
     if (!p) return;
     let changed = false;
