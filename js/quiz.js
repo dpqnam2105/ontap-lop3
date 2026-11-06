@@ -41,6 +41,7 @@ const Quiz = {
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
     // Câu tự sinh đã gặp nhưng không có trong kho hiện tại (vd sau khi lên phiên bản mẫu) → dựng lại từ id
     if (window.GenB13 && window.App && App.allData && GenB13.ensureFromHistory(App.allData) && window.Today) Today._qIdxCache = null;
+    const batchRestore = window.ToanBatch1Web ? ToanBatch1Web.restore(window.App && App.allData) : null;
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
       for (const it of items) {
@@ -50,7 +51,7 @@ const Quiz = {
         if (!topic || !Array.isArray(topic.questions)) continue;
         let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
         // Dự phòng theo chữ đề CHỈ cho trắc nghiệm: dạng mới hay trùng đề ("Put the words in order.") → chỉ tìm theo id
-        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
+        if (idx < 0 && it.question && !(window.ToanBatch1Adapter && ToanBatch1Adapter.looksLikeBatchId(it.questionId))) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
         if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
         if (window.App && App.questionReady && !App.questionReady(topic.questions[idx])) continue; // cau cho duyet hinh
         pool.push({
@@ -65,6 +66,10 @@ const Quiz = {
       }
     }
 
+    if (!pool.length && batchRestore && batchRestore.unresolvedIds.length) {
+      Rewards._achievementPopup('Một số câu ôn chưa tải được. Con thử lại sau nhé.');
+      return;
+    }
     if (!pool.length) {
       Rewards._achievementPopup('🎉 Tuyệt vời! Con không còn câu sai nào cần ôn lại');
       if (window.Today) Today.onSessionFinish({ mode: 'wrong_review', taskId: this.todayTaskId, empty: true });

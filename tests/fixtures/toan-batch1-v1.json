@@ -1,0 +1,427 @@
+[
+  {
+    "id": "toan_chia-co-du_bo-tro-v1_d6_q8_r5",
+    "q": "53 : 6 = ?",
+    "choices": [
+      "7 (dư 11)",
+      "9 (dư 1)",
+      "8 (dư 6)",
+      "8 (dư 5)"
+    ],
+    "a": 3,
+    "hint": "Nhẩm bảng 6 xem 6 nhân với số nào thì gần 53 nhất mà không vượt quá 53. Số dư phải bé hơn 6.",
+    "explain": "6 × 8 = 48, lấy 53 − 48 = 5 nên 53 : 6 = 8 (dư 5). Thử lại: 8 × 6 + 5 = 53.",
+    "difficulty": 1,
+    "skill": "chia-co-du",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-co-du_bo-tro-v1_d5_q7_r4",
+    "q": "39 : 5 = ?",
+    "choices": [
+      "7 (dư 5)",
+      "8 (dư 1)",
+      "6 (dư 9)",
+      "7 (dư 4)"
+    ],
+    "a": 3,
+    "hint": "Nhẩm bảng 5 xem 5 nhân với số nào thì gần 39 nhất mà không vượt quá 39. Số dư phải bé hơn 5.",
+    "explain": "5 × 7 = 35, lấy 39 − 35 = 4 nên 39 : 5 = 7 (dư 4). Thử lại: 7 × 5 + 4 = 39.",
+    "difficulty": 1,
+    "skill": "chia-co-du",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-co-du_bo-tro-v1_d2_q2_r1",
+    "q": "5 : 2 = ?",
+    "choices": [
+      "1 (dư 3)",
+      "2 (dư 1)",
+      "2 (dư 2)",
+      "3 (dư 1)"
+    ],
+    "a": 1,
+    "hint": "Nhẩm bảng 2 xem 2 nhân với số nào thì gần 5 nhất mà không vượt quá 5. Số dư phải bé hơn 2.",
+    "explain": "2 × 2 = 4, lấy 5 − 4 = 1 nên 5 : 2 = 2 (dư 1). Thử lại: 2 × 2 + 1 = 5.",
+    "difficulty": 1,
+    "skill": "chia-co-du",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-co-du_bo-tro-v1_d9_q9_r8",
+    "q": "89 : 9 = ?",
+    "choices": [
+      "9 (dư 8)",
+      "8 (dư 17)",
+      "10 (dư 1)",
+      "9 (dư 9)"
+    ],
+    "a": 0,
+    "hint": "Nhẩm bảng 9 xem 9 nhân với số nào thì gần 89 nhất mà không vượt quá 89. Số dư phải bé hơn 9.",
+    "explain": "9 × 9 = 81, lấy 89 − 81 = 8 nên 89 : 9 = 9 (dư 8). Thử lại: 9 × 9 + 8 = 89.",
+    "difficulty": 1,
+    "skill": "chia-co-du",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_nhan-dien-chia-het_bo-tro-v1_d8_q6_v0",
+    "q": "Phép chia nào dưới đây là phép chia hết?",
+    "choices": [
+      "73 : 9",
+      "48 : 8",
+      "56 : 6",
+      "26 : 4"
+    ],
+    "a": 1,
+    "hint": "Phép chia hết là phép chia có số dư bằng 0. Nhẩm thử từng phép một.",
+    "explain": "48 : 8 = 6, không còn dư. Ba phép kia đều còn dư: 73 : 9 dư 1, 56 : 6 dư 2, 26 : 4 dư 2.",
+    "difficulty": 1,
+    "skill": "chia-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_nhan-dien-chia-het_bo-tro-v1_d3_q9_v0",
+    "q": "Phép chia nào dưới đây là phép chia hết?",
+    "choices": [
+      "46 : 8",
+      "47 : 7",
+      "27 : 3",
+      "39 : 4"
+    ],
+    "a": 2,
+    "hint": "Phép chia hết là phép chia có số dư bằng 0. Nhẩm thử từng phép một.",
+    "explain": "27 : 3 = 9, không còn dư. Ba phép kia đều còn dư: 46 : 8 dư 6, 47 : 7 dư 5, 39 : 4 dư 3.",
+    "difficulty": 1,
+    "skill": "chia-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-du-con-thua_bo-tro-v1_d3_q9_r2_c0",
+    "q": "Có 29 bông hoa, mỗi bó gồm 3 bông. Hỏi bó được nhiều nhất bao nhiêu bó và còn thừa mấy bông?",
+    "choices": [
+      "10 bó, thừa 2 bông",
+      "9 bó, thừa 2 bông",
+      "2 bó, thừa 9 bông",
+      "9 bó, thừa 3 bông"
+    ],
+    "a": 1,
+    "hint": "Tính 29 : 3 được thương mấy, dư mấy. Số bó đầy là thương hay là số dư?",
+    "explain": "29 : 3 = 9 (dư 2). Thương 9 là số bó đầy, 2 bông còn lại không đủ một bó nên là phần thừa.",
+    "difficulty": 1,
+    "skill": "chia-du-con-thua",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-du-con-thua_bo-tro-v1_d4_q5_r3_c1",
+    "q": "Có 23 quyển vở, xếp mỗi chồng 4 quyển. Hỏi xếp được nhiều nhất bao nhiêu chồng và còn thừa mấy quyển?",
+    "choices": [
+      "3 chồng, thừa 5 quyển",
+      "6 chồng, thừa 3 quyển",
+      "5 chồng, thừa 3 quyển",
+      "5 chồng, thừa 4 quyển"
+    ],
+    "a": 2,
+    "hint": "Tính 23 : 4 được thương mấy, dư mấy. Số chồng đầy là thương hay là số dư?",
+    "explain": "23 : 4 = 5 (dư 3). Thương 5 là số chồng đầy, 3 quyển còn lại không đủ một chồng nên là phần thừa.",
+    "difficulty": 1,
+    "skill": "chia-du-con-thua",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-du-con-thua_bo-tro-v1_d7_q8_r6_c2",
+    "q": "Có 62 cái bánh, mỗi hộp xếp được 7 cái. Hỏi xếp được nhiều nhất bao nhiêu hộp đầy và còn thừa mấy cái bánh?",
+    "choices": [
+      "9 hộp, thừa 6 cái",
+      "6 hộp, thừa 8 cái",
+      "8 hộp, thừa 6 cái",
+      "8 hộp, thừa 7 cái"
+    ],
+    "a": 2,
+    "hint": "Tính 62 : 7 được thương mấy, dư mấy. Số hộp đầy là thương hay là số dư?",
+    "explain": "62 : 7 = 8 (dư 6). Thương 8 là số hộp đầy, 6 cái còn lại không đủ một hộp nên là phần thừa.",
+    "difficulty": 1,
+    "skill": "chia-du-con-thua",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d6_q7_r4_c0",
+    "q": "Mẹ rót 46 l mật ong vào các can, mỗi can đựng được nhiều nhất 6 l. Hỏi mẹ cần ít nhất bao nhiêu can để đựng hết số mật ong đó?",
+    "choices": [
+      "8 can",
+      "4 can",
+      "9 can",
+      "7 can"
+    ],
+    "a": 0,
+    "hint": "46 : 6 = 7 (dư 4). Chỗ mật ong còn dư đó có bỏ đi được không?",
+    "explain": "7 can đầy chứa 42 l, vẫn còn 4 l nên phải thêm một can nữa: 7 + 1 = 8 can.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d6_q8_r0_c1",
+    "q": "Có 48 l dầu, rót vào các can, mỗi can đựng được nhiều nhất 6 l. Hỏi cần ít nhất bao nhiêu can để đựng hết số dầu đó?",
+    "choices": [
+      "8 can",
+      "6 can",
+      "7 can",
+      "9 can"
+    ],
+    "a": 0,
+    "hint": "Tính 48 : 6 trước đã. Phép chia này có còn dư không?",
+    "explain": "48 : 6 = 8, chia hết nên 8 can là vừa đủ. Chỉ khi còn dư mới phải thêm một can.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d7_q4_r0_c2",
+    "q": "Có 28 kg gạo, mỗi túi đựng được nhiều nhất 7 kg. Hỏi cần ít nhất bao nhiêu túi để đựng hết số gạo đó?",
+    "choices": [
+      "5 túi",
+      "3 túi",
+      "4 túi",
+      "7 túi"
+    ],
+    "a": 2,
+    "hint": "Tính 28 : 7 trước đã. Phép chia này có còn dư không?",
+    "explain": "28 : 7 = 4, chia hết nên 4 túi là vừa đủ. Chỉ khi còn dư mới phải thêm một túi.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d8_q4_r3_c2",
+    "q": "Có 35 kg gạo, mỗi túi đựng được nhiều nhất 8 kg. Hỏi cần ít nhất bao nhiêu túi để đựng hết số gạo đó?",
+    "choices": [
+      "3 túi",
+      "4 túi",
+      "5 túi",
+      "6 túi"
+    ],
+    "a": 2,
+    "hint": "35 : 8 = 4 (dư 3). Chỗ gạo còn dư đó có bỏ đi được không?",
+    "explain": "4 túi đầy chứa 32 kg, vẫn còn 3 kg nên phải thêm một túi nữa: 4 + 1 = 5 túi.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-so-hang_bo-tro-v1_sbn4_kc4_ssh12",
+    "q": "Dãy số 4; 8; 12; …; 48 có bao nhiêu số hạng?",
+    "choices": [
+      "11",
+      "12",
+      "44",
+      "13"
+    ],
+    "a": 1,
+    "hint": "Số số hạng = (Số lớn nhất − Số bé nhất) : Khoảng cách + 1. Dãy này có khoảng cách là 4.",
+    "explain": "(48 − 4) : 4 + 1 = 11 + 1 = 12 số hạng.",
+    "difficulty": 2,
+    "skill": "so-so-hang",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-so-hang_bo-tro-v1_sbn3_kc5_ssh11",
+    "q": "Dãy số 3; 8; 13; …; 53 có bao nhiêu số hạng?",
+    "choices": [
+      "50",
+      "12",
+      "10",
+      "11"
+    ],
+    "a": 3,
+    "hint": "Số số hạng = (Số lớn nhất − Số bé nhất) : Khoảng cách + 1. Dãy này có khoảng cách là 5.",
+    "explain": "(53 − 3) : 5 + 1 = 10 + 1 = 11 số hạng.",
+    "difficulty": 2,
+    "skill": "so-so-hang",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-so-hang_bo-tro-v1_sbn1_kc2_ssh25",
+    "q": "Dãy số 1; 3; 5; …; 49 có bao nhiêu số hạng?",
+    "choices": [
+      "25",
+      "26",
+      "24",
+      "48"
+    ],
+    "a": 0,
+    "hint": "Số số hạng = (Số lớn nhất − Số bé nhất) : Khoảng cách + 1. Dãy này có khoảng cách là 2.",
+    "explain": "(49 − 1) : 2 + 1 = 24 + 1 = 25 số hạng.",
+    "difficulty": 1,
+    "skill": "so-so-hang",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-so-hang_bo-tro-v1_sbn10_kc10_ssh4",
+    "q": "Dãy số 10; 20; 30; …; 40 có bao nhiêu số hạng?",
+    "choices": [
+      "30",
+      "4",
+      "5",
+      "3"
+    ],
+    "a": 1,
+    "hint": "Số số hạng = (Số lớn nhất − Số bé nhất) : Khoảng cách + 1. Dãy này có khoảng cách là 10.",
+    "explain": "(40 − 10) : 10 + 1 = 3 + 1 = 4 số hạng.",
+    "difficulty": 1,
+    "skill": "so-so-hang",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-hang-thu-n_bo-tro-v1_sbn2_kc3_n10",
+    "q": "Cho dãy số 2; 5; 8; 11; … Số hạng thứ 10 là số nào?",
+    "choices": [
+      "32",
+      "27",
+      "30",
+      "29"
+    ],
+    "a": 3,
+    "hint": "Số hạng thứ n = (n − 1) × khoảng cách + số bé nhất của dãy.",
+    "explain": "Khoảng cách là 3. (10 − 1) × 3 + 2 = 27 + 2 = 29.",
+    "difficulty": 2,
+    "skill": "so-hang-thu-n",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-hang-thu-n_bo-tro-v1_sbn7_kc10_n8",
+    "q": "Cho dãy số 7; 17; 27; 37; … Số hạng thứ 8 là số nào?",
+    "choices": [
+      "80",
+      "87",
+      "77",
+      "70"
+    ],
+    "a": 2,
+    "hint": "Số hạng thứ n = (n − 1) × khoảng cách + số bé nhất của dãy.",
+    "explain": "Khoảng cách là 10. (8 − 1) × 10 + 7 = 70 + 7 = 77.",
+    "difficulty": 2,
+    "skill": "so-hang-thu-n",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-hang-thu-n_bo-tro-v1_sbn4_kc4_n7",
+    "q": "Cho dãy số 4; 8; 12; 16; … Số hạng thứ 7 là số nào?",
+    "choices": [
+      "28",
+      "20",
+      "32",
+      "24"
+    ],
+    "a": 0,
+    "hint": "Số hạng thứ n = (n − 1) × khoảng cách + số bé nhất của dãy.",
+    "explain": "Khoảng cách là 4. (7 − 1) × 4 + 4 = 24 + 4 = 28.",
+    "difficulty": 2,
+    "skill": "so-hang-thu-n",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_so-hang-thu-n_bo-tro-v1_sbn1_kc2_n25",
+    "q": "Cho dãy số 1; 3; 5; 7; … Số hạng thứ 25 là số nào?",
+    "choices": [
+      "48",
+      "51",
+      "49",
+      "50"
+    ],
+    "a": 2,
+    "hint": "Số hạng thứ n = (n − 1) × khoảng cách + số bé nhất của dãy.",
+    "explain": "Khoảng cách là 2. (25 − 1) × 2 + 1 = 48 + 1 = 49.",
+    "difficulty": 2,
+    "skill": "so-hang-thu-n",
+    "unit": "day-so-cach-deu",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-du-con-thua_bo-tro-v1_d4_q5_r3_c4",
+    "q": "Có 23 quyển vở, xếp mỗi chồng 4 quyển. Hỏi xếp được nhiều nhất bao nhiêu chồng và còn thừa mấy quyển?",
+    "choices": [
+      "3 chồng, thừa 5 quyển",
+      "5 chồng, thừa 3 quyển",
+      "6 chồng, thừa 3 quyển",
+      "5 chồng, thừa 4 quyển"
+    ],
+    "a": 1,
+    "hint": "Tính 23 : 4 được thương mấy, dư mấy. Số chồng đầy là thương hay là số dư?",
+    "explain": "23 : 4 = 5 (dư 3). Thương 5 là số chồng đầy, 3 quyển còn lại không đủ một chồng nên là phần thừa.",
+    "difficulty": 1,
+    "skill": "chia-du-con-thua",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d6_q8_r0_c4",
+    "q": "Có 48 l dầu, rót vào các can, mỗi can đựng được nhiều nhất 6 l. Hỏi cần ít nhất bao nhiêu can để đựng hết số dầu đó?",
+    "choices": [
+      "7 can",
+      "6 can",
+      "8 can",
+      "9 can"
+    ],
+    "a": 2,
+    "hint": "Tính 48 : 6 trước đã. Phép chia này có còn dư không?",
+    "explain": "48 : 6 = 8, chia hết nên 8 can là vừa đủ. Chỉ khi còn dư mới phải thêm một can.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_chia-du-con-thua_bo-tro-v1_d5_q6_r4_c3",
+    "q": "Có 34 bông hoa, mỗi bó gồm 5 bông. Hỏi bó được nhiều nhất bao nhiêu bó và còn thừa mấy bông?",
+    "choices": [
+      "6 bó, thừa 5 bông",
+      "4 bó, thừa 6 bông",
+      "6 bó, thừa 4 bông",
+      "7 bó, thừa 4 bông"
+    ],
+    "a": 2,
+    "hint": "Tính 34 : 5 được thương mấy, dư mấy. Số bó đầy là thương hay là số dư?",
+    "explain": "34 : 5 = 6 (dư 4). Thương 6 là số bó đầy, 4 bông còn lại không đủ một bó nên là phần thừa.",
+    "difficulty": 1,
+    "skill": "chia-du-con-thua",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  },
+  {
+    "id": "toan_dung-het_bo-tro-v1_d6_q7_r4_c5",
+    "q": "Có 46 kg gạo, mỗi túi đựng được nhiều nhất 6 kg. Hỏi cần ít nhất bao nhiêu túi để đựng hết số gạo đó?",
+    "choices": [
+      "4 túi",
+      "9 túi",
+      "7 túi",
+      "8 túi"
+    ],
+    "a": 3,
+    "hint": "46 : 6 = 7 (dư 4). Chỗ gạo còn dư đó có bỏ đi được không?",
+    "explain": "7 túi đầy chứa 42 kg, vẫn còn 4 kg nên phải thêm một túi nữa: 7 + 1 = 8 túi.",
+    "difficulty": 2,
+    "skill": "dung-het",
+    "unit": "chia-co-du",
+    "source": "bo-tro-tuan9-11"
+  }
+]
