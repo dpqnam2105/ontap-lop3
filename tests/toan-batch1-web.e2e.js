@@ -21,6 +21,16 @@ fs.mkdirSync(SHOT, { recursive: true });
     await ordinary.waitForFunction(() => window.App && App.allData);
     ok(await ordinary.evaluate(() => !App.allData.subjects.some(s => s.topics.some(t => t.batch1Pilot))), 'normal: no pilot topics');
     ok(!fetched.some(u => u.includes('toan-batch1-ids.json')), 'normal: no pilot manifest request');
+    const fixedOutsidePilot = await ordinary.evaluate(() => {
+      Storage.switchPlayer('inactive-fixed-test');
+      const id='toan_chia-co-du_bo-tro-v9_d6_q8_r5';
+      Storage.recordAnswer({questionId:id,isCorrect:false,subjectId:'toan',topicId:'toan-chia-het-co-du'});
+      Storage.recordAnswer({questionId:id,isCorrect:true,subjectId:'toan',topicId:'toan-chia-het-co-du'});
+      let message=''; const old=Rewards._achievementPopup; Rewards._achievementPopup=m=>message=m;
+      try {Quiz.startWrongReview();return {ids:ToanBatch1Web.restore(App.allData).unresolvedIds,message};}
+      finally {Rewards._achievementPopup=old;}
+    });
+    ok(!fixedOutsidePilot.ids.length&&fixedOutsidePilot.message.includes('không còn câu sai'),'pilot off: corrected batch history does not block congratulations');
     await regular.close();
     for (const width of [390, 1280]) {
       const ctx = await browser.newContext({ viewport: { width, height: 844 }, isMobile: width === 390, hasTouch: width === 390 });
@@ -73,6 +83,9 @@ fs.mkdirSync(SHOT, { recursive: true });
       const wrong = long.choices.find((c,i) => i !== long.a);
       await p.locator('#ansGrid .ans-btn').filter({ hasText: new RegExp('^' + wrong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).click();
       ok(await p.evaluate(id => !!Storage.getWrongHistory()[id], long.id), width + ': actual wrong recorded');
+      const mapped=await p.evaluate(()=>{const q=Quiz.questions[Quiz.curIdx],d=Quiz.sessionDetails[0];return {selected:d.selectedAnswer,fromSource:q.choices[d.selectedIndex],correct:d.correctAnswer,answer:q.choices[q.a],index:d.correctIndex,a:q.a,green:document.querySelectorAll('#ansGrid .correct').length};});
+      ok(mapped.selected===wrong&&mapped.fromSource===wrong&&mapped.correct===mapped.answer&&mapped.index===mapped.a&&mapped.green===0,width+': shuffled UI records original index and text, no correct highlight after wrong');
+
       const box = await p.locator('#ansGrid .ans-btn').evaluateAll(bs => bs.map(b => ({ h:b.getBoundingClientRect().height, width:b.getBoundingClientRect().width, scroll:b.scrollWidth, client:b.clientWidth })));
       ok(box.every(x => x.h >= 44 && x.scroll <= x.client + 1), width + ': no answer clipping');
       await p.screenshot({ path: path.join(SHOT, width + '-wrong.png'), fullPage: true });
@@ -121,6 +134,13 @@ fs.mkdirSync(SHOT, { recursive: true });
       eq(restored,{found:true,normalized:true,count:1,seen:true,quiz:true,again:0},width+': reload, ID progress, wrong review, idempotent');
       const profile = await p.evaluate(() => { Storage.switchPlayer('Bé khác'); return { wrong:Object.keys(Storage.getWrongHistory()).length, added:ToanBatch1Web.restore(App.allData).added, seen:Storage.getTotalProgress('toan-day-so-cach-deu').seen.length }; });
       eq(profile,{wrong:0,added:0,seen:0},width+': no cross-profile progress');
+      const resolverCheck=await p.evaluate(()=>{
+        const d=App.allData,t=d.subjects.find(s=>s.id==='toan').topics.find(t=>t.batch1Pilot);
+        const before=Object.keys(Storage._idTopics).length;
+        ToanBatch1Web.attachData(d,'lop3');ToanBatch1Web.attachData(d,'lop3');
+        return {sameCount:Object.keys(Storage._idTopics).length===before,one:Storage.ID_PROGRESS_TOPICS.filter(id=>id===t.id).length,live:Storage._idTopics[t.id].questions()===t.questions,unsupported:ToanBatch1Web.normalize({unit:'unsupported'})};
+      });
+      eq(resolverCheck,{sameCount:true,one:1,live:true,unsupported:null},width+': resolver replaces by key; unknown unit rejected');
       const broken = 'toan_chia-co-du_bo-tro-v9_d6_q8_r5';
       const msg = await p.evaluate(id => {
         Storage.recordAnswer({questionId:id,isCorrect:false,subjectId:'toan',topicId:'toan-chia-het-co-du',question:'Phép chia nào dưới đây là phép chia hết?'});
@@ -145,6 +165,14 @@ fs.mkdirSync(SHOT, { recursive: true });
       await p.evaluate(async () => { await App._chooseGrade('lop2'); });
       ok(await p.evaluate(() => !ToanBatch1Web.active(App.allData)),width+': grade 2 not mounted');
       ok(await p.evaluate(() => { let m=''; const old=Rewards._achievementPopup;Rewards._achievementPopup=x=>{m=x;};Quiz.startWrongReview();Rewards._achievementPopup=old;return m.includes('chưa tải được'); }),width+': another grade does not falsely complete pilot wrong history');
+      const correctedInactive=await p.evaluate(id=>{
+        Storage.recordAnswer({questionId:id,isCorrect:true,subjectId:'toan',topicId:'toan-chia-het-co-du'});
+        let message=''; const old=Rewards._achievementPopup;Rewards._achievementPopup=m=>message=m;
+        try {Quiz.startWrongReview();return {ids:ToanBatch1Web.restore(App.allData).unresolvedIds,message};}
+        finally {Rewards._achievementPopup=old;}
+      },broken);
+      ok(!correctedInactive.ids.length&&correctedInactive.message.includes('không còn câu sai'),width+': inactive bank ignores corrected unsupported ID');
+
       eq(posts,0,width+': no remote POST');
       eq(errors,[],width+': no pageerror');
       const after=(await ctx.storageState()).origins;

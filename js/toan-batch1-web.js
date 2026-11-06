@@ -23,6 +23,7 @@
     normalize(q) {
       if (window.LearningEngine && LearningEngine.normalizeQuestionBank) {
         const meta = ToanBatch1Adapter.ID_LISTS.topics.find(t => t.unit === q.unit);
+        if (!meta) return null; // Unsupported unit: adapter reports this ID instead of dereferencing undefined.
         const d = LearningEngine.normalizeQuestionBank({ subjects: [{ id: 'toan', topics: [
           { id: meta.topicId, questions: [q] }
         ] }] });
@@ -32,16 +33,21 @@
     },
     restore(data) {
       const none = { added: 0, present: 0, unresolvedIds: [], topics: [] };
+      // Diagnostics concern unresolved mistakes, not every historical/due ID we may restore.
+      const wrongIds = window.ToanBatch1Adapter
+        ? ToanBatch1Adapter.idsFromHistory(Storage.getUnresolvedWrong(Infinity), null) : [];
       if (!this.active(data)) {
         // History stays intact when viewing another grade or when the pilot bank failed to load.
         // Do not let an empty current-grade pool be mistaken for "all wrong answers fixed".
         if (window.API && API.pilotOn() && window.ToanBatch1Adapter) {
-          none.unresolvedIds = ToanBatch1Adapter.idsFromHistory(Storage.getWrongHistory(), Storage.getReviewMap());
+          none.unresolvedIds = wrongIds;
         }
         return none;
       }
       const result = ToanBatch1Adapter.ensureFromHistory(data.subjects,
         Storage.getWrongHistory(), Storage.getReviewMap(), { normalize: q => this.normalize(q) });
+      const outstanding = new Set(wrongIds);
+      result.unresolvedIds = result.unresolvedIds.filter(id => outstanding.has(id));
       if (result.added && window.Today) Today._qIdxCache = null;
       return result;
     }

@@ -53,5 +53,14 @@ E2E kiểm 390/1280px: ngoài pilot không có chủ đề hoặc request manife
 - API lấy số câu dự kiến từ manifest; `added + present` đủ mới bật pilot. Test gọi API hai lần và giả lập augment trên cùng list để lần trả về `added: 0, present: 120` vẫn giữ hai chủ đề.
 - Lượt ôn không tải được gọi Today với `blocked`; lượt ôn được một phần gọi với `partial`. Không đánh dấu xong nhiệm vụ, không thưởng kế hoạch. Phần tải được vẫn học bình thường; cuối lượt có thông báo phần chưa tải được.
 - `ToanBatch1Web.restore()` tự đặt `Today._qIdxCache = null` khi thêm câu. Không cần lặp thao tác này ở App.
-- E2E tích hợp: 40 kiểm tra, gồm cả hai đường mở ôn, trạng thái Today và thông báo cuối lượt thiếu câu. Ảnh là thao tác kiểm thử tự động, không phải bài làm của Thỏ.
+- E2E tích hợp: 47 kiểm tra, gồm cả hai đường mở ôn, trạng thái Today và thông báo cuối lượt thiếu câu. Ảnh là thao tác kiểm thử tự động, không phải bài làm của Thỏ.
 - Ảnh `390-dung-het-full.png`: câu dài nhất dạng đựng hết trong kho mẫu; `390-large-text-wrong.png`: vừa chọn sai, chưa chữa, khung đáp án 220px và chữ 28px. Khung 220px là phép thử CSS tạm thời, không phải chiều rộng toàn màn hình.
+
+## Review tiếp: lịch sử đã chữa và ánh xạ đáp án
+
+- `restore()` chỉ dùng `Storage.getUnresolvedWrong(Infinity)` để xác định ID cần báo chưa tải được; các ID đã chữa vẫn được giữ/khôi phục nhưng không chặn lượt ôn. Lọc tương tự ở cả nhánh kho đang hoạt động và nhánh không hoạt động. Pilot tắt vẫn không đọc vùng lưu pilot.
+- `normalize()` trả null khi không có metadata unit. Adapter ghi nhận thất bại theo ID, không dựa vào ngoại lệ dereference.
+- `Storage.registerIdTopic()` gán `_idTopics[topicId]`, danh sách ID dùng includes trước push: gọi attach nhiều lần không tích luỹ resolver. E2E kiểm resolver trỏ đúng mảng hiện tại.
+- Quiz xáo thứ tự nút nhưng closure vẫn truyền origIdx vào checkAnswer. Session details lưu chỉ số theo choices gốc và chữ tương ứng. E2E kiểm trực tiếp sau thao tác chọn sai, đồng thời chưa có lớp correct nào.
+- Viền xanh nhạt ở lựa chọn chưa chọn là quy tắc `.ans-btn:hover:not(:disabled)` hiện có, không phải lớp correct/focus. Không đổi CSS chung trong PR này.
+- E2E mới kiểm tắt pilot với lịch sử đã chữa, đổi lớp với ID đã chữa, attach lặp và unit không hỗ trợ.
