@@ -60,6 +60,7 @@ const Today = {
     if (!d) return new Map();
     // Câu tự sinh trong lịch sử mà chưa có trong kho → dựng lại từ id trước khi lập bản đồ
     if (window.GenB13 && GenB13.ensureFromHistory(d)) this._qIdxCache = null;
+    if (window.ToanBatch1Web) ToanBatch1Web.restore(d);
     if (this._qIdxCache && this._qIdxCache.data === d) return this._qIdxCache.map;
     const map = new Map();
     d.subjects.forEach(s => (s.topics || []).forEach(t => (t.questions || []).forEach((q, i) => {
@@ -221,6 +222,8 @@ const Today = {
   },
 
   onSessionFinish(info) {
+    // A failed/partial review is retryable, not an empty completed task. Do not award the plan bonus.
+    if (info && (info.blocked || info.partial)) { this.render(); return; }
     const p = this.plan();
     if (!p) return;
     let changed = false;

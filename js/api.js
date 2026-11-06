@@ -157,7 +157,20 @@ const API = {
     if (window.GenB13) {
       try { GenB13.augment(list, gradeId); } catch (e) { console.warn('GenB13.augment failed:', e); }
     }
+    // Pilot only: small fixed ID bank, never enumerate the full generator at startup.
+    let batch1Pilot = false;
+    if (gradeId === 'lop3' && this.pilotOn() && window.ToanBatch1Adapter) {
+      try {
+        const ids = await this._fetchJSON(base + 'toan/toan-batch1-ids.json');
+        ToanBatch1Adapter.configure(ids);
+        const result = ToanBatch1Adapter.augment(list, gradeId);
+        const expected = ToanBatch1Adapter.ID_LISTS.topics.reduce((n, t) => n + t.ids.length, 0);
+        batch1Pilot = result.added + result.present === expected && !result.unresolvedIds.length;
+        if (!batch1Pilot) list.forEach(s => { s.topics = s.topics.filter(t => !ToanBatch1Adapter.ID_LISTS.topics.some(m => m.topicId === t.id)); });
+      } catch (e) { console.warn('Toan batch 1 pilot unavailable:', e); }
+    }
     return {
+      _batch1Pilot: batch1Pilot,
       version: manifest.version,
       lastUpdated: manifest.lastUpdated,
       subjects: list

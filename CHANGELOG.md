@@ -1,5 +1,13 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-06 — Thử Toán bổ trợ tuần 9–11 (chưa mở cho hồ sơ thật)
+- Chỉ khi `?pilot=1`: hai chủ đề Toán Giai đoạn 2, 60 câu/chủ đề, gồm chia hết/chia có dư/còn thừa/đựng hết và dãy số cách đều. Kho mẫu theo ID cố định; không sinh toàn bộ 3165 câu lúc mở app.
+- Nối khôi phục câu ngoài kho mẫu từ wrongHistory/lịch ôn theo hồ sơ, tiến độ theo ID, chuẩn hóa câu trước khi thêm. ID hỏng giữ lịch sử và báo chưa tải được, không báo nhầm đã ôn hết.
+- Chủ đề thử chỉ mở thủ công, không vào kế hoạch chủ đề tự động, đề trộn hay thử thách cún. Dùng vùng lưu pilot hiện có; không ghi Sheets/Cloud. Công thức số hạng giữ `(n − 1) × KC + SBN`.
+- Sửa sau review: nạp lại dùng added + present và tổng từ manifest; lượt ôn bị chặn/thiếu câu giữ nhiệm vụ Today để thử lại, không thưởng kế hoạch và có thông báo cuối lượt.
+- Lọc thông báo chưa tải được theo câu sai chưa chữa, tránh ID lịch sử đã chữa chặn lượt ôn; thêm kiểm resolver và ánh xạ đáp án sau xáo trộn.
+- Test bộ sinh (24), adapter (17), E2E tích hợp 390/1280px, khôi phục sau reload, đổi hồ sơ/lớp và kiểm hồ sơ thật không đổi. Chi tiết `docs/toan-batch1-pilot.md`.
+
 ## 2026-11-03 — Tiếng Anh: đủ 60 động từ bất quy tắc (lô 6d) + Unit 3 Vocabulary 2 (lô 7)
 - Lô 6d: 21 câu nhóm 10–12 (set … write) → thẻ "Động từ bất quy tắc" đủ 60 từ danh sách cô, 12 nhóm, 84 câu; đề thử 24 câu (2/nhóm).
 - Lô 7: 24 câu từ vựng theo phiếu U3-WS8 (waterfall, coast, go kayaking, go zip-lining, go rock climbing, meet new people, light, heavy, safe, unsafe, dangerous, beautiful) trong chủ đề NIK3 Unit 3: Vacation & camping. Codex duyệt chữ cả hai lô.

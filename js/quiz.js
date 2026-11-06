@@ -41,6 +41,8 @@ const Quiz = {
     const items = (window.Storage && Storage.getUnresolvedWrong) ? Storage.getUnresolvedWrong(40) : [];
     // Câu tự sinh đã gặp nhưng không có trong kho hiện tại (vd sau khi lên phiên bản mẫu) → dựng lại từ id
     if (window.GenB13 && window.App && App.allData && GenB13.ensureFromHistory(App.allData) && window.Today) Today._qIdxCache = null;
+    const batchRestore = window.ToanBatch1Web ? ToanBatch1Web.restore(window.App && App.allData) : null;
+    this._batchReviewUnresolved = batchRestore ? batchRestore.unresolvedIds.slice() : [];
     const pool = [];
     if (window.App && App.allData && Array.isArray(App.allData.subjects)) {
       for (const it of items) {
@@ -50,7 +52,7 @@ const Quiz = {
         if (!topic || !Array.isArray(topic.questions)) continue;
         let idx = topic.questions.findIndex(q => q.id && q.id === it.questionId);
         // Dự phòng theo chữ đề CHỈ cho trắc nghiệm: dạng mới hay trùng đề ("Put the words in order.") → chỉ tìm theo id
-        if (idx < 0 && it.question) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
+        if (idx < 0 && it.question && !(window.ToanBatch1Adapter && ToanBatch1Adapter.looksLikeBatchId(it.questionId))) idx = topic.questions.findIndex(q => !q.type && (q.q || '') === it.question);
         if (idx < 0) continue; // cau da bi xoa/sua khoi ngan hang
         if (window.App && App.questionReady && !App.questionReady(topic.questions[idx])) continue; // cau cho duyet hinh
         pool.push({
@@ -65,6 +67,12 @@ const Quiz = {
       }
     }
 
+    if (!pool.length && batchRestore && batchRestore.unresolvedIds.length) {
+      Rewards._achievementPopup('Một số câu ôn chưa tải được. Con thử lại sau nhé.');
+      if (window.Today) Today.onSessionFinish({ mode: 'wrong_review', taskId: this.todayTaskId, blocked: true });
+      this.todayTaskId = null;
+      return;
+    }
     if (!pool.length) {
       Rewards._achievementPopup('🎉 Tuyệt vời! Con không còn câu sai nào cần ôn lại');
       if (window.Today) Today.onSessionFinish({ mode: 'wrong_review', taskId: this.todayTaskId, empty: true });
@@ -105,6 +113,14 @@ const Quiz = {
     this.spellingRun = null;
     this._spellFinished = false;
     pool = (pool || []).filter(q => q && !(window.App && App.questionReady && !App.questionReady(q)));
+    const batchRestore = window.ToanBatch1Web ? ToanBatch1Web.restore(window.App && App.allData) : null;
+    this._batchReviewUnresolved = batchRestore ? batchRestore.unresolvedIds.slice() : [];
+    if ((!pool || !pool.length) && this._batchReviewUnresolved.length) {
+      Rewards._achievementPopup('Một số câu ôn chưa tải được. Con thử lại sau nhé.');
+      if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, blocked: true });
+      this.todayTaskId = null;
+      return;
+    }
     if (!pool || !pool.length) { Rewards._achievementPopup('🎉 Hôm nay chưa có câu nào cần ôn!'); if (window.Today) Today.onSessionFinish({ mode: 'review_pool', taskId: todayTaskId, empty: true }); return; }
     this.todayTaskId = todayTaskId || null;
     this._lastLaunch = { type: 'pool', pool }; this.speed = null; this.pickIdx = null; this._setBack('topic');
@@ -1112,6 +1128,8 @@ const Quiz = {
     if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
     // Keep the result identity after challenge is cleared, even if finish is invoked again.
     const isPetChallenge = !!this.challenge || (this.sessionInfo && this.sessionInfo.modeLabel === 'Thử thách đón cún 🐶');
+    const partialReview = (this.mode === 'wrong_review' || this.mode === 'review_pool') &&
+      !!(this._batchReviewUnresolved && this._batchReviewUnresolved.length);
     let petChallengeResult = null;
     if (this.challenge) {
       try { if (window.Pet) petChallengeResult = Pet.onChallengeFinish({ ...this.challenge, score: this.score, mainTotal: this._mainTotal() }); }
@@ -1164,6 +1182,7 @@ const Quiz = {
           : '📚 Còn ' + (info.totalInTopic - newLearnedTotal) + ' câu nữa trong chủ đề này.';
       }
 
+      if (partialReview) progressMsg = 'Con đã ôn phần tải được. Một số câu ôn chưa tải được, con thử lại sau nhé.';
       let praiseMsg = '';
       if (ratio >= 0.9) praiseMsg = 'Xuất sắc! Con thật giỏi! 🌟';
       else if (ratio >= 0.7) praiseMsg = 'Rất tốt! Con đã chăm chỉ lắm! 👏';
@@ -1178,7 +1197,7 @@ const Quiz = {
     if (ratio >= 0.8) this._confettiBurst();
     if (window.Today) {
       try {
-        if (!this.spellingRun) Today.onSessionFinish({ mode: isPetChallenge ? 'pet_challenge' : this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total });
+        if (!this.spellingRun) Today.onSessionFinish({ mode: isPetChallenge ? 'pet_challenge' : this.mode, taskId: this.todayTaskId, topicId: this.currentTopicId, subjectId: this.currentSubjectId, score: this.score, total, partial: partialReview });
         Today.renderResult({ stars: this.sessionStars || 0, xp: this.sessionXP || 0 });
       } catch (e) { console.warn('Today result error', e); }
     }

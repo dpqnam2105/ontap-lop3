@@ -104,6 +104,7 @@ const App = {
     }
 
     this._dataByGrade[g] = this.allData;
+    if (window.ToanBatch1Web) ToanBatch1Web.attachData(this.allData, g);
 
     if (this.playerName && this.allData) this._renderSubjects();
     if (this.playerName) this._showWelcome(this.playerName);
@@ -260,6 +261,7 @@ const App = {
       }
     }
     this._dataByGrade[gradeId] = data;
+    if (window.ToanBatch1Web) ToanBatch1Web.attachData(data, gradeId);
     return data;
   },
 
@@ -988,6 +990,7 @@ const App = {
     const s = this.allData.subjects[idx];
     // Câu tự sinh trong lịch sử của bé mà kho chưa có → dựng lại trước khi vẽ thẻ chủ đề / tính tiến độ
     if (window.GenB13 && GenB13.ensureFromHistory(this.allData) && window.Today) Today._qIdxCache = null;
+    if (window.ToanBatch1Web) ToanBatch1Web.restore(this.allData);
     document.getElementById('topicMenuTitle').textContent = s.name;
 
     const list = document.getElementById('topicList');
@@ -1031,6 +1034,13 @@ const App = {
     if (stageBar) list.appendChild(stageBar);
     if (mixCard) list.appendChild(mixCard);
     shown.forEach(x => list.appendChild(this._topicCard(s, x.t, x.allowed)));
+    // Manual pilot cards stay out of Today / mixed practice / pet challenges.
+    if (s.id === 'toan' && window.ToanBatch1Web && ToanBatch1Web.active(this.allData)) {
+      s.topics.filter(t => t.batch1Pilot).forEach(t => {
+        const allowed = this._allowedIndices(s, t);
+        if (allowed === null || allowed.length) list.appendChild(this._topicCard(s, t, allowed));
+      });
+    }
 
     if (stageBar && !list.querySelector('.topic-card')) {
       const empty = document.createElement('div');
