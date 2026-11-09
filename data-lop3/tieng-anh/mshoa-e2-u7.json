@@ -8,14 +8,14 @@
         "id": "en_mshoa-e2-u7_q001",
         "q": "Choose a or an: There is ___ spoon beside my plate.",
         "choices": [
-          "a",
+          "any",
           "an",
-          "some",
-          "any"
+          "a",
+          "some"
         ],
-        "a": 0,
+        "a": 2,
         "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
-        "explain": "There is a spoon beside my plate. Spoon bắt đầu bằng âm phụ âm /s/, nên dùng a.",
+        "explain": "There is a spoon beside my plate. Spoon bắt đầu bằng âm phụ âm, nên dùng a.",
         "difficulty": 1,
         "skill": "articles-a-an",
         "unit": "e2-u7",
@@ -44,14 +44,14 @@
         "id": "en_mshoa-e2-u7_q002",
         "q": "Choose a or an: Dad puts ___ egg in the bowl.",
         "choices": [
+          "any",
           "a",
-          "an",
           "some",
-          "any"
+          "an"
         ],
-        "a": 1,
+        "a": 3,
         "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
-        "explain": "Dad puts an egg in the bowl. Egg là danh từ đếm được số ít, bắt đầu bằng âm nguyên âm /e/.",
+        "explain": "Dad puts an egg in the bowl. Egg là danh từ đếm được số ít, bắt đầu bằng âm nguyên âm.",
         "difficulty": 1,
         "skill": "articles-a-an",
         "unit": "e2-u7",
@@ -80,14 +80,14 @@
         "id": "en_mshoa-e2-u7_q003",
         "q": "Choose a or an: This is ___ bottle of water.",
         "choices": [
-          "an",
-          "some",
           "a",
-          "any"
+          "any",
+          "an",
+          "some"
         ],
-        "a": 2,
+        "a": 0,
         "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
-        "explain": "This is a bottle of water. Bottle đếm được, số ít và bắt đầu bằng âm /b/. Water ở sau of không quyết định mạo từ.",
+        "explain": "This is a bottle of water. Bottle đếm được, số ít và bắt đầu bằng âm phụ âm. Water ở sau of không quyết định mạo từ.",
         "difficulty": 1,
         "skill": "articles-a-an",
         "unit": "e2-u7",
@@ -117,11 +117,11 @@
         "q": "Choose a or an: I can see ___ orange on the plate.",
         "choices": [
           "a",
-          "some",
+          "an",
           "any",
-          "an"
+          "some"
         ],
-        "a": 3,
+        "a": 1,
         "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
         "explain": "I can see an orange on the plate. Orange bắt đầu bằng âm nguyên âm, nên dùng an.",
         "difficulty": 1,
@@ -153,13 +153,13 @@
         "q": "Choose a or an: Mum makes ___ sandwich for me.",
         "choices": [
           "a",
-          "an",
+          "any",
           "some",
-          "any"
+          "an"
         ],
         "a": 0,
         "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
-        "explain": "Mum makes a sandwich for me. Sandwich là danh từ đếm được số ít, bắt đầu bằng âm /s/.",
+        "explain": "Mum makes a sandwich for me. Sandwich là danh từ đếm được số ít, bắt đầu bằng âm phụ âm.",
         "difficulty": 1,
         "skill": "articles-a-an",
         "unit": "e2-u7",
@@ -188,14 +188,14 @@
         "id": "en_mshoa-e2-u7_q006",
         "q": "Choose a or an: She has ___ empty cup.",
         "choices": [
-          "a",
+          "any",
           "an",
-          "some",
-          "any"
+          "a",
+          "some"
         ],
         "a": 1,
-        "hint": "Nghe âm đầu rồi chọn từ phù hợp.",
-        "explain": "She has an empty cup. Từ ngay sau chỗ trống là empty, bắt đầu bằng âm /e/. Chọn theo âm của empty, không phải cup.",
+        "hint": "Từ nào đứng ngay sau chỗ trống? Nghe âm đầu của từ đó.",
+        "explain": "She has an empty cup. Từ ngay sau chỗ trống là empty, bắt đầu bằng âm nguyên âm. Chọn theo âm của empty, không phải cup.",
         "difficulty": 1,
         "skill": "articles-a-an",
         "unit": "e2-u7",
@@ -227,12 +227,12 @@
         "id": "en_mshoa-e2-u7_q007",
         "q": "There is ___ bread next to the soup.",
         "choices": [
-          "a",
           "an",
-          "some",
-          "many"
+          "many",
+          "a",
+          "some"
         ],
-        "a": 2,
+        "a": 3,
         "hint": "Trong câu này, từ chỉ thức ăn là chất/thực phẩm hay một đồ vật riêng lẻ?",
         "explain": "There is some bread next to the soup. Bread không đếm được trong cách dùng này; câu khẳng định dùng some. Không nói a bread để chỉ một ít bánh mì.",
         "difficulty": 1,
@@ -263,12 +263,12 @@
         "id": "en_mshoa-e2-u7_q008",
         "q": "There are ___ grapes in my lunch box.",
         "choices": [
-          "a",
-          "an",
           "any",
-          "some"
+          "some",
+          "a",
+          "an"
         ],
-        "a": 3,
+        "a": 1,
         "hint": "Xét dạng số nhiều và loại câu.",
         "explain": "There are some grapes in my lunch box. Grapes là danh từ đếm được số nhiều; câu khẳng định dùng some.",
         "difficulty": 1,
@@ -299,12 +299,12 @@
         "id": "en_mshoa-e2-u7_q009",
         "q": "There is ___ sugar in this bowl.",
         "choices": [
-          "some",
           "a",
           "an",
+          "some",
           "many"
         ],
-        "a": 0,
+        "a": 2,
         "hint": "Danh từ trong câu có đếm trực tiếp từng cái được không?",
         "explain": "There is some sugar in this bowl. Sugar không đếm được trong câu này; dùng some để nói một ít đường.",
         "difficulty": 1,
@@ -335,12 +335,12 @@
         "id": "en_mshoa-e2-u7_q010",
         "q": "There are ___ biscuits on the blue plate.",
         "choices": [
-          "a",
-          "some",
           "an",
-          "any"
+          "any",
+          "a",
+          "some"
         ],
-        "a": 1,
+        "a": 3,
         "hint": "Xét danh từ số ít hay số nhiều và câu có phủ định không.",
         "explain": "There are some biscuits on the blue plate. Biscuits là số nhiều; câu khẳng định dùng some.",
         "difficulty": 1,
@@ -371,10 +371,10 @@
         "id": "en_mshoa-e2-u7_q011",
         "q": "The bottle is empty. There isn't ___ milk in it.",
         "choices": [
-          "a",
+          "many",
           "an",
           "any",
-          "many"
+          "a"
         ],
         "a": 2,
         "hint": "Đồ đựng đã rỗng: chọn cách nói không còn chút nào.",
@@ -407,12 +407,12 @@
         "id": "en_mshoa-e2-u7_q012",
         "q": "We have no eggs left. We don't have ___ eggs for the cake.",
         "choices": [
+          "any",
           "a",
           "an",
-          "every",
-          "any"
+          "every"
         ],
-        "a": 3,
+        "a": 0,
         "hint": "Chú ý ý nghĩa không còn thứ gì trong câu phủ định.",
         "explain": "We don't have any eggs for the cake. Eggs là số nhiều. Câu phủ định nói không còn quả nào, nên dùng any.",
         "difficulty": 1,
@@ -443,12 +443,12 @@
         "id": "en_mshoa-e2-u7_q013",
         "q": "Are there ___ potatoes in the basket?",
         "choices": [
-          "any",
-          "a",
+          "every",
           "an",
-          "every"
+          "a",
+          "any"
         ],
-        "a": 0,
+        "a": 3,
         "hint": "Câu đang hỏi có thứ đó hay không; xét cả dạng số nhiều.",
         "explain": "Are there any potatoes in the basket? Đây là câu hỏi thông thường về việc có khoai tây hay không; dùng any với potatoes số nhiều.",
         "difficulty": 1,
@@ -482,12 +482,12 @@
         "id": "en_mshoa-e2-u7_q014",
         "q": "Is there ___ sugar left in this bowl?",
         "choices": [
+          "many",
           "a",
           "any",
-          "an",
-          "many"
+          "an"
         ],
-        "a": 1,
+        "a": 2,
         "hint": "Đây là câu hỏi có hay không; chất trong câu không đếm trực tiếp từng cái.",
         "explain": "Is there any sugar left in this bowl? Đây là câu hỏi thông thường xem còn đường hay không; dùng any với sugar không đếm được.",
         "difficulty": 1,
@@ -518,12 +518,12 @@
         "id": "en_mshoa-e2-u7_q015",
         "q": "Would you like ___ soup with your lunch?",
         "choices": [
-          "many",
           "every",
-          "some",
-          "each"
+          "many",
+          "each",
+          "some"
         ],
-        "a": 2,
+        "a": 3,
         "hint": "Câu này mời người khác ăn, khác với câu chỉ hỏi có hay không.",
         "explain": "Would you like some soup with your lunch? Lời mời dùng some trong mẫu đang học; soup không đếm được. Không phải cứ thấy dấu hỏi là luôn chọn any.",
         "difficulty": 1,
@@ -554,12 +554,12 @@
         "id": "en_mshoa-e2-u7_q016",
         "q": "Would you like ___ water after your game?",
         "choices": [
+          "some",
           "many",
           "every",
-          "each",
-          "some"
+          "each"
         ],
-        "a": 3,
+        "a": 0,
         "hint": "Nhận ra mẫu câu mời đồ uống trước khi chọn từ.",
         "explain": "Would you like some water after your game? Đây là lời mời uống nước, dùng some. Water không đếm được trong cách dùng này.",
         "difficulty": 1,
@@ -590,12 +590,12 @@
         "id": "en_mshoa-e2-u7_q017",
         "q": "Choose the pair: There is ___ sandwich and ___ milk on the tray.",
         "choices": [
-          "a / some",
           "an / some",
+          "a / some",
           "a / any",
           "an / any"
         ],
-        "a": 0,
+        "a": 1,
         "hint": "Xét riêng từng chỗ trống: một món đếm được và một loại đồ uống.",
         "explain": "There is a sandwich and some milk on the tray. Một chiếc sandwich dùng a; một ít milk trong câu khẳng định dùng some.",
         "difficulty": 2,
@@ -629,14 +629,14 @@
         "id": "en_mshoa-e2-u7_q018",
         "q": "Choose the pair: There is ___ egg in the bowl. There isn't ___ sugar in the empty jar.",
         "choices": [
-          "a / any",
           "an / any",
+          "a / any",
           "an / some",
           "a / some"
         ],
-        "a": 1,
+        "a": 0,
         "hint": "Câu thứ nhất có một vật; câu thứ hai nói đồ đựng đã rỗng.",
-        "explain": "There is an egg in the bowl. There isn't any sugar in the empty jar. Egg bắt đầu bằng âm /e/; câu phủ định với sugar dùng any.",
+        "explain": "There is an egg in the bowl. There isn't any sugar in the empty jar. Egg bắt đầu bằng âm nguyên âm; câu phủ định với sugar dùng any.",
         "difficulty": 2,
         "skill": "determiners-mixed",
         "unit": "e2-u7",
@@ -665,12 +665,12 @@
         "id": "en_mshoa-e2-u7_q019",
         "q": "Choose the pair: There are ___ sweets in the bag. There is ___ orange beside it.",
         "choices": [
+          "some / an",
           "some / a",
           "any / an",
-          "some / an",
           "any / a"
         ],
-        "a": 2,
+        "a": 0,
         "hint": "Phân biệt danh từ số nhiều ở câu đầu với một loại quả ở câu sau.",
         "explain": "There are some sweets in the bag. There is an orange beside it. Sweets số nhiều trong câu khẳng định dùng some; orange số ít bắt đầu bằng âm nguyên âm dùng an.",
         "difficulty": 2,
@@ -701,14 +701,14 @@
         "id": "en_mshoa-e2-u7_q020",
         "q": "Choose the pair: There is ___ bottle on the table. It is empty, so there isn't ___ water in it.",
         "choices": [
-          "an / any",
           "a / some",
           "an / some",
-          "a / any"
+          "a / any",
+          "an / any"
         ],
-        "a": 3,
+        "a": 2,
         "hint": "Một đồ vật đếm được ở câu đầu; không còn chút chất lỏng nào ở câu sau.",
-        "explain": "There is a bottle on the table. There isn't any water in it. Bottle bắt đầu bằng âm /b/ nên dùng a; water trong câu phủ định nói chai rỗng dùng any.",
+        "explain": "There is a bottle on the table. There isn't any water in it. Bottle bắt đầu bằng âm phụ âm nên dùng a; water trong câu phủ định nói chai rỗng dùng any.",
         "difficulty": 2,
         "skill": "determiners-mixed",
         "unit": "e2-u7",
@@ -732,6 +732,45 @@
           "by": "codex",
           "date": "2026-11-09"
         }
+      },
+      {
+        "id": "en_mshoa-e2-u7_q021",
+        "q": "Choose a or an: We play for ___ hour.",
+        "choices": [
+          "some",
+          "an",
+          "a",
+          "any"
+        ],
+        "a": 1,
+        "hint": "Chữ h trong từ chỉ thời gian này không được đọc thành tiếng.",
+        "explain": "We play for an hour. Chữ h trong hour không được đọc thành tiếng, nên từ này mở đầu bằng âm nguyên âm. Vì vậy dùng an, dù chữ đầu là h.",
+        "difficulty": 1,
+        "skill": "articles-a-an",
+        "unit": "e2-u7",
+        "book": "mshoa-explorer2",
+        "track": "core",
+        "bookLesson": {
+          "book": "mshoa-explorer2",
+          "unit": 7,
+          "lesson": 2
+        },
+        "source": "codex-mshoa-e2u7-determiners-20261109",
+        "ref": {
+          "basis": "lesson-sheet",
+          "sources": [
+            "TGR2 U7 L2 (1).docx — 3 trang Countable and uncountable nouns, Nam gửi 09/11/2026"
+          ],
+          "note": "Câu tự biên soạn theo phạm vi phiếu Ms Hoa Junior U7 L2; Nam xác nhận con đang học U7 L3. Không chép nguyên câu trên phiếu. Bổ sung hour theo góp ý Claude/Nam để luyện âm đầu; không khẳng định từ này xuất hiện trong phiếu.",
+          "toc": [],
+          "extraWords": [
+            "hour"
+          ],
+          "contentReview": "codex-noi-dung-20261109",
+          "by": "codex",
+          "date": "2026-11-09"
+        },
+        "gloss": "hour: giờ (đơn vị thời gian)."
       }
     ]
   }

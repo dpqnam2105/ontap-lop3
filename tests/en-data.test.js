@@ -56,6 +56,14 @@ const IRR_V3 = /\b(begun|broken|chosen|done|drawn|driven|eaten|fallen|given|gone
 // Lô 4–6 (Past Simple): đề hoàn toàn tiếng Anh để nút 🔊 đọc giọng Anh; chú nghĩa Việt nằm ở q.gloss (hiện riêng, không đọc).
 // Audit giọng đọc 02/11: đề trộn Việt–Anh làm bộ đọc chọn giọng Việt cho cả câu và cả đáp án một từ.
 const VI_CHARS = /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i;
+// Articles are whole words: "an" inside Vietnamese "thời gian" does not reveal the answer.
+function hintExposesAnswer(hint, answer) {
+  if (/^(a|an)$/.test(answer)) return new RegExp('(^|[^\\p{L}])' + answer + '($|[^\\p{L}])', 'iu').test(hint);
+  return hint.includes(answer);
+}
+assert.strictEqual(hintExposesAnswer('Từ chỉ thời gian này mở đầu bằng âm gì?', 'an'), false);
+assert.strictEqual(hintExposesAnswer('Điền an vào chỗ trống.', 'an'), true);
+assert.strictEqual(hintExposesAnswer('Hãy dùng a.', 'a'), true);
 function enOnlyQ(q, err, tag) {
   if (VI_CHARS.test(q.q) || q.choices.some(c => VI_CHARS.test(c))) err(tag + ': đề/lựa chọn phải hoàn toàn tiếng Anh (chú nghĩa Việt để ở gloss)');
   // gloss hiện ngay dưới đề: không được chứa đáp án (trừ khi đáp án trùng động từ gốc đang chú nghĩa, vd let, put)
@@ -270,14 +278,19 @@ const RA101 = { round: 'claude-ra-101-20261009', total: 101, ok: 71,
     'en_global-success-3_q004', 'en_global-success-3_q012', 'en_global-success-3_q013', 'en_global-success-3_q015'],
   pending: [] };
 BATCH_RULES['codex-mshoa-e2u7-determiners-20261109'] = {
-  count:20, passages:[], check(q,err) {
+  count:21, passages:[], check(q,err) {
     if(q.book!=='mshoa-explorer2'||q.unit!=='e2-u7'||q.bookLesson?.unit!==7||q.bookLesson?.lesson!==2) err('U7 L2: nhãn phạm vi sai');
     if(q.ref.basis!=='lesson-sheet'||!q.ref.sources?.includes('TGR2 U7 L2 (1).docx — 3 trang Countable and uncountable nouns, Nam gửi 09/11/2026')) err('U7 L2: thiếu nguồn phiếu');
     if(VI_CHARS.test(q.q)||q.choices.some(c=>VI_CHARS.test(c))) err('U7 L2: đề và đáp án phải tiếng Anh');
     if(!['articles-a-an','some-any','determiners-mixed'].includes(q.skill)) err('U7 L2: skill sai');
   }, after(qs,errs) {
     const positions=[0,0,0,0];qs.forEach(q=>positions[q.a]++);
-    if(positions.some(n=>n!==5)) errs.push('U7 L2: vị trí đáp án cần 5/5/5/5');
+    if(JSON.stringify(positions.slice().sort())!==JSON.stringify([5,5,5,6])) errs.push('U7 L2: vị trí đáp án cần 6/5/5/5');
+    for(let period=1;period<=4;period++) if(qs.every((q,i)=>q.a===qs[i%period].a)) errs.push('U7 L2: đáp án lặp chu kỳ '+period);
+    const hour=qs.find(q=>q.id==='en_mshoa-e2-u7_q021');
+    if(!hour||!hour.q.includes('___ hour')||hour.choices[hour.a]!=='an') errs.push('U7 L2: cần an hour kiểm âm đầu');
+    if(qs.some(q=>/\/[seb]\//.test(q.explain))) errs.push('U7 L2: bỏ IPA khỏi giải thích');
+    if(qs.find(q=>q.id==='en_mshoa-e2-u7_q006')?.hint!=='Từ nào đứng ngay sau chỗ trống? Nghe âm đầu của từ đó.') errs.push('U7 L2: hint empty cup phải nhắc từ ngay sau chỗ trống');
   }
 };
 const reviewed = [];
@@ -330,7 +343,7 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json') && x !== 'in
     if (r && /approvedBy/.test(JSON.stringify(r))) err('không dùng approvedBy');
     if ((!q.hint && !q.noHint) || !q.explain) err('thiếu hint/explain');
     if (q.noHint && (q.hint || !q.pilotCheck)) err('noHint chỉ cho câu kiểm tra pilot, không kèm hint');
-    if (q.hint && q.choices && q.choices[q.a] && q.hint.includes(q.choices[q.a])) err('gợi ý chứa nguyên văn đáp án');
+    if (q.hint && q.choices && q.choices[q.a] && hintExposesAnswer(q.hint, q.choices[q.a])) err('gợi ý chứa nguyên văn đáp án');
     if (q.passage) {
       const m = /^Read: "(.+?)" /.exec(q.q);
       if (!m) err('câu đọc phải chứa đoạn trong q');
