@@ -47,13 +47,23 @@ const tests = {
     assert.strictEqual(b.J(`${S}.reviewRounds['${ROUND}'].confirmed`), true);
     assert.strictEqual(b.J(`App.getBookScope(App.allData.subjects.find(x => x.id === 'toan'))`), null);
   },
-  async 'Ms Hoa mặc định U6 L2: đủ 23 câu; chọn L1: 12 câu, không có câu L2 / đoạn E'() {
+  async 'Kho Ms Hoa U6 cũ: đủ 23 câu; chọn L1: 12 câu, không có câu L2 / đoạn E'() {
     const b = await boot();
     assert.strictEqual(b.J(`App._allowedIndices(${S}, ${MS}).length`), 23);
     setLesson(b, 1);
     const qs = b.J(`App._allowedIndices(${S}, ${MS}).map(i => ${MS}.questions[i])`);
     assert.strictEqual(qs.length, 12);
     assert.ok(qs.every(q => q.bookLesson.lesson === 1 && !q.passage));
+  },
+  async 'U7 theo phiếu L2: mặc định L3 thấy 20 câu, mốc L1 cũ vẫn lọc'() {
+    const b=await boot(), U7=`${S}.topics.find(t=>t.id==='en_mshoa-e2-u7')`;
+    assert.deepStrictEqual(b.J(`App.getBookScope(${S}).lesson['mshoa-explorer2']`),{unit:7,lesson:3});
+    assert.strictEqual(b.J(`App._allowedIndices(${S},${U7}).length`),20);
+    setLesson(b,1);
+    assert.strictEqual(b.J(`App._allowedIndices(${S},${U7}).length`),0);
+    assert.deepStrictEqual(b.J(`App.getBookScope(${S}).lesson['mshoa-explorer2']`),{unit:6,lesson:1});
+    b.run(`App.setBookScope(${S},{lesson:{'mshoa-explorer2':{unit:7,lesson:2}}})`);
+    assert.strictEqual(b.J(`App._allowedIndices(${S},${U7}).length`),20);
   },
   async 'mốc Ms Hoa không đổi thiết lập NIK, giai đoạn NIK không lọc Ms Hoa'() {
     const b = await boot();
@@ -69,10 +79,10 @@ const tests = {
     const elig = () => b.J(`${S}.topics.flatMap(t => t.questions.filter(q => App._mixEligible(${S}, q)).map(q => q.id))`);
     unconfirm(b);
     const e1 = new Set(elig());
-    assert.strictEqual(e1.size, 34 + 23 + 23 + 36 + 30 + 20 + 21 + 21 + 21 + 21 + 24); // lô 1, U3, Ms Hoa, lô 3 (đủ 20 hình đã duyệt), lô 4 Past -ed, lô 5 didn't, lô 6a–6d bất quy tắc, lô 7 U3 Vocabulary 2
+    assert.strictEqual(e1.size, 34 + 23 + 23 + 36 + 30 + 20 + 21 + 21 + 21 + 21 + 24 + 20); // lô 1, U3, Ms Hoa, lô 3 (đủ 20 hình đã duyệt), lô 4 Past -ed, lô 5 didn't, lô 6a–6d bất quy tắc, lô 7 U3 Vocabulary 2
     confirm(b);
     const e2 = new Set(elig());
-    assert.strictEqual(e2.size, 274 + 101); // + 71 ok + 30 fixed
+    assert.strictEqual(e2.size, 274 + 101 + 20); // + 71 ok + 30 fixed
     assert.ok(b.J(`${S}.topics.flatMap(t => t.questions).filter(q => q.source === 'claude-audit-20260924')`).every(q => !e2.has(q.id)));
   },
   async 'chặn trước: câu có contentReview nhưng review pending / rejected → bị loại; lượt rà đã xác nhận cũng không cứu được câu pending'() {
@@ -148,14 +158,14 @@ const tests = {
     const k1 = b.J(`App._mixKey(${S})`);
     setLesson(b, 1);
     assert.notStrictEqual(k1, b.J(`App._mixKey(${S})`));
-    assert.ok(/\|b:nik3,mshoa-explorer2@6\.2,nen$/.test(k1), k1);
+    assert.ok(/\|b:nik3,mshoa-explorer2@7\.3,nen$/.test(k1), k1);
     assert.ok(!/\|b:/.test(b.J(`App._mixKey(App.allData.subjects.find(x => x.id === 'toan'))`)));
   },
   async 'cài đặt sai / bài không tồn tại → về mặc định, không vỡ'() {
     const b = await boot();
     b.run(`Storage.set('bookScopeBySubject', { 'lop3:tieng-anh': { lesson: { 'mshoa-explorer2': { unit: 6, lesson: 9 } }, mix: { nik3: 'x' } } })`);
     const bs = b.J(`App.getBookScope(${S})`);
-    assert.deepStrictEqual(bs.lesson['mshoa-explorer2'], { unit: 6, lesson: 2 });
+    assert.deepStrictEqual(bs.lesson['mshoa-explorer2'], { unit: 7, lesson: 3 });
     assert.strictEqual(bs.mix.nik3, true);
   },
 };

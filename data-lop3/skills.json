@@ -267,7 +267,10 @@
    "past-ed": "Quá khứ đơn: thêm -ed",
    "past-time": "Từ chỉ thời gian quá khứ",
    "past-negative": "Quá khứ đơn: câu phủ định didn't",
-   "past-irregular": "Quá khứ đơn: động từ bất quy tắc"
+   "past-irregular": "Quá khứ đơn: động từ bất quy tắc",
+   "articles-a-an": "Chọn a / an theo âm đầu",
+   "some-any": "Some / any với danh từ",
+   "determiners-mixed": "Phối hợp a / an / some / any"
   },
   "toan-tieng-anh": {
    "numbers": "Numbers – số đếm",
