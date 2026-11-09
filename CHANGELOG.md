@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-09 — Chỉnh Ms Hoa U7 sau rà nội dung
+- Sửa hint empty cup; nối một câu an hour (ID q021), nâng bộ lên 21 câu. Bỏ IPA khỏi giải thích, xáo vị trí đáp án để không lặp A–B–C–D; giữ ID và đáp án đúng của 20 câu cũ.
+
 ## 2026-11-09 — Ms Hoa Junior Unit 7: a / an / some / any
 - Thêm 20 câu tự biên soạn theo phiếu TGR2 U7 L2 Nam gửi: a/an theo âm đầu, some/any với danh từ số nhiều và không đếm được, lời mời, chọn cặp từ. Đề/lựa chọn tiếng Anh, giải thích tiếng Việt.
 - Thêm mốc U7 L2 và U7 L3; mặc định U7 L3 theo xác nhận của Nam. Giữ mốc phụ huynh đã lưu; có thể đổi trong Phụ huynh → Phạm vi học. Không gắn nội dung chưa có phiếu vào L3.
