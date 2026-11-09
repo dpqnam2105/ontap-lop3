@@ -10,8 +10,9 @@ const BOOKS = new Set(['nik3', 'gs3', 'mshoa-explorer2', 'none']);
 // Cơ sở nguồn: toc = theo mục lục; school-weekly = lịch/nội dung tuần của trường; page = đã đối chiếu trang sách thật.
 // school-midterm = phạm vi đề thi giữa kỳ theo tài liệu trường (phiếu ôn GV, tờ tranh GV, Review); câu vẫn tự biên soạn.
 // school-sheet = phạm vi theo phiếu bài tập trường phát (ảnh Nam gửi); câu tự biên soạn, tránh câu của phiếu.
-const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet', 'pilot']);   // pilot = nội dung thử dạng bài mới, chỉ mở với ?pilot=1
+const BASES = new Set(['toc', 'school-weekly', 'page', 'school-midterm', 'school-sheet', 'lesson-sheet', 'pilot']);   // pilot = nội dung thử dạng bài mới, chỉ mở với ?pilot=1
 
+// lesson-sheet = phiếu trung tâm theo Unit/Lesson đã đối chiếu, không phải phiếu trường hay trang sách.
 // Sổ dạng bài (js/qtypes) — kiểm schema theo type, không nới lỏng chung cho mọi câu.
 const vm = require('vm');
 const QCTX = { console }; QCTX.globalThis = QCTX; vm.createContext(QCTX);
@@ -268,6 +269,17 @@ const RA101 = { round: 'claude-ra-101-20261009', total: 101, ok: 71,
     'en_nik3-unit1_q019', 'en_nik3-unit1_q021', 'en_nik3-unit1_q022', 'en_nik3-unit2_q015', 'en_nik3-unit2_q016', 'en_nik3-unit2_q017',
     'en_global-success-3_q004', 'en_global-success-3_q012', 'en_global-success-3_q013', 'en_global-success-3_q015'],
   pending: [] };
+BATCH_RULES['codex-mshoa-e2u7-determiners-20261109'] = {
+  count:20, passages:[], check(q,err) {
+    if(q.book!=='mshoa-explorer2'||q.unit!=='e2-u7'||q.bookLesson?.unit!==7||q.bookLesson?.lesson!==2) err('U7 L2: nhãn phạm vi sai');
+    if(q.ref.basis!=='lesson-sheet'||!q.ref.sources?.includes('TGR2 U7 L2 (1).docx — 3 trang Countable and uncountable nouns, Nam gửi 09/11/2026')) err('U7 L2: thiếu nguồn phiếu');
+    if(VI_CHARS.test(q.q)||q.choices.some(c=>VI_CHARS.test(c))) err('U7 L2: đề và đáp án phải tiếng Anh');
+    if(!['articles-a-an','some-any','determiners-mixed'].includes(q.skill)) err('U7 L2: skill sai');
+  }, after(qs,errs) {
+    const positions=[0,0,0,0];qs.forEach(q=>positions[q.a]++);
+    if(positions.some(n=>n!==5)) errs.push('U7 L2: vị trí đáp án cần 5/5/5/5');
+  }
+};
 const reviewed = [];
 const errs = [], ids = new Set(), passages = {}, bySource = {};
 let tagged = 0;

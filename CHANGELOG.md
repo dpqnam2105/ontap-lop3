@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-09 — Ms Hoa Junior Unit 7: a / an / some / any
+- Thêm 20 câu tự biên soạn theo phiếu TGR2 U7 L2 Nam gửi: a/an theo âm đầu, some/any với danh từ số nhiều và không đếm được, lời mời, chọn cặp từ. Đề/lựa chọn tiếng Anh, giải thích tiếng Việt.
+- Thêm mốc U7 L2 và U7 L3; mặc định U7 L3 theo xác nhận của Nam. Giữ mốc phụ huynh đã lưu; có thể đổi trong Phụ huynh → Phạm vi học. Không gắn nội dung chưa có phiếu vào L3.
+
 ## 2026-11-06 — Thử Toán bổ trợ tuần 9–11 (chưa mở cho hồ sơ thật)
 - Chỉ khi `?pilot=1`: hai chủ đề Toán Giai đoạn 2, 60 câu/chủ đề, gồm chia hết/chia có dư/còn thừa/đựng hết và dãy số cách đều. Kho mẫu theo ID cố định; không sinh toàn bộ 3165 câu lúc mở app.
 - Nối khôi phục câu ngoài kho mẫu từ wrongHistory/lịch ôn theo hồ sơ, tiến độ theo ID, chuẩn hóa câu trước khi thêm. ID hỏng giữ lịch sử và báo chưa tải được, không báo nhầm đã ôn hết.
