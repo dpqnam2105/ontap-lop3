@@ -158,10 +158,10 @@ fs.mkdirSync(SHOT, { recursive: true });
           const s=App.allData.subjects.find(s=>s.id==='toan'),t=s.topics.find(t=>t.id==='toan-chia-het-co-du');
           Quiz.startReviewPool([{...t.questions[0],_idx:0,subjectId:s.id,topicId:t.id}],task.id);
           Quiz._finish();
-          return {blocked:calls.filter(c=>c.blocked&&c.taskId===task.id).length,partial:calls.some(c=>c.partial&&c.taskId===task.id),notice:document.querySelector('.result-msg').textContent.includes('Một số câu ôn chưa tải được'),empty:calls.some(c=>c.empty),done:task.done,rewards};
+          return {blocked:calls.filter(c=>c.blocked&&c.taskId===task.id).length,partial:calls.some(c=>c.partial&&c.taskId===task.id),notice:document.querySelector('.result-msg').textContent.includes('Một số câu ôn chưa tải được'),empty:calls.some(c=>c.empty),done:task.done,taskCleared:Quiz.todayTaskId===null,rewards};
         }finally{Object.assign(Today,old);}
       });
-      eq(lifecycle,{blocked:2,partial:true,notice:true,empty:false,done:false,rewards:0},width+': blocked/partial Today task retryable, no bonus');
+      eq(lifecycle,{blocked:2,partial:true,notice:true,empty:false,done:false,taskCleared:true,rewards:0},width+': blocked/partial Today task retryable, no bonus');
       await p.evaluate(async () => { await App._chooseGrade('lop2'); });
       ok(await p.evaluate(() => !ToanBatch1Web.active(App.allData)),width+': grade 2 not mounted');
       ok(await p.evaluate(() => { let m=''; const old=Rewards._achievementPopup;Rewards._achievementPopup=x=>{m=x;};Quiz.startWrongReview();Rewards._achievementPopup=old;return m.includes('chưa tải được'); }),width+': another grade does not falsely complete pilot wrong history');

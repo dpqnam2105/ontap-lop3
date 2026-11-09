@@ -1202,6 +1202,7 @@ const Quiz = {
       } catch (e) { console.warn('Today result error', e); }
     }
 
+    this.todayTaskId = null; // Session ended, including partial reviews; the plan itself stays retryable.
     const durationSec = Math.round((Date.now() - this.sessionStartTime) / 1000);
     if (!this.spellingRun) this._saveLocalSessionDetails(durationSec);
     if (!this.spellingRun) API.saveScore(App.playerName, this.score, total, this.currentSubject, this.currentTopic.name + ' · ' + (this.sessionInfo.modeLabel || ''), durationSec)

@@ -44,7 +44,7 @@ E2E kiểm 390/1280px: ngoài pilot không có chủ đề hoặc request manife
 
 ## Giới hạn
 
-- Chưa merge/main, chưa mở ngoài pilot. Không tính khả năng nghe máy thật: đây là Toán, nút đọc chung vẫn giữ quy tắc cũ.
+- Chỉ mở trong pilot, kể cả sau merge main. Không tính khả năng nghe máy thật: đây là Toán, nút đọc chung vẫn giữ quy tắc cũ.
 - Source của Claude đã được đối chiếu trực tiếp từ ZIP và hai file adapter gửi lại; lần gửi lặp có hash giống nhau.
 - Sau review, việc mở chính thức cần chốt phạm vi bổ trợ và cách chọn lượt mới từ nguồn 3165 câu; bản này chỉ có kho mẫu cố định 120 câu để kiểm luồng.
 
@@ -64,3 +64,18 @@ E2E kiểm 390/1280px: ngoài pilot không có chủ đề hoặc request manife
 - Quiz xáo thứ tự nút nhưng closure vẫn truyền origIdx vào checkAnswer. Session details lưu chỉ số theo choices gốc và chữ tương ứng. E2E kiểm trực tiếp sau thao tác chọn sai, đồng thời chưa có lớp correct nào.
 - Viền xanh nhạt ở lựa chọn chưa chọn là quy tắc `.ans-btn:hover:not(:disabled)` hiện có, không phải lớp correct/focus. Không đổi CSS chung trong PR này.
 - E2E mới kiểm tắt pilot với lịch sử đã chữa, đổi lớp với ID đã chữa, attach lặp và unit không hỗ trợ.
+
+## Đo hiệu năng và việc để đợt sau
+
+Đo local Edge desktop ở 390px, mỗi trường hợp 50 lần gọi `_qIndex()` sau khi đã khôi phục, lịch sử giả lập gồm ID batch hợp lệ (một nửa đã chữa) cùng reviewMap. Không phải số đo điện thoại thật.
+
+| Mục lịch sử | CPU bình thường: median / p95 | CPU giả lập chậm 4 lần: median / p95 |
+| --- | --- | --- |
+| 500 | 4,6 / 6,6 ms | 14,5 / 18,7 ms |
+| 2.000 | 14 / 24,9 ms | 62,6 / 67,9 ms |
+
+Lần đầu dựng câu và lập index trên CPU bình thường: 13,4 ms (500), 46,9 ms (2.000). Kho mẫu pilot hiện nhỏ; chưa thêm cache mới vào PR. Trước mở rộng cần cache theo hồ sơ + data + phiên bản lịch sử/nội dung, không chỉ số mục: chữa đúng vẫn giữ nguyên số mục. Phải vô hiệu khi đổi hồ sơ, chữa câu, cập nhật lịch ôn hoặc thay mảng câu.
+
+- `Today.onSessionFinish()` sau guard chỉ đánh dấu nhiệm vụ, lưu/thưởng kế hoạch và render. Study log/streak ở Quiz vẫn chạy trước callback. Quiz xoá todayTaskId sau kết thúc cả lượt thiếu câu; hai nhánh blocked cũng đã xoá.
+- Nâng phiên bản bộ sinh: phải giữ resolver v1. Nếu ID vĩnh viễn không hỗ trợ, cần trạng thái retired/quarantined để ngừng đưa vào nhiệm vụ và có thông báo cho phụ huynh, giữ lịch sử gốc; không coi đó là bé đã chữa đúng, không tự xoá bằng số lần retry. Phân biệt lỗi vĩnh viễn với lỗi tải tạm thời. Chưa làm cơ chế này trong PR #19.
+- Cùng ID đảm bảo cùng câu/choices/a ở tầng dữ liệu; vị trí nút trên UI vẫn xáo mỗi lượt, không dùng vị trí hiển thị để suy ra đáp án.
