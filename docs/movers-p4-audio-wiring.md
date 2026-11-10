@@ -1,18 +1,18 @@
 # Movers Listening Part 4 — audio và Quiz thử nghiệm
 
-Ngày rà: 2026-11-10. Chưa phát hành; không merge trước khi Claude review.
+Trạng thái 2026-11-10: đã mở pilot trên web chính. PR #22 merge e79e977; PR #23 thêm lối vào Tài nguyên, merge f383dcd. Nam đã nghe thử và xác nhận dùng mượt. Chưa ghi nhận cụ thể thiết bị/hệ điều hành. Bản bàn giao: `docs/gui-claude-movers-20261110.md`.
 
 ## Màn nghe thử bổ sung theo yêu cầu Nam
 
 Sau khi Nam báo không tìm thấy từ trang chủ: thêm link “Luyện nghe Movers (thử)” vào rail Tài nguyên, Today tự chép vào Tài nguyên điện thoại. Link mở tab mới với noopener/noreferrer, tab gốc không bật pilot. Không thêm vào menu đáy hoặc kế hoạch tự động. Entry E2E kiểm lối vào này ở 390/1280, vùng bấm ≥44px và không tràn ngang.
 
-Mở preview với `?pilot=1&movers=1` để vào thẳng hộp nghe thử. Hoặc bật `?pilot=1`, bấm “🎧 Thử nghe Movers” ở dải vàng đầu trang. Nghe câu ví dụ (không tính điểm), có thể xem đáp án ví dụ; chọn Luyện tập/Mô phỏng rồi chạm “Bắt đầu phần nghe (5 câu)”. Nếu chưa có tên, dùng hồ sơ riêng “Thử Movers” trong vùng pilot.
+Mở web chính với `?pilot=1&movers=1` để vào thẳng hộp nghe thử. Hoặc bật `?pilot=1`, bấm “🎧 Thử nghe Movers” ở dải vàng đầu trang. Nghe câu ví dụ (không tính điểm), có thể xem đáp án ví dụ; chọn Luyện tập/Mô phỏng rồi chạm “Bắt đầu phần nghe (5 câu)”. Nếu chưa có tên, dùng hồ sơ riêng “Thử Movers” trong vùng pilot.
 
-Index chỉ nạp bootstrap `movers-pilot.js`. Ngoài pilot, bootstrap thoát ngay: không có nút và không tải module/audio/CSS/dữ liệu Movers. Trong pilot, các phần này chỉ tải khi mở hộp nghe. Dữ liệu sáu câu chuyển từ fixture sang `data/pilot/movers-listening-p4.json`, chưa vào kho bài học chính thức hay kế hoạch Today.
+Index chỉ nạp bootstrap `movers-pilot.js`. Ngoài pilot, bootstrap thoát ngay và không tải module/audio/CSS/dữ liệu Movers; trang chủ có link Tài nguyên để mở pilot trong tab riêng. Trong pilot, các phần này chỉ tải khi mở hộp nghe. Dữ liệu sáu câu chuyển từ fixture sang `data/pilot/movers-listening-p4.json`, chưa vào kho bài học chính thức hay kế hoạch Today.
 
-Nút bắt đầu gọi Quiz trong chính thao tác chạm; không coi đây là bằng chứng autoplay iOS hoạt động xuyên suốt. Chưa MP3, chưa duyệt hình ok. Bản này mới mở preview để Nam nghe thật, vẫn không merge main.
+Nút bắt đầu gọi Quiz trong chính thao tác chạm; không coi đây là bằng chứng autoplay iOS hoạt động xuyên suốt. Chưa MP3, chưa duyệt hình ok. Bản này đã mở pilot trên web chính; Nam nghe thử và báo ổn.
 
-`tests/movers-entry.e2e.js`: 24 kiểm tra ở 390/1280 px qua đường người dùng thật, mở ví dụ → nghe → xem đáp án → chọn mô phỏng → bắt đầu năm câu → kết thúc sớm. Giọng giả, không POST mạng, key thật không đổi; không pilot không tải payload Movers. E2E deferred 100 và Node 35 vẫn đạt sau chuyển đường dữ liệu.
+`tests/movers-entry.e2e.js`: 36 kiểm tra ở 390/1280 px qua đường người dùng thật, mở ví dụ → nghe → xem đáp án → chọn mô phỏng → bắt đầu năm câu → kết thúc sớm. Giọng giả, không POST mạng, key thật không đổi; không pilot không tải payload Movers. E2E deferred 100 và Node 35 vẫn đạt sau chuyển đường dữ liệu.
 
 ## Phạm vi
 
@@ -58,4 +58,4 @@ Chạy lại hồi quy sau góp ý: qtypes E2E 145, spell-pilot E2E 102 và audi
 - Câu trả lời mô phỏng đang chờ được giữ trong RAM; thoát/reload trước cuối phần mất lượt chưa hoàn tất. Không coi đây là cơ chế tiếp tục bài hoặc giao dịch lưu trữ chống crash.
 - HEAD chưa có timeout riêng; người dùng có thể dừng/hủy. **Trước khi gắn `audio.src` đầu tiên**, bắt buộc thêm hạn 3–5 giây với AbortController và test HEAD treo → fallback, hủy/chuyển câu → không callback muộn, retry không dùng kết quả lỗi đã cache. Hiện fixture không có src nên chưa gọi HEAD trong luồng người dùng.
 - Trước khi mở cho bé: nghe giọng thật trên điện thoại (đặc biệt autoplay Safari iOS), kiểm đủ 18 hình trong app 390 px rồi mới đổi duyệt hình; không suy ra các kiểm này từ speech giả.
-- Màn thử vừa bổ sung theo yêu cầu Nam, cần Claude rà phần bootstrap/UI mới; không merge main tự động.
+- PR #22 và #23 đã merge. Giữ phạm vi pilot; mọi mở rộng tiếp theo cần review theo phạm vi mới.
