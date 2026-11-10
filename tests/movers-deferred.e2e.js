@@ -17,7 +17,7 @@ try{for(const width of [390,1280]){
  await p.goto(BASE+'?pilot=1');await p.waitForFunction(()=>window.App&&App.allData);await p.fill('#nameInput','Movers test');await p.click('#btnStart');
  await p.addStyleTag({url:BASE+'movers.css'});await p.addScriptTag({url:BASE+'js/movers-audio.js'});await p.addScriptTag({url:BASE+'js/qtypes/movers-listen-p4.js'});
  await p.evaluate(async()=>{
-  window.__fixture=(await (await fetch('tests/fixtures/movers-listening-p4.json')).json()).topic;
+  window.__fixture=(await (await fetch('data/pilot/movers-listening-p4.json')).json()).topic;
   window.__sounds=[];Sound.play=n=>window.__sounds.push(n);window.__achieve=0;Achieve.recordAnswer=()=>window.__achieve++;
   window.__starCalls=0;window.__xpCalls=0;const addStar=Rewards.addStar.bind(Rewards),addXP=Rewards.addXP.bind(Rewards);
   Rewards.addStar=n=>{window.__starCalls++;return addStar(n);};Rewards.addXP=n=>{window.__xpCalls++;return addXP(n);};

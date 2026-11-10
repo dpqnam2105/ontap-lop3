@@ -10,7 +10,7 @@ const HERE = __dirname;
 const find = (...c) => { for (const x of c) if (fs.existsSync(path.join(HERE, x))) return path.join(HERE, x); throw new Error('thiếu ' + c.join('|')); };
 const F_AUDIO = find('movers-audio.js', '../js/movers-audio.js');
 const F_P4 = find('movers-listen-p4.js', '../js/qtypes/movers-listen-p4.js');
-const F_DATA = find('movers-listening-p4.json', 'fixtures/movers-listening-p4.json', '../data-lop3/tieng-anh/movers-listening-p4.json');
+const F_DATA = find('movers-listening-p4.json', '../data/pilot/movers-listening-p4.json', '../data-lop3/tieng-anh/movers-listening-p4.json');
 const DATA = JSON.parse(fs.readFileSync(F_DATA, 'utf8'));
 const QS = DATA.topic.questions;
 

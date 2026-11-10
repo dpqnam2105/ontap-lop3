@@ -1,4 +1,8 @@
 /* Movers Listening — prefix .mv- , không đụng style Toán/Tiếng Việt */
+.mv-intro { box-sizing:border-box; width: min(560px, calc(100vw - 24px)); max-height:calc(100dvh - 32px); overflow:auto; border:2px solid #c9dff8; border-radius:18px; padding:18px; color:#203752; font-family:inherit; }
+.mv-intro::backdrop { background:#132e5166; }
+.mv-intro .mv-btn, #btnEndPart { font-family:inherit; }
+.mv-intro select { max-width:100%; min-height:44px; font:inherit; }
 .mv-p4 { display: flex; flex-direction: column; gap: 12px; }
 
 .mv-example-badge {

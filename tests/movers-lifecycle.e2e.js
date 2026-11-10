@@ -41,7 +41,7 @@ const raw = state => state.origins.map(o => ({ origin: o.origin, localStorage: o
       await p.addScriptTag({ url: BASE + 'js/movers-audio.js' });
       await p.addScriptTag({ url: BASE + 'js/qtypes/movers-listen-p4.js' });
       await p.evaluate(async () => {
-        const t = (await (await fetch('tests/fixtures/movers-listening-p4.json')).json()).topic;
+        const t = (await (await fetch('data/pilot/movers-listening-p4.json')).json()).topic;
         window.__topic = { ...t, questions: MoversP4.splitExample(t.questions).scored };
         // Fail first utterance of pass TWO: pass one must remain counted.
         Quiz.start(__topic, 'Tiếng Anh', { mode: 'test', subjectId: 'tieng-anh' });
@@ -87,7 +87,7 @@ const raw = state => state.origins.map(o => ({ origin: o.origin, localStorage: o
       });
       await p.close({ runBeforeUnload: true });
       assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
-      const probe = await ctx.newPage(); await probe.goto(BASE + 'tests/fixtures/movers-listening-p4.json');
+      const probe = await ctx.newPage(); await probe.goto(BASE + 'data/pilot/movers-listening-p4.json');
       assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
       ok(errors.length === 0, 'no page exceptions: ' + errors.join(';'));
       ok(posts === 0, 'unfinished exam sends no remote POST');

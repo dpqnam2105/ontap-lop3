@@ -2,11 +2,21 @@
 
 Ngày rà: 2026-11-10. Chưa phát hành; không merge trước khi Claude review.
 
+## Màn nghe thử bổ sung theo yêu cầu Nam
+
+Mở preview với `?pilot=1&movers=1` để vào thẳng hộp nghe thử. Hoặc bật `?pilot=1`, bấm “🎧 Thử nghe Movers” ở dải vàng đầu trang. Nghe câu ví dụ (không tính điểm), có thể xem đáp án ví dụ; chọn Luyện tập/Mô phỏng rồi chạm “Bắt đầu phần nghe (5 câu)”. Nếu chưa có tên, dùng hồ sơ riêng “Thử Movers” trong vùng pilot.
+
+Index chỉ nạp bootstrap `movers-pilot.js`. Ngoài pilot, bootstrap thoát ngay: không có nút và không tải module/audio/CSS/dữ liệu Movers. Trong pilot, các phần này chỉ tải khi mở hộp nghe. Dữ liệu sáu câu chuyển từ fixture sang `data/pilot/movers-listening-p4.json`, chưa vào kho bài học chính thức hay kế hoạch Today.
+
+Nút bắt đầu gọi Quiz trong chính thao tác chạm; không coi đây là bằng chứng autoplay iOS hoạt động xuyên suốt. Chưa MP3, chưa duyệt hình ok. Bản này mới mở preview để Nam nghe thật, vẫn không merge main.
+
+`tests/movers-entry.e2e.js`: 24 kiểm tra ở 390/1280 px qua đường người dùng thật, mở ví dụ → nghe → xem đáp án → chọn mô phỏng → bắt đầu năm câu → kết thúc sớm. Giọng giả, không POST mạng, key thật không đổi; không pilot không tải payload Movers. E2E deferred 100 và Node 35 vẫn đạt sau chuyển đường dữ liệu.
+
 ## Phạm vi
 
 - Nhận bản Claude gửi trong `5files.zip`: 29 test gốc đạt trước khi sửa tiếp.
-- Sáu câu đã rà nội dung nằm ở `tests/fixtures/movers-listening-p4.json`: một ví dụ, năm câu tính điểm. 18 SVG ở `images/questions/lop3/movers/` vẫn để `choiceImageReview: pending`.
-- Chưa thêm danh mục, chủ đề, dữ liệu học chính thức hoặc script Movers vào index. E2E nạp riêng module trong `?pilot=1`; dữ liệu thật được kiểm không thay đổi.
+- Sáu câu đã rà nội dung nằm ở `data/pilot/movers-listening-p4.json`: một ví dụ, năm câu tính điểm. 18 SVG ở `images/questions/lop3/movers/` vẫn để `choiceImageReview: pending`.
+- Chưa thêm danh mục, chủ đề hoặc dữ liệu học chính thức. Index nạp bootstrap thoát ngay ngoài pilot; module chỉ tải khi mở hộp thử. Dữ liệu thật được kiểm không thay đổi.
 - `MoversP4.splitExample()` phải được gọi khi dựng lượt: ví dụ ở bước hướng dẫn riêng, chỉ năm câu scored vào Quiz. Quiz chặn nộp ví dụ như lớp phòng vệ bổ sung.
 
 ## Hợp đồng audio
@@ -42,8 +52,8 @@ Chạy lại hồi quy sau góp ý: qtypes E2E 145, spell-pilot E2E 102 và audi
 ## Chưa kiểm / bước sau
 
 - Chưa có MP3, chưa nghe giọng thật hoặc kiểm Safari iOS/Chrome Android trên thiết bị thật. Speech giả không chứng minh phát âm, chất lượng nghe hay autoplay hoạt động trên máy bé.
-- Chưa có màn vào Movers và luồng hướng dẫn ví dụ cho người dùng; fixture và module chưa được nạp ở web thường. Chưa duyệt `imageReview: ok` chỉ dựa trên test.
+- Đã có màn vào riêng trong pilot; chưa có mục Movers ở web thường. Chưa duyệt `imageReview: ok` chỉ dựa trên test.
 - Câu trả lời mô phỏng đang chờ được giữ trong RAM; thoát/reload trước cuối phần mất lượt chưa hoàn tất. Không coi đây là cơ chế tiếp tục bài hoặc giao dịch lưu trữ chống crash.
 - HEAD chưa có timeout riêng; người dùng có thể dừng/hủy. **Trước khi gắn `audio.src` đầu tiên**, bắt buộc thêm hạn 3–5 giây với AbortController và test HEAD treo → fallback, hủy/chuyển câu → không callback muộn, retry không dùng kết quả lỗi đã cache. Hiện fixture không có src nên chưa gọi HEAD trong luồng người dùng.
 - Trước khi mở cho bé: nghe giọng thật trên điện thoại (đặc biệt autoplay Safari iOS), kiểm đủ 18 hình trong app 390 px rồi mới đổi duyệt hình; không suy ra các kiểm này từ speech giả.
-- Chờ Claude rà diff rồi mới quyết định tích hợp màn thử; không merge hoặc mở rộng phạm vi tự động.
+- Màn thử vừa bổ sung theo yêu cầu Nam, cần Claude rà phần bootstrap/UI mới; không merge main tự động.
