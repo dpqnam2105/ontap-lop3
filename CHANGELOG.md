@@ -1,5 +1,8 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-10 — Lối vào nghe Movers từ trang chủ
+- Thêm “Luyện nghe Movers (thử)” vào Tài nguyên: bên trái máy tính và dưới kế hoạch học trên điện thoại. Mở tab mới trong vùng pilot, trang chủ và tiến độ thật giữ nguyên. Không thêm nút menu đáy.
+
 ## 2026-11-10 — Nền thử Movers Listening Part 4 (chưa phát hành)
 - Thêm audio/qtype và 18 SVG để kiểm riêng; sáu câu ở data/pilot, chưa nạp thành chủ đề trên web thường.
 - Mở preview với ?pilot=1&movers=1 để nghe ví dụ và thử năm câu. Có nút Bắt đầu; ngoài pilot không tải payload Movers. Màn vào mới đạt 24 kiểm tra E2E 390/1280, chưa kiểm giọng trên máy thật.
