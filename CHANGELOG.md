@@ -4,6 +4,7 @@
 - Thêm audio/qtype và 18 SVG để kiểm riêng; sáu câu ở fixture, chưa nạp thành chủ đề trên web thường.
 - Quiz hỗ trợ hoãn phản hồi trong mô phỏng: cuối phần mới ghi điểm, thưởng, lịch sử và hiện bài chữa; luyện giữ phản hồi ngay. Hủy audio giải quyết Promise và bỏ callback đến muộn.
 - Kiểm Node và E2E 390/1280 px với speech giả; chưa có MP3 hay xác nhận trên thiết bị thật. Chi tiết `docs/movers-p4-audio-wiring.md`.
+- Kết thúc sớm bằng nút riêng mở màn chưa chấm và không ghi dữ liệu; phòng vệ trùng index, ẩn Kiểm tra khi lọt ví dụ, gộp thưởng cuối phần. E2E Movers 100 + 34 kiểm tra đạt.
 - Thêm E2E đóng tab giữa phần: mọi key/value localStorage (kể cả pilot) không đổi sau hai câu chưa kết thúc; lỗi TTS ở lượt hai chỉ cho nghe lại một lượt còn lại. Ghi timeout HEAD là điều kiện bắt buộc trước khi gắn MP3.
 
 ## 2026-11-09 — Chỉnh Ms Hoa U7 sau rà nội dung

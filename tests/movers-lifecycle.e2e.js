@@ -69,6 +69,22 @@ const raw = state => state.origins.map(o => ({ origin: o.origin, localStorage: o
       }
       ok(await p.evaluate(() => Quiz.curIdx === 2 && Quiz.sessionDetails.length === 0 && Quiz.score === 0), 'two submissions stay in RAM');
       assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
+      await p.click('#btnEndPart');
+      ok(await p.locator('#screenResult').evaluate(el => el.classList.contains('active')), 'explicit early end opens result screen');
+      ok(await p.locator('#resScore').textContent().then(t => t === 'Chưa chấm'), 'cancelled part is not shown as a zero grade');
+      ok(await p.evaluate(() => Quiz._deferredRun.discarded && Quiz._deferredRun.items.length === 0 && Quiz.sessionStars === 0 && Quiz.sessionXP === 0), 'early end clears evidence and gives no rewards');
+      assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
+      await p.evaluate(() => Quiz._finish({ earlyEnd: true }));
+      assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
+      await p.evaluate(() => Quiz.start(__topic, 'Tiếng Anh', { mode: 'test', subjectId: 'tieng-anh' }));
+      await p.click('#btnEndPart');
+      ok(await p.evaluate(() => Quiz._deferredRun.discarded && document.getElementById('screenResult').classList.contains('active')), 'early end also works before first submission');
+      assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
+      // Start again, submit part of the pool and close without clicking End.
+      await p.evaluate(() => {
+        Quiz.start(__topic, 'Tiếng Anh', { mode: 'test', subjectId: 'tieng-anh' });
+        for (let i=0;i<2;i++) { const q=Quiz.questions[Quiz.curIdx]; Quiz._qt.restore({choice:i?q.a:(q.a+1)%3}); Quiz.submit(); Quiz.next(); }
+      });
       await p.close({ runBeforeUnload: true });
       assert.deepStrictEqual(raw(await ctx.storageState()), before); checks++;
       const probe = await ctx.newPage(); await probe.goto(BASE + 'tests/fixtures/movers-listening-p4.json');

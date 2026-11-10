@@ -19,6 +19,8 @@ try{for(const width of [390,1280]){
  await p.evaluate(async()=>{
   window.__fixture=(await (await fetch('tests/fixtures/movers-listening-p4.json')).json()).topic;
   window.__sounds=[];Sound.play=n=>window.__sounds.push(n);window.__achieve=0;Achieve.recordAnswer=()=>window.__achieve++;
+  window.__starCalls=0;window.__xpCalls=0;const addStar=Rewards.addStar.bind(Rewards),addXP=Rewards.addXP.bind(Rewards);
+  Rewards.addStar=n=>{window.__starCalls++;return addStar(n);};Rewards.addXP=n=>{window.__xpCalls++;return addXP(n);};
   const split=MoversP4.splitExample(__fixture.questions);window.__scored=split.scored;window.__example=split.example[0];
   const host=document.createElement('div');document.body.appendChild(host);const q=__example;const x=QTypes.forQuestion(q).render({host,q,mode:'practice',onChange(){}});x.restore({choice:q.a});x.showResult({correct:true,reveal:true});x.destroy();host.remove();
  });
@@ -39,10 +41,12 @@ try{for(const width of [390,1280]){
   ok(await p.evaluate(()=>document.getElementById('feedback').className==='feedback mv-deferred'&&document.getElementById('fbText').textContent==='Đã ghi nhận. Con sang câu tiếp theo nhé.'),'same neutral feedback for correct and wrong');
   ok(await p.evaluate(()=>Object.keys(Storage.getWrongHistory()).length===0&&!(Storage.getTotalProgress('en_movers-listening-p4').seen||[]).length),'history/progress deferred');
   ok(await p.evaluate(()=>!Quiz.submit().ok),'double submit blocked');
-  if(i===0){await p.evaluate(()=>Quiz._finish());ok(await p.evaluate(()=>Quiz.score===0&&document.getElementById('screenQuiz').classList.contains('active')),'premature finish cannot award');}
+  if(i===0){await p.evaluate(()=>{Quiz._finish();const actual=Quiz._deferredRun.items[0];Quiz._deferredRun.items.unshift({...actual,correct:true});});ok(await p.evaluate(()=>Quiz.score===0&&document.getElementById('screenQuiz').classList.contains('active')),'premature finish cannot award');}
   await p.locator('#btnNext').click();
  }
  ok(await p.evaluate(()=>Quiz.score===4&&Quiz.sessionDetails.length===5&&Quiz.sessionStars===4&&Quiz.sessionXP===48&&window.__achieve===5),'part end settles grade and rewards once');
+ ok(await p.evaluate(()=>Quiz._deferredRun.items.length===5&&Quiz._deferredRun.items[0].correct===false),'duplicate index keeps last evidence only');
+ ok(await p.evaluate(()=>window.__starCalls===1&&window.__xpCalls===1),'part rewards use one star call and one XP call');
  ok(await p.evaluate(()=>Quiz.sessionDetails.filter(d=>d.isCorrect).length===4&&Quiz.sessionDetails.every(d=>d.questionType==='movers-listen-p4'&&d.response.choice>=0&&!d.questionId.endsWith('q000'))),'records preserve valid responses and exclude example');
  ok(await p.locator('#deferredReview details').count()===5,'all five questions can be reviewed at end');
  ok(await p.evaluate(()=>document.querySelectorAll('#deferredReview .is-answer').length===5&&document.querySelectorAll('#deferredReview .mv-transcript:not([hidden])').length===5),'answers and transcripts revealed only at result');
@@ -52,6 +56,11 @@ try{for(const width of [390,1280]){
  await p.evaluate(()=>Quiz.start({...__topic,id:'movers-practice-test',questions:[__scored[0]]},'Tiếng Anh',{mode:'practice',subjectId:'tieng-anh'}));
  const answer=await p.evaluate(()=>Quiz.questions[Quiz.curIdx].a);await p.locator('.mv-choice').nth(answer).click();await p.locator('#btnCheck').click();
  ok(await p.evaluate(()=>Quiz.score===1&&document.querySelector('.is-correct')&&!document.querySelector('.mv-transcript').hidden&&window.__sounds.includes('correct')),'practice feedback remains immediate');
+ const warnings=[];p.on('console',m=>{if(m.type()==='warning')warnings.push(m.text());});
+ await p.evaluate(()=>Quiz.start({...__topic,questions:[__example]},'Tiếng Anh',{mode:'test',subjectId:'tieng-anh'}));
+ ok(await p.locator('#btnCheck').isHidden(),'leaked example hides Check button');
+ ok(warnings.some(t=>t.includes('splitExample')),'leaked example logs pool warning');
+ ok(await p.evaluate(()=>Quiz.submit().reason==='example'&&Quiz.sessionDetails.length===0),'leaked example still cannot record');
  ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'no horizontal overflow');
  ok(errors.length===0,'no page exceptions: '+errors.join(';'));ok(posts===0,'pilot sends no remote POST');
  const real=os=>(os.find(o=>o.origin===new URL(BASE).origin)?.localStorage||[]).filter(k=>!k.name.startsWith('pilot::')).sort((a,b)=>a.name.localeCompare(b.name));

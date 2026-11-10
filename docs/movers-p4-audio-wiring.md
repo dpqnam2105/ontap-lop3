@@ -23,18 +23,19 @@ Quiz hỏi `T.feedbackPolicy({mode, q})`. Chế độ test của Part 4 trả `d
 
 - Nộp bài mô phỏng chỉ hiện cùng một thông báo “Đã ghi nhận”, khóa lựa chọn, không lộ đúng/sai, transcript, âm báo hay điểm.
 - Giữ câu trả lời, thời gian, hint và trạng thái giám sát tại thời điểm nộp. Chỉ khi đủ câu mới ghi học tập, lịch sử, tiến độ và thưởng; không lấy thời gian cuối phần làm thời gian từng câu.
-- Kết thúc sớm không ghi thưởng; nộp đôi hoặc gọi kết thúc lặp không ghi trùng. Cuối phần có năm mục chữa bài, đáp án, transcript và giải thích.
+- Gọi tự động khi chưa đủ câu không ghi gì. Nút riêng “Kết thúc phần nghe” gọi `_finish({earlyEnd:true})`: nếu chưa đủ câu thì hủy bằng chứng, đóng audio/guard và mở màn “Đã dừng phần nghe / Chưa chấm”, không chạy study log, streak, Today, API hay session history. Nộp đôi hoặc gọi kết thúc lặp không ghi trùng. Cuối phần có năm mục chữa bài, đáp án, transcript và giải thích.
+- Phòng vệ trùng index giữ mục cuối trước khi flush; luồng thường vẫn khóa sau lần nộp đầu. Tổng thưởng dùng một lần addStar và một lần addXP. Ví dụ lọt pool ẩn nút Kiểm tra và cảnh báo console yêu cầu splitExample.
 - Dạng cũ không khai báo policy giữ luồng hiện có. Luyện Part 4 vẫn phản hồi ngay.
 
 ## Kiểm chứng
 
 Node: `node tests/movers-listen.test.js` — 35 test, gồm 29 ca Claude và sáu ca bổ sung về Promise hủy, lỗi audio, nhãn hội thoại và tô đáp án khi chữa.
 
-Trình duyệt: `node tests/movers-deferred.e2e.js` — 90 kiểm tra, Edge Chromium 390/1280 px, qua Quiz và Speak thật với speechSynthesis giả. Bao gồm hai lượt nghe, ví dụ không tính điểm, hoãn toàn bộ phản hồi, nộp đôi, kết thúc sớm/lặp, chữa đủ năm câu, luyện vẫn phản hồi ngay, không POST ra Sheets và không đổi localStorage thật. Ảnh chạy test lưu trong `tests/out/movers-*.png`.
+Trình duyệt: `node tests/movers-deferred.e2e.js` — 100 kiểm tra, Edge Chromium 390/1280 px, qua Quiz và Speak thật với speechSynthesis giả. Bao gồm hai lượt nghe, ví dụ không tính điểm, hoãn toàn bộ phản hồi, nộp đôi, kết thúc sớm/lặp, chữa đủ năm câu, luyện vẫn phản hồi ngay, không POST ra Sheets và không đổi localStorage thật. Ảnh chạy test lưu trong `tests/out/movers-*.png`.
 
 Hồi quy đã chạy: qtypes Node/E2E (16 nhóm / 145 kiểm tra), speak-lang Node (10), en-data, en-books Node (13), en-midterm Node (9), home E2E và Toán batch 1 E2E.
 
-Rà tiếp theo góp ý Claude: `node tests/movers-lifecycle.e2e.js` — 20 kiểm tra ở 390/1280 px. Qua Speak thật, giả sự kiện lỗi ở đầu lượt nghe thứ hai: hiện thông báo lỗi, bật lại Nghe, chỉ phát lại đúng một lượt còn lại. Caller hai đối số vẫn nhận callback theo hành vi cũ. Làm hai câu (một sai, một đúng), chuyển sang câu ba rồi đóng tab thật: toàn bộ key/value localStorage, gồm cả vùng pilot, giống hệt snapshot trước khi trả lời; tab mới mở nguồn tĩnh cũng không có dữ liệu câu trả lời sót lại. Snapshot lấy sau khi app/hồ sơ đã khởi tạo, không coi thao tác đăng nhập/khởi tạo là một phần lượt thi.
+Rà tiếp theo góp ý Claude: `node tests/movers-lifecycle.e2e.js` — 34 kiểm tra ở 390/1280 px. Qua Speak thật, giả sự kiện lỗi ở đầu lượt nghe thứ hai: hiện thông báo lỗi, bật lại Nghe, chỉ phát lại đúng một lượt còn lại. Caller hai đối số vẫn nhận callback theo hành vi cũ. Bổ sung ca kết thúc bằng nút thật ở 2/5 và 0/5: có màn chưa chấm, bằng chứng bị xóa, mọi key/value localStorage không đổi; kết thúc lặp không ghi gì. Làm hai câu (một sai, một đúng), chuyển sang câu ba rồi đóng tab thật: toàn bộ key/value localStorage, gồm cả vùng pilot, giống hệt snapshot trước khi trả lời; tab mới mở nguồn tĩnh cũng không có dữ liệu câu trả lời sót lại. Snapshot lấy sau khi app/hồ sơ đã khởi tạo, không coi thao tác đăng nhập/khởi tạo là một phần lượt thi.
 
 Chạy lại hồi quy sau góp ý: qtypes E2E 145, spell-pilot E2E 102 và audiobooks E2E 390/1280 + JSON 404 đều đạt. Sách nói dùng HTMLAudio riêng, không gọi Speak; spell-fix không gọi speakParts. Kiểm sách nói này là nhánh lỗi/mở/đóng/điều hướng, không phải nghe MP3 thật.
 

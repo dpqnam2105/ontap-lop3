@@ -799,13 +799,14 @@ const Quiz = {
   },
 
   /** Cộng sao/XP cho câu đúng ngay lần đầu (canEarnPoint) — dùng chung trắc nghiệm và dạng mới. */
-  _award(fromEl) {
-    this.score++;
-    Rewards.addStar(1);
-    const xpGain = this.mode === 'test' ? 12 : 8;
+  _award(fromEl, count = 1) {
+    if (!count) return;
+    this.score += count;
+    Rewards.addStar(count);
+    const xpGain = (this.mode === 'test' ? 12 : 8) * count;
     if (Rewards.addXP) Rewards.addXP(xpGain);
-    this.sessionStars = (this.sessionStars || 0) + 1;
-    if (Storage.addStudyLog) Storage.addStudyLog(1);
+    this.sessionStars = (this.sessionStars || 0) + count;
+    if (Storage.addStudyLog) Storage.addStudyLog(count);
     this.sessionXP = (this.sessionXP || 0) + xpGain;
     document.getElementById('scoreDisp').textContent = this.score;
     if (fromEl) this._flyStar(fromEl);
@@ -917,6 +918,9 @@ const Quiz = {
   _flushDeferred() {
     const run = this._deferredRun;
     if (!run || run.flushed) return true;
+    // Defensive recovery: a repeated index settles only its last submitted evidence.
+    // Ordinary submission remains locked after the first answer.
+    run.items = [...new Map(run.items.map(item => [item.index, item])).values()];
     // An unfinished part must not settle rewards or mastery.
     const incomplete = this.questions.some((q, index) => !q._retry && this._feedbackDeferred(q, QTypes.forQuestion(q)) && !run.items.some(x => x.index === index));
     if (incomplete) return false;
@@ -924,9 +928,29 @@ const Quiz = {
     run.items.forEach(item => {
       this._recordFirst(item.q, item.T, item.response, item.correct, item);
       this._recordQuestionProgress(item.q, item.correct);
-      if (item.correct && item.earned) this._award(null);
     });
+    this._award(null, run.items.filter(item => item.correct && item.earned).length);
     return true;
+  },
+
+  _discardDeferred() {
+    const run = this._deferredRun;
+    const answered = run.items.length;
+    run.items.length = 0;
+    run.flushed = true; run.finished = true; run.discarded = true;
+    this._stopSpeedTimer(); this._destroyQt(); this._clearDeferredReview();
+    if (this.sessionGuard && this.sessionGuard.cleanup) this.sessionGuard.cleanup();
+    this.score = 0; this.sessionStars = 0; this.sessionXP = 0; this.sessionDetails = [];
+    this.todayTaskId = null; this.challenge = null;
+    App.showScreen('result');
+    document.querySelector('#screenResult .result-title').textContent = 'Đã dừng phần nghe';
+    document.getElementById('resScore').textContent = 'Chưa chấm';
+    document.querySelector('.result-msg').textContent = 'Con đã trả lời ' + answered + '/' + this._mainTotal() + ' câu. Lượt này đã hủy, không lưu kết quả hoặc nhận thưởng.';
+    const insight = document.getElementById('resInsight'); if (insight) insight.innerHTML = '';
+    const extra = document.getElementById('resExtra'); extra.innerHTML = '';
+    const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'btn-secondary';
+    restart.textContent = 'Làm lại từ đầu'; restart.onclick = () => Today.relaunch(); extra.appendChild(restart);
+    // Do not run the normal finish path: study log, streak, Today, API and session history all write.
   },
 
   _renderDeferredReview() {
@@ -982,10 +1006,20 @@ const Quiz = {
       host.parentNode.insertBefore(bar, host.nextSibling);
       bar.querySelector('#btnCheck').addEventListener('click', () => this.submit());
     }
-    bar.hidden = false;
+    const example = q.example || q.scored === false;
+    bar.hidden = !!example;
+    let end = bar.querySelector('#btnEndPart');
+    if (!end) {
+      end = document.createElement('button'); end.id = 'btnEndPart'; end.type = 'button'; end.className = 'btn-secondary';
+      end.textContent = 'Kết thúc phần nghe'; end.addEventListener('click', () => this._finish({ earlyEnd: true })); bar.appendChild(end);
+    }
+    end.hidden = !!example || !this._feedbackDeferred(q, T);
+    if (this._feedbackDeferred(q, T) && !example && !this._deferredRun)
+      this._deferredRun = { items: [], flushed: false, finished: false };
+    if (example) console.warn('Quiz pool contains an unscored example; splitExample must run before Quiz.start:', q.id);
     // lastKey: khoá của câu trả lời VỪA nộp; same: câu trả lời hiện tại trùng lần vừa nộp (chọn lại đúng tranh sai,
     // tháo rồi xếp lại y thứ tự cũ…) → chưa cho nộp lại, tránh "đổi giả" mở lần nộp thứ hai.
-    const st = this._qtState = { type: T.name, attempts: 0, done: false, complete: false, busy: false, qid: q.id, lastKey: null, same: false };
+    const st = this._qtState = { type: T.name, attempts: 0, done: false, complete: false, busy: false, qid: q.id, lastKey: null, same: false, example: !!example };
     this._qt = T.render({
       host, q, mode: this.mode,
       onChange: complete => {
@@ -1007,7 +1041,8 @@ const Quiz = {
     const st = this._qtState, btn = document.getElementById('btnCheck');
     if (!btn) return;
     if (!st) { btn.disabled = true; return; }
-    btn.disabled = st.done || st.busy || !st.complete || st.same;
+    btn.hidden = !!st.example;
+    btn.disabled = st.example || st.done || st.busy || !st.complete || st.same;
     btn.classList.toggle('hidden', st.done);
     btn.textContent = st.same && st.complete ? (st.type === 'order' ? 'Con đổi thứ tự thẻ rồi kiểm tra lại' : st.type === 'spell-fix' ? 'Con đổi cách sửa rồi kiểm tra lại' : 'Con chọn tranh khác rồi kiểm tra lại')
       : st.complete || st.attempts ? 'Kiểm tra ✔'
@@ -1070,7 +1105,7 @@ const Quiz = {
       if (this._feedbackDeferred(q, T)) {
         const guard = this.sessionGuard && this.sessionGuard.get ? this.sessionGuard.get() : {};
         if (!this._deferredRun) this._deferredRun = { items: [], flushed: false, finished: false };
-        this._deferredRun.items.push({ q, T, response: JSON.parse(JSON.stringify(response)), correct: !!g.correct,
+        this._deferredRun.items.push({ q, T, response: response ? JSON.parse(JSON.stringify(response)) : null, correct: !!g.correct,
           earned: this.canEarnPoint, index: this.curIdx, elapsedMs: Math.max(0, Date.now() - this.questionStartedAt),
           usedHint: !!this.questionUsedHint, visibilityChanges: guard.visibilityChanges || 0, answeredAt: new Date().toISOString() });
         this.questionAnswered = true; st.done = true;
@@ -1191,9 +1226,12 @@ const Quiz = {
     Storage.saveTopicProgress(this.currentTopicId, progress.learned, progress.wrong);
   },
 
-  _finish() {
+  _finish(opts = {}) {
     if (this._deferredRun && this._deferredRun.finished) return;
-    if (!this._flushDeferred()) return;
+    if (!this._flushDeferred()) {
+      if (opts.earlyEnd) this._discardDeferred();
+      return;
+    }
     if (this._deferredRun) this._deferredRun.finished = true;
     if (this._spellFinished) return;
     if (this.spellingRun) this._spellFinished = true;
@@ -1216,6 +1254,7 @@ const Quiz = {
     if (Rewards.touchStreak) Rewards.touchStreak();
 
     App.showScreen('result');
+    document.querySelector('#screenResult .result-title').textContent = 'Hoàn thành rồi!';
     const total = this._mainTotal();
     document.getElementById('resScore').textContent = this.score + '/' + total;
 
