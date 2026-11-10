@@ -4,6 +4,8 @@ Ngày rà: 2026-11-10. Chưa phát hành; không merge trước khi Claude revie
 
 ## Màn nghe thử bổ sung theo yêu cầu Nam
 
+Sau khi Nam báo không tìm thấy từ trang chủ: thêm link “Luyện nghe Movers (thử)” vào rail Tài nguyên, Today tự chép vào Tài nguyên điện thoại. Link mở tab mới với noopener/noreferrer, tab gốc không bật pilot. Không thêm vào menu đáy hoặc kế hoạch tự động. Entry E2E kiểm lối vào này ở 390/1280, vùng bấm ≥44px và không tràn ngang.
+
 Mở preview với `?pilot=1&movers=1` để vào thẳng hộp nghe thử. Hoặc bật `?pilot=1`, bấm “🎧 Thử nghe Movers” ở dải vàng đầu trang. Nghe câu ví dụ (không tính điểm), có thể xem đáp án ví dụ; chọn Luyện tập/Mô phỏng rồi chạm “Bắt đầu phần nghe (5 câu)”. Nếu chưa có tên, dùng hồ sơ riêng “Thử Movers” trong vùng pilot.
 
 Index chỉ nạp bootstrap `movers-pilot.js`. Ngoài pilot, bootstrap thoát ngay: không có nút và không tải module/audio/CSS/dữ liệu Movers. Trong pilot, các phần này chỉ tải khi mở hộp nghe. Dữ liệu sáu câu chuyển từ fixture sang `data/pilot/movers-listening-p4.json`, chưa vào kho bài học chính thức hay kế hoạch Today.
