@@ -1,0 +1,48 @@
+/* Movers Listening — prefix .mv- , không đụng style Toán/Tiếng Việt */
+.mv-p4 { display: flex; flex-direction: column; gap: 12px; }
+
+.mv-example-badge {
+  align-self: flex-start; padding: 4px 10px; border-radius: 999px;
+  background: #FFF3CD; color: #7A5B00; font-size: 13px; font-weight: 700;
+}
+
+.mv-audio-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+.mv-btn {
+  min-height: 44px; padding: 10px 14px; border-radius: 12px;
+  border: 2px solid #1F6FEB; background: #fff; color: #1F6FEB;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+}
+.mv-btn-play { background: #1F6FEB; color: #fff; }
+.mv-btn:disabled { opacity: .45; cursor: default; }
+.mv-audio-status { font-size: 13px; color: #607D8B; }
+
+.mv-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.mv-choice {
+  min-height: 44px; padding: 8px; border-radius: 14px; cursor: pointer;
+  border: 3px solid #E0E6EF; background: #fff;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.mv-choice img { width: 100%; max-width: 110px; height: auto; display: block; }
+.mv-choice-label { font-size: 13px; font-weight: 700; color: #37474F; text-align: center; }
+.mv-choice.is-picked { border-color: #1F6FEB; }
+.mv-choice.is-correct { border-color: #2E7D32; background: #E8F5E9; }
+.mv-choice.is-wrong { border-color: #C62828; background: #FFEBEE; }
+.mv-choice.is-answer { border-color: #2E7D32; }
+
+.mv-transcript {
+  white-space: pre-line; font-size: 14px; line-height: 1.5;
+  background: #F1F5FB; border-radius: 12px; padding: 10px 12px; color: #37474F;
+}
+
+@media (max-width: 380px) {
+  .mv-choices { gap: 8px; }
+  .mv-choice { padding: 6px; border-width: 2px; }
+  .mv-choice-label { font-size: 12px; }
+  .mv-btn { padding: 10px 12px; font-size: 14px; }
+}
+
+.feedback.mv-deferred { display:block; background:#eef5ff; color:#355377; border:1px solid #a9c9ea; }
+.mv-review { margin-top:16px; text-align:left; }
+.mv-review details { padding:12px; border:1px solid #d9eafd; border-radius:12px; margin:10px 0; }
+.mv-review summary { cursor:pointer; font-weight:bold; min-height:44px; }
+.mv-review .mv-audio-bar, .mv-review .mv-audio-status { display:none; }

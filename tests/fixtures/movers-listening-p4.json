@@ -1,0 +1,363 @@
+{
+  "topic": {
+    "id": "en_movers-listening-p4",
+    "icon": "🎧",
+    "name": "Movers Listening Part 4 — Which picture?",
+    "book": "movers",
+    "pilot": true,
+    "count": 5,
+    "exampleCount": 1,
+    "questions": [
+      {
+        "id": "en_movers-l-p4_q000",
+        "type": "movers-listen-p4",
+        "example": true,
+        "scored": false,
+        "q": "Example — listen and tick the right picture. What does the boy want to eat?",
+        "part": 4,
+        "difficulty": 1,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Câu ví dụ, không tính điểm. Nghe hai lần rồi chọn tranh.",
+        "explain": "He wants an orange. — Câu ví dụ để bé quen cách làm, không tính vào điểm.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "woman",
+              "text": "Do you want a banana?"
+            },
+            {
+              "speaker": "boy",
+              "text": "No, thank you. I want an orange, please."
+            }
+          ],
+          "fallback": {
+            "text": "Do you want a banana? No, thank you. I want an orange, please.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Woman: Do you want a banana?\nBoy: No, thank you. I want an orange, please."
+        },
+        "choices": [
+          "banana",
+          "orange",
+          "apple"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/food-banana.svg",
+          "images/questions/lop3/movers/food-orange.svg",
+          "images/questions/lop3/movers/food-apple.svg"
+        ],
+        "a": 1,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      },
+      {
+        "id": "en_movers-l-p4_q001",
+        "type": "movers-listen-p4",
+        "q": "Listen and tick the right picture. Where does Dad want to go today?",
+        "part": 4,
+        "difficulty": 1,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Nghe cả câu trả lời của bố. Chỗ được nhắc đầu tiên chưa chắc là chỗ bố muốn đi.",
+        "explain": "Dad wants to go to the swimming pool. He says 'Not today' about the park. — Bé nghe thấy 'park' trước, nhưng bố từ chối chỗ đó.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "girl",
+              "text": "Dad, can we go to the park this afternoon?"
+            },
+            {
+              "speaker": "man",
+              "text": "Not today. Let's go to the swimming pool."
+            }
+          ],
+          "fallback": {
+            "text": "Dad, can we go to the park this afternoon? Not today. Let's go to the swimming pool.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Girl: Dad, can we go to the park this afternoon?\nMan: Not today. Let's go to the swimming pool."
+        },
+        "choices": [
+          "park",
+          "swimming pool",
+          "supermarket"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/place-park.svg",
+          "images/questions/lop3/movers/place-pool.svg",
+          "images/questions/lop3/movers/place-shop.svg"
+        ],
+        "a": 1,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      },
+      {
+        "id": "en_movers-l-p4_q002",
+        "type": "movers-listen-p4",
+        "q": "Listen and tick the right picture. What did Ben do on Saturday?",
+        "part": 4,
+        "difficulty": 2,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Phân biệt điều bạn ấy định làm với việc bạn ấy thực sự đã làm.",
+        "explain": "Ben played football. He wanted to watch a film, but he didn't. — 'wanted to' chỉ là ý định.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "woman",
+              "text": "What did Ben do on Saturday?"
+            },
+            {
+              "speaker": "boy",
+              "text": "He wanted to watch a film, but he didn't. He played football with me in the park."
+            }
+          ],
+          "fallback": {
+            "text": "What did Ben do on Saturday? He wanted to watch a film, but he didn't. He played football with me in the park.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Woman: What did Ben do on Saturday?\nBoy: He wanted to watch a film, but he didn't. He played football with me in the park."
+        },
+        "choices": [
+          "went fishing",
+          "watched a film",
+          "played football"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/act-fishing.svg",
+          "images/questions/lop3/movers/act-tv.svg",
+          "images/questions/lop3/movers/act-football.svg"
+        ],
+        "a": 2,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      },
+      {
+        "id": "en_movers-l-p4_q003",
+        "type": "movers-listen-p4",
+        "q": "Listen and tick the right picture. Which animal did the boy like best?",
+        "part": 4,
+        "difficulty": 2,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Bé nghe thấy ba con vật. Chỉ chọn con mà bạn nhỏ thích nhất.",
+        "explain": "He liked the tiger best. The pandas and the penguins were there too. — Nghe từ 'best'.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "woman",
+              "text": "Did you see the pandas at the zoo?"
+            },
+            {
+              "speaker": "boy",
+              "text": "Yes, and the penguins too. But I liked the tiger best. It was the biggest animal there."
+            }
+          ],
+          "fallback": {
+            "text": "Did you see the pandas at the zoo? Yes, and the penguins too. But I liked the tiger best. It was the biggest animal there.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Woman: Did you see the pandas at the zoo?\nBoy: Yes, and the penguins too. But I liked the tiger best. It was the biggest animal there."
+        },
+        "choices": [
+          "tiger",
+          "panda",
+          "penguin"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/animal-tiger.svg",
+          "images/questions/lop3/movers/animal-panda.svg",
+          "images/questions/lop3/movers/animal-penguin.svg"
+        ],
+        "a": 0,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      },
+      {
+        "id": "en_movers-l-p4_q004",
+        "type": "movers-listen-p4",
+        "q": "Listen and tick the right picture. What is Daisy wearing today?",
+        "part": 4,
+        "difficulty": 2,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Nghe xem hôm nay bạn ấy có đeo kính không, rồi nghe món đồ được xác nhận.",
+        "explain": "Daisy is wearing her red baseball cap. Her glasses are at home today. — Câu trả lời bắt đầu bằng 'No'.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "man",
+              "text": "Is Daisy wearing her glasses today?"
+            },
+            {
+              "speaker": "woman",
+              "text": "No, her glasses are at home. Today she's wearing her red baseball cap."
+            }
+          ],
+          "fallback": {
+            "text": "Is Daisy wearing her glasses today? No, her glasses are at home. Today she's wearing her red baseball cap.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Man: Is Daisy wearing her glasses today?\nWoman: No, her glasses are at home. Today she's wearing her red baseball cap."
+        },
+        "choices": [
+          "scarf",
+          "glasses",
+          "baseball cap"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/wear-scarf.svg",
+          "images/questions/lop3/movers/wear-glasses.svg",
+          "images/questions/lop3/movers/wear-cap.svg"
+        ],
+        "a": 2,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      },
+      {
+        "id": "en_movers-l-p4_q005",
+        "type": "movers-listen-p4",
+        "q": "Listen and tick the right clock. When does the swimming lesson start now?",
+        "part": 4,
+        "difficulty": 2,
+        "skill": "movers-listening-p4",
+        "unit": "movers-listening",
+        "book": "movers",
+        "stage": 1,
+        "source": "self-authored-movers-2026",
+        "hint": "Có hai mốc giờ: giờ năm ngoái và giờ bây giờ. Nghe từ 'now'.",
+        "explain": "The lesson starts at five o'clock now. Four o'clock was last year. — Nghe hai mốc giờ rồi chọn mốc đang dùng.",
+        "audio": {
+          "plays": 2,
+          "lines": [
+            {
+              "speaker": "woman",
+              "text": "Does the swimming lesson start at four o'clock?"
+            },
+            {
+              "speaker": "man",
+              "text": "That was last year. Now it starts at five o'clock."
+            }
+          ],
+          "fallback": {
+            "text": "Does the swimming lesson start at four o'clock? That was last year. Now it starts at five o'clock.",
+            "lang": "en",
+            "rateNormal": 0.85,
+            "rateSlow": 0.6,
+            "note": "TTS chỉ đọc phần text. Không đọc nhãn speaker."
+          },
+          "transcript": "Woman: Does the swimming lesson start at four o'clock?\nMan: That was last year. Now it starts at five o'clock."
+        },
+        "choices": [
+          "four o'clock",
+          "five o'clock",
+          "six o'clock"
+        ],
+        "choiceImages": [
+          "images/questions/lop3/movers/time-4-00.svg",
+          "images/questions/lop3/movers/time-5-00.svg",
+          "images/questions/lop3/movers/time-6-00.svg"
+        ],
+        "a": 1,
+        "choiceImageReview": {
+          "status": "pending",
+          "by": "claude",
+          "date": "2026-11-09",
+          "note": "Chờ kiểm trong qtype thật ở 390 px."
+        },
+        "ref": {
+          "basis": "movers-wordlist-2025",
+          "note": "Self-authored. Format practice only — not a Cambridge past paper. Real listening: Fun / Storyfun for Movers.",
+          "by": "claude",
+          "date": "2026-11-09"
+        }
+      }
+    ]
+  }
+}
