@@ -114,8 +114,8 @@ const Speak = {
   },
 
   /** Đọc lần lượt nhiều đoạn [{text, lang}]. */
-  speakParts(parts, onDone) {
-    if (!this.supported) return;
+  speakParts(parts, onDone, onError) {
+    if (!this.supported) { if (onError) onError(); return; }
     this.stop();
     // Đoạn chưa ghi lang → tách theo ngôn ngữ; đoạn Việt chỉ đọc khi máy có giọng Việt (không ép giọng Anh đọc tiếng Việt)
     const list = [];
@@ -125,7 +125,7 @@ const Speak = {
       const segs = p.lang ? [p] : (own || this.segments(p.text, this._hint)).map(s => ({ ...s, rate: p.rate }));
       segs.forEach(s => { if (!(this._hint === 'en' && s.lang === 'vi' && !this.hasVoice('vi'))) list.push(s); });
     });
-    if (!list.length) return;
+    if (!list.length) { if (onError) onError(); return; }
     this._speaking = true;
     this._setBtnState(true);
     const token = {};
@@ -140,6 +140,11 @@ const Speak = {
           if (onDone) onDone();
         };
       }
+      if (onError) u.onerror = event => {
+        if (this._current !== token) return;
+        this.stop();
+        onError(event);
+      };
       window.speechSynthesis.speak(u);
     });
   },

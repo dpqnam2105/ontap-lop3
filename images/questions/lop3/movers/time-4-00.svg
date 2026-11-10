@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img"><rect width="120" height="120" rx="12" fill="#F7FAFF"/>
+<circle cx="60" cy="60" r="50" fill="#FFFFFF" stroke="#37474F" stroke-width="5"/><circle cx="60.0" cy="18.0" r="2.5" fill="#90A4AE"/><circle cx="81.0" cy="23.6" r="2.5" fill="#90A4AE"/><circle cx="96.4" cy="39.0" r="2.5" fill="#90A4AE"/><circle cx="102.0" cy="60.0" r="2.5" fill="#90A4AE"/><circle cx="96.4" cy="81.0" r="2.5" fill="#90A4AE"/><circle cx="81.0" cy="96.4" r="2.5" fill="#90A4AE"/><circle cx="60.0" cy="102.0" r="2.5" fill="#90A4AE"/><circle cx="39.0" cy="96.4" r="2.5" fill="#90A4AE"/><circle cx="23.6" cy="81.0" r="2.5" fill="#90A4AE"/><circle cx="18.0" cy="60.0" r="2.5" fill="#90A4AE"/><circle cx="23.6" cy="39.0" r="2.5" fill="#90A4AE"/><circle cx="39.0" cy="23.6" r="2.5" fill="#90A4AE"/>
+<line x1="60" y1="60" x2="82.5" y2="73.0" stroke="#37474F" stroke-width="7" stroke-linecap="round"/>
+<line x1="60" y1="60" x2="60.0" y2="22.0" stroke="#1F6FEB" stroke-width="5" stroke-linecap="round"/>
+<circle cx="60" cy="60" r="4" fill="#37474F"/></svg>

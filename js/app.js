@@ -156,6 +156,7 @@ const App = {
   },
 
   showScreen(name) {
+    if (window.MoversAudio) MoversAudio.stop();
     if (window.AudioBooks) AudioBooks.close();
     if (window.PetView) PetView.stop();
     if (window.Speak) Speak.stop();
