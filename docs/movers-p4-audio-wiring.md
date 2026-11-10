@@ -34,10 +34,15 @@ Trình duyệt: `node tests/movers-deferred.e2e.js` — 90 kiểm tra, Edge Chro
 
 Hồi quy đã chạy: qtypes Node/E2E (16 nhóm / 145 kiểm tra), speak-lang Node (10), en-data, en-books Node (13), en-midterm Node (9), home E2E và Toán batch 1 E2E.
 
+Rà tiếp theo góp ý Claude: `node tests/movers-lifecycle.e2e.js` — 20 kiểm tra ở 390/1280 px. Qua Speak thật, giả sự kiện lỗi ở đầu lượt nghe thứ hai: hiện thông báo lỗi, bật lại Nghe, chỉ phát lại đúng một lượt còn lại. Caller hai đối số vẫn nhận callback theo hành vi cũ. Làm hai câu (một sai, một đúng), chuyển sang câu ba rồi đóng tab thật: toàn bộ key/value localStorage, gồm cả vùng pilot, giống hệt snapshot trước khi trả lời; tab mới mở nguồn tĩnh cũng không có dữ liệu câu trả lời sót lại. Snapshot lấy sau khi app/hồ sơ đã khởi tạo, không coi thao tác đăng nhập/khởi tạo là một phần lượt thi.
+
+Chạy lại hồi quy sau góp ý: qtypes E2E 145, spell-pilot E2E 102 và audiobooks E2E 390/1280 + JSON 404 đều đạt. Sách nói dùng HTMLAudio riêng, không gọi Speak; spell-fix không gọi speakParts. Kiểm sách nói này là nhánh lỗi/mở/đóng/điều hướng, không phải nghe MP3 thật.
+
 ## Chưa kiểm / bước sau
 
 - Chưa có MP3, chưa nghe giọng thật hoặc kiểm Safari iOS/Chrome Android trên thiết bị thật. Speech giả không chứng minh phát âm, chất lượng nghe hay autoplay hoạt động trên máy bé.
 - Chưa có màn vào Movers và luồng hướng dẫn ví dụ cho người dùng; fixture và module chưa được nạp ở web thường. Chưa duyệt `imageReview: ok` chỉ dựa trên test.
 - Câu trả lời mô phỏng đang chờ được giữ trong RAM; thoát/reload trước cuối phần mất lượt chưa hoàn tất. Không coi đây là cơ chế tiếp tục bài hoặc giao dịch lưu trữ chống crash.
-- HEAD chưa có timeout riêng; người dùng có thể dừng/hủy. Kiểm audio thật và chính sách autoplay trước khi mở pilot cho bé.
+- HEAD chưa có timeout riêng; người dùng có thể dừng/hủy. **Trước khi gắn `audio.src` đầu tiên**, bắt buộc thêm hạn 3–5 giây với AbortController và test HEAD treo → fallback, hủy/chuyển câu → không callback muộn, retry không dùng kết quả lỗi đã cache. Hiện fixture không có src nên chưa gọi HEAD trong luồng người dùng.
+- Trước khi mở cho bé: nghe giọng thật trên điện thoại (đặc biệt autoplay Safari iOS), kiểm đủ 18 hình trong app 390 px rồi mới đổi duyệt hình; không suy ra các kiểm này từ speech giả.
 - Chờ Claude rà diff rồi mới quyết định tích hợp màn thử; không merge hoặc mở rộng phạm vi tự động.
