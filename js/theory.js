@@ -7,7 +7,7 @@
  * Module chỉ đọc dữ liệu, không ghi localStorage.
  */
 const Theory = {
-  VERSION: '20261119th5',
+  VERSION: '20261119th6',
   _cache: {},      // grade → data | null (null = lớp chưa có lý thuyết)
   _loading: {},    // grade → Promise
   _view: null,     // id bài đang mở trên màn Lý thuyết (null = danh sách)
@@ -206,7 +206,7 @@ const Theory = {
     });
     const res = `${r.a} : ${r.b} = ${r.quot}${r.rem ? ` (dư ${r.rem})` : ''}`;
     const steps = v.steps ? `<ol class="dv-steps">${r.steps.map((st, k) => {
-      const head = k === 0 ? '' : `Hạ ${r.ds[st.end]}; `;
+      const head = k === 0 ? '' : `Hạ ${r.ds[st.end]}${st.cur >= 10 ? `, được ${st.cur}` : ''}; `;
       return `<li>${head}${st.cur} chia ${r.b} được ${st.q}, viết ${st.q}. ${st.q} nhân ${r.b} bằng ${st.prod}; ${st.cur} trừ ${st.prod} bằng ${st.rem}.</li>`;
     }).join('')}</ol>` : '';
     return `<figure class="dv-item">

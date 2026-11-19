@@ -1,5 +1,11 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-19 (tối) — 💡 Lý thuyết có 2 tab Toán | Tiếng Anh
+- Màn Lý thuyết chia tab 🔢 Toán và 🌍 Tiếng Anh; mở bài rồi quay lại vẫn ở đúng tab.
+- 7 bài Toán mới: Chia hết và chia có dư (có khung đặt tính giống Vở bài tập, lời giải từng bước), Gấp lên / giảm đi một số lần, Dãy số cách đều (số số hạng, số hạng thứ n, tính tổng), Đơn vị đo độ dài (km, m, dm, cm, mm), Khối lượng và dung tích (kg, g, l, ml).
+- Bài Tiếng Anh đổi tên theo kiến thức và xếp nhóm: Các thì / Hỏi và trả lời / Chính tả.
+- Trả lời sai câu Toán về chia có dư, gấp/giảm, dãy số, đổi đơn vị cũng có nút "📒 Xem lại bài".
+
 ## 2026-11-19 (chiều) — Lý thuyết chạy ổn hơn trên điện thoại
 - Bấm "Xem lại bài" trên điện thoại giờ mở ở đầu bài (trước đây có thể bị cuộn xuống cuối).
 - Mạng chậm: nút "Xem lại bài" vẫn hiện khi dữ liệu tải xong. Mạng chập chờn: màn Lý thuyết có nút 🔄 Thử lại thay vì báo nhầm "chưa có bài".
