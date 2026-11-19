@@ -243,12 +243,13 @@
       "book": "Bài tập bổ trợ Toán 3",
       "rule": [
         "**Khoảng cách** = hiệu hai số liền nhau trong dãy. Ví dụ dãy 2; 4; 6; … có khoảng cách 2.",
-        "**Số số hạng = (Số cuối − Số đầu) : Khoảng cách + 1**"
+        "**SBN** = số bé nhất, **SLN** = số lớn nhất của dãy.",
+        "**Số số hạng = (SLN − SBN) : Khoảng cách + 1**"
       ],
       "examples": [
-        "Dãy 2; 4; 6; …; 20 → (20 − 2) : 2 + 1 = **10** số hạng",
-        "Dãy 5; 10; 15; …; 100 → (100 − 5) : 5 + 1 = **20** số hạng",
-        "Dãy 1; 4; 7; …; 31 → (31 − 1) : 3 + 1 = **11** số hạng"
+        "Dãy 2; 4; 6; …; 20: SBN = 2, SLN = 20 → (20 − 2) : 2 + 1 = **10** số hạng",
+        "Dãy 5; 10; 15; …; 100: SBN = 5, SLN = 100 → (100 − 5) : 5 + 1 = **20** số hạng",
+        "Dãy 1; 4; 7; …; 31: SBN = 1, SLN = 31 → (31 − 1) : 3 + 1 = **11** số hạng"
       ],
       "mistakes": [
         {
@@ -284,34 +285,40 @@
       "title": "Dãy số cách đều: tìm số hạng thứ n",
       "book": "Bài tập bổ trợ Toán 3",
       "rule": [
-        "Dãy tăng: **Số hạng thứ n = Số đầu + (n − 1) × Khoảng cách**",
-        "Muốn biết một số là số hạng thứ mấy: **(Số đó − Số đầu) : Khoảng cách + 1**"
+        "**SBN** = số bé nhất, **SLN** = số lớn nhất của dãy.",
+        "Dãy tăng: **Số hạng thứ n = (n − 1) × Khoảng cách + SBN**",
+        "Muốn biết một số là số hạng thứ mấy: **(Số đó − SBN) : Khoảng cách + 1**"
       ],
       "examples": [
-        "Dãy 2; 5; 8; … Số hạng thứ 10 = 2 + (10 − 1) × 3 = 2 + 27 = **29**",
-        "Dãy 0; 5; 10; … Số hạng thứ 11 = 0 + 10 × 5 = **50**",
+        "Dãy 2; 5; 8; … Số hạng thứ 10 = (10 − 1) × 3 + 2 = 27 + 2 = **29**",
+        "Dãy 0; 5; 10; … Số hạng thứ 11 = (11 − 1) × 5 + 0 = **50**",
         "Dãy 4; 8; 12; …: số 28 là số hạng thứ (28 − 4) : 4 + 1 = **7**"
       ],
       "mistakes": [
         {
-          "wrong": "Dãy 2; 5; 8; … số hạng thứ 10 = 2 + ~~10~~ × 3 = 32",
-          "right": "2 + **(10 − 1)** × 3 = **29**",
+          "wrong": "Dãy 2; 5; 8; … số hạng thứ 10 = ~~10~~ × 3 + 2 = 32",
+          "right": "**(10 − 1)** × 3 + 2 = **29**",
           "why": "Từ số thứ 1 đến số thứ 10 chỉ có 9 bước nhảy."
+        },
+        {
+          "wrong": "Dãy 2; 5; 8; … số hạng thứ 10 = (10 − 1) × 3 = ~~27~~",
+          "right": "(10 − 1) × 3 **+ 2** = **29**",
+          "why": "Quên cộng SBN: dãy bắt đầu từ 2, không bắt đầu từ 0."
         }
       ],
-      "tip": "Số đầu đứng sẵn ở vị trí 1. Muốn tới vị trí n, con chỉ cần nhảy **n − 1** bước.",
+      "tip": "SBN đứng sẵn ở vị trí thứ 1. Muốn tới vị trí n, con nhảy **n − 1** bước, mỗi bước bằng khoảng cách, rồi **cộng SBN**.",
       "check": [
         {
           "q": "Dãy 1; 3; 5; … Số hạng thứ 20 là số nào?",
-          "a": "1 + 19 × 2 = 39"
+          "a": "(20 − 1) × 2 + 1 = 39"
         },
         {
           "q": "Dãy 4; 8; 12; … Số hạng thứ 15 là số nào?",
-          "a": "4 + 14 × 4 = 60"
+          "a": "(15 − 1) × 4 + 4 = 60"
         },
         {
           "q": "Dãy 10; 15; 20; … Số hạng thứ 8 là số nào?",
-          "a": "10 + 7 × 5 = 45"
+          "a": "(8 − 1) × 5 + 10 = 45"
         }
       ],
       "skills": [
@@ -326,8 +333,9 @@
       "title": "Dãy số cách đều: tính tổng",
       "book": "Bài tập bổ trợ Toán 3",
       "rule": [
-        "Bước 1: tìm **số số hạng**.",
-        "Bước 2: **Tổng = (Số đầu + Số cuối) × Số số hạng : 2**"
+        "**SBN** = số bé nhất, **SLN** = số lớn nhất của dãy.",
+        "Bước 1: tìm **số số hạng** = (SLN − SBN) : Khoảng cách + 1.",
+        "Bước 2: **Tổng = (SBN + SLN) × Số số hạng : 2**"
       ],
       "examples": [
         "1 + 2 + 3 + … + 10: có 10 số hạng → (1 + 10) × 10 : 2 = **55**",
@@ -338,10 +346,10 @@
         {
           "wrong": "1 + 2 + … + 10 = (1 + 10) × 10 = ~~110~~",
           "right": "(1 + 10) × 10 **: 2** = **55**",
-          "why": "Quên chia 2: mỗi cặp (đầu + cuối) bị đếm hai lần."
+          "why": "Quên chia 2: mỗi cặp (SBN + SLN) bị đếm hai lần."
         }
       ],
-      "tip": "Ghép cặp đầu với cuối: 1 + 10, 2 + 9, 3 + 8, … mỗi cặp đều bằng 11. Dãy 10 số có 10 : 2 = 5 cặp → 5 × 11 = 55.",
+      "tip": "Ghép cặp số bé nhất với số lớn nhất: 1 + 10, 2 + 9, 3 + 8, … mỗi cặp đều bằng 11. Dãy 10 số có 10 : 2 = 5 cặp → 5 × 11 = 55.",
       "check": [
         {
           "q": "1 + 2 + 3 + … + 20 = ?",

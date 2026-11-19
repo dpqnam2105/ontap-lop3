@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-19 (Claude — dãy số dùng SBN/SLN theo cách cô dạy, Nam yêu cầu)
+- toan / day-so-cach-deu — 12 gợi ý: "số đầu/số cuối" → SBN/SLN; số hạng thứ n viết (n − 1) × khoảng cách + SBN. Không đổi đề, lựa chọn, đáp án.
+
 ## 2026-11-19 (Claude — ghi nhận Gemini đã duyệt nội dung)
 - tieng-anh / mshoa-e2-pt1 — 37 câu: contentReview claude-tu-ra-20261119 → gemini-noi-dung-20261119 (Gemini rà, 4 câu đã sửa theo góp ý). Không đổi chữ câu hỏi.
 

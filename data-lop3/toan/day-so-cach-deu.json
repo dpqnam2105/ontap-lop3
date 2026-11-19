@@ -13,7 +13,7 @@
           "22"
         ],
         "a": 1,
-        "hint": "Từ số hạng thứ 1 đến số hạng thứ 10 có 9 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 10 có 9 khoảng cách. Số thứ n = (n − 1) × khoảng cách + SBN (số bé nhất).",
         "difficulty": 1,
         "skill": "so-hang-thu-n",
         "unit": "day-so-cach-deu",
@@ -30,7 +30,7 @@
           "55"
         ],
         "a": 1,
-        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + SBN (số bé nhất).",
         "difficulty": 2,
         "skill": "so-hang-thu-n",
         "unit": "day-so-cach-deu",
@@ -47,7 +47,7 @@
           "30"
         ],
         "a": 0,
-        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 11 có 10 khoảng cách. Số thứ n = (n − 1) × khoảng cách + SBN (số bé nhất).",
         "difficulty": 2,
         "skill": "so-hang-thu-n",
         "unit": "day-so-cach-deu",
@@ -64,7 +64,7 @@
           "24"
         ],
         "a": 1,
-        "hint": "Từ số hạng thứ 1 đến số hạng thứ 8 có 7 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 8 có 7 khoảng cách. Số thứ n = (n − 1) × khoảng cách + SBN (số bé nhất).",
         "difficulty": 2,
         "skill": "so-hang-thu-n",
         "unit": "day-so-cach-deu",
@@ -81,7 +81,7 @@
           "25"
         ],
         "a": 3,
-        "hint": "Từ số hạng thứ 1 đến số hạng thứ 6 có 5 khoảng cách. Số thứ n = (n − 1) × khoảng cách + số đầu.",
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 6 có 5 khoảng cách. Số thứ n = (n − 1) × khoảng cách + SBN (số bé nhất).",
         "difficulty": 2,
         "skill": "so-hang-thu-n",
         "unit": "day-so-cach-deu",
@@ -98,7 +98,7 @@
           "10"
         ],
         "a": 0,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 2,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -121,7 +121,7 @@
           "9"
         ],
         "a": 3,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 2,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -144,7 +144,7 @@
           "22"
         ],
         "a": 0,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 3,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -167,7 +167,7 @@
           "10"
         ],
         "a": 0,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 2,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -190,7 +190,7 @@
           "9"
         ],
         "a": 2,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 2,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -213,7 +213,7 @@
           "10"
         ],
         "a": 3,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 1,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
@@ -236,7 +236,7 @@
           "11"
         ],
         "a": 3,
-        "hint": "Số số hạng = (số cuối − số đầu) : khoảng cách + 1. Đừng quên cộng 1!",
+        "hint": "Số số hạng = (SLN − SBN) : khoảng cách + 1. Đừng quên cộng 1!",
         "difficulty": 1,
         "skill": "so-so-hang",
         "unit": "day-so-cach-deu",
