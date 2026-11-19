@@ -7,10 +7,13 @@
  * Module chỉ đọc dữ liệu, không ghi localStorage.
  */
 const Theory = {
-  VERSION: '20261119th2',
+  VERSION: '20261119th3',
   _cache: {},      // grade → data | null (null = lớp chưa có lý thuyết)
   _loading: {},    // grade → Promise
   _view: null,     // id bài đang mở trên màn Lý thuyết (null = danh sách)
+  _failed: {},     // grade → true khi lần tải gần nhất lỗi mạng (chưa ghi cache, lần sau thử lại)
+  _attachSeq: 0,   // chặn gắn nút "Xem lại bài" nhầm sang câu sau khi dữ liệu tải chậm
+  _prevFocus: null,
 
   _grade() { return (window.App && App.currentGrade) || 'lop3'; },
 
@@ -18,10 +21,15 @@ const Theory = {
     grade = grade || this._grade();
     if (grade in this._cache) return Promise.resolve(this._cache[grade]);
     if (this._loading[grade]) return this._loading[grade];
+    // 404 = lớp chưa có lý thuyết (ghi cache null). Lỗi mạng/khác: không ghi cache để lần sau thử lại.
     this._loading[grade] = fetch('data/theory/' + encodeURIComponent(grade) + '.json?v=' + this.VERSION)
-      .then(r => (r.ok ? r.json() : null))
-      .catch(() => null)
-      .then(d => { this._cache[grade] = this._index(d); delete this._loading[grade]; return this._cache[grade]; });
+      .then(r => {
+        if (r.status === 404) return null;
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(d => { this._cache[grade] = this._index(d); delete this._failed[grade]; delete this._loading[grade]; return this._cache[grade]; })
+      .catch(() => { this._failed[grade] = true; delete this._loading[grade]; return null; });
     return this._loading[grade];
   },
 
@@ -73,8 +81,13 @@ const Theory = {
     if (!box) return;
     const grade = this._grade();
     if (!(grade in this._cache)) {
+      if (this._failed[grade] && !this._loading[grade]) {
+        box.innerHTML = '<div class="card th-empty"><div class="th-empty-icon">📶</div><b>Chưa mở được sổ lý thuyết.</b><p>Mạng đang chập chờn. Con thử lại nhé!</p><button class="btn-primary" data-th="retry">🔄 Thử lại</button></div>';
+        this._wire(box);
+        return;
+      }
       box.innerHTML = '<div class="loading-text">Đang mở sổ lý thuyết...</div>';
-      this.load(grade).then(() => this.render());
+      this.load(grade).then(() => { if (this._grade() === grade) this.render(); });
       return;
     }
     const d = this._cache[grade];
@@ -116,6 +129,7 @@ const Theory = {
     const list = arr => (arr || []).map(x => `<li>${f(x)}</li>`).join('');
     const n = this._practiceCount(l);
     const t = l.table;
+    const en = l.subject === 'tieng-anh' ? ' lang="en"' : '';
     return `
       <div class="th-lesson">
         <div class="th-lesson-head">
@@ -128,19 +142,19 @@ const Theory = {
             ${t.head ? `<thead><tr>${t.head.map(h => `<th>${f(h)}</th>`).join('')}</tr></thead>` : ''}
             <tbody>${(t.rows || []).map(r => `<tr>${r.map(c => `<td>${f(c)}</td>`).join('')}</tr>`).join('')}</tbody>
           </table></div></div>` : ''}
-        ${l.examples && l.examples.length ? `<div class="th-box th-ex"><div class="th-box-title">🗣️ Ví dụ</div><ul lang="en">${list(l.examples)}</ul></div>` : ''}
+        ${l.examples && l.examples.length ? `<div class="th-box th-ex"><div class="th-box-title">🗣️ Ví dụ</div><ul${en}>${list(l.examples)}</ul></div>` : ''}
         ${l.mistakes && l.mistakes.length ? `<div class="th-box th-mis"><div class="th-box-title">⚠️ Lỗi hay gặp</div>
           ${l.mistakes.map(m => `<div class="th-mis-row">
-            <div class="th-mis-wrong"><span class="th-tag th-tag-bad">✗ Sai</span><span lang="en">${f(m.wrong)}</span></div>
-            <div class="th-mis-right"><span class="th-tag th-tag-ok">✓ Đúng</span><span lang="en">${f(m.right)}</span></div>
+            <div class="th-mis-wrong"><span class="th-tag th-tag-bad">✗ Sai</span><span${en}>${f(m.wrong)}</span></div>
+            <div class="th-mis-right"><span class="th-tag th-tag-ok">✓ Đúng</span><span${en}>${f(m.right)}</span></div>
             ${m.why ? `<div class="th-mis-why">${f(m.why)}</div>` : ''}
           </div>`).join('')}</div>` : ''}
         ${l.tip ? `<div class="th-box th-tip"><div class="th-box-title">🐰 Mẹo nhớ</div><p>${f(l.tip)}</p></div>` : ''}
         ${l.check && l.check.length ? `<div class="th-box th-check"><div class="th-box-title">✅ Tự kiểm tra</div>
           ${l.check.map((c, i) => `<div class="th-check-row">
-            <span class="th-check-q" lang="en">${i + 1}. ${f(c.q)}</span>
+            <span class="th-check-q"${en}>${i + 1}. ${f(c.q)}</span>
             <button class="th-reveal" data-th="reveal" aria-expanded="false">Xem đáp án</button>
-            <span class="th-check-a hidden" lang="en">→ ${f(c.a)}</span>
+            <span class="th-check-a hidden"${en}>→ ${f(c.a)}</span>
           </div>`).join('')}</div>` : ''}
         <div class="th-actions">
           ${inModal
@@ -172,6 +186,7 @@ const Theory = {
       else if (act === 'practice') this.practice(el.dataset.id);
       else if (act === 'close') this.closeModal();
       else if (act === 'learn' && window.App) App.goLearn();
+      else if (act === 'retry') { delete this._failed[this._grade()]; this.render(); }
     }));
   },
 
@@ -215,9 +230,20 @@ const Theory = {
   // ─── Nút "Xem lại bài" trong ô nhận xét khi bé trả lời sai ───
   attachLink(q) {
     this.clearLink();
+    const seq = ++this._attachSeq;
+    const grade = this._grade();
+    const mount = () => {
+      if (seq !== this._attachSeq || this._grade() !== grade) return;   // bé đã sang câu khác / đổi lớp
+      this._mountLink(q);
+    };
+    if (grade in this._cache) mount();
+    else this.load(grade).then(mount);
+  },
+
+  _mountLink(q) {
     const l = this.lessonFor(q);
     const fb = document.getElementById('feedback');
-    if (!l || !fb) return;
+    if (!l || !fb || document.getElementById('fbTheory')) return;
     const b = document.createElement('button');
     b.type = 'button';
     b.id = 'fbTheory';
@@ -228,6 +254,7 @@ const Theory = {
   },
 
   clearLink() {
+    this._attachSeq++;
     const old = document.getElementById('fbTheory');
     if (old) old.remove();
   },
@@ -237,6 +264,7 @@ const Theory = {
     const l = d && d._byId[id];
     if (!l) return;
     this.closeModal();
+    this._prevFocus = document.activeElement;
     if (window.Speak) Speak.stop();
     const wrap = document.createElement('div');
     wrap.id = 'theoryModal';
@@ -254,8 +282,10 @@ const Theory = {
     document.body.appendChild(wrap);
     document.body.classList.add('th-modal-open');
     this._wire(wrap);
-    const x = wrap.querySelector('.th-close-main');
-    if (x) x.focus();
+    // Focus nút ✕ ở đầu hộp (không cuộn), để bé thấy tiêu đề và "Nhớ nhanh" trước.
+    const x = wrap.querySelector('.th-modal-x');
+    if (x) x.focus({ preventScroll: true });
+    wrap.scrollTop = 0;
   },
 
   closeModal() {
@@ -263,6 +293,9 @@ const Theory = {
     if (m) m.remove();
     document.body.classList.remove('th-modal-open');
     if (this._onKey) { document.removeEventListener('keydown', this._onKey); this._onKey = null; }
+    const prev = this._prevFocus;
+    this._prevFocus = null;
+    if (m && prev && prev.focus && document.contains(prev)) prev.focus({ preventScroll: true });
   }
 };
 

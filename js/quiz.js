@@ -787,7 +787,7 @@ const Quiz = {
       fbText.textContent = 'Không sao, câu này hơi khó. Xem gợi ý rồi chọn lại nhé!';
       this._fbMascot('dong-vien');
       fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : '';
-      if (window.Theory) Theory.attachLink(q);
+      if (!this.speed && window.Theory) Theory.attachLink(q);
     }
   },
 
@@ -1160,7 +1160,7 @@ const Quiz = {
           this._fbMascot('dong-vien');
           fbAns.textContent = this._withPrev(q.hint ? '💡 Gợi ý: ' + q.hint : '');
         }
-        if (!test && window.Theory) Theory.attachLink(q);
+        if (!test && !this.speed && window.Theory) Theory.attachLink(q);
       }
       return { ok: true, correct: g.correct };
     } finally {

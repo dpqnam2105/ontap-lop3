@@ -64,8 +64,13 @@ const root=path.resolve(__dirname,'..');
   assert.equal(await page.locator('#theoryModal').count(),1);
   assert.equal(await page.evaluate(()=>{const c=document.querySelector('.th-modal-card').getBoundingClientRect();return c.left>=0&&c.right<=innerWidth+1;}),true);
   if(width!==320)await page.screenshot({path:path.join(out,'modal-'+width+'.png')});
+  // Focus ở nút ✕ đầu hộp, hộp không bị cuộn xuống đáy
+  assert.equal(await page.evaluate(()=>document.activeElement&&document.activeElement.className),'th-modal-x');
+  assert.equal(await page.evaluate(()=>document.getElementById('theoryModal').scrollTop),0);
+  assert.equal(await page.locator('#theoryModal .th-lesson ul[lang="en"]').count(),1,'ví dụ tiếng Anh có lang=en');
   await page.locator('.th-close-main').click();
   assert.equal(await page.locator('#theoryModal').count(),0);
+  assert.equal(await page.evaluate(()=>document.activeElement&&document.activeElement.id),'fbTheory','trả focus về nút');
   assert.ok(await page.locator('#screenQuiz').evaluate(n=>n.classList.contains('active')));
   assert.equal(await page.evaluate(()=>Quiz.curIdx),q0);
   // Esc cũng đóng; trả lời đúng → câu sau không còn nút cũ
@@ -83,6 +88,41 @@ const root=path.resolve(__dirname,'..');
   await page.evaluate(()=>{Theory.showModal('en-time-oclock');App.showScreen('register');});
   assert.equal(await page.locator('#theoryModal').count(),0);
   console.log('theory passed',width);
+ }
+ // Dữ liệu tải chậm: trả lời sai trước khi tải xong → nút vẫn hiện khi tải xong; đã sang câu khác thì không gắn nhầm
+ {
+  let release, fetches=0; const gate=new Promise(r=>release=r);
+  await page.route('**/data/theory/lop3.json*',async route=>{fetches++;await gate;await route.fallback();});
+  await page.evaluate(()=>{delete Theory._cache.lop3;delete Theory._failed.lop3;App.currentGrade='lop3';Storage.switchPlayer('Bé Duyệt');App.playerName='Bé Duyệt';
+   const s=App.allData.subjects.find(x=>x.id==='tieng-anh');const t=s.topics.find(t=>t.id==='en_mshoa-e2-pt1');Quiz.start(t,s.name,{subjectId:'tieng-anh'});
+   const q=Quiz.questions[0];[...document.querySelectorAll('.ans-btn')].find(b=>b.textContent!==String(q.choices[q.a])).click();});
+  assert.equal(await page.locator('#fbTheory').count(),0);
+  release(); await page.locator('#fbTheory').waitFor();
+  // Lần 2: bấm sai, sang câu sau trước khi tải xong → câu mới không có nút
+  let release2; const gate2=new Promise(r=>release2=r);
+  await page.unroute('**/data/theory/lop3.json*');
+  await page.route('**/data/theory/lop3.json*',async route=>{await gate2;await route.fallback();});
+  await page.evaluate(()=>{delete Theory._cache.lop3;const q=Quiz.questions[Quiz.curIdx];[...document.querySelectorAll('.ans-btn')].find(b=>b.textContent===String(q.choices[q.a])).click();});
+  await page.locator('#btnNext').click();
+  await page.evaluate(()=>{const q=Quiz.questions[Quiz.curIdx];[...document.querySelectorAll('.ans-btn')].find(b=>b.textContent!==String(q.choices[q.a])).click();});
+  await page.evaluate(()=>{const q=Quiz.questions[Quiz.curIdx];[...document.querySelectorAll('.ans-btn')].find(b=>!b.disabled&&b.textContent===String(q.choices[q.a])).click();});
+  await page.locator('#btnNext').click();
+  release2; release2(); await page.waitForFunction(()=>Theory._cache.lop3);
+  await page.waitForTimeout(100);
+  assert.equal(await page.locator('#fbTheory').count(),0,'không gắn nhầm sang câu mới');
+  await page.unroute('**/data/theory/lop3.json*');
+  // Mất mạng: không ghi cache null, hiện Thử lại, không tải lặp vô hạn; có mạng lại thì Thử lại mở được
+  let n=0, down=true;
+  await page.route('**/data/theory/lop3.json*',async route=>{n++; if(down) return route.abort(); await route.fallback();});
+  await page.evaluate(()=>{delete Theory._cache.lop3;Theory._view=null;App.showScreen('theory');});
+  await page.locator('[data-th="retry"]').waitFor();
+  await page.waitForTimeout(400);
+  assert.equal(n,1,'chỉ tải 1 lần khi lỗi');
+  assert.equal(await page.evaluate(()=>'lop3' in Theory._cache),false);
+  down=false; await page.locator('[data-th="retry"]').click();
+  await page.locator('.th-card').first().waitFor();
+  assert.equal(await page.locator('.th-card').count(),6);
+  await page.unroute('**/data/theory/lop3.json*');
  }
  // Lớp chưa có lý thuyết: lời nhắn thân thiện, không màn trắng
  await page.evaluate(()=>{Theory._cache.lop2=null;App.currentGrade='lop2';App.showScreen('theory');});
