@@ -1,0 +1,1378 @@
+{
+ "topic": {
+  "id": "en_mshoa-e2-pt1",
+  "icon": "📒",
+  "name": "Ms Hoa Explorer 2 · Ôn sau Progress test 1",
+  "questions": [
+   {
+    "id": "en_mshoa-e2-pt1_q001",
+    "q": "___ your sister play the piano? – Yes, she does.",
+    "choices": [
+     "Is",
+     "Do",
+     "Does",
+     "Are"
+    ],
+    "a": 2,
+    "hint": "Chủ ngữ là your sister — một người.",
+    "explain": "Một người (she) → Does. Does your sister play the piano?",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q002",
+    "q": "___ Minh and Lan walk to school? – No, they don't.",
+    "choices": [
+     "Is",
+     "Are",
+     "Do",
+     "Does"
+    ],
+    "a": 2,
+    "hint": "Minh and Lan là hai người.",
+    "explain": "Hai người (they) → Do. Do Minh and Lan walk to school?",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q003",
+    "q": "Where ___ you do your homework? – In my bedroom.",
+    "choices": [
+     "do",
+     "does",
+     "is",
+     "are"
+    ],
+    "a": 0,
+    "hint": "Chủ ngữ là you, phía sau có động từ thường.",
+    "explain": "you + động từ thường → do. Không viết \"Where are you do…\".",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q004",
+    "q": "Does your dad drink coffee? – No, he ___.",
+    "choices": [
+     "don't",
+     "isn't",
+     "doesn't",
+     "not"
+    ],
+    "a": 2,
+    "hint": "Câu hỏi bắt đầu bằng Does, trả lời ngắn với he.",
+    "explain": "Hỏi Does → trả lời he does / he doesn't.",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q005",
+    "q": "Do your friends like cats? – Yes, they ___.",
+    "choices": [
+     "is",
+     "do",
+     "are",
+     "does"
+    ],
+    "a": 1,
+    "hint": "Câu hỏi bắt đầu bằng Do, chủ ngữ là they.",
+    "explain": "Hỏi Do → trả lời they do / they don't.",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q006",
+    "q": "Which question is correct?",
+    "choices": [
+     "Is Lan go to bed at nine o'clock?",
+     "Do Lan go to bed at nine o'clock?",
+     "Does Lan go to bed at nine o'clock?",
+     "Does Lan goes to bed at nine o'clock?"
+    ],
+    "a": 2,
+    "hint": "Lan là một người. Sau trợ động từ, động từ giữ nguyên.",
+    "explain": "Lan → Does, động từ sau Does giữ nguyên: go (không phải goes).",
+    "difficulty": 1,
+    "skill": "present-do-does",
+    "theoryId": "en-do-does",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q007",
+    "q": "A farmer ___ vegetables.",
+    "choices": [
+     "grow",
+     "growing",
+     "is grow",
+     "grows"
+    ],
+    "a": 3,
+    "hint": "A farmer là một người, đây là việc làm hằng ngày.",
+    "explain": "Một người → động từ thêm -s: grow → grows.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q008",
+    "q": "My grandma ___ TV every evening.",
+    "choices": [
+     "watchs",
+     "watching",
+     "watches",
+     "watch"
+    ],
+    "a": 2,
+    "hint": "Động từ tận cùng là ch.",
+    "explain": "watch tận cùng ch → thêm -es: watches.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q009",
+    "q": "My brother ___ his teeth after breakfast.",
+    "choices": [
+     "brushes",
+     "brushing",
+     "brush",
+     "brushs"
+    ],
+    "a": 0,
+    "hint": "Động từ tận cùng là sh.",
+    "explain": "brush tận cùng sh → thêm -es: brushes.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q010",
+    "q": "Lan ___ to school at seven o'clock.",
+    "choices": [
+     "gos",
+     "goes",
+     "going",
+     "go"
+    ],
+    "a": 1,
+    "hint": "Động từ tận cùng là o.",
+    "explain": "go tận cùng o → thêm -es: goes.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q011",
+    "q": "A doctor ___ sick people.",
+    "choices": [
+     "helps",
+     "helpes",
+     "help",
+     "helping"
+    ],
+    "a": 0,
+    "hint": "A doctor là một người. Động từ này chỉ cần thêm một chữ.",
+    "explain": "help → helps (chỉ thêm -s).",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q012",
+    "q": "A pilot ___ drive a bus. He flies a plane.",
+    "choices": [
+     "don't",
+     "not",
+     "isn't",
+     "doesn't"
+    ],
+    "a": 3,
+    "hint": "A pilot là một người, đây là câu phủ định.",
+    "explain": "Một người → doesn't + động từ giữ nguyên: doesn't drive.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q013",
+    "q": "She doesn't ___ milk.",
+    "choices": [
+     "to likes",
+     "liking",
+     "like",
+     "likes"
+    ],
+    "a": 2,
+    "hint": "Sau doesn't, động từ trở về dạng gốc.",
+    "explain": "doesn't đã mang đuôi s → động từ giữ nguyên: doesn't like.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q014",
+    "q": "Which sentence about my dad is correct?",
+    "choices": [
+     "My dad have a red car.",
+     "My dad has a red car.",
+     "My dad haves a red car.",
+     "My dad having a red car."
+    ],
+    "a": 1,
+    "hint": "Động từ have có dạng đặc biệt khi nói về một người.",
+    "explain": "have với he/she/một người → has.",
+    "difficulty": 1,
+    "skill": "present-third-s",
+    "theoryId": "en-third-person-s",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q015",
+    "q": "Look! Linh ___ a picture now.",
+    "choices": [
+     "is drawing",
+     "draws",
+     "are drawing",
+     "drawing"
+    ],
+    "a": 0,
+    "hint": "Việc đang xảy ra bây giờ, chủ ngữ là Linh.",
+    "explain": "Đang làm bây giờ: is + V-ing. Linh is drawing a picture.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q016",
+    "q": "Nam and Hoa ___ in the yard now.",
+    "choices": [
+     "is playing",
+     "playing",
+     "plays",
+     "are playing"
+    ],
+    "a": 3,
+    "hint": "Nam and Hoa là hai người, việc đang làm bây giờ.",
+    "explain": "Hai người → are + V-ing: are playing.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q017",
+    "q": "What is Tom doing? – He ___ to music.",
+    "choices": [
+     "listening",
+     "listens",
+     "is listening",
+     "are listening"
+    ],
+    "a": 2,
+    "hint": "Câu hỏi dùng is … doing, trả lời cùng thì.",
+    "explain": "Hỏi What is … doing → trả lời He is + V-ing.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q018",
+    "q": "Where are the children? – They ___ in the garden.",
+    "choices": [
+     "are",
+     "is",
+     "am",
+     "do"
+    ],
+    "a": 0,
+    "hint": "Câu không có động từ khác, chủ ngữ là They.",
+    "explain": "They are in the garden. Không bỏ are.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q019",
+    "q": "What are the girls doing?",
+    "choices": [
+     "They is dancing.",
+     "They dance every day.",
+     "They dancing.",
+     "They are dancing."
+    ],
+    "a": 3,
+    "hint": "Câu hỏi hỏi việc đang làm bây giờ.",
+    "explain": "Hỏi What are … doing → They are + V-ing.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q020",
+    "q": "I ___ reading a book now.",
+    "choices": [
+     "do",
+     "is",
+     "am",
+     "are"
+    ],
+    "a": 2,
+    "hint": "Chủ ngữ là I.",
+    "explain": "I → am: I am reading a book now.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q021",
+    "q": "She is ___ a bike in the park.",
+    "choices": [
+     "riding",
+     "rides",
+     "rideing",
+     "ridding"
+    ],
+    "a": 0,
+    "hint": "Động từ ride tận cùng là e.",
+    "explain": "ride bỏ e rồi thêm -ing: riding.",
+    "difficulty": 1,
+    "skill": "present-continuous",
+    "theoryId": "en-present-continuous",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q022",
+    "q": "Do you and your brother like ice cream? – Yes, ___ do.",
+    "choices": [
+     "you",
+     "we",
+     "I",
+     "they"
+    ],
+    "a": 1,
+    "hint": "Đếm người: con và anh/em trai của con.",
+    "explain": "you and your brother = mình + người khác → we.",
+    "difficulty": 1,
+    "skill": "pronoun-answer",
+    "theoryId": "en-pronoun-answer",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q023",
+    "q": "Does your mom cook dinner? – Yes, ___ does.",
+    "choices": [
+     "he",
+     "she",
+     "it",
+     "they"
+    ],
+    "a": 1,
+    "hint": "your mom là mẹ.",
+    "explain": "your mom → she.",
+    "difficulty": 1,
+    "skill": "pronoun-answer",
+    "theoryId": "en-pronoun-answer",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q024",
+    "q": "Is your dad reading now? – No, ___ isn't.",
+    "choices": [
+     "he",
+     "we",
+     "they",
+     "she"
+    ],
+    "a": 0,
+    "hint": "your dad là bố.",
+    "explain": "your dad → he.",
+    "difficulty": 1,
+    "skill": "pronoun-answer",
+    "theoryId": "en-pronoun-answer",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q025",
+    "q": "Do Mai and Lan go to the park? – Yes, ___ do.",
+    "choices": [
+     "I",
+     "they",
+     "she",
+     "we"
+    ],
+    "a": 1,
+    "hint": "Mai and Lan là hai bạn khác, không có con trong đó.",
+    "explain": "Mai and Lan → they.",
+    "difficulty": 1,
+    "skill": "pronoun-answer",
+    "theoryId": "en-pronoun-answer",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q026",
+    "q": "Do you play football? – No, ___ don't.",
+    "choices": [
+     "you",
+     "we",
+     "he",
+     "I"
+    ],
+    "a": 3,
+    "hint": "Bạn hỏi riêng một mình con.",
+    "explain": "Hỏi you (một người) → trả lời I.",
+    "difficulty": 1,
+    "skill": "pronoun-answer",
+    "theoryId": "en-pronoun-answer",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q027",
+    "q": "How do we say 10:00?",
+    "choices": [
+     "ten o'clocks",
+     "o'clock ten",
+     "ten clock",
+     "ten o'clock"
+    ],
+    "a": 3,
+    "hint": "Giờ đúng: số giờ đứng trước.",
+    "explain": "10:00 = ten o'clock.",
+    "difficulty": 1,
+    "skill": "time-oclock",
+    "theoryId": "en-time-oclock",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q028",
+    "q": "How do we say 7:35?",
+    "choices": [
+     "seven thirty-five",
+     "seven thirty-five o'clock",
+     "o'clock seven thirty-five",
+     "seven o'clock thirty-five"
+    ],
+    "a": 0,
+    "hint": "Giờ này có phút.",
+    "explain": "Có phút thì không dùng o'clock: seven thirty-five.",
+    "difficulty": 1,
+    "skill": "time-oclock",
+    "theoryId": "en-time-oclock",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q029",
+    "q": "Which sentence about time is correct?",
+    "choices": [
+     "My mom goes to bed at 10 pm o'clock.",
+     "My mom goes to bed in ten o'clock.",
+     "My mom goes to bed at ten o'clock in evening.",
+     "My mom goes to bed at ten o'clock in the evening."
+    ],
+    "a": 3,
+    "hint": "Chỉ dùng một cách nói giờ, và nhớ chữ the.",
+    "explain": "at ten o'clock in the evening (hoặc at 10 pm). Không viết pm o'clock.",
+    "difficulty": 1,
+    "skill": "time-oclock",
+    "theoryId": "en-time-oclock",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q030",
+    "q": "I have breakfast ___ the morning.",
+    "choices": [
+     "at",
+     "to",
+     "on",
+     "in"
+    ],
+    "a": 3,
+    "hint": "Buổi sáng đi với giới từ nào?",
+    "explain": "in the morning / in the afternoon / in the evening.",
+    "difficulty": 1,
+    "skill": "time-oclock",
+    "theoryId": "en-time-oclock",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q031",
+    "q": "We look at the stars ___ night.",
+    "choices": [
+     "in",
+     "on",
+     "to",
+     "at"
+    ],
+    "a": 3,
+    "hint": "Ban đêm khác với các buổi còn lại.",
+    "explain": "at night (không có the).",
+    "difficulty": 1,
+    "skill": "time-oclock",
+    "theoryId": "en-time-oclock",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q032",
+    "q": "Does Lan like milk? – Yes, she ___.",
+    "choices": [
+     "does",
+     "dose",
+     "doese",
+     "dos"
+    ],
+    "a": 0,
+    "hint": "Viết như do rồi thêm es.",
+    "explain": "Viết đúng: d-o-e-s.",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q033",
+    "q": "A ___ builds houses.",
+    "choices": [
+     "builder",
+     "biulder",
+     "bilder",
+     "buider"
+    ],
+    "a": 0,
+    "hint": "Gốc là động từ build (xây).",
+    "explain": "Viết đúng: b-u-i-l-d-e-r (u trước i).",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q034",
+    "q": "I get ___ after I get up.",
+    "choices": [
+     "dresed",
+     "dressed",
+     "dress",
+     "drest"
+    ],
+    "a": 1,
+    "hint": "Cụm \"mặc quần áo\" có đuôi -ed.",
+    "explain": "get dressed: d-r-e-s-s-e-d.",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q035",
+    "q": "I go to ___ by bus.",
+    "choices": [
+     "schol",
+     "school",
+     "scool",
+     "shool"
+    ],
+    "a": 1,
+    "hint": "Có chữ h đứng sau c.",
+    "explain": "Viết đúng: s-c-h-o-o-l.",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q036",
+    "q": "I ___ TV in the evening.",
+    "choices": [
+     "wach",
+     "watch",
+     "watsh",
+     "wotch"
+    ],
+    "a": 1,
+    "hint": "Có chữ t đứng trước ch.",
+    "explain": "Viết đúng: w-a-t-c-h.",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   },
+   {
+    "id": "en_mshoa-e2-pt1_q037",
+    "q": "He is a ___ player.",
+    "choices": [
+     "soccor",
+     "sokker",
+     "soccer",
+     "socer"
+    ],
+    "a": 2,
+    "hint": "Có hai chữ c.",
+    "explain": "Viết đúng: s-o-c-c-e-r.",
+    "difficulty": 1,
+    "skill": "spelling",
+    "theoryId": "en-spelling-book",
+    "unit": "e2-u6",
+    "book": "mshoa-explorer2",
+    "track": "core",
+    "bookLesson": {
+     "book": "mshoa-explorer2",
+     "unit": 6,
+     "lesson": 2
+    },
+    "source": "claude-mshoa-pt1-theory-20261119",
+    "ref": {
+     "basis": "lesson-sheet",
+     "sources": [
+      "Ms Hoa Junior Explorer 2 — Progress test 1 (Exam 3) + phiếu nhận xét giữa kỳ, Nam gửi 19/11/2026"
+     ],
+     "note": "Câu tự biên soạn theo lỗi thật của Thỏ trong Progress test 1 (do/does, -s/-es, am/is/are + V-ing, đổi đại từ, o'clock, chính tả). Không chép nguyên câu trong đề. Nối bài Lý thuyết qua theoryId.",
+     "toc": [],
+     "extraWords": [],
+     "contentReview": "claude-tu-ra-20261119",
+     "by": "claude",
+     "date": "2026-11-19"
+    }
+   }
+  ]
+ }
+}

@@ -26,7 +26,7 @@ const root=path.resolve(__dirname,'..');
  // Mọi id trong dữ liệu lý thuyết trỏ tới câu có thật; mỗi bài có câu luyện đã qua cổng duyệt.
  const audit=await page.evaluate(()=>{const s=App.allData.subjects.find(x=>x.id==='tieng-anh'),ids=new Set();s.topics.forEach(t=>t.questions.forEach(q=>ids.add(q.id)));
   const d=Theory._cache.lop3;return d.lessons.map(l=>({id:l.id,missing:(l.questionIds||[]).filter(i=>!ids.has(i)),n:Theory._hits(l).hits.length,grouped:d.subjects.some(x=>x.groups.some(g=>g.lessons.includes(l.id)))}));});
- audit.forEach(a=>{assert.deepEqual(a.missing,[],a.id+' trỏ id không có');assert.ok(a.grouped,a.id+' chưa nằm trong nhóm');assert.ok(a.n>=2,a.id+' quá ít câu luyện: '+a.n);});
+ audit.forEach(a=>{assert.deepEqual(a.missing,[],a.id+' trỏ id không có');assert.ok(a.grouped,a.id+' chưa nằm trong nhóm');assert.ok(a.n>=5,a.id+' quá ít câu luyện: '+a.n);});
 
  for(const width of [320,390,1280]){
   await page.setViewportSize({width,height:900});

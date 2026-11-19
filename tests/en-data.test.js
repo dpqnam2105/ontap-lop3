@@ -293,6 +293,30 @@ BATCH_RULES['codex-mshoa-e2u7-determiners-20261109'] = {
     if(qs.find(q=>q.id==='en_mshoa-e2-u7_q006')?.hint!=='Từ nào đứng ngay sau chỗ trống? Nghe âm đầu của từ đó.') errs.push('U7 L2: hint empty cup phải nhắc từ ngay sau chỗ trống');
   }
 };
+// Lô ôn sau Progress test 1 (Ms Hoa): mỗi câu nối một bài Lý thuyết có thật; đề + lựa chọn tiếng Anh.
+const THEORY = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'theory', 'lop3.json'), 'utf8'));
+const THEORY_IDS = new Set(THEORY.lessons.map(l => l.id));
+const PT1_SKILL = { 'en-do-does': 'present-do-does', 'en-third-person-s': 'present-third-s', 'en-present-continuous': 'present-continuous',
+  'en-pronoun-answer': 'pronoun-answer', 'en-time-oclock': 'time-oclock', 'en-spelling-book': 'spelling' };
+// Câu trong đề Progress test 1 — không chép sang kho
+const PT1_EXAM = [/farmer grows carrots/i, /builder builds houses\b(?!.*___)/i, /soccer player\. He/i, /helps Grandma/i, /taxi driver/i, /eat dinner\?$/i,
+  /eat breakfast at school/i, /Lan go to bed at 10/i, /you and your friends go to school every day/i, /mom eat breakfast at 7/i];
+BATCH_RULES['claude-mshoa-pt1-theory-20261119'] = {
+  count: 37, passages: [], check(q, err) {
+    if (q.book !== 'mshoa-explorer2' || q.unit !== 'e2-u6' || q.bookLesson?.unit !== 6 || q.bookLesson?.lesson !== 2) err('PT1: nhãn phạm vi sai');
+    if (!THEORY_IDS.has(q.theoryId)) err('PT1: theoryId không có trong data/theory/lop3.json');
+    else if (PT1_SKILL[q.theoryId] !== q.skill) err('PT1: skill không khớp bài lý thuyết');
+    if (VI_CHARS.test(q.q) || q.choices.some(c => VI_CHARS.test(c))) err('PT1: đề và đáp án phải tiếng Anh');
+    if (PT1_EXAM.some(re => re.test(q.q))) err('PT1: chép câu trong đề thi');
+    if (q.ref.basis !== 'lesson-sheet' || !q.ref.sources?.[0]?.includes('Progress test 1')) err('PT1: thiếu nguồn');
+  }, after(qs, errs) {
+    const positions = [0, 0, 0, 0]; qs.forEach(q => positions[q.a]++);
+    if (Math.max(...positions) - Math.min(...positions) > 1) errs.push('PT1: vị trí đáp án lệch ' + positions);
+    for (let period = 1; period <= 4; period++) if (qs.every((q, i) => q.a === qs[i % period].a)) errs.push('PT1: đáp án lặp chu kỳ ' + period);
+    for (const id of THEORY_IDS) if (!qs.some(q => q.theoryId === id)) errs.push('PT1: bài ' + id + ' chưa có câu');
+    const stems = new Set(); qs.forEach(q => { if (stems.has(q.q)) errs.push('PT1: trùng đề ' + q.q); stems.add(q.q); });
+  }
+};
 const reviewed = [];
 const errs = [], ids = new Set(), passages = {}, bySource = {};
 let tagged = 0;

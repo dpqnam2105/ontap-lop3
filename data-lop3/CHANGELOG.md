@@ -7,6 +7,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-19 (Claude — ôn sau Progress test 1 Ms Hoa, Claude tự rà vì Codex tạm nghỉ)
+- tieng-anh / mshoa-e2-pt1 (file mới) — +37 câu (q001–q037) theo lỗi thật trong Progress test 1: do/does (6), -s/-es (8), am/is/are + V-ing (7), đổi đại từ khi trả lời (5), o'clock và buổi (5), chính tả (6). Mỗi câu có theoryId nối bài Lý thuyết; không chép câu trong đề. contentReview claude-tu-ra-20261119.
+- index.json — thêm chủ đề en_mshoa-e2-pt1 (37 câu, book mshoa-explorer2, mốc U6 L2).
+
 ## 2026-11-03 (Claude — lô 6d + lô 7, Codex duyệt chữ)
 - tieng-anh / nik3-past-irregular — +21 câu (q064–q084: nhóm 10 set–spend, nhóm 11 stand–think, nhóm 12 throw–write); reviewSet en-batquytac-2026 thêm g10–g12, mockSize 24.
 - tieng-anh / nik3-unit3 — +24 câu (q027–q050: U3 Vocabulary 2 theo phiếu U3-WS8).

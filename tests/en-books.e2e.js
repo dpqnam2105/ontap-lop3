@@ -22,7 +22,7 @@ async function open(b, vp, mobile) {
 // Câu Quiz thực sự nhận (sau khi khởi chạy)
 const quizQs = p => p.evaluate(() => Quiz.questions.map(q => ({ id: q.id, topicId: q.topicId || Quiz.currentTopicId, lesson: q.bookLesson ? q.bookLesson.lesson : null, passage: !!q.passage })));
 const openEnglish = p => p.evaluate(() => App._chooseSubject(App.allData.subjects.findIndex(s => s.id === 'tieng-anh')));
-const isMs = q => /^en_mshoa-e2-u6_/.test(q.id);
+const isMs = q => /^en_mshoa-e2-(u6|pt1)_/.test(q.id);
 
 (async () => {
   const b = await chromium.launch();
