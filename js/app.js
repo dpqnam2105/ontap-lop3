@@ -104,6 +104,7 @@ const App = {
     }
 
     this._dataByGrade[g] = this.allData;
+    if (window.Theory) Theory.load(g);
     if (window.ToanBatch1Web) ToanBatch1Web.attachData(this.allData, g);
 
     if (this.playerName && this.allData) this._renderSubjects();
@@ -160,6 +161,7 @@ const App = {
     if (window.AudioBooks) AudioBooks.close();
     if (window.PetView) PetView.stop();
     if (window.Speak) Speak.stop();
+    if (window.Theory) Theory.closeModal();
     if (name !== 'quiz' && window.Quiz && Quiz._stopSpeedTimer) Quiz._stopSpeedTimer();
     if (name === 'register' && window.Achieve) Achieve.renderTicker();
     // Cần có tên trước khi vào khu học (grade/subject/topic). Nếu chưa, đưa về Trang chủ.
@@ -202,6 +204,7 @@ const App = {
       if (window.Rewards && Rewards.updateUI) Rewards.updateUI();
     }
     if (name === 'arena' && window.Arena) Arena.render();
+    if (name === 'theory' && window.Theory) Theory.render();
     if (name === 'collection') {
       if (window.Arena) Arena.renderCollection();
       DragonBall._renderCollection();

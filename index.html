@@ -32,9 +32,10 @@
 
   <link rel="stylesheet" href="audiobooks.css?v=20261014catalog13" />
   <link rel="stylesheet" href="style.css?v=20261102sp1" />
-  <link rel="stylesheet" href="mobile-compact.css?v=20261014resources-20261009shop1" />
+  <link rel="stylesheet" href="mobile-compact.css?v=20261119th1" />
   <link rel="stylesheet" href="decor.css?v=20261007c" />
   <link rel="stylesheet" href="qtypes.css?v=20261031sf1" />
+  <link rel="stylesheet" href="theory.css?v=20261119th1" />
   <style>
     /* Hero banner trang chu - dung aspect-ratio dung ti le anh (~2.3:1) de
        banner LUON keo sat 2 mep (full width) MA KHONG can cat/zoom anh,
@@ -66,7 +67,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="companion.css?v=20261009rabbit1">
+  <link rel="stylesheet" href="companion.css?v=20261119th1">
 </head>
 <body class="on-home">
   <div class="app-shell">
@@ -81,6 +82,7 @@
       <div class="rail-label">Học tập</div>
       <button class="rail-btn btn-nav" data-screen="register">🏠 <span class="lbl-long">Trang chủ</span><span class="lbl-short">Trang chủ</span></button>
       <button class="rail-btn btn-nav rail-btn-learn" data-screen="learn">📖 <span>Vào học</span></button>
+      <button class="rail-btn btn-nav rail-btn-theory" data-screen="theory" title="Xem lại quy tắc khi quên">💡 <span>Lý thuyết</span></button>
       <button class="rail-btn btn-nav rail-btn-arena" data-screen="arena">⏱️ <span class="lbl-long">Đấu trường tính nhanh</span><span class="lbl-short">Tính nhanh</span></button>
       <div class="rail-label">Phần thưởng</div>
       <button class="rail-btn btn-nav" data-screen="shop">⭐ <span class="lbl-long">Cửa hàng sao</span><span class="lbl-short">Cửa hàng</span></button>
@@ -363,6 +365,16 @@
             </div>
           </div>
         </section>
+        <section class="screen" id="screenTheory" aria-label="Lý thuyết">
+          <div class="theory-wrap">
+            <div class="quiz-hdr glassbar">
+              <button class="btn-nav" data-screen="register">🏠 <span>Trang chủ</span></button>
+              <div class="quiz-hdr-title">💡 Lý thuyết</div>
+              <span></span>
+            </div>
+            <div id="theoryBody" aria-live="polite"></div>
+          </div>
+        </section>
         <section class="screen" id="screenPet" aria-label="Nhà cún"></section>
       </main>
     </div>
@@ -382,7 +394,8 @@
   <script src="js/qtypes/listen-pick.js?v=20261012qt2"></script>
   <script src="js/qtypes/spell-fix.js?v=20261031sf1"></script>
   <script src="js/qtypes/order.js?v=20261012qt2"></script>
-  <script src="js/quiz.js?v=20261110mv2"></script>
+  <script src="js/quiz.js?v=20261119th1"></script>
+  <script src="js/theory.js?v=20261119th1"></script>
   <script src="js/achieve.js?v=20261007c"></script>
   <script src="js/decor.js?v=20261007c"></script>
   <script src="js/dragonball.js?v=20261007c"></script>
@@ -398,7 +411,7 @@
   <script src="js/companion.js?v=20261009rabbit1"></script>
   <script src="js/audiobooks.js?v=20261014catalog13"></script>
   <script src="js/spell-pilot.js?v=20261031sf1"></script>
-  <script src="js/app.js?v=20261110mv1"></script>
+  <script src="js/app.js?v=20261119th1"></script>
   <script src="js/today.js?v=20261106math4"></script>
   <script src="js/guest-flow-guard.js?v=20261009topics1"></script>
   <script src="js/movers-pilot.js?v=20261110mv3"></script>

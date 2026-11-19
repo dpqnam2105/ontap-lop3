@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "grade": "lop3",
+  "note": "Phần Lý thuyết lớp 3. Chữ **đậm** = phần cần nhớ (tô màu), ~~gạch~~ = chỗ viết sai. Câu hỏi nối với bài qua q.theoryId, questionIds hoặc skills (chỉ câu có id bắt đầu bằng idPrefix của môn).",
+  "subjects": [
+    {
+      "id": "tieng-anh",
+      "name": "Tiếng Anh",
+      "icon": "🌍",
+      "idPrefix": "en_",
+      "groups": [
+        { "name": "Thì hiện tại đơn", "lessons": ["en-do-does", "en-third-person-s"] },
+        { "name": "Thì hiện tại tiếp diễn", "lessons": ["en-present-continuous"] },
+        { "name": "Trả lời câu hỏi", "lessons": ["en-pronoun-answer", "en-time-oclock"] },
+        { "name": "Chính tả", "lessons": ["en-spelling-book"] }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "en-do-does",
+      "subject": "tieng-anh",
+      "icon": "❓",
+      "title": "Câu hỏi với Do / Does",
+      "book": "Ms Hoa Explorer 2 · Unit 6",
+      "rule": [
+        "**I / you / we / they** → dùng **do**",
+        "**he / she / it / một người** (Lan, my mom) → dùng **does**",
+        "Sau do / does, động từ **giữ nguyên**, không thêm -s."
+      ],
+      "examples": [
+        "**Do** you **eat** breakfast at school? – Yes, I **do**. / No, I **don't**.",
+        "**Do** they **play** football? – Yes, they **do**. / No, they **don't**.",
+        "**Does** Lan **go** to bed at 10 o'clock? – Yes, she **does**. / No, she **doesn't**.",
+        "Where **do** you **eat** dinner? – In the dining room."
+      ],
+      "mistakes": [
+        { "wrong": "Where ~~are~~ you eat dinner?", "right": "Where **do** you eat dinner?", "why": "Có động từ \"eat\" → dùng do, không dùng are." },
+        { "wrong": "~~Does~~ they eat breakfast?", "right": "**Do** they eat breakfast?", "why": "they → do" },
+        { "wrong": "No, they ~~doesn't~~.", "right": "No, they **don't**.", "why": "they → don't" },
+        { "wrong": "~~Dose~~ Lan go to bed?", "right": "**Does** Lan go to bed?", "why": "Viết đúng: d-o-e-s" }
+      ],
+      "tip": "\"Does\" đi với **một người** (he, she, Lan, mẹ). \"Do\" đi với **tôi, bạn, chúng tôi, họ**. Chữ \"does\" viết như \"do\" thêm \"es\".",
+      "check": [
+        { "q": "___ your brother like apples?", "a": "Does" },
+        { "q": "___ you and Nam go to school by bus?", "a": "Do" },
+        { "q": "Do they watch TV? – No, they ___.", "a": "don't" }
+      ],
+      "skills": ["grammar-where"],
+      "questionIds": [
+        "en_mshoa-e2-u6_q001", "en_mshoa-e2-u6_q010", "en_grammar_q015", "en_nik3-unit1_q020",
+        "en_nik3-unit1_q027", "en_nik3-unit1_q038", "en_daily-activities_q009", "en_daily-activities_q010",
+        "en_nik3-unit2_q019", "en_nik3-unit2_q020", "en_global-success-3_q015"
+      ]
+    },
+    {
+      "id": "en-third-person-s",
+      "subject": "tieng-anh",
+      "icon": "🐍",
+      "title": "Một người làm việc gì: thêm -s / -es",
+      "book": "Ms Hoa Explorer 2 · Unit 5–6",
+      "rule": [
+        "Câu kể về **he / she / một người** → động từ **thêm -s** hoặc **-es**.",
+        "Thường thêm **-s**: play**s**, eat**s**, help**s**, grow**s**, build**s**",
+        "Tận cùng **o, sh, ch, s, x** thêm **-es**: go**es**, do**es**, watch**es**, brush**es**",
+        "Đặc biệt: have → **has**",
+        "Câu phủ định: **doesn't + động từ giữ nguyên** → She doesn't **play** baseball."
+      ],
+      "examples": [
+        "A builder **builds** houses.",
+        "My mom **goes** to bed at nine o'clock.",
+        "He **watches** TV in the evening.",
+        "A taxi driver **doesn't drive** a plane."
+      ],
+      "mistakes": [
+        { "wrong": "A builder ~~building~~ houses.", "right": "A builder **builds** houses.", "why": "Một người, việc làm thường ngày → builds." },
+        { "wrong": "My mom ~~go~~ to bed at nine o'clock.", "right": "My mom **goes** to bed at nine o'clock.", "why": "go tận cùng o → goes." }
+      ],
+      "tip": "Câu **khẳng định** về một người → động từ \"đeo đuôi s\". Câu **có doesn't** → đuôi s đã nằm trong doesn't, động từ không đeo nữa.",
+      "check": [
+        { "q": "My dad (wash) ___ the car on Sunday.", "a": "washes" },
+        { "q": "A farmer (grow) ___ rice.", "a": "grows" },
+        { "q": "She doesn't (like) ___ milk.", "a": "like" }
+      ],
+      "skills": [],
+      "questionIds": [
+        "en_grammar_q013", "en_grammar_q014", "en_on-tap-tong-hop_q003", "en_on-tap-tong-hop_q006",
+        "en_daily-activities_q002", "en_daily-activities_q003", "en_daily-activities_q004", "en_daily-activities_q013",
+        "en_nik3-unit1_q031", "en_nik3-unit2_q029"
+      ]
+    },
+    {
+      "id": "en-present-continuous",
+      "subject": "tieng-anh",
+      "icon": "🏃",
+      "title": "Đang làm gì: am / is / are + V-ing",
+      "book": "Ms Hoa Explorer 2",
+      "rule": [
+        "Việc **đang xảy ra bây giờ** = **am / is / are + động từ-ing**. Không được bỏ am / is / are.",
+        "I → **am** · he / she / Linda → **is** · you / we / they / Manh and Chung → **are**"
+      ],
+      "examples": [
+        "Linda **is riding** a bike.",
+        "Manh and Chung **are playing** football.",
+        "They **are** in the park. (không có động từ khác → vẫn cần are)",
+        "What is Thanh doing? – He **is listening** to music."
+      ],
+      "table": {
+        "title": "Câu hỏi dùng thì nào, trả lời thì đó",
+        "head": ["Câu hỏi", "Trả lời"],
+        "rows": [
+          ["What **is** Linda **doing**?", "She **is riding** a bike."],
+          ["What **does** Linda **do** every day?", "She **rides** a bike."]
+        ]
+      },
+      "mistakes": [
+        { "wrong": "They ~~in~~ the park.", "right": "They **are in** the park.", "why": "Thiếu are." },
+        { "wrong": "Manh and Chung ~~playing~~ football.", "right": "Manh and Chung **are playing** football.", "why": "-ing cần are đứng trước." },
+        { "wrong": "Linda ~~riding~~ a bike.", "right": "Linda **is riding** a bike.", "why": "-ing cần is đứng trước." }
+      ],
+      "tip": "\"-ing\" không đi một mình, luôn cần một \"người bạn\" **am / is / are** đứng trước. Viết -ing: ride → rid**ing** (bỏ e), write → writ**ing**, swim → swim**ming**, run → run**ning**.",
+      "check": [
+        { "q": "Look! The cat ___ sleeping.", "a": "is" },
+        { "q": "We ___ drawing pictures.", "a": "are" },
+        { "q": "What are the boys doing? – They ___ football. (playing / are playing / play)", "a": "are playing" }
+      ],
+      "skills": [],
+      "questionIds": [
+        "en_grammar_q016", "en_grammar_q003", "en_nik3-unit1_q019", "en_nik3-unit1_q021",
+        "en_nik3-unit1_q034", "en_nik3-unit1_q035"
+      ]
+    },
+    {
+      "id": "en-pronoun-answer",
+      "subject": "tieng-anh",
+      "icon": "🔄",
+      "title": "Đổi người khi trả lời",
+      "book": "Dùng chung",
+      "rule": [
+        "Khi trả lời, đổi người trong câu hỏi thành **chữ thay thế**.",
+        "Đếm số người: **mình + bạn** → **we**."
+      ],
+      "table": {
+        "title": "Câu hỏi nói về … → trả lời dùng …",
+        "head": ["Câu hỏi nói về", "Trả lời dùng"],
+        "rows": [
+          ["you (bạn)", "**I**"],
+          ["you and your friends / you and your mom", "**we**"],
+          ["your mom, Lan, Linda", "**she**"],
+          ["your dad, Thanh, James", "**he**"],
+          ["Manh and Chung, your friends", "**they**"]
+        ]
+      },
+      "examples": [
+        "Do **you and your friends** go to school every day? – Yes, **we** do.",
+        "Does **your mom** eat breakfast at 7 o'clock? – Yes, **she** does.",
+        "Where are **Thang and his friends**? – **They** are in the park."
+      ],
+      "mistakes": [
+        { "wrong": "Do you and your friends go to school every day? – No, ~~I~~ don't.", "right": "No, **we** don't.", "why": "you and your friends = mình + bạn → we." }
+      ],
+      "tip": "Đếm số người. \"You and your friends\" có **mình + bạn** → **we**.",
+      "check": [
+        { "q": "Do you and your sister like cats? – Yes, ___ do.", "a": "we" },
+        { "q": "Is James walking? – Yes, ___ is.", "a": "he" },
+        { "q": "Do Manh and Chung like football? – Yes, ___ do.", "a": "they" }
+      ],
+      "skills": [],
+      "questionIds": [
+        "en_nik3-unit1_q026", "en_nik3-unit2_q025", "en_nik3-unit2_q035", "en_global-success-3_q015"
+      ]
+    },
+    {
+      "id": "en-time-oclock",
+      "subject": "tieng-anh",
+      "icon": "⏰",
+      "title": "Nói giờ: o'clock và buổi trong ngày",
+      "book": "Ms Hoa Explorer 2 · Unit 6",
+      "rule": [
+        "**o'clock** chỉ dùng cho **giờ đúng**: 9:00 = nine o'clock.",
+        "Có phút thì **không** dùng o'clock: 7:35 = seven thirty-five.",
+        "Chỉ dùng **một** cách: \"nine o'clock **in the evening**\" **hoặc** \"9 pm\", không viết \"9 pm o'clock\".",
+        "in **the** morning · in **the** afternoon · in **the** evening · **at** night",
+        "What time do you get up? – I get up **at** six o'clock."
+      ],
+      "examples": [
+        "I get up **at** six o'clock **in the morning**.",
+        "I brush my teeth **at** seven thirty-five.",
+        "My mom goes to bed **at** nine o'clock **in the evening**."
+      ],
+      "mistakes": [
+        { "wrong": "at 9 ~~pm o'clock~~", "right": "at nine **o'clock in the evening** / at **9 pm**", "why": "Chọn một cách nói giờ." },
+        { "wrong": "at 7:35 ~~o'clock~~", "right": "at **7:35** (seven thirty-five)", "why": "Có phút thì không dùng o'clock." },
+        { "wrong": "~~In thee~~ morning", "right": "**In the** morning", "why": "Viết đúng: t-h-e" }
+      ],
+      "tip": "\"o'clock\" = \"**đúng** … giờ\". Đã có phút thì không còn là \"đúng giờ\" nữa.",
+      "check": [
+        { "q": "8:00 → eight ___", "a": "o'clock" },
+        { "q": "I go to bed ___ night.", "a": "at" },
+        { "q": "Câu nào đúng? I eat dinner at 7 pm o'clock. / I eat dinner at seven o'clock. / I eat dinner in seven o'clock.", "a": "I eat dinner at seven o'clock." }
+      ],
+      "skills": ["grammar-time", "clock", "time-of-day", "preposition"],
+      "questionIds": [
+        "en_daily-activities_q005", "en_daily-activities_q006", "en_daily-activities_q016", "en_on-tap-tong-hop_q011"
+      ]
+    },
+    {
+      "id": "en-spelling-book",
+      "subject": "tieng-anh",
+      "icon": "✏️",
+      "title": "Sổ từ hay viết sai",
+      "book": "Ghi từ bài làm thật",
+      "rule": [
+        "Đọc to từng chữ cái của **từ đúng**, che lại rồi viết ra giấy. Viết đúng 3 lần liền là nhớ."
+      ],
+      "table": {
+        "title": "Từ hay viết sai",
+        "head": ["Viết sai", "Viết đúng", "Nghĩa"],
+        "rows": [
+          ["~~dose~~", "**does**", "trợ động từ"],
+          ["~~diner~~", "**dinner** (2 chữ n)", "bữa tối"],
+          ["~~get dress~~", "**get dressed**", "mặc quần áo"],
+          ["~~biulder~~", "**builder** (u trước i)", "thợ xây"],
+          ["~~socer~~", "**soccer** (2 chữ c)", "bóng đá"],
+          ["~~shool~~", "**school**", "trường học"],
+          ["~~wach~~", "**watch**", "xem"],
+          ["~~leah~~", "**learn**", "học"],
+          ["~~luch~~", "**lunch**", "bữa trưa"],
+          ["~~broush~~", "**brush**", "đánh (răng)"],
+          ["~~teeths~~", "**teeth**", "răng"],
+          ["~~thee~~", "**the**", "—"]
+        ]
+      },
+      "skills": [],
+      "questionIds": ["en_mshoa-e2-u6_q011", "en_mshoa-e2-u6_q012"]
+    }
+  ]
+}

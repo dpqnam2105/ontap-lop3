@@ -1,0 +1,72 @@
+/* 💡 Lý thuyết — màn danh sách bài, nội dung bài, hộp nổi khi trả lời sai. Dùng màu sẵn có trong style.css. */
+.theory-wrap{max-width:880px;margin:0 auto}
+.th-subject{margin-bottom:18px}
+.th-subject-title{font-family:var(--font-display);font-weight:900;color:#0f4f9c;font-size:1.4rem;margin:4px 0 10px}
+.th-group{margin-bottom:14px}
+.th-group-name{font-weight:900;color:var(--muted);margin:0 0 8px 4px}
+.th-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.th-card{display:flex;align-items:center;gap:12px;text-align:left;background:#fff;border:2px solid #dbeeff;border-radius:20px;padding:14px 16px;min-height:72px;cursor:pointer;font-family:var(--font-body);color:var(--ink);box-shadow:0 10px 24px rgba(31,122,245,.07);transition:.18s}
+.th-card:hover{transform:translateY(-3px);border-color:#8ccaed}
+.th-card-icon{width:48px;height:48px;min-width:48px;border-radius:14px;background:#eef8ff;display:grid;place-items:center;font-size:1.6rem}
+.th-card-text{flex:1;min-width:0}
+.th-card-text b{display:block;font-family:var(--font-display);font-weight:900;font-size:1.08rem;line-height:1.2}
+.th-card-text small{color:var(--muted);font-weight:750}
+.th-card-go{font-size:1.8rem;color:#8ab4dd;font-weight:900}
+.th-back{margin-bottom:12px}
+.th-empty{padding:30px;text-align:center}
+.th-empty-icon{font-size:3rem}
+.th-empty p{color:var(--muted);font-weight:750;margin:8px 0 16px}
+
+.th-lesson{display:flex;flex-direction:column;gap:14px}
+.th-lesson-head{display:flex;align-items:center;gap:14px}
+.th-lesson-icon{width:58px;height:58px;min-width:58px;border-radius:18px;background:#eef8ff;display:grid;place-items:center;font-size:2rem}
+.th-lesson-head h2{font-family:var(--font-display);font-size:1.7rem;line-height:1.15;color:#0f4f9c}
+.th-lesson-head small{color:var(--muted);font-weight:800}
+.th-box{background:#fff;border:1px solid #d9eafd;border-radius:20px;padding:16px 18px;box-shadow:var(--shadow2)}
+.th-box-title{font-family:var(--font-display);font-weight:900;font-size:1.15rem;color:#0f4f9c;margin-bottom:8px}
+.th-box ul{padding-left:20px;display:flex;flex-direction:column;gap:7px}
+.th-box li,.th-box p{font-size:1.12rem;font-weight:750;line-height:1.5}
+.th-rule{border:2px solid #9dcbfb;background:#f4f9ff}
+.th-tip{background:#fff8ed;border-color:#ffdda7}
+.th-tip .th-box-title{color:#f07916}
+.th-hl{color:#0d63d8;background:#e3f0ff;border-radius:6px;padding:0 4px}
+.th-bad{color:#a7221a;text-decoration-thickness:2px}
+.th-table-wrap{overflow-x:auto}
+.th-table{width:100%;border-collapse:collapse;font-size:1.05rem}
+.th-table th,.th-table td{border:1px solid #d9eafd;padding:9px 10px;text-align:left;font-weight:750;vertical-align:top}
+.th-table th{background:#eef8ff;font-family:var(--font-display);font-weight:900;color:#0f4f9c}
+.th-mis-row{border-top:1px dashed #d9eafd;padding:10px 0;display:flex;flex-direction:column;gap:5px}
+.th-mis-row:first-of-type{border-top:0;padding-top:2px}
+.th-mis-wrong,.th-mis-right{display:flex;gap:8px;align-items:baseline;font-size:1.1rem;font-weight:800;flex-wrap:wrap}
+.th-mis-why{color:var(--muted);font-weight:750;padding-left:4px}
+.th-tag{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.88rem;font-weight:900;white-space:nowrap}
+.th-tag-bad{background:#ffe2df;color:#a7221a}
+.th-tag-ok{background:#dcf9e5;color:#148240}
+.th-check-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:8px 0;border-top:1px dashed #d9eafd}
+.th-check-row:first-of-type{border-top:0}
+.th-check-q{flex:1 1 260px;font-size:1.1rem;font-weight:800}
+.th-reveal{border:1px solid #d9eafd;background:#fff;border-radius:12px;padding:8px 12px;min-height:40px;font-family:var(--font-display);font-weight:850;cursor:pointer;color:#0d63d8}
+.th-check-a{flex-basis:100%;font-size:1.1rem;font-weight:900;color:#148240}
+.th-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.th-actions .btn-primary,.th-actions .btn-secondary{min-height:52px;padding:12px 20px;font-size:1.08rem}
+
+/* Nút trong ô nhận xét khi trả lời sai */
+.fb-theory{display:inline-block;margin-top:12px;border:2px solid #9dcbfb;background:#fff;color:#0d63d8;border-radius:14px;padding:10px 16px;min-height:46px;font-family:var(--font-display);font-weight:900;font-size:1.02rem;cursor:pointer;box-shadow:var(--shadow2)}
+.fb-theory:hover{border-color:#1f7af5}
+
+/* Hộp nổi */
+.th-modal{position:fixed;inset:0;z-index:9000;background:rgba(20,32,51,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 14px;overflow-y:auto}
+.th-modal-card{position:relative;width:100%;max-width:760px;padding:22px 20px;background:#f7fbff}
+.th-modal-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:1px solid #d9eafd;background:#fff;font-size:1.2rem;font-weight:900;cursor:pointer;color:#42698f}
+.th-modal .th-lesson-head{padding-right:46px}
+body.th-modal-open{overflow:hidden}
+
+@media (max-width:760px){
+  .th-list{grid-template-columns:1fr}
+  .th-lesson-head h2{font-size:1.35rem}
+  .th-box{padding:14px}
+  .th-box li,.th-box p,.th-check-q,.th-mis-wrong,.th-mis-right{font-size:1.02rem}
+  .th-modal{padding:10px 8px}
+  .th-modal-card{padding:16px 12px}
+  .th-actions .btn-primary,.th-actions .btn-secondary{flex:1 1 100%}
+}

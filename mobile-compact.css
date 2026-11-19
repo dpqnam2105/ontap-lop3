@@ -608,12 +608,13 @@
   .side-rail .rail-btn .lbl-long, .side-rail .rail-parent-link .lbl-long { display: none !important; }
   .side-rail .rail-btn .lbl-short, .side-rail .rail-parent-link .lbl-short { display: block !important; }
 }
-/* Nhà cún: menu đáy 7 ô; shared rail layout belongs here. */
+/* Menu đáy 8 ô (thêm 💡 Lý thuyết 2026-11-19); shared rail layout belongs here. */
 @media (max-width: 760px) {
-  .side-rail { grid-template-columns: repeat(7, minmax(0, 1fr)) !important; gap: 0 !important; padding-left: 2px !important; padding-right: 2px !important; }
+  .side-rail { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; gap: 0 !important; padding-left: 2px !important; padding-right: 2px !important; }
   .side-rail .rail-btn, .side-rail .rail-parent-link { padding: 0 2px !important; font-size: 1.2rem !important; }
   .side-rail .rail-btn span, .side-rail .rail-parent-link span { font-size: 0.62rem !important; text-align: center !important; }
-  .side-rail .lbl-short { white-space: normal !important; text-overflow: clip !important; }
+  .side-rail .lbl-short,
+  .side-rail .rail-btn > span:only-of-type { white-space: normal !important; text-overflow: clip !important; }
 }
 /* Shop grids must shrink inside the phone viewport rather than widen their 1fr track. */
 @media (max-width: 760px) {

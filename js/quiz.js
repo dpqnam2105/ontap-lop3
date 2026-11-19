@@ -453,6 +453,7 @@ const Quiz = {
 
     { const fbBox = document.getElementById('feedback'); fbBox.style.display = ''; fbBox.className = 'feedback'; fbBox.classList.remove('has-mascot'); }
     this._fbMascot('');
+    if (window.Theory) Theory.clearLink();
     document.getElementById('btnNext').classList.add('hidden');
 
     const grid = document.getElementById('ansGrid');
@@ -715,6 +716,7 @@ const Quiz = {
       fbAns.textContent = this.mode === 'test'
         ? 'Chế độ kiểm tra không hiện gợi ý để điểm công bằng hơn.'
         : this._withPrev(q.hint ? '💡 Gợi ý: ' + q.hint : 'Hãy xem lại câu hỏi một chút con nhé.');
+      if (this.mode !== 'test' && !spd && window.Theory) Theory.attachLink(q);
 
       if (this.mode === 'test') {
         document.querySelectorAll('.ans-btn').forEach(b => b.disabled = true);
@@ -785,6 +787,7 @@ const Quiz = {
       fbText.textContent = 'Không sao, câu này hơi khó. Xem gợi ý rồi chọn lại nhé!';
       this._fbMascot('dong-vien');
       fbAns.textContent = q.hint ? '💡 Gợi ý: ' + q.hint : '';
+      if (window.Theory) Theory.attachLink(q);
     }
   },
 
@@ -1157,6 +1160,7 @@ const Quiz = {
           this._fbMascot('dong-vien');
           fbAns.textContent = this._withPrev(q.hint ? '💡 Gợi ý: ' + q.hint : '');
         }
+        if (!test && window.Theory) Theory.attachLink(q);
       }
       return { ok: true, correct: g.correct };
     } finally {
