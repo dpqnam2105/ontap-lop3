@@ -70,7 +70,7 @@
         "A builder **builds** houses.",
         "My mom **goes** to bed at nine o'clock.",
         "He **watches** TV in the evening.",
-        "A taxi driver **doesn't drive** a plane."
+        "A taxi driver **doesn't fly** a plane."
       ],
       "mistakes": [
         { "wrong": "A builder ~~building~~ houses.", "right": "A builder **builds** houses.", "why": "Một người, việc làm thường ngày → builds." },
@@ -144,7 +144,7 @@
         "title": "Câu hỏi nói về … → trả lời dùng …",
         "head": ["Câu hỏi nói về", "Trả lời dùng"],
         "rows": [
-          ["you (bạn)", "**I**"],
+          ["you (hỏi riêng một bạn)", "**I**"],
           ["you and your friends / you and your mom", "**we**"],
           ["your mom, Lan, Linda", "**she**"],
           ["your dad, Thanh, James", "**he**"],

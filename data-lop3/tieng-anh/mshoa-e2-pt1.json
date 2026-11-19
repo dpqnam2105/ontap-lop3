@@ -384,7 +384,7 @@
      "helping"
     ],
     "a": 0,
-    "hint": "A doctor là một người. Động từ này chỉ cần thêm một chữ.",
+    "hint": "A doctor là một người. Động từ help có tận cùng là o, sh, ch, s hay x không?",
     "explain": "help → helps (chỉ thêm -s).",
     "difficulty": 1,
     "skill": "present-third-s",
@@ -931,7 +931,7 @@
    },
    {
     "id": "en_mshoa-e2-pt1_q026",
-    "q": "Do you play football? – No, ___ don't.",
+    "q": "Nam, do you play football? – No, ___ don't.",
     "choices": [
      "you",
      "we",
@@ -939,8 +939,8 @@
      "I"
     ],
     "a": 3,
-    "hint": "Bạn hỏi riêng một mình con.",
-    "explain": "Hỏi you (một người) → trả lời I.",
+    "hint": "Câu hỏi gọi tên riêng một bạn (Nam).",
+    "explain": "Hỏi riêng một người (Nam, do you…?) → trả lời I.",
     "difficulty": 1,
     "skill": "pronoun-answer",
     "theoryId": "en-pronoun-answer",
@@ -1161,7 +1161,7 @@
      "dos"
     ],
     "a": 0,
-    "hint": "Viết như do rồi thêm es.",
+    "hint": "Trợ động từ đi với she; chú ý thứ tự các chữ cái ở cuối từ.",
     "explain": "Viết đúng: d-o-e-s.",
     "difficulty": 1,
     "skill": "spelling",
@@ -1190,7 +1190,7 @@
    },
    {
     "id": "en_mshoa-e2-pt1_q033",
-    "q": "A ___ builds houses.",
+    "q": "My uncle is a ___. He makes houses.",
     "choices": [
      "builder",
      "biulder",
@@ -1198,7 +1198,7 @@
      "buider"
     ],
     "a": 0,
-    "hint": "Gốc là động từ build (xây).",
+    "hint": "Người làm nghề xây nhà; chú ý thứ tự chữ u và chữ i.",
     "explain": "Viết đúng: b-u-i-l-d-e-r (u trước i).",
     "difficulty": 1,
     "skill": "spelling",

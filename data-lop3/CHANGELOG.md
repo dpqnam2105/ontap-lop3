@@ -7,6 +7,10 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-19 (Claude — sửa theo góp ý Gemini, Nam chuyển)
+- tieng-anh / mshoa-e2-pt1 — q011, q032: gợi ý không còn lộ đáp án; q026: đề thành "Nam, do you play football?" để chỉ còn đáp án I (you có thể là số nhiều → we); q033: đề "My uncle is a ___. He makes houses." (bỏ chữ builds lộ chính tả). Không đổi lựa chọn, vị trí đáp án.
+- data/theory/lop3.json — ví dụ bài -s/-es: "A taxi driver doesn't fly a plane."; bảng đổi người: "you (hỏi riêng một bạn)".
+
 ## 2026-11-19 (Claude — ôn sau Progress test 1 Ms Hoa, Claude tự rà vì Codex tạm nghỉ)
 - tieng-anh / mshoa-e2-pt1 (file mới) — +37 câu (q001–q037) theo lỗi thật trong Progress test 1: do/does (6), -s/-es (8), am/is/are + V-ing (7), đổi đại từ khi trả lời (5), o'clock và buổi (5), chính tả (6). Mỗi câu có theoryId nối bài Lý thuyết; không chép câu trong đề. contentReview claude-tu-ra-20261119.
 - index.json — thêm chủ đề en_mshoa-e2-pt1 (37 câu, book mshoa-explorer2, mốc U6 L2).
