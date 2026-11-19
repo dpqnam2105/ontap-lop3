@@ -1,5 +1,12 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-19 — 💡 Lý thuyết: xem lại quy tắc khi quên
+- Menu có thêm nút 💡 Lý thuyết (máy tính và menu đáy điện thoại). Tiếng Anh có 5 bài ngắn theo lỗi trong bài thi Ms Hoa: câu hỏi Do/Does, thêm -s/-es, am/is/are + V-ing, đổi người khi trả lời, nói giờ o'clock; kèm Sổ từ hay viết sai.
+- Mỗi bài: Nhớ nhanh, Ví dụ (tô màu chỗ cần nhớ), Lỗi hay gặp (sai ✗ / đúng ✓), Mẹo nhớ, Tự kiểm tra (bấm mới hiện đáp án) và nút Luyện 5 câu.
+- Khi con trả lời sai lúc luyện, ô nhận xét có nút "📒 Xem lại bài: …". Bài mở ngay trên câu hỏi, bấm "Quay lại câu hỏi" là làm tiếp đúng câu đó. Chế độ Kiểm tra không hiện nút này.
+- Chủ đề mới "Ms Hoa Explorer 2 · Ôn sau Progress test 1" (37 câu) để luyện đúng các lỗi trên; câu cũng vào đề trộn, kế hoạch hôm nay như các chủ đề Ms Hoa khác.
+- Lớp chưa có bài lý thuyết (Lớp 2) thấy lời nhắn thay vì màn trống.
+
 ## 2026-11-10 — Lối vào nghe Movers từ trang chủ
 - Thêm “Luyện nghe Movers (thử)” vào Tài nguyên: bên trái máy tính và dưới kế hoạch học trên điện thoại. Mở tab mới trong vùng pilot, trang chủ và tiến độ thật giữ nguyên. Không thêm nút menu đáy.
 
