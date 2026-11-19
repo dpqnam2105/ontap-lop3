@@ -295,7 +295,7 @@ BATCH_RULES['codex-mshoa-e2u7-determiners-20261109'] = {
 };
 // Lô ôn sau Progress test 1 (Ms Hoa): mỗi câu nối một bài Lý thuyết có thật; đề + lựa chọn tiếng Anh.
 const THEORY = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'theory', 'lop3.json'), 'utf8'));
-const THEORY_IDS = new Set(THEORY.lessons.map(l => l.id));
+const THEORY_IDS = new Set(THEORY.lessons.filter(l => l.subject === 'tieng-anh').map(l => l.id));
 const PT1_SKILL = { 'en-do-does': 'present-do-does', 'en-third-person-s': 'present-third-s', 'en-present-continuous': 'present-continuous',
   'en-pronoun-answer': 'pronoun-answer', 'en-time-oclock': 'time-oclock', 'en-spelling-book': 'spelling' };
 // Câu trong đề Progress test 1 — không chép sang kho

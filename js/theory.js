@@ -7,10 +7,11 @@
  * Module chỉ đọc dữ liệu, không ghi localStorage.
  */
 const Theory = {
-  VERSION: '20261119th3',
+  VERSION: '20261119th5',
   _cache: {},      // grade → data | null (null = lớp chưa có lý thuyết)
   _loading: {},    // grade → Promise
   _view: null,     // id bài đang mở trên màn Lý thuyết (null = danh sách)
+  _tab: null,      // id môn đang chọn ở danh sách (null = môn đầu tiên)
   _failed: {},     // grade → true khi lần tải gần nhất lỗi mạng (chưa ghi cache, lần sau thử lại)
   _attachSeq: 0,   // chặn gắn nút "Xem lại bài" nhầm sang câu sau khi dữ liệu tải chậm
   _prevFocus: null,
@@ -98,9 +99,14 @@ const Theory = {
     }
     if (this._view && d._byId[this._view]) { this._renderLesson(box, d._byId[this._view], false); return; }
     this._view = null;
-    box.innerHTML = (d.subjects || []).map(s => `
-      <section class="th-subject">
-        <h3 class="th-subject-title">${this._esc(s.icon || '')} ${this._esc(s.name)}</h3>
+    const subs = d.subjects || [];
+    const cur = subs.find(s => s.id === this._tab) || subs[0];
+    const tabs = subs.length > 1 ? `<div class="th-tabs" role="tablist" aria-label="Chọn môn">${subs.map(s => `
+        <button class="th-tab${s === cur ? ' active' : ''}" role="tab" aria-selected="${s === cur}" data-th="tab" data-id="${this._esc(s.id)}">${this._esc(s.icon || '')} ${this._esc(s.name)}</button>`).join('')}
+      </div>` : '';
+    box.innerHTML = tabs + [cur].filter(Boolean).map(s => `
+      <section class="th-subject" role="tabpanel">
+        ${subs.length > 1 ? '' : `<h3 class="th-subject-title">${this._esc(s.icon || '')} ${this._esc(s.name)}</h3>`}
         ${(s.groups || []).map(g => `
           <div class="th-group">
             <div class="th-group-name">${this._esc(g.name)}</div>
@@ -119,6 +125,8 @@ const Theory = {
 
   open(id) {
     this._view = id || null;
+    const d = this._data();
+    if (id && d && d._byId[id]) this._tab = d._byId[id].subject;
     if (window.App) App.showScreen('theory');
     else this.render();
   },
@@ -137,6 +145,8 @@ const Theory = {
           <div><h2>${this._esc(l.title)}</h2>${l.book ? `<small>${this._esc(l.book)}</small>` : ''}</div>
         </div>
         ${l.rule && l.rule.length ? `<div class="th-box th-rule"><div class="th-box-title">💡 Nhớ nhanh</div><ul>${list(l.rule)}</ul></div>` : ''}
+        ${l.divisions && l.divisions.length ? `<div class="th-box th-div-box"><div class="th-box-title">🧮 Đặt tính rồi tính</div>
+          <div class="th-div-list">${l.divisions.map(v => this._divisionHtml(v)).join('')}</div></div>` : ''}
         ${t ? `<div class="th-box th-table-box">${t.title ? `<div class="th-box-title">📋 ${this._esc(t.title)}</div>` : ''}
           <div class="th-table-wrap"><table class="th-table">
             ${t.head ? `<thead><tr>${t.head.map(h => `<th>${f(h)}</th>`).join('')}</tr></thead>` : ''}
@@ -165,7 +175,55 @@ const Theory = {
       </div>`;
   },
 
+  // ─── Khung đặt tính chia kiểu Vở bài tập Toán 3 (số bị chia | số chia, thương dưới số chia) ───
+  /** Các bước chia từ trái sang phải. Chỉ nhận số tự nhiên, số chia 1 chữ số (lớp 3). */
+  _divide(a, b) {
+    a = Math.floor(Number(a)); b = Math.floor(Number(b));
+    if (!(a >= 0) || !(b >= 1 && b <= 9)) return null;
+    const ds = String(a).split('').map(Number), steps = [];
+    let cur = 0, started = false;
+    ds.forEach((dg, i) => {
+      cur = cur * 10 + dg;
+      if (!started && cur < b && i < ds.length - 1) return;   // chưa đủ để chia: lấy thêm chữ số
+      started = true;
+      const q = Math.floor(cur / b), prod = q * b, rem = cur - prod;
+      steps.push({ cur, q, prod, rem, end: i, next: i < ds.length - 1 ? ds[i + 1] : null });
+      cur = rem;
+    });
+    const quot = Math.floor(a / b), rem = a % b;
+    return { a, b, ds, steps, quot, rem };
+  },
+
+  _divisionHtml(v) {
+    const r = this._divide(v.a, v.b);
+    if (!r) return '';
+    const n = r.ds.length, rows = [];
+    const row = (text, end, ul) => rows.push(`<div class="dv-row"><span class="dv-num${ul ? ' dv-ul' : ''}" style="margin-left:${end + 1 - text.length}ch">${text}</span></div>`);
+    r.steps.forEach((st, k) => {
+      row(String(st.prod), st.end, true);
+      if (st.next != null) row(String(st.rem) + st.next, st.end + 1, false);
+      else row(String(st.rem), st.end, false);
+    });
+    const res = `${r.a} : ${r.b} = ${r.quot}${r.rem ? ` (dư ${r.rem})` : ''}`;
+    const steps = v.steps ? `<ol class="dv-steps">${r.steps.map((st, k) => {
+      const head = k === 0 ? '' : `Hạ ${r.ds[st.end]}; `;
+      return `<li>${head}${st.cur} chia ${r.b} được ${st.q}, viết ${st.q}. ${st.q} nhân ${r.b} bằng ${st.prod}; ${st.cur} trừ ${st.prod} bằng ${st.rem}.</li>`;
+    }).join('')}</ol>` : '';
+    return `<figure class="dv-item">
+      <div class="dv" role="img" aria-label="Đặt tính ${res}">
+        <div class="dv-left" style="width:${n}ch">
+          <div class="dv-row"><span class="dv-num" style="margin-left:0">${r.ds.join('')}</span></div>
+          ${rows.join('')}
+        </div>
+        <div class="dv-right"><div class="dv-divisor">${r.b}</div><div class="dv-quot">${r.quot}</div></div>
+      </div>
+      <figcaption class="dv-res">${this._esc(res)}</figcaption>
+      ${steps}
+    </figure>`;
+  },
+
   _renderLesson(box, l) {
+    this._tab = l.subject;
     box.innerHTML = `<button class="btn-nav th-back" data-th="list">← Các bài lý thuyết</button>` + this._lessonHtml(l, false);
     this._wire(box);
   },
@@ -175,6 +233,7 @@ const Theory = {
       e.stopPropagation();
       const act = el.dataset.th;
       if (act === 'open') { this._view = el.dataset.id; this.render(); window.scrollTo(0, 0); }
+      else if (act === 'tab') { this._tab = el.dataset.id; this._view = null; this.render(); }
       else if (act === 'list') { this._view = null; this.render(); window.scrollTo(0, 0); }
       else if (act === 'reveal') {
         const a = el.parentNode.querySelector('.th-check-a');
@@ -208,7 +267,21 @@ const Theory = {
     (s.topics || []).forEach(t => (t.questions || []).forEach(q => {
       if (q && q.theoryId === l.id && q.id && !ids.includes(q.id)) ids.push(q.id);
     }));
-    return { s, hits: App._reviewSetHits(s, ids, { scope: 'stage' }) };
+    // Môn chia giáo trình (Tiếng Anh): dùng cổng duyệt của đề trộn. Môn khác (Toán): câu sẵn sàng, đúng giai đoạn đang học,
+    // bỏ chủ đề luyện tốc độ / thử nghiệm (batch1Pilot, manualOnly) như kế hoạch hôm nay.
+    if (s.books && s.books.length) return { s, hits: App._reviewSetHits(s, ids, { scope: 'stage' }) };
+    const want = new Set(ids), hits = [];
+    (s.topics || []).forEach(t => {
+      if (t.drill || t.manualOnly || t.batch1Pilot) return;
+      const allowed = App._allowedIndices(s, t);
+      const ok = allowed === null ? null : new Set(allowed);
+      (t.questions || []).forEach((q, i) => {
+        if (!q || !want.has(q.id) || (ok && !ok.has(i))) return;
+        if (!App.questionReady(q) || q.pilotCheck || q.type === 'spell-fix') return;
+        hits.push({ t, q, i });
+      });
+    });
+    return { s, hits };
   },
 
   _practiceCount(l) {

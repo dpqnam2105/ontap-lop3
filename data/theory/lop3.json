@@ -1,27 +1,511 @@
 {
   "version": 1,
   "grade": "lop3",
-  "note": "Phần Lý thuyết lớp 3. Chữ **đậm** = phần cần nhớ (tô màu), ~~gạch~~ = chỗ viết sai. Câu hỏi nối với bài qua q.theoryId, questionIds hoặc skills (chỉ câu có id bắt đầu bằng idPrefix của môn).",
+  "note": "Phần Lý thuyết lớp 3, chia tab theo môn. Chữ **đậm** = phần cần nhớ (tô màu), ~~gạch~~ = chỗ viết sai. Câu hỏi nối với bài qua q.theoryId, questionIds hoặc skills (chỉ câu có id bắt đầu bằng idPrefix của môn). divisions: [{a,b,steps}] = khung đặt tính chia kiểu Vở bài tập Toán 3.",
   "subjects": [
+    {
+      "id": "toan",
+      "name": "Toán",
+      "icon": "🔢",
+      "idPrefix": "toan_",
+      "groups": [
+        {
+          "name": "Phép nhân, phép chia",
+          "lessons": [
+            "toan-chia-co-du",
+            "toan-gap-giam"
+          ]
+        },
+        {
+          "name": "Dãy số cách đều",
+          "lessons": [
+            "toan-day-so-so-so-hang",
+            "toan-day-so-so-hang-thu-n",
+            "toan-day-so-tong"
+          ]
+        },
+        {
+          "name": "Đơn vị đo",
+          "lessons": [
+            "toan-do-dai",
+            "toan-khoi-luong-dung-tich"
+          ]
+        }
+      ]
+    },
     {
       "id": "tieng-anh",
       "name": "Tiếng Anh",
       "icon": "🌍",
       "idPrefix": "en_",
       "groups": [
-        { "name": "Thì hiện tại đơn", "lessons": ["en-do-does", "en-third-person-s"] },
-        { "name": "Thì hiện tại tiếp diễn", "lessons": ["en-present-continuous"] },
-        { "name": "Trả lời câu hỏi", "lessons": ["en-pronoun-answer", "en-time-oclock"] },
-        { "name": "Chính tả", "lessons": ["en-spelling-book"] }
+        {
+          "name": "Các thì",
+          "lessons": [
+            "en-third-person-s",
+            "en-do-does",
+            "en-present-continuous"
+          ]
+        },
+        {
+          "name": "Hỏi và trả lời",
+          "lessons": [
+            "en-pronoun-answer",
+            "en-time-oclock"
+          ]
+        },
+        {
+          "name": "Chính tả",
+          "lessons": [
+            "en-spelling-book"
+          ]
+        }
       ]
     }
   ],
   "lessons": [
     {
+      "id": "toan-chia-co-du",
+      "subject": "toan",
+      "icon": "➗",
+      "title": "Phép chia hết và phép chia có dư",
+      "book": "SGK Toán 3 · Bài 25 · Vở bài tập Bài 28",
+      "rule": [
+        "Số bị chia : Số chia = **Thương**. Ví dụ 36 : 6 = 6.",
+        "**Chia hết**: số dư bằng 0. **Chia có dư**: còn thừa, ví dụ 19 : 2 = 9 (dư 1).",
+        "**Số dư luôn bé hơn số chia.** Chia cho 6 thì số dư lớn nhất là 5.",
+        "Thử lại: **Thương × Số chia + Số dư = Số bị chia** → 9 × 2 + 1 = 19."
+      ],
+      "divisions": [
+        {
+          "a": 19,
+          "b": 2
+        },
+        {
+          "a": 38,
+          "b": 5
+        },
+        {
+          "a": 87,
+          "b": 4,
+          "steps": true
+        }
+      ],
+      "examples": [
+        "36 : 6 = 6 (chia hết, số dư 0)",
+        "30 : 4 = 7 (dư 2) vì 7 × 4 = 28, 30 − 28 = 2",
+        "26 : 3 = 8 (dư 2) vì 8 × 3 = 24, 26 − 24 = 2"
+      ],
+      "table": {
+        "title": "Bài toán có dư: đọc kĩ câu hỏi",
+        "head": [
+          "Đề hỏi",
+          "Cách trả lời"
+        ],
+        "rows": [
+          [
+            "25 cái bánh xếp mỗi hộp 4 cái. Xếp được **nhiều nhất** mấy hộp, còn thừa mấy cái?",
+            "25 : 4 = 6 (dư 1) → **6 hộp**, thừa **1** cái"
+          ],
+          [
+            "25 cái bánh, mỗi hộp 4 cái. Cần **ít nhất** mấy hộp để xếp hết bánh?",
+            "25 : 4 = 6 (dư 1) → 6 hộp chưa đủ, cần thêm 1 hộp → **7 hộp**"
+          ]
+        ]
+      },
+      "mistakes": [
+        {
+          "wrong": "31 : 4 = 6 (dư ~~7~~)",
+          "right": "31 : 4 = **7 (dư 3)**",
+          "why": "Số dư 7 lớn hơn số chia 4 → thương 6 còn nhỏ quá, phải là 7."
+        },
+        {
+          "wrong": "48 : 2 = ~~23~~ (dư 2)",
+          "right": "48 : 2 = **24**",
+          "why": "Số dư 2 bằng số chia 2 → vẫn chia tiếp được. Đúng là 8 chia 2 được 4, nên 48 : 2 = 24."
+        },
+        {
+          "wrong": "Cần ít nhất ~~6~~ hộp (vì 25 : 4 = 6 dư 1)",
+          "right": "Cần ít nhất **7** hộp",
+          "why": "Còn 1 cái bánh thừa cũng cần một hộp."
+        }
+      ],
+      "tip": "Chia xong luôn tự hỏi: **số dư có bé hơn số chia không?** Nếu không, con chia lại.",
+      "check": [
+        {
+          "q": "29 : 5 = ?",
+          "a": "5 (dư 4)"
+        },
+        {
+          "q": "Một phép chia cho 7, số dư lớn nhất có thể là mấy?",
+          "a": "6"
+        },
+        {
+          "q": "30 bạn đi thuyền, mỗi thuyền chở 4 bạn. Cần ít nhất mấy thuyền?",
+          "a": "30 : 4 = 7 (dư 2) → 8 thuyền"
+        }
+      ],
+      "skills": [
+        "divide-remainder",
+        "chia-co-du",
+        "chia-het",
+        "chia-du-con-thua",
+        "dung-het"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-gap-giam",
+      "subject": "toan",
+      "icon": "🔁",
+      "title": "Gấp lên, giảm đi một số lần",
+      "book": "SGK Toán 3 · Bài 24, Bài 27",
+      "rule": [
+        "Gấp một số lên mấy lần: lấy số đó **nhân** với số lần.",
+        "Giảm một số đi mấy lần: lấy số đó **chia** cho số lần.",
+        "Đừng nhầm: **gấp lên 3 lần** (× 3) khác **thêm 3** (+ 3); **giảm đi 3 lần** (: 3) khác **bớt 3** (− 3)."
+      ],
+      "table": {
+        "title": "Cùng số 12, bốn cách khác nhau",
+        "head": [
+          "Đề nói",
+          "Phép tính",
+          "Kết quả"
+        ],
+        "rows": [
+          [
+            "12 gấp lên 3 lần",
+            "12 **×** 3",
+            "36"
+          ],
+          [
+            "12 thêm 3",
+            "12 **+** 3",
+            "15"
+          ],
+          [
+            "12 giảm đi 3 lần",
+            "12 **:** 3",
+            "4"
+          ],
+          [
+            "12 bớt 3",
+            "12 **−** 3",
+            "9"
+          ]
+        ]
+      },
+      "examples": [
+        "4 gấp lên 5 lần: 4 × 5 = 20",
+        "35 giảm đi 7 lần: 35 : 7 = 5",
+        "Em 8 tuổi, tuổi anh gấp 3 lần tuổi em: 8 × 3 = 24 (tuổi)",
+        "6 gấp lên 4 lần rồi giảm đi 3 lần: 6 × 4 = 24, 24 : 3 = 8"
+      ],
+      "mistakes": [
+        {
+          "wrong": "12 gấp lên 3 lần = ~~15~~",
+          "right": "12 gấp lên 3 lần = **36**",
+          "why": "Gấp lên là nhân, không phải cộng."
+        },
+        {
+          "wrong": "24 giảm đi 4 lần = ~~20~~",
+          "right": "24 giảm đi 4 lần = **6**",
+          "why": "Giảm đi … lần là chia, không phải trừ."
+        }
+      ],
+      "tip": "Có chữ **\"lần\"** → nghĩ tới nhân hoặc chia. Không có chữ \"lần\" (thêm, bớt, nhiều hơn, ít hơn) → cộng hoặc trừ.",
+      "check": [
+        {
+          "q": "7 gấp lên 4 lần được bao nhiêu?",
+          "a": "28"
+        },
+        {
+          "q": "40 giảm đi 5 lần được bao nhiêu?",
+          "a": "8"
+        },
+        {
+          "q": "5 gấp lên 2 lần rồi thêm 3 được bao nhiêu?",
+          "a": "5 × 2 = 10, 10 + 3 = 13"
+        }
+      ],
+      "skills": [
+        "times-more",
+        "times-less",
+        "so-do-gap-lan"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-day-so-so-so-hang",
+      "subject": "toan",
+      "icon": "🔢",
+      "title": "Dãy số cách đều: tìm số số hạng",
+      "book": "Bài tập bổ trợ Toán 3",
+      "rule": [
+        "**Khoảng cách** = hiệu hai số liền nhau trong dãy. Ví dụ dãy 2; 4; 6; … có khoảng cách 2.",
+        "**Số số hạng = (Số cuối − Số đầu) : Khoảng cách + 1**"
+      ],
+      "examples": [
+        "Dãy 2; 4; 6; …; 20 → (20 − 2) : 2 + 1 = **10** số hạng",
+        "Dãy 5; 10; 15; …; 100 → (100 − 5) : 5 + 1 = **20** số hạng",
+        "Dãy 1; 4; 7; …; 31 → (31 − 1) : 3 + 1 = **11** số hạng"
+      ],
+      "mistakes": [
+        {
+          "wrong": "Dãy 2; 4; …; 20 có (20 − 2) : 2 = ~~9~~ số",
+          "right": "(20 − 2) : 2 **+ 1** = **10** số",
+          "why": "Quên cộng 1. Phép chia chỉ đếm số khoảng."
+        }
+      ],
+      "tip": "Giống trồng cây thành hàng: **10 cây chỉ có 9 khoảng**. Vì vậy số số hạng = số khoảng **+ 1**.",
+      "check": [
+        {
+          "q": "Dãy 3; 6; 9; …; 30 có bao nhiêu số hạng?",
+          "a": "(30 − 3) : 3 + 1 = 10"
+        },
+        {
+          "q": "Dãy 10; 20; 30; …; 200 có bao nhiêu số hạng?",
+          "a": "(200 − 10) : 10 + 1 = 20"
+        },
+        {
+          "q": "Dãy 1; 3; 5; …; 19 có bao nhiêu số hạng?",
+          "a": "(19 − 1) : 2 + 1 = 10"
+        }
+      ],
+      "skills": [
+        "so-so-hang"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-day-so-so-hang-thu-n",
+      "subject": "toan",
+      "icon": "📍",
+      "title": "Dãy số cách đều: tìm số hạng thứ n",
+      "book": "Bài tập bổ trợ Toán 3",
+      "rule": [
+        "Dãy tăng: **Số hạng thứ n = Số đầu + (n − 1) × Khoảng cách**",
+        "Muốn biết một số là số hạng thứ mấy: **(Số đó − Số đầu) : Khoảng cách + 1**"
+      ],
+      "examples": [
+        "Dãy 2; 5; 8; … Số hạng thứ 10 = 2 + (10 − 1) × 3 = 2 + 27 = **29**",
+        "Dãy 0; 5; 10; … Số hạng thứ 11 = 0 + 10 × 5 = **50**",
+        "Dãy 4; 8; 12; …: số 28 là số hạng thứ (28 − 4) : 4 + 1 = **7**"
+      ],
+      "mistakes": [
+        {
+          "wrong": "Dãy 2; 5; 8; … số hạng thứ 10 = 2 + ~~10~~ × 3 = 32",
+          "right": "2 + **(10 − 1)** × 3 = **29**",
+          "why": "Từ số thứ 1 đến số thứ 10 chỉ có 9 bước nhảy."
+        }
+      ],
+      "tip": "Số đầu đứng sẵn ở vị trí 1. Muốn tới vị trí n, con chỉ cần nhảy **n − 1** bước.",
+      "check": [
+        {
+          "q": "Dãy 1; 3; 5; … Số hạng thứ 20 là số nào?",
+          "a": "1 + 19 × 2 = 39"
+        },
+        {
+          "q": "Dãy 4; 8; 12; … Số hạng thứ 15 là số nào?",
+          "a": "4 + 14 × 4 = 60"
+        },
+        {
+          "q": "Dãy 10; 15; 20; … Số hạng thứ 8 là số nào?",
+          "a": "10 + 7 × 5 = 45"
+        }
+      ],
+      "skills": [
+        "so-hang-thu-n"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-day-so-tong",
+      "subject": "toan",
+      "icon": "➕",
+      "title": "Dãy số cách đều: tính tổng",
+      "book": "Bài tập bổ trợ Toán 3",
+      "rule": [
+        "Bước 1: tìm **số số hạng**.",
+        "Bước 2: **Tổng = (Số đầu + Số cuối) × Số số hạng : 2**"
+      ],
+      "examples": [
+        "1 + 2 + 3 + … + 10: có 10 số hạng → (1 + 10) × 10 : 2 = **55**",
+        "2 + 4 + 6 + … + 20: có 10 số hạng → (2 + 20) × 10 : 2 = **110**",
+        "5 + 10 + 15 + 20 + 25: có 5 số hạng → (5 + 25) × 5 : 2 = **75**"
+      ],
+      "mistakes": [
+        {
+          "wrong": "1 + 2 + … + 10 = (1 + 10) × 10 = ~~110~~",
+          "right": "(1 + 10) × 10 **: 2** = **55**",
+          "why": "Quên chia 2: mỗi cặp (đầu + cuối) bị đếm hai lần."
+        }
+      ],
+      "tip": "Ghép cặp đầu với cuối: 1 + 10, 2 + 9, 3 + 8, … mỗi cặp đều bằng 11. Dãy 10 số có 10 : 2 = 5 cặp → 5 × 11 = 55.",
+      "check": [
+        {
+          "q": "1 + 2 + 3 + … + 20 = ?",
+          "a": "(1 + 20) × 20 : 2 = 210"
+        },
+        {
+          "q": "5 + 10 + 15 + … + 50 = ?",
+          "a": "10 số hạng → (5 + 50) × 10 : 2 = 275"
+        },
+        {
+          "q": "3 + 6 + 9 + 12 + 15 = ?",
+          "a": "(3 + 15) × 5 : 2 = 45"
+        }
+      ],
+      "skills": [],
+      "questionIds": []
+    },
+    {
+      "id": "toan-do-dai",
+      "subject": "toan",
+      "icon": "📏",
+      "title": "Đơn vị đo độ dài: km, m, dm, cm, mm",
+      "book": "SGK Toán 3 · Bài 30",
+      "rule": [
+        "**1 cm = 10 mm** · **1 dm = 10 cm** · **1 m = 10 dm = 100 cm**",
+        "**1 m = 1000 mm** · **1 km = 1000 m**",
+        "Đổi từ đơn vị lớn sang đơn vị bé: **nhân**. Đổi từ đơn vị bé sang đơn vị lớn: **chia**."
+      ],
+      "table": {
+        "title": "Bậc thang đơn vị đo (mỗi bậc liền nhau gấp 10 lần)",
+        "head": [
+          "m",
+          "dm",
+          "cm",
+          "mm"
+        ],
+        "rows": [
+          [
+            "1 m",
+            "10 dm",
+            "100 cm",
+            "1000 mm"
+          ],
+          [
+            "",
+            "1 dm",
+            "10 cm",
+            "100 mm"
+          ],
+          [
+            "",
+            "",
+            "1 cm",
+            "10 mm"
+          ]
+        ]
+      },
+      "examples": [
+        "3 m = 300 cm",
+        "5 cm = 50 mm",
+        "70 mm = 7 cm",
+        "2 dm 4 cm = 20 cm + 4 cm = 24 cm",
+        "3 m 25 cm = 300 cm + 25 cm = 325 cm"
+      ],
+      "mistakes": [
+        {
+          "wrong": "1 m = ~~10~~ cm",
+          "right": "1 m = **100** cm",
+          "why": "1 m = 10 dm, mỗi dm lại bằng 10 cm."
+        },
+        {
+          "wrong": "3 m 25 cm = ~~325 m~~",
+          "right": "3 m 25 cm = **325 cm**",
+          "why": "Đổi hết ra đơn vị bé (cm) rồi mới cộng."
+        }
+      ],
+      "tip": "Cộng, trừ, so sánh độ dài thì **đổi về cùng một đơn vị** trước.",
+      "check": [
+        {
+          "q": "4 dm = ? cm",
+          "a": "40 cm"
+        },
+        {
+          "q": "7 cm = ? mm",
+          "a": "70 mm"
+        },
+        {
+          "q": "1 m = ? mm",
+          "a": "1000 mm"
+        }
+      ],
+      "skills": [],
+      "questionIds": [
+        "toan_do-luong_q001",
+        "toan_do-luong_q002",
+        "toan_do-luong_q003",
+        "toan_do-luong_q006",
+        "toan_do-luong_q007",
+        "toan_do-luong_q008",
+        "toan_do-luong_q011",
+        "toan_do-luong_q012",
+        "toan_do-luong_q015"
+      ]
+    },
+    {
+      "id": "toan-khoi-luong-dung-tich",
+      "subject": "toan",
+      "icon": "⚖️",
+      "title": "Khối lượng và dung tích: kg, g, l, ml",
+      "book": "SGK Toán 3 · Bài 31, Bài 32",
+      "rule": [
+        "**1 kg = 1000 g**",
+        "**1 l = 1000 ml**",
+        "Cân nặng đo bằng **kg, g**. Lượng nước (dung tích) đo bằng **l, ml**."
+      ],
+      "examples": [
+        "2 kg = 2000 g",
+        "500 g + 500 g = 1000 g = 1 kg",
+        "1 kg 250 g = 1000 g + 250 g = 1250 g",
+        "1 l − 250 ml = 1000 ml − 250 ml = 750 ml",
+        "2 chai, mỗi chai 500 ml: 500 ml × 2 = 1000 ml = 1 l"
+      ],
+      "mistakes": [
+        {
+          "wrong": "1 kg = ~~100~~ g",
+          "right": "1 kg = **1000** g",
+          "why": "Gam rất nhẹ: 1000 g mới bằng 1 kg."
+        },
+        {
+          "wrong": "1 kg ~~<~~ 999 g (vì 1 bé hơn 999)",
+          "right": "1 kg **>** 999 g",
+          "why": "Đổi 1 kg = 1000 g rồi mới so sánh: 1000 > 999."
+        }
+      ],
+      "tip": "So sánh hai số đo khác đơn vị thì **đổi về cùng đơn vị** trước, rồi mới so sánh các số.",
+      "check": [
+        {
+          "q": "3 kg = ? g",
+          "a": "3000 g"
+        },
+        {
+          "q": "1 l − 400 ml = ? ml",
+          "a": "600 ml"
+        },
+        {
+          "q": "Chọn dấu: 2 kg … 1999 g",
+          "a": ">"
+        }
+      ],
+      "skills": [],
+      "questionIds": [
+        "toan_do-luong_q004",
+        "toan_do-luong_q005",
+        "toan_do-luong_q009",
+        "toan_do-luong_q010",
+        "toan_do-luong_q013",
+        "toan_do-luong_q014"
+      ]
+    },
+    {
       "id": "en-do-does",
       "subject": "tieng-anh",
       "icon": "❓",
-      "title": "Câu hỏi với Do / Does",
+      "title": "Hiện tại đơn: câu hỏi Do / Does",
       "book": "Ms Hoa Explorer 2 · Unit 6",
       "rule": [
         "**I / you / we / they** → dùng **do**",
@@ -35,29 +519,64 @@
         "Where **do** you **eat** dinner? – In the dining room."
       ],
       "mistakes": [
-        { "wrong": "Where ~~are~~ you eat dinner?", "right": "Where **do** you eat dinner?", "why": "Có động từ \"eat\" → dùng do, không dùng are." },
-        { "wrong": "~~Does~~ they eat breakfast?", "right": "**Do** they eat breakfast?", "why": "they → do" },
-        { "wrong": "No, they ~~doesn't~~.", "right": "No, they **don't**.", "why": "they → don't" },
-        { "wrong": "~~Dose~~ Lan go to bed?", "right": "**Does** Lan go to bed?", "why": "Viết đúng: d-o-e-s" }
+        {
+          "wrong": "Where ~~are~~ you eat dinner?",
+          "right": "Where **do** you eat dinner?",
+          "why": "Có động từ \"eat\" → dùng do, không dùng are."
+        },
+        {
+          "wrong": "~~Does~~ they eat breakfast?",
+          "right": "**Do** they eat breakfast?",
+          "why": "they → do"
+        },
+        {
+          "wrong": "No, they ~~doesn't~~.",
+          "right": "No, they **don't**.",
+          "why": "they → don't"
+        },
+        {
+          "wrong": "~~Dose~~ Lan go to bed?",
+          "right": "**Does** Lan go to bed?",
+          "why": "Viết đúng: d-o-e-s"
+        }
       ],
       "tip": "\"Does\" đi với **một người** (he, she, Lan, mẹ). \"Do\" đi với **tôi, bạn, chúng tôi, họ**. Chữ \"does\" viết như \"do\" thêm \"es\".",
       "check": [
-        { "q": "___ your brother like apples?", "a": "Does" },
-        { "q": "___ you and Nam go to school by bus?", "a": "Do" },
-        { "q": "Do they watch TV? – No, they ___.", "a": "don't" }
+        {
+          "q": "___ your brother like apples?",
+          "a": "Does"
+        },
+        {
+          "q": "___ you and Nam go to school by bus?",
+          "a": "Do"
+        },
+        {
+          "q": "Do they watch TV? – No, they ___.",
+          "a": "don't"
+        }
       ],
-      "skills": ["grammar-where"],
+      "skills": [
+        "grammar-where"
+      ],
       "questionIds": [
-        "en_mshoa-e2-u6_q001", "en_mshoa-e2-u6_q010", "en_grammar_q015", "en_nik3-unit1_q020",
-        "en_nik3-unit1_q027", "en_nik3-unit1_q038", "en_daily-activities_q009", "en_daily-activities_q010",
-        "en_nik3-unit2_q019", "en_nik3-unit2_q020", "en_global-success-3_q015"
+        "en_mshoa-e2-u6_q001",
+        "en_mshoa-e2-u6_q010",
+        "en_grammar_q015",
+        "en_nik3-unit1_q020",
+        "en_nik3-unit1_q027",
+        "en_nik3-unit1_q038",
+        "en_daily-activities_q009",
+        "en_daily-activities_q010",
+        "en_nik3-unit2_q019",
+        "en_nik3-unit2_q020",
+        "en_global-success-3_q015"
       ]
     },
     {
       "id": "en-third-person-s",
       "subject": "tieng-anh",
       "icon": "🐍",
-      "title": "Một người làm việc gì: thêm -s / -es",
+      "title": "Hiện tại đơn: thêm -s / -es",
       "book": "Ms Hoa Explorer 2 · Unit 5–6",
       "rule": [
         "Câu kể về **he / she / một người** → động từ **thêm -s** hoặc **-es**.",
@@ -73,27 +592,51 @@
         "A taxi driver **doesn't fly** a plane."
       ],
       "mistakes": [
-        { "wrong": "A builder ~~building~~ houses.", "right": "A builder **builds** houses.", "why": "Một người, việc làm thường ngày → builds." },
-        { "wrong": "My mom ~~go~~ to bed at nine o'clock.", "right": "My mom **goes** to bed at nine o'clock.", "why": "go tận cùng o → goes." }
+        {
+          "wrong": "A builder ~~building~~ houses.",
+          "right": "A builder **builds** houses.",
+          "why": "Một người, việc làm thường ngày → builds."
+        },
+        {
+          "wrong": "My mom ~~go~~ to bed at nine o'clock.",
+          "right": "My mom **goes** to bed at nine o'clock.",
+          "why": "go tận cùng o → goes."
+        }
       ],
       "tip": "Câu **khẳng định** về một người → động từ \"đeo đuôi s\". Câu **có doesn't** → đuôi s đã nằm trong doesn't, động từ không đeo nữa.",
       "check": [
-        { "q": "My dad (wash) ___ the car on Sunday.", "a": "washes" },
-        { "q": "A farmer (grow) ___ rice.", "a": "grows" },
-        { "q": "She doesn't (like) ___ milk.", "a": "like" }
+        {
+          "q": "My dad (wash) ___ the car on Sunday.",
+          "a": "washes"
+        },
+        {
+          "q": "A farmer (grow) ___ rice.",
+          "a": "grows"
+        },
+        {
+          "q": "She doesn't (like) ___ milk.",
+          "a": "like"
+        }
       ],
       "skills": [],
       "questionIds": [
-        "en_grammar_q013", "en_grammar_q014", "en_on-tap-tong-hop_q003", "en_on-tap-tong-hop_q006",
-        "en_daily-activities_q002", "en_daily-activities_q003", "en_daily-activities_q004", "en_daily-activities_q013",
-        "en_nik3-unit1_q031", "en_nik3-unit2_q029"
+        "en_grammar_q013",
+        "en_grammar_q014",
+        "en_on-tap-tong-hop_q003",
+        "en_on-tap-tong-hop_q006",
+        "en_daily-activities_q002",
+        "en_daily-activities_q003",
+        "en_daily-activities_q004",
+        "en_daily-activities_q013",
+        "en_nik3-unit1_q031",
+        "en_nik3-unit2_q029"
       ]
     },
     {
       "id": "en-present-continuous",
       "subject": "tieng-anh",
       "icon": "🏃",
-      "title": "Đang làm gì: am / is / are + V-ing",
+      "title": "Hiện tại tiếp diễn: am / is / are + V-ing",
       "book": "Ms Hoa Explorer 2",
       "rule": [
         "Việc **đang xảy ra bây giờ** = **am / is / are + động từ-ing**. Không được bỏ am / is / are.",
@@ -107,27 +650,61 @@
       ],
       "table": {
         "title": "Câu hỏi dùng thì nào, trả lời thì đó",
-        "head": ["Câu hỏi", "Trả lời"],
+        "head": [
+          "Câu hỏi",
+          "Trả lời"
+        ],
         "rows": [
-          ["What **is** Linda **doing**?", "She **is riding** a bike."],
-          ["What **does** Linda **do** every day?", "She **rides** a bike."]
+          [
+            "What **is** Linda **doing**?",
+            "She **is riding** a bike."
+          ],
+          [
+            "What **does** Linda **do** every day?",
+            "She **rides** a bike."
+          ]
         ]
       },
       "mistakes": [
-        { "wrong": "They ~~in~~ the park.", "right": "They **are in** the park.", "why": "Thiếu are." },
-        { "wrong": "Manh and Chung ~~playing~~ football.", "right": "Manh and Chung **are playing** football.", "why": "-ing cần are đứng trước." },
-        { "wrong": "Linda ~~riding~~ a bike.", "right": "Linda **is riding** a bike.", "why": "-ing cần is đứng trước." }
+        {
+          "wrong": "They ~~in~~ the park.",
+          "right": "They **are in** the park.",
+          "why": "Thiếu are."
+        },
+        {
+          "wrong": "Manh and Chung ~~playing~~ football.",
+          "right": "Manh and Chung **are playing** football.",
+          "why": "-ing cần are đứng trước."
+        },
+        {
+          "wrong": "Linda ~~riding~~ a bike.",
+          "right": "Linda **is riding** a bike.",
+          "why": "-ing cần is đứng trước."
+        }
       ],
       "tip": "\"-ing\" không đi một mình, luôn cần một \"người bạn\" **am / is / are** đứng trước. Viết -ing: ride → rid**ing** (bỏ e), write → writ**ing**, swim → swim**ming**, run → run**ning**.",
       "check": [
-        { "q": "Look! The cat ___ sleeping.", "a": "is" },
-        { "q": "We ___ drawing pictures.", "a": "are" },
-        { "q": "What are the boys doing? – They ___ football. (playing / are playing / play)", "a": "are playing" }
+        {
+          "q": "Look! The cat ___ sleeping.",
+          "a": "is"
+        },
+        {
+          "q": "We ___ drawing pictures.",
+          "a": "are"
+        },
+        {
+          "q": "What are the boys doing? – They ___ football. (playing / are playing / play)",
+          "a": "are playing"
+        }
       ],
       "skills": [],
       "questionIds": [
-        "en_grammar_q016", "en_grammar_q003", "en_nik3-unit1_q019", "en_nik3-unit1_q021",
-        "en_nik3-unit1_q034", "en_nik3-unit1_q035"
+        "en_grammar_q016",
+        "en_grammar_q003",
+        "en_nik3-unit1_q019",
+        "en_nik3-unit1_q021",
+        "en_nik3-unit1_q034",
+        "en_nik3-unit1_q035"
       ]
     },
     {
@@ -142,13 +719,31 @@
       ],
       "table": {
         "title": "Câu hỏi nói về … → trả lời dùng …",
-        "head": ["Câu hỏi nói về", "Trả lời dùng"],
+        "head": [
+          "Câu hỏi nói về",
+          "Trả lời dùng"
+        ],
         "rows": [
-          ["you (hỏi riêng một bạn)", "**I**"],
-          ["you and your friends / you and your mom", "**we**"],
-          ["your mom, Lan, Linda", "**she**"],
-          ["your dad, Thanh, James", "**he**"],
-          ["Manh and Chung, your friends", "**they**"]
+          [
+            "you (hỏi riêng một bạn)",
+            "**I**"
+          ],
+          [
+            "you and your friends / you and your mom",
+            "**we**"
+          ],
+          [
+            "your mom, Lan, Linda",
+            "**she**"
+          ],
+          [
+            "your dad, Thanh, James",
+            "**he**"
+          ],
+          [
+            "Manh and Chung, your friends",
+            "**they**"
+          ]
         ]
       },
       "examples": [
@@ -157,17 +752,33 @@
         "Where are **Thang and his friends**? – **They** are in the park."
       ],
       "mistakes": [
-        { "wrong": "Do you and your friends go to school every day? – No, ~~I~~ don't.", "right": "No, **we** don't.", "why": "you and your friends = mình + bạn → we." }
+        {
+          "wrong": "Do you and your friends go to school every day? – No, ~~I~~ don't.",
+          "right": "No, **we** don't.",
+          "why": "you and your friends = mình + bạn → we."
+        }
       ],
       "tip": "Đếm số người. \"You and your friends\" có **mình + bạn** → **we**.",
       "check": [
-        { "q": "Do you and your sister like cats? – Yes, ___ do.", "a": "we" },
-        { "q": "Is James walking? – Yes, ___ is.", "a": "he" },
-        { "q": "Do Manh and Chung like football? – Yes, ___ do.", "a": "they" }
+        {
+          "q": "Do you and your sister like cats? – Yes, ___ do.",
+          "a": "we"
+        },
+        {
+          "q": "Is James walking? – Yes, ___ is.",
+          "a": "he"
+        },
+        {
+          "q": "Do Manh and Chung like football? – Yes, ___ do.",
+          "a": "they"
+        }
       ],
       "skills": [],
       "questionIds": [
-        "en_nik3-unit1_q026", "en_nik3-unit2_q025", "en_nik3-unit2_q035", "en_global-success-3_q015"
+        "en_nik3-unit1_q026",
+        "en_nik3-unit2_q025",
+        "en_nik3-unit2_q035",
+        "en_global-success-3_q015"
       ]
     },
     {
@@ -189,19 +800,48 @@
         "My mom goes to bed **at** nine o'clock **in the evening**."
       ],
       "mistakes": [
-        { "wrong": "at 9 ~~pm o'clock~~", "right": "at nine **o'clock in the evening** / at **9 pm**", "why": "Chọn một cách nói giờ." },
-        { "wrong": "at 7:35 ~~o'clock~~", "right": "at **7:35** (seven thirty-five)", "why": "Có phút thì không dùng o'clock." },
-        { "wrong": "~~In thee~~ morning", "right": "**In the** morning", "why": "Viết đúng: t-h-e" }
+        {
+          "wrong": "at 9 ~~pm o'clock~~",
+          "right": "at nine **o'clock in the evening** / at **9 pm**",
+          "why": "Chọn một cách nói giờ."
+        },
+        {
+          "wrong": "at 7:35 ~~o'clock~~",
+          "right": "at **7:35** (seven thirty-five)",
+          "why": "Có phút thì không dùng o'clock."
+        },
+        {
+          "wrong": "~~In thee~~ morning",
+          "right": "**In the** morning",
+          "why": "Viết đúng: t-h-e"
+        }
       ],
       "tip": "\"o'clock\" = \"**đúng** … giờ\". Đã có phút thì không còn là \"đúng giờ\" nữa.",
       "check": [
-        { "q": "8:00 → eight ___", "a": "o'clock" },
-        { "q": "I go to bed ___ night.", "a": "at" },
-        { "q": "Câu nào đúng? I eat dinner at 7 pm o'clock. / I eat dinner at seven o'clock. / I eat dinner in seven o'clock.", "a": "I eat dinner at seven o'clock." }
+        {
+          "q": "8:00 → eight ___",
+          "a": "o'clock"
+        },
+        {
+          "q": "I go to bed ___ night.",
+          "a": "at"
+        },
+        {
+          "q": "Câu nào đúng? I eat dinner at 7 pm o'clock. / I eat dinner at seven o'clock. / I eat dinner in seven o'clock.",
+          "a": "I eat dinner at seven o'clock."
+        }
       ],
-      "skills": ["grammar-time", "clock", "time-of-day", "preposition"],
+      "skills": [
+        "grammar-time",
+        "clock",
+        "time-of-day",
+        "preposition"
+      ],
       "questionIds": [
-        "en_daily-activities_q005", "en_daily-activities_q006", "en_daily-activities_q016", "en_on-tap-tong-hop_q011"
+        "en_daily-activities_q005",
+        "en_daily-activities_q006",
+        "en_daily-activities_q016",
+        "en_on-tap-tong-hop_q011"
       ]
     },
     {
@@ -215,24 +855,79 @@
       ],
       "table": {
         "title": "Từ hay viết sai",
-        "head": ["Viết sai", "Viết đúng", "Nghĩa"],
+        "head": [
+          "Viết sai",
+          "Viết đúng",
+          "Nghĩa"
+        ],
         "rows": [
-          ["~~dose~~", "**does**", "trợ động từ"],
-          ["~~diner~~", "**dinner** (2 chữ n)", "bữa tối"],
-          ["~~get dress~~", "**get dressed**", "mặc quần áo"],
-          ["~~biulder~~", "**builder** (u trước i)", "thợ xây"],
-          ["~~socer~~", "**soccer** (2 chữ c)", "bóng đá"],
-          ["~~shool~~", "**school**", "trường học"],
-          ["~~wach~~", "**watch**", "xem"],
-          ["~~leah~~", "**learn**", "học"],
-          ["~~luch~~", "**lunch**", "bữa trưa"],
-          ["~~broush~~", "**brush**", "đánh (răng)"],
-          ["~~teeths~~", "**teeth**", "răng"],
-          ["~~thee~~", "**the**", "—"]
+          [
+            "~~dose~~",
+            "**does**",
+            "trợ động từ"
+          ],
+          [
+            "~~diner~~",
+            "**dinner** (2 chữ n)",
+            "bữa tối"
+          ],
+          [
+            "~~get dress~~",
+            "**get dressed**",
+            "mặc quần áo"
+          ],
+          [
+            "~~biulder~~",
+            "**builder** (u trước i)",
+            "thợ xây"
+          ],
+          [
+            "~~socer~~",
+            "**soccer** (2 chữ c)",
+            "bóng đá"
+          ],
+          [
+            "~~shool~~",
+            "**school**",
+            "trường học"
+          ],
+          [
+            "~~wach~~",
+            "**watch**",
+            "xem"
+          ],
+          [
+            "~~leah~~",
+            "**learn**",
+            "học"
+          ],
+          [
+            "~~luch~~",
+            "**lunch**",
+            "bữa trưa"
+          ],
+          [
+            "~~broush~~",
+            "**brush**",
+            "đánh (răng)"
+          ],
+          [
+            "~~teeths~~",
+            "**teeth**",
+            "răng"
+          ],
+          [
+            "~~thee~~",
+            "**the**",
+            "—"
+          ]
         ]
       },
       "skills": [],
-      "questionIds": ["en_mshoa-e2-u6_q011", "en_mshoa-e2-u6_q012"]
+      "questionIds": [
+        "en_mshoa-e2-u6_q011",
+        "en_mshoa-e2-u6_q012"
+      ]
     }
   ]
 }

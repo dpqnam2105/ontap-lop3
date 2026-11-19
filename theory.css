@@ -50,6 +50,26 @@
 .th-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .th-actions .btn-primary,.th-actions .btn-secondary{min-height:52px;padding:12px 20px;font-size:1.08rem}
 
+/* Tab môn */
+.th-tabs{display:flex;gap:10px;margin:0 0 16px;flex-wrap:wrap}
+.th-tab{flex:1 1 0;min-height:52px;border:2px solid #dbeeff;background:#fff;border-radius:16px;font-family:var(--font-display);font-weight:900;font-size:1.12rem;color:#42698f;cursor:pointer}
+.th-tab.active{border-color:#1f7af5;background:#eef8ff;color:#0d63d8}
+
+/* Đặt tính chia (kiểu Vở bài tập Toán 3) */
+.th-div-list{display:flex;flex-wrap:wrap;gap:18px 34px}
+.dv-item{margin:0;display:flex;flex-direction:column;gap:8px}
+.dv{display:flex;align-items:flex-start;font-family:"Courier New",ui-monospace,monospace;font-size:1.5rem;font-weight:700;line-height:1.5;color:var(--ink)}
+.dv-left{padding-right:.35ch;flex:none}
+.dv-row{white-space:pre;height:1.5em}
+.dv-num{display:inline-block}
+.dv-ul{border-bottom:2px solid currentColor}
+.dv-right{border-left:2px solid currentColor;padding-left:.4ch;min-width:3ch}
+.dv-divisor{border-bottom:2px solid currentColor;padding-right:.6ch;height:1.5em}
+.dv-quot{color:#0d63d8;height:1.5em}
+.dv-res{font-weight:850;font-size:1.08rem}
+.dv-steps{padding-left:22px;display:flex;flex-direction:column;gap:5px;max-width:520px}
+.dv-steps li{font-size:1.02rem;font-weight:750;line-height:1.45}
+
 /* Nút trong ô nhận xét khi trả lời sai */
 .fb-theory{display:inline-block;margin-top:12px;border:2px solid #9dcbfb;background:#fff;color:#0d63d8;border-radius:14px;padding:10px 16px;min-height:46px;font-family:var(--font-display);font-weight:900;font-size:1.02rem;cursor:pointer;box-shadow:var(--shadow2)}
 .fb-theory:hover{border-color:#1f7af5}
