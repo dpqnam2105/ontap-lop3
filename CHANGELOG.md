@@ -1,5 +1,10 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-19 (chiều) — Lý thuyết chạy ổn hơn trên điện thoại
+- Bấm "Xem lại bài" trên điện thoại giờ mở ở đầu bài (trước đây có thể bị cuộn xuống cuối).
+- Mạng chậm: nút "Xem lại bài" vẫn hiện khi dữ liệu tải xong. Mạng chập chờn: màn Lý thuyết có nút 🔄 Thử lại thay vì báo nhầm "chưa có bài".
+- 4 câu ôn Progress test 1 sửa gợi ý/đề theo góp ý của Gemini.
+
 ## 2026-11-19 — 💡 Lý thuyết: xem lại quy tắc khi quên
 - Menu có thêm nút 💡 Lý thuyết (máy tính và menu đáy điện thoại). Tiếng Anh có 5 bài ngắn theo lỗi trong bài thi Ms Hoa: câu hỏi Do/Does, thêm -s/-es, am/is/are + V-ing, đổi người khi trả lời, nói giờ o'clock; kèm Sổ từ hay viết sai.
 - Mỗi bài: Nhớ nhanh, Ví dụ (tô màu chỗ cần nhớ), Lỗi hay gặp (sai ✗ / đúng ✓), Mẹo nhớ, Tự kiểm tra (bấm mới hiện đáp án) và nút Luyện 5 câu.

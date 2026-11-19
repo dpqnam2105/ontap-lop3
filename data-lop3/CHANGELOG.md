@@ -7,6 +7,9 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
+## 2026-11-19 (Claude — ghi nhận Gemini đã duyệt nội dung)
+- tieng-anh / mshoa-e2-pt1 — 37 câu: contentReview claude-tu-ra-20261119 → gemini-noi-dung-20261119 (Gemini rà, 4 câu đã sửa theo góp ý). Không đổi chữ câu hỏi.
+
 ## 2026-11-19 (Claude — sửa theo góp ý Gemini, Nam chuyển)
 - tieng-anh / mshoa-e2-pt1 — q011, q032: gợi ý không còn lộ đáp án; q026: đề thành "Nam, do you play football?" để chỉ còn đáp án I (you có thể là số nhiều → we); q033: đề "My uncle is a ___. He makes houses." (bỏ chữ builds lộ chính tả). Không đổi lựa chọn, vị trí đáp án.
 - data/theory/lop3.json — ví dụ bài -s/-es: "A taxi driver doesn't fly a plane."; bảng đổi người: "you (hỏi riêng một bạn)".
