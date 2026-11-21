@@ -300,6 +300,186 @@
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_day-so-cach-deu_q015",
         "stage": 1
+      },
+      {
+        "q": "Viết các số từ 1 đến 20 thì cần dùng bao nhiêu lượt chữ số?",
+        "choices": [
+          "40",
+          "31",
+          "20",
+          "29"
+        ],
+        "a": 1,
+        "hint": "Tách hai nhóm: các số có 1 chữ số và các số có 2 chữ số. Đếm số các số trong từng nhóm.",
+        "explain": "1 → 9: 9 số → 9 lượt. 10 → 20: (20 − 10) : 1 + 1 = 11 số → 11 × 2 = 22 lượt. Cộng: 9 + 22 = 31 lượt.",
+        "difficulty": 3,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q016",
+        "stage": 2
+      },
+      {
+        "q": "Đánh số trang một cuốn truyện từ trang 1 đến trang 56 thì cần dùng bao nhiêu lượt chữ số?",
+        "choices": [
+          "94",
+          "112",
+          "101",
+          "103"
+        ],
+        "a": 3,
+        "hint": "Số các số có 2 chữ số = (56 − 10) : 1 + 1. Đừng quên nhóm số có 1 chữ số.",
+        "explain": "1 → 9: 9 lượt. 10 → 56: 47 số → 94 lượt. Cộng: 9 + 94 = 103 lượt.",
+        "difficulty": 3,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q017",
+        "stage": 2
+      },
+      {
+        "q": "Một quyển vở có 48 trang. Người ta không đánh số trang 1 và trang 2, mà đánh số từ trang 3 đến trang 48. Cần dùng bao nhiêu lượt chữ số?",
+        "choices": [
+          "96",
+          "85",
+          "87",
+          "83"
+        ],
+        "a": 1,
+        "hint": "Nhóm 1 chữ số bắt đầu từ trang 3, không phải từ trang 1.",
+        "explain": "3 → 9: (9 − 3) : 1 + 1 = 7 số → 7 lượt. 10 → 48: 39 số → 78 lượt. Cộng: 7 + 78 = 85 lượt.",
+        "difficulty": 3,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q018",
+        "stage": 2
+      },
+      {
+        "q": "Một cuốn sách có 70 trang. Người ta không đánh số trang 1, mà đánh số từ trang 2 đến trang 70. Cần dùng bao nhiêu lượt chữ số?",
+        "choices": [
+          "130",
+          "140",
+          "128",
+          "131"
+        ],
+        "a": 0,
+        "hint": "Nhóm 1 chữ số: từ trang 2 đến trang 9. Nhóm 2 chữ số: từ trang 10 đến trang 70.",
+        "explain": "2 → 9: 8 số → 8 lượt. 10 → 70: (70 − 10) : 1 + 1 = 61 số → 122 lượt. Cộng: 8 + 122 = 130 lượt.",
+        "difficulty": 3,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q019",
+        "stage": 2
+      },
+      {
+        "q": "Cô giáo viết số thứ tự cho các bạn từ 1 đến 36. Trong các số cô viết, có bao nhiêu số có hai chữ số?",
+        "choices": [
+          "27",
+          "26",
+          "36",
+          "28"
+        ],
+        "a": 0,
+        "hint": "Các số có hai chữ số bắt đầu từ 10. Dùng công thức tìm số số hạng.",
+        "explain": "Từ 10 đến 36: (36 − 10) : 1 + 1 = 27 số.",
+        "difficulty": 2,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q020",
+        "stage": 2
+      },
+      {
+        "q": "Viết liền các số từ 1 đến 15 ta được dãy chữ số 123456789101112131415. Dãy đó có tất cả bao nhiêu chữ số?",
+        "choices": [
+          "30",
+          "15",
+          "21",
+          "20"
+        ],
+        "a": 2,
+        "hint": "Mỗi số có 1 chữ số viết 1 chữ số, mỗi số có 2 chữ số viết 2 chữ số.",
+        "explain": "1 → 9: 9 chữ số. 10 → 15: 6 số → 12 chữ số. Cộng: 9 + 12 = 21.",
+        "difficulty": 2,
+        "skill": "luot-chu-so",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q021",
+        "stage": 2
+      },
+      {
+        "q": "Dãy số 6; 9; 12; 15; … Số hạng thứ 10 của dãy là số nào?",
+        "choices": [
+          "30",
+          "27",
+          "36",
+          "33"
+        ],
+        "a": 3,
+        "hint": "Tìm khoảng cách của dãy. Số hạng thứ n = (n − 1) × khoảng cách + SBN.",
+        "explain": "Khoảng cách 3. Số hạng thứ 10 = (10 − 1) × 3 + 6 = 27 + 6 = 33.",
+        "difficulty": 3,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q022",
+        "stage": 1
+      },
+      {
+        "q": "Dãy số 1; 6; 11; 16; … Số hạng thứ 20 của dãy là số nào?",
+        "choices": [
+          "100",
+          "95",
+          "96",
+          "101"
+        ],
+        "a": 2,
+        "hint": "Từ số hạng thứ 1 đến số hạng thứ 20 có bao nhiêu khoảng cách? Nhớ cộng SBN.",
+        "explain": "Khoảng cách 5. Số hạng thứ 20 = (20 − 1) × 5 + 1 = 95 + 1 = 96.",
+        "difficulty": 3,
+        "skill": "so-hang-thu-n",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q023",
+        "stage": 1
+      },
+      {
+        "q": "Tính tổng: 1 + 2 + 3 + … + 12 = ?",
+        "choices": [
+          "156",
+          "78",
+          "66",
+          "72"
+        ],
+        "a": 1,
+        "hint": "Tìm số số hạng trước. Tổng = (SBN + SLN) × số số hạng : 2.",
+        "explain": "Có 12 số hạng. Tổng = (1 + 12) × 12 : 2 = 13 × 12 : 2 = 78.",
+        "difficulty": 3,
+        "skill": "tong-day",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q024",
+        "stage": 1
+      },
+      {
+        "q": "Tính tổng: 4 + 8 + 12 + … + 40 = ?",
+        "choices": [
+          "200",
+          "440",
+          "180",
+          "220"
+        ],
+        "a": 3,
+        "hint": "Dãy có khoảng cách 4. Đếm số số hạng bằng công thức rồi mới tính tổng.",
+        "explain": "Số số hạng = (40 − 4) : 4 + 1 = 10. Tổng = (4 + 40) × 10 : 2 = 220.",
+        "difficulty": 3,
+        "skill": "tong-day",
+        "unit": "day-so-cach-deu",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_day-so-cach-deu_q025",
+        "stage": 1
       }
     ]
   }

@@ -27,10 +27,10 @@ const root=path.resolve(__dirname,'..');
  const audit=await page.evaluate(()=>{const s=App.allData.subjects.find(x=>x.id==='tieng-anh'),ids=new Set();s.topics.forEach(t=>t.questions.forEach(q=>ids.add(q.id)));
   const t=App.allData.subjects.find(x=>x.id==='toan');App.setStageSetting(t,5,false);t.topics.forEach(tp=>(tp.questions||[]).forEach(q=>ids.add(q.id)));
   const d=Theory._cache.lop3;return d.lessons.map(l=>({id:l.id,missing:(l.questionIds||[]).filter(i=>!ids.has(i)),n:Theory._hits(l).hits.length,grouped:d.subjects.some(x=>x.id===l.subject&&x.groups.some(g=>g.lessons.includes(l.id)))}));});
- const NO_PRACTICE=['toan-day-so-tong']; // chưa có câu trong kho → không hiện nút Luyện
+ const MIN_PRACTICE={'toan-day-so-tong':2}; // bài mới có ít câu trong kho
  console.log('practice', audit.map(a=>a.id+':'+a.n).join(' '));
  audit.forEach(a=>{assert.deepEqual(a.missing,[],a.id+' trỏ id không có');assert.ok(a.grouped,a.id+' chưa nằm trong nhóm');
-  if(NO_PRACTICE.includes(a.id))assert.equal(a.n,0);else assert.ok(a.n>=5,a.id+' quá ít câu luyện: '+a.n);});
+  assert.ok(a.n>=(MIN_PRACTICE[a.id]||5),a.id+' quá ít câu luyện: '+a.n);});
  // Khung chia: tính đúng thương, số dư và từng bước
  const dv=await page.evaluate(()=>[[19,2],[87,4],[61,3],[42,2],[36,6],[100,9],[60,6]].map(([a,b])=>{const r=Theory._divide(a,b);return {a,b,q:r.quot,r:r.rem,ok:r.steps.every(s=>s.rem<b&&s.q*b===s.prod&&s.cur-s.prod===s.rem)};}));
  dv.forEach(x=>{assert.equal(x.q,Math.floor(x.a/x.b));assert.equal(x.r,x.a%x.b);assert.ok(x.ok,JSON.stringify(x));});
@@ -45,7 +45,7 @@ const root=path.resolve(__dirname,'..');
   // 2 tab: Toán (mặc định) | Tiếng Anh
   assert.deepEqual(await page.locator('.th-tab').allTextContents(),['🔢 Toán','🌍 Tiếng Anh']);
   assert.equal(await page.locator('.th-tab.active').getAttribute('aria-selected'),'true');
-  assert.equal(await page.locator('.th-card').count(),7);
+  assert.equal(await page.locator('.th-card').count(),9);
   await page.locator('.th-card[data-id="toan-chia-co-du"]').click();
   assert.equal(await page.locator('.dv').count(),3);
   assert.deepEqual(await page.locator('.dv-res').allTextContents(),['19 : 2 = 9 (dư 1)','38 : 5 = 7 (dư 3)','87 : 4 = 21 (dư 3)']);
@@ -146,7 +146,7 @@ const root=path.resolve(__dirname,'..');
   assert.equal(await page.evaluate(()=>'lop3' in Theory._cache),false);
   down=false; await page.locator('[data-th="retry"]').click();
   await page.locator('.th-card').first().waitFor();
-  assert.equal(await page.locator('.th-card').count(),7);
+  assert.equal(await page.locator('.th-card').count(),9);
   await page.unroute('**/data/theory/lop3.json*');
  }
  // Lớp chưa có lý thuyết: lời nhắn thân thiện, không màn trắng

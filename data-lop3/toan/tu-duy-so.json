@@ -1320,6 +1320,114 @@
         "source": "bo-tro-tuan6-8-20261001",
         "id": "toan_tu-duy-so_q076",
         "stage": 1
+      },
+      {
+        "q": "Điền số thích hợp:  6 × 7 − 6 = 6 × …",
+        "choices": [
+          "6",
+          "1",
+          "8",
+          "7"
+        ],
+        "a": 0,
+        "hint": "6 × 7 là 7 lần số 6. Bớt đi một số 6 thì còn mấy lần số 6?",
+        "explain": "6 × 7 − 6 = 6 × 7 − 6 × 1 = 6 × 6.",
+        "difficulty": 2,
+        "skill": "viet-thanh-tich",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q077",
+        "stage": 1
+      },
+      {
+        "q": "Điền số thích hợp:  4 + 4 + 4 × 5 = 4 × …",
+        "choices": [
+          "7",
+          "13",
+          "5",
+          "6"
+        ],
+        "a": 0,
+        "hint": "Đếm xem có tất cả bao nhiêu số 4 được cộng lại.",
+        "explain": "4 + 4 là 2 lần số 4, 4 × 5 là 5 lần số 4. Tất cả có 2 + 5 = 7 lần số 4 → 4 × 7.",
+        "difficulty": 3,
+        "skill": "viet-thanh-tich",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q078",
+        "stage": 1
+      },
+      {
+        "q": "Tìm số thích hợp điền vào ô trống:  35 × 2 < 8 × ☐ < 10 × 8",
+        "choices": [
+          "10",
+          "8",
+          "11",
+          "9"
+        ],
+        "a": 3,
+        "hint": "Tính hai vế ngoài trước. Rồi tìm tích của bảng 8 nằm giữa hai số đó.",
+        "explain": "35 × 2 = 70, 10 × 8 = 80. 70 < 8 × ☐ < 80 → 8 × 9 = 72 → ☐ = 9.",
+        "difficulty": 3,
+        "skill": "so-trong-khoang",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q079",
+        "stage": 2
+      },
+      {
+        "q": "Điền chữ số thích hợp vào ô trống để được phép tính đúng:  ☐3 × 4 = 9☐",
+        "choices": [
+          "13 × 4 = 92",
+          "23 × 4 = 92",
+          "33 × 4 = 92",
+          "23 × 4 = 93"
+        ],
+        "a": 1,
+        "hint": "Thử lần lượt chữ số hàng chục: tích phải là một số chín mươi mấy.",
+        "explain": "13 × 4 = 52, 23 × 4 = 92, 33 × 4 = 132. Chỉ 23 × 4 = 92 đúng.",
+        "difficulty": 3,
+        "skill": "dien-chu-so",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q080",
+        "stage": 2
+      },
+      {
+        "q": "Bảng số: hàng 1 là 3; 5; 15. Hàng 2 là 4; 6; 24. Hàng 3 là 7; ?; 14. Số thích hợp thay cho dấu ? là:",
+        "choices": [
+          "7",
+          "2",
+          "21",
+          "1"
+        ],
+        "a": 1,
+        "hint": "Xem số thứ ba của mỗi hàng được tạo ra từ hai số đầu bằng phép tính gì.",
+        "explain": "Mỗi hàng: số thứ nhất × số thứ hai = số thứ ba (3 × 5 = 15, 4 × 6 = 24). 7 × 2 = 14 → ? = 2.",
+        "difficulty": 2,
+        "skill": "quy-luat",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q081",
+        "stage": 1
+      },
+      {
+        "q": "☐ —gấp lên 3 lần→ ○ —bớt 7 đơn vị→ 20. Số ở ô ☐ là:",
+        "choices": [
+          "27",
+          "39",
+          "9",
+          "81"
+        ],
+        "a": 2,
+        "hint": "Đi ngược từ 20: bớt 7 thì ngược lại là gì? Gấp lên 3 lần thì ngược lại là gì?",
+        "explain": "○ = 20 + 7 = 27. ☐ = 27 : 3 = 9.",
+        "difficulty": 3,
+        "skill": "suy-nguoc",
+        "unit": "tu-duy-so",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_tu-duy-so_q082",
+        "stage": 2
       }
     ]
   }

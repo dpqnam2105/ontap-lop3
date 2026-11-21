@@ -564,6 +564,240 @@
         "source": "claude-audit-20260924",
         "id": "toan_nhan-chia-ngoai-bang_q033",
         "stage": 3
+      },
+      {
+        "q": "Trong phép chia cho 5, số dư có thể là những số nào?",
+        "choices": [
+          "1; 2; 3; 4",
+          "0; 1; 2; 3; 4",
+          "0; 1; 2; 3; 4; 5",
+          "1; 2; 3; 4; 5"
+        ],
+        "a": 1,
+        "hint": "Số dư luôn bé hơn số chia. Phép chia hết thì số dư là bao nhiêu?",
+        "explain": "Phép chia cho 5 gồm cả chia hết (dư 0) và chia có dư (dư 1, 2, 3, 4). Số dư bé hơn 5.",
+        "difficulty": 2,
+        "skill": "so-du",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q034",
+        "stage": 2
+      },
+      {
+        "q": "Trong phép chia có dư với số chia là 4, số dư có thể là những số nào?",
+        "choices": [
+          "1; 2; 3",
+          "0; 1; 2; 3; 4",
+          "1; 2; 3; 4",
+          "0; 1; 2; 3"
+        ],
+        "a": 0,
+        "hint": "Đề nói \"phép chia có dư\": số dư khác 0 và bé hơn số chia.",
+        "explain": "Chia có dư thì số dư lớn hơn 0 và bé hơn 4: 1, 2, 3.",
+        "difficulty": 2,
+        "skill": "so-du",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q035",
+        "stage": 2
+      },
+      {
+        "q": "Một số chia cho 9 được thương là 8 và số dư là số dư lớn nhất có thể. Số đó là:",
+        "choices": [
+          "72",
+          "81",
+          "79",
+          "80"
+        ],
+        "a": 3,
+        "hint": "Chia cho 9 thì số dư lớn nhất là bao nhiêu? Số bị chia = Thương × Số chia + Số dư.",
+        "explain": "Số dư lớn nhất là 8. Số đó = 8 × 9 + 8 = 80.",
+        "difficulty": 3,
+        "skill": "tim-so-bi-chia",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q036",
+        "stage": 2
+      },
+      {
+        "q": "Tìm số thích hợp điền vào ô trống:  ☐ : 4 = 13 (dư 3)",
+        "choices": [
+          "52",
+          "56",
+          "49",
+          "55"
+        ],
+        "a": 3,
+        "hint": "Số bị chia = Thương × Số chia + Số dư.",
+        "explain": "☐ = 13 × 4 + 3 = 52 + 3 = 55. Thử lại: 55 : 4 = 13 (dư 3).",
+        "difficulty": 2,
+        "skill": "tim-so-bi-chia",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q037",
+        "stage": 2
+      },
+      {
+        "q": "Tìm số thích hợp điền vào ô trống:  ☐ : 6 = 9 (dư 5)",
+        "choices": [
+          "54",
+          "60",
+          "59",
+          "49"
+        ],
+        "a": 2,
+        "hint": "Nhân thương với số chia, rồi đừng quên số dư.",
+        "explain": "☐ = 9 × 6 + 5 = 54 + 5 = 59.",
+        "difficulty": 2,
+        "skill": "tim-so-bi-chia",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q038",
+        "stage": 2
+      },
+      {
+        "q": "Tìm số thích hợp điền vào ô trống:  62 : ☐ = 7 (dư 6)",
+        "choices": [
+          "8",
+          "9",
+          "10",
+          "7"
+        ],
+        "a": 0,
+        "hint": "Số chia = (Số bị chia − Số dư) : Thương.",
+        "explain": "☐ = (62 − 6) : 7 = 56 : 7 = 8. Thử lại: 62 : 8 = 7 (dư 6).",
+        "difficulty": 3,
+        "skill": "tim-so-chia",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q039",
+        "stage": 2
+      },
+      {
+        "q": "Tìm số thích hợp điền vào ô trống:  50 : ☐ = 6 (dư 2)",
+        "choices": [
+          "9",
+          "7",
+          "8",
+          "6"
+        ],
+        "a": 2,
+        "hint": "Bớt số dư khỏi số bị chia trước, rồi mới chia cho thương.",
+        "explain": "☐ = (50 − 2) : 6 = 48 : 6 = 8.",
+        "difficulty": 3,
+        "skill": "tim-so-chia",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q040",
+        "stage": 2
+      },
+      {
+        "q": "Có 29 quả cam xếp vào các túi, mỗi túi 4 quả. Xếp được nhiều nhất mấy túi và còn thừa mấy quả?",
+        "choices": [
+          "7 túi, thừa 1 quả",
+          "8 túi, không thừa",
+          "6 túi, thừa 5 quả",
+          "7 túi, thừa 2 quả"
+        ],
+        "a": 0,
+        "hint": "Chia 29 cho 4. Số dư phải bé hơn 4.",
+        "explain": "29 : 4 = 7 (dư 1) → 7 túi, thừa 1 quả.",
+        "difficulty": 2,
+        "skill": "chia-du-thuc-te",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q041",
+        "stage": 2
+      },
+      {
+        "q": "Có 38 l dầu, rót vào các can, mỗi can chứa 5 l. Cần ít nhất bao nhiêu can để chứa hết số dầu?",
+        "choices": [
+          "7 can",
+          "3 can",
+          "9 can",
+          "8 can"
+        ],
+        "a": 3,
+        "hint": "Chia xong còn thừa dầu thì số dầu thừa đó cũng cần can.",
+        "explain": "38 : 5 = 7 (dư 3). 7 can chứa 35 l, còn 3 l cần thêm 1 can → 8 can.",
+        "difficulty": 2,
+        "skill": "chia-du-thuc-te",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q042",
+        "stage": 2
+      },
+      {
+        "q": "Có 22 hành khách muốn qua sông. Mỗi chiếc thuyền chở được 4 người, kể cả bác lái thuyền. Cần ít nhất bao nhiêu chiếc thuyền để chở hết hành khách?",
+        "choices": [
+          "8 thuyền",
+          "6 thuyền",
+          "5 thuyền",
+          "7 thuyền"
+        ],
+        "a": 0,
+        "hint": "Mỗi thuyền đã có bác lái ngồi một chỗ. Mỗi thuyền chở được mấy hành khách?",
+        "explain": "Mỗi thuyền chở 4 − 1 = 3 khách. 22 : 3 = 7 (dư 1) → cần thêm 1 thuyền → 8 thuyền.",
+        "difficulty": 3,
+        "skill": "chia-du-thuc-te",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q043",
+        "stage": 2
+      },
+      {
+        "q": "Giảm số nào đi 7 lần thì được 6?",
+        "choices": [
+          "35",
+          "13",
+          "42",
+          "49"
+        ],
+        "a": 2,
+        "hint": "Làm ngược lại: giảm đi 7 lần là chia 7, vậy ngược lại là phép tính gì?",
+        "explain": "Số đó = 6 × 7 = 42. Thử lại: 42 : 7 = 6.",
+        "difficulty": 2,
+        "skill": "gap-giam-nguoc",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q044",
+        "stage": 2
+      },
+      {
+        "q": "Một số gấp lên 4 lần thì được 36. Số đó là:",
+        "choices": [
+          "144",
+          "9",
+          "32",
+          "40"
+        ],
+        "a": 1,
+        "hint": "Gấp lên 4 lần là nhân 4. Ngược lại là phép tính gì?",
+        "explain": "Số đó = 36 : 4 = 9. Thử lại: 9 × 4 = 36.",
+        "difficulty": 2,
+        "skill": "gap-giam-nguoc",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q045",
+        "stage": 2
+      },
+      {
+        "q": "Giảm 90 đi một nửa thì được:",
+        "choices": [
+          "88",
+          "45",
+          "180",
+          "92"
+        ],
+        "a": 1,
+        "hint": "\"Một nửa\" nghĩa là chia thành 2 phần bằng nhau.",
+        "explain": "Giảm đi một nửa là giảm đi 2 lần: 90 : 2 = 45.",
+        "difficulty": 1,
+        "skill": "times-less",
+        "unit": "toan_nhan-chia-ngoai-bang",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_nhan-chia-ngoai-bang_q046",
+        "stage": 2
       }
     ]
   }

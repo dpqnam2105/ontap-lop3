@@ -401,6 +401,114 @@
         "source": "claude-audit-20260924",
         "id": "toan_do-luong_q020",
         "stage": 5
+      },
+      {
+        "q": "5 dm 4 mm = … mm",
+        "choices": [
+          "504",
+          "5004",
+          "54",
+          "540"
+        ],
+        "a": 0,
+        "hint": "1 dm = 100 mm. Đổi phần dm ra mm rồi cộng thêm phần mm.",
+        "explain": "5 dm = 500 mm. 500 mm + 4 mm = 504 mm.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q021",
+        "stage": 3
+      },
+      {
+        "q": "600 mm = … dm",
+        "choices": [
+          "6",
+          "6000",
+          "60",
+          "600"
+        ],
+        "a": 0,
+        "hint": "1 dm = 100 mm. Đổi từ đơn vị bé sang đơn vị lớn thì làm phép tính gì?",
+        "explain": "600 : 100 = 6 → 600 mm = 6 dm.",
+        "difficulty": 2,
+        "skill": "convert",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q022",
+        "stage": 3
+      },
+      {
+        "q": "Con kiến bò từ A đến B hết 1 dm 5 cm, rồi bò tiếp từ B đến C hết 28 cm. Cả quãng đường con kiến bò dài bao nhiêu xăng-ti-mét?",
+        "choices": [
+          "29 cm",
+          "43 cm",
+          "34 cm",
+          "38 cm"
+        ],
+        "a": 1,
+        "hint": "Đổi 1 dm 5 cm ra xăng-ti-mét trước, rồi mới cộng.",
+        "explain": "1 dm 5 cm = 15 cm. 15 cm + 28 cm = 43 cm.",
+        "difficulty": 2,
+        "skill": "tinh-don-vi",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q023",
+        "stage": 3
+      },
+      {
+        "q": "Mẹ có 2 kg gạo nếp, mẹ đã dùng 600 g. Mẹ còn lại bao nhiêu gam gạo nếp?",
+        "choices": [
+          "2600 g",
+          "1400 g",
+          "1600 g",
+          "400 g"
+        ],
+        "a": 1,
+        "hint": "Đổi 2 kg ra gam rồi mới trừ.",
+        "explain": "2 kg = 2000 g. 2000 g − 600 g = 1400 g.",
+        "difficulty": 2,
+        "skill": "tinh-don-vi",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q024",
+        "stage": 3
+      },
+      {
+        "q": "Một chai có 1 l sữa. Rót ra 400 ml, phần còn lại chia đều vào 2 cốc. Mỗi cốc có bao nhiêu mi-li-lít sữa?",
+        "choices": [
+          "700 ml",
+          "200 ml",
+          "600 ml",
+          "300 ml"
+        ],
+        "a": 3,
+        "hint": "Đổi 1 l ra mi-li-lít. Tìm phần còn lại trước, rồi mới chia.",
+        "explain": "1 l = 1000 ml. Còn lại: 1000 − 400 = 600 ml. Mỗi cốc: 600 : 2 = 300 ml.",
+        "difficulty": 3,
+        "skill": "tinh-don-vi",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q025",
+        "stage": 3
+      },
+      {
+        "q": "Chọn dấu thích hợp:  1 kg … 990 g",
+        "choices": [
+          ">",
+          "<",
+          "=",
+          "Không so sánh được"
+        ],
+        "a": 0,
+        "hint": "Đổi về cùng một đơn vị rồi mới so sánh.",
+        "explain": "1 kg = 1000 g. 1000 g > 990 g.",
+        "difficulty": 2,
+        "skill": "compare",
+        "unit": "toan_do-luong",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_do-luong_q026",
+        "stage": 3
       }
     ]
   }

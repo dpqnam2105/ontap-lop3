@@ -368,6 +368,96 @@
           "date": "2026-10-07",
           "upgradedFrom": "suy-luan"
         }
+      },
+      {
+        "q": "Một cửa hàng có 64 quả dưa. Buổi sáng, cửa hàng bán được số dưa bằng số dưa ban đầu giảm đi 4 lần. Hỏi cửa hàng còn lại bao nhiêu quả dưa?",
+        "choices": [
+          "16 quả",
+          "80 quả",
+          "48 quả",
+          "60 quả"
+        ],
+        "a": 2,
+        "hint": "Bước 1: tìm số dưa đã bán. Bước 2: tìm số dưa còn lại.",
+        "explain": "Đã bán: 64 : 4 = 16 quả. Còn lại: 64 − 16 = 48 quả.",
+        "difficulty": 2,
+        "skill": "word-2step-gap-giam",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_giai-toan-co-loi-van_q016",
+        "stage": 2
+      },
+      {
+        "q": "Hà có 35 viên bi. Sau khi cho bạn, số bi còn lại của Hà bằng số bi ban đầu giảm đi 5 lần. Hỏi Hà đã cho bạn bao nhiêu viên bi?",
+        "choices": [
+          "30 viên",
+          "28 viên",
+          "40 viên",
+          "7 viên"
+        ],
+        "a": 1,
+        "hint": "Tìm số bi còn lại trước, rồi mới tìm số bi đã cho.",
+        "explain": "Còn lại: 35 : 5 = 7 viên. Đã cho: 35 − 7 = 28 viên.",
+        "difficulty": 3,
+        "skill": "word-2step-gap-giam",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_giai-toan-co-loi-van_q017",
+        "stage": 2
+      },
+      {
+        "q": "Mai gấp được 42 con hạc. Số hạc của Lan bằng số hạc của Mai giảm đi 3 lần. Hỏi Mai gấp được nhiều hơn Lan bao nhiêu con hạc?",
+        "choices": [
+          "28 con",
+          "56 con",
+          "14 con",
+          "39 con"
+        ],
+        "a": 0,
+        "hint": "Tìm số hạc của Lan trước. \"Nhiều hơn bao nhiêu\" là phép tính gì?",
+        "explain": "Lan: 42 : 3 = 14 con. Mai hơn Lan: 42 − 14 = 28 con.",
+        "difficulty": 2,
+        "skill": "word-2step-gap-giam",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_giai-toan-co-loi-van_q018",
+        "stage": 2
+      },
+      {
+        "q": "Nhân một số với 4 thì được 84. Nếu nhân số đó với 2 thì được bao nhiêu?",
+        "choices": [
+          "80",
+          "168",
+          "21",
+          "42"
+        ],
+        "a": 3,
+        "hint": "Tìm số đó trước: số nào nhân 4 được 84?",
+        "explain": "Số đó = 84 : 4 = 21. Nhân với 2: 21 × 2 = 42.",
+        "difficulty": 3,
+        "skill": "word-2step-gap-giam",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_giai-toan-co-loi-van_q019",
+        "stage": 2
+      },
+      {
+        "q": "Thùng thứ nhất có 8 l nước. Nếu đổ thêm 5 l vào thùng thứ hai thì thùng thứ hai sẽ có số nước gấp 3 lần thùng thứ nhất. Hỏi lúc đầu thùng thứ hai có bao nhiêu lít nước?",
+        "choices": [
+          "19 l",
+          "24 l",
+          "29 l",
+          "13 l"
+        ],
+        "a": 0,
+        "hint": "Tính số nước của thùng thứ hai sau khi đổ thêm, rồi bớt phần đổ thêm.",
+        "explain": "Sau khi đổ thêm: 8 × 3 = 24 l. Lúc đầu: 24 − 5 = 19 l.",
+        "difficulty": 3,
+        "skill": "word-2step-gap-giam",
+        "unit": "toan_giai-toan-co-loi-van",
+        "source": "bo-tro-tuan11-13-20261121",
+        "id": "toan_giai-toan-co-loi-van_q020",
+        "stage": 2
       }
     ]
   }

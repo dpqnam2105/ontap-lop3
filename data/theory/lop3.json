@@ -13,6 +13,7 @@
           "name": "Phép nhân, phép chia",
           "lessons": [
             "toan-chia-co-du",
+            "toan-tim-sbc-sc",
             "toan-gap-giam"
           ]
         },
@@ -21,7 +22,8 @@
           "lessons": [
             "toan-day-so-so-so-hang",
             "toan-day-so-so-hang-thu-n",
-            "toan-day-so-tong"
+            "toan-day-so-tong",
+            "toan-luot-chu-so"
           ]
         },
         {
@@ -150,7 +152,58 @@
         "chia-co-du",
         "chia-het",
         "chia-du-con-thua",
-        "dung-het"
+        "dung-het",
+        "so-du",
+        "chia-du-thuc-te"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-tim-sbc-sc",
+      "subject": "toan",
+      "icon": "🔍",
+      "title": "Tìm số bị chia, số chia khi có dư",
+      "book": "Bài tập bổ trợ Toán 3 · Tuần 12",
+      "rule": [
+        "**Số bị chia = Thương × Số chia + Số dư**",
+        "**Số chia = (Số bị chia − Số dư) : Thương**",
+        "Số dư lớn nhất = **Số chia − 1** (chia cho 7 thì số dư lớn nhất là 6)."
+      ],
+      "examples": [
+        "☐ : 5 = 10 (dư 2) → ☐ = 10 × 5 + 2 = **52**",
+        "43 : ☐ = 8 (dư 3) → ☐ = (43 − 3) : 8 = **5**",
+        "Một số chia cho 8 được thương 26, số dư là số dư lớn nhất → 26 × 8 + 7 = **215**"
+      ],
+      "mistakes": [
+        {
+          "wrong": "☐ : 7 = 20 (dư 5) → ☐ = ~~140~~",
+          "right": "☐ = 20 × 7 **+ 5** = **145**",
+          "why": "Quên cộng số dư."
+        },
+        {
+          "wrong": "43 : ☐ = 8 (dư 3) → ☐ = 43 : 8 ~~= 5 (dư 3)~~",
+          "right": "☐ = **(43 − 3)** : 8 = **5**",
+          "why": "Phải bớt số dư trước rồi mới chia cho thương."
+        }
+      ],
+      "tip": "Tìm xong luôn **thử lại bằng phép chia**: 145 : 7 = 20 (dư 5) ✓",
+      "check": [
+        {
+          "q": "☐ : 6 = 7 (dư 4)",
+          "a": "7 × 6 + 4 = 46"
+        },
+        {
+          "q": "38 : ☐ = 6 (dư 2)",
+          "a": "(38 − 2) : 6 = 6"
+        },
+        {
+          "q": "Một số chia cho 9 được thương 5, số dư là số dư lớn nhất. Số đó là?",
+          "a": "5 × 9 + 8 = 53"
+        }
+      ],
+      "skills": [
+        "tim-so-bi-chia",
+        "tim-so-chia"
       ],
       "questionIds": []
     },
@@ -199,7 +252,8 @@
         "4 gấp lên 5 lần: 4 × 5 = 20",
         "35 giảm đi 7 lần: 35 : 7 = 5",
         "Em 8 tuổi, tuổi anh gấp 3 lần tuổi em: 8 × 3 = 24 (tuổi)",
-        "6 gấp lên 4 lần rồi giảm đi 3 lần: 6 × 4 = 24, 24 : 3 = 8"
+        "6 gấp lên 4 lần rồi giảm đi 3 lần: 6 × 4 = 24, 24 : 3 = 8",
+        "Bài ngược: giảm số nào đi 4 lần thì được 12? → 12 × 4 = **48** (thử lại 48 : 4 = 12)"
       ],
       "mistakes": [
         {
@@ -231,7 +285,9 @@
       "skills": [
         "times-more",
         "times-less",
-        "so-do-gap-lan"
+        "so-do-gap-lan",
+        "gap-giam-nguoc",
+        "word-2step-gap-giam"
       ],
       "questionIds": []
     },
@@ -364,7 +420,89 @@
           "a": "(3 + 15) × 5 : 2 = 45"
         }
       ],
-      "skills": [],
+      "skills": [
+        "tong-day"
+      ],
+      "questionIds": []
+    },
+    {
+      "id": "toan-luot-chu-so",
+      "subject": "toan",
+      "icon": "🔤",
+      "title": "Đếm lượt chữ số (đánh số trang)",
+      "book": "Bài tập bổ trợ Toán 3 · Tuần 11–13",
+      "rule": [
+        "**Lượt chữ số** = số chữ số phải viết ra.",
+        "Số có 1 chữ số (1 → 9): mỗi số viết **1** chữ số.",
+        "Số có 2 chữ số (10 → 99): mỗi số viết **2** chữ số.",
+        "Cách làm: **tách nhóm → đếm số các số trong mỗi nhóm → nhân với số lượt → cộng lại.**",
+        "Đếm số các số trong một nhóm: (SLN − SBN) : 1 + 1"
+      ],
+      "table": {
+        "title": "Bảng nhớ",
+        "head": [
+          "Số",
+          "Số số hạng",
+          "Số lượt chữ số"
+        ],
+        "rows": [
+          [
+            "Từ 1 đến 9",
+            "9 số",
+            "1 × 9 = 9 lượt"
+          ],
+          [
+            "Từ 10 đến 99",
+            "(99 − 10) : 1 + 1 = 90 số",
+            "2 × 90 = 180 lượt"
+          ]
+        ]
+      },
+      "examples": [
+        "Viết các số từ 1 đến 30: 1 → 9 có 9 số → 9 lượt; 10 → 30 có (30 − 10) : 1 + 1 = 21 số → 21 × 2 = 42 lượt. Cộng: 9 + 42 = **51** lượt chữ số.",
+        "Đánh số trang từ trang 3 đến trang 50: 3 → 9 có (9 − 3) : 1 + 1 = 7 số → 7 lượt; 10 → 50 có 41 số → 82 lượt. Cộng: 7 + 82 = **89** lượt chữ số.",
+        "Bài giải nhớ viết đủ câu kết: \"Vậy để đánh hết số trang cần dùng … lượt chữ số.\" Đáp số ghi đơn vị **lượt chữ số**."
+      ],
+      "mistakes": [
+        {
+          "wrong": "Trang 3 → 99: có ~~99~~ số có 2 chữ số",
+          "right": "Từ 10 đến 99 có (99 − 10) : 1 + 1 = **90** số",
+          "why": "Số có 2 chữ số bắt đầu từ 10, không phải từ 1."
+        },
+        {
+          "wrong": "Từ 10 đến 32: (32 − 10) : 1 + 1 = ~~22~~",
+          "right": "(32 − 10) : 1 + 1 = 22 + 1 = **23**",
+          "why": "Tính 32 − 10 = 22 rồi còn phải cộng 1."
+        },
+        {
+          "wrong": "Đánh số từ trang 3 mà vẫn tính ~~9~~ số có 1 chữ số",
+          "right": "Từ 3 đến 9 chỉ có **7** số",
+          "why": "Nhóm 1 chữ số bắt đầu đúng ở trang đề cho."
+        },
+        {
+          "wrong": "Đáp số: 55 ~~lần~~",
+          "right": "Đáp số: 55 **lượt chữ số**",
+          "why": "Ghi đúng đơn vị như cô dạy."
+        }
+      ],
+      "tip": "Đọc kĩ đề **bắt đầu đánh số từ trang mấy**. Nhóm 1 chữ số bắt đầu từ trang đó, không phải lúc nào cũng là 9 số.",
+      "check": [
+        {
+          "q": "Viết các số từ 1 đến 40 cần bao nhiêu lượt chữ số?",
+          "a": "9 + 31 × 2 = 71 lượt"
+        },
+        {
+          "q": "Đánh số trang từ trang 2 đến trang 30 cần bao nhiêu lượt chữ số?",
+          "a": "8 + 21 × 2 = 50 lượt"
+        },
+        {
+          "q": "Từ 10 đến 25 có bao nhiêu số?",
+          "a": "(25 − 10) : 1 + 1 = 16 số"
+        }
+      ],
+      "skills": [
+        "luot-chu-so"
+      ],
       "questionIds": []
     },
     {
@@ -451,7 +589,10 @@
         "toan_do-luong_q008",
         "toan_do-luong_q011",
         "toan_do-luong_q012",
-        "toan_do-luong_q015"
+        "toan_do-luong_q015",
+        "toan_do-luong_q021",
+        "toan_do-luong_q022",
+        "toan_do-luong_q023"
       ]
     },
     {
@@ -506,7 +647,10 @@
         "toan_do-luong_q009",
         "toan_do-luong_q010",
         "toan_do-luong_q013",
-        "toan_do-luong_q014"
+        "toan_do-luong_q014",
+        "toan_do-luong_q024",
+        "toan_do-luong_q025",
+        "toan_do-luong_q026"
       ]
     },
     {
