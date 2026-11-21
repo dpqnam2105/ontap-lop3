@@ -7,8 +7,8 @@ Ghi lại mỗi lần thêm/sửa câu hỏi. Mới nhất ở trên cùng.
 ---
 
 
-## 2026-11-21 (Claude — ôn thi cấp trường Toán, bổ trợ tuần 11–13; chờ Gemini rà)
-- toan / day-so-cach-deu — +10 (q016–q025): lượt chữ số ×6 (GĐ2), số hạng thứ n ×2, tổng dãy ×2 (GĐ1). 15 → 25.
+## 2026-11-21 (Claude — ôn thi cấp trường Toán, bổ trợ tuần 11–13; Gemini đã rà)
+- toan / day-so-cach-deu — +10 (q016–q025): lượt chữ số ×6 (GĐ2), số hạng thứ n ×2 (q022 GĐ1, q023 GĐ2), tổng dãy ×2 (GĐ2). 15 → 25. Gemini rà 21/11: q023–q025 lên GĐ2 vì cần nhân ngoài bảng; giải thích tổng chia 2 trước (13 × 6, 44 × 5).
 - toan / nhan-chia-ngoai-bang — +13 (q034–q046, GĐ2): số dư có thể, tìm số bị chia/số chia, nhiều nhất/ít nhất/thuyền kể cả lái, gấp/giảm ngược, giảm một nửa. 33 → 46.
 - toan / giai-toan-co-loi-van — +5 (q016–q020, GĐ2): bài toán hai bước có gấp/giảm. 15 → 20.
 - toan / do-luong — +6 (q021–q026, GĐ3): đổi dm–mm, cộng dm cm + cm, kg–g, l–ml chia cốc, so sánh kg–g. 20 → 26.

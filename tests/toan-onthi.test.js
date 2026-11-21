@@ -29,7 +29,9 @@ for (const [f, n] of Object.entries(WANT)) {
     assert.ok(Number.isInteger(q.a) && q.a >= 0 && q.a < 4, m);
     assert.ok(q.hint && q.explain, m + ': thiếu gợi ý/giải thích');
     assert.ok(!q.hint.includes(q.choices[q.a]) || /^\d$/.test(q.choices[q.a]), m + ': gợi ý lộ đáp án');
-    assert.strictEqual(q.stage, STAGE[q.skill], m + ': giai đoạn');
+    // Cần nhân/chia ngoài bảng (19 × 5, 13 × 6, 44 × 5) → GĐ2 dù cùng dạng với câu GĐ1 (Gemini rà 21/11)
+    const OVERRIDE = { 'toan_day-so-cach-deu_q023': 2, 'toan_day-so-cach-deu_q024': 2, 'toan_day-so-cach-deu_q025': 2 };
+    assert.strictEqual(q.stage, OVERRIDE[q.id] || STAGE[q.skill], m + ': giai đoạn');
     assert.ok(theorySkills.has(q.skill) || theoryIds.has(q.id) || ['viet-thanh-tich', 'quy-luat', 'so-trong-khoang', 'dien-chu-so', 'suy-nguoc'].includes(q.skill), m + ': chưa nối lý thuyết');
   }
   total += mine.length;

@@ -443,7 +443,7 @@
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan11-13-20261121",
         "id": "toan_day-so-cach-deu_q023",
-        "stage": 1
+        "stage": 2
       },
       {
         "q": "Tính tổng: 1 + 2 + 3 + … + 12 = ?",
@@ -455,13 +455,13 @@
         ],
         "a": 1,
         "hint": "Tìm số số hạng trước. Tổng = (SBN + SLN) × số số hạng : 2.",
-        "explain": "Có 12 số hạng. Tổng = (1 + 12) × 12 : 2 = 13 × 12 : 2 = 78.",
+        "explain": "Có 12 số hạng. Tổng = (1 + 12) × 12 : 2 = 13 × 6 = 78 (lấy 12 : 2 = 6 trước cho dễ tính).",
         "difficulty": 3,
         "skill": "tong-day",
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan11-13-20261121",
         "id": "toan_day-so-cach-deu_q024",
-        "stage": 1
+        "stage": 2
       },
       {
         "q": "Tính tổng: 4 + 8 + 12 + … + 40 = ?",
@@ -473,13 +473,13 @@
         ],
         "a": 3,
         "hint": "Dãy có khoảng cách 4. Đếm số số hạng bằng công thức rồi mới tính tổng.",
-        "explain": "Số số hạng = (40 − 4) : 4 + 1 = 10. Tổng = (4 + 40) × 10 : 2 = 220.",
+        "explain": "Số số hạng = (40 − 4) : 4 + 1 = 10. Tổng = (4 + 40) × 10 : 2 = 44 × 5 = 220 (lấy 10 : 2 = 5 trước).",
         "difficulty": 3,
         "skill": "tong-day",
         "unit": "day-so-cach-deu",
         "source": "bo-tro-tuan11-13-20261121",
         "id": "toan_day-so-cach-deu_q025",
-        "stage": 1
+        "stage": 2
       }
     ]
   }
