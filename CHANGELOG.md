@@ -1,5 +1,9 @@
 # CHANGELOG — Vương Quốc Thỏ (ontap-lop3)
 
+## 2026-11-21 — Ôn thi cấp trường Toán
+- Thêm 40 câu theo dạng bài bổ trợ tuần 11–13, vào đúng chủ đề và giai đoạn: đếm lượt chữ số và tổng dãy (Dãy số cách đều), chia có dư – tìm số bị chia/số chia – nhiều nhất/ít nhất (Nhân, chia ngoài bảng), bài toán hai bước gấp/giảm (Giải toán có lời văn), đổi mm/g/ml (Đo lường), viết thành phép nhân, điền chữ số, chuỗi tính ngược (Tư duy số).
+- Lý thuyết Toán thêm 2 bài: "Đếm lượt chữ số" và "Tìm số bị chia, số chia khi có dư". Bài "Tính tổng dãy số" giờ có nút Luyện.
+
 ## 2026-11-19 (tối) — 💡 Lý thuyết có 2 tab Toán | Tiếng Anh
 - Màn Lý thuyết chia tab 🔢 Toán và 🌍 Tiếng Anh; mở bài rồi quay lại vẫn ở đúng tab.
 - 7 bài Toán mới: Chia hết và chia có dư (có khung đặt tính giống Vở bài tập, lời giải từng bước), Gấp lên / giảm đi một số lần, Dãy số cách đều (số số hạng, số hạng thứ n, tính tổng), Đơn vị đo độ dài (km, m, dm, cm, mm), Khối lượng và dung tích (kg, g, l, ml).
